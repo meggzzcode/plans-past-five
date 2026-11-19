@@ -458,14 +458,12 @@ content:
         list: true
         options:
           values:
-            - { value: pottery-era, label: "The Pottery Era" }
-            - { value: creative-girl, label: "The Creative Girl" }
-            - { value: sporty-girl, label: "Sporty Girl" }
-            - { value: girls-night-in, label: "Girls' Night In" }
-            - { value: bookish-girl, label: "Bookish Girl" }
-            - { value: little-adventures, label: "Little Adventures" }
-            - { value: journaling-era, label: "The Journaling Era" }
-            - { value: cozy-after-hours, label: "Cozy After Hours" }
+            - { value: paper, label: "The Paper Edit (journaling, scrapbooking, stationery)" }
+            - { value: creative, label: "The Creative Edit (painting, clay, embroidery, crochet)" }
+            - { value: cozy, label: "The Cozy Edit (reading, puzzles, slow evenings)" }
+            - { value: hosting, label: "The Hosting Edit (mahjong, craft and paint nights)" }
+            - { value: sporty, label: "The Sporty Edit (tennis, pickleball, movement)" }
+            - { value: little-adventures, label: "The Little Adventures Edit (picnics, afternoons out)" }
       - { name: hobbies, label: "Hobby pages it appears on (web-address names, one per line, e.g. junk-journaling)", type: string, list: true }
       - { name: articles, label: "Articles that show it as a shop pick (web-address names, one per line)", type: string, list: true }
       - name: kitSlots

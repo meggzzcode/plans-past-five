@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { getCollection } from "@/data/products";
+import { isCollectionLive } from "@/data/collection-status";
 import {
   selectProducts,
   verifiedCatalog,
@@ -60,7 +61,9 @@ export function ShopTheArticle({
   }, [key, empty]);
   if (empty) return null;
 
-  const coll = getCollection(collection ?? sel.all.flatMap((p) => p.collections)[0] ?? "");
+  // The "More in ..." link only points at a collection that is shown (see collection-status.ts).
+  const collSlug = collection ?? sel.all.flatMap((p) => p.collections)[0] ?? "";
+  const coll = isCollectionLive(collSlug, catalog) ? getCollection(collSlug) : undefined;
   const { pick, groups } = groupsFor(sel);
   return (
     <aside className="not-prose my-12 border-y-2 border-ink py-8" aria-labelledby={`shop-${key}`}>
@@ -86,7 +89,6 @@ export function ShopTheArticle({
           </Link>
         </p>
       )}
-      <ShopDisclosure className="mt-4" />
     </aside>
   );
 }

@@ -252,6 +252,7 @@ export function CollectionCard({
         </div>
         <div className="px-1 py-4">
           <h3 className="text-2xl italic leading-tight group-hover:text-cherry">{c.name}</h3>
+          <p className="mt-1 text-sm font-semibold text-ink">{c.label}</p>
           <p className="mt-1 text-sm text-espresso">{c.dek}</p>
           {tag && <p className="kicker mt-2 text-cherry">{tag}</p>}
         </div>

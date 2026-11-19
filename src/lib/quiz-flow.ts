@@ -12,7 +12,14 @@
 import type { Craving, Cost, Energy } from "@/data/hobbies";
 import { exactMatches, type FinderAnswers } from "@/lib/finder";
 
-export const QUIZ_ORDER = ["craving", "energy", "company", "where", "time", "budget"] as const;
+/**
+ * Four questions (Stage 3b; it was six). "Where" and "How long" were dropped because the other
+ * four already carry them: the craving says whether the evening is out (adventure, movement) or in,
+ * and energy says how big the first try can be. The finder still understands where/time, so a
+ * result is computed with them left open ("anywhere", "any"); see `toFinderAnswers`. Old shared
+ * links with six answers still open (`decodeAnswers` maps them).
+ */
+export const QUIZ_ORDER = ["craving", "energy", "company", "budget"] as const;
 export type QuizKey = (typeof QUIZ_ORDER)[number];
 export type QuizRaw = Partial<Record<QuizKey, string>>;
 
@@ -21,18 +28,18 @@ export const QUIZ_VALUES: Record<QuizKey, readonly string[]> = {
   craving: ["creativity", "relaxation", "adventure", "friendship", "movement", "different"],
   energy: ["low", "medium", "high"],
   company: ["solo", "social", "either"],
-  where: ["home", "outdoors", "out", "anywhere"],
-  time: ["short", "couple", "halfday", "any"],
   budget: ["free", "under25", "under50", "flexible"],
 };
+
+/** The finder's own "where" and "how long" values. The quiz no longer asks them; other tools may. */
+export const FINDER_WHERE = ["home", "outdoors", "out", "anywhere"] as const;
+export const FINDER_TIME = ["short", "couple", "halfday", "any"] as const;
 
 /** Offered even when few hobbies match, so a question never turns into a dead end. */
 const ALWAYS: Record<QuizKey, string> = {
   craving: "different",
   energy: "high",
   company: "either",
-  where: "anywhere",
-  time: "any",
   budget: "flexible",
 };
 
@@ -49,8 +56,6 @@ const CODES: Record<QuizKey, Record<string, string>> = {
   },
   energy: { low: "lo", medium: "me", high: "hi" },
   company: { solo: "so", social: "sc", either: "ei" },
-  where: { home: "ho", outdoors: "ou", out: "ne", anywhere: "an" },
-  time: { short: "sh", couple: "co", halfday: "ha", any: "no" },
   budget: { free: "fr", under25: "u2", under50: "u5", flexible: "fl" },
 };
 
@@ -61,17 +66,25 @@ export function encodeAnswers(raw: QuizRaw): string {
   return parts.join(".");
 }
 
-/** Tolerant decode: unknown tokens are dropped, never thrown on. */
+/** The two-letter codes the six-question quiz used for "where" (4th slot), so old links still open. */
+const LEGACY_WHERE_CODES = ["ho", "ou", "ne", "an"];
+
+/**
+ * Tolerant decode: unknown tokens are dropped, never thrown on. A link made by the old six-question
+ * quiz (`cr.lo.so.ho.sh.fr`: the 4th token is a "where" code) keeps its craving, energy, company and
+ * budget (the 6th token); where and time are ignored.
+ */
 export function decodeAnswers(s: unknown): QuizRaw {
   if (typeof s !== "string") return {};
+  const toks = s.split(".");
+  const legacy = LEGACY_WHERE_CODES.includes(toks[3] ?? "");
+  const slots = legacy ? [toks[0], toks[1], toks[2], toks[5]] : toks.slice(0, QUIZ_ORDER.length);
   const out: QuizRaw = {};
-  s.split(".")
-    .slice(0, QUIZ_ORDER.length)
-    .forEach((tok, i) => {
-      const k = QUIZ_ORDER[i]!;
-      const hit = Object.entries(CODES[k]).find(([, c]) => c === tok);
-      if (hit) out[k] = hit[0];
-    });
+  slots.forEach((tok, i) => {
+    const k = QUIZ_ORDER[i]!;
+    const hit = Object.entries(CODES[k]).find(([, c]) => c === tok);
+    if (hit) out[k] = hit[0];
+  });
   return out;
 }
 
@@ -82,8 +95,8 @@ function viableCount(a: QuizRaw, key: QuizKey, value: string): number {
     craving: (merged.craving ?? "different") as Craving,
     energy: (merged.energy ?? "high") as Energy,
     company: (merged.company ?? "either") as FinderAnswers["company"],
-    where: (merged.where ?? "anywhere") as FinderAnswers["where"],
-    time: (merged.time ?? "any") as FinderAnswers["time"],
+    where: "anywhere",
+    time: "any",
     budget: (merged.budget ?? "flexible") as Cost,
   };
   return exactMatches(f).length;
@@ -153,8 +166,9 @@ export function toFinderAnswers(flow: Flow): FinderAnswers {
     craving: a.craving as Craving,
     energy: a.energy as Energy,
     company: a.company as FinderAnswers["company"],
-    where: a.where as FinderAnswers["where"],
-    time: a.time as FinderAnswers["time"],
+    // Not asked any more: left open, so only craving, energy, company and budget narrow the list.
+    where: "anywhere",
+    time: "any",
     budget: a.budget as Cost,
   };
 }

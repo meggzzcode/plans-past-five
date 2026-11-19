@@ -12,6 +12,7 @@ import { pinFiles } from "@/data/pins";
 import { hobbies } from "@/data/hobbies";
 import { pinForHobby } from "@/lib/pins";
 import { collections } from "@/data/products";
+import { redirects } from "@/config/redirects";
 import { ArticleBody } from "@/components/editorial/ArticleBody";
 import { SavedMeta } from "@/components/saved/SavedMeta";
 import {
@@ -237,7 +238,11 @@ describe("defect 8: reading sections are open on every screen size", () => {
 
 describe("defect 9: every pin maps to its own published page", () => {
   const slugs = new Set(articles.map((a) => a.slug));
-  const shop = new Set<string>(collections.map((c) => c.slug));
+  // A pin may still promote a retired collection path: it 301s to the new collection (see redirects.ts).
+  const shop = new Set<string>([
+    ...collections.map((c) => c.slug),
+    ...redirects.filter((r) => r.from.startsWith("/shop/")).map((r) => r.from.slice(6)),
+  ]);
   it("every pin destination is a published article, a shop collection or a real tool/page", () => {
     for (const dest of Object.keys(pinFiles)) {
       const j = /^\/journal\/(.+)$/.exec(dest);

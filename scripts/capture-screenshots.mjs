@@ -75,7 +75,7 @@ const shots = [
     },
   },
   { name: "shop-index", path: "/shop" },
-  { name: "shop-collection", path: "/shop/pottery-era" },
+  { name: "shop-collection", path: "/shop/creative" },
   { name: "editorial-policy", path: "/editorial-policy" },
   { name: "methodology", path: "/methodology" },
   { name: "corrections", path: "/corrections" },

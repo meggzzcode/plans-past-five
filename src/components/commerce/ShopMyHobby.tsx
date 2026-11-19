@@ -194,7 +194,6 @@ export function ShopMyHobby({
           ))}
         </p>
       )}
-      <ShopDisclosure className="mt-5" />
 
       {mounted && createPortal(printArea, document.body)}
     </section>

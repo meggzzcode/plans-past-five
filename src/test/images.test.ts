@@ -23,7 +23,7 @@ describe("image registry", () => {
   });
 
   it("no image is the hero of more than 3 articles", () => {
-    // TARGET is 1 hero per image (see docs/content/IMAGE-SOURCING-BRIEF.md). The limit was 4; it is now 3 (14 images cover 34 articles, so 2 everywhere is not possible; published articles are held to 2 in round3-fixes.test.tsx). Old note: the limit was 4 for now (it was 3 before the outline drafts
+    // TARGET is 1 hero per image (see docs/content/IMAGE-SOURCING-BRIEF.md). The limit was 4; it is now 3 (14 images cover the 34 article files, 32 published plus 2 drafts that also carry a hero, so 2 everywhere is not possible; published articles are held to 2 in round3-fixes.test.tsx). Old note: the limit was 4 for now (it was 3 before the outline drafts
     // from drafts.ts, which share girlsNight, became data files and started being counted),
     // the current state; tighten it as new images are ingested.
     const counts = new Map<string, number>();

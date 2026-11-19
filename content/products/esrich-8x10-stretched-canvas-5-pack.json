@@ -27,7 +27,9 @@
   "articles": [
     "how-to-host-a-paint-night-at-home"
   ],
-  "collections": [],
+  "collections": [
+    "hosting"
+  ],
   "kitSlots": [
     {
       "kit": "pottery-paint-night",

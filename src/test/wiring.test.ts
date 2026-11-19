@@ -105,9 +105,7 @@ describe("empty-catalog parity", () => {
       renderToStaticMarkup(createElement(ShopMyHobby, { hobby: "junk-journaling", catalog: [] })),
     ).toBe("");
     expect(
-      renderToStaticMarkup(
-        createElement(ShopMyHobby, { collection: "creative-girl", catalog: [] }),
-      ),
+      renderToStaticMarkup(createElement(ShopMyHobby, { collection: "creative", catalog: [] })),
     ).toBe("");
     expect(
       renderToStaticMarkup(createElement(StarterKit, { kit: "junk-journaling", catalog: [] })),
@@ -116,18 +114,9 @@ describe("empty-catalog parity", () => {
 });
 
 describe("collections as editorial pages", () => {
-  it("has the eight requested collections", () => {
+  it("has the six collections (Paper, Creative, Cozy, Hosting, Sporty, Little Adventures)", () => {
     expect(collections.map((c) => c.slug).sort()).toEqual(
-      [
-        "pottery-era",
-        "creative-girl",
-        "sporty-girl",
-        "bookish-girl",
-        "little-adventures",
-        "girls-night-in",
-        "journaling-era",
-        "cozy-after-hours",
-      ].sort(),
+      ["paper", "creative", "cozy", "hosting", "sporty", "little-adventures"].sort(),
     );
   });
   it("every collection yields real guide content from existing records", () => {

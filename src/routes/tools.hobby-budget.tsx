@@ -12,6 +12,7 @@ import {
   type Level,
 } from "@/lib/budget";
 import { getCollection } from "@/data/products";
+import { isCollectionLive } from "@/data/collection-status";
 import { seo, absoluteUrl } from "@/lib/seo";
 import { images } from "@/data/images";
 import { Kicker } from "@/components/editorial/Section";
@@ -230,7 +231,10 @@ function HobbyBudget() {
                   <h3 className="kicker mb-2 text-ink">{g.label}</h3>
                   <ul className="divide-y divide-border border-y border-border">
                     {g.items.map((i) => {
-                      const col = i.collection ? getCollection(i.collection) : undefined;
+                      const col =
+                        i.collection && isCollectionLive(i.collection)
+                          ? getCollection(i.collection)
+                          : undefined;
                       return (
                         <li
                           key={i.id}

@@ -4,7 +4,7 @@
 
 Scope: the 27 published `src/content/article-*.ts` files. Drafts (air-dry-clay, crocheting, embroidery, watercolor, affordable-hobbies-under-25), index.ts, types.ts, src/data and the catalog were not changed. Slugs, status, sources and verifiedAt are unchanged. `bunx tsc --noEmit` and `bunx vitest run` (270 tests) pass.
 
-Note: the review's counts (e.g. "7 of 9 open with Imagine/Picture") were from 9 articles; across all 27 it was 19.
+Note: the review's counts (e.g. "7 of 9 open with Imagine/Picture") were from 9 articles; across all 27 articles then published it was 19 (32 are published now).
 
 ## 1. Raw markdown showing as text
 

@@ -65,7 +65,7 @@ export const personas: Record<PersonaKey, Persona> = {
     hobbies: ["junk-journaling", "watercolor-painting", "air-dry-clay", "embroidery"],
     beginnerPick: "junk-journaling",
     guides: [guideA, guideB],
-    collection: "creative-girl",
+    collection: "creative",
     plannerVibe: "creative",
   },
   cozy: {
@@ -75,7 +75,7 @@ export const personas: Record<PersonaKey, Persona> = {
     hobbies: ["jigsaw-puzzles", "baking", "indoor-gardening", "crossword-puzzles"],
     beginnerPick: "jigsaw-puzzles",
     guides: [guideC, guideD],
-    collection: "girls-night-in",
+    collection: "cozy",
     plannerVibe: "cozy",
   },
   sporty: {
@@ -85,7 +85,7 @@ export const personas: Record<PersonaKey, Persona> = {
     hobbies: ["pickleball", "tennis", "hiking", "roller-skating"],
     beginnerPick: "pickleball",
     guides: [guideD, guideC],
-    collection: "sporty-girl",
+    collection: "sporty",
     plannerVibe: "active",
   },
   bookish: {
@@ -95,7 +95,7 @@ export const personas: Record<PersonaKey, Persona> = {
     hobbies: ["reading", "book-clubs", "creative-writing", "crossword-puzzles"],
     beginnerPick: "reading",
     guides: [guideC, guideD],
-    collection: "bookish-girl",
+    collection: "cozy",
     plannerVibe: "relaxing",
   },
   "little-adventurer": {
@@ -115,7 +115,7 @@ export const personas: Record<PersonaKey, Persona> = {
     hobbies: ["craft-nights", "friendship-bracelets", "mahjong", "book-clubs"],
     beginnerPick: "craft-nights",
     guides: [guideB, guideD],
-    collection: "girls-night-in",
+    collection: "hosting",
     plannerVibe: "social",
   },
   "slow-living": {
@@ -125,7 +125,7 @@ export const personas: Record<PersonaKey, Persona> = {
     hobbies: ["indoor-gardening", "picnicking", "flower-arranging", "vinyl-collecting"],
     beginnerPick: "flower-arranging",
     guides: [guideC, guideB],
-    collection: "little-adventures",
+    collection: "cozy",
     plannerVibe: "relaxing",
   },
   "curious-beginner": {
@@ -135,7 +135,7 @@ export const personas: Record<PersonaKey, Persona> = {
     hobbies: ["collage-art", "crossword-puzzles", "volunteering", "museum-exploring", "mahjong"],
     beginnerPick: "collage-art",
     guides: [guideD, guideC],
-    collection: "creative-girl",
+    collection: "creative",
     plannerVibe: "adventurous",
   },
 };
@@ -363,8 +363,9 @@ export function plannerSearch(a: FinderAnswers, persona: Persona): PlanSearch {
     out.when = "saturday";
     out.length = "half-day";
   } else {
+    // "No limit", or not asked (the quiz has no time question): size the day by the energy answer.
     out.when = "saturday";
-    out.length = "full-day";
+    out.length = a.energy === "low" ? "few-hours" : a.energy === "medium" ? "half-day" : "full-day";
   }
   out.from = persona.key;
   return out;

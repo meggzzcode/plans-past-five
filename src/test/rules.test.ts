@@ -109,12 +109,23 @@ describe("Content rules", () => {
       expect(search(d.title).some((h) => h.to === `/journal/${d.slug}`)).toBe(false);
     }
   });
-  // Hobby count is not fixed (the directory may grow or shrink). Eight collections today.
-  it("has 8 collections, each supporting hobbies that exist", () => {
+  // Hobby count is not fixed (the directory may grow or shrink). Six collections (Stage 3b).
+  it("has 6 collections, each supporting hobbies that exist", () => {
     expect(new Set(hobbies.map((h) => h.slug)).size).toBe(hobbies.length);
-    expect(collections).toHaveLength(8);
+    expect(collections).toHaveLength(6);
+    expect(collections.map((c) => c.name)).toEqual([
+      "The Paper Edit",
+      "The Creative Edit",
+      "The Cozy Edit",
+      "The Hosting Edit",
+      "The Sporty Edit",
+      "The Little Adventures Edit",
+    ]);
     for (const c of collections) {
       expect(c.hobbies.length, c.slug).toBeGreaterThan(0);
+      expect(c.label.length, `${c.slug} has a plain-words label beside the name`).toBeGreaterThan(
+        10,
+      );
       for (const s of c.hobbies)
         expect(
           hobbies.some((x) => x.slug === s),

@@ -30,8 +30,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-start-junk-journaling"
     ],
     "collections": [
-      "journaling-era",
-      "creative-girl"
+      "paper"
     ],
     "kitSlots": [
       {
@@ -92,8 +91,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-start-junk-journaling"
     ],
     "collections": [
-      "journaling-era",
-      "creative-girl"
+      "paper"
     ],
     "kitSlots": [
       {
@@ -154,8 +152,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-start-junk-journaling"
     ],
     "collections": [
-      "journaling-era",
-      "creative-girl"
+      "paper"
     ],
     "kitSlots": [
       {
@@ -213,8 +210,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-start-junk-journaling"
     ],
     "collections": [
-      "journaling-era",
-      "creative-girl"
+      "paper"
     ],
     "kitSlots": [
       {
@@ -274,8 +270,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-start-junk-journaling"
     ],
     "collections": [
-      "journaling-era",
-      "creative-girl"
+      "paper"
     ],
     "kitSlots": [
       {
@@ -334,8 +329,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-start-junk-journaling"
     ],
     "collections": [
-      "journaling-era",
-      "creative-girl"
+      "paper"
     ],
     "kitSlots": [
       {
@@ -398,8 +392,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-start-air-dry-clay"
     ],
     "collections": [
-      "pottery-era",
-      "creative-girl"
+      "creative"
     ],
     "kitSlots": [
       {
@@ -455,8 +448,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-start-air-dry-clay"
     ],
     "collections": [
-      "pottery-era",
-      "creative-girl"
+      "creative"
     ],
     "kitSlots": [
       {
@@ -520,7 +512,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-host-a-mahjong-night"
     ],
     "collections": [
-      "girls-night-in"
+      "hosting"
     ],
     "kitSlots": [
       {
@@ -582,7 +574,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-host-a-mahjong-night"
     ],
     "collections": [
-      "girls-night-in"
+      "hosting"
     ],
     "kitSlots": [
       {
@@ -644,7 +636,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-host-a-mahjong-night"
     ],
     "collections": [
-      "girls-night-in"
+      "hosting"
     ],
     "kitSlots": [
       {
@@ -705,8 +697,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-start-air-dry-clay"
     ],
     "collections": [
-      "pottery-era",
-      "creative-girl"
+      "creative"
     ],
     "kitSlots": [
       {
@@ -773,7 +764,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-host-a-mahjong-night"
     ],
     "collections": [
-      "girls-night-in"
+      "hosting"
     ],
     "kitSlots": [
       {
@@ -836,8 +827,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-start-junk-journaling"
     ],
     "collections": [
-      "journaling-era",
-      "creative-girl"
+      "paper"
     ],
     "kitSlots": [
       {
@@ -895,7 +885,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-host-a-mahjong-night"
     ],
     "collections": [
-      "girls-night-in"
+      "hosting"
     ],
     "kitSlots": [
       {
@@ -952,7 +942,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-host-a-mahjong-night"
     ],
     "collections": [
-      "girls-night-in"
+      "hosting"
     ],
     "kitSlots": [
       {
@@ -1013,7 +1003,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "watercolor-painting-for-beginners"
     ],
     "collections": [
-      "creative-girl"
+      "creative"
     ],
     "kitSlots": [
       {
@@ -1072,7 +1062,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "watercolor-painting-for-beginners"
     ],
     "collections": [
-      "creative-girl"
+      "creative"
     ],
     "kitSlots": [
       {
@@ -1129,7 +1119,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "watercolor-painting-for-beginners"
     ],
     "collections": [
-      "creative-girl"
+      "creative"
     ],
     "kitSlots": [
       {
@@ -1190,7 +1180,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "watercolor-painting-for-beginners"
     ],
     "collections": [
-      "creative-girl"
+      "creative"
     ],
     "kitSlots": [
       {
@@ -1256,7 +1246,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "watercolor-painting-for-beginners"
     ],
     "collections": [
-      "creative-girl"
+      "creative"
     ],
     "kitSlots": [
       {
@@ -1310,7 +1300,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-start-embroidery"
     ],
     "collections": [
-      "creative-girl"
+      "creative"
     ],
     "kitSlots": [],
     "role": "complete-kit",
@@ -1375,7 +1365,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-start-embroidery"
     ],
     "collections": [
-      "creative-girl"
+      "creative"
     ],
     "kitSlots": [],
     "role": "affordable",
@@ -1427,7 +1417,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-start-embroidery"
     ],
     "collections": [
-      "creative-girl"
+      "creative"
     ],
     "kitSlots": [],
     "role": "affordable",
@@ -1479,7 +1469,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-start-crocheting"
     ],
     "collections": [
-      "creative-girl"
+      "creative"
     ],
     "kitSlots": [],
     "role": "essential",
@@ -1536,7 +1526,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-start-crocheting"
     ],
     "collections": [
-      "creative-girl"
+      "creative"
     ],
     "kitSlots": [],
     "role": "nice-to-have",
@@ -1586,9 +1576,8 @@ export const generatedCatalog: CatalogProduct[] = [
       "how-to-host-a-paint-night-at-home"
     ],
     "collections": [
-      "pottery-era",
-      "creative-girl",
-      "girls-night-in"
+      "creative",
+      "hosting"
     ],
     "kitSlots": [
       {
@@ -1652,7 +1641,9 @@ export const generatedCatalog: CatalogProduct[] = [
     "articles": [
       "how-to-host-a-paint-night-at-home"
     ],
-    "collections": [],
+    "collections": [
+      "hosting"
+    ],
     "kitSlots": [
       {
         "kit": "pottery-paint-night",
@@ -1708,7 +1699,9 @@ export const generatedCatalog: CatalogProduct[] = [
     "articles": [
       "how-to-host-a-paint-night-at-home"
     ],
-    "collections": [],
+    "collections": [
+      "hosting"
+    ],
     "kitSlots": [
       {
         "kit": "pottery-paint-night",

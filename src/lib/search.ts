@@ -1,6 +1,6 @@
 import { articles } from "@/content";
 import { hobbies, type Hobby } from "@/data/hobbies";
-import { collections } from "@/data/products";
+import { liveCollections } from "@/data/collection-status";
 import { categories } from "@/data/categories";
 
 export type SearchHit = { kind: string; title: string; text: string; to: string };
@@ -22,12 +22,12 @@ function index(): (SearchHit & { hay: string; hobby?: Hobby })[] {
       hay: `${h.name} ${h.description} ${h.tags.join(" ")} ${h.category}`,
       hobby: h,
     })),
-    ...collections.map((c) => ({
+    ...liveCollections().map((c) => ({
       kind: "Shop Your Hobby",
       title: c.name,
       text: c.dek,
       to: `/shop/${c.slug}`,
-      hay: `${c.name} ${c.dek} ${c.intro}`,
+      hay: `${c.name} ${c.label} ${c.dek} ${c.intro}`,
     })),
     ...categories.map((c) => ({
       kind: "Section",

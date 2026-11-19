@@ -2,19 +2,19 @@ import { Link } from "@tanstack/react-router";
 import type { Category } from "@/data/categories";
 import { hobbies } from "@/data/hobbies";
 import { articles, articlesForCategory } from "@/content";
-import { collections } from "@/data/products";
+import { liveCollections } from "@/data/collection-status";
 import { images } from "@/data/images";
 import { Kicker, toneBg } from "@/components/editorial/Section";
 import { cn } from "@/lib/utils";
 import { ArticleCard, HobbyCard, CollectionCard } from "@/components/cards/Cards";
 
 const collectionFor: Record<string, string[]> = {
-  "after-hours": ["creative-girl", "bookish-girl", "girls-night-in"],
-  weekends: ["little-adventures", "sporty-girl", "pottery-era"],
-  "solo-dates": ["bookish-girl", "little-adventures", "creative-girl"],
-  "better-together": ["girls-night-in", "pottery-era", "sporty-girl"],
-  "creative-corner": ["pottery-era", "creative-girl", "girls-night-in"],
-  movement: ["sporty-girl", "little-adventures", "bookish-girl"],
+  "after-hours": ["creative", "cozy", "hosting"],
+  weekends: ["little-adventures", "sporty", "creative"],
+  "solo-dates": ["cozy", "little-adventures", "creative"],
+  "better-together": ["hosting", "creative", "sporty"],
+  "creative-corner": ["creative", "paper", "hosting"],
+  movement: ["sporty", "little-adventures", "cozy"],
 };
 
 export function CategoryPage({ c }: { c: Category }) {
@@ -29,7 +29,8 @@ export function CategoryPage({ c }: { c: Category }) {
     ? own
     : articles.filter((a) => a.hobbies.some((s) => hs.some((h) => h.slug === s))).slice(0, 3);
   const img = images[c.image];
-  const cols = collections.filter((x) => collectionFor[c.slug]?.includes(x.slug));
+  // Only collections that have something to show (see src/data/collection-status.ts).
+  const cols = liveCollections().filter((x) => collectionFor[c.slug]?.includes(x.slug));
   return (
     <>
       <section className={cn("relative", toneBg[c.tone])}>
@@ -87,16 +88,18 @@ export function CategoryPage({ c }: { c: Category }) {
           </Link>
         </div>
       </section>
-      <section className="mx-auto mt-12 max-w-7xl px-5 md:mt-16 md:px-8">
-        <h2 className="text-3xl md:text-4xl">
-          Shop the <em className="text-cherry">look</em>
-        </h2>
-        <div className="mt-5 grid gap-5 sm:grid-cols-3">
-          {cols.map((x) => (
-            <CollectionCard key={x.slug} c={x} />
-          ))}
-        </div>
-      </section>
+      {cols.length > 0 && (
+        <section className="mx-auto mt-12 max-w-7xl px-5 md:mt-16 md:px-8">
+          <h2 className="text-3xl md:text-4xl">
+            Shop the <em className="text-cherry">look</em>
+          </h2>
+          <div className="mt-5 grid gap-5 sm:grid-cols-3">
+            {cols.map((x) => (
+              <CollectionCard key={x.slug} c={x} />
+            ))}
+          </div>
+        </section>
+      )}
     </>
   );
 }

@@ -6,18 +6,14 @@ import type { ImageKey } from "./images";
  */
 
 export type CollectionSlug =
-  | "pottery-era"
-  | "creative-girl"
-  | "sporty-girl"
-  | "girls-night-in"
-  | "bookish-girl"
-  | "little-adventures"
-  | "journaling-era"
-  | "cozy-after-hours";
+  "paper" | "creative" | "cozy" | "hosting" | "sporty" | "little-adventures";
 
 export type Collection = {
   slug: CollectionSlug;
+  /** The aspirational name ("The Paper Edit"). Always shown with `label` beside it. */
   name: string;
+  /** What is actually inside, in plain words ("Journaling, scrapbooking and stationery"). */
+  label: string;
   dek: string;
   intro: string;
   image: ImageKey;
@@ -32,132 +28,18 @@ export type Collection = {
   kitIds?: string[];
 };
 
+/**
+ * Six collections (Stage 3b), replacing the earlier eight. A collection is SHOWN (shop index,
+ * search, sitemap, links) only while it has at least one shown product or a complete kit; see
+ * src/data/collection-status.ts. Nobody toggles that: add a verified product tagged with the
+ * collection slug and it appears by itself. Old slugs 301 to these (src/config/redirects.ts).
+ */
 export const collections: Collection[] = [
   {
-    slug: "pottery-era",
-    hobbies: ["air-dry-clay", "craft-nights", "paint-by-numbers", "pottery-painting"],
-    name: "The Pottery Era",
-    dek: "Clay, paint and very lovable lumpy bowls",
-    image: "shopPottery",
-    tone: "butter",
-    intro:
-      "Pottery-class energy at your kitchen table. No kiln, no wheel, just clay, paint and a few hours of lovably lumpy.",
-    kitIds: ["air-dry-clay"],
-  },
-  {
-    slug: "creative-girl",
-    hobbies: [
-      "outdoor-sketching",
-      "junk-journaling",
-      "scrapbooking",
-      "flower-arranging",
-      "watercolor-painting",
-      "collage-art",
-      "crochet",
-      "knitting",
-      "craft-nights",
-      "embroidery",
-      "creative-writing",
-      "paint-by-numbers",
-    ],
-    name: "The Creative Girl",
-    dek: "Paper, paint and thread for quiet evenings",
-    image: "watercolor",
-    tone: "strawberry",
-    intro:
-      "Watercolor, a journal, a hoop and thread: starter supplies small enough to put away after.",
-    kitIds: ["watercolor", "junk-journaling"],
-  },
-  {
-    slug: "sporty-girl",
-    hobbies: [
-      "tennis",
-      "hiking",
-      "pickleball",
-      "picnicking",
-      "birdwatching",
-      "nature-photography",
-      "running",
-      "roller-skating",
-      "yoga-for-beginners",
-    ],
-    name: "The Sporty Girl",
-    dek: "For golden-hour rallies and Saturday trails",
-    image: "shopSporty",
-    tone: "matcha",
-    intro:
-      "Gear for your first rally, game or trail. You don't need the pro version, and you can often borrow or rent first.",
-    kitIds: ["racquet-sports"],
-  },
-  {
-    slug: "girls-night-in",
-    hobbies: [
-      "craft-nights",
-      "mahjong",
-      "friendship-bracelets",
-      "jewelry-making",
-      "book-clubs",
-      "paint-by-numbers",
-      "baking",
-      "jigsaw-puzzles",
-      "picnicking",
-    ],
-    name: "Girls' Night In",
-    dek: "Host a night everyone talks about after",
-    image: "shopGirlsNight",
-    tone: "strawberry",
-    intro:
-      "Turn 'we should hang out' into a date in the group chat: a mahjong night or a paint night at home, with what to grab to make it easy.",
-    kitIds: ["mahjong-night", "pottery-paint-night"],
-  },
-  {
-    slug: "bookish-girl",
-    hobbies: ["reading", "book-clubs"],
-    name: "The Bookish Girl",
-    dek: "For one-more-chapter people",
-    image: "hobbyReading",
-    tone: "sunday",
-    intro:
-      "Little upgrades that make reading feel like an event: in bed, on the train or at your favorite café.",
-    kitIds: ["reading-book-club"],
-  },
-  {
-    slug: "little-adventures",
-    hobbies: [
-      "picnicking",
-      "birdwatching",
-      "film-photography",
-      "outdoor-sketching",
-      "hiking",
-      "nature-photography",
-      "creative-writing",
-      "museum-exploring",
-      "thrifting",
-      "watercolor-painting",
-    ],
-    name: "Little Adventures",
-    dek: "Pack for a picnic, a market or a wander",
-    image: "shopAdventures",
-    tone: "butter",
-    intro: "Small, portable things that make it easier to say yes to a spontaneous afternoon out.",
-    kitIds: ["picnic"],
-  },
-  {
-    slug: "journaling-era",
-    hobbies: [
-      "junk-journaling",
-      "scrapbooking",
-      "calligraphy",
-      "film-photography",
-      "creative-writing",
-      "collage-art",
-      "reading",
-      "book-clubs",
-      "birdwatching",
-      "outdoor-sketching",
-      "museum-exploring",
-    ],
-    name: "The Journaling Era",
+    slug: "paper",
+    hobbies: ["junk-journaling", "scrapbooking", "collage-art", "calligraphy", "creative-writing"],
+    name: "The Paper Edit",
+    label: "Journaling, scrapbooking and stationery",
     dek: "Pages, tape and a pen that makes you want to write",
     image: "junkJournal",
     tone: "sunday",
@@ -166,22 +48,98 @@ export const collections: Collection[] = [
     kitIds: ["junk-journaling"],
   },
   {
-    slug: "cozy-after-hours",
+    slug: "creative",
+    hobbies: [
+      "watercolor-painting",
+      "air-dry-clay",
+      "pottery-painting",
+      "embroidery",
+      "crochet",
+      "knitting",
+      "paint-by-numbers",
+      "flower-arranging",
+      "outdoor-sketching",
+      "jewelry-making",
+    ],
+    name: "The Creative Edit",
+    label: "Painting, clay, embroidery and crochet",
+    dek: "Paint, clay and thread for quiet evenings",
+    image: "shopCreative",
+    tone: "strawberry",
+    intro:
+      "Watercolor, a lump of clay, a hoop and thread: starter supplies small enough to put away after. No kiln, no wheel, lovably lumpy is the point.",
+    kitIds: ["watercolor", "air-dry-clay"],
+  },
+  {
+    slug: "cozy",
     hobbies: [
       "reading",
       "jigsaw-puzzles",
-      "board-games",
-      "book-clubs",
-      "craft-nights",
+      "crossword-puzzles",
       "indoor-gardening",
+      "baking",
+      "vinyl-collecting",
     ],
-    name: "Cozy After Hours",
+    name: "The Cozy Edit",
+    label: "Reading, puzzles and slow evenings",
     dek: "Low-effort comforts for the evening you actually have",
     image: "cozyCorner",
     tone: "cream",
     intro:
-      "Small things that turn a weeknight at home into a plan: better light, a game on the table, something quiet to make.",
-    kitIds: [],
+      "Small things that turn a weeknight at home into a plan: better light, a puzzle on the table, a book you can't put down.",
+    kitIds: ["reading-book-club"],
+  },
+  {
+    slug: "hosting",
+    hobbies: ["mahjong", "craft-nights", "book-clubs", "board-games", "friendship-bracelets"],
+    name: "The Hosting Edit",
+    label: "Mahjong, craft and paint nights, gatherings",
+    dek: "Host a night everyone talks about after",
+    image: "shopGirlsNight",
+    tone: "strawberry",
+    intro:
+      "Turn 'we should hang out' into a date in the group chat: a mahjong night or a paint night at home, with what to grab to make it easy.",
+    kitIds: ["mahjong-night", "pottery-paint-night"],
+  },
+  {
+    slug: "sporty",
+    hobbies: [
+      "tennis",
+      "pickleball",
+      "yoga-for-beginners",
+      "dance-classes",
+      "roller-skating",
+      "running",
+      "climbing",
+    ],
+    name: "The Sporty Edit",
+    label: "Tennis, pickleball and easy movement",
+    dek: "For golden-hour rallies and a standing Saturday game",
+    image: "shopSporty",
+    tone: "matcha",
+    intro:
+      "Gear for your first rally or game. You don't need the pro version, and you can often borrow or rent first.",
+    kitIds: ["racquet-sports"],
+  },
+  {
+    slug: "little-adventures",
+    hobbies: [
+      "picnicking",
+      "hiking",
+      "thrifting",
+      "museum-exploring",
+      "birdwatching",
+      "nature-photography",
+      "film-photography",
+      "cooking-classes",
+    ],
+    name: "The Little Adventures Edit",
+    label: "Picnics and afternoons out",
+    dek: "Pack for a picnic, a market or a wander",
+    image: "shopAdventures",
+    tone: "butter",
+    intro: "Small, portable things that make it easier to say yes to a spontaneous afternoon out.",
+    kitIds: ["picnic"],
   },
 ];
 

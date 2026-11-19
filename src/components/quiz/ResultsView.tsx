@@ -16,7 +16,7 @@ import { selectProducts } from "@/data/catalog";
 import { toneBg } from "@/components/editorial/Section";
 import { Bow, Flower, Sparkle, Star } from "@/components/brand/Doodles";
 import { SaveButton } from "@/components/editorial/SaveButton";
-import { ShopMyHobby } from "@/components/commerce/ShopMyHobby";
+import { ProductCard, ShopDisclosure } from "@/components/commerce/ProductCard";
 import { cn } from "@/lib/utils";
 import { canonicalUrl } from "@/lib/share";
 import { track } from "@/lib/track";
@@ -160,7 +160,14 @@ export function ResultsView({
   const { results, persona, strength, nearest, loosen, beginnerPick } = findHobbies(a);
   const strong = strength === "strong";
   const picks = results.slice(0, 3).map((r) => r.hobby);
-  const hasList = strong && !!picks[0] && selectProducts({ hobby: picks[0].slug }).all.length > 0;
+  // ONE primary product, from the central product source (the same "if you only buy one thing" pick
+  // a hobby page shows), for the first of the matched hobbies that has a verified, shown one. With
+  // none, nothing is shown: no search link and no padding.
+  const quizPick = strong
+    ? picks
+        .map((hobby) => ({ hobby, product: selectProducts({ hobby: hobby.slug }).pick }))
+        .find((x) => !!x.product)
+    : undefined;
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [note, setNote] = useState("");
   const [busy, setBusy] = useState(false);
@@ -264,6 +271,33 @@ export function ResultsView({
         ))}
       </ul>
 
+      {quizPick?.product && (
+        <section
+          className="mx-auto mt-8 max-w-2xl bg-butter/40 p-5 md:p-6"
+          aria-label="Your one pick"
+          data-quiz-pick
+        >
+          <p className="kicker text-cherry">Start {quizPick.hobby.name.toLowerCase()} tonight</p>
+          <h2 className="mt-1 font-display text-2xl italic">If you only buy one thing</h2>
+          <div className="mt-4">
+            <ProductCard product={quizPick.product} placement="quiz-result" label="Our one pick" />
+          </div>
+          <ShopDisclosure kind="short" className="mt-3" />
+          <p className="mt-3 text-sm text-ink">
+            Rather start free? <span className="font-semibold">Tonight, try:</span>{" "}
+            {quizPick.hobby.firstActivity}
+          </p>
+          <Link
+            to="/hobbies/$slug"
+            params={{ slug: quizPick.hobby.slug }}
+            hash="kit"
+            className="mt-1 inline-flex min-h-11 items-center text-sm font-semibold text-cherry underline underline-offset-4"
+          >
+            Everything you need for {quizPick.hobby.name.toLowerCase()}
+          </Link>
+        </section>
+      )}
+
       <ol className="mt-6 grid gap-5 md:grid-cols-3">
         {strong
           ? picks.map((h, i) => (
@@ -298,19 +332,11 @@ export function ResultsView({
       </ol>
 
       <div className="mt-10 flex flex-col items-center gap-3">
-        {hasList && (
-          <a
-            href="#starter-list"
-            className="inline-flex min-h-12 w-full max-w-sm items-center justify-center bg-cherry px-6 py-3 text-center text-base font-semibold text-cream hover:bg-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
-          >
-            Get my starter list
-          </a>
-        )}
         <Link
           to="/make-plans"
           search={plannerSearch(a, persona)}
           className={
-            hasList
+            quizPick
               ? secondaryBtn + " w-full max-w-sm"
               : "inline-flex min-h-12 w-full max-w-sm items-center justify-center bg-cherry px-6 py-3 text-center text-base font-semibold text-cream hover:bg-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
           }
@@ -354,16 +380,6 @@ export function ResultsView({
           to a friend.
         </p>
       </div>
-
-      {strong && picks[0] && hasList && (
-        <div id="starter-list" className="scroll-mt-24">
-          <ShopMyHobby
-            hobby={picks[0].slug}
-            title={`Your starter list for ${picks[0].name}`}
-            dek="Everything you need for the first session, nothing you don't. Tap the list icon on anything you want, then copy or print it."
-          />
-        </div>
-      )}
     </div>
   );
 }

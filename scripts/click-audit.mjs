@@ -361,7 +361,7 @@ const SEED_SAVED = JSON.stringify([
     key: "product:test",
     kind: "product",
     title: "A product",
-    href: "/shop/creative-girl",
+    href: "/shop/creative",
     savedAt: new Date().toISOString(),
   },
 ]);

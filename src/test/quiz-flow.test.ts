@@ -34,7 +34,8 @@ describe("Quiz flow", () => {
   it("count constant matches the flow and the question bank", () => {
     expect(QUIZ_ORDER.length).toBe(QUIZ_QUESTION_COUNT);
     expect(Object.keys(questions).sort()).toEqual([...QUIZ_ORDER].sort());
-    expect(quizCountWord()).toBe("Six");
+    expect(quizCountWord()).toBe("Four");
+    expect(QUIZ_ORDER).toEqual(["craving", "energy", "company", "budget"]);
     for (const k of QUIZ_ORDER)
       expect(questions[k].options.map((o) => o.v)).toEqual([...QUIZ_VALUES[k]]);
   });
@@ -48,8 +49,9 @@ describe("Quiz flow", () => {
     const f = resolveFlow({ craving: "friendship", energy: "medium" });
     expect(f.skipped).toContain("company");
     expect(f.answers.company).toBe("social");
-    expect(f.next).toBe("where");
-    expect(f.total).toBeLessThanOrEqual(QUIZ_QUESTION_COUNT - 1);
+    expect(f.next).toBe("budget");
+    // Four questions, one skipped: a friendship craving is asked three.
+    expect(f.total).toBe(QUIZ_QUESTION_COUNT - 1);
   });
   it("options that would contradict earlier answers are not offered", () => {
     const hidden = (k: (typeof QUIZ_ORDER)[number], before: QuizRaw) =>
@@ -78,12 +80,32 @@ describe("Quiz flow", () => {
       for (const { hobby } of findHobbies(toFinderAnswers(resolveFlow(p))).results)
         expect(hobby.energy).not.toBe("high");
   });
-  it("home never returns an outdoors-only hobby; free never returns a paid one", () => {
+  it("free never returns a paid one", () => {
     for (const p of all) {
       const r = findHobbies(toFinderAnswers(resolveFlow(p))).results;
-      if (p.where === "home") for (const x of r) expect(x.hobby.settings).toContain("home");
       if (p.budget === "free") for (const x of r) expect(x.hobby.cost).toBe("free");
     }
+  });
+  it("where and how long are no longer asked: the result is computed with both left open", () => {
+    for (const p of all) {
+      const f = toFinderAnswers(resolveFlow(p));
+      expect(f.where).toBe("anywhere");
+      expect(f.time).toBe("any");
+    }
+    for (const k of ["where", "time"]) expect(QUIZ_ORDER as readonly string[]).not.toContain(k);
+  });
+  it("the finder itself still honours where and time (other tools can pass them)", () => {
+    for (const p of all.slice(0, 40)) {
+      const f = toFinderAnswers(resolveFlow(p));
+      for (const x of findHobbies({ ...f, where: "home" }).results)
+        expect(x.hobby.settings).toContain("home");
+      for (const x of findHobbies({ ...f, time: "short" }).results)
+        expect(x.hobby.minutes).toBeLessThanOrEqual(45);
+    }
+  });
+  it("dropping the two questions does not make results worse: every path still has three honest matches", () => {
+    const counts = all.map((p) => findHobbies(toFinderAnswers(resolveFlow(p))).results.length);
+    expect(Math.min(...counts)).toBeGreaterThanOrEqual(3);
   });
   it("changing an earlier answer re-asks the later ones", () => {
     const before = { craving: "creativity", energy: "low", company: "solo" };
@@ -177,7 +199,15 @@ describe("Quiz URL", () => {
     expect(encodeAnswers(all[0]!).length).toBeLessThan(30);
   });
   it("junk in the URL degrades to the first question, never throws", () => {
-    for (const junk of [undefined, "", "zz.zz", "<script>", "cr.lo.so.ho.sh.fr.extra", 42]) {
+    for (const junk of [
+      undefined,
+      "",
+      "zz.zz",
+      "<script>",
+      "cr.lo.so.ho.sh.fr.extra",
+      "cr.lo.so.fr.x.y.z",
+      42,
+    ]) {
       const v = viewFor(undefined, decodeAnswers(junk));
       expect(["question", "results"]).toContain(v.kind);
     }
@@ -190,15 +220,44 @@ describe("Quiz URL", () => {
       key: "energy",
     });
     expect(viewFor(4, { craving: "creativity", energy: "low" })).toMatchObject({ key: "company" });
+    expect(viewFor(5, { craving: "creativity", energy: "low", company: "solo" })).toMatchObject({
+      key: "budget",
+    });
   });
   it("steps back over skipped questions and forward after an answer", () => {
-    const raw = { craving: "friendship", energy: "medium", where: "anywhere" } as QuizRaw;
+    const raw = { craving: "friendship", energy: "medium", budget: "flexible" } as QuizRaw;
     const f = resolveFlow(raw);
     expect(f.skipped).toContain("company");
-    expect(previousQ(f, "where")).toBe(2);
+    expect(previousQ(f, "budget")).toBe(2);
     expect(viewFor(3, raw)).toMatchObject({ key: "energy" });
     expect(afterAnswer({ craving: "friendship" }).q).toBe(2);
     expect(afterAnswer({ craving: "friendship", energy: "low" }).q).toBe(4);
+  });
+  it("a link from the old six-question quiz still opens, keeping the answers that still exist", () => {
+    // craving . energy . company . where . time . budget
+    expect(decodeAnswers("cr.lo.so.ho.sh.u2")).toEqual({
+      craving: "creativity",
+      energy: "low",
+      company: "solo",
+      budget: "under25",
+    });
+    expect(decodeAnswers("re.me.ei.an.no.fl")).toEqual({
+      craving: "relaxation",
+      energy: "medium",
+      company: "either",
+      budget: "flexible",
+    });
+    // A half-finished old link (no budget yet) asks the one question that is left.
+    const half = decodeAnswers("cr.lo.so.ou");
+    expect(half).toEqual({ craving: "creativity", energy: "low", company: "solo" });
+    expect(viewFor(undefined, half)).toMatchObject({ kind: "question", key: "budget" });
+    // And a new four-answer link is not mistaken for an old one (its 4th token is a budget code).
+    expect(decodeAnswers("cr.lo.so.fr")).toEqual({
+      craving: "creativity",
+      energy: "low",
+      company: "solo",
+      budget: "free",
+    });
   });
   it("a finished quiz is complete", () => {
     expect(isComplete(resolveFlow(all[0]!))).toBe(true);

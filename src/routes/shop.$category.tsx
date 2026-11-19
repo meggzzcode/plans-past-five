@@ -1,5 +1,7 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { getCollection, collections, collectionKitIds } from "@/data/products";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
+import { getCollection, collectionKitIds } from "@/data/products";
+import { isCollectionLive, liveCollections } from "@/data/collection-status";
+import { redirectFor } from "@/config/redirects";
 import { verifiedCatalog, selectProducts } from "@/data/catalog";
 import { collectionGuide } from "@/lib/collection-guide";
 import { images } from "@/data/images";
@@ -15,39 +17,45 @@ import { cn } from "@/lib/utils";
 
 /** Two specific lines per collection: who it is for, in her voice. */
 const WHO_FOR: Record<string, string> = {
-  "pottery-era":
-    "For the girl who wants pottery-class energy on a Tuesday. You'll shape something lumpy, paint it, and keep it. Lumpy is the point.",
-  "creative-girl":
-    "For quiet evenings with something in your hands: a page to fill, a brush to try, a few stitches while a podcast plays. Starter supplies, small enough to put away after.",
-  "sporty-girl":
-    "For the girl who wants a standing Saturday rally, not a gym membership. Start with a borrowed racket if you can; buy once you know you're coming back.",
-  "girls-night-in":
+  paper:
+    "For the girl who keeps every ticket stub. A page to fill, glue, tape, a pen you like: layer it up, there is no wrong way.",
+  creative:
+    "For quiet evenings with something in your hands: a brush to try, a lump of clay, a few stitches while a podcast plays. Starter supplies, small enough to put away after. Lumpy is the point.",
+  cozy: "For the weeknight you actually have: tired, a little hungry, wanting something nice to do with your hands or your eyes. Low effort, high candle.",
+  hosting:
     "For the group chat that keeps saying 'we should hang out'. Pick a game or a canvas, send one message, and it's on the calendar.",
-  "bookish-girl":
-    "For one-more-chapter people who want reading to feel like an evening plan. Light, a notebook, a bookmark you love.",
+  sporty:
+    "For the girl who wants a standing Saturday rally, not a gym membership. Start with a borrowed racket if you can; buy once you know you're coming back.",
   "little-adventures": "For the afternoon you almost said no to. Pack small, carry light, go.",
-  "journaling-era": "For the girl who keeps every ticket stub. Glue, tape, layer: no wrong way.",
-  "cozy-after-hours":
-    "For the weeknight you actually have: tired, a little hungry, wanting something nice to do with your hands. Low effort, high candle.",
 };
 
 /** What the page is about, as the kicker above the name. */
 const KICKER: Record<string, string> = {
-  "pottery-era": "Your pottery evening",
-  "creative-girl": "Your quiet creative evening",
-  "sporty-girl": "Your golden-hour plan",
-  "girls-night-in": "Your night in",
-  "bookish-girl": "Your reading evening",
+  paper: "Your journaling evening",
+  creative: "Your quiet creative evening",
+  cozy: "Your cozy weeknight",
+  hosting: "Your night in",
+  sporty: "Your golden-hour plan",
   "little-adventures": "Your afternoon out",
-  "journaling-era": "Your journaling evening",
-  "cozy-after-hours": "Your cozy weeknight",
 };
 
 export const Route = createFileRoute("/shop/$category")({
+  // A retired collection slug (the eight earlier names) is a permanent 301 to its new home. The
+  // list lives in src/config/redirects.ts; public/_redirects mirrors it for the host.
+  beforeLoad: ({ params }) => {
+    const r = redirectFor(`/shop/${params.category}`);
+    if (r)
+      throw redirect({
+        to: "/shop/$category",
+        params: { category: r.to.split("/").pop()! },
+        statusCode: 301,
+      });
+  },
   loader: ({ params }) => {
     const c = getCollection(params.category);
     if (!c) throw notFound();
-    return { slug: c.slug };
+    // Shown only with something real to show (src/data/collection-status.ts); otherwise a short note.
+    return { slug: c.slug, live: isCollectionLive(c.slug) };
   },
   head: ({ loaderData }) => {
     const c = loaderData ? getCollection(loaderData.slug) : undefined;
@@ -58,17 +66,71 @@ export const Route = createFileRoute("/shop/$category")({
           { name: "robots", content: "noindex" },
         ],
       };
+    // Not shown anywhere else either (shop index, sitemap, search), and never indexed.
+    const live = isCollectionLive(c.slug);
     return seo({
-      title: `${c.name}: Shop Your Hobby`,
+      title: live ? `${c.name}: Shop Your Hobby` : `${c.name}: coming soon`,
       description: c.intro,
       path: `/shop/${c.slug}`,
+      ...(live ? {} : { noindex: true }),
     });
   },
   component: CollectionPage,
 });
 
+/** A collection with no shown product and no complete kit: a short, noindex note, never a page of nothing. */
+function ComingSoon({ slug }: { slug: string }) {
+  const c = getCollection(slug)!;
+  const g = collectionGuide(c.slug);
+  const live = liveCollections();
+  return (
+    <section
+      className={cn("px-5 py-14 md:px-8", toneBg[c.tone])}
+      aria-label="Coming soon"
+      data-coming-soon
+    >
+      <div className="mx-auto max-w-3xl">
+        <nav className="text-xs text-ink" aria-label="Breadcrumb">
+          <Link to="/shop" className="hover:text-cherry">
+            Shop your hobby
+          </Link>{" "}
+          / {c.name}
+        </nav>
+        <Kicker className="mt-6">Coming soon</Kicker>
+        <h1 className="mt-3 text-4xl italic leading-[1] md:text-6xl">{c.name}</h1>
+        <p className="mt-2 font-semibold text-ink">{c.label}</p>
+        <p className="mt-5 max-w-prose text-lg text-ink">
+          Nothing to show here yet. We only name a product once we have read its Amazon page, and
+          none for this collection has passed yet. It will appear by itself when one does.
+        </p>
+        <ul className="mt-6 space-y-2">
+          {g.hobbies.slice(0, 3).map((h) => (
+            <li key={h.slug}>
+              <Link
+                to="/hobbies/$slug"
+                params={{ slug: h.slug }}
+                className="font-semibold text-cherry underline underline-offset-4"
+              >
+                How your first {h.name.toLowerCase()} session goes
+              </Link>
+            </li>
+          ))}
+          {live.length > 0 && (
+            <li>
+              <Link to="/shop" className="font-semibold text-cherry underline underline-offset-4">
+                See what is on the shop now
+              </Link>
+            </li>
+          )}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
 function CollectionPage() {
-  const { slug } = Route.useLoaderData();
+  const { slug, live } = Route.useLoaderData();
+  if (!live) return <ComingSoon slug={slug} />;
   const c = getCollection(slug)!;
   const img = images[c.image];
   const g = collectionGuide(c.slug);
@@ -80,6 +142,7 @@ function CollectionPage() {
   const [needNow = [], needLater = []] = dedupeListGroups([g.essentials, g.upgrades]).map((xs) =>
     xs.slice(0, 4),
   );
+  const others = liveCollections().filter((x) => x.slug !== c.slug);
   const verified = selectProducts({ collection: c.slug }, verifiedCatalog).all.length > 0;
   return (
     <>
@@ -94,7 +157,8 @@ function CollectionPage() {
             </nav>
             <Kicker className="mt-6">{KICKER[c.slug] ?? "Shop your hobby"}</Kicker>
             <h1 className="mt-3 text-5xl italic leading-[1] md:text-7xl">{c.name}</h1>
-            <p className="mt-5 max-w-lg text-lg text-ink">{c.intro}</p>
+            <p className="mt-2 font-semibold text-ink">{c.label}</p>
+            <p className="mt-4 max-w-lg text-lg text-ink">{c.intro}</p>
           </div>
           <div className="postcard -rotate-2">
             <div className="aspect-square overflow-hidden">
@@ -122,48 +186,6 @@ function CollectionPage() {
           ) : (
             <ShopMyHobby collection={c.slug} title={`Start here: ${c.name}`} headingAs="h2" />
           )}
-        </section>
-      )}
-      {/* No named, verified product yet: say so, and point to the finished guides instead. */}
-      {!hasKit && !verified && (
-        <section
-          className="mx-auto mt-12 max-w-7xl px-5 md:px-8"
-          aria-label="Where to start: guides and what to look for"
-          data-where-to-start
-        >
-          <div className="border-y-2 border-ink py-8">
-            <p className="kicker text-cherry">Where to start</p>
-            <h2 className="mt-2 text-3xl italic">Where to start: guides and what to look for</h2>
-            <p className="mt-2 max-w-prose text-espresso">
-              We have not named verified products for this collection yet, because we only name a
-              product once we have read its Amazon page. Until then, start with the guides below,
-              then use the lists on this page to know what to look for.
-            </p>
-            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-              {g.hobbies.slice(0, 4).map((h) => (
-                <li key={h.slug}>
-                  <Link
-                    to="/hobbies/$slug"
-                    params={{ slug: h.slug }}
-                    className="font-semibold text-cherry underline underline-offset-4"
-                  >
-                    How your first {h.name.toLowerCase()} session goes
-                  </Link>
-                </li>
-              ))}
-              {g.articles.map((a) => (
-                <li key={a.slug}>
-                  <Link
-                    to="/journal/$slug"
-                    params={{ slug: a.slug }}
-                    className="font-semibold text-cherry underline underline-offset-4"
-                  >
-                    {a.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
         </section>
       )}
       <section className="mx-auto grid max-w-7xl gap-10 px-5 pt-12 md:grid-cols-2 md:px-8">
@@ -220,12 +242,6 @@ function CollectionPage() {
               </p>
             </div>
           </div>
-          {!verified && (
-            <p className="mt-8 border-l-4 border-cherry bg-butter/40 px-4 py-3 text-sm text-ink">
-              No named picks here yet: we only name a product once we have read its Amazon page.
-              Until then, here is what to start with.
-            </p>
-          )}
         </section>
       )}
       <section className="mx-auto max-w-7xl px-5 pb-16 md:px-8">
@@ -252,14 +268,16 @@ function CollectionPage() {
             </div>
           </>
         )}
-        <h2 className="mt-20 text-3xl italic">More collections</h2>
-        <div className="mt-6 grid gap-6 sm:grid-cols-3 lg:grid-cols-4">
-          {collections
-            .filter((x) => x.slug !== c.slug)
-            .map((x) => (
-              <CollectionCard key={x.slug} c={x} />
-            ))}
-        </div>
+        {others.length > 0 && (
+          <>
+            <h2 className="mt-20 text-3xl italic">More collections</h2>
+            <div className="mt-6 grid gap-6 sm:grid-cols-3 lg:grid-cols-4">
+              {others.map((x) => (
+                <CollectionCard key={x.slug} c={x} />
+              ))}
+            </div>
+          </>
+        )}
       </section>
     </>
   );
