@@ -45,3 +45,6 @@ The site returns HTTP 401 to anyone not logged in to Netlify (checked from outsi
 1. Domain (not started, per rule): owner has not confirmed that a domain is owned. planspastfive.com is unregistered per docs/NAME-CHECK-planspastfive.md.
 2. Decide whether the site should be public.
 3. Frequent WIP pushes will burn credits; consider pausing auto-publishing ("Lock to stop auto publishing") while agents are editing, or pointing production at a branch that changes rarely.
+
+## Update 11:05 ET: builds stopped
+To stop the credit drain, Build status was set to **Stopped builds** (Developer settings > Build settings). Netlify will not build or deploy on pushes until it is set back to Active, and a stopped project cannot be built from the dashboard: publish with the Netlify CLI/API, or switch to Active, push once, then stop again. Last published deploy: claude/vibrant-dirac-amdf7r@6f87ad2 or later (check Deploys). Better long-term fix: make production a rarely-updated branch (for example `release`) so WIP pushes on the working branch never deploy.
