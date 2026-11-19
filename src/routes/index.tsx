@@ -194,6 +194,16 @@ function Home() {
             </li>
           ))}
         </ul>
+        {/* Secondary entry: a quiet text link, not a fourth journey. */}
+        <p className="mt-4 text-sm text-espresso md:text-base" data-testid="home-tonight">
+          Just need something for tonight?{" "}
+          <Link
+            to="/tools/tonight"
+            className="inline-flex min-h-11 items-center gap-1 border-b-2 border-cherry font-semibold text-cherry hover:border-transparent"
+          >
+            {NAMES.tonight} <ArrowRight className="h-4 w-4" />
+          </Link>
+        </p>
       </section>
 
       {/* THIS SEASON */}

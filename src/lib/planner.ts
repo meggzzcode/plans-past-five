@@ -692,20 +692,29 @@ function bestStops(
   input: PlanInput,
   defs: SlotDef[],
   seed: number,
+  must?: Activity,
 ): { stops: Stop[]; widened: boolean } {
-  const strict = assemble(input, defs, seed);
+  const strict = assemble(input, defs, seed, {}, must);
   const aim = targetMinutes(input);
   if (aim === null || spanOf(strict, defs) >= aim * LENGTH_TOLERANCE)
     return { stops: strict, widened: false };
-  const wide = assemble(input, defs, seed, { vibe: true });
+  const wide = assemble(input, defs, seed, { vibe: true }, must);
   return spanOf(wide, defs) > spanOf(strict, defs)
     ? { stops: wide, widened: true }
     : { stops: strict, widened: false };
 }
 
-export function makePlan(input: PlanInput, seed = 0): Plan {
+/**
+ * `pin` is an activity id the plan should be built around (the idea chosen in the Tonight tool).
+ * If it cannot be placed within the budget and the stop windows, the plan is built without it.
+ */
+export function makePlan(input: PlanInput, seed = 0, pin?: string | null): Plan {
   const defs = slotsFor(input);
-  const { stops, widened } = bestStops(input, defs, seed);
+  const pinned = pin ? getActivity(pin) : undefined;
+  let result = bestStops(input, defs, seed, pinned);
+  if (pinned && !result.stops.some((s) => s.a.id === pinned.id))
+    result = bestStops(input, defs, seed);
+  const { stops, widened } = result;
   return { ...buildPlan(input, seed, stops), widenedVibe: widened };
 }
 
@@ -731,6 +740,8 @@ export type PlanSearch = Partial<{
   seed: string;
   ids: string;
   from: string;
+  /** Activity id to build the plan around (from the Tonight tool). */
+  with: string;
 }>;
 
 const pick = <T extends string>(v: unknown, allowed: readonly T[]): T | undefined =>
@@ -754,6 +765,8 @@ export type ParsedSearch = {
   seed: number;
   ids: string[] | null;
   from: string | null;
+  /** Valid activity id to pin into the plan, or null. */
+  pin: string | null;
 };
 
 /** Safely reads search params. Unknown or malformed values are ignored. */
@@ -789,7 +802,8 @@ export function parsePlanSearch(s: Record<string, unknown>): ParsedSearch {
           .map((x) => (x === "-" ? "" : x));
   const from = typeof s["from"] === "string" && /^[a-z-]{1,30}$/.test(s["from"]) ? s["from"] : null;
   const prefilled = !!(when || length || vibe || who || budget || setting || energy || home);
-  return { input, prefilled, seed, ids, from };
+  const pin = typeof s["with"] === "string" && getActivity(s["with"]) ? s["with"] : null;
+  return { input, prefilled, seed, ids, from, pin };
 }
 
 /** Search params for a plan, including the exact activities. */

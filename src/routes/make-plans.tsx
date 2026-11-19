@@ -133,7 +133,7 @@ const groups: Group[] = [
   {
     key: "energy",
     label: "Energy level",
-    hint: "We keep ideas at or below the energy you pick.",
+    hint: "Low-key and Medium keep ideas at or below that effort. High energy skips the very gentle ones.",
     options: [
       { v: "any", label: "No preference" },
       { v: "low", label: "Low-key" },
@@ -153,8 +153,9 @@ function Planner() {
   const [seed, setSeed] = useState(init.seed);
   // Exact activity ids from a saved plan: used until the person changes something.
   const [restored, setRestored] = useState<string[] | null>(init.ids);
-  const [shown, setShown] = useState(init.ids !== null);
-  const fromQuiz = init.from !== null && init.prefilled && init.ids === null;
+  const [shown, setShown] = useState(init.ids !== null || init.pin !== null);
+  const fromQuiz =
+    init.from !== null && init.from !== "tonight" && init.prefilled && init.ids === null;
 
   const restoredPlan = restored ? planFromIds(input, seed, restored) : null;
   const [pin, setPin] = useState<string | null>(init.pin);
@@ -209,6 +210,15 @@ function Planner() {
             Pick a few things and get a plan you can start tonight. Every idea works wherever you
             live, so there's nothing to book and nothing to cancel.
           </p>
+          {pin && plan && plan.ids.includes(pin) && (
+            <p
+              role="status"
+              className="mt-5 max-w-xl border-2 border-dashed border-cherry bg-cream p-4 text-sm text-ink"
+            >
+              <strong>Built around your tonight idea.</strong> It's in the plan. Change anything
+              and we'll plan from scratch.
+            </p>
+          )}
           {fromQuiz && (
             <p
               role="status"

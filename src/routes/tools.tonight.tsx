@@ -7,6 +7,8 @@ import {
   tonightEcho,
   tonightHref,
   tonightIdeas,
+  tonightPlanSearch,
+  tonightSaveItem,
   tonightText,
   timeOptions,
   type TonightInput,
@@ -14,6 +16,7 @@ import {
 import { seo, absoluteUrl } from "@/lib/seo";
 import { canonicalUrl } from "@/lib/share";
 import { images } from "@/data/images";
+import { SaveButton } from "@/components/editorial/SaveButton";
 import { Kicker } from "@/components/editorial/Section";
 import { Star } from "@/components/brand/Doodles";
 import { cn } from "@/lib/utils";
@@ -150,7 +153,7 @@ function Tonight() {
           </h1>
           <p className="mt-4 max-w-xl text-lg text-ink">
             It's after five and the sofa is calling. Five taps, three ideas that fit. Nothing is
-            saved or sent anywhere.
+            sent anywhere; anything you save stays on this device.
           </p>
           <div className="mt-10 grid gap-7">
             {groups.map((g) => (
@@ -217,9 +220,16 @@ function Tonight() {
                         Read the how-to guide
                       </Link>
                     )}
-                    <Link to="/make-plans" className="text-ink underline underline-offset-4">
+                    <Link
+                      to="/make-plans"
+                      search={tonightPlanSearch(input, s)}
+                      className="text-ink underline underline-offset-4"
+                    >
                       Make it a whole plan
                     </Link>
+                  </div>
+                  <div className="mt-3">
+                    <SaveButton item={tonightSaveItem(s, input, seed)} />
                   </div>
                 </li>
               ))}

@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { Bow } from "@/components/brand/Doodles";
+import { Bow, Sparkle } from "@/components/brand/Doodles";
 import { images } from "@/data/images";
 import { cn } from "@/lib/utils";
 import type { QuizQuestion } from "./questions";
@@ -78,38 +78,53 @@ export const QuizStep = forwardRef<HTMLHeadingElement, Props>(function QuizStep(
               onClick={() => onPick(o.v)}
               aria-pressed={on}
               className={cn(
-                "group flex min-h-28 flex-col overflow-hidden border-2 bg-cream text-left transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cherry",
+                "group flex min-h-16 flex-col overflow-hidden border-2 bg-cream text-left transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cherry",
                 on ? "border-cherry" : "border-ink/15 hover:border-cherry",
               )}
             >
               {img ? (
-                <img
-                  src={img.src}
-                  alt=""
-                  width={img.w}
-                  height={img.h}
-                  loading="lazy"
-                  className="aspect-[4/3] w-full object-cover"
-                />
+                <>
+                  <img
+                    src={img.src}
+                    alt=""
+                    width={img.w}
+                    height={img.h}
+                    loading="lazy"
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                  <span
+                    className={cn(
+                      "px-3 py-2.5 text-base font-semibold leading-snug",
+                      on ? "bg-cherry text-cream" : "text-ink",
+                    )}
+                  >
+                    {o.label}
+                  </span>
+                </>
               ) : (
+                // No photo: a compact, icon-led row (a small round chip beside the label) rather than
+                // a tall flat block, so it stays calm at 390px.
                 <span
-                  aria-hidden
                   className={cn(
-                    "grid aspect-[4/3] w-full place-items-center transition",
-                    on ? "bg-cherry text-cream" : "bg-butter text-cherry group-hover:bg-cherry/10",
+                    "flex min-h-16 flex-1 items-center gap-3 px-3 py-3 transition",
+                    on ? "bg-cherry text-cream" : "text-ink",
                   )}
+                  data-testid="quiz-icon-tile"
                 >
-                  {o.Icon && <o.Icon className="h-10 w-10" />}
+                  <span
+                    aria-hidden
+                    className={cn(
+                      "grid h-10 w-10 shrink-0 place-items-center rounded-full transition",
+                      on
+                        ? "bg-cream text-cherry"
+                        : "bg-butter text-cherry group-hover:bg-cherry/10",
+                    )}
+                  >
+                    {o.Icon ? <o.Icon className="h-5 w-5" /> : <Sparkle className="h-4 w-4" />}
+                  </span>
+                  <span className="text-base font-semibold leading-snug">{o.label}</span>
                 </span>
               )}
-              <span
-                className={cn(
-                  "px-3 py-2.5 text-base font-semibold leading-snug",
-                  on ? "bg-cherry text-cream" : "text-ink",
-                )}
-              >
-                {o.label}
-              </span>
             </button>
           );
         })}

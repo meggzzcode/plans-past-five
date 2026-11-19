@@ -387,6 +387,50 @@ export const tonightSearch = (i: TonightInput, seed: number): Record<string, str
 export const tonightHref = (i: TonightInput, seed: number) =>
   `/tools/tonight?${new URLSearchParams(tonightSearch(i, seed)).toString()}`;
 
+/** What My Plans stores for a Tonight idea: a hobby saves as a hobby, anything else as a small idea note. */
+export function tonightSaveItem(s: Suggestion, i: TonightInput, seed: number) {
+  if (s.kind === "hobby" && s.hobbySlug)
+    return {
+      key: `hobby:${s.hobbySlug}`,
+      kind: "hobby" as const,
+      title: s.title,
+      href: `/hobbies/${s.hobbySlug}`,
+    };
+  return {
+    key: s.id,
+    kind: "solo-date" as const,
+    title: s.title,
+    href: tonightHref(i, seed),
+    note: `First step: ${s.firstStep}`,
+  };
+}
+
+/**
+ * Planner search params that carry a Tonight idea into /make-plans: the same time, energy, budget,
+ * company and setting, plus `with` (the planner activity to build around) when the idea maps to one.
+ * One stop when the idea is long, otherwise two.
+ */
+export function tonightPlanSearch(i: TonightInput, s: Suggestion): Record<string, string> {
+  const activity = s.id.startsWith("idea:")
+    ? activities.find((a) => a.id === s.id.slice(5))
+    : s.hobbySlug
+      ? activities.find((a) => a.hobby === s.hobbySlug && !a.advance)
+      : undefined;
+  const long = (activity?.minutes ?? s.minutes) > 90;
+  return {
+    when: "weeknight",
+    length: long ? "evening" : "few-hours",
+    vibe: activity?.vibes[0] ?? "cozy",
+    who: i.company === "solo" ? "alone" : "friend",
+    budget: i.budget,
+    home: "0",
+    setting: i.setting === "either" ? "any" : i.setting,
+    energy: i.energy,
+    from: "tonight",
+    ...(activity ? { with: activity.id } : {}),
+  };
+}
+
 const energyWords: Record<Energy, string> = {
   low: "running on fumes",
   medium: "okay",
