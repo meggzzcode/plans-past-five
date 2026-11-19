@@ -7,7 +7,7 @@ Site status: pre-revenue, not yet public (2026-11-19).
 ## How to read the columns
 
 - **Status**: CONFIRMED (shown by the repo or a document you hold), UNCONFIRMED (unknown), NOT NEEDED (the repo does not require it).
-- **Pricing type**: a promotional first-term price is not a renewal price. Always find the renewal price before you count on a number. PENDING COWORK: read each provider's current pricing page and record promotional versus renewal separately, with date.
+- **Pricing type**: a promotional first-term price is not a renewal price. Always find the renewal price before you count on a number. re-read live: read each provider's current pricing page and record promotional versus renewal separately, with date.
 
 | Item | Needed? | Status | Pricing type to check | Notes |
 |---|---|---|---|---|

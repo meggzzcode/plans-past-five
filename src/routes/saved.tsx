@@ -14,6 +14,8 @@ import { seo } from "@/lib/seo";
 import { NAMES } from "@/components/layout/nav";
 import { PageHero } from "@/components/editorial/Section";
 import { Transfer } from "@/components/saved/Transfer";
+import { SavedExtras } from "@/components/share/SavedExtras";
+import { NearBox } from "@/components/share/Near";
 import { Star, Bow } from "@/components/brand/Doodles";
 
 export const Route = createFileRoute("/saved")({
@@ -279,11 +281,15 @@ function Saved() {
                         {(i.kind === "plan" || i.kind === "hobby") && (
                           <ShareRow title={i.title} {...savedShareText(i)} />
                         )}
+                        <div className="relative z-10">
+                          <SavedExtras item={i} />
+                        </div>
                       </li>
                     ))}
                 </ul>
               </div>
             ))}
+            {items.length > 0 && <NearBox className="mb-8 max-w-xl" />}
             {items.length > 0 && (
               <button
                 onClick={() => {

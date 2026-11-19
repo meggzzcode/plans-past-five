@@ -1,0 +1,38 @@
+# Implemented: Claude Code job 3 (Phase 0 items 0.1, 0.2/0.4 dates, 0.5, 0.10, 0.11), 2026-11-19
+
+Nothing committed or pushed. Scores are not claimed; this lists what changed and how it was checked.
+
+## 0.1 Buyer index, counts, jargon, fresh-clone log
+- `docs/buyer/START-HERE.md` is the single index. Counts now come from the repo: 27 published and 7 draft articles, 43 hobbies, 8 collections, 62 product records (37 verified, 29 shown, 8 on hold, 25 candidates), 88 pins, 18 images, 641 tests in 44 files. It also holds "What we do not claim" and the honest-dates note.
+- Stale counts fixed in the buyer docs and in ASSET-INVENTORY, BUYER-FAQ, LISTING-DRAFT, LISTING-CHECKLIST, TURNKEY-READINESS, README. `CLAUDE-HANDOFF.md` still has old counts (523 tests, 36 hobbies, 5 drafts); it is outside this job's file list.
+- Jargon removed from `docs/buyer/*` and the owned marketplace docs ("PENDING COWORK" became "re-read live" or "Open items to check live"; task codes such as C4, C10, C17 became plain wording). The task list in `docs/cowork` is unchanged. `src/test/buyer-docs.test.ts` guards this and checks START-HERE links.
+- `docs/buyer/FRESH-CLONE-LOG.md`: export of the working tree (not committed), Bun install frozen, vitest 641 passed, tsc clean, build OK, eslint 3 errors only in another job's `src/test/_scratch/s.test.ts` (recorded, not hidden).
+
+## 0.10 Images
+- `docs/content/IMAGE-LICENCE-LEDGER.md`: one row per file in `src/assets` (14 original, 4 Canva) plus 4 Canva contact sheets not yet on the site: tool, date, source link, licence statement, embedded metadata, status. The statement "AI-generated; no exclusivity or registrable copyright promised" appears only in handover docs. Guard: `src/test/image-ledger.test.ts` fails if an image has no row (Cowork W2 must add rows).
+- IPTC DigitalSourceType = trainedAlgorithmicMedia: the 14 originals already carried it in their content credentials. The 4 Canva files had it stripped on ingest, so `scripts/embed-ai-metadata.mjs` (no dependencies, no pixel change, idempotent, `--check` mode) added an XMP packet. Run it after every ingest. exiftool was not available.
+- `docs/IMAGE-LICENSES.md` intro updated; its auto-generated table and marker were left untouched. No visible AI wording added to the site.
+
+## 0.4 Honest dates
+- New route `/changelog` ("What changed"): launch note "Launched November 2026", dated entries from git history (2026-11-18 and 2026-11-19 only), plain English, no hashes. Data in `src/content/changelog.ts`. Linked from the footer fine print and added to the sitemap. Page JSON-LD dates equal the first and last entry dates, which are the visible dates.
+- Article JSON-LD already used the visible published date; dateModified comes only from a visible updated or checked date. `src/test/changelog.test.ts` asserts this for every article and that no date is before November 2026.
+
+## 0.5 Kits
+- `src/data/kits.ts`: 15 kits merged into 8 (junk journaling, watercolor, air-dry clay, mahjong night, picnic, reading and book club [with cozy night in], pottery and paint night [with girls' craft night], pickleball and tennis). Added `alsoHobbies`, `kitHobbies`, `MIN_KIT_PICKS = 4`, `isFullKit`.
+- Dropped as kits: embroidery, crochet, flower arranging (not in the requested eight). Their products lost their kit slot and remain ordinary collection products.
+- `src/components/commerce/StarterKit.tsx`: a kit renders only with 4 or more named verified picks and an essential; otherwise one "Where to start" card with a single pick, no filler tiles, no group lists. Empty still renders nothing. The shop index tag counts only full kits.
+- Product kit refs were remapped in `src/data/catalog.generated.ts`, `docs/commerce/product-research.csv` and `product-research.cowork-latest.csv`. The importer's `hold` flag is unchanged (8 held products still hidden).
+- Today only 2 kits meet the 4-pick rule (junk journaling 4, air-dry clay 4); watercolor 3, mahjong 3, pottery and paint 2, and picnic, reading and book club, racquet sports 0 until verified picks arrive (Cowork W1). Tests updated intentionally (8 kit ids, new render-rule test).
+
+## 0.11 Buyer docs
+- `docs/buyer/AMAZON-ASSOCIATES-PATH.md`: apply as the buyer; 3 qualified sales within 180 days of applying (Application Review page); Creators API needs 10 qualifying sales in the past 30 days; content generally within 60 days; the required statement and the list of places where the "we don't currently earn" wording must be replaced; seller's master account excluded. Dates: 11-18 read for the 180-day page; the other two marked "re-read live" (no URL recorded).
+- `docs/buyer/NETLIFY-CREDITS-AND-RELEASES.md`: 300 credits per month, 15 per production deploy, 20 per GB, site pauses at the cap, at most 8 deploys a month (120 credits, leaves about 9 GB), release marker rule. Figures marked "re-read live"; no page copy was saved.
+- Monthly Search Console check added to `MONTHLY-MAINTENANCE.md`. "What we do not claim" added to LISTING-DRAFT, LISTING-CHECKLIST, BUYER-FAQ.
+
+## Checks (2026-11-19)
+`node scripts/build-content.mjs` OK; `bunx tsc --noEmit` clean for this job's files (other jobs had in-flight errors that day); `bunx eslint . --quiet` clean for this job's files; `bunx vitest run` all passing in the fresh export. Prettier run on touched `src` files only.
+
+## Not done / needs a human
+- No Amazon, Netlify or Console page was re-read live by this job; figures come from the brief and earlier notes.
+- Owner decision pending: whether embroidery, crochet and flower arranging should get a ninth kit.
+- The 4 originals still show no "facts last checked" date although source-check notes exist.

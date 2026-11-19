@@ -15,7 +15,8 @@ export function pinFor(path: string): string | undefined {
 }
 
 /** All pin images for a page path (primary first). */
-export const pinsFor = (path: string): string[] => (pinFiles[path] ?? []).map((f) => `${PIN_DIR}${f}`);
+export const pinsFor = (path: string): string[] =>
+  (pinFiles[path] ?? []).map((f) => `${PIN_DIR}${f}`);
 
 /** Pin for a hobby page: the pin of its first published guide that has one. */
 export function pinForHobby(slug: string): string | undefined {

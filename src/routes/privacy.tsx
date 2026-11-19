@@ -39,6 +39,14 @@ export const Route = createFileRoute("/privacy")({
         device, we cannot see it, and you can clear it any time by clearing site data in your
         browser.
       </p>
+      <h2>Your town or postcode (optional)</h2>
+      <p>
+        If you type a town or postcode to get "near you" search links, it is kept in your browser's
+        local storage on your device only. We never receive it. It is used only to build a Google
+        Maps search link that opens in a new tab, so Google sees it only if you open that link. We
+        do not use your device's location. Calendar files are made in your browser and are not
+        uploaded.
+      </p>
       <h2>Analytics and newsletter</h2>
       <p>
         No analytics, tracking or newsletter tools are currently active, and we do not set analytics

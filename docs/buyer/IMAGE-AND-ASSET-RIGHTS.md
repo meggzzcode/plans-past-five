@@ -4,7 +4,7 @@ Read this before relying on any visual in the kit for commercial use. It describ
 
 ## 1. Photographic images on the site and in pins: AI-generated
 
-- The 14 images in `src/assets/` (see `docs/IMAGE-LICENSES.md` for the inventory) were **generated with Lovable's AI image tool in November 2026** for this project. They are not photographs of real people, places, products or events. Registered with alt text in `src/data/images.ts`.
+- The 18 images in `src/assets/` (14 original plus 4 from Canva) (see `docs/IMAGE-LICENSES.md` for the inventory) were **generated with Lovable's AI image tool in November 2026** for this project. They are not photographs of real people, places, products or events. Registered with alt text in `src/data/images.ts`.
 - Eight are lifestyle scenes (pottery night, tennis, junk journal flat lay, solo café, picnic, watercolor evening, girls' night crafts, hiking). Six are styled still lifes used for the shop collections (labelled "illustrative" on the site and in pins). **No Amazon or other retailer product images are used.**
 - The pins in `public/pins/` crop, tint and overlay these same images. No new third-party images were added for pins; where there is no suitable image, the pin is typographic.
 
@@ -52,7 +52,7 @@ The OFL allows commercial use, embedding in images and logo outlines, and redist
 
 | Asset | Origin | Commercial use | Transferable | Exclusive? | Open risk |
 |---|---|---|---|---|---|
-| 14 site images | AI-generated (Lovable tool), Nov 2026 | Per tool terms: **owner must verify** | Per tool terms: verify | Unlikely to be protected as exclusive | Terms and copyright status unverified; AI disclosure |
+| 18 site images | AI-generated (14 Lovable tool, 4 Canva AI), Nov 2026 | Per tool terms: **owner must verify** | Per tool terms: verify | Unlikely to be protected as exclusive | Terms and copyright status unverified; AI disclosure |
 | Pins (88) | Original layouts over the images above and type | Same as images where photos used | Yes (files in repo) | Layouts only | Inherits image risks |
 | Logos, favicon, templates | Original, built from the existing identity | Yes | Yes (assignment if required) | Not trademarked | No trademark clearance |
 | Fonts | OFL | Yes | Yes with licence files | No (open licence) | None known |

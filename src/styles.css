@@ -233,11 +233,13 @@
   hyphens: manual;
   overflow-wrap: break-word;
 }
-.article-flow > p {
+.article-flow > p,
+.article-section-body > p {
   margin-bottom: 1.1em;
 }
 /* A long paragraph gets extra air after it, never edited text. */
-.article-flow > p.para-long {
+.article-flow > p.para-long,
+.article-section-body > p.para-long {
   margin-bottom: 1.7em;
 }
 .article-flow > h2 {
@@ -251,14 +253,47 @@
   padding-top: 0;
   margin-top: 0;
 }
-.article-flow > h3 {
+.article-flow > h3,
+.article-section-body > h3 {
   font-size: 1.25rem;
   margin: 1.8em 0 0.4em;
 }
 @media (min-width: 768px) {
-  .article-flow > h2 {
+  .article-flow > h2,
+  .article-section > summary h2 {
     font-size: 1.9rem;
   }
+}
+/* Long sections are native details: open by default, folded on phones after hydration. */
+.article-flow details.article-section {
+  margin: 2.6em 0 0;
+  border-top: 1px solid var(--border);
+}
+.article-flow details.article-section > summary {
+  display: flex;
+  min-height: 2.75rem;
+  cursor: pointer;
+  list-style: none;
+  align-items: center;
+  gap: 0.75rem;
+}
+.article-flow details.article-section > summary::-webkit-details-marker {
+  display: none;
+}
+.article-flow details.article-section > summary h2 {
+  font-size: 1.65rem;
+  margin: 0.7em 0 0.45em;
+  padding: 0;
+  border: 0;
+}
+.article-flow details.article-section[open] > summary .chev {
+  transform: rotate(180deg);
+}
+.article-flow details.article-section:not([open]) > summary {
+  padding-bottom: 0.4rem;
+}
+.article-section-body {
+  padding-bottom: 0.25rem;
 }
 /* Bold lead-ins at the start of a paragraph or list item pop. */
 .article-flow .lead-in > strong:first-child {
@@ -266,10 +301,12 @@
   font-weight: 700;
 }
 /* Idea cards sit together as one tight list. */
-.article-flow > .item-card + .item-card {
+.article-flow > .item-card + .item-card,
+.article-section-body > .item-card + .item-card {
   margin-top: 0;
 }
-.article-flow > .item-card:last-of-type {
+.article-flow > .item-card:last-of-type,
+.article-section-body > .item-card:last-of-type {
   margin-bottom: 1.5rem;
 }
 .article-flow .item-more > summary::marker {

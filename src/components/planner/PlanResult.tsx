@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import {
   Bookmark,
   BookmarkCheck,
   Check,
   Copy,
+  Feather,
+  Footprints,
+  Moon,
   Printer,
   RefreshCw,
   Repeat,
@@ -11,10 +14,11 @@ import {
   TriangleAlert,
 } from "lucide-react";
 import { Bow, Flower, Sparkle, Star } from "@/components/brand/Doodles";
-import type { Activity } from "@/data/activities";
+import { ADVANCE_NOTES, type Activity } from "@/data/activities";
 import {
   fmtClock,
   fmtDuration,
+  lighterPlan,
   planHref,
   planSummary,
   planText,
@@ -23,7 +27,12 @@ import {
   type PlanSlot,
 } from "@/lib/planner";
 import { canonicalUrl } from "@/lib/share";
+import { eventsFromPlan, type CalendarPresetId } from "@/lib/ics";
+import { nearTermFor } from "@/lib/near";
+import { AddToCalendar } from "@/components/share/AddToCalendar";
+import { NearBox, NearLink } from "@/components/share/Near";
 import { cn } from "@/lib/utils";
+import { useHydrated, waitingProps } from "@/lib/use-hydrated";
 import { imageSrc, pickImages, tintFor } from "./planImage";
 
 const focusRing =
@@ -55,6 +64,30 @@ const Chip = ({ children, tone = "bg-cream" }: { children: React.ReactNode; tone
   </span>
 );
 
+/** The row between two stops: time to get there and settle in, or a breather, then any open time. */
+function BufferRow({ s }: { s: PlanSlot }) {
+  if (!s.buffer) return null;
+  const Icon = s.buffer.kind === "reset" ? Feather : Footprints;
+  return (
+    <div
+      className="py-1.5 pl-3 text-xs font-medium text-muted-foreground"
+      data-buffer={s.buffer.kind}
+    >
+      <p className="flex items-center gap-1.5">
+        <Icon className="h-3.5 w-3.5 shrink-0 text-cherry" aria-hidden />
+        <span>
+          {s.buffer.label}: about {fmtDuration(s.buffer.minutes)}
+        </span>
+      </p>
+      {s.freeBefore !== undefined && s.freeBefore >= 30 && (
+        <p className="mt-0.5 pl-5">
+          <span aria-hidden>· · ·</span> then {fmtDuration(s.freeBefore)} free
+        </p>
+      )}
+    </div>
+  );
+}
+
 function Card({
   s,
   img,
@@ -64,6 +97,7 @@ function Card({
   img: ReturnType<typeof pickImages>[number];
   onSwap: () => void;
 }) {
+  const hydrated = useHydrated();
   const a = s.activity!;
   const tint = tintFor(a);
   return (
@@ -93,8 +127,9 @@ function Card({
               onClick={onSwap}
               aria-label={`Swap ${a.name} for ${s.alternative.name}`}
               title={`Swap for: ${s.alternative.name}`}
+              {...waitingProps(hydrated)}
               className={cn(
-                "no-print -mr-1 -mt-1 inline-flex min-h-11 items-center gap-1 px-2 text-xs font-semibold text-ink underline underline-offset-4 hover:text-cherry",
+                "no-print -mr-1 -mt-1 inline-flex min-h-11 items-center gap-1 px-2 text-xs font-semibold text-ink underline underline-offset-4 hover:text-cherry disabled:cursor-wait disabled:opacity-60",
                 focusRing,
               )}
             >
@@ -107,11 +142,13 @@ function Card({
         <div className="mt-1.5 flex flex-wrap gap-1.5">
           <Chip tone="bg-butter/60">{costChip(a)}</Chip>
           <Chip>{fmtDuration(a.minutes)}</Chip>
+          {a.advance && <Chip tone="bg-strawberry/60">{ADVANCE_NOTES[a.id] ?? "Plan ahead"}</Chip>}
         </div>
         <p className="mt-2 text-sm leading-snug text-espresso">
           <span className="font-semibold text-ink">Start: </span>
           {a.prep}
         </p>
+        <NearLink term={nearTermFor({ activityId: a.id })} />
       </div>
     </div>
   );
@@ -123,17 +160,35 @@ type Props = {
   onShuffle: () => void;
   onToggleSave: () => void;
   onSwap: (index: number) => void;
+  /** Make this plan lighter: one stop fewer and longer breaks. Called with the new choices and ids. */
+  onLighter: (next: { input: PlanInput; ids: string[] }) => void;
   /** Apply a one-tap change to the choices (used by the "nothing found" buttons). */
   onRelax: (patch: Partial<PlanInput>) => void;
 };
 
 /** The generated plan as a visual timeline: one card per stop, a one-line summary, and the actions. */
-export function PlanResult({ plan, saved, onShuffle, onToggleSave, onSwap, onRelax }: Props) {
+export function PlanResult({
+  plan,
+  saved,
+  onShuffle,
+  onToggleSave,
+  onSwap,
+  onLighter,
+  onRelax,
+}: Props) {
   const [copied, setCopied] = useState<"idle" | "yes" | "no">("idle");
+  const hydrated = useHydrated();
+  const wait = waitingProps(hydrated);
+  const lighter = lighterPlan(plan);
   const imgs = pickImages(plan.slots.map((s) => s.activity));
   const canShare = typeof navigator !== "undefined" && typeof navigator.share === "function";
 
   const link = () => canonicalUrl(planHref(plan.input, plan.seed, plan.ids));
+  const planUrl = canonicalUrl(planHref(plan.input, plan.seed, plan.ids));
+  const buildEvents = useCallback(
+    (preset: CalendarPresetId, now: Date) => eventsFromPlan(plan, preset, now, planUrl),
+    [plan, planUrl],
+  );
 
   const copy = async () => {
     const text = planText(plan, link());
@@ -181,6 +236,12 @@ export function PlanResult({ plan, saved, onShuffle, onToggleSave, onSwap, onRel
           <span className="text-xs font-medium text-muted-foreground">(rough estimate)</span>
         </p>
       )}
+      {plan.filled > 0 && (
+        <p className="mt-3 max-w-2xl text-sm leading-snug text-espresso" data-testid="plan-why">
+          <span className="font-semibold text-ink">Why this plan: </span>
+          {plan.why.replace(/^Chosen for /, "built for ")}
+        </p>
+      )}
       {plan.lengthNote && (
         <p
           role="status"
@@ -195,8 +256,6 @@ export function PlanResult({ plan, saved, onShuffle, onToggleSave, onSwap, onRel
         {plan.slots.map((s, i) => {
           const prev = plan.slots[i - 1];
           const newDay = s.day && prev?.day !== s.day;
-          const free =
-            prev && prev.day === s.day && prev.activity && s.activity ? s.start - prev.end : 0;
           return (
             <li key={s.step}>
               {newDay && (
@@ -204,14 +263,7 @@ export function PlanResult({ plan, saved, onShuffle, onToggleSave, onSwap, onRel
                   {s.day}
                 </h3>
               )}
-              {free >= 45 && (
-                <p
-                  className="py-1.5 pl-3 text-xs font-medium text-muted-foreground"
-                  aria-label={`${fmtDuration(free)} free`}
-                >
-                  <span aria-hidden>· · ·</span> {fmtDuration(free)} free
-                </p>
-              )}
+              <BufferRow s={s} />
               {s.activity ? (
                 <Card s={s} img={imgs[i] ?? null} onSwap={() => onSwap(s.step - 1)} />
               ) : (
@@ -245,27 +297,57 @@ export function PlanResult({ plan, saved, onShuffle, onToggleSave, onSwap, onRel
           );
         })}
       </ol>
+      {plan.windDown && (
+        <p
+          className="mt-3 flex items-center gap-1.5 pl-3 text-xs font-medium text-muted-foreground"
+          data-testid="wind-down"
+        >
+          <Moon className="h-3.5 w-3.5 shrink-0 text-cherry" aria-hidden />
+          {plan.windDown.label} (about {fmtDuration(plan.windDown.minutes)})
+        </p>
+      )}
 
       <div className="no-print mt-8 border-t border-border pt-5">
         <div className="flex flex-wrap gap-2">
           <button
             type="button"
             onClick={onShuffle}
+            {...wait}
             className={cn(
               btn,
-              "border-2 border-cherry text-cherry hover:bg-cherry hover:text-cream",
+              "border-2 border-cherry text-cherry hover:bg-cherry hover:text-cream disabled:cursor-wait disabled:opacity-60",
               focusRing,
             )}
           >
             <RefreshCw className="h-4 w-4" aria-hidden />
             Shuffle
           </button>
+          {lighter ? (
+            <button
+              type="button"
+              onClick={() => onLighter(lighter)}
+              {...wait}
+              className={cn(
+                btn,
+                "border-2 border-ink/25 text-ink hover:border-cherry disabled:cursor-wait disabled:opacity-60",
+                focusRing,
+              )}
+            >
+              <Feather className="h-4 w-4" aria-hidden />
+              Too much? Make it lighter
+            </button>
+          ) : null}
           <button
             type="button"
             disabled={plan.filled === 0}
             onClick={onToggleSave}
             aria-pressed={saved}
-            className={cn(btn, "bg-cherry text-cream hover:bg-ink disabled:opacity-50", focusRing)}
+            {...wait}
+            className={cn(
+              btn,
+              "bg-cherry text-cream hover:bg-ink disabled:cursor-wait disabled:opacity-60",
+              focusRing,
+            )}
           >
             {saved ? (
               <BookmarkCheck className="h-4 w-4" aria-hidden />
@@ -278,9 +360,10 @@ export function PlanResult({ plan, saved, onShuffle, onToggleSave, onSwap, onRel
             type="button"
             disabled={plan.filled === 0}
             onClick={copy}
+            {...wait}
             className={cn(
               btn,
-              "border-2 border-ink/25 text-ink hover:border-cherry disabled:opacity-50",
+              "border-2 border-ink/25 text-ink hover:border-cherry disabled:cursor-wait disabled:opacity-60",
               focusRing,
             )}
           >
@@ -296,9 +379,10 @@ export function PlanResult({ plan, saved, onShuffle, onToggleSave, onSwap, onRel
               type="button"
               disabled={plan.filled === 0}
               onClick={share}
+              {...wait}
               className={cn(
                 btn,
-                "border-2 border-ink/25 text-ink hover:border-cherry disabled:opacity-50",
+                "border-2 border-ink/25 text-ink hover:border-cherry disabled:cursor-wait disabled:opacity-60",
                 focusRing,
               )}
             >
@@ -309,12 +393,23 @@ export function PlanResult({ plan, saved, onShuffle, onToggleSave, onSwap, onRel
           <button
             type="button"
             onClick={() => window.print()}
-            className={cn(btn, "text-ink underline", focusRing)}
+            {...wait}
+            className={cn(
+              btn,
+              "text-ink underline disabled:cursor-wait disabled:opacity-60",
+              focusRing,
+            )}
           >
             <Printer className="h-4 w-4" aria-hidden />
             Print
           </button>
         </div>
+        {plan.filled > 0 && (
+          <div className="mt-3 space-y-3">
+            <AddToCalendar title={plan.title} build={buildEvents} />
+            <NearBox />
+          </div>
+        )}
         <p
           role="status"
           aria-live="polite"

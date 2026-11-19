@@ -1,6 +1,6 @@
 # Pages CMS setup and daily use
 
-For the owner or buyer. No coding. You need: a GitHub account that can edit the Plans Past Five repository, and a web browser. Status: configured in `.pages.yml`; the first live test with the owner's login is Cowork task C17.
+For the owner or buyer. No coding. You need: a GitHub account that can edit the Plans Past Five repository, and a web browser. Status: configured in `.pages.yml`; the first live test with the owner's login is a pending follow-up task listed in `docs/cowork`.
 
 ## One-time setup
 

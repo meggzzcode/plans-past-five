@@ -10,7 +10,7 @@ It is a built starter site, not a running business. This repository makes no cla
 - **Make Some Plans**: a weekend and weeknight itinerary planner (time, vibe, company, budget).
 - **What Should I Do Tonight?**: a quick idea picker, plus a starter-budget tool.
 - **Hobbies**, **The Journal**, six themed sections, **Shop Your Hobby**, search and a saved-items list ("My Plans") that lives in the visitor's own browser.
-- Trust pages: About, Contact, Editorial Standards, Methodology, Corrections, Affiliate Disclosure, Privacy, Terms.
+- Trust pages: About, Contact, Editorial Standards, Methodology, Corrections, Affiliate Disclosure, Privacy, Terms, and a dated "What changed" page (`/changelog`) with the launch note (launched November 2026).
 
 ## Stack
 
@@ -66,7 +66,7 @@ git commit --allow-empty -m "Release: what changed [deploy]"
 git push
 ```
 
-Details: `docs/buyer/HOSTING-AND-DEPLOYMENT.md`. CI (`.github/workflows`) runs the content build, tests, typecheck and build on every pull request.
+Budget: Netlify's free plan gives 300 credits a month, 15 per production deploy and 20 per GB of bandwidth, and the site pauses at the cap; plan for at most 8 deploys a month (`docs/buyer/NETLIFY-CREDITS-AND-RELEASES.md`, re-read live before relying on the numbers). Details: `docs/buyer/HOSTING-AND-DEPLOYMENT.md`. CI (`.github/workflows`) runs the content build, tests, typecheck and build on every pull request.
 
 ## What is not included
 
@@ -74,4 +74,6 @@ Details: `docs/buyer/HOSTING-AND-DEPLOYMENT.md`. CI (`.github/workflows`) runs t
 - Affiliate links are not activated; the disclosure says links currently earn nothing.
 - No traffic, revenue or ranking history.
 - A working contact channel is yours to add (`docs/buyer/DOMAIN-AND-EMAIL.md`).
-- Photo rights are recorded per image; check `docs/IMAGE-LICENSES.md` before publishing.
+- Images are AI-generated; no exclusivity or registrable copyright is promised. The per-image record is `docs/content/IMAGE-LICENCE-LEDGER.md`; check it and `docs/IMAGE-LICENSES.md` before publishing.
+- Amazon Associates: nobody has applied; the path and dated rules are in `docs/buyer/AMAZON-ASSOCIATES-PATH.md`.
+- The full list of things we do not claim (traffic, revenue, approved affiliate, exclusive images, trademark clearance, legal review, no-code editing of hobbies/products/config) is in `docs/marketplace/LISTING-DRAFT.md`.

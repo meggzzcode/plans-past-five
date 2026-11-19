@@ -191,10 +191,7 @@ const addDays = (d: Date, n: number) => new Date(d.getFullYear(), d.getMonth(), 
  * - This evening: 18:00 today; once 18:00 has passed, the next half hour that is at least 30
  *   minutes away; after 21:00, 18:00 tomorrow.
  */
-export function presetStart(
-  id: CalendarPresetId,
-  now: Date,
-): { day: Date; startMinutes: number } {
+export function presetStart(id: CalendarPresetId, now: Date): { day: Date; startMinutes: number } {
   if (id === "saturday-morning") {
     const dow = now.getDay(); // 6 = Saturday
     const nowMin = now.getHours() * 60 + now.getMinutes();
@@ -250,11 +247,14 @@ export function eventsFromPlan(
   );
   return filled.map((s, i) => {
     const a = s.activity!;
+    const span = s.end - s.start;
     return {
       summary: a.name,
-      description: [`${plan.title}`, `Start: ${a.prep}`, "Costs and times are rough estimates."].join(
-        "\n",
-      ),
+      description: [
+        `${plan.title}`,
+        `Start: ${a.prep}`,
+        "Costs and times are rough estimates.",
+      ].join("\n"),
       start: starts[i]!,
       minutes: span > 0 ? span : a.minutes,
       ...(url ? { url } : {}),

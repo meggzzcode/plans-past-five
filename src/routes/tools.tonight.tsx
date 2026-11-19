@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Check, Copy, RefreshCw, Share2 } from "lucide-react";
 import {
   formatMinutes,
@@ -13,12 +13,15 @@ import {
   timeOptions,
   type TonightInput,
 } from "@/lib/tonight";
-import { pinFor } from "@/lib/pins";
 import { seo, absoluteUrl } from "@/lib/seo";
 import { canonicalUrl } from "@/lib/share";
 import { images } from "@/data/images";
 import { SaveButton } from "@/components/editorial/SaveButton";
+import { TonightExtras } from "@/components/share/TonightExtras";
+import { NearBox } from "@/components/share/Near";
 import { Kicker } from "@/components/editorial/Section";
+import { ChoicePill } from "@/components/planner/ChoicePill";
+import { useHydrated, waitingProps } from "@/lib/use-hydrated";
 import { Star } from "@/components/brand/Doodles";
 import { cn } from "@/lib/utils";
 
@@ -30,7 +33,6 @@ export const Route = createFileRoute("/tools/tonight")({
         "Tired, bored or somewhere in between? Answer five taps and get three ideas that fit your time, energy and budget tonight. No email, no account.",
       path: "/tools/tonight",
       image: absoluteUrl(images.soloCafe.src),
-      pinImage: pinFor("/tools/tonight")!,
     }),
   validateSearch: (s: Record<string, unknown>) => {
     const o: Record<string, string> = {};
@@ -42,6 +44,15 @@ export const Route = createFileRoute("/tools/tonight")({
   },
   component: Tonight,
 });
+
+/** The address-bar name of each answer (see parseTonightSearch). */
+const PARAM: Record<keyof TonightInput, string> = {
+  minutes: "t",
+  energy: "e",
+  budget: "b",
+  company: "c",
+  setting: "w",
+};
 
 type Group = {
   key: keyof TonightInput;
@@ -95,6 +106,11 @@ function Tonight() {
   const [input, setInput] = useState<TonightInput>(init.input);
   const [seed, setSeed] = useState(init.seed);
   const [copied, setCopied] = useState<"idle" | "yes" | "no">("idle");
+  const hydrated = useHydrated();
+  const formRef = useRef<HTMLFormElement>(null);
+  // The radios are uncontrolled (so a choice made before scripts load is never overwritten); this
+  // rebuilds them when the answers change from outside the form (the "change one answer" buttons).
+  const [formKey, setFormKey] = useState(0);
   const result = tonightIdeas(input, seed);
   const canShare = typeof navigator !== "undefined" && typeof navigator.share === "function";
 
@@ -109,13 +125,31 @@ function Tonight() {
   }, [href]);
 
   const set = (k: keyof TonightInput, v: string | number) => {
-    setInput((i) => ({ ...i, [k]: v }) as TonightInput);
+    setInput((i) => ({ ...i, [k]: k === "minutes" ? Number(v) : v }) as TonightInput);
     setSeed(0);
   };
   const apply = (patch: Partial<TonightInput>) => {
     setInput((i) => ({ ...i, ...patch }));
     setSeed(0);
+    setFormKey((k) => k + 1);
   };
+  // Answers ticked before the page finished loading are kept: read them once on arrival.
+  useEffect(() => {
+    const f = formRef.current;
+    if (!f) return;
+    const fd = new FormData(f);
+    const picked: Record<string, string | number> = {};
+    for (const [k, p] of Object.entries(PARAM)) {
+      const v = fd.get(p);
+      if (typeof v === "string" && v !== String(input[k as keyof TonightInput]))
+        picked[k] = k === "minutes" ? Number(v) : v;
+    }
+    if (Object.keys(picked).length) {
+      setInput((i) => ({ ...i, ...picked }) as TonightInput);
+      setSeed(0);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const text = () => tonightText(input, result.suggestions, canonicalUrl(href));
   const copy = async () => {
     try {
@@ -157,31 +191,48 @@ function Tonight() {
             It's after five and the sofa is calling. Five taps, three ideas that fit. Nothing is
             sent anywhere; anything you save stays on this device.
           </p>
-          <div className="mt-10 grid gap-7">
-            {groups.map((g) => (
-              <fieldset key={g.key}>
-                <legend className="kicker mb-3 text-ink">{g.label}</legend>
-                <div className="flex flex-wrap gap-2">
-                  {g.options.map((o) => (
-                    <button
-                      key={o.v}
-                      type="button"
-                      onClick={() => set(g.key, o.v)}
-                      aria-pressed={input[g.key] === o.v}
-                      className={cn(
-                        "border-2 px-4 py-2 text-sm font-medium transition",
-                        input[g.key] === o.v
-                          ? "border-cherry bg-cherry text-cream"
-                          : "border-ink/20 bg-cream text-ink hover:border-cherry",
-                      )}
-                    >
-                      {o.label}
-                    </button>
-                  ))}
-                </div>
-              </fieldset>
-            ))}
-          </div>
+          <form
+            ref={formRef}
+            method="get"
+            action="/tools/tonight"
+            aria-label="Tonight answers"
+            onChange={(e) => {
+              const t = e.target as unknown as HTMLInputElement;
+              const key = (Object.keys(PARAM) as (keyof TonightInput)[]).find(
+                (k) => PARAM[k] === t.name,
+              );
+              if (key) set(key, t.value);
+            }}
+            onSubmit={(e) => e.preventDefault()}
+          >
+            <div key={formKey} className="mt-10 grid gap-7">
+              {groups.map((g) => (
+                <fieldset key={g.key}>
+                  <legend className="kicker mb-3 text-ink">{g.label}</legend>
+                  <div className="flex flex-wrap gap-2">
+                    {g.options.map((o) => (
+                      <ChoicePill
+                        key={o.v}
+                        name={PARAM[g.key]}
+                        value={String(o.v)}
+                        label={o.label}
+                        defaultChecked={String(input[g.key]) === String(o.v)}
+                      />
+                    ))}
+                  </div>
+                </fieldset>
+              ))}
+            </div>
+            {/* Before scripts load this is how the answers are applied: a plain page load with them in the address. */}
+            {!hydrated && (
+              <button
+                type="submit"
+                className="mt-8 bg-cherry px-8 py-4 font-semibold text-cream shadow-[4px_4px_0_var(--ink)]"
+              >
+                Show my 3 ideas
+              </button>
+            )}
+          </form>
         </div>
       </section>
 
@@ -233,6 +284,7 @@ function Tonight() {
                   <div className="mt-3">
                     <SaveButton item={tonightSaveItem(s, input, seed)} />
                   </div>
+                  <TonightExtras s={s} href={href} />
                 </li>
               ))}
             </ol>
@@ -253,7 +305,8 @@ function Tonight() {
                 type="button"
                 onClick={() => setSeed((x) => x + 1)}
                 disabled={result.matched <= 3}
-                className="inline-flex items-center gap-2 border-2 border-cherry px-4 py-2 text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream disabled:opacity-50"
+                {...waitingProps(hydrated)}
+                className="inline-flex min-h-11 items-center gap-2 border-2 border-cherry px-4 py-2 text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream disabled:cursor-wait disabled:opacity-60"
               >
                 <RefreshCw className="h-4 w-4" />
                 Shuffle ideas
@@ -261,7 +314,8 @@ function Tonight() {
               <button
                 type="button"
                 onClick={copy}
-                className="inline-flex min-h-11 items-center gap-2 border-2 border-ink/25 px-4 py-2 text-sm font-semibold text-ink hover:border-cherry"
+                {...waitingProps(hydrated)}
+                className="inline-flex min-h-11 items-center gap-2 border-2 border-ink/25 px-4 py-2 text-sm font-semibold text-ink hover:border-cherry disabled:cursor-wait disabled:opacity-60"
               >
                 {copied === "yes" ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
                 {copied === "yes" ? "Copied" : "Copy as text"}
@@ -270,13 +324,15 @@ function Tonight() {
                 <button
                   type="button"
                   onClick={share}
-                  className="inline-flex min-h-11 items-center gap-2 border-2 border-ink/25 px-4 py-2 text-sm font-semibold text-ink hover:border-cherry"
+                  {...waitingProps(hydrated)}
+                  className="inline-flex min-h-11 items-center gap-2 border-2 border-ink/25 px-4 py-2 text-sm font-semibold text-ink hover:border-cherry disabled:cursor-wait disabled:opacity-60"
                 >
                   <Share2 className="h-4 w-4" />
                   Share
                 </button>
               )}
             </div>
+            <NearBox className="mt-6 max-w-xl" />
             <p
               role="status"
               aria-live="polite"
@@ -316,6 +372,7 @@ function RelaxButtons({
   onApply: (patch: Partial<TonightInput>) => void;
   center?: boolean;
 }) {
+  const hydrated = useHydrated();
   if (relax.length === 0) return null;
   return (
     <ul className={cn("mt-3 flex flex-wrap gap-2", center && "justify-center")}>
@@ -324,7 +381,8 @@ function RelaxButtons({
           <button
             type="button"
             onClick={() => onApply(r.patch)}
-            className="min-h-11 border-2 border-cherry px-4 py-2 text-left text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream"
+            {...waitingProps(hydrated)}
+            className="min-h-11 border-2 border-cherry px-4 py-2 text-left text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream disabled:cursor-wait disabled:opacity-60"
           >
             {r.label} ({r.matched} {r.matched === 1 ? "idea" : "ideas"})
           </button>

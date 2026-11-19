@@ -36,6 +36,6 @@ Pre-revenue and not yet public (2026-11-19). This is a sequence of work, not a f
 
 Buying followers or links, scraping other sites, fake reviews or testimonials, claiming testing that did not happen, or sending pins straight to retail pages.
 
-## PENDING COWORK
+## Open items to check live
 
 Which channels the target reader actually uses and which seasonal windows matter, from live trend data (Google Trends, Pinterest Trends), recorded with dates.

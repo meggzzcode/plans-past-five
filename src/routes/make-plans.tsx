@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   makePlan,
   parsePlanSearch,
@@ -13,6 +13,7 @@ import { images } from "@/data/images";
 import { useSaved } from "@/lib/saved";
 import { Kicker } from "@/components/editorial/Section";
 import { PlanResult } from "@/components/planner/PlanResult";
+import { ChoicePill } from "@/components/planner/ChoicePill";
 import { cn } from "@/lib/utils";
 import { track } from "@/lib/track";
 import { getHobby } from "@/data/hobbies";
@@ -29,6 +30,8 @@ const SEARCH_KEYS = [
   "energy",
   "seed",
   "ids",
+  "light",
+  "go",
   "from",
   "with",
 ] as const;
@@ -146,31 +149,54 @@ const groups: Group[] = [
 const focusRing =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cherry";
 
+/** Keeps "how long" valid for the chosen "when". */
+function withValidLength(next: PlanInput): PlanInput {
+  if (isDayWhen(next.when)) {
+    if (next.length === "evening") return { ...next, length: "full-day" };
+  } else if (next.length !== "evening" && next.length !== "few-hours") {
+    return { ...next, length: "evening" };
+  }
+  return next;
+}
+
+const FORM_KEYS = ["when", "length", "vibe", "who", "budget", "setting", "energy"] as const;
+
 function Planner() {
   const search = Route.useSearch();
-  const [init] = useState(() => parsePlanSearch(search));
+  const [init] = useState(() => {
+    const p = parsePlanSearch(search);
+    return { ...p, input: withValidLength(p.input) };
+  });
   const [input, setInput] = useState<PlanInput>(init.input);
   const [seed, setSeed] = useState(init.seed);
   // Exact activity ids from a saved plan: used until the person changes something.
   const [restored, setRestored] = useState<string[] | null>(init.ids);
-  const [shown, setShown] = useState(init.ids !== null || init.pin !== null);
+  // `go=1` is the plain page load from the form (the answers are in the address), so the plan is
+  // already on the page before any script runs.
+  const [shown, setShown] = useState(init.ids !== null || init.pin !== null || search.go === "1");
+  const formRef = useRef<HTMLFormElement>(null);
+  // Bumped when the choices change from outside the form (the "nothing found" buttons): the form's
+  // radios are uncontrolled, so they are rebuilt from the new choices.
+  const [formKey, setFormKey] = useState(0);
+
   const fromQuiz =
     init.from !== null && init.from !== "tonight" && init.prefilled && init.ids === null;
 
   const restoredPlan = restored ? planFromIds(input, seed, restored) : null;
   const [pin, setPin] = useState<string | null>(init.pin);
-  const plan = shown ? (restoredPlan ?? makePlan(input, seed, pin)) : null;
+  const plan = useMemo(
+    () => (shown ? (restoredPlan ?? makePlan(input, seed, pin)) : null),
+    // restoredPlan is rebuilt each render; its inputs are what matter.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [shown, input, seed, pin, restored],
+  );
   const { isSaved, toggle, ready } = useSaved();
 
   const change = (patch: Partial<PlanInput>) => {
     setInput((i) => {
-      const next = { ...i, ...patch };
-      // Keep "how long" valid for the chosen "when".
-      if (isDayWhen(next.when)) {
-        if (next.length === "evening") next.length = "full-day";
-      } else if (next.length !== "evening" && next.length !== "few-hours") {
-        next.length = "evening";
-      }
+      const next = withValidLength({ ...i, ...patch });
+      // A lighter plan is tied to the plan it came from: any new choice starts a fresh one.
+      if (!("light" in patch)) delete next.light;
       return next;
     });
     setSeed(0);
@@ -178,6 +204,50 @@ function Planner() {
     setPin(null);
   };
   const set = (k: keyof PlanInput, v: string) => change({ [k]: v } as Partial<PlanInput>);
+  /** The answers currently ticked in the form (which may be choices made before scripts loaded). */
+  const readForm = (): Partial<PlanInput> | null => {
+    const f = formRef.current;
+    if (!f) return null;
+    const fd = new FormData(f);
+    const out: Record<string, unknown> = { atHome: fd.get("home") === "1" };
+    for (const k of FORM_KEYS) {
+      const v = fd.get(k);
+      if (typeof v === "string") out[k] = v;
+    }
+    return out as Partial<PlanInput>;
+  };
+  // Choices ticked before the page finished loading are kept: read them once on arrival.
+  useEffect(() => {
+    const picked = readForm();
+    if (!picked) return;
+    const differs = (Object.keys(picked) as (keyof PlanInput)[]).some(
+      (k) => picked[k] !== undefined && picked[k] !== (k === "atHome" ? input.atHome : cur(k)),
+    );
+    if (differs) change(picked);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  /** Change from outside the form: rebuild the form's radios from the new choices. */
+  const changeFromOutside = (patch: Partial<PlanInput>) => {
+    change(patch);
+    setFormKey((k) => k + 1);
+  };
+  const run = () => {
+    setShown(true);
+    setSeed(0);
+    setRestored(null);
+    window.setTimeout(() => {
+      const el = document.getElementById("your-plan");
+      if (el && typeof el.scrollIntoView === "function") {
+        el.scrollIntoView({
+          behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
+            ? "auto"
+            : "smooth",
+          block: "start",
+        });
+      }
+    }, 50);
+    track("planner_use", { when: input.when, length: input.length });
+  };
 
   const planUrl = plan ? planHref(plan.input, plan.seed, plan.ids) : "";
   // Keep the address bar on the exact plan so copying the URL shares it (choices, seed and ideas only).
@@ -228,76 +298,76 @@ function Planner() {
               anything, then press "{planLabel}".
             </p>
           )}
-          <div className="mt-10 grid gap-7">
-            {groups.map((g) => {
-              const options = g.key === "length" ? lengthOptions : g.options;
-              const hintId = g.hint ? `hint-${g.key}` : undefined;
-              return (
-                <fieldset key={g.key} aria-describedby={hintId}>
-                  <legend className="kicker mb-3 text-ink">{g.label}</legend>
-                  {g.hint && (
-                    <p id={hintId} className="-mt-1 mb-3 text-sm text-espresso">
-                      {g.hint}
-                    </p>
-                  )}
-                  <div className="flex flex-wrap gap-2">
-                    {options.map((o) => (
-                      <button
-                        key={o.v}
-                        type="button"
-                        onClick={() => set(g.key, o.v)}
-                        aria-pressed={cur(g.key) === o.v}
-                        className={cn(
-                          "min-h-11 border-2 px-4 py-2 text-sm font-medium transition",
-                          focusRing,
-                          cur(g.key) === o.v
-                            ? "border-cherry bg-cherry text-cream"
-                            : "border-ink/20 bg-cream text-ink hover:border-cherry",
-                        )}
-                      >
-                        {o.label}
-                      </button>
-                    ))}
-                  </div>
-                </fieldset>
-              );
-            })}
-            <label className="flex min-h-11 items-center gap-3 text-sm font-medium text-ink">
-              <input
-                type="checkbox"
-                checked={input.atHome}
-                onChange={(e) => change({ atHome: e.target.checked })}
-                className={cn("h-5 w-5 accent-[var(--cherry)]", focusRing)}
-              />
-              Keep it at home
-            </label>
-          </div>
-          <button
-            type="button"
-            onClick={() => {
-              setShown(true);
-              setSeed(0);
-              setRestored(null);
-              window.setTimeout(() => {
-                const el = document.getElementById("your-plan");
-                if (el && typeof el.scrollIntoView === "function") {
-                  el.scrollIntoView({
-                    behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
-                      ? "auto"
-                      : "smooth",
-                    block: "start",
-                  });
-                }
-              }, 50);
-              track("planner_use", { when: input.when, length: input.length });
+          <form
+            ref={formRef}
+            method="get"
+            action="/make-plans"
+            aria-label="Plan choices"
+            onChange={(e) => {
+              const t = e.target as unknown as HTMLInputElement;
+              if (t.name === "home") change({ atHome: t.checked });
+              else if ((FORM_KEYS as readonly string[]).includes(t.name))
+                set(t.name as keyof PlanInput, t.value);
             }}
-            className={cn(
-              "mt-10 bg-cherry px-8 py-4 font-semibold text-cream shadow-[4px_4px_0_var(--ink)] transition hover:-translate-y-0.5",
-              focusRing,
-            )}
+            onSubmit={(e) => {
+              // With scripts: no page load. Without them the same form loads /make-plans?...&go=1.
+              e.preventDefault();
+              run();
+            }}
           >
-            {planLabel}
-          </button>
+            <input type="hidden" name="go" value="1" />
+            {init.pin && <input type="hidden" name="with" value={init.pin} />}
+            {init.from && <input type="hidden" name="from" value={init.from} />}
+            <div key={formKey} className="mt-10 grid gap-7">
+              {groups.map((g) => {
+                const options = g.key === "length" ? lengthOptions : g.options;
+                const hintId = g.hint ? `hint-${g.key}` : undefined;
+                return (
+                  <fieldset
+                    key={g.key === "length" ? `length-${isDayWhen(input.when)}` : g.key}
+                    aria-describedby={hintId}
+                  >
+                    <legend className="kicker mb-3 text-ink">{g.label}</legend>
+                    {g.hint && (
+                      <p id={hintId} className="-mt-1 mb-3 text-sm text-espresso">
+                        {g.hint}
+                      </p>
+                    )}
+                    <div className="flex flex-wrap gap-2">
+                      {options.map((o) => (
+                        <ChoicePill
+                          key={o.v}
+                          name={g.key}
+                          value={o.v}
+                          label={o.label}
+                          defaultChecked={cur(g.key) === o.v}
+                        />
+                      ))}
+                    </div>
+                  </fieldset>
+                );
+              })}
+              <label className="flex min-h-11 items-center gap-3 text-sm font-medium text-ink">
+                <input
+                  type="checkbox"
+                  name="home"
+                  value="1"
+                  defaultChecked={input.atHome}
+                  className={cn("h-5 w-5 accent-[var(--cherry)]", focusRing)}
+                />
+                Keep it at home
+              </label>
+            </div>
+            <button
+              type="submit"
+              className={cn(
+                "mt-10 bg-cherry px-8 py-4 font-semibold text-cream shadow-[4px_4px_0_var(--ink)] transition hover:-translate-y-0.5",
+                focusRing,
+              )}
+            >
+              {planLabel}
+            </button>
+          </form>
         </div>
       </section>
 
@@ -312,15 +382,24 @@ function Planner() {
             plan={plan}
             saved={!!saved}
             onShuffle={() => {
+              setInput((i) => {
+                const next = { ...i };
+                delete next.light;
+                return next;
+              });
               setSeed((x) => x + 1);
               setRestored(null);
+            }}
+            onLighter={(next) => {
+              setInput(next.input);
+              setRestored(next.ids);
             }}
             onSwap={(index) => {
               const alt = plan.slots[index]?.alternative;
               const mine = plan.slots[index]?.activity;
               if (alt && mine) setRestored(plan.ids.map((id) => (id === mine.id ? alt.id : id)));
             }}
-            onRelax={(patch) => change(patch)}
+            onRelax={(patch) => changeFromOutside(patch)}
             onToggleSave={() =>
               toggle({
                 key: `plan:${planUrl}`,

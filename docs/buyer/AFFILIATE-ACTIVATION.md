@@ -6,6 +6,8 @@ Plans Past Five ships **unmonetized**: plain Amazon search links, no tracking id
 
 Affiliate accounts belong to the person who applied. Amazon's Operating Agreement says it may not be assigned "without our express prior written approval" (https://affiliate-program.amazon.com/help/operating/agreement, read 2026-11-18), so treat the seller's account as non-transferable and apply in your own name. Plans Past Five uses Amazon Associates only (owner decision 2026-11-19). The facts recorded about Amazon, with sources, are in `src/data/affiliate-programs.ts` and `docs/commerce/affiliate-research.md`. The seller's master/portfolio accounts, ids and links are therefore deliberately not included, and nothing in this repo shares anything with another site.
 
+The step-by-step path, dates and the replacement of the "we don't currently earn" lines are in `docs/buyer/AMAZON-ASSOCIATES-PATH.md`.
+
 ## Where everything lives
 
 | What                                         | File                                                                                |
@@ -22,7 +24,7 @@ Affiliate accounts belong to the person who applied. Amazon's Operating Agreemen
 | Qualifying sales | The account must drive at least **three qualified sales within 180 days** of application (personal orders excluded). Until then the application is not fully accepted. | https://affiliate-program.amazon.com/help/node/topic/G8TW5AE9XL2VX9VM |
 | Site requirements | Robust original content (guideline: at least 10 posts), publicly available. | same page |
 | Attribution | 24-hour session; items added to cart count if ordered within 89 days of the click. | Program Policies (updated April 14, 2026), https://affiliate-program.amazon.com/help/operating/policies |
-| Commission rates | Rate card is in your signed-in account; NOT READ by Cowork. Amazon also restricts public communication about the Agreement, so do not publish rates or earnings. | Operating Agreement s.5 |
+| Commission rates | Rate card is in your signed-in account; NOT READ. Amazon also restricts public communication about the Agreement, so do not publish rates or earnings. | Operating Agreement s.5 |
 | Payment and tax | A tax interview and a payment method are required in Associates Central (details not read). | G8TW5AE9XL2VX9VM |
 | Disclosure sentence | "As an Amazon Associate I earn from qualifying purchases." shown clearly and prominently. | Operating Agreement s.5 (`AMAZON_ASSOCIATE_STATEMENT`) |
 | Links | Tag every link with your Associates ID; no redirecting links; do not encourage bookmarking Special Links; show prices only if Amazon serves them or via API. | Program Policies |

@@ -12,7 +12,6 @@ import { selectProducts, verifiedCatalog } from "@/data/catalog";
 import { images } from "@/data/images";
 import { site } from "@/config/site";
 import { seo, absoluteUrl } from "@/lib/seo";
-import { pinForHobby } from "@/lib/pins";
 import { HobbyMeta, ArticleCard, ProductCard, HobbyCard } from "@/components/cards/Cards";
 import { SaveButton } from "@/components/editorial/SaveButton";
 import { ShareButtons } from "@/components/editorial/ShareButtons";
@@ -42,7 +41,6 @@ export const Route = createFileRoute("/hobbies/$slug")({
       }.`,
       path: `/hobbies/${h.slug}`,
       ...(h.image ? { image: absoluteUrl(images[h.image].src) } : {}),
-      ...(pinForHobby(h.slug) ? { pinImage: pinForHobby(h.slug)! } : {}),
       noindex: !isHobbyIndexable(h.slug),
     });
   },

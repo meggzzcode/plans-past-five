@@ -100,3 +100,59 @@ export function seasonalHobbies(date: Date, list: Hobby[] = allHobbies, count = 
   }
   return picked;
 }
+
+/* ---------- This weekend: the same picks, rotated through the month ---------- */
+
+/** 1 to 5: which block of seven days of the month the date falls in. Deterministic, no ISO-week edge cases. */
+export const weekOfMonth = (d: Date): number => Math.floor((d.getDate() - 1) / 7) + 1;
+
+/**
+ * hashString plus a final avalanche step, so strings that differ only in their last characters (a
+ * week number) still land far apart in [0, 1).
+ */
+function spread(s: string): number {
+  let x = Math.floor(hashString(s) * 4294967296);
+  x ^= x >>> 16;
+  x = Math.imul(x, 0x85ebca6b);
+  x ^= x >>> 13;
+  x = Math.imul(x, 0xc2b2ae35);
+  x ^= x >>> 16;
+  return (x >>> 0) / 4294967296;
+}
+
+/** Extra points for hobbies tagged "weekend" (first session of 90 minutes or more, or out and about). */
+const WEEKEND_TAG_BONUS = 2;
+
+/**
+ * Up to `count` hobbies for "this weekend". Starts from the season's tag and category weights, adds
+ * a bonus for the existing "weekend" tag, and rotates with the month and the week of the month, so
+ * the set changes through the month without any backend or randomness. Never more than two of one
+ * category. The same date always gives the same answer.
+ */
+export function weekendHobbies(date: Date, list: Hobby[] = allHobbies, count = 4): Hobby[] {
+  const season = seasonOf(date);
+  const key = `${date.getFullYear()}-${date.getMonth()}-w${weekOfMonth(date)}`;
+  const scored = list
+    .map((h) => {
+      const base = seasonScore(h, season);
+      return {
+        h,
+        base,
+        score:
+          base +
+          (h.tags.includes("weekend") ? WEEKEND_TAG_BONUS : 0) +
+          spread(`${key}:${h.slug}`) * 4,
+      };
+    })
+    .filter((x) => x.base > 0)
+    .sort((a, b) => b.score - a.score || a.h.slug.localeCompare(b.h.slug));
+  const picked: Hobby[] = [];
+  const perCategory: Record<string, number> = {};
+  for (const { h } of scored) {
+    if (picked.length >= count) break;
+    if ((perCategory[h.category] ?? 0) >= 2) continue;
+    perCategory[h.category] = (perCategory[h.category] ?? 0) + 1;
+    picked.push(h);
+  }
+  return picked;
+}

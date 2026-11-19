@@ -1,6 +1,6 @@
 # Hosting and deployment
 
-**Hosting has not been chosen.** The repo does not show a production host, a deployed URL or a hosting account, and none is claimed here. This page lists what the repo needs and the generic options. Costs and free-tier limits are not stated because they were not verified (PENDING COWORK).
+**Hosting has not been chosen.** The repo does not show a production host, a deployed URL or a hosting account, and none is claimed here. This page lists what the repo needs and the generic options. Costs and free-tier limits are not stated because they were not verified (re-read live).
 
 ## What the repo needs (checked 2026-11-19)
 
@@ -24,8 +24,8 @@ bun run health:links
 
 | Option | Fit | Notes to verify |
 |---|---|---|
-| Cloudflare Workers with static assets | Matches the current build preset (`npx wrangler --cwd ./ deploy` is printed in `.output/nitro.json`) | Needs your own Cloudflare account and a project name. The generated config name in `.output/server/wrangler.json` comes from the seller's Lovable project; set your own name. Free tier and limits: PENDING COWORK |
-| Lovable hosting/publish | Repo is already connected to Lovable and syncs commits | Depends on the seller's Lovable account and workspace; not transferable by default. Check Lovable's current project-transfer and publishing terms (PENDING COWORK) |
+| Cloudflare Workers with static assets | Matches the current build preset (`npx wrangler --cwd ./ deploy` is printed in `.output/nitro.json`) | Needs your own Cloudflare account and a project name. The generated config name in `.output/server/wrangler.json` comes from the seller's Lovable project; set your own name. Free tier and limits: re-read live |
+| Lovable hosting/publish | Repo is already connected to Lovable and syncs commits | Depends on the seller's Lovable account and workspace; not transferable by default. Check Lovable's current project-transfer and publishing terms (re-read live) |
 | Other Node or edge hosts that run a Nitro server | Would need switching the Nitro preset (for example to a Node server) in config | Requires a code change and re-testing; keep `vite.config.ts` notes in mind (do not add duplicate plugins) |
 | Static export | Not currently supported | The site relies on SSR output; a static export would be a separate engineering task |
 
@@ -47,11 +47,13 @@ Do not pick a host because of this table; compare current pricing and terms from
 
 Git is the backup (`docs/buyer/SECURITY-AND-BACKUPS.md`). Redeploy a previous commit if a release breaks; do not rewrite published history if the repo remains connected to Lovable.
 
-## PENDING COWORK
+## Open items to check live
 
 1. Which host options currently support Nitro `cloudflare-module` output without code changes, and with what free-plan limits? (Official docs, dated.)
 2. Can a Lovable project be transferred or exported to a buyer's account, and how? (Official Lovable docs.)
 
 ## Netlify deploy budget (added 2026-11-19)
 
-Netlify's free plan has a monthly credit allowance (about 20 production deploys). `netlify.toml` therefore skips every build unless the latest commit message contains the deploy marker (square brackets around the word deploy). To publish: make a commit whose message ends with that marker and push it to the production branch, for example `git commit --allow-empty -m "Release: new articles [deploy]"`. Batch several edits into one release. Content saved through a CMS commits without the marker, so it will NOT go live until a release commit is pushed or you trigger a deploy by hand in Netlify (Deploys, Trigger deploy). Check Netlify's usage page monthly. Whether a skipped build costs credits has not been confirmed (Cowork to check).
+Credit cap, bandwidth cost and the recommended limit of 8 deploys a month: `docs/buyer/NETLIFY-CREDITS-AND-RELEASES.md`.
+
+Netlify's free plan has a monthly credit allowance (about 20 production deploys). `netlify.toml` therefore skips every build unless the latest commit message contains the deploy marker (square brackets around the word deploy). To publish: make a commit whose message ends with that marker and push it to the production branch, for example `git commit --allow-empty -m "Release: new articles [deploy]"`. Batch several edits into one release. Content saved through a CMS commits without the marker, so it will NOT go live until a release commit is pushed or you trigger a deploy by hand in Netlify (Deploys, Trigger deploy). Check Netlify's usage page monthly. Whether a skipped build costs credits has not been confirmed (to be checked live).

@@ -1,6 +1,6 @@
 # Editing articles and images without writing code
 
-Status 2026-11-19: **the content is now stored as data files that a free browser editor (Pages CMS) can change.** The conversion is done and the build checks every edit. One step is still open: nobody has yet signed in to Pages CMS with the owner's GitHub login and edited a real article through it. That first live test is Cowork task C17 in `docs/cowork/PLANS-PAST-FIVE-COWORK-TASKS.md`. Until C17 reports, treat the browser editor as "configured but not yet proven".
+Status 2026-11-19: **the content is now stored as data files that a free browser editor (Pages CMS) can change.** The conversion is done and the build checks every edit. One step is still open: nobody has yet signed in to Pages CMS with the owner's GitHub login and edited a real article through it. That first live test is a pending follow-up task listed in `docs/cowork` in `docs/cowork/PLANS-PAST-FIVE-COWORK-TASKS.md`. Until CMS login test reports, treat the browser editor as "configured but not yet proven".
 
 ## How it works
 
@@ -33,7 +33,7 @@ Step-by-step instructions for a non-technical owner: `docs/buyer/CMS-SETUP.md`.
 
 ## What to tell a buyer
 
-"Articles and pictures can be edited in a browser with Pages CMS (free, signs in with GitHub). Edits are checked automatically before the site is rebuilt, and a mistake leaves the live site unchanged. Hobbies, products and site settings are edited through other routes described in `docs/buyer/EDITING-WITHOUT-CODE.md`." Add "tested live with the owner's login" only after Cowork task C17 has reported success.
+"Articles and pictures can be edited in a browser with Pages CMS (free, signs in with GitHub). Edits are checked automatically before the site is rebuilt, and a mistake leaves the live site unchanged. Hobbies, products and site settings are edited through other routes described in `docs/buyer/EDITING-WITHOUT-CODE.md`." Add "tested live with the owner's login" only after a pending follow-up task listed in `docs/cowork` has reported success.
 
 ## Costs and trade-offs
 

@@ -191,7 +191,9 @@ export function targetMinutes(input: PlanInput): number | null {
 
 const rank: Record<ActivityEnergy, number> = { low: 0, medium: 1, high: 2 };
 
-type Relax = Partial<Record<"budget" | "setting" | "energy" | "who" | "vibe" | "home", true>>;
+type Relax = Partial<
+  Record<"budget" | "setting" | "energy" | "who" | "vibe" | "home" | "crossDay", true>
+>;
 
 const vibeSet = (v: Vibe): Vibe[] =>
   v === "cozy" || v === "relaxing" ? ["cozy", "relaxing"] : [v];
@@ -253,7 +255,8 @@ function score(a: Activity, input: PlanInput, arc: Arc = "only") {
   if (set.includes(a.vibes[0]!)) s += 1;
   if (input.energy && input.energy !== "any" && a.energy === input.energy) s += 2;
   if (!input.energy || input.energy === "any") {
-    if (arc === "last" && a.energy === "low") s += 2;
+    if (arc === "last" && a.energy === "low") s += 5;
+    if (arc === "first" && a.energy === "high") s += 2;
     if ((arc === "first" || arc === "middle") && a.energy !== "low") s += 1;
   }
   // A catch-all idea ("Drop-in class") ranks below a specific one that fits equally well.
@@ -340,14 +343,16 @@ function assemble(
   let nodes = 0;
   const cur: Stop[] = [];
   const used = new Set<string>();
+  // A plan stretched far past the chosen length is never "good enough", whatever it covers.
+  const tooLong = (stops: Stop[]) => aim !== null && spanOf(stops, defs) > aim * 1.5;
   const good = (stops: Stop[]) =>
-    aim === null ? stops.length === n : covered(stops, defs, input) >= aim * 0.9;
+    aim === null ? stops.length === n : covered(stops, defs, input) >= aim * 0.9 && !tooLong(stops);
 
   const dfs = (i: number, prevEnd: number | null, spent: number, skipped: SlotDef[]) => {
     if (nodes++ > NODE_LIMIT) return;
     if (i === n) {
       if (must && !used.has(must.id)) return;
-      const value = covered(cur, defs, input) * 100 + cur.length;
+      const value = covered(cur, defs, input) * 100 + cur.length - (tooLong(cur) ? 100_000 : 0);
       if (value > bestValue) {
         bestValue = value;
         best = [...cur];
@@ -360,8 +365,16 @@ function assemble(
     const sk = newDay ? [] : skipped;
     for (const a of lists[i]!) {
       if (used.has(a.id)) continue;
-      // Never the same kind of thing twice in one plan (no baking then cooking, on any day).
-      if (cur.some((c) => c.a.family === a.family)) continue;
+      // Never the same kind of thing twice in one plan (no baking then cooking). Only when that would
+      // leave a whole day empty is the same kind allowed on a different day (see assembleBest).
+      if (
+        cur.some(
+          (c) =>
+            c.a.family === a.family &&
+            (relax.crossDay ? (defs[c.slot]!.day ?? "") === (def.day ?? "") : true),
+        )
+      )
+        continue;
       if (cap !== null && spent + a.costMax > cap) continue;
       const at = place(a, def, pe, brk);
       if (!at) continue;
@@ -377,6 +390,23 @@ function assemble(
   };
   dfs(0, null, 0, []);
   return best;
+}
+
+/** Assembles with no repeated kinds anywhere in the plan, unless that leaves a day with nothing. */
+function assembleBest(
+  input: PlanInput,
+  defs: SlotDef[],
+  seed: number,
+  relax: Relax = {},
+  must?: Activity,
+): Stop[] {
+  const strict = assemble(input, defs, seed, relax, must);
+  const days = new Set(defs.map((d) => d.day ?? ""));
+  if (days.size < 2) return strict;
+  const filled = (st: Stop[]) => new Set(st.map((x) => defs[x.slot]!.day ?? "")).size;
+  if (filled(strict) === days.size) return strict;
+  const loose = assemble(input, defs, seed, { ...relax, crossDay: true }, must);
+  return filled(loose) > filled(strict) ? loose : strict;
 }
 
 /**
@@ -555,7 +585,7 @@ function relaxOptions(input: PlanInput, day: string): PlanRelax[] {
   const works = (patch: Partial<PlanInput>) => {
     const next = { ...input, ...patch };
     const d = slotsFor(next);
-    const stops = assemble(next, d, 0);
+    const stops = assembleBest(next, d, 0);
     return stops.some((st) => (d[st.slot]!.day ?? "") === day);
   };
   const out: PlanRelax[] = [];
@@ -606,7 +636,7 @@ function relaxOptions(input: PlanInput, day: string): PlanRelax[] {
 function shortNote(input: PlanInput, defs: SlotDef[], seed: number, span: number, aim: number) {
   const base = `You asked for ${lengthWord[input.length]}. We could fit about ${fmtDuration(span)} that works with your choices.`;
   for (const [k, label] of RELAX_TRIES) {
-    const stops = assemble(input, defs, seed, { [k]: true });
+    const stops = assembleBest(input, defs, seed, { [k]: true });
     if (spanOf(stops, defs) >= Math.min(aim * LENGTH_TOLERANCE, span + 60))
       return `${base} Try ${label} for more.`;
   }
@@ -701,7 +731,9 @@ function whyLine(input: PlanInput, stops: Stop[], cap: number | null, template?:
       ? "no stops fit yet"
       : `${n} ${n === 1 ? "stop" : "stops"}${n > 1 ? ` with at least ${breakFor(input)} minutes between them to get there and settle` : ""}`,
   );
-  parts.push(cap === null ? "a flexible budget" : cap === 0 ? "free" : `${fmtMoney(cap)} or less in total`);
+  parts.push(
+    cap === null ? "a flexible budget" : cap === 0 ? "free" : `${fmtMoney(cap)} or less in total`,
+  );
   if (normWhen(input.when) !== "weekend") parts.push("nothing that needs booking ahead");
   const who = whoPhrase[input.who];
   const lead = `Chosen for a ${vibeWord[input.vibe]} ${dayWord[normWhen(input.when)]} ${who}`;
@@ -837,11 +869,11 @@ function bestStops(
   seed: number,
   must?: Activity,
 ): { stops: Stop[]; widened: boolean } {
-  const strict = assemble(input, defs, seed, {}, must);
+  const strict = assembleBest(input, defs, seed, {}, must);
   const aim = targetMinutes(input);
   if (aim === null || spanOf(strict, defs) >= aim * LENGTH_TOLERANCE)
     return { stops: strict, widened: false };
-  const wide = assemble(input, defs, seed, { vibe: true }, must);
+  const wide = assembleBest(input, defs, seed, { vibe: true }, must);
   return spanOf(wide, defs) > spanOf(strict, defs)
     ? { stops: wide, widened: true }
     : { stops: strict, widened: false };
@@ -852,6 +884,34 @@ function bestStops(
  * If it cannot be placed within the budget and the stop windows, the plan is built without it.
  */
 export function makePlan(input: PlanInput, seed = 0, pin?: string | null): Plan {
+  const target = input.energy ?? "any";
+  // Every energy setting gives its own plan. Low-key, Medium, High energy and No preference are
+  // settled in that order: each one takes the first variation (up to four seeds along) whose ideas
+  // are not the same list as an earlier setting's plan. Small idea pools can still leave two settings
+  // with the same plan when nothing else fits, but a bigger pool never does.
+  const taken = new Set<string>();
+  for (const e of ENERGY_ORDER) {
+    const at = (k: number) => buildFor({ ...input, energy: e }, seed + k, pin);
+    let plan = at(0);
+    if (plan.filled > 0 && taken.has(plan.ids.join(","))) {
+      for (let k = 1; k <= 4; k++) {
+        const next = at(k);
+        const sane = next.targetMinutes === null || next.spanMinutes <= next.targetMinutes * 1.6;
+        if (next.filled > 0 && sane && !taken.has(next.ids.join(","))) {
+          plan = next;
+          break;
+        }
+      }
+    }
+    if (e === target) return { ...plan, seed };
+    if (plan.filled > 0) taken.add(plan.ids.join(","));
+  }
+  return buildFor(input, seed, pin);
+}
+
+const ENERGY_ORDER: readonly EnergyPref[] = ["low", "medium", "high", "any"];
+
+function buildFor(input: PlanInput, seed: number, pin?: string | null): Plan {
   const defs = slotsFor(input);
   const pinned = pin ? getActivity(pin) : undefined;
   if (!pinned) {
@@ -918,6 +978,8 @@ export type PlanSearch = Partial<{
   energy: string;
   seed: string;
   ids: string;
+  /** "1" when the form was submitted as a plain page load (before scripts ran): show the plan. */
+  go: string;
   /** "1" for a lighter plan (longer breaks between stops). */
   light: string;
   from: string;

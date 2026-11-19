@@ -1,6 +1,6 @@
 # Content management
 
-Articles and images are data files (`content/articles/*.json`, `content/images/*.json`) that a developer edits directly or a non-coder edits in Pages CMS (`docs/buyer/CMS-SETUP.md`, `docs/buyer/EDITING-WITHOUT-CODE.md`; first live login test is Cowork task C17). `bun run content:build` validates them and writes the generated files; it runs automatically before every build. Hobbies, products and settings remain code. After any change run:
+Articles and images are data files (`content/articles/*.json`, `content/images/*.json`) that a developer edits directly or a non-coder edits in Pages CMS (`docs/buyer/CMS-SETUP.md`, `docs/buyer/EDITING-WITHOUT-CODE.md`; first live login test is a pending follow-up task listed in `docs/cowork`). `bun run content:build` validates them and writes the generated files; it runs automatically before every build. Hobbies, products and settings remain code. After any change run:
 
 ```
 bunx vitest run

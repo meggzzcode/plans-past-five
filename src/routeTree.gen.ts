@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as AffiliateDisclosureRouteImport } from './routes/affiliate-disclosure'
 import { Route as AfterHoursRouteImport } from './routes/after-hours'
 import { Route as BetterTogetherRouteImport } from './routes/better-together'
+import { Route as ChangelogRouteImport } from './routes/changelog'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CorrectionsRouteImport } from './routes/corrections'
 import { Route as CreativeCornerRouteImport } from './routes/creative-corner'
@@ -63,6 +64,11 @@ const AfterHoursRoute = AfterHoursRouteImport.update({
 const BetterTogetherRoute = BetterTogetherRouteImport.update({
   id: '/better-together',
   path: '/better-together',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChangelogRoute = ChangelogRouteImport.update({
+  id: '/changelog',
+  path: '/changelog',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -197,6 +203,7 @@ export interface FileRoutesByFullPath {
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
   '/after-hours': typeof AfterHoursRoute
   '/better-together': typeof BetterTogetherRoute
+  '/changelog': typeof ChangelogRoute
   '/contact': typeof ContactRoute
   '/corrections': typeof CorrectionsRoute
   '/creative-corner': typeof CreativeCornerRoute
@@ -229,6 +236,7 @@ export interface FileRoutesByTo {
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
   '/after-hours': typeof AfterHoursRoute
   '/better-together': typeof BetterTogetherRoute
+  '/changelog': typeof ChangelogRoute
   '/contact': typeof ContactRoute
   '/corrections': typeof CorrectionsRoute
   '/creative-corner': typeof CreativeCornerRoute
@@ -262,6 +270,7 @@ export interface FileRoutesById {
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
   '/after-hours': typeof AfterHoursRoute
   '/better-together': typeof BetterTogetherRoute
+  '/changelog': typeof ChangelogRoute
   '/contact': typeof ContactRoute
   '/corrections': typeof CorrectionsRoute
   '/creative-corner': typeof CreativeCornerRoute
@@ -296,6 +305,7 @@ export interface FileRouteTypes {
     | '/affiliate-disclosure'
     | '/after-hours'
     | '/better-together'
+    | '/changelog'
     | '/contact'
     | '/corrections'
     | '/creative-corner'
@@ -328,6 +338,7 @@ export interface FileRouteTypes {
     | '/affiliate-disclosure'
     | '/after-hours'
     | '/better-together'
+    | '/changelog'
     | '/contact'
     | '/corrections'
     | '/creative-corner'
@@ -360,6 +371,7 @@ export interface FileRouteTypes {
     | '/affiliate-disclosure'
     | '/after-hours'
     | '/better-together'
+    | '/changelog'
     | '/contact'
     | '/corrections'
     | '/creative-corner'
@@ -393,6 +405,7 @@ export interface RootRouteChildren {
   AffiliateDisclosureRoute: typeof AffiliateDisclosureRoute
   AfterHoursRoute: typeof AfterHoursRoute
   BetterTogetherRoute: typeof BetterTogetherRoute
+  ChangelogRoute: typeof ChangelogRoute
   ContactRoute: typeof ContactRoute
   CorrectionsRoute: typeof CorrectionsRoute
   CreativeCornerRoute: typeof CreativeCornerRoute
@@ -455,6 +468,13 @@ declare module '@tanstack/react-router' {
       path: '/better-together'
       fullPath: '/better-together'
       preLoaderRoute: typeof BetterTogetherRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/changelog': {
+      id: '/changelog'
+      path: '/changelog'
+      fullPath: '/changelog'
+      preLoaderRoute: typeof ChangelogRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -641,6 +661,7 @@ const rootRouteChildren: RootRouteChildren = {
   AffiliateDisclosureRoute: AffiliateDisclosureRoute,
   AfterHoursRoute: AfterHoursRoute,
   BetterTogetherRoute: BetterTogetherRoute,
+  ChangelogRoute: ChangelogRoute,
   ContactRoute: ContactRoute,
   CorrectionsRoute: CorrectionsRoute,
   CreativeCornerRoute: CreativeCornerRoute,

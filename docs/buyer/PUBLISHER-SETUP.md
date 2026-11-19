@@ -33,4 +33,4 @@ Whichever you pick, state only facts: who owns the site, where, and how to reach
 
 ## Researching the filing
 
-Tell the assistant which state (or country) you are in, then run Cowork task C19 in `docs/cowork/PLANS-PAST-FIVE-COWORK-TASKS.md`. It reads the current official rules for DBA and LLC filing there, with dates, and reports them. Nothing is filed or paid for by the assistant.
+Tell the assistant which state (or country) you are in, then run a pending follow-up task listed in `docs/cowork` in `docs/cowork/PLANS-PAST-FIVE-COWORK-TASKS.md`. It reads the current official rules for DBA and LLC filing there, with dates, and reports them. Nothing is filed or paid for by the assistant.

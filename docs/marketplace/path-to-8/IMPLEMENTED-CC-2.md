@@ -1,0 +1,43 @@
+# Implemented: CC-2 (share, calendar, pins, manifest, near me, weekend strip)
+
+Scope: PATH-TO-8 Phase 0 steps 0.7, 0.8, 0.9 (manifest part) and the "near-me postcode" step from P3. Checked 2026-11-19 with `tsc`, `eslint --quiet`, `vitest` and Playwright at 390 and 1280 px (no horizontal scroll, no console errors). No analytics, accounts, service worker, new Vite plugin or backend were added.
+
+## Done
+
+1. Add to calendar (`src/lib/ics.ts`, `src/components/share/AddToCalendar.tsx`)
+   - `.ics` built in the browser (RFC 5545): CRLF, 75-octet line folding that never splits a character, TEXT escaping, one VEVENT per activity, stable UID (hash of title, start and length), UTC DTSTAMP, floating local DTSTART/DTEND (no `Z`, no TZID), a 1-hour reminder per event.
+   - Google Calendar template link, one per stop (Google takes one event at a time). Links open in a new tab with `rel="noopener noreferrer"`.
+   - Presets: "Saturday morning" (next Saturday 10:00; today if it is Saturday before 10:00) and "This evening" (18:00 today, then the next half hour at least 30 minutes away, then 18:00 tomorrow after 21:00). Plan gaps are kept, and Sunday stops stay on Sunday.
+   - Wired into planner results (`PlanResult`), saved plans (`/saved`, `SavedExtras`) and each Tonight pick (`TonightExtras`, defaults to "This evening").
+   - Tests: `src/test/ics.test.ts` parses the generated file (unfold, components, unescape) and checks floating times, UIDs, presets, real planner output, Sunday handling, Google URL.
+2. Pinterest kit (`src/data/pins.ts`, `src/lib/pins.ts`, `ShareButtons`)
+   - `pinFiles`: page path to 1000 x 1500 pin files, generated from `design/pins/manifest.json` (all 88 pins, 40 pages: articles, tools, shop). Hobby pages borrow the pin of their first published guide that has one; any other page falls back to its hero.
+   - The Pin button now sends the mapped pin as `media` (hero only as fallback) and, on articles, the title plus the dek as the description.
+   - Hobby pages now set their own hero as `og:image` instead of the shared default; noindex hobby pages still emit no image. Articles already had `og:type=article` and a hero `og:image`; this is now covered by a test for every published article. The root head still sets no image.
+   - Tests: `src/test/pins.test.tsx` (data equals manifest, every file exists and is 1000 x 1500, CSV lists the same files and destinations, lookup and fallback, route heads for every article and hobby, noindex has no image, Pin button media).
+3. Manifest and icons
+   - `public/manifest.webmanifest` (name and description from site settings, `theme_color` #B83F43 cherry, `background_color` #FFF8EF cream, 192 and 512 PNG icons plus the SVG, three shortcuts). Icons copied from `design/brand/exports/favicon` into `public/icons/` (plus 180 px apple-touch-icon). Linked from `__root.tsx` head with `apple-touch-icon`; the existing `theme-color` meta is unchanged.
+   - Tests: `src/test/manifest.test.ts` (JSON fields match site and palette, icons exist at the stated sizes, shortcuts are real routes, root head links, no service worker and no PWA plugin).
+4. Near me (`src/lib/near.ts`, `src/data/near-terms.ts`, `src/components/share/Near.tsx`)
+   - Optional "Find it near you" box on planner results, saved page and Tonight. Stored only in localStorage (`ppf:near-place:v1`), sanitised, copy says "Stays on this device". No geolocation API (the test fails the build if one appears) and no network call.
+   - Links are `https://www.google.com/maps/search/?api=1&query=<term> near <place>`, new tab, `rel="noopener noreferrer"`, labelled as opening Google Maps. Terms are generic search phrases in an editable data file, only for activities done out (home activities get none). Hobby and Tonight picks derive their term from the matching activity. No venue claims.
+   - `/privacy` has a short paragraph on this and on calendar files.
+   - Tests: `src/test/near.test.tsx`.
+5. This weekend strip (`src/lib/season.ts`, `SeasonStrip.tsx`)
+   - `weekendHobbies(date)`: season tag and category weights, a bonus for the existing `weekend` tag, rotated by month and week of the month (days 1-7, 8-14, ...) with a mixed hash. Deterministic, at most two per category. Copy says "This weekend, try one for autumn" and the kicker shows the week; it does not claim "updated weekly". Link to "Plan the whole weekend". Existing `seasonalHobbies` is unchanged.
+   - Tests added to `src/test/season.test.ts`.
+
+## Skipped or deferred, with reasons
+
+- `pinterest:description` meta: not in Pinterest's article rich-pin spec (it asks for `og:title`, `og:description`, `og:type`), so adding it would be inventing a tag. The Pin button already sends its own description.
+- A second `og:image` carrying the 2:3 pin: TanStack head de-duplicates meta with the same `property`, so only one `og:image` can be emitted. Kept the landscape hero (best for chat and social cards); Pinterest saves go through the Pin button, which uses the pin. Switching a route to the pin is one line in its `head()` if the owner prefers it.
+- Pinterest rich-pin validation: needs the live domain (Phase 3 re-check).
+- Hobby pages with no published guide and no pin use the hero (not 2:3). A real hobby pin would need new images (design task).
+- `.ics` on-device only; tested by parsing, not on a real iPhone or Google Calendar (needs a device).
+- Southern-hemisphere toggle for the season strip and a per-pick calendar button on the strip: not requested here, left out to keep the strip small.
+- Install hint on `/saved`, Eventbrite and Meetup links, WhatsApp link: out of scope.
+- Owner still to confirm that a free browser-generated `.ics` is fine under the "no printables" rule (P3 step 1).
+
+## Touched outside the owned list (small edits)
+
+`src/routes/saved.tsx`, `src/routes/tools.tonight.tsx`, `src/routes/privacy.tsx`, `src/routes/hobbies.$slug.tsx`, `src/routes/journal.$slug.tsx` (Pin description), `src/components/planner/PlanResult.tsx` (three insertions: calendar, near box, near link per card). Merge these by hand if the planner or article agents changed the same files.

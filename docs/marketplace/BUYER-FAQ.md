@@ -24,9 +24,9 @@ Status: DRAFT, 2026-11-19. Flippa rules were researched on 2026-11-18 (FLIPPA-RE
 
 **Are the legal pages ready?** No. Privacy and Terms are starter text. Get them reviewed for your jurisdiction and your actual practices. Owner name and jurisdiction fields in `src/config/site.ts` are empty.
 
-**How many articles are published?** 27 files are marked `status: "published"`; 5 more are drafts and there are 2 outline-only entries. "Published" means the article was source-checked by Cowork (2026-11-18) and set to published on the branch. It does NOT mean deployed: nothing is live. Of the 27, the 4 originally published articles have NOT been source-checked yet (Cowork task C4 is still to do for them); the other 23 were. The 5 drafts were checked and left not ready. Source-checking is a review of claims against sources, not a guarantee that every statement is correct.
+**How many articles are published?** 27 files are marked `status: "published"`; 7 more are drafts and there are 2 outline-only entries. "Published" means the article was source-checked (2026-11-18) and set to published on the branch. It does NOT mean deployed: nothing is live. Of the 27, the 4 originally published articles have NOT been source-checked yet (a pending follow-up task listed in `docs/cowork` is still to do for them); the other 23 were. The 5 drafts were checked and left not ready. Source-checking is a review of claims against sources, not a guarantee that every statement is correct.
 
-**Are there verified products?** Yes, in a limited sense: the catalog holds 44 records, 37 verified and 7 candidates that never display. "Verified" means Cowork opened the Amazon listing and the record was reviewed; the links are ordinary Amazon links. Nobody on this project has bought or tested these products, and most records still say the manufacturer page was not checked. Product research (C3) continues toward about 60 products. Product-type records still link to Amazon searches. Only 7 of the 15 starter kits have any verified product.
+**Are there verified products?** Yes, in a limited sense: the catalog holds 62 records, 37 verified (29 shown, 8 on editorial hold) and 25 candidates that never display. "Verified" means Cowork opened the Amazon listing and the record was reviewed; the links are ordinary Amazon links. Nobody on this project has bought or tested these products, and most records still say the manufacturer page was not checked. Product research  continues toward about 60 products. Product-type records still link to Amazon searches. Only 7 of the 15 starter kits have any verified product.
 
 **What is not proven?** Demand, traffic, search rankings, conversion, affiliate earnings, Pinterest performance, and whether any program will approve the site. Hypothetical forecasts are not evidence.
 
@@ -35,3 +35,18 @@ Status: DRAFT, 2026-11-19. Flippa rules were researched on 2026-11-18 (FLIPPA-RE
 **Is the technical state tested?** 250 automated tests passed (15 test files) and typecheck was clean on 2026-11-19. A production build and live QA have not been recorded.
 
 **What is the price?** Not set. See PRICING-STRATEGY.md; Flippa fee and pricing-rule facts are recorded there with sources; no verified comparable sale was found, and the owner's cash costs are UNCONFIRMED. No price is guaranteed and a sale may not happen. Under Flippa's rules a site without revenue has a maximum asking or reserve price (see PRICING-STRATEGY.md).
+
+
+## What we do not claim
+
+Keep this list with the listing. If a statement below becomes true, it needs evidence first (a dated screenshot, a receipt or a written record), and this list must be edited, not ignored.
+
+- **No traffic.** The site has no visitor history and no analytics. We state no visitor, ranking or audience figure.
+- **No revenue.** The site has earned nothing.
+- **No approved affiliate account.** Amazon Associates is not applied for and not approved. See `docs/buyer/AMAZON-ASSOCIATES-PATH.md`. The seller's own accounts are not included.
+- **No claim of indexing before Search Console shows it.** Say "submitted" at most; say "indexed" only for pages the Console lists as indexed, with the date.
+- **No exclusive or copyrighted images.** The site's images are AI-generated; no exclusivity or registrable copyright is promised, and tool terms on transfer are unverified. See `docs/content/IMAGE-LICENCE-LEDGER.md`.
+- **No trademark clearance.** A name knockout search is not clearance (`docs/NAME-CHECK-planspastfive.md`).
+- **No legal review.** Privacy, Terms, disclosure and editorial pages are starter text and have not been reviewed by a lawyer.
+- **No no-code editing of hobbies, products or config.** Articles can be edited through a free browser editor once it is connected and tested (`docs/buyer/EDITING-WITHOUT-CODE.md`); hobbies, products, kits and site settings are code or data files and need a developer or an AI coding tool.
+- **Not live.** Do not call the site live until it is deployed, the URL works and production QA is recorded.

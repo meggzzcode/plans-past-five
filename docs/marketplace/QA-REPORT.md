@@ -52,7 +52,7 @@ Targets: LCP 2.5 s or less, CLS 0.1 or less. INP: not measured (real-user data o
 | Quiz                      | 1.9 s              | 1.9 s                       | 0.003              | 0 ms       | 531 KB            | 0              | 328 KB |
 | Shop                      | 1.7 s              | 1.7 s                       | 0.007              | 0 ms       | 495 KB            | 526 KB         | 328 KB |
 
-Unthrottled, all four pages: LCP 0.16 to 0.44 s, CLS 0 to 0.016 (mobile and 1280 desktop). CSS is 96 KB on every page. **Result: CLS passes everywhere. LCP passes unthrottled; on the throttled mobile profile home (about 2.9 s) and the article (4.7 to 5.6 s) miss 2.5 s in this lab, mostly because the uncompressed 500 KB of JS plus 400 KB of fonts share a 1.6 Mbps link.** I did not get a compressed-server rerun finished, so the production-like figure is unmeasured. Re-test on the real host (Cowork C9).
+Unthrottled, all four pages: LCP 0.16 to 0.44 s, CLS 0 to 0.016 (mobile and 1280 desktop). CSS is 96 KB on every page. **Result: CLS passes everywhere. LCP passes unthrottled; on the throttled mobile profile home (about 2.9 s) and the article (4.7 to 5.6 s) miss 2.5 s in this lab, mostly because the uncompressed 500 KB of JS plus 400 KB of fonts share a 1.6 Mbps link.** I did not get a compressed-server rerun finished, so the production-like figure is unmeasured. Re-test on the real host (a pending follow-up task).
 
 Largest bottlenecks, in order:
 
@@ -75,7 +75,7 @@ All passed at both widths: quiz start to result (keyboard only), result to plann
 
 `bunx prettier --write` on changed files, `bunx eslint .` (0 errors, 8 pre-existing warnings in `ui/`), `bunx tsc --noEmit`, `bunx vitest run` (14 files, 235 tests, including new `src/test/a11y.test.ts`), `bunx vite build`: all pass.
 
-## 6. Remaining for production QA (Cowork C9)
+## 6. Remaining for production QA (a pending follow-up task)
 
 - Real-host run of Lighthouse or PageSpeed and WebPageTest with compression and CDN caching; confirm LCP and CLS on the live domain. Real-user Core Web Vitals (including INP) only after traffic, via Search Console or analytics.
 - Decide on self-hosted fonts (largest lab bottleneck) and WebP/AVIF images.

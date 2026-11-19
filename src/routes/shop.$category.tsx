@@ -4,7 +4,6 @@ import { verifiedCatalog, selectProducts } from "@/data/catalog";
 import { collectionGuide } from "@/lib/collection-guide";
 import { images } from "@/data/images";
 import { site } from "@/config/site";
-import { pinFor } from "@/lib/pins";
 import { seo } from "@/lib/seo";
 import { ProductCard, CollectionCard, ArticleCard } from "@/components/cards/Cards";
 import { Kicker, toneBg } from "@/components/editorial/Section";
@@ -65,7 +64,6 @@ export const Route = createFileRoute("/shop/$category")({
       title: `${c.name}: ${c.dek}`,
       description: c.intro,
       path: `/shop/${c.slug}`,
-      ...(pinFor(`/shop/${c.slug}`) ? { pinImage: pinFor(`/shop/${c.slug}`)! } : {}),
     });
   },
   component: CollectionPage,

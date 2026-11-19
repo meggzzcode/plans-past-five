@@ -67,6 +67,12 @@ export function Footer() {
             >
               {NAMES.howWeMake}
             </Link>
+            <Link
+              to="/changelog"
+              className="inline-flex min-h-11 items-center underline underline-offset-[3px] hover:text-butter"
+            >
+              What changed
+            </Link>
           </span>
           <span className="flex items-center gap-2">
             <Star className="h-3 w-3 text-butter" /> {site.slogan}

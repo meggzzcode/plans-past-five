@@ -125,6 +125,6 @@ Whether Flippa computes the success fee on the final sale price in exactly this 
 
 ## Pending before any price is set
 
-- C7 is done (Cowork, 2026-11-18) but left open: verified completed comparable sales (none found), the live fee schedule (sources conflict), the cap versus Projects & Concepts conflict, listing field and handover rules (NOT READ), other marketplaces (NOT researched).
+- marketplace research is done (Cowork, 2026-11-18) but left open: verified completed comparable sales (none found), the live fee schedule (sources conflict), the cap versus Projects & Concepts conflict, listing field and handover rules (NOT READ), other marketplaces (NOT researched).
 - NEEDS OWNER: cash costs (A), hours (B), floor, and whether the domain is included.
 - Re-run the calculator against the live fee page at listing time. Any asking price must respect Flippa's pre-revenue price rule above.

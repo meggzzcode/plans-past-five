@@ -1,38 +1,41 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import { MONTHS, SEASON_COPY, seasonOf, seasonalHobbies } from "@/lib/season";
+import { MONTHS, SEASON_COPY, seasonOf, weekOfMonth, weekendHobbies } from "@/lib/season";
 import { SaveButton } from "@/components/editorial/SaveButton";
 
 /**
- * "This season": hobbies picked from the current month with the existing hobby tags. Rendered after
- * mount (the month is a browser fact), with its space reserved so nothing jumps.
+ * "This weekend": hobbies picked with the existing hobby tags for the current season, rotating by
+ * month and week of the month (so it changes through the month, never at random). Rendered after
+ * mount (the date is a browser fact), with its space reserved so nothing jumps.
  */
 export function SeasonStrip({ now }: { now?: Date }) {
   const [date, setDate] = useState<Date | null>(now ?? null);
   useEffect(() => {
     if (!now) setDate(new Date());
   }, [now]);
-  const picks = date ? seasonalHobbies(date, undefined, 4) : [];
+  const picks = date ? weekendHobbies(date, undefined, 4) : [];
   const copy = date ? SEASON_COPY[seasonOf(date)] : null;
   return (
     <section
       className="mx-auto mt-12 max-w-7xl px-5 md:mt-16 md:px-8"
-      aria-labelledby="this-season"
+      aria-labelledby="this-weekend"
       data-testid="season-strip"
     >
       <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-1">
         <div>
           <p className="kicker text-cherry">
-            {date ? `${MONTHS[date.getMonth()]} · this season` : "This season"}
+            {date
+              ? `${MONTHS[date.getMonth()]} · week ${weekOfMonth(date)} · this weekend`
+              : "This weekend"}
           </p>
-          <h2 id="this-season" className="mt-1 text-2xl leading-tight md:text-4xl">
+          <h2 id="this-weekend" className="mt-1 text-2xl leading-tight md:text-4xl">
             {copy ? (
               <>
-                Good for <em className="text-cherry">{copy.label}</em>
+                This weekend, try one for <em className="text-cherry">{copy.label}</em>
               </>
             ) : (
-              "Good for right now"
+              "This weekend, try one of these"
             )}
           </h2>
         </div>
@@ -43,7 +46,21 @@ export function SeasonStrip({ now }: { now?: Date }) {
           All hobbies <ArrowRight className="ml-1 h-4 w-4" />
         </Link>
       </div>
-      <p className="mt-1 min-h-6 text-espresso">{copy?.line}</p>
+      <p className="mt-1 min-h-6 text-espresso">
+        {copy?.line}
+        {copy && (
+          <>
+            {" "}
+            <Link
+              to="/make-plans"
+              search={{ when: "weekend" }}
+              className="font-semibold text-cherry underline underline-offset-4"
+            >
+              Plan the whole weekend
+            </Link>
+          </>
+        )}
+      </p>
       <ul className="mt-4 grid min-h-[7rem] grid-cols-1 gap-3 min-[480px]:grid-cols-2 lg:grid-cols-4 lg:gap-5">
         {picks.map((h) => (
           <li key={h.slug} className="relative bg-cream shadow-[var(--shadow-paper)]">

@@ -29,6 +29,7 @@ import {
   ShoppingBag,
 } from "lucide-react";
 import { SaveButton } from "./SaveButton";
+import { openAndScrollTo } from "@/lib/reading";
 import { AffiliateNote } from "./AffiliateNote";
 
 export function ArticleBody({ blocks, articleSlug }: { blocks: Block[]; articleSlug?: string }) {
@@ -51,13 +52,134 @@ export function ArticleBody({ blocks, articleSlug }: { blocks: Block[]; articleS
     b.type === "starterKit" || b.type === "shopHobby" ? verifiedFor(b, slug, used) : null,
   );
   const heavy = heavyCallouts(blocks);
+  const firstShop = blocks.findIndex(isShopBlock);
+  const view = (i: number) => {
+    const node = (
+      <BlockView key={i} b={blocks[i]!} verified={legacy[i] ?? null} heavy={heavy.has(i)} />
+    );
+    // The first shop block is the target of the "Skip to shopping" link.
+    return i === firstShop ? (
+      <div key={i} id={SHOP_ANCHOR} className="scroll-mt-40 lg:scroll-mt-28">
+        {node}
+      </div>
+    ) : (
+      node
+    );
+  };
+  const sections = readingSections(blocks);
   return (
-    <div className="prose-editorial article-flow">
-      {blocks.map((b, i) => (
-        <BlockView key={i} b={b} verified={legacy[i] ?? null} heavy={heavy.has(i)} />
-      ))}
+    <div className="prose-editorial article-flow" data-reading-root>
+      <SectionReader />
+      {sections.map((sec, k) =>
+        sec.fold ? (
+          <details
+            key={k}
+            open
+            className="article-section"
+            data-collapsible=""
+            data-section-index={k}
+          >
+            <summary>
+              <div className="min-w-0 flex-1">{view(sec.start)}</div>
+              <ChevronDown aria-hidden className="chev h-5 w-5 shrink-0 text-cherry" />
+            </summary>
+            <div className="article-section-body">
+              {Array.from({ length: sec.end - sec.start - 1 }, (_, j) => view(sec.start + 1 + j))}
+            </div>
+          </details>
+        ) : (
+          Array.from({ length: sec.end - sec.start }, (_, j) => view(sec.start + j))
+        ),
+      )}
     </div>
   );
+}
+
+/** Id of the first shopping block on an article page, the target of the "Skip to shopping" link. */
+export const SHOP_ANCHOR = "shopping";
+
+const isShopBlock = (b: Block) =>
+  b.type === "starterKit" ||
+  b.type === "shopHobby" ||
+  b.type === "shopTheArticle" ||
+  b.type === "shopMyHobby";
+
+/** True when the article has a shopping block, so a page can offer a "Skip to shopping" link. */
+export const hasShopBlock = (blocks: Block[]) => blocks.some(isShopBlock);
+
+/** Sections with at least this many words, or this many blocks, are long enough to fold on a phone. */
+const LONG_WORDS = 160;
+const LONG_BLOCKS = 6;
+/** An article needs at least this many long sections before any are folded. */
+const MIN_FOLDED = 2;
+
+const blockWords = (b: Block): number => {
+  switch (b.type) {
+    case "p":
+    case "quote":
+    case "h3":
+      return wc(b.text);
+    case "list":
+      return b.items.reduce((n, t) => n + wc(t), 0);
+    case "item":
+      return wc(b.title) + wc(b.note);
+    default:
+      return 30;
+  }
+};
+
+export type ReadingSection = { start: number; end: number; fold: boolean };
+
+/**
+ * Splits an article into the text before its first heading and one section per h2. A section is
+ * "long" (and can fold on a phone) when it has many words or blocks. Nothing is removed: folded
+ * sections stay in the page, only collapsed by a native details element.
+ */
+export function readingSections(blocks: Block[]): ReadingSection[] {
+  const out: ReadingSection[] = [];
+  let start = 0;
+  blocks.forEach((b, i) => {
+    if (b.type === "h2" && i > start) {
+      out.push({ start, end: i, fold: false });
+      start = i;
+    }
+  });
+  if (blocks.length > start) out.push({ start, end: blocks.length, fold: false });
+  const long = out.filter((sec) => {
+    if (blocks[sec.start]?.type !== "h2") return false;
+    const body = blocks.slice(sec.start + 1, sec.end);
+    return body.length >= LONG_BLOCKS || body.reduce((n, b) => n + blockWords(b), 0) >= LONG_WORDS;
+  });
+  if (long.length >= MIN_FOLDED) for (const sec of long) sec.fold = true;
+  return out;
+}
+
+/**
+ * Phone reading mode, after hydration: the first long section stays open and the rest fold, unless
+ * the address points inside one. Everything stays in the page (and open without scripts, on desktop
+ * and for search engines). Links to #section or the shop block open the section they point into.
+ */
+function SectionReader() {
+  useEffect(() => {
+    const root = document.querySelector<HTMLElement>("[data-reading-root]");
+    if (!root) return;
+    const all = [...root.querySelectorAll<HTMLDetailsElement>("details[data-collapsible]")];
+    const openFor = (hash: string) => {
+      if (hash.length < 2) return;
+      try {
+        openAndScrollTo(decodeURIComponent(hash.slice(1)));
+      } catch {
+        // A malformed address hash: nothing to open.
+      }
+    };
+    const phone = window.matchMedia?.("(max-width: 767px)").matches;
+    if (phone) all.slice(1).forEach((d) => (d.open = false));
+    openFor(window.location.hash);
+    const onHash = () => openFor(window.location.hash);
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
+  return null;
 }
 
 /**
@@ -296,7 +418,7 @@ function BlockView({
     }
     case "h2":
       return (
-        <h2 id={b.id} className="scroll-mt-28">
+        <h2 id={b.id} className="scroll-mt-40 lg:scroll-mt-28">
           <Inline text={b.text} />
         </h2>
       );

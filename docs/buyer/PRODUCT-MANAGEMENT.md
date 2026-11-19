@@ -5,7 +5,7 @@ Two product layers exist. Know which one you are editing.
 | Layer | File | What it is | Public behavior |
 |---|---|---|---|
 | Product TYPES | `src/data/products.ts` | "A beginner watercolor set": 36 records across 8 collections (pottery-era, creative-girl, sporty-girl, girls-night-in, bookish-girl, little-adventures, journaling-era, cozy-after-hours) | Cards link to an ordinary Amazon search ("Browse options on Amazon") |
-| Verified catalog | `src/data/catalog.ts` + generated `src/data/catalog.generated.ts` | Specific, researched products with ASIN and ordinary URL | 44 records on 2026-11-19: 37 `verified`, 7 `candidate`. Only `status: "verified"` records that pass validation ever render. Verified means the Amazon listing was checked, not that the product was tested; links are ordinary non-affiliate Amazon links. An empty catalog still falls back to rendering nothing |
+| Verified catalog | `src/data/catalog.ts` + generated `src/data/catalog.generated.ts` | Specific, researched products with ASIN and ordinary URL | 62 records on 2026-11-19: 37 `verified` (29 shown, 8 on editorial hold), 25 `candidate` (never shown). Only `status: "verified"` records that pass validation ever render. Verified means the Amazon listing was checked, not that the product was tested; links are ordinary non-affiliate Amazon links. An empty catalog still falls back to rendering nothing |
 | Kits | `src/data/kits.ts` | 15 kits as slots filled by verified products | A kit renders only when a verified product fills a slot; 7 of 15 kits have at least one (`docs/commerce/STARTER-KITS.md`) |
 
 Counts checked 2026-11-19.
@@ -45,4 +45,4 @@ Keep `lastVerified` current. Recheck listings before updating an article and dur
 
 ## Not included
 
-Prices, stock and ratings are never stored. If you want them shown, you must read the program's current terms first (PENDING COWORK) and change the validators knowingly. This is not recommended.
+Prices, stock and ratings are never stored. If you want them shown, you must read the program's current terms first (re-read live) and change the validators knowingly. This is not recommended.

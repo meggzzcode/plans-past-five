@@ -1,6 +1,6 @@
 # Suggested post-sale handover terms
 
-**This is a suggestion, not legal advice.** The owner and a lawyer must review and adapt it. Marketplace rules may also apply: Flippa's handover and domain-transfer rules were NOT READ by Cowork (FLIPPA-RESEARCH.md), and its terms say sellers must not circumvent the platform (https://flippa.com/terms-of-service, read 2026-11-18). No indefinite free support.
+**This is a suggestion, not legal advice.** The owner and a lawyer must review and adapt it. Marketplace rules may also apply: Flippa's handover and domain-transfer rules were NOT READ (FLIPPA-RESEARCH.md), and its terms say sellers must not circumvent the platform (https://flippa.com/terms-of-service, read 2026-11-18). No indefinite free support.
 
 ## Suggested terms
 

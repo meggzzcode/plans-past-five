@@ -4,26 +4,32 @@ Plans Past Five is a frontend-only website for women who want hobbies, weekend p
 
 ## Read in this order
 
+0. `docs/buyer/FRESH-CLONE-LOG.md`: proof the repo installs, tests, type-checks, lints and builds from a clean export.
 1. `docs/buyer/BUSINESS-OVERVIEW.md`: what the business is and is not.
 2. `docs/buyer/WEBSITE-ARCHITECTURE.md`: how the code is organized.
 3. `docs/buyer/ACCOUNT-DEPENDENCIES.md` and `docs/buyer/TRANSFER-CHECKLIST.md`: what you get and how handover works.
-4. `docs/buyer/HOSTING-AND-DEPLOYMENT.md` and `docs/buyer/DOMAIN-AND-EMAIL.md`: getting it online.
-5. `docs/buyer/AFFILIATE-ACTIVATION.md` (long form) and `docs/buyer/AFFILIATE-SETUP.md` (checklist): how monetization would work with YOUR accounts.
+4. `docs/buyer/HOSTING-AND-DEPLOYMENT.md`, `docs/buyer/NETLIFY-CREDITS-AND-RELEASES.md` (300 credits a month; at most 8 deploys) and `docs/buyer/DOMAIN-AND-EMAIL.md`: getting it online.
+5. `docs/buyer/AMAZON-ASSOCIATES-PATH.md` (the path and the dated rules), `docs/buyer/AFFILIATE-ACTIVATION.md` (long form) and `docs/buyer/AFFILIATE-SETUP.md` (checklist): how monetization would work with YOUR accounts.
 6. `docs/buyer/CONTENT-MANAGEMENT.md`, `docs/buyer/PRODUCT-MANAGEMENT.md`, `docs/buyer/CONTENT-ROADMAP.md`: running content.
 7. `docs/buyer/ANALYTICS-SETUP.md`, `docs/buyer/SEO-GUIDE.md`, `docs/buyer/MARKETING-ROADMAP.md`: getting found and measuring.
 8. `docs/buyer/OPERATING-COSTS.md`, `docs/buyer/SECURITY-AND-BACKUPS.md`, `docs/buyer/WEEKLY-MAINTENANCE.md`, `docs/buyer/MONTHLY-MAINTENANCE.md`, `docs/buyer/TROUBLESHOOTING.md`.
 9. `docs/buyer/BUYER-90-DAY-PLAN.md`: a suggested first 90 days.
 
-Other docs in the repo: `CLAUDE-HANDOFF.md` (developer handoff), `AGENTS.md` (project rules), `docs/BRAND-GUIDE.md`, `docs/content/*` (editorial system), `docs/commerce/*` (product and kit research), `docs/marketing/*` (Pinterest and distribution), `docs/IMAGE-LICENSES.md`, `docs/SOP-*.md` (publish, corrections, link checks).
+Other docs in the repo: `CLAUDE-HANDOFF.md` (developer handoff), `AGENTS.md` (project rules), `docs/BRAND-GUIDE.md`, `docs/content/*` (editorial system), `docs/commerce/*` (product and kit research), `docs/marketing/*` (Pinterest and distribution), `docs/IMAGE-LICENSES.md`, `docs/content/IMAGE-LICENCE-LEDGER.md`, `docs/SOP-*.md` (publish, corrections, link checks).
 
-## Quick facts (checked 2026-11-19)
+## Quick facts (counted 2026-11-19 from the repo; re-run the commands if the date is old)
 
 - Stack: TanStack Start (React 19, TypeScript, Tailwind v4), built with Vite. Package manager: Bun (`bun.lock`).
 - No database, accounts, payments, AI or server secrets. Saved items live in each visitor's browser.
-- Content is typed local data in `src/content` and `src/data`; brand copy lives in `src/config/site.ts`; Amazon and other retailer links are built only in `src/config/affiliate.ts`.
-- The site ships **unmonetized**: plain search links, no tracking ids, a disclosure that says links currently earn nothing.
-- 27 articles are marked published (23 source-checked by Cowork on 2026-11-18; the 4 originals are not source-checked yet); 5 remain drafts. Published means set to published on the branch, not deployed: nothing is live. Drafts are never public (`docs/content/ARTICLE-ROADMAP.md`).
-- Tests: `bunx vitest run` (523 tests in 34 files passing on 2026-11-19).
+- Content is typed local data in `src/content`, `content/articles` and `src/data`; brand copy lives in `src/config/site.ts`; Amazon and other retailer links are built only in `src/config/affiliate.ts`.
+- The site ships **unmonetized**: ordinary Amazon links, no tracking ids, and a disclosure that says links currently earn nothing. How that changes: `docs/buyer/AMAZON-ASSOCIATES-PATH.md`.
+- Articles: **27 published, 7 drafts** (`node scripts/build-content.mjs` prints the count). 23 were source-checked on 2026-11-18 and show a "facts last checked" date; the 4 originals have source-check notes in `docs/content/verification/` but no date shown on their pages yet. Published means set to published in the repo, not deployed: nothing is live. Drafts are never public.
+- Hobbies: **43** (`src/data/hobbies.ts`). Shop collections: **8**.
+- Product records: **62** in `src/data/catalog.generated.ts`: 37 verified (29 shown, 8 on editorial hold) and 25 candidates (never shown). Kits: **8** collection kits; a kit renders as a kit only with 4 or more named verified picks, otherwise as one "Where to start" card.
+- Pinterest pins: **88** images in `public/pins` (`docs/pinterest-pins.csv`).
+- Images: **18** in `src/assets` (14 original plus 4 from Canva), each with a row in `docs/content/IMAGE-LICENCE-LEDGER.md`.
+- Tests: `bunx vitest run`: 641 tests in 44 files passing on 2026-11-19 (see `docs/buyer/FRESH-CLONE-LOG.md` for the clean-export run).
+- Buyer guides in `docs/buyer`: 31 files, this one included.
 
 ## First commands
 
@@ -44,4 +50,12 @@ bun run build         # production build into .output
 
 ## What is unconfirmed
 
-Costs, domain ownership, hosting, mailbox and any account are unconfirmed unless the repo shows them. Facts needing live research are labeled PENDING COWORK in the docs.
+Costs, domain ownership, hosting, mailbox and any account are unconfirmed unless the repo shows them. Facts that change (prices, plan limits, program rules) say "re-read live" in the docs: check the official page before relying on them. Open tasks for an assistant working in your browser are listed in `docs/cowork`.
+
+## What we do not claim
+
+No traffic, no revenue, no approved affiliate account, no indexing before Search Console shows it, no exclusive or copyrighted images, no trademark clearance, no legal review, no no-code editing of hobbies, products or config (articles only, once the editor is connected and tested), and not live until deployed and checked. The full list is in `docs/marketplace/LISTING-DRAFT.md`.
+
+## Honest dates
+
+The site launched in November 2026. `/changelog` ("What changed") lists only real changes on the day they happened; do not backdate entries or article dates.

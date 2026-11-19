@@ -27,6 +27,7 @@ export function sitemapPaths(): string[] {
     "/editorial-policy",
     "/methodology",
     "/corrections",
+    "/changelog",
     ...categories.map((c) => `/${c.slug}`),
     ...articles.map((a) => `/journal/${a.slug}`),
     ...collections.map((c) => `/shop/${c.slug}`),

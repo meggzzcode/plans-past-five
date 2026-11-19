@@ -52,7 +52,7 @@ Evidence used: commits (`git log --oneline`): 062f8a7 (brand asset library, 88 p
 | Typecheck clean (bunx tsc --noEmit, no errors, 2026-11-19) | 1 |
 | CI workflow defined (.github/workflows/ci.yml: tests, tsc, build); no CI run result seen by this worker | 0.5 |
 | Production build confirmed successful (local build passed 2026-11-19; hosted build not run) | 0.5 |
-| Current desktop and mobile browser QA (earlier Playwright pass was on an older build per CLAUDE-HANDOFF.md; C9 pending) | 0.5 |
+| Current desktop and mobile browser QA (earlier Playwright pass was on an older build per CLAUDE-HANDOFF.md; production QA pending) | 0.5 |
 | Live production site functioning | 0 |
 
 ### Editorial content and research (15%): 7.83 of 15
@@ -61,10 +61,10 @@ Evidence used: commits (`git log --oneline`): 062f8a7 (brand asset library, 88 p
 |---|---|
 | Roadmap and 28 research briefs exist (docs/content) | 1 |
 | Published articles versus the 30 target (27 of 30; published on the branch, not deployed) | 0.9 |
-| Drafts verified against sources (23 of 28 applied after Cowork C4, 2026-11-18; 5 open) | 0.82 |
+| Drafts verified against sources (23 of 28 applied after a pending follow-up task, 2026-11-18; 5 open) | 0.82 |
 | Editorial process docs (quality checklist, SOPs, corrections policy) | 1 |
 | Trust pages built (editorial policy, methodology, corrections) | 1 |
-| Cowork keyword and competitor research completed (C1, C2 pending) | 0 |
+| Cowork keyword and competitor research completed (keyword research, competitor research pending) | 0 |
 
 ### Monetization infrastructure (15%): 8.57 of 15
 
@@ -86,9 +86,9 @@ Evidence used: commits (`git log --oneline`): 062f8a7 (brand asset library, 88 p
 | Per-page metadata and canonical URLs (repo-stated, covered by seo-trust tests) | 1 |
 | Structured data on articles (repo-stated) | 1 |
 | Thin hobby pages noindexed unless a published article covers them (repo-stated) | 1 |
-| Keyword and demand evidence (C1 pending) | 0 |
+| Keyword and demand evidence (keyword research pending) | 0 |
 | Search Console and Bing set up (no domain or host) | 0 |
-| Lighthouse or PageSpeed lab run on production (C9 pending) | 0 |
+| Lighthouse or PageSpeed lab run on production (production QA pending) | 0 |
 | Domain connected and site.url real | 0 |
 
 ### Original tools (10%): 10.00 of 10
@@ -139,7 +139,7 @@ Removed criteria: the printable PDFs, premium kits, kit usage terms and kits-for
 | Account dependency doc | 1 |
 | Operating-cost doc that keeps unknowns UNCONFIRMED | 1 |
 | Image and licence records | 1 |
-| Marketplace package (this folder; drafts, C7 figures pending) | 0.5 |
+| Marketplace package (this folder; drafts, marketplace research figures pending) | 0.5 |
 | Buyer presentation (not started) | 0 |
 | Legal pages reviewed by a professional (starter text only) | 0 |
 
@@ -160,19 +160,19 @@ Status words: PASS (evidenced), FAIL (evidence shows it is not met), BLOCKED (ca
 
 | # | Gate | Status | Evidence |
 |---|---|---|---|
-| 1 | Public production site functions correctly | BLOCKED | No host or domain chosen (docs/buyer/BUSINESS-OVERVIEW.md; docs/RESUME.md). Cowork task C9 needs a deployed URL. |
-| 2 | No broken critical journeys | BLOCKED | Unit and route tests pass (235), but journeys have not been exercised on production (C9). Earlier local Playwright pass was on an older build (CLAUDE-HANDOFF.md). |
+| 1 | Public production site functions correctly | BLOCKED | No host or domain chosen (docs/buyer/BUSINESS-OVERVIEW.md; docs/RESUME.md). a pending follow-up task listed in `docs/cowork` needs a deployed URL. |
+| 2 | No broken critical journeys | BLOCKED | Unit and route tests pass (235), but journeys have not been exercised on production. Earlier local Playwright pass was on an older build (CLAUDE-HANDOFF.md). |
 | 3 | Professional desktop and mobile experience | BLOCKED | Needs current browser QA on a deployed build; only the older local check exists. |
 | 4 | No unfinished public pages | FAIL | CLAUDE-HANDOFF.md known issues: hobby profile pages are short, contact email, socials and legal owner name are empty in src/config/site.ts, Privacy and Terms are starter text. Owner may decide some are acceptable. |
-| 5 | No placeholder articles | NEEDS OWNER | Drafts are kept out of routes, lists, search and sitemap (src/test/rules.test.ts checks drafts). Only 4 articles are published. Owner must confirm those 4 were source-checked; the C4 verification process was written for the drafts. The 28 new draft files are now registered in src/content/index.ts (`all` array) and are tested to stay hidden (checked 2026-11-19 after wiring). |
-| 6 | No fabricated claims | BLOCKED | Policy forbids invented prices, ratings, experts and traffic, but the full claim audit (C4, 0 of 28 drafts verified) and listing-text audit are not done. |
+| 5 | No placeholder articles | NEEDS OWNER | Drafts are kept out of routes, lists, search and sitemap (src/test/rules.test.ts checks drafts). Only 4 articles are published. Owner must confirm those 4 were source-checked; the claim check verification process was written for the drafts. The 28 new draft files are now registered in src/content/index.ts (`all` array) and are tested to stay hidden (checked 2026-11-19 after wiring). |
+| 6 | No fabricated claims | BLOCKED | Policy forbids invented prices, ratings, experts and traffic, but the full claim audit (claim check, 0 of 28 drafts verified) and listing-text audit are not done. |
 | 7 | No known critical security issues | PASS (on what was checked) | docs/marketplace/SECURITY-AUDIT.md (2026-11-19): no critical advisories, no admin/debug routes, no source maps or env values in the build, drafts no longer ship in the public bundle (found and fixed), only Google Fonts as an external host. Not checked: host headers and TLS (no host), account 2FA, GitHub settings. Re-run at listing time. |
-| 8 | No unauthorized included assets | BLOCKED | docs/IMAGE-LICENSES.md says images were generated with Lovable's AI image tool and may be transferred; confirming the tool terms allow transfer is PENDING COWORK (C10). Fonts are SIL OFL. |
+| 8 | No unauthorized included assets | BLOCKED | docs/IMAGE-LICENSES.md says images were generated with Lovable's AI image tool and may be transferred; confirming the tool terms allow transfer is re-read live. Fonts are SIL OFL. |
 | 9 | Important SEO infrastructure operational | BLOCKED | Sitemap, robots, metadata exist in the repo, but nothing is live, no Search Console or Bing property, no domain. |
 | 10 | Affiliate configuration tested | BLOCKED | Registry is unit-tested in code. No approved account exists, so a real tracked link has never been tested. Buyer creates their own account. |
-| 11 | Ordinary fallback links functional | PASS (code level) | src/config/affiliate.ts resolution order and tests (src/test/affiliate.test.ts, shop.test.tsx). Live-site check still due (C9). |
+| 11 | Ordinary fallback links functional | PASS (code level) | src/config/affiliate.ts resolution order and tests (src/test/affiliate.test.ts, shop.test.tsx). Live-site check still due. |
 | 12 | Original digital products completed | NOT APPLICABLE | The business no longer includes digital products (printables and premium kits were removed by owner decision, 2026-11-19), so this gate cannot be met or failed. It is excluded from the pass count and the applicable-gate total. |
-| 13 | Buyer documentation completed | FAIL | 25 buyer docs exist, but the buyer presentation is not started (docs/RESUME.md) and the marketplace documents here depend on C7. |
+| 13 | Buyer documentation completed | FAIL | 31 buyer docs exist, but the buyer presentation is not started (docs/RESUME.md) and the marketplace documents here depend on marketplace research. |
 | 14 | Operating costs documented | NEEDS OWNER | docs/buyer/OPERATING-COSTS.md documents every line as UNCONFIRMED. Owner must confirm any real cash spent before costs are stated. |
 | 15 | Business dependencies documented | PASS | docs/buyer/ACCOUNT-DEPENDENCIES.md exists. |
 | 16 | Technical tests passed | PASS | 235 of 235 tests, 14 files; tsc clean (2026-11-19). Re-run at listing time. |
@@ -190,10 +190,10 @@ Count: PASS 9 (gates 7, 11, 15, 16, 17 local, 18, 19, 21, 22), FAIL 2 (4, 13), B
 **Listing is not recommended now.** 14 of the 21 applicable mandatory gates are not PASS (gate 12 is not applicable). Nothing should be published, listed or offered without the owner's explicit approval in any case.
 
 Outstanding, in dependency order:
-1. NEEDS OWNER: choose and connect a domain and a host (confirm domain ownership), then deploy. This unblocks gates 1, 2, 3, 9 and the C8 and C9 Cowork tasks.
+1. NEEDS OWNER: choose and connect a domain and a host (confirm domain ownership), then deploy. This unblocks gates 1, 2, 3, 9 and the the pending follow-up tasks.
 2. Run the production build and the site-health check; record results (gate 17, 16 re-run).
-3. Cowork C4: verify draft article claims, then Claude Code flips verified drafts to published (gates 5, 6). Cowork C3: verify products and load the catalog.
-4. Cowork C10 and C7: confirm image-tool transfer terms, marketplace fees, revenue-claim rules and comparable completed sales (gate 8 and pricing).
+3. a pending follow-up task: verify draft article claims, then Claude Code flips verified drafts to published (gates 5, 6). a pending follow-up task: verify products and load the catalog.
+4. a pending follow-up task: confirm image-tool transfer terms, marketplace fees, revenue-claim rules and comparable completed sales (gate 8 and pricing).
 5. Owner: fill site.ts contact email, legal owner name, socials as appropriate; get legal pages reviewed; decide on unfinished or short pages (gate 4).
 6. Run a secrets scan including git history (gate 19); confirm real costs (gate 14).
 7. Finish the buyer presentation (gate 13).

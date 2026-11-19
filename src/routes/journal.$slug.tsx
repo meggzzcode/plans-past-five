@@ -2,12 +2,12 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getArticle, readingMinutes, relatedArticles, toc } from "@/content";
 import { getCategory } from "@/data/categories";
 import { images } from "@/data/images";
-import { pinFor } from "@/lib/pins";
 import { getHobby } from "@/data/hobbies";
 import { site } from "@/config/site";
 import { NAMES } from "@/components/layout/nav";
 import { seo, absoluteUrl, articleJsonLd, breadcrumbJsonLd, modifiedAfterPublish } from "@/lib/seo";
-import { ArticleBody } from "@/components/editorial/ArticleBody";
+import { ArticleBody, hasShopBlock, SHOP_ANCHOR } from "@/components/editorial/ArticleBody";
+import { MiniToc } from "@/components/editorial/MiniToc";
 import { shortVersion } from "@/components/editorial/article-summary";
 import { SaveButton } from "@/components/editorial/SaveButton";
 import { ShareButtons } from "@/components/editorial/ShareButtons";
@@ -43,7 +43,6 @@ export const Route = createFileRoute("/journal/$slug")({
       path,
       type: "article",
       image: absoluteUrl(images[a.hero].src),
-      ...(pinFor(path) ? { pinImage: pinFor(path)! } : {}),
       jsonLd: [
         articleJsonLd({
           title: a.title,
@@ -80,6 +79,7 @@ function ArticlePage() {
     a.titleItalic && a.title.includes(a.titleItalic) ? a.title.split(a.titleItalic) : null;
   const date = longDate(a.publishedAt);
   const short = shortVersion(a);
+  const shop = hasShopBlock(a.body);
   const hasIfYouLoved = a.body.some((b) => b.type === "ifYouLoved");
   const sources = (a.sources ?? []).filter((s) => /^https?:\/\//.test(s.url));
   return (
@@ -170,28 +170,22 @@ function ArticlePage() {
                   </li>
                 ))}
               </ol>
+              {shop && (
+                <p className="mt-4 text-sm">
+                  <a
+                    href={`#${SHOP_ANCHOR}`}
+                    className="font-semibold text-cherry underline underline-offset-4"
+                  >
+                    Skip to shopping
+                  </a>
+                </p>
+              )}
             </nav>
           )}
         </aside>
         <div className="min-w-0 max-w-[680px]">
           <ShortVersion items={short} />
-          {sections.length > 3 && (
-            <nav aria-label="Jump to a section" className="mb-8 lg:hidden">
-              <p className="kicker mb-2 text-cherry">Jump to</p>
-              <ul className="jump-row -mx-5 flex gap-2 overflow-x-auto px-5 pb-1">
-                {sections.map((s) => (
-                  <li key={s.id} className="shrink-0">
-                    <a
-                      href={`#${s.id}`}
-                      className="inline-flex min-h-9 max-w-[16rem] items-center truncate rounded-full border border-border bg-warm-white px-3.5 text-sm text-espresso no-underline hover:border-cherry hover:text-cherry"
-                    >
-                      <span className="truncate">{s.text}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          )}
+          {sections.length > 3 && <MiniToc sections={sections} shop={shop} />}
           <ArticleBody blocks={a.body} />
           <aside
             aria-label="Sources and checks"
@@ -245,11 +239,11 @@ function ArticlePage() {
               }}
             />
             <ShareButtons
-            title={a.title}
-            description={`${a.title}. ${a.dek}`}
-            path={`/journal/${a.slug}`}
-            image={img.src}
-          />
+              title={a.title}
+              description={`${a.title}. ${a.dek}`}
+              path={`/journal/${a.slug}`}
+              image={img.src}
+            />
           </div>
         </div>
       </div>
