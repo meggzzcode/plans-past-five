@@ -268,7 +268,7 @@ export const articleCozySoloDatesAtHome: Article = {
     },
     {
       type: "p",
-      text: "For more ideas, see [creative hobbies you can start at home](/journal/creative-hobbies-you-can-start-at-home) and [low-energy hobbies](/journal/low-energy-hobbies). Ready to go out instead? Try [50 solo date ideas](/journal/solo-date-ideas) or [how to plan a solo Saturday](/journal/how-to-plan-a-solo-saturday).",
+      text: "For more ideas, see [creative hobbies you can start at home](/journal/creative-hobbies-you-can-start-at-home) and [low-energy hobbies](/journal/low-energy-hobbies). Ready to go out instead? Try [30 solo date ideas](/journal/solo-date-ideas) or [how to plan a solo Saturday](/journal/how-to-plan-a-solo-saturday).",
     },
     { type: "h2", text: "Make it a series", id: "series" },
     {

@@ -1,0 +1,38 @@
+# Desirability audit (2026-11-19)
+
+Audience: women 22-40, aesthetic-minded, budget-aware. Scope: every row in `docs/commerce/product-research.csv` (62 products: 37 verified, 25 candidates) and every kit in `src/data/kits.ts`. Done from the catalog text only; nothing here was checked live. Cowork task C12 should confirm or overturn each line below with the live Amazon and maker pages.
+
+## What was changed (no live research needed)
+
+| Item                                                                         | Action                                                                                         |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Crayola air-dry clay 5 lb bucket                                             | Held (`hold`): marketed to children ages 4+, 5 lb is a lot for a first project.                 |
+| LINPHCEY clay tools "Ages 8+"                                                | Held: kid-marketed, and the adult clay kit already includes tools.                              |
+| Apple Barrel 16 craft paints                                                 | Held: plain craft-store paint that duplicates the lead paint set.                               |
+| Knaid grid washi, Mr. Pen 10-roll washi, Secopad tape runner                 | Held: extra choices that add a decision, not a different look.                                  |
+| Mr. Pen 21-roll washi tape                                                   | No longer "essential" (the junk-journaling article calls washi a nice-to-have). Kit slot is optional. |
+| Embroidery floss slot                                                        | Now optional: the Bradove kit already contains thread.                                          |
+| Pickleball kit, tennis racket                                                | The racket belongs only to the tennis kit. Pickleball kit note says a racket will not work. Tote card text now says "paddle or racket". |
+| Insulated water bottle (product type) "whole match or trail"                 | Reworded to "through a match, a trail or an afternoon in the park" and tagged for picnicking.   |
+| NMJL card note "confirm when the next card is released before recommending a purchase" | Replaced by a reader-facing note: "The 2026 card is the current edition; the League issues a new card each year." Removed a price from the research note (prices are not stored). |
+| Mahjong kit                                                                  | Kit note says the sets are American (166 tiles with jokers); one pick, two alternatives per slot. |
+| `low-energy-hobbies` hobby slug on four cozy-night rows                      | Not a hobby in the site; changed to `reading` / `jigsaw-puzzles` so the CSV imports.            |
+
+## Candidates (still invisible, never styled as verified)
+
+Reading journal, gel pens, book light, book-club cards, bowls, picnic blanket, cooler bag, floral shears, bud vases, flower frog, pickleball paddles and balls, tennis racket and balls, throw blanket, flameless candles, tea sampler, puzzle, crochet hooks (two), scrapbook paper (two), brushes (Auhoahsil), Stork scissors (3 Swords), mahjong card sleeves. They need the live listing check before `status` becomes `verified`.
+
+## Open problems for Cowork (need live research)
+
+1. **Unknown brands.** Reviewers distrust names such as PAPERAGE, Knaid, Secopad, Stationery Island, TIASUSAN, Jongyance, MUTEX, GUSTARIA, Plusvivo, Shuttle Art, Artecho, Transon, Benicci, ESRICH, Bradove, INSCRAFT, AQUEENLY. For each, find a recognisable, equally priced alternative (for example a well-known stationery, art-supply or craft brand) or confirm that the brand has a real maker page. Give ASIN, clean URL, maker URL.
+2. **Crochet kit is incomplete.** Both hook sets are candidates and brand-less. A verified, pretty, beginner hook set (and a stitch-marker or needle option) is needed before this kit feels complete. Yarn: Red Heart Super Saver white is functional but plain; confirm a nicer light-colored beginner yarn that is still budget-friendly.
+3. **Air-dry clay.** The only displayed clay is the UHAPEER kit (third-party seller). Find an adult-oriented, well-reviewed air-dry clay brand and confirm its safety wording on the maker page. Also confirm the Mod Podge spray works over air-dry clay (the maker snippet says wood, metal, canvas, terra cotta).
+4. **Watercolor.** Artecho has 48 colors, which is more than a beginner needs and reads "kids' set". Look for a 12-24 pan travel tin from a known brand with a pretty case. Confirm Arches pad sheet count.
+5. **Embroidery.** The 304-piece INSCRAFT set is mostly small accessories; look for a prettier floss set. Confirm the Bradove kit contents and what the pattern looks like (floral? modern?).
+6. **Junk journaling.** Confirm the PAPERAGE blush journal paper weight and whether it takes glue; the Stationery Island A5 is shown as the thicker-paper alternative. Look for a neutral/pastel washi set from a known brand as an alternative to Mr. Pen.
+7. **Mahjong.** Colour and finish: confirm the tile colors look good in photos (blue vs white vs walnut racks). Confirm the NMJL four-pack is the right bundle (a single card is cheaper to try). Confirm whether the Gustaria mat and Plusvivo cover suit a standard card table.
+8. **Tennis racket candidate.** The HIRALIY 27 in aluminum racket looks like a beginner/junior toy. For women 22-40, find a real beginner adult racket from a known brand or recommend renting first. Pickleball: confirm the niupipo paddle set is currently USAPA/UPA-A approved on the approved list (listing claim only).
+9. **Picnic, flower arranging, cozy night in, book club, reading journal, girls' craft night kits.** All empty because every product is a candidate. Prioritise the picnic blanket, the reading journal and the flower snips, which the articles already point at.
+10. **Girls' craft night kit has no products** and no candidates. Pick one easy group project (for example a bracelet or candle kit) and research two products.
+11. **Photos.** No product has a documented right to a photo. Use C12's `product-photo-permissions.md`: for each brand record the exact terms and URL, then fill `imageUrl`, `imageCredit`, `imageRights` and `imageSource` in the CSV. Do not hotlink or copy Amazon images, and do not use AI images for real branded products.
+12. **Third-party sellers.** About half the displayed products list a third-party seller. Check that each listing is stable (not a one-off seller) so cards do not break.

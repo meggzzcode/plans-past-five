@@ -128,9 +128,8 @@ function fromActivity(a: Activity): Candidate {
   const outdoor = a.vibes.includes("outdoorsy");
   const energy: Energy = a.vibes.includes("adventurous") ? "medium" : outdoor ? "medium" : "low";
   const h = a.hobby ? hobbies.find((x) => x.slug === a.hobby) : undefined;
-  const firstStep = a.lowCost
-    ? `Lower-cost version: ${a.lowCost}`
-    : "Start with the first small step, then see where it goes.";
+  // The idea's own "how to start" line (always present), so the card never says "start small".
+  const firstStep = a.prep;
   return {
     id: `idea:${a.id}`,
     kind: "idea",

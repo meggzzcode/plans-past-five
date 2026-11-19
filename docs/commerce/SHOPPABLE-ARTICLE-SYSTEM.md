@@ -57,3 +57,7 @@ Supply verified research rows (the CSV). Confirm current Amazon Associates wordi
 - Legacy `shopHobby` / `starterKit` blocks use the catalog only when products are tagged to this article slug, or when the block's product types map to catalog hobbies and at most 4 products result. Otherwise the original product-type cards render. A legacy block never repeats products already shown by an earlier catalog block on the page. `ArticleBody` finds the article slug by body identity (or an `articleSlug` prop).
 - `relatedArticles()` now puts declared `related` slugs (published only) first, then computed matches, de-duplicated, same limit.
 - Amazon links and the "I need this" / "I already own this" labels are at least 44px tall.
+
+## Commercial refinement 2026-11-19
+
+See `COMMERCIAL-REFINEMENT.md`. Superseded details above: cards no longer show seller wording, "Worth knowing" caveats or "Details checked"; the "I need this / I already own this / Save for later" row is one list icon (the saved items feed the copy and print list); alternatives are no longer separate cards but at most two compact "Also consider" lines under the pick; every block opens with "If you only buy one thing"; "Tick all essentials" is "Add all essentials".
