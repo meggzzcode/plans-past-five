@@ -22,9 +22,9 @@ Keep this list with the listing. If a statement below becomes true, it needs evi
 - [ ] Flippa research re-read against the live pages at listing time: fees (sources conflict), pre-revenue price ceiling (cap versus Projects & Concepts conflict), required listing fields and handover rules (NOT READ), and any verified completed comparable sales (none found so far). LISTING-DRAFT.md and PRICING-STRATEGY.md updated from it, not guessed.
 
 ## B. Claim accuracy against the repo (re-run each, record date and result)
-- [ ] Published article count: `grep -H 'status:' src/content/article-*.ts src/content/drafts.ts` and read the `articles` export in `src/content/index.ts`. Expected on 2026-11-19: 27 published, 7 drafts (published files in `src/content/index.ts`, drafts in `src/content/draft-registry.ts`). State that the 4 original articles are not yet source-checked unless claim check has been done for them; "published" never means deployed.
-- [ ] Hobbies 43: `src/test/hobbies.test.ts`; products 36 types and 8 collections: `src/data/products.ts`; verified catalog count in `src/data/catalog.generated.ts` (37 verified, 25 candidate on 2026-11-19).
-- [ ] Tools 4, pins 88 (`ls public/pins | wc -l`; CSV: 72 published-article, 16 hold-until-published), brand assets (`ls design/brand/exports/*`), docs count (`find docs -name '*.md' | wc -l`).
+- [ ] Published article count: run `node scripts/inventory.mjs` (or `node scripts/build-content.mjs --check`). Expected on 2026-11-19: 32 published, 2 outline drafts. "Published" never means live.
+- [ ] Hobbies, product types, collections and the verified catalog counts: `docs/buyer/INVENTORY.md` (2026-11-19: 43 hobbies, 36 product types, 8 collections, 66 catalog records: 37 verified, 29 candidates).
+- [ ] Tools 4, pins (count in `docs/buyer/INVENTORY.md`; CSV status column), brand assets (`ls design/brand/exports/*`), docs count (`find docs -name '*.md' | wc -l`).
 - [ ] Tests and typecheck: `bunx vitest run`, `bunx tsc --noEmit`; production build `bunx vite build`. Record counts and dates; do not copy an old number.
 - [ ] Domain: seller confirms ownership and registrar; if unconfirmed, remove every domain claim.
 - [ ] Host and live site: only claim "live" if deployed and production QA is done.

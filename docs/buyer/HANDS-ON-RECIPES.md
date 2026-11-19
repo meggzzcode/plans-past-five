@@ -20,7 +20,7 @@ The `dev` script is `vite dev --host 127.0.0.1`. It used to fail with `EAFNOSUPP
 3. `bun run content:format content/articles/<slug>.json` rewrites the file in the exact format the tests expect (otherwise `src/test/build-content.test.ts` fails on spacing alone).
 4. `bun run content:build` validates (plain-English errors, nothing is written if something is wrong). Then `bunx vitest run` and `bun run build`.
 5. Check `/journal`, `/journal/<slug>` and `/sitemap.xml`.
-Important: the validator enforces field shapes (for example `titleItalic` must be a phrase inside the title, source URLs must be https, dates must be YYYY-MM-DD) but it does NOT block a published article that has no `sources`, no `verifiedAt` or unresolved `coworkChecks`. That gate is yours: `docs/content/ARTICLE-QUALITY-CHECKLIST.md`. Tests also reject banned words such as "best" or "perfect" in titles and text, and inline links to articles that are still drafts.
+Important: the build now refuses a published article that has no `sources`, no `verifiedAt` date or unresolved `coworkChecks`, and enforces field shapes (for example `titleItalic` must be a phrase inside the title, source URLs must be https, dates must be YYYY-MM-DD). It checks that the fields exist, not that the facts are right: the fact-check is yours (`docs/content/ARTICLE-QUALITY-CHECKLIST.md`). Tests also reject banned words such as "best" or "perfect" in titles and text, and inline links to articles that are still drafts.
 
 ## Update an article
 Edit the JSON, set `updatedAt`, run `bun run content:format <file>` and `bun run content:build`. A bad date or a `http://` source stops the build with the field name in the message.

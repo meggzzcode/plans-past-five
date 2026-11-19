@@ -40,7 +40,7 @@ The OFL allows commercial use, embedding and redistribution with the licence fil
 
 ## Text and product mentions
 
-- Article text and pin copy are original wording prepared for the project under the repo's content rules (`docs/TURNKEY-PLAN.md`); nothing was copied from other sites. No tracking IDs or branding from any other business are used.
+- Article text and pin copy are original wording prepared for the project under the repo's content rules (`docs/content/ARTICLE-QUALITY-CHECKLIST.md`); nothing was copied from other sites. No tracking IDs or branding from any other business are used.
 - Product, brand and retailer names are trademarks of their owners and appear as plain text only. Do not add manufacturer logos or product photos without checking permission and licence.
 
 ## Summary

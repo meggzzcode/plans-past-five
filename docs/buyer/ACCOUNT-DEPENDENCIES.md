@@ -6,7 +6,7 @@ Every account or service the site, its content or its marketing could touch. "Tr
 |---|---|---|---|---|
 | GitHub repository | Code, content, history, CI | `.github/workflows` | Repository transfer or copy is possible; account is not | Receive repo into your own account (`docs/buyer/TRANSFER-CHECKLIST.md`); check Actions secrets are not carried over |
 | Lovable project | Editor and sync of commits | `AGENTS.md`, `README.md` (project id in README link) | re-read live: check Lovable's terms for project transfer | Decide whether to keep using it; otherwise work in git directly. Avoid rewriting pushed history while connected |
-| Hosting | Runs the site (needs the SSR function) | `netlify.toml` is the configured host; no account or deploy exists | n/a | Create your own Netlify account (or verify an alternative) (`docs/buyer/HOSTING-AND-DEPLOYMENT.md`) |
+| Hosting | Runs the site (needs the SSR function) | `netlify.toml` is the configured host; the only Netlify project is a seller-owned test deploy that is not transferred | n/a | Create your own Netlify account (or verify an alternative); the seller's test project is not handed over (`docs/buyer/HOSTING-AND-DEPLOYMENT.md`) |
 | Domain registrar | Domain | `site.url` placeholder only | Domains can usually be transferred between registrars; rules vary (re-read live) | Obtain registrar proof first; register or transfer in your name |
 | DNS | Points domain to host | none | Part of registrar or host | Re-create records under your account |
 | Email mailbox | hello@ | `contactEmail` empty | Mailboxes are typically not transferred; create new | `docs/buyer/DOMAIN-AND-EMAIL.md` |
@@ -24,5 +24,5 @@ Every account or service the site, its content or its marketing could touch. "Tr
 
 ## Rules
 
-- Nothing shared with any other site: no shared analytics, tags, tracking IDs, mailboxes or repos (`docs/TURNKEY-PLAN.md`: never copy another site's IDs).
+- Nothing shared with any other site: no shared analytics, tags, tracking IDs, mailboxes or repos. Never copy another site's IDs into this one.
 - No secrets live in the repo (`docs/buyer/SECURITY-AND-BACKUPS.md`). Credentials are handed over only through the buyer's secure channel, never in git or chat.

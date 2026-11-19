@@ -16,7 +16,7 @@ You get the website code, the articles and tools, product records, brand files a
 4. Run `bunx vitest run` (under a minute) and `bun run build`.
 
 ## Days 2 to 3: get online
-1. The repo is configured for Netlify (`netlify.toml`): it sets the Netlify build preset, publishes `dist` and uses a server-rendering function, so the host must run that function. No Netlify account exists yet; create your own and connect your GitHub copy. Netlify's free-plan credits and limits change: re-read them live (`docs/buyer/NETLIFY-CREDITS-AND-RELEASES.md`). Cloudflare or another host is an alternative that needs its own build setup and verification (`docs/buyer/HOSTING-AND-DEPLOYMENT.md`).
+1. The repo is configured for Netlify (`netlify.toml`): it sets the Netlify build preset, publishes `dist` and uses a server-rendering function, so the host must run that function. The seller's own test deploy on Netlify is not transferred: create your own account and connect your GitHub copy. Netlify's free-plan credits and limits change: re-read them live (`docs/buyer/NETLIFY-CREDITS-AND-RELEASES.md`). Cloudflare or another host is an alternative that needs its own build setup and verification (`docs/buyer/HOSTING-AND-DEPLOYMENT.md`).
 2. A build only runs when the commit message contains `[deploy]`, or when you press Trigger deploy (untested). To publish: `git commit --allow-empty -m "Release: what changed [deploy]"` and push.
 3. Register or transfer a domain, then set `url` and `domain` in `src/config/site.ts` and the `Sitemap:` line in `public/robots.txt`.
 4. Create a mailbox and set `contactEmail`; choose the "Published by" details (`docs/buyer/PUBLISHER-SETUP.md`). Update the tests that expect these to be empty.

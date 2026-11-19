@@ -2,7 +2,7 @@
 
 > **NOT YET TESTED WITH A REAL LOGIN.** The CMS is configured (`.pages.yml`) and the content checks are tested, but nobody has yet signed in to Pages CMS with the owner's GitHub login, edited a real article, or pressed Netlify's Trigger deploy on this site. Do not treat it as fully operational until `docs/buyer/CMS-TEST-PLAN.md` has been run and recorded as passed.
 
-Status on 2026-11-19: a Netlify project exists on the seller's account for testing (`docs/cowork/NETLIFY-FIRST-DEPLOY-LOG.md`). It is not part of the handover; you create your own. Nothing was purchased.
+Status on 2026-11-19: a Netlify project exists on the seller's account as a test deploy (a `netlify.app` address; the main routes returned 200). It is not part of the handover; you create your own. Nothing was purchased.
 
 ## The cap (free plan)
 As recorded for this project on 2026-11-19 (no copy of the page was saved; official pages: https://www.netlify.com/pricing/ and Netlify's billing docs. **Re-read live before relying on them**, Netlify changes plans):

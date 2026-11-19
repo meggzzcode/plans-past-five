@@ -8,8 +8,8 @@ This backlog is separate from the 30 planned launch articles in `docs/content/AR
 
 | Slug | Status when checked | Notes |
 |---|---|---|
-| how-to-take-yourself-on-a-solo-coffee-shop-date | published (source-checked 2026-11-18; not deployed): `src/content/article-how-to-take-yourself-on-a-solo-coffee-shop-date.ts` | Table for One spoke; counts as buyer backlog, not a launch article |
-| how-to-get-into-recreational-cycling-as-an-adult | published (source-checked 2026-11-18; not deployed): `src/content/article-how-to-get-into-recreational-cycling-as-an-adult.ts` | A Little Movement; backlog |
+| how-to-take-yourself-on-a-solo-coffee-shop-date | published (source-checked 2026-11-18; not deployed): `content/articles/how-to-take-yourself-on-a-solo-coffee-shop-date.json` | Table for One spoke; counts as buyer backlog, not a launch article |
+| how-to-get-into-recreational-cycling-as-an-adult | published (source-checked 2026-11-18; not deployed): `content/articles/how-to-get-into-recreational-cycling-as-an-adult.json` | A Little Movement; backlog |
 
 ## How the 50 were picked
 

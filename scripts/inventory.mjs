@@ -12,7 +12,17 @@
  * Every other doc points here instead of repeating numbers that go stale.
  */
 import { spawnSync, execSync } from "node:child_process";
-import { cpSync, existsSync, mkdtempSync, readdirSync, readFileSync, rmSync, statSync, symlinkSync, writeFileSync } from "node:fs";
+import {
+  cpSync,
+  existsSync,
+  mkdtempSync,
+  readdirSync,
+  readFileSync,
+  rmSync,
+  statSync,
+  symlinkSync,
+  writeFileSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -23,7 +33,9 @@ const args = process.argv.slice(2);
 if (!process.versions.bun) {
   const r = spawnSync("bun", [fileURLToPath(import.meta.url), ...args], { stdio: "inherit" });
   if (r.error) {
-    console.error("This script needs Bun (it imports the TypeScript data files). Install Bun, then re-run.");
+    console.error(
+      "This script needs Bun (it imports the TypeScript data files). Install Bun, then re-run.",
+    );
     process.exit(1);
   }
   process.exit(r.status ?? 1);
@@ -31,10 +43,14 @@ if (!process.versions.bun) {
 
 const at = (p) => join(root, p);
 const countFiles = (dir, re = /./) =>
-  existsSync(at(dir)) ? readdirSync(at(dir)).filter((f) => re.test(f) && statSync(at(join(dir, f))).isFile()).length : 0;
+  existsSync(at(dir))
+    ? readdirSync(at(dir)).filter((f) => re.test(f) && statSync(at(join(dir, f))).isFile()).length
+    : 0;
 const sh = (c) => {
   try {
-    return execSync(c, { cwd: root, stdio: ["ignore", "pipe", "ignore"] }).toString().trim();
+    return execSync(c, { cwd: root, stdio: ["ignore", "pipe", "ignore"] })
+      .toString()
+      .trim();
   } catch {
     return "";
   }
@@ -59,12 +75,19 @@ const kitRows = kits.map((k) => {
   return { id: k.id, picks: filled.length, full: isFullKit(filled, k) };
 });
 const ledger = readFileSync(at("docs/content/IMAGE-LICENCE-LEDGER.md"), "utf8");
-const assetSection = (ledger.split(/^## Ledger: files in `src\/assets\/`/m)[1] ?? "").split(/^## /m)[0];
+const assetSection = (ledger.split(/^## Ledger: files in `src\/assets\/`/m)[1] ?? "").split(
+  /^## /m,
+)[0];
 const ledgerRows = assetSection.split("\n").filter((l) => /^\| [\w-]+\.(jpe?g|png|webp)/.test(l));
 const originCount = (re) => ledgerRows.filter((l) => re.test(l.split("|")[3] ?? "")).length;
-const routeFiles = readdirSync(at("src/routes")).filter((f) => f.endsWith(".tsx") && !f.startsWith("__"));
+const routeFiles = readdirSync(at("src/routes")).filter(
+  (f) => f.endsWith(".tsx") && !f.startsWith("__"),
+);
 const pinCount = countFiles("public/pins", /\.(jpe?g|png)$/i);
-const pinCsvRows = Math.max(0, readFileSync(at("docs/pinterest-pins.csv"), "utf8").trim().split("\n").length - 1);
+const pinCsvRows = Math.max(
+  0,
+  readFileSync(at("docs/pinterest-pins.csv"), "utf8").trim().split("\n").length - 1,
+);
 
 // Tests: run vitest with the JSON reporter in a throwaway copy of the repo under the temp dir.
 let tests = "not run (use `node scripts/inventory.mjs` without --no-tests)";
@@ -73,10 +96,15 @@ if (!args.includes("--no-tests")) {
   try {
     cpSync(root, tmp, {
       recursive: true,
-      filter: (src) => !/[\\/](node_modules|dist|\.output|\.netlify|\.git)([\\/]|$)/.test(src.slice(root.length)),
+      filter: (src) =>
+        !/[\\/](node_modules|dist|\.output|\.netlify|\.git)([\\/]|$)/.test(src.slice(root.length)),
     });
     symlinkSync(at("node_modules"), join(tmp, "node_modules"));
-    const r = spawnSync("bunx", ["vitest", "run", "--reporter=json"], { cwd: tmp, encoding: "utf8", maxBuffer: 1 << 28 });
+    const r = spawnSync("bunx", ["vitest", "run", "--reporter=json"], {
+      cwd: tmp,
+      encoding: "utf8",
+      maxBuffer: 1 << 28,
+    });
     const out = r.stdout ?? "";
     const json = JSON.parse(out.slice(out.indexOf("{")));
     tests = `${json.numPassedTests} passed, ${json.numFailedTests} failed, ${json.numTotalTests} total, in ${json.numTotalTestSuites === undefined ? "?" : json.testResults.length} files`;
@@ -105,7 +133,12 @@ Generated ${date} from commit \`${commit}\`${dirty} by \`node scripts/inventory.
 | Draft articles (never public) | ${drafts.length} (${wordsOf(drafts).toLocaleString("en-US")} words) |
 | Hobbies | ${hobbies.length}; ${hobbies.filter((h) => h.image).length} have an image; ${hobbies.filter((h) => published.some((a) => a.hobbies?.includes?.(h.slug))).length} are covered by a published guide |
 | Shop collections | ${collections.length} |
-| Collection kits | ${kits.length}; complete (render as a kit): ${kitRows.filter((k) => k.full).length} (${kitRows.filter((k) => k.full).map((k) => k.id).join(", ") || "none"}); incomplete: ${kitRows.filter((k) => !k.full).length} |
+| Collection kits | ${kits.length}; complete (render as a kit): ${kitRows.filter((k) => k.full).length} (${
+  kitRows
+    .filter((k) => k.full)
+    .map((k) => k.id)
+    .join(", ") || "none"
+}); incomplete: ${kitRows.filter((k) => !k.full).length} |
 | Legacy shop records (\`src/data/products.ts\`, search-link style, not researched) | ${legacyProducts.length} |
 
 ## Products (researched catalog, \`src/data/catalog.generated.ts\`)
@@ -151,5 +184,10 @@ if (args.includes("--stdout")) process.stdout.write(md);
 else {
   writeFileSync(at("docs/buyer/INVENTORY.md"), md);
   console.log(`Wrote docs/buyer/INVENTORY.md (commit ${commit}, ${date}).`);
-  console.log(md.split("\n").filter((l) => l.startsWith("| ") && !l.startsWith("| Item") && !l.startsWith("| ---")).join("\n"));
+  console.log(
+    md
+      .split("\n")
+      .filter((l) => l.startsWith("| ") && !l.startsWith("| Item") && !l.startsWith("| ---"))
+      .join("\n"),
+  );
 }

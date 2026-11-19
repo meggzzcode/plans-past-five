@@ -6,7 +6,7 @@ Status: DRAFT, 2026-11-19. Flippa rules were researched on 2026-11-18 (FLIPPA-RE
 
 **Is it live?** No. Nothing is deployed or live. No host or domain connection exists in the repo; `planspastfive.com` is a placeholder. Status: BLOCKED on owner choices (NEEDS OWNER).
 
-**What is included?** The repo (code, content, data, drafts, briefs, tests, CI), brand files, 88 pin images with CSV and schedule, and all docs. Full table: ASSET-INVENTORY.md.
+**What is included?** The repo (code, content, data, drafts, briefs, tests, CI), brand files, pin images with CSV and schedule (count: `docs/buyer/INVENTORY.md`), and all docs. Full table: ASSET-INVENTORY.md.
 
 **What is excluded?** Affiliate master or portfolio accounts and tracking IDs, payment and tax accounts, mailbox, Lovable project and credits, any personal credentials, the seller's other sites and tools. The domain is included only if the seller confirms ownership and agrees to transfer it.
 
@@ -24,15 +24,15 @@ Status: DRAFT, 2026-11-19. Flippa rules were researched on 2026-11-18 (FLIPPA-RE
 
 **Are the legal pages ready?** No. Privacy and Terms are starter text. Get them reviewed for your jurisdiction and your actual practices. Owner name and jurisdiction fields in `src/config/site.ts` are empty.
 
-**How many articles are published?** 27 files are marked `status: "published"`; 7 more are drafts and there are 2 outline-only entries. "Published" means the article was source-checked (2026-11-18) and set to published on the branch. It does NOT mean deployed: nothing is live. Of the 27, the 4 originally published articles have NOT been source-checked yet (a pending follow-up task listed in `docs/cowork` is still to do for them); the other 23 were. The 5 drafts were checked and left not ready. Source-checking is a review of claims against sources, not a guarantee that every statement is correct.
+**How many articles are published?** See `docs/buyer/INVENTORY.md` (32 files are marked `status: "published"` and 2 are outline drafts on 2026-11-19). "Published" means the article has sources and a fact-check date and is set to published on the branch. It does NOT mean live on a real domain. Source-checking is a review of claims against sources, not a guarantee that every statement is correct.
 
-**Are there verified products?** Yes, in a limited sense: the catalog holds 62 records, 37 verified (29 shown, 8 on editorial hold) and 25 candidates that never display. "Verified" means Cowork opened the Amazon listing and the record was reviewed; the links are ordinary Amazon links. Nobody on this project has bought or tested these products, and most records still say the manufacturer page was not checked. Product research  continues toward about 60 products. Product-type records still link to Amazon searches. Only 7 of the 15 starter kits have any verified product.
+**Are there verified products?** Yes, in a limited sense: the catalog holds 66 records on 2026-11-19: 37 verified (29 shown, 8 on editorial hold) and 29 candidates that never display (live counts: `docs/buyer/INVENTORY.md`). "Verified" means Cowork opened the Amazon listing and the record was reviewed; the links are ordinary Amazon links. Nobody on this project has bought or tested these products, and most records still say the manufacturer page was not checked. Product research may continue. Product-type records still link to Amazon searches. Only some of the 8 collection kits are complete (a kit shows as a kit only with 4 or more verified picks); counts in `docs/buyer/INVENTORY.md`.
 
 **What is not proven?** Demand, traffic, search rankings, conversion, affiliate earnings, Pinterest performance, and whether any program will approve the site. Hypothetical forecasts are not evidence.
 
 **Is there post-sale support?** A short, fixed, written-questions-only handover period is suggested (HANDOVER-TERMS-SUGGESTION.md). It is a suggestion for the parties and their lawyers. No indefinite free support.
 
-**Is the technical state tested?** 250 automated tests passed (15 test files) and typecheck was clean on 2026-11-19. A production build and live QA have not been recorded.
+**Is the technical state tested?** the automated test count and result are in `docs/buyer/INVENTORY.md` (735 passed in 50 files on 2026-11-19), with typecheck clean. A production build was checked locally and one test deploy ran on the seller's Netlify account; live QA on a real domain has not been recorded.
 
 **What is the price?** Not set. See PRICING-STRATEGY.md; Flippa fee and pricing-rule facts are recorded there with sources; no verified comparable sale was found, and the owner's cash costs are UNCONFIRMED. No price is guaranteed and a sale may not happen. Under Flippa's rules a site without revenue has a maximum asking or reserve price (see PRICING-STRATEGY.md).
 

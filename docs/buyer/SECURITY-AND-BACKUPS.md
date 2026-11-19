@@ -4,7 +4,7 @@
 A TanStack Start app with no database, accounts, payments or server secrets (it does run a server-rendering function on the host; see `docs/buyer/HOSTING-AND-DEPLOYMENT.md`). Saved items live in each visitor's browser (`src/lib/saved.ts`). Checked 2026-11-19: no API keys, tokens or credentials are committed in the repo (pattern scan of source, config and docs; no `.env` files tracked). Keep it that way: never put secret values in the repo; analytics IDs and verification codes are public by design.
 
 ## Security headers
-`public/_headers` sets `X-Content-Type-Options`, `Referrer-Policy` and `Permissions-Policy`. Netlify is the configured host (nothing is deployed yet); this file is read by hosts that support `_headers` (Netlify, Cloudflare Pages) and is ignored elsewhere.
+`public/_headers` sets `X-Content-Type-Options`, `Referrer-Policy` and `Permissions-Policy`. Netlify is the configured host (no production deploy exists yet); this file is read by hosts that support `_headers` (Netlify, Cloudflare Pages) and is ignored elsewhere.
 Server-rendered HTML pages get the same three headers from server code: `src/server.ts` wraps the SSR entry and applies `src/lib/security-headers.ts` to every HTML response (including the error page). No CSP is enforced, and HSTS and `X-Frame-Options` are intentionally not set because the Lovable editor previews the site in an iframe; add HSTS at the host once the domain is final. Verify on the live host with `curl -I https://yourdomain/` and `curl -I https://yourdomain/favicon.svg`.
 Deliberately not set:
 - **Strict-Transport-Security**: add `Strict-Transport-Security: max-age=31536000` only after the host confirms HTTPS works for the final domain (do not add `preload` casually).

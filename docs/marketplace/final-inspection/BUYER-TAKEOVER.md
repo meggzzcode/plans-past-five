@@ -56,7 +56,7 @@ Rule of thumb: articles in a browser (once the CMS is proven); everything else n
 | `@lovable.dev/vite-tanstack-config` (public npm package) | the Vite, TanStack and Nitro setup in `vite.config.ts` | Installs and builds with no Lovable account. A third-party build dependency: if it left npm, the build config would need rewriting. `src/lib/lovable-error-reporting.ts` and `.lovable/` are inert without Lovable |
 | Lovable account | NOT needed to run, build, deploy or edit | Only to keep using the Lovable editor and sync; the project is not transferable by default and its service agreement is not assignable (`docs/buyer/IMAGE-AND-ASSET-RIGHTS.md`) |
 | GitHub account (yours) | hosting the repo, CI (no secrets), Pages CMS login, Netlify connection | |
-| Netlify account (yours) | hosting | `netlify.toml` is ready; none exists yet; credits re-read live |
+| Netlify account (yours) | hosting | `netlify.toml` is ready. The seller ran one test deploy on the seller's own Netlify account; it is not transferred, so create your own. Credits re-read live |
 | Domain, DNS, mailbox | go-live | Registrar proof needed if the domain is part of the sale |
 | Amazon Associates, Google Analytics and Search Console, Pinterest | monetization, measurement, distribution | None included; Amazon is not transferable |
 | Canva | NOT needed | Finished assets are in the repo; Canva AI terms unverified |
@@ -74,7 +74,7 @@ Rule of thumb: articles in a browser (once the CMS is proven); everything else n
 | No pinned Node or Bun versions | OPEN |
 | Playwright and fonttools undeclared | OPEN (documented as optional) |
 | Ingest script does not write the ledger row | OPEN |
-| Real Netlify dry run (CLI timed out in the sandbox) | OPEN: no real deploy has been run |
+| Real Netlify dry run (CLI timed out in the sandbox) | PARTLY CLOSED: a test deploy ran on the seller's Netlify account on 2026-11-19 and the main routes returned 200; headers, the skip rule and the real domain are unverified |
 | Pages CMS real login test | OPEN (`docs/buyer/CMS-TEST-PLAN.md`) |
 
 Measured compute for the rehearsal was about one minute of command time; the whole rehearsal took about 25 minutes including reading. A realistic first-timer estimate for a developer is half a day to the first deploy; for a non-developer it is not feasible alone for products, affiliate settings and the first deploy.

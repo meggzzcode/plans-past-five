@@ -79,7 +79,7 @@ Type key: CB = commercial buying guide, SB = shoppable beginner guide, IN = insp
 - `status: "published"`: 27 files. Of those, 25 are roadmap rows (the 4 originals, which are not yet source-checked, plus 21 source-checked by Cowork) and 2 are the extras outside the 30 (below), also source-checked.
 - `status: "draft"`: 5 files, all roadmap rows: 3 (how-to-start-air-dry-clay), 4 (watercolor-painting-for-beginners), 6 (how-to-start-embroidery), 7 (how-to-start-crocheting), 14 (affordable-hobbies-under-25). Each was source-checked and left NOT READY.
 - Outline-only entries in `src/content/drafts.ts`: 2 (not article files).
-- 25 published + 5 draft + 0 needing writing = 30 roadmap rows. Plus 2 published extras = 27 published in total.
+- 25 published + 5 draft + 0 needing writing = 30 roadmap rows. (Counts at the time; current counts: `docs/buyer/INVENTORY.md`.)
 - Published does not mean deployed or live. Check again with the command above before relying on this table.
 
 ## Drafts outside the 30

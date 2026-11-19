@@ -1,5 +1,7 @@
 # Marketplace listing draft: Plans Past Five
 
+> **Counts in this draft were reconciled on 2026-11-19 to `docs/buyer/INVENTORY.md` (generated: `node scripts/inventory.mjs`). Re-run it on the listing day and update any number here before publishing; the INVENTORY file wins if they differ.**
+
 Status: DRAFT for owner review. Nothing has been published, listed or offered. Facts below were read from the repo on 2026-11-19 and will drift; re-check with LISTING-CHECKLIST.md before use.
 
 ## Flippa rules this draft follows (Cowork, docs/marketplace/FLIPPA-RESEARCH.md, read 2026-11-18)
@@ -18,7 +20,7 @@ Plans Past Five — Turnkey Women's Lifestyle Brand With Interactive Hobby Tools
 
 ## Short description
 
-Plans Past Five is a pre-revenue, newly built women's lifestyle and hobby publication prepared as a transparent turnkey starter site. It has no traffic history and no earnings. It includes a built website with interactive hobby tools, a 36-hobby directory, 27 published articles (23 source-checked on the branch; the 4 original articles are not source-checked yet) plus 5 drafts, 37 verified Amazon products (listing-checked, not tested by us), 88 Pinterest pin images and a full brand asset set. Amazon Associates links are not activated, no application has been made, and affiliate and payment accounts are not included; the buyer sets up their own. No earnings are claimed or guaranteed.
+Plans Past Five is a pre-revenue, newly built women's lifestyle and hobby publication prepared as a transparent turnkey starter site. It has no traffic history and no earnings. It includes a built website with interactive hobby tools, a 43-hobby directory, 32 published articles (each with sources and a fact-check date) plus 2 outline drafts, 37 verified Amazon products (29 shown; listing-checked, not tested by us), 88 Pinterest pin images and a full brand asset set. Amazon Associates links are not activated, no application has been made, and affiliate and payment accounts are not included; the buyer sets up their own. No earnings are claimed or guaranteed.
 
 ## Long description
 
@@ -28,7 +30,7 @@ Plans Past Five is a pre-revenue, newly built women's lifestyle and hobby public
 - Amazon Associates links are **not yet activated** and nothing has been applied for. Approval is **not guaranteed** and is the buyer's to apply for.
 - The seller's master or portfolio affiliate accounts are **not included**. The buyer must create or connect their own affiliate and payment accounts.
 - There is **no guarantee of future earnings**. Any forecast a buyer makes is hypothetical.
-- **Nothing is live.** The site is not deployed; there is no domain, host or analytics. "Published" means set to `status: "published"` on the branch after a Cowork source check (2026-11-18), not deployed. The 4 originally published articles still need that source check (a pending follow-up task listed in `docs/cowork`).
+- **Nothing is live on a real domain.** The domain is not connected, there is no analytics and no production host. One test deploy exists on the seller's own Netlify account (not part of the sale). "Published" means set to `status: "published"` on the branch after a source check, not live.
 - Products are checked against their Amazon listings and linked with ordinary (non-affiliate) Amazon links. We have not bought or tested them.
 
 ### What the business is
@@ -43,25 +45,25 @@ Women who want a hobby or a better weekend but are unsure where to start, with a
 
 | Item | Count | Status | Where |
 |---|---|---|---|
-| Published articles | 27 (`status: "published"`). 23 source-checked on 2026-11-18 (`docs/content/verification/`, `verification-applied/`); the 4 originals (`article-35-hobbies.ts`, `article-after-work.ts`, `article-creative-home.ts`, `article-junk-journaling.ts`) are NOT source-checked yet (a pending follow-up task to do) | COMPLETED on the branch; NOT deployed, nothing is live | `src/content/article-*.ts` |
+| Published articles | 32 (`status: "published"`), each with sources and a `verifiedAt` date (`docs/content/verification/`, `verification-applied/`, `verification-final/`); 2 outline drafts that never display | COMPLETED on the branch; NOT live | `content/articles/*.json` |
 | Article drafts | 5 files still `status: "draft"` (how-to-start-air-dry-clay, how-to-start-crocheting, how-to-start-embroidery, watercolor-painting-for-beginners, affordable-hobbies-under-25); source-checked and left NOT READY; 32 research briefs | IN PROGRESS | `src/content/article-*.ts`, `docs/content/briefs/` |
 | Outline-only drafts in drafts.ts | 2 | IN PROGRESS | `src/content/drafts.ts` |
 | Article roadmap target | 30 articles; 50-topic buyer roadmap | RECOMMENDED | `docs/TURNKEY-PLAN.md`, `docs/buyer/CONTENT-ROADMAP.md` |
-| Hobbies in the directory | 36 (test-enforced), 10 filters, profile pages | COMPLETED | `src/data/hobbies.ts` |
+| Hobbies in the directory | 43 (test-enforced), 10 filters, profile pages | COMPLETED | `src/data/hobbies.ts` |
 | Site sections | 6 (After Hours, The Weekend Edit, Creative Corner, Table for One, Better Together, A Little Movement) | COMPLETED | `src/data/categories.ts` |
 | Shop collections | 8 | COMPLETED | `src/data/products.ts` |
 | Shop product types | 36 product-type records (names and search queries; no prices, ratings, brands or ASINs) | COMPLETED | `src/data/products.ts` |
-| Verified specific products | 37 verified (29 shown, 8 on editorial hold), 25 candidates that never display. Verified = Amazon listing opened and reviewed; ordinary non-affiliate links; not tested by us; manufacturer pages mostly unchecked | IN PROGRESS (product verification continues toward about 60) | `src/data/catalog.generated.ts` |
-| Starter kit shopping lists | 15 kit definitions as slots; render only when verified products fill them; 7 kits have at least one slot filled, 8 have none | COMPLETED as system, partly filled | `src/data/kits.ts` |
+| Verified specific products | 66 records: 37 verified (29 shown, 8 on editorial hold), 29 candidates that never display. Verified = Amazon listing opened and reviewed; ordinary non-affiliate links; not tested by us; manufacturer pages mostly unchecked | IN PROGRESS (product verification continues toward about 60) | `src/data/catalog.generated.ts` |
+| Starter kit shopping lists | 8 collection kits as slots; render as a kit only with 4 or more verified picks and every essential filled (2 of 8 qualify today), otherwise one "where to start" card | COMPLETED as system, partly filled | `src/data/kits.ts` |
 | Interactive tools | 4: Find Your Thing quiz, Make Some Plans planner, Hobby Budget tool, Tonight tool; plus My Plans saved items and site search | COMPLETED | `src/lib`, `src/routes` |
 | Pinterest pins | 88 pin images, CSV with metadata, 90-day schedule; 72 point to published articles (published on the branch, not deployed) and 16 are marked hold-until-published | COMPLETED as assets; no account | `public/pins`, `docs/pinterest-pins.csv` |
 | Brand assets | 12 logo files, 11 board covers, 4 social images (including a 1200x630 OG image), 4 article templates, 5 favicon files, fonts with licences | COMPLETED | `design/brand` |
-| Documentation | about 235 Markdown files under docs, including 31 buyer guides and a 20-step transfer checklist | COMPLETED (some depend on pending research) | `docs/` |
-| Automated tests | 641 tests passing in 44 files; typecheck clean | VERIFIED 2026-11-19 | `src/test` |
+| Documentation | Markdown guides under docs, including the buyer guides (`docs/buyer`) and a 20-step transfer checklist; count the files on the listing day | COMPLETED (some depend on pending research) | `docs/` |
+| Automated tests | 735 tests passing in 50 files (2026-11-19, `node scripts/inventory.mjs`); typecheck clean | VERIFIED 2026-11-19 | `src/test` |
 | Trust pages | About, Contact, Privacy, Terms, Affiliate Disclosure, Editorial Policy, Methodology, Corrections, Start Here | COMPLETED; legal pages are starter text | `src/routes` |
 
-- [ ] AVAILABLE AT LISTING ONLY IF COMPLETE: state a higher published-article count (today 27) only if drafts have been verified and flipped to published; do not say the 4 original articles are source-checked until claim check is done for them; never say "live" (check `grep -H 'status:' src/content/article-*.ts`).
-- [ ] AVAILABLE AT LISTING ONLY IF COMPLETE: re-count verified products (`src/data/catalog.generated.ts`) on the day of listing. Today: 37 verified (29 shown), 25 candidate; describe them as checked against Amazon listings, not tested by us.
+- [ ] AVAILABLE AT LISTING ONLY IF COMPLETE: state a higher published-article count (today 32) only if drafts have been verified and flipped to published; say "source-checked" only for articles whose `verifiedAt` and sources are in the file; never say "live" (check with `node scripts/build-content.mjs --check`).
+- [ ] AVAILABLE AT LISTING ONLY IF COMPLETE: re-count verified products (`src/data/catalog.generated.ts`) on the day of listing. Today: 37 verified (29 shown), 29 candidate; describe them as checked against Amazon listings, not tested by us.
 - [ ] AVAILABLE AT LISTING ONLY IF COMPLETE: say the site is live only if a host and domain are connected and production QA  is done. Today: no domain connection, host or live site is confirmed.
 - [ ] AVAILABLE AT LISTING ONLY IF COMPLETE: say a domain is included only if the seller confirms they own it and it will transfer. Today: `planspastfive.com` is a placeholder in `site.ts`; ownership and purchase are UNCONFIRMED.
 
@@ -89,7 +91,7 @@ Women who want a hobby or a better weekend but are unsure where to start, with a
 
 ### Existing content
 
-27 published articles (including 35 hobbies; 25 things to do after work; 21 creative hobbies at home; a junk journaling guide; the other 23 were source-checked, the four named originals not yet), the 43-hobby directory, six section pages, and trust pages. Five further articles remain drafts after the source check, plus 2 outline-only entries; research briefs and verification notes are included. None of this is deployed.
+32 published articles (including 35 hobbies; 25 things to do after work; 21 creative hobbies at home; a junk journaling guide), the 43-hobby directory, six section pages, and trust pages. Two outline-only drafts never display; research briefs and verification notes are included. None of this is deployed.
 
 ### Interactive features
 
@@ -123,7 +125,7 @@ Seller's affiliate master or portfolio accounts, any tracking IDs, payment accou
 
 ### Growth opportunities (hypothetical, no outcome implied)
 
-Revise and publish the 5 remaining drafts, source-check the 4 original articles; extend the verified product catalog; apply for the buyer's own Amazon Associates account; launch the Pinterest schedule; extend the roadmap beyond the 30-article target. Whether any of this earns money is unknown.
+Finish or retire the 2 outline drafts and re-verify articles before relying on them; extend the verified product catalog; apply for the buyer's own Amazon Associates account; launch the Pinterest schedule; extend the roadmap beyond the 30-article target. Whether any of this earns money is unknown.
 
 ### Ownership transfer process
 

@@ -36,7 +36,12 @@ const copyright = (file) => {
     const line = readFileSync(file, "utf8")
       .split("\n")
       .find((l) => /copyright/i.test(l) && /\d{4}|\bauthors?\b/i.test(l));
-    return line ? line.replace(/^[\s#*/-]+/, "").trim().slice(0, 140) : "";
+    return line
+      ? line
+          .replace(/^[\s#*/-]+/, "")
+          .trim()
+          .slice(0, 140)
+      : "";
   } catch {
     return "";
   }
@@ -60,7 +65,10 @@ The project's own code is proprietary (see \`docs/buyer/LICENCE-STATUS.md\`); no
 
 | Licence | Packages |
 | --- | --- |
-${[...byLicence.entries()].sort((a, b) => b[1] - a[1]).map(([l, n]) => `| ${l} | ${n} |`).join("\n")}
+${[...byLicence.entries()]
+  .sort((a, b) => b[1] - a[1])
+  .map(([l, n]) => `| ${l} | ${n} |`)
+  .join("\n")}
 
 No GPL, AGPL, LGPL, SSPL or "unknown" licence appears in the production set at generation time. Re-run the script after any dependency change and re-check this statement.
 
