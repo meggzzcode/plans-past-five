@@ -105,11 +105,11 @@ export const articleActiveHobbiesForWomenWhoDontLoveTheGym: Article = {
     },
     {
       type: "p",
-      text: "If that scene is familiar, the problem was probably never your discipline. It was the setting. Plenty of people who dislike the gym will happily spend three hours walking around a flea market or an afternoon chasing a ball around a court, and their bodies can't tell the difference.",
+      text: "If that scene is familiar, the problem was probably never your discipline. It was the setting. Three hours walking around a flea market or an afternoon chasing a ball around a court is movement too, even if it never felt like exercise.",
     },
     {
       type: "p",
-      text: "So this is a different kind of list: fifteen things to do with your body that come with a view, a friend, a ball or a decent soundtrack. Pick by what sounds fun. Being good at it is completely optional.",
+      text: "So this is a different kind of list: fifteen things to do with your body that come with a view, a friend, a ball or a decent soundtrack. Pick by what sounds fun, not by what burns the most.",
     },
     { type: "h2", text: "How to choose", id: "choose" },
     {
@@ -202,7 +202,7 @@ export const articleActiveHobbiesForWomenWhoDontLoveTheGym: Article = {
     it(
       10,
       "Outdoor swimming or a local pool",
-      "If you like water, swimming is low-impact and very good for the head. Swim where a lifeguard is present, never swim alone, and follow local rules.",
+      "If you like water, swimming is low-impact and a lovely change of scene. Swim where a lifeguard is present, never swim alone, and follow local rules.",
       "30-45 min",
       "Varies",
       "Social",
@@ -252,9 +252,10 @@ export const articleActiveHobbiesForWomenWhoDontLoveTheGym: Article = {
       "Solo or social",
       "thrifting",
     ),
+    { type: "h3", text: "Plan your first try" },
     {
-      type: "first30",
-      steps: [
+      type: "list",
+      items: [
         "Pick the one activity above that made you curious rather than obligated.",
         "Find its easiest version: a short trail, a drop-in session, a friend with a spare racket.",
         "Put it in your calendar for a time of day when you actually have energy.",

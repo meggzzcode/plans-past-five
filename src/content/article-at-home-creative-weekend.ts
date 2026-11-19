@@ -57,7 +57,7 @@ export const articleAtHomeCreativeWeekend: Article = {
   body: [
     {
       type: "p",
-      text: "Picture a Saturday at home that goes one of two ways. You clean until you resent the cleaning, or you sink into the sofa and the hours leak away. There's a third version, where you stay in, make a few small things with your hands, and finish Sunday with a shelf of evidence.",
+      text: "Saturdays at home tend to go one of two ways. You clean until you resent the cleaning, or you sink into the sofa and the hours leak away. There's a third version, where you stay in, make a few small things with your hands, and finish Sunday with a shelf of evidence.",
     },
     {
       type: "p",
@@ -178,7 +178,7 @@ export const articleAtHomeCreativeWeekend: Article = {
         "**Clay cracks while drying:** cracks usually come from drying too fast or unevenly, so dry it slowly, away from heat.",
         "**Paint looks streaky:** add a second coat once the first is dry.",
         "**You're bored by Saturday afternoon:** swap the project. Bake, read, rearrange a shelf.",
-        "**You don't feel creative:** copy something. Trace, follow a tutorial, paint a photograph. Copying is how most people start.",
+        "**You don't feel creative:** copy something. Trace, follow a tutorial, paint a photograph. Copying is a perfectly good way to start.",
       ],
     },
     {

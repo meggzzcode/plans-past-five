@@ -29,11 +29,17 @@ export type Activity = {
   costMax: number;
   prep: string;
   supplies: string[];
+  /**
+   * When the activity may START, as clock windows in minutes after midnight. Derived from `parts`
+   * unless overridden in `startWindows` (golden hour is evening, breakfast is morning, and so on).
+   * The planner only ever places an activity at a start time inside one of these windows.
+   */
+  at: [number, number][];
 };
 
 type Base = Omit<
   Activity,
-  "name" | "energy" | "setting" | "home" | "costMin" | "costMax" | "prep" | "supplies"
+  "name" | "energy" | "setting" | "home" | "costMin" | "costMax" | "prep" | "supplies" | "at"
 >;
 
 const A = (
@@ -1047,6 +1053,49 @@ const extras: Record<string, Extra> = {
   },
 };
 
+const hm = (h: number, m = 0) => h * 60 + m;
+
+/** Default start windows for a time of day. */
+const partWindow: Record<Part, [number, number]> = {
+  morning: [hm(7, 30), hm(11, 30)],
+  afternoon: [hm(12), hm(16, 30)],
+  evening: [hm(17), hm(20, 30)],
+};
+
+/** Activities whose name or nature needs a tighter window than their time-of-day parts. */
+const startWindows: Record<string, [number, number]> = {
+  "park-walk": [hm(16), hm(19)], // golden hour
+  sunset: [hm(16, 30), hm(19, 30)],
+  stargaze: [hm(18), hm(21)], // after dark
+  "slow-breakfast": [hm(7, 30), hm(10, 30)],
+  "reset-morning": [hm(8), hm(11)],
+  "thermos-walk": [hm(7), hm(9, 30)], // before the day starts
+  birds: [hm(7), hm(11)],
+  market: [hm(8), hm(12)],
+  trail: [hm(8), hm(14)], // daylight, and it takes a while
+  "new-neighborhood": [hm(9, 30), hm(14, 30)],
+  "bike-ride": [hm(8), hm(16)],
+  "film-roll": [hm(10), hm(15, 30)],
+  "photo-walk": [hm(8), hm(16, 30)],
+  frisbee: [hm(12), hm(16, 30)],
+  picnic: [hm(11, 30), hm(15, 30)],
+  museum: [hm(10), hm(15, 30)],
+  thrift: [hm(9, 30), hm(15)],
+  "pottery-studio": [hm(10), hm(16)],
+  bookstore: [hm(11), hm(19)],
+  "cafe-sketch": [hm(8, 30), hm(15, 30)],
+  volunteer: [hm(9), hm(13)],
+  "dinner-for-one": [hm(17, 30), hm(20, 30)],
+  "cook-together": [hm(17), hm(20)], // dinner
+  "movie-night": [hm(18), hm(21)],
+  "game-night": [hm(18), hm(20, 30)],
+  skate: [hm(18), hm(20, 30)],
+  "read-bath": [hm(18), hm(21)],
+  vinyl: [hm(18), hm(21)],
+  "face-mask": [hm(18), hm(21)],
+  "call-walk": [hm(17), hm(20)],
+};
+
 export const activities: Activity[] = base.map((b) => {
   const e = extras[b.id];
   if (!e) throw new Error(`Activity "${b.id}" is missing details`);
@@ -1061,6 +1110,12 @@ export const activities: Activity[] = base.map((b) => {
     costMax: e.cost[1],
     prep: e.prep,
     supplies: e.supplies,
+    at: startWindows[b.id]
+      ? [startWindows[b.id]!]
+      : [...b.parts]
+          .sort()
+          .map((p) => partWindow[p])
+          .sort((x, y) => x[0] - y[0]),
   };
 });
 

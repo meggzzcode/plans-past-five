@@ -94,7 +94,7 @@ export const articleFlowerArrangingAsAHobby: Article = {
   body: [
     {
       type: "p",
-      text: "Picture Friday evening. The week is finished, and so is the milk, so you make a quick run to the shop. At the end of the aisle sits a bucket of flowers, and for once you put a bunch in the basket.",
+      text: "Friday evening: the week is finished, and so is the milk, so you make a quick run to the shop. At the end of the aisle sits a bucket of flowers, and for once you put a bunch in the basket.",
     },
     {
       type: "p",
@@ -103,7 +103,7 @@ export const articleFlowerArrangingAsAHobby: Article = {
     { type: "h2", text: "Why it is worth trying", id: "why" },
     {
       type: "p",
-      text: "It takes about twenty minutes and needs no talent, only a few choices. The start-up effort is the lowest of any craft here, since you can begin with a bunch from the shop and a jug. And the result lands on your table, where you see it every day. Let's give Saturday a storyline: flowers first, everything else after.",
+      text: "It takes about twenty minutes and needs no talent, only a few choices. You can begin with a bunch from the shop and a jug. And the result lands on your table, where you see it every day. Do the flowers first and let everything else come after.",
     },
     { type: "h2", text: "What you need", id: "need" },
     {
@@ -213,7 +213,7 @@ export const articleFlowerArrangingAsAHobby: Article = {
     },
     {
       type: "makePlan",
-      text: "Make flowers a standing Friday habit in [Make Some Plans](/make-plans), and treat the arranging as the start of the weekend.",
+      text: "Make flowers a standing Friday habit, and treat the arranging as the start of the weekend.",
     },
     {
       type: "p",

@@ -74,7 +74,7 @@ export const articleCozySoloDatesAtHome: Article = {
   body: [
     {
       type: "p",
-      text: "Imagine it's Friday, it's pouring, and your social battery is somewhere around four percent. Staying in isn't a failure to make plans. It can be the plan, provided you actually make it.",
+      text: "Friday, pouring rain, social battery somewhere around four percent. Staying in isn't a failure to make plans. It can be the plan, provided you actually make it.",
     },
     {
       type: "p",
@@ -290,7 +290,7 @@ export const articleCozySoloDatesAtHome: Article = {
     },
     {
       type: "p",
-      text: "It also works as a reset after a hectic week. If your weekends tend to fill up, a cozy night booked in advance gives you permission to rest, and a free evening you've chosen to spend this way is never wasted. Let's give Saturday a storyline, even if the storyline is a blanket.",
+      text: "It also works as a reset after a hectic week. If your weekends tend to fill up, a cozy night booked in advance gives you permission to rest, and a free evening you've chosen to spend this way is never wasted. Book it like a plan, even if the plan is a blanket.",
     },
     { type: "ifYouLoved", hobbies: ["air-dry-clay", "paint-by-numbers", "jigsaw-puzzles"] },
   ],

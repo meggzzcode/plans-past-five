@@ -36,7 +36,7 @@ export const articleHowToPlanASoloSaturday: Article = {
   body: [
     {
       type: "p",
-      text: "Picture it. Saturday arrives with nothing on the calendar, and by 2 p.m. you've done two loads of laundry, checked your phone more often than you'd admit and eaten cereal over the sink. It's not that you didn't want to do something. It's that nobody made a plan, and the person best placed to do it was you.",
+      text: "Saturday arrives with nothing on the calendar, and by 2 p.m. you've done two loads of laundry, checked your phone more often than you'd admit and eaten cereal over the sink. It's not that you didn't want to do something. It's that nobody made a plan, and the person best placed to do it was you.",
     },
     {
       type: "p",
@@ -61,9 +61,10 @@ export const articleHowToPlanASoloSaturday: Article = {
       text: "Choose each ahead of time, write them down and let the rest of the day arrange itself around them.",
     },
     { type: "h2", text: "Step by step: planning it on Thursday", id: "plan" },
+    { type: "h3", text: "Your Thursday checklist" },
     {
-      type: "first30",
-      steps: [
+      type: "list",
+      items: [
         "Open your calendar and block late morning to late afternoon. Give it a name that sounds like a plan.",
         "Choose your anchor. If you're stuck, try the [hobby finder](/hobby-finder) quiz or browse [Make Some Plans](/make-plans).",
         "The day before, check opening hours, tickets or reservations, since they vary.",

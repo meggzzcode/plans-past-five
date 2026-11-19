@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { seo } from "@/lib/seo";
+import { quizCountWord } from "@/data/quiz-meta";
 import { ProsePage } from "@/components/pages/ProsePage";
 
 export const Route = createFileRoute("/start-here")({
@@ -15,14 +16,13 @@ export const Route = createFileRoute("/start-here")({
       kicker="Start here"
       title="Hi. You clocked out. What's the plan?"
       italic="What's the plan?"
-      dek="Four easy ways to use Plans Past Five, depending on how much you know about what you want."
+      dek="Three easy ways in, depending on what you know about what you want."
       tone="butter"
     >
       <h2>1. If you have no idea what you're into</h2>
       <p>
-        Take <Link to="/hobby-finder">Find Your Thing</Link>, our six-question hobby quiz. It
-        respects your budget, time and energy, and gives you three to five ideas with an easy first
-        step.
+        Take <Link to="/hobby-finder">Find Your Thing</Link>, our {quizCountWord().toLowerCase()}
+        -question hobby quiz. Three to five ideas that fit your time, budget and energy.
       </p>
       <h2>2. If you want a plan for tonight or this weekend</h2>
       <p>

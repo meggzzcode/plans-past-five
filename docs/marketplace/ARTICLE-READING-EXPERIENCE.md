@@ -1,0 +1,50 @@
+# Article reading experience
+
+Owner direction: the site read as too text-heavy. People like images and simple ways to read. This pass makes articles shorter to scan without editing any article text.
+
+## What changed
+
+- **The short version** (top of each article): up to three facts built only from the article's own blocks (reading time from `readingMinutes`, first-30-minutes step count, idea count, essentials count, a no-spend block if present). Skipped when fewer than two facts exist. Logic: `src/components/editorial/article-summary.ts`.
+- **Jump to** chips on phones for articles with more than three h2 sections (horizontal scroll, not sticky). The desktop "In this story" sidebar is unchanged.
+- **Idea lists** (25 to 50 items): each is a compact card, number + title + note, with time/cost/company as small icon chips. Supplies, "first try", the guide link and Save sit behind a small "More" disclosure.
+- **Callouts**: one family (small icon, label, left rule). At most 3 per article get a tinted panel (priority: first30, whatYoullNeed, noSpend, tryThisWeekend, makePlan, saveSplurge, girlsNight); the rest are a plain bordered line. Quote is a light italic line instead of a double-ruled block. "Nice to have" is collapsed.
+- **Images**: article hero is 4:5 on phones (16:10 on small tablets). Related reading is a photo-first snap row (ArticleCard `sm`); "If you loved this" hobby cards show photo + name only (CSS hides description/meta on `.photo-cards`; Cards.tsx untouched).
+- **Duplicate row fixed**: the page-bottom hobby cards render only when the article has no `ifYouLoved` block, so the same three cards never appear twice.
+- **Typography**: 17px text, 1.72 line height, 680px measure, h2 rhythm with a hairline, paragraphs over 70 words get extra bottom space, bold lead-ins turn cherry and bold.
+- **Shop fold**: every shop block is wrapped in `ShopFold` (layout only). Collapsed shows 3 essentials and a "See all (N)" toggle; "Another option" cards sit behind a separate "Show more options (k)" toggle. Both are `aria-expanded` buttons. Everything shows before hydration and with scripts off.
+- Reading-time label already uses `readingMinutes` (articleWordCount based).
+
+## Full-page height (Playwright, px)
+
+| Article @ width                                            | Before (px) | After (px) | Change |
+| ---------------------------------------------------------- | ----------- | ---------- | ------ |
+| junk-journaling-supplies-for-beginners@320                 | 25393       | 14837      | -42%   |
+| how-to-host-a-mahjong-night@320                            | 24701       | 17231      | -30%   |
+| solo-date-ideas@320                                        | 32844       | 21047      | -36%   |
+| how-to-plan-a-perfect-picnic@320                           | 18258       | 13385      | -27%   |
+| hobbies-to-try-when-life-feels-like-work-sleep-repeat@320  | 32273       | 19041      | -41%   |
+| low-energy-hobbies@320                                     | 23015       | 14917      | -35%   |
+| junk-journaling-supplies-for-beginners@390                 | 23686       | 13335      | -44%   |
+| how-to-host-a-mahjong-night@390                            | 22552       | 15033      | -33%   |
+| solo-date-ideas@390                                        | 29900       | 18201      | -39%   |
+| how-to-plan-a-perfect-picnic@390                           | 16854       | 11869      | -30%   |
+| hobbies-to-try-when-life-feels-like-work-sleep-repeat@390  | 29092       | 17035      | -41%   |
+| low-energy-hobbies@390                                     | 21282       | 13163      | -38%   |
+| junk-journaling-supplies-for-beginners@1280                | 14306       | 10427      | -27%   |
+| how-to-host-a-mahjong-night@1280                           | 13454       | 11169      | -17%   |
+| solo-date-ideas@1280                                       | 21436       | 15095      | -30%   |
+| how-to-plan-a-perfect-picnic@1280                          | 10150       | 9148       | -10%   |
+| hobbies-to-try-when-life-feels-like-work-sleep-repeat@1280 | 19754       | 13496      | -32%   |
+| low-energy-hobbies@1280                                    | 13830       | 10616      | -23%   |
+
+Phone pages are 27% to 44% shorter; desktop 10% to 32%. No horizontal overflow at 320, 390 or 1280. Screenshots: `/tmp/claude-0/article-ux/before-*.png` and `after-*.png`.
+
+## What we cut (visually, no text deleted)
+
+Per-item meta rows and supplies lists (now chips + "More"), boxed colour blocks (max 3 tinted), the big red "Make it a plan" panel (now a line), double-ruled pull quote, the mobile "In this story" accordion (now chips), the repeated hobby cards, and the optional/alternative product cards (behind toggles).
+
+## Not done / notes
+
+- Inline images: articles only have an image block in a few cases; images are rendered full-bleed where present, but no new images are inserted.
+- Item and callout text are unchanged; the "girls' night" label is content-owned.
+- Tests: `src/test/article-layout.test.tsx`.

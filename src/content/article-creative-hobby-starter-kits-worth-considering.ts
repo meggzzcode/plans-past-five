@@ -65,7 +65,7 @@ export const articleCreativeHobbyStarterKitsWorthConsidering: Article = {
   body: [
     {
       type: "p",
-      text: "Picture an online cart at 11 p.m.: a tiny embroidery hoop, a clay set with a cheerful box, a paint tin the size of a deck of cards. Each one promises a finished thing and no decisions. Some deliver. Others are a small pile of ordinary materials in a pretty package.",
+      text: "It's 11 p.m. and the online cart holds a tiny embroidery hoop, a clay set with a cheerful box, a paint tin the size of a deck of cards. Each one promises a finished thing and no decisions. Some deliver. Others are a small pile of ordinary materials in a pretty package.",
     },
     {
       type: "p",
@@ -203,7 +203,7 @@ export const articleCreativeHobbyStarterKitsWorthConsidering: Article = {
     },
     {
       type: "makePlan",
-      text: "Still undecided? Try the [Hobby Finder](/hobby-finder), then book your first session in [Make Some Plans](/make-plans).",
+      text: "Still undecided? Try the hobby finder, then book your first session on the calendar.",
     },
     { type: "ifYouLoved", hobbies: ["embroidery", "watercolor-painting", "air-dry-clay"] },
   ],

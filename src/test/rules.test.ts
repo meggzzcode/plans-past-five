@@ -111,8 +111,10 @@ describe("Content rules", () => {
   // Updated deliberately: the owner asked for eight collections. The original six own six product
   // types each; "journaling-era" and "cozy-after-hours" own none and cross-reference at least four
   // existing product types via extraProductIds (no new products were invented).
-  it("has 36 hobbies and 8 collections, each with at least 4 product types", () => {
-    expect(hobbies).toHaveLength(36);
+  // Hobby count updated deliberately from 36 to 38: "Yoga for Beginners" and "Dance Classes"
+  // were added so the Active filter is not just four hobbies (cost-and-search review).
+  it("has 38 hobbies and 8 collections, each with at least 4 product types", () => {
+    expect(hobbies).toHaveLength(38);
     expect(collections).toHaveLength(8);
     expect(products).toHaveLength(36);
     for (const c of collections)

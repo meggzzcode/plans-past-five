@@ -13,7 +13,7 @@ export const articleLowEnergyHobbies: Article = {
   slug: "low-energy-hobbies",
   title: "20 Cozy Hobbies to Try After a Long Day",
   titleItalic: "Cozy Hobbies",
-  dek: "For the evenings when your brain has clocked out and your body wants a soft surface: twenty small, forgiving things to do that aren't scrolling.",
+  dek: "For the evenings when your brain has clocked out and your body wants a soft surface: twenty small, forgiving things to do that aren't scrolling, built for the nights you have almost nothing left.",
   category: "after-hours",
   status: "published",
   publishedAt: "2026-11-19",
@@ -57,7 +57,7 @@ export const articleLowEnergyHobbies: Article = {
     },
     {
       type: "p",
-      text: "So here's a gentler definition. A cozy hobby asks almost nothing to start, doesn't mind being abandoned halfway, and leaves you slightly better off than the scroll would have. The twenty below are sorted by how much effort they take, so you can match one to tonight's battery level.",
+      text: "So here's a gentler definition. A cozy hobby asks almost nothing to start, doesn't mind being abandoned halfway, and leaves you slightly better off than the scroll would have. The twenty below are sorted by how much effort they take, so you can match one to tonight's battery level. If you'd rather browse a wider menu, including hobbies that get you out of the house, the [thirty-five hobbies list](/journal/hobbies-to-try-when-life-feels-like-work-sleep-repeat) goes further; this one is only for the tired evenings.",
     },
     { type: "h2", text: "Four rules for a tired evening", id: "rules" },
     {
@@ -209,7 +209,7 @@ export const articleLowEnergyHobbies: Article = {
     it(
       17,
       "Plant care, slowly",
-      "Wipe the leaves, check the soil with a finger, repot the one that's outgrown its home. Plants work on a slow clock, which is the whole appeal.",
+      "Wipe the leaves, check the soil with a finger, repot the one that's outgrown its home. Plants work on a slow clock, which is rather the point.",
       "10-20 min",
       "Varies",
       "indoor-gardening",

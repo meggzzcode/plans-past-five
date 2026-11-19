@@ -54,7 +54,7 @@ function Directory() {
                 onClick={() => toggle(f.tag)}
                 aria-pressed={active.includes(f.tag)}
                 className={cn(
-                  "shrink-0 border px-3.5 py-1.5 text-sm font-medium transition",
+                  "inline-flex min-h-11 shrink-0 items-center border px-3.5 py-1.5 text-sm font-medium transition",
                   active.includes(f.tag)
                     ? "border-cherry bg-cherry text-cream"
                     : "border-ink/25 bg-warm-white text-espresso hover:border-cherry",
@@ -66,7 +66,7 @@ function Directory() {
             {active.length > 0 && (
               <button
                 onClick={() => setActive([])}
-                className="shrink-0 px-2 text-sm font-semibold text-cherry underline"
+                className="inline-flex min-h-11 shrink-0 items-center px-2 text-sm font-semibold text-cherry underline"
               >
                 Clear
               </button>

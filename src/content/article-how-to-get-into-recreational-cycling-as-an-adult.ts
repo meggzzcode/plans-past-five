@@ -162,7 +162,7 @@ export const articleHowToGetIntoRecreationalCyclingAsAnAdult: Article = {
     { type: "h2", text: "Step 5: Practice somewhere quiet", id: "practice" },
     {
       type: "p",
-      text: "Choose an empty car park, a quiet park path or a traffic-free trail. Spend twenty minutes getting comfortable.",
+      text: "Choose an empty parking lot, a quiet park path or a traffic-free trail. Spend twenty minutes getting comfortable.",
     },
     {
       type: "first30",

@@ -14,7 +14,7 @@ export const articlePickleballForBeginners: Article = {
   angle:
     "A no-jargon starter guide: what you really need, the handful of rules that matter on day one, and how to join open play without feeling like the new kid",
   hobbies: ["pickleball", "tennis"],
-  productIds: ["pickleball-sets", "water-bottles", "sports-totes", "tennis-rackets"],
+  productIds: ["pickleball-sets", "water-bottles", "sports-totes"],
   related: [
     "how-to-start-playing-tennis-as-an-adult",
     "active-hobbies-for-women-who-dont-love-the-gym",
@@ -157,11 +157,11 @@ export const articlePickleballForBeginners: Article = {
       type: "shopHobby",
       title: "Pickleball essentials",
       dek: "Optional. Play first, buy later.",
-      productIds: ["pickleball-sets", "water-bottles", "sports-totes", "tennis-rackets"],
+      productIds: ["pickleball-sets", "water-bottles", "sports-totes"],
     },
     {
       type: "p",
-      text: "Want to try the other racket sport? Read [how to start playing tennis as an adult](/journal/how-to-start-playing-tennis-as-an-adult), or browse [active hobbies for women who don't love the gym](/journal/active-hobbies-for-women-who-dont-love-the-gym).",
+      text: "Curious about the game pickleball borrows from? Read [how to start playing tennis as an adult](/journal/how-to-start-playing-tennis-as-an-adult), or browse [active hobbies for women who don't love the gym](/journal/active-hobbies-for-women-who-dont-love-the-gym).",
     },
     {
       type: "makePlan",

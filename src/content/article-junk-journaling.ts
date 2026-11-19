@@ -4,7 +4,7 @@ export const articleJunkJournaling: Article = {
   slug: "how-to-start-junk-journaling",
   title: "How to Start Junk Journaling: A Beginner's Guide",
   titleItalic: "Junk Journaling",
-  dek: "What it is, what you actually need (less than you think), and how to make your very first page tonight.",
+  dek: "The how-to: what junk journaling is, the no-rules mindset and a first page you can make tonight with what is already in the house.",
   category: "creative-corner",
   status: "published",
   publishedAt: "2026-11-18",
@@ -21,9 +21,9 @@ export const articleJunkJournaling: Article = {
     },
     {
       type: "p",
-      text: "A junk journal is a notebook you fill with layers of paper, ephemera, tape, handwriting and the occasional pressed flower. It sits somewhere between a diary, a scrapbook and a collage. There are no rules, no wrong answers, and no reason for it to be neat. That's the whole appeal.",
+      text: "A junk journal is a notebook you fill with layers of paper, ephemera, tape, handwriting and the occasional pressed flower. It sits somewhere between a diary, a scrapbook and a collage. There are no rules, no wrong answers, and no reason for it to be neat. This guide is the how-to; the [supplies guide](/journal/junk-journaling-supplies-for-beginners) is the shopping list.",
     },
-    { type: "quote", text: "Being good at it is completely optional." },
+    { type: "quote", text: "A page only has to be yours, not good." },
     { type: "h2", text: "Why people love it", id: "why" },
     {
       type: "p",

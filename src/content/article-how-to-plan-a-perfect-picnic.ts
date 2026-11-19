@@ -109,7 +109,7 @@ export const articleHowToPlanAPerfectPicnic: Article = {
         "**Mains:** sandwiches or wraps on sturdy bread, a pasta or grain salad, a frittata cut into squares.",
         "**Sides:** crudités and dip, a bean salad, crackers and cheese, olives, pickles.",
         "**Fresh:** grapes, berries, cucumber, sliced fruit kept in a lidded box.",
-        "**Sweet:** brownies, cookies, flapjacks, or fruit with a little chocolate.",
+        "**Sweet:** brownies, cookies, granola bars, or fruit with a little chocolate.",
         "**Drinks:** water first, then iced tea, lemonade or a thermos of something hot on a cool day.",
       ],
     },
@@ -139,7 +139,7 @@ export const articleHowToPlanAPerfectPicnic: Article = {
         "A cooler or insulated bag with ice packs",
         "Plates, cutlery, napkins and a sharp knife in a sleeve",
         "Water, other drinks, and a bottle opener or corkscrew if needed",
-        "A rubbish bag for everything you take, and wet wipes for sticky fingers",
+        "A trash bag for everything you take, and wet wipes for sticky fingers",
         "Sun protection and a layer for when the shade moves",
       ],
       optional: [
@@ -184,7 +184,7 @@ export const articleHowToPlanAPerfectPicnic: Article = {
     },
     {
       type: "p",
-      text: "Leave the spot as you found it. Take everything you brought, scraps and napkins included, and carry a spare bag so you're never tempted to cram rubbish into an already overflowing bin.",
+      text: "Leave the spot as you found it. Take everything you brought, scraps and napkins included, and carry a spare bag so you're never tempted to cram trash into an already overflowing bin.",
     },
     { type: "h2", text: "When it goes a bit wrong", id: "troubleshooting" },
     {

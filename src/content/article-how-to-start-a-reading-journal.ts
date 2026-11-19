@@ -41,7 +41,7 @@ export const articleHowToStartAReadingJournal: Article = {
     { type: "h2", text: "Why it is worth trying", id: "why" },
     {
       type: "p",
-      text: "An entry takes about five minutes, a figure that is a suggestion, not a rule. It suits anyone who reads, whatever the pace. Start-up effort is a notebook and a pen. Let's call it homework you assign to nobody but yourself, with no grades and no due date.",
+      text: "An entry takes about five minutes, a figure that is a suggestion, not a rule. It suits anyone who reads, whatever the pace. All it takes is a notebook and a pen. Let's call it homework you assign to nobody but yourself, with no grades and no due date.",
     },
     { type: "h2", text: "What you need", id: "need" },
     {
@@ -167,7 +167,7 @@ export const articleHowToStartAReadingJournal: Article = {
     },
     {
       type: "makePlan",
-      text: "Schedule a monthly reading-journal catch-up in [Make Some Plans](/make-plans), ideally with a hot drink.",
+      text: "Schedule a monthly reading-journal catch-up, ideally with a hot drink.",
     },
     {
       type: "p",

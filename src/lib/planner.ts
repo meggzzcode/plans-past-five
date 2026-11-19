@@ -62,12 +62,18 @@ export const budgetCap = (b: Cost): number | null =>
   b === "free" ? 0 : b === "under25" ? 25 : b === "under50" ? 50 : null;
 
 export type Day = "Saturday" | "Sunday";
+/**
+ * One stop in an itinerary. An activity placed here starts at the later of `from` and the end of the
+ * previous stop plus a short break, must start by `latestStart` and be over by `to`. All times are
+ * minutes after midnight.
+ */
 export type SlotDef = {
   day?: Day;
-  label: string;
-  part: Part;
-  /** Start time in minutes after midnight. */
-  start: number;
+  /** Fixed label; otherwise it is derived from the start time (Morning, Afternoon, Evening). */
+  label?: string;
+  from: number;
+  latestStart: number;
+  to: number;
   maxMinutes: number;
 };
 
@@ -75,29 +81,54 @@ const h = (hours: number, mins = 0) => hours * 60 + mins;
 
 const normWhen = (w: When): (typeof WHENS)[number] => (w === "after-work" ? "weeknight" : w);
 
+/** Short break between stops (travel, a drink, a breather). */
+export const BREAK_MINUTES = 30;
+/** The longest wait we accept before a stop (lunch, a slow start). */
+const MAX_WAIT = 90;
+/** Ideas shorter than this are fillers, not stops. */
+const MIN_STOP_MINUTES = 30;
+/** A plan counts as honouring the chosen length when it covers at least this share of it. */
+export const LENGTH_TOLERANCE = 0.75;
+
+const slot = (
+  from: number,
+  latestStart: number,
+  to: number,
+  maxMinutes: number,
+  extra: Partial<SlotDef> = {},
+): SlotDef => ({ from, latestStart, to, maxMinutes, ...extra });
+
 function dayDefs(length: Length, day?: Day): SlotDef[] {
   const d = day ? { day } : {};
   if (length === "full-day")
     return [
-      { ...d, label: "Morning", part: "morning", start: h(9, 30), maxMinutes: 180 },
-      { ...d, label: "Afternoon", part: "afternoon", start: h(13, 30), maxMinutes: 180 },
-      { ...d, label: "Evening", part: "evening", start: h(18, 30), maxMinutes: 150 },
+      slot(h(9, 30), h(10, 30), h(12, 30), 180, d),
+      slot(h(12, 30), h(15), h(17, 30), 180, d),
+      slot(h(17, 30), h(19, 30), h(21, 30), 150, d),
     ];
   if (length === "half-day")
     return [
-      { ...d, label: "Morning", part: "morning", start: h(9, 30), maxMinutes: 180 },
-      { ...d, label: "Afternoon", part: "afternoon", start: h(13, 30), maxMinutes: 150 },
+      slot(h(9, 30), h(10, 30), h(12, 30), 150, d),
+      slot(h(11), h(13, 30), h(15), 150, d),
+      slot(h(13, 30), h(15, 30), h(17), 120, d),
     ];
-  // "few-hours" (and the single-stop "evening" length on a weekend day) is an afternoon outing.
   if (length === "few-hours")
-    return [
-      { ...d, label: "First", part: "afternoon", start: h(13), maxMinutes: 120 },
-      { ...d, label: "Then", part: "afternoon", start: h(15, 15), maxMinutes: 90 },
-    ];
-  return [{ ...d, label: "Afternoon", part: "afternoon", start: h(14), maxMinutes: 150 }];
+    return [slot(h(13), h(14), h(15, 30), 120, d), slot(h(14, 30), h(16, 30), h(18, 30), 120, d)];
+  return [slot(h(14), h(15), h(18), 150, d)]; // a single stop on a weekend day
 }
 
-/** The ordered time windows for an input. Every window is always returned, even if nothing fits it. */
+/** Minutes of plan we aim for per day (first start to last end), or null for a single stop. */
+function dayTarget(length: Length): number | null {
+  return length === "full-day"
+    ? 480
+    : length === "half-day"
+      ? 270
+      : length === "few-hours"
+        ? 180
+        : null;
+}
+
+/** The ordered stops for an input. Every stop is always returned, even if nothing fits it. */
 export function slotsFor(input: PlanInput): SlotDef[] {
   const when = normWhen(input.when);
   const two = input.length !== "evening";
@@ -105,31 +136,31 @@ export function slotsFor(input: PlanInput): SlotDef[] {
     case "weeknight":
       return two
         ? [
-            { label: "First", part: "evening", start: h(18), maxMinutes: 75 },
-            { label: "Then", part: "evening", start: h(19, 30), maxMinutes: 90 },
+            slot(h(18), h(19), h(20, 30), 75, { label: "First" }),
+            slot(h(19), h(20), h(22), 90, { label: "Then" }),
           ]
-        : [{ label: "Tonight", part: "evening", start: h(18, 30), maxMinutes: 120 }];
+        : [slot(h(18), h(19, 30), h(21, 30), 120, { label: "Tonight" })];
     case "evening":
       return two
         ? [
-            { label: "First", part: "evening", start: h(17, 30), maxMinutes: 75 },
-            { label: "Then", part: "evening", start: h(19), maxMinutes: 90 },
+            slot(h(17, 30), h(18, 30), h(19, 45), 75, { label: "First" }),
+            slot(h(18, 45), h(20), h(22), 90, { label: "Then" }),
           ]
-        : [{ label: "Evening", part: "evening", start: h(18), maxMinutes: 150 }];
+        : [slot(h(18), h(19, 30), h(22), 150, { label: "Evening" })];
     case "morning":
       return two
         ? [
-            { label: "First", part: "morning", start: h(9), maxMinutes: 90 },
-            { label: "Then", part: "morning", start: h(10, 45), maxMinutes: 120 },
+            slot(h(9), h(10), h(11), 90, { label: "First" }),
+            slot(h(10), h(11, 30), h(13), 120, { label: "Then" }),
           ]
-        : [{ label: "Morning", part: "morning", start: h(9), maxMinutes: 180 }];
+        : [slot(h(9), h(10), h(13), 180, { label: "Morning" })];
     case "afternoon":
       return two
         ? [
-            { label: "First", part: "afternoon", start: h(13), maxMinutes: 90 },
-            { label: "Then", part: "afternoon", start: h(14, 45), maxMinutes: 120 },
+            slot(h(13), h(14), h(15, 30), 90, { label: "First" }),
+            slot(h(14, 30), h(16), h(18), 120, { label: "Then" }),
           ]
-        : [{ label: "Afternoon", part: "afternoon", start: h(13, 30), maxMinutes: 180 }];
+        : [slot(h(13), h(14, 30), h(18), 180, { label: "Afternoon" })];
     case "saturday":
     case "sunday":
       return dayDefs(input.length);
@@ -140,6 +171,16 @@ export function slotsFor(input: PlanInput): SlotDef[] {
   }
 }
 
+/** Total minutes the chosen length asks for (all days together), or null for a single stop. */
+export function targetMinutes(input: PlanInput): number | null {
+  const when = normWhen(input.when);
+  if (when === "weeknight" || when === "evening" || when === "morning" || when === "afternoon")
+    return input.length === "evening" ? null : 150;
+  const len = when === "weekend" && input.length === "evening" ? "few-hours" : input.length;
+  const t = dayTarget(len);
+  return t === null ? null : t * (when === "weekend" ? 2 : 1);
+}
+
 const rank: Record<ActivityEnergy, number> = { low: 0, medium: 1, high: 2 };
 
 type Relax = Partial<Record<"budget" | "setting" | "energy" | "who" | "vibe" | "home", true>>;
@@ -147,9 +188,9 @@ type Relax = Partial<Record<"budget" | "setting" | "energy" | "who" | "vibe" | "
 const vibeSet = (v: Vibe): Vibe[] =>
   v === "cozy" || v === "relaxing" ? ["cozy", "relaxing"] : [v];
 
-function fits(a: Activity, input: PlanInput, def: SlotDef, relax: Relax = {}) {
-  if (!a.parts.includes(def.part)) return false;
-  if (a.minutes > def.maxMinutes) return false;
+/** Everything except timing: who, budget, setting, energy, vibe. */
+function fits(a: Activity, input: PlanInput, relax: Relax = {}) {
+  if (a.minutes < MIN_STOP_MINUTES) return false;
   if (!relax.who && !a.who.includes(input.who)) return false;
   const cap = budgetCap(input.budget);
   if (!relax.budget && cap !== null && a.costMax > cap) return false;
@@ -162,6 +203,25 @@ function fits(a: Activity, input: PlanInput, def: SlotDef, relax: Relax = {}) {
   return true;
 }
 
+/** The first moment at or after `earliest` that the activity is allowed to start, or null. */
+export function startIn(a: Activity, earliest: number): number | null {
+  for (const [from, to] of a.at) if (earliest <= to) return Math.max(earliest, from);
+  return null;
+}
+
+/**
+ * Where an activity would go in a stop, given when the previous stop ended (null for the first stop
+ * of a day). Null when its time window, the stop's window or the wait rules do not allow it.
+ */
+export function place(a: Activity, def: SlotDef, prevEnd: number | null) {
+  if (a.minutes > def.maxMinutes) return null;
+  const earliest = Math.max(def.from, prevEnd === null ? 0 : prevEnd + BREAK_MINUTES);
+  const start = startIn(a, earliest);
+  if (start === null || start > def.latestStart || start - earliest > MAX_WAIT) return null;
+  const end = start + a.minutes;
+  return end <= def.to ? { start, end } : null;
+}
+
 function score(a: Activity, input: PlanInput) {
   const set = vibeSet(input.vibe);
   let s = 0;
@@ -171,71 +231,162 @@ function score(a: Activity, input: PlanInput) {
   return s;
 }
 
-/** All ideas that fit a time window, best first. Does not consider what other slots use. */
+/** All ideas that could happen in a stop (first of its day), best first. Ignores what other stops use. */
 export function candidates(input: PlanInput, def: SlotDef, relax: Relax = {}) {
   return activities
-    .filter((a) => fits(a, input, def, relax))
+    .filter((a) => fits(a, input, relax) && place(a, def, null))
     .map((a) => ({ a, score: score(a, input) }))
     .sort((x, y) => y.score - x.score || x.a.id.localeCompare(y.a.id));
 }
 
 /** Seed rotates within the top 4; the rest follow in score order so budget fitting can still reach them. */
-function ordered(input: PlanInput, def: SlotDef, seed: number, slotIndex: number): Activity[] {
-  const c = candidates(input, def).map((x) => x.a);
+function ordered(
+  input: PlanInput,
+  def: SlotDef,
+  seed: number,
+  slotIndex: number,
+  relax: Relax,
+): Activity[] {
+  const c = candidates(input, def, relax).map((x) => x.a);
   const top = c.slice(0, Math.min(4, c.length));
   const k = top.length ? (seed + slotIndex) % top.length : 0;
   return [...top.slice(k), ...top.slice(0, k), ...c.slice(top.length)];
 }
 
-const NODE_LIMIT = 400_000;
+export type Stop = { slot: number; a: Activity; start: number; end: number };
 
-/** Picks one idea per slot so the whole itinerary fits the budget. Fills as many slots as possible. */
-function assemble(input: PlanInput, defs: SlotDef[], seed: number): (Activity | null)[] {
+const NODE_LIMIT = 60_000;
+
+/** Time covered by the stops (first start to last end per day), each day capped at its share of the target. */
+const covered = (stops: Stop[], defs: SlotDef[], input: PlanInput) => {
+  const aim = targetMinutes(input);
+  const dayCount = new Set(defs.map((d) => d.day ?? "")).size;
+  const per = aim === null ? Infinity : aim / dayCount;
+  const spans = new Map<string, [number, number]>();
+  for (const s of stops) {
+    const k = defs[s.slot]!.day ?? "";
+    const cur = spans.get(k);
+    spans.set(k, [cur ? cur[0] : s.start, s.end]);
+  }
+  let total = 0;
+  for (const [from, to] of spans.values()) total += Math.min(to - from, per);
+  return total;
+};
+
+/**
+ * Picks ideas for the stops so the whole itinerary fits the budget, every idea sits in a compatible
+ * time window, and the plan covers as much of the chosen length as it can. Stops may be skipped, but
+ * only canonically (an idea goes in the earliest stop that could hold it) so that a plan can be
+ * rebuilt exactly from its activity ids.
+ */
+function assemble(input: PlanInput, defs: SlotDef[], seed: number, relax: Relax = {}): Stop[] {
   const cap = budgetCap(input.budget);
-  const lists = defs.map((d, i) => ordered(input, d, seed, i));
+  const lists = defs.map((d, i) => ordered(input, d, seed, i, relax));
   const n = defs.length;
-  let best: (Activity | null)[] = defs.map(() => null);
-  let bestFilled = -1;
+  const aim = targetMinutes(input);
+  let best: Stop[] = [];
+  let bestValue = -1;
   let nodes = 0;
-  const cur: (Activity | null)[] = defs.map(() => null);
+  const cur: Stop[] = [];
   const used = new Set<string>();
+  const good = (stops: Stop[]) =>
+    aim === null ? stops.length === n : covered(stops, defs, input) >= aim * 0.9;
 
-  const dfs = (i: number, spent: number, filled: number) => {
-    if (nodes++ > NODE_LIMIT || bestFilled === n) return;
-    if (filled + (n - i) <= bestFilled) return;
+  const dfs = (i: number, prevEnd: number | null, spent: number, skipped: SlotDef[]) => {
+    if (nodes++ > NODE_LIMIT) return;
     if (i === n) {
-      if (filled > bestFilled) {
-        bestFilled = filled;
+      const value = covered(cur, defs, input) * 100 + cur.length;
+      if (value > bestValue) {
+        bestValue = value;
         best = [...cur];
       }
       return;
     }
+    const def = defs[i]!;
+    const newDay = i > 0 && defs[i - 1]!.day !== def.day;
+    const pe = newDay ? null : prevEnd;
+    const sk = newDay ? [] : skipped;
     for (const a of lists[i]!) {
       if (used.has(a.id)) continue;
       if (cap !== null && spent + a.costMax > cap) continue;
-      cur[i] = a;
+      const at = place(a, def, pe);
+      if (!at) continue;
+      if (sk.some((d) => place(a, d, pe))) continue; // it belongs in an earlier stop
+      cur.push({ slot: i, a, ...at });
       used.add(a.id);
-      dfs(i + 1, spent + a.costMax, filled + 1);
+      dfs(i + 1, at.end, spent + a.costMax, []);
       used.delete(a.id);
-      cur[i] = null;
-      if (bestFilled === n) return;
+      cur.pop();
+      if (bestValue >= 0 && good(best)) return;
     }
-    dfs(i + 1, spent, filled); // leave this slot empty
+    dfs(i + 1, pe, spent, [...sk, def]); // leave this stop empty
   };
-  dfs(0, 0, 0);
+  dfs(0, null, 0, []);
   return best;
 }
 
+/**
+ * Places a given list of activity ids (a day's stops in order, days separated by ""). Null when any
+ * id is unknown, repeated, or cannot go where it sits.
+ */
+function replay(input: PlanInput, defs: SlotDef[], ids: string[]): Stop[] | null {
+  const days = [...new Set(defs.map((d) => d.day ?? ""))];
+  const groups: string[][] = [[]];
+  for (const id of ids) {
+    if (id === "") groups.push([]);
+    else groups[groups.length - 1]!.push(id);
+  }
+  while (groups.length > days.length && groups[groups.length - 1]!.length === 0) groups.pop();
+  if (groups.length > days.length) return null;
+  const seen = new Set<string>();
+  const out: Stop[] = [];
+  for (let g = 0; g < groups.length; g++) {
+    const first = defs.findIndex((d) => (d.day ?? "") === days[g]);
+    let ptr = first;
+    let prevEnd: number | null = null;
+    for (const id of groups[g]!) {
+      const a = getActivity(id);
+      if (!a || seen.has(id)) return null;
+      seen.add(id);
+      let found = false;
+      while (ptr < defs.length && (defs[ptr]!.day ?? "") === days[g]) {
+        const at = place(a, defs[ptr]!, prevEnd);
+        if (at) {
+          out.push({ slot: ptr, a, ...at });
+          prevEnd = at.end;
+          ptr++;
+          found = true;
+          break;
+        }
+        ptr++;
+      }
+      if (!found) return null;
+    }
+  }
+  return out;
+}
+
+const idsOf = (stops: Stop[], defs: SlotDef[]): string[] => {
+  const out: string[] = [];
+  const days = [...new Set(defs.map((d) => d.day ?? ""))];
+  days.forEach((day, k) => {
+    if (k > 0) out.push("");
+    for (const s of stops) if ((defs[s.slot]!.day ?? "") === day) out.push(s.a.id);
+  });
+  return out;
+};
+
 export type PlanSlot = {
-  /** 1-based position in the itinerary (also used for missing slots). */
+  /** 1-based position in the itinerary. */
   step: number;
   day?: Day;
   label: string;
   start: number;
   end: number;
   activity: Activity | null;
+  /** A swap that still fits the time, budget and choices. */
   alternative: Activity | null;
-  /** Visible explanation when no idea fits this window. */
+  /** Visible explanation when nothing fits this day. */
   missing?: string;
 };
 
@@ -244,14 +395,21 @@ export type Plan = {
   slots: PlanSlot[];
   filled: number;
   missingCount: number;
+  /** Minutes of activities. */
   totalMinutes: number;
+  /** Minutes from the first start to the last end, days added together. */
+  spanMinutes: number;
+  /** Minutes the chosen length asks for, null for a single stop. */
+  targetMinutes: number | null;
+  /** Set when the plan covers clearly less than the chosen length, and says why in plain words. */
+  lengthNote: string | null;
   totalCost: { min: number; max: number };
   /** Spending cap for the whole itinerary, null when the budget is flexible. */
   budgetCap: number | null;
   withinBudget: boolean;
   input: PlanInput;
   seed: number;
-  /** Activity id per slot ("" when the slot is empty). This plus input and seed restores the plan. */
+  /** Activity ids in order, days separated by "". This plus input and seed restores the plan. */
   ids: string[];
 };
 
@@ -275,74 +433,153 @@ const vibeWord: Record<Vibe, string> = {
 };
 const fmtMoney = (n: number) => `$${n}`;
 
-function missingReason(input: PlanInput, def: SlotDef, cap: number | null): string {
-  const when = `${def.day ? `${def.day} ` : ""}${def.label.toLowerCase()}`;
-  if (candidates(input, def).length) {
-    return `We found ideas for this ${when} slot, but not within your ${cap === 0 ? "free" : `${fmtMoney(cap ?? 0)}`} total budget after the other stops. Raise the budget or pick a cheaper vibe to fill it.`;
-  }
-  const tries: [keyof Relax, string][] = [
-    ["budget", "a bigger budget"],
-    ["setting", "dropping the indoor/outdoor choice"],
-    ["home", "unticking keep it at home"],
-    ["energy", "a higher energy level"],
-    ["who", "a different company choice"],
-    ["vibe", "a different vibe"],
-  ];
-  for (const [k, label] of tries)
-    if (candidates(input, def, { [k]: true }).length)
-      return `No ${vibeWord[input.vibe]} idea fits this ${when} slot yet. Try ${label}.`;
-  return `No idea in our collection fits this ${when} slot. Try changing more than one choice.`;
+/** How the chosen company reads in a title: "for one", "with a friend", "for two", "with the group". */
+export const whoPhrase: Record<Who, string> = {
+  alone: "for one",
+  friend: "with a friend",
+  partner: "with your partner",
+  group: "with the group",
+};
+
+const lengthWord: Record<Length, string> = {
+  evening: "one stop",
+  "few-hours": "a few hours",
+  "half-day": "half a day",
+  "full-day": "a full day",
+};
+
+const RELAX_TRIES: [keyof Relax, string][] = [
+  ["budget", "a bigger budget"],
+  ["setting", "dropping the indoor/outdoor choice"],
+  ["home", "unticking keep it at home"],
+  ["energy", "a higher energy level"],
+  ["who", "a different company choice"],
+  ["vibe", "a different vibe"],
+];
+
+function emptyDayReason(input: PlanInput, defs: SlotDef[], cap: number | null): string {
+  const none = (relax: Relax) => defs.every((d) => candidates(input, d, relax).length === 0);
+  if (!none({}))
+    return `We found ideas, but not within your ${cap === 0 ? "free" : fmtMoney(cap ?? 0)} total budget after the other stops. Raise the budget or pick a cheaper vibe.`;
+  for (const [k, label] of RELAX_TRIES)
+    if (!none({ [k]: true })) return `No ${vibeWord[input.vibe]} idea fits yet. Try ${label}.`;
+  return "No idea in our collection fits yet. Try changing more than one choice.";
 }
 
-function alternativeFor(
+/** Why the plan is shorter than asked, naming the one change most likely to help. */
+function shortNote(input: PlanInput, defs: SlotDef[], seed: number, span: number, aim: number) {
+  const base = `You asked for ${lengthWord[input.length]}. We could fit about ${fmtDuration(span)} that works with your choices.`;
+  for (const [k, label] of RELAX_TRIES) {
+    const stops = assemble(input, defs, seed, { [k]: true });
+    if (spanOf(stops, defs) >= Math.min(aim * LENGTH_TOLERANCE, span + 60))
+      return `${base} Try ${label} for more.`;
+  }
+  return base;
+}
+
+const spanOf = (stops: Stop[], defs: SlotDef[]) => {
+  const first = new Map<string, number>();
+  const last = new Map<string, number>();
+  for (const s of stops) {
+    const k = defs[s.slot]!.day ?? "";
+    if (!first.has(k)) first.set(k, s.start);
+    last.set(k, s.end);
+  }
+  let t = 0;
+  for (const [k, f] of first) t += last.get(k)! - f;
+  return t;
+};
+
+const labelFor = (def: SlotDef, start: number) =>
+  def.label ?? (start < h(12) ? "Morning" : start < h(17) ? "Afternoon" : "Evening");
+
+function swapFor(
   input: PlanInput,
-  def: SlotDef,
-  chosen: (Activity | null)[],
+  defs: SlotDef[],
+  stops: Stop[],
   index: number,
   total: number,
 ): Activity | null {
   const cap = budgetCap(input.budget);
-  const others = new Set(chosen.filter((a): a is Activity => !!a).map((a) => a.id));
-  const rest = total - (chosen[index]?.costMax ?? 0);
+  const used = new Set(stops.map((s) => s.a.id));
+  const rest = total - stops[index]!.a.costMax;
+  const ids = idsOf(stops, defs);
+  const mine = stops[index]!.a.id;
+  const list = activities
+    .filter((a) => !used.has(a.id) && fits(a, input) && (cap === null || rest + a.costMax <= cap))
+    .sort((x, y) => score(y, input) - score(x, input) || x.id.localeCompare(y.id));
   return (
-    candidates(input, def).find(
-      ({ a }) => !others.has(a.id) && (cap === null || rest + a.costMax <= cap),
-    )?.a ?? null
+    list.find((a) => {
+      const swapped = replay(
+        input,
+        defs,
+        ids.map((i) => (i === mine ? a.id : i)),
+      );
+      return swapped !== null && swapped.length === stops.length;
+    }) ?? null
   );
 }
 
-function buildPlan(input: PlanInput, seed: number, chosen: (Activity | null)[]): Plan {
+function buildPlan(input: PlanInput, seed: number, stops: Stop[]): Plan {
   const defs = slotsFor(input);
   const cap = budgetCap(input.budget);
-  const total = chosen.reduce((t, a) => t + (a?.costMax ?? 0), 0);
-  const slots: PlanSlot[] = defs.map((d, i) => {
-    const a = chosen[i] ?? null;
-    return {
-      step: i + 1,
-      ...(d.day ? { day: d.day } : {}),
-      label: d.label,
-      start: d.start,
-      end: d.start + (a?.minutes ?? 0),
-      activity: a,
-      alternative: a ? alternativeFor(input, d, chosen, i, total) : null,
-      ...(a ? {} : { missing: missingReason(input, d, cap) }),
-    };
-  });
-  const filled = slots.filter((s) => s.activity).length;
-  const min = chosen.reduce((t, a) => t + (a?.costMin ?? 0), 0);
-  const who = input.who === "alone" ? " for one" : input.who === "group" ? " with the group" : "";
+  const total = stops.reduce((t, s) => t + s.a.costMax, 0);
+  const slots: PlanSlot[] = [];
+  const days = [...new Set(defs.map((d) => d.day ?? ""))];
+  let missingCount = 0;
+  for (const day of days) {
+    const mine = stops.filter((s) => (defs[s.slot]!.day ?? "") === day);
+    const dayDefsOnly = defs.filter((d) => (d.day ?? "") === day);
+    const dayName = day ? { day: day as Day } : {};
+    if (mine.length === 0) {
+      missingCount++;
+      slots.push({
+        step: slots.length + 1,
+        ...dayName,
+        label: dayDefsOnly[0]!.label ?? "Anytime",
+        start: dayDefsOnly[0]!.from,
+        end: dayDefsOnly[0]!.from,
+        activity: null,
+        alternative: null,
+        missing: emptyDayReason(input, dayDefsOnly, cap),
+      });
+      continue;
+    }
+    for (const s of mine) {
+      slots.push({
+        step: slots.length + 1,
+        ...dayName,
+        label: labelFor(defs[s.slot]!, s.start),
+        start: s.start,
+        end: s.end,
+        activity: s.a,
+        alternative: swapFor(input, defs, stops, stops.indexOf(s), total),
+      });
+    }
+  }
+  const aim = targetMinutes(input);
+  const span = spanOf(stops, defs);
+  const filled = stops.length;
+  const lengthNote =
+    aim !== null && filled > 0 && span < aim * LENGTH_TOLERANCE
+      ? shortNote(input, defs, seed, span, aim)
+      : null;
+  const min = stops.reduce((t, s) => t + s.a.costMin, 0);
   return {
-    title: `Your little ${vibeWord[input.vibe]} ${dayWord[normWhen(input.when)]}${who}`,
+    title: `Your little ${vibeWord[input.vibe]} ${dayWord[normWhen(input.when)]} ${whoPhrase[input.who]}`,
     slots,
     filled,
-    missingCount: slots.length - filled,
-    totalMinutes: chosen.reduce((t, a) => t + (a?.minutes ?? 0), 0),
+    missingCount,
+    totalMinutes: stops.reduce((t, s) => t + s.a.minutes, 0),
+    spanMinutes: span,
+    targetMinutes: aim,
+    lengthNote,
     totalCost: { min, max: total },
     budgetCap: cap,
     withinBudget: cap === null || total <= cap,
     input,
     seed,
-    ids: chosen.map((a) => a?.id ?? ""),
+    ids: idsOf(stops, defs),
   };
 }
 
@@ -350,15 +587,12 @@ export function makePlan(input: PlanInput, seed = 0): Plan {
   return buildPlan(input, seed, assemble(input, slotsFor(input), seed));
 }
 
-/** Rebuilds a saved plan exactly from its activity ids. Returns null if the ids do not match the input's slots. */
+/** Rebuilds a saved or shared plan exactly from its activity ids. Null if they do not fit the input. */
 export function planFromIds(input: PlanInput, seed: number, ids: string[]): Plan | null {
-  const defs = slotsFor(input);
-  if (ids.length !== defs.length) return null;
-  return buildPlan(
-    input,
-    seed,
-    ids.map((id) => (id ? (getActivity(id) ?? null) : null)),
-  );
+  // Retired activity ids are skipped so an old link still opens with what is left.
+  const known = ids.filter((id) => id === "" || getActivity(id));
+  const stops = replay(input, slotsFor(input), known);
+  return stops ? buildPlan(input, seed, stops) : null;
 }
 
 /* ---------- Search params: quiz hand-off and saved-plan links ---------- */
@@ -423,7 +657,14 @@ export function parsePlanSearch(s: Record<string, unknown>): ParsedSearch {
   const seedNum = Number(s["seed"]);
   const seed = Number.isInteger(seedNum) && seedNum >= 0 && seedNum < 1000 ? seedNum : 0;
   const rawIds = typeof s["ids"] === "string" ? s["ids"] : null;
-  const ids = rawIds ? rawIds.split(",").map((x) => (x === "-" ? "" : x)) : null;
+  const ids = !rawIds
+    ? null
+    : rawIds === "-"
+      ? []
+      : rawIds
+          .split(",")
+          .slice(0, 24)
+          .map((x) => (x === "-" ? "" : x));
   const from = typeof s["from"] === "string" && /^[a-z-]{1,30}$/.test(s["from"]) ? s["from"] : null;
   const prefilled = !!(when || length || vibe || who || budget || setting || energy || home);
   return { input, prefilled, seed, ids, from };
@@ -441,7 +682,7 @@ export function planSearch(input: PlanInput, seed: number, ids: string[]): Recor
     setting: input.setting ?? "any",
     energy: input.energy ?? "any",
     seed: String(seed),
-    ids: ids.map((i) => i || "-").join(","),
+    ids: ids.length ? ids.map((i) => i || "-").join(",") : "-",
   };
 }
 
@@ -529,4 +770,58 @@ export function guidesFor(a: Activity): GuideLink[] {
     out.push({ kind: "section", ...section });
   }
   return out;
+}
+
+/* ---------- Sharing ---------- */
+
+const onWord: Record<(typeof WHENS)[number], string> = {
+  weeknight: "after work",
+  morning: "in the morning",
+  afternoon: "this afternoon",
+  evening: "this evening",
+  saturday: "on Saturday",
+  sunday: "on Sunday",
+  weekend: "this weekend",
+};
+
+/** The one line that opens a shared plan, worded for who is coming. */
+export function inviteLine(input: PlanInput): string {
+  const on = onWord[normWhen(input.when)];
+  switch (input.who) {
+    case "friend":
+      return `Free ${on}? I planned it, want to join me?`;
+    case "partner":
+      return `Date plan ${on}. Want in?`;
+    case "group":
+      return `Plan for the group ${on}. Who's in?`;
+    default:
+      return `My plan ${on}.`;
+  }
+}
+
+/** Short "how long and how much" line used at the top of a plan and in shared text. */
+export function planSummary(plan: Plan): string {
+  const time = plan.spanMinutes > 0 ? fmtDuration(plan.spanMinutes) : "";
+  const cost = fmtRange(plan.totalCost.min, plan.totalCost.max);
+  return [time, cost].filter(Boolean).join(" · ");
+}
+
+/** Plain-text version of a plan with times and a link. No personal data: only the choices made. */
+export function planText(plan: Plan, url: string): string {
+  const lines = [plan.title, inviteLine(plan.input), ""];
+  let day: string | undefined;
+  for (const s of plan.slots) {
+    if (s.day && s.day !== day) {
+      if (day) lines.push("");
+      lines.push(s.day);
+      day = s.day;
+    }
+    const a = s.activity;
+    if (!a) continue;
+    lines.push(
+      `${fmtClock(s.start)}  ${a.name} (${fmtDuration(a.minutes)}, ${fmtRange(a.costMin, a.costMax)})`,
+    );
+  }
+  lines.push("", `Total: ${planSummary(plan)} (rough estimate)`, `Open the same plan: ${url}`);
+  return lines.join("\n");
 }

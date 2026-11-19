@@ -82,7 +82,7 @@ export const articleGirlsNightIdeasThatArentDrinks: Article = {
   body: [
     {
       type: "p",
-      text: "Imagine the group chat. Someone types 'we should do something', six people react with a heart, and three days later the plan is, once again, drinks. Drinks are lovely. They're also loud, pricey, hard to talk over and a slightly awkward fit for friends who aren't drinking, are driving, are saving or want to be home by ten.",
+      text: "Someone types 'we should do something' into the group chat, six people react with a heart, and three days later the plan is, once again, drinks. Drinks are lovely. They're also loud, pricey, hard to talk over and a slightly awkward fit for friends who aren't drinking, are driving, are saving or want to be home by ten.",
     },
     {
       type: "p",
@@ -331,9 +331,10 @@ export const articleGirlsNightIdeasThatArentDrinks: Article = {
         "Keep a backup for no-shows: a smaller version of the same plan.",
       ],
     },
+    { type: "h3", text: "Get it into the group chat" },
     {
-      type: "first30",
-      steps: [
+      type: "list",
+      items: [
         "Pick two ideas from the list that suit your group.",
         "Send them to the chat with a date and a rough cost.",
         "Take the first yes as a plan and confirm the details.",
@@ -357,7 +358,7 @@ export const articleGirlsNightIdeasThatArentDrinks: Article = {
     },
     {
       type: "p",
-      text: "Rotating who chooses helps too. When each friend takes a turn, the group finds new things and nobody ends up carrying the planning alone. Sorry, I have plans past five stops being an excuse and starts being a calendar.",
+      text: "Rotating who chooses helps too. When each friend takes a turn, the group finds new things and nobody ends up carrying the planning alone. A standing night turns 'we should do something' into a date on the calendar.",
     },
     { type: "ifYouLoved", hobbies: ["craft-nights", "pottery-painting", "book-clubs"] },
   ],

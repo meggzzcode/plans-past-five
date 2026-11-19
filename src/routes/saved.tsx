@@ -84,11 +84,14 @@ function Saved() {
                   {items
                     .filter((i) => i.kind === k)
                     .map((i) => (
-                      <li key={i.key} className="flex items-start justify-between gap-4 py-4">
+                      <li
+                        key={i.key}
+                        className="relative flex items-start justify-between gap-4 py-4"
+                      >
                         <div>
                           <a
                             href={hrefFor(i)}
-                            className="font-display text-xl text-ink hover:text-cherry focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cherry"
+                            className="font-display text-xl text-ink after:absolute after:inset-0 after:content-[''] hover:text-cherry focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cherry"
                           >
                             {i.title}
                           </a>
@@ -105,7 +108,7 @@ function Saved() {
                         </div>
                         <button
                           onClick={() => remove(i.key)}
-                          className="grid h-11 w-11 shrink-0 place-items-center text-muted-foreground hover:text-cherry focus-visible:outline focus-visible:outline-2 focus-visible:outline-cherry"
+                          className="relative z-10 grid h-11 w-11 shrink-0 place-items-center text-muted-foreground hover:text-cherry focus-visible:outline focus-visible:outline-2 focus-visible:outline-cherry"
                           aria-label={`Remove ${i.title}`}
                         >
                           <X className="h-5 w-5" />

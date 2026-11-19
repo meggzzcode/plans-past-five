@@ -1,5 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Search as SearchIcon } from "lucide-react";
 import { search } from "@/lib/search";
 import { seo } from "@/lib/seo";
@@ -22,6 +22,8 @@ function SearchPage() {
   const { q } = Route.useSearch();
   const nav = useNavigate({ from: "/search" });
   const [value, setValue] = useState(q);
+  // Keep the box in step with the URL (browser Back/Forward, suggestion chips).
+  useEffect(() => setValue(q), [q]);
   const hits = search(q);
   return (
     <section className="mx-auto max-w-3xl px-5 py-14 md:px-8">
@@ -44,7 +46,7 @@ function SearchPage() {
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder="Try 'clay', 'weekend' or 'low energy'"
-          className="flex-1 bg-transparent py-3 font-display text-2xl outline-none placeholder:text-muted-foreground/60"
+          className="min-w-0 flex-1 bg-transparent py-3 font-display text-2xl outline-none placeholder:text-muted-foreground/60"
         />
         <button className="p-3 text-cherry" aria-label="Search">
           <SearchIcon className="h-6 w-6" />
@@ -57,7 +59,7 @@ function SearchPage() {
             to="/search"
             search={{ q: s }}
             onClick={() => setValue(s)}
-            className="border border-ink/20 px-3 py-1 text-sm hover:border-cherry hover:text-cherry"
+            className="inline-flex min-h-11 items-center border border-ink/20 px-3 py-1 text-sm hover:border-cherry hover:text-cherry"
           >
             {s}
           </Link>
@@ -79,11 +81,11 @@ function SearchPage() {
           )}
           <ul className="mt-4 divide-y divide-border">
             {hits.map((h, i) => (
-              <li key={i} className="py-5">
+              <li key={i} className="relative py-5">
                 <p className="kicker text-cherry">{h.kind}</p>
                 <Link
                   to={h.to}
-                  className="mt-1 block font-display text-2xl text-ink hover:text-cherry"
+                  className="mt-1 block font-display text-2xl text-ink hover:text-cherry after:absolute after:inset-0 after:content-['']"
                 >
                   {h.title}
                 </Link>

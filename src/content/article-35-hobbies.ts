@@ -12,7 +12,7 @@ export const article35Hobbies: Article = {
   slug: "hobbies-to-try-when-life-feels-like-work-sleep-repeat",
   title: "35 Hobbies to Try When Your Life Feels Like Work, Sleep, Repeat",
   titleItalic: "Work, Sleep, Repeat",
-  dek: "If your week is laptop, dinner, couch, bed, this is your way out. Thirty-five hobbies sorted by how much energy you've actually got left.",
+  dek: "If your week is laptop, dinner, couch, bed, this is your way out. A wide menu of thirty-five hobbies, from couch-friendly to out-of-the-house, sorted by how much energy you've actually got left.",
   category: "after-hours",
   status: "published",
   publishedAt: "2026-11-18",
@@ -53,7 +53,7 @@ export const article35Hobbies: Article = {
     { type: "h2", text: "When you've got nothing left: low-energy hobbies", id: "low-energy" },
     {
       type: "p",
-      text: "For the days when you closed the laptop and felt your brain leave your body. These all work on the couch, need almost no setup, and are gentle on screen-tired eyes. If you want more, we've got a whole list of [low-energy hobbies for when work has worn you out](/journal/low-energy-hobbies).",
+      text: "For the days when you closed the laptop and felt your brain leave your body. These all work on the couch, need almost no setup, and are gentle on screen-tired eyes. If tonight is a very tired night, the shorter, gentler [low-energy hobbies list](/journal/low-energy-hobbies) is the one to open.",
     },
     it(
       1,
@@ -140,7 +140,7 @@ export const article35Hobbies: Article = {
       13,
       "Knitting",
       "knitting",
-      "Very repetitive in the best way. A coaster-sized square is a perfect first evening, and knitting groups are famously welcoming.",
+      "Very repetitive in the best way. A coaster-sized square is a perfect first evening, and a knitting group can add company later if you want it.",
     ),
     it(
       14,
@@ -187,7 +187,7 @@ export const article35Hobbies: Article = {
       19,
       "Tennis",
       "tennis",
-      "Golden-hour rallies with a friend are the best kind of exercise. You don't need to keep score for months. Start by rallying on a free public court.",
+      "Golden-hour rallies with a friend are a lovely way to move. You don't need to keep score for months. Start by rallying on a free public court.",
     ),
     it(
       20,
@@ -205,13 +205,13 @@ export const article35Hobbies: Article = {
       22,
       "Roller skating",
       "roller-skating",
-      "Expect wobbling. Expect laughing. Adult skate nights at rinks are the best way in.",
+      "Expect wobbling. Expect laughing. Look for an adult skate night to ease in.",
     ),
     it(
       23,
       "Birdwatching",
       "birdwatching",
-      "Free apps can identify birds by song, so all you need is a bench and thirty minutes. You'll never hear a park the same way.",
+      "All you need is a bench and thirty minutes, plus a bird-ID app if you like. You'll never hear a park the same way.",
     ),
     it(
       24,

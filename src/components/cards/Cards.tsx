@@ -1,3 +1,4 @@
+import type { ComponentType, ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Clock, Wallet, Zap } from "lucide-react";
 import type { Article } from "@/content";
@@ -10,6 +11,47 @@ import { resolveProductLink, productLinkLabel } from "@/config/affiliate";
 import { SaveButton } from "@/components/editorial/SaveButton";
 import { cn } from "@/lib/utils";
 import { toneBg } from "@/components/editorial/Section";
+import { Bow, Flower, Sparkle, Star } from "@/components/brand/Doodles";
+
+/**
+ * Cards are links, so they opt out of the running-text link style (`.prose-editorial a`) with
+ * `not-prose`, and out of any inherited underline with `no-underline`. Titles only underline on
+ * hover (ArticleCard), never at rest, wherever a card is placed.
+ */
+const CARD_LINK = "not-prose no-underline";
+
+/**
+ * Fallback for a card with no photo. The name is set once, inside the tile, in a size that follows
+ * the tile's own width (container query units) so it never overflows or clips from 320px up.
+ */
+function FallbackTile({
+  title,
+  tone,
+  Icon,
+  className,
+}: {
+  title: ReactNode;
+  tone: keyof typeof toneBg;
+  Icon: ComponentType<{ className?: string }>;
+  className?: string;
+}) {
+  return (
+    <div
+      data-fallback-tile
+      className={cn(
+        "@container relative grid aspect-[5/3] place-items-center overflow-hidden px-6 py-5 text-center",
+        toneBg[tone],
+        className,
+      )}
+    >
+      <Icon className="pointer-events-none absolute left-4 top-4 h-6 w-6 text-cherry/40" />
+      <Icon className="pointer-events-none absolute -bottom-4 -right-3 h-24 w-24 rotate-12 text-cherry/15" />
+      <h3 className="relative max-w-full text-balance break-words font-display text-[clamp(1.4rem,9cqw,2.25rem)] italic leading-[1.08] text-ink no-underline">
+        {title}
+      </h3>
+    </div>
+  );
+}
 
 export function ArticleCard({
   a,
@@ -20,25 +62,34 @@ export function ArticleCard({
   size?: "sm" | "md" | "lg";
   className?: string;
 }) {
-  const img = images[a.hero];
+  const img = images[a.hero] as (typeof images)[keyof typeof images] | undefined;
   const cat = getCategory(a.category);
   return (
-    <article className={cn("group relative", className)}>
-      <Link to="/journal/$slug" params={{ slug: a.slug }} className="block">
+    <article className={cn("group not-prose relative", className)}>
+      <Link to="/journal/$slug" params={{ slug: a.slug }} className={cn("block", CARD_LINK)}>
         <div
           className={cn(
             "relative overflow-hidden bg-muted",
             size === "lg" ? "aspect-[4/3]" : size === "sm" ? "aspect-square" : "aspect-[4/5]",
           )}
         >
-          <img
-            src={img.src}
-            alt={img.alt}
-            width={img.w}
-            height={img.h}
-            loading="lazy"
-            className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
-          />
+          {img ? (
+            <img
+              src={img.src}
+              alt={img.alt}
+              width={img.w}
+              height={img.h}
+              loading="lazy"
+              className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
+            />
+          ) : (
+            <div
+              aria-hidden
+              className={cn("grid h-full w-full place-items-center", toneBg[cat?.tone ?? "butter"])}
+            >
+              <Sparkle className="h-10 w-10 text-cherry/50" />
+            </div>
+          )}
         </div>
         <p className="kicker mt-4 text-cherry">{cat?.name}</p>
         <h3
@@ -99,16 +150,31 @@ const hobbyTone: Record<Hobby["category"], keyof typeof toneBg> = {
   bookish: "sunday",
 };
 
+const hobbyIcon: Record<Hobby["category"], ComponentType<{ className?: string }>> = {
+  creative: Flower,
+  cozy: Bow,
+  social: Sparkle,
+  active: Star,
+  outdoors: Flower,
+  bookish: Sparkle,
+};
+
 export function HobbyCard({ h, className }: { h: Hobby; className?: string }) {
-  const img = h.image ? images[h.image] : null;
+  const img = h.image
+    ? (images[h.image] as (typeof images)[keyof typeof images] | undefined)
+    : null;
   return (
     <article
       className={cn(
-        "group relative flex flex-col border border-border bg-warm-white transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-paper)]",
+        "group not-prose relative flex flex-col border border-border bg-warm-white transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-paper)]",
         className,
       )}
     >
-      <Link to="/hobbies/$slug" params={{ slug: h.slug }} className="flex flex-1 flex-col">
+      <Link
+        to="/hobbies/$slug"
+        params={{ slug: h.slug }}
+        className={cn("flex flex-1 flex-col", CARD_LINK)}
+      >
         {img ? (
           <div className="aspect-[5/3] overflow-hidden">
             <img
@@ -121,18 +187,12 @@ export function HobbyCard({ h, className }: { h: Hobby; className?: string }) {
             />
           </div>
         ) : (
-          <div
-            className={cn(
-              "relative grid aspect-[5/3] place-items-center",
-              toneBg[hobbyTone[h.category]],
-            )}
-          >
-            <span className="font-display text-5xl italic text-cherry">{h.name.split(" ")[0]}</span>
-          </div>
+          <FallbackTile title={h.name} tone={hobbyTone[h.category]} Icon={hobbyIcon[h.category]} />
         )}
         <div className="flex flex-1 flex-col p-5">
           <p className="kicker text-cherry">{h.category}</p>
-          <h3 className="mt-1.5 text-2xl leading-tight">{h.name}</h3>
+          {/* Image-less cards show the name once, inside the tile above. */}
+          {img && <h3 className="mt-1.5 text-2xl leading-tight">{h.name}</h3>}
           <p className="mt-2 line-clamp-3 flex-1 text-sm text-muted-foreground">{h.description}</p>
           <HobbyMeta h={h} className="mt-4" />
         </div>
@@ -164,7 +224,7 @@ export function ProductCard({
 }) {
   const link = resolveProductLink(p);
   return (
-    <article className={cn("flex flex-col border-t-2 border-ink pt-4", className)}>
+    <article className={cn("not-prose flex flex-col border-t-2 border-ink pt-4", className)}>
       <div className="flex items-baseline justify-between gap-3">
         {index !== undefined && (
           <span className="font-display text-3xl italic text-cherry">
@@ -211,7 +271,7 @@ export function CollectionCard({ c, className }: { c: Collection; className?: st
     <Link
       to="/shop/$category"
       params={{ category: c.slug }}
-      className={cn("group block", className)}
+      className={cn("group block", CARD_LINK, className)}
     >
       <div className={cn("p-3 pb-0", toneBg[c.tone])}>
         <div className="aspect-square overflow-hidden">

@@ -73,7 +73,7 @@ export const articleHowToHostAMahjongNight: Article = {
   body: [
     {
       type: "p",
-      text: "Picture this. It's Friday, the group chat has been circling 'we should do something' for two weeks, and the plan on the table is the same loud restaurant where you shout across the table and leave hoarse. Now picture the alternative: four friends around one table, a pot of tea, a soft clatter of tiles and nobody checking the time.",
+      text: "The group chat has been circling 'we should do something' for two weeks, and the plan on the table is the same loud restaurant where you shout across the table and leave hoarse. The alternative: four friends around one table, a pot of tea, a soft clatter of tiles and nobody checking the time.",
     },
     {
       type: "p",
@@ -158,16 +158,17 @@ export const articleHowToHostAMahjongNight: Article = {
     },
     {
       type: "p",
-      text: "If nobody in your group plays, take a lesson first, then host after a couple of practice rounds. Being good at it is completely optional; knowing which version you're playing is not.",
+      text: "If nobody in your group plays, take a lesson first, then host after a couple of practice rounds. Being a beginner is fine; not knowing which version you're playing is the part to sort out first.",
     },
     { type: "h2", text: "How to run your first night", id: "first-night" },
     {
       type: "p",
       text: "Keep it short, warm and clearly labeled as practice. A realistic sample evening:",
     },
+    { type: "h3", text: "Your countdown to the first night" },
     {
-      type: "first30",
-      steps: [
+      type: "list",
+      items: [
         "A week before: confirm the version, the date and the guest list. Ask about allergies and dietary needs.",
         "Two days before: check that your set is complete and that the reference card or book is the right one. Do a dry run of your setup.",
         "On the day: set the table, mat down, lamp on, snacks and tea on side trays rather than the playing surface.",

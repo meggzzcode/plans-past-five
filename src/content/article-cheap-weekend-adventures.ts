@@ -188,7 +188,7 @@ export const articleCheapWeekendAdventures: Article = {
     { type: "h2", text: "Little treasure hunts", id: "treasure" },
     it(
       13,
-      "A charity-shop crawl",
+      "A thrift-store crawl",
       "Visit three in an afternoon with a small budget. Look for one thing you'd never buy new.",
       "2 hours",
       "Varies",
@@ -296,9 +296,10 @@ export const articleCheapWeekendAdventures: Article = {
       "Varies",
       "Solo or social",
     ),
+    { type: "h3", text: "Plan your first adventure" },
     {
-      type: "first30",
-      steps: [
+      type: "list",
+      items: [
         "Pick one category from this list and search your area for a nearby match.",
         "Check opening times, entry costs and any rules.",
         "Pack water, a snack and one small thing to do there, like a book or a sketchbook.",

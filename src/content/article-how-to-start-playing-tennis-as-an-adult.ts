@@ -54,7 +54,7 @@ export const articleHowToStartPlayingTennisAsAnAdult: Article = {
   body: [
     {
       type: "p",
-      text: "Picture a bright Sunday. A friend texts a photo of a tennis court with the caption 'we should', and you reply with a thumbs-up and a small, private panic. You haven't held a racket since a school gym class. Everyone on those courts looks like they learned at nine.",
+      text: "On a bright Sunday, a friend texts a photo of a tennis court with the caption 'we should', and you reply with a thumbs-up and a small, private panic. You haven't held a racket since a school gym class. Everyone on those courts looks like they learned at nine.",
     },
     {
       type: "p",

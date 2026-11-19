@@ -7,10 +7,10 @@ import { trustLinks } from "@/config/trust-links";
 
 export function Footer() {
   return (
-    <footer className="no-print mt-24 bg-garden text-cream">
+    <footer className="no-print mt-16 bg-garden md:mt-24 text-cream">
       <div className="gingham-strip" />
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-[1.3fr_1fr_1fr_1fr] md:px-8">
-        <div>
+        <div className="col-span-2 md:col-span-1">
           <div className="text-6xl [&_*]:!text-cream">
             <WordmarkStacked />
           </div>
@@ -19,7 +19,10 @@ export function Footer() {
         </div>
         <FooterCol
           title="Explore"
-          links={categories.map((c) => ({ to: `/${c.slug}`, label: c.name }))}
+          links={[
+            { to: "/start-here", label: "Start Here" },
+            ...categories.map((c) => ({ to: `/${c.slug}`, label: c.name })),
+          ]}
         />
         <FooterCol
           title="Tools & extras"
@@ -37,7 +40,6 @@ export function Footer() {
           title="The fine print"
           links={[
             { to: "/about", label: "About" },
-            { to: "/start-here", label: "Start Here" },
             { to: "/contact", label: "Contact" },
             { to: "/affiliate-disclosure", label: "Affiliate Disclosure" },
             ...trustLinks.map((l) => ({ to: l.to as string, label: l.label })),
@@ -49,7 +51,7 @@ export function Footer() {
       <div className="border-t border-cream/15">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-5 py-6 text-xs text-cream/70 md:flex-row md:px-8">
           <span>
-            © {new Date().getFullYear()} {site.name}. {site.signature}
+            © {new Date().getFullYear()} {site.name}
           </span>
           <span className="flex items-center gap-2">
             <Star className="h-3 w-3 text-butter" /> {site.slogan}
@@ -64,10 +66,13 @@ function FooterCol({ title, links }: { title: string; links: { to: string; label
   return (
     <div>
       <h2 className="kicker mb-4 font-sans text-butter">{title}</h2>
-      <ul className="space-y-2.5">
+      <ul className="space-y-1">
         {links.map((l) => (
           <li key={l.to}>
-            <Link to={l.to} className="text-sm text-cream/90 hover:text-butter hover:underline">
+            <Link
+              to={l.to}
+              className="inline-flex min-h-8 items-center text-sm text-cream/90 hover:text-butter hover:underline"
+            >
               {l.label}
             </Link>
           </li>

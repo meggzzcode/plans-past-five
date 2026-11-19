@@ -121,6 +121,10 @@
     background: var(--strawberry);
     color: var(--ink);
   }
+  /* Brand-tint placeholder so lazy images never leave a blank block while loading. */
+  img {
+    background-color: color-mix(in oklab, var(--strawberry) 50%, var(--cream));
+  }
   :focus-visible {
     outline: 2px solid var(--cherry);
     outline-offset: 3px;
@@ -142,9 +146,9 @@
 }
 @utility kicker {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 @utility hand {
@@ -208,7 +212,8 @@
     position: relative;
     margin-bottom: 0.4em;
   }
-  & ul li::before {
+  /* Same rule for the bullet star and bold text: a not-prose callout on a cherry/garden fill must not inherit cherry or ink from here. */
+  & ul:not(:where(.not-prose, .not-prose *)) li::before {
     content: "✶";
     color: var(--cherry);
     position: absolute;
@@ -216,9 +221,94 @@
     font-size: 0.85em;
     top: 0.15em;
   }
-  & strong {
+  & strong:not(:where(.not-prose, .not-prose *)) {
     color: var(--ink);
   }
+}
+
+/* ---- Article reading experience (scoped to article classes) ---- */
+.article-flow {
+  font-size: 1.0625rem;
+  line-height: 1.72;
+  hyphens: manual;
+  overflow-wrap: break-word;
+}
+.article-flow > p {
+  margin-bottom: 1.1em;
+}
+/* A long paragraph gets extra air after it, never edited text. */
+.article-flow > p.para-long {
+  margin-bottom: 1.7em;
+}
+.article-flow > h2 {
+  font-size: 1.65rem;
+  margin: 2.6em 0 0.55em;
+  padding-top: 1.1em;
+  border-top: 1px solid var(--border);
+}
+.article-flow > h2:first-child {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 0;
+}
+.article-flow > h3 {
+  font-size: 1.25rem;
+  margin: 1.8em 0 0.4em;
+}
+@media (min-width: 768px) {
+  .article-flow > h2 {
+    font-size: 1.9rem;
+  }
+}
+/* Bold lead-ins at the start of a paragraph or list item pop. */
+.article-flow .lead-in > strong:first-child {
+  color: var(--cherry);
+  font-weight: 700;
+}
+/* Idea cards sit together as one tight list. */
+.article-flow > .item-card + .item-card {
+  margin-top: 0;
+}
+.article-flow > .item-card:last-of-type {
+  margin-bottom: 1.5rem;
+}
+.article-flow .item-more > summary::marker {
+  color: var(--cherry);
+}
+/* Image-led hobby cards: photo and name only. */
+.photo-cards [class*="p-5"] h3 {
+  font-size: 0.95rem;
+  line-height: 1.2;
+  margin-top: 0.25rem;
+}
+.photo-cards .line-clamp-3,
+.photo-cards ul,
+.photo-cards p.kicker {
+  display: none;
+}
+.photo-cards [data-fallback-tile] {
+  aspect-ratio: 1 / 1;
+  padding: 0.4rem;
+}
+.photo-cards [data-fallback-tile] + div {
+  display: none;
+}
+.photo-cards a > div[class*="aspect-"]:not([data-fallback-tile]) {
+  aspect-ratio: 1 / 1;
+}
+.photo-cards [class*="p-5"] {
+  padding: 0.6rem;
+}
+/* Shop fold: cards the toggle has put away. */
+.shop-fold [data-fold-hide] {
+  display: none !important;
+}
+/* Short version and jump row. */
+.jump-row {
+  scrollbar-width: none;
+}
+.jump-row::-webkit-scrollbar {
+  display: none;
 }
 
 @media print {

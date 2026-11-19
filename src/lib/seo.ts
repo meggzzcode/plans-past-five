@@ -109,3 +109,13 @@ export function articleJsonLd(a: {
     mainEntityOfPage: { "@type": "WebPage", "@id": absoluteUrl(a.path) },
   };
 }
+
+/** Latest of updatedAt / verifiedAt that is strictly later than publishedAt; undefined otherwise. Never invented. */
+export function modifiedAfterPublish(a: {
+  publishedAt: string;
+  updatedAt?: string | undefined;
+  verifiedAt?: string | undefined;
+}) {
+  const later = [a.updatedAt, a.verifiedAt].filter((d): d is string => !!d && d > a.publishedAt);
+  return later.sort().at(-1);
+}

@@ -52,7 +52,7 @@ export const articleHowToFindAHobbyAsAnAdult: Article = {
   body: [
     {
       type: "p",
-      text: "Imagine someone asks what you do for fun, and you hear yourself say, 'Oh, you know. Watch things.' It's not a crisis. It's just a little flat, and you know you used to have a longer answer.",
+      text: "What do you do for fun? If you hear yourself say, 'Oh, you know. Watch things,' it's not a crisis. It's just a little flat, and you know you used to have a longer answer.",
     },
     {
       type: "p",
@@ -124,9 +124,10 @@ export const articleHowToFindAHobbyAsAnAdult: Article = {
       type: "p",
       text: "Seven days, three short sessions, thirty to sixty minutes each. Afterwards, jot down how you felt before, how you felt after, and whether you'd go again. Skill doesn't matter. The after-feeling does: lighter, curious, a bit pleased with yourself.",
     },
+    { type: "h3", text: "Your one-week experiment" },
     {
-      type: "first30",
-      steps: [
+      type: "list",
+      items: [
         "Monday: thirty minutes with your first pick. Aim for nothing good.",
         "Wednesday: the second pick, ideally somewhere different (outside, or with a friend).",
         "Saturday: the third, or a return visit to whichever felt best.",
@@ -154,7 +155,7 @@ export const articleHowToFindAHobbyAsAnAdult: Article = {
     { type: "h3", text: "'I'm not good at anything.'" },
     {
       type: "p",
-      text: "Wonderful, because you aren't auditioning. Being good at it is completely optional; you're collecting evenings you like.",
+      text: "Wonderful, because you aren't auditioning. You're collecting evenings you like.",
     },
     { type: "h3", text: "'Nothing sticks.'" },
     {

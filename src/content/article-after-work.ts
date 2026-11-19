@@ -45,7 +45,7 @@ export const articleAfterWork: Article = {
       type: "p",
       text: "The scroll isn't a character flaw. It's just the easiest thing available when your brain is tired. The trick is to make something else almost as easy, and a lot more fun. Here are twenty-five things to do after work that fit inside a normal weeknight, sorted by how you're feeling when you clock out.",
     },
-    { type: "quote", text: "Sorry, I have plans past five." },
+    { type: "quote", text: "Make the better option almost as easy as the scroll." },
     { type: "h2", text: "If you're exhausted", id: "exhausted" },
     {
       type: "p",

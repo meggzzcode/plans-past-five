@@ -49,7 +49,7 @@ function CollectionPage() {
       <section className={cn(toneBg[c.tone])}>
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-12 md:grid-cols-2 md:px-8 md:py-16">
           <div>
-            <nav className="text-xs text-muted-foreground" aria-label="Breadcrumb">
+            <nav className="text-xs text-ink" aria-label="Breadcrumb">
               <Link to="/shop" className="hover:text-cherry">
                 Off Duty Essentials
               </Link>{" "}
@@ -58,7 +58,7 @@ function CollectionPage() {
             <Kicker className="mt-6">Off Duty Essentials</Kicker>
             <h1 className="mt-3 text-5xl italic leading-[1] md:text-7xl">{c.name}</h1>
             <p className="mt-5 max-w-lg text-lg text-ink">{c.intro}</p>
-            <AffiliateNote className="mt-6" />
+            <AffiliateNote className="mt-6 text-ink" />
           </div>
           <div className="postcard -rotate-2">
             <div className="aspect-square overflow-hidden">

@@ -20,8 +20,7 @@ export const categories: Category[] = [
     name: "After Hours",
     short: "Weeknight hobbies & plans",
     kicker: "5:01 p.m. and beyond",
-    intro:
-      "Small, doable things for the hours between closing your laptop and going to bed. Nothing that needs a full Saturday, a car or a second wind you don't have.",
+    intro: "Small, doable ideas for after you close the laptop. No car, no full Saturday.",
     image: "watercolor",
     tone: "butter",
     hobbyTags: ["after-work", "low-energy"],
@@ -31,8 +30,7 @@ export const categories: Category[] = [
     name: "The Weekend Edit",
     short: "Saturday & Sunday inspiration",
     kicker: "Let's give Saturday a storyline",
-    intro:
-      "Weekend plans that aren't just brunch and errands. Markets, picnics, workshops, long walks and slow mornings with something to show for them.",
+    intro: "Weekend plans that aren't just brunch. Markets, picnics, workshops and slow mornings.",
     image: "picnic",
     tone: "strawberry",
     hobbyTags: ["weekend"],
@@ -42,8 +40,7 @@ export const categories: Category[] = [
     name: "Table for One",
     short: "Solo dates you'll look forward to",
     kicker: "Make plans with yourself",
-    intro:
-      "Solo, not lonely. Ideas for enjoying your own company, from bookstore wanders to a sketchbook and a café window seat.",
+    intro: "Solo, not lonely. Plans for enjoying your own company.",
     image: "soloCafe",
     tone: "cream",
     hobbyTags: ["solo"],
@@ -53,8 +50,7 @@ export const categories: Category[] = [
     name: "Better Together",
     short: "Friendship & social plans",
     kicker: "Text the group chat",
-    intro:
-      "Hobbies that come with people. Craft nights, book clubs, a standing tennis date, and gentle ways to meet new friends as an adult.",
+    intro: "Hobbies that come with people. Craft nights, book clubs and new friends.",
     image: "girlsNight",
     tone: "strawberry",
     hobbyTags: ["social"],
@@ -64,8 +60,7 @@ export const categories: Category[] = [
     name: "Creative Corner",
     short: "Arts, crafts & making things",
     kicker: "Being good at it is optional",
-    intro:
-      "Paint, clay, paper, thread and beads. Hobbies where you end the evening with something you made with your own two hands.",
+    intro: "Paint, clay, paper and thread. End the night with something you made.",
     image: "junkJournal",
     tone: "butter",
     hobbyTags: ["creative"],
@@ -75,8 +70,7 @@ export const categories: Category[] = [
     name: "A Little Movement",
     short: "Outdoor & recreational hobbies",
     kicker: "Fresh air counts",
-    intro:
-      "Movement for fun, not for a fitness tracker. Tennis, pickleball, hiking, skating and slow outdoor wanders.",
+    intro: "Movement for fun, not for a tracker. Tennis, hiking, skating and slow wanders.",
     image: "tennis",
     tone: "matcha",
     hobbyTags: ["active", "outdoors"],

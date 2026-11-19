@@ -54,7 +54,7 @@ export const articleHowToHostAPaintNightAtHome: Article = {
   body: [
     {
       type: "p",
-      text: "Picture your living room with a long table, a row of small canvases and four friends in aprons that used to be shirts. Nobody has a plan beyond 'something with a sunset.' The speaker is playing something low, and someone has already asked whether blue and yellow make green.",
+      text: "A long table in your living room, a row of small canvases and four friends in aprons that used to be shirts. Nobody has a plan beyond 'something with a sunset.' The speaker is playing something low, and someone has already asked whether blue and yellow make green.",
     },
     {
       type: "p",
@@ -63,7 +63,7 @@ export const articleHowToHostAPaintNightAtHome: Article = {
     { type: "h2", text: "Why it is worth hosting", id: "why" },
     {
       type: "p",
-      text: "It takes about two to three hours, suits any skill level and gives a group something to do with its hands, which makes conversation easier. Everyone leaves with something made. Start-up effort is a table, some paint and a plan, and the cost depends mostly on how fancy the snacks get.",
+      text: "It takes about two to three hours, suits any skill level and gives a group something to do with its hands, which makes conversation easier. Everyone leaves with something made. You need a table, some paint and a plan, and the cost depends mostly on how fancy the snacks get.",
     },
     { type: "h2", text: "What you need", id: "need" },
     {
@@ -115,9 +115,10 @@ export const articleHowToHostAPaintNightAtHome: Article = {
       type: "p",
       text: "Pick a painting everyone can follow together. A simple sunset over water, a moon behind a hill or a row of tulips all work, because they are built from flat shapes and blends rather than drawing skill.",
     },
+    { type: "h3", text: "The evening, step by step" },
     {
-      type: "first30",
-      steps: [
+      type: "list",
+      items: [
         "Paint the whole background in a gradient while you chat: darker at the top, lighter at the horizon.",
         "Take a short break to let it dry a little. Snacks go to the other table.",
         "Add the big shape, such as the hill, the water or the moon.",
@@ -192,7 +193,7 @@ export const articleHowToHostAPaintNightAtHome: Article = {
     },
     {
       type: "makePlan",
-      text: "Book the evening in [Make Some Plans](/make-plans) and mark a shopping slot two days ahead, so nobody is buying paint at the last moment.",
+      text: "Book the evening and mark a shopping slot two days ahead, so nobody is buying paint at the last moment.",
     },
     {
       type: "p",

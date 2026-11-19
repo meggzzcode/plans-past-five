@@ -43,7 +43,7 @@ export const articleHowToStartABookClub: Article = {
   body: [
     {
       type: "p",
-      text: "Imagine a group chat that's been quietly saying 'we should start a book club' since spring. Everyone means it. Nobody organizes it. Meanwhile the paperback on your nightstand is gathering dust like it's been waiting for an invitation.",
+      text: "The group chat has been quietly saying 'we should start a book club' since spring. Everyone means it. Nobody organizes it. Meanwhile the paperback on your nightstand is gathering dust like it's been waiting for an invitation.",
     },
     {
       type: "p",
@@ -94,9 +94,10 @@ export const articleHowToStartABookClub: Article = {
       ],
     },
     { type: "h2", text: "Step 5: Run the night", id: "run" },
+    { type: "h3", text: "Running the night, in order" },
     {
-      type: "first30",
-      steps: [
+      type: "list",
+      items: [
         "Settle in with snacks and drinks and let the catching-up run for ten minutes.",
         "Open with a quick round: one word for the book, or a score out of five.",
         "Use two or three prompts (below), not the whole list.",

@@ -155,7 +155,7 @@ const hobbyCostRank = (c: Cost) => (c === "flexible" ? 2 : costRank[c]); // flex
 const maxMinutes = { short: 45, couple: 120, halfday: 240, any: Infinity } as const;
 const energyRank: Record<Energy, number> = { low: 0, medium: 1, high: 2 };
 
-type Constraint = "where" | "time" | "budget" | "company" | "energy" | "level";
+export type Constraint = "where" | "time" | "budget" | "company" | "energy" | "level";
 const constraintLabels: Record<Constraint, string> = {
   where: "location",
   time: "time",
@@ -205,21 +205,44 @@ function reasons(h: Hobby, a: FinderAnswers): string[] {
   return r;
 }
 
-export function findHobbies(a: FinderAnswers) {
-  const scored = hobbies
+/** The constraints a hobby can fail one at a time (used for the nearest-match list). */
+function fails(h: Hobby, a: FinderAnswers, c: Constraint) {
+  const only: FinderAnswers = {
+    craving: a.craving,
+    where: "anywhere",
+    time: "any",
+    budget: "flexible",
+    company: "either",
+    energy: "high",
+    level: "any",
+  };
+  (only as Record<string, unknown>)[c] = a[c];
+  return !passes(h, only);
+}
+
+export type Loosen = { constraint: Constraint; label: string };
+
+const scoreFor = (h: Hobby, a: FinderAnswers) => {
+  let s = 0;
+  if (h.cravings.includes(a.craving)) s += 4;
+  if (h.energy === a.energy) s += 2;
+  if (h.beginner === 1) s += 1;
+  if (a.company !== "either" && h.company[0] === a.company) s += 1;
+  if (a.where !== "anywhere" && a.where !== "indoors" && h.settings[0] === a.where) s += 1;
+  return s;
+};
+
+/** Every hobby that fits all the answers, best first (not capped). */
+export function exactMatches(a: FinderAnswers) {
+  return hobbies
     .filter((h) => passes(h, a))
-    .map((h) => {
-      let s = 0;
-      if (h.cravings.includes(a.craving)) s += 4;
-      if (h.energy === a.energy) s += 2;
-      if (h.beginner === 1) s += 1;
-      if (a.company !== "either" && h.company[0] === a.company) s += 1;
-      if (a.where !== "anywhere" && a.where !== "indoors" && h.settings[0] === a.where) s += 1;
-      return { hobby: h, score: s, why: reasons(h, a) };
-    })
+    .map((h) => ({ hobby: h, score: scoreFor(h, a), why: reasons(h, a) }))
     .filter((r) => r.score >= 3 || r.hobby.cravings.includes(a.craving))
-    .sort((x, y) => y.score - x.score || x.hobby.name.localeCompare(y.hobby.name))
-    .slice(0, 5);
+    .sort((x, y) => y.score - x.score || x.hobby.name.localeCompare(y.hobby.name));
+}
+
+export function findHobbies(a: FinderAnswers) {
+  const scored = exactMatches(a).slice(0, 5);
 
   const counts: Record<string, number> = {};
   for (const r of scored)
@@ -229,8 +252,11 @@ export function findHobbies(a: FinderAnswers) {
     Hobby["category"] | undefined;
   const persona = personaFor(a, top);
 
+  const tooFew = scored.length < 3;
   let suggestions: { constraint: string; extra: number }[] = [];
-  if (scored.length < 3) {
+  let nearest: { hobby: Hobby; breaks: Constraint[] }[] = [];
+  let loosen: Loosen | null = null;
+  if (tooFew) {
     suggestions = (Object.keys(constraintLabels) as Constraint[])
       .map((c) => ({
         constraint: constraintLabels[c],
@@ -238,6 +264,31 @@ export function findHobbies(a: FinderAnswers) {
       }))
       .filter((s) => s.extra > scored.length)
       .sort((x, y) => y.extra - x.extra);
+    // Nearest matches: the hobbies that break the fewest answers (craving first), never ones
+    // already shown as exact matches.
+    const shown = new Set(scored.map((r) => r.hobby.slug));
+    const checks = Object.keys(constraintLabels) as Constraint[];
+    nearest = hobbies
+      .filter((h) => !shown.has(h.slug))
+      .map((h) => ({
+        hobby: h,
+        breaks: checks.filter((c) => fails(h, a, c)),
+        craves: h.cravings.includes(a.craving),
+      }))
+      .sort(
+        (x, y) =>
+          x.breaks.length - y.breaks.length ||
+          Number(y.craves) - Number(x.craves) ||
+          scoreFor(y.hobby, a) - scoreFor(x.hobby, a) ||
+          x.hobby.name.localeCompare(y.hobby.name),
+      )
+      .slice(0, Math.max(0, 3 - scored.length))
+      .map(({ hobby, breaks }) => ({ hobby, breaks }));
+    // The one answer to loosen: whichever the nearest matches break most often.
+    const tally = new Map<Constraint, number>();
+    for (const n of nearest) for (const c of n.breaks) tally.set(c, (tally.get(c) ?? 0) + 1);
+    const worst = [...tally.entries()].sort((x, y) => y[1] - x[1])[0]?.[0];
+    if (worst) loosen = { constraint: worst, label: constraintLabels[worst] };
   }
 
   // Beginner pick: the easiest matching hobby, else the persona's default.
@@ -249,34 +300,41 @@ export function findHobbies(a: FinderAnswers) {
     theme: persona,
     persona,
     beginnerPick,
-    tooFew: scored.length < 3,
+    tooFew,
+    /** "strong" = three or more hobbies fit every answer. Anything else is honest about it. */
+    strength: (tooFew ? "weak" : "strong") as "strong" | "weak",
     suggestions,
+    nearest,
+    loosen,
   };
 }
 
-const categoryPersona: Record<Hobby["category"], PersonaKey> = {
-  creative: "creative",
-  cozy: "cozy",
-  outdoors: "little-adventurer",
-  social: "social-butterfly",
-  bookish: "bookish",
-  active: "sporty",
-};
-const cravingPersona: Record<Craving, PersonaKey> = {
-  creativity: "creative",
-  relaxation: "cozy",
-  adventure: "little-adventurer",
-  friendship: "social-butterfly",
-  movement: "sporty",
-  different: "curious-beginner",
-};
-
-/** Which persona the answers (and the top hobby category) point to. Deterministic. */
+/**
+ * Which persona the answers point to. Uses the craving AND company AND energy (and where), with
+ * the top hobby category only to tell bookish from the rest. Deterministic.
+ */
 export function personaFor(a: FinderAnswers, topCategory?: Hobby["category"]): Persona {
-  if (a.craving === "different") return personas["curious-beginner"];
-  if (a.craving === "relaxation" && a.energy === "low" && topCategory !== "bookish")
-    return personas["slow-living"];
-  return personas[topCategory ? categoryPersona[topCategory] : cravingPersona[a.craving]];
+  const social = a.company === "social";
+  const lowKey = a.energy === "low";
+  const out = a.where === "outdoors" || a.where === "out";
+  switch (a.craving) {
+    case "different":
+      return personas["curious-beginner"];
+    case "friendship":
+      return personas["social-butterfly"];
+    case "relaxation":
+      if (social) return personas[lowKey ? "cozy" : "social-butterfly"];
+      if (topCategory === "bookish") return personas.bookish;
+      return personas[lowKey ? "slow-living" : "cozy"];
+    case "creativity":
+      if (social && topCategory === "social") return personas["social-butterfly"];
+      if (topCategory === "bookish") return personas.bookish;
+      return personas.creative;
+    case "movement":
+      return personas[out && a.energy !== "high" ? "little-adventurer" : "sporty"];
+    case "adventure":
+      return personas[social && a.energy === "high" ? "social-butterfly" : "little-adventurer"];
+  }
 }
 
 /**

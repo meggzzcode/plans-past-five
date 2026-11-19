@@ -294,13 +294,13 @@ describe("Planner: too restrictive and missing slots", () => {
       budget: "free",
       when: "weekend",
     });
-    expect(p.slots).toHaveLength(6);
-    expect(p.missingCount).toBe(6 - p.filled);
+    // An empty day shows one placeholder with a reason; a partly filled day just shows what fits.
+    expect(p.filled + p.missingCount).toBe(p.slots.length);
     expect(p.missingCount).toBeGreaterThan(0);
     for (const s of p.slots)
       if (!s.activity) expect(s.missing && s.missing.length > 20).toBeTruthy();
   });
-  it("an impossible request gives an empty plan with a reason per slot", () => {
+  it("an impossible request gives an empty plan with a reason for the day", () => {
     const p = makePlan({
       ...base,
       atHome: true,
@@ -309,7 +309,7 @@ describe("Planner: too restrictive and missing slots", () => {
       budget: "free",
     });
     expect(p.filled).toBe(0);
-    expect(p.slots).toHaveLength(3);
+    expect(p.slots).toHaveLength(1);
     expect(p.slots.every((s) => s.missing)).toBe(true);
     expect(p.totalCost.max).toBe(0);
   });
@@ -392,11 +392,14 @@ describe("Saved plan round trip", () => {
     expect(sanitizePlanData({ input: {}, ids: [1] })).toBeNull();
     expect(sanitizePlanData(null)).toBeNull();
   });
-  it("rejects ids that do not match the slots and tolerates retired ids", () => {
-    expect(planFromIds(base, 0, ["market"])).toBeNull();
-    const p = planFromIds(base, 0, ["gone", "", "market"])!;
-    expect(p.slots[0]!.missing).toBeTruthy();
-    expect(p.slots[2]!.activity?.id).toBe("market");
+  it("rejects ids that cannot go where they sit and tolerates retired ids", () => {
+    // Dinner cannot be the first thing on a Saturday, and a breakfast cannot follow it.
+    expect(planFromIds(base, 0, ["dinner-for-one", "slow-breakfast"])).toBeNull();
+    expect(
+      planFromIds({ ...base, when: "weeknight", length: "evening" }, 0, ["market"]),
+    ).toBeNull();
+    const p = planFromIds(base, 0, ["gone", "market"])!;
+    expect(p.slots[0]!.activity?.id).toBe("market");
     expect(getActivity("gone")).toBeUndefined();
   });
   it("ignores junk search params", () => {

@@ -39,8 +39,10 @@ export const Route = createFileRoute("/corrections")({
         </p>
       ) : (
         <p>
-          Our inbox is being set up. Once it is live, it will be listed on the{" "}
-          <Link to="/contact">contact page</Link>.
+          We do not have a public corrections inbox yet. Once the{" "}
+          <Link to="/contact">contact page</Link> is live, you will be able to send corrections
+          there with the page link and what needs fixing. Every correction we make is logged on this
+          page with its date.
         </p>
       )}
       <h2>Corrections log</h2>

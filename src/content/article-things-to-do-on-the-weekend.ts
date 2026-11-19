@@ -80,13 +80,13 @@ export const articleThingsToDoOnTheWeekend: Article = {
   body: [
     {
       type: "p",
-      text: "Imagine it's Sunday at seven. You meant to do something with the weekend: a long walk, the café you keep walking past, that shelf you were going to paint. Instead there was laundry, a brunch that ate the afternoon and a great deal of lying down. The weekend is over and you can't quite account for it.",
+      text: "Sunday at seven is when it lands. You meant to do something with the weekend: a long walk, the café you keep walking past, that shelf you were going to paint. Instead there was laundry, a brunch that ate the afternoon and a great deal of lying down. The weekend is over and you can't quite account for it.",
     },
     {
       type: "p",
       text: "Resting isn't wasting, to be clear. The real culprit is drift: nothing planned, so nothing happens, and then you feel faintly robbed. A little shape fixes most of it. Here's one, followed by thirty ideas to hang on it.",
     },
-    { type: "quote", text: "Let's give Saturday a storyline." },
+    { type: "quote", text: "Give each weekend day one anchor." },
     { type: "h2", text: "One anchor, one treat, one rest", id: "method" },
     {
       type: "list",
@@ -98,7 +98,7 @@ export const articleThingsToDoOnTheWeekend: Article = {
     },
     {
       type: "p",
-      text: "Do that for each day and you get two small storylines, much less guilt, and space for chores around the edges. Choose an anchor below by mood.",
+      text: "Do that for each day and you get two small plans, much less guilt, and space for chores around the edges. Choose an anchor below by mood.",
     },
     { type: "h2", text: "If you want to get outside", id: "outside" },
     it(
@@ -121,7 +121,7 @@ export const articleThingsToDoOnTheWeekend: Article = {
     it(
       3,
       "Take a short hike",
-      "Pick an easy, well-marked trail, check the weather, carry water and tell someone where you're headed. Park services advise against hiking alone, so bring a friend if you can.",
+      "Pick an easy, well-marked trail, check the weather, carry water and tell someone where you're headed. Going with a friend is the safer choice when you can.",
       "2-3 hours",
       "Varies",
       "Solo or social",
@@ -360,9 +360,10 @@ export const articleThingsToDoOnTheWeekend: Article = {
       "Free",
       "Solo",
     ),
+    { type: "h3", text: "Shape the weekend on Thursday" },
     {
-      type: "first30",
-      steps: [
+      type: "list",
+      items: [
         "On Thursday or Friday evening, choose one anchor for each weekend day.",
         "Attach a treat to each: a coffee, a snack, a playlist.",
         "Put them in your calendar as appointments, with times.",

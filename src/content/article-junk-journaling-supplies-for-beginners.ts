@@ -4,7 +4,7 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
   slug: "junk-journaling-supplies-for-beginners",
   title: "So, You Want to Start Junk Journaling? Here's Everything You Actually Need",
   titleItalic: "Everything You Actually Need",
-  dek: "A free-first supply list, a sensible first shopping basket, and the pretty things that can wait until you know your style.",
+  dek: "The shopping side of junk journaling: a free-first supply list, a sensible first basket and the pretty things that can wait. Looking for the how-to? Start with the beginner's guide.",
   category: "creative-corner",
   status: "published",
   publishedAt: "2026-11-19",
@@ -49,11 +49,11 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
   body: [
     {
       type: "p",
-      text: "Picture a craft aisle on a slow Sunday. Sticker sheets in every color, tape on a spinning rack, a wall of notebooks with covers prettier than anything you own. Forty minutes later you are holding a basket and have no idea what any of it is for.",
+      text: "Forty minutes in a craft aisle can end with a full basket and no idea what any of it is for. Sticker sheets in every color, tape on a spinning rack, a wall of notebooks with covers prettier than anything you own.",
     },
     {
       type: "p",
-      text: "Junk journaling does not need that basket. It is the art of making a book out of paper that has already lived a bit (envelopes, tickets, tags, a torn map) and gluing it together until it looks like it meant to. Here is what you need, what you probably have, and what can sit on the shelf a while longer.",
+      text: "Junk journaling does not need that basket. It is the art of making a book out of paper that has already lived a bit (envelopes, tickets, tags, a torn map) and gluing it together until it looks like it meant to. This guide is the supplies list: what you need, what you probably have, and what can sit on the shelf a while longer. The how-to, with your first page step by step, is in [How to Start Junk Journaling](/journal/how-to-start-junk-journaling).",
     },
     { type: "h2", text: "Why it is worth trying", id: "why" },
     {
@@ -62,7 +62,7 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
     },
     {
       type: "p",
-      text: "The start-up effort is small too. Many people already own most of it. If you would like the creative side first, [How to Start Junk Journaling](/journal/how-to-start-junk-journaling) walks through the method; this page is the shopping side.",
+      text: "The outlay is small too. Many people already own most of it.",
     },
     { type: "h2", text: "What you probably already own", id: "free" },
     {
@@ -211,7 +211,7 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
     },
     {
       type: "makePlan",
-      text: "Put a journal evening on the calendar in [Make Some Plans](/make-plans). One hour and the scrap envelope is the whole brief.",
+      text: "Put a journal evening on the calendar. One hour and the scrap envelope is the whole brief.",
     },
     {
       type: "p",

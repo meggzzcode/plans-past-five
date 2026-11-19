@@ -1,5 +1,7 @@
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { articles, type Block } from "@/content";
+import { heavyCallouts } from "./article-summary";
 import { getHobby } from "@/data/hobbies";
 import { productsFor } from "@/data/products";
 import { selectProducts, verifiedCatalog } from "@/data/catalog";
@@ -10,8 +12,22 @@ import { StarterKit } from "@/components/commerce/StarterKit";
 import { images } from "@/data/images";
 import { Inline } from "./Inline";
 import { ProductCard, HobbyCard } from "@/components/cards/Cards";
-import { Star, Bow, Flower, Arrow } from "@/components/brand/Doodles";
-import { Clock, Wallet, Users } from "lucide-react";
+import { Star, Arrow } from "@/components/brand/Doodles";
+import {
+  CalendarHeart,
+  Clock,
+  Gem,
+  Heart,
+  Leaf,
+  ListChecks,
+  PiggyBank,
+  Sun,
+  Timer,
+  Users,
+  Wallet,
+  ChevronDown,
+  ShoppingBag,
+} from "lucide-react";
 import { SaveButton } from "./SaveButton";
 import { AffiliateNote } from "./AffiliateNote";
 
@@ -34,34 +50,151 @@ export function ArticleBody({ blocks, articleSlug }: { blocks: Block[]; articleS
   const legacy = blocks.map((b) =>
     b.type === "starterKit" || b.type === "shopHobby" ? verifiedFor(b, slug, used) : null,
   );
+  const heavy = heavyCallouts(blocks);
   return (
-    <div className="prose-editorial">
+    <div className="prose-editorial article-flow">
       {blocks.map((b, i) => (
-        <BlockView key={i} b={b} verified={legacy[i] ?? null} />
+        <BlockView key={i} b={b} verified={legacy[i] ?? null} heavy={heavy.has(i)} />
       ))}
     </div>
   );
 }
 
-function Box({
-  tone,
+/**
+ * One style family for every callout: a small icon + label, a left rule, generous space.
+ * `heavy` adds a soft tint (at most MAX_HEAVY_CALLOUTS per article); the rest are a plain bordered line.
+ */
+function Callout({
+  id,
   label,
   icon,
+  heavy,
   children,
 }: {
-  tone: string;
+  id?: string;
   label: string;
-  icon?: React.ReactNode;
+  icon: React.ReactNode;
+  heavy: boolean;
   children: React.ReactNode;
 }) {
   return (
-    <aside className={`not-prose relative my-10 ${tone} px-6 py-6 md:px-8`}>
-      <p className="kicker mb-3 flex items-center gap-2 text-cherry">
-        {icon}
+    <aside
+      id={id}
+      data-callout={heavy ? "heavy" : "light"}
+      className={
+        heavy
+          ? "not-prose callout callout-heavy my-9 scroll-mt-24 border-l-4 border-cherry bg-butter/50 px-5 py-5 md:px-7"
+          : "not-prose callout callout-light my-7 scroll-mt-24 border-l-2 border-cherry/50 py-1 pl-4"
+      }
+    >
+      <p className="kicker mb-2 flex items-center gap-2 text-cherry">
+        <span
+          aria-hidden
+          className="grid h-5 w-5 place-items-center text-cherry [&>svg]:h-4 [&>svg]:w-4"
+        >
+          {icon}
+        </span>
         {label}
       </p>
       <div className="text-[1rem] leading-relaxed text-ink">{children}</div>
     </aside>
+  );
+}
+
+const wc = (t: string) => t.split(/\s+/).filter(Boolean).length;
+
+/**
+ * Layout wrapper around the commerce blocks. Collapsed by default: three essentials and a
+ * "See all (N)" toggle; "Another option" cards sit behind one more toggle. It only hides cards the
+ * commerce components already rendered (no markup of theirs is changed), and shows everything
+ * until the page hydrates or when scripts are off.
+ */
+function ShopFold({ children }: { children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [open, setOpen] = useState(false);
+  const [showAlt, setShowAlt] = useState(false);
+  const [n, setN] = useState({ main: 0, alt: 0 });
+  useEffect(() => {
+    const root = ref.current;
+    if (!root) return;
+    const cards = [...root.querySelectorAll<HTMLElement>("[data-product-id], [data-fold-card]")];
+    let idx = 0;
+    let main = 0;
+    let alt = 0;
+    const meta = cards.map((el) => {
+      const isAlt = /another option/i.test(el.textContent ?? "");
+      if (isAlt) alt++;
+      else main++;
+      return { el, isAlt, idx: isAlt ? -1 : idx++ };
+    });
+    setN((p) => (p.main === main && p.alt === alt ? p : { main, alt }));
+    const hide = new Set<HTMLElement>();
+    for (const m of meta) if (m.isAlt ? !(open && showAlt) : !(open || m.idx < 3)) hide.add(m.el);
+    for (const m of meta) m.el.toggleAttribute("data-fold-hide", hide.has(m.el));
+    root.querySelectorAll<HTMLElement>("section").forEach((sec) => {
+      const inside = cards.filter((c) => sec.contains(c));
+      if (inside.length > 0)
+        sec.toggleAttribute(
+          "data-fold-hide",
+          inside.every((c) => hide.has(c)),
+        );
+    });
+  }, [open, showAlt, children]);
+  const foldable = n.main > 3 || n.alt > 0;
+  const btn =
+    "inline-flex min-h-11 items-center gap-1.5 border-2 border-ink px-4 text-sm font-semibold hover:bg-butter";
+  return (
+    <div ref={ref} className="shop-fold">
+      {children}
+      {foldable && (
+        <div className="not-prose -mt-6 mb-10 flex flex-wrap items-center gap-3 border-b border-border pb-5">
+          <p className="mr-auto flex items-center gap-2 text-sm font-semibold text-ink">
+            <ShoppingBag aria-hidden className="h-4 w-4 text-cherry" />
+            Shop the pieces
+          </p>
+          {n.main > 3 && (
+            <button
+              type="button"
+              className={btn}
+              aria-expanded={open}
+              onClick={() => {
+                setOpen((v) => !v);
+                if (open) setShowAlt(false);
+              }}
+            >
+              {open ? "Show fewer" : `See all (${n.main})`}
+              <ChevronDown
+                aria-hidden
+                className={`h-4 w-4 transition ${open ? "rotate-180" : ""}`}
+              />
+            </button>
+          )}
+          {open && n.alt > 0 && (
+            <button
+              type="button"
+              className={btn}
+              aria-expanded={showAlt}
+              onClick={() => setShowAlt((v) => !v)}
+            >
+              {showAlt ? "Hide other options" : `Show more options (${n.alt})`}
+            </button>
+          )}
+          {!open && n.main <= 3 && n.alt > 0 && (
+            <button
+              type="button"
+              className={btn}
+              aria-expanded={showAlt}
+              onClick={() => {
+                setOpen(true);
+                setShowAlt(true);
+              }}
+            >
+              Show more options ({n.alt})
+            </button>
+          )}
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -129,27 +262,55 @@ function verifiedFor(
   );
 }
 
-function BlockView({ b, verified }: { b: Block; verified: React.ReactNode }) {
+function Chip({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) {
+  return (
+    <li className="mb-0 inline-flex items-center gap-1 rounded-full !pl-2.5 before:!hidden bg-butter/60 px-2.5 py-0.5 text-xs font-medium text-espresso [&>svg]:h-3.5 [&>svg]:w-3.5 [&>svg]:text-cherry">
+      {icon}
+      {children}
+    </li>
+  );
+}
+
+function BlockView({
+  b,
+  verified,
+  heavy,
+}: {
+  b: Block;
+  verified: React.ReactNode;
+  heavy: boolean;
+}) {
   switch (b.type) {
-    case "p":
+    case "p": {
+      const long = wc(b.text) > 70;
+      const lead = b.text.startsWith("**");
       return (
-        <p>
+        <p
+          className={
+            [long ? "para-long" : "", lead ? "lead-in" : ""].filter(Boolean).join(" ") || undefined
+          }
+        >
           <Inline text={b.text} />
         </p>
       );
+    }
     case "h2":
       return (
         <h2 id={b.id} className="scroll-mt-28">
-          {b.text}
+          <Inline text={b.text} />
         </h2>
       );
     case "h3":
-      return <h3>{b.text}</h3>;
+      return (
+        <h3>
+          <Inline text={b.text} />
+        </h3>
+      );
     case "list":
       return (
         <ul>
           {b.items.map((t, i) => (
-            <li key={i}>
+            <li key={i} className={t.startsWith("**") ? "lead-in" : undefined}>
               <Inline text={t} />
             </li>
           ))}
@@ -157,14 +318,14 @@ function BlockView({ b, verified }: { b: Block; verified: React.ReactNode }) {
       );
     case "quote":
       return (
-        <blockquote className="my-12 border-y-2 border-cherry py-8 text-center font-display text-3xl italic leading-tight text-cherry md:text-4xl">
-          <Star className="mx-auto mb-3 h-5 w-5" />“{b.text}”
+        <blockquote className="not-prose my-10 text-center font-display text-2xl italic leading-snug text-cherry md:text-3xl">
+          <Star aria-hidden className="mx-auto mb-2 h-4 w-4" />“<Inline text={b.text} />”
         </blockquote>
       );
     case "image": {
       const img = images[b.image];
       return (
-        <figure className="my-10 -mx-5 md:mx-0">
+        <figure className="my-9 -mx-5 md:mx-0">
           <img
             src={img.src}
             alt={img.alt}
@@ -175,7 +336,7 @@ function BlockView({ b, verified }: { b: Block; verified: React.ReactNode }) {
           />
           {b.caption && (
             <figcaption className="hand mt-2 px-5 text-xl text-cherry md:px-0">
-              {b.caption}
+              <Inline text={b.caption} />
             </figcaption>
           )}
         </figure>
@@ -195,216 +356,243 @@ function BlockView({ b, verified }: { b: Block; verified: React.ReactNode }) {
               : "Social"
           : undefined);
       const first = b.first ?? h?.firstActivity;
+      const hasMore = !!(h || first);
       return (
-        <section className="my-9 border-t border-border pt-6">
-          <h3 className="!mt-0 flex items-baseline gap-3">
-            {b.n !== undefined && (
-              <span className="font-display text-4xl italic text-cherry">{b.n}.</span>
+        <section className="item-card not-prose my-0 flex gap-3 border-t border-border py-4">
+          {b.n !== undefined && (
+            <span
+              aria-hidden
+              className="w-8 shrink-0 font-display text-2xl italic leading-tight text-cherry"
+            >
+              {b.n}
+            </span>
+          )}
+          <div className="min-w-0 flex-1">
+            <h3 className="!mt-0 !mb-1 font-display text-xl leading-tight text-ink">
+              <Inline text={b.title} />
+            </h3>
+            <p className="!mb-2 text-[0.97rem] leading-snug text-espresso">
+              <Inline text={b.note} />
+            </p>
+            {(time || cost || company) && (
+              <ul className="!mb-0 flex flex-wrap gap-1.5">
+                {time && <Chip icon={<Clock aria-hidden />}>{time}</Chip>}
+                {cost && <Chip icon={<Wallet aria-hidden />}>{cost}</Chip>}
+                {company && <Chip icon={<Users aria-hidden />}>{company}</Chip>}
+              </ul>
             )}
-            <span>{b.title}</span>
-          </h3>
-          <p>
-            <Inline text={b.note} />
-          </p>
-          {(time || cost || company) && (
-            <ul className="!mb-3 flex flex-wrap gap-x-5 gap-y-1 text-sm font-medium [&>li]:!pl-0 [&>li]:before:!hidden">
-              {time && (
-                <li className="flex items-center gap-1.5">
-                  <Clock className="h-4 w-4 text-cherry" />
-                  {time}
-                </li>
-              )}
-              {cost && (
-                <li className="flex items-center gap-1.5">
-                  <Wallet className="h-4 w-4 text-cherry" />
-                  {cost}
-                </li>
-              )}
-              {company && (
-                <li className="flex items-center gap-1.5">
-                  <Users className="h-4 w-4 text-cherry" />
-                  {company}
-                </li>
-              )}
-            </ul>
-          )}
-          {h && (
-            <p className="!mb-2 text-[0.95rem]">
-              <strong>You'll need:</strong> {h.supplies.join(", ")}.
-            </p>
-          )}
-          {first && (
-            <p className="!mb-2 text-[0.95rem]">
-              <span className="hand text-xl text-cherry">first try → </span>
-              {first}
-            </p>
-          )}
-          {h && (
-            <div className="flex flex-wrap items-center gap-5 text-sm">
-              <Link to="/hobbies/$slug" params={{ slug: h.slug }} className="font-semibold">
-                Read the {h.name.toLowerCase()} guide
-              </Link>
-              <SaveButton
-                item={{
-                  key: `hobby:${h.slug}`,
-                  kind: "hobby",
-                  title: h.name,
-                  href: `/hobbies/${h.slug}`,
-                }}
-              />
-            </div>
-          )}
+            {hasMore && (
+              <details className="item-more mt-2 text-[0.95rem]">
+                <summary className="inline-flex min-h-8 cursor-pointer items-center gap-1 text-sm font-semibold text-cherry">
+                  More
+                </summary>
+                <div className="mt-2 space-y-2 border-l-2 border-cherry/30 pl-3">
+                  {h && (
+                    <p>
+                      <strong>You'll need:</strong> {h.supplies.join(", ")}.
+                    </p>
+                  )}
+                  {first && (
+                    <p>
+                      <span className="hand text-xl text-cherry">first try → </span>
+                      <Inline text={first} />
+                    </p>
+                  )}
+                  {h && (
+                    <div className="flex flex-wrap items-center gap-5 text-sm">
+                      <Link
+                        to="/hobbies/$slug"
+                        params={{ slug: h.slug }}
+                        className="font-semibold text-cherry underline underline-offset-4"
+                      >
+                        Read the {h.name.toLowerCase()} guide
+                      </Link>
+                      <SaveButton
+                        item={{
+                          key: `hobby:${h.slug}`,
+                          kind: "hobby",
+                          title: h.name,
+                          href: `/hobbies/${h.slug}`,
+                        }}
+                      />
+                    </div>
+                  )}
+                </div>
+              </details>
+            )}
+          </div>
         </section>
       );
     }
     case "whatYoullNeed":
       return (
-        <Box tone="bg-butter" label="What you'll need" icon={<Star className="h-3 w-3" />}>
-          <div className="grid gap-6 md:grid-cols-2">
-            <div>
-              <p className="mb-2 font-display text-xl">The essentials</p>
-              <ul className="space-y-1.5">
-                {b.essentials.map((e) => (
-                  <li key={e} className="flex gap-2">
-                    <span className="text-cherry">✶</span>
-                    {e}
+        <Callout id="what-youll-need" heavy={heavy} label="What you'll need" icon={<ListChecks />}>
+          <ul className="space-y-1">
+            {b.essentials.map((e) => (
+              <li key={e} className="flex gap-2 !pl-0 before:!hidden">
+                <span aria-hidden className="text-cherry">
+                  ✶
+                </span>
+                <span>
+                  <Inline text={e} />
+                </span>
+              </li>
+            ))}
+          </ul>
+          {b.optional && b.optional.length > 0 && (
+            <details className="mt-3">
+              <summary className="cursor-pointer text-sm font-semibold text-cherry">
+                Nice to have ({b.optional.length})
+              </summary>
+              <ul className="mt-2 space-y-1">
+                {b.optional.map((e) => (
+                  <li key={e} className="flex gap-2 !pl-0 before:!hidden">
+                    <span aria-hidden className="text-cherry">
+                      ○
+                    </span>
+                    <span>
+                      <Inline text={e} />
+                    </span>
                   </li>
                 ))}
               </ul>
-            </div>
-            {b.optional && (
-              <div>
-                <p className="mb-2 font-display text-xl italic">Nice to have</p>
-                <ul className="space-y-1.5">
-                  {b.optional.map((e) => (
-                    <li key={e} className="flex gap-2">
-                      <span className="text-cherry">○</span>
-                      {e}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-        </Box>
+            </details>
+          )}
+        </Callout>
       );
     case "starterKit":
     case "shopHobby": {
-      if (verified) return <>{verified}</>;
+      if (verified) return <ShopFold>{verified}</ShopFold>;
       const ps = productsFor(b.productIds);
       return (
-        <aside className="not-prose my-12 border-y-2 border-ink py-8">
-          <p className="kicker text-cherry">Off Duty Essentials</p>
-          <h3 className="mt-2 font-display text-3xl italic">
-            {b.title ?? (b.type === "starterKit" ? "The Starter Kit" : "Shop the hobby")}
-          </h3>
-          {"dek" in b && b.dek && <p className="mt-2 text-muted-foreground">{b.dek}</p>}
-          <div className="mt-6 grid gap-8 sm:grid-cols-2">
-            {ps.map((p) => (
-              <ProductCard key={p.id} p={p} />
-            ))}
-          </div>
-          <AffiliateNote className="mt-6" />
-        </aside>
+        <ShopFold>
+          <aside className="not-prose my-12 border-y-2 border-ink py-8">
+            <p className="kicker text-cherry">Off Duty Essentials</p>
+            <h3 className="mt-2 font-display text-3xl italic">
+              {b.title ?? (b.type === "starterKit" ? "The Starter Kit" : "Shop the hobby")}
+            </h3>
+            {"dek" in b && b.dek && (
+              <p className="mt-2 text-muted-foreground">
+                <Inline text={b.dek} />
+              </p>
+            )}
+            <div className="mt-6 grid gap-8 sm:grid-cols-2">
+              {ps.map((p) => (
+                <div key={p.id} data-fold-card>
+                  <ProductCard p={p} />
+                </div>
+              ))}
+            </div>
+            <AffiliateNote className="mt-6" />
+          </aside>
+        </ShopFold>
       );
     }
     case "shopTheArticle":
       return (
-        <ShopTheArticle
-          {...(b.articleSlug ? { article: b.articleSlug } : {})}
-          {...(b.hobbies ? { hobbies: b.hobbies } : {})}
-          {...(b.collection ? { collection: b.collection } : {})}
-          {...(b.title ? { title: b.title } : {})}
-          {...(b.dek ? { dek: b.dek } : {})}
-        />
+        <ShopFold>
+          <ShopTheArticle
+            {...(b.articleSlug ? { article: b.articleSlug } : {})}
+            {...(b.hobbies ? { hobbies: b.hobbies } : {})}
+            {...(b.collection ? { collection: b.collection } : {})}
+            {...(b.title ? { title: b.title } : {})}
+            {...(b.dek ? { dek: b.dek } : {})}
+          />
+        </ShopFold>
       );
     case "shopMyHobby":
       return (
-        <ShopMyHobby
-          hobby={b.hobby}
-          {...(b.title ? { title: b.title } : {})}
-          {...(b.dek ? { dek: b.dek } : {})}
-        />
+        <ShopFold>
+          <ShopMyHobby
+            hobby={b.hobby}
+            {...(b.title ? { title: b.title } : {})}
+            {...(b.dek ? { dek: b.dek } : {})}
+          />
+        </ShopFold>
       );
     case "saveSplurge":
       return (
-        <aside className="not-prose my-10 grid md:grid-cols-2">
-          <div className="bg-matcha/60 p-6">
-            <p className="kicker text-garden">Save</p>
-            <p className="mt-2 text-ink">{b.save}</p>
-          </div>
-          <div className="bg-strawberry p-6">
-            <p className="kicker text-cherry">Splurge</p>
-            <p className="mt-2 text-ink">{b.splurge}</p>
-          </div>
-        </aside>
+        <Callout heavy={heavy} label="Save or splurge" icon={<PiggyBank />}>
+          <p className="!mb-2">
+            <strong className="text-garden">Save:</strong> <Inline text={b.save} />
+          </p>
+          <p className="!mb-0">
+            <span className="inline-flex items-center gap-1 font-bold text-cherry">
+              <Gem aria-hidden className="h-3.5 w-3.5" />
+              Splurge:
+            </span>{" "}
+            <Inline text={b.splurge} />
+          </p>
+        </Callout>
       );
     case "tryThisWeekend":
       return (
-        <Box
-          tone="bg-sunday/70"
-          label="Try it this weekend"
-          icon={<Flower className="h-4 w-4 text-cherry" />}
-        >
-          <p>{b.text}</p>
-        </Box>
+        <Callout heavy={heavy} label="Try it this weekend" icon={<Sun />}>
+          <p className="!mb-0">
+            <Inline text={b.text} />
+          </p>
+        </Callout>
       );
     case "girlsNight":
       return (
-        <Box tone="bg-strawberry" label="Make it a girls' night" icon={<Bow className="h-4 w-6" />}>
-          <p>{b.text}</p>
-        </Box>
+        <Callout heavy={heavy} label="Make it a girls' night" icon={<Heart />}>
+          <p className="!mb-0">
+            <Inline text={b.text} />
+          </p>
+        </Callout>
       );
     case "noSpend":
       return (
-        <Box tone="bg-warm-white border border-dashed border-garden" label="No-spend alternative">
-          <p>{b.text}</p>
-        </Box>
+        <Callout id="no-spend" heavy={heavy} label="No-spend alternative" icon={<Leaf />}>
+          <p className="!mb-0">
+            <Inline text={b.text} />
+          </p>
+        </Callout>
       );
     case "first30":
       return (
-        <Box tone="paper" label="Your first 30 minutes">
-          <ol className="space-y-3">
-            {b.steps.map((s, i) => (
-              <li key={i} className="flex gap-4">
-                <span className="font-display text-2xl italic leading-none text-cherry">
+        <Callout id="first-30" heavy={heavy} label="Your first 30 minutes" icon={<Timer />}>
+          <ol className="space-y-2">
+            {b.steps.map((st, i) => (
+              <li key={i} className="flex gap-3">
+                <span
+                  aria-hidden
+                  className="w-5 shrink-0 font-display text-xl italic leading-tight text-cherry"
+                >
                   {i + 1}
                 </span>
-                <span>{s}</span>
+                <span>
+                  <Inline text={st} />
+                </span>
               </li>
             ))}
           </ol>
-        </Box>
+        </Callout>
       );
     case "makePlan":
       return (
-        <aside className="not-prose my-12 bg-cherry px-6 py-8 text-cream md:px-10">
-          <p className="kicker text-butter">Make it a plan</p>
-          <p className="mt-3 font-display text-2xl leading-snug md:text-3xl">{b.text}</p>
-          <div className="mt-5 flex flex-wrap gap-4">
-            <Link
-              to="/hobby-finder"
-              className="bg-cream px-5 py-2.5 text-sm font-semibold text-cherry hover:bg-butter"
-            >
+        <Callout heavy={heavy} label="Make it a plan" icon={<CalendarHeart />}>
+          <p className="!mb-3 font-display text-xl leading-snug">
+            <Inline text={b.text} />
+          </p>
+          <p className="!mb-0 flex flex-wrap gap-x-5 gap-y-1 text-sm font-semibold">
+            <Link to="/hobby-finder" className="text-cherry underline underline-offset-4">
               Find Your Thing
             </Link>
-            <Link
-              to="/make-plans"
-              className="border-2 border-cream px-5 py-2 text-sm font-semibold text-cream hover:bg-cream hover:text-cherry"
-            >
+            <Link to="/make-plans" className="text-cherry underline underline-offset-4">
               Let's Make Plans
             </Link>
-          </div>
-        </aside>
+          </p>
+        </Callout>
       );
     case "ifYouLoved": {
       const hs = b.hobbies.map(getHobby).filter((x): x is NonNullable<typeof x> => !!x);
       return (
-        <aside className="not-prose my-14">
-          <p className="hand flex items-center gap-2 text-3xl text-cherry">
-            If you loved this, try… <Arrow className="h-6 w-12" />
+        <aside className="not-prose my-12" data-if-you-loved>
+          <p className="hand flex items-center gap-2 text-2xl text-cherry">
+            If you loved this, try… <Arrow className="h-5 w-10" />
           </p>
-          <div className="mt-5 grid gap-5 sm:grid-cols-3">
+          <div className="photo-cards mt-4 grid grid-cols-3 gap-3 sm:gap-5">
             {hs.map((h) => (
               <HobbyCard key={h.slug} h={h} />
             ))}

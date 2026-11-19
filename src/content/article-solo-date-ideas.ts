@@ -7,7 +7,8 @@ const it = (
   time: string,
   cost: string,
   hobby?: string,
-): Block => ({ type: "item", n, title, note, time, cost, company: "Solo", hobby });
+  first?: string,
+): Block => ({ type: "item", n, title, note, time, cost, company: "Solo", hobby, first });
 
 export const articleSoloDateIdeas: Article = {
   slug: "solo-date-ideas",
@@ -97,7 +98,7 @@ export const articleSoloDateIdeas: Article = {
   body: [
     {
       type: "p",
-      text: "Imagine you've got a free Thursday evening and nobody to fill it with. The old you would scroll until it was bedtime. The new you has an hour, a notebook and a very good idea about where to sit.",
+      text: "A free Thursday evening and nobody to fill it with? The old you would scroll until it was bedtime. The new you has an hour, a notebook and a very good idea about where to sit.",
     },
     {
       type: "p",
@@ -171,7 +172,8 @@ export const articleSoloDateIdeas: Article = {
       "Read the first page of five books you'd never normally pick up. Write down the one you'd go back for.",
       "45 min",
       "Free",
-      "reading",
+      undefined,
+      "Set a timer for twenty minutes, read five opening pages and leave without buying anything.",
     ),
     it(
       9,
@@ -198,7 +200,8 @@ export const articleSoloDateIdeas: Article = {
       "Order something you wouldn't make at home, take the window seat and read one chapter before you touch your phone.",
       "60 min",
       "Varies",
-      "reading",
+      undefined,
+      "Put the book on the table before the coffee arrives, and aim for one chapter before your phone comes out.",
     ),
     it(
       12,
@@ -236,7 +239,8 @@ export const articleSoloDateIdeas: Article = {
       "One book from a genre you've never tried, one you've heard of, one with a cover you love.",
       "45 min",
       "Varies",
-      "reading",
+      undefined,
+      "Pick three books by their covers, read the first line of each, then choose which one comes home.",
     ),
     it(
       17,
@@ -347,7 +351,8 @@ export const articleSoloDateIdeas: Article = {
       "Choose one artwork and write three sentences about what's happening in it. Then read the label and compare notes.",
       "60-90 min",
       "Varies",
-      "museum-exploring",
+      undefined,
+      "Pick a room near the entrance and sit with a single piece for ten minutes.",
     ),
     { type: "h2", text: "Outdoor solo dates", id: "outdoor" },
     it(
@@ -408,7 +413,8 @@ export const articleSoloDateIdeas: Article = {
       "Bring a book you really want to read and a hat. Keep the phone in your bag for the first half hour.",
       "1-2 hours",
       "Free",
-      "reading",
+      undefined,
+      "Read for the first half hour with your phone in your bag, then decide whether to wander.",
     ),
     it(
       39,
@@ -416,7 +422,8 @@ export const articleSoloDateIdeas: Article = {
       "Some public courts have a practice wall, so check local rules first. Hit against it with a borrowed racket for thirty minutes.",
       "30-45 min",
       "Varies",
-      "tennis",
+      undefined,
+      "Stand a few steps back, tap the ball gently against the wall and count how many returns in a row you manage.",
     ),
     it(
       40,
@@ -424,7 +431,8 @@ export const articleSoloDateIdeas: Article = {
       "Two dates in one: lunch under a tree, then draw the tree.",
       "90 min",
       "Varies",
-      "picnicking",
+      undefined,
+      "Eat first, then spend ten minutes sketching the nearest tree, outline only.",
     ),
     { type: "h2", text: "Solo dates for introverts", id: "introverts" },
     it(
@@ -433,7 +441,8 @@ export const articleSoloDateIdeas: Article = {
       "Lay out a towel, charge the book light, build a snack plate. Phone in another room.",
       "60-90 min",
       "Varies",
-      "reading",
+      undefined,
+      "Run the bath, leave the phone in another room and read until the water cools.",
     ),
     it(
       42,
@@ -449,7 +458,8 @@ export const articleSoloDateIdeas: Article = {
       "Choose the recipe you've been putting off, play music while you chop and serve it on the good plate.",
       "90 min",
       "Groceries",
-      "baking",
+      undefined,
+      "Read the whole recipe the day before, and chop everything before you turn on the heat.",
     ),
     it(
       44,
@@ -522,9 +532,10 @@ export const articleSoloDateIdeas: Article = {
       type: "p",
       text: "Pick well-lit, busy places, especially after dark, and go with someone when you can. Tell someone where you're going and when you'll be home. Two personal tips, not official advice: share your location with a friend if you're comfortable doing so, and keep your phone charged. If a place or situation feels off, leave. You never owe anyone an explanation, and a good solo date is one where you feel at ease.",
     },
+    { type: "h3", text: "Turn one idea into a plan" },
     {
-      type: "first30",
-      steps: [
+      type: "list",
+      items: [
         "Pick one idea from the free list.",
         "Put it in your calendar with a start and end time.",
         "Pack a book or notebook so your hands have a job.",

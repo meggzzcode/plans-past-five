@@ -18,6 +18,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CorrectionsRouteImport } from './routes/corrections'
 import { Route as CreativeCornerRouteImport } from './routes/creative-corner'
 import { Route as EditorialPolicyRouteImport } from './routes/editorial-policy'
+import { Route as EditorialStandardsRouteImport } from './routes/editorial-standards'
 import { Route as HobbyFinderRouteImport } from './routes/hobby-finder'
 import { Route as MakePlansRouteImport } from './routes/make-plans'
 import { Route as MethodologyRouteImport } from './routes/methodology'
@@ -82,6 +83,11 @@ const CreativeCornerRoute = CreativeCornerRouteImport.update({
 const EditorialPolicyRoute = EditorialPolicyRouteImport.update({
   id: '/editorial-policy',
   path: '/editorial-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EditorialStandardsRoute = EditorialStandardsRouteImport.update({
+  id: '/editorial-standards',
+  path: '/editorial-standards',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HobbyFinderRoute = HobbyFinderRouteImport.update({
@@ -195,6 +201,7 @@ export interface FileRoutesByFullPath {
   '/corrections': typeof CorrectionsRoute
   '/creative-corner': typeof CreativeCornerRoute
   '/editorial-policy': typeof EditorialPolicyRoute
+  '/editorial-standards': typeof EditorialStandardsRoute
   '/hobby-finder': typeof HobbyFinderRoute
   '/make-plans': typeof MakePlansRoute
   '/methodology': typeof MethodologyRoute
@@ -226,6 +233,7 @@ export interface FileRoutesByTo {
   '/corrections': typeof CorrectionsRoute
   '/creative-corner': typeof CreativeCornerRoute
   '/editorial-policy': typeof EditorialPolicyRoute
+  '/editorial-standards': typeof EditorialStandardsRoute
   '/hobby-finder': typeof HobbyFinderRoute
   '/make-plans': typeof MakePlansRoute
   '/methodology': typeof MethodologyRoute
@@ -258,6 +266,7 @@ export interface FileRoutesById {
   '/corrections': typeof CorrectionsRoute
   '/creative-corner': typeof CreativeCornerRoute
   '/editorial-policy': typeof EditorialPolicyRoute
+  '/editorial-standards': typeof EditorialStandardsRoute
   '/hobby-finder': typeof HobbyFinderRoute
   '/make-plans': typeof MakePlansRoute
   '/methodology': typeof MethodologyRoute
@@ -291,6 +300,7 @@ export interface FileRouteTypes {
     | '/corrections'
     | '/creative-corner'
     | '/editorial-policy'
+    | '/editorial-standards'
     | '/hobby-finder'
     | '/make-plans'
     | '/methodology'
@@ -322,6 +332,7 @@ export interface FileRouteTypes {
     | '/corrections'
     | '/creative-corner'
     | '/editorial-policy'
+    | '/editorial-standards'
     | '/hobby-finder'
     | '/make-plans'
     | '/methodology'
@@ -353,6 +364,7 @@ export interface FileRouteTypes {
     | '/corrections'
     | '/creative-corner'
     | '/editorial-policy'
+    | '/editorial-standards'
     | '/hobby-finder'
     | '/make-plans'
     | '/methodology'
@@ -385,6 +397,7 @@ export interface RootRouteChildren {
   CorrectionsRoute: typeof CorrectionsRoute
   CreativeCornerRoute: typeof CreativeCornerRoute
   EditorialPolicyRoute: typeof EditorialPolicyRoute
+  EditorialStandardsRoute: typeof EditorialStandardsRoute
   HobbyFinderRoute: typeof HobbyFinderRoute
   MakePlansRoute: typeof MakePlansRoute
   MethodologyRoute: typeof MethodologyRoute
@@ -470,6 +483,13 @@ declare module '@tanstack/react-router' {
       path: '/editorial-policy'
       fullPath: '/editorial-policy'
       preLoaderRoute: typeof EditorialPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/editorial-standards': {
+      id: '/editorial-standards'
+      path: '/editorial-standards'
+      fullPath: '/editorial-standards'
+      preLoaderRoute: typeof EditorialStandardsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/hobby-finder': {
@@ -625,6 +645,7 @@ const rootRouteChildren: RootRouteChildren = {
   CorrectionsRoute: CorrectionsRoute,
   CreativeCornerRoute: CreativeCornerRoute,
   EditorialPolicyRoute: EditorialPolicyRoute,
+  EditorialStandardsRoute: EditorialStandardsRoute,
   HobbyFinderRoute: HobbyFinderRoute,
   MakePlansRoute: MakePlansRoute,
   MethodologyRoute: MethodologyRoute,

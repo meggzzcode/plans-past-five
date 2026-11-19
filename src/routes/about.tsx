@@ -68,6 +68,12 @@ export const Route = createFileRoute("/about")({
         <Link to="/editorial-policy">editorial policy</Link> and{" "}
         <Link to="/affiliate-disclosure">affiliate disclosure</Link>.
       </p>
+      <p>
+        There is no single named author on purpose. {site.editorialByline} is a publication-level
+        identity: no one person's invented experience stands behind a story, and the same standards
+        apply to every page. How we use AI tools is explained on the{" "}
+        <Link to="/editorial-policy">editorial standards page</Link>.
+      </p>
       <p className="hand text-3xl text-cherry">{site.slogan}</p>
     </ProsePage>
   ),

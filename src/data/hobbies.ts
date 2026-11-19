@@ -1,5 +1,6 @@
 import type { ImageKey } from "./images";
 import { articlesForHobby } from "@/content";
+import { bucketForHigh, costBucketLabels, startupRange } from "./equipment";
 
 export type Cost = "free" | "under25" | "under50" | "flexible";
 export type Energy = "low" | "medium" | "high";
@@ -60,12 +61,8 @@ type Seed = Omit<Hobby, "id" | "slug" | "timeLabel" | "costLabel" | "tags"> & {
   extraTags?: string[];
 };
 
-const costLabels: Record<Cost, string> = {
-  free: "Free",
-  under25: "Under $25 to start",
-  under50: "About $25–$50 to start",
-  flexible: "Varies — can start small",
-};
+/** Card labels come from src/data/equipment.ts so card, profile and budget tool agree. */
+const costLabels: Record<Cost, string> = costBucketLabels;
 
 const slugify = (s: string) =>
   s
@@ -74,8 +71,12 @@ const slugify = (s: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 
-function make(s: Seed): Hobby {
-  const slug = slugify(s.name);
+function make(input: Seed): Hobby {
+  const slug = slugify(input.name);
+  // One source of truth: the cost bucket is derived from the same equipment numbers that
+  // drive the profile range and the budget tool. The seed `cost` is only a fallback.
+  const range = startupRange(slug);
+  const s: Seed = { ...input, cost: range ? bucketForHigh(range.high) : input.cost };
   const tags = new Set<string>(s.extraTags ?? []);
   if (s.settings.includes("home")) tags.add("at-home");
   if (s.settings.includes("outdoors")) tags.add("outdoors");
@@ -108,7 +109,7 @@ const seeds: Seed[] = [
     name: "Junk Journaling",
     category: "creative",
     settings: ["home"],
-    company: ["solo", "social"],
+    company: ["solo"],
     minutes: 45,
     cost: "under25",
     energy: "low",
@@ -129,7 +130,7 @@ const seeds: Seed[] = [
     name: "Scrapbooking",
     category: "creative",
     settings: ["home"],
-    company: ["solo", "social"],
+    company: ["solo"],
     minutes: 60,
     cost: "under50",
     energy: "low",
@@ -140,7 +141,8 @@ const seeds: Seed[] = [
     whyYoullLoveIt: "Your camera roll finally gets to live somewhere other than your phone.",
     supplies: ["Scrapbook album", "Printed photos", "Adhesive", "Scissors"],
     optional: ["Patterned paper", "Stickers", "Corner punch"],
-    firstActivity: "Print ten photos from one memorable weekend and fill a two-page spread.",
+    firstActivity:
+      "Print ten photos from one memorable trip or day out and fill a two-page spread.",
     productIds: ["junk-journals", "sticker-sets", "washi-tape"],
   },
   {
@@ -173,7 +175,7 @@ const seeds: Seed[] = [
     name: "Embroidery",
     category: "creative",
     settings: ["home"],
-    company: ["solo", "social"],
+    company: ["solo"],
     minutes: 45,
     cost: "under25",
     energy: "low",
@@ -192,7 +194,7 @@ const seeds: Seed[] = [
     name: "Crochet",
     category: "creative",
     settings: ["home"],
-    company: ["solo", "social"],
+    company: ["solo"],
     minutes: 45,
     cost: "under25",
     energy: "low",
@@ -212,7 +214,7 @@ const seeds: Seed[] = [
     name: "Knitting",
     category: "creative",
     settings: ["home"],
-    company: ["solo", "social"],
+    company: ["solo"],
     minutes: 45,
     cost: "under25",
     energy: "low",
@@ -230,7 +232,7 @@ const seeds: Seed[] = [
     name: "Jewelry Making",
     category: "creative",
     settings: ["home"],
-    company: ["solo", "social"],
+    company: ["social"],
     minutes: 60,
     cost: "under50",
     energy: "low",
@@ -249,7 +251,7 @@ const seeds: Seed[] = [
     name: "Friendship Bracelets",
     category: "creative",
     settings: ["home", "out"],
-    company: ["social", "solo"],
+    company: ["social"],
     minutes: 30,
     cost: "under25",
     energy: "low",
@@ -278,7 +280,8 @@ const seeds: Seed[] = [
     whyYoullLoveIt: "Pottery-class energy at your kitchen table for the price of a sandwich.",
     supplies: ["Air-dry clay", "A rolling pin or glass", "Acrylic paint"],
     optional: ["Sculpting tools", "Clay work mat", "Gloss varnish"],
-    firstActivity: "Roll a ball, press your thumb in, and shape a ring dish. Paint it tomorrow.",
+    firstActivity:
+      "Roll a ball, press your thumb in, and shape a ring dish. Paint it once it has dried.",
     image: "shopPottery",
     productIds: ["air-dry-clay", "clay-tools", "acrylic-paints", "clay-mats"],
   },
@@ -286,7 +289,7 @@ const seeds: Seed[] = [
     name: "Pottery Painting",
     category: "creative",
     settings: ["out", "home"],
-    company: ["social", "solo"],
+    company: ["social"],
     minutes: 120,
     cost: "under50",
     energy: "low",
@@ -342,7 +345,7 @@ const seeds: Seed[] = [
     name: "Collage Art",
     category: "creative",
     settings: ["home"],
-    company: ["solo", "social"],
+    company: ["solo"],
     minutes: 45,
     cost: "free",
     energy: "low",
@@ -378,7 +381,7 @@ const seeds: Seed[] = [
     name: "Film Photography",
     category: "outdoors",
     settings: ["outdoors", "out"],
-    company: ["solo", "social"],
+    company: ["solo"],
     minutes: 90,
     cost: "flexible",
     energy: "medium",
@@ -424,14 +427,14 @@ const seeds: Seed[] = [
     whyYoullLoveIt: "A gentle, screen-free focus that you can share with whoever wanders by.",
     supplies: ["A 500 or 1000-piece puzzle"],
     optional: ["Puzzle mat", "Sorting trays"],
-    firstActivity: "Do the edges tonight. Leave the sky for the weekend.",
+    firstActivity: "Do the edges first. Leave the sky for another evening.",
     productIds: ["board-games"],
   },
   {
     name: "Crossword Puzzles",
     category: "cozy",
     settings: ["home", "out"],
-    company: ["solo", "social"],
+    company: ["solo"],
     minutes: 20,
     cost: "free",
     energy: "low",
@@ -442,7 +445,7 @@ const seeds: Seed[] = [
     whyYoullLoveIt: "Small daily wins, and an excellent café companion.",
     supplies: ["A pencil and a printed crossword"],
     optional: ["A crossword book"],
-    firstActivity: "Solve a Monday-level crossword with a friend over coffee.",
+    firstActivity: "Solve an easy early-week crossword with a pencil and a cup of coffee.",
     productIds: [],
   },
   {
@@ -478,7 +481,8 @@ const seeds: Seed[] = [
     whyYoullLoveIt: "Something alive to look after that won't text you back.",
     supplies: ["One easy plant (pothos or basil)", "A pot with drainage"],
     optional: ["Propagation jars", "Watering can"],
-    firstActivity: "Take a cutting from a friend's pothos and root it in a glass of water.",
+    firstActivity:
+      "Root a pothos cutting, or a small shop-bought plant, in a glass of water on a windowsill.",
     productIds: [],
   },
   {
@@ -505,7 +509,7 @@ const seeds: Seed[] = [
     name: "Vinyl Collecting",
     category: "cozy",
     settings: ["home", "out"],
-    company: ["solo", "social"],
+    company: ["solo"],
     minutes: 60,
     cost: "flexible",
     energy: "low",
@@ -588,15 +592,55 @@ const seeds: Seed[] = [
     supplies: ["Comfortable shoes", "Water", "A snack", "A trail map or app"],
     optional: ["Daypack", "Binoculars"],
     firstActivity:
-      "Pick a short, well-marked trail under three miles and go on a Saturday morning.",
+      "Pick a short, well-marked trail under three miles and go when you have a few daylight hours free.",
     image: "hiking",
     productIds: ["daypacks", "water-bottles", "binoculars"],
+  },
+  {
+    name: "Yoga for Beginners",
+    category: "active",
+    settings: ["home", "out"],
+    company: ["solo", "social"],
+    minutes: 30,
+    cost: "under25",
+    energy: "low",
+    beginner: 1,
+    cravings: ["movement", "relaxation"],
+    description:
+      "Slow stretching and breathing, done on a mat at home with a free video or in a beginner class. No flexibility needed; you go as far as feels okay.",
+    whyYoullLoveIt:
+      "It is movement for a tired body: you finish loosened up, not wrecked, and it fits in a living-room corner.",
+    supplies: ["A mat, or a towel on carpet", "Comfortable clothes you can stretch in"],
+    optional: ["Two blocks or a firm cushion", "A drop-in beginner class"],
+    firstActivity:
+      "Roll out a mat, play a free 20-minute beginner video, and stop any pose that hurts.",
+    productIds: [],
+  },
+  {
+    name: "Dance Classes",
+    category: "active",
+    settings: ["out"],
+    company: ["social"],
+    minutes: 60,
+    cost: "under25",
+    energy: "medium",
+    beginner: 2,
+    cravings: ["movement", "friendship", "adventure"],
+    description:
+      "A drop-in beginner class in something like salsa, swing, hip-hop or line dancing. Everyone is learning the same steps at once, so nobody is watching you.",
+    whyYoullLoveIt:
+      "You get exercise, music and other people in one hour, and you cannot scroll while you are counting steps.",
+    supplies: ["Comfortable clothes", "Shoes that slide a little on the floor"],
+    optional: ["A friend to go with", "A water bottle"],
+    firstActivity:
+      "Book one drop-in beginner class in a style you are curious about, and go with a friend if you can.",
+    productIds: [],
   },
   {
     name: "Roller Skating",
     category: "active",
     settings: ["outdoors", "out"],
-    company: ["solo", "social"],
+    company: ["social"],
     minutes: 60,
     cost: "flexible",
     energy: "high",
@@ -613,7 +657,7 @@ const seeds: Seed[] = [
     name: "Birdwatching",
     category: "outdoors",
     settings: ["outdoors"],
-    company: ["solo", "social"],
+    company: ["solo"],
     minutes: 60,
     cost: "free",
     energy: "low",
@@ -649,7 +693,7 @@ const seeds: Seed[] = [
     name: "Outdoor Sketching",
     category: "creative",
     settings: ["outdoors"],
-    company: ["solo", "social"],
+    company: ["solo"],
     minutes: 45,
     cost: "under25",
     energy: "low",
@@ -711,7 +755,7 @@ const seeds: Seed[] = [
     name: "Volunteering",
     category: "social",
     settings: ["out", "outdoors"],
-    company: ["social", "solo"],
+    company: ["social"],
     minutes: 180,
     cost: "free",
     energy: "medium",
@@ -765,7 +809,7 @@ const seeds: Seed[] = [
     name: "Picnicking",
     category: "outdoors",
     settings: ["outdoors"],
-    company: ["solo", "social"],
+    company: ["social"],
     minutes: 120,
     cost: "under25",
     energy: "low",
@@ -776,7 +820,7 @@ const seeds: Seed[] = [
     whyYoullLoveIt: "Low effort, very romantic, works alone or with a group.",
     supplies: ["A blanket", "Snacks", "A park"],
     optional: ["Picnic blanket with waterproof backing", "Market tote"],
-    firstActivity: "Pack bread, fruit and cheese and claim a patch of grass on Saturday.",
+    firstActivity: "Pack bread, fruit and cheese and claim a patch of grass on the next dry day.",
     image: "picnic",
     productIds: ["picnic-blankets", "market-totes"],
   },
@@ -1236,6 +1280,42 @@ const enrichment: Record<string, Enrichment> = {
     [comm, lib, "A local writing group"],
     [G_JUNK, G_AFTER],
   ),
+  "yoga-for-beginners": e(
+    "Easy",
+    0,
+    25,
+    "Assumes a basic mat or a towel and free video classes. Drop-in classes and props are extra.",
+    "20 to 45 minutes, a few times a week",
+    "either",
+    [
+      "Choose a free beginner video of 20 minutes or less, or a class labelled beginner or gentle.",
+      "Clear a space the size of a mat and wear something you can stretch in.",
+      "Move slowly and breathe through your nose. Stop or back off anything that hurts.",
+      "Finish with a minute lying down before you pick your phone back up.",
+    ],
+    "A gentle 20-minute beginner sequence at home, repeated twice in one week.",
+    ["hiking", "roller-skating", "indoor-gardening"],
+    [vid, comm, "A beginner or gentle class"],
+    [G_35, G_AFTER],
+  ),
+  "dance-classes": e(
+    "Needs a lesson or two",
+    10,
+    25,
+    "Assumes one drop-in beginner class and clothes you already own. Class packs and dance shoes are extra, and prices vary a lot by area.",
+    "About an hour per class",
+    "indoor",
+    [
+      "Pick one style you are curious about and look for a class labelled beginner or no experience needed.",
+      "Book a single drop-in class rather than a pack.",
+      "Wear comfortable clothes and shoes you can turn in.",
+      "Arrive a few minutes early so you can watch the room and say hello to the teacher.",
+    ],
+    "One beginner class, then a decision about whether to go back.",
+    ["yoga-for-beginners", "roller-skating", "pickleball"],
+    [comm, vid, "A community center or rec program"],
+    [G_35, G_AFTER],
+  ),
   tennis: e(
     "Needs a lesson or two",
     40,
@@ -1468,14 +1548,22 @@ const enrichment: Record<string, Enrichment> = {
       "Bring a blanket, something to sit on and a bag for trash.",
       "Add a book or a small game.",
     ],
-    "A bread, fruit and cheese picnic on a Saturday.",
+    "A bread, fruit and cheese picnic on the next dry day.",
     ["hiking", "reading", "flower-arranging"],
     ["A friend with a favorite spot", lib],
     [G_35, G_AFTER],
   ),
 };
 
-export const hobbies: Hobby[] = seeds.map(make).map((h) => ({ ...h, ...enrichment[h.slug] }));
+export const hobbies: Hobby[] = seeds.map(make).map((h) => {
+  const en = enrichment[h.slug];
+  const range = startupRange(h.slug);
+  return {
+    ...h,
+    ...en,
+    ...(en && range ? { startupBudget: { ...en.startupBudget, ...range } } : {}),
+  };
+});
 export const getHobby = (slug: string) => hobbies.find((h) => h.slug === slug);
 
 export const hobbyFilters = [

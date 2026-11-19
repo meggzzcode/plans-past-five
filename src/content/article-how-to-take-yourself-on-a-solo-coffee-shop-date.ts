@@ -37,7 +37,7 @@ export const articleHowToTakeYourselfOnASoloCoffeeShopDate: Article = {
   body: [
     {
       type: "p",
-      text: "Picture this. It's a quiet weekday afternoon, you've got a paperback in your bag and an hour you didn't plan to fill. Somewhere nearby is a window seat with your name on it, and the only thing between you and it is the small, silly worry that people will wonder why you're alone.",
+      text: "Going to a coffee shop alone feels bigger than it is. It's a quiet weekday afternoon, you've got a paperback in your bag and an hour you didn't plan to fill. Somewhere nearby is a window seat with your name on it, and the only thing between you and it is the small, silly worry that people will wonder why you're alone.",
     },
     {
       type: "p",

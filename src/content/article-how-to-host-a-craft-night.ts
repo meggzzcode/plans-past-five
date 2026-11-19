@@ -65,11 +65,11 @@ export const articleHowToHostACraftNight: Article = {
   body: [
     {
       type: "p",
-      text: "Imagine a table covered in paper, a heap of supplies and six friends who all swear they're not creative. Forty minutes later the room is chatty, someone's holding up a wonky mug with real pride, and nobody has mentioned work. That's the quiet trick of a craft night: busy hands make conversation easier.",
+      text: "A table covered in paper, a heap of supplies and six friends who all swear they're not creative. Forty minutes later the room is chatty, someone's holding up a wonky mug with real pride, and nobody has mentioned work. That's the quiet trick of a craft night: busy hands make conversation easier.",
     },
     {
       type: "p",
-      text: "It's also one of the easiest ways to host. No cooking, no seating chart, no playlist panic. Being good at it is completely optional. Here's the plan, from choosing a craft to clearing up.",
+      text: "It's also one of the easiest ways to host. No cooking, no seating chart, no playlist panic. Here's the plan, from choosing a craft to clearing up.",
     },
     { type: "h2", text: "Step 1: Choose a craft your whole group can do", id: "choose" },
     {
@@ -150,9 +150,10 @@ export const articleHowToHostACraftNight: Article = {
       ],
     },
     { type: "h2", text: "Step 5: A timeline for the evening", id: "timeline" },
+    { type: "h3", text: "The evening at a glance" },
     {
-      type: "first30",
-      steps: [
+      type: "list",
+      items: [
         "0:00 Welcome, drinks and snacks, music on low.",
         "0:20 Show the craft. Do a quick demo, then let everyone start.",
         "0:30 Free making time. Keep conversation going with a few easy questions.",

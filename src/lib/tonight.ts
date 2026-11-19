@@ -35,13 +35,50 @@ export const timeOptions = [
 /** Approximate assumptions, labelled as estimates on the page. Edit here. */
 export const costRanges: Record<Cost, { max: number; label: string }> = {
   free: { max: 0, label: "Free" },
-  under25: { max: 25, label: "About $0–$25" },
-  under50: { max: 50, label: "About $25–$50" },
+  under25: { max: 25, label: "Under $25" },
+  under50: { max: 50, label: "Under $50" },
   flexible: { max: Infinity, label: "Varies, can start small" },
 };
 
 const costRank: Record<Cost, number> = { free: 0, under25: 1, under50: 2, flexible: 3 };
 const energyRank: Record<Energy, number> = { low: 0, medium: 1, high: 2 };
+
+/**
+ * Hobbies that need daylight or opening hours, so they do not belong on a "tonight" list
+ * (typed data: edit here). Hiking at 6pm in November is not a plan.
+ */
+export const daytimeOnlyHobbies: readonly string[] = [
+  "hiking",
+  "picnicking",
+  "birdwatching",
+  "nature-photography",
+  "outdoor-sketching",
+  "film-photography",
+  "thrifting",
+  "museum-exploring",
+  "volunteering",
+];
+
+/** Wording that ties an idea to another day or part of the day, which is wrong for "tonight". */
+export const notTonightWording =
+  /\b(mon|tues|wednes|thurs|fri|satur|sun)day\b|\bweekends?\b|\btomorrow\b|\bnext week\b|\b(this |in the )?(morning|afternoon)\b/i;
+
+/** Wording that needs another person. Used to keep "Just me" free of ideas that need a friend. */
+export const needsOthersWording =
+  /\bwith (a |your |two |three |some )?(friends?|partner|group|someone)\b|\binvite\b|\btogether\b|\bcall a friend\b|\bdoubles\b|\bsign up a friend\b/i;
+
+/** True when a candidate is a sensible thing to do this evening. */
+export function tonightOk(c: {
+  hobbySlug?: string | undefined;
+  kind: "hobby" | "idea";
+  parts?: readonly string[];
+  title: string;
+  firstStep: string;
+}): boolean {
+  if (c.kind === "hobby" && c.hobbySlug && daytimeOnlyHobbies.includes(c.hobbySlug)) return false;
+  if (c.kind === "idea" && c.parts && !c.parts.includes("evening")) return false;
+  return !notTonightWording.test(`${c.title} ${c.firstStep}`);
+}
 
 type Candidate = Suggestion & {
   cost: Cost;
@@ -49,6 +86,10 @@ type Candidate = Suggestion & {
   outdoor: boolean;
   social: boolean;
   solo: boolean;
+  /** Passes the tonight rule (right time of day, no other-day wording). */
+  tonight: boolean;
+  /** The wording needs another person. */
+  needsOthers: boolean;
 };
 
 const fmtMin = (m: number) =>
@@ -56,6 +97,12 @@ const fmtMin = (m: number) =>
 export const formatMinutes = fmtMin;
 
 function fromHobby(h: Hobby): Candidate {
+  const base = {
+    kind: "hobby" as const,
+    hobbySlug: h.slug,
+    title: h.name,
+    firstStep: h.firstActivity,
+  };
   return {
     id: `hobby:${h.slug}`,
     kind: "hobby",
@@ -71,6 +118,8 @@ function fromHobby(h: Hobby): Candidate {
     // "indoor" = at home or somewhere new indoors (studio, café, venue)
     social: h.company.includes("social"),
     solo: h.company.includes("solo"),
+    tonight: tonightOk(base),
+    needsOthers: needsOthersWording.test(h.firstActivity),
   };
 }
 
@@ -79,21 +128,24 @@ function fromActivity(a: Activity): Candidate {
   const outdoor = a.vibes.includes("outdoorsy");
   const energy: Energy = a.vibes.includes("adventurous") ? "medium" : outdoor ? "medium" : "low";
   const h = a.hobby ? hobbies.find((x) => x.slug === a.hobby) : undefined;
+  const firstStep = a.lowCost
+    ? `Lower-cost version: ${a.lowCost}`
+    : "Start with the first small step, then see where it goes.";
   return {
     id: `idea:${a.id}`,
     kind: "idea",
     title: a.text,
     minutes: a.minutes,
     costLabel: costRanges[a.cost].label,
-    firstStep: a.lowCost
-      ? `Lower-cost version: ${a.lowCost}`
-      : "Start with the first small step, then see where it goes.",
+    firstStep,
     ...(h ? { hobbySlug: h.slug, guideSlug: articlesForHobby(h.slug)[0]?.slug } : {}),
     cost: a.cost,
     energy,
     outdoor,
     social: a.who.some((w) => w !== "alone"),
     solo: a.who.includes("alone"),
+    tonight: tonightOk({ kind: "idea", parts: a.parts, title: a.text, firstStep }),
+    needsOthers: needsOthersWording.test(`${a.text} ${firstStep}`),
   };
 }
 
@@ -102,6 +154,9 @@ const pool = (): Candidate[] => [...hobbies.map(fromHobby), ...activities.map(fr
 type Constraint = "time" | "energy" | "budget" | "company" | "setting";
 
 function fits(c: Candidate, i: TonightInput, skip?: Constraint): boolean {
+  // Always on: ideas must make sense this evening, and "Just me" must not need a friend.
+  if (!c.tonight) return false;
+  if (i.company === "solo" && c.needsOthers) return false;
   if (skip !== "time" && c.minutes > i.minutes) return false;
   if (skip !== "energy" && energyRank[c.energy] > energyRank[i.energy]) return false;
   if (skip !== "budget" && costRank[c.cost] > costRank[i.budget]) return false;
@@ -161,6 +216,8 @@ const clean = ({
   outdoor: _o,
   social: _s,
   solo: _so,
+  tonight: _t,
+  needsOthers: _n,
   ...s
 }: Candidate): Suggestion => s;
 

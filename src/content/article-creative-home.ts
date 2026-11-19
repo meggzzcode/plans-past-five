@@ -92,7 +92,7 @@ export const articleCreativeHome: Article = {
     it(
       6,
       "Watercolor painting",
-      "You don't need an art studio or an entire Sunday afternoon. A little paint set, a sketchbook and twenty minutes at your kitchen table are enough. Try painting the flowers on your counter, your favorite mug, or whatever happens to be in front of you.",
+      "No studio and no free Sunday needed. A little paint set, a sketchbook and twenty minutes at your kitchen table are enough. Try painting the flowers on your counter, your favorite mug, or whatever happens to be in front of you.",
       "watercolor-painting",
     ),
     it(
@@ -127,7 +127,7 @@ export const articleCreativeHome: Article = {
     it(
       9,
       "Air-dry clay",
-      "Pottery without a wheel or kiln. Ring dishes, incense holders and tiny vases dry overnight and can be painted the next day. Seal them if you want them to last.",
+      "No wheel or kiln required. Ring dishes, incense holders and tiny vases dry overnight and can be painted the next day. Seal them if you want them to last.",
       "air-dry-clay",
     ),
     it(
