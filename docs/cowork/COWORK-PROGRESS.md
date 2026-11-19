@@ -42,3 +42,16 @@ No code, main branch or claude/vibrant-dirac-amdf7r changed by Cowork work; data
 - E: Netlify terms, Search Console, Pinterest claim, Amazon agreement read; GA4 and Bing help pages gave no answers (NOT FOUND).
 - J: Flippa pricing page read: no dollar prices or success-fee rates published there; escrow fee pages conflict (cannot reconcile); no sold comps (NOT FOUND).
 - Trademark: USPTO database searched; no exact mark; HOOKED AFTER FIVE (class 41) to be opened by owner.
+
+## Round 2 (2026-11-19), branch cowork/round2
+
+| Item | Status | Notes |
+|---|---|---|
+| B2 products | Partly | Tier 1-3 sampled; 8 rows in docs/commerce/buy-plan/VERIFIED-QUEUE-2.csv, `--check` passes (0 verified, 8 candidates). Osprey and Giro rows are on hold (third-party seller; Giro manufacturer safety page not read). Bike lights (Cygolite, Blackburn) have no Customers-say summary: not queued. Not reached: yarn/needles, flower items, jigsaw, paint-by-number, yoga mat, letter set, tennis/pickleball shoes, skate gear, jewelry/sewing kits, picnic tableware, bell. |
+| Held decisions | Not done | HELD-DECISIONS.md says all five stay held. |
+| C2 claims | Not done | Safeway page and unsourced-sentence list not produced. |
+| Pinterest pin rows | Done | Two rows in PINTEREST-VERIFICATION.md (images still to build). |
+| Pinterest account | Partly | Handle @planspastfive confirmed, business profile, bio and website field set. 7 pins published, 6 boards exist. Website not claimed. Instagram/TikTok handle check not done. |
+| Amazon policy read | Partly | Public Operating Agreement only; 180-day rule, image/price rules, SiteStripe NOT FOUND (AMAZON-POLICY-READ.md). |
+| Domain (owner-instructed) | Done | Netlify: planspastfive.com primary, www redirect. Namecheap: removed parking URL redirect and parking CNAME; added A @ 75.2.60.5 and CNAME www plans-past-five.netlify.app. MX and SPF untouched, nameservers untouched. Netlify DNS verification passed and Let's Encrypt cert issued for both names. No release deploy yet, so the domain serves nothing. |
+| GA4/Bing/GSC, trademark serial, Flippa, email test, G, H-O | Not done | Need owner logins or "go"; G needs RELEASE-HANDOVER.md merged status and the owner's go before the one deploy. |
