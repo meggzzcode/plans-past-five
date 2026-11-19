@@ -1,0 +1,133 @@
+# P2: Trust, Editorial Authenticity and Business Credibility (path to 8+)
+
+Written 2026-11-19. Research only; repo not modified. Targets: Editorial authenticity ~6.2, Trust ~6.6, Business credibility ~5.2 (out of 10, simulated blind reviewers).
+
+## Bottom line
+
+- Trust and Editorial authenticity can honestly reach 8+ with work that is mostly Claude Code plus a few owner facts (a working mailbox, a legal/owner line, real dates going forward). Expect about 7.5-8.2 and 7.5-8.0.
+- Business credibility has an honest ceiling near 6.5-7 until real-world facts exist: a named owner or legal entity, a postal or registered address, a live domain with a working mailbox, a track record of publishing over time, and an approved affiliate program. A reviewer cannot honestly rate "business" 8+ for an unlaunched, undated, unattributed site. Reaching 8 needs the owner to supply facts, not copy changes.
+- Nothing here requires a fictional person, testimonial, fake testing or backdating. Google itself says made-up creators and false credentials are deception (source 1).
+
+## What the official sources say (read 2026-11-19)
+
+1. Google, "Creating helpful, reliable, people-first content": https://developers.google.com/search/docs/fundamentals/creating-helpful-content (page shows no update date)
+   - Who: make clear who wrote the content; bylines where readers expect them, linking to background. About pages help readers understand who publishes the site. Do not fabricate creators, AI headshots or false credentials.
+   - How: explain how content was produced; for reviews, how many products were tested, how, with photos. Disclose substantial AI use where readers would wonder how content was made.
+   - Trust is the most important E-E-A-T element. E-E-A-T is not a direct ranking factor.
+   - NOTE: this conflicts mildly with the owner rule "AI disclosure only inside Editorial Standards". Google says disclose where readers would expect it. Editorial Standards placement is defensible if linked from every byline and footer; see step 3. Flag for owner, do not override the decision.
+2. Google, product reviews: https://developers.google.com/search/docs/specialty/ecommerce/write-high-quality-product-reviews (no date shown). Asks for first-hand evidence, original research, quantitative measurements, claims of "best" backed by first-hand evidence, comparison of alternatives, links to multiple sellers. This is the biggest honest gap for "best X" lists: either remove or soften "best" claims to "picked because" criteria, or add real evidence.
+3. Google, generative AI content: https://developers.google.com/search/docs/fundamentals/using-gen-ai-content (no date shown). Allowed if it adds value and is fact-checked; scaled low-value pages are spam. Recommends telling users how content was created. AI-generated images should carry IPTC DigitalSourceType "TrainedAlgorithmicMedia" metadata (this applies to Google Merchant/product contexts; treat as good practice here). Add image license metadata.
+4. Google, publication dates: https://developers.google.com/search/docs/appearance/publication-dates (no date shown). Show a visible, labeled date ("Published", "Last updated"), match it in datePublished/dateModified, dates must reflect the page itself. Misleading dates are discouraged.
+5. Amazon Associates Program Policies, last updated April 14, 2026: https://affiliate-program.amazon.com/help/operating/policies . Site must have original content, be publicly available at the submitted address, application and email contact info complete and current, privacy/tracking disclosure, no Amazon price display without approved API, FTC-style disclosure is the participant's responsibility. Nothing stated about a named person or legal entity. Amazon reviews at its sole discretion. Site not live = cannot be approved.
+6. FTC disclosures guidance (Nov 2019): https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers . Disclosure must be hard to miss, placed with the endorsement; About-page-only or end-of-post disclosures are likely missed. Relevant to affiliate disclosure wording, and to the Terms/Privacy vs disclosure mismatch.
+7. impact.com: https://help.impact.com/partner/what-would-you-like-to-learn-about/getting-started/complete-your-application-checklist (found via search; not fetched in full). Review within about 72 hours for authenticity and compliance. Official list of required pages (contact, privacy): NOT FOUND. Third parties advise a complete, working site with a clear niche.
+8. Awin and CJ requirements: official Awin page fetch returned 404; CJ not checked. NOT FOUND. Awin's wiki (https://wiki.affiliatewindow.com/index.php/Affiliate_Application_Rejections) exists as a lead for rejection reasons; not read.
+9. Unsplash license: https://unsplash.com/license . Free commercial use, no permission or attribution required; cannot compile photos to replicate a competing service. Identifiable people may need releases for some uses (third-party commentary, not official).
+10. Pexels license: https://www.pexels.com/license/ . Free use, edits allowed, attribution not required; do not imply endorsement by people/brands shown, do not sell unaltered copies, no portrayal of identifiable people in a bad light.
+11. Cloudflare Email Routing: https://developers.cloudflare.com/email-routing/ . Free on Workers Free/Paid plans; forwards inbound mail to a verified destination; cannot send arbitrary mail (sending is Beta on paid plan). Domain DNS requirement not stated on the page I read; in practice the domain's DNS must be managed in Cloudflare (not confirmed from the fetched page).
+
+Not read: how reputable publications word staff bylines (item 2 of the brief) and quality-rater guideline text. No specific URLs confirmed; treat the byline advice below as editorial practice, not cited fact. Item NOT FOUND: any official source saying a named legal entity is required for E-E-A-T or affiliate approval.
+
+## Ranked steps
+
+Score effect is my honest estimate of what a blind reviewer would move, E = Editorial authenticity, T = Trust, B = Business credibility.
+
+### 1. Working contact + corrections inbox (owner + Claude Code)
+- Owner: register or choose the domain, create a mailbox, e.g. editors@ and corrections@ (or one address). Cheapest honest route: domain registrar email forwarding or Cloudflare Email Routing (free) forwarding to the owner's own inbox; or a paid mailbox (Google Workspace or similar, roughly 6-8 USD/month). Send and receive a test message before publishing.
+- Claude Code: single `site.contactEmail` source is already used by contact.tsx, corrections.tsx, privacy.tsx (grep confirmed). Set it to the real address, add a pre-publish check (test that it is not a placeholder/example domain), and mention a response-time expectation only if the owner will keep it.
+- Without a backend, mailto plus visible address is fine; a form service (Formspree/Netlify Forms) adds a dependency and a data-collection line in Privacy, so prefer plain mailto.
+- Cost: 0-8 USD/month. Effect: T +0.5 to +0.8, B +0.5 to +0.8. Blocks everything else, since Amazon requires accurate current contact info.
+
+### 2. Accountable owner line, minimal and honest (owner decision + Claude Code)
+- Options, from lightest to strongest, none requiring a personal name if the owner prefers privacy:
+  a. "Published by [trade name], [city, state/country]. Contact: address." in footer and About. A sole proprietor or DBA can legitimately do this; a DBA/assumed-name filing is usually cheap (roughly 10-100 USD by jurisdiction, NOT verified here).
+  b. Legal entity (LLC): name, registered state and a registered-agent or mailing address in footer/Terms/Privacy. Typically costs filing fees plus annual fees, varies widely (NOT verified here). Adds the strongest business-credibility signal.
+  c. Postal address: a PO box or a commercial mail forwarding address is acceptable for a contact line; do not show a fake or borrowed address.
+- Do not invent an owner's biography or credentials. State only facts: who owns it, where, since when, and how to reach them.
+- Make the legal name in Terms/Privacy match the footer.
+- Cost: 0 to a few hundred USD depending on option. Effect: B +1.0 to +1.5 (the largest single lever for B), T +0.3 to +0.5.
+
+### 3. Fix disclosure wording consistency (Claude Code)
+- Reconcile Terms, Privacy, Editorial Standards and the affiliate disclosure so every page says the same thing about how content is made. Keep AI disclosure inside Editorial Standards per owner decision, but link to it from the footer, every article byline ("How we make this") and the About page; Google asks for how-it-was-made information where readers would look for it, and a labeled link satisfies that without repeating the full text.
+- Put affiliate disclosure next to the first product link on each page, not only on the About page (FTC guidance, source 6).
+- Cost: 0. Effect: T +0.4 to +0.6, E +0.2.
+
+### 4. Honest dates and history (Claude Code, owner)
+- The 27 stories dated Nov 18-19 2026 are true if that is when they were created. Do not alter them. Honest options:
+  - Show "Published" and a separate "Last checked" date per article, with a dated changelog page ("What changed") listing real edits. This also supports freshness.
+  - Going forward, publish on a real cadence (for example 2-3 items per week) and let the archive build; this is the only way "all dated the same day" goes away.
+  - Make visible and structured dates match (datePublished/dateModified), per Google (source 4).
+- What not to do: backdate any story, stagger fake dates, or fabricate "updated" entries.
+- Honest ceiling: a launch-day batch is normal for a new publication. Reviewers who see it as a flaw will be satisfied by a "launched [date]" note and a cadence. Cost 0. Effect: E +0.3 to +0.5, B +0.2 now, more after several real weeks. Time is the only fix for the rest.
+
+### 5. Sources, methodology and "last checked" visibility (Claude Code)
+- Add per-article "Sources and how we checked" block: real links to official pages, manufacturer specs, regulator or standards pages actually consulted, with the date each was read. Only list sources that were actually used for the claim.
+- Add a Methodology page that states plainly what the publication does and does not do (research and editorial curation, not lab testing; price ranges are researched estimates with a date). This directly addresses Google's "how" and prevents the fabricated-testing trap.
+- Soften or remove "best" superlatives where there is no first-hand evidence (Google product-review guidance, source 2): use "good fit for" plus criteria.
+- Cost: 0 (Claude Code writes; owner spot-checks accuracy). Effect: E +0.6 to +1.0, T +0.4 to +0.6.
+
+### 6. Real corrections log (Claude Code, owner)
+- Keep the corrections page; add a dated log table. If there are no corrections yet, say "No corrections as of [date]" rather than inventing entries. Log real fixes from QA already done (for example if a price or fact was corrected after launch) only if they were published errors; pre-launch edits are not corrections.
+- Cost: 0. Effect: T +0.2 to +0.4.
+
+### 7. Masthead instead of a named byline (Claude Code)
+- Replace anonymous "Editors" with a consistent publication-level byline plus a masthead/About page naming the publication, publisher (step 2), contact, standards, corrections and method. Reputable outlets use "Staff", "Editorial team" or publication names with a masthead and process page; I did not retrieve a specific source (NOT FOUND), so do not cite it.
+- Do not add person names, headshots, ages, backstories or "we tried it" first-person claims.
+- Cost: 0. Effect: E +0.3 to +0.5 combined with steps 3 and 5.
+
+### 8. Image strategy (Claude Code, owner for photography)
+- Problem: repeated, AI-looking images read as inauthentic. Fixes, cheapest first:
+  1. Remove repeats; one distinct image per story; vary composition (flat lay, detail, wide, tools-only, hands-free still life), consistent light editing so the set looks coherent.
+  2. Replace the most obviously AI images with licensed real photography from Unsplash or Pexels (licences above: free commercial use, no attribution required but credit photographers anyway on an image-credits page; avoid identifiable people in contexts implying endorsement; keep a record of each photo URL and date downloaded).
+  3. Owner-made photos are the strongest honest signal: if the owner genuinely buys a craft kit, a planner or a plant and photographs it, a "Photographed by the editors" caption is true. Any image the owner did not take must not be captioned as the owner's.
+  4. If any AI imagery remains, label it (caption or image-credits page) and embed IPTC "TrainedAlgorithmicMedia" metadata (Google, source 3). Consistent with the owner's AI-disclosure decision only if labels stay inside Editorial Standards or an image-credits page linked from it; confirm with owner.
+- Licensing implications for a sale/transfer: stock licences are non-exclusive and attach to the site use; keep a licence ledger so the buyer can verify. Owner-shot photos transfer as copyright assignment in the sale agreement; AI-generated images have unsettled copyright in some jurisdictions, so do not warrant exclusivity (NOT verified here).
+- Cost: stock free; own photography time plus a few kit purchases (about 50-300 USD). Effect: E +0.5 to +1.0 (largest E lever), T +0.2.
+
+### 9. First-party content the owner can honestly create (owner, Claude Code formats)
+- Owner buys and does a hobby, then publishes real first-hand notes with real photos and dated entries. Even 3-5 of these genuinely raise E and T because they supply the "experience" Google asks for. Written by the owner or published as editorial output from real activity; Claude Code can format but must not invent details.
+- First-party data: a cost-range table compiled from real price checks with a date and the retailer pages used; update quarterly with a changelog line.
+- Reader questions without accounts: a mailto "send a question" link; publish answers only for real submissions and with permission. Do not seed fake reader questions.
+- Expert quotes only with the person's written permission, named and attributed exactly; none exist now, so NOT AVAILABLE until the owner arranges it.
+- Credits/press/partners: only list real ones; if there are none, omit rather than imply.
+- Cost: 100-500 USD plus owner time. Effect: E +0.5 to +1.0 after several pieces; B +0.2.
+
+### 10. Brand-pick familiarity (Claude Code)
+- Unfamiliar brands lower trust. Add for each pick a one-line reason and a link to the brand's own official page plus a note on where it is sold (multiple sellers per Google product-review guidance). Prefer mixing in widely known options where honest. Cost 0. Effect: T +0.2 to +0.3.
+
+### 11. Go live (owner)
+- "Site not live" is a standing penalty on B and T; reviewers and affiliate programs need a public URL. Amazon requires a public site. Deploy, confirm the mailbox, then apply to programs. Effect: B +0.5 to +1.0. Program approval itself (when granted) is a real third-party signal; the owner may mention "member of X program" only after approval.
+
+## Estimated outcome
+
+| Dimension | Now | After steps 1-8 (Claude Code + owner mailbox/owner line/live) | After 9-11 plus several weeks of real publishing |
+|---|---|---|---|
+| Editorial authenticity | ~6.2 | ~7.3-7.8 | ~7.8-8.3 |
+| Trust | ~6.6 | ~7.6-8.0 | ~8.0-8.4 |
+| Business credibility | ~5.2 | ~6.2-7.0 | ~7.0-7.8; 8+ needs a registered entity, track record and an approved affiliate account |
+
+These are my estimates from the reviewers' cited causes; they are not measured.
+
+## What requires real-world facts (cannot be done by writing)
+- A working domain mailbox (owner).
+- A named owner or registered business entity and an address (owner decision and filing).
+- Time and a publishing cadence for real date spread.
+- Genuine photos and first-hand notes (owner activity).
+- Affiliate approvals and any press or expert relationships.
+
+## What NOT to do
+- No invented editor names, headshots, bios, credentials, "I tried this" lines, testimonials, ratings, reader quotes or fake reader questions.
+- No claims of testing, hands-on use or lab measurements that did not happen; use "researched" and "selected because".
+- No backdating, staggered fake publish dates or fabricated "updated" entries; no fake corrections.
+- No fake address, borrowed company name, or unverified "as seen in"/press badges.
+- No placeholder or non-working email at launch.
+- Do not put AI disclosure anywhere other than Editorial Standards without owner approval (the rule stands); do link to it.
+- Do not use Amazon trademarks in domain names, tags or handles (Amazon policy, source 5), or display Amazon prices without an approved API.
+- Do not add a newsletter or account/login features.
+- Do not copy the Terms/Privacy wording from another site without checking it matches the real owner and data practices.
+
+## Open questions for the owner
+1. Named owner, sole proprietor/DBA or LLC, and which address to show?
+2. Domain and mailbox provider?
+3. Willing to buy and photograph a few real items?
+4. Confirm AI-disclosure placement given Google's "where readers expect it" guidance (Editorial Standards plus linked from bylines and footer is the proposed compromise).
