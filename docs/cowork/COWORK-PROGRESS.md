@@ -1,0 +1,1 @@
+- A Live Amazon verification: done (29/29 in stock, ASIN and title match; 4 flagged). Files: docs/commerce/FINAL-LISTING-VERIFICATION.csv. Branch cowork/product-verification. Blockers: manufacturer-page checks not repeated this round; Pigma, Scotch 6061 and Arches sold by third parties. NMJL four-packs now confirmed, sold by NMJL.
