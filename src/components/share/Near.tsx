@@ -7,6 +7,12 @@ const FOCUS =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cherry";
 
 /**
+ * Stage 3a: the postcode box is no longer shown on any page (an unrequested extra for a first-time
+ * visitor). The component, its library and its tests are intact. To bring it back, set this to true.
+ */
+export const SHOW_NEAR_BOX = false;
+
+/**
  * Optional town or postcode box. Kept in this browser's localStorage only; it is never sent to us.
  * It only builds Google Maps search links that open in a new tab.
  */

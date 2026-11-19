@@ -1,0 +1,10 @@
+# Permanent redirects for Netlify (the host reads this file from the published folder).
+# The same list lives in src/config/redirects.ts, and the app's own routes also throw these as 301s
+# (so the dev server, the tests and the built server behave the same). src/test/redirects.test.ts
+# fails if this file and that list drift apart.
+# Netlify keeps the visitor's query string on a redirect and merges it with any fixed query below,
+# so saved Tonight links (/tools/tonight?t=60&e=low...) arrive at /make-plans?mode=tonight&t=60&e=low...
+# The trailing ! makes the rule win even if a static file exists at the old path.
+/start-here  /  301!
+/tools/tonight  /make-plans?mode=tonight  301!
+/editorial-standards  /editorial-policy  301!

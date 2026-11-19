@@ -59,7 +59,7 @@ const shots = [
   { name: "tool-hobby-budget", path: "/tools/hobby-budget" },
   {
     name: "tool-tonight",
-    path: "/tools/tonight",
+    path: "/make-plans?mode=tonight",
     act: async (page) => {
       // pick one option per group so a result is shown for chosen answers
       const groups = page.locator("fieldset");

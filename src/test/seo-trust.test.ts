@@ -105,15 +105,12 @@ describe("sitemap", () => {
   });
 
   it("includes the trust pages and tools", () => {
-    for (const p of [
-      "/methodology",
-      "/corrections",
-      "/editorial-policy",
-      "/tools/hobby-budget",
-      "/tools/tonight",
-    ]) {
+    for (const p of ["/methodology", "/corrections", "/editorial-policy", "/make-plans"]) {
       expect(paths).toContain(p);
     }
+    // Retired, redirected and hidden-utility paths are never listed.
+    for (const p of ["/start-here", "/tools/tonight", "/tools/hobby-budget"])
+      expect(paths).not.toContain(p);
   });
 
   it("lists only hobby profiles that have a published guide", () => {

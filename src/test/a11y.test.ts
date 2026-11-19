@@ -30,6 +30,13 @@ describe("route headings", () => {
       const src = read(f);
       // The catch-all only renders the shared 404 component (which has the h1).
       if (f.startsWith("sitemap") || f === "$.tsx") continue;
+      // A route that only throws a 301 redirect never renders a page (see src/config/redirects.ts).
+      if (
+        /throw redirect\(/.test(src) &&
+        !h1Components.some((c) => src.includes(`<${c}`)) &&
+        !/<h1[\s>]/.test(src)
+      )
+        continue;
       const own = (src.match(/<h1[\s>]/g) ?? []).length;
       const viaComponent = h1Components.some((c) => src.includes(`<${c}`));
       expect(own + (viaComponent ? 1 : 0), `${f} h1 count`).toBeGreaterThanOrEqual(1);

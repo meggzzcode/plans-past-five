@@ -2,16 +2,12 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, CalendarHeart, ShoppingBag, Sparkles, type LucideIcon } from "lucide-react";
 import { images, type ImageKey } from "@/data/images";
 import { categories } from "@/data/categories";
-import { hobbies } from "@/data/hobbies";
 import { articles, getArticle } from "@/content";
-import { collections } from "@/data/products";
 import { quizCountWord } from "@/data/quiz-meta";
 import { site } from "@/config/site";
 import { absoluteUrl, seo } from "@/lib/seo";
 import { Star, Sparkle, Squiggle } from "@/components/brand/Doodles";
-import { SeasonStrip } from "@/components/home/SeasonStrip";
 import { NAMES } from "@/components/layout/nav";
-import { AffiliateNote } from "@/components/editorial/AffiliateNote";
 import { cn } from "@/lib/utils";
 
 /**
@@ -107,7 +103,10 @@ function Pic({
   );
 }
 
-/** The three journeys. Shop replaces the old "What tonight?" tile; Tonight stays in the nav and Make Some Plans. */
+/**
+ * The three journeys (Start Here's content now lives here). Tonight is a mode of Make Plans, so it
+ * has no tile of its own.
+ */
 const startTiles: {
   to: string;
   title: string;
@@ -120,7 +119,7 @@ const startTiles: {
   {
     to: "/hobby-finder",
     title: NAMES.quiz,
-    line: `${quizCountWord()} questions. A few hobbies that fit your time, budget and energy.`,
+    line: `Not sure what to try? ${quizCountWord()} questions, a few hobbies that fit your time, budget and energy.`,
     k: "hiking",
     Icon: Sparkles,
     tone: "bg-strawberry",
@@ -129,7 +128,7 @@ const startTiles: {
   {
     to: "/make-plans",
     title: NAMES.plans,
-    line: "Pick the night and the mood. Get a plan you can save or print.",
+    line: "Need something for tonight or this weekend? Pick the mood, get a plan you can save or print.",
     k: "shopAdventures",
     Icon: CalendarHeart,
     tone: "bg-butter",
@@ -137,23 +136,19 @@ const startTiles: {
   {
     to: "/shop",
     title: NAMES.shop,
-    line: "Everything you need for the first try, hobby by hobby.",
+    line: "Already know your hobby? What you need for the first try, and nothing you don't.",
     k: "shopBookish",
     Icon: ShoppingBag,
     tone: "bg-matcha",
   },
 ];
 
+/** The curated editorial row: these articles first, then the newest published ones if any is missing. */
 const featuredSlugs = [
   "things-to-do-after-work-instead-of-scrolling",
   "how-to-host-a-craft-night",
   "how-to-start-playing-tennis-as-an-adult",
 ];
-
-/** Collections not already pictured by the start tiles. */
-const shopTeaser = collections
-  .filter((c) => !["shopAdventures", "shopBookish"].includes(c.image))
-  .slice(0, 4);
 
 function Home() {
   const featured = featuredSlugs.map((s) => getArticle(s)).filter((a) => !!a);
@@ -175,23 +170,6 @@ function Home() {
               Find a hobby, plan the night, and get the little supplies to start it. Close the
               laptop. Open your evening.
             </p>
-            <div className="mt-6 flex flex-col items-stretch gap-1 sm:max-w-xs">
-              <Link
-                to="/hobby-finder"
-                className="inline-flex min-h-12 items-center justify-center gap-2 border-2 border-cherry bg-cherry px-6 text-base font-semibold text-cream transition hover:bg-transparent hover:text-cherry"
-              >
-                Find your thing <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                to="/make-plans"
-                className="inline-flex min-h-11 items-center justify-center text-sm font-semibold text-ink underline decoration-cherry decoration-2 underline-offset-4"
-              >
-                or plan this weekend
-              </Link>
-              <p className="text-center text-xs text-muted-foreground">
-                A few quick questions. No account needed.
-              </p>
-            </div>
           </div>
           <div className="relative mx-auto w-full max-w-[340px] pb-4 sm:max-w-[420px] lg:max-w-[500px]">
             <div className="postcard -rotate-2">
@@ -217,7 +195,7 @@ function Home() {
         <div className="gingham-strip" />
       </section>
 
-      {/* START HERE */}
+      {/* THE THREE JOURNEYS */}
       <section className="mx-auto max-w-7xl px-5 pt-8 md:px-8 md:pt-12" aria-labelledby="start">
         <h2 id="start" className="hand text-3xl text-cherry md:text-4xl">
           hi, you clocked out. start here:
@@ -235,7 +213,6 @@ function Home() {
               >
                 <Pic k={t.k} ratio="h-full min-h-24 md:aspect-[16/10] md:h-auto" />
                 <div className="flex flex-col justify-center gap-1 p-3 md:p-5">
-                  {t.primary && <p className="kicker text-cherry">Start here</p>}
                   <h3 className="flex items-center gap-2 font-display text-xl italic leading-tight text-ink md:text-2xl">
                     <t.Icon className="h-5 w-5 shrink-0 text-cherry" />
                     {t.title}
@@ -246,94 +223,9 @@ function Home() {
             </li>
           ))}
         </ul>
-        {/* Secondary entry: a quiet text link, not a fourth journey. */}
-        <p className="mt-4 text-sm text-espresso md:text-base" data-testid="home-tonight">
-          Just need something for tonight?{" "}
-          <Link
-            to="/tools/tonight"
-            className="inline-flex min-h-11 items-center gap-1 border-b-2 border-cherry font-semibold text-cherry hover:border-transparent"
-          >
-            {NAMES.tonight} <ArrowRight className="h-4 w-4" />
-          </Link>
-        </p>
       </section>
 
-      {/* THIS SEASON */}
-      <SeasonStrip />
-
-      {/* SHOP TEASER */}
-      <section className="mt-14 bg-butter md:mt-20">
-        <div className="gingham-strip" />
-        <div className="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-12">
-          <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-1">
-            <h2 className="text-3xl leading-tight md:text-4xl">
-              Everything you need for <em className="text-cherry">try number one</em>
-            </h2>
-            <Link
-              to="/shop"
-              className="inline-flex min-h-11 items-center border-b-2 border-cherry text-sm font-semibold text-cherry"
-            >
-              See the starter lists <ArrowRight className="ml-1 h-4 w-4" />
-            </Link>
-          </div>
-          <p className="mt-2 max-w-xl text-espresso">
-            Pick a hobby, see the starter list, buy only what you need. Opens on Amazon.
-          </p>
-          <ul className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-6">
-            {shopTeaser.map((c) => (
-              <li key={c.slug}>
-                <Link
-                  to="/shop/$category"
-                  params={{ category: c.slug }}
-                  className="group block bg-cream"
-                >
-                  <Pic k={c.image} ratio="aspect-square" />
-                  <div className="p-2.5 md:p-3">
-                    <h3 className="text-base italic leading-tight group-hover:text-cherry md:text-lg">
-                      {c.name}
-                    </h3>
-                    <p className="mt-0.5 text-xs text-espresso md:text-sm">{c.dek}</p>
-                    <p className="mt-1 text-xs font-semibold text-cherry underline decoration-2 underline-offset-4 md:text-sm">
-                      See the starter list
-                    </p>
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <AffiliateNote className="mt-3 text-espresso" />
-        </div>
-      </section>
-
-      {/* SIX SECTIONS */}
-      <section className="mx-auto mt-14 max-w-7xl px-5 md:mt-20 md:px-8">
-        <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-1">
-          <h2 className="text-3xl leading-tight md:text-5xl">
-            Pick your kind of <em className="text-cherry">plans past five</em>
-          </h2>
-          <Link
-            to="/hobbies"
-            className="inline-flex min-h-11 items-center border-b-2 border-cherry text-sm font-semibold text-cherry"
-          >
-            All {hobbies.length} hobbies <ArrowRight className="ml-1 h-4 w-4" />
-          </Link>
-        </div>
-        <ul className="mt-5 grid grid-cols-2 gap-x-3 gap-y-6 md:grid-cols-3 md:gap-x-6 md:gap-y-8">
-          {categories.map((c) => (
-            <li key={c.slug}>
-              <Link to={`/${c.slug}`} className="group block">
-                <Pic k={c.image} ratio="aspect-[4/3]" />
-                <h3 className="mt-2 text-lg italic leading-tight group-hover:text-cherry md:text-2xl">
-                  {c.name}
-                </h3>
-                <p className="text-sm text-muted-foreground">{c.short}</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {/* FEATURED ARTICLES */}
+      {/* CURATED EDITORIAL ROW */}
       <section className="mx-auto mt-14 max-w-7xl px-5 md:mt-20 md:px-8">
         <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-1">
           <h2 className="text-3xl leading-tight md:text-5xl">
@@ -361,28 +253,6 @@ function Home() {
             </li>
           ))}
         </ul>
-      </section>
-
-      {/* CLOSING */}
-      <section className="mx-auto max-w-3xl px-5 py-12 text-center md:py-16">
-        <p className="hand text-3xl text-cherry md:text-4xl">{site.slogan}</p>
-        <p className="mx-auto mt-3 max-w-md text-espresso">
-          Your evening is allowed to be the main character.
-        </p>
-        <div className="mt-5 flex flex-col items-center gap-1">
-          <Link
-            to="/hobby-finder"
-            className="inline-flex min-h-12 items-center justify-center gap-2 border-2 border-cherry bg-cherry px-6 text-base font-semibold text-cream transition hover:bg-transparent hover:text-cherry"
-          >
-            Find your thing <ArrowRight className="h-4 w-4" />
-          </Link>
-          <Link
-            to="/start-here"
-            className="inline-flex min-h-11 items-center px-3 text-sm font-semibold text-ink underline decoration-cherry decoration-2 underline-offset-4"
-          >
-            or start here
-          </Link>
-        </div>
       </section>
     </>
   );

@@ -120,7 +120,7 @@ describe("'How we make this' link (B)", () => {
     expect(NAMES.howWeMake).not.toMatch(/\bAI\b|artificial|generated/i);
   });
 
-  it("appears in the footer and goes to the Editorial Standards page", async () => {
+  it("is covered in the footer by one Editorial Standards link to the same page", async () => {
     const root = createRootRoute({ component: () => <Footer /> });
     const router = createRouter({
       routeTree: root,
@@ -130,8 +130,8 @@ describe("'How we make this' link (B)", () => {
     await act(async () => {
       await router.load();
     });
-    await waitFor(() => view.getByText(NAMES.howWeMake));
-    const a = view.getByText(NAMES.howWeMake).closest("a")!;
+    await waitFor(() => view.getByText("Editorial Standards"));
+    const a = view.getByText("Editorial Standards").closest("a")!;
     expect(a.getAttribute("href")).toBe("/editorial-policy");
     expect(view.container.textContent ?? "").not.toMatch(/\bAI\b/);
   });

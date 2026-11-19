@@ -395,7 +395,7 @@ export const tonightSearch = (i: TonightInput, seed: number): Record<string, str
 });
 
 export const tonightHref = (i: TonightInput, seed: number) =>
-  `/tools/tonight?${new URLSearchParams(tonightSearch(i, seed)).toString()}`;
+  `/make-plans?${new URLSearchParams({ mode: "tonight", ...tonightSearch(i, seed) }).toString()}`;
 
 /** What My Plans stores for a Tonight idea: a hobby saves as a hobby, anything else as a small idea note. */
 export function tonightSaveItem(s: Suggestion, i: TonightInput, seed: number) {

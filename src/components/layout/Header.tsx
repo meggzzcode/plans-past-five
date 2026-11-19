@@ -1,16 +1,15 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, Search, Bookmark } from "lucide-react";
+import { Menu, X, Search, Heart } from "lucide-react";
 import { WordmarkInline } from "@/components/brand/Wordmark";
 import { Star } from "@/components/brand/Doodles";
 import { site } from "@/config/site";
 import { useSaved } from "@/lib/saved";
 import {
   finePrintNav,
-  menuMoreNav,
-  menuStartNav,
+  isFindAHobbyPath,
   NAMES,
-  sectionNav,
+  primaryNav,
   topNav,
   type NavItem,
 } from "@/components/layout/nav";
@@ -27,31 +26,6 @@ function MenuLink({ n, onNavigate }: { n: NavItem; onNavigate: () => void }) {
       <n.Icon className="h-5 w-5 shrink-0 text-cherry" />
       <span className="font-display text-lg leading-tight">{n.label}</span>
     </Link>
-  );
-}
-
-function MenuGroup({
-  title,
-  items,
-  close,
-  cols,
-}: {
-  title: string;
-  items: NavItem[];
-  close: () => void;
-  cols?: boolean;
-}) {
-  return (
-    <div className="mt-4">
-      <p className="kicker px-2 text-cherry">{title}</p>
-      <ul className={cols ? "mt-1 grid grid-cols-2 gap-x-1" : "mt-1"}>
-        {items.map((n) => (
-          <li key={n.to}>
-            <MenuLink n={n} onNavigate={close} />
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }
 
@@ -87,7 +61,7 @@ export function Header() {
             <Link
               key={n.to}
               to={n.to}
-              className={`inline-flex min-h-11 items-center text-sm font-medium text-espresso decoration-cherry decoration-2 underline-offset-[6px] hover:text-cherry hover:underline ${ACTIVE} data-[status=active]:underline`}
+              className={`inline-flex min-h-11 items-center text-sm font-medium text-espresso decoration-cherry decoration-2 underline-offset-[6px] hover:text-cherry hover:underline ${ACTIVE} data-[status=active]:underline ${n.to === "/hobbies" && isFindAHobbyPath(pathname) ? "text-cherry underline" : ""}`}
             >
               {n.label}
             </Link>
@@ -107,18 +81,12 @@ export function Header() {
             className="relative grid h-11 w-11 place-items-center text-espresso hover:text-cherry data-[status=active]:text-cherry"
             aria-label={NAMES.saved}
           >
-            <Bookmark className="h-5 w-5" />
+            <Heart className="h-5 w-5" />
             {ready && items.length > 0 && (
               <span className="absolute right-0.5 top-0.5 grid h-4 min-w-4 place-items-center rounded-full bg-cherry px-1 text-[0.6rem] font-bold text-cream">
                 {items.length}
               </span>
             )}
-          </Link>
-          <Link
-            to="/hobby-finder"
-            className="ml-2 hidden min-h-11 items-center border-2 border-cherry bg-cherry px-4 text-sm font-semibold text-cream transition hover:bg-transparent hover:text-cherry md:inline-flex"
-          >
-            {NAMES.quiz}
           </Link>
           <button
             className="grid h-11 w-11 place-items-center text-espresso lg:hidden"
@@ -131,40 +99,22 @@ export function Header() {
           </button>
         </div>
       </div>
-      <nav className="hidden border-t border-border/70 bg-cream lg:block" aria-label="Sections">
-        <ul className="mx-auto flex max-w-7xl items-center justify-center gap-2 px-8">
-          {sectionNav.map((n) => (
-            <li key={n.to}>
-              <Link
-                to={n.to}
-                className={`inline-flex min-h-11 items-center gap-2 px-3 text-sm font-medium text-espresso hover:text-cherry ${ACTIVE} data-[status=active]:underline decoration-cherry decoration-2 underline-offset-[6px]`}
-              >
-                <n.Icon className="h-4 w-4 text-cherry" />
-                {n.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
       {open && (
         <div
           id="mobile-menu"
           className="max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-border bg-cream px-3 pb-6 pt-4 lg:hidden"
         >
           <nav aria-label="Mobile">
-            <Link
-              to="/hobby-finder"
-              onClick={close}
-              className="flex min-h-12 items-center justify-center border-2 border-cherry bg-cherry px-4 text-base font-semibold text-cream"
-            >
-              {NAMES.quiz}
-            </Link>
-            <MenuGroup title="Start here" items={menuStartNav} close={close} />
-            <MenuGroup title="Browse by mood" items={sectionNav} close={close} cols />
-            <MenuGroup title="More" items={menuMoreNav} close={close} />
+            <ul>
+              {primaryNav.map((n) => (
+                <li key={n.to}>
+                  <MenuLink n={n} onNavigate={close} />
+                </li>
+              ))}
+            </ul>
             <ul
               aria-label="Fine print"
-              className="mt-5 flex flex-wrap gap-x-4 border-t border-border px-2 pt-3 text-sm text-espresso"
+              className="mt-4 flex flex-wrap gap-x-4 border-t border-border px-2 pt-3 text-sm text-espresso"
             >
               {finePrintNav.map((n) => (
                 <li key={n.to}>
