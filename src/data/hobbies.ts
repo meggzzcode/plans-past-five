@@ -211,7 +211,7 @@ const seeds: Seed[] = [
     firstActivity:
       "Follow a beginner video and crochet one granny square. It doesn't need to be square.",
     image: "hobbyCrochet",
-    productIds: [],
+    productIds: ["crochet-hooks", "yarn"],
   },
   {
     name: "Knitting",
@@ -230,7 +230,7 @@ const seeds: Seed[] = [
     optional: ["Row counter", "Darning needle"],
     firstActivity: "Cast on twenty stitches and knit a coaster-sized square.",
     image: "hobbyKnitting",
-    productIds: [],
+    productIds: ["knitting-needles", "yarn"],
   },
   {
     name: "Jewelry Making",
@@ -355,7 +355,7 @@ const seeds: Seed[] = [
     optional: ["Floral frog", "Flower snips"],
     firstActivity: "Buy one bunch of supermarket flowers and split it into three small jars.",
     image: "hobbyFlowerArranging",
-    productIds: [],
+    productIds: ["flower-snips", "vases", "flower-frogs"],
   },
   {
     name: "Collage Art",
@@ -368,13 +368,14 @@ const seeds: Seed[] = [
     beginner: 1,
     cravings: ["creativity", "different"],
     description:
-      "Cutting and layering images from old magazines into something new. Moodboards, postcards, framed wall art.",
-    whyYoullLoveIt: "It costs nothing, and it's surprisingly revealing about what you like.",
-    supplies: ["Old magazines", "Glue stick", "Scissors", "Card or paper"],
+      "Cutting and layering images into something new: moodboards, postcards, framed wall art. Good paper, sharp scissors and a glue stick you like turn a pile of scraps into a piece you would hang.",
+    whyYoullLoveIt:
+      "It is surprisingly revealing about what you like, and a finished piece looks good on a wall.",
+    supplies: ["Glue stick", "Sharp scissors", "Card or paper", "Magazines or packaging to cut up"],
     optional: ["Washi tape", "Frame"],
     firstActivity: "Make a postcard-sized collage of everything you want more of this year.",
     image: "hobbyCollageArt",
-    productIds: ["washi-tape"],
+    productIds: ["washi-tape", "junk-journals", "sticker-sets"],
   },
   {
     name: "Calligraphy",
@@ -392,7 +393,7 @@ const seeds: Seed[] = [
     supplies: ["Brush pens", "Practice pad or smooth paper"],
     optional: ["Practice sheets", "Dip pen and ink"],
     firstActivity: "Practice upstrokes and downstrokes for ten minutes, then write your name.",
-    productIds: [],
+    productIds: ["brush-pens", "letter-writing-sets"],
   },
   {
     name: "Film Photography",
@@ -423,11 +424,11 @@ const seeds: Seed[] = [
     beginner: 1,
     cravings: ["relaxation"],
     description:
-      "Yes, it counts. A good book, a warm lamp and a library card are a whole evening plan.",
+      "Yes, it counts. A good book, a warm lamp and a comfy corner are a whole evening plan.",
     whyYoullLoveIt:
-      "The easiest hobby to restart, and often the cheapest, since most libraries lend books free.",
-    supplies: ["A library book or one you already own"],
-    optional: ["Book light", "Reading journal", "Book sleeve"],
+      "The easiest hobby to restart, and a few small things make it nicer: a good light, a journal for what you loved, a sleeve to carry the book. A library copy or a book you already own works fine to begin.",
+    supplies: ["A book you are looking forward to", "A comfy corner with good light"],
+    optional: ["Rechargeable book light", "Reading journal", "Book sleeve", "Reading stand"],
     firstActivity: "Pick up a short novel and read before your phone gets a chance.",
     image: "hobbyReading",
     productIds: ["book-lights", "reading-journals", "book-sleeves", "reading-stands"],
@@ -461,13 +462,13 @@ const seeds: Seed[] = [
     beginner: 1,
     cravings: ["relaxation", "different"],
     description:
-      "Mini or full crosswords, in a newspaper, book or app. Monday puzzles are the friendliest.",
+      "Mini or full crosswords, in a puzzle book, newspaper or app. Monday puzzles are the friendliest. A puzzle book, a pencil with a good eraser and a warm drink make it an evening.",
     whyYoullLoveIt: "Small daily wins, and an excellent café companion.",
-    supplies: ["A pencil and a printed crossword"],
-    optional: ["A crossword book"],
+    supplies: ["A crossword book or printed puzzle", "A pencil with a good eraser"],
+    optional: ["A warm drink and a cozy corner", "A notebook for tricky words"],
     firstActivity: "Solve an easy early-week crossword with a pencil and a cup of coffee.",
     image: "hobbyCrosswordPuzzles",
-    productIds: [],
+    productIds: ["pocket-notebooks", "cozy-night-in"],
   },
   {
     name: "Baking",
@@ -506,7 +507,7 @@ const seeds: Seed[] = [
     firstActivity:
       "Root a pothos cutting, or a small shop-bought plant, in a glass of water on a windowsill.",
     image: "hobbyIndoorGardening",
-    productIds: [],
+    productIds: ["indoor-plant-basics"],
   },
   {
     name: "Mahjong",
@@ -560,11 +561,11 @@ const seeds: Seed[] = [
     description:
       "Short stories, poems, flash fiction or just morning pages. Not for publishing. For you.",
     whyYoullLoveIt: "You spend all day writing emails. This is the opposite.",
-    supplies: ["A notebook and pen"],
-    optional: ["Writing prompt deck", "A café window seat"],
+    supplies: ["A notebook you like writing in", "A pen that feels good in your hand"],
+    optional: ["A pocket notebook for your bag", "Writing prompt deck", "A café window seat"],
     firstActivity: "Write a 300-word story that starts with the last thing someone said to you.",
     image: "hobbyCreativeWriting",
-    productIds: ["pocket-notebooks"],
+    productIds: ["pocket-notebooks", "junk-journals"],
   },
   {
     name: "Tennis",
@@ -616,14 +617,28 @@ const seeds: Seed[] = [
     energy: "high",
     beginner: 1,
     cravings: ["adventure", "movement"],
-    description: "Walking marked trails, from flat nature paths to proper climbs with a view.",
+    description:
+      "Walking marked trails, from flat nature paths to proper climbs with a view. Comfortable shoes, a small daypack and a good water bottle make the day easier.",
     whyYoullLoveIt: "Fresh air, real tiredness, and a snack that tastes better on a summit.",
-    supplies: ["Comfortable shoes", "Water", "A snack", "A trail map or app"],
-    optional: ["Daypack", "Binoculars"],
+    supplies: [
+      "Comfortable walking shoes",
+      "A daypack",
+      "A water bottle",
+      "A snack",
+      "A trail map or app",
+    ],
+    optional: ["Trekking-style socks", "Insulated flask", "Compact binoculars"],
     firstActivity:
       "Pick a short, well-marked trail under three miles and go when you have a few daylight hours free.",
     image: "hiking",
-    productIds: ["daypacks", "water-bottles", "binoculars"],
+    productIds: [
+      "walking-shoes",
+      "daypacks",
+      "water-bottles",
+      "trekking-socks",
+      "thermos-flasks",
+      "binoculars",
+    ],
   },
   {
     name: "Yoga for Beginners",
@@ -636,14 +651,13 @@ const seeds: Seed[] = [
     beginner: 1,
     cravings: ["movement", "relaxation"],
     description:
-      "Slow stretching and breathing on a mat at home with a free video. No flexibility needed; you go as far as feels okay.",
+      "Slow stretching and breathing on a yoga mat at home with a beginner video. No flexibility needed; you go as far as feels okay.",
     whyYoullLoveIt:
       "A quiet stretch of time that's only for you, and a reason to put the phone in another room. You finish loosened up, not wrecked, and it fits in a living-room corner.",
-    supplies: ["A mat, or a towel on carpet", "Comfortable clothes you can stretch in"],
-    optional: ["Two blocks or a firm cushion", "A drop-in beginner class"],
-    firstActivity:
-      "Roll out a mat, play a free 20-minute beginner video, and stop any pose that hurts.",
-    productIds: [],
+    supplies: ["A yoga mat, or a towel on carpet", "Comfortable clothes you can stretch in"],
+    optional: ["Two blocks or a firm cushion", "A water bottle", "A drop-in beginner class"],
+    firstActivity: "Roll out a mat, play a 20-minute beginner video, and stop any pose that hurts.",
+    productIds: ["yoga-mats", "water-bottles"],
   },
   {
     name: "Dance Classes",
@@ -659,11 +673,11 @@ const seeds: Seed[] = [
       "A drop-in beginner class in something like salsa, swing, hip-hop or line dancing. Everyone is learning the same steps at once, so nobody is watching you.",
     whyYoullLoveIt:
       "You get exercise, music and other people in one hour, and you cannot scroll while you are counting steps.",
-    supplies: ["Comfortable clothes", "Shoes that slide a little on the floor"],
-    optional: ["A friend to go with", "A water bottle"],
+    supplies: ["Shoes that slide a little on the floor", "Comfortable clothes"],
+    optional: ["A water bottle", "A sports tote for your things", "A friend to go with"],
     firstActivity:
       "Book one drop-in beginner class in a style you are curious about, and go with a friend if you can.",
-    productIds: [],
+    productIds: ["water-bottles", "sports-totes"],
   },
   {
     name: "Roller Skating",
@@ -677,11 +691,11 @@ const seeds: Seed[] = [
     cravings: ["movement", "adventure"],
     description: "Quad skates at a rink or a smooth park path. Expect wobbling. Expect laughing.",
     whyYoullLoveIt: "It's pure play and the music is always good.",
-    supplies: ["Rental skates at a rink"],
-    optional: ["Wrist guards and knee pads", "Your own skates"],
+    supplies: ["Quad skates (rent at a rink to start)", "Wrist guards and knee pads"],
+    optional: ["Your own skates", "A water bottle"],
     firstActivity: "Go to a rink's adult skate night and rent skates.",
     image: "hobbyRollerSkating",
-    productIds: [],
+    productIds: ["skate-protective-gear"],
   },
   {
     name: "Birdwatching",
@@ -694,10 +708,10 @@ const seeds: Seed[] = [
     beginner: 1,
     cravings: ["adventure", "relaxation"],
     description:
-      "Noticing and identifying birds in your local park. Free apps can identify birds by song.",
+      "Noticing and identifying birds in your local park. Compact binoculars and a pocket notebook turn a bench into a proper outing, and a bird ID app can help with names.",
     whyYoullLoveIt: "Once you start noticing, you'll never walk through a park the same way.",
-    supplies: ["A free bird ID app", "Your local park"],
-    optional: ["Compact binoculars", "Pocket notebook"],
+    supplies: ["Compact binoculars", "A pocket notebook", "A bird ID app or field guide"],
+    optional: ["A field guide", "Insulated flask for a longer sit"],
     firstActivity: "Sit on one park bench for 30 minutes and log every bird you hear.",
     image: "hobbyBirdwatching",
     productIds: ["binoculars", "pocket-notebooks"],
@@ -713,13 +727,13 @@ const seeds: Seed[] = [
     beginner: 1,
     cravings: ["creativity", "adventure"],
     description:
-      "Photographing flowers, light, leaves and landscapes, with your phone or a camera.",
+      "Photographing flowers, light, leaves and landscapes, with your phone or a small camera. A film camera and a pocket notebook for what you shot make a walk feel like a project.",
     whyYoullLoveIt: "A walk becomes a treasure hunt.",
-    supplies: ["Your phone camera"],
-    optional: ["A film camera", "Clip-on macro lens"],
+    supplies: ["Your phone camera or a small film camera", "A pocket notebook for what you shot"],
+    optional: ["Clip-on macro lens", "A daypack for a longer walk"],
     firstActivity: "Take 20 photos of one color on one walk.",
     image: "hobbyNaturePhotography",
-    productIds: ["film-cameras"],
+    productIds: ["film-cameras", "pocket-notebooks", "daypacks"],
   },
   {
     name: "Outdoor Sketching",
@@ -751,14 +765,18 @@ const seeds: Seed[] = [
     beginner: 1,
     cravings: ["friendship", "relaxation"],
     description:
-      "Reading the same book as a group, then meeting to talk about it (and everything else).",
+      "Reading the same book as a group, then meeting to talk about it (and everything else). Conversation cards, a reading journal and a good snack spread make it an evening to host.",
     whyYoullLoveIt:
       "A recurring plan with built-in conversation. Libraries and bookstores often host them.",
-    supplies: ["A book", "A group or a library listing"],
-    optional: ["Conversation cards", "Reading journal"],
+    supplies: [
+      "A book the group wants to read",
+      "Conversation cards or a few shared questions",
+      "A group, or a listing near you",
+    ],
+    optional: ["Reading journal", "Book light", "Tea set for hosting"],
     firstActivity: "Ask two friends to read the same short novel this month, then pick a café.",
     image: "soloCafe",
-    productIds: ["reading-journals", "conversation-cards"],
+    productIds: ["conversation-cards", "reading-journals", "book-lights", "tea-sets"],
   },
   {
     name: "Craft Nights",
@@ -794,13 +812,17 @@ const seeds: Seed[] = [
     beginner: 1,
     cravings: ["friendship", "different"],
     description:
-      "Giving a few hours to an animal shelter, community garden, food bank or literacy program.",
+      "Giving a few hours to an animal shelter, community garden, food bank or literacy program. Comfortable shoes, a water bottle and a small bag make shift days easier.",
     whyYoullLoveIt: "You meet people who care about the same things, without awkward small talk.",
-    supplies: ["A local listing", "A few free hours"],
-    optional: [],
+    supplies: [
+      "Comfortable shoes",
+      "A water bottle and a small bag",
+      "A local listing for a one-off shift",
+    ],
+    optional: ["A daypack"],
     firstActivity: "Sign up for a single one-off shift before committing to anything.",
     image: "hobbyVolunteering",
-    productIds: [],
+    productIds: ["daypacks", "water-bottles"],
   },
   {
     name: "Thrifting",
@@ -831,10 +853,10 @@ const seeds: Seed[] = [
     beginner: 1,
     cravings: ["different", "adventure"],
     description:
-      "Wandering galleries and small museums. Many have free days or pay-what-you-wish hours.",
+      "Wandering galleries and small museums at your own pace, with a pocket sketchbook for the piece you cannot stop looking at.",
     whyYoullLoveIt: "A perfect solo date and a reliable rainy-day plan.",
-    supplies: ["A ticket or a free entry day"],
-    optional: ["Pocket sketchbook"],
+    supplies: ["A pocket sketchbook or notebook", "A museum ticket or a reservation"],
+    optional: ["A small bag with a water bottle"],
     firstActivity:
       "Visit just one room of a museum and stay with your favorite piece for ten minutes.",
     productIds: ["pocket-notebooks"],
@@ -876,10 +898,10 @@ const seeds: Seed[] = [
       "Comfortable trainers you already own, or a first pair of running shoes",
       "Clothes you can move in",
     ],
-    optional: ["A running buddy", "A free interval-timer app"],
+    optional: ["A running buddy", "An interval-timer app", "A phone armband"],
     firstActivity:
       "Walk for five minutes, then alternate one minute of easy jogging with two minutes of walking for twenty minutes.",
-    productIds: [],
+    productIds: ["phone-armband", "water-bottles"],
   },
   {
     name: "Climbing",
@@ -899,7 +921,7 @@ const seeds: Seed[] = [
     optional: ["Chalk", "A friend to go with"],
     firstActivity:
       "Book a beginner intro or first-timer session at a climbing gym and rent shoes there.",
-    productIds: [],
+    productIds: ["sports-totes", "water-bottles"],
   },
   {
     name: "Board Games",
@@ -919,7 +941,7 @@ const seeds: Seed[] = [
     optional: ["A second game", "A friend who has played before"],
     firstActivity:
       "Pick one short game with simple rules, read the rules aloud together, and play a first round slowly.",
-    productIds: [],
+    productIds: ["board-games", "conversation-cards"],
   },
   {
     name: "Cooking Classes",
@@ -939,7 +961,7 @@ const seeds: Seed[] = [
     optional: ["A friend to go with", "A notebook for what you learned"],
     firstActivity:
       "Find one beginner class on a dish you already like eating, book a single session and bring a container for leftovers.",
-    productIds: [],
+    productIds: ["pocket-notebooks"],
   },
   {
     name: "Language Learning",
@@ -952,14 +974,18 @@ const seeds: Seed[] = [
     beginner: 2,
     cravings: ["different", "relaxation"],
     description:
-      "Ten to twenty minutes a day with a free app, a library course or a podcast in a language you have always been curious about.",
+      "Ten to twenty minutes a day with an app, a library course or a podcast in a language you have always been curious about.",
     whyYoullLoveIt:
       "Tiny daily wins add up, and it makes the next trip, film or playlist feel richer.",
-    supplies: ["A free app, library course or podcast", "A notebook"],
-    optional: ["A beginner workbook", "A conversation group or language partner"],
+    supplies: ["A notebook you like", "A beginner app, course or podcast"],
+    optional: [
+      "A beginner workbook",
+      "A pocket notebook for new words",
+      "A conversation group or language partner",
+    ],
     firstActivity:
       "Pick one language, learn ten useful words out loud, and write them in a notebook.",
-    productIds: [],
+    productIds: ["pocket-notebooks"],
   },
 ];
 
@@ -1000,7 +1026,7 @@ const e = (
 
 const lib = "A library book or e-book on the basics";
 const comm = "A local community class or workshop";
-const vid = "Free beginner video tutorials";
+const vid = "Beginner video tutorials";
 
 const enrichment: Record<string, Enrichment> = {
   "junk-journaling": e(
@@ -1228,7 +1254,7 @@ const enrichment: Record<string, Enrichment> = {
     "Easy",
     0,
     15,
-    "Assumes magazines, packaging and paper you already have, plus a glue stick and scissors.",
+    "A glue stick, sharp scissors and decent paper make it easier; assumes magazines and packaging you already have.",
     "30 to 60 minutes",
     "indoor",
     [
@@ -1282,7 +1308,7 @@ const enrichment: Record<string, Enrichment> = {
     "Easy",
     0,
     15,
-    "Assumes borrowing from a library. Buying books and accessories is optional.",
+    "A good light and a reading journal make it nicer; assumes borrowing from a library, and buying books is optional.",
     "20 to 60 minutes, daily or a few times a week",
     "either",
     [
@@ -1318,7 +1344,7 @@ const enrichment: Record<string, Enrichment> = {
     "Gentle learning curve",
     0,
     10,
-    "Assumes free or low-cost puzzles from a newspaper, app or puzzle book.",
+    "A puzzle book and a pencil with a good eraser are the gear; assumes low-cost puzzles from a newspaper, app or puzzle book.",
     "10 to 30 minutes",
     "either",
     [
@@ -1408,7 +1434,7 @@ const enrichment: Record<string, Enrichment> = {
     "Easy",
     0,
     20,
-    "Assumes a notebook or free writing app. Courses and books are optional.",
+    "A notebook you like writing in is the main gear; assumes a notebook or writing app. Courses and books are optional.",
     "15 to 30 minutes",
     "either",
     [
@@ -1426,11 +1452,11 @@ const enrichment: Record<string, Enrichment> = {
     "Easy",
     0,
     25,
-    "Assumes a basic mat or a towel and free video classes. Drop-in classes and props are extra.",
+    "A yoga mat and a beginner video are the gear; assumes a basic mat or a towel. Drop-in classes and props are extra.",
     "20 to 45 minutes, a few times a week",
     "either",
     [
-      "Choose a free beginner video of 20 minutes or less, or a class labelled beginner or gentle.",
+      "Choose a beginner video of 20 minutes or less, or a class labelled beginner or gentle.",
       "Clear a space the size of a mat and wear something you can stretch in.",
       "Move slowly and breathe through your nose. Stop or back off anything that hurts.",
       "Finish with a minute lying down before you pick your phone back up.",
@@ -1498,7 +1524,7 @@ const enrichment: Record<string, Enrichment> = {
     "Easy",
     0,
     100,
-    "Assumes starting with comfortable shoes you own. Boots, a pack and layers raise the figure later.",
+    "Comfortable shoes and a small daypack make the first hike easier; assumes shoes you own. Boots and layers raise the figure later.",
     "2 to 4 hours",
     "outdoor",
     [
@@ -1534,13 +1560,13 @@ const enrichment: Record<string, Enrichment> = {
     "Easy",
     0,
     80,
-    "Assumes starting with your eyes and a free field guide app or library book. Binoculars are an optional upgrade.",
+    "Compact binoculars make birds easier to see; assumes a field guide app or library book. Binoculars are an optional upgrade.",
     "30 to 90 minutes",
     "outdoor",
     [
       "Sit somewhere quiet for ten minutes near trees or water.",
       "Notice size, color, beak and behavior before trying to name a bird.",
-      "Use a field guide from the library or a free identification app.",
+      "Use a field guide from the library or an identification app.",
       "Keep a short list of what you saw and where.",
     ],
     "A ten-minute sit in a park, writing down every bird you notice.",
@@ -1588,7 +1614,7 @@ const enrichment: Record<string, Enrichment> = {
     "Easy",
     0,
     25,
-    "Assumes borrowing from a library. Buying copies is optional.",
+    "Conversation cards and a reading journal make the evening easier; assumes borrowing from a library, and buying copies is optional.",
     "About two hours a month, plus reading",
     "either",
     [
@@ -1757,18 +1783,18 @@ const enrichment: Record<string, Enrichment> = {
     "Gentle learning curve",
     0,
     25,
-    "Assumes a free app, library course or podcast. A workbook or conversation group is an optional extra.",
+    "A notebook for new words helps; assumes an app, library course or podcast. A workbook or conversation group is an optional extra.",
     "10 to 20 minutes a day",
     "either",
     [
       "Pick one language you are genuinely curious about.",
-      "Choose one free resource and stay with it for a week.",
+      "Choose one resource and stay with it for a week.",
       "Learn ten useful words and say them out loud.",
       "Do ten minutes a day at the same time, such as with a morning coffee.",
     ],
     "Ten everyday phrases, practised out loud over one week.",
     ["reading", "creative-writing", "crossword-puzzles"],
-    [lib, "Free beginner podcasts or apps", "A conversation group or language partner"],
+    [lib, "Beginner podcasts or apps", "A conversation group or language partner"],
     [G_35, G_AFTER],
   ),
   picnicking: e(

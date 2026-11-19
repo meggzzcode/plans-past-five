@@ -250,7 +250,7 @@ export const equipmentByHobby: Record<string, EquipmentItem[]> = {
     e("container", "A container for leftovers", opt, "extras", 0, 8),
   ],
   "language-learning": [
-    e("app", "A free app, library course or podcast", ess, "learning", 0, 0),
+    e("app", "An app, library course or podcast", ess, "learning", 0, 0),
     e("notebook", "A notebook", ess, "materials", 0, 8),
     e("workbook", "A beginner workbook", opt, "extras", 8, 20),
     e("group", "A conversation group or language partner", opt, "learning", 0, 15),
@@ -273,7 +273,7 @@ export const equipmentByHobby: Record<string, EquipmentItem[]> = {
     e("shoes", "Comfortable shoes you already own", ess, "gear", 0, 0),
     e("water", "Water (refill a bottle you own)", ess, "gear", 0, 5, "little-adventures"),
     e("snack", "A snack", ess, "materials", 1, 5),
-    e("map", "A free trail map or app", ess, "learning", 0, 0),
+    e("map", "A trail map or app", ess, "learning", 0, 0),
     e("newshoes", "Proper walking shoes", opt, "gear", 30, 60),
     e("pack", "Daypack", opt, "extras", 15, 45, "little-adventures"),
     e("binos", "Binoculars", opt, "extras", 20, 50, "little-adventures"),
@@ -284,7 +284,7 @@ export const equipmentByHobby: Record<string, EquipmentItem[]> = {
     e("skates", "Your own skates", opt, "gear", 40, 100, "sporty-girl"),
   ],
   birdwatching: [
-    e("app", "A free bird ID app", ess, "learning", 0, 0),
+    e("app", "A bird ID app or field guide", ess, "learning", 0, 0),
     e("park", "Your local park", ess, "learning", 0, 0),
     e("binos", "Compact binoculars", opt, "extras", 20, 50, "little-adventures"),
     e("notebook", "Pocket notebook", opt, "extras", 2, 8, "little-adventures"),
