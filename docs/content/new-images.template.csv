@@ -1,0 +1,3 @@
+key,file,alt,source,creator,sourceUrl,licenseName,licenseUrl,dateSourced,heroFor,pinFor,notes
+# Copy this file to docs/content/new-images.csv, delete this comment line and the example below, then add one row per image. Lines starting with # are ignored. source is one of: Unsplash, Pexels, Pixabay, Canva AI, Lovable AI, Own photo, CC0. heroFor and pinFor take article slugs separated by |.
+# crochetHands,crochet-hands.jpg,"A woman's hands crocheting a butter-yellow blanket with a wooden hook, yarn in a basket nearby",Canva AI,Plans Past Five (generated with Canva AI),https://www.canva.com/M/MAHbXvOeP98,"AI-generated image, Canva terms",https://www.canva.com/policies/content-license-agreement/,2026-11-19,how-to-start-crocheting,,Generated 2026-11-19; AI-generated

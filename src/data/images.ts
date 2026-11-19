@@ -12,11 +12,12 @@ import shopSporty from "@/assets/shop-sporty-girl.jpg";
 import shopBookish from "@/assets/shop-bookish-girl.jpg";
 import shopAdventures from "@/assets/shop-little-adventures.jpg";
 import shopGirlsNight from "@/assets/shop-girls-night-in.jpg";
+import { extraImages } from "./images.extra";
 
 export type Img = { src: string; alt: string; w: number; h: number };
 
-/** Every image on the site is registered here with alt text. See IMAGE-LICENSES.md. */
-export const images = {
+/** The original 14 images. New ones are added by scripts/ingest-images.mjs (see images.extra.ts). */
+const baseImages = {
   potteryNight: {
     src: potteryNight,
     alt: "Three friends laughing while painting cherry-covered mugs at a gingham-covered kitchen table",
@@ -102,5 +103,8 @@ export const images = {
     h: 1024,
   },
 } satisfies Record<string, Img>;
+
+/** Every image on the site is registered here with alt text. See IMAGE-LICENSES.md. */
+export const images = { ...baseImages, ...extraImages } satisfies Record<string, Img>;
 
 export type ImageKey = keyof typeof images;
