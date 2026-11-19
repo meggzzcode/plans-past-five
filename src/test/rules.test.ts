@@ -5,7 +5,15 @@ import { articles, getArticle } from "@/content";
 import { allArticlesIncludingDrafts } from "@/content/draft-registry";
 import { search } from "@/lib/search";
 import { hobbies } from "@/data/hobbies";
-import { products, collections, collectionProducts } from "@/data/products";
+import {
+  products,
+  articleProducts,
+  allProductTypes,
+  productTypeIds,
+  getProduct,
+  collections,
+  collectionProducts,
+} from "@/data/products";
 import { amazonSearchUrl } from "@/config/affiliate";
 import { restoreAffiliate, setAffiliateState, snapshotAffiliate } from "./affiliate-state";
 import { sanitizeSaved } from "@/lib/saved";
@@ -133,6 +141,56 @@ describe("Content rules", () => {
       for (const id of c.extraProductIds ?? [])
         expect(products.some((p) => p.id === id)).toBe(true);
   });
+  // Article-only product types (docs/commerce/PRODUCT-TYPES.md): not in `products`, so the collection
+  // counts above stay as they were; resolvable by id for articles and hobby pages.
+  it("has 30 article-only product types that stay out of collections and search", () => {
+    expect(articleProducts.map((x) => x.id)).toEqual([
+      "walking-shoes",
+      "trekking-socks",
+      "phone-armband",
+      "sketch-pads",
+      "crochet-hooks",
+      "yarn",
+      "knitting-needles",
+      "flower-snips",
+      "vases",
+      "flower-frogs",
+      "jigsaw-puzzles",
+      "paint-by-number-kits",
+      "cozy-night-in",
+      "bike-helmets",
+      "bike-lights",
+      "bike-repair-kits",
+      "bike-bells",
+      "skate-protective-gear",
+      "thermos-flasks",
+      "cooler-bags",
+      "portable-speakers",
+      "glue-guns",
+      "tea-sets",
+      "brush-pens",
+      "photo-albums",
+      "letter-writing-sets",
+      "indoor-plant-basics",
+      "tennis-shoes",
+      "pickleball-shoes",
+      "yoga-mats",
+    ]);
+    expect(new Set(productTypeIds).size).toBe(allProductTypes.length);
+    expect(allProductTypes).toHaveLength(66);
+    for (const a of articleProducts) {
+      expect(getProduct(a.id)).toBe(a);
+      expect(products.some((x) => x.id === a.id)).toBe(false);
+      expect(collections.some((c) => collectionProducts(c.slug).some((x) => x.id === a.id))).toBe(
+        false,
+      );
+      expect(collections.some((c) => c.slug === a.collection)).toBe(true);
+      expect(a.amazonQuery).toMatch(/^[a-z0-9 ]+$/);
+      expect(a.blurb.length).toBeGreaterThan(10);
+      expect(a.lookFor.length).toBeGreaterThan(10);
+      expect(a.brand ?? a.exactUrl ?? a.sourceUrl).toBeUndefined();
+    }
+  });
   it("Amazon links carry no affiliate tag unless an entry is live", () => {
     const snap = snapshotAffiliate();
     try {
@@ -153,3 +211,28 @@ describe("Saved items", () => {
     expect(sanitizeSaved({ nope: true })).toEqual([]);
   });
 });
+
+// The content validator (scripts/content-lib.mjs) only checks that productIds is a string list, so
+// this is the guard that a shopHobby/starterKit block never silently renders nothing.
+describe("article productIds resolve", () => {
+  it("every shopHobby and starterKit product id is a known product type or kit-slot id", async () => {
+    const { readdirSync, readFileSync } = await import("node:fs");
+    const path = await import("node:path");
+    const dir = path.resolve(__dirname, "../../content/articles");
+    const bad: string[] = [];
+    for (const f of readdirSync(dir).filter((n) => n.endsWith(".json"))) {
+      const a = JSON.parse(readFileSync(path.join(dir, f), "utf8"));
+      for (const b of JSON.stringify(a).match(/"type":"shopHobby"/) ? flat(a) : [])
+        if (b.type === "shopHobby")
+          for (const id of b.productIds ?? [])
+            if (!productTypeIds.includes(id)) bad.push(`${f}: ${id}`);
+    }
+    expect(bad).toEqual([]);
+  });
+});
+function flat(node: unknown): Array<{ type?: string; productIds?: string[] }> {
+  if (Array.isArray(node)) return node.flatMap(flat);
+  if (node && typeof node === "object")
+    return [node as never, ...Object.values(node).flatMap(flat)];
+  return [];
+}
