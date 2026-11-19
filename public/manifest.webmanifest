@@ -1,0 +1,23 @@
+{
+  "name": "Plans Past Five",
+  "short_name": "Plans Past Five",
+  "description": "Creative hobbies, cute weekend plans, solo dates, new friendships and little adventures for women building a life they love outside of work.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFF8EF",
+  "theme_color": "#B83F43",
+  "lang": "en",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "What should I do tonight?", "short_name": "Tonight", "url": "/tools/tonight" },
+    { "name": "Make some plans", "short_name": "Plans", "url": "/make-plans" },
+    { "name": "My plans", "short_name": "Saved", "url": "/saved" }
+  ]
+}

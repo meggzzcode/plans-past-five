@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link2, Check, Send } from "lucide-react";
 import { canonicalUrl, outcomeMessage, pinterestCreateUrl, sendToGroupChat } from "@/lib/share";
 import { copyText } from "@/lib/shoplist";
+import { pinImageFor } from "@/lib/pins";
 
 const BTN =
   "inline-flex min-h-11 items-center gap-1.5 text-espresso hover:text-cherry focus-visible:outline focus-visible:outline-2 focus-visible:outline-cherry";
@@ -11,11 +12,16 @@ export function ShareButtons({
   title,
   path,
   image,
+  description,
 }: {
   title: string;
   path: string;
+  /** Fallback image (the page hero) when the page has no 2:3 pin of its own. */
   image?: string;
+  /** Pin text; defaults to the title. */
+  description?: string;
 }) {
+  const pinImage = pinImageFor(path, image);
   const [copied, setCopied] = useState(false);
   const [note, setNote] = useState("");
   const copy = async () => {
@@ -26,7 +32,11 @@ export function ShareButtons({
   };
   const pin = () => {
     window.open(
-      pinterestCreateUrl({ path, description: title, ...(image ? { image } : {}) }),
+      pinterestCreateUrl({
+        path,
+        description: description ?? title,
+        ...(pinImage ? { image: pinImage } : {}),
+      }),
       "_blank",
       "noopener,noreferrer",
     );

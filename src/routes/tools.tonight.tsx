@@ -13,6 +13,7 @@ import {
   timeOptions,
   type TonightInput,
 } from "@/lib/tonight";
+import { pinFor } from "@/lib/pins";
 import { seo, absoluteUrl } from "@/lib/seo";
 import { canonicalUrl } from "@/lib/share";
 import { images } from "@/data/images";
@@ -29,6 +30,7 @@ export const Route = createFileRoute("/tools/tonight")({
         "Tired, bored or somewhere in between? Answer five taps and get three ideas that fit your time, energy and budget tonight. No email, no account.",
       path: "/tools/tonight",
       image: absoluteUrl(images.soloCafe.src),
+      pinImage: pinFor("/tools/tonight")!,
     }),
   validateSearch: (s: Record<string, unknown>) => {
     const o: Record<string, string> = {};

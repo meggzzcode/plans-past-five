@@ -19,7 +19,7 @@ import {
   verifiedCatalog,
   type CatalogProduct,
 } from "@/data/catalog";
-import { fillKit, kitSlotIndex, kits } from "@/data/kits";
+import { fillKit, isFullKit, kitHobbies, kitSlotIndex, kits } from "@/data/kits";
 import { collections } from "@/data/products";
 import { hobbies } from "@/data/hobbies";
 import {
@@ -434,27 +434,20 @@ describe("alternatives for one kit slot", () => {
 });
 
 describe("kits", () => {
-  it("defines all 15 kits with unique slot ids", () => {
+  it("defines the 8 collection kits with unique slot ids", () => {
     expect(kits.map((k) => k.id)).toEqual([
       "junk-journaling",
       "watercolor",
       "air-dry-clay",
-      "embroidery",
-      "crochet",
-      "reading-journal",
-      "girls-craft-night",
       "mahjong-night",
-      "book-club",
-      "paint-night",
-      "picnic-adventure",
-      "flower-arranging",
-      "pickleball",
-      "tennis",
-      "cozy-night-in",
+      "picnic",
+      "reading-book-club",
+      "pottery-paint-night",
+      "racquet-sports",
     ]);
     for (const k of kits) {
       expect(new Set(k.slots.map((s) => s.id)).size).toBe(k.slots.length);
-      if (k.hobby) expect(hobbies.some((h) => h.slug === k.hobby)).toBe(true);
+      for (const h of kitHobbies(k)) expect(hobbies.some((x) => x.slug === h)).toBe(true);
     }
   });
   it("fills only slots with verified products", () => {
@@ -465,6 +458,19 @@ describe("kits", () => {
       "pens",
     ]);
     expect(fillKit(kit, filterVerified([candidate]))).toEqual([]);
+  });
+  it("calls something a kit only with at least 4 named verified picks, else one start-here card", async () => {
+    const kit = kits.find((k) => k.id === "junk-journaling")!;
+    const few = filterVerified(fixtures);
+    expect(isFullKit(fillKit(kit, few))).toBe(false);
+    await show(<StarterKit kit="junk-journaling" catalog={few} />);
+    expect(document.body.textContent).toMatch(/Where to start/);
+    expect(document.querySelector("[data-kit-contents]")).toBeNull();
+    // Shipped data: every kit that renders as a full kit has >= 4 filled slots.
+    for (const k of kits) {
+      const filled = fillKit(k, verifiedCatalog);
+      if (isFullKit(filled)) expect(filled.length).toBeGreaterThanOrEqual(4);
+    }
   });
   it("renders nothing for an empty kit and a disclaimer for a filled one", async () => {
     const { container, unmount } = await show(<StarterKit kit="junk-journaling" catalog={[]} />);

@@ -6,6 +6,11 @@ type SeoInput = {
   description: string;
   path: string;
   image?: string;
+  /**
+   * Optional 2:3 pin image (site path or absolute URL). Emitted as a second og:image after the
+   * main preview image, so cards keep the landscape image and Pinterest can see the pin.
+   */
+  pinImage?: string;
   type?: "website" | "article";
   noindex?: boolean;
   /** Optional JSON-LD objects rendered as application/ld+json scripts. */
@@ -24,6 +29,7 @@ export function seo({
   description,
   path,
   image,
+  pinImage,
   type = "website",
   noindex,
   jsonLd,
@@ -48,6 +54,10 @@ export function seo({
       { property: "og:image", content: preview },
       { name: "twitter:image", content: preview },
     );
+  }
+  // Never on noindex pages: they carry no preview image at all (see above).
+  if (pinImage && !noindex && absoluteUrl(pinImage) !== preview) {
+    meta.push({ property: "og:image", content: absoluteUrl(pinImage) });
   }
   if (noindex) meta.push({ name: "robots", content: "noindex, follow" });
   return {

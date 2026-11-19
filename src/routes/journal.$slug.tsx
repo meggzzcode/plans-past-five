@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getArticle, readingMinutes, relatedArticles, toc } from "@/content";
 import { getCategory } from "@/data/categories";
 import { images } from "@/data/images";
+import { pinFor } from "@/lib/pins";
 import { getHobby } from "@/data/hobbies";
 import { site } from "@/config/site";
 import { NAMES } from "@/components/layout/nav";
@@ -42,6 +43,7 @@ export const Route = createFileRoute("/journal/$slug")({
       path,
       type: "article",
       image: absoluteUrl(images[a.hero].src),
+      ...(pinFor(path) ? { pinImage: pinFor(path)! } : {}),
       jsonLd: [
         articleJsonLd({
           title: a.title,
@@ -136,7 +138,12 @@ function ArticlePage() {
               href: `/journal/${a.slug}`,
             }}
           />
-          <ShareButtons title={a.title} path={`/journal/${a.slug}`} image={img.src} />
+          <ShareButtons
+            title={a.title}
+            description={`${a.title}. ${a.dek}`}
+            path={`/journal/${a.slug}`}
+            image={img.src}
+          />
         </div>
       </header>
       <figure className="mx-auto mt-6 max-w-6xl md:mt-10 md:px-8">
@@ -237,7 +244,12 @@ function ArticlePage() {
                 href: `/journal/${a.slug}`,
               }}
             />
-            <ShareButtons title={a.title} path={`/journal/${a.slug}`} image={img.src} />
+            <ShareButtons
+            title={a.title}
+            description={`${a.title}. ${a.dek}`}
+            path={`/journal/${a.slug}`}
+            image={img.src}
+          />
           </div>
         </div>
       </div>

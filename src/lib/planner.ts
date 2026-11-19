@@ -11,6 +11,7 @@ import type { Cost } from "@/data/hobbies";
 import { getHobby } from "@/data/hobbies";
 import { productsFor } from "@/data/products";
 import { articlesForHobby } from "@/content";
+import { EVENING_TEMPLATES, type EveningTemplate } from "@/data/evening-templates";
 
 /**
  * Deterministic itinerary builder. No randomness, no network: the same PlanInput and seed always give the
@@ -40,6 +41,8 @@ export type PlanInput = {
   atHome: boolean;
   setting?: SettingPref;
   energy?: EnergyPref;
+  /** A lighter version: longer breaks between stops (and, from the "Make it lighter" button, one stop fewer). */
+  light?: boolean;
 };
 
 export const LENGTHS: Length[] = ["evening", "few-hours", "half-day", "full-day"];
@@ -85,6 +88,9 @@ const normWhen = (w: When): (typeof WHENS)[number] => (w === "after-work" ? "wee
 
 /** Short break between stops (travel, a drink, a breather). */
 export const BREAK_MINUTES = 30;
+/** Extra minutes added to every break in a lighter plan. */
+export const LIGHT_EXTRA_BREAK = 15;
+const breakFor = (input: PlanInput) => BREAK_MINUTES + (input.light ? LIGHT_EXTRA_BREAK : 0);
 /** The longest wait we accept before a stop (lunch, a slow start). */
 const MAX_WAIT = 90;
 /** Ideas shorter than this are fillers, not stops. */
@@ -206,8 +212,8 @@ function fits(a: Activity, input: PlanInput, relax: Relax = {}) {
     if (rank[a.energy] > rank[e]) return false;
     if (e === "high" && rank[a.energy] < rank.medium) return false;
   }
-  // Ideas that need signing up ahead are not something you can do on the fly. They only appear in a
-  // whole-weekend plan, where there is time to book.
+  // Ideas that need signing up, or may need booking, ahead are not something you can do on the fly.
+  // They only appear in a whole-weekend plan, where there is time to book.
   if (a.advance && normWhen(input.when) !== "weekend") return false;
   if (!relax.vibe && !a.vibes.some((v) => vibeSet(input.vibe).includes(v))) return false;
   return true;
@@ -223,31 +229,43 @@ export function startIn(a: Activity, earliest: number): number | null {
  * Where an activity would go in a stop, given when the previous stop ended (null for the first stop
  * of a day). Null when its time window, the stop's window or the wait rules do not allow it.
  */
-export function place(a: Activity, def: SlotDef, prevEnd: number | null) {
+export function place(
+  a: Activity,
+  def: SlotDef,
+  prevEnd: number | null,
+  breakMinutes: number = BREAK_MINUTES,
+) {
   if (a.minutes > def.maxMinutes) return null;
-  const earliest = Math.max(def.from, prevEnd === null ? 0 : prevEnd + BREAK_MINUTES);
+  const earliest = Math.max(def.from, prevEnd === null ? 0 : prevEnd + breakMinutes);
   const start = startIn(a, earliest);
   if (start === null || start > def.latestStart || start - earliest > MAX_WAIT) return null;
   const end = start + a.minutes;
   return end <= def.to ? { start, end } : null;
 }
 
-function score(a: Activity, input: PlanInput) {
+/** Where a stop sits in its day: used to give "no energy preference" plans a shape (livelier first, gentler last). */
+type Arc = "first" | "middle" | "last" | "only";
+
+function score(a: Activity, input: PlanInput, arc: Arc = "only") {
   const set = vibeSet(input.vibe);
   let s = 0;
   if (a.vibes.some((v) => set.includes(v))) s += 3;
   if (set.includes(a.vibes[0]!)) s += 1;
   if (input.energy && input.energy !== "any" && a.energy === input.energy) s += 2;
+  if (!input.energy || input.energy === "any") {
+    if (arc === "last" && a.energy === "low") s += 2;
+    if ((arc === "first" || arc === "middle") && a.energy !== "low") s += 1;
+  }
   // A catch-all idea ("Drop-in class") ranks below a specific one that fits equally well.
   if (a.generic) s -= 2;
   return s;
 }
 
 /** All ideas that could happen in a stop (first of its day), best first. Ignores what other stops use. */
-export function candidates(input: PlanInput, def: SlotDef, relax: Relax = {}) {
+export function candidates(input: PlanInput, def: SlotDef, relax: Relax = {}, arc: Arc = "only") {
   return activities
     .filter((a) => fits(a, input, relax) && place(a, def, null))
-    .map((a) => ({ a, score: score(a, input) }))
+    .map((a) => ({ a, score: score(a, input, arc) }))
     .sort((x, y) => y.score - x.score || x.a.id.localeCompare(y.a.id));
 }
 
@@ -258,8 +276,9 @@ function ordered(
   seed: number,
   slotIndex: number,
   relax: Relax,
+  arc: Arc = "only",
 ): Activity[] {
-  const c = candidates(input, def, relax).map((x) => x.a);
+  const c = candidates(input, def, relax, arc).map((x) => x.a);
   const top = c.slice(0, Math.min(4, c.length));
   const k = top.length ? (seed + slotIndex) % top.length : 0;
   return [...top.slice(k), ...top.slice(0, k), ...c.slice(top.length)];
@@ -291,6 +310,15 @@ const covered = (stops: Stop[], defs: SlotDef[], input: PlanInput) => {
  * only canonically (an idea goes in the earliest stop that could hold it) so that a plan can be
  * rebuilt exactly from its activity ids.
  */
+/** First, middle or last stop of its day (or the only one). */
+function arcOf(defs: SlotDef[], i: number): Arc {
+  const day = defs[i]!.day ?? "";
+  const same = defs.filter((d) => (d.day ?? "") === day);
+  if (same.length === 1) return "only";
+  const k = same.indexOf(defs[i]!);
+  return k === 0 ? "first" : k === same.length - 1 ? "last" : "middle";
+}
+
 function assemble(
   input: PlanInput,
   defs: SlotDef[],
@@ -299,8 +327,9 @@ function assemble(
   must?: Activity,
 ): Stop[] {
   const cap = budgetCap(input.budget);
+  const brk = breakFor(input);
   const lists = defs.map((d, i) => {
-    const l = ordered(input, d, seed, i, relax);
+    const l = ordered(input, d, seed, i, relax, arcOf(defs, i));
     // A pinned idea (carried over from the Tonight tool) is tried first in every stop.
     return must ? [must, ...l.filter((a) => a.id !== must.id)] : l;
   });
@@ -331,13 +360,12 @@ function assemble(
     const sk = newDay ? [] : skipped;
     for (const a of lists[i]!) {
       if (used.has(a.id)) continue;
-      // Never the same kind of thing twice in one day (no baking then cooking).
-      if (cur.some((c) => c.a.family === a.family && (defs[c.slot]!.day ?? "") === (def.day ?? "")))
-        continue;
+      // Never the same kind of thing twice in one plan (no baking then cooking, on any day).
+      if (cur.some((c) => c.a.family === a.family)) continue;
       if (cap !== null && spent + a.costMax > cap) continue;
-      const at = place(a, def, pe);
+      const at = place(a, def, pe, brk);
       if (!at) continue;
-      if (sk.some((d) => place(a, d, pe))) continue; // it belongs in an earlier stop
+      if (sk.some((d) => place(a, d, pe, brk))) continue; // it belongs in an earlier stop
       cur.push({ slot: i, a, ...at });
       used.add(a.id);
       dfs(i + 1, at.end, spent + a.costMax, []);
@@ -366,6 +394,7 @@ function replay(input: PlanInput, defs: SlotDef[], ids: string[]): Stop[] | null
   if (groups.length > days.length) return null;
   const seen = new Set<string>();
   const out: Stop[] = [];
+  const brk = breakFor(input);
   for (let g = 0; g < groups.length; g++) {
     const first = defs.findIndex((d) => (d.day ?? "") === days[g]);
     let ptr = first;
@@ -376,7 +405,7 @@ function replay(input: PlanInput, defs: SlotDef[], ids: string[]): Stop[] | null
       seen.add(id);
       let found = false;
       while (ptr < defs.length && (defs[ptr]!.day ?? "") === days[g]) {
-        const at = place(a, defs[ptr]!, prevEnd);
+        const at = place(a, defs[ptr]!, prevEnd, brk);
         if (at) {
           out.push({ slot: ptr, a, ...at });
           prevEnd = at.end;
@@ -402,6 +431,14 @@ const idsOf = (stops: Stop[], defs: SlotDef[]): string[] => {
   return out;
 };
 
+/** A row of time between two stops: getting there, settling in, or a breather. */
+export type PlanBuffer = {
+  kind: "travel" | "home" | "reset";
+  label: string;
+  /** Minutes set aside (the planner's break, plus 15 in a lighter plan). */
+  minutes: number;
+};
+
 export type PlanSlot = {
   /** 1-based position in the itinerary. */
   step: number;
@@ -412,6 +449,10 @@ export type PlanSlot = {
   activity: Activity | null;
   /** A swap that still fits the time, budget and choices. */
   alternative: Activity | null;
+  /** Time set aside between the previous stop (same day) and this one. */
+  buffer?: PlanBuffer;
+  /** Minutes of open time after the buffer and before this stop (not counted as plan time). */
+  freeBefore?: number;
   /** Visible explanation when nothing fits this day. */
   missing?: string;
   /** One-tap changes that would give this day something. Each patch is applied to the choices. */
@@ -445,6 +486,12 @@ export type Plan = {
   seed: number;
   /** Activity ids in order, days separated by "". This plus input and seed restores the plan. */
   ids: string[];
+  /** One line saying which of the person's choices shaped this plan. */
+  why: string;
+  /** A closing row for evening plans: nothing booked after the last stop. */
+  windDown: { minutes: number; label: string } | null;
+  /** Name of the curated evening this plan came from, when it came from one. */
+  template?: string;
 };
 
 const dayWord: Record<(typeof WHENS)[number], string> = {
@@ -594,12 +641,7 @@ function swapFor(
   const rest = total - stops[index]!.a.costMax;
   const ids = idsOf(stops, defs);
   const mine = stops[index]!.a.id;
-  const myDay = defs[stops[index]!.slot]!.day ?? "";
-  const others = new Set(
-    stops
-      .filter((s, i) => i !== index && (defs[s.slot]!.day ?? "") === myDay)
-      .map((s) => s.a.family),
-  );
+  const others = new Set(stops.filter((_, i) => i !== index).map((s) => s.a.family));
   const list = activities
     .filter(
       (a) =>
@@ -621,7 +663,59 @@ function swapFor(
   );
 }
 
-function buildPlan(input: PlanInput, seed: number, stops: Stop[]): Plan {
+/** The travel / settle / breather row between two stops, and the open time left over after it. */
+function bufferBetween(
+  from: Activity,
+  to: Activity,
+  gap: number,
+  input: PlanInput,
+): { buffer: PlanBuffer; free: number } {
+  const minutes = Math.min(gap, breakFor(input));
+  const kind: PlanBuffer["kind"] = !to.home ? "travel" : !from.home ? "home" : "reset";
+  const label =
+    kind === "travel"
+      ? "Get there and settle in"
+      : kind === "home"
+        ? "Head home and settle in"
+        : "A breather and a reset";
+  return { buffer: { kind, label, minutes }, free: Math.max(0, gap - minutes) };
+}
+
+const energyWhy: Record<EnergyPref, string> = {
+  any: "no energy limit, so it starts livelier and ends gentler where it can",
+  low: "low-key energy, so nothing is more than gentle",
+  medium: "medium energy, so nothing is more tiring than moderate",
+  high: "high energy, so every stop has some real effort in it",
+};
+
+/** "Why this plan": one line naming the choices that shaped it. Only states what is checked in code. */
+function whyLine(input: PlanInput, stops: Stop[], cap: number | null, template?: EveningTemplate) {
+  const parts: string[] = [];
+  parts.push(energyWhy[input.energy ?? "any"]);
+  if (input.setting && input.setting !== "any")
+    parts.push(input.setting === "indoor" ? "kept indoors" : "kept outdoors");
+  if (input.atHome) parts.push("kept at home");
+  const n = stops.length;
+  parts.push(
+    n === 0
+      ? "no stops fit yet"
+      : `${n} ${n === 1 ? "stop" : "stops"}${n > 1 ? ` with at least ${breakFor(input)} minutes between them to get there and settle` : ""}`,
+  );
+  parts.push(cap === null ? "a flexible budget" : cap === 0 ? "free" : `${fmtMoney(cap)} or less in total`);
+  if (normWhen(input.when) !== "weekend") parts.push("nothing that needs booking ahead");
+  const who = whoPhrase[input.who];
+  const lead = `Chosen for a ${vibeWord[input.vibe]} ${dayWord[normWhen(input.when)]} ${who}`;
+  const tail = template ? ` It is one of our ready-made evenings: ${template.title}.` : "";
+  const light = input.light ? " This is the lighter version: longer breaks between stops." : "";
+  return `${lead}: ${parts.join(", ")}.${tail}${light}`;
+}
+
+function buildPlan(
+  input: PlanInput,
+  seed: number,
+  stops: Stop[],
+  template?: EveningTemplate,
+): Plan {
   const defs = slotsFor(input);
   const cap = budgetCap(input.budget);
   const total = stops.reduce((t, s) => t + s.a.costMax, 0);
@@ -647,7 +741,10 @@ function buildPlan(input: PlanInput, seed: number, stops: Stop[]): Plan {
       });
       continue;
     }
+    let prev: Stop | undefined;
     for (const s of mine) {
+      const gap = prev ? s.start - prev.end : 0;
+      const buf = prev ? bufferBetween(prev.a, s.a, gap, input) : null;
       slots.push({
         step: slots.length + 1,
         ...dayName,
@@ -656,7 +753,9 @@ function buildPlan(input: PlanInput, seed: number, stops: Stop[]): Plan {
         end: s.end,
         activity: s.a,
         alternative: swapFor(input, defs, stops, stops.indexOf(s), total),
+        ...(buf ? { buffer: buf.buffer, freeBefore: buf.free } : {}),
       });
+      prev = s;
     }
   }
   const aim = targetMinutes(input);
@@ -683,7 +782,48 @@ function buildPlan(input: PlanInput, seed: number, stops: Stop[]): Plan {
     input,
     seed,
     ids: idsOf(stops, defs),
+    why: whyLine(input, stops, cap, template),
+    windDown: windDownFor(input, stops),
+    ...(template ? { template: template.title } : {}),
   };
+}
+
+/** Evening plans end with a quiet row: nothing planned after the last stop. */
+function windDownFor(input: PlanInput, stops: Stop[]): Plan["windDown"] {
+  const when = normWhen(input.when);
+  if ((when !== "weeknight" && when !== "evening") || stops.length === 0) return null;
+  const last = Math.max(...stops.map((s) => s.end));
+  if (last < h(19)) return null;
+  return { minutes: 15, label: "Wind down: tea, screens off, nothing else planned" };
+}
+
+/**
+ * The curated evenings that suit these choices, best vibe match first. Only for a two-stop weeknight
+ * or evening. Every idea must fit (company, budget, setting, energy, at home, no booking ahead), at
+ * least one must match the vibe, the pair must fit the evening's time windows and the total budget.
+ */
+export function eveningTemplatesFor(input: PlanInput): EveningTemplate[] {
+  const when = normWhen(input.when);
+  if ((when !== "weeknight" && when !== "evening") || input.length === "evening") return [];
+  const defs = slotsFor(input);
+  const e = input.energy ?? "any";
+  const cap = budgetCap(input.budget);
+  const set = vibeSet(input.vibe);
+  const out: { t: EveningTemplate; hits: number }[] = [];
+  for (const t of EVENING_TEMPLATES) {
+    if (t.energy !== e) continue;
+    const acts = t.ids.map((id) => getActivity(id));
+    if (acts.some((a) => !a)) continue;
+    const list = acts as Activity[];
+    if (!list.every((a) => fits(a, input, { vibe: true }))) continue;
+    const hits = list.filter((a) => a.vibes.some((v) => set.includes(v))).length;
+    if (hits === 0) continue;
+    if (cap !== null && list.reduce((t2, a) => t2 + a.costMax, 0) > cap) continue;
+    if (new Set(list.map((a) => a.family)).size !== list.length) continue;
+    if (!replay(input, defs, t.ids)) continue;
+    out.push({ t, hits });
+  }
+  return out.sort((x, y) => y.hits - x.hits).map((x) => x.t);
 }
 
 /**
@@ -714,6 +854,12 @@ function bestStops(
 export function makePlan(input: PlanInput, seed = 0, pin?: string | null): Plan {
   const defs = slotsFor(input);
   const pinned = pin ? getActivity(pin) : undefined;
+  if (!pinned) {
+    const ready = eveningTemplatesFor(input);
+    const t = ready.length ? ready[seed % ready.length] : undefined;
+    const stops = t ? replay(input, defs, t.ids) : null;
+    if (t && stops) return buildPlan(input, seed, stops, t);
+  }
   let result = bestStops(input, defs, seed, pinned);
   if (pinned && !result.stops.some((s) => s.a.id === pinned.id))
     result = bestStops(input, defs, seed);
@@ -726,7 +872,37 @@ export function planFromIds(input: PlanInput, seed: number, ids: string[]): Plan
   // Retired activity ids are skipped so an old link still opens with what is left.
   const known = ids.filter((id) => id === "" || getActivity(id));
   const stops = replay(input, slotsFor(input), known);
-  return stops ? buildPlan(input, seed, stops) : null;
+  if (!stops) return null;
+  const t = EVENING_TEMPLATES.find(
+    (x) => x.ids.length === known.length && x.ids.every((id, i) => id === known[i]),
+  );
+  return buildPlan(input, seed, stops, t);
+}
+
+/**
+ * A lighter version of a plan: one stop dropped (the most tiring, then the longest) and longer breaks
+ * between the rest. Null when the plan is already light, or has no day with two or more stops.
+ * Returns the new choices and the exact activity ids, so the lighter plan can be saved and shared.
+ */
+export function lighterPlan(plan: Plan): { input: PlanInput; ids: string[] } | null {
+  if (plan.input.light) return null;
+  const stops = plan.slots.filter((s) => s.activity);
+  const perDay = new Map<string, number>();
+  for (const s of stops) perDay.set(s.day ?? "", (perDay.get(s.day ?? "") ?? 0) + 1);
+  const droppable = stops
+    .filter((s) => (perDay.get(s.day ?? "") ?? 0) >= 2)
+    .sort(
+      (x, y) =>
+        rank[y.activity!.energy] - rank[x.activity!.energy] ||
+        y.activity!.minutes - x.activity!.minutes ||
+        y.step - x.step,
+    );
+  const input: PlanInput = { ...plan.input, light: true };
+  for (const s of droppable) {
+    const ids = plan.ids.filter((id) => id !== s.activity!.id);
+    if (planFromIds(input, plan.seed, ids)) return { input, ids };
+  }
+  return null;
 }
 
 /* ---------- Search params: quiz hand-off and saved-plan links ---------- */
@@ -742,6 +918,8 @@ export type PlanSearch = Partial<{
   energy: string;
   seed: string;
   ids: string;
+  /** "1" for a lighter plan (longer breaks between stops). */
+  light: string;
   from: string;
   /** Activity id to build the plan around (from the Tonight tool). */
   with: string;
@@ -791,6 +969,7 @@ export function parsePlanSearch(s: Record<string, unknown>): ParsedSearch {
     atHome: home,
     setting: setting ?? "any",
     energy: energy ?? "any",
+    ...(s["light"] === "1" || s["light"] === 1 ? { light: true } : {}),
   };
   const seedNum = Number(s["seed"]);
   const seed = Number.isInteger(seedNum) && seedNum >= 0 && seedNum < 1000 ? seedNum : 0;
@@ -820,6 +999,7 @@ export function planSearch(input: PlanInput, seed: number, ids: string[]): Recor
     home: input.atHome ? "1" : "0",
     setting: input.setting ?? "any",
     energy: input.energy ?? "any",
+    ...(input.light ? { light: "1" } : {}),
     seed: String(seed),
     ids: ids.length ? ids.map((i) => i || "-").join(",") : "-",
   };
@@ -847,6 +1027,7 @@ export function sanitizePlanData(raw: unknown): SavedPlanData | null {
     home: rec["atHome"] ? "1" : "0",
     setting: rec["setting"],
     energy: rec["energy"],
+    light: rec["light"] === true ? "1" : undefined,
     seed: String(r["seed"] ?? 0),
   });
   const ids = r["ids"] as unknown[];
