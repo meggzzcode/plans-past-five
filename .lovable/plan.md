@@ -3,14 +3,14 @@
 A frontend-only editorial lifestyle magazine for women building a life outside work. No database, accounts, AI or payments; saving is browser-only. Built in the refined priority order; anything not finished properly is hidden and documented in CLAUDE-HANDOFF.md.
 
 ## Brand and naming
-- Tagline "For the life outside your 9–5.", slogan "Clock out. Make plans. Live a little.", plus the approved phrase bank used selectively.
+- Tagline "Making a life, not just a living.", slogan "For the plot, not the paycheck.", signature phrase "Professionally off duty.", mission "Helping women fall in love with the life they live outside of work." Approved phrase bank used selectively.
 - Section names used everywhere: After Hours, The Weekend Edit, Creative Corner, Table for One, Better Together, A Little Movement, Off Duty Essentials, Find Your Thing, Make Some Plans, My Plans, The Out-of-Office Collection, The Out-of-Office Note, The Journal.
 - Lead colors: cherry red, vanilla cream, butter yellow, strawberry milk; matcha and Sunday blue for select sections. Fraunces (expressive italics) + DM Sans.
 - Original SVG wordmark "plans past / five." (stacked, horizontal, compact, monogram, favicon, light/dark).
 - Restrained decorative kit: gingham, scallops, stars, bows, flowers, hand-drawn arrows, handwritten notes, postcard frames, magazine dividers. Few rounded boxes and pill buttons; varied compositions.
 
 ## Priority 1–2: Design system and homepage
-Hero "Your 9 to 5 isn't your whole life." with collage and CTAs Find Your Thing / Make Some Plans. Then a consolidated journey: relatable intro, six categories, Hobby Finder teaser, After Hours (5:01 Edit), Weekend Edit, Table for One + Better Together, Journal, Off Duty Essentials, free printable, Out-of-Office Note (no fake signup), footer.
+Hero "Because the best part of your day is still ahead." with collage and CTAs Find Your Thing / Make Some Plans. Then a consolidated journey: relatable intro, six categories, Hobby Finder teaser, After Hours (5:01 Edit), Weekend Edit, Table for One + Better Together, Journal, Off Duty Essentials, free printable, Out-of-Office Note (no fake signup), footer.
 
 ## Priority 3–4: Content and articles
 - Typed article model with search intent, angle, hobby links, product links, related content.
@@ -29,6 +29,9 @@ Six collections x six product types exactly as specified (Pottery Era, Creative 
 - My Plans: local saves of hobbies, articles, plans, solo dates; remove; empty state "Nothing on the calendar yet? Let's fix that."; device-only notice.
 - Make Some Plans: after-work, Saturday, Sunday, solo, friend, at-home; deterministic matching on time, budget, energy, company; save, regenerate, print.
 - Three printables (Out-of-Office Bucket List with 50 activities, Weekend Edit Planner, My Hobby Era Tracker) as real downloadable/print-ready pages.
+
+## Experience priorities
+Boutique-magazine feel on every page, mobile-first polish for Pinterest visitors, product picks framed as editorial help, substance over page count, no extra services or dependencies, CLAUDE-HANDOFF.md lists unfinished work, known issues, test results and next steps.
 
 ## Images
 About 20–25 original generated images: hero collage, six categories, key article heroes, finder, six shop collections, brand lifestyle. Diverse, candid, film feel; manifest in IMAGE-LICENSES.md.
