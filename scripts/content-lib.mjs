@@ -6,7 +6,7 @@
  * The editable content lives in content/ (articles and images, edited through Pages CMS).
  * Nothing here reaches the network.
  */
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
 
@@ -578,7 +578,97 @@ export function validateContent(root, opts = {}) {
           `content/articles/${a.slug}.json, field "related": there is no article "${s}"`,
         );
     }
-  return { articles, images, problems, settings: settingsRead.settings };
+  if (opts.integrity !== false) problems.push(...integrityProblems(root, articles));
+  return { articles, images, problems, settings: settingsRead.settings, articleFiles: seen };
+}
+
+// ------------------------------------------------------------------ integrity gate
+
+/** Source files that may legitimately mention any article slug (generated or test files). */
+const GATE_SKIP = /(^|\/)(test|generated)(\/|$)|routeTree\.gen\.ts$|\.generated\.ts$/;
+
+function sourceFiles(root) {
+  const out = [];
+  const walk = (rel) => {
+    const dir = join(root, rel);
+    if (!existsSync(dir)) return;
+    for (const n of readdirSync(dir)) {
+      const r = `${rel}/${n}`;
+      if (GATE_SKIP.test(r)) continue;
+      if (statSync(join(root, r)).isDirectory()) walk(r);
+      else if (/\.(ts|tsx)$/.test(n)) out.push(r);
+    }
+  };
+  walk("src");
+  return out;
+}
+
+/**
+ * Integrity gate: nothing live may point at an article that is not published. Switching an article
+ * to draft, or changing its slug, would otherwise leave dead links, pins, meta-title overrides and
+ * related-article lists behind. Every message says what to change.
+ */
+export function integrityProblems(root, articles) {
+  const problems = [];
+  const published = new Set(articles.filter((a) => a.status === "published").map((a) => a.slug));
+  const known = new Set(articles.map((a) => a.slug));
+  const gone = (slug) => !published.has(slug);
+  const why = (slug) =>
+    known.has(slug)
+      ? `"${slug}" is a draft, so it is not on the website`
+      : `there is no article "${slug}" (it was renamed or deleted)`;
+  const fix = "Point it at a published article, remove it, or set the article back to Published";
+
+  // 1. published articles: body links, related list, shop-the-article blocks
+  for (const a of articles) {
+    if (a.status !== "published") continue;
+    const file = `content/articles/${a.slug}.json`;
+    const seen = new Set();
+    for (const m of JSON.stringify(a.body).matchAll(/\/journal\/([a-z0-9]+(?:-[a-z0-9]+)*)/g)) {
+      if (gone(m[1]) && !seen.has(m[1])) {
+        seen.add(m[1]);
+        problems.push(
+          `${file}: a link in the text goes to /journal/${m[1]} but ${why(m[1])}. ${fix}.`,
+        );
+      }
+    }
+    for (const s of a.related ?? [])
+      if (s !== a.slug && gone(s)) problems.push(`${file}, field "related": ${why(s)}. ${fix}.`);
+    a.body.forEach((b, i) => {
+      if (b.type === "shopTheArticle" && b.articleSlug && gone(b.articleSlug))
+        problems.push(
+          `${file}, block #${i + 1} (shopTheArticle), field "articleSlug": ${why(b.articleSlug)}. ${fix}.`,
+        );
+    });
+  }
+
+  // 2. site files: pins, meta-title overrides, corrections log, links in pages and data
+  const draftSlugs = new Set(articles.filter((a) => a.status === "draft").map((a) => a.slug));
+  for (const rel of sourceFiles(root)) {
+    const text = readFileSync(join(root, rel), "utf8");
+    const label = /pins/.test(rel)
+      ? "a Pinterest pin"
+      : /seo\.ts$/.test(rel)
+        ? "a page-title override"
+        : /corrections/.test(rel)
+          ? "the corrections log"
+          : "a link or list";
+    const reported = new Set();
+    const report = (slug) => {
+      if (reported.has(slug)) return;
+      reported.add(slug);
+      problems.push(
+        `${rel}: ${label} refers to "${slug}" but ${why(slug)}. Remove that line or set the article back to Published.`,
+      );
+    };
+    for (const m of text.matchAll(/\/journal\/([a-z0-9]+(?:-[a-z0-9]+)*)/g))
+      if (gone(m[1]) && (known.has(m[1]) || /^[a-z0-9]+(?:-[a-z0-9]+){2,}$/.test(m[1])))
+        report(m[1]);
+    // an exact slug string in a data file (collections, overrides): only drafts, to avoid false alarms
+    for (const m of text.matchAll(/["'`]([a-z0-9]+(?:-[a-z0-9]+)+)["'`]/g))
+      if (draftSlugs.has(m[1])) report(m[1]);
+  }
+  return problems;
 }
 
 // ------------------------------------------------------------------ outputs
@@ -614,7 +704,7 @@ export function generatedImagesModule(images) {
  * With { write: false } returns the file texts without touching disk.
  */
 export function buildContent(root, opts = {}) {
-  const { articles, images, problems, settings } = validateContent(root, opts);
+  const { articles, images, problems, settings, articleFiles } = validateContent(root, opts);
   if (problems.length) throw new ContentError(problems);
   // Internal verification notes (coworkChecks) stay in the content files and drafts bundle; they are
   // not shipped in the public client bundle.
@@ -629,12 +719,26 @@ export function buildContent(root, opts = {}) {
     "src/data/images.generated.ts": generatedImagesModule(images),
     ...publicFileOutputs(root, settings),
   };
+  const reformatted = [];
   if (opts.write !== false) {
+    // Tidy article files into the one canonical layout (key order, 2-space indent, trailing newline,
+    // no blank values). Pages CMS writes valid JSON in its own layout; the content is the same, so
+    // this never changes meaning and never rejects an edit, it only keeps Git diffs small.
+    for (const a of articles) {
+      const rel = articleFiles.get(a.slug);
+      if (!rel) continue;
+      const p = join(root, rel);
+      const text = articleToJson(a);
+      if (readFileSync(p, "utf8") !== text) {
+        writeFileSync(p, text);
+        reformatted.push(rel);
+      }
+    }
     for (const [rel, text] of Object.entries(outputs)) {
       const p = join(root, rel);
       mkdirSync(join(p, ".."), { recursive: true });
       if (!existsSync(p) || readFileSync(p, "utf8") !== text) writeFileSync(p, text);
     }
   }
-  return { articles, published, drafts, images, outputs };
+  return { articles, published, drafts, images, outputs, reformatted };
 }

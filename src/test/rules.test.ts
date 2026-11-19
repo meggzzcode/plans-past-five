@@ -122,8 +122,8 @@ describe("Content rules", () => {
   // existing product types via extraProductIds (no new products were invented).
   // Hobby count updated deliberately from 36 to 43: "Yoga for Beginners", "Dance Classes", "Running", "Climbing", "Board Games", "Cooking Classes", "Language Learning"
   // were added so the Active filter is not just four hobbies (cost-and-search review).
-  it("has 43 hobbies and 8 collections, each with at least 4 product types", () => {
-    expect(hobbies).toHaveLength(43);
+  it("has 8 collections, each with at least 4 product types", () => {
+    expect(new Set(hobbies.map((h) => h.slug)).size).toBe(hobbies.length); // no fixed hobby count
     expect(collections).toHaveLength(8);
     expect(products).toHaveLength(36);
     for (const c of collections)

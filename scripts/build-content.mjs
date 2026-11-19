@@ -15,6 +15,10 @@ const check = process.argv.includes("--check");
 
 try {
   const r = buildContent(root, { write: !check });
+  if (r.reformatted.length)
+    console.log(
+      `Tidied the layout of ${r.reformatted.length} article file(s) (same content): ${r.reformatted.join(", ")}`,
+    );
   console.log(
     `Content OK: ${r.published.length} published and ${r.drafts.length} draft articles, ${r.images.length} images from content/.${check ? "" : " Generated files written."}`,
   );

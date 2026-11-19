@@ -1,4 +1,13 @@
-import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import {
+  cpSync,
+  existsSync,
+  mkdirSync,
+  mkdtempSync,
+  readdirSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { afterAll, beforeEach, describe, expect, it } from "vitest";
@@ -21,10 +30,29 @@ function scratch() {
   for (const f of ["images.ts", "images.extra.ts"])
     cpSync(path.join(repo, "src/data", f), path.join(root, "src/data", f));
   cpSync(path.join(repo, "src/assets"), path.join(root, "src/assets"), { recursive: true });
+  // photos uploaded through the CMS live in public/uploads (the folder may be empty or missing)
+  mkdirSync(path.join(root, "public/uploads"), { recursive: true });
+  if (existsSync(path.join(repo, "public/uploads")))
+    cpSync(path.join(repo, "public/uploads"), path.join(root, "public/uploads"), {
+      recursive: true,
+    });
+  // site files the integrity gate reads (pins, page-title overrides, corrections log)
+  for (const f of ["src/data/pins.ts", "src/lib/seo.ts", "src/content/corrections.ts"]) {
+    mkdirSync(path.dirname(path.join(root, f)), { recursive: true });
+    cpSync(path.join(repo, f), path.join(root, f));
+  }
   return root;
 }
-const articlePath = (root: string, slug: string) =>
-  path.join(root, "content/articles", `${slug}.json`);
+/** The file that holds an article, found by its slug (Pages CMS may name files after the title). */
+const articleFile = (root: string, slug: string) => {
+  const dir = path.join(root, "content/articles");
+  const f = readdirSync(dir).find(
+    (n) => n.endsWith(".json") && JSON.parse(readFileSync(path.join(dir, n), "utf8")).slug === slug,
+  );
+  if (!f) throw new Error(`no article file for ${slug}`);
+  return path.join(dir, f);
+};
+const articlePath = articleFile;
 const edit = (root: string, slug: string, fn: (a: Record<string, unknown>) => void) => {
   const p = articlePath(root, slug);
   const a = JSON.parse(readFileSync(p, "utf8"));
@@ -33,6 +61,14 @@ const edit = (root: string, slug: string, fn: (a: Record<string, unknown>) => vo
 };
 const problems = (root: string) => lib.validateContent(root).problems as string[];
 const SLUG = "pickleball-for-beginners";
+const allBodies = (root: string) =>
+  readdirSync(path.join(root, "content/articles")).map((n) =>
+    readFileSync(path.join(root, "content/articles", n), "utf8"),
+  );
+const siteMentions = (root: string, slug: string) =>
+  ["src/data/pins.ts", "src/lib/seo.ts", "src/content/corrections.ts"].some((f) =>
+    readFileSync(path.join(root, f), "utf8").includes(slug),
+  );
 
 afterAll(() => tmpRoots.forEach((r) => rmSync(r, { recursive: true, force: true })));
 
@@ -69,6 +105,80 @@ describe("content validator", () => {
     });
     expect(problems(root).join("\n")).toMatch(/block #\d+: unknown block type "banner"/);
   });
+  it("accepts the first photo uploaded through the CMS (public/uploads) and uses it as a hero", () => {
+    const png = Buffer.from(
+      "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==",
+      "base64",
+    );
+    writeFileSync(path.join(root, "public/uploads/cms-photo.png"), png);
+    writeFileSync(
+      path.join(root, "content/images/cmsPhoto.json"),
+      JSON.stringify({
+        key: "cmsPhoto",
+        file: "/uploads/cms-photo.png",
+        alt: "A small test picture uploaded through the CMS",
+      }),
+    );
+    edit(root, SLUG, (a) => {
+      a["hero"] = "cmsPhoto";
+    });
+    expect(problems(root)).toEqual([]);
+  });
+  describe("integrity gate (nothing live may point at an unpublished article)", () => {
+    const toDraft = (r: string, slug: string) =>
+      edit(r, slug, (a) => {
+        a["status"] = "draft";
+        a["publishedAt"] = "";
+        a["sources"] = [];
+        delete a["verifiedAt"];
+        a["coworkChecks"] = [];
+      });
+    it("passes when an article nobody refers to becomes a draft", () => {
+      const refs = (lib.validateContent(root).articles as Article[]).flatMap((a) => [
+        ...(a.related ?? []),
+      ]);
+      const loner = (lib.validateContent(root).articles as Article[]).find(
+        (a) =>
+          a.status === "published" &&
+          !refs.includes(a.slug) &&
+          !JSON.stringify(allBodies(root)).includes(`/journal/${a.slug}`) &&
+          !siteMentions(root, a.slug),
+      );
+      if (!loner) return; // every article is referred to somewhere: nothing to prove here
+      toDraft(root, loner.slug);
+      expect(problems(root)).toEqual([]);
+    });
+    it("fails, in plain English, when a drafted article still has a pin", () => {
+      const pinned = /"\/journal\/([a-z0-9-]+)"/.exec(
+        readFileSync(path.join(root, "src/data/pins.ts"), "utf8"),
+      )![1]!;
+      toDraft(root, pinned);
+      expect(problems(root).join("\n")).toMatch(
+        new RegExp(
+          `src/data/pins\\.ts: a Pinterest pin refers to "${pinned}" but "${pinned}" is a draft`,
+        ),
+      );
+    });
+    it("fails when a drafted article is still linked from another article's text or related list", () => {
+      const all = lib.validateContent(root).articles as Article[];
+      const target = all.find((a) => a.related?.length)!;
+      const victim = target.related![0]!;
+      toDraft(root, victim);
+      expect(problems(root).join("\n")).toMatch(
+        new RegExp(`${target.slug}\\.json, field "related": "${victim}" is a draft`),
+      );
+    });
+    it("fails when a slug is changed but links still use the old one", () => {
+      const all = lib.validateContent(root).articles as Article[];
+      const target = all.find((a) => a.related?.length)!;
+      const old = target.related![0]!;
+      edit(root, old, (a) => {
+        a["slug"] = "renamed-article-slug";
+      });
+      const p = problems(root).join("\n");
+      expect(p).toMatch(new RegExp(`there is no article "${old}" \\(it was renamed or deleted\\)`));
+    });
+  });
   describe("publish gate", () => {
     const OTHER = "how-to-start-crocheting";
     it("fails a published article with no sources", () => {
@@ -103,7 +213,8 @@ describe("content validator", () => {
         delete a["verifiedAt"];
         a["coworkChecks"] = ["Confirm the yarn weight claim"];
       });
-      expect(problems(root)).toEqual([]);
+      // (this article is linked from others; the integrity gate has its own tests above)
+      expect(lib.validateContent(root, { integrity: false }).problems).toEqual([]);
     });
   });
   it("rejects a bad status", () => {
@@ -151,15 +262,50 @@ describe("content validator", () => {
 });
 
 describe("converted data renders identically", () => {
-  it("is byte-stable: converting an article again gives the same text", () => {
+  it("the compiled bundle matches the article files, whatever their formatting", () => {
+    // Compares meaning (parsed data), not bytes, so a valid save from Pages CMS never fails here.
+    const strip = (x: unknown) => {
+      const { coworkChecks: _c, ...rest } = x as Record<string, unknown>;
+      return rest;
+    };
+    const fromFiles = lib.validateContent(repo).articles as Article[];
+    expect(fromFiles.length).toBe(allArticlesIncludingDrafts.length);
     for (const a of allArticlesIncludingDrafts) {
-      const onDisk = readFileSync(articlePath(repo, a.slug), "utf8");
-      // The public bundle leaves out internal coworkChecks, so put them back from the file to compare.
-      const full = { ...a, coworkChecks: JSON.parse(onDisk).coworkChecks } as Article;
-      const text = lib.articleToJson(full);
-      expect(lib.articleToJson(JSON.parse(text))).toBe(text);
-      expect(onDisk).toBe(text);
+      const f = fromFiles.find((x) => x.slug === a.slug);
+      expect(f, a.slug).toBeDefined();
+      expect(strip(f)).toEqual(strip(a));
     }
+  });
+  it("the canonical layout is stable: writing an article twice gives the same text", () => {
+    for (const a of lib.validateContent(repo).articles as Article[]) {
+      const text = lib.articleToJson(a);
+      expect(lib.articleToJson(JSON.parse(text))).toBe(text);
+    }
+  });
+  it("accepts a Pages CMS style save (4-space indent, no final newline, other key order, blank optional values) and tidies it", () => {
+    const root = scratch();
+    const f = articleFile(root, SLUG);
+    const original = readFileSync(f, "utf8");
+    const a = JSON.parse(original);
+    const shuffled = Object.fromEntries(
+      [...Object.entries(a)]
+        .reverse()
+        .concat(a["updatedAt"] === undefined ? [["updatedAt", ""]] : []),
+    );
+    writeFileSync(f, JSON.stringify(shuffled, null, 4));
+    expect(problems(root)).toEqual([]);
+    const r = lib.buildContent(root, { write: true });
+    expect(r.reformatted.length).toBe(1);
+    expect(readFileSync(f, "utf8")).toBe(original);
+  });
+  it("a typo fix in an article file is picked up by the build and is not a test failure", () => {
+    const root = scratch();
+    edit(root, SLUG, (a) => {
+      a["dek"] = `${String(a["dek"])} (edited)`;
+    });
+    const r = lib.buildContent(root, { write: false });
+    const pub = JSON.parse(r.outputs["src/content/generated/published.json"]);
+    expect(pub.find((x: Article) => x.slug === SLUG).dek).toMatch(/\(edited\)$/);
   });
   it("round-trips every article: same object, same block text, same reading time", () => {
     for (const a of allArticlesIncludingDrafts) {
