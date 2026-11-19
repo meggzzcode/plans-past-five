@@ -20,3 +20,7 @@ Default: photo-less product cards. No product photo is proposed for publication 
 
 ## Recommendation
 Ship photo-less cards (name, "what it's for", search/ASIN link only). Revisit images only with licensed or self-made photos and a signed or published license on file.
+
+## Update 2026-11-19 (C10): Canva AI images
+Terms read and recorded in docs/content/CANVA-LICENCE-TERMS.md. Summary: Canva says you own AI output "as between you and Canva", AI images are outside the Content License Agreement, and may be used commercially under the AI Product Terms; no exclusivity is promised; nothing read addresses transfer to a buyer of a site. Rows prepared in docs/content/new-images.canva-pending.csv; the image files themselves are not yet in the repo (see C13 report).
+Product photos: unchanged. No Amazon product image is used; maker press-kit terms are tracked in docs/commerce/product-photo-permissions.md.
