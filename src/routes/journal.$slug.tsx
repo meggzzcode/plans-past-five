@@ -4,6 +4,7 @@ import { getCategory } from "@/data/categories";
 import { images } from "@/data/images";
 import { getHobby } from "@/data/hobbies";
 import { site } from "@/config/site";
+import { NAMES } from "@/components/layout/nav";
 import { seo, absoluteUrl, articleJsonLd, breadcrumbJsonLd, modifiedAfterPublish } from "@/lib/seo";
 import { ArticleBody } from "@/components/editorial/ArticleBody";
 import { shortVersion } from "@/components/editorial/article-summary";
@@ -109,8 +110,22 @@ function ArticlePage() {
         </h1>
         <p className="mx-auto mt-5 max-w-2xl text-lg text-espresso md:text-xl">{a.dek}</p>
         <p className="mt-6 text-xs font-medium tracking-wide text-muted-foreground uppercase">
-          By {site.editorialByline} · <time dateTime={a.publishedAt}>{date}</time> ·{" "}
-          {readingMinutes(a)} min read
+          By {site.editorialByline} · <time dateTime={a.publishedAt}>{date}</time>
+          {a.updatedAt ? (
+            <>
+              {" "}
+              · Updated <time dateTime={a.updatedAt}>{longDate(a.updatedAt)}</time>
+            </>
+          ) : null}{" "}
+          · {readingMinutes(a)} min read
+        </p>
+        <p className="mt-2 text-xs">
+          <Link
+            to="/editorial-policy"
+            className="inline-flex min-h-11 items-center text-muted-foreground underline underline-offset-[3px] hover:text-cherry"
+          >
+            {NAMES.howWeMake}
+          </Link>
         </p>
         <div className="mt-5 flex flex-wrap items-center justify-center gap-6">
           <SaveButton
@@ -171,33 +186,44 @@ function ArticlePage() {
             </nav>
           )}
           <ArticleBody blocks={a.body} />
-          {sources.length > 0 && (
-            <details className="mt-10 border border-border bg-warm-white p-4 text-sm">
-              <summary className="kicker cursor-pointer text-cherry">
-                Sources and when we checked
-              </summary>
-              <ul className="mt-3 space-y-2">
-                {sources.map((s) => (
-                  <li key={s.url}>
-                    <a
-                      href={s.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-cherry underline underline-offset-[3px]"
-                    >
-                      {s.title}
-                    </a>
-                    {s.note ? <span className="text-muted-foreground"> ({s.note})</span> : null}
-                  </li>
-                ))}
-              </ul>
-              {a.verifiedAt && (
-                <p className="mt-3 text-muted-foreground">
-                  Facts last checked: {longDate(a.verifiedAt)}
-                </p>
-              )}
-            </details>
-          )}
+          <aside
+            aria-label="Sources and checks"
+            className="mt-10 border border-border bg-warm-white p-4 text-sm"
+          >
+            {sources.length > 0 && (
+              <details open>
+                <summary className="kicker cursor-pointer text-cherry">Sources</summary>
+                <ul className="mt-3 space-y-2">
+                  {sources.map((s) => (
+                    <li key={s.url}>
+                      <a
+                        href={s.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-cherry underline underline-offset-[3px]"
+                      >
+                        {s.title}
+                      </a>
+                      {s.note ? <span className="text-muted-foreground"> ({s.note})</span> : null}
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            )}
+            {a.verifiedAt && (
+              <p className={sources.length > 0 ? "mt-3 text-muted-foreground" : "text-muted-foreground"}>
+                Facts last checked <time dateTime={a.verifiedAt}>{longDate(a.verifiedAt)}</time>.
+              </p>
+            )}
+            <p className={a.verifiedAt || sources.length > 0 ? "mt-1" : ""}>
+              <Link
+                to="/methodology"
+                className="inline-flex min-h-11 items-center text-cherry underline underline-offset-[3px]"
+              >
+                How we check
+              </Link>
+            </p>
+          </aside>
           <div className="mt-10 flex flex-wrap items-center gap-6 border-t border-border pt-6">
             <SaveButton
               item={{

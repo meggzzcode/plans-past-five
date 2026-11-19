@@ -22,6 +22,15 @@ export const site = {
     jurisdiction: "",
     lastUpdated: "2026-11-19",
   },
+  /**
+   * Who publishes the site. All four stay empty until the owner chooses (see
+   * docs/buyer/PUBLISHER-SETUP.md). While empty, no "Published by" line is shown anywhere.
+   * Only src/lib/publisher.ts reads these, so the wording is identical on every page.
+   */
+  publisherName: "", // the owner's name, a business name/DBA, or a registered company name
+  publisherEntityType: "", // free text, e.g. "sole proprietor", "DBA", "LLC"; optional
+  publisherAddress: "", // a real postal, PO box or registered-agent address; optional
+  publisherUrl: "", // https:// link to the publisher's own page; optional
   integrations: {
     newsletter: { enabled: false, provider: "" as "" | "kit" | "mailerlite", formAction: "" },
     googleAnalyticsId: "",

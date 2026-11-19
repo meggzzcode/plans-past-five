@@ -4,6 +4,7 @@ import { Star } from "@/components/brand/Doodles";
 import { site } from "@/config/site";
 import { categories } from "@/data/categories";
 import { NAMES } from "@/components/layout/nav";
+import { PublishedBy } from "@/components/layout/PublishedBy";
 import { trustLinks } from "@/config/trust-links";
 
 export function Footer() {
@@ -55,8 +56,17 @@ export function Footer() {
       </div>
       <div className="border-t border-cream/15">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-5 py-6 text-xs text-cream/70 md:flex-row md:px-8">
-          <span>
-            © {new Date().getFullYear()} {site.name}
+          <span className="flex flex-col items-center gap-1 md:items-start">
+            <span>
+              © {new Date().getFullYear()} {site.name}
+            </span>
+            <PublishedBy className="[&_a]:underline" />
+            <Link
+              to="/editorial-policy"
+              className="inline-flex min-h-11 items-center underline underline-offset-[3px] hover:text-butter"
+            >
+              {NAMES.howWeMake}
+            </Link>
           </span>
           <span className="flex items-center gap-2">
             <Star className="h-3 w-3 text-butter" /> {site.slogan}

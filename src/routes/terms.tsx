@@ -3,6 +3,7 @@ import { seo, breadcrumbJsonLd } from "@/lib/seo";
 import { commissionStatement } from "@/config/affiliate";
 import { site } from "@/config/site";
 import { ProsePage } from "@/components/pages/ProsePage";
+import { PublishedBy } from "@/components/layout/PublishedBy";
 
 export const Route = createFileRoute("/terms")({
   head: () =>
@@ -47,6 +48,7 @@ export const Route = createFileRoute("/terms")({
         do not guarantee it is complete or current, and we are not liable for decisions you make
         based on it. Hobbies are not medical or mental-health treatment.
       </p>
+      <PublishedBy />
       <h2>Changes</h2>
       <p>
         We may update these terms; the date below shows the latest version. Last updated{" "}

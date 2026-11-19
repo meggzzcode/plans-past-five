@@ -4,6 +4,7 @@ import { commissionStatement } from "@/config/affiliate";
 import { site } from "@/config/site";
 import { Link } from "@tanstack/react-router";
 import { ProsePage } from "@/components/pages/ProsePage";
+import { PublishedBy } from "@/components/layout/PublishedBy";
 
 export const Route = createFileRoute("/privacy")({
   head: () =>
@@ -72,6 +73,7 @@ export const Route = createFileRoute("/privacy")({
           </p>
         </>
       ) : null}
+      <PublishedBy />
       <p>Last updated {site.legal.lastUpdated}.</p>
     </ProsePage>
   ),

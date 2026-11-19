@@ -49,6 +49,8 @@ export const NAMES = {
   tonight: "What Should I Do Tonight?",
   hobbies: "Hobbies",
   journal: "The Journal",
+  /** Small link in article bylines and the footer; goes to the Editorial Standards page (/editorial-policy). */
+  howWeMake: "How we make this",
 } as const;
 
 /** Start here: the three journeys first, then the tools that support them. */

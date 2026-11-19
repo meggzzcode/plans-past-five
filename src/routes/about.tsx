@@ -4,6 +4,7 @@ import { site } from "@/config/site";
 import { ProsePage } from "@/components/pages/ProsePage";
 import { images } from "@/data/images";
 import { NAMES } from "@/components/layout/nav";
+import { PublishedBy } from "@/components/layout/PublishedBy";
 
 export const Route = createFileRoute("/about")({
   head: () =>
@@ -73,6 +74,7 @@ export const Route = createFileRoute("/about")({
         <Link to="/editorial-policy">editorial standards page</Link>, and our{" "}
         <Link to="/affiliate-disclosure">affiliate disclosure</Link> says how shopping links work.
       </p>
+      <PublishedBy />
       <div className="not-prose mt-10 flex flex-col items-start gap-1">
         <Link
           to="/hobby-finder"

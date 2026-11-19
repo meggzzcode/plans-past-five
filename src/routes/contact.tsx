@@ -3,6 +3,7 @@ import { seo, breadcrumbJsonLd } from "@/lib/seo";
 import { site } from "@/config/site";
 import { Link } from "@tanstack/react-router";
 import { ProsePage } from "@/components/pages/ProsePage";
+import { PublishedBy } from "@/components/layout/PublishedBy";
 
 export const Route = createFileRoute("/contact")({
   head: () =>
@@ -39,6 +40,7 @@ export const Route = createFileRoute("/contact")({
           <Link to="/saved">My Plans</Link>. None of it needs an account.
         </p>
       )}
+      <PublishedBy />
       <h2>Corrections</h2>
       <p>
         If something in a story is wrong or out of date, we want to know. Please include the page

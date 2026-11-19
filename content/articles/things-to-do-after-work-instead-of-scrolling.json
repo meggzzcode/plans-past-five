@@ -134,7 +134,7 @@
       "n": 9,
       "title": "Bake something to give away",
       "hobby": "baking",
-      "note": "Cookies are a forty-minute project, and giving half to a neighbor or coworker is the best part.",
+      "note": "Cookies are a forty-minute project, and giving half to a neighbor or coworker is half the fun.",
       "time": "60 min",
       "cost": "Pantry staples",
       "company": "Solo or with a friend"
@@ -249,7 +249,7 @@
       "n": 19,
       "title": "Join a library book club",
       "hobby": "book-clubs",
-      "note": "Libraries and bookstores often host free monthly book clubs. Showing up once is a perfectly fine start.",
+      "note": "Libraries and bookstores often host free monthly book clubs. Showing up once is a fine start.",
       "time": "90 min",
       "cost": "Free",
       "company": "Group"
