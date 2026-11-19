@@ -561,6 +561,144 @@ describe("search scenario matrix", () => {
   });
 });
 
+describe("planner: energy, duration, advance sign-ups and repeats", () => {
+  const base: PlanInput = {
+    when: "saturday",
+    length: "half-day",
+    vibe: "active",
+    who: "alone",
+    budget: "under50",
+    atHome: false,
+    setting: "any",
+    energy: "high",
+  };
+
+  it("Active / High energy never returns a low-energy idea (no yoga)", () => {
+    let n = 0;
+    for (const when of WHENS)
+      for (const length of lengthsFor(when))
+        for (const who of WHOS)
+          for (const vibe of VIBES) {
+            const plan = makePlan({ ...base, when, length, who, vibe, budget: "flexible" }, 0);
+            for (const s of plan.slots)
+              if (s.activity) {
+                n++;
+                expect(
+                  s.activity.energy,
+                  `${when} ${length} ${who} ${vibe} ${s.activity.id}`,
+                ).not.toBe("low");
+              }
+          }
+    expect(n).toBeGreaterThan(0);
+    const weeknight = makePlan(
+      { ...base, when: "weeknight", length: "evening", budget: "free" },
+      0,
+    );
+    expect(weeknight.ids).not.toContain("home-yoga");
+    bump("high-energy plan stops checked", n);
+  });
+
+  it("a half day is not one 30-minute item", () => {
+    const hard: PlanInput[] = [
+      { ...base, energy: "medium", setting: "indoor", who: "friend" }, // used to return only home-yoga (30 min)
+      { ...base, energy: "low", setting: "indoor", who: "friend" },
+      { ...base, vibe: "cozy", energy: "low", budget: "free" },
+      { ...base, vibe: "adventurous", energy: "medium", budget: "under25", setting: "outdoor" },
+    ];
+    for (const input of hard) {
+      const plan = makePlan(input, 0);
+      expect(plan.spanMinutes, JSON.stringify(input)).toBeGreaterThanOrEqual(
+        (plan.targetMinutes ?? 0) * 0.75,
+      );
+      expect(plan.filled, JSON.stringify(input)).toBeGreaterThan(1);
+      expect(plan.lengthNote, JSON.stringify(input)).toBeNull();
+    }
+  });
+
+  it("hard choices (who, budget, setting, energy) still hold when the vibe is widened to fill the time", () => {
+    for (const input of [
+      { ...base, energy: "medium", setting: "indoor", who: "friend" } as PlanInput,
+      { ...base, energy: "low", setting: "outdoor", who: "alone", budget: "free" } as PlanInput,
+    ]) {
+      const plan = makePlan(input, 0);
+      const cap = budgetCap(input.budget);
+      for (const s of plan.slots) {
+        const a = s.activity;
+        if (!a) continue;
+        expect(a.who).toContain(input.who);
+        if (input.setting !== "any" && a.setting !== "either")
+          expect(a.setting).toBe(input.setting);
+        expect(["low", "medium", "high"].indexOf(a.energy)).toBeLessThanOrEqual(
+          ["low", "medium", "high"].indexOf(input.energy!),
+        );
+      }
+      if (cap !== null) expect(plan.totalCost.max).toBeLessThanOrEqual(cap);
+    }
+  });
+
+  it("advance sign-up ideas (volunteer shifts) never appear in same-day, tonight or single-day plans", () => {
+    const advance = activities.filter((a) => a.advance).map((a) => a.id);
+    expect(advance).toContain("volunteer");
+    let n = 0;
+    for (const when of WHENS.filter((w) => w !== "weekend"))
+      for (const length of lengthsFor(when))
+        for (const who of WHOS)
+          for (const vibe of VIBES)
+            for (const seed of [0, 1, 2]) {
+              const plan = makePlan(
+                { ...base, when, length, who, vibe, energy: "any", budget: "flexible" },
+                seed,
+              );
+              n++;
+              for (const id of advance)
+                expect(plan.ids, `${when} ${length} ${who} ${vibe}`).not.toContain(id);
+            }
+    bump("plans checked for advance sign-ups", n);
+    for (const budget of ["free", "under25", "under50"] as const)
+      for (const company of ["solo", "social"] as const)
+        for (const energy of ["low", "medium", "high"] as const)
+          for (const minutes of TIMES)
+            for (const seed of [0, 1])
+              for (const s of tonightIdeas(
+                { minutes, energy, budget, company, setting: "either" },
+                seed,
+              ).suggestions)
+                expect(s.id).not.toBe("idea:volunteer");
+  });
+
+  it("never puts two ideas of the same kind (cooking, walking, painting ...) on one day", () => {
+    let n = 0;
+    for (const when of WHENS)
+      for (const length of lengthsFor(when))
+        for (const who of WHOS)
+          for (const vibe of VIBES)
+            for (const seed of [0, 1]) {
+              const plan = makePlan(
+                { ...base, when, length, who, vibe, energy: "any", budget: "flexible" },
+                seed,
+              );
+              const byDay = new Map<string, string[]>();
+              for (const s of plan.slots)
+                if (s.activity)
+                  byDay.set(s.day ?? "", [...(byDay.get(s.day ?? "") ?? []), s.activity.family]);
+              for (const [day, fams] of byDay) {
+                n++;
+                expect(new Set(fams).size, `${when} ${length} ${who} ${vibe} ${day}: ${fams}`).toBe(
+                  fams.length,
+                );
+              }
+            }
+    bump("plan days checked for repeated activity kinds", n);
+    // the reported case: a Saturday with a friend, bake and cook-together on the same day
+    const social = makePlan(
+      { ...base, vibe: "social", who: "friend", energy: "medium", length: "full-day" },
+      0,
+    );
+    const cooking = social.slots.filter((s) => s.activity?.family === "cooking");
+    expect(cooking.length).toBeLessThanOrEqual(1);
+  });
+});
+
 describe("scenario counts", () => {
   it("prints the totals for the report", async () => {
     // eslint-disable-next-line no-console

@@ -38,8 +38,8 @@ export const Route = createFileRoute("/terms")({
       </p>
       <h2>Links and affiliate relationships</h2>
       <p>
-        We link to third-party sites. {commissionStatement().long} We do not control
-        those sites and are not responsible for their content, prices, products or policies.
+        We link to third-party sites. {commissionStatement().long} We do not control those sites and
+        are not responsible for their content, prices, products or policies.
       </p>
       <h2>No warranty</h2>
       <p>

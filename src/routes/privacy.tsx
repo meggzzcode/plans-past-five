@@ -50,9 +50,8 @@ export const Route = createFileRoute("/privacy")({
         {commissionStatement().live
           ? "Some links to retailers such as Amazon are affiliate links. When you click one, the retailer may set its own cookies to record that you came from us. "
           : "Our links to retailers such as Amazon are ordinary links today. If they become affiliate links, the retailer may set its own cookies when you click one, to record that you came from us. "}
-        {commissionStatement().long} Those cookies are set by the retailer, under its own
-        privacy policy, not by us. See the{" "}
-        <Link to="/affiliate-disclosure">affiliate disclosure</Link>.
+        {commissionStatement().long} Those cookies are set by the retailer, under its own privacy
+        policy, not by us. See the <Link to="/affiliate-disclosure">affiliate disclosure</Link>.
       </p>
       <h2>Third-party links</h2>
       <p>

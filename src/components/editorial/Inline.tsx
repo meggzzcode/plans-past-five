@@ -62,7 +62,11 @@ export function Inline({ text }: { text: string }) {
             <a
               key={i}
               href={href}
-              rel={/(^|\.)amazon\.com(\/|$)/i.test(href.replace(/^https?:\/\//, "")) ? OUTBOUND_BUY_REL : "noopener noreferrer"}
+              rel={
+                /(^|\.)amazon\.com(\/|$)/i.test(href.replace(/^https?:\/\//, ""))
+                  ? OUTBOUND_BUY_REL
+                  : "noopener noreferrer"
+              }
               className={inlineLinkClass}
             >
               {l[1]}

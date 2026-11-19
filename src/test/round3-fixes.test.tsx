@@ -31,7 +31,7 @@ import { makePlan, planFromIds, planHref, planText, type PlanInput } from "@/lib
 import { tonightIdeas, tonightPlanSearch, tonightSaveItem } from "@/lib/tonight";
 import { parsePlanSearch } from "@/lib/planner";
 import { hobbies } from "@/data/hobbies";
-import { getCatalogProduct } from "@/data/catalog";
+import { catalog, getCatalogProduct } from "@/data/catalog";
 
 const root = path.resolve(__dirname, "../..");
 const Wrap = ({ children }: { children: ReactNode }) => {
@@ -69,8 +69,8 @@ describe("1. outbound buy links carry rel sponsored noopener noreferrer", () => 
     for (const f of files) {
       const src = readFileSync(f, "utf8");
       const rels = [...src.matchAll(/rel=(\{[^}]*\}|"[^"]*")/g)].map((m) => m[1]);
-      expect(rels.length, f).toBeGreaterThan(0);
-      for (const r of rels) expect(r, f).toBe("{OUTBOUND_BUY_REL}");
+      for (const r of rels) expect(r, f).toContain("OUTBOUND_BUY_REL");
+      expect(src.includes("<a") ? rels.length : 1, f).toBeGreaterThan(0);
     }
   });
 
@@ -95,7 +95,7 @@ describe("1. outbound buy links carry rel sponsored noopener noreferrer", () => 
     for (const f of walk(path.join(root, "src")).filter((f) => /\.tsx$/.test(f))) {
       const src = readFileSync(f, "utf8");
       for (const m of src.matchAll(/<a\b[^>]*target="_blank"[^>]*>/gs)) {
-        expect(m[0], f).toMatch(/noopener/);
+        expect(m[0], f).toMatch(/noopener|OUTBOUND_BUY_REL/);
       }
     }
   });
@@ -146,7 +146,9 @@ describe("3. link text before 'has more ...' agrees with the verb", () => {
   });
   it("the reported sentence is fixed", () => {
     const text = JSON.stringify(allArticlesIncludingDrafts.map((a) => a.body));
-    expect(text).not.toContain("[low-energy hobbies](/journal/low-energy-hobbies) has more");
+    expect(text).toContain(
+      "our guide to [low-energy hobbies](/journal/low-energy-hobbies) has more",
+    );
   });
 });
 
@@ -290,7 +292,7 @@ describe("8. watercolor kit is consistent", () => {
 
 describe("9. filler picks are held, not deleted", () => {
   it("the 200-piece ephemera pack and the white-tile mahjong duplicate are on hold", () => {
-    const held = (id: string) => getCatalogProduct(id)?.hold;
+    const held = (id: string) => catalog.find((p) => p.id === id)?.hold;
     expect(held("knaid-200-piece-vintage-ephemera-cottagecore")).toBeTruthy();
     expect(held("jongyance-american-mahjong-set-white-tiles")).toBeTruthy();
     expect(

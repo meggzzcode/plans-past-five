@@ -215,8 +215,8 @@ function Planner() {
               role="status"
               className="mt-5 max-w-xl border-2 border-dashed border-cherry bg-cream p-4 text-sm text-ink"
             >
-              <strong>Built around your tonight idea.</strong> It's in the plan. Change anything
-              and we'll plan from scratch.
+              <strong>Built around your tonight idea.</strong> It's in the plan. Change anything and
+              we'll plan from scratch.
             </p>
           )}
           {fromQuiz && (

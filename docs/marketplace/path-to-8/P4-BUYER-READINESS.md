@@ -1,0 +1,168 @@
+# P4: Buyer readiness and credibility, path to 8
+
+Status: RECOMMENDED plan (research, 2026-11-19). Not a listing, not financial or legal advice. Nothing here is published or offered without the owner's approval. All reviewer scores are SIMULATED opinions from AI personas, not market data.
+
+Scope: how to raise "Buyer readiness" (simulated R2-5 = 6, R3-5 = 6; the task brief cites about 5.2 across rounds) to 8 or more, and lift "Business credibility" (4) as far as is honestly possible for a pre-revenue site. Also: honest valuation.
+
+## 1. Bottom line
+
+1. Buyer readiness 8 is reachable with owner-controlled facts, no traffic needed. Every blocker the two reviewers named is a verifiable fact or a handover artifact: live URL, owned domain, working mailbox, image rights resolved, CMS proven, trademark knockout done, legal pages reviewed, fresh-clone reproducibility. Eight of those nine are cheap.
+2. Business credibility cannot honestly reach 8 pre-revenue. The reviewers wrote "a higher price would require demonstrated traction, not more documents." Honest ceiling for credibility is about 5.5 to 6.5, only with a live URL, a few weeks of Search Console data and a named human owner. Do not chase more than that.
+3. Price: expect "low hundreds to low thousands of dollars". NO verified completed sale of a comparable pre-revenue site was found (see section 7). The best-supported ceiling is the buyer's replacement cost, and the best third-party guide places polished 25+ article sites at roughly $1,500 to $3,000 only when 6 to 12 months old and indexed. A zero-day-old site should plan below that.
+4. The single biggest honest lever is time-stamped evidence: deploy, get indexed, connect Search Console, and wait three to four weeks before listing. Evidence of "live and indexed with data" is worth more than any additional document.
+
+## 2. Marketplace facts (what the venue actually requires)
+
+| Fact | Source and read date | Confidence |
+|---|---|---|
+| Empire Flippers requires at least $2,000 per month net profit averaged over 12 months, 12 months of revenue history, GA or Clicky for 3+ months; affiliate/Amazon sites must have used the same domain 12+ months. Pre-revenue and starter sites are not mentioned; the page suggests lower-profit businesses go to its sister marketplace Money Nomad. Page dated 2025-08-04. Result: Empire Flippers is NOT an option. | https://empireflippers.com/business-listing-requirements/ (fetched 2026-11-19) | High (official page) |
+| Flippa accepts pre-revenue and starter sites. Starter/new/non-revenue assets: maximum asking or reserve price $9,999 USD (search-result snippet of the official support page). Older Flippa support pages conflict (see PRICING-STRATEGY.md); the live listing flow decides. | https://support.flippa.com/hc/en-us/articles/12856932906767-Listing-sale-pricing (direct fetch returned 403; read via search snippet, 2026-11-19) | Medium |
+| Flippa may require proof of domain registration ownership (TXT record or WHOIS email) and ID verification; seller identity checks do not validate asset ownership or financial claims. | Flippa support (search snippet) https://support.flippa.com/hc/en-us/articles/5974444302351 plus seller forum, 2026-11-19 | Medium |
+| Flippa does not allow a "partial sale" where the seller keeps operating the domain/site and the buyer runs a subfolder or account on it. Implication: the buyer must receive full ownership of repo, host project and domain. | Flippa support (search snippet), 2026-11-19 | Medium |
+| Flippa fees conflict across sources: listing from $29 (60 days, non-refundable); success fee 3% to 10% depending on source and price band. Re-read the live pricing page at listing time. | Third-party: https://gauravtiwari.org/flippa-value-sell-a-website-with-no-revenue (updated 2026-08-31, read 2026-11-19); earlier Cowork notes in FLIPPA-RESEARCH.md | Low to medium |
+| Motion Invest wants about 3 months of earnings data; Acquire.com is mostly SaaS and discourages pre-revenue. Not viable. | FLIPPA-RESEARCH.md (Cowork, 2026-11-18), third-party | Low |
+| Existing Flippa pre-revenue "turnkey" listings ask $9,999 and describe assets (domain, site, content library, logo, setup) while stating the brand "does not currently generate revenue". Whether any sold: NOT FOUND (final prices are behind login). | Listing titles via search, 2026-11-19; pages themselves returned 403 | Low |
+
+Conclusion: Flippa is the only realistic mainstream marketplace. Its buyers are used to pre-revenue assets and judge on asset list, ownership proof and honesty.
+
+## 3. Why turnkey sites fail diligence (and our exposure)
+
+Sourced from practitioner checklists (secondary, read 2026-11-19): https://investors.club/website-due-diligence-checklist/ , https://hooshmand.net/?p=4800 , https://organicarbitrage.pages.dev/articles/website-acquisition-due-diligence-checklist . These are vendor/broker blogs, not authorities; the items are common-sense and match the reviewers' own lists.
+
+| Common failure | Our exposure | Fix class |
+|---|---|---|
+| Traffic or earnings claims that cannot be verified (buyers want read-only Search Console and Analytics access, not screenshots) | None claimed. Keep it that way. | Do not claim; offer viewer access only after data exists |
+| Not indexed, or no proof of indexing | Not live | Deploy plus Search Console |
+| Domain or hosting not in seller's name or not transferable | Domain "not owned" per reviewers | Register domain, registrar-account push or transfer-code readiness |
+| Plagiarism and AI-content flags | Content is AI-assisted; images all AI | Disclose; run plagiarism scan; named human reviewer |
+| Image licence problems | All 14 images AI; terms unverified in repo | Section 5 below |
+| Affiliate accounts not transferable | Correctly disclosed | Keep disclosure |
+| Stale or contradictory docs (test counts, draft counts, README boilerplate) | Both reviewers noticed | Doc sync, one buyer index |
+| Build artifacts and node_modules in the handover | Noted by both | Clean export |
+
+Google context for the AI-content risk: Google's own guidance says AI content is acceptable if it adds value and is fact-checked; generating many pages "without adding value for users" may violate the scaled content abuse policy; it recommends explaining how content was created and adding image licence metadata. Source: https://developers.google.com/search/docs/fundamentals/using-gen-ai-content (fetched 2026-11-19; page shows no last-updated date). Implication: an honest "how this content was made and checked" page, plus a named reviewer, is both a Google and a buyer trust asset.
+
+## 4. "Staging live" evidence a buyer values
+
+What counts (ranked by buyer weight):
+1. Live URL on the owned domain, HTTPS valid, all journeys working.
+2. Search Console property verified in the seller's name, sitemap submitted, indexed-page count visible. Google says new sites can take "up to a week" to show data and data lags 2 to 3 days (https://support.google.com/webmasters/answer/96568 , fetched 2026-11-19). Practitioner reports say consistency can take 2 to 3 weeks (secondary, not official). Plan on 3 to 4 weeks before listing so there are visible weeks of data.
+3. Uptime record (free external monitor, Netlify status): a 2 to 4 week log is plausible; label it as seller-run monitoring.
+4. Lighthouse/PageSpeed numbers labelled as LAB data. PSI's own docs: lab data is a simulated single Lighthouse run (mid-tier mobile profile), scores vary run to run; field (CrUX) data covers the previous 28 days and appears only when enough real Chrome users exist, so a new site will show none (https://developers.google.com/speed/docs/insights/v5/about , fetched 2026-11-19). Say "lab, not field; no real-user data yet".
+5. One crawl report (e.g. free crawler) showing no broken links, canonical and sitemap correct.
+
+Constraint: Netlify free plan is credit limited and deploys only on a `[deploy]` marker (netlify.toml, read 2026-11-19). Batch fixes and release once or twice, not per commit. Free-plan current limits: NOT re-verified in this pass; re-read the Netlify pricing page before the release.
+
+## 5. Legal and IP package
+
+### 5.1 AI image licences (the reviewers' second-biggest blocker)
+
+Lovable (images were generated with Lovable's tool per docs/IMAGE-LICENSES.md):
+- Terms of Service effective Aug 15, 2026, last updated Aug 28, 2026 (fetched 2026-11-19 via https://lovable.dev/terms; the fetch tool summarises, so quotes should be re-checked by a human): "As between us, you own your Customer Data" and "you also own any AI Output generated for you through the Services", "subject to any third-party rights in the underlying models, training data, or outputs." Licence to use the Services is "limited, non-exclusive, non-transferable, worldwide, revocable" for "personal or internal business purposes". The Terms themselves may not be assigned without Lovable's written consent. Lovable receives a perpetual licence to use Customer Data and may train models unless you opt out.
+- Reading: ownership of output sits with the user, so handing the images to a buyer is supported by the text; but the buyer cannot take over the Lovable account/subscription, and "subject to third-party rights" means no warranty of non-infringement. Not legal advice; a lawyer should confirm. Action: save a dated PDF of the Terms version in force and note the opt-out status. Which plan and which Terms applied on the generation dates: NOT FOUND (owner must check account history).
+- Enterprise "Product Terms" (https://lovable.dev/product-terms, Feb 2026) state ownership of AI Output more explicitly; only relevant if the account is on that tier. Not read in full.
+
+Canva (only relevant if any asset used Canva AI):
+- Official Canva AI Product Terms (https://www.canva.com/policies/ai-product-terms/ ; direct fetch returned 403, so this is from search results of official pages, 2026-11-19): as between you and Canva you own your Output; use for any lawful purpose subject to the terms; the Magic Media help page warns copyright for AI content varies by country and you may not have exclusive rights. Third-party sites claim no IP indemnity outside Enterprise: UNVERIFIED. Effective date shown in search result: 26 June 2026.
+- Fonts: SIL OFL (already documented).
+
+Copyright reality (secondary commentary on the US Copyright Office Part 2 report, Jan 29, 2025; I could not extract the report text itself): prompts alone generally do not make someone an author of AI output; human selection, arrangement and modification can be protected. Source: https://ipwatchdog.com/2025/01/29/part-two-copyright-office-ai-report-says-creative-prompting-doesnt-constitute-authorship/ and https://copyrightalliance.org/ai-report-part-2-copyrightability/ (read 2026-11-19). Implication: never say "copyrighted images" or "exclusive". Say "AI-generated; owned as between seller and tool vendor per the vendor's terms; no exclusivity or registrable copyright is promised."
+
+Cheapest way to make the image blocker go away: (a) written terms evidence as above, AND (b) replace or supplement the hero and shop images that carry synthetic faces with images the owner can warrant, to cut the 14-image repetition too. Options with no verified licence claim: owner-taken photos (best; can be assigned cleanly), or stock under a licence read and archived at download time. I did NOT verify any specific stock site's terms; do not state one in the listing until read.
+
+### 5.2 Trademark
+A knockout search (free USPTO database) only tells you whether to keep investigating, not whether a name is safe; common-law use is not covered (https://tmexpress.com/trademark-search/ and https://upcounsel.com/trademark-clearance-search , secondary, read 2026-11-19). A professional clearance search is reported at $300 to $1,500 (secondary). Honest package: run and save a dated knockout search (USPTO, state, domain, major social handles, Google), write the result as "knockout only, not clearance", and sell "as-is, no trademark warranty". Do not say "trademark-clear".
+
+### 5.3 Assignment agreement and domain
+- Asset purchase agreement terms already drafted in HANDOVER-TERMS-SUGGESTION.md. Add: assignment of copyright in code, copy, logos, pins; statement on AI images; no traffic or revenue warranty; no-clone/non-compete clause (both simulated reviewers asked); 30-day Q&A window.
+- Amazon Associates: the Operating Agreement says "You may not assign this Agreement ... without our express prior written approval" (https://affiliate-program.amazon.com/help/operating/agreement , fetched 2026-11-19). Keep "buyer applies; master/seller accounts are not transferred".
+- Domain: Flippa-style ownership verification needs the seller to own it in a registrar account; transfer lock and EPP code process documented. Cost typical but UNVERIFIED here: a standard .com is on the order of a few to tens of dollars a year; check the registrar's price at purchase.
+- Legal review of Privacy/Terms: cost NOT FOUND; get a quote. If no review, label the pages "starter text, buyer to have reviewed" (already honest).
+
+## 6. Documentation and handover expectations
+Practitioner checklists expect: ownership proof, access list, read-only analytics access, a clean repo, a handover call, and a short support window (secondary sources above). The repo already has 27 buyer docs and a 20-step checklist; the reviewers' complaint is drift and volume, not absence. Needed: one authoritative buyer index; corrected counts; no internal jargon ("Cowork C17", "PENDING COWORK") in buyer-facing files; screen-recorded walkthroughs (suggest: 10-minute tour, 5-minute CMS edit, 5-minute deploy and rollback, 5-minute affiliate activation); SOP set already exists; 30-day Q&A support stated in the listing terms as a seller offer, not a guarantee of outcomes.
+
+## 7. Price benchmarks (asking separated from sold)
+
+VERIFIED COMPLETED SALES of comparable pre-revenue content/affiliate starter sites: NOT FOUND. Flippa shows final prices only behind login or on revenue-earning closed deals (https://flippa.com/lps/closed-deals returned 403; search snippet shows only larger revenue businesses, e.g. a KDP portfolio sold for $330,000, not comparable). 
+
+Asking (not sold):
+- Flippa pre-revenue listings at $9,999 (the platform cap): asking only, sale outcome unknown.
+- Third-party starter-template pages quoted at $99 to $139 (secondary, unverified).
+
+Seller-reported or guide estimates (NOT verified sales):
+- Gaurav Tiwari guide (published 2021-12-13, updated 2026-08-31, read 2026-11-19): most pre-revenue sites a few hundred to about $3,000; under $500 template pages with no indexed content; $500 to $1,500 for 15 to 25 readable articles, indexed pages, clean setup, 3 to 6 months old; $1,500 to $3,000 for 25+ articles, real design, transferable brand files, 6 to 12 months old; above $3,000 needs traffic, revenue or a premium domain. The guide states it has no sold-price dataset and its examples are hypothetical.
+- Earlier Cowork anecdotes (FLIPPA-RESEARCH.md): about $1,400 (1-year-old Amazon-affiliate site), $350 and $800 starter sites, all self-reported.
+
+What moves price (supported by the guide and by both reviewers): indexed pages, publishable content without rewrite, transferable brand files in one place, written operating facts, clean ownership, and absence of neglect signs. Unverifiable signals (projections, empty email forms, authority scores) reduce trust.
+
+Honest planning range for this asset: low hundreds to roughly $1,500 at launch without data; up to the low thousands only with several weeks of indexing evidence, rights resolved and live-proven CMS. Net of Flippa fees (guide: listing $29 non-refundable plus roughly 10% success fee under $50k; unresolved across sources) the seller keeps roughly 83 to 88%. Never use revenue multiples. A reserve or asking price is the owner's call.
+
+## 8. Ranked checklist to 8
+
+Effort codes: CC = Claude Code (repo work), CW = Cowork (research or browser/account tasks), OWN = owner action. Effects are my ESTIMATES of the simulated Buyer readiness score, not measured; they are not additive beyond the 8.5 ceiling.
+
+| # | Action | Who | Cost | Time | Est. effect on Buyer readiness | Evidence that closes it |
+|---|---|---|---|---|---|---|
+| 1 | Register domain in owner's registrar account; set site.url; screenshot registrar (hide personal data) | OWN | domain yearly fee (verify at purchase) | 30 min | +0.7 | Registrar record in seller name; domain lock info |
+| 2 | Create role mailbox (e.g. hello@ on the domain or a free alias) and put it on Contact page and site.ts; legal owner name and jurisdiction in site.ts | OWN then CC | low or free (verify) | 1 hr | +0.4 | Contact page shows email; test message received |
+| 3 | Single release deploy to Netlify free plan with `[deploy]` marker; connect domain; HTTPS; run C9 QA on live | CC + OWN | free plan (credit limited) | half day | +1.0 | Live URL; test results dated |
+| 4 | Search Console and Bing property in owner's account, sitemap submitted, indexing requested for key pages; then wait 3 to 4 weeks | OWN (CW assist) | free | 1 hr plus wait | +0.6 | Console screenshots with date range; indexed count |
+| 5 | Image rights pack: archive Lovable Terms (version/date), list each image, generation date, tool, plan (check account); note opt-out; AI disclosure on About | OWN + CC | free | 2 hrs | +0.8 | IMAGE-AND-ASSET-RIGHTS.md updated with dated evidence |
+| 6 | Reduce image risk: replace hero and shop images showing synthetic faces and repeated images with owner-taken photos or licence-read stock | OWN | stock fees or free | 1 to 2 days | +0.4 | Per-image licence files; no repeats on article pages |
+| 7 | Prove Pages CMS: record a real edit (article text and new image upload) through deploy; fix `public/uploads` vs `src/assets` mismatch; document fallback | CW then CC | free | 2 to 3 hrs | +0.7 | Screen recording; dated entry in CMS-SETUP.md |
+| 8 | State clearly what is code-only (hobbies, products, config) or add CMS collections for them | CC | free | 1 day | +0.3 | EDITING-WITHOUT-CODE.md accurate; listing says so |
+| 9 | Trademark knockout search with saved results; "as-is" clause | CW or OWN | free (pro clearance $300 to $1,500 optional) | 1 hr | +0.3 | Dated search log |
+| 10 | Legal review quote for Privacy/Terms/affiliate disclosure, or keep "starter text" label | OWN | NOT FOUND | days | +0.3 | Reviewed pages or explicit label |
+| 11 | Named editorial owner and "how this content is made and checked" page (AI-assisted, human review, sources) | OWN + CC | free | 2 hrs | +0.2 (credibility +0.5) | About page shows named person; policy page |
+| 12 | Clean handover export (no node_modules/build output/AI tool folders as needed), fresh-clone reproduction log (bun install frozen, vitest, tsc, eslint, build) | CC | free | 2 hrs | +0.4 | Dated log; archive checksum |
+| 13 | Doc sync: README rewrite, counts, remove internal jargon, one buyer index | CC | free | 3 hrs | +0.3 | START-HERE matches repo |
+| 14 | Videos: tour, CMS edit, deploy/rollback, affiliate activation | OWN or CW | free | 3 hrs | +0.2 | Links in handover |
+| 15 | Uptime monitor and Lighthouse/PSI lab report, labelled "lab, no field data" | CC | free | 1 hr | +0.2 (credibility +0.3) | Dated report |
+| 16 | Pinterest account with a few real pins live; note impressions only if real | OWN | free | ongoing | credibility +0.2 | Screenshot, no claims beyond what shows |
+
+Rough sum: 1 to 7 and 12 to 13 alone take 6.0 to about 8.0 to 8.5. Items 8 to 11 and 14 to 16 are insurance.
+
+## 9. Honest ceiling and exact facts needed to credibly say "8"
+
+Buyer readiness 8 means ALL of these are true and evidenced on the listing date:
+1. Live URL on a domain the seller owns, HTTPS, tested journeys (dated).
+2. Domain in seller's registrar account, transferable; working contact mailbox.
+3. Search Console verified with 3+ weeks of data and a sitemap indexed count; whatever the count is, state it exactly.
+4. AI-image terms archived with dates, AI disclosure on site, no claim of exclusivity or copyright; repeated images reduced.
+5. A recorded, successful CMS edit through deploy; code-only parts plainly listed.
+6. Trademark knockout log; "as-is" clause.
+7. Fresh-clone build reproduced on a clean export; README and counts accurate.
+8. Handover terms with assignment, no-clone clause and 30-day Q&A.
+9. Privacy/Terms either reviewed or labelled starter text.
+
+Credibility ceiling about 6 (not 8): reasons are no traffic, no revenue, no audience, no domain age, an anonymous brand, and an AI-assisted workflow. A named owner, live indexed pages and honest "how made" disclosure move it, but only genuine traffic, sign-ups, or earnings could move it to 8, and those cannot be claimed or manufactured.
+
+## 10. What NOT to claim
+
+Traffic, rankings, revenue, earnings, projections, subscribers; "monetized" or "income-ready"; Amazon Associates account included; "indexed" before Search Console shows it; "no-code, fully editable" (hobbies, products, config need code); "original/licensed/exclusive/copyrighted images"; "trademark-clear"; "legally reviewed"; "fully fact-checked" beyond what was done; "human-written"; "Lighthouse 100" without "lab data" and the date; "uptime 99.9%" without the monitor record; any comparable-sales figure; "passive income"; "turnkey, hands-off" without listing what the buyer must still create (accounts, affiliate, mailbox); that Flippa or Empire Flippers has approved anything.
+
+## 11. NOT FOUND or unverified in this pass
+- Verified completed sales of comparable pre-revenue sites: NOT FOUND.
+- Flippa's current official page text on pre-revenue/fees/verification: pages returned 403 to the fetch tool; relied on search snippets and earlier Cowork notes. Re-read live at listing time.
+- Canva official AI Product Terms full text (403); Canva indemnity position: NOT FOUND officially.
+- Copyright Office report full text (PDF fetch failed); secondary commentary only.
+- Lovable plan/terms in force on each image generation date: NOT FOUND (owner account history).
+- Cost of legal review of Privacy/Terms; domain, mailbox and stock prices: NOT verified here.
+- Netlify free-plan limits as of today: NOT re-read in this pass.
+
+## 12. Sources (URL, read 2026-11-19)
+- https://empireflippers.com/business-listing-requirements/ (page dated 2025-08-04)
+- https://support.flippa.com/hc/en-us/articles/12856932906767-Listing-sale-pricing (snippet only)
+- https://support.flippa.com/hc/en-us/articles/5974444302351-Businesses-and-digital-assets-which-cannot-be-listed-for-sale-on-Flippa (snippet only)
+- https://gauravtiwari.org/flippa-value-sell-a-website-with-no-revenue (updated 2026-08-31)
+- https://lovable.dev/terms (effective 2026-08-15, updated 2026-08-28) and https://lovable.dev/product-terms (snippet)
+- https://www.canva.com/policies/ai-product-terms/ and https://www.canva.com/help/using-magic-media/ (snippets only)
+- https://developers.google.com/search/docs/fundamentals/using-gen-ai-content
+- https://developers.google.com/speed/docs/insights/v5/about
+- https://support.google.com/webmasters/answer/96568
+- https://affiliate-program.amazon.com/help/operating/agreement
+- https://ipwatchdog.com/2025/01/29/part-two-copyright-office-ai-report-says-creative-prompting-doesnt-constitute-authorship/ (secondary)
+- https://tmexpress.com/trademark-search/ (secondary)
+- https://investors.club/website-due-diligence-checklist/ , https://hooshmand.net/?p=4800 (secondary)
+- Repo: docs/marketplace/TURNKEY-READINESS.md, reviews2/R2-5-TURNKEY-SITE-BUYER.md, reviews3/R3-5-TURNKEY-SITE-BUYER.md, FLIPPA-RESEARCH.md, PRICING-STRATEGY.md, netlify.toml.

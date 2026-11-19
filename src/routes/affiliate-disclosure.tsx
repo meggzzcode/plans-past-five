@@ -41,15 +41,14 @@ export const Route = createFileRoute("/affiliate-disclosure")({
               .filter((e) => e.id !== "amazon")
               .map((e) => (
                 <p key={e.id}>
-                  Some links go to {e.retailer} through the {e.network} affiliate program. {commissionStatement().long}
+                  Some links go to {e.retailer} through the {e.network} affiliate program.{" "}
+                  {commissionStatement().long}
                 </p>
               ))}
             <p>{SHOP_LINK_FACTS.neutral}</p>
           </>
         ) : (
-          <p>
-            Our shopping links are ordinary Amazon links. {commissionStatement().long}
-          </p>
+          <p>Our shopping links are ordinary Amazon links. {commissionStatement().long}</p>
         )}
         <h2>What the buttons do</h2>
         <ul>

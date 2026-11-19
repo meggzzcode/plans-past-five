@@ -151,7 +151,10 @@ function fromActivity(a: Activity): Candidate {
     outdoor,
     social: a.who.some((w) => w !== "alone"),
     solo: a.who.includes("alone"),
-    tonight: !a.advance && tonightOk({ kind: "idea", parts: a.parts, title: a.text, firstStep }),
+    tonight:
+      !a.advance &&
+      a.at.some(([, to]) => to >= 17 * 60) &&
+      tonightOk({ kind: "idea", parts: a.parts, title: a.text, firstStep }),
     needsOthers: needsOthersWording.test(`${a.text} ${firstStep}`),
   };
 }
