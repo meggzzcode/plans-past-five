@@ -43,3 +43,7 @@ Recorded at the bottom of this file after the merge (see "Merge record").
 
 ## After a8ee2f7
 Narrow follow-up fixes (share consistency, dollar chips, heading levels, 404 title, long meta titles, contact page test) and the re-run of the blind reviews on the new build are recorded in `FINAL-FIXES.md` and the updated review summaries. The final tested commit is named in the Merge record.
+
+## Merge record
+- 2026-11-19: owner approved the merge. `main` fast-forwarded from 52f70ce to bfda832 (release branch `claude/vibrant-dirac-amdf7r`, 79 commits, no conflicts).
+- Release deploy: one marker commit follows this record (owner's "go" given 2026-11-19).
