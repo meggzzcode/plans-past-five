@@ -1,5 +1,15 @@
 # Domain and email setup: planspastfive.com (2026-11-19)
 
+## STATUS (2026-11-19): DONE except the delivery test
+- Bought by Megan, Namecheap order 220011258: domain $12.08 + $0.20 ICANN, Private Email Launch $14.88, domain privacy free. Total $27.16.
+- Domain registered 2026-11-19, expires 2027-11-19. Domain and Private Email auto-renew both OFF (renewal falls to the buyer; first year is covered).
+- Contact verification cleared (Domain List shows ACTIVE, no alert).
+- Mailbox hello@planspastfive.com created (1 of 1 mailboxes); alias subscriptions@planspastfive.com added to it (1 of 10 aliases). Password set by Megan, not recorded.
+- DNS Mail Settings = Private Email (automatic MX/SPF). No manual records. Nameservers unchanged.
+- Renewal prices: domain $15.98 list (+ICANN), Private Email Launch $14.88 is unconfirmed on an official page.
+- STILL OPEN: send/receive test to hello@ and subscriptions@ (owner login needed), then set site.contactEmail. Keep subscriptions@ unpublished.
+- The sections below are the original pre-purchase plan, kept for history.
+
 Same pattern as Paws & Passage: domain and mailbox both at Namecheap, DNS stays at Namecheap.
 Note: the site name is planspastfive.com (not plansafterfive.com); confirmed with Megan.
 

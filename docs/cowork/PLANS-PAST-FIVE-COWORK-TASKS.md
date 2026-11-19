@@ -89,7 +89,7 @@ Open each link in docs/content/CANVA-ASSETS.md, download the largest original, s
 Prepare (do not run on real people without the owner): use docs/marketplace/USABILITY-TEST-SCRIPT.md. If the owner approves, run it with 3-5 real women and record results without names.
 
 ## C15 Contact email and corrections inbox (owner action, Cowork helps)
-The owner creates hello@ on the chosen domain; Cowork sends and receives a test message both ways in the owner's mailbox and reports. Claude Code publishes the address only after that passes.
+UPDATE 2026-11-19: hello@planspastfive.com and the alias subscriptions@ already exist (one mailbox, DNS automatic). Create and buy nothing. Cowork, with the owner logged in, sends and receives a test message both ways in the owner's mailbox and reports. Claude Code publishes the address only after that passes.
 
 ## C16 Source check of the 4 original published articles and the 5 drafts
 Finish C4 for hobbies-to-try-when-life-feels-like-work-sleep-repeat, things-to-do-after-work-instead-of-scrolling, creative-hobbies-you-can-start-at-home, how-to-start-junk-journaling, and the 5 drafts. Output docs/content/verification/<slug>.md as before.
