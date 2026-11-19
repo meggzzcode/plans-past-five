@@ -186,7 +186,7 @@ code{ font-family:ui-monospace,Menlo,monospace; font-size:11px; background:rgba(
         <li><b>Six editorial sections</b> plus a Journal of articles</li>
         <li><b>Hobby directory:</b> 36 hobbies with filters and profiles</li>
         <li><b>Four interactive tools</b> and a saved-items page</li>
-        <li><b>Off Duty Essentials:</b> 6 shopping collections</li>
+        <li><b>Off Duty Essentials:</b> 8 shopping collections</li>
         <li><b>Trust pages:</b> editorial policy, methodology, corrections, affiliate disclosure, privacy, terms</li>
       </ul>
       <div class="card" style="margin-top:auto"><b>Stack:</b> TanStack Start (React 19, TypeScript, Tailwind v4), built with Vite and Bun. Frontend only: no database, accounts, payments or server secrets. Saved items live in the visitor's browser.</div>
@@ -217,17 +217,17 @@ code{ font-family:ui-monospace,Menlo,monospace; font-size:11px; background:rgba(
 <section class="slide">
   <div class="gingham"></div>
   <p class="kicker">05 · Content inventory</p>
-  <h2>Four published. <em>Drafts are drafts.</em></h2>
+  <h2>27 published, 5 drafts. <em>None of it deployed.</em></h2>
   <div class="body">
     <div class="col">
       <div class="grid2">
-        <div class="card"><div class="stat">4</div><b>published articles</b><p class="cap" style="margin:0">Live in the Journal and the sitemap.</p></div>
-        <div class="card"><div class="stat">28</div><b>drafts awaiting verification</b><p class="cap" style="margin:0">Written, status "draft", never shown publicly until sources are checked.</p></div>
+        <div class="card"><div class="stat">27</div><b>published articles</b><p class="cap" style="margin:0">Set to published on the branch, not deployed. 23 source-checked by Cowork; the 4 originals are not yet.</p></div>
+        <div class="card"><div class="stat">5</div><b>drafts</b><p class="cap" style="margin:0">Source-checked, not ready. Status "draft"; not shown publicly.</p></div>
         <div class="card"><div class="stat">36</div><b>hobby profiles</b></div>
         <div class="card"><div class="stat">2</div><b>outline-only topic stubs</b><p class="cap" style="margin:0">Planned, no body written.</p></div>
       </div>
-      <p style="margin-top:10px">Drafts carry research briefs and a list of claims to verify (<code>coworkChecks</code>). The plan is to flip an article to "published" only after those checks against sources pass (SOP in <code>docs/SOP-publish-article.md</code>).</p>
-      <p class="note">Counts read from src/content on 2026-11-19. The target roadmap is 30 articles and a 50-topic list; that is a plan, not inventory.</p>
+      <p style="margin-top:10px">Cowork source-checked 28 articles on 2026-11-18 (<code>docs/content/verification/</code>); the 23 that passed were published, the 5 that did not stay drafts. The 4 originally published articles still need that check (Cowork task C4).</p>
+      <p class="note">Counts read from src/content on 2026-11-19. Published means source-checked and set to published, not live. The target roadmap is 30 articles and a 50-topic list; that is a plan, not inventory.</p>
     </div>
     <div class="col"><div class="shot" style="flex:1"><img src="screenshots/journal-index-desktop.jpg" alt="Journal index"></div><p class="cap">The Journal index (published articles only).</p></div>
     <div class="col"><div class="shot" style="flex:1"><img src="screenshots/article-junk-journaling-desktop.jpg" alt="Published article"></div><p class="cap">One published article: how to start junk journaling.</p></div>
@@ -274,8 +274,8 @@ code{ font-family:ui-monospace,Menlo,monospace; font-size:11px; background:rgba(
     <div class="col w2"><div class="shot" style="flex:1"><img src="screenshots/shop-index-desktop.jpg" alt="Shop index"></div></div>
     <div class="col"><div class="shot" style="flex:1"><img src="screenshots/shop-collection-desktop.jpg" alt="Collection"></div><p class="cap">A collection page.</p></div>
     <div class="col n">
-      <ul><li><b>6</b> collections</li><li><b>36</b> product-type records</li><li>Starter "kits" are editorial lists, not bundles</li><li>Shopping checklist the visitor can keep</li></ul>
-      <div class="card" style="margin-top:auto"><span class="tag red">Honest label</span><p style="margin:6px 0 0;font-size:11.5px">The site sells nothing. Records name product types; verified products and links are a pending step. Images are illustrative styling, no retailer images.</p></div>
+      <ul><li><b>8</b> collections</li><li><b>36</b> product-type records</li><li>Starter "kits" are editorial lists, not bundles</li><li>Shopping checklist the visitor can keep</li></ul>
+      <div class="card" style="margin-top:auto"><span class="tag red">Honest label</span><p style="margin:6px 0 0;font-size:11.5px">The site sells nothing. Records name product types; 37 verified Amazon products (listing-checked, not tested by us) sit alongside them, with ordinary non-affiliate links. Images are illustrative styling, no retailer images.</p></div>
     </div>
   </div>
   <div class="foot"><span>Source: src/data/products.ts, kits.ts, docs/IMAGE-LICENSES.md</span><span>Shopping</span></div>
@@ -336,7 +336,7 @@ code{ font-family:ui-monospace,Menlo,monospace; font-size:11px; background:rgba(
       <ul>
         <li><b>Per-page title, description, canonical, Open Graph</b>; a test fails on duplicates or gaps</li>
         <li><b>JSON-LD:</b> Organization, Article, BreadcrumbList</li>
-        <li><b>Server-rendered HTML</b>, verified on a production build</li>
+        <li><b>Server-rendered output</b> (production build and live QA not yet recorded)</li>
         <li><b>sitemap.xml</b> from published pages only; robots.txt in place</li>
         <li><b>Draft and thin pages are noindex</b> or excluded</li>
         <li><b>Security headers file</b> and CI plus a weekly site-health workflow</li>
@@ -381,7 +381,7 @@ code{ font-family:ui-monospace,Menlo,monospace; font-size:11px; background:rgba(
       <ul>
         <li><b>Affiliate links</b> on buying guides and kit lists, once you hold approved accounts of your own</li>
         <li><b>Pinterest and search</b> as discovery channels, using the prepared pins and verified articles</li>
-        <li><b>Publishing the 28 drafts</b> after source verification</li>
+        <li><b>Revising and publishing the 5 drafts</b>, and source-checking the 4 original articles</li>
         <li><b>Later, possibly:</b> email list, display ads or sponsorships (not planned or researched)</li>
       </ul>
     </div>
@@ -390,7 +390,7 @@ code{ font-family:ui-monospace,Menlo,monospace; font-size:11px; background:rgba(
         <ul style="margin-top:6px">
           <li>Content-site growth is slow and uncertain</li>
           <li>Program approval, terms and commissions are set by the programs</li>
-          <li>Drafts need verification before publishing</li>
+          <li>The 4 original articles are not yet source-checked; 5 drafts are not ready</li>
           <li>Thin or AI-assisted content may be treated skeptically by search engines</li>
         </ul>
       </div>
@@ -411,7 +411,7 @@ code{ font-family:ui-monospace,Menlo,monospace; font-size:11px; background:rgba(
         <ul style="margin-top:6px">
           <li>Complete site source code and tests</li>
           <li>Brand system, logos, brand library, fonts under OFL</li>
-          <li>4 published articles, 28 drafts and research briefs</li>
+          <li>27 published articles, 5 drafts and research briefs</li>
           <li>36 hobby profiles, 8 collections, 4 tools</li>
           <li>88 Pinterest pin images, CSV and a 90-day schedule</li>
           <li>Buyer, content, commerce and marketing documentation</li>

@@ -6,7 +6,7 @@ This score measures how ready the site is to be handed to a buyer. It is separat
 
 ## Method
 
-- Each category has a fixed weight (from the owner's plan). Each category has objective completion criteria. A criterion scores 1 (done and evidenced), 0.5 (partly done, reason given) or 0 (not done or not evidenced). The published-articles criterion is scored proportionally (4 of 30) and the pins-on-published-content criterion proportionally (23 of 88).
+- Each category has a fixed weight (from the owner's plan). Each category has objective completion criteria. A criterion scores 1 (done and evidenced), 0.5 (partly done, reason given) or 0 (not done or not evidenced). The published-articles criterion is scored proportionally (27 of 30) and the pins-on-published-content criterion proportionally (23 of 88).
 - Category percentage = points / criteria. Weighted points = percentage x weight. Total = sum of weighted points out of 100.
 - Conservative rules applied: drafts awaiting source verification do not count as published; unverified products do not count; no domain, host, analytics or affiliate account means those criteria score 0; something this worker did not run itself and could not see evidence for scores 0 or 0.5.
 - This is a checklist tally, not an arbitrary score. Change a criterion and the arithmetic changes with it.
@@ -19,16 +19,16 @@ Evidence used: commits (`git log --oneline`): 062f8a7 (brand asset library, 88 p
 |---|---|---|---|---|
 | Branding and presentation | 10% | 4 of 6 | 66.7% | 6.67 of 10 |
 | Website functionality and UX | 15% | 4.5 of 7 | 64.3% | 9.64 of 15 |
-| Editorial content and research | 15% | 3.13333 of 6 | 52.2% | 7.83 of 15 |
-| Monetization infrastructure | 15% | 4 of 7 | 57.1% | 8.57 of 15 |
+| Editorial content and research | 15% | 4.72143 of 6 | 78.7% | 11.80 of 15 |
+| Monetization infrastructure | 15% | 5.61667 of 7 | 80.2% | 12.04 of 15 |
 | SEO and performance | 10% | 4 of 8 | 50.0% | 5.00 of 10 |
 | Original tools | 10% | 6 of 6 | 100.0% | 10.00 of 10 |
-| Marketing package | 10% | 4.26136 of 8 | 53.3% | 5.33 of 10 |
+| Marketing package | 10% | 4.81818 of 8 | 60.2% | 6.02 of 10 |
 | Security and maintenance | 5% | 7 of 8 | 87.5% | 4.38 of 5 |
 | Documentation and transferability | 10% | 5.5 of 8 | 68.8% | 6.88 of 10 |
-| **Total** | 100% | | | **64.29 of 100** |
+| **Total** | 100% | | | **72.42 of 100** |
 
-**Computed readiness total: 64.3 out of 100 (rounded).** That is a tally of work done against objective criteria. It does not mean the site is 63 percent ready to sell: the mandatory sale gates below are pass or fail and are not averaged into this number.
+**Computed readiness total: 72.4 out of 100 (rounded).** That is a tally of work done against objective criteria. It does not mean the site is 63 percent ready to sell: the mandatory sale gates below are pass or fail and are not averaged into this number.
 
 ## Criteria and evidence by category
 
@@ -60,8 +60,8 @@ Evidence used: commits (`git log --oneline`): 062f8a7 (brand asset library, 88 p
 | Criterion | Score |
 |---|---|
 | Roadmap and 28 research briefs exist (docs/content) | 1 |
-| Published articles versus the 30 target (4 of 30) | 0.13 |
-| Drafts verified against sources (0 of 28; C4 pending) | 0 |
+| Published articles versus the 30 target (27 of 30; published on the branch, not deployed) | 0.9 |
+| Drafts verified against sources (23 of 28 applied after Cowork C4, 2026-11-18; 5 open) | 0.82 |
 | Editorial process docs (quality checklist, SOPs, corrections policy) | 1 |
 | Trust pages built (editorial policy, methodology, corrections) | 1 |
 | Cowork keyword and competitor research completed (C1, C2 pending) | 0 |
@@ -74,9 +74,9 @@ Evidence used: commits (`git log --oneline`): 062f8a7 (brand asset library, 88 p
 | Ordinary fallback links (retailer URL then Amazon search link) working in code and tests | 1 |
 | Affiliate disclosure page and note components | 1 |
 | Shoppable article and kit system built (renders nothing until verified products exist) | 1 |
-| Verified product catalog loaded (0 products; catalog empty) | 0 |
+| Verified product catalog loaded (37 verified products toward about 60; flagship kits mostly covered) | 0.62 |
 | Approved and tested affiliate account (none exists) | 0 |
-| Affiliate program and Amazon rules research (C5, C6 pending) | 0 |
+| Amazon program and rules research delivered by Cowork (docs/commerce/affiliate-research.md; Amazon only) | 1 |
 
 ### SEO and performance (10%): 5.00 of 10
 
@@ -112,7 +112,7 @@ Removed criteria: the printable PDFs, premium kits, kit usage terms and kits-for
 | Pins CSV (docs/pinterest-pins.csv, 95 rows) | 1 |
 | 90-day Pinterest schedule (docs/PINTEREST-90-DAY-SCHEDULE.md) | 1 |
 | Pinterest and distribution strategy docs | 1 |
-| Pins pointing at published content (23 of 88; 65 are hold-until-published) | 0.26 |
+| Pins pointing at published content (72 of 88; 16 are hold-until-published) | 0.82 |
 | Pinterest account created and website claimed (none) | 0 |
 | Buyer presentation (not started per RESUME.md) | 0 |
 | CSV verify_before_posting items cleared | 0 |
@@ -149,7 +149,7 @@ The owner decided the business has no printables or digital products. Two catego
 
 - Monetization infrastructure: the criterion "Storefront for premium kits" (scored 0) was removed. 4 of 8 becomes 4 of 7 = 57.14%; 57.14% x 15 = 8.57 (was 7.50).
 - Original tools: the criteria for six printable PDFs (1), two premium kits (1), kit usage terms (0) and kits listed for sale (0) were removed; a shopping checklist criterion (1, src/lib/shoplist.ts exists) was added because the shopping list is part of the original tools. Earlier 7 of 9 = 77.8%; now 6 of 6 = 100%; 100% x 10 = 10.00 (was 7.78).
-- Total, exact values: 6.6667 + 9.6429 + 7.8333 + 8.5714 + 5.0000 + 10.0000 + 5.3267 + 4.3750 + 6.8750 = 64.2910, shown as 64.29 (rounded rows may differ by 0.01). Previous total: 59.50.
+- Total, exact values: 6.6667 + 9.6429 + 11.8036 + 12.0357 + 5.0000 + 10.0000 + 6.0227 + 4.3750 + 6.8750 = 72.4216, shown as 72.42 (rounded rows may differ by 0.01). The rise since the last score comes from real progress: 27 articles published on the branch after source checks, 37 verified products, Amazon research delivered, pins matched to published pages. Nothing is deployed, so live-site criteria are still 0.
 - The total rose partly because the removed criteria were mostly unmet or dropped from the denominator, not because the site became more ready. The mandatory gates below still decide whether a listing is recommended.
 
 ## Mandatory sale gates

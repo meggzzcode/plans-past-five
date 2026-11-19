@@ -20,7 +20,7 @@ Scroll the homepage slowly. Point at the hero, the six section tiles and the sho
 
 ## 1:10 Article experience [Shots 5-6]
 
-"The Journal holds published articles only. Here is one: how to start junk journaling. Notice the structured blocks: what you'll need, a first-30-minutes list, save-or-splurge notes, and a clear affiliate note. Four articles are published; the others exist as drafts and stay hidden until their claims are verified against sources." Show the save button.
+"The Journal holds published articles only. Here is one: how to start junk journaling. Notice the structured blocks: what you'll need, a first-30-minutes list, save-or-splurge notes, and a clear affiliate note. 27 articles are set to published on the branch; 23 of them were source-checked by Cowork, but this junk journaling guide is one of the 4 original articles that has not been source-checked yet. Five more remain drafts and stay hidden. Nothing here is deployed." Show the save button.
 
 ## 1:50 Hobby directory [Shots 7-8]
 
@@ -36,7 +36,7 @@ Scroll the homepage slowly. Point at the hero, the six section tiles and the sho
 
 ## 3:30 Shopping experience [Shots 14-15]
 
-"Off Duty Essentials has six collections. It is curated, not a store: nothing is sold on this site. Product records name types of items; verified products come later. Links are plain retailer searches today."
+"Off Duty Essentials has eight collections. It is curated, not a store: nothing is sold on this site. Product records name types of items; 37 verified Amazon products have been checked against their listings, not tested by us, and linked with ordinary Amazon links; type cards still use plain Amazon searches. No affiliate program is active."
 
 ## 4:25 Affiliate configuration [Shots 16-17]
 

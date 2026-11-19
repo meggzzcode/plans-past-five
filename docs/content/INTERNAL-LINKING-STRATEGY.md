@@ -22,7 +22,7 @@ Hubs are the six section pages plus the shop and tools. Each hub links to its ar
 | `/solo-dates` | solo-date-ideas, cozy-solo-dates-at-home, how-to-plan-a-solo-saturday | `/make-plans` |
 | `/movement` | pickleball-for-beginners, how-to-start-playing-tennis-as-an-adult, active-hobbies-for-women-who-dont-love-the-gym | `/shop/sporty-girl` |
 
-Shop collection slugs come from `CollectionSlug` in `src/data/products.ts`: pottery-era, creative-girl, sporty-girl, girls-night-in, bookish-girl, little-adventures. Hobby profile pages are `/hobbies/<slug>`; they are noindexed until a published article covers the hobby (`isHobbyIndexable` in `src/data/hobbies.ts`), so linking a published guide to its hobby profile helps readers and unlocks indexing through the `hobbies` field.
+Shop collection slugs come from `CollectionSlug` in `src/data/products.ts`: pottery-era, creative-girl, sporty-girl, girls-night-in, bookish-girl, little-adventures, journaling-era, cozy-after-hours. Hobby profile pages are `/hobbies/<slug>`; they are noindexed until a published article covers the hobby (`isHobbyIndexable` in `src/data/hobbies.ts`), so linking a published guide to its hobby profile helps readers and unlocks indexing through the `hobbies` field.
 
 ## Pillar relationships (flagships)
 

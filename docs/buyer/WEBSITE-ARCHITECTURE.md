@@ -40,8 +40,8 @@ docs/              handoff, buyer, content, commerce, marketing, SOPs
 
 ## Data flow
 
-- Articles: `src/content/index.ts` collects every article; `articles` (published only) is the only list public code may use. `allArticlesIncludingDrafts` is for tooling and tests only. Note: newer `article-*.ts` draft files must be imported into `src/content/index.ts` to be registered (check the file; `docs/content/ARTICLE-ROADMAP.md` explains).
-- Products: two layers. Product TYPES (`src/data/products.ts`) link to an Amazon search. The verified catalog (`src/data/catalog.ts`, generated list in `src/data/catalog.generated.ts`) is EMPTY at launch and is filled by `bun run import:products` from a researched CSV. Kits (`src/data/kits.ts`) are slots filled only by verified products.
+- Articles: `src/content/index.ts` registers published articles only (27 on 2026-11-19); `articles` is the only list public code may use. Drafts (5 files plus the 2 outlines in `drafts.ts`) are registered in `src/content/draft-registry.ts`, which exports `allArticlesIncludingDrafts` for tooling and tests only (`docs/content/ARTICLE-ROADMAP.md`).
+- Products: two layers. Product TYPES (`src/data/products.ts`) link to an Amazon search. The verified catalog (`src/data/catalog.ts`, generated list in `src/data/catalog.generated.ts`) holds 44 records on 2026-11-19 (37 verified, 7 candidate; ordinary non-affiliate links, listing-checked not tested) and is filled by `bun run import:products` from a researched CSV; with no verified product it renders nothing. Kits (`src/data/kits.ts`) are slots filled only by verified products.
 - Links: `resolveProductLink()` in `src/config/affiliate.ts` picks an active approved affiliate entry, else an ordinary retailer URL, else an Amazon search link. Disclosure text follows automatically.
 - SEO: `src/lib/seo.ts` builds titles, descriptions, canonicals, Open Graph and JSON-LD. `src/lib/sitemap.ts` lists published pages for `/sitemap.xml`.
 - Analytics: `src/lib/track.ts` is a no-op helper; it fires only if a Google Analytics ID is set and a gtag function already exists on the page. No script is loaded by the repo (see `docs/buyer/ANALYTICS-SETUP.md`).

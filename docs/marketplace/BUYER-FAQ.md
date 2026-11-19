@@ -4,7 +4,7 @@ Status: DRAFT, 2026-11-19. Flippa rules were researched on 2026-11-18 (FLIPPA-RE
 
 **Is the site making money?** No. It is pre-revenue with no traffic history, no audience data and no earnings. Nobody should quote earnings, traffic or rankings for it.
 
-**Is it live?** Not confirmed. No host or domain connection exists in the repo; `planspastfive.com` is a placeholder. Status: BLOCKED on owner choices (NEEDS OWNER).
+**Is it live?** No. Nothing is deployed or live. No host or domain connection exists in the repo; `planspastfive.com` is a placeholder. Status: BLOCKED on owner choices (NEEDS OWNER).
 
 **What is included?** The repo (code, content, data, drafts, briefs, tests, CI), brand files, 88 pin images with CSV and schedule, and all docs. Full table: ASSET-INVENTORY.md.
 
@@ -24,14 +24,14 @@ Status: DRAFT, 2026-11-19. Flippa rules were researched on 2026-11-18 (FLIPPA-RE
 
 **Are the legal pages ready?** No. Privacy and Terms are starter text. Get them reviewed for your jurisdiction and your actual practices. Owner name and jurisdiction fields in `src/config/site.ts` are empty.
 
-**How many articles are published?** 4. Twenty-eight more are drafts awaiting source verification and are not public. Do not count drafts as published content.
+**How many articles are published?** 27 files are marked `status: "published"`; 5 more are drafts and there are 2 outline-only entries. "Published" means the article was source-checked by Cowork (2026-11-18) and set to published on the branch. It does NOT mean deployed: nothing is live. Of the 27, the 4 originally published articles have NOT been source-checked yet (Cowork task C4 is still to do for them); the other 23 were. The 5 drafts were checked and left not ready. Source-checking is a review of claims against sources, not a guarantee that every statement is correct.
 
-**Are there verified products?** No. The shop shows product types with search links. The verified product catalog is empty until Cowork research (C3) is done.
+**Are there verified products?** Yes, in a limited sense: the catalog holds 44 records, 37 verified and 7 candidates that never display. "Verified" means Cowork opened the Amazon listing and the record was reviewed; the links are ordinary Amazon links. Nobody on this project has bought or tested these products, and most records still say the manufacturer page was not checked. Product research (C3) continues toward about 60 products. Product-type records still link to Amazon searches. Only 7 of the 15 starter kits have any verified product.
 
 **What is not proven?** Demand, traffic, search rankings, conversion, affiliate earnings, Pinterest performance, and whether any program will approve the site. Hypothetical forecasts are not evidence.
 
 **Is there post-sale support?** A short, fixed, written-questions-only handover period is suggested (HANDOVER-TERMS-SUGGESTION.md). It is a suggestion for the parties and their lawyers. No indefinite free support.
 
-**Is the technical state tested?** 235 automated tests passed and typecheck was clean on 2026-11-19. A production build and live QA have not been recorded.
+**Is the technical state tested?** 250 automated tests passed (15 test files) and typecheck was clean on 2026-11-19. A production build and live QA have not been recorded.
 
 **What is the price?** Not set. See PRICING-STRATEGY.md; Flippa fee and pricing-rule facts are recorded there with sources; no verified comparable sale was found, and the owner's cash costs are UNCONFIRMED. No price is guaranteed and a sale may not happen. Under Flippa's rules a site without revenue has a maximum asking or reserve price (see PRICING-STRATEGY.md).

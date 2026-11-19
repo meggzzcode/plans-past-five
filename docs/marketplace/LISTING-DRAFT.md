@@ -18,7 +18,7 @@ Plans Past Five — Turnkey Women's Lifestyle Brand With Interactive Hobby Tools
 
 ## Short description
 
-Plans Past Five is a pre-revenue, newly built women's lifestyle and hobby publication prepared as a transparent turnkey starter site. It has no traffic history and no earnings. It includes a built website with interactive hobby tools, a 36-hobby directory, 4 published articles plus drafts awaiting source verification, 88 Pinterest pin images and a full brand asset set. Amazon Associates links are not activated, no application has been made, and affiliate and payment accounts are not included; the buyer sets up their own. No earnings are claimed or guaranteed.
+Plans Past Five is a pre-revenue, newly built women's lifestyle and hobby publication prepared as a transparent turnkey starter site. It has no traffic history and no earnings. It includes a built website with interactive hobby tools, a 36-hobby directory, 27 published articles (23 source-checked by Cowork on the branch; the 4 original articles are not source-checked yet) plus 5 drafts, 37 verified Amazon products (listing-checked, not tested by us), 88 Pinterest pin images and a full brand asset set. Amazon Associates links are not activated, no application has been made, and affiliate and payment accounts are not included; the buyer sets up their own. No earnings are claimed or guaranteed.
 
 ## Long description
 
@@ -28,6 +28,8 @@ Plans Past Five is a pre-revenue, newly built women's lifestyle and hobby public
 - Amazon Associates links are **not yet activated** and nothing has been applied for. Approval is **not guaranteed** and is the buyer's to apply for.
 - The seller's master or portfolio affiliate accounts are **not included**. The buyer must create or connect their own affiliate and payment accounts.
 - There is **no guarantee of future earnings**. Any forecast a buyer makes is hypothetical.
+- **Nothing is live.** The site is not deployed; there is no domain, host or analytics. "Published" means set to `status: "published"` on the branch after a Cowork source check (2026-11-18), not deployed. The 4 originally published articles still need that source check (Cowork task C4).
+- Products are checked against their Amazon listings and linked with ordinary (non-affiliate) Amazon links. We have not bought or tested them.
 
 ### What the business is
 
@@ -41,25 +43,25 @@ Women who want a hobby or a better weekend but are unsure where to start, with a
 
 | Item | Count | Status | Where |
 |---|---|---|---|
-| Published articles | 4 | COMPLETED | `src/content/article-35-hobbies.ts`, `article-after-work.ts`, `article-creative-home.ts`, `article-junk-journaling.ts` |
-| Article drafts awaiting source verification | 28 files written as drafts (`status: "draft"`), each with a `coworkChecks` list; 28 research briefs | IN PROGRESS, NEEDS Cowork verification | `src/content/article-*.ts`, `docs/content/briefs/` |
+| Published articles | 27 (`status: "published"`). 23 source-checked by Cowork on 2026-11-18 (`docs/content/verification/`, `verification-applied/`); the 4 originals (`article-35-hobbies.ts`, `article-after-work.ts`, `article-creative-home.ts`, `article-junk-journaling.ts`) are NOT source-checked yet (Cowork C4 to do) | COMPLETED on the branch; NOT deployed, nothing is live | `src/content/article-*.ts` |
+| Article drafts | 5 files still `status: "draft"` (how-to-start-air-dry-clay, how-to-start-crocheting, how-to-start-embroidery, watercolor-painting-for-beginners, affordable-hobbies-under-25); source-checked and left NOT READY; 32 research briefs | IN PROGRESS | `src/content/article-*.ts`, `docs/content/briefs/` |
 | Outline-only drafts in drafts.ts | 2 | IN PROGRESS | `src/content/drafts.ts` |
 | Article roadmap target | 30 articles; 50-topic buyer roadmap | RECOMMENDED | `docs/TURNKEY-PLAN.md`, `docs/buyer/CONTENT-ROADMAP.md` |
 | Hobbies in the directory | 36 (test-enforced), 10 filters, profile pages | COMPLETED | `src/data/hobbies.ts` |
 | Site sections | 6 (After Hours, The Weekend Edit, Creative Corner, Table for One, Better Together, A Little Movement) | COMPLETED | `src/data/categories.ts` |
-| Shop collections | 6 | COMPLETED | `src/data/products.ts` |
+| Shop collections | 8 | COMPLETED | `src/data/products.ts` |
 | Shop product types | 36 product-type records (names and search queries; no prices, ratings, brands or ASINs) | COMPLETED | `src/data/products.ts` |
-| Verified specific products | 0 (catalog empty; import path built) | BLOCKED on Cowork C3 | `src/data/catalog.ts` |
-| Starter kit shopping lists | 15 kit definitions as slots; render only when verified products fill them | COMPLETED as system, empty of products | `src/data/kits.ts` |
+| Verified specific products | 37 verified, 7 candidates that never display. Verified = Amazon listing opened and reviewed by Cowork; ordinary non-affiliate links; not tested by us; manufacturer pages mostly unchecked | IN PROGRESS (C3 continues toward about 60) | `src/data/catalog.generated.ts` |
+| Starter kit shopping lists | 15 kit definitions as slots; render only when verified products fill them; 7 kits have at least one slot filled, 8 have none | COMPLETED as system, partly filled | `src/data/kits.ts` |
 | Interactive tools | 4: Find Your Thing quiz, Make Some Plans planner, Hobby Budget tool, Tonight tool; plus My Plans saved items and site search | COMPLETED | `src/lib`, `src/routes` |
-| Pinterest pins | 88 pin images, CSV with metadata, 90-day schedule; 23 point to published articles or live pages, 65 are marked hold-until-published | COMPLETED as assets; no account | `public/pins`, `docs/pinterest-pins.csv` |
+| Pinterest pins | 88 pin images, CSV with metadata, 90-day schedule; 72 point to published articles (published on the branch, not deployed) and 16 are marked hold-until-published | COMPLETED as assets; no account | `public/pins`, `docs/pinterest-pins.csv` |
 | Brand assets | 12 logo files, 11 board covers, 4 social images (including a 1200x630 OG image), 4 article templates, 5 favicon files, fonts with licences | COMPLETED | `design/brand` |
-| Documentation | 87 Markdown files under docs, including 25 buyer guides and a 20-step transfer checklist | COMPLETED (some depend on pending research) | `docs/` |
-| Automated tests | 235 passing in 14 files; typecheck clean | VERIFIED 2026-11-19 | `src/test` |
+| Documentation | 160 Markdown files under docs, including 25 buyer guides and a 20-step transfer checklist | COMPLETED (some depend on pending research) | `docs/` |
+| Automated tests | 250 passing in 15 files; typecheck clean | VERIFIED 2026-11-19 | `src/test` |
 | Trust pages | About, Contact, Privacy, Terms, Affiliate Disclosure, Editorial Policy, Methodology, Corrections, Start Here | COMPLETED; legal pages are starter text | `src/routes` |
 
-- [ ] AVAILABLE AT LISTING ONLY IF COMPLETE: state a higher published-article count only if drafts have been verified and flipped to published (check `grep -H 'status:' src/content/article-*.ts`).
-- [ ] AVAILABLE AT LISTING ONLY IF COMPLETE: state any number of verified products only after Cowork C3 has loaded them into the catalog. Today: 0.
+- [ ] AVAILABLE AT LISTING ONLY IF COMPLETE: state a higher published-article count (today 27) only if drafts have been verified and flipped to published; do not say the 4 original articles are source-checked until C4 is done for them; never say "live" (check `grep -H 'status:' src/content/article-*.ts`).
+- [ ] AVAILABLE AT LISTING ONLY IF COMPLETE: re-count verified products (`src/data/catalog.generated.ts`) on the day of listing. Today: 37 verified, 7 candidate; describe them as checked against Amazon listings, not tested by us.
 - [ ] AVAILABLE AT LISTING ONLY IF COMPLETE: say the site is live only if a host and domain are connected and production QA (C9) is done. Today: no domain connection, host or live site is confirmed.
 - [ ] AVAILABLE AT LISTING ONLY IF COMPLETE: say a domain is included only if the seller confirms they own it and it will transfer. Today: `planspastfive.com` is a placeholder in `site.ts`; ownership and purchase are UNCONFIRMED.
 
@@ -87,7 +89,7 @@ Women who want a hobby or a better weekend but are unsure where to start, with a
 
 ### Existing content
 
-Four published articles (35 hobbies; 25 things to do after work; 21 creative hobbies at home; junk journaling guide), the 36-hobby directory, six section pages, and trust pages. Twenty-eight further articles are written as drafts with research briefs and a list of claims to verify before publishing.
+27 published articles (including 35 hobbies; 25 things to do after work; 21 creative hobbies at home; a junk journaling guide; the other 23 were source-checked by Cowork, the four named originals not yet), the 36-hobby directory, six section pages, and trust pages. Five further articles remain drafts after the source check, plus 2 outline-only entries; research briefs and verification notes are included. None of this is deployed.
 
 ### Interactive features
 
@@ -121,7 +123,7 @@ Seller's affiliate master or portfolio accounts, any tracking IDs, payment accou
 
 ### Growth opportunities (hypothetical, no outcome implied)
 
-Verify and publish the 28 drafts; load verified products; apply for the buyer's own Amazon Associates account; launch the Pinterest schedule; extend the roadmap beyond the 30-article target. Whether any of this earns money is unknown.
+Revise and publish the 5 remaining drafts, source-check the 4 original articles; extend the verified product catalog; apply for the buyer's own Amazon Associates account; launch the Pinterest schedule; extend the roadmap beyond the 30-article target. Whether any of this earns money is unknown.
 
 ### Ownership transfer process
 

@@ -17,15 +17,15 @@ Plans Past Five is a lifestyle content site. Brand copy lives in `src/config/sit
 |---|---|---|
 | Brand and design system | Wordmark, palette, type, decorative kit | `docs/BRAND-GUIDE.md`, `src/components/brand` |
 | Section pages | After Hours, The Weekend Edit, Creative Corner, Table for One, Better Together, A Little Movement | `src/routes/*.tsx`, `src/data/categories.ts` |
-| Journal (articles) | 4 published, many drafts | `src/content`, `docs/content/ARTICLE-ROADMAP.md` |
+| Journal (articles) | 27 `status: "published"` articles (23 source-checked by Cowork on 2026-11-18; the 4 originals not yet; not deployed), 5 drafts, 2 outline-only entries | `src/content`, `docs/content/ARTICLE-ROADMAP.md` |
 | Hobby directory | 36 hobbies with filters and profile pages | `src/data/hobbies.ts` |
-| Shop (Off Duty Essentials) | 6 collections, 36 product-type records, kit slots, shopping checklist | `src/data/products.ts`, `src/data/kits.ts`, `src/lib/shoplist.ts` |
+| Shop (Off Duty Essentials) | 8 collections, 36 product-type records, 37 verified Amazon products (listing-checked, not tested by us; 7 of 15 kits partly filled), kit slots, shopping checklist | `src/data/products.ts`, `src/data/kits.ts`, `src/lib/shoplist.ts` |
 | Tools | Hobby finder quiz, Make Some Plans planner, hobby budget tool, tonight tool | `src/lib/finder.ts`, `planner.ts`, `budget.ts`, `tonight.ts` |
 | Pinterest assets | Pin images and a pins CSV | `public/pins`, `docs/pinterest-pins.csv` |
 | Trust pages | About, Contact, Privacy, Terms, Affiliate Disclosure, Editorial Policy, Corrections, Methodology | `src/routes` |
 | Automation | CI, weekly site-health check, monthly digest, Dependabot | `.github/` |
 
-Counts (hobbies, products, tests) were checked on 2026-11-19 and will drift; re-check with the repo.
+Counts (articles, hobbies, products, tests) were checked on 2026-11-19 and will drift; re-check with the repo.
 
 ## How it could make money (unvalidated)
 
@@ -45,7 +45,7 @@ All three are hypotheses. None has produced revenue. Affiliate programs require 
 
 - Content-site growth is slow and uncertain; search and Pinterest traffic cannot be promised.
 - Affiliate approval and terms are controlled by the programs; commissions and rules change.
-- Content needs verification before publishing; most drafts still carry `coworkChecks`.
+- Published articles were source-checked by Cowork (2026-11-18) except the 4 originals, which still need that check (Cowork C4). The 5 remaining drafts did not pass and need revision.
 - Search engines may treat AI-assisted drafts skeptically if they are thin; the editorial system (`docs/content/`) exists to keep quality up.
 - Dependency on Lovable and the Nitro Cloudflare Worker build; see `docs/buyer/HOSTING-AND-DEPLOYMENT.md`.
 

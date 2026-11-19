@@ -92,7 +92,7 @@ Write the answers in the article's research brief (`docs/content/ARTICLE-RESEARC
 
 1. Finish and verify the flagships first, then their direct spokes.
 2. Publish in clusters (a hub plus two or three spokes) so internal links have real targets on day one; see `docs/content/INTERNAL-LINKING-STRATEGY.md`.
-3. Do not publish an article whose `coworkChecks` are unverified. Everything else on the list stays `status: "draft"`.
+3. Do not publish an article whose `coworkChecks` are unverified. Everything else on the list stays `status: "draft"`. (Status 2026-11-19: 25 of the 30 are published after Cowork's source check on 2026-11-18, 5 remain drafts, and the 4 originally published articles still need that check; published does not mean deployed.)
 
 ## Out of scope for this document
 

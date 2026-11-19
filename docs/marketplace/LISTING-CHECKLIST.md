@@ -4,13 +4,13 @@ Status: RECOMMENDED process, 2026-11-19. **Nothing is published, listed or offer
 
 ## A. Before anything else
 - [ ] Owner has said in writing to proceed with a listing.
-- [ ] TURNKEY-READINESS.md re-scored; every mandatory gate is PASS (today: not recommended, 15 of 22 gates not PASS).
+- [ ] TURNKEY-READINESS.md re-scored; every mandatory gate is PASS (per TURNKEY-READINESS.md on 2026-11-19: score 72.42/100, listing not recommended, 14 of 21 applicable gates not PASS).
 - [ ] Flippa research re-read against the live pages at listing time: fees (sources conflict), pre-revenue price ceiling (cap versus Projects & Concepts conflict), required listing fields and handover rules (NOT READ), and any verified completed comparable sales (none found so far). LISTING-DRAFT.md and PRICING-STRATEGY.md updated from it, not guessed.
 
 ## B. Claim accuracy against the repo (re-run each, record date and result)
-- [ ] Published article count: `grep -H 'status:' src/content/article-*.ts src/content/drafts.ts` and read the `articles` export in `src/content/index.ts`. The 28 new draft files are registered in the `all` array and stay hidden while `status` is draft (fixed 2026-11-19).
-- [ ] Hobbies 36: `src/test/hobbies.test.ts`; products 36 types and 8 collections: `src/data/products.ts`; verified catalog count: `src/data/catalog.ts`.
-- [ ] Tools 4, pins 95 (`ls public/pins | wc -l`), brand assets (`ls design/brand/exports/*`), docs count (`find docs -name '*.md' | wc -l`).
+- [ ] Published article count: `grep -H 'status:' src/content/article-*.ts src/content/drafts.ts` and read the `articles` export in `src/content/index.ts`. Expected on 2026-11-19: 27 published, 5 drafts (published files in `src/content/index.ts`, drafts in `src/content/draft-registry.ts`). State that the 4 original articles are not yet source-checked unless C4 has been done for them; "published" never means deployed.
+- [ ] Hobbies 36: `src/test/hobbies.test.ts`; products 36 types and 8 collections: `src/data/products.ts`; verified catalog count in `src/data/catalog.generated.ts` (37 verified, 7 candidate on 2026-11-19).
+- [ ] Tools 4, pins 88 (`ls public/pins | wc -l`; CSV: 72 published-article, 16 hold-until-published), brand assets (`ls design/brand/exports/*`), docs count (`find docs -name '*.md' | wc -l`).
 - [ ] Tests and typecheck: `bunx vitest run`, `bunx tsc --noEmit`; production build `bunx vite build`. Record counts and dates; do not copy an old number.
 - [ ] Domain: seller confirms ownership and registrar; if unconfirmed, remove every domain claim.
 - [ ] Host and live site: only claim "live" if deployed and C9 QA is done.

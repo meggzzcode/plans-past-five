@@ -280,7 +280,7 @@ export const articles = [
   {
     slug: "low-energy-hobbies",
     short: "low-energy",
-    status: "draft",
+    status: "published",
     board: "Cozy Hobbies",
     kw: [
       "low energy hobbies",
@@ -336,7 +336,7 @@ export const articles = [
   {
     slug: "how-to-find-a-hobby-as-an-adult",
     short: "find-a-hobby",
-    status: "draft",
+    status: "published",
     board: "Creative Hobbies for Beginners",
     kw: [
       "how to find a hobby",
@@ -454,7 +454,7 @@ export const articles = [
   {
     slug: "junk-journaling-supplies-for-beginners",
     short: "junk-supplies",
-    status: "draft",
+    status: "published",
     board: "Junk Journaling",
     kw: [
       "junk journal supplies",
@@ -713,7 +713,7 @@ export const articles = [
   {
     slug: "flower-arranging-as-a-hobby",
     short: "flower-arranging",
-    status: "draft",
+    status: "published",
     board: "Cozy Hobbies",
     kw: [
       "flower arranging for beginners",
@@ -756,7 +756,7 @@ export const articles = [
   {
     slug: "creative-hobby-starter-kits-worth-considering",
     short: "starter-kits",
-    status: "draft",
+    status: "published",
     board: "Hobby Starter Kits",
     kw: [
       "hobby starter kits",
@@ -816,7 +816,7 @@ export const articles = [
   {
     slug: "things-to-do-on-the-weekend",
     short: "weekend-things",
-    status: "draft",
+    status: "published",
     board: "Weekend Activities",
     kw: [
       "things to do on the weekend",
@@ -874,7 +874,7 @@ export const articles = [
   {
     slug: "at-home-creative-weekend",
     short: "creative-weekend",
-    status: "draft",
+    status: "published",
     board: "Weekend Activities",
     kw: [
       "creative weekend at home",
@@ -917,7 +917,7 @@ export const articles = [
   {
     slug: "how-to-plan-a-perfect-picnic",
     short: "picnic",
-    status: "draft",
+    status: "published",
     board: "Weekend Activities",
     kw: [
       "how to plan a picnic",
@@ -963,7 +963,7 @@ export const articles = [
   {
     slug: "cheap-weekend-adventures",
     short: "cheap-adventures",
-    status: "draft",
+    status: "published",
     board: "Affordable Adventures",
     kw: [
       "cheap weekend activities",
@@ -1003,7 +1003,7 @@ export const articles = [
   {
     slug: "solo-date-ideas",
     short: "solo-dates",
-    status: "draft",
+    status: "published",
     board: "Solo Date Ideas",
     kw: [
       "solo date ideas",
@@ -1060,7 +1060,7 @@ export const articles = [
   {
     slug: "how-to-take-yourself-on-a-solo-coffee-shop-date",
     short: "solo-coffee",
-    status: "draft",
+    status: "published",
     board: "Solo Date Ideas",
     kw: [
       "solo coffee date",
@@ -1104,7 +1104,7 @@ export const articles = [
   {
     slug: "cozy-solo-dates-at-home",
     short: "cozy-solo-home",
-    status: "draft",
+    status: "published",
     board: "Solo Date Ideas",
     kw: [
       "solo date at home",
@@ -1186,7 +1186,7 @@ export const articles = [
   {
     slug: "girls-night-ideas-that-arent-drinks",
     short: "girls-night",
-    status: "draft",
+    status: "published",
     board: "Girls' Night Ideas",
     kw: [
       "girls night ideas",
@@ -1243,7 +1243,7 @@ export const articles = [
   {
     slug: "how-to-host-a-craft-night",
     short: "craft-night",
-    status: "draft",
+    status: "published",
     board: "Girls' Night Ideas",
     kw: [
       "how to host a craft night",
@@ -1305,7 +1305,7 @@ export const articles = [
   {
     slug: "how-to-start-a-book-club",
     short: "book-club",
-    status: "draft",
+    status: "published",
     board: "Girls' Night Ideas",
     kw: [
       "how to start a book club",
@@ -1349,7 +1349,7 @@ export const articles = [
   {
     slug: "how-to-host-a-mahjong-night",
     short: "mahjong",
-    status: "draft",
+    status: "published",
     board: "Girls' Night Ideas",
     kw: [
       "how to host a mahjong night",
@@ -1395,7 +1395,7 @@ export const articles = [
   {
     slug: "active-hobbies-for-women-who-dont-love-the-gym",
     short: "active-no-gym",
-    status: "draft",
+    status: "published",
     board: "Active Hobbies",
     kw: [
       "active hobbies for women",
@@ -1446,7 +1446,7 @@ export const articles = [
   {
     slug: "how-to-start-playing-tennis-as-an-adult",
     short: "tennis",
-    status: "draft",
+    status: "published",
     board: "Active Hobbies",
     kw: [
       "how to start playing tennis as an adult",
@@ -1485,7 +1485,7 @@ export const articles = [
   {
     slug: "pickleball-for-beginners",
     short: "pickleball",
-    status: "draft",
+    status: "published",
     board: "Active Hobbies",
     kw: [
       "pickleball for beginners",
@@ -1534,7 +1534,7 @@ export const articles = [
   {
     slug: "how-to-get-into-recreational-cycling-as-an-adult",
     short: "cycling",
-    status: "draft",
+    status: "published",
     board: "Active Hobbies",
     kw: [
       "recreational cycling for beginners",
