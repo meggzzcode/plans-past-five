@@ -122,6 +122,18 @@ export const blockSchemas = {
 };
 export const BLOCK_TYPES = Object.keys(blockSchemas);
 
+/**
+ * Publish gate. A check in `coworkChecks` is resolved once it starts with one of these words and a date.
+ * Anything else (TODO, CHECK, a bare question) blocks publishing. Drafts are exempt.
+ */
+const RESOLVED_CHECK =
+  /^(RESOLVED|VERIFIED|SUPPORTED|REMOVED|CORRECT AS|NOTE|DONE|CLOSED)\b[^:]*\d{4}-\d{2}-\d{2}/;
+/**
+ * Two published articles predate the source rule and make no sourced claims (cost figures and
+ * health claims were removed). Remove a slug here as soon as it has a source. Do not add to this list.
+ */
+export const SOURCELESS_ALLOWED = new Set(["low-energy-hobbies", "how-to-start-a-reading-journal"]);
+
 export const articleSchema = z
   .object({
     slug: slugStr,
@@ -382,6 +394,21 @@ export function validateContent(root, opts = {}) {
       problems.push(
         `${file}, field "publishedAt": a published article needs a date written like 2026-11-19`,
       );
+    if (art.status === "published") {
+      if (!(art.sources && art.sources.length) && !SOURCELESS_ALLOWED.has(art.slug))
+        problems.push(
+          `${file}, field "sources": a published article needs at least one source (title and https link). Add one, or set the article back to draft.`,
+        );
+      if (!art.verifiedAt)
+        problems.push(
+          `${file}, field "verifiedAt": a published article needs the date its facts were checked, written like 2026-11-19`,
+        );
+      const open = (art.coworkChecks ?? []).filter((c) => !RESOLVED_CHECK.test(c.trim()));
+      if (open.length)
+        problems.push(
+          `${file}, field "coworkChecks": ${open.length} unresolved check(s) on a published article (first: "${open[0].slice(0, 80)}"). Resolve each one (start it with RESOLVED, VERIFIED, SUPPORTED, REMOVED, CORRECT AS, NOTE or DONE plus a date, like "RESOLVED 2026-11-19: ...") or set the article back to draft.`,
+        );
+    }
     if (art.status === "draft" && art.publishedAt !== "" && !DATE.test(art.publishedAt))
       problems.push(
         `${file}, field "publishedAt": must be empty or a date written like 2026-11-19`,

@@ -31,7 +31,7 @@ For the owner or buyer. No coding. You need: a GitHub account that can edit the 
 
 ## Drafts, unpublish
 - Status **Draft** is never on the website. For a new article keep Draft until finished.
-- To go live: Status Published, fill **First published on** and **Facts last checked on** (like 2026-11-19), empty "Facts still waiting to be checked", Save, Publish.
+- To go live: Status Published, fill **First published on** and **Facts last checked on** (like 2026-11-19), add at least one source, and resolve every "Facts still waiting to be checked" line (start it with RESOLVED and a date) or the deploy fails; Save, Publish.
 - **Unpublish**: set Status to Draft, Save, Publish.
 
 ## Preview

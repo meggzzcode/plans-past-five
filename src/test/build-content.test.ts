@@ -69,6 +69,47 @@ describe("content validator", () => {
     });
     expect(problems(root).join("\n")).toMatch(/block #\d+: unknown block type "banner"/);
   });
+  describe("publish gate", () => {
+    const OTHER = "how-to-start-crocheting";
+    it("fails a published article with no sources", () => {
+      edit(root, OTHER, (a) => {
+        a["sources"] = [];
+      });
+      expect(problems(root).join("\n")).toMatch(/field "sources": a published article needs at least one/);
+    });
+    it("fails a published article with no verifiedAt date", () => {
+      edit(root, OTHER, (a) => {
+        delete a["verifiedAt"];
+      });
+      expect(problems(root).join("\n")).toMatch(/field "verifiedAt": a published article needs/);
+    });
+    it("fails a published article with an unresolved coworkCheck", () => {
+      edit(root, OTHER, (a) => {
+        a["coworkChecks"] = ["Confirm the yarn weight claim"];
+      });
+      expect(problems(root).join("\n")).toMatch(/field "coworkChecks": 1 unresolved check/);
+    });
+    it("passes resolved checks and exempts drafts", () => {
+      edit(root, OTHER, (a) => {
+        a["coworkChecks"] = ["RESOLVED 2026-11-19: yarn weight claim removed"];
+      });
+      expect(problems(root)).toEqual([]);
+      edit(root, OTHER, (a) => {
+        a["status"] = "draft";
+        a["publishedAt"] = "";
+        a["sources"] = [];
+        delete a["verifiedAt"];
+        a["coworkChecks"] = ["Confirm the yarn weight claim"];
+      });
+      expect(problems(root)).toEqual([]);
+    });
+    it("keeps the source exemption list to the two known articles", () => {
+      expect([...lib.SOURCELESS_ALLOWED].sort()).toEqual([
+        "how-to-start-a-reading-journal",
+        "low-energy-hobbies",
+      ]);
+    });
+  });
   it("rejects a bad status", () => {
     edit(root, SLUG, (a) => {
       a["status"] = "live";
