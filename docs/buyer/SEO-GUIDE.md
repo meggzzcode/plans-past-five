@@ -12,7 +12,7 @@ Ran `bunx vite build`, then loaded the built server entry (`.output/server/index
 - `/` returns 200 with full server-rendered HTML: one `<h1>`, `<title>`, canonical, about 65 links in the markup, Organization JSON-LD.
 - An article (`/journal/how-to-start-junk-journaling`) returns 200 with server-rendered content, canonical and three JSON-LD blocks (Organization, Article, BreadcrumbList).
 - `/sitemap.xml` returns 200 as XML.
-So search engines receive real HTML without needing to run JavaScript. The build target is a Cloudflare Worker (`.output/server/wrangler.json`), not static HTML files: there is no pre-rendered `index.html` in `.output/public`. A host must run the Worker (or Node-compatible server entry). No framework migration is needed.
+So search engines receive real HTML without needing to run JavaScript. The default build target is a Cloudflare Worker (`.output/server/wrangler.json`) and the Netlify build (configured in `netlify.toml`) writes a server function; neither is a folder of static HTML files: there is no pre-rendered `index.html`. A host must run the server-rendering function (`docs/buyer/HOSTING-AND-DEPLOYMENT.md`). No framework migration is needed.
 Re-run any time: `bun run build`, then `node scripts/serve-built.mjs 3000` and `curl http://localhost:3000/`.
 
 ## Before launch (owner)

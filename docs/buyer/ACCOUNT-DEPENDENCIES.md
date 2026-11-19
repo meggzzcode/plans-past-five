@@ -6,7 +6,7 @@ Every account or service the site, its content or its marketing could touch. "Tr
 |---|---|---|---|---|
 | GitHub repository | Code, content, history, CI | `.github/workflows` | Repository transfer or copy is possible; account is not | Receive repo into your own account (`docs/buyer/TRANSFER-CHECKLIST.md`); check Actions secrets are not carried over |
 | Lovable project | Editor and sync of commits | `AGENTS.md`, `README.md` (project id in README link) | re-read live: check Lovable's terms for project transfer | Decide whether to keep using it; otherwise work in git directly. Avoid rewriting pushed history while connected |
-| Hosting | Runs the site | none (not chosen) | n/a | Create your own (`docs/buyer/HOSTING-AND-DEPLOYMENT.md`) |
+| Hosting | Runs the site (needs the SSR function) | `netlify.toml` is the configured host; no account or deploy exists | n/a | Create your own Netlify account (or verify an alternative) (`docs/buyer/HOSTING-AND-DEPLOYMENT.md`) |
 | Domain registrar | Domain | `site.url` placeholder only | Domains can usually be transferred between registrars; rules vary (re-read live) | Obtain registrar proof first; register or transfer in your name |
 | DNS | Points domain to host | none | Part of registrar or host | Re-create records under your account |
 | Email mailbox | hello@ | `contactEmail` empty | Mailboxes are typically not transferred; create new | `docs/buyer/DOMAIN-AND-EMAIL.md` |
@@ -16,8 +16,7 @@ Every account or service the site, its content or its marketing could touch. "Tr
 | Bing Webmaster Tools | Optional | none | n/a | Create own |
 | Pinterest | Distribution | `site.social.pinterest` empty; pin assets only | Account transfer rules: re-read live | Create own business account; use `public/pins` and `docs/pinterest-pins.csv` |
 | Instagram, TikTok | Optional | `site.social` empty | Not created | Create own if wanted |
-| Newsletter provider | Optional | disabled in `site.ts` | No list exists | Create own; update privacy first |
-| Image tools and licenses | Assets | `docs/IMAGE-LICENSES.md` (images generated with Lovable's AI image tool, stored in `src/assets`) | License terms transfer is re-read live to confirm against the tool's terms | Review `docs/buyer/IMAGE-AND-ASSET-RIGHTS.md` (other worker) before relying on it |
+| Image tools and licenses | Assets | `docs/IMAGE-LICENSES.md` (AI-generated images from Lovable's image tool and Canva AI, stored in `src/assets`) | Commercial-use and transfer terms are UNVERIFIED; the Lovable service agreement is not assignable | Read `docs/buyer/IMAGE-AND-ASSET-RIGHTS.md` before relying on them |
 | Fonts | Typography | Google Fonts (OFL per `docs/BRAND-GUIDE.md`) | Open license | Self-host if preferred |
 | Canva or design files | Pin sources | Sources live in `design/` | Not account-based | None |
 | Password manager | Holds credentials | n/a | n/a | Buyer's own |

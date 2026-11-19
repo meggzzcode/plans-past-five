@@ -8,7 +8,7 @@ import {
 } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { AMAZON_ASSOCIATE_STATEMENT, resolveProductLink } from "@/config/affiliate";
-import { setAffiliateState, useAffiliateRestore } from "./affiliate-state";
+import { setAffiliateState, withAffiliateRestore } from "./affiliate-state";
 import { site } from "@/config/site";
 import {
   catalog,
@@ -717,7 +717,7 @@ describe("empty-catalog parity", () => {
 });
 
 describe("links and affiliate swap", () => {
-  useAffiliateRestore();
+  withAffiliateRestore();
 
   it("links are ordinary and not sponsored while the entry is inactive", async () => {
     setAffiliateState("inactive");

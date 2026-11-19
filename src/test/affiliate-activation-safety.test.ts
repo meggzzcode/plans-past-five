@@ -15,7 +15,7 @@ import {
 } from "@/data/catalog";
 import { exportLinkFor } from "@/lib/export-links";
 import { buildListText } from "@/lib/shoplist";
-import { FAKE_TAG, useAffiliateState } from "./affiliate-state";
+import { FAKE_TAG, withAffiliateState } from "./affiliate-state";
 
 const good: CatalogProduct = {
   id: "safety-good",
@@ -43,7 +43,7 @@ const good: CatalogProduct = {
 };
 
 describe("live affiliate entry: misleading URLs are impossible", () => {
-  useAffiliateState("active");
+  withAffiliateState("active");
 
   it("a valid verified product gets exactly one tag on its own ASIN page", () => {
     expect(validateCatalogProduct(good)).toEqual([]);

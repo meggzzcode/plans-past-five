@@ -51,7 +51,7 @@ export function setAffiliateState(state: AffiliateState, tag = FAKE_TAG) {
 export const configuredTag = () => amazon().websiteTrackingId.trim();
 
 /** Register beforeEach/afterEach that set `state` for each test and restore the original after. */
-export function useAffiliateState(state: AffiliateState, tag = FAKE_TAG) {
+export function withAffiliateState(state: AffiliateState, tag = FAKE_TAG) {
   let snap: AffiliateEntry | null = null;
   beforeEach(() => {
     snap = snapshotAffiliate();
@@ -64,7 +64,7 @@ export function useAffiliateState(state: AffiliateState, tag = FAKE_TAG) {
 }
 
 /** Restore-only variant for files that switch state themselves inside tests. */
-export function useAffiliateRestore() {
+export function withAffiliateRestore() {
   let snap: AffiliateEntry | null = null;
   beforeEach(() => {
     snap = snapshotAffiliate();

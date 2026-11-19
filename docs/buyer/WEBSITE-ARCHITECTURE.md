@@ -4,7 +4,7 @@ Checked against the repo on 2026-11-19. Developer-oriented notes also in `CLAUDE
 
 ## Principles (from AGENTS.md)
 
-- Frontend-only: no database, auth, AI or paid backend; saved items use localStorage (`src/lib/saved.ts`, `src/lib/shoplist.ts`). The site is meant to be portable.
+- No database, auth, AI or paid backend; saved items use localStorage (`src/lib/saved.ts`, `src/lib/shoplist.ts`). The site is server-rendered, so the host must run an SSR function (`docs/buyer/HOSTING-AND-DEPLOYMENT.md`).
 - All brand copy and settings come from `src/config/site.ts`. Retailer/Amazon links are built only in `src/config/affiliate.ts`.
 - Content is typed local data (`src/content`, `src/data`); drafts use `status: "draft"` and are never exposed by public helpers.
 - Product records store no prices, ratings, brands or ASINs unless verified; buttons describe the real destination.
@@ -40,15 +40,15 @@ docs/              handoff, buyer, content, commerce, marketing, SOPs
 
 ## Data flow
 
-- Articles: `src/content/index.ts` registers published articles only (27 on 2026-11-19); `articles` is the only list public code may use. Drafts (5 files plus the 2 outlines in `drafts.ts`) are registered in `src/content/draft-registry.ts`, which exports `allArticlesIncludingDrafts` for tooling and tests only (`docs/content/ARTICLE-ROADMAP.md`).
-- Products: two layers. Product TYPES (`src/data/products.ts`) link to an Amazon search. The verified catalog (`src/data/catalog.ts`, generated list in `src/data/catalog.generated.ts`) holds 64 records (37 verified, 27 candidate; ordinary non-affiliate links, listing-checked not tested) and is filled by `bun run import:products` from a researched CSV; with no verified product it renders nothing. Kits (`src/data/kits.ts`) are slots filled only by verified products.
+- Articles: `src/content/index.ts` registers published articles only (count: `docs/buyer/INVENTORY.md`); `articles` is the only list public code may use. Drafts are registered in `src/content/draft-registry.ts`, which exports `allArticlesIncludingDrafts` for tooling and tests only (`docs/content/ARTICLE-ROADMAP.md`).
+- Products: two layers. Product TYPES (`src/data/products.ts`) link to an Amazon search. The verified catalog (`src/data/catalog.ts`, generated list in `src/data/catalog.generated.ts`) holds the researched records (verified, candidate and on-hold counts: `docs/buyer/INVENTORY.md`; ordinary non-affiliate links, listing-checked not tested) and is filled by `bun run import:products` from a researched CSV; with no verified product it renders nothing. Kits (`src/data/kits.ts`) are slots filled only by verified products.
 - Links: `resolveProductLink()` in `src/config/affiliate.ts` picks an active approved affiliate entry, else an ordinary retailer URL, else an Amazon search link. Disclosure text follows automatically.
 - SEO: `src/lib/seo.ts` builds titles, descriptions, canonicals, Open Graph and JSON-LD. `src/lib/sitemap.ts` lists published pages for `/sitemap.xml`.
 - Analytics: one setting, `analytics.ga4MeasurementId` (empty by default, so nothing loads). A valid ID makes `src/lib/analytics.ts` add the async Google tag to the root head and switches on `src/lib/track.ts` events. See `docs/buyer/ANALYTICS-SETUP.md`.
 
 ## Build and deploy output
 
-`bun run build` runs `vite build`. The checked build output used the Nitro `cloudflare-module` preset (observed in `.output/nitro.json`; the same finding is described in `docs/buyer/SEO-GUIDE.md`): a Worker entry plus static assets, not static HTML files. Details: `docs/buyer/HOSTING-AND-DEPLOYMENT.md`.
+`bun run build` runs `vite build`. The configured host is Netlify: `netlify.toml` sets `NITRO_PRESET=netlify`, which writes static files to `dist/` plus a server function. With no preset set, the build uses the Nitro `cloudflare-module` preset (`.output/`, a Worker entry plus static assets). Either way it is not a folder of static HTML files. Details: `docs/buyer/HOSTING-AND-DEPLOYMENT.md`.
 
 ## Quality gates
 

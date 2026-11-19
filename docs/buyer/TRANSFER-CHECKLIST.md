@@ -31,7 +31,7 @@ Source code, content data, drafts, docs, brand assets generated for the project,
 
 ## Excluded by default (must be explicitly agreed to move)
 
-Domain (only if confirmed owned), hosting accounts, mailbox and its mail, Lovable project and credits, any analytics or Search Console property, Pinterest or social accounts, affiliate accounts and ids (never transferable), newsletter lists (none exist), seller's password manager and credentials, seller's other sites, tools and subscriptions, tax and financial records, any third-party license that does not allow transfer (re-read live to confirm image tool terms).
+Domain (only if confirmed owned), hosting accounts, mailbox and its mail, Lovable project and credits, any analytics or Search Console property, Pinterest or social accounts, affiliate accounts and ids (never transferable), seller's password manager and credentials, seller's other sites, tools and subscriptions, tax and financial records, any third-party license that does not allow transfer (re-read live to confirm image tool terms).
 
 ## Suggested limited post-sale handover term (optional; agree in writing)
 

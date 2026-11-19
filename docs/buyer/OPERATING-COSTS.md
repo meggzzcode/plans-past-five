@@ -17,7 +17,6 @@ Site status: pre-revenue, not yet public (2026-11-19).
 | GitHub (repo) | Yes | UNCONFIRMED | Free vs paid plan | Your own account; two-factor on |
 | Lovable (if you keep using it) | Optional | UNCONFIRMED | Subscription and credits | `AGENTS.md`; the Lovable project belongs to the seller's account |
 | Analytics (Google Analytics, Search Console, Bing) | Optional | UNCONFIRMED | Usually free; verify | `docs/buyer/ANALYTICS-SETUP.md` |
-| Newsletter provider | Optional, not wired | UNCONFIRMED | Free tier limits vs paid | Disabled in `site.ts` |
 | Pinterest business account | Optional | UNCONFIRMED | Usually free; verify | `docs/marketing/PINTEREST-STRATEGY.md` |
 | Affiliate programs | Optional | UNCONFIRMED | Typically free to join; verify | Own accounts; approval not guaranteed |
 | Image generation or stock images | Optional | UNCONFIRMED | Per-subscription or per-image | Existing images were AI-generated for this project; see `docs/IMAGE-LICENSES.md` |
@@ -25,7 +24,7 @@ Site status: pre-revenue, not yet public (2026-11-19).
 | Legal review of Privacy/Terms | Recommended | UNCONFIRMED | One-off professional fee | Pages are starter text |
 | Business entity, tax and accounting | Depends on your situation | UNCONFIRMED | Varies by jurisdiction | Not covered by these docs; no tax or financial advice given |
 | Dependencies | Yes (free) | CONFIRMED that the repo uses open-source packages managed by Bun; paid dependencies not found | n/a | Dependabot is configured (`.github/dependabot.yml`) |
-| Database, authentication, AI APIs, payment backend | No | NOT NEEDED (frontend-only by design, `AGENTS.md`) | n/a | |
+| Database, authentication, AI APIs, payment backend | No | NOT NEEDED (no backend by design, `AGENTS.md`) | n/a | |
 
 ## Your time
 

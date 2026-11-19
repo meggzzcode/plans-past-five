@@ -4,7 +4,7 @@ Status: NEEDS OWNER. No Pinterest account was created, logged into or modified f
 
 What is already done in this repo:
 
-- 88 vertical pins (1000x1500) in `public/pins/`, built from 7 template styles (`design/pins/`, rebuild with `node scripts/build-pins.mjs`).
+- Vertical pins (1000x1500; count: `docs/buyer/INVENTORY.md`) in `public/pins/`, built from 7 template styles (`design/pins/`, rebuild with `node scripts/build-pins.mjs`).
 - `docs/pinterest-pins.csv`: title, description, destination, tracked URL (UTM), board, keywords, concept, publish status, suggested date.
 - `docs/PINTEREST-90-DAY-SCHEDULE.md`: day-by-day plan.
 - 11 board cover images in `design/brand/exports/board-covers/`, profile avatar `design/brand/exports/social/profile-avatar-1000.png`.

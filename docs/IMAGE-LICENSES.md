@@ -1,26 +1,31 @@
-# Image inventory & licensing
+# Image inventory and licensing
 
-All images were generated with Lovable's AI image tool (Nov 2026) for this project and stored locally in `src/assets/`. They depict no real, identifiable people or brands by design. AI-generated; no exclusivity or registrable copyright promised. Whether the tool's terms let a buyer inherit them is not verified here. The full per-image record (tool, date, source link, licence statement, embedded metadata) is `docs/content/IMAGE-LICENCE-LEDGER.md`. Alt text lives in `src/data/images.ts`.
+**The one position, repeated identically in `docs/buyer/IMAGE-AND-ASSET-RIGHTS.md` and `docs/marketplace/final-inspection/RIGHTS-AND-TRANSFERABILITY.md`:**
+
+1. Every photograph-style image on the site and in the pins is **AI-generated**, with the Lovable image tool (the original batch) or Canva AI (the later batches). Counts and the origin split: `docs/buyer/INVENTORY.md`. The per-image record (tool, date, source link, licence statement, embedded metadata) is `docs/content/IMAGE-LICENCE-LEDGER.md`; alt text lives in `src/data/images.ts`.
+2. **Commercial-use and transfer terms are UNVERIFIED** until the live terms of each tool are read by the owner or an assistant (the Canva pages returned 403 and were not read live; the Lovable terms were read by a summarising fetch and need a quote-check; see `docs/content/CANVA-LICENCE-TERMS.md`). Do not state or imply that the images may be resold or transferred.
+3. **No exclusivity and no registrable copyright is promised.** Anyone can get similar results from similar prompts, and AI output may not be protected by copyright in some jurisdictions.
+4. **The Lovable service agreement is not assignable** ("may not assign, delegate, or transfer these Terms"), and the Lovable project, account and credits are not part of any sale.
+5. **Fonts** (Fraunces, DM Sans, Caveat) are under the SIL Open Font License 1.1; the licence files stay with the font files.
+6. **No Amazon, manufacturer or retailer product images or logos** are used, and no stock photography.
+
+The images depict no real, identifiable people or brands by design.
+
+## The original batch (Lovable AI image tool, Nov 2026)
 
 | File | Subject | Used on |
 |---|---|---|
-| hero-pottery-night.jpg | three friends painting cherry mugs | home hero, pottery hobby, article 1 |
+| hero-pottery-night.jpg | three friends painting cherry mugs | home hero, pottery hobby, a journal article |
 | tennis-golden-hour.jpg | woman on tennis court, red cardigan | home hero, A Little Movement, tennis |
-| junk-journal-flatlay.jpg | open junk journal flat lay | Creative Corner, articles 3 & 6 |
-| solo-cafe-date.jpg | woman reading at pink café | Table for One, book clubs |
+| junk-journal-flatlay.jpg | open junk journal flat lay | Creative Corner, junk-journal articles |
+| solo-cafe-date.jpg | woman reading at pink cafe | Table for One, book clubs |
 | weekend-picnic.jpg | friends on gingham picnic blanket | hero, Weekend Edit, picnicking |
-| watercolor-evening.jpg | woman painting at kitchen table at night | After Hours, article 2, watercolor |
+| watercolor-evening.jpg | woman painting at kitchen table at night | After Hours, watercolor |
 | girls-night-crafts.jpg | friends making bracelets around mahjong | Better Together, craft nights, mahjong |
 | hiking-wildflowers.jpg | woman hiking wildflower trail | hiking |
-| shop-pottery-era.jpg … shop-girls-night-in.jpg (6) | styled collection still lifes | shop collections (labelled illustrative) |
+| shop-pottery-era.jpg ... shop-girls-night-in.jpg (6) | styled collection still lifes | shop collections (labelled illustrative) |
 
-Total: 14. Shop images are illustrative styling, not specific Amazon products; no Amazon images are used.
-
-## Still needed (for Claude Code)
-- Article heroes for the 8 drafts (solo date, tennis lesson, craft night hosting, watercolor tutorial, weekend plans) — avoid reusing current images.
-- Hobby-specific photos for hobbies without an image (e.g. crochet, roller skating, birdwatching, thrifting, museum).
-- 1200×630 social share image with the wordmark; Pinterest pin templates (1000×1500).
-
+That is 14 files. Shop images are illustrative styling, not specific Amazon products. Every other file in `src/assets` is a Canva AI image recorded in the table below and in the ledger.
 
 ## Sourced images (added by scripts/ingest-images.mjs)
 

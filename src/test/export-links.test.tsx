@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { configuredTag, setAffiliateState, useAffiliateRestore } from "./affiliate-state";
+import { configuredTag, setAffiliateState, withAffiliateRestore } from "./affiliate-state";
 import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { AMAZON_ASSOCIATE_STATEMENT, resolveProductLink } from "@/config/affiliate";
 import { exportLinkFor, exportPageUrl } from "@/lib/export-links";
@@ -26,7 +26,7 @@ const Wrap = ({ children }: { children: ReactNode }) => {
   return <RouterProvider router={router} />;
 };
 
-useAffiliateRestore();
+withAffiliateRestore();
 afterEach(() => {
   cleanup();
   window.localStorage.clear();

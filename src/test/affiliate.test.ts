@@ -13,17 +13,17 @@ import {
 import { affiliatePrograms, validatePrograms, UNVERIFIED } from "@/data/affiliate-programs";
 import { products, validateProduct } from "@/data/products";
 
-import { setAffiliateState, useAffiliateRestore, useAffiliateState } from "./affiliate-state";
+import { setAffiliateState, withAffiliateRestore, withAffiliateState } from "./affiliate-state";
 
 const amazon = affiliateRegistry["amazon"]!;
 // Every test starts from the state it asks for and the entry is restored afterwards, so the
 // results never depend on whether the repo ships inactive or the buyer has activated it.
-useAffiliateRestore();
+withAffiliateRestore();
 
 const activate = (tag = "demo-20") => setAffiliateState("active", tag);
 
 describe("inactive registry (shipped default state)", () => {
-  useAffiliateState("inactive");
+  withAffiliateState("inactive");
   it("an inactive registry yields no tag and no sponsored links", () => {
     expect(affiliate.associatesTag).toBe("");
     expect(isMonetized()).toBe(false);
@@ -39,7 +39,7 @@ describe("inactive registry (shipped default state)", () => {
 });
 
 describe("active registry (buyer state, fake id)", () => {
-  useAffiliateState("active", "testsite-20");
+  withAffiliateState("active", "testsite-20");
   it("is valid, monetized, and tags every product link with the one id", () => {
     expect(validateRegistry()).toEqual([]);
     expect(isMonetized()).toBe(true);

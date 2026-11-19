@@ -42,7 +42,7 @@ Never in content. Edit only the Amazon (or other) entry in `src/config/affiliate
 
 ## Update homepage features
 
-Edit `src/routes/index.tsx` (hero, categories, 5:01 Edit, Weekend Edit, shop and newsletter-ready blocks). Brand text and taglines come from `src/config/site.ts`. Check mobile width after changing layout.
+Edit `src/routes/index.tsx` (hero, categories, 5:01 Edit, Weekend Edit, shop blocks). Brand text and taglines come from `src/config/site.ts`. Check mobile width after changing layout.
 
 ## Upload an image
 

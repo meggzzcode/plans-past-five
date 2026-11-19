@@ -30,7 +30,6 @@ Pre-revenue and not yet public (2026-11-19). This is a sequence of work, not a f
 
 ## Phase 4: owned audience (optional)
 
-- Newsletter with your own provider; update privacy and consent first.
 
 ## Things not to do
 

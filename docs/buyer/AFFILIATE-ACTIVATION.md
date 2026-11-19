@@ -36,18 +36,47 @@ Timing: the three-sale window means the site needs real visitors first. Nothing 
 
 ## Activate Amazon (own approval required)
 
-1. Apply to Amazon Associates with your own account, listing your site URL. Complete the tax interview and payment method. You have 180 days to drive three qualified sales (your own orders do not count). Read the current Operating Agreement.
-2. In `src/config/affiliate.ts`, edit `affiliateRegistry.amazon`:
-   - `websiteTrackingId: "your-tag-20"` (the tracking id Amazon gave this website)
-   - `approvalStatus: "approved"`
-   - `active: true`
-   - `lastVerified: "YYYY-MM-DD"` (today)
-   - `approvedPromotionMethods`: what Amazon approved (e.g. website content)
-   - `accountOwnershipNote`: whose account it is
-3. `AMAZON_ASSOCIATE_STATEMENT` already holds Amazon's wording as read on 2026-11-18; confirm it still matches the current Operating Agreement. `AMAZON_PROGRAM_STATEMENT` (the longer disclosure-page sentence) is not prescribed by Amazon in the pages Cowork read; review it and do not claim approval before Amazon's final acceptance. Both are used only while the Amazon entry is live.
-4. Run `bunx vitest run`. Every product link now carries `tag=your-tag-20`, gets `rel="sponsored noopener"`, and the disclosure switches to the monetized form.
+Do these in order. Nothing else in the code needs to change.
 
-Replacing an id later: change `websiteTrackingId` in that one place; every link follows. If any of `active`, `approvalStatus: "approved"` or a tracking id is missing, the site falls back to plain links automatically.
+1. **Get your own approval.** Apply to Amazon Associates in your own name, listing your site URL. Complete the tax interview and payment method. You have 180 days to drive three qualified sales (your own orders do not count). Read the current Operating Agreement. Create a tracking id for this website in Associates Central (Manage Your Tracking IDs).
+2. **Replace the id and flip the one entry.** In `src/config/affiliate.ts` there is exactly one entry, `affiliateRegistry.amazon`. It is built with `blank(...)`; add these fields to it (spread the `blank(...)` result and override):
+
+   ```ts
+   amazon: {
+     ...blank("amazon", "Amazon Associates", "Amazon",
+       ["amazon.com", "www.amazon.com"], "https://www.amazon.com"),
+     websiteTrackingId: "your-tag-20", // the tracking id Amazon gave THIS website
+     approvalStatus: "approved",
+     active: true,
+     lastVerified: "YYYY-MM-DD", // today
+     approvedPromotionMethods: ["website content"], // what Amazon approved
+     accountOwnershipNote: "Account owned by <your name or company>.",
+   },
+   ```
+
+   Use your own id only. Never reuse another site's id. If any of `active`, `approvalStatus: "approved"` or a tracking id is missing, the site falls back to plain links automatically.
+3. **Know what the disclosure will say.** The moment the entry is live, these appear automatically beside shop links, on the disclosure page, and in Terms and Privacy:
+   - "As an Amazon Associate I earn from qualifying purchases." (`AMAZON_ASSOCIATE_STATEMENT`, Amazon's wording as read on 2026-11-18; confirm it still matches the Operating Agreement.)
+   - "It never changes what we recommend."
+   - "We may earn a commission on qualifying purchases at no extra cost to you." (replaces "We don't currently earn from these links.")
+   - The longer program sentence `AMAZON_PROGRAM_STATEMENT` is not prescribed by Amazon in the pages Cowork read; review it and do not claim approval before Amazon's final acceptance.
+4. **Run the tests.** The suite does not depend on the shipped configuration, so it must be green with your id in place:
+
+   ```
+   bunx vitest run                          # your real configuration
+   node scripts/check-affiliate-config.mjs  # full suite forced inactive, then forced active (fake id, in memory)
+   bunx tsc --noEmit && bunx eslint . --quiet
+   ```
+
+   Do not run `scripts/check-affiliate-config.mjs --expect-inactive`; that flag is only for the seller's release branch and fails once you activate. Your real id is never written into a test.
+5. **Review the live wording.** Update `site.legal.lastUpdated`, open `/affiliate-disclosure`, `/shop`, a product card and `/terms` and read the disclosure once.
+6. **Deploy** as described in `docs/buyer/HOSTING-AND-DEPLOYMENT.md` (`bun run build`, then publish). After deploying, click a product link on the live site and check the URL ends in `?tag=your-tag-20`.
+
+Replacing an id later: change `websiteTrackingId` in that one place; every link follows.
+
+### How this was tested
+
+The suite was verified with a FAKE, well-formed id (`testsite-20`, not a real account) in both states: shipped inactive, and the Amazon entry activated (approved, active, fake id). Both states: full `vitest` suite, `tsc --noEmit`, `eslint` and the production build. Each affiliate-sensitive test sets the registry to the state it needs and restores it. A guard test (`src/test/affiliate-config-independence.test.ts`) and `scripts/check-affiliate-config.mjs` re-run the suite in both states. Evidence: `docs/marketplace/final-inspection/AFFILIATE-ACTIVATION-TEST.md`.
 
 ## Adding another program later (not part of this business)
 

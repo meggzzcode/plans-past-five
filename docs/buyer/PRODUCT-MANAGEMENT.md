@@ -11,11 +11,11 @@ Two product layers exist. Know which one you are editing.
 
 | Layer | File | What it is | Public behavior |
 |---|---|---|---|
-| Product TYPES | `src/data/products.ts` | "A beginner watercolor set": 36 records across 8 collections (pottery-era, creative-girl, sporty-girl, girls-night-in, bookish-girl, little-adventures, journaling-era, cozy-after-hours) | Cards link to an ordinary Amazon search ("Browse options on Amazon") |
-| Verified catalog | `src/data/catalog.ts` + generated `src/data/catalog.generated.ts` | Specific, researched products with ASIN and ordinary URL | 64 records (re-counted 2026-11-19 with `bun run import:products docs/commerce/product-research.csv --check`): 37 `verified` (29 shown, 8 on editorial hold), 27 `candidate` (never shown). Only `status: "verified"` records that pass validation ever render. Verified means the Amazon listing was checked, not that the product was tested; links are ordinary non-affiliate Amazon links. An empty catalog still falls back to rendering nothing |
-| Kits | `src/data/kits.ts` | 15 kits as slots filled by verified products | A kit renders only when a verified product fills a slot; 7 of 15 kits have at least one (`docs/commerce/STARTER-KITS.md`) |
+| Product TYPES | `src/data/products.ts` | "A beginner watercolor set": records grouped into the shop collections (counts: `docs/buyer/INVENTORY.md`) | Cards link to an ordinary Amazon search ("Browse options on Amazon") |
+| Verified catalog | `src/data/catalog.ts` + generated `src/data/catalog.generated.ts` | Specific, researched products with ASIN and ordinary URL | Counts of records, `verified` (shown or on editorial hold) and `candidate` (never shown): `docs/buyer/INVENTORY.md`. To re-check with the importer without writing, run `bun run import:products docs/commerce/product-research.csv --check`. Only `status: "verified"` records that pass validation ever render. Verified means the Amazon listing was checked, not that the product was tested; links are ordinary non-affiliate Amazon links. An empty catalog still falls back to rendering nothing |
+| Kits | `src/data/kits.ts` | Kits as slots filled by verified products | A kit renders only when a verified product fills a slot, and as a full kit only with 4 or more verified picks and every essential filled; how many kits are complete today: `docs/buyer/INVENTORY.md` |
 
-Counts checked 2026-11-19.
+The importer REPLACES the whole generated catalog with the CSV you give it. Always start from the full `docs/commerce/product-research.csv`, append your rows, and run with `--check` first. A guard refuses a write that shrinks the catalog by 30% or more unless `--force` is given.
 
 ## Rules you must keep
 

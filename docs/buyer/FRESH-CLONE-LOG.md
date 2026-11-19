@@ -1,5 +1,7 @@
 # Fresh-clone reproduction log
 
+**HISTORICAL record, dated 2026-11-19, from an earlier commit.** The counts below describe that run and are out of date: current counts are in `docs/buyer/INVENTORY.md`.
+
 Date: 2026-11-19. Purpose: show that the repository, exported without `node_modules`, `.output`, `dist`, `.wrangler` or `.git`, installs, tests, type-checks, lints and builds. Re-run it yourself before relying on it; numbers drift.
 
 ## How the export was made
