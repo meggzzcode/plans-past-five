@@ -1,0 +1,24 @@
+# Weekly dependency updates, grouped so there are only a few pull requests. Nothing merges by itself:
+# review, wait for the CI check to pass, then merge. Bun lockfile (bun.lock) updates are supported by Dependabot's npm ecosystem.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    groups:
+      minor-and-patch:
+        update-types: [minor, patch]
+    labels: [dependencies]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 2
+    groups:
+      actions:
+        patterns: ["*"]
+    labels: [dependencies]

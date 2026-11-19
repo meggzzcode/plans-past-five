@@ -11,7 +11,13 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "health:serve": "node scripts/serve-built.mjs 3000",
+    "health:links": "bun scripts/site-health.mjs links --base http://localhost:3000",
+    "health:freshness": "bun scripts/site-health.mjs freshness",
+    "health:digest": "bun scripts/site-health.mjs digest",
+    "import:products": "bun scripts/import-products.mjs"
   },
   "overrides": {
     "rolldown": "1.2.1",

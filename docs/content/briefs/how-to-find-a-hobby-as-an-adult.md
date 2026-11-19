@@ -1,0 +1,48 @@
+# Research brief: How to Find a Hobby as an Adult When You Don't Know Where to Start
+
+Slug: `how-to-find-a-hobby-as-an-adult`. Status: draft. Written from reasoning only; no external data has been gathered.
+
+## Why would someone search this?
+She says 'I don't have any hobbies' or 'what should I do for fun' and wants a method, not a list. It is a question with a hint of embarrassment, so she wants reassurance as much as ideas.
+
+## Why would someone save it on Pinterest?
+A step-by-step framework with a clear visual hook (audit, try three, keep one) is saveable as a 'reset' project. The one-week experiment works as a pin she returns to when she is ready to start.
+
+## What problem or aspiration does it serve?
+Problem: free time with no shape and a vague sense of having lost her interests. Aspiration: a few things she would happily do again and a weekly rhythm around them.
+
+## What products would genuinely help?
+A pocket notebook for the audit and experiment notes, one small starter kit per trial hobby (watercolor, air-dry clay), a daypack for outdoor trials.
+
+## What would she reasonably need to buy?
+Nothing beyond a notebook. The method is deliberately about borrowing and starter versions first.
+
+## What might she already own?
+Notebook, pens, tote, comfortable shoes, a phone for the quiz.
+
+## What optional products help?
+Small watercolor set, small block of air-dry clay, daypack, a friend to join.
+
+## What would make our recommendations better than generic shopping results?
+A simple, repeatable method (audit, craving, three cheap trials, keep/park/drop) with explicit permission to quit, and a rule against buying beyond starter versions. Generic results push kits first; we put the decision before the purchase, which builds trust and better product fit later.
+
+## Which other articles should link to and from it?
+hobbies-to-try-when-life-feels-like-work-sleep-repeat, low-energy-hobbies, affordable-hobbies-under-25, things-to-do-after-work-instead-of-scrolling, creative-hobbies-you-can-start-at-home, how-to-start-a-book-club, /hobby-finder quiz
+
+## How does it contribute to long-term revenue?
+A top-of-funnel article that routes readers into hobby pages, the quiz and starter-kit articles, so it supports every later product page. Durable evergreen search demand, strong newsletter capture point, and a natural place for a printable. No revenue figure is claimed.
+
+## Keyword and autocomplete research
+PENDING COWORK
+
+## Competitor review
+PENDING COWORK
+
+## Pinterest research
+PENDING COWORK
+
+## Seasonality
+PENDING COWORK
+
+## Product shortlist
+PENDING COWORK

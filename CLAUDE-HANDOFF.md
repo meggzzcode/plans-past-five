@@ -75,3 +75,15 @@ src/test/rules.test.ts    quiz/planner/content rules
 3. Generate missing imagery (see IMAGE-LICENSES.md) and an OG image.
 4. Build Pinterest templates; static PDFs for printables.
 5. Wire newsletter + analytics with consent once credentials exist.
+
+
+## Turnkey build-out (2026-11-19, branch claude/vibrant-dirac-amdf7r)
+Plan and work split: `docs/TURNKEY-PLAN.md`. Checkpoint: `docs/RESUME.md`. Cowork tasks: `docs/cowork/PLANS-PAST-FIVE-COWORK-TASKS.md`. Buyer docs: `docs/buyer/`. Content and commerce docs: `docs/content/`, `docs/commerce/`, `docs/marketing/`.
+- **Articles:** 26 new drafts exist (`src/content/article-*.ts`, registered in `src/content/index.ts`). They stay `status: "draft"` until every `coworkChecks` item is verified and `verifiedAt`/`sources` are set. Only 4 are published.
+- **Affiliate behavior changed:** setting `associatesTag` alone no longer monetizes. The Amazon entry in `src/config/affiliate.ts` must also be `approved` and `active`. See `docs/buyer/AFFILIATE-ACTIVATION.md`. The older "Monetize" note above is superseded.
+- **Shoppable system:** `src/data/catalog.ts` (empty until verified products are imported with `bun run import:products`), `src/components/commerce/*`, `src/lib/shoplist.ts`. Nothing renders until verified products exist.
+- **Planner and quiz** were rewritten (total budget, time slots, restoring saved plans, energy, quiz handoff). New tools at `/tools/hobby-budget` and `/tools/tonight`.
+- **Trust pages:** `/editorial-policy` (with the one AI disclosure), `/methodology`, `/corrections`.
+- **Newsletter:** the homepage no longer promises one (standing decision: no newsletters for now).
+- **Printables:** six real PDFs in `public/downloads` built by `scripts/build-printables.mjs`; premium kits live in `design/kits` and are not linked publicly.
+- Not yet true: no domain, host, analytics or affiliate account is set up; legal pages are starter text.

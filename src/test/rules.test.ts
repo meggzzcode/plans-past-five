@@ -80,7 +80,7 @@ describe("Make Some Plans", () => {
       budget: "free",
       atHome: false,
     });
-    expect(p?.slots.every((s) => s.activity.cost === "free")).toBe(true);
+    expect(p?.slots.every((s) => (s.activity?.cost ?? "free") === "free")).toBe(true);
   });
   it("is deterministic for the same seed", () => {
     const i = {
@@ -91,8 +91,8 @@ describe("Make Some Plans", () => {
       budget: "flexible",
       atHome: false,
     } as const;
-    expect(makePlan(i, 2)?.slots.map((s) => s.activity.id)).toEqual(
-      makePlan(i, 2)?.slots.map((s) => s.activity.id),
+    expect(makePlan(i, 2)?.slots.map((s) => s.activity?.id)).toEqual(
+      makePlan(i, 2)?.slots.map((s) => s.activity?.id),
     );
   });
 });

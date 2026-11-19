@@ -5,7 +5,7 @@ import { images } from "@/data/images";
 import { getHobby } from "@/data/hobbies";
 import { getPrintable } from "@/data/printables";
 import { site } from "@/config/site";
-import { seo } from "@/lib/seo";
+import { seo, absoluteUrl, articleJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { ArticleBody } from "@/components/editorial/ArticleBody";
 import { SaveButton } from "@/components/editorial/SaveButton";
 import { ShareButtons } from "@/components/editorial/ShareButtons";
@@ -24,31 +24,31 @@ export const Route = createFileRoute("/journal/$slug")({
       return {
         meta: [{ title: `Story not found | ${site.name}` }, { name: "robots", content: "noindex" }],
       };
-    const h = seo({
+    const cat = getCategory(a.category);
+    const path = `/journal/${a.slug}`;
+    return seo({
       title: a.title,
       description: a.dek,
-      path: `/journal/${a.slug}`,
+      path,
       type: "article",
-    });
-    return {
-      ...h,
-      scripts: [
-        {
-          type: "application/ld+json",
-          children: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            headline: a.title,
-            description: a.dek,
-            datePublished: a.publishedAt,
-            dateModified: a.updatedAt ?? a.publishedAt,
-            author: { "@type": "Organization", name: site.editorialByline },
-            publisher: { "@type": "Organization", name: site.name },
-            mainEntityOfPage: `${site.url}/journal/${a.slug}`,
-          }),
-        },
+      image: absoluteUrl(images[a.hero].src),
+      jsonLd: [
+        articleJsonLd({
+          title: a.title,
+          description: a.dek,
+          path,
+          image: images[a.hero].src,
+          publishedAt: a.publishedAt,
+          updatedAt: a.updatedAt,
+        }),
+        breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "The Journal", path: "/journal" },
+          ...(cat ? [{ name: cat.name, path: `/${cat.slug}` }] : []),
+          { name: a.title, path },
+        ]),
       ],
-    };
+    });
   },
   component: ArticlePage,
 });

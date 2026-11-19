@@ -33,7 +33,63 @@ export type Product = {
   amazonQuery: string;
   exactUrl?: string;
   hobbySlugs: string[];
+  /**
+   * OPTIONAL verified-research fields. Leave all unset unless verified from a source.
+   * If brand, manufacturer, specs, retailerUrl or exactUrl are set, `sourceUrl` and
+   * `lastVerified` are required (enforced by validateProduct and tests).
+   */
+  brand?: string;
+  manufacturer?: string;
+  /** Official page (manufacturer or retailer listing) the facts were checked against. */
+  sourceUrl?: string;
+  /** Ordinary retailer listing URL (any retailer). Verified only. */
+  retailerUrl?: string;
+  /** Photo rights; photo-less cards remain the default. */
+  imageRights?: ImageRights;
+  /** ISO date YYYY-MM-DD the facts above were last checked. */
+  lastVerified?: string;
+  audience?: string;
+  advantages?: string[];
+  limitations?: string[];
+  specs?: ProductSpec[];
 };
+
+export type ImageRights = "none" | "owned" | "licensed" | "retailer-permission";
+export type ProductSpec = { label: string; value: string };
+
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+const isHttps = (u: string) => {
+  try {
+    return new URL(u).protocol === "https:";
+  } catch {
+    return false;
+  }
+};
+
+/** Returns a list of problems; empty means the record is valid. */
+export function validateProduct(p: Product): string[] {
+  const out: string[] = [];
+  const claims: string[] = [];
+  if (p.brand) claims.push("brand");
+  if (p.manufacturer) claims.push("manufacturer");
+  if (p.specs && p.specs.length > 0) claims.push("specs");
+  if (p.retailerUrl) claims.push("retailerUrl");
+  if (p.exactUrl) claims.push("exactUrl");
+  if (claims.length > 0) {
+    if (!p.sourceUrl) out.push(`${p.id}: ${claims.join(", ")} set without sourceUrl`);
+    if (!p.lastVerified) out.push(`${p.id}: ${claims.join(", ")} set without lastVerified`);
+  }
+  if (p.sourceUrl && !isHttps(p.sourceUrl)) out.push(`${p.id}: sourceUrl must be https`);
+  if (p.retailerUrl && !isHttps(p.retailerUrl)) out.push(`${p.id}: retailerUrl must be https`);
+  if (p.exactUrl && !isHttps(p.exactUrl)) out.push(`${p.id}: exactUrl must be https`);
+  if (p.lastVerified && !ISO_DATE.test(p.lastVerified))
+    out.push(`${p.id}: lastVerified must be YYYY-MM-DD`);
+  return out;
+}
+
+/** True when the record carries verified research that may be displayed. */
+export const hasVerifiedResearch = (p: Product) =>
+  validateProduct(p).length === 0 && Boolean(p.sourceUrl && p.lastVerified);
 
 export const collections: Collection[] = [
   {

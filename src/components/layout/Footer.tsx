@@ -3,6 +3,7 @@ import { WordmarkStacked } from "@/components/brand/Wordmark";
 import { Star } from "@/components/brand/Doodles";
 import { site } from "@/config/site";
 import { categories } from "@/data/categories";
+import { trustLinks } from "@/config/trust-links";
 
 export function Footer() {
   return (
@@ -25,6 +26,8 @@ export function Footer() {
           links={[
             { to: "/hobby-finder", label: "Find Your Thing" },
             { to: "/make-plans", label: "Make Some Plans" },
+            { to: "/tools/hobby-budget", label: "Hobby Starter Budget" },
+            { to: "/tools/tonight", label: "What Should I Do Tonight?" },
             { to: "/hobbies", label: "Hobby Directory" },
             { to: "/printables", label: "The Out-of-Office Collection" },
             { to: "/shop", label: "Off Duty Essentials" },
@@ -38,7 +41,7 @@ export function Footer() {
             { to: "/start-here", label: "Start Here" },
             { to: "/contact", label: "Contact" },
             { to: "/affiliate-disclosure", label: "Affiliate Disclosure" },
-            { to: "/editorial-policy", label: "Editorial Policy" },
+            ...trustLinks.map((l) => ({ to: l.to as string, label: l.label })),
             { to: "/privacy", label: "Privacy" },
             { to: "/terms", label: "Terms" },
           ]}

@@ -1,4 +1,5 @@
 import type { ImageKey } from "./images";
+import { articlesForHobby } from "@/content";
 
 export type Cost = "free" | "under25" | "under50" | "flexible";
 export type Energy = "low" | "medium" | "high";
@@ -7,7 +8,31 @@ export type Company = "solo" | "social";
 export type Craving =
   "creativity" | "relaxation" | "adventure" | "friendship" | "movement" | "different";
 
-export type Hobby = {
+export type Difficulty = "Easy" | "Gentle learning curve" | "Needs a lesson or two";
+export type IndoorOutdoor = "indoor" | "outdoor" | "either";
+
+/** Approximate startup spend. Always show with the assumptions note; never present as a price. */
+export type StartupBudget = {
+  low: number;
+  high: number;
+  currency: "USD";
+  assumptions: string;
+};
+
+/** Optional beginner-guide detail layered on top of the seed data. */
+export type Enrichment = {
+  difficulty: Difficulty;
+  startupBudget: StartupBudget;
+  timeCommitment: string;
+  indoorOutdoor: IndoorOutdoor;
+  startSteps: string[]; // 3 to 5
+  firstProject: string;
+  relatedHobbies: string[]; // hobby slugs
+  learningResources: string[]; // generic descriptions only, no named businesses or URLs
+  relatedGuides: string[]; // slugs of PUBLISHED articles only
+};
+
+export type Hobby = Partial<Enrichment> & {
   id: string;
   slug: string;
   name: string;
@@ -757,7 +782,700 @@ const seeds: Seed[] = [
   },
 ];
 
-export const hobbies: Hobby[] = seeds.map(make);
+// ---------------------------------------------------------------------------
+// Enrichment: how-to-start detail for every hobby profile.
+// Budgets are rough, labeled ranges in US dollars with an assumptions note.
+// They are not quotes, product prices or claims about any retailer. Resources are
+// described generically on purpose: no named businesses, brands or URLs.
+// ---------------------------------------------------------------------------
+const G_35 = "hobbies-to-try-when-life-feels-like-work-sleep-repeat";
+const G_AFTER = "things-to-do-after-work-instead-of-scrolling";
+const G_CREATIVE = "creative-hobbies-you-can-start-at-home";
+const G_JUNK = "how-to-start-junk-journaling";
+
+const e = (
+  difficulty: Difficulty,
+  low: number,
+  high: number,
+  assumptions: string,
+  timeCommitment: string,
+  where: IndoorOutdoor,
+  startSteps: string[],
+  firstProject: string,
+  relatedHobbies: string[],
+  learningResources: string[],
+  relatedGuides: string[],
+): Enrichment => ({
+  difficulty,
+  startupBudget: { low, high, currency: "USD", assumptions },
+  timeCommitment,
+  indoorOutdoor: where,
+  startSteps,
+  firstProject,
+  relatedHobbies,
+  learningResources,
+  relatedGuides,
+});
+
+const lib = "A library book or e-book on the basics";
+const comm = "A local community class or workshop";
+const vid = "Free beginner video tutorials";
+
+const enrichment: Record<string, Enrichment> = {
+  "junk-journaling": e(
+    "Easy",
+    5,
+    25,
+    "Assumes an old notebook plus glue and scissors you may already own. Decorative extras are optional.",
+    "20 to 45 minutes, once or twice a week",
+    "indoor",
+    [
+      "Pick a notebook you are not precious about, even a secondhand one.",
+      "Start a small pile of paper scraps: tickets, receipts, packaging, magazine pages.",
+      "Glue three scraps to a page and overlap them a little.",
+      "Add a line of handwriting about the day. Stop before it feels like homework.",
+    ],
+    "A single page about this week, built from three scraps you were going to throw away.",
+    ["scrapbooking", "collage-art", "creative-writing"],
+    [vid, "Pages from friends or an online community to borrow ideas from", lib],
+    [G_JUNK, G_CREATIVE],
+  ),
+  scrapbooking: e(
+    "Easy",
+    15,
+    50,
+    "Assumes printing a handful of photos at home or at a print counter, plus an album and adhesive. Fancy paper is extra.",
+    "About an hour per spread",
+    "indoor",
+    [
+      "Choose one theme: a trip, a season, a friendship.",
+      "Print or gather 8 to 10 photos and pick your favorites.",
+      "Arrange before you stick: a big photo, two small ones, space for words.",
+      "Glue it down and add a caption with the date and a detail you would otherwise forget.",
+    ],
+    "A two-page spread about one memorable weekend.",
+    ["junk-journaling", "collage-art", "craft-nights"],
+    ["A library book on memory keeping", "A local craft group meetup", vid],
+    [G_JUNK, G_CREATIVE],
+  ),
+  "watercolor-painting": e(
+    "Gentle learning curve",
+    10,
+    35,
+    "Assumes a student-grade pan set, one or two brushes and a pad of watercolor paper. Artist-grade paint costs more.",
+    "20 to 40 minutes, a few times a week",
+    "either",
+    [
+      "Tape a sheet of watercolor paper to a board or table so it stays flat.",
+      "Practice three things: a flat wash, a wet-on-wet blend, and a dry-brush line.",
+      "Pick three colors and paint one simple object in front of you.",
+      "Let it dry fully before judging it. Watercolor always looks different dry.",
+    ],
+    "A three-color painting of a lemon, a mug or a single flower.",
+    ["outdoor-sketching", "calligraphy", "paint-by-numbers"],
+    [vid, comm, lib],
+    [G_CREATIVE, G_AFTER],
+  ),
+  embroidery: e(
+    "Easy",
+    8,
+    30,
+    "Assumes a hoop, a few skeins of thread, needles and fabric, or a beginner kit that bundles them.",
+    "30 to 60 minutes per sitting",
+    "indoor",
+    [
+      "Get a small hoop, a needle with an eye big enough for six-strand thread, and plain cotton fabric.",
+      "Learn just three stitches: backstitch, satin stitch and french knot.",
+      "Draw a simple shape on the fabric with a washable pen.",
+      "Stitch slowly and pull the thread gently to avoid puckering.",
+    ],
+    "A small flower or your initial inside a 4 to 5 inch hoop.",
+    ["crochet", "knitting", "friendship-bracelets"],
+    [vid, "A beginner stitch guide from the library", comm],
+    [G_35, G_CREATIVE],
+  ),
+  crochet: e(
+    "Gentle learning curve",
+    8,
+    25,
+    "Assumes one hook and one or two balls of beginner-friendly yarn. Patterns are often free.",
+    "30 to 60 minutes, evenings or commutes as a passenger",
+    "indoor",
+    [
+      "Choose a smooth, light-colored medium-weight yarn and a matching hook so stitches are easy to see.",
+      "Learn the slip knot, chain and single crochet. That is enough to make a lot.",
+      "Practice a flat rectangle until your edges stay even.",
+      "Count your stitches at the end of each row. It saves a lot of unpicking.",
+    ],
+    "A simple square, which becomes a coaster, then a dishcloth.",
+    ["knitting", "embroidery", "craft-nights"],
+    [vid, comm, "A beginner pattern book from the library"],
+    [G_CREATIVE],
+  ),
+  knitting: e(
+    "Gentle learning curve",
+    10,
+    30,
+    "Assumes one pair of needles and a couple of balls of beginner-friendly yarn.",
+    "30 to 60 minutes per session",
+    "indoor",
+    [
+      "Pick medium-weight yarn in a light color and needles that suit the yarn label.",
+      "Learn to cast on, knit stitch and bind off. Everything else builds on these.",
+      "Knit a flat practice swatch until your tension feels steady.",
+      "If you drop a stitch, pause and look it up instead of pulling it out in frustration.",
+    ],
+    "A garter-stitch scarf or a plain washcloth.",
+    ["crochet", "embroidery", "craft-nights"],
+    [vid, comm, "A beginner knitting book from the library"],
+    [G_CREATIVE],
+  ),
+  "jewelry-making": e(
+    "Easy",
+    15,
+    50,
+    "Assumes a bead assortment, stringing material, clasps and a pair of small pliers. Specialty tools are extra.",
+    "45 to 90 minutes per piece",
+    "indoor",
+    [
+      "Choose a simple piece: a beaded bracelet or a pair of earrings.",
+      "Gather beads, stringing material, clasps and one pair of pliers.",
+      "Lay out your bead pattern on a tray before threading.",
+      "Finish with a secure knot or crimp, then test the closure before you wear it.",
+    ],
+    "A beaded bracelet in a pattern you laid out yourself.",
+    ["friendship-bracelets", "air-dry-clay", "craft-nights"],
+    [vid, comm, lib],
+    [G_CREATIVE],
+  ),
+  "friendship-bracelets": e(
+    "Easy",
+    5,
+    20,
+    "Assumes a few skeins of embroidery thread and tape or a clipboard. Beads are optional.",
+    "20 to 40 minutes per bracelet",
+    "either",
+    [
+      "Pick three to four thread colors that look good together.",
+      "Cut lengths about as long as your arm and knot them at one end.",
+      "Tape the knot to a table, clipboard or your knee.",
+      "Learn the basic forward knot and make a simple stripe pattern.",
+    ],
+    "A striped bracelet to give to a friend.",
+    ["jewelry-making", "craft-nights", "embroidery"],
+    [vid, "A friend who already knows how", "A community craft meetup"],
+    [G_35],
+  ),
+  "air-dry-clay": e(
+    "Easy",
+    10,
+    35,
+    "Assumes one pack of clay, a basic set of tools and paint. Sealant and fancier tools are extra.",
+    "45 to 90 minutes, plus drying time",
+    "indoor",
+    [
+      "Cover a table with a mat or parchment so clay does not stick.",
+      "Roll a small ball and press it into a pinch pot to learn how the clay behaves.",
+      "Smooth cracks with a damp fingertip as you work.",
+      "Let it dry fully, often a day or more, before painting.",
+    ],
+    "A trinket dish or ring holder.",
+    ["pottery-painting", "jewelry-making", "paint-by-numbers"],
+    [vid, "A local community studio taster session", lib],
+    [G_35, G_AFTER, G_CREATIVE],
+  ),
+  "pottery-painting": e(
+    "Easy",
+    25,
+    60,
+    "Assumes a paint-your-own studio session paid per piece, or an at-home kit. Studio pricing varies a lot by area.",
+    "About two hours, plus time for the piece to be fired if done in a studio",
+    "either",
+    [
+      "Find a local paint-your-own pottery studio, or choose an at-home kit.",
+      "Pick a simple piece such as a mug or small plate.",
+      "Sketch the design with pencil first, since it burns away when fired.",
+      "Apply thin, even coats and allow them to dry between layers.",
+    ],
+    "A mug or trinket dish with a simple pattern.",
+    ["air-dry-clay", "paint-by-numbers", "craft-nights"],
+    ["Staff at a local studio are usually happy to give tips", vid],
+    [G_CREATIVE],
+  ),
+  "paint-by-numbers": e(
+    "Easy",
+    15,
+    40,
+    "Assumes a small to medium canvas kit with paints and brushes included.",
+    "30 to 60 minutes per sitting, over several sessions",
+    "indoor",
+    [
+      "Choose a small canvas first so you can finish it.",
+      "Lay out the paints and a damp cloth, with good light.",
+      "Work one numbered area at a time, light colors first.",
+      "Keep lids closed between colors so the paint stays workable.",
+    ],
+    "A small canvas finished across a few evenings.",
+    ["watercolor-painting", "pottery-painting", "craft-nights"],
+    ["The instructions packaged with the kit", vid],
+    [G_CREATIVE, G_AFTER],
+  ),
+  "flower-arranging": e(
+    "Easy",
+    10,
+    30,
+    "Assumes one bunch of grocery or market flowers and a vase you already own. Specialty tools are optional.",
+    "20 to 40 minutes, weekly or whenever you buy flowers",
+    "indoor",
+    [
+      "Buy one mixed bunch or three single stems: a focal bloom, a filler and some greenery.",
+      "Trim stems on an angle and remove leaves that would sit below the water line.",
+      "Start with greenery to form a frame, then add the focal flowers.",
+      "Change the water every couple of days to help them last.",
+    ],
+    "A single-vase arrangement for your table.",
+    ["indoor-gardening", "picnicking", "collage-art"],
+    ["A local floral class", vid, lib],
+    [G_CREATIVE],
+  ),
+  "collage-art": e(
+    "Easy",
+    0,
+    15,
+    "Assumes magazines, packaging and paper you already have, plus a glue stick and scissors.",
+    "30 to 60 minutes",
+    "indoor",
+    [
+      "Collect magazine pages, packaging and scrap paper in a folder.",
+      "Choose a mood or color story and cut out pieces that fit it.",
+      "Move the pieces around on a sheet before gluing anything.",
+      "Glue down your final layout and let it dry flat under a heavy book.",
+    ],
+    "A postcard-sized collage built from one color story.",
+    ["junk-journaling", "scrapbooking", "watercolor-painting"],
+    [vid, lib, "A local art meetup"],
+    [G_JUNK, G_CREATIVE],
+  ),
+  calligraphy: e(
+    "Gentle learning curve",
+    8,
+    30,
+    "Assumes a beginner pen set and practice paper. Specialty paper and nibs are extra.",
+    "15 to 30 minutes, ideally most days",
+    "indoor",
+    [
+      "Start with a brush pen or a pointed-pen starter set.",
+      "Practice basic strokes on lined or guide paper: up strokes thin, down strokes thick.",
+      "Move on to single letters, then short words.",
+      "Keep your wrist loose and write slowly. Speed comes later.",
+    ],
+    "Your name or a short favorite word written five different ways.",
+    ["watercolor-painting", "creative-writing", "junk-journaling"],
+    [comm, vid, "Printable practice sheets from library books"],
+    [G_CREATIVE],
+  ),
+  "film-photography": e(
+    "Gentle learning curve",
+    30,
+    150,
+    "Assumes a secondhand or simple point-and-shoot film camera plus a few rolls and development. Costs vary widely with what you buy.",
+    "About 90 minutes per walk, then waiting for development",
+    "outdoor",
+    [
+      "Pick a simple automatic film camera, which may be available secondhand.",
+      "Learn how to load the film and what the numbers on the roll mean.",
+      "Shoot one roll over a few walks without checking results.",
+      "Get it developed and review which shots worked and why.",
+    ],
+    "One roll of film shot on a single neighborhood walk.",
+    ["nature-photography", "thrifting", "museum-exploring"],
+    [comm, lib, "A local camera club or photo walk"],
+    [G_35],
+  ),
+  reading: e(
+    "Easy",
+    0,
+    15,
+    "Assumes borrowing from a library. Buying books and accessories is optional.",
+    "20 to 60 minutes, daily or a few times a week",
+    "either",
+    [
+      "Get a library card if you do not have one.",
+      "Choose something short and easy to enjoy, not what you think you should read.",
+      "Set a small daily window, such as 20 minutes before bed.",
+      "Give yourself permission to abandon a book that is not working.",
+    ],
+    "One short novel or a story collection finished in a week.",
+    ["book-clubs", "creative-writing", "picnicking"],
+    ["Your local library and its staff recommendations", "Library e-book lending"],
+    [G_AFTER, G_35],
+  ),
+  "jigsaw-puzzles": e(
+    "Easy",
+    5,
+    30,
+    "Assumes a 300 to 500 piece puzzle, new or secondhand. Borrowing or swapping brings this to near zero.",
+    "30 to 60 minutes per sitting",
+    "indoor",
+    [
+      "Choose a 300 to 500 piece puzzle with a clear picture.",
+      "Clear a table or use a board you can move.",
+      "Flip all the pieces face up and sort edges first.",
+      "Group by color and pattern, then work from the edges inward.",
+    ],
+    "A 300 to 500 piece puzzle finished over one weekend.",
+    ["crossword-puzzles", "mahjong", "reading"],
+    ["Puzzle swaps with friends or neighbors", "Community libraries that lend puzzles"],
+    [G_AFTER],
+  ),
+  "crossword-puzzles": e(
+    "Gentle learning curve",
+    0,
+    10,
+    "Assumes free or low-cost puzzles from a newspaper, app or puzzle book.",
+    "10 to 30 minutes",
+    "either",
+    [
+      "Start with an easy, early-week style puzzle.",
+      "Fill in the clues you know, then use crossings to unlock others.",
+      "Learn common crossword answers, which repeat.",
+      "Check an answer only after you have tried a few crossings.",
+    ],
+    "One small puzzle finished with a pencil in hand.",
+    ["jigsaw-puzzles", "reading", "creative-writing"],
+    [lib, "A beginner crossword guide", "A local puzzle group"],
+    [G_AFTER],
+  ),
+  baking: e(
+    "Easy",
+    10,
+    50,
+    "Assumes basic pantry staples, a mixing bowl and a baking tray. Specialty equipment is extra.",
+    "1 to 2 hours, including cooling",
+    "indoor",
+    [
+      "Pick a short, simple recipe such as cookies or banana bread.",
+      "Read the full recipe and gather everything before you start.",
+      "Measure precisely, since baking is chemistry.",
+      "Cool on a rack and note what you would change next time.",
+    ],
+    "A batch of simple cookies to share.",
+    ["craft-nights", "picnicking", "reading"],
+    [lib, vid, "A friend or relative who bakes"],
+    [G_AFTER],
+  ),
+  "indoor-gardening": e(
+    "Easy",
+    5,
+    40,
+    "Assumes one or two small, forgiving plants with a pot and soil. Grow lights and extras cost more.",
+    "10 to 20 minutes a few times a week",
+    "indoor",
+    [
+      "Choose one forgiving plant that suits your light.",
+      "Repot it in a container with a drainage hole.",
+      "Water when the top of the soil feels dry, not on a rigid schedule.",
+      "Notice changes weekly and adjust the spot if it struggles.",
+    ],
+    "One healthy plant on a windowsill, watered by feel.",
+    ["flower-arranging", "reading", "picnicking"],
+    ["Local plant swaps and nurseries", lib, vid],
+    [G_AFTER],
+  ),
+  mahjong: e(
+    "Gentle learning curve",
+    30,
+    120,
+    "Assumes a basic tile set. Used sets may cost less, and playing at a friend's or a local group costs nothing.",
+    "About two hours per game night",
+    "indoor",
+    [
+      "Learn the tiles and the basic goal of building a winning hand.",
+      "Find a friend who plays or a local beginner session.",
+      "Play slowly with the rules written out on a card.",
+      "Agree on which rule variation your group is using before you begin.",
+    ],
+    "One full game with friends, rules card in the middle of the table.",
+    ["jigsaw-puzzles", "craft-nights", "book-clubs"],
+    ["A local community game night", lib, vid],
+    [G_35],
+  ),
+  "vinyl-collecting": e(
+    "Easy",
+    50,
+    300,
+    "Assumes a basic turntable, speakers and a few secondhand records. Prices vary a great deal by turntable and record.",
+    "About an hour per listening session or record hunt",
+    "either",
+    [
+      "Decide how you will play records: a basic turntable and some speakers.",
+      "Start with a few albums you already love.",
+      "Visit a record store or secondhand shop and browse without a plan.",
+      "Look after your records: clean sleeves, store upright, avoid heat.",
+    ],
+    "Listen to one full album, front to back, with nothing else on.",
+    ["thrifting", "reading", "museum-exploring"],
+    ["Staff at local record shops", lib, "Community listening nights"],
+    [G_35],
+  ),
+  "creative-writing": e(
+    "Easy",
+    0,
+    20,
+    "Assumes a notebook or free writing app. Courses and books are optional.",
+    "15 to 30 minutes",
+    "either",
+    [
+      "Choose a notebook or document just for this.",
+      "Set a ten-minute timer and write without stopping to edit.",
+      "Use a prompt if you are stuck: a place, an object, an overheard sentence.",
+      "Reread once a week and underline any line you like.",
+    ],
+    "Ten minutes of free writing about one ordinary morning.",
+    ["junk-journaling", "reading", "calligraphy"],
+    [comm, lib, "A local writing group"],
+    [G_JUNK, G_AFTER],
+  ),
+  tennis: e(
+    "Needs a lesson or two",
+    40,
+    150,
+    "Assumes a beginner racket, a can of balls and comfortable sports shoes. Lessons and court fees are extra and vary by area.",
+    "About an hour per session",
+    "outdoor",
+    [
+      "Book a beginner group lesson at a local court or park program.",
+      "Borrow a racket first before buying one.",
+      "Practice the forehand with a partner or against a practice wall.",
+      "Play short rallies instead of keeping score at first.",
+    ],
+    "A 30-minute rally with a friend, no scoring.",
+    ["pickleball", "hiking", "roller-skating"],
+    [comm, "A local park and recreation program", vid],
+    [G_35],
+  ),
+  pickleball: e(
+    "Easy",
+    25,
+    100,
+    "Assumes two paddles and a few balls. Some courts offer loaner equipment or open play.",
+    "60 to 90 minutes",
+    "either",
+    [
+      "Find a local court or community center with open play.",
+      "Learn the basic rules: the serve, the kitchen and scoring.",
+      "Borrow a paddle at first.",
+      "Play a casual game with friends or join a beginner session.",
+    ],
+    "One casual doubles game at an open play session.",
+    ["tennis", "roller-skating", "hiking"],
+    ["A community center beginner session", vid, "A local club"],
+    [G_35, G_AFTER],
+  ),
+  hiking: e(
+    "Easy",
+    0,
+    100,
+    "Assumes starting with comfortable shoes you own. Boots, a pack and layers raise the figure later.",
+    "2 to 4 hours",
+    "outdoor",
+    [
+      "Pick an easy, well-marked trail close to where you live.",
+      "Check the weather and daylight hours before you go.",
+      "Carry water, a snack and a charged phone.",
+      "Tell someone where you are going and when you plan to be back.",
+    ],
+    "A short, easy trail walk with a snack at the halfway point.",
+    ["birdwatching", "nature-photography", "picnicking"],
+    ["A local parks office or trail guide", lib, "A community walking group"],
+    [G_35, G_AFTER],
+  ),
+  "roller-skating": e(
+    "Gentle learning curve",
+    0,
+    150,
+    "Assumes renting skates at first. Buying your own skates and pads varies widely.",
+    "About an hour per session",
+    "either",
+    [
+      "Rent skates at a rink for your first sessions.",
+      "Wear a helmet and wrist guards.",
+      "Practice standing, marching in place and gliding on a flat surface.",
+      "Learn to stop and fall safely before trying anything fancy.",
+    ],
+    "One full lap of a rink without holding on.",
+    ["pickleball", "tennis", "hiking"],
+    [comm, "Rink staff and beginner sessions", vid],
+    [G_35],
+  ),
+  birdwatching: e(
+    "Easy",
+    0,
+    80,
+    "Assumes starting with your eyes and a free field guide app or library book. Binoculars are an optional upgrade.",
+    "30 to 90 minutes",
+    "outdoor",
+    [
+      "Sit somewhere quiet for ten minutes near trees or water.",
+      "Notice size, color, beak and behavior before trying to name a bird.",
+      "Use a field guide from the library or a free identification app.",
+      "Keep a short list of what you saw and where.",
+    ],
+    "A ten-minute sit in a park, writing down every bird you notice.",
+    ["hiking", "nature-photography", "outdoor-sketching"],
+    ["A local nature group walk", lib, vid],
+    [G_35],
+  ),
+  "nature-photography": e(
+    "Easy",
+    0,
+    50,
+    "Assumes the camera on your phone. Extra lenses and gear are optional.",
+    "About an hour",
+    "outdoor",
+    [
+      "Go out when the light is soft, usually early or late in the day.",
+      "Pick one subject: leaves, water, birds or textures.",
+      "Move around your subject and look at it from low and high angles.",
+      "Choose your best five and delete the rest.",
+    ],
+    "Five good photos from a single walk.",
+    ["birdwatching", "hiking", "film-photography"],
+    [lib, vid, "A local photo walk"],
+    [G_35],
+  ),
+  "outdoor-sketching": e(
+    "Easy",
+    5,
+    35,
+    "Assumes a pencil, a pocket sketchbook and optionally a small watercolor set.",
+    "30 to 60 minutes",
+    "outdoor",
+    [
+      "Pick a bench or a spot with something interesting to draw.",
+      "Start with a thirty-second outline sketch.",
+      "Work for ten minutes on one object and do not erase.",
+      "Add the date and place as a caption.",
+    ],
+    "A single page of sketches from one bench.",
+    ["watercolor-painting", "birdwatching", "nature-photography"],
+    ["A local sketch group", lib, vid],
+    [G_CREATIVE, G_35],
+  ),
+  "book-clubs": e(
+    "Easy",
+    0,
+    25,
+    "Assumes borrowing from a library. Buying copies is optional.",
+    "About two hours a month, plus reading",
+    "either",
+    [
+      "Decide on a small group, even three friends.",
+      "Choose a book together, ideally a short one.",
+      "Set a date and place before you start reading.",
+      "Bring three questions to the first meeting.",
+    ],
+    "A first meeting around a short book, with snacks.",
+    ["reading", "craft-nights", "creative-writing"],
+    [
+      "Your local library, which often runs clubs",
+      "Discussion questions printed in the back of many books",
+    ],
+    [G_35],
+  ),
+  "craft-nights": e(
+    "Easy",
+    10,
+    40,
+    "Assumes one group-friendly craft and snacks. Cost depends on guests and the craft.",
+    "2 to 3 hours",
+    "indoor",
+    [
+      "Pick one simple craft that suits mixed skill levels.",
+      "Invite two to four friends.",
+      "Prep a sample so people can see the goal.",
+      "Set out snacks and music, then let people chat while they make.",
+    ],
+    "A bracelet night with friends.",
+    ["friendship-bracelets", "air-dry-clay", "paint-by-numbers"],
+    ["A friend who already hosts", vid, "A community craft meetup"],
+    [G_CREATIVE, G_35],
+  ),
+  volunteering: e(
+    "Easy",
+    0,
+    0,
+    "Assumes a one-off shift with a local group. Some groups ask for background checks or specific clothing.",
+    "2 to 4 hours per shift",
+    "either",
+    [
+      "Decide on a cause you care about.",
+      "Look for local groups that welcome one-off volunteers.",
+      "Sign up for a single shift before committing.",
+      "Afterward, reflect on whether you want to return.",
+    ],
+    "A single volunteer shift with a local group.",
+    ["hiking", "book-clubs", "thrifting"],
+    ["Your local volunteer center", "Community notice boards", "Your library or community center"],
+    [G_35],
+  ),
+  thrifting: e(
+    "Easy",
+    5,
+    50,
+    "Assumes a small, fixed spending limit that you set yourself.",
+    "1 to 3 hours",
+    "indoor",
+    [
+      "Pick a secondhand shop or market near you.",
+      "Set a spending limit and one thing to hunt for.",
+      "Check seams, stains and zips before buying.",
+      "Wash or clean your finds before you use them.",
+    ],
+    "A hunt for one piece of tableware under a limit you chose beforehand.",
+    ["vinyl-collecting", "museum-exploring", "flower-arranging"],
+    ["Local secondhand shops and markets", "A friend with a good eye"],
+    [G_35],
+  ),
+  "museum-exploring": e(
+    "Easy",
+    0,
+    40,
+    "Assumes entry costs vary by place; many offer free or pay-what-you-wish times.",
+    "1 to 3 hours",
+    "indoor",
+    [
+      "Choose a small museum or one gallery of a larger one.",
+      "Check for free or discounted days.",
+      "Pick one piece and spend ten minutes with it.",
+      "Write or sketch a line about what you noticed.",
+    ],
+    "Ten quiet minutes with a single piece of art.",
+    ["film-photography", "outdoor-sketching", "thrifting"],
+    ["Gallery notes and audio guides", "Museum staff", lib],
+    [G_35, G_AFTER],
+  ),
+  picnicking: e(
+    "Easy",
+    5,
+    40,
+    "Assumes a blanket you own and snacks from home. Extras such as a basket are optional.",
+    "1 to 3 hours",
+    "outdoor",
+    [
+      "Pick a park with some shade and a spot you like.",
+      "Pack easy-to-eat food that does not need a fridge.",
+      "Bring a blanket, something to sit on and a bag for trash.",
+      "Add a book or a small game.",
+    ],
+    "A bread, fruit and cheese picnic on a Saturday.",
+    ["hiking", "reading", "flower-arranging"],
+    ["A friend with a favorite spot", lib],
+    [G_35, G_AFTER],
+  ),
+};
+
+export const hobbies: Hobby[] = seeds.map(make).map((h) => ({ ...h, ...enrichment[h.slug] }));
 export const getHobby = (slug: string) => hobbies.find((h) => h.slug === slug);
 
 export const hobbyFilters = [
@@ -772,3 +1490,9 @@ export const hobbyFilters = [
   { tag: "low-energy", label: "Low energy" },
   { tag: "low-cost", label: "Free or low cost" },
 ] as const;
+
+/**
+ * Indexing rule for hobby profile pages, kept in one place: a page is indexable only when
+ * at least one published article covers the hobby. Otherwise it is noindex.
+ */
+export const isHobbyIndexable = (slug: string) => articlesForHobby(slug).length > 0;

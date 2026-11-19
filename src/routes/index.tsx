@@ -507,16 +507,16 @@ function Home() {
         </div>
       </section>
 
-      {/* NEWSLETTER-READY */}
+      {/* MY PLANS (no newsletter for now: standing decision) */}
       <section className="mx-auto mt-24 max-w-3xl px-5 text-center md:px-8">
         <div className="mx-auto w-fit text-6xl">
           <WordmarkStacked />
         </div>
-        <p className="kicker mt-8 text-cherry">The Out-of-Office Note</p>
-        <h2 className="mt-3 text-4xl">A little weekly note for your life outside work.</h2>
+        <p className="kicker mt-8 text-cherry">Your list, your device</p>
+        <h2 className="mt-3 text-4xl">Keep your good ideas somewhere you'll find them.</h2>
         <p className="mt-4 text-muted-foreground">
-          Our newsletter is getting ready. Until it launches, save ideas to My Plans and they'll be
-          waiting for you on this device.
+          Save hobbies, stories and plans as you go. They stay on this device, with no account and
+          no email needed.
         </p>
         <Link
           to="/saved"

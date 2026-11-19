@@ -1,0 +1,62 @@
+# Weekly health check. Builds the site, serves the build locally, then checks every sitemap URL and
+# every internal link. External links are report-only. Also lists articles overdue for a review.
+# It never edits content and never publishes anything. No secrets are used.
+# Run by hand: GitHub > Actions > "Site health" > "Run workflow".
+name: Site health
+
+on:
+  schedule:
+    - cron: "23 6 * * 1" # Mondays 06:23 UTC
+  workflow_dispatch:
+    inputs:
+      months:
+        description: "Flag articles not updated in this many months"
+        default: "6"
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bunx vitest run
+      - run: bunx vite build
+      - name: Serve the build
+        run: |
+          node scripts/serve-built.mjs 3000 > serve.log 2>&1 &
+          for i in $(seq 1 30); do curl -sf http://localhost:3000/sitemap.xml > /dev/null && exit 0; sleep 1; done
+          cat serve.log; exit 1
+      - name: Check sitemap URLs and internal links
+        run: bun scripts/site-health.mjs links --base http://localhost:3000 --out link-report.md
+        continue-on-error: true
+      - name: Check content freshness
+        run: bun scripts/site-health.mjs freshness --months "${{ inputs.months || '6' }}" --out freshness-report.md
+      - name: Open, update or close issues
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require("fs");
+            const reports = [
+              { file: "link-report.md", title: "Site health: broken links or sitemap URLs" },
+              { file: "freshness-report.md", title: "Site health: articles due for a review" },
+            ];
+            const open = await github.paginate(github.rest.issues.listForRepo, {
+              ...context.repo, state: "open", labels: "site-health", per_page: 100,
+            });
+            for (const { file, title } of reports) {
+              const existing = open.find((i) => i.title === title);
+              if (fs.existsSync(file)) {
+                const body = fs.readFileSync(file, "utf8") + "\n_Updated automatically by the weekly Site health workflow._";
+                if (existing) await github.rest.issues.update({ ...context.repo, issue_number: existing.number, body });
+                else await github.rest.issues.create({ ...context.repo, title, body, labels: ["site-health"] });
+              } else if (existing) {
+                await github.rest.issues.createComment({ ...context.repo, issue_number: existing.number, body: "Fixed: this week's check found nothing. Closing." });
+                await github.rest.issues.update({ ...context.repo, issue_number: existing.number, state: "closed", state_reason: "completed" });
+              }
+            }

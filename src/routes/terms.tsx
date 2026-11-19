@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { seo } from "@/lib/seo";
+import { seo, breadcrumbJsonLd } from "@/lib/seo";
 import { site } from "@/config/site";
 import { ProsePage } from "@/components/pages/ProsePage";
 
@@ -9,6 +9,12 @@ export const Route = createFileRoute("/terms")({
       title: "Terms of Use",
       description: "Terms for using the Plans Past Five website and printables.",
       path: "/terms",
+      jsonLd: [
+        breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Terms of Use", path: "/terms" },
+        ]),
+      ],
     }),
   component: () => (
     <ProsePage
@@ -17,11 +23,6 @@ export const Route = createFileRoute("/terms")({
       dek="The ground rules for using this site and its free resources."
       tone="butter"
     >
-      <p>
-        <em>
-          Starter terms for the site owner to review with a qualified professional before launch.
-        </em>
-      </p>
       <h2>Content</h2>
       <p>
         Stories, images, printables and design on {site.name} are provided for personal,
@@ -37,6 +38,17 @@ export const Route = createFileRoute("/terms")({
       <p>
         Free printables are for personal use. You're welcome to print as many as you like for
         yourself, your friends or a small group activity.
+      </p>
+      <h2>Links and affiliate relationships</h2>
+      <p>
+        We link to third-party sites and may earn a commission on some purchases. We do not control
+        those sites and are not responsible for their content, prices, products or policies.
+      </p>
+      <h2>No warranty</h2>
+      <p>
+        The site is provided as is. We make reasonable efforts to keep information accurate, but we
+        do not guarantee it is complete or current, and we are not liable for decisions you make
+        based on it. Hobbies are not medical or mental-health treatment.
       </p>
       <h2>Changes</h2>
       <p>

@@ -1,11 +1,22 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { seo } from "@/lib/seo";
+import { seo, breadcrumbJsonLd } from "@/lib/seo";
 import { site } from "@/config/site";
 import { ProsePage } from "@/components/pages/ProsePage";
 import { images } from "@/data/images";
 
 export const Route = createFileRoute("/about")({
-  head: () => seo({ title: "About Plans Past Five", description: site.mission, path: "/about" }),
+  head: () =>
+    seo({
+      title: "About Plans Past Five",
+      description: site.mission,
+      path: "/about",
+      jsonLd: [
+        breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ]),
+      ],
+    }),
   component: () => (
     <ProsePage
       kicker="About"

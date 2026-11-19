@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import type { SavedPlanData } from "@/lib/planner";
 
 export type SavedKind = "article" | "hobby" | "plan" | "product" | "solo-date";
 export type SavedItem = {
@@ -7,6 +8,8 @@ export type SavedItem = {
   title: string;
   href: string;
   note?: string;
+  /** For plans: everything needed to restore the exact itinerary (input, seed, activity ids). */
+  plan?: SavedPlanData;
   savedAt: string;
 };
 
@@ -18,15 +21,33 @@ const KINDS: SavedKind[] = ["article", "hobby", "plan", "product", "solo-date"];
 /** Keeps only well-formed entries so corrupted or old-format storage can never crash the page. */
 export function sanitizeSaved(raw: unknown): SavedItem[] {
   if (!Array.isArray(raw)) return [];
-  return raw.filter(
-    (i): i is SavedItem =>
-      !!i &&
-      typeof i === "object" &&
-      typeof i.key === "string" &&
-      typeof i.title === "string" &&
-      typeof i.href === "string" &&
-      typeof i.savedAt === "string" &&
-      KINDS.includes(i.kind),
+  return raw
+    .filter(
+      (i): i is SavedItem =>
+        !!i &&
+        typeof i === "object" &&
+        typeof i.key === "string" &&
+        typeof i.title === "string" &&
+        typeof i.href === "string" &&
+        typeof i.savedAt === "string" &&
+        KINDS.includes(i.kind),
+    )
+    .map((i) => {
+      if (i.plan === undefined || validPlan(i.plan)) return i;
+      const { plan: _drop, ...rest } = i; // malformed plan data: keep the bookmark, drop the payload
+      return rest;
+    });
+}
+
+function validPlan(p: unknown): p is SavedPlanData {
+  if (!p || typeof p !== "object") return false;
+  const r = p as Record<string, unknown>;
+  return (
+    !!r["input"] &&
+    typeof r["input"] === "object" &&
+    typeof r["seed"] === "number" &&
+    Array.isArray(r["ids"]) &&
+    r["ids"].every((x) => typeof x === "string")
   );
 }
 

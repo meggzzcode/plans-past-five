@@ -1,0 +1,411 @@
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { render, screen, cleanup, fireEvent, act } from "@testing-library/react";
+import {
+  RouterProvider,
+  createMemoryHistory,
+  createRootRoute,
+  createRouter,
+} from "@tanstack/react-router";
+import type { ReactNode } from "react";
+import { affiliateRegistry, resolveProductLink } from "@/config/affiliate";
+import { site } from "@/config/site";
+import {
+  catalog,
+  catalogReferenceProblems,
+  filterVerified,
+  linkableFor,
+  selectProducts,
+  validateCatalogProduct,
+  verifiedCatalog,
+  type CatalogProduct,
+} from "@/data/catalog";
+import { fillKit, kitSlotIndex, kits } from "@/data/kits";
+import { collections } from "@/data/products";
+import { hobbies } from "@/data/hobbies";
+import {
+  buildListText,
+  nextState,
+  readShopList,
+  sanitizeShopList,
+  SHOPLIST_KEY,
+} from "@/lib/shoplist";
+import { cleanParams, track } from "@/lib/track";
+import { ProductCard, ShopDisclosure } from "@/components/commerce/ProductCard";
+import { ShopTheArticle } from "@/components/commerce/ShopTheArticle";
+import { ShopMyHobby } from "@/components/commerce/ShopMyHobby";
+import { StarterKit } from "@/components/commerce/StarterKit";
+import { ArticleBody } from "@/components/editorial/ArticleBody";
+
+// TEST FIXTURES ONLY. Invented for tests; they must never appear in the shipped catalog.
+const base: CatalogProduct = {
+  id: "test-fixture-washi",
+  name: "TEST FIXTURE washi tape set",
+  brand: "Test Brand",
+  category: "Washi tape",
+  description: "A fixture used only in tests.",
+  asin: "B0TESTFIX1",
+  amazonUrl: "https://www.amazon.com/dp/B0TESTFIX1",
+  specs: [{ label: "Width", value: "15 mm" }],
+  hobbies: ["junk-journaling"],
+  articles: ["test-article"],
+  collections: ["creative-girl"],
+  kitSlots: [{ kit: "junk-journaling", slot: "washi-tape" }],
+  role: "affordable",
+  isEssential: true,
+  audience: "Beginners",
+  whySelected: "Fixture reason.",
+  limitations: ["Fixture limitation."],
+  researchSources: ["https://example.com/source"],
+  lastVerified: "2026-01-01",
+  availability: "available",
+  affiliateStatus: "not-activated",
+  status: "verified",
+};
+const second: CatalogProduct = {
+  ...base,
+  id: "test-fixture-pens",
+  name: "TEST FIXTURE pens",
+  asin: "B0TESTFIX2",
+  amazonUrl: "https://www.amazon.com/dp/B0TESTFIX2",
+  kitSlots: [{ kit: "junk-journaling", slot: "pens" }],
+  role: "nice-to-have",
+  isEssential: false,
+};
+const candidate: CatalogProduct = {
+  ...base,
+  id: "test-fixture-candidate",
+  asin: "B0TESTFIX3",
+  amazonUrl: "https://www.amazon.com/dp/B0TESTFIX3",
+  status: "candidate",
+};
+const fixtures = [base, second, candidate];
+
+const Wrap = ({ children }: { children: ReactNode }) => {
+  const root = createRootRoute({ component: () => <>{children}</> });
+  const router = createRouter({
+    routeTree: root,
+    history: createMemoryHistory({ initialEntries: ["/"] }),
+  });
+  return <RouterProvider router={router} />;
+};
+const show = async (ui: ReactNode) => {
+  const r = render(<Wrap>{ui}</Wrap>);
+  await act(async () => {});
+  return r;
+};
+
+beforeEach(() => window.localStorage.clear());
+afterEach(cleanup);
+
+describe("catalog validation", () => {
+  it("accepts a well-formed record", () => expect(validateCatalogProduct(base)).toEqual([]));
+  it("rejects a bad ASIN", () => {
+    expect(validateCatalogProduct({ ...base, asin: "B0123" }).join()).toMatch(/ASIN/);
+    expect(validateCatalogProduct({ ...base, asin: "b0testfix1" }).join()).toMatch(/ASIN/);
+  });
+  it("rejects placeholder ASINs", () => {
+    for (const asin of ["EXAMPLE000", "EXAMPLE0000", "0000000000", "XXXXXXXXXX", "B000000000"])
+      expect(
+        validateCatalogProduct({
+          ...base,
+          asin,
+          amazonUrl: `https://www.amazon.com/dp/${asin}`,
+        }).join(),
+      ).toMatch(/ASIN/);
+  });
+  it("rejects amazonUrl that does not match the ASIN", () =>
+    expect(
+      validateCatalogProduct({ ...base, amazonUrl: "https://www.amazon.com/dp/B0OTHER123" }).join(),
+    ).toMatch(/must equal/));
+  it("rejects tracking parameters", () => {
+    for (const q of ["?tag=me-20", "?utm_source=x", "?ref=abc", "/ref=sr_1_1"]) {
+      expect(
+        validateCatalogProduct({ ...base, amazonUrl: `${base.amazonUrl}${q}` }).length,
+      ).toBeGreaterThan(0);
+    }
+    expect(
+      validateCatalogProduct({
+        ...base,
+        manufacturerUrl: "https://example.com/?utm_medium=x",
+      }).join(),
+    ).toMatch(/tracking/);
+  });
+  it("keeps affiliateUrl empty until activated", () =>
+    expect(
+      validateCatalogProduct({ ...base, affiliateUrl: "https://x.example/aff" }).join(),
+    ).toMatch(/affiliateUrl/));
+  it("requires sources and lastVerified", () => {
+    expect(validateCatalogProduct({ ...base, researchSources: [] }).join()).toMatch(
+      /researchSources/,
+    );
+    expect(validateCatalogProduct({ ...base, lastVerified: "" }).join()).toMatch(/lastVerified/);
+    expect(validateCatalogProduct({ ...base, lastVerified: "2999-01-01" }).join()).toMatch(
+      /future/,
+    );
+  });
+  it("rejects price, rating and review fields and price-like text", () => {
+    for (const k of ["price", "rating", "reviewCount", "discount"])
+      expect(validateCatalogProduct({ ...base, [k]: 1 }).join()).toMatch(/not allowed/);
+    expect(validateCatalogProduct({ ...base, whySelected: "Only $9 today" }).join()).toMatch(
+      /price/,
+    );
+    expect(validateCatalogProduct({ ...base, description: "Limited time deal" }).join()).toMatch(
+      /price/,
+    );
+  });
+  it("rejects example ids and essential-but-later roles", () => {
+    expect(validateCatalogProduct({ ...base, id: "example-do-not-import" }).join()).toMatch(
+      /example-/,
+    );
+    expect(validateCatalogProduct({ ...base, role: "later-upgrade" }).join()).toMatch(
+      /isEssential/,
+    );
+  });
+  it("ships an empty catalog with no test fixtures", () => {
+    expect(catalog).toEqual([]);
+    expect(verifiedCatalog).toEqual([]);
+    expect(catalog.some((p) => /^(test-fixture|example-)/.test(p.id))).toBe(false);
+  });
+  it("cross-references hobbies, collections and kit slots", () => {
+    const known = {
+      hobbies: hobbies.map((h) => h.slug),
+      collections: collections.map((c) => c.slug),
+      kits: kitSlotIndex(),
+    };
+    expect(catalogReferenceProblems(fixtures, known)).toEqual([]);
+    expect(
+      catalogReferenceProblems(
+        [{ ...base, hobbies: ["nope"], kitSlots: [{ kit: "junk-journaling", slot: "x" }] }],
+        known,
+      ).length,
+    ).toBe(2);
+    expect(catalogReferenceProblems([base, base], known).join()).toMatch(/duplicate/);
+  });
+});
+
+describe("unverified products never render", () => {
+  it("filters candidates, invalid and unavailable records", () => {
+    const bad = { ...base, id: "test-fixture-bad", asin: "nope" };
+    const gone = {
+      ...base,
+      id: "test-fixture-gone",
+      asin: "B0TESTFIX4",
+      amazonUrl: "https://www.amazon.com/dp/B0TESTFIX4",
+      availability: "unavailable" as const,
+    };
+    expect(filterVerified([base, candidate, bad, gone]).map((p) => p.id)).toEqual([
+      "test-fixture-washi",
+    ]);
+  });
+  it("components render nothing for candidates only", async () => {
+    const { container } = await show(
+      <>
+        <ShopTheArticle article="test-article" catalog={filterVerified([candidate])} />
+        <ShopMyHobby hobby="junk-journaling" catalog={filterVerified([candidate])} />
+      </>,
+    );
+    expect(container.textContent).toBe("");
+  });
+  it("shows verified, hides candidate in the same context", async () => {
+    await show(<ShopTheArticle article="test-article" catalog={filterVerified(fixtures)} />);
+    expect(screen.queryByText(/washi tape set/)).not.toBeNull();
+    expect(document.body.textContent).not.toMatch(/test-fixture-candidate/);
+    expect(document.querySelectorAll("[data-product-id]").length).toBe(2);
+  });
+});
+
+describe("selection", () => {
+  it("separates essentials from optional and never duplicates", () => {
+    const dupAsin = { ...second, id: "test-fixture-dup", articles: ["test-article"] }; // same ASIN as `second`
+    const sel = selectProducts(
+      { article: "test-article", hobby: "junk-journaling", collection: "creative-girl" },
+      [base, second, dupAsin, base],
+    );
+    expect(sel.essentials.map((p) => p.id)).toEqual(["test-fixture-washi"]);
+    expect(sel.optional.map((p) => p.id)).toEqual(["test-fixture-pens"]);
+    expect(sel.all).toHaveLength(2);
+  });
+  it("renders essentials before optional upgrades", async () => {
+    await show(
+      <ShopTheArticle
+        article="test-article"
+        catalog={fixtures.filter((p) => p.status === "verified")}
+      />,
+    );
+    const heads = [...document.querySelectorAll("h4")].map((h) => h.textContent);
+    expect(heads).toEqual(["Start with these", "Optional upgrades"]);
+  });
+});
+
+describe("kits", () => {
+  it("defines all 15 kits with unique slot ids", () => {
+    expect(kits.map((k) => k.id)).toEqual([
+      "junk-journaling",
+      "watercolor",
+      "air-dry-clay",
+      "embroidery",
+      "crochet",
+      "reading-journal",
+      "girls-craft-night",
+      "mahjong-night",
+      "book-club",
+      "paint-night",
+      "picnic-adventure",
+      "flower-arranging",
+      "pickleball",
+      "tennis",
+      "cozy-night-in",
+    ]);
+    for (const k of kits) {
+      expect(new Set(k.slots.map((s) => s.id)).size).toBe(k.slots.length);
+      if (k.hobby) expect(hobbies.some((h) => h.slug === k.hobby)).toBe(true);
+    }
+  });
+  it("fills only slots with verified products", () => {
+    const kit = kits.find((k) => k.id === "junk-journaling")!;
+    expect(fillKit(kit, []).length).toBe(0);
+    expect(fillKit(kit, filterVerified(fixtures)).map((f) => f.slot.id)).toEqual([
+      "washi-tape",
+      "pens",
+    ]);
+    expect(fillKit(kit, filterVerified([candidate]))).toEqual([]);
+  });
+  it("renders nothing for an empty kit and a disclaimer for a filled one", async () => {
+    const { container, unmount } = await show(<StarterKit kit="junk-journaling" catalog={[]} />);
+    expect(container.textContent).toBe("");
+    unmount();
+    await show(<StarterKit kit="junk-journaling" catalog={filterVerified(fixtures)} />);
+    expect(document.body.textContent).toMatch(/not a bundle sold by Plans Past Five/);
+  });
+});
+
+describe("shopping list", () => {
+  it("sanitizes corrupt storage", () => {
+    expect(sanitizeShopList(null)).toEqual({});
+    expect(sanitizeShopList({ items: { a: "need", b: "nope", c: 3 } })).toEqual({ a: "need" });
+    window.localStorage.setItem(SHOPLIST_KEY, "{not json");
+    expect(readShopList()).toEqual({});
+  });
+  it("toggles statuses", () => {
+    let s = nextState({}, "a", "need");
+    expect(s).toEqual({ a: "need" });
+    s = nextState(s, "a", "own");
+    expect(s).toEqual({ a: "own" });
+    expect(nextState(s, "a", "own")).toEqual({});
+  });
+  it("round-trips through the UI and localStorage", async () => {
+    const cat = filterVerified(fixtures);
+    const { unmount } = await show(<ShopMyHobby hobby="junk-journaling" catalog={cat} />);
+    fireEvent.click(screen.getAllByLabelText(/^I need this: TEST FIXTURE washi/)[0]!);
+    await act(async () => {});
+    expect(JSON.parse(window.localStorage.getItem(SHOPLIST_KEY)!)).toEqual({
+      v: 1,
+      items: { "test-fixture-washi": "need" },
+    });
+    unmount();
+    await show(<ShopMyHobby hobby="junk-journaling" catalog={cat} />);
+    expect(
+      (screen.getAllByLabelText(/^I need this: TEST FIXTURE washi/)[0] as HTMLInputElement).checked,
+    ).toBe(true);
+    fireEvent.click(screen.getAllByLabelText(/^I already own this: TEST FIXTURE washi/)[0]!);
+    await act(async () => {});
+    expect(readShopList()).toEqual({ "test-fixture-washi": "own" });
+  });
+  it("copy text has names and ordinary URLs only for ticked items", () => {
+    const text = buildListText(
+      [base, second],
+      { [base.id]: "need", [second.id]: "own" },
+      "2026-02-03",
+      "Test list",
+    );
+    expect(text).toContain("Test list (Plans Past Five)");
+    expect(text).toContain("[ ] TEST FIXTURE washi tape set (Test Brand)");
+    expect(text).toContain("Amazon: https://www.amazon.com/dp/B0TESTFIX1");
+    expect(text).not.toContain("B0TESTFIX2");
+    expect(text).toContain("Already own: TEST FIXTURE pens");
+    expect(text).not.toMatch(/tag=|utm_/);
+    expect(text).not.toMatch(/sponsored|earn from/i);
+  });
+});
+
+describe("empty-catalog parity", () => {
+  it("shop blocks render nothing and legacy blocks fall back to type cards", async () => {
+    const { container } = await show(
+      <ArticleBody
+        blocks={[
+          { type: "shopTheArticle", articleSlug: "x", hobbies: ["junk-journaling"] },
+          { type: "shopMyHobby", hobby: "junk-journaling" },
+          { type: "shopHobby", productIds: ["air-dry-clay"], title: "Legacy title" },
+        ]}
+      />,
+    );
+    expect(container.textContent).toContain("Legacy title");
+    expect(container.textContent).toContain("Air-dry clay");
+    expect(container.textContent).not.toMatch(/Shopping checklist|Shop this guide/);
+    expect(container.querySelector("a[href*='amazon.com/s']")).not.toBeNull();
+    expect(container.querySelectorAll("input[type=checkbox]").length).toBe(0);
+  });
+  it("inline product mentions stay plain text when unverified", async () => {
+    const { container } = await show(
+      <ArticleBody blocks={[{ type: "p", text: "Try {{product:nope|this tape}} today." }]} />,
+    );
+    expect(container.textContent).toBe("Try this tape today.");
+    expect(container.querySelector("a")).toBeNull();
+  });
+});
+
+describe("links and affiliate swap", () => {
+  const amazon = affiliateRegistry["amazon"]!;
+  const snap = { ...amazon };
+  afterEach(() => Object.assign(amazon, snap));
+
+  it("links are ordinary and not sponsored today", async () => {
+    await show(
+      <>
+        <ProductCard product={base} placement="test" />
+        <ShopDisclosure />
+      </>,
+    );
+    const a = screen.getByText(/View on Amazon/).closest("a")!;
+    expect(a.getAttribute("href")).toBe("https://www.amazon.com/dp/B0TESTFIX1");
+    expect(a.getAttribute("rel")).toBe("noopener");
+    expect(document.body.textContent).toMatch(/Sold by Amazon/);
+    expect(document.body.textContent).toMatch(/don't currently earn/);
+  });
+  it("activating the registry changes link, rel and disclosure with no component change", async () => {
+    Object.assign(amazon, {
+      websiteTrackingId: "demo-20",
+      approvalStatus: "approved",
+      active: true,
+      lastVerified: "2026-01-01",
+    });
+    expect(resolveProductLink(linkableFor(base)).sponsored).toBe(true);
+    await show(<ProductCard product={base} placement="test" />);
+    const a = screen.getByText(/View on Amazon/).closest("a")!;
+    expect(a.getAttribute("href")).toBe("https://www.amazon.com/dp/B0TESTFIX1?tag=demo-20");
+    expect(a.getAttribute("rel")).toBe("sponsored noopener");
+    expect(buildListText([base], { [base.id]: "need" }, "2026-02-03")).toMatch(/Associate/);
+  });
+});
+
+describe("tracking", () => {
+  const original = site.integrations.googleAnalyticsId;
+  afterEach(() => {
+    (site.integrations as { googleAnalyticsId: string }).googleAnalyticsId = original;
+    delete (window as unknown as { gtag?: unknown }).gtag;
+  });
+  it("is a no-op by default", () => {
+    const g = vi.fn();
+    (window as unknown as { gtag: unknown }).gtag = g;
+    track("product_click", { product_id: "x" });
+    expect(g).not.toHaveBeenCalled();
+  });
+  it("fires only with an id, and strips non-allow-listed or personal data", () => {
+    const g = vi.fn();
+    (window as unknown as { gtag: unknown }).gtag = g;
+    (site.integrations as { googleAnalyticsId: string }).googleAnalyticsId = "G-TEST";
+    track("product_click", { product_id: "x", email: "a@b.com", placement: "a@b.com" } as never);
+    expect(g).toHaveBeenCalledWith("event", "product_click", { product_id: "x" });
+    expect(cleanParams({ query: "my name", count: 2 })).toEqual({ count: 2 });
+  });
+});

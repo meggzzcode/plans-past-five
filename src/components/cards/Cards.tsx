@@ -6,7 +6,7 @@ import { getCategory } from "@/data/categories";
 import { images } from "@/data/images";
 import type { Hobby } from "@/data/hobbies";
 import type { Product, Collection } from "@/data/products";
-import { productHref, isMonetized } from "@/config/affiliate";
+import { resolveProductLink, productLinkLabel } from "@/config/affiliate";
 import { SaveButton } from "@/components/editorial/SaveButton";
 import { cn } from "@/lib/utils";
 import { toneBg } from "@/components/editorial/Section";
@@ -164,7 +164,7 @@ export function ProductCard({
   index?: number;
   className?: string;
 }) {
-  const href = productHref(p);
+  const link = resolveProductLink(p);
   return (
     <article className={cn("flex flex-col border-t-2 border-ink pt-4", className)}>
       <div className="flex items-baseline justify-between gap-3">
@@ -196,13 +196,12 @@ export function ProductCard({
         </p>
       )}
       <a
-        href={href}
+        href={link.href}
         target="_blank"
-        rel={isMonetized() ? "sponsored noopener" : "noopener"}
+        rel={link.sponsored ? "sponsored noopener" : "noopener"}
         className="mt-4 inline-flex w-fit items-center gap-1.5 border-b-2 border-cherry pb-0.5 text-sm font-semibold text-cherry hover:border-transparent"
       >
-        {p.exactUrl ? "View on Amazon" : "Browse options on Amazon"}{" "}
-        <ArrowUpRight className="h-4 w-4" />
+        {productLinkLabel(link)} <ArrowUpRight className="h-4 w-4" />
       </a>
     </article>
   );

@@ -1,0 +1,29 @@
+# Monthly counts of articles, hobbies and products, posted as a GitHub issue. Counts only: no content is changed or published.
+name: Monthly digest
+
+on:
+  schedule:
+    - cron: "41 7 1 * *" # 1st of each month, 07:41 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bun scripts/site-health.mjs digest --out digest.md
+      - run: bun scripts/site-health.mjs freshness --out freshness.md
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require("fs");
+            let body = fs.readFileSync("digest.md", "utf8");
+            if (fs.existsSync("freshness.md")) body += "\n" + fs.readFileSync("freshness.md", "utf8");
+            const month = new Date().toISOString().slice(0, 7);
+            await github.rest.issues.create({ ...context.repo, title: `Monthly digest ${month}`, body, labels: ["digest"] });

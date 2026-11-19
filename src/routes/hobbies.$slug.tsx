@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { getHobby, hobbies } from "@/data/hobbies";
-import { articlesForHobby } from "@/content";
+import { getHobby, hobbies, isHobbyIndexable } from "@/data/hobbies";
+import { articlesForHobby, getArticle } from "@/content";
 import { productsFor } from "@/data/products";
 import { images } from "@/data/images";
 import { site } from "@/config/site";
@@ -23,13 +23,11 @@ export const Route = createFileRoute("/hobbies/$slug")({
       return {
         meta: [{ title: `Hobby not found | ${site.name}` }, { name: "robots", content: "noindex" }],
       };
-    // Hobby pages are short profiles; keep them out of the index until expanded into full guides.
-    const hasGuide = articlesForHobby(h.slug).length > 0;
     return seo({
       title: `${h.name} for Beginners: How to Start`,
       description: `${h.description} Time, cost, supplies and an easy first session.`,
       path: `/hobbies/${h.slug}`,
-      noindex: !hasGuide,
+      noindex: !isHobbyIndexable(h.slug),
     });
   },
   component: HobbyPage,
@@ -41,7 +39,26 @@ function HobbyPage() {
   const img = h.image ? images[h.image] : null;
   const reads = articlesForHobby(h.slug);
   const ps = productsFor(h.productIds);
-  const similar = hobbies.filter((x) => x.slug !== h.slug && x.category === h.category).slice(0, 3);
+  const related = (h.relatedHobbies ?? [])
+    .map((slug) => getHobby(slug))
+    .filter((x): x is NonNullable<typeof x> => Boolean(x));
+  const similar = (
+    related.length ? related : hobbies.filter((x) => x.slug !== h.slug && x.category === h.category)
+  ).slice(0, 3);
+  const guides = [...(h.relatedGuides ?? []).map((g) => getArticle(g)), ...reads].filter(
+    (a, i, arr): a is NonNullable<typeof a> =>
+      Boolean(a) && arr.findIndex((b) => b?.slug === a?.slug) === i,
+  );
+  const budget = h.startupBudget;
+  const money = (n: number) => `$${n}`;
+  const where =
+    h.indoorOutdoor === "indoor"
+      ? "Indoors"
+      : h.indoorOutdoor === "outdoor"
+        ? "Outdoors"
+        : h.indoorOutdoor === "either"
+          ? "Indoors or out"
+          : null;
   return (
     <>
       <section className="bg-butter">
@@ -92,12 +109,68 @@ function HobbyPage() {
           )}
         </div>
       </section>
+      {(h.difficulty || budget || h.timeCommitment || where) && (
+        <section className="mx-auto max-w-6xl px-5 pt-12 md:px-8">
+          <dl className="grid gap-px bg-ink/15 sm:grid-cols-2 lg:grid-cols-4">
+            {h.difficulty && (
+              <div className="bg-warm-white p-5">
+                <dt className="kicker text-cherry">Difficulty</dt>
+                <dd className="mt-1 font-display text-xl">{h.difficulty}</dd>
+              </div>
+            )}
+            {budget && (
+              <div className="bg-warm-white p-5">
+                <dt className="kicker text-cherry">Rough startup budget</dt>
+                <dd className="mt-1 font-display text-xl">
+                  {budget.low === budget.high
+                    ? money(budget.low)
+                    : `${money(budget.low)} to ${money(budget.high)}`}
+                </dd>
+              </div>
+            )}
+            {h.timeCommitment && (
+              <div className="bg-warm-white p-5">
+                <dt className="kicker text-cherry">Time commitment</dt>
+                <dd className="mt-1 font-display text-xl">{h.timeCommitment}</dd>
+              </div>
+            )}
+            {where && (
+              <div className="bg-warm-white p-5">
+                <dt className="kicker text-cherry">Where</dt>
+                <dd className="mt-1 font-display text-xl">{where}</dd>
+              </div>
+            )}
+          </dl>
+          {budget && (
+            <p className="mt-3 text-xs text-muted-foreground">
+              Approximate range, not a price. {budget.assumptions} Costs vary by place and what you
+              already own.
+            </p>
+          )}
+        </section>
+      )}
       <section className="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[1.3fr_1fr] md:px-8">
         <div className="prose-editorial">
           <h2 className="!mt-0">Why you might love it</h2>
           <p>{h.whyYoullLoveIt}</p>
+          {h.startSteps && h.startSteps.length > 0 && (
+            <>
+              <h2>How to get started</h2>
+              <ol>
+                {h.startSteps.map((step) => (
+                  <li key={step}>{step}</li>
+                ))}
+              </ol>
+            </>
+          )}
           <h2>Your first session</h2>
           <p className="font-display text-2xl italic text-cherry">{h.firstActivity}</p>
+          {h.firstProject && (
+            <>
+              <h2>A good first project</h2>
+              <p>{h.firstProject}</p>
+            </>
+          )}
           <h2>Good to know</h2>
           <ul>
             <li>
@@ -119,6 +192,16 @@ function HobbyPage() {
                   : "a lesson or two helps"}
             </li>
           </ul>
+          {h.learningResources && h.learningResources.length > 0 && (
+            <>
+              <h2>Where to learn</h2>
+              <ul>
+                {h.learningResources.map((r) => (
+                  <li key={r}>{r}</li>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
         <aside className="h-fit bg-warm-white p-7 shadow-[var(--shadow-paper)]">
           <p className="kicker text-cherry">What you'll need</p>
@@ -153,11 +236,11 @@ function HobbyPage() {
           <AffiliateNote className="mt-6" />
         </section>
       )}
-      {reads.length > 0 && (
+      {guides.length > 0 && (
         <section className="mx-auto mt-20 max-w-6xl px-5 md:px-8">
-          <Divider label="Read more" />
+          <Divider label="Guides that mention it" />
           <div className="mt-10 grid gap-10 md:grid-cols-3">
-            {reads.slice(0, 3).map((a) => (
+            {guides.slice(0, 3).map((a) => (
               <ArticleCard key={a.slug} a={a} />
             ))}
           </div>

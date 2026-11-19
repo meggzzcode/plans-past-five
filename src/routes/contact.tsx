@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { seo } from "@/lib/seo";
+import { seo, breadcrumbJsonLd } from "@/lib/seo";
 import { site } from "@/config/site";
+import { Link } from "@tanstack/react-router";
 import { ProsePage } from "@/components/pages/ProsePage";
 
 export const Route = createFileRoute("/contact")({
@@ -9,6 +10,12 @@ export const Route = createFileRoute("/contact")({
       title: "Contact",
       description: "Get in touch with Plans Past Five about stories, partnerships or corrections.",
       path: "/contact",
+      jsonLd: [
+        breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact" },
+        ]),
+      ],
     }),
   component: () => (
     <ProsePage
@@ -32,7 +39,7 @@ export const Route = createFileRoute("/contact")({
       <h2>Corrections</h2>
       <p>
         If something in a story is wrong or out of date, we want to know. Please include the page
-        link and what needs fixing.
+        link and what needs fixing. See our <Link to="/corrections">corrections policy</Link>.
       </p>
       <h2>Brands and partnerships</h2>
       <p>

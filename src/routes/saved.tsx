@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { X } from "lucide-react";
-import { useSaved, type SavedKind } from "@/lib/saved";
+import { useSaved, type SavedItem, type SavedKind } from "@/lib/saved";
+import { planHref, sanitizePlanData } from "@/lib/planner";
 import { seo } from "@/lib/seo";
 import { PageHero } from "@/components/editorial/Section";
 import { Star, Bow } from "@/components/brand/Doodles";
@@ -24,6 +25,15 @@ const labels: Record<SavedKind, string> = {
   "solo-date": "Solo dates",
   product: "Shop picks",
 };
+
+/** Saved plans restore their exact itinerary from the stored input, seed and activity ids. */
+function hrefFor(i: SavedItem) {
+  if (i.kind === "plan" && i.plan) {
+    const p = sanitizePlanData(i.plan);
+    if (p) return planHref(p.input, p.seed, p.ids);
+  }
+  return i.href;
+}
 
 function Saved() {
   const { items, ready, remove, clear } = useSaved();
@@ -77,11 +87,16 @@ function Saved() {
                       <li key={i.key} className="flex items-start justify-between gap-4 py-4">
                         <div>
                           <a
-                            href={i.href}
-                            className="font-display text-xl text-ink hover:text-cherry"
+                            href={hrefFor(i)}
+                            className="font-display text-xl text-ink hover:text-cherry focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cherry"
                           >
                             {i.title}
                           </a>
+                          {i.kind === "plan" && i.plan && (
+                            <p className="text-xs text-muted-foreground">
+                              Opens this exact itinerary again.
+                            </p>
+                          )}
                           {i.note && (
                             <p className="mt-1 whitespace-pre-line text-sm text-muted-foreground">
                               {i.note}
@@ -90,7 +105,7 @@ function Saved() {
                         </div>
                         <button
                           onClick={() => remove(i.key)}
-                          className="shrink-0 p-1 text-muted-foreground hover:text-cherry"
+                          className="grid h-11 w-11 shrink-0 place-items-center text-muted-foreground hover:text-cherry focus-visible:outline focus-visible:outline-2 focus-visible:outline-cherry"
                           aria-label={`Remove ${i.title}`}
                         >
                           <X className="h-5 w-5" />

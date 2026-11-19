@@ -24,6 +24,17 @@ export type Block =
   | { type: "whatYoullNeed"; essentials: string[]; optional?: string[] }
   | { type: "starterKit"; productIds: string[]; title?: string }
   | { type: "shopHobby"; productIds: string[]; title?: string; dek?: string }
+  /** Verified catalog products for this article/hobbies/collection. Renders nothing until the catalog has verified products. */
+  | {
+      type: "shopTheArticle";
+      articleSlug?: string;
+      hobbies?: string[];
+      collection?: string;
+      title?: string;
+      dek?: string;
+    }
+  /** Reusable shopping checklist for one hobby (verified catalog only). */
+  | { type: "shopMyHobby"; hobby: string; title?: string; dek?: string }
   | { type: "saveSplurge"; save: string; splurge: string }
   | { type: "tryThisWeekend"; text: string }
   | { type: "girlsNight"; text: string }

@@ -2,6 +2,11 @@ import { Link } from "@tanstack/react-router";
 import type { Block } from "@/content";
 import { getHobby } from "@/data/hobbies";
 import { productsFor } from "@/data/products";
+import { selectProducts, verifiedCatalog } from "@/data/catalog";
+import { fillKit, kits } from "@/data/kits";
+import { ShopTheArticle } from "@/components/commerce/ShopTheArticle";
+import { ShopMyHobby } from "@/components/commerce/ShopMyHobby";
+import { StarterKit } from "@/components/commerce/StarterKit";
 import { images } from "@/data/images";
 import { Inline } from "./Inline";
 import { ProductCard, HobbyCard } from "@/components/cards/Cards";
@@ -39,6 +44,37 @@ function Box({
       </p>
       <div className="text-[1rem] leading-relaxed text-ink">{children}</div>
     </aside>
+  );
+}
+
+/**
+ * Legacy `starterKit` / `shopHobby` blocks list product TYPES by id. When verified catalog products exist
+ * for the same hobbies, show those instead (through the new components); otherwise return null so the
+ * original product-type cards render exactly as before.
+ */
+function verifiedFor(b: Extract<Block, { type: "starterKit" | "shopHobby" }>): React.ReactNode {
+  if (verifiedCatalog.length === 0) return null;
+  const hobbies = [
+    ...new Set(
+      productsFor(b.productIds)
+        .map((p) => p.hobbySlugs[0])
+        .filter((x): x is string => !!x),
+    ),
+  ];
+  if (b.type === "starterKit") {
+    const kit = kits.find((k) => hobbies.some((h) => k.id === h || k.hobby === h));
+    if (kit && fillKit(kit, verifiedCatalog).length > 0)
+      return <StarterKit kit={kit} {...(b.title ? { title: b.title } : {})} />;
+  }
+  if (selectProducts({ hobbies }).all.length === 0) return null;
+  const common = {
+    ...(b.title ? { title: b.title } : {}),
+    ...(b.type === "shopHobby" && b.dek ? { dek: b.dek } : {}),
+  };
+  return hobbies.length === 1 ? (
+    <ShopMyHobby hobby={hobbies[0]!} {...common} />
+  ) : (
+    <ShopTheArticle hobbies={hobbies} {...common} />
   );
 }
 
@@ -203,6 +239,8 @@ function BlockView({ b }: { b: Block }) {
       );
     case "starterKit":
     case "shopHobby": {
+      const verified = verifiedFor(b);
+      if (verified) return <>{verified}</>;
       const ps = productsFor(b.productIds);
       return (
         <aside className="not-prose my-12 border-y-2 border-ink py-8">
@@ -220,6 +258,24 @@ function BlockView({ b }: { b: Block }) {
         </aside>
       );
     }
+    case "shopTheArticle":
+      return (
+        <ShopTheArticle
+          {...(b.articleSlug ? { article: b.articleSlug } : {})}
+          {...(b.hobbies ? { hobbies: b.hobbies } : {})}
+          {...(b.collection ? { collection: b.collection } : {})}
+          {...(b.title ? { title: b.title } : {})}
+          {...(b.dek ? { dek: b.dek } : {})}
+        />
+      );
+    case "shopMyHobby":
+      return (
+        <ShopMyHobby
+          hobby={b.hobby}
+          {...(b.title ? { title: b.title } : {})}
+          {...(b.dek ? { dek: b.dek } : {})}
+        />
+      );
     case "saveSplurge":
       return (
         <aside className="not-prose my-10 grid md:grid-cols-2">

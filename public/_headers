@@ -1,0 +1,12 @@
+# Security headers for static hosts that read a _headers file (Netlify, Cloudflare Pages).
+# Host not chosen yet: this file is ignored by hosts that do not support it. See docs/buyer/SECURITY-AND-BACKUPS.md.
+#
+# Deliberately NOT set:
+#  - Content-Security-Policy: report-only draft lives in docs/buyer/SECURITY-AND-BACKUPS.md; test before enforcing.
+#  - Strict-Transport-Security: add only after the host confirms HTTPS for the final domain.
+#  - Cache-Control for /assets/*: the build adds its own rule.
+#  - X-Frame-Options: the Lovable editor previews the site in an iframe.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()

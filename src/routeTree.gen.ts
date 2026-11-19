@@ -15,10 +15,12 @@ import { Route as AffiliateDisclosureRouteImport } from './routes/affiliate-disc
 import { Route as AfterHoursRouteImport } from './routes/after-hours'
 import { Route as BetterTogetherRouteImport } from './routes/better-together'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CorrectionsRouteImport } from './routes/corrections'
 import { Route as CreativeCornerRouteImport } from './routes/creative-corner'
 import { Route as EditorialPolicyRouteImport } from './routes/editorial-policy'
 import { Route as HobbyFinderRouteImport } from './routes/hobby-finder'
 import { Route as MakePlansRouteImport } from './routes/make-plans'
+import { Route as MethodologyRouteImport } from './routes/methodology'
 import { Route as MovementRouteImport } from './routes/movement'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SavedRouteImport } from './routes/saved'
@@ -36,6 +38,8 @@ import { Route as PrintablesIndexRouteImport } from './routes/printables.index'
 import { Route as PrintablesSlugRouteImport } from './routes/printables.$slug'
 import { Route as ShopIndexRouteImport } from './routes/shop.index'
 import { Route as ShopCategoryRouteImport } from './routes/shop.$category'
+import { Route as ToolsHobbyBudgetRouteImport } from './routes/tools.hobby-budget'
+import { Route as ToolsTonightRouteImport } from './routes/tools.tonight'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -67,6 +71,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CorrectionsRoute = CorrectionsRouteImport.update({
+  id: '/corrections',
+  path: '/corrections',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CreativeCornerRoute = CreativeCornerRouteImport.update({
   id: '/creative-corner',
   path: '/creative-corner',
@@ -85,6 +94,11 @@ const HobbyFinderRoute = HobbyFinderRouteImport.update({
 const MakePlansRoute = MakePlansRouteImport.update({
   id: '/make-plans',
   path: '/make-plans',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MethodologyRoute = MethodologyRouteImport.update({
+  id: '/methodology',
+  path: '/methodology',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MovementRoute = MovementRouteImport.update({
@@ -172,6 +186,16 @@ const ShopCategoryRoute = ShopCategoryRouteImport.update({
   path: '/shop/$category',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ToolsHobbyBudgetRoute = ToolsHobbyBudgetRouteImport.update({
+  id: '/tools/hobby-budget',
+  path: '/tools/hobby-budget',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToolsTonightRoute = ToolsTonightRouteImport.update({
+  id: '/tools/tonight',
+  path: '/tools/tonight',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -180,10 +204,12 @@ export interface FileRoutesByFullPath {
   '/after-hours': typeof AfterHoursRoute
   '/better-together': typeof BetterTogetherRoute
   '/contact': typeof ContactRoute
+  '/corrections': typeof CorrectionsRoute
   '/creative-corner': typeof CreativeCornerRoute
   '/editorial-policy': typeof EditorialPolicyRoute
   '/hobby-finder': typeof HobbyFinderRoute
   '/make-plans': typeof MakePlansRoute
+  '/methodology': typeof MethodologyRoute
   '/movement': typeof MovementRoute
   '/privacy': typeof PrivacyRoute
   '/saved': typeof SavedRoute
@@ -197,6 +223,8 @@ export interface FileRoutesByFullPath {
   '/journal/$slug': typeof JournalSlugRoute
   '/printables/$slug': typeof PrintablesSlugRoute
   '/shop/$category': typeof ShopCategoryRoute
+  '/tools/hobby-budget': typeof ToolsHobbyBudgetRoute
+  '/tools/tonight': typeof ToolsTonightRoute
   '/hobbies/': typeof HobbiesIndexRoute
   '/journal/': typeof JournalIndexRoute
   '/printables/': typeof PrintablesIndexRoute
@@ -209,10 +237,12 @@ export interface FileRoutesByTo {
   '/after-hours': typeof AfterHoursRoute
   '/better-together': typeof BetterTogetherRoute
   '/contact': typeof ContactRoute
+  '/corrections': typeof CorrectionsRoute
   '/creative-corner': typeof CreativeCornerRoute
   '/editorial-policy': typeof EditorialPolicyRoute
   '/hobby-finder': typeof HobbyFinderRoute
   '/make-plans': typeof MakePlansRoute
+  '/methodology': typeof MethodologyRoute
   '/movement': typeof MovementRoute
   '/privacy': typeof PrivacyRoute
   '/saved': typeof SavedRoute
@@ -226,6 +256,8 @@ export interface FileRoutesByTo {
   '/journal/$slug': typeof JournalSlugRoute
   '/printables/$slug': typeof PrintablesSlugRoute
   '/shop/$category': typeof ShopCategoryRoute
+  '/tools/hobby-budget': typeof ToolsHobbyBudgetRoute
+  '/tools/tonight': typeof ToolsTonightRoute
   '/hobbies': typeof HobbiesIndexRoute
   '/journal': typeof JournalIndexRoute
   '/printables': typeof PrintablesIndexRoute
@@ -239,10 +271,12 @@ export interface FileRoutesById {
   '/after-hours': typeof AfterHoursRoute
   '/better-together': typeof BetterTogetherRoute
   '/contact': typeof ContactRoute
+  '/corrections': typeof CorrectionsRoute
   '/creative-corner': typeof CreativeCornerRoute
   '/editorial-policy': typeof EditorialPolicyRoute
   '/hobby-finder': typeof HobbyFinderRoute
   '/make-plans': typeof MakePlansRoute
+  '/methodology': typeof MethodologyRoute
   '/movement': typeof MovementRoute
   '/privacy': typeof PrivacyRoute
   '/saved': typeof SavedRoute
@@ -256,6 +290,8 @@ export interface FileRoutesById {
   '/journal/$slug': typeof JournalSlugRoute
   '/printables/$slug': typeof PrintablesSlugRoute
   '/shop/$category': typeof ShopCategoryRoute
+  '/tools/hobby-budget': typeof ToolsHobbyBudgetRoute
+  '/tools/tonight': typeof ToolsTonightRoute
   '/hobbies/': typeof HobbiesIndexRoute
   '/journal/': typeof JournalIndexRoute
   '/printables/': typeof PrintablesIndexRoute
@@ -270,10 +306,12 @@ export interface FileRouteTypes {
     | '/after-hours'
     | '/better-together'
     | '/contact'
+    | '/corrections'
     | '/creative-corner'
     | '/editorial-policy'
     | '/hobby-finder'
     | '/make-plans'
+    | '/methodology'
     | '/movement'
     | '/privacy'
     | '/saved'
@@ -287,6 +325,8 @@ export interface FileRouteTypes {
     | '/journal/$slug'
     | '/printables/$slug'
     | '/shop/$category'
+    | '/tools/hobby-budget'
+    | '/tools/tonight'
     | '/hobbies/'
     | '/journal/'
     | '/printables/'
@@ -299,10 +339,12 @@ export interface FileRouteTypes {
     | '/after-hours'
     | '/better-together'
     | '/contact'
+    | '/corrections'
     | '/creative-corner'
     | '/editorial-policy'
     | '/hobby-finder'
     | '/make-plans'
+    | '/methodology'
     | '/movement'
     | '/privacy'
     | '/saved'
@@ -316,6 +358,8 @@ export interface FileRouteTypes {
     | '/journal/$slug'
     | '/printables/$slug'
     | '/shop/$category'
+    | '/tools/hobby-budget'
+    | '/tools/tonight'
     | '/hobbies'
     | '/journal'
     | '/printables'
@@ -328,10 +372,12 @@ export interface FileRouteTypes {
     | '/after-hours'
     | '/better-together'
     | '/contact'
+    | '/corrections'
     | '/creative-corner'
     | '/editorial-policy'
     | '/hobby-finder'
     | '/make-plans'
+    | '/methodology'
     | '/movement'
     | '/privacy'
     | '/saved'
@@ -345,6 +391,8 @@ export interface FileRouteTypes {
     | '/journal/$slug'
     | '/printables/$slug'
     | '/shop/$category'
+    | '/tools/hobby-budget'
+    | '/tools/tonight'
     | '/hobbies/'
     | '/journal/'
     | '/printables/'
@@ -358,10 +406,12 @@ export interface RootRouteChildren {
   AfterHoursRoute: typeof AfterHoursRoute
   BetterTogetherRoute: typeof BetterTogetherRoute
   ContactRoute: typeof ContactRoute
+  CorrectionsRoute: typeof CorrectionsRoute
   CreativeCornerRoute: typeof CreativeCornerRoute
   EditorialPolicyRoute: typeof EditorialPolicyRoute
   HobbyFinderRoute: typeof HobbyFinderRoute
   MakePlansRoute: typeof MakePlansRoute
+  MethodologyRoute: typeof MethodologyRoute
   MovementRoute: typeof MovementRoute
   PrivacyRoute: typeof PrivacyRoute
   SavedRoute: typeof SavedRoute
@@ -375,6 +425,8 @@ export interface RootRouteChildren {
   JournalSlugRoute: typeof JournalSlugRoute
   PrintablesSlugRoute: typeof PrintablesSlugRoute
   ShopCategoryRoute: typeof ShopCategoryRoute
+  ToolsHobbyBudgetRoute: typeof ToolsHobbyBudgetRoute
+  ToolsTonightRoute: typeof ToolsTonightRoute
   HobbiesIndexRoute: typeof HobbiesIndexRoute
   JournalIndexRoute: typeof JournalIndexRoute
   PrintablesIndexRoute: typeof PrintablesIndexRoute
@@ -425,6 +477,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/corrections': {
+      id: '/corrections'
+      path: '/corrections'
+      fullPath: '/corrections'
+      preLoaderRoute: typeof CorrectionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/creative-corner': {
       id: '/creative-corner'
       path: '/creative-corner'
@@ -451,6 +510,13 @@ declare module '@tanstack/react-router' {
       path: '/make-plans'
       fullPath: '/make-plans'
       preLoaderRoute: typeof MakePlansRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/methodology': {
+      id: '/methodology'
+      path: '/methodology'
+      fullPath: '/methodology'
+      preLoaderRoute: typeof MethodologyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/movement': {
@@ -572,6 +638,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ShopCategoryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tools/hobby-budget': {
+      id: '/tools/hobby-budget'
+      path: '/tools/hobby-budget'
+      fullPath: '/tools/hobby-budget'
+      preLoaderRoute: typeof ToolsHobbyBudgetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/tonight': {
+      id: '/tools/tonight'
+      path: '/tools/tonight'
+      fullPath: '/tools/tonight'
+      preLoaderRoute: typeof ToolsTonightRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -582,10 +662,12 @@ const rootRouteChildren: RootRouteChildren = {
   AfterHoursRoute: AfterHoursRoute,
   BetterTogetherRoute: BetterTogetherRoute,
   ContactRoute: ContactRoute,
+  CorrectionsRoute: CorrectionsRoute,
   CreativeCornerRoute: CreativeCornerRoute,
   EditorialPolicyRoute: EditorialPolicyRoute,
   HobbyFinderRoute: HobbyFinderRoute,
   MakePlansRoute: MakePlansRoute,
+  MethodologyRoute: MethodologyRoute,
   MovementRoute: MovementRoute,
   PrivacyRoute: PrivacyRoute,
   SavedRoute: SavedRoute,
@@ -599,6 +681,8 @@ const rootRouteChildren: RootRouteChildren = {
   JournalSlugRoute: JournalSlugRoute,
   PrintablesSlugRoute: PrintablesSlugRoute,
   ShopCategoryRoute: ShopCategoryRoute,
+  ToolsHobbyBudgetRoute: ToolsHobbyBudgetRoute,
+  ToolsTonightRoute: ToolsTonightRoute,
   HobbiesIndexRoute: HobbiesIndexRoute,
   JournalIndexRoute: JournalIndexRoute,
   PrintablesIndexRoute: PrintablesIndexRoute,
