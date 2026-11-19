@@ -1,0 +1,22 @@
+# Final audit remediation plan (2026-11-19): who does what
+
+Scope is frozen: no newsletter, database, accounts, paid subscriptions, redesign, new tools, extra articles or Amazon cart integration. Nothing is purchased; account ownership is unchanged; the listing is not published. Domain and email remain owner actions.
+
+| # | Item | Claude Code (parallel agents) | Cowork (after Claude Code says 'frozen') | Owner |
+|---|---|---|---|---|
+| 1 | Five drafts + four originals | Verify claims with web research where reachable, reword unsupported claims, add sources/verifiedAt, publish the drafts that pass (URLs kept), keep any that cannot be resolved as drafts with reasons | Finish sources behind pages Claude cannot open (403); re-check safety statements (clay, art materials, needles/hooks) | none |
+| 2 | Commercial language | Encouraging, benefit-led rewrite after step 1 (no pressure, fewer disclaimers, research transparency kept) | none | none |
+| 3 | Starter kits | Gap map, research shortlist (1 starter + 1 alternative per missing slot, quality sources separate from listing verification), render rules already prevent incomplete kits | Open Amazon.com pages, confirm listings, record ASINs and clean /dp/ URLs, manufacturer pages; confirm quality sources; no affiliate activation (C12/F1/F2) | none |
+| 4 | Affiliate export compliance | Separate non-affiliate export resolver; copy/print/export/share use it; tests with affiliate enabled and disabled; reusable rule doc | none | none |
+| 5 | Product presentation | Keep tiles + illustrative lifestyle imagery; guard so internal notes never render (test); strip internal-only fields from the client bundle if safe | Read manufacturer press/brand pages for photo permission (record terms); draft permission emails | Send permission emails if wanted |
+| 6 | CMS publishing workflow | Resolve save-vs-deploy contradiction in config and docs; credit-friendly 'Publish' step; real-test plan; honest product-management answer | REAL CMS TEST with owner login: draft, edit, image, field preservation, publish, verify, unpublish (docs/buyer/CMS-TEST-PLAN.md) | Be present for GitHub login |
+| 7 | Documentation reconciliation | One consistent set of buyer/dev/commerce/marketing docs; remove obsolete instructions | none | none |
+| 8 | Image/IP rights | Resolve contradictory transferability statements using actual terms; disclosure wording; identify assets to replace; sanitized buyer package; repo visibility recommendation | Read Canva, Lovable, stock licence terms live; check repo visibility and (with owner approval) set private after the package is ready | Approve making the repo private |
+| 9 | Operating costs | Annual cost table for the listing from verified costs (done in OPERATING-COSTS-VERIFIED.md; table to finalise) | Re-read registrar and Netlify prices live | none |
+| 10 | Buyer installation test | Clean-room takeover, security headers on server-rendered responses, full tests/typecheck/lint/build/link checks, backup restore, rollback (running now) | Real hosting setup, deploy and rollback on Netlify, headers on the live site | Logins |
+| 11 | Final consumer and buyer review | Blind reviewers on the production build (running now); usability script ready | Blind re-review on the live URL; owner's friends test | Text the script to 3-5 friends |
+| 12 | Marketplace package | Listing draft (not published), overview, inventory, costs, handbook, roadmap, affiliate guide, transfer checklist, FAQ; asking-price note (provisional $1,495 vs researched range) | Screenshots and walkthrough video | Approve listing later |
+| 13 | Website Flipping System tracker | Update the existing workbook with lessons and status | none | none |
+| 14 | Domain and business email | Pre-publish check and config fields ready | DNS/mailbox/Search Console steps | Buy domain; create mailbox |
+
+Order: (A) article verification, export resolver, CMS workflow, kit research run in parallel; (B) commercial-language pass after A; (C) docs reconciliation, rights/sanitised package, cost table, listing package, scoring after A-B; (D) Cowork pack after Claude Code reports 'frozen'.

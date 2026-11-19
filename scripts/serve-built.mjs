@@ -33,7 +33,13 @@ const types = {
 };
 
 async function staticFile(pathname) {
-  const file = normalize(join(publicDir, decodeURIComponent(pathname)));
+  let decoded;
+  try {
+    decoded = decodeURIComponent(pathname);
+  } catch {
+    return null; // malformed percent-encoding (e.g. /%E0%A4%A): not a file, let the app answer
+  }
+  const file = normalize(join(publicDir, decoded));
   if (!file.startsWith(publicDir) || !existsSync(file) || !statSync(file).isFile()) return null;
   return new Response(await readFile(file), {
     headers: { "content-type": types[extname(file)] ?? "application/octet-stream" },
@@ -48,10 +54,17 @@ const env = {
 const ctx = { waitUntil() {}, passThroughOnException() {} };
 
 createServer(async (req, res) => {
-  const url = new URL(req.url, `http://localhost:${port}`);
-  const response =
-    (await staticFile(url.pathname)) ??
-    (await worker.fetch(new Request(url, { method: req.method }), env, ctx));
-  res.writeHead(response.status, Object.fromEntries(response.headers));
-  res.end(Buffer.from(await response.arrayBuffer()));
+  try {
+    const url = new URL(req.url, `http://localhost:${port}`);
+    const response =
+      (await staticFile(url.pathname)) ??
+      (await worker.fetch(new Request(url, { method: req.method }), env, ctx));
+    res.writeHead(response.status, Object.fromEntries(response.headers));
+    res.end(Buffer.from(await response.arrayBuffer()));
+  } catch (e) {
+    // One bad request must never take the whole server down.
+    console.error("request failed:", req.url?.slice(0, 120), e?.message);
+    if (!res.headersSent) res.writeHead(500, { "content-type": "text/plain" });
+    res.end("Internal error");
+  }
 }).listen(port, () => console.log(`Serving build on http://localhost:${port}`));
