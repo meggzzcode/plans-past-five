@@ -18,9 +18,35 @@ import { cn } from "@/lib/utils";
  * The one image that is the page's largest paint: a 960px copy for phones and most laptops (the
  * 1440px original is only used on very sharp screens). Same picture, less to download.
  */
-const HERO_SMALL = "/lcp/hero-pottery-night-960.jpg";
+const HERO_SMALL = "/lcp/hero-pottery-night-640.jpg";
+const HERO_MEDIUM = "/lcp/hero-pottery-night-960.jpg";
 const HERO_SIZES = "(min-width: 1024px) 500px, (min-width: 640px) 420px, 340px";
-const heroSrcSet = () => `${HERO_SMALL} 960w, ${images.potteryNight.src} ${images.potteryNight.w}w`;
+const heroSrcSet = () =>
+  `${HERO_SMALL} 640w, ${HERO_MEDIUM} 960w, ${images.potteryNight.src} ${images.potteryNight.w}w`;
+
+/**
+ * 480px copies (about 35 KB instead of 150-200 KB) of the card pictures on this page. They sit in
+ * public/lcp/ because that folder holds derivatives, not licensed originals. Cards are at most
+ * about 400 CSS px wide, so the 480w copy covers them; sharper screens still get the original.
+ */
+const THUMBS: Partial<Record<ImageKey, string>> = {
+  hiking: "hiking-wildflowers",
+  shopAdventures: "shop-little-adventures",
+  shopBookish: "shop-bookish-girl",
+  watercolor: "watercolor-evening",
+  picnic: "weekend-picnic",
+  soloCafe: "solo-cafe-date",
+  girlsNight: "girls-night-crafts",
+  junkJournal: "junk-journal-flatlay",
+  tennis: "tennis-golden-hour",
+  shopPottery: "shop-pottery-era",
+  shopCreative: "shop-creative-girl",
+  shopSporty: "shop-sporty-girl",
+  shopGirlsNight: "shop-girls-night-in",
+};
+const CARD_SIZES = "(min-width: 768px) 400px, 50vw";
+const cardSrcSet = (k: ImageKey) =>
+  THUMBS[k] ? `/lcp/${THUMBS[k]}-480.jpg 480w, ${images[k].src} ${images[k].w}w` : undefined;
 
 export const Route = createFileRoute("/")({
   head: () => {
@@ -70,7 +96,8 @@ function Pic({
         alt={i.alt}
         width={i.w}
         height={i.h}
-        {...(eager ? { srcSet: heroSrcSet(), sizes: HERO_SIZES } : {})}
+        srcSet={eager ? heroSrcSet() : cardSrcSet(k)}
+        sizes={eager ? HERO_SIZES : THUMBS[k] ? CARD_SIZES : undefined}
         loading={eager ? "eager" : "lazy"}
         fetchPriority={eager ? "high" : "auto"}
         decoding={eager ? "sync" : "async"}
