@@ -5,7 +5,7 @@
 - Domain registered 2026-11-19, expires 2027-11-19. Domain and Private Email auto-renew both OFF (renewal falls to the buyer; first year is covered).
 - Contact verification cleared (Domain List shows ACTIVE, no alert).
 - Mailbox hello@planspastfive.com created (1 of 1 mailboxes); alias subscriptions@planspastfive.com added to it (1 of 10 aliases). Password set by Megan, not recorded.
-- CORRECTION 2026-11-19: DNS Mail Settings shows Private Email, but LIVE DNS still returns Namecheap's forwarding MX (eforward1-5.registrar-servers.com) and forwarding SPF. Namecheap says to add: MX @ priority 10 mx1.privateemail.com, MX @ priority 10 mx2.privateemail.com, TXT @ v=spf1 include:spf.privateemail.com ~all (allow up to 4 hours). NOT YET DONE; mail to hello@ will not arrive until it is. Nameservers unchanged.
+- DNS DONE 2026-11-19 ~14:55: Mail Settings set to Custom MX; MX @ 10 mx1.privateemail.com, MX @ 10 mx2.privateemail.com, TXT @ v=spf1 include:spf.privateemail.com ~all added in Namecheap Advanced DNS (Megan approved). Public resolvers (Cloudflare, Google) show them live. Before this the live DNS still pointed to Namecheap forwarding. Nameservers unchanged. Allow up to 4 hours for Namecheap to activate the mailbox; any test email sent before the change may have been lost.
 - Renewal prices: domain $15.98 list (+ICANN), Private Email Launch $14.88 is unconfirmed on an official page.
 - STILL OPEN: send/receive test to hello@ and subscriptions@ (owner login needed), then set site.contactEmail. Keep subscriptions@ unpublished.
 - The sections below are the original pre-purchase plan, kept for history.
