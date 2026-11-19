@@ -1,47 +1,144 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { collections, products } from "@/data/products";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { collections } from "@/data/products";
+import { verifiedCatalog, type CatalogProduct } from "@/data/catalog";
+import { fillKit, getKit } from "@/data/kits";
+import { collectionGuide } from "@/lib/collection-guide";
 import { seo } from "@/lib/seo";
 import { PageHero, SectionHead } from "@/components/editorial/Section";
 import { CollectionCard } from "@/components/cards/Cards";
-import { Link } from "@tanstack/react-router";
+import { ProductCard, ShopDisclosure } from "@/components/commerce/ProductCard";
+import { NAMES } from "@/components/layout/nav";
 
 export const Route = createFileRoute("/shop/")({
   head: () =>
     seo({
-      title: "Shop Your Hobby: Beginner Starter Picks",
-      description: `${collections.length} collections of starter picks for pottery, journaling, painting, tennis, reading, cozy nights in and little adventures: a few named products where we have checked the listing, plain guidance everywhere else.`,
+      title: "Shop Your Hobby: Starter Picks for Your Next Evening Plan",
+      description:
+        "Starter picks for pottery, journaling, painting, tennis, mahjong and more. One good thing to buy first, why it made the list, and an honest note when you can skip it. Ordinary Amazon links, no prices shown.",
       path: "/shop",
     }),
   component: Shop,
 });
 
+/** Honest, data-driven label for a collection tile: how many starter kits actually have picks. */
+function tagFor(slug: string) {
+  const kitCount = collectionGuide(slug).kitIds.filter((id) => {
+    const kit = getKit(id);
+    return !!kit && fillKit(kit, verifiedCatalog).length > 0;
+  }).length;
+  if (kitCount === 0) return "What to look for";
+  return kitCount === 1 ? "Starter kit inside" : `${kitCount} starter kits`;
+}
+
+/** The "start here" picks: the one-pick of three different kits, in catalog order. */
+function startHere(): CatalogProduct[] {
+  const seen = new Set<string>();
+  const out: CatalogProduct[] = [];
+  for (const p of verifiedCatalog) {
+    const kit = p.kitSlots[0]?.kit;
+    if (!p.onlyOne || !kit || seen.has(kit)) continue;
+    seen.add(kit);
+    out.push(p);
+  }
+  return out.slice(0, 3);
+}
+
+/** Boxed sets with everything in one box: the honest basis for a "first evening" gift row. */
+function giftSets(exclude: CatalogProduct[]): CatalogProduct[] {
+  const skip = new Set(exclude.map((p) => p.id));
+  const seen = new Set<string>();
+  const out: CatalogProduct[] = [];
+  for (const p of verifiedCatalog) {
+    if (p.role !== "complete-kit" || skip.has(p.id)) continue;
+    const kit = p.kitSlots[0]?.kit ?? p.id;
+    if (seen.has(kit)) continue;
+    seen.add(kit);
+    out.push(p);
+  }
+  return out.slice(0, 3);
+}
+
 function Shop() {
+  const picks = startHere();
+  const gifts = giftSets(picks);
   return (
     <>
       <PageHero
-        kicker="Shop Your Hobby"
-        title="Shop your hobby"
-        italic="hobby"
-        dek={`Starter picks for ${collections.length} kinds of after-work evening. Where we name a product, we checked its Amazon page and say why it made the list; everywhere else we tell you what to look for. And we'll always say when you don't need to buy anything.`}
+        kicker="Supplies for your first evening"
+        title="Start the hobby. Buy one thing."
+        italic="one thing"
+        dek="Pick the evening you want. We'll tell you the one thing to buy first, why it made the list, and what you can skip or borrow. Ordinary Amazon links, no prices, no pressure."
         tone="strawberry"
-      />
+      >
+        <p className="mt-4 text-sm text-ink">
+          We read each Amazon page ourselves before a product goes on a list.{" "}
+          <Link to="/methodology" className="underline">
+            How we choose
+          </Link>
+        </p>
+      </PageHero>
       <section className="mx-auto mt-16 max-w-7xl px-5 md:px-8">
-        <SectionHead kicker="The collections" title="Shop by your era" italic="era" />
-        <div className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+        <SectionHead kicker="Pick your evening" title="Which era are you in?" italic="era" />
+        <p className="mt-3 text-espresso">
+          Not sure?{" "}
+          <Link to="/hobby-finder" className="font-semibold text-cherry underline">
+            Take the {NAMES.quiz} quiz
+          </Link>{" "}
+          and we'll point you to one.
+        </p>
+        <div className="mt-8 grid grid-cols-2 gap-x-3 gap-y-8 lg:grid-cols-3 lg:gap-x-6 lg:gap-y-10">
           {collections.map((c) => (
-            <CollectionCard key={c.slug} c={c} />
+            <CollectionCard key={c.slug} c={c} tag={tagFor(c.slug)} />
           ))}
         </div>
-        <p className="mt-10 text-sm text-muted-foreground">
-          Named products link to their own Amazon page; "what to look for" guidance across{" "}
-          {products.length} product types opens an Amazon search instead. We never show prices,
-          ratings or review counts. How we choose is on the{" "}
+      </section>
+      {picks.length > 0 && (
+        <section className="mx-auto mt-20 max-w-7xl px-5 md:px-8" aria-label="Start here">
+          <SectionHead kicker="Start here" title="Three good first buys" italic="first buys" />
+          <p className="mt-3 max-w-prose text-espresso">
+            One pick each from our starter kits, with the reason it made the list.
+          </p>
+          <ShopDisclosure kind="short" className="mt-3" />
+          <div className="mt-8 grid gap-10 md:grid-cols-3">
+            {picks.map((p) => (
+              <ProductCard key={p.id} product={p} placement="shop-start" label="Our one pick" />
+            ))}
+          </div>
+        </section>
+      )}
+      {gifts.length > 0 && (
+        <section className="mx-auto mt-20 max-w-7xl px-5 md:px-8" aria-label="Give a first evening">
+          <SectionHead
+            kicker="Gifting"
+            title="Give someone a first evening"
+            italic="first evening"
+          />
+          <p className="mt-3 max-w-prose text-espresso">
+            Boxed sets she can open and start tonight, with everything in the one box.
+          </p>
+          <div className="mt-8 grid gap-10 md:grid-cols-3">
+            {gifts.map((p) => (
+              <ProductCard
+                key={p.id}
+                product={p}
+                placement="shop-gift"
+                label="Everything in one box"
+              />
+            ))}
+          </div>
+        </section>
+      )}
+      <section className="mx-auto mb-20 mt-12 max-w-7xl px-5 md:px-8">
+        <p className="text-sm text-muted-foreground">
+          Buttons that say "See it on Amazon" open that product's own page. Where we only describe
+          what to look for, the button opens an Amazon search. We never show prices, ratings or
+          review counts: Amazon sets those.{" "}
           <Link to="/methodology" className="underline">
-            methodology page
-          </Link>
-          , and how links work is in the{" "}
+            How we choose
+          </Link>{" "}
+          /{" "}
           <Link to="/affiliate-disclosure" className="underline">
-            affiliate disclosure
+            How links work
           </Link>
           .
         </p>

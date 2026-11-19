@@ -241,7 +241,7 @@ describe("selection", () => {
       />,
     );
     const heads = [...document.querySelectorAll("h4")].map((h) => h.textContent);
-    expect(heads).toEqual(["If you only buy one thing", "Optional extras"]);
+    expect(heads).toEqual(["If you only buy one thing, buy this", "Pretty extras for later"]);
   });
 });
 
@@ -259,17 +259,17 @@ describe("card content", () => {
       />,
     );
     const text = document.body.textContent ?? "";
-    expect(text).toContain("Essential");
+    expect(text).toContain("Start with this");
     expect(text).toContain("Pastel rolls in three widths.");
-    expect(screen.getAllByText(/View on Amazon/)).toHaveLength(1);
+    expect(screen.getAllByText(/See it on Amazon/)).toHaveLength(1);
     expect(text).not.toMatch(
       /Worth knowing|third-party|Sold by|Available on Amazon|confirm|Details checked/i,
     );
     expect(text).not.toMatch(/\$|price|rating|review/i);
   });
-  it("labels extras as optional and offers a single list icon, no checkboxes", async () => {
+  it("labels extras as nice-later and offers a single list icon, no checkboxes", async () => {
     await show(<ProductCard product={second} placement="test" />);
-    expect(document.body.textContent).toContain("Optional extra");
+    expect(document.body.textContent).toContain("Nice later");
     expect(document.querySelectorAll("input[type=checkbox]")).toHaveLength(0);
     expect(document.body.textContent).not.toMatch(/I need this|I already own|Save for later/);
     expect(screen.getAllByRole("button", { name: /Add to my shopping list/ })).toHaveLength(1);
@@ -391,7 +391,7 @@ describe("alternatives for one kit slot", () => {
       "alt-one",
       "alt-three",
     ]);
-    expect(document.body.textContent).toContain("Also consider");
+    expect(document.body.textContent).toContain("Prefer something different?");
     expect(document.body.textContent).toContain("Bigger tiles.");
     expect(document.body.textContent).not.toMatch(/Another option for this slot/);
   });
@@ -426,7 +426,7 @@ describe("alternatives for one kit slot", () => {
       />,
     );
     await act(async () => {
-      fireEvent.click(screen.getByText("Add all essentials"));
+      fireEvent.click(screen.getByText("Add the starters to my list"));
     });
     const stored = readShopList();
     expect(Object.keys(stored)).toEqual(["alt-two"]);
@@ -530,7 +530,7 @@ describe("print view and list extras", () => {
       { [base.id]: "need", [second.id]: "later" },
       "2026-02-03",
     );
-    expect(text).toContain("Saved for later: TEST FIXTURE pens");
+    expect(text).toContain("Maybe later: TEST FIXTURE pens");
   });
   it("portals the print list to <body> so printing leaves no blank pages", async () => {
     const cat = filterVerified(fixtures);
@@ -545,7 +545,7 @@ describe("print view and list extras", () => {
     expect(area!.textContent).toContain("TEST FIXTURE washi tape set");
     expect(area!.textContent).toContain("https://www.amazon.com/dp/B0TESTFIX1");
     expect(area!.textContent).not.toMatch(/tag=/);
-    fireEvent.click(screen.getByRole("button", { name: /Print list/ }));
+    fireEvent.click(screen.getByRole("button", { name: /Print my list/ }));
     expect(document.body.getAttribute("data-print-shop")).toBe(area!.getAttribute("data-print-id"));
     expect(window.print).toHaveBeenCalled();
     window.dispatchEvent(new Event("afterprint"));
@@ -610,7 +610,7 @@ describe("links and affiliate swap", () => {
         <ShopDisclosure />
       </>,
     );
-    const a = screen.getByText(/View on Amazon/).closest("a")!;
+    const a = screen.getByText(/See it on Amazon/).closest("a")!;
     expect(a.getAttribute("href")).toBe("https://www.amazon.com/dp/B0TESTFIX1");
     expect(a.getAttribute("rel")).toBe("noopener");
     expect(document.body.textContent).not.toMatch(/Sold by Amazon/);
@@ -627,7 +627,7 @@ describe("links and affiliate swap", () => {
     });
     expect(resolveProductLink(linkableFor(base)).sponsored).toBe(true);
     await show(<ProductCard product={base} placement="test" />);
-    const a = screen.getByText(/View on Amazon/).closest("a")!;
+    const a = screen.getByText(/See it on Amazon/).closest("a")!;
     expect(a.getAttribute("href")).toBe("https://www.amazon.com/dp/B0TESTFIX1?tag=demo-20");
     expect(a.getAttribute("rel")).toBe("sponsored noopener");
     expect(buildListText([base], { [base.id]: "need" }, "2026-02-03")).toMatch(/Associate/);

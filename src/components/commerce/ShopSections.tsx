@@ -20,8 +20,8 @@ export type ShopGroup = {
 };
 
 /**
- * The shared layout of every shopping block: the single best buy first, essentials, then optional
- * extras, each product with at most two alternatives folded under it. One short honest note (never
+ * The shared layout of every shopping block: the single best buy first, essentials, then extras
+ * for later, each product with at most two alternatives folded under it. One short honest note (never
  * a per-card disclaimer) sits under the intro.
  */
 export function ShopSections({
@@ -29,12 +29,18 @@ export function ShopSections({
   groups,
   placement,
   note,
+  afterPick,
+  alsoNeed,
   cardClassName,
 }: {
   pick?: ShopItem | undefined;
   groups: ShopGroup[];
   placement: string;
   note?: ReactNode;
+  /** Shown right under the one pick, next to the first button (the short disclosure). */
+  afterPick?: ReactNode;
+  /** Other essentials the list needs, named under the one pick. */
+  alsoNeed?: string[];
   cardClassName?: string;
 }) {
   return (
@@ -42,19 +48,25 @@ export function ShopSections({
       {note && <p className="mt-3 max-w-prose text-sm text-espresso">{note}</p>}
       {pick && (
         <section className="mt-6" aria-label="If you only buy one thing">
-          <h4 className="font-display text-xl italic text-cherry">If you only buy one thing</h4>
+          <h4 className="font-display text-xl italic text-cherry">
+            {alsoNeed && alsoNeed.length > 0
+              ? "Your one pick to start"
+              : "If you only buy one thing, buy this"}
+          </h4>
           <div className="mt-3">
             <ProductCard
               featured
               product={pick.product}
               placement={`${placement}-pick`}
               alternatives={pick.alternatives}
+              {...(alsoNeed ? { alsoNeed } : {})}
               {...(pick.label ? { label: pick.label } : {})}
               className={cardClassName}
             />
           </div>
         </section>
       )}
+      {afterPick}
       {groups
         .filter((g) => g.items.length > 0)
         .map((g) => (

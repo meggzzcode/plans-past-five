@@ -8,7 +8,8 @@ import {
   type PlanInput,
   type PlanSearch,
 } from "@/lib/planner";
-import { seo } from "@/lib/seo";
+import { seo, absoluteUrl } from "@/lib/seo";
+import { images } from "@/data/images";
 import { useSaved } from "@/lib/saved";
 import { Kicker } from "@/components/editorial/Section";
 import { PlanResult } from "@/components/planner/PlanResult";
@@ -46,6 +47,7 @@ export const Route = createFileRoute("/make-plans")({
       description:
         "An empty calendar? We can work with that. Pick your time, budget and mood and get a realistic after-work or weekend plan, with the supplies to make it happen.",
       path: "/make-plans",
+      image: absoluteUrl(images.picnic.src),
     }),
   component: Planner,
 });

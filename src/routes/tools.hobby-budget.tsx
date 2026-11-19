@@ -12,7 +12,8 @@ import {
   type Level,
 } from "@/lib/budget";
 import { getCollection } from "@/data/products";
-import { seo } from "@/lib/seo";
+import { seo, absoluteUrl } from "@/lib/seo";
+import { images } from "@/data/images";
 import { Kicker } from "@/components/editorial/Section";
 import { cn } from "@/lib/utils";
 
@@ -23,6 +24,7 @@ export const Route = createFileRoute("/tools/hobby-budget")({
       description:
         "How much does it really cost to start? Pick a hobby, tick what you already own, and see a realistic starting range plus a checklist. Estimates, not live prices.",
       path: "/tools/hobby-budget",
+      image: absoluteUrl(images.junkJournal.src),
     }),
   component: HobbyBudget,
 });

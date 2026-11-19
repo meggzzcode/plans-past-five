@@ -23,8 +23,8 @@ export function groupsFor(sel: Selection): { pick: ShopItem | undefined; groups:
   return {
     pick,
     groups: [
-      { heading: "Start with these", items: rest(sel.essentials) },
-      { heading: "Optional extras", quiet: true, items: rest(sel.optional) },
+      { heading: "Then add", items: rest(sel.essentials) },
+      { heading: "Pretty extras for later", quiet: true, items: rest(sel.optional) },
     ],
   };
 }
@@ -69,9 +69,15 @@ export function ShopTheArticle({
         {title}
       </h3>
       <p className="mt-2 text-muted-foreground">
-        {dek ?? "A few named products, picked with the reason for each. Skip anything you own."}
+        {dek ??
+          "The one thing to buy first, why it made the list, and what can wait. Skip anything you already own."}
       </p>
-      <ShopSections pick={pick} groups={groups} placement="article" />
+      <ShopSections
+        pick={pick}
+        groups={groups}
+        placement="article"
+        afterPick={<ShopDisclosure kind="short" className="mt-3" />}
+      />
       {coll && (
         <p className="mt-6 text-sm">
           More in{" "}

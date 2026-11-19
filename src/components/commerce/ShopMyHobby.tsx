@@ -8,7 +8,7 @@ import { articlesForHobby } from "@/content";
 import { selectProducts, verifiedCatalog, linkableFor, type CatalogProduct } from "@/data/catalog";
 import { buildListText, copyText, neededProducts, useShopList } from "@/lib/shoplist";
 import { track } from "@/lib/track";
-import { ShopDisclosure } from "./ProductCard";
+import { ShopDisclosure, primaryButtonCls } from "./ProductCard";
 import { ShopSections } from "./ShopSections";
 import { groupsFor } from "./ShopTheArticle";
 
@@ -59,7 +59,11 @@ export function ShopMyHobby({
   const [mounted, setMounted] = useState(false);
   const printId = useId();
   const h = hobby ? getHobby(hobby) : undefined;
-  const heading = title ?? (h ? `Shop your ${h.name.toLowerCase()} kit` : "Shop your hobby");
+  const heading =
+    title ??
+    (h
+      ? `Everything you need to start ${h.name.toLowerCase()}`
+      : "Everything for your first evening");
 
   useEffect(() => {
     const done = () => document.body.removeAttribute("data-print-shop");
@@ -119,6 +123,7 @@ export function ShopMyHobby({
   };
   const btn =
     "inline-flex min-h-11 items-center gap-2 border-2 border-ink px-4 text-sm font-semibold hover:bg-butter disabled:cursor-not-allowed disabled:opacity-50";
+  const primary = primaryButtonCls.replace("w-full", "w-full disabled:opacity-50");
 
   return (
     <section className="not-prose my-12 bg-butter/40 px-5 py-8 md:px-8" aria-label={heading}>
@@ -127,13 +132,13 @@ export function ShopMyHobby({
       <h3 className="mt-2 font-display text-3xl italic">{heading}</h3>
       <p className="mt-2 text-muted-foreground">
         {dek ??
-          "Tap the list icon on anything you want, then copy or print the list. It stays in this browser."}
+          "Start with the first pick; the rest can wait. Tap the list icon to save what you want. It stays in this browser."}
       </p>
 
       <div className="no-print mt-5 flex flex-wrap items-center gap-3">
         <button
           type="button"
-          className={btn}
+          className={primary}
           onClick={() =>
             setMany(
               sel.essentials.map((p) => p.id),
@@ -142,23 +147,29 @@ export function ShopMyHobby({
           }
           disabled={sel.essentials.length === 0}
         >
-          Add all essentials
+          Add the starters to my list
         </button>
-        <button type="button" className={btn} onClick={copy} disabled={needed.length === 0}>
-          <Copy className="h-4 w-4" /> Copy list
-        </button>
-        <button type="button" className={btn} onClick={print} disabled={needed.length === 0}>
-          <Printer className="h-4 w-4" /> Print list
-        </button>
-        <button
-          type="button"
-          className="min-h-11 text-sm font-semibold text-cherry underline"
-          onClick={clear}
-        >
-          Clear
-        </button>
+        {needed.length > 0 && (
+          <>
+            <button type="button" className={btn} onClick={copy}>
+              <Copy className="h-4 w-4" /> Copy my list
+            </button>
+            <button type="button" className={btn} onClick={print}>
+              <Printer className="h-4 w-4" /> Print my list
+            </button>
+          </>
+        )}
+        {ready && Object.keys(state).length > 0 && (
+          <button
+            type="button"
+            className="min-h-11 text-sm font-semibold text-cherry underline"
+            onClick={clear}
+          >
+            Clear
+          </button>
+        )}
         <p className="text-sm" role="status" aria-live="polite">
-          {ready ? `${needed.length} on your list` : ""} {msg}
+          {ready && needed.length > 0 ? `${needed.length} on your list` : ""} {msg}
         </p>
       </div>
 
@@ -166,6 +177,7 @@ export function ShopMyHobby({
         pick={grouped.pick}
         groups={grouped.groups}
         placement="hobby"
+        afterPick={<ShopDisclosure kind="short" className="mt-3" />}
         cardClassName="bg-cream/60 p-3"
       />
 

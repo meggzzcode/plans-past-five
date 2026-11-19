@@ -76,6 +76,16 @@ describe("route metadata", () => {
     }
   });
 
+  it("every indexable route has an absolute og:image (a default is applied when none is set)", () => {
+    for (const { file, head } of heads) {
+      if (robots(head).includes("noindex")) continue;
+      const og = (head.meta as { property?: string; content?: string }[]).find(
+        (m) => m.property === "og:image",
+      );
+      expect(og?.content, `${file} og:image`).toMatch(/^https:\/\/planspastfive\.com\//);
+    }
+  });
+
   it("noindex pages (saved, search, thin hobby profiles) are not in the sitemap", () => {
     const paths = new Set(sitemapPaths());
     for (const { head } of heads) {

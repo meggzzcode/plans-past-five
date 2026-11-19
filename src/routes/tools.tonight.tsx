@@ -11,7 +11,8 @@ import {
   timeOptions,
   type TonightInput,
 } from "@/lib/tonight";
-import { seo } from "@/lib/seo";
+import { seo, absoluteUrl } from "@/lib/seo";
+import { images } from "@/data/images";
 import { Kicker } from "@/components/editorial/Section";
 import { Star } from "@/components/brand/Doodles";
 import { cn } from "@/lib/utils";
@@ -23,6 +24,7 @@ export const Route = createFileRoute("/tools/tonight")({
       description:
         "Tired, bored or somewhere in between? Answer five taps and get three ideas that fit your time, energy and budget tonight. No email, no account.",
       path: "/tools/tonight",
+      image: absoluteUrl(images.soloCafe.src),
     }),
   validateSearch: (s: Record<string, unknown>) => {
     const o: Record<string, string> = {};

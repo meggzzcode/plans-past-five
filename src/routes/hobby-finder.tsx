@@ -14,7 +14,8 @@ import {
   type QuizKey,
 } from "@/lib/quiz-flow";
 import { parseQuizStep } from "@/lib/quiz-steps";
-import { seo } from "@/lib/seo";
+import { seo, absoluteUrl } from "@/lib/seo";
+import { images } from "@/data/images";
 import { quizUpToWord } from "@/data/quiz-meta";
 import { Kicker } from "@/components/editorial/Section";
 import { Star } from "@/components/brand/Doodles";
@@ -40,6 +41,7 @@ export const Route = createFileRoute("/hobby-finder")({
       title: "Hobby Quiz: Find a Hobby You'll Actually Do",
       description: `${upToCap()} quick taps, no email. Tell us your energy, company, time and budget and get hobbies that fit your after-work life, plus an easy first step for each.`,
       path: "/hobby-finder",
+      image: absoluteUrl(images.potteryNight.src),
     }),
   component: Finder,
 });

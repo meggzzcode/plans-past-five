@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Copy, Send, X } from "lucide-react";
+import { ArrowUpRight, Copy, Send, X } from "lucide-react";
 import { useSaved, type SavedItem, type SavedKind } from "@/lib/saved";
 import { buildListText, copyText, productsWithStatus, useShopList } from "@/lib/shoplist";
-import { verifiedCatalog } from "@/data/catalog";
+import { linkableFor, verifiedCatalog } from "@/data/catalog";
+import { resolveProductLink } from "@/config/affiliate";
+import { linkLabel } from "@/components/commerce/labels";
+import { ShopDisclosure } from "@/components/commerce/ProductCard";
+import { track } from "@/lib/track";
 import { outcomeMessage, sendToGroupChat } from "@/lib/share";
 import { planHref, sanitizePlanData } from "@/lib/planner";
 import { seo } from "@/lib/seo";
@@ -83,7 +87,7 @@ function ShareRow({ title, text, url }: { title: string; text: string; url?: str
 }
 
 function ShoppingList() {
-  const { state, ready } = useShopList();
+  const { state, ready, setStatus } = useShopList();
   if (!ready) return null;
   const need = productsWithStatus(verifiedCatalog, state, "need");
   const later = productsWithStatus(verifiedCatalog, state, "later");
@@ -100,12 +104,61 @@ function ShoppingList() {
       <div className="mt-4">
         <h3 className="text-xl italic">{title}</h3>
         <ul className="mt-1 divide-y divide-border border-y border-border">
-          {list.map((p) => (
-            <li key={p.id} className="py-3">
-              <span className="font-display text-lg">{p.name}</span>
-              {p.brand && <span className="text-sm text-muted-foreground"> ({p.brand})</span>}
-            </li>
-          ))}
+          {list.map((p) => {
+            const link = resolveProductLink(linkableFor(p));
+            const toggle =
+              "inline-flex min-h-11 items-center px-2 text-sm font-semibold text-espresso hover:text-cherry focus-visible:outline focus-visible:outline-2 focus-visible:outline-cherry";
+            return (
+              <li key={p.id} className="py-3">
+                <span className="font-display text-lg">{p.shortName ?? p.name}</span>
+                {p.brand && !(p.shortName ?? p.name).startsWith(p.brand) && (
+                  <span className="text-sm text-muted-foreground"> ({p.brand})</span>
+                )}
+                {p.benefit && <p className="mt-1 text-sm text-espresso">{p.benefit}</p>}
+                <div className="mt-2 flex flex-wrap items-center gap-x-2">
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel={link.sponsored ? "sponsored noopener" : "noopener"}
+                    onClick={() => {
+                      const base = {
+                        product_id: p.id,
+                        placement: "saved",
+                        retailer: link.retailer,
+                        link_kind: link.kind,
+                      };
+                      track("product_click", base);
+                      track(
+                        link.kind === "affiliate"
+                          ? "affiliate_outbound_click"
+                          : "retailer_outbound_click",
+                        base,
+                      );
+                    }}
+                    className="inline-flex min-h-11 items-center justify-center gap-1.5 bg-cherry px-4 py-2 text-sm font-semibold text-cream hover:bg-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+                    aria-label={`${linkLabel(link)}: ${p.shortName ?? p.name}`}
+                  >
+                    {linkLabel(link)} <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                  {state[p.id] !== "own" && (
+                    <button type="button" className={toggle} onClick={() => setStatus(p, "own")}>
+                      Got it
+                    </button>
+                  )}
+                  {state[p.id] !== "later" && (
+                    <button type="button" className={toggle} onClick={() => setStatus(p, "later")}>
+                      Later
+                    </button>
+                  )}
+                  {state[p.id] !== "need" && (
+                    <button type="button" className={toggle} onClick={() => setStatus(p, "need")}>
+                      Back to my list
+                    </button>
+                  )}
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </div>
     );
@@ -124,6 +177,7 @@ function ShoppingList() {
           Back to {NAMES.shop}
         </Link>
       </div>
+      <ShopDisclosure className="mt-2" />
     </div>
   );
 }
@@ -170,6 +224,12 @@ function Saved() {
                 className="inline-flex min-h-11 items-center bg-cherry px-5 text-sm font-semibold text-cream hover:bg-ink"
               >
                 {NAMES.quiz}
+              </Link>
+              <Link
+                to="/shop"
+                className="inline-flex min-h-11 items-center border-2 border-cherry px-5 text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream"
+              >
+                Pick a starter kit
               </Link>
               <Link
                 to="/make-plans"

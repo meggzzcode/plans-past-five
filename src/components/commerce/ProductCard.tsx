@@ -1,26 +1,33 @@
 import { useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, ListChecks, ListPlus } from "lucide-react";
-import { productLinkLabel, resolveProductLink, shopDisclosureSentences } from "@/config/affiliate";
+import { resolveProductLink, shopDisclosureSentences } from "@/config/affiliate";
 import { linkableFor, photoFor, type CatalogProduct } from "@/data/catalog";
 import { useShopList } from "@/lib/shoplist";
 import { track } from "@/lib/track";
 import { cn } from "@/lib/utils";
+import { linkLabel, roleLabel } from "./labels";
+import { Doodle, lookFor } from "./ProductTile";
 
 /**
- * Disclosure under every block of named products. One wording (src/config/affiliate.ts) for the
- * cards, the shop pages, /methodology and /affiliate-disclosure. The Associates statement appears
- * here only when an Amazon entry is live, and this renders only where product links are.
+ * Disclosure beside a block of named products. One wording (src/config/affiliate.ts) for the cards,
+ * the shop pages, /methodology and /affiliate-disclosure. The Associates statement appears here only
+ * when an Amazon entry is live, and this renders only where product links are. `kind="short"` is the
+ * one-line version near the first ask.
  */
 export function ShopDisclosure({
   className,
   kind = "product",
+  lead,
 }: {
   className?: string;
-  kind?: "product" | "general";
+  kind?: "product" | "general" | "short";
+  /** An extra sentence that belongs in the same line (e.g. the kit's "not a bundle" note). */
+  lead?: string;
 }) {
   return (
     <p className={cn("text-xs text-muted-foreground", className)}>
+      {lead ? `${lead} ` : ""}
       {shopDisclosureSentences(kind).join(" ")}{" "}
       <Link to="/affiliate-disclosure" className="underline">
         Disclosure
@@ -29,34 +36,32 @@ export function ShopDisclosure({
   );
 }
 
-const TINTS = [
-  "bg-butter/60",
-  "bg-strawberry/60",
-  "bg-sunday/60",
-  "bg-matcha/40",
-  "bg-warm-white",
-] as const;
-
-/** Stable, readable hash so a category always gets the same tint. */
-const tintFor = (key: string) => {
-  let h = 0;
-  for (let i = 0; i < key.length; i++) h = (h * 31 + key.charCodeAt(i)) % 9973;
-  return TINTS[h % TINTS.length];
-};
-
 const brandKnown = (b: string) => b.trim() !== "" && !/^not stated/i.test(b);
+
+/** The brand line is hidden when the product name already starts with it (no brand three times). */
+const showBrand = (p: CatalogProduct) => {
+  if (!brandKnown(p.brand)) return false;
+  const name = (p.shortName ?? p.name).toLowerCase();
+  return !name.startsWith(p.brand.trim().toLowerCase());
+};
 
 /**
  * The card's picture. Shows a photo ONLY when the record documents the rights (see `photoFor`);
- * otherwise a brand-tinted typographic tile (category as the kicker, brand or product as the title)
- * that is designed to look like a label, not like a missing image.
+ * otherwise a typographic tile: category colour, a doodle, and what she gets as the headline. It is
+ * designed to look like a label, not like a missing image. `compact` is the strip used on standard
+ * cards; the one-pick uses the larger tile.
  */
 export function ProductVisual({
   product: p,
   className,
+  compact = false,
+  badge,
 }: {
   product: CatalogProduct;
   className?: string;
+  compact?: boolean;
+  /** A small tag on the corner ("Our one pick"). */
+  badge?: string;
 }) {
   const photo = photoFor(p);
   if (photo)
@@ -71,26 +76,44 @@ export function ProductVisual({
         <figcaption className="mt-1 text-[11px] text-muted-foreground">{photo.credit}</figcaption>
       </figure>
     );
-  const title = brandKnown(p.brand) ? p.brand : (p.shortName ?? p.category);
+  const look = lookFor(p.category);
   return (
     <div
       aria-hidden="true"
       className={cn(
-        "relative flex aspect-[4/3] w-full flex-col items-center justify-center overflow-hidden px-4 text-center text-ink",
-        tintFor(p.category),
+        "relative flex w-full overflow-hidden text-ink",
+        compact
+          ? "h-24 flex-row items-center gap-4 px-5 sm:h-28"
+          : "min-h-52 flex-col items-center justify-center gap-2 px-4 py-8 text-center md:h-full",
+        look.tint,
         className,
       )}
       data-product-tile
     >
-      <span className="pointer-events-none absolute inset-2 border border-ink/20" />
-      <span className="kicker text-ink/70">{p.category}</span>
-      <span className="mt-1 font-display text-2xl italic leading-tight">{title}</span>
+      <span className="pointer-events-none absolute inset-2 border border-ink/25" />
+      {badge && (
+        <span className="absolute left-0 top-4 -rotate-2 bg-cherry px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-cream">
+          {badge}
+        </span>
+      )}
+      <Doodle kind={look.doodle} className={compact ? "h-12 w-12 sm:h-14 sm:w-14" : "h-20 w-20"} />
+      <span className={compact ? "min-w-0 text-left" : ""}>
+        <span className="kicker block text-ink/70">{p.category}</span>
+        <span
+          className={cn(
+            "block font-display italic leading-tight",
+            compact ? "text-xl" : "mt-1 text-2xl",
+          )}
+        >
+          {look.headline}
+        </span>
+      </span>
     </div>
   );
 }
 
 /** Resolves the one destination and records the click. The href always comes from the registry. */
-function useProductLink(p: CatalogProduct, placement: string) {
+export function useProductLink(p: CatalogProduct, placement: string) {
   const link = resolveProductLink(linkableFor(p));
   const onClick = () => {
     const base = { product_id: p.id, placement, retailer: link.retailer, link_kind: link.kind };
@@ -100,13 +123,15 @@ function useProductLink(p: CatalogProduct, placement: string) {
   return { link, onClick };
 }
 
-const buttonCls =
-  "inline-flex min-h-11 w-fit items-center gap-1.5 bg-ink px-4 py-2 text-sm font-semibold text-warm-white hover:bg-cherry";
+/** The one clear primary action: cherry, full-width on phones, always at least 44px tall. */
+export const primaryButtonCls =
+  "inline-flex min-h-11 w-full items-center justify-center gap-1.5 bg-cherry px-5 py-2 text-sm font-semibold text-cream hover:bg-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink sm:w-fit";
 
-/** Save icon only. Saved items feed the copy / print list. */
-function SaveButton({ product: p }: { product: CatalogProduct }) {
+/** Save to the shopping list. Icon-only on standard cards, with a visible label on the one-pick. */
+function SaveButton({ product: p, labelled }: { product: CatalogProduct; labelled?: boolean }) {
   const { state, ready, setStatus } = useShopList();
   const saved = ready && state[p.id] === "need";
+  const text = saved ? "On my list" : "Add to my list";
   return (
     <button
       type="button"
@@ -114,14 +139,18 @@ function SaveButton({ product: p }: { product: CatalogProduct }) {
       aria-pressed={saved}
       aria-label={`${saved ? "On my shopping list" : "Add to my shopping list"}: ${p.shortName ?? p.name}`}
       title={saved ? "On my shopping list" : "Add to my shopping list"}
-      className="no-print -mr-2 -mt-2 flex h-11 w-11 shrink-0 items-center justify-center text-cherry"
+      className={cn(
+        "no-print flex h-11 shrink-0 items-center justify-center gap-1.5 text-cherry",
+        labelled ? "-mr-1 px-2 text-sm font-semibold" : "-mr-2 -mt-2 w-11",
+      )}
     >
       {saved ? <ListChecks className="h-5 w-5" /> : <ListPlus className="h-5 w-5" />}
+      {labelled && <span>{text}</span>}
     </button>
   );
 }
 
-/** A compact "also consider" line: another product for the same slot and how it differs. */
+/** A compact "prefer something different?" line: another product for the same slot and how it differs. */
 export function AlternativeRow({
   product: p,
   placement,
@@ -140,7 +169,7 @@ export function AlternativeRow({
     >
       <span className="min-w-0 text-sm">
         <strong className="font-semibold">{p.shortName ?? p.name}</strong>
-        {brandKnown(p.brand) && <span className="text-muted-foreground"> by {p.brand}</span>}
+        {showBrand(p) && <span className="text-muted-foreground"> by {p.brand}</span>}
         <span className="block text-muted-foreground">
           {p.compare ?? p.benefit ?? p.description}
         </span>
@@ -151,19 +180,25 @@ export function AlternativeRow({
         rel={link.sponsored ? "sponsored noopener" : "noopener"}
         onClick={onClick}
         className="inline-flex min-h-11 items-center gap-1 border-b-2 border-cherry py-2 text-sm font-semibold text-cherry hover:border-transparent"
-        aria-label={`${productLinkLabel(link)}: ${p.shortName ?? p.name}`}
+        aria-label={`${linkLabel(link)}: ${p.shortName ?? p.name}`}
       >
-        {productLinkLabel(link)} <ArrowUpRight className="h-4 w-4" />
+        {linkLabel(link)} <ArrowUpRight className="h-4 w-4" />
       </a>
     </li>
   );
 }
 
+/** The first sentence of a longer line, so the one-pick reason stays one line. */
+const firstSentence = (t: string) => {
+  const m = /^.*?[.!?](?=\s|$)/.exec(t.trim());
+  return m ? m[0] : t.trim();
+};
+
 /**
  * Product card: a picture (photo only when rights are recorded, else a typographic tile), a role
- * label, the name, one practical benefit line and one "View on Amazon" button. No prices, ratings or
- * per-card disclaimers; the shared disclosure sits under the block. Safe to reuse anywhere: it only
- * needs a verified product.
+ * label, the name, one practical benefit line and one "See it on Amazon" button. No prices, ratings
+ * or per-card disclaimers; the shared disclosure sits under the block. Other options for the same
+ * need are folded under the card. Safe to reuse anywhere: it only needs a verified product.
  */
 export function ProductCard({
   product: p,
@@ -171,6 +206,7 @@ export function ProductCard({
   index,
   label,
   featured,
+  alsoNeed,
   alternatives,
   className,
 }: {
@@ -180,9 +216,11 @@ export function ProductCard({
   index?: number;
   /** Overrides the role label (a kit slot can be essential while the product's own role is not). */
   label?: string;
-  /** The "If you only buy one thing" layout: picture beside the text on wide screens. */
+  /** The "one pick" layout: a larger tile beside the text on wide screens, with the reason shown. */
   featured?: boolean;
-  /** Other products for the same slot: shown as compact "also consider" lines. */
+  /** Other things the same list needs, named under the one pick ("You'll also need ... below"). */
+  alsoNeed?: string[];
+  /** Other products for the same slot: folded under "Prefer something different?". */
   alternatives?: CatalogProduct[] | undefined;
   className?: string | undefined;
 }) {
@@ -194,7 +232,7 @@ export function ProductCard({
     track("product_impression", { product_id: p.id, placement, role: p.role });
   }, [p.id, p.role, placement]);
 
-  const role = label ?? (p.isEssential ? "Essential" : "Optional extra");
+  const role = label ?? roleLabel(p);
 
   return (
     <article
@@ -206,7 +244,12 @@ export function ProductCard({
       )}
       data-product-id={p.id}
     >
-      <ProductVisual product={p} className={cn(featured && "md:w-2/5 md:shrink-0")} />
+      <ProductVisual
+        product={p}
+        compact={!featured}
+        {...(featured ? { badge: "Our one pick" } : {})}
+        className={cn(featured && "md:w-2/5 md:shrink-0")}
+      />
       <div className="mt-3 flex min-w-0 flex-1 flex-col">
         <div className="flex items-start justify-between gap-3">
           <p className="kicker text-cherry">
@@ -217,32 +260,48 @@ export function ProductCard({
             )}
             {role}
           </p>
-          <SaveButton product={p} />
+          <SaveButton product={p} {...(featured ? { labelled: true } : {})} />
         </div>
         <h3 className={cn("mt-1 leading-tight", featured ? "text-2xl" : "text-xl")}>
           {p.shortName ?? p.name}
         </h3>
-        {brandKnown(p.brand) && <p className="text-sm text-muted-foreground">{p.brand}</p>}
+        {showBrand(p) && <p className="text-sm text-muted-foreground">{p.brand}</p>}
         <p className="mt-2 text-sm text-espresso">{p.benefit ?? p.description}</p>
+        {featured && p.whySelected && (
+          <p className="mt-2 text-sm text-espresso">
+            <strong className="font-semibold">Why we picked it:</strong>{" "}
+            {firstSentence(p.whySelected)}
+          </p>
+        )}
+        {featured && alsoNeed && alsoNeed.length > 0 && (
+          <p className="mt-2 text-sm text-espresso">
+            You'll also need: {alsoNeed.join(", ")} (below).
+          </p>
+        )}
+        {p.role === "complete-kit" && (
+          <p className="mt-2 text-sm text-garden">Good for gifting: it's all in one box.</p>
+        )}
         <a
           href={link.href}
           target="_blank"
           rel={link.sponsored ? "sponsored noopener" : "noopener"}
           onClick={onClick}
-          className={cn(buttonCls, "mt-4")}
-          aria-label={`${productLinkLabel(link)}: ${p.shortName ?? p.name}`}
+          className={cn(primaryButtonCls, "mt-4")}
+          aria-label={`${linkLabel(link)}: ${p.shortName ?? p.name}`}
         >
-          {productLinkLabel(link)} <ArrowUpRight className="h-4 w-4" />
+          {linkLabel(link)} <ArrowUpRight className="h-4 w-4" />
         </a>
         {alternatives && alternatives.length > 0 && (
-          <div className="mt-4 border-t border-border pt-3">
-            <p className="kicker text-muted-foreground">Also consider</p>
-            <ul className="mt-2 space-y-3">
+          <details className="mt-3 border-t border-border">
+            <summary className="flex min-h-11 cursor-pointer items-center text-sm font-semibold text-espresso">
+              Prefer something different? ({alternatives.length})
+            </summary>
+            <ul className="mt-1 space-y-3 pb-1">
               {alternatives.map((a) => (
                 <AlternativeRow key={a.id} product={a} placement={`${placement}-alt`} />
               ))}
             </ul>
-          </div>
+          </details>
         )}
       </div>
     </article>

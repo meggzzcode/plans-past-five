@@ -7,7 +7,8 @@ import { getCategory } from "@/data/categories";
 import { images } from "@/data/images";
 import { categoryLabels, type Hobby } from "@/data/hobbies";
 import type { Product, Collection } from "@/data/products";
-import { resolveProductLink, productLinkLabel } from "@/config/affiliate";
+import { resolveProductLink } from "@/config/affiliate";
+import { linkLabel } from "@/components/commerce/labels";
 import { SaveButton } from "@/components/editorial/SaveButton";
 import { cn } from "@/lib/utils";
 import { toneBg } from "@/components/editorial/Section";
@@ -255,7 +256,7 @@ export function ProductCard({
       <p className="mt-2 text-sm text-espresso">{p.blurb}</p>
       <p className="mt-3 text-sm">
         <span className="hand text-lg text-cherry">look for → </span>
-        <span className="text-muted-foreground">{p.lookFor}</span>
+        <span className="font-medium text-espresso">{p.lookFor}</span>
       </p>
       {p.noSpend && (
         <p className="mt-2 text-sm text-garden">
@@ -266,15 +267,24 @@ export function ProductCard({
         href={link.href}
         target="_blank"
         rel={link.sponsored ? "sponsored noopener" : "noopener"}
-        className="mt-4 inline-flex w-fit items-center gap-1.5 border-b-2 border-cherry pb-0.5 text-sm font-semibold text-cherry hover:border-transparent"
+        className="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-1.5 border-2 border-cherry px-4 py-2 text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream sm:w-fit"
       >
-        {productLinkLabel(link)} <ArrowUpRight className="h-4 w-4" />
+        {linkLabel(link, p.name)} <ArrowUpRight className="h-4 w-4" />
       </a>
     </article>
   );
 }
 
-export function CollectionCard({ c, className }: { c: Collection; className?: string }) {
+export function CollectionCard({
+  c,
+  className,
+  tag,
+}: {
+  c: Collection;
+  className?: string;
+  /** A short honest label from data ("Starter kit inside", "What to look for"). */
+  tag?: string;
+}) {
   const img = images[c.image];
   return (
     <Link
@@ -296,6 +306,7 @@ export function CollectionCard({ c, className }: { c: Collection; className?: st
         <div className="px-1 py-4">
           <h3 className="text-2xl italic leading-tight group-hover:text-cherry">{c.name}</h3>
           <p className="mt-1 text-sm text-espresso">{c.dek}</p>
+          {tag && <p className="kicker mt-2 text-cherry">{tag}</p>}
         </div>
       </div>
     </Link>

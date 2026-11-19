@@ -107,7 +107,7 @@ export const collections: Collection[] = [
     image: "shopPottery",
     tone: "butter",
     intro:
-      "Everything you need to bring pottery-class energy to your kitchen table, no kiln or wheel required.",
+      "Pottery-class energy at your kitchen table. No kiln, no wheel, just clay, paint and a few hours of lovably lumpy.",
   },
   {
     slug: "creative-girl",
@@ -116,7 +116,7 @@ export const collections: Collection[] = [
     image: "shopCreative",
     tone: "strawberry",
     intro:
-      "Starter supplies for watercolor, journaling and embroidery: small, affordable and very easy to put away after.",
+      "Watercolor, a journal, a hoop and thread: starter supplies small enough to put away after.",
   },
   {
     slug: "sporty-girl",
@@ -125,7 +125,7 @@ export const collections: Collection[] = [
     image: "shopSporty",
     tone: "matcha",
     intro:
-      "Beginner-friendly gear for tennis, pickleball and getting outside. You do not need the pro version.",
+      "Gear for your first rally, game or trail. You don't need the pro version, and you can often borrow or rent first.",
   },
   {
     slug: "girls-night-in",
@@ -133,7 +133,8 @@ export const collections: Collection[] = [
     dek: "Host a night everyone talks about after",
     image: "shopGirlsNight",
     tone: "strawberry",
-    intro: "Group activities that turn 'we should hang out' into an actual plan on the calendar.",
+    intro:
+      "Turn 'we should hang out' into a date in the group chat: a mahjong night or a paint-and-sip table, with exactly what to buy.",
   },
   {
     slug: "bookish-girl",
@@ -142,7 +143,7 @@ export const collections: Collection[] = [
     image: "shopBookish",
     tone: "sunday",
     intro:
-      "Little upgrades that make reading feel like an event, whether that's in bed, on the train or at a café.",
+      "Little upgrades that make reading feel like an event: in bed, on the train or at your favorite café.",
   },
   {
     slug: "little-adventures",
@@ -159,7 +160,7 @@ export const collections: Collection[] = [
     image: "shopCreative",
     tone: "sunday",
     intro:
-      "Notebooks, tape and stickers for junk journals, reading logs and pocket notes. Start with one notebook and whatever scraps you already have.",
+      "A journal that can take glue, tape you'll love and the scraps already in your bag. Start with one notebook.",
     extraProductIds: [
       "junk-journals",
       "washi-tape",
@@ -175,7 +176,7 @@ export const collections: Collection[] = [
     image: "shopBookish",
     tone: "cream",
     intro:
-      "Small things that make a weeknight at home feel like a plan: better light for reading, a game on the table and something quiet to make.",
+      "Small things that turn a weeknight at home into a plan: better light, a game on the table, something quiet to make.",
     extraProductIds: [
       "book-lights",
       "reading-stands",

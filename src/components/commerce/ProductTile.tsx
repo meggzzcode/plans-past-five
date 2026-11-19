@@ -40,7 +40,10 @@ const LOOKS: [RegExp, Look][] = [
   [/adhesive|glue/i, { doodle: "glue", tint: TINT.sunday, headline: "Stick it down" }],
   [/ephemera|paper/i, { doodle: "paper", tint: TINT.strawberry, headline: "Layers to play with" }],
   [/pens?$/i, { doodle: "pen", tint: TINT.sunday, headline: "Write it all down" }],
-  [/mahjong.*card|card.*mahjong/i, { doodle: "card", tint: TINT.sunday, headline: "Play from the card" }],
+  [
+    /mahjong.*card|card.*mahjong/i,
+    { doodle: "card", tint: TINT.sunday, headline: "Play from the card" },
+  ],
   [/mahjong.*(mat|accessor)/i, { doodle: "mat", tint: TINT.matcha, headline: "Quieter tiles" }],
   [/mahjong/i, { doodle: "tile", tint: TINT.strawberry, headline: "Game night, ready" }],
   [/table cover/i, { doodle: "mat", tint: TINT.matcha, headline: "Protect the table" }],
@@ -182,9 +185,7 @@ function paths(kind: DoodleKind): ReactNode {
         </>
       );
     default:
-      return (
-        <path d="M28 8 L33 22 L48 22 L36 31 L41 46 L28 37 L15 46 L20 31 L8 22 L23 22 Z" />
-      );
+      return <path d="M28 8 L33 22 L48 22 L36 31 L41 46 L28 37 L15 46 L20 31 L8 22 L23 22 Z" />;
   }
 }
 
