@@ -1,6 +1,7 @@
 import { articles } from "@/content";
 import { hobbies, type Hobby } from "@/data/hobbies";
-import { products, collections } from "@/data/products";
+import { collections } from "@/data/products";
+import { searchTerms } from "@/data/search-terms";
 import { categories } from "@/data/categories";
 
 export type SearchHit = { kind: string; title: string; text: string; to: string };
@@ -29,12 +30,12 @@ function index(): (SearchHit & { hay: string; hobby?: Hobby })[] {
       to: `/shop/${c.slug}`,
       hay: `${c.name} ${c.dek} ${c.intro}`,
     })),
-    ...products.map((p) => ({
+    ...searchTerms.map((p) => ({
       kind: "Shop pick",
-      title: p.name,
-      text: p.blurb,
+      title: p.label,
+      text: `Find ${p.label.toLowerCase()} on Amazon`,
       to: `/shop/${p.collection}`,
-      hay: `${p.name} ${p.blurb} ${p.hobbySlugs.join(" ")}`,
+      hay: `${p.label} ${p.query} ${p.hobbies.join(" ")}`,
     })),
     ...categories.map((c) => ({
       kind: "Section",

@@ -87,8 +87,9 @@ describe("product and article files hold no tracking ID and only declared link t
       const p = JSON.parse(text);
       expect(LINK_TYPES, f).toContain(p.linkType);
       if (p.linkType === "amazon-affiliate-ready") {
-        expect(p.amazonUrl, f).toBe(`https://www.amazon.com/dp/${p.asin}`);
-        expect(new URL(p.amazonUrl).hostname, f).toBe("www.amazon.com");
+        // only the ASIN is stored; the ordinary address is derived from it (never typed, never tagged)
+        expect(p, f).not.toHaveProperty("amazonUrl");
+        expect(p.asin, f).toMatch(/^[A-Z0-9]{10}$/);
       } else {
         const dest = new URL(p.altRetailerUrl ?? p.manufacturerUrl);
         expect(dest.protocol, f).toBe("https:");

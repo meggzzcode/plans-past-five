@@ -15,10 +15,6 @@
     "volunteering",
     "mahjong"
   ],
-  "productIds": [
-    "conversation-cards",
-    "mahjong-sets"
-  ],
   "body": [
     {
       "type": "h2",

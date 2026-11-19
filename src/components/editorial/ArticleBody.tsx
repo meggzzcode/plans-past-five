@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { articles, type Block } from "@/content";
 import { heavyCallouts } from "./article-summary";
 import { getHobby } from "@/data/hobbies";
-import { productsFor } from "@/data/products";
+import { searchTermsFor } from "@/data/search-terms";
 import { selectProducts, verifiedCatalog } from "@/data/catalog";
 import { fillKit, kitHobbies, kits } from "@/data/kits";
 import { ShopTheArticle } from "@/components/commerce/ShopTheArticle";
@@ -11,7 +11,7 @@ import { ShopMyHobby } from "@/components/commerce/ShopMyHobby";
 import { StarterKit } from "@/components/commerce/StarterKit";
 import { images } from "@/data/images";
 import { Inline } from "./Inline";
-import { ProductCard, HobbyCard } from "@/components/cards/Cards";
+import { SearchTermCard, HobbyCard } from "@/components/cards/Cards";
 import { Star, Arrow } from "@/components/brand/Doodles";
 import {
   CalendarHeart,
@@ -353,8 +353,8 @@ function verifiedFor(
 
   const hobbies = [
     ...new Set(
-      productsFor(b.productIds)
-        .map((p) => p.hobbySlugs[0])
+      searchTermsFor(b.productIds)
+        .map((p) => p.hobbies[0])
         .filter((x): x is string => !!x),
     ),
   ];
@@ -582,7 +582,7 @@ function BlockView({
     case "starterKit":
     case "shopHobby": {
       if (verified) return <ShopFold>{verified}</ShopFold>;
-      const ps = productsFor(b.productIds);
+      const ps = searchTermsFor(b.productIds);
       return (
         <ShopFold>
           <aside className="not-prose my-12 border-y-2 border-ink py-8">
@@ -598,7 +598,7 @@ function BlockView({
             <div className="mt-6 grid gap-8 sm:grid-cols-2">
               {ps.map((p) => (
                 <div key={p.id} data-fold-card>
-                  <ProductCard p={p} />
+                  <SearchTermCard p={p} />
                 </div>
               ))}
             </div>

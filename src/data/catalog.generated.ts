@@ -13,7 +13,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "A 21-roll washi tape set in three widths with floral, pastel and seasonal designs.",
     "asin": "B08L5PB8N6",
-    "amazonUrl": "https://www.amazon.com/dp/B08L5PB8N6",
     "specs": [
       {
         "label": "Rolls",
@@ -59,6 +58,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "Floral washi tape, 21 rolls",
     "benefit": "Pastel floral rolls in three widths: enough to dress every page of a first journal.",
     "lead": true,
+    "amazonUrl": "https://www.amazon.com/dp/B08L5PB8N6",
     "status": "verified"
   },
   {
@@ -69,7 +69,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "A 40-roll set of 10 mm washi tape in neutral, geometric and solid designs, in a gift box.",
     "asin": "B0881M69D4",
-    "amazonUrl": "https://www.amazon.com/dp/B0881M69D4",
     "specs": [
       {
         "label": "Rolls",
@@ -123,6 +122,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "Neutral slim washi tape, 40 rolls",
     "benefit": "Calm neutral and geometric prints in a gift box, 10 mm wide.",
     "compare": "Quieter, more neutral palette than the floral set; one width only.",
+    "amazonUrl": "https://www.amazon.com/dp/B0881M69D4",
     "status": "verified"
   },
   {
@@ -133,7 +133,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "A hardcover thread-bound blank journal with 100 gsm acid-free ivory paper, inner pocket, ribbon and elastic closure.",
     "asin": "B08FC38BJ4",
-    "amazonUrl": "https://www.amazon.com/dp/B08FC38BJ4",
     "specs": [
       {
         "label": "Pages",
@@ -188,6 +187,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "Blush blank journal, 160 pages",
     "benefit": "A blush-pink journal that slips into a bag, with 160 pages for tickets, notes and half-finished ideas.",
     "compare": "Smaller bag-size blush journal; thinner 100 gsm paper, so glue-heavy pages warp sooner.",
+    "amazonUrl": "https://www.amazon.com/dp/B08FC38BJ4",
     "status": "verified"
   },
   {
@@ -198,7 +198,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "A four-pack of glue sticks that the listing describes as acid-free and photo-safe.",
     "asin": "B07BVQFKM8",
-    "amazonUrl": "https://www.amazon.com/dp/B07BVQFKM8",
     "specs": [
       {
         "label": "Pack",
@@ -251,6 +250,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "Scotch glue sticks, 4-pack",
     "benefit": "A glue stick you'll recognise, four to a pack, so there's always a spare mid-page.",
     "lead": true,
+    "amazonUrl": "https://www.amazon.com/dp/B07BVQFKM8",
     "status": "verified"
   },
   {
@@ -261,7 +261,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "A three-pack of double-sided tape runners that the listing describes as permanent, acid-free and photo-safe.",
     "asin": "B0FP6NW64R",
-    "amazonUrl": "https://www.amazon.com/dp/B0FP6NW64R",
     "specs": [
       {
         "label": "Pack",
@@ -317,6 +316,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "Scotch tape runners, 3-pack",
     "benefit": "Rolls on dry tape instead of wet glue, so there is nothing to wait for.",
     "compare": "Tidier than a glue stick, but permanent: you can't lift it once placed.",
+    "amazonUrl": "https://www.amazon.com/dp/B0FP6NW64R",
     "status": "verified"
   },
   {
@@ -327,7 +327,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "Eight black archival fineliner pens in assorted tip sizes.",
     "asin": "B004QHI43S",
-    "amazonUrl": "https://www.amazon.com/dp/B004QHI43S",
     "specs": [
       {
         "label": "Pack",
@@ -379,6 +378,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "Pigma Micron pens, 8-pack",
     "benefit": "Fine black pens for handwriting and small details on your pages.",
     "lead": true,
+    "amazonUrl": "https://www.amazon.com/dp/B004QHI43S",
     "status": "verified"
   },
   {
@@ -389,7 +389,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "A 15-colour set of 12 ml acrylic paint tubes with three brushes, described as suitable for clay among other surfaces.",
     "asin": "B083X67QFX",
-    "amazonUrl": "https://www.amazon.com/dp/B083X67QFX",
     "specs": [
       {
         "label": "Tubes",
@@ -439,6 +438,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "Shuttle Art acrylic paints, 15 tubes",
     "benefit": "Fifteen 12 ml tubes in a spread of colors: enough to paint a first piece.",
     "lead": true,
+    "amazonUrl": "https://www.amazon.com/dp/B083X67QFX",
     "status": "verified"
   },
   {
@@ -449,7 +449,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "A 12 oz gloss clear acrylic spray sealer for finished craft projects.",
     "asin": "B003VYD9DM",
-    "amazonUrl": "https://www.amazon.com/dp/B003VYD9DM",
     "specs": [
       {
         "label": "Size",
@@ -502,6 +501,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "Mod Podge gloss sealer spray",
     "benefit": "A gloss spray to finish painted pieces. Use it outdoors or with the windows open.",
     "lead": true,
+    "amazonUrl": "https://www.amazon.com/dp/B003VYD9DM",
     "status": "verified"
   },
   {
@@ -512,7 +512,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "A 166-tile American mahjong set with racks and pushers, dice, chips, a wind indicator, a manual, protective sleeves and a bag.",
     "asin": "B0F6SDSQGF",
-    "amazonUrl": "https://www.amazon.com/dp/B0F6SDSQGF",
     "specs": [
       {
         "label": "Tiles",
@@ -566,6 +565,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "benefit": "Built for game one: 166 blue tiles, racks, a carry bag and extras like dice and a wind indicator.",
     "lead": true,
     "onlyOne": true,
+    "amazonUrl": "https://www.amazon.com/dp/B0F6SDSQGF",
     "status": "verified"
   },
   {
@@ -576,7 +576,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "Four large-size official National Mah Jongg League cards with the 2026 hands and rules.",
     "asin": "B0GRCBQ3Y2",
-    "amazonUrl": "https://www.amazon.com/dp/B0GRCBQ3Y2",
     "specs": [
       {
         "label": "Cards",
@@ -630,6 +629,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "2026 mahjong card, large size",
     "benefit": "The official card of hands your table plays from: four large-size cards, so everyone has one. This is the 2026 edition.",
     "lead": true,
+    "amazonUrl": "https://www.amazon.com/dp/B0GRCBQ3Y2",
     "status": "verified"
   },
   {
@@ -640,7 +640,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "A 31.5 inch square non-slip, noise-reducing table mat with a carrying bag.",
     "asin": "B0CXJ4PLBY",
-    "amazonUrl": "https://www.amazon.com/dp/B0CXJ4PLBY",
     "specs": [
       {
         "label": "Size",
@@ -693,6 +692,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "Mahjong mat with carry bag, 31.5 in",
     "benefit": "Softens tile clatter and protects the table, then rolls up into its own carry bag.",
     "lead": true,
+    "amazonUrl": "https://www.amazon.com/dp/B0CXJ4PLBY",
     "status": "verified"
   },
   {
@@ -703,7 +703,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "An all-in-one air dry clay starter kit with clay, sculpting tools, paints, varnish and a guide.",
     "asin": "B0DFH9Z3BC",
-    "amazonUrl": "https://www.amazon.com/dp/B0DFH9Z3BC",
     "specs": [
       {
         "label": "Clay",
@@ -759,6 +758,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "benefit": "Clay, tools, paint and sealer in one box: shape a trinket dish tonight, paint it once it dries.",
     "lead": true,
     "onlyOne": true,
+    "amazonUrl": "https://www.amazon.com/dp/B0DFH9Z3BC",
     "status": "verified"
   },
   {
@@ -769,7 +769,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "A 166-tile American mahjong set in a blue carrying bag with four racks, dice, chips and a wind indicator.",
     "asin": "B0FM7P49H7",
-    "amazonUrl": "https://www.amazon.com/dp/B0FM7P49H7",
     "specs": [
       {
         "label": "Tiles",
@@ -827,6 +826,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "MUTEX American mahjong set, walnut racks",
     "benefit": "166 tiles, four walnut-finish racks and an instruction booklet for newcomers.",
     "compare": "Warm walnut racks and a rules booklet; the card is separate.",
+    "amazonUrl": "https://www.amazon.com/dp/B0FM7P49H7",
     "status": "verified"
   },
   {
@@ -837,7 +837,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "A hardcover A5 unlined notebook with 120 gsm paper and 180 pages.",
     "asin": "B081VK1CM1",
-    "amazonUrl": "https://www.amazon.com/dp/B081VK1CM1",
     "specs": [
       {
         "label": "Size",
@@ -893,6 +892,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "benefit": "Thicker 120 gsm pages than a standard notebook, in a black hardcover with 180 pages to fill.",
     "lead": true,
     "onlyOne": true,
+    "amazonUrl": "https://www.amazon.com/dp/B081VK1CM1",
     "status": "verified"
   },
   {
@@ -903,7 +903,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "A fitted square felt cover for card tables, listed for poker, mahjong and bridge.",
     "asin": "B09CTRNP73",
-    "amazonUrl": "https://www.amazon.com/dp/B09CTRNP73",
     "specs": [
       {
         "label": "Size",
@@ -952,6 +951,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "Felt card-table cover, 36 in",
     "benefit": "A fitted felt cover for a standard card table that softens tile noise.",
     "compare": "Fits a 36 in card table instead of rolling up like a mat.",
+    "amazonUrl": "https://www.amazon.com/dp/B09CTRNP73",
     "status": "verified"
   },
   {
@@ -962,7 +962,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "Four standard-size (5 1/8 x 4 in) 2026 National Mah Jongg League cards.",
     "asin": "B0GRCCTYJ5",
-    "amazonUrl": "https://www.amazon.com/dp/B0GRCCTYJ5",
     "specs": [
       {
         "label": "Pack",
@@ -1015,6 +1014,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "2026 mahjong card, standard size",
     "benefit": "The same official card in the smaller standard size, 2026 edition.",
     "compare": "Smaller than the large-print card, with the same year's hands.",
+    "amazonUrl": "https://www.amazon.com/dp/B0GRCCTYJ5",
     "status": "verified"
   },
   {
@@ -1025,7 +1025,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "A 48-pan watercolor set with three brushes in a portable case.",
     "asin": "B0BWRCKFDH",
-    "amazonUrl": "https://www.amazon.com/dp/B0BWRCKFDH",
     "specs": [
       {
         "label": "Pans",
@@ -1076,6 +1075,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "benefit": "Pick one small set: this box has 48 pan colors, three brushes and a case. Use three colors at first and ignore the rest.",
     "lead": true,
     "onlyOne": true,
+    "amazonUrl": "https://www.amazon.com/dp/B0BWRCKFDH",
     "status": "verified"
   },
   {
@@ -1086,7 +1086,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "Eight round brushes in a natural-hair and nylon blend for watercolor and other media.",
     "asin": "B06XTMNKVF",
-    "amazonUrl": "https://www.amazon.com/dp/B06XTMNKVF",
     "specs": [
       {
         "label": "Count",
@@ -1135,6 +1134,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "Transon round brush set, 8 pieces",
     "benefit": "Eight round brushes in graduated sizes for washes and fine lines.",
     "lead": true,
+    "amazonUrl": "https://www.amazon.com/dp/B06XTMNKVF",
     "status": "verified"
   },
   {
@@ -1145,7 +1145,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "Twelve nylon round brushes for watercolor, acrylic and gouache.",
     "asin": "B07WH8T6LH",
-    "amazonUrl": "https://www.amazon.com/dp/B07WH8T6LH",
     "specs": [
       {
         "label": "Count",
@@ -1194,6 +1193,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "Fenorkey nylon round brushes, 12 pieces",
     "benefit": "Twelve nylon round brushes that rinse clean.",
     "compare": "More brushes, in nylon rather than goat hair; all round shapes.",
+    "amazonUrl": "https://www.amazon.com/dp/B07WH8T6LH",
     "status": "verified"
   },
   {
@@ -1204,7 +1204,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "A 9 x 12 in cold-press pad of cotton watercolor paper.",
     "asin": "B01EQHJH10",
-    "amazonUrl": "https://www.amazon.com/dp/B01EQHJH10",
     "specs": [
       {
         "label": "Weight",
@@ -1258,6 +1257,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "Arches cold-press pad, 9 x 12 in",
     "benefit": "Cotton watercolor paper in a 140 lb cold-press pad.",
     "compare": "A step up in paper quality once you are hooked.",
+    "amazonUrl": "https://www.amazon.com/dp/B01EQHJH10",
     "status": "verified"
   },
   {
@@ -1268,7 +1268,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "A 20-sheet cold-press watercolor pad, 140 lb, 9 x 12 in.",
     "asin": "B0D5R7JRKZ",
-    "amazonUrl": "https://www.amazon.com/dp/B0D5R7JRKZ",
     "specs": [
       {
         "label": "Sheets",
@@ -1326,6 +1325,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "Heavyweight watercolor pad, 9 x 12 in",
     "benefit": "Twenty 140 lb cold-press sheets for practice washes.",
     "lead": true,
+    "amazonUrl": "https://www.amazon.com/dp/B0D5R7JRKZ",
     "status": "verified"
   },
   {
@@ -1336,7 +1336,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "A beginner embroidery kit with patterned fabric, thread, hoops, needles, a seam ripper and video tutorials.",
     "asin": "B0B762JW55",
-    "amazonUrl": "https://www.amazon.com/dp/B0B762JW55",
     "specs": [
       {
         "label": "Includes",
@@ -1377,6 +1376,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "benefit": "A boxed kit with a tutorial covering the hoop, threading and basic stitches.",
     "lead": true,
     "onlyOne": true,
+    "amazonUrl": "https://www.amazon.com/dp/B0B762JW55",
     "status": "verified"
   },
   {
@@ -1387,7 +1387,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "A large embroidery starter kit: 200 floss colours, 5 bamboo hoops, 2 Aida cloth, needles, pins and tools.",
     "asin": "B087RB2K2B",
-    "amazonUrl": "https://www.amazon.com/dp/B087RB2K2B",
     "specs": [
       {
         "label": "Floss",
@@ -1443,6 +1442,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "INSCRAFT embroidery set, 200 floss colors",
     "benefit": "A big palette of floss plus five bamboo hoops for trying things out.",
     "lead": true,
+    "amazonUrl": "https://www.amazon.com/dp/B087RB2K2B",
     "status": "verified"
   },
   {
@@ -1453,7 +1453,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "Two small stainless steel stork-style scissors with a gold finish.",
     "asin": "B07KZPRBQT",
-    "amazonUrl": "https://www.amazon.com/dp/B07KZPRBQT",
     "specs": [
       {
         "label": "Pack",
@@ -1497,6 +1496,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "Gold stork embroidery scissors, 2-pack",
     "benefit": "Small gold scissors for snipping thread, a pair for each project bag.",
     "lead": true,
+    "amazonUrl": "https://www.amazon.com/dp/B07KZPRBQT",
     "status": "verified"
   },
   {
@@ -1507,7 +1507,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "A single skein of worsted-weight (size 4) acrylic yarn in white.",
     "asin": "B000XZY8Q4",
-    "amazonUrl": "https://www.amazon.com/dp/B000XZY8Q4",
     "specs": [
       {
         "label": "Weight",
@@ -1552,6 +1551,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "benefit": "A plain, light worsted yarn that shows every stitch.",
     "lead": true,
     "onlyOne": true,
+    "amazonUrl": "https://www.amazon.com/dp/B000XZY8Q4",
     "status": "verified"
   },
   {
@@ -1562,7 +1562,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "Three skeins of machine-washable 100% acrylic worsted-weight (4) yarn in grey.",
     "asin": "B0BBY2QVV4",
-    "amazonUrl": "https://www.amazon.com/dp/B0BBY2QVV4",
     "specs": [
       {
         "label": "Weight",
@@ -1610,6 +1609,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "Caron Simply Soft yarn, gray 3-pack",
     "benefit": "Three skeins of softer yarn in a gentle gray.",
     "compare": "Softer feel and three skeins, enough for a small project.",
+    "amazonUrl": "https://www.amazon.com/dp/B0BBY2QVV4",
     "status": "verified"
   },
   {
@@ -1620,7 +1620,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "A 12-brush set: rounds, flats, liners, an angle, a filbert and a fan.",
     "asin": "B0868QQ1X6",
-    "amazonUrl": "https://www.amazon.com/dp/B0868QQ1X6",
     "specs": [
       {
         "label": "Count",
@@ -1673,6 +1672,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "Benicci artist brush set, 12 pieces",
     "benefit": "A mix of brush shapes for base coats and fine lines on clay or canvas.",
     "lead": true,
+    "amazonUrl": "https://www.amazon.com/dp/B0868QQ1X6",
     "status": "verified"
   },
   {
@@ -1683,7 +1683,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "Ten primed, cotton 8 x 10 in canvases on 5/8 in pine frames; the listing describes them as primed and acid-free.",
     "asin": "B0CH3K5F62",
-    "amazonUrl": "https://www.amazon.com/dp/B0CH3K5F62",
     "specs": [
       {
         "label": "Count",
@@ -1735,6 +1734,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "benefit": "Ten primed canvases: one for every guest, plus spares for the \"let me try again\".",
     "lead": true,
     "onlyOne": true,
+    "amazonUrl": "https://www.amazon.com/dp/B0CH3K5F62",
     "status": "verified"
   },
   {
@@ -1745,7 +1745,6 @@ export const generatedCatalog: CatalogProduct[] = [
     "linkType": "amazon-affiliate-ready",
     "description": "Five primed, cotton 8 x 10 in canvases on 5/8 in pine frames; the listing describes them as primed and acid-free.",
     "asin": "B0D3TWT3TX",
-    "amazonUrl": "https://www.amazon.com/dp/B0D3TWT3TX",
     "specs": [
       {
         "label": "Count",
@@ -1791,6 +1790,7 @@ export const generatedCatalog: CatalogProduct[] = [
     "shortName": "ESRICH 8 x 10 canvases, 5-pack",
     "benefit": "Five canvases for a smaller group.",
     "compare": "The same canvases in a pack of five, for four guests or fewer.",
+    "amazonUrl": "https://www.amazon.com/dp/B0D3TWT3TX",
     "status": "verified"
   }
 ];

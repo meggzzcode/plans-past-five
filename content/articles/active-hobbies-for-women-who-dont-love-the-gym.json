@@ -20,24 +20,6 @@
     "thrifting",
     "flower-arranging"
   ],
-  "productIds": [
-    "pickleball-sets",
-    "tennis-rackets",
-    "tennis-balls",
-    "pickleball-shoes",
-    "tennis-shoes",
-    "walking-shoes",
-    "trekking-socks",
-    "daypacks",
-    "water-bottles",
-    "phone-armband",
-    "binoculars",
-    "skate-protective-gear",
-    "bike-helmets",
-    "sports-totes",
-    "portable-speakers",
-    "thermos-flasks"
-  ],
   "sources": [
     {
       "title": "CDC: adult physical activity guidelines",

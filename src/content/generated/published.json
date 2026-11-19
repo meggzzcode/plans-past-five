@@ -21,24 +21,6 @@
       "thrifting",
       "flower-arranging"
     ],
-    "productIds": [
-      "pickleball-sets",
-      "tennis-rackets",
-      "tennis-balls",
-      "pickleball-shoes",
-      "tennis-shoes",
-      "walking-shoes",
-      "trekking-socks",
-      "daypacks",
-      "water-bottles",
-      "phone-armband",
-      "binoculars",
-      "skate-protective-gear",
-      "bike-helmets",
-      "sports-totes",
-      "portable-speakers",
-      "thermos-flasks"
-    ],
     "sources": [
       {
         "title": "CDC: adult physical activity guidelines",
@@ -383,22 +365,6 @@
       "creative-writing",
       "thrifting"
     ],
-    "productIds": [
-      "watercolor-sets",
-      "air-dry-clay",
-      "embroidery-kits",
-      "paint-by-number-kits",
-      "friendship-bracelet-kits",
-      "sketch-pads",
-      "jigsaw-puzzles",
-      "indoor-plant-basics",
-      "pocket-notebooks",
-      "book-lights",
-      "binoculars",
-      "walking-shoes",
-      "daypacks",
-      "market-totes"
-    ],
     "sources": [
       {
         "title": "ASPCA: toxic and non-toxic plants",
@@ -672,17 +638,6 @@
       "reading",
       "craft-nights"
     ],
-    "productIds": [
-      "air-dry-clay",
-      "clay-mats",
-      "acrylic-paints",
-      "detail-brushes",
-      "watercolor-sets",
-      "watercolor-sketchbooks",
-      "junk-journals",
-      "washi-tape",
-      "sticker-sets"
-    ],
     "sources": [
       {
         "title": "CPSC: art materials safety",
@@ -949,23 +904,6 @@
       "nature-photography",
       "volunteering",
       "outdoor-sketching"
-    ],
-    "productIds": [
-      "walking-shoes",
-      "trekking-socks",
-      "daypacks",
-      "water-bottles",
-      "phone-armband",
-      "binoculars",
-      "pocket-notebooks",
-      "sketch-pads",
-      "portable-watercolor",
-      "film-cameras",
-      "picnic-blankets",
-      "thermos-flasks",
-      "market-totes",
-      "cooler-bags",
-      "book-sleeves"
     ],
     "sources": [
       {
@@ -1265,22 +1203,6 @@
       "paint-by-numbers",
       "baking",
       "indoor-gardening"
-    ],
-    "productIds": [
-      "cozy-night-in",
-      "book-lights",
-      "jigsaw-puzzles",
-      "paint-by-number-kits",
-      "air-dry-clay",
-      "junk-journals",
-      "brush-pens",
-      "letter-writing-sets",
-      "photo-albums",
-      "reading-journals",
-      "indoor-plant-basics",
-      "tea-sets",
-      "portable-speakers",
-      "washi-tape"
     ],
     "sources": [
       {
@@ -1636,30 +1558,6 @@
       "jewelry-making",
       "crochet"
     ],
-    "productIds": [
-      "junk-journals",
-      "washi-tape",
-      "photo-albums",
-      "brush-pens",
-      "watercolor-sets",
-      "watercolor-sketchbooks",
-      "paint-by-number-kits",
-      "acrylic-paints",
-      "air-dry-clay",
-      "clay-tools",
-      "clay-mats",
-      "friendship-bracelet-kits",
-      "ceramic-painting-kits",
-      "embroidery-kits",
-      "crochet-hooks",
-      "yarn",
-      "knitting-needles",
-      "flower-snips",
-      "vases",
-      "flower-frogs",
-      "indoor-plant-basics",
-      "cookie-decorating-kits"
-    ],
     "sources": [
       {
         "title": "How long does air-dry clay take to dry? (Crayola FAQ)",
@@ -1997,14 +1895,6 @@
       "junk-journaling",
       "pottery-painting"
     ],
-    "productIds": [
-      "embroidery-kits",
-      "ceramic-painting-kits",
-      "air-dry-clay",
-      "watercolor-sets",
-      "junk-journals",
-      "group-painting-kits"
-    ],
     "sources": [
       {
         "title": "CPSC: art materials safety",
@@ -2227,13 +2117,6 @@
       "flower-arranging",
       "indoor-gardening",
       "collage-art"
-    ],
-    "productIds": [
-      "flower-snips",
-      "vases",
-      "flower-frogs",
-      "market-totes",
-      "indoor-plant-basics"
     ],
     "sources": [
       {
@@ -2481,23 +2364,6 @@
       "book-clubs",
       "mahjong",
       "baking"
-    ],
-    "productIds": [
-      "group-painting-kits",
-      "friendship-bracelet-kits",
-      "cookie-decorating-kits",
-      "board-games",
-      "conversation-cards",
-      "mahjong-sets",
-      "cozy-night-in",
-      "jigsaw-puzzles",
-      "letter-writing-sets",
-      "tea-sets",
-      "picnic-blankets",
-      "daypacks",
-      "pickleball-sets",
-      "skate-protective-gear",
-      "market-totes"
     ],
     "sources": [
       {
@@ -2901,31 +2767,6 @@
       "book-clubs",
       "pickleball",
       "embroidery"
-    ],
-    "productIds": [
-      "paint-by-number-kits",
-      "jigsaw-puzzles",
-      "book-lights",
-      "reading-journals",
-      "indoor-plant-basics",
-      "watercolor-sets",
-      "air-dry-clay",
-      "embroidery-kits",
-      "junk-journals",
-      "crochet-hooks",
-      "knitting-needles",
-      "brush-pens",
-      "tennis-rackets",
-      "pickleball-sets",
-      "walking-shoes",
-      "daypacks",
-      "binoculars",
-      "picnic-blankets",
-      "mahjong-sets",
-      "conversation-cards",
-      "group-painting-kits",
-      "friendship-bracelet-kits",
-      "ceramic-painting-kits"
     ],
     "sources": [
       {
@@ -3391,16 +3232,6 @@
       "book-clubs",
       "craft-nights"
     ],
-    "productIds": [
-      "pocket-notebooks",
-      "watercolor-sets",
-      "air-dry-clay",
-      "daypacks",
-      "pickleball-sets",
-      "conversation-cards",
-      "friendship-bracelet-kits",
-      "market-totes"
-    ],
     "sources": [
       {
         "title": "National Park Service: hiking safety",
@@ -3620,15 +3451,6 @@
       "hiking",
       "nature-photography",
       "birdwatching"
-    ],
-    "productIds": [
-      "bike-helmets",
-      "bike-lights",
-      "bike-bells",
-      "bike-repair-kits",
-      "daypacks",
-      "water-bottles",
-      "market-totes"
     ],
     "sources": [
       {
@@ -3935,16 +3757,6 @@
       "air-dry-clay",
       "pottery-painting"
     ],
-    "productIds": [
-      "group-painting-kits",
-      "ceramic-painting-kits",
-      "friendship-bracelet-kits",
-      "air-dry-clay",
-      "cookie-decorating-kits",
-      "acrylic-paints",
-      "glue-guns",
-      "portable-speakers"
-    ],
     "sources": [
       {
         "title": "CPSC: art materials safety",
@@ -4188,12 +4000,6 @@
       "mahjong",
       "craft-nights",
       "book-clubs"
-    ],
-    "productIds": [
-      "mahjong-sets",
-      "tea-sets",
-      "board-games",
-      "conversation-cards"
     ],
     "sources": [
       {
@@ -4439,13 +4245,6 @@
       "paint-by-numbers",
       "pottery-painting"
     ],
-    "productIds": [
-      "group-painting-kits",
-      "acrylic-paints",
-      "detail-brushes",
-      "portable-speakers",
-      "conversation-cards"
-    ],
     "sources": [
       {
         "title": "CPSC: art materials safety",
@@ -4659,18 +4458,6 @@
       "outdoor-sketching",
       "birdwatching",
       "film-photography"
-    ],
-    "productIds": [
-      "picnic-blankets",
-      "cooler-bags",
-      "thermos-flasks",
-      "market-totes",
-      "water-bottles",
-      "book-sleeves",
-      "sketch-pads",
-      "portable-watercolor",
-      "pocket-notebooks",
-      "conversation-cards"
     ],
     "sources": [
       {
@@ -4944,20 +4731,6 @@
       "reading",
       "outdoor-sketching"
     ],
-    "productIds": [
-      "walking-shoes",
-      "trekking-socks",
-      "daypacks",
-      "water-bottles",
-      "phone-armband",
-      "film-cameras",
-      "picnic-blankets",
-      "market-totes",
-      "thermos-flasks",
-      "portable-watercolor",
-      "sketch-pads",
-      "pocket-notebooks"
-    ],
     "sources": [
       {
         "title": "Solo outings: well-lit areas and companions (US DOJ/OJP guide)",
@@ -5179,14 +4952,6 @@
       "book-clubs",
       "reading"
     ],
-    "productIds": [
-      "conversation-cards",
-      "tea-sets",
-      "cozy-night-in",
-      "reading-journals",
-      "book-lights",
-      "magnetic-bookmarks"
-    ],
     "sources": [
       {
         "title": "Food Allergy Research & Education: tips for staying safe",
@@ -5386,12 +5151,6 @@
       "book-clubs",
       "creative-writing"
     ],
-    "productIds": [
-      "reading-journals",
-      "pocket-notebooks",
-      "book-lights",
-      "magnetic-bookmarks"
-    ],
     "sources": [
       {
         "title": "Los Angeles County Library: eBooks and audiobooks",
@@ -5565,13 +5324,6 @@
       "air-dry-clay",
       "pottery-painting",
       "craft-nights"
-    ],
-    "productIds": [
-      "air-dry-clay",
-      "clay-tools",
-      "clay-mats",
-      "acrylic-paints",
-      "detail-brushes"
     ],
     "sources": [
       {
@@ -5780,10 +5532,6 @@
       "knitting",
       "embroidery"
     ],
-    "productIds": [
-      "crochet-hooks",
-      "yarn"
-    ],
     "sources": [
       {
         "title": "Lion Brand: how to crochet, a step-by-step guide for beginners",
@@ -5964,9 +5712,6 @@
       "embroidery",
       "crochet",
       "craft-nights"
-    ],
-    "productIds": [
-      "embroidery-kits"
     ],
     "sources": [
       {
@@ -6162,12 +5907,6 @@
       "collage-art",
       "creative-writing"
     ],
-    "productIds": [
-      "junk-journals",
-      "washi-tape",
-      "sticker-sets",
-      "pocket-notebooks"
-    ],
     "sources": [
       {
         "title": "Liquid glue vs glue stick (LePage)",
@@ -6324,13 +6063,6 @@
     "hobbies": [
       "tennis",
       "pickleball"
-    ],
-    "productIds": [
-      "tennis-rackets",
-      "tennis-balls",
-      "water-bottles",
-      "sports-totes",
-      "tennis-shoes"
     ],
     "sources": [
       {
@@ -6543,15 +6275,6 @@
       "creative-writing",
       "junk-journaling"
     ],
-    "productIds": [
-      "pocket-notebooks",
-      "reading-journals",
-      "book-sleeves",
-      "portable-watercolor",
-      "sketch-pads",
-      "letter-writing-sets",
-      "market-totes"
-    ],
     "sources": [
       {
         "title": "Food Allergy Research & Education: tips for staying safe",
@@ -6739,12 +6462,6 @@
       "scrapbooking",
       "collage-art"
     ],
-    "productIds": [
-      "junk-journals",
-      "washi-tape",
-      "sticker-sets",
-      "pocket-notebooks"
-    ],
     "sources": [
       {
         "title": "NEDCC: storage enclosures for photographic materials",
@@ -6910,23 +6627,6 @@
       "indoor-gardening",
       "crossword-puzzles",
       "collage-art"
-    ],
-    "productIds": [
-      "jigsaw-puzzles",
-      "paint-by-number-kits",
-      "knitting-needles",
-      "yarn",
-      "embroidery-kits",
-      "friendship-bracelet-kits",
-      "book-lights",
-      "cozy-night-in",
-      "tea-sets",
-      "portable-speakers",
-      "pocket-notebooks",
-      "yoga-mats",
-      "magnetic-bookmarks",
-      "photo-albums",
-      "indoor-plant-basics"
     ],
     "sources": [
       {
@@ -7151,12 +6851,6 @@
       "pickleball",
       "tennis"
     ],
-    "productIds": [
-      "pickleball-sets",
-      "water-bottles",
-      "sports-totes",
-      "pickleball-shoes"
-    ],
     "sources": [
       {
         "title": "USA Pickleball Official Rulebook",
@@ -7353,27 +7047,6 @@
       "outdoor-sketching",
       "picnicking",
       "thrifting"
-    ],
-    "productIds": [
-      "pocket-notebooks",
-      "portable-watercolor",
-      "sketch-pads",
-      "film-cameras",
-      "junk-journals",
-      "book-sleeves",
-      "walking-shoes",
-      "trekking-socks",
-      "daypacks",
-      "water-bottles",
-      "phone-armband",
-      "binoculars",
-      "picnic-blankets",
-      "thermos-flasks",
-      "skate-protective-gear",
-      "market-totes",
-      "vases",
-      "flower-snips",
-      "letter-writing-sets"
     ],
     "sources": [
       {
@@ -7834,29 +7507,6 @@
       "pickleball",
       "baking"
     ],
-    "productIds": [
-      "portable-watercolor",
-      "air-dry-clay",
-      "junk-journals",
-      "letter-writing-sets",
-      "jigsaw-puzzles",
-      "paint-by-number-kits",
-      "book-lights",
-      "cozy-night-in",
-      "group-painting-kits",
-      "friendship-bracelet-kits",
-      "board-games",
-      "mahjong-sets",
-      "pickleball-sets",
-      "tennis-rackets",
-      "water-bottles",
-      "walking-shoes",
-      "phone-armband",
-      "market-totes",
-      "brush-pens",
-      "pocket-notebooks",
-      "skate-protective-gear"
-    ],
     "sources": [
       {
         "title": "Library Card Sign-up Month fact sheet (American Library Association)",
@@ -8250,26 +7900,6 @@
       "film-photography",
       "reading"
     ],
-    "productIds": [
-      "air-dry-clay",
-      "clay-tools",
-      "junk-journals",
-      "washi-tape",
-      "walking-shoes",
-      "trekking-socks",
-      "daypacks",
-      "water-bottles",
-      "picnic-blankets",
-      "thermos-flasks",
-      "phone-armband",
-      "market-totes",
-      "pocket-notebooks",
-      "board-games",
-      "friendship-bracelet-kits",
-      "group-painting-kits",
-      "cozy-night-in",
-      "tea-sets"
-    ],
     "sources": [
       {
         "title": "National Park Service: hiking safety (Mount Rainier)",
@@ -8601,11 +8231,6 @@
     "hobbies": [
       "watercolor-painting",
       "outdoor-sketching"
-    ],
-    "productIds": [
-      "watercolor-sets",
-      "watercolor-sketchbooks",
-      "portable-watercolor"
     ],
     "sources": [
       {

@@ -452,7 +452,9 @@ const KEY_ORDER = [
 
 /** CSV product -> the source file shape (a held product becomes status "held" with its reason). */
 export function toSourceRecord(p) {
-  const { hold, ...rest } = p;
+  // The Amazon address is derived from the ASIN, so it is not stored.
+  const { hold, amazonUrl: _derived, ...rest } = p;
+  void _derived;
   const rec = {
     ...rest,
     status: hold ? "held" : p.status,

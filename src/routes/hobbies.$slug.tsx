@@ -7,12 +7,12 @@ import {
   isHobbyIndexable,
 } from "@/data/hobbies";
 import { articlesForHobby, getArticle } from "@/content";
-import { productsFor } from "@/data/products";
+import { searchTermsFor } from "@/data/search-terms";
 import { selectProducts, verifiedCatalog } from "@/data/catalog";
 import { images } from "@/data/images";
 import { site } from "@/config/site";
 import { seo, absoluteUrl } from "@/lib/seo";
-import { HobbyMeta, ArticleCard, ProductCard, HobbyCard } from "@/components/cards/Cards";
+import { HobbyMeta, ArticleCard, SearchTermCard, HobbyCard } from "@/components/cards/Cards";
 import { SaveButton } from "@/components/editorial/SaveButton";
 import { ShareButtons } from "@/components/editorial/ShareButtons";
 import { AffiliateNote } from "@/components/editorial/AffiliateNote";
@@ -52,7 +52,7 @@ function HobbyPage() {
   const h = getHobby(slug)!;
   const img = h.image ? images[h.image] : null;
   const reads = articlesForHobby(h.slug);
-  const ps = productsFor(h.productIds);
+  const ps = searchTermsFor(h.productIds);
   const related = (h.relatedHobbies ?? [])
     .map((slug) => getHobby(slug))
     .filter((x): x is NonNullable<typeof x> => Boolean(x));
@@ -251,7 +251,7 @@ function HobbyPage() {
           <Divider label="Your starter kit" />
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {ps.map((p) => (
-              <ProductCard key={p.id} p={p} />
+              <SearchTermCard key={p.id} p={p} />
             ))}
           </div>
           <AffiliateNote className="mt-6" />

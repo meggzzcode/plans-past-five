@@ -59,17 +59,24 @@ const sh = (c) => {
 const { articles: published, articleWordCount } = await import(at("src/content/index.ts"));
 const drafts = JSON.parse(readFileSync(at("src/content/generated/drafts.json"), "utf8"));
 const { hobbies } = await import(at("src/data/hobbies.ts"));
-const { catalog, verifiedCatalog } = await import(at("src/data/catalog.ts"));
+const { verifiedCatalog } = await import(at("src/data/catalog.ts"));
 const { kits, fillKit, isFullKit } = await import(at("src/data/kits.ts"));
-const { collections, products: legacyProducts } = await import(at("src/data/products.ts"));
+const { collections } = await import(at("src/data/products.ts"));
+const { searchTerms } = await import(at("src/data/search-terms.ts"));
 const { sitemapPaths } = await import(at("src/lib/sitemap.ts"));
 const { pinFiles } = await import(at("src/data/pins.ts"));
 const { images } = await import(at("src/data/images.ts"));
 
 const wordsOf = (list) => list.reduce((n, a) => n + articleWordCount(a), 0);
-const verified = catalog.filter((p) => p.status === "verified");
-const held = catalog.filter((p) => p.hold);
-const candidates = catalog.filter((p) => p.status === "candidate");
+// The product source: one JSON file per product in content/products.
+const sourceProducts = readdirSync(resolve(root, "content/products"))
+  .filter((f) => f.endsWith(".json"))
+  .map((f) => JSON.parse(readFileSync(resolve(root, "content/products", f), "utf8")));
+const catalog = sourceProducts;
+const verified = sourceProducts.filter((p) => p.status === "verified");
+const held = sourceProducts.filter((p) => p.status === "held");
+const candidates = sourceProducts.filter((p) => p.status === "candidate");
+const discontinued = sourceProducts.filter((p) => p.status === "discontinued");
 const kitRows = kits.map((k) => {
   const filled = fillKit(k, verifiedCatalog);
   return { id: k.id, picks: filled.length, full: isFullKit(filled, k) };
@@ -139,9 +146,9 @@ Generated ${date} from commit \`${commit}\`${dirty} by \`node scripts/inventory.
     .map((k) => k.id)
     .join(", ") || "none"
 }); incomplete: ${kitRows.filter((k) => !k.full).length} |
-| Legacy shop records (\`src/data/products.ts\`, search-link style, not researched) | ${legacyProducts.length} |
+| Generic search terms (\`content/product-search-terms.json\`, "Find ... on Amazon" links) | ${searchTerms.length} |
 
-## Products (researched catalog, \`src/data/catalog.generated.ts\`)
+## Products (the one source, \`content/products/*.json\`)
 
 | Item | Count |
 | --- | --- |
@@ -149,6 +156,7 @@ Generated ${date} from commit \`${commit}\`${dirty} by \`node scripts/inventory.
 | Verified | ${verified.length} |
 | Candidates (never shown) | ${candidates.length} |
 | On editorial hold | ${held.length} |
+| Discontinued | ${discontinued.length} |
 | Shown publicly (verified, not held, available, valid today) | ${verifiedCatalog.length} |
 
 ## Assets

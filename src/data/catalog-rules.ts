@@ -404,7 +404,6 @@ export const PRODUCT_STATUSES: ProductStatus[] = ["candidate", "verified", "held
 /** A product file as stored in content/products. Same facts as CatalogProduct; lifecycle is one field plus a reason. */
 export type ProductSource = Omit<CatalogProduct, "status" | "hold" | "asin" | "amazonUrl"> & {
   asin?: string;
-  amazonUrl?: string;
   status: ProductStatus;
   /** Plain-English reason for held / discontinued. Internal: written for the owner, never shipped to the site. */
   statusReason?: string;
@@ -422,7 +421,8 @@ export function toCatalogProduct(s: ProductSource): CatalogProduct {
   const base = {
     ...rest,
     asin: rest.asin ?? "",
-    amazonUrl: rest.amazonUrl ?? "",
+    // The ordinary Amazon address is ALWAYS built from the ASIN, so the two can never disagree.
+    amazonUrl: rest.asin && isValidAsin(rest.asin) ? amazonProductUrl(rest.asin) : "",
   } as Omit<CatalogProduct, "status" | "hold">;
   if (status === "held") return { ...base, status: "verified", hold: statusReason ?? "held" };
   if (status === "discontinued")
@@ -456,6 +456,10 @@ export function productFileProblems(file: string, raw: unknown, now: Date = new 
   if (r["id"] !== stem)
     out.push(
       `${file}, field "id": must be exactly "${stem}", the same as the file name. A product's id never changes; to replace a product, add a new product and set "Replaced by" on the old one.`,
+    );
+  if (r["amazonUrl"] !== undefined)
+    out.push(
+      `${file}, field "amazonUrl": remove it. The Amazon address is built from the ASIN, so only the ASIN is entered.`,
     );
   if (!PRODUCT_STATUSES.includes(r["status"] as ProductStatus))
     out.push(`${file}, field "status": must be one of ${PRODUCT_STATUSES.join(", ")}`);

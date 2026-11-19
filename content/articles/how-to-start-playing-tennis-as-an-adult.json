@@ -14,13 +14,6 @@
     "tennis",
     "pickleball"
   ],
-  "productIds": [
-    "tennis-rackets",
-    "tennis-balls",
-    "water-bottles",
-    "sports-totes",
-    "tennis-shoes"
-  ],
   "sources": [
     {
       "title": "USTA: tennis scoring rules",

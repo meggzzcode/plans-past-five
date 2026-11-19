@@ -11,7 +11,7 @@ import {
   validateRegistry,
 } from "@/config/affiliate";
 import { affiliatePrograms, validatePrograms, UNVERIFIED } from "@/data/affiliate-programs";
-import { products, validateProduct } from "@/data/products";
+import { searchLinkable, searchTerms } from "@/data/search-terms";
 
 import { setAffiliateState, withAffiliateRestore, withAffiliateState } from "./affiliate-state";
 
@@ -34,7 +34,7 @@ describe("inactive registry (shipped default state)", () => {
     expect(validateRegistry()).toEqual([]);
   });
   it("every product link is a plain link while inactive", () => {
-    for (const p of products) expect(productHref(p)).not.toContain("tag=");
+    for (const p of searchTerms) expect(productHref(searchLinkable(p))).not.toContain("tag=");
   });
 });
 
@@ -44,7 +44,8 @@ describe("active registry (buyer state, fake id)", () => {
     expect(validateRegistry()).toEqual([]);
     expect(isMonetized()).toBe(true);
     expect(liveDisclosureSentences()).toContain(AMAZON_ASSOCIATE_STATEMENT);
-    for (const p of products) {
+    for (const t of searchTerms) {
+      const p = searchLinkable(t);
       const l = resolveProductLink(p);
       expect(new URL(l.href).searchParams.getAll("tag")).toEqual(["testsite-20"]);
       expect(l.sponsored).toBe(true);
@@ -63,11 +64,11 @@ describe("disclosure wording", () => {
 describe("swap procedure", () => {
   it("changing one tracking id changes every link", () => {
     activate("first-20");
-    const all = () => products.map((p) => productHref(p));
+    const all = () => searchTerms.map((p) => productHref(searchLinkable(p)));
     expect(all().every((h) => h.includes("tag=first-20"))).toBe(true);
     amazon.websiteTrackingId = "second-20";
     expect(all().every((h) => h.includes("tag=second-20") && !h.includes("first-20"))).toBe(true);
-    expect(resolveProductLink(products[0]!).sponsored).toBe(true);
+    expect(resolveProductLink(searchLinkable(searchTerms[0]!)).sponsored).toBe(true);
     expect(liveDisclosureSentences()).toContain(AMAZON_ASSOCIATE_STATEMENT);
   });
   it("legacy associatesTag setter writes the registry entry", () => {
@@ -171,26 +172,6 @@ describe("no fake URLs", () => {
     setAffiliateState("active");
     // Amazon uses the tag parameter, never an invented deep-link template.
     expect(affiliateRegistry["amazon"]!.affiliateUrlTemplate).toBeNull();
-  });
-});
-
-describe("product records", () => {
-  it("all shipped products validate", () => {
-    expect(products.flatMap(validateProduct)).toEqual([]);
-  });
-  it("displayed brand/spec/retailer claims need sourceUrl and lastVerified", () => {
-    const base = products[0]!;
-    expect(validateProduct({ ...base, brand: "X" }).length).toBe(2);
-    expect(validateProduct({ ...base, specs: [{ label: "a", value: "b" }] }).length).toBe(2);
-    expect(
-      validateProduct({
-        ...base,
-        brand: "X",
-        sourceUrl: "https://example.test/p",
-        lastVerified: "2026-11-19",
-      }),
-    ).toEqual([]);
-    expect(validateProduct({ ...base, lastVerified: "19/11/2026" })).not.toEqual([]);
   });
 });
 

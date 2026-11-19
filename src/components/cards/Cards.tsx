@@ -6,7 +6,8 @@ import { readingMinutes } from "@/content";
 import { getCategory } from "@/data/categories";
 import { images } from "@/data/images";
 import { categoryLabels, type Hobby } from "@/data/hobbies";
-import type { Product, Collection } from "@/data/products";
+import type { Collection } from "@/data/products";
+import { searchLinkable, type SearchTerm } from "@/data/search-terms";
 import { OUTBOUND_BUY_REL, resolveProductLink } from "@/config/affiliate";
 import { linkLabel } from "@/components/commerce/labels";
 import { SaveButton } from "@/components/editorial/SaveButton";
@@ -222,17 +223,20 @@ export function HobbyCard({ h, className }: { h: Hobby; className?: string }) {
   );
 }
 
-/** Editorial product recommendation. Button text reflects the real destination. */
-export function ProductCard({
+/**
+ * A generic "Search Amazon for X" card for a KIND of product (a search term), never a named pick.
+ * The button opens an ordinary Amazon search and says so. Named products use the commerce ProductCard.
+ */
+export function SearchTermCard({
   p,
   index,
   className,
 }: {
-  p: Product;
+  p: SearchTerm;
   index?: number;
   className?: string;
 }) {
-  const link = resolveProductLink(p);
+  const link = resolveProductLink(searchLinkable(p));
   return (
     <article className={cn("not-prose flex flex-col border-t-2 border-ink pt-4", className)}>
       <div className="flex items-baseline justify-between gap-3">
@@ -247,29 +251,19 @@ export function ProductCard({
           item={{
             key: `product:${p.id}`,
             kind: "product",
-            title: p.name,
+            title: p.label,
             href: `/shop/${p.collection}`,
           }}
         />
       </div>
-      <h3 className="mt-1 text-xl leading-tight">{p.name}</h3>
-      <p className="mt-2 text-sm text-espresso">{p.blurb}</p>
-      <p className="mt-3 text-sm">
-        <span className="hand text-lg text-cherry">look for → </span>
-        <span className="font-medium text-espresso">{p.lookFor}</span>
-      </p>
-      {p.noSpend && (
-        <p className="mt-2 text-sm text-garden">
-          <strong>No-spend swap:</strong> {p.noSpend}
-        </p>
-      )}
+      <h3 className="mt-1 text-xl leading-tight">{p.label}</h3>
       <a
         href={link.href}
         target="_blank"
         rel={OUTBOUND_BUY_REL}
         className="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-1.5 border-2 border-cherry px-4 py-2 text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream sm:w-fit"
       >
-        {linkLabel(link, p.name)} <ArrowUpRight className="h-4 w-4" />
+        {linkLabel(link, p.label)} <ArrowUpRight className="h-4 w-4" />
       </a>
     </article>
   );

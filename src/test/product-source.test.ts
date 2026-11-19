@@ -204,7 +204,6 @@ describe("replacing a product updates every reference", () => {
       ...old,
       name: "Replacement Glue Stick Four Pack",
       asin: "B0REPLACE9",
-      amazonUrl: "https://www.amazon.com/dp/B0REPLACE9",
     };
     writeProduct(root, swapped);
     expect(problems(root)).toEqual([]); // every inline mention still resolves
@@ -237,7 +236,6 @@ describe("replacing a product updates every reference", () => {
       id: "glue-stick-successor",
       name: "Successor Glue Stick",
       asin: "B0SUCCESS1",
-      amazonUrl: "https://www.amazon.com/dp/B0SUCCESS1",
     };
     writeProduct(root, fresh);
     writeProduct(root, {
@@ -329,6 +327,44 @@ describe("a dangling reference fails the content build, in plain English", () =>
       encoding: "utf8",
     });
     expect(ok.status, ok.stderr).toBe(0);
+  });
+});
+
+describe("generic search terms (the retired product types)", () => {
+  it("src/data/search-terms.generated.ts is exactly what the build generates", () => {
+    const r = lib.buildContent(repo, { write: false });
+    expect(readFileSync(path.join(repo, "src/data/search-terms.generated.ts"), "utf8")).toBe(
+      r.outputs["src/data/search-terms.generated.ts"],
+    );
+  });
+  it("a shop block naming an id that is neither a search term nor known fails the build", () => {
+    const root = scratch();
+    const file = path.join(root, "content/articles/pickleball-for-beginners.json");
+    const a = JSON.parse(readFileSync(file, "utf8"));
+    const i = a.body.findIndex((b: { type: string }) => b.type === "shopHobby");
+    a.body[i].productIds = ["pickleball-paddles", "no-such-term"];
+    writeFileSync(file, JSON.stringify(a, null, 2));
+    const text = problems(root).join("\n");
+    expect(text).toContain("content/articles/pickleball-for-beginners.json");
+    expect(text).toContain(`block #${i + 1} (shopHobby), field "productIds": "no-such-term"`);
+  });
+  it("a search term with a bad collection, bad hobby or odd search words fails", () => {
+    const root = scratch();
+    const file = path.join(root, "content/product-search-terms.json");
+    const t = JSON.parse(readFileSync(file, "utf8"));
+    t.terms[0] = { ...t.terms[0], collection: "nope", hobbies: ["not-a-hobby"] };
+    t.terms[1] = { ...t.terms[1], query: "Air-Dry!" };
+    writeFileSync(file, JSON.stringify(t, null, 2));
+    const text = problems(root).join("\n");
+    expect(text).toMatch(/"nope" is not a shop collection/);
+    expect(text).toMatch(/"not-a-hobby" is not a hobby/);
+    expect(text).toMatch(/lowercase words and numbers/);
+  });
+  it("the article files no longer carry the dead top-level productIds field", () => {
+    for (const f of readdirSync(path.join(repo, "content/articles"))) {
+      const a = JSON.parse(readFileSync(path.join(repo, "content/articles", f), "utf8"));
+      expect(a, f).not.toHaveProperty("productIds");
+    }
   });
 });
 

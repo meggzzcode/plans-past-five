@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { hobbies, getHobby, isHobbyIndexable } from "@/data/hobbies";
 import { articles } from "@/content";
-import { getProduct } from "@/data/products";
+import { getSearchTerm } from "@/data/search-terms";
 
 const publishedSlugs = new Set(articles.map((a) => a.slug));
 const currency = /[$€£]\s?\d|\d\s?(usd|dollars?|eur|gbp)\b/i;
@@ -40,9 +40,9 @@ describe("hobby directory", () => {
         expect(publishedSlugs.has(g), `${h.slug} -> ${g}`).toBe(true);
   });
 
-  it("product ids resolve", () => {
+  it("search term ids resolve", () => {
     for (const h of hobbies)
-      for (const id of h.productIds) expect(getProduct(id), `${h.slug} -> ${id}`).toBeTruthy();
+      for (const id of h.productIds) expect(getSearchTerm(id), `${h.slug} -> ${id}`).toBeTruthy();
   });
 
   it("startup budgets are well-formed with an assumptions note", () => {

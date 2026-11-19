@@ -5,15 +5,8 @@ import { articles, getArticle } from "@/content";
 import { allArticlesIncludingDrafts } from "@/content/draft-registry";
 import { search } from "@/lib/search";
 import { hobbies } from "@/data/hobbies";
-import {
-  products,
-  articleProducts,
-  allProductTypes,
-  productTypeIds,
-  getProduct,
-  collections,
-  collectionProducts,
-} from "@/data/products";
+import { collections } from "@/data/products";
+import { collectionSearchTerms, searchTermIds, searchTerms } from "@/data/search-terms";
 import { amazonSearchUrl } from "@/config/affiliate";
 import { restoreAffiliate, setAffiliateState, snapshotAffiliate } from "./affiliate-state";
 import { sanitizeSaved } from "@/lib/saved";
@@ -117,78 +110,30 @@ describe("Content rules", () => {
       expect(search(d.title).some((h) => h.to === `/journal/${d.slug}`)).toBe(false);
     }
   });
-  // Updated deliberately: the owner asked for eight collections. The original six own six product
-  // types each; "journaling-era" and "cozy-after-hours" own none and cross-reference at least four
-  // existing product types via extraProductIds (no new products were invented).
-  // Hobby count updated deliberately from 36 to 43: "Yoga for Beginners", "Dance Classes", "Running", "Climbing", "Board Games", "Cooking Classes", "Language Learning"
-  // were added so the Active filter is not just four hobbies (cost-and-search review).
-  it("has 43 hobbies and 8 collections, each with at least 4 product types", () => {
+  // Hobby count updated deliberately from 36 to 43 (see git history). Collections: eight today.
+  it("has 43 hobbies and 8 collections, each with at least 4 search terms", () => {
     expect(hobbies).toHaveLength(43);
     expect(collections).toHaveLength(8);
-    expect(products).toHaveLength(36);
     for (const c of collections)
-      expect(collectionProducts(c.slug).length).toBeGreaterThanOrEqual(4);
-    for (const slug of [
-      "pottery-era",
-      "creative-girl",
-      "sporty-girl",
-      "girls-night-in",
-      "bookish-girl",
-      "little-adventures",
-    ])
-      expect(products.filter((p) => p.collection === slug)).toHaveLength(6);
+      expect(
+        collectionSearchTerms(c.slug, c.extraSearchTermIds).length,
+        c.slug,
+      ).toBeGreaterThanOrEqual(4);
     for (const c of collections)
-      for (const id of c.extraProductIds ?? [])
-        expect(products.some((p) => p.id === id)).toBe(true);
+      for (const id of c.extraSearchTermIds ?? [])
+        expect(searchTermIds, `${c.slug} -> ${id}`).toContain(id);
   });
-  // Article-only product types (docs/commerce/PRODUCT-TYPES.md): not in `products`, so the collection
-  // counts above stay as they were; resolvable by id for articles and hobby pages.
-  it("has 30 article-only product types that stay out of collections and search", () => {
-    expect(articleProducts.map((x) => x.id)).toEqual([
-      "walking-shoes",
-      "trekking-socks",
-      "phone-armband",
-      "sketch-pads",
-      "crochet-hooks",
-      "yarn",
-      "knitting-needles",
-      "flower-snips",
-      "vases",
-      "flower-frogs",
-      "jigsaw-puzzles",
-      "paint-by-number-kits",
-      "cozy-night-in",
-      "bike-helmets",
-      "bike-lights",
-      "bike-repair-kits",
-      "bike-bells",
-      "skate-protective-gear",
-      "thermos-flasks",
-      "cooler-bags",
-      "portable-speakers",
-      "glue-guns",
-      "tea-sets",
-      "brush-pens",
-      "photo-albums",
-      "letter-writing-sets",
-      "indoor-plant-basics",
-      "tennis-shoes",
-      "pickleball-shoes",
-      "yoga-mats",
-    ]);
-    expect(new Set(productTypeIds).size).toBe(allProductTypes.length);
-    expect(allProductTypes).toHaveLength(66);
-    for (const a of articleProducts) {
-      expect(getProduct(a.id)).toBe(a);
-      expect(products.some((x) => x.id === a.id)).toBe(false);
-      expect(collections.some((c) => collectionProducts(c.slug).some((x) => x.id === a.id))).toBe(
-        false,
-      );
-      expect(collections.some((c) => c.slug === a.collection)).toBe(true);
-      expect(a.amazonQuery).toMatch(/^[a-z0-9 ]+$/);
-      expect(a.blurb.length).toBeGreaterThan(10);
-      expect(a.lookFor.length).toBeGreaterThan(10);
-      expect(a.brand ?? a.exactUrl ?? a.sourceUrl).toBeUndefined();
+  // The retired "product types" survive as one small list of generic search terms.
+  it("search terms are unique, every one has a collection and plain search words", () => {
+    expect(new Set(searchTermIds).size).toBe(searchTerms.length);
+    expect(searchTerms).toHaveLength(66);
+    for (const t of searchTerms) {
+      expect(
+        collections.some((c) => c.slug === t.collection),
+        t.id,
+      ).toBe(true);
+      expect(t.query).toMatch(/^[a-z0-9 ]+$/);
+      expect(t.label.length).toBeGreaterThan(2);
     }
   });
   it("Amazon links carry no affiliate tag unless an entry is live", () => {
@@ -212,20 +157,20 @@ describe("Saved items", () => {
   });
 });
 
-// The content validator (scripts/content-lib.mjs) only checks that productIds is a string list, so
-// this is the guard that a shopHobby/starterKit block never silently renders nothing.
-describe("article productIds resolve", () => {
-  it("every shopHobby and starterKit product id is a known product type or kit-slot id", async () => {
+// scripts/content-lib.mjs now fails the build when a shopHobby/starterKit block names an id that is
+// not a search term (see product-source.test.ts); this keeps the same guard at the data level.
+describe("article block ids resolve", () => {
+  it("every shopHobby and starterKit id is a search term", async () => {
     const { readdirSync, readFileSync } = await import("node:fs");
     const path = await import("node:path");
     const dir = path.resolve(__dirname, "../../content/articles");
     const bad: string[] = [];
     for (const f of readdirSync(dir).filter((n) => n.endsWith(".json"))) {
       const a = JSON.parse(readFileSync(path.join(dir, f), "utf8"));
-      for (const b of JSON.stringify(a).match(/"type":"shopHobby"/) ? flat(a) : [])
-        if (b.type === "shopHobby")
+      for (const b of flat(a))
+        if (b.type === "shopHobby" || b.type === "starterKit")
           for (const id of b.productIds ?? [])
-            if (!productTypeIds.includes(id)) bad.push(`${f}: ${id}`);
+            if (!searchTermIds.includes(id)) bad.push(`${f}: ${id}`);
     }
     expect(bad).toEqual([]);
   });

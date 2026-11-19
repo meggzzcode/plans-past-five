@@ -114,11 +114,6 @@ content:
         type: string
         list: true
         description: "The web-address names of hobbies (e.g. watercolor-painting, pickleball), one per line. Used for related reading and shop picks."
-      - name: productIds
-        label: Product types to show in the shop picks
-        type: string
-        list: true
-        description: "The short names from the product list (e.g. air-dry-clay). Leave empty if unsure: the products are managed separately."
       - name: sources
         label: Sources (where the facts came from)
         type: object
@@ -232,12 +227,12 @@ content:
           - name: starterKit
             label: Starter kit (shop)
             fields:
-              - { name: productIds, label: "Product short names (one per line)", type: string, list: true }
+              - { name: productIds, label: "Search terms to show (ids from Product search terms, one per line)", type: string, list: true }
               - { name: title, label: "Heading (optional)", type: string }
           - name: shopHobby
             label: Shop for a hobby
             fields:
-              - { name: productIds, label: "Product short names (one per line)", type: string, list: true }
+              - { name: productIds, label: "Search terms to show (ids from Product search terms, one per line)", type: string, list: true }
               - { name: title, label: "Heading (optional)", type: string }
               - { name: dek, label: "Short intro (optional)", type: string }
           - name: shopTheArticle

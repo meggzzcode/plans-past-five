@@ -5,7 +5,7 @@ import { collectionGuide } from "@/lib/collection-guide";
 import { images } from "@/data/images";
 import { site } from "@/config/site";
 import { seo } from "@/lib/seo";
-import { ProductCard, CollectionCard, ArticleCard } from "@/components/cards/Cards";
+import { SearchTermCard, CollectionCard, ArticleCard } from "@/components/cards/Cards";
 import { Kicker, toneBg } from "@/components/editorial/Section";
 import { StarterKit } from "@/components/commerce/StarterKit";
 import { ShopDisclosure } from "@/components/commerce/ProductCard";
@@ -218,19 +218,9 @@ function CollectionPage() {
             </div>
             <div>
               <h3 className="font-display text-xl">Already have it? Skip it.</h3>
-              {g.budget.length > 0 ? (
-                <ul className="mt-3 space-y-2 text-sm text-espresso">
-                  {g.budget.map((b) => (
-                    <li key={b.name}>
-                      <strong>{b.name}:</strong> {b.text}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="mt-3 text-sm text-espresso">
-                  Borrow, swap or use what is already at home before buying anything new.
-                </p>
-              )}
+              <p className="mt-3 text-sm text-espresso">
+                Borrow, swap or use what is already at home before buying anything new.
+              </p>
             </div>
           </div>
           {!verified && (
@@ -251,7 +241,7 @@ function CollectionPage() {
             </summary>
             <div className="mt-6 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
               {ps.map((p, i) => (
-                <ProductCard key={p.id} p={p} index={i} />
+                <SearchTermCard key={p.id} p={p} index={i} />
               ))}
             </div>
             <ShopDisclosure kind="general" className="mt-6" />
@@ -264,7 +254,7 @@ function CollectionPage() {
             </p>
             <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
               {ps.map((p, i) => (
-                <ProductCard key={p.id} p={p} index={i} />
+                <SearchTermCard key={p.id} p={p} index={i} />
               ))}
             </div>
             <ShopDisclosure kind="general" className="mt-8" />

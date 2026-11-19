@@ -56,7 +56,6 @@ export type Article = {
   searchIntent: string;
   angle: string;
   hobbies: string[];
-  productIds: string[];
   /** Sources a reader or editor can check. Filled when claims are verified. */
   sources?: { title: string; url: string; note?: string }[];
   /** Date (YYYY-MM-DD) all coworkChecks were verified against sources. Publish only after this is set. */
