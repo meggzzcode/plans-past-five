@@ -74,7 +74,7 @@ function Shop() {
         kicker="Supplies for your first evening"
         title="Start the hobby. Buy one thing."
         italic="one thing"
-        dek="Pick the evening you want. We'll tell you the one thing to buy first, why it made the list, and what you can skip or borrow. Ordinary Amazon links, no prices, no pressure."
+        dek="Pick the evening you want. We'll tell you the one thing to buy first, why it made the list, and what you can skip or borrow."
         tone="strawberry"
       >
         <p className="mt-4 text-sm text-ink">
@@ -83,6 +83,8 @@ function Shop() {
             How we choose
           </Link>
         </p>
+        {/* The one shopping-links line for this page (full text: /affiliate-disclosure). */}
+        <ShopDisclosure kind="short" className="mt-3 text-ink" />
       </PageHero>
       <section className="mx-auto mt-16 max-w-7xl px-5 md:px-8">
         <SectionHead kicker="Pick your evening" title="Which era are you in?" italic="era" />
@@ -105,7 +107,6 @@ function Shop() {
           <p className="mt-3 max-w-prose text-espresso">
             One pick each from our starter kits, with the reason it made the list.
           </p>
-          <ShopDisclosure kind="short" className="mt-3" />
           <div className="mt-8 grid gap-10 md:grid-cols-3">
             {picks.map((p) => (
               <ProductCard key={p.id} product={p} placement="shop-start" label="Our one pick" />
@@ -135,21 +136,7 @@ function Shop() {
           </div>
         </section>
       )}
-      <section className="mx-auto mb-20 mt-12 max-w-7xl px-5 md:px-8">
-        <p className="text-sm text-muted-foreground">
-          Buttons that say "See it on Amazon" open that product's own page. Where we only describe
-          what to look for, the button opens an Amazon search. We never show prices, ratings or
-          review counts: Amazon sets those.{" "}
-          <Link to="/methodology" className="underline">
-            How we choose
-          </Link>{" "}
-          /{" "}
-          <Link to="/affiliate-disclosure" className="underline">
-            How links work
-          </Link>
-          .
-        </p>
-      </section>
+      <div className="mb-20" />
     </>
   );
 }

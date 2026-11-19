@@ -136,8 +136,7 @@ export function TonightMode({ search }: { search: Record<string, unknown> }) {
             What should I do <em className="text-cherry">tonight?</em>
           </h1>
           <p className="mt-4 max-w-xl text-lg text-ink">
-            It's after five and the sofa is calling. Five taps, three ideas that fit. Nothing is
-            sent anywhere; anything you save stays on this device.
+            It's after five and the sofa is calling. Five taps, three ideas that fit.
           </p>
           <form
             ref={formRef}
@@ -197,7 +196,7 @@ export function TonightMode({ search }: { search: Record<string, unknown> }) {
                     {s.title}
                   </h2>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    About {formatMinutes(s.minutes)} · {s.costLabel} (estimate)
+                    About {formatMinutes(s.minutes)} · {s.costLabel}
                   </p>
                   <p className="mt-3 text-ink">
                     <strong>First step:</strong> {s.firstStep}

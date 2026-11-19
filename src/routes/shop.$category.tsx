@@ -97,7 +97,6 @@ function CollectionPage() {
             <Kicker className="mt-6">{KICKER[c.slug] ?? "Shop your hobby"}</Kicker>
             <h1 className="mt-3 text-5xl italic leading-[1] md:text-7xl">{c.name}</h1>
             <p className="mt-5 max-w-lg text-lg text-ink">{c.intro}</p>
-            <ShopDisclosure kind="short" className="mt-6 text-ink" />
           </div>
           <div className="postcard -rotate-2">
             <div className="aspect-square overflow-hidden">

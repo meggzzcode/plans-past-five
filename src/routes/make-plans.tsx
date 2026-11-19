@@ -387,9 +387,8 @@ function Planner() {
             An empty calendar? <em className="text-cherry">We can work with that.</em>
           </h1>
           <p className="mt-4 max-w-xl text-lg text-ink">
-            Pick a few things and get a plan to follow. Every idea works wherever you live. Evening
-            and single-day plans need nothing booked. A full-weekend plan may include one idea that
-            says "book ahead" on its card.
+            Pick a few things and get a plan to follow. Every idea works wherever you live, and only
+            a full-weekend plan may include one "book ahead" idea.
           </p>
           {pin && plan && plan.ids.includes(pin) && (
             <p
@@ -447,10 +446,11 @@ function Planner() {
                     aria-describedby={hintId}
                   >
                     <legend className="kicker mb-3 text-ink">{g.label}</legend>
-                    {(g.key === "vibe" || g.key === "who" || g.key === "budget") &&
-                      !touched.has(g.key) && (
+                    {/* Said once, on the first of the three preselected groups, not under each. */}
+                    {g.key === "vibe" &&
+                      (["vibe", "who", "budget"] as const).some((k) => !touched.has(k)) && (
                         <p className="-mt-1 mb-3 text-sm text-espresso" data-testid="preselected">
-                          Starting choice, not yours yet. Pick the one that fits.
+                          Vibe, who and budget start preselected. Change any that don't fit.
                         </p>
                       )}
                     {g.hint && (
