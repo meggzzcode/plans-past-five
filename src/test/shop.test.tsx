@@ -245,6 +245,87 @@ describe("selection", () => {
   });
 });
 
+describe("seller wording", () => {
+  it("says Available on Amazon for available products", async () => {
+    await show(<ProductCard product={base} placement="test" />);
+    expect(document.body.textContent).toContain("Available on Amazon");
+  });
+  it("flags third-party sellers and never says Sold by Amazon", async () => {
+    await show(
+      <ProductCard product={{ ...base, availability: "check-listing" }} placement="test" />,
+    );
+    expect(document.body.textContent).toContain(
+      "Sold by a third-party seller on Amazon: check the listing",
+    );
+    expect(document.body.textContent).not.toMatch(/Sold by Amazon/);
+  });
+});
+
+describe("alternatives for one kit slot", () => {
+  const mk = (id: string, n: number, over: Partial<CatalogProduct> = {}): CatalogProduct => ({
+    ...base,
+    id,
+    name: `TEST FIXTURE ${id}`,
+    asin: `B0ALT000${n}`,
+    amazonUrl: `https://www.amazon.com/dp/B0ALT000${n}`,
+    kitSlots: [{ kit: "mahjong-night", slot: "set" }],
+    articles: ["alt-article"],
+    ...over,
+  });
+  const a1 = mk("alt-one", 1, { role: "complete-kit" });
+  const a2 = mk("alt-two", 2, { role: "researched-pick" });
+  const a3 = mk("alt-three", 3, { role: "complete-kit" });
+  const loose = mk("alt-loose", 4, { kitSlots: [], role: "essential" });
+  const looseOptional = mk("alt-loose-opt", 5, {
+    kitSlots: [],
+    role: "nice-to-have",
+    isEssential: false,
+  });
+
+  it("makes the researched pick the primary and the rest alternatives", () => {
+    const sel = selectProducts({ article: "alt-article" }, [a1, a2, a3, loose, looseOptional]);
+    expect(sel.essentials.map((p) => p.id).sort()).toEqual(["alt-loose", "alt-two"]);
+    expect(sel.alternatives.map((p) => p.id).sort()).toEqual(["alt-one", "alt-three"]);
+    expect(sel.optional.map((p) => p.id)).toEqual(["alt-loose-opt"]);
+    expect(sel.all).toHaveLength(5);
+  });
+  it("falls back to the first in list order without a researched pick", () => {
+    const sel = selectProducts({ article: "alt-article" }, [
+      { ...a1, role: "complete-kit" },
+      { ...a3, role: "complete-kit" },
+    ]);
+    expect(sel.essentials.map((p) => p.id)).toEqual(["alt-one"]);
+    expect(sel.alternatives.map((p) => p.id)).toEqual(["alt-three"]);
+  });
+  it("products with no kit slot keep their own isEssential", () => {
+    const sel = selectProducts({ article: "alt-article" }, [loose, looseOptional]);
+    expect(sel.essentials).toHaveLength(1);
+    expect(sel.optional).toHaveLength(1);
+    expect(sel.alternatives).toHaveLength(0);
+  });
+  it("labels alternatives 'Another option for this slot', not 'Essential'", async () => {
+    await show(<ShopTheArticle article="alt-article" catalog={[a1, a2, a3]} />);
+    const labels = [...document.querySelectorAll("article .kicker")].map((k) =>
+      k.textContent?.replace(/^\d+/, ""),
+    );
+    expect(labels.filter((l) => l === "Essential")).toHaveLength(1);
+    expect(labels.filter((l) => l === "Another option for this slot")).toHaveLength(2);
+  });
+  it("tick-all-essentials ticks only the primary per slot", async () => {
+    await show(
+      <ShopMyHobby
+        hobby="junk-journaling"
+        catalog={[a1, a2, a3].map((p) => ({ ...p, hobbies: ["junk-journaling"] }))}
+      />,
+    );
+    await act(async () => {
+      fireEvent.click(screen.getByText("Tick all essentials"));
+    });
+    const stored = readShopList();
+    expect(Object.keys(stored)).toEqual(["alt-two"]);
+  });
+});
+
 describe("kits", () => {
   it("defines all 15 kits with unique slot ids", () => {
     expect(kits.map((k) => k.id)).toEqual([
@@ -426,7 +507,8 @@ describe("links and affiliate swap", () => {
     const a = screen.getByText(/View on Amazon/).closest("a")!;
     expect(a.getAttribute("href")).toBe("https://www.amazon.com/dp/B0TESTFIX1");
     expect(a.getAttribute("rel")).toBe("noopener");
-    expect(document.body.textContent).toMatch(/Sold by Amazon/);
+    expect(document.body.textContent).toMatch(/Available on Amazon/);
+    expect(document.body.textContent).not.toMatch(/Sold by Amazon/);
     expect(document.body.textContent).toMatch(/don't currently earn/);
   });
   it("activating the registry changes link, rel and disclosure with no component change", async () => {
@@ -464,5 +546,57 @@ describe("tracking", () => {
     track("product_click", { product_id: "x", email: "a@b.com", placement: "a@b.com" } as never);
     expect(g).toHaveBeenCalledWith("event", "product_click", { product_id: "x" });
     expect(cleanParams({ query: "my name", count: 2 })).toEqual({ count: 2 });
+  });
+});
+
+describe("legacy blocks use the catalog strictly", () => {
+  const legacy = (hobby: string): CatalogProduct[] => [
+    {
+      ...base,
+      id: "leg-a",
+      asin: "B0LEG0001A",
+      amazonUrl: "https://www.amazon.com/dp/B0LEG0001A",
+      hobbies: [hobby],
+      articles: ["elsewhere"],
+      kitSlots: [],
+    },
+  ];
+  it("does not pull a many-product hobby into an untagged article", async () => {
+    // air-dry-clay has far more than 4 verified products and none are tagged to this slug
+    const { container } = await show(
+      <ArticleBody
+        articleSlug="some-other-article"
+        blocks={[{ type: "shopHobby", productIds: ["air-dry-clay"], title: "Legacy title" }]}
+      />,
+    );
+    expect(container.textContent).toContain("Legacy title");
+    expect(container.querySelectorAll("[data-product-id]").length).toBe(0);
+    expect(container.querySelector("a[href*='amazon.com/s']")).not.toBeNull();
+    expect(legacy("x")).toHaveLength(1);
+  });
+  it("uses catalog products tagged to this article slug", async () => {
+    const { container } = await show(
+      <ArticleBody
+        articleSlug="how-to-host-a-mahjong-night"
+        blocks={[{ type: "shopHobby", productIds: ["air-dry-clay"] }]}
+      />,
+    );
+    expect(container.querySelectorAll("[data-product-id]").length).toBeGreaterThan(0);
+  });
+  it("never repeats a product across blocks on one page", async () => {
+    const { container } = await show(
+      <ArticleBody
+        articleSlug="how-to-host-a-mahjong-night"
+        blocks={[
+          { type: "shopTheArticle", articleSlug: "how-to-host-a-mahjong-night" },
+          { type: "shopHobby", productIds: ["air-dry-clay"] },
+        ]}
+      />,
+    );
+    const ids = [...container.querySelectorAll("[data-product-id]")].map((e) =>
+      e.getAttribute("data-product-id"),
+    );
+    expect(new Set(ids).size).toBe(ids.length);
+    expect(container.querySelectorAll("aside").length).toBe(2);
   });
 });

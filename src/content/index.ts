@@ -108,9 +108,18 @@ export const articlesForCategory = (slug: string) => articles.filter((a) => a.ca
 export const articlesForHobby = (hobbySlug: string) =>
   articles.filter((a) => a.hobbies.includes(hobbySlug));
 
-/** Contextual related reading: score by shared hobbies, then shared category. */
-export function relatedArticles(a: Pick<Article, "slug" | "hobbies" | "category">, limit = 3) {
-  return articles
+/**
+ * Contextual related reading: slugs the article declares in `related` (published only) first, in
+ * order, then computed matches by shared hobbies and category. De-duplicated; limit applies overall.
+ */
+export function relatedArticles(
+  a: Pick<Article, "slug" | "hobbies" | "category"> & { related?: string[] | undefined },
+  limit = 3,
+) {
+  const declared = (a.related ?? [])
+    .map((slug) => getArticle(slug))
+    .filter((x): x is Article => !!x && x.slug !== a.slug);
+  const computed = articles
     .filter((x) => x.slug !== a.slug)
     .map((x) => ({
       x,
@@ -120,8 +129,8 @@ export function relatedArticles(a: Pick<Article, "slug" | "hobbies" | "category"
     }))
     .filter((r) => r.score > 0)
     .sort((p, q) => q.score - p.score)
-    .slice(0, limit)
     .map((r) => r.x);
+  return [...new Map([...declared, ...computed].map((x) => [x.slug, x])).values()].slice(0, limit);
 }
 
 export const toc = (a: Article) =>

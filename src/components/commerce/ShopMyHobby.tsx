@@ -190,6 +190,26 @@ export function ShopMyHobby({
         </div>
       )}
 
+      {sel.alternatives.length > 0 && (
+        <div className="mt-8">
+          <h4 className="font-display text-xl italic">Other options</h4>
+          <p className="mt-1 text-sm text-muted-foreground">
+            These fill the same need as a pick above. Choose one, not all.
+          </p>
+          <div className="mt-4 grid gap-8 sm:grid-cols-2">
+            {sel.alternatives.map((p) => (
+              <ProductCard
+                key={p.id}
+                product={p}
+                placement="hobby-alternative"
+                alternative
+                className="bg-cream/60 px-4 pb-3"
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
       {related.length > 0 && (
         <p className="mt-6 text-sm">
           Read next:{" "}

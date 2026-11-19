@@ -26,6 +26,12 @@ export function ShopDisclosure({ className }: { className?: string }) {
   );
 }
 
+/** Honest sold-by wording: never implies Amazon itself sells a third-party item. */
+const availabilityLabel = (p: Pick<CatalogProduct, "availability">) =>
+  p.availability === "check-listing"
+    ? "Sold by a third-party seller on Amazon: check the listing"
+    : "Available on Amazon";
+
 /**
  * Photo-less, magazine-style product card. Safe to reuse anywhere: it only needs a verified product.
  * The link comes from `resolveProductLink`, so activating affiliate links later needs no change here.
@@ -34,12 +40,15 @@ export function ProductCard({
   product: p,
   placement,
   index,
+  alternative,
   className,
 }: {
   product: CatalogProduct;
   /** Where it is shown ("article", "hobby", "kit"...). Sent to analytics as an id, never as text. */
   placement: string;
   index?: number;
+  /** Another product already fills this kit slot as the primary pick. */
+  alternative?: boolean;
   className?: string;
 }) {
   const link = resolveProductLink(linkableFor(p));
@@ -57,7 +66,7 @@ export function ProductCard({
   };
 
   const check =
-    "flex min-h-11 cursor-pointer items-center gap-2.5 text-sm [&>input]:h-5 [&>input]:w-5 [&>input]:accent-[var(--cherry,#b3122b)]";
+    "flex min-h-11 cursor-pointer items-center gap-2.5 py-1 text-sm [&>input]:h-5 [&>input]:w-5 [&>input]:accent-[var(--cherry,#b3122b)]";
 
   return (
     <article
@@ -75,9 +84,9 @@ export function ProductCard({
               {String(index + 1).padStart(2, "0")}
             </span>
           )}
-          {p.isEssential ? "Essential" : "Optional"}
+          {alternative ? "Another option for this slot" : p.isEssential ? "Essential" : "Optional"}
         </p>
-        <p className="text-xs text-muted-foreground">Sold by {link.retailer}</p>
+        <p className="text-xs text-muted-foreground">{availabilityLabel(p)}</p>
       </div>
       <h3 className="mt-1 text-xl leading-tight">{p.name}</h3>
       <p className="text-sm text-muted-foreground">{p.brand}</p>
@@ -96,7 +105,7 @@ export function ProductCard({
         target="_blank"
         rel={link.sponsored ? "sponsored noopener" : "noopener"}
         onClick={onClick}
-        className="mt-4 inline-flex min-h-11 w-fit items-center gap-1.5 border-b-2 border-cherry pb-0.5 text-sm font-semibold text-cherry hover:border-transparent"
+        className="mt-4 inline-flex min-h-11 w-fit items-center gap-1.5 border-b-2 border-cherry py-2 text-sm font-semibold text-cherry hover:border-transparent"
       >
         {productLinkLabel(link)} <ArrowUpRight className="h-4 w-4" />
       </a>

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import type { Block } from "@/content";
+import { articles, type Block } from "@/content";
 import { getHobby } from "@/data/hobbies";
 import { productsFor } from "@/data/products";
 import { selectProducts, verifiedCatalog } from "@/data/catalog";
@@ -15,11 +15,29 @@ import { Clock, Wallet, Users } from "lucide-react";
 import { SaveButton } from "./SaveButton";
 import { AffiliateNote } from "./AffiliateNote";
 
-export function ArticleBody({ blocks }: { blocks: Block[] }) {
+export function ArticleBody({ blocks, articleSlug }: { blocks: Block[]; articleSlug?: string }) {
+  // Which article this is: passed in, or found by identity of its body.
+  const slug = articleSlug ?? articles.find((a) => a.body === blocks)?.slug;
+  const used: Used = new Set();
+  // Explicit commerce blocks claim their products first so a legacy block never repeats them.
+  for (const b of blocks) {
+    if (b.type === "shopTheArticle")
+      selectProducts({
+        ...(b.articleSlug ? { article: b.articleSlug } : {}),
+        ...(b.hobbies ? { hobbies: b.hobbies } : {}),
+        ...(b.collection ? { collection: b.collection } : {}),
+      }).all.forEach((p) => used.add(p.id));
+    else if (b.type === "shopMyHobby")
+      selectProducts({ hobby: b.hobby }).all.forEach((p) => used.add(p.id));
+  }
+  // Resolved once, in order, so the overlap check never depends on re-render order.
+  const legacy = blocks.map((b) =>
+    b.type === "starterKit" || b.type === "shopHobby" ? verifiedFor(b, slug, used) : null,
+  );
   return (
     <div className="prose-editorial">
       {blocks.map((b, i) => (
-        <BlockView key={i} b={b} />
+        <BlockView key={i} b={b} verified={legacy[i] ?? null} />
       ))}
     </div>
   );
@@ -47,13 +65,40 @@ function Box({
   );
 }
 
+/** Most products a legacy block may show when it is matched only by hobby (not tagged to the article). */
+const LEGACY_HOBBY_MAX = 4;
+
+type Used = Set<string>;
+
 /**
- * Legacy `starterKit` / `shopHobby` blocks list product TYPES by id. When verified catalog products exist
- * for the same hobbies, show those instead (through the new components); otherwise return null so the
- * original product-type cards render exactly as before.
+ * Legacy `starterKit` / `shopHobby` blocks list product TYPES by id. The catalog replaces them only when
+ * (a) products are tagged to THIS article slug, or (b) the block's product types map to catalog hobbies
+ * AND at most LEGACY_HOBBY_MAX products result. Otherwise return null so the original product-type cards
+ * render. Products already shown by an earlier catalog block on the page are never repeated: a block
+ * that would overlap falls back to the original cards.
  */
-function verifiedFor(b: Extract<Block, { type: "starterKit" | "shopHobby" }>): React.ReactNode {
+function verifiedFor(
+  b: Extract<Block, { type: "starterKit" | "shopHobby" }>,
+  slug: string | undefined,
+  used: Used,
+): React.ReactNode {
   if (verifiedCatalog.length === 0) return null;
+  const common = {
+    ...(b.title ? { title: b.title } : {}),
+    ...(b.type === "shopHobby" && b.dek ? { dek: b.dek } : {}),
+  };
+  const claim = (ids: string[]) => {
+    if (ids.length === 0 || ids.some((id) => used.has(id))) return false;
+    ids.forEach((id) => used.add(id));
+    return true;
+  };
+
+  if (slug) {
+    const tagged = selectProducts({ article: slug }).all;
+    if (tagged.length > 0)
+      return claim(tagged.map((p) => p.id)) ? <ShopTheArticle article={slug} {...common} /> : null;
+  }
+
   const hobbies = [
     ...new Set(
       productsFor(b.productIds)
@@ -61,16 +106,22 @@ function verifiedFor(b: Extract<Block, { type: "starterKit" | "shopHobby" }>): R
         .filter((x): x is string => !!x),
     ),
   ];
+  if (hobbies.length === 0) return null;
   if (b.type === "starterKit") {
     const kit = kits.find((k) => hobbies.some((h) => k.id === h || k.hobby === h));
-    if (kit && fillKit(kit, verifiedCatalog).length > 0)
-      return <StarterKit kit={kit} {...(b.title ? { title: b.title } : {})} />;
+    if (kit) {
+      const filled = fillKit(kit, verifiedCatalog);
+      if (
+        filled.length > 0 &&
+        filled.length <= LEGACY_HOBBY_MAX &&
+        claim(filled.map((f) => f.product.id))
+      )
+        return <StarterKit kit={kit} {...(b.title ? { title: b.title } : {})} />;
+    }
   }
-  if (selectProducts({ hobbies }).all.length === 0) return null;
-  const common = {
-    ...(b.title ? { title: b.title } : {}),
-    ...(b.type === "shopHobby" && b.dek ? { dek: b.dek } : {}),
-  };
+  const sel = selectProducts({ hobbies }).all;
+  if (sel.length === 0 || sel.length > LEGACY_HOBBY_MAX || !claim(sel.map((p) => p.id)))
+    return null;
   return hobbies.length === 1 ? (
     <ShopMyHobby hobby={hobbies[0]!} {...common} />
   ) : (
@@ -78,7 +129,7 @@ function verifiedFor(b: Extract<Block, { type: "starterKit" | "shopHobby" }>): R
   );
 }
 
-function BlockView({ b }: { b: Block }) {
+function BlockView({ b, verified }: { b: Block; verified: React.ReactNode }) {
   switch (b.type) {
     case "p":
       return (
@@ -239,7 +290,6 @@ function BlockView({ b }: { b: Block }) {
       );
     case "starterKit":
     case "shopHobby": {
-      const verified = verifiedFor(b);
       if (verified) return <>{verified}</>;
       const ps = productsFor(b.productIds);
       return (

@@ -72,6 +72,19 @@ export function ShopTheArticle({
           </div>
         </section>
       )}
+      {sel.alternatives.length > 0 && (
+        <section className="mt-8" aria-label="Other options for the same slot">
+          <h4 className="font-display text-xl italic">Other options</h4>
+          <p className="mt-1 text-sm text-muted-foreground">
+            These fill the same need as a pick above. Choose one, not all.
+          </p>
+          <div className="mt-4 grid gap-8 sm:grid-cols-2">
+            {sel.alternatives.map((p) => (
+              <ProductCard key={p.id} product={p} placement="article-alternative" alternative />
+            ))}
+          </div>
+        </section>
+      )}
       {coll && (
         <p className="mt-6 text-sm">
           More in{" "}

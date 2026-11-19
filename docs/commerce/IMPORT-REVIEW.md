@@ -1,11 +1,12 @@
-# Import review (C3 round 3)
+# Import review (C3 rounds 3 and 4)
 
 Reviewed 2026-11-19 against `PRODUCT-SELECTION-METHODOLOGY.md` and `product-research-notes.md`. Nothing here comes from browsing: only what Cowork recorded (listings opened in the owner's Chrome on 2026-11-18) was used. No ASIN, spec, brand or source was added or invented. Links are ordinary non-affiliate `https://www.amazon.com/dp/<ASIN>` URLs (Amazon Associates is the only future program).
 
 ## Result
 
-- 27 rows reviewed: **24 promoted to `verified`, 3 left `candidate`**.
-- `bun run import:products -- docs/commerce/product-research.csv` wrote 27 products (24 verified, 3 candidates) to `src/data/catalog.generated.ts`. Candidates are in the file but never render (`verifiedCatalog` filters them).
+- Round 3 review (2026-11-19): 27 rows, 24 promoted to `verified`, 3 left `candidate`.
+- Round 4 merge (Cowork's `product-research.cowork-latest.csv`, 44 rows): the 27 reviewed rows kept with every earlier decision, updated with the maker-page facts Cowork recorded, plus 17 new rows. **44 rows: 37 `verified`, 7 `candidate`** (13 of the 17 new rows promoted, 4 left candidate).
+- `bun run import:products -- docs/commerce/product-research.csv` wrote 44 products (37 verified, 7 candidates) to `src/data/catalog.generated.ts`. Candidates are in the file but never render (`verifiedCatalog` filters them).
 - Format fixes only where the importer failed: one spec entry (`Washable per listing` became `Washable:per listing`), one availability value with a stock note, and two unknown kit slots (cleared).
 
 ## Promotion rule applied
@@ -13,6 +14,16 @@ Reviewed 2026-11-19 against `PRODUCT-SELECTION-METHODOLOGY.md` and `product-rese
 Promoted only when: the listing was opened per Cowork's notes, ASIN, brand and title are recorded, required fields are complete, `researchSources` holds the Amazon detail URL, `lastVerified` is set, and no unverified claim remains. The validator does not require a manufacturer page, but the methodology prefers one: 23 of 24 promoted rows still say "Manufacturer page not yet checked" in limitations, so readers are told the evidence is the Amazon listing. Re-check the manufacturer pages when Cowork can (Crayola, Scotch, PAPERAGE, Knaid, Mr. Pen, Shuttle Art, Mod Podge, NMJL).
 
 Claims stripped or softened: "non-toxic" (Scotch glue stick), ACMI AP / ASTM D-4236 (Crayola, Pigma; secondary sources only), "widely used" and "mainstream" popularity wording, "small-batch seller", "lesser-known brand", an untested "plastic may flex" guess, a stock count. Listing-only claims (acid-free, photo-safe, tears by hand, dries in 24-48 hours, "child-safe materials") remain only where worded as the listing's claim or listed under limitations. Third-party sellers (Jongyance, UHAPEER, LINPHCEY, MUTEX, GUSTARIA, Plusvivo/YuChii) are marked `check-listing`.
+
+## Round 4 merge rules
+
+- Cowork's CSV marks only Crayola and Mod Podge `verified` and every other row `candidate`; our reviewed statuses were kept (the rule is the listing was opened, not a maker page). Where wording differed, the more conservative wording was kept: Cowork's "non-toxic" (Scotch), "AP seal" and "widely used" (Pigma), ACMI/ASTM retail wording (Crayola), "mainstream" (Mod Podge), "small-batch", "lesser-known brand", "plastic may flex" were NOT restored.
+- New maker-page facts merged (all from Cowork's notes, read 2026-11-18 as search snippets; nothing browsed by us):
+  - Crayola 5 lb: `manufacturerUrl` and `researchSources` now carry the crayola.com product page. Limitation line states what the page said (5 lb resealable bucket, natural white earth clay, dries hard with no kiln or oven, ages 4 and older, marketed to children). No safety or certification line added: the page text read did not mention one.
+  - Mod Podge gloss 12 oz: `manufacturerUrl` and `researchSources` carry the Plaid page. Limitation line: gloss clear acrylic sealer for wood, metal, canvas, terra cotta; quick-drying, will not run, drip or yellow, worded as the maker's claims. Ventilation/respirator advice still attributed to the Amazon listing. Still "do not treat as food-safe".
+  - Apple Barrel: Plaid brand page added to `researchSources` only (brand-level match; the exact 16-colour set was not found), so `manufacturerUrl` stays blank and no maker claim is repeated. Row stays `verified` on the listing evidence as before; Cowork kept it `candidate`. Revert to candidate if the owner prefers Cowork's stricter call.
+  - Scotch glue stick: added the maker-page conflict (text says photo safe, attribute table says Photo Safe: No), so "photo-safe" stays attributed to the listing. Scotch 6061: maker page not found, noted. NMJL (both sizes): no card page found, noted.
+- New rows: promoted only with brand recorded, listing opened, fields complete and no unverified claim; "seller not captured" or third-party seller (CLOYAN) means `availability: check-listing`.
 
 ## Per-row decisions
 
@@ -46,10 +57,35 @@ Claims stripped or softened: "non-toxic" (Scotch glue stick), ACMI AP / ASTM D-4
 | protective-sleeve-large-mahjong-card-4-pack  | not stated (listing says not affiliated with any brand) | B0FRSSG8FZ | (none)                     | nice-to-have      | available     | candidate | CANDIDATE: no brand ("not stated"); needs a "card-sleeve" slot that does not exist in kits.ts (kitSlots cleared); final-sale listing.                 |
 | nmjl-2026-standard-size-cards-four-pack      | National Mah Jongg League                               | B0GRCCTYJ5 | mahjong-night/card         | essential         | available     | PROMOTED  | Seller on listing is the League; 2026 edition limitation kept.                                                                                        |
 
-## Why three rows stayed candidate
+### Round 4 new rows
+
+| Row id                                          | Brand                 | ASIN       | Kit slot                                  | Role         | Availability  | Decision  | Notes                                                                                     |
+| ----------------------------------------------- | --------------------- | ---------- | ----------------------------------------- | ------------ | ------------- | --------- | ----------------------------------------------------------------------------------------- |
+| artecho-48-color-watercolor-set-3-brushes       | Artecho               | B0BWRCKFDH | watercolor/paints                         | essential    | check-listing | PROMOTED  | Seller not captured; non-toxic status not stated (limitation).                            |
+| transon-8-round-watercolor-brushes              | Transon               | B06XTMNKVF | watercolor/brushes                        | essential    | check-listing | PROMOTED  | Hair blend and "mimic sable" are listing claims.                                          |
+| fenorkey-12-round-watercolor-brushes            | FENORKEY              | B07WH8T6LH | watercolor/brushes                        | affordable   | check-listing | PROMOTED  | Shedding resistance is the listing's claim.                                               |
+| arches-watercolor-pad-140lb-cold-press-9x12     | Arches                | B01EQHJH10 | watercolor/paper                          | nice-to-have | check-listing | PROMOTED  | Cotton fibre stated "per listing"; sheet count not read.                                  |
+| hapikalor-watercolor-pad-140lb-9x12             | Hapikalor             | B0D5R7JRKZ | watercolor/paper                          | affordable   | check-listing | PROMOTED  | Spec fixed to `Acid-free:per listing`.                                                    |
+| bradove-classic-embroidery-kit                  | Bradove               | B0B762JW55 | embroidery/hoop                           | complete-kit | check-listing | PROMOTED  | Tutorial quality untested.                                                                |
+| inscraft-304-piece-embroidery-starter-kit       | INSCRAFT              | B087RB2K2B | embroidery/floss                          | affordable   | check-listing | PROMOTED  | Aida cloth is for cross stitch (limitation).                                              |
+| aqueenly-stork-embroidery-scissors-2-pack       | AQUEENLY              | B07KZPRBQT | embroidery/scissors                       | affordable   | check-listing | PROMOTED  | Sharpness and rust claims are the listing's.                                              |
+| 3-swords-germany-stork-embroidery-scissors      | 3 Swords Germany      | B0D1Y66RQZ | embroidery/scissors                       | nice-to-have | available     | candidate | CANDIDATE: bullet text did not load (only title and seller captured); origin unconfirmed. |
+| crochet-hooks-12-sizes-51-pack-ming-shun        | not stated on listing | B0C33QM3KR | crochet/hooks                             | complete-kit | available     | candidate | CANDIDATE: no brand stated.                                                               |
+| crochet-hooks-12-sizes-44-pcs-ergonomic-rp-tech | not stated on listing | B09F9B2XTD | crochet/hooks                             | affordable   | available     | candidate | CANDIDATE: no brand stated; arthritis wording is marketing.                               |
+| red-heart-super-saver-white-worsted             | Red Heart             | B000XZY8Q4 | crochet/yarn                              | essential    | check-listing | PROMOTED  | One skein is small (limitation).                                                          |
+| caron-simply-soft-feathered-gray-3-pack         | Caron                 | B0BBY2QVV4 | crochet/yarn                              | nice-to-have | check-listing | PROMOTED  | Colour/pack size vary by variant.                                                         |
+| benicci-12-piece-artist-paint-brush-set         | Benicci               | B0868QQ1X6 | air-dry-clay/brushes, paint-night/brushes | essential    | available     | PROMOTED  | Seller on listing is Benicci. Fills the missing clay brushes slot.                        |
+| auhoahsil-12-round-acrylic-paint-brushes        | not stated on listing | B087W3PT95 | paint-night/brushes                       | affordable   | available     | candidate | CANDIDATE: no brand stated.                                                               |
+| esrich-8x10-stretched-canvas-10-pack            | ESRICH                | B0CH3K5F62 | paint-night/canvas                        | essential    | check-listing | PROMOTED  | Third-party seller (CLOYAN). "Primed, acid-free" now attributed to the listing.           |
+| esrich-8x10-stretched-canvas-5-pack             | ESRICH                | B0D3TWT3TX | paint-night/canvas                        | affordable   | check-listing | PROMOTED  | Third-party seller (CLOYAN).                                                              |
+
+Other fixes: `hobbies` `paint-night` (Cowork) is not a hobby slug in `src/data/hobbies.ts`; the paint-night rows use `craft-nights|paint-by-numbers`, the hobbies the paint-night article itself lists. UHAPEER got `air-dry-clay/clay` back (Cowork's slot fix; slot exists), so it can now render in the clay slot after Crayola.
+
+## Why seven rows are candidates
 
 1. `generic-460-sheet-vintage-scrapbook-paper` (B0DJBKT452) and `generic-200-sheet-vintage-scrapbook-paper` (B0BXKS3HBR): the listing states no brand, the seller is a third party, and the imagery may be reproduced, so rights and quality are unknown. Needs a named brand or a manufacturer source.
 2. `protective-sleeve-large-mahjong-card-4-pack` (B0FRSSG8FZ): no brand stated, and the intended slot `mahjong-night/card-sleeve` does not exist in `src/data/kits.ts`. Intended slot noted here: add a `card-sleeve` slot (owner of kits.ts), then re-point this row.
+3. Round 4: `3-swords-germany-stork-embroidery-scissors`, `crochet-hooks-12-sizes-51-pack-ming-shun`, `crochet-hooks-12-sizes-44-pcs-ergonomic-rp-tech`, `auhoahsil-12-round-acrylic-paint-brushes`: see the new-rows table (no brand, or listing text incomplete).
 
 ## Kit coverage (verified products only)
 
@@ -72,14 +108,38 @@ Claims stripped or softened: "non-toxic" (Scotch glue stick), ACMI AP / ASTM D-4
 | mahjong-night   | card         | nmjl-2026-large-size-cards-four-pack (standard-size also mapped) | filled                                                                                |
 | mahjong-night   | snack-bowls  | none                                                             | missing, "probably own"                                                               |
 
-Not slotted: `uhapeer-air-dry-clay-kit-3-lb` (verified, role complete-kit, kitSlots empty because `air-dry-clay` has no `kit` slot). It still renders in article shop blocks by `articles` and `hobbies`.
+Round 4 additions (verified only):
+
+| Kit          | Slot                                      | Filled by                                                       | Status                                                      |
+| ------------ | ----------------------------------------- | --------------------------------------------------------------- | ----------------------------------------------------------- |
+| air-dry-clay | brushes                                   | benicci-12-piece-artist-paint-brush-set                         | filled now                                                  |
+| air-dry-clay | clay                                      | crayola (first), uhapeer-air-dry-clay-kit-3-lb                  | filled                                                      |
+| watercolor   | paints                                    | artecho-48-color-watercolor-set-3-brushes                       | filled                                                      |
+| watercolor   | brushes                                   | transon, fenorkey                                               | filled                                                      |
+| watercolor   | paper                                     | arches, hapikalor                                               | filled                                                      |
+| watercolor   | palette, masking-tape, water-jar          | none                                                            | palette not researched; the others "probably own"           |
+| embroidery   | hoop                                      | bradove-classic-embroidery-kit                                  | filled                                                      |
+| embroidery   | floss                                     | inscraft-304-piece-embroidery-starter-kit                       | filled                                                      |
+| embroidery   | scissors                                  | aqueenly-stork-embroidery-scissors-2-pack                       | filled (3 Swords is candidate)                              |
+| embroidery   | needles, fabric, pattern                  | none                                                            | missing (kits include them, but there is no standalone row) |
+| crochet      | yarn                                      | red-heart, caron                                                | filled                                                      |
+| crochet      | hooks                                     | none verified (both hook sets are candidates: brand not stated) | missing                                                     |
+| crochet      | stitch-markers, tapestry-needle, scissors | none                                                            | missing                                                     |
+| paint-night  | canvas                                    | esrich 10-pack, esrich 5-pack                                   | filled                                                      |
+| paint-night  | brushes                                   | benicci (verified; auhoahsil is candidate)                      | filled                                                      |
+| paint-night  | paint                                     | none (air-dry-clay paint rows are not mapped to paint-night)    | missing                                                     |
+
+Summary: junk-journaling 5 of 6 slots filled (scissors on purpose), air-dry-clay 5 of 6 (work-surface "probably own"), mahjong-night 3 of 4 (snack-bowls "probably own"), watercolor 3 of 6, embroidery 3 of 6, crochet 1 of 5, paint-night 2 of 6. Kits still with no product: reading-journal, girls-craft-night, book-club, picnic-adventure, flower-arranging, pickleball, tennis, cozy-night-in.
+
+Not slotted: none of the verified rows. (UHAPEER was unslotted in round 3; it now maps to `air-dry-clay/clay`.) Candidate sleeves `protective-sleeve-large-mahjong-card-4-pack` stay unslotted: `mahjong-night` has no `card-sleeve` slot.
 
 ## Open follow-ups for Cowork
 
-- C3 continues toward about 60 products (27 rows now, 24 verified). Next targets: air-dry-clay brushes; second options for junk-journaling scissors only if the owner wants it; the 12 other starter kits in `kits.ts` have no research at all.
-- Read manufacturer pages (blocked by fetch permission or site errors last round): crayola.com (drying and safety guidance), 3m.com/scotch, mahjongg.com (next card release timing), modpodgerocks.com, paperage.com, Knaid, Mr. Pen, Shuttle Art. Add them to `manufacturerUrl` and `researchSources` with dates.
+- C3 continues toward about 60 products (44 rows now, 37 verified). Clay brushes are now covered (Benicci). Next targets: crochet hooks with a named brand, crochet stitch markers and tapestry needle, embroidery needles/fabric/pattern, watercolor palette, paint-night paint, mahjong snack bowls (optional); second options for junk-journaling scissors only if the owner wants it; the 12 other starter kits in `kits.ts` have no research at all.
+- Crayola and Plaid (Mod Podge) maker pages were read in round 4 only as search snippets. Still to read in full: crayola.com drying and safety guidance, 3m.com/scotch (6061 page not found; glue stick page contradicts itself on photo safe), mahjongg.com (next card release timing), modpodgerocks.com, paperage.com, Knaid, Mr. Pen, Shuttle Art. Add them to `manufacturerUrl` and `researchSources` with dates.
 - Clay safety: re-check ACMI AP / ASTM D-4236 on crayola.com before any non-toxic wording; never "food-safe".
-- Decide kit slots: add `air-dry-clay/kit` and `mahjong-night/card-sleeve` to `src/data/kits.ts` (not edited here), then restore `kitSlots` on UHAPEER and the sleeve row.
+- Kit slots: `air-dry-clay/kit` is no longer needed (Cowork remapped UHAPEER to `air-dry-clay/clay`). Optional: add `mahjong-night/card-sleeve` to `src/data/kits.ts` (not edited here), then re-point the sleeve row. Suggested extra slots only if wanted: none are required by the 44 rows.
+- Cowork's notes and CSV disagree in places: (1) the notes' Round 4 says Crayola and Mod Podge are verified but the CSV text for Crayola still carries the secondary ACMI/ASTM wording, which this merge dropped; (2) the CSV's `hobbies` value `paint-night` is not a valid hobby slug; (3) the CSV marks 22 of our 24 promoted rows `candidate` that we promoted (listing evidence, no maker page); (4) the notes list "Round 3 ... 13 more rows" while the earlier "seen, not opened" ASIN list is stale; (5) the notes' Round 4 maker facts say "search snippets", not full page reads. Winsor & Newton Cotman set (B00004THXI) was skipped by Cowork (page did not load) and is not in the catalog.
 - Re-check `check-listing` rows for seller and stock before relying on them. NMJL 2026 cards: confirm the next card's release.
 - Notes conflict: the "seen but not opened" section of `product-research-notes.md` lists ASINs that the Round 3 section says were later opened. This review trusted Round 3. If Cowork did not in fact open them, demote the affected rows.
 

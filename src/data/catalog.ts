@@ -319,12 +319,45 @@ export type ProductContext = {
 };
 
 export type Selection = {
+  /** Essentials, with one primary product per kit slot. */
   essentials: CatalogProduct[];
+  /** Non-essential products that are not alternatives for another product's slot. */
   optional: CatalogProduct[];
+  /** Products that fill a kit slot another product in the selection already fills as the primary. */
+  alternatives: CatalogProduct[];
   all: CatalogProduct[];
 };
 
 const roleRank = (r: ProductRole) => PRODUCT_ROLES.indexOf(r);
+
+const slotKey = (s: KitSlotRef) => `${s.kit}:${s.slot}`;
+
+/**
+ * Where several products fill the same kit slot (three mahjong sets, two card sizes), one is the
+ * primary for that slot: the "researched-pick" if there is one, otherwise the first in list order (among essentials when the slot has any).
+ * A product is an alternative when it has kit slots and is not the primary of any of them.
+ * Products with no kit slot are never alternatives.
+ */
+export function alternativeIds(picked: CatalogProduct[], list: CatalogProduct[]): Set<string> {
+  const order = (p: CatalogProduct) => list.findIndex((x) => x.id === p.id);
+  const groups = new Map<string, CatalogProduct[]>();
+  for (const p of picked)
+    for (const s of p.kitSlots) groups.set(slotKey(s), [...(groups.get(slotKey(s)) ?? []), p]);
+  const primary = new Map<string, string>();
+  for (const [k, ps] of groups) {
+    const sorted = [...ps].sort((a, b) => order(a) - order(b));
+    // A slot that has an essential filler keeps an essential as its primary, so it is never demoted.
+    const pool = sorted.some((p) => p.isEssential) ? sorted.filter((p) => p.isEssential) : sorted;
+    primary.set(k, (pool.find((p) => p.role === "researched-pick") ?? pool[0]!).id);
+  }
+  return new Set(
+    picked
+      .filter(
+        (p) => p.kitSlots.length > 0 && p.kitSlots.every((s) => primary.get(slotKey(s)) !== p.id),
+      )
+      .map((p) => p.id),
+  );
+}
 
 /**
  * Products for an article / hobby / collection. Priority: tagged for the article, then matching
@@ -348,9 +381,11 @@ export function selectProducts(
   if (hobbies.length) list.filter((p) => p.hobbies.some((h) => hobbies.includes(h))).forEach(add);
   if (ctx.collection) list.filter((p) => p.collections.includes(ctx.collection!)).forEach(add);
   const sorted = [...picked].sort((a, b) => roleRank(a.role) - roleRank(b.role));
+  const alt = alternativeIds(picked, list);
   return {
-    essentials: sorted.filter((p) => p.isEssential),
-    optional: sorted.filter((p) => !p.isEssential),
+    essentials: sorted.filter((p) => p.isEssential && !alt.has(p.id)),
+    optional: sorted.filter((p) => !p.isEssential && !alt.has(p.id)),
+    alternatives: sorted.filter((p) => alt.has(p.id)),
     all: sorted,
   };
 }

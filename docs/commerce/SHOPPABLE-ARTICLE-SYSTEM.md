@@ -49,3 +49,11 @@ Selection order: products tagged for the article, then matching hobbies, then th
 ## Still to do (owner / Cowork)
 
 Supply verified research rows (the CSV). Confirm current Amazon Associates wording before activating affiliate links. Update `docs/buyer/AFFILIATE-ACTIVATION.md` if the flow changes.
+
+## Fixes 2026-11-19
+
+- Seller wording: cards say "Available on Amazon", or "Sold by a third-party seller on Amazon: check the listing" for `check-listing` products. Never "Sold by Amazon".
+- Alternatives: where several selected products fill one kit slot, one is the primary (the `researched-pick`, else the first in list order; essentials are preferred so an essential slot is never demoted). The rest are alternatives, labelled "Another option for this slot" and listed under "Other options". `selectProducts` returns `alternatives` separately; "Tick all essentials" ticks only primaries. Products with no kit slot keep their own `isEssential`.
+- Legacy `shopHobby` / `starterKit` blocks use the catalog only when products are tagged to this article slug, or when the block's product types map to catalog hobbies and at most 4 products result. Otherwise the original product-type cards render. A legacy block never repeats products already shown by an earlier catalog block on the page. `ArticleBody` finds the article slug by body identity (or an `articleSlug` prop).
+- `relatedArticles()` now puts declared `related` slugs (published only) first, then computed matches, de-duplicated, same limit.
+- Amazon links and the "I need this" / "I already own this" labels are at least 44px tall.
