@@ -192,7 +192,8 @@
     line-height: 1.25;
     margin: 1.6em 0 0.5em;
   }
-  & a {
+  /* Links in running text only. Links inside .not-prose blocks (callouts, cards, buttons) keep their own utility colours. */
+  & a:not(:where(.not-prose, .not-prose *)) {
     color: var(--cherry);
     text-decoration: underline;
     text-underline-offset: 3px;
