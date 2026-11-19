@@ -46,3 +46,7 @@ Kits still with NO product: reading-journal, girls-craft-night, book-club, picni
 
 ## C12 review (2026-11-19)
 See PRODUCT-DESIRABILITY-REVIEW.csv (62 rows: recommendation per product) and product-photo-permissions.md. The review is qualitative; no listing was read live. Counts are in the CSV.
+
+## Round 6 (2026-11-19)
+- Girls' craft night kit now has two candidates: PAXCOO 488-piece friendship bracelet kit (main-project) and iBayam 8 in scissors 3-pack (shared-tools); project chosen: friendship bracelets, the easiest of the article's five. Table-cover and extras slots stay empty. CSV now 64 rows.
+- Retries: Scotch glue stick RESOLVED (3M pages say acid free, photo safe). Scotch 6061 exists on 3M's page but acid-free/photo-safe conflicts between retailers: do not claim it. NMJL four-packs not on the League site. Pigma 8-pack contents confirmed by retailers, but one distributor says Sakura products may not be sold on Amazon. Apple Barrel: model number matches, colour names differ.
