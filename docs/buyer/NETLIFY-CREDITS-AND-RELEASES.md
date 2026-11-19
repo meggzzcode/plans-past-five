@@ -8,7 +8,7 @@ Status on 2026-11-19: a Netlify project exists on the seller's account as a test
 Read from Netlify's own pages on 2026-11-19 (re-read live before relying on them; Netlify changes plans): https://www.netlify.com/pricing/ , https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/how-credits-work/ and .../credit-based-pricing-plans/.
 
 - **300 credits per month** on the free plan (Personal $9: 1,000; Pro $20: 3,000). The free plan has a hard limit and no auto recharge.
-- **15 credits per successful production deploy.**
+- **15 credits per production deploy** (each successful one).
 - **0 credits** for failed deploys, for rolling back to a previous production deploy, and for Deploy Previews and branch deploys (their traffic still counts as bandwidth).
 - **20 credits per GB of bandwidth.**
 - **When the credits run out, every project on the account is paused**: visitors see "Site not available" until the next cycle or an upgrade.
