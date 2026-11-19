@@ -46,3 +46,35 @@ PENDING COWORK
 
 ## Product shortlist
 PENDING COWORK
+
+---
+
+# Cowork research 2026-11-18
+
+## C1 audience and keyword research
+
+- Primary keyword candidate (author judgement, NOT validated by any volume tool): affordable hobbies under 25
+- Related keyword candidates (from competitor titles and headings, not a keyword tool): NOT FOUND (not researched in this pass)
+- Google autocomplete suggestions: NOT FOUND (not collected; no sanctioned autocomplete tool in this pass)
+- Related searches / People Also Ask: NOT FOUND (search tool returns result pages, not SERP features)
+- Pinterest search suggestions: NOT FOUND (requires the owner's Pinterest login; not used)
+- Google Trends direction / date range: NOT FOUND (Trends not available in this pass); no volume or difficulty numbers exist for this topic in this file
+- Seasonal pattern: NOT FOUND (qualitative guess only if owner wants one: ask)
+- Community questions with links: NOT FOUND (communities such as Reddit were not read in this pass)
+- Product-related searches: NOT FOUND
+- Cannibalization risk vs our other articles: see the roadmap table; author assessment, unvalidated: HIGH with low-energy-hobbies and creative-hobbies-you-can-start-at-home
+- Intended traffic source: Google search plus Pinterest (per EDITORIAL-STRATEGY.md); no evidence gathered either way
+
+## C2 competitor reading
+
+Method: ran "cheap hobbies under $25" in a live web search 2026-11-18 and recorded top results. "Covers" and "misses" come from result titles/snippets only; full pages were NOT read. No wording, photos or data copied.
+
+| URL | Covers | Misses / angle |
+|---|---|---|
+| https://wealthvieu.com/cheap-hobbies-under-50 | tables of startup and monthly cost by hobby | unsourced costs; $50 cutoff |
+| https://www.themuse.com/advice/cheap-hobbies | 25 cheap hobbies | no cost table |
+| https://www.sofi.com/learn/content/inexpensive-hobbies/ | 30 inexpensive hobbies | finance brand, generic |
+| https://favecrafts.com/Most-Popular-Crafts/Low-Cost-Hobbies | 25 low-cost crafts | craft-only |
+| https://moneymoves.beehiiv.com/p/cheap-hobbies-under-25 | 10 hobbies under $25 | newsletter |
+
+What we can do better (hypotheses to test, not findings): a dated cost table with every price verified live before stating it, plus a "true cost after month 3" column. Do not state unverified prices.

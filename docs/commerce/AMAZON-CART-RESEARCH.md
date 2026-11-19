@@ -37,9 +37,35 @@ Record each answer with: the page URL, the page title, the date read, and a shor
 14. How does it behave on mobile browsers and the Amazon app (deep-linking, sign-in redirects)?
 15. What maintenance burden does it add: version changes, deprecations, key rotation, rate limits, terms changes? Who would own it after a sale (accounts are not transferable; see `docs/buyer/AFFILIATE-ACTIVATION.md`)?
 
-## Findings
+## Findings (read 2026-11-18 in the owner's signed-in Chrome unless noted; official Amazon pages only except where marked)
 
-PENDING COWORK. (Fill in a table with columns: question number, answer, source URL, date read, confidence. Leave blank until read from the official page.)
+Sources: Program Policies (updated April 14, 2026) https://affiliate-program.amazon.com/help/operating/policies ; Operating Agreement https://affiliate-program.amazon.com/help/operating/agreement ; Application review help https://affiliate-program.amazon.com/help/node/topic/G8TW5AE9XL2VX9VM ; Creators API docs https://affiliate-program.amazon.com/creatorsapi/docs/en-us/introduction (+ /onboarding/register-for-creators-api, /frequently-asked-questions, /paapiv5-deprecation). Add to Cart form doc (legacy, PA-API site): https://webservices.amazon.com/paapi5/documentation/add-to-cart-form.html (search snippet only: the browser refused script access to that domain, so I did not read the whole page).
+
+| Q | Answer | Source | Confidence |
+|---|---|---|---|
+| A1 links | Special Links must carry the Associates ID/tag (format XXXXX-##) as a URL parameter, be accessed directly from your Site, and you must not encourage visitors to bookmark them. Product lists (search results, events, department pages) are allowed only with additional original relevant content on the page. | Program Policies, Participation Requirements s.2 | High |
+| A2 multi-product cart | The policies read describe cart behaviour for attribution only (items added to cart count if ordered within 89 days of the click, within a session). The policy text I extracted has no wording that permits or forbids an Add to Cart form or button. | Commission Income Statement s.1(c); Participation Requirements | Medium (absence of text, not an explicit rule) |
+| A3 prices | A Site may show prices and availability only if Amazon serves the link that displays them, or if the data comes via the Creators API/PA-API under the License. Not showing prices remains the safe choice. | Participation Requirements | High |
+| A4 disclosure | Exact sentence required: "As an Amazon Associate I earn from qualifying purchases." Must be clear and prominent on the Site. See AMAZON-DISCLOSURE.md. | Operating Agreement s.5 | High |
+| A5 redirects/cloaking | Purchases via a "Redirecting Link" (a link that reaches Amazon through an intermediate site without the visitor taking an action there) are excluded from commissions. Special Links "must be accessed directly from your Site". No offering rewards for using Special Links. Do not use Associates links in client-side software or non-approved apps. | Commission Income Statement s.2(e); Participation Requirements | High for redirects; shorteners NOT FOUND in text read |
+| B6 supported cart mechanism today | An "Add to Cart form" is documented on the PA-API documentation site (US endpoint https://www.amazon.com/gp/aws/cart/add.html, ASIN.x parameters, optional AssociateTag) but PA-API 5 is deprecated and returns 403 to callers. The Creators API lists only SearchItems, GetItems, GetVariations, GetBrowseNodes: no cart operation. I found no current official page confirming the Add to Cart form is still supported. | Creators API intro (operations list); PA-API deprecation notice; search snippet of add-to-cart-form.html | Medium: status of the legacy form UNCONFIRMED |
+| B7 Creators API and cart | No cart or multi-item operation in the documented operations. | Creators API introduction | High |
+| B8 limits | NOT FOUND | | |
+| B9 credentials | Creators API uses OAuth 2.0 client credentials; secrets cannot live in a frontend-only repo. | Creators API FAQ | High |
+| C10 eligibility | Associates application review requires qualified sales (at least three within 180 days, personal orders excluded) and a site with robust original content (guideline: at least 10 posts), publicly available. Creators API sign-up requires an account that has received final acceptance and referred qualified sales. | Application review help; Register for Creators API | High |
+| C11-12 | NOT FOUND for the legacy form. | | |
+| D13 attribution | Session ends at the first of: 24 hours from click, an order placed, or a new Special Link click. Cart: purchase of a product added to cart is credited if the order completes no later than 89 days after the click; item must ship within 180 days. | Commission Income Statement s.1 | High |
+| D14 mobile | NOT FOUND; mobile apps are restricted to Approved Mobile Applications. | Participation Requirements s.5 | Medium |
+| D15 ownership | Operating Agreement: the account cannot be assigned without Amazon's prior written approval. Buyer must create their own Associates account; PA-API retired; Creators API needs a server-side secret. | Operating Agreement | High |
+
+## Account and multi-site notes
+- Account assignment: "You may not assign this Agreement, by operation of law or otherwise, without our express prior written approval." (Operating Agreement.) Sale packet should say the buyer applies for their own account.
+- Termination: either party may end the Agreement at any time with 7 calendar days' written notice (Operating Agreement s.6). After a termination for violation or abuse, rejoining needs Amazon's advance authorization (Program Policies).
+- The account contact and Site information must stay complete and accurate (Participation Requirements). Exact multi-site and tracking-ID policy wording was NOT FOUND in the pages read; confirm in Account Settings / Manage Your Tracking IDs before telling a buyer.
+- Do not combine an Associates tag with another affiliate program on the same traffic (Commission Income Limitations).
+
+## Recommendation
+Keep the shopping checklist; build no cart button. Reasons: the only documented cart mechanism sits in deprecated PA-API documentation and its current support is unconfirmed; the Creators API has no cart operation and needs a secret. Re-check this page when the owner asks Amazon (Associates "Contact Us") whether the Add to Cart form remains supported.
 
 ## Decision rules
 

@@ -47,3 +47,35 @@ PENDING COWORK
 
 ## Product shortlist
 PENDING COWORK
+
+---
+
+# Cowork research 2026-11-18
+
+## C1 audience and keyword research
+
+- Primary keyword candidate (author judgement, NOT validated by any volume tool): how to start playing tennis as an adult
+- Related keyword candidates (from competitor titles and headings, not a keyword tool): NOT FOUND (not researched in this pass)
+- Google autocomplete suggestions: NOT FOUND (not collected; no sanctioned autocomplete tool in this pass)
+- Related searches / People Also Ask: NOT FOUND (search tool returns result pages, not SERP features)
+- Pinterest search suggestions: NOT FOUND (requires the owner's Pinterest login; not used)
+- Google Trends direction / date range: NOT FOUND (Trends not available in this pass); no volume or difficulty numbers exist for this topic in this file
+- Seasonal pattern: NOT FOUND (qualitative guess only if owner wants one: ask)
+- Community questions with links: NOT FOUND (communities such as Reddit were not read in this pass)
+- Product-related searches: NOT FOUND
+- Cannibalization risk vs our other articles: see the roadmap table; author assessment, unvalidated: HIGH with none obvious in the 30; verify
+- Intended traffic source: Google search plus Pinterest (per EDITORIAL-STRATEGY.md); no evidence gathered either way
+
+## C2 competitor reading
+
+Method: ran "how to start playing tennis as an adult" in a live web search 2026-11-18 and recorded top results. "Covers" and "misses" come from result titles/snippets only; full pages were NOT read. No wording, photos or data copied.
+
+| URL | Covers | Misses / angle |
+|---|---|---|
+| https://www.tenniscanada.com/news/never-late-start-playing-tennis-get-started-adult/ | 5 ways to start as an adult incl. join a club | governing-body style, older (2016) |
+| https://www.glamour.co.za/wellness/fitness-exercise/want-to-get-into-tennis-as-an-adult-heres-how-to-actually-start-9f1f8cd7-7db5-4214-866c-6efaffdcf12f | start with a few lessons; learn scoring and serving first | magazine |
+| https://www.stylist.co.uk/fitness-health/sport/how-to-start-playing-tennis/532594 | LTA tips such as lower-compression balls; health claims | UK; health claims we avoid |
+| https://www.usta.com/en/home/stay-current/midwest/chicago/how-to-start-playing-tennis--or-pick-the-racquet-up-again-.html | USTA partnered piece on starting or returning | 2020, regional |
+| https://www.playyourcourt.com/news/?p=1378 | 7 tips; find a friend to start with | coach-directory brand |
+
+What we can do better (hypotheses to test, not findings): a first-month plan with real costs, free community-court and USTA options, and a no-health-claims tone. Statistics cited by competitors (e.g. participation figures) need a primary source if we use them.

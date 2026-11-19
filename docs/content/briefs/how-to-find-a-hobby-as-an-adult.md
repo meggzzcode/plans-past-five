@@ -46,3 +46,35 @@ PENDING COWORK
 
 ## Product shortlist
 PENDING COWORK
+
+---
+
+# Cowork research 2026-11-18
+
+## C1 audience and keyword research
+
+- Primary keyword candidate (author judgement, NOT validated by any volume tool): how to find a hobby as an adult
+- Related keyword candidates (from competitor titles and headings, not a keyword tool): NOT FOUND (not researched in this pass)
+- Google autocomplete suggestions: NOT FOUND (not collected; no sanctioned autocomplete tool in this pass)
+- Related searches / People Also Ask: NOT FOUND (search tool returns result pages, not SERP features)
+- Pinterest search suggestions: NOT FOUND (requires the owner's Pinterest login; not used)
+- Google Trends direction / date range: NOT FOUND (Trends not available in this pass); no volume or difficulty numbers exist for this topic in this file
+- Seasonal pattern: NOT FOUND (qualitative guess only if owner wants one: ask)
+- Community questions with links: NOT FOUND (communities such as Reddit were not read in this pass)
+- Product-related searches: NOT FOUND
+- Cannibalization risk vs our other articles: see the roadmap table; author assessment, unvalidated: HIGH with 35-hobbies and creative-hobbies-you-can-start-at-home
+- Intended traffic source: Google search plus Pinterest (per EDITORIAL-STRATEGY.md); no evidence gathered either way
+
+## C2 competitor reading
+
+Method: ran "how to find a hobby as an adult" in a live web search 2026-11-18 and recorded top results. "Covers" and "misses" come from result titles/snippets only; full pages were NOT read. No wording, photos or data copied.
+
+| URL | Covers | Misses / angle |
+|---|---|---|
+| https://theeverygirl.com/how-to-find-hobbies-as-an-adult/ | reflection prompts, making time | mental-health claims; we avoid |
+| https://womanandhome.com/hobbies/how-to-find-a-new-hobby | expert tips; try a short-term class | UK magazine voice |
+| https://www.betterup.com/blog/how-to-find-a-hobby-as-an-adult | interest vs hobby; classes | coaching brand |
+| https://food52.com/blog/23071-how-to-find-a-new-to-you-hobby-as-a-grown-up | consult your inner child | short |
+| https://www.burlapandblue.com/?p=42623 | 50 ideas incl. situational guides | medical-adjacent |
+
+What we can do better (hypotheses to test, not findings): a concrete 4-week sampler plan with a small budget cap and a quiz tie-in, instead of generic reflection advice.

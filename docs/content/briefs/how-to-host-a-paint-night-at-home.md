@@ -15,11 +15,11 @@ Status: draft. Answers below come from reasoning only. No data has been collecte
 
 ## Keyword and autocomplete research
 
-PENDING COWORK
+See "Cowork research 2026-11-18" at the end of this file (qualitative only; no volume data available).
 
 ## Competitor review
 
-PENDING COWORK
+See "Cowork research 2026-11-18" at the end of this file.
 
 ## Pinterest research
 
@@ -32,3 +32,35 @@ PENDING COWORK
 ## Product shortlist
 
 PENDING COWORK
+
+---
+
+# Cowork research 2026-11-18
+
+## C1 audience and keyword research
+
+- Primary keyword candidate (author judgement, NOT validated by any volume tool): how to host a paint night at home
+- Related keyword candidates (from competitor titles and headings, not a keyword tool): NOT FOUND (not researched in this pass)
+- Google autocomplete suggestions: NOT FOUND (not collected; no sanctioned autocomplete tool in this pass)
+- Related searches / People Also Ask: NOT FOUND (search tool returns result pages, not SERP features)
+- Pinterest search suggestions: NOT FOUND (requires the owner's Pinterest login; not used)
+- Google Trends direction / date range: NOT FOUND (Trends not available in this pass); no volume or difficulty numbers exist for this topic in this file
+- Seasonal pattern: NOT FOUND (qualitative guess only if owner wants one: ask)
+- Community questions with links: NOT FOUND (communities such as Reddit were not read in this pass)
+- Product-related searches: NOT FOUND
+- Cannibalization risk vs our other articles: see the roadmap table; author assessment, unvalidated: HIGH with how-to-host-a-craft-night
+- Intended traffic source: Google search plus Pinterest (per EDITORIAL-STRATEGY.md); no evidence gathered either way
+
+## C2 competitor reading
+
+Method: ran "how to host a paint night at home" in a live web search 2026-11-18 and recorded top results. "Covers" and "misses" come from result titles/snippets only; full pages were NOT read. No wording, photos or data copied.
+
+| URL | Covers | Misses / angle |
+|---|---|---|
+| https://www.musepaintbar.com/blog/how-to-host-a-ladies-night-at-home/ | ladies paint night guide with kits and video | sells kits; wine-centred |
+| https://stepbysteppainting.net/2017/09/07/diy-paint-night-supplies/comment-page-3/ | canvas size advice (11x14 or 12x16 for home tables) | 2017, dated |
+| https://www.paintingtogogh.com/blogs/news/how-to-host-a-painting-party-with-painting-to-gogh | venues, video tutorials, supplies | brand-led |
+| https://www.artshedonline.com.au/blog/paint-and-sip-kits-tips-art-shed/ | paint and sip at home or in a hall | AU retailer |
+| https://in-our-spare-time.com/?p=6655 | timeline for hosting (updated June 2026) | simple, snack-focused |
+
+What we can do better (hypotheses to test, not findings): a cost per guest, protecting surfaces, acrylic non-toxic labelling checked on the actual paint label, and a no-skill tutorial plan; keep drinks optional.

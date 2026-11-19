@@ -47,3 +47,35 @@ PENDING COWORK
 
 ## Product shortlist
 PENDING COWORK
+
+---
+
+# Cowork research 2026-11-18
+
+## C1 audience and keyword research
+
+- Primary keyword candidate (author judgement, NOT validated by any volume tool): solo date ideas
+- Related keyword candidates (from competitor titles and headings, not a keyword tool): NOT FOUND (not researched in this pass)
+- Google autocomplete suggestions: NOT FOUND (not collected; no sanctioned autocomplete tool in this pass)
+- Related searches / People Also Ask: NOT FOUND (search tool returns result pages, not SERP features)
+- Pinterest search suggestions: NOT FOUND (requires the owner's Pinterest login; not used)
+- Google Trends direction / date range: NOT FOUND (Trends not available in this pass); no volume or difficulty numbers exist for this topic in this file
+- Seasonal pattern: NOT FOUND (qualitative guess only if owner wants one: ask)
+- Community questions with links: NOT FOUND (communities such as Reddit were not read in this pass)
+- Product-related searches: NOT FOUND
+- Cannibalization risk vs our other articles: see the roadmap table; author assessment, unvalidated: HIGH with cozy-solo-dates-at-home
+- Intended traffic source: Google search plus Pinterest (per EDITORIAL-STRATEGY.md); no evidence gathered either way
+
+## C2 competitor reading
+
+Method: ran "solo date ideas" in a live web search 2026-11-18 and recorded top results. "Covers" and "misses" come from result titles/snippets only; full pages were NOT read. No wording, photos or data copied.
+
+| URL | Covers | Misses / angle |
+|---|---|---|
+| https://theeverygirl.com/solo-date-ideas/ | six solo date ideas (museum, etc.) | short list |
+| https://www.xonecole.com/solo-date-ideas | 26 solo date ideas | list only |
+| https://www.theknot.com/content/solo-date-ideas | 30 self-date ideas with an affiliate editor | wedding-brand voice |
+| https://classpop.com/magazine/solo-date-ideas | 37 ideas grouped by creative, foodie, at-home, DIY, free | class-marketplace funnel |
+| https://www.momooze.com/solo-date-ideas/ | 37+ ideas with wellbeing claims | self-love framing, unsourced claims |
+
+What we can do better (hypotheses to test, not findings): a very crowded head term with many 20-50 item lists. Differentiate by planning (budget, time, safety basics, what to bring) rather than another list. Calm cites a safety tip about well-lit public spaces; we should source any safety advice ourselves.

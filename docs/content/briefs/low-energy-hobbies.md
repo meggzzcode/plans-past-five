@@ -46,3 +46,35 @@ PENDING COWORK
 
 ## Product shortlist
 PENDING COWORK
+
+---
+
+# Cowork research 2026-11-18
+
+## C1 audience and keyword research
+
+- Primary keyword candidate (author judgement, NOT validated by any volume tool): low energy hobbies
+- Related keyword candidates (from competitor titles and headings, not a keyword tool): NOT FOUND (not researched in this pass)
+- Google autocomplete suggestions: NOT FOUND (not collected; no sanctioned autocomplete tool in this pass)
+- Related searches / People Also Ask: NOT FOUND (search tool returns result pages, not SERP features)
+- Pinterest search suggestions: NOT FOUND (requires the owner's Pinterest login; not used)
+- Google Trends direction / date range: NOT FOUND (Trends not available in this pass); no volume or difficulty numbers exist for this topic in this file
+- Seasonal pattern: NOT FOUND (qualitative guess only if owner wants one: ask)
+- Community questions with links: NOT FOUND (communities such as Reddit were not read in this pass)
+- Product-related searches: NOT FOUND
+- Cannibalization risk vs our other articles: see the roadmap table; author assessment, unvalidated: HIGH with affordable-hobbies-under-25 and how-to-find-a-hobby-as-an-adult
+- Intended traffic source: Google search plus Pinterest (per EDITORIAL-STRATEGY.md); no evidence gathered either way
+
+## C2 competitor reading
+
+Method: ran "low energy hobbies for after work" in a live web search 2026-11-18 and recorded top results. "Covers" and "misses" come from result titles/snippets only; full pages were NOT read. No wording, photos or data copied.
+
+| URL | Covers | Misses / angle |
+|---|---|---|
+| https://www.bustle.com/life/low-effort-commitment-hobbies-to-try | 8 low-effort ways to have fun | short listicle |
+| https://www.flowmagazine.com/diy-crafts/creative-hobbies-little-energy/ | 5 creative hobbies needing little energy | few items |
+| https://bibliolifestyle.com/low-energy-hobbies-for-an-overstimulated-brain/ | 5 low-energy hobbies: coloring, puzzles, slow baking | wellbeing-style framing; we avoid medical claims |
+| https://vitalibrary.com/?p=30867 | levels of effort, 5-15 minute starters | wellness framing |
+| https://thismonthscraft.com/blogs/news/5-after-work-hobbies-you-can-start-today-no-planning-required | no-prep craft hobbies | subscription-box pitch |
+
+What we can do better (hypotheses to test, not findings): tier hobbies by minutes and set-up effort (5, 15, 30 min), name what to buy vs already own, avoid depression/ADHD/medical framing.

@@ -48,3 +48,35 @@ PENDING COWORK
 
 ## Product shortlist
 PENDING COWORK
+
+---
+
+# Cowork research 2026-11-18
+
+## C1 audience and keyword research
+
+- Primary keyword candidate (author judgement, NOT validated by any volume tool): pickleball for beginners
+- Related keyword candidates (from competitor titles and headings, not a keyword tool): NOT FOUND (not researched in this pass)
+- Google autocomplete suggestions: NOT FOUND (not collected; no sanctioned autocomplete tool in this pass)
+- Related searches / People Also Ask: NOT FOUND (search tool returns result pages, not SERP features)
+- Pinterest search suggestions: NOT FOUND (requires the owner's Pinterest login; not used)
+- Google Trends direction / date range: NOT FOUND (Trends not available in this pass); no volume or difficulty numbers exist for this topic in this file
+- Seasonal pattern: NOT FOUND (qualitative guess only if owner wants one: ask)
+- Community questions with links: NOT FOUND (communities such as Reddit were not read in this pass)
+- Product-related searches: NOT FOUND
+- Cannibalization risk vs our other articles: see the roadmap table; author assessment, unvalidated: HIGH with none obvious in the 30; verify
+- Intended traffic source: Google search plus Pinterest (per EDITORIAL-STRATEGY.md); no evidence gathered either way
+
+## C2 competitor reading
+
+Method: ran "pickleball for beginners" in a live web search 2026-11-18 and recorded top results. "Covers" and "misses" come from result titles/snippets only; full pages were NOT read. No wording, photos or data copied.
+
+| URL | Covers | Misses / angle |
+|---|---|---|
+| https://pickleball.com/learn/pickleball-101-new-players-guide-1 | new players guide; says racket-sport experience is not required | brand/league site |
+| https://playpickleball.com/pickleball-for-beginners | beginner guide; clubs often have free demo paddles | directory site |
+| https://www.bounce.game/blog/pickleball-for-beginners | 12-minute guide, rules, equipment, drills (Feb 2026) | venue brand |
+| https://www.scheels.com/e/post/pickleball-for-beginners.html | beginners guide; can play on many hard surfaces | retailer |
+| https://www.womanandhome.com/us/health-wellbeing/pickleball-for-beginners/ | first-session account, tennis comparison | magazine experience piece |
+
+What we can do better (hypotheses to test, not findings): very crowded and gear-brand dominated. Use official rules (USA Pickleball) with a cited date, explain open play etiquette and a beginner budget; verify paddle claims on manufacturer pages.
