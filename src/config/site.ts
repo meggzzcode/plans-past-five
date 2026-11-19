@@ -17,7 +17,7 @@ export const site = {
   philosophy: "Your career can be a big part of your life without being your whole life.",
   description:
     "Creative hobbies, cute weekend plans, solo dates, new friendships and little adventures for women building a life they love outside of work.",
-  contactEmail: "", // set by owner; contact page hides the address until filled in
+  contactEmail: "hello@planspastfive.com", // owner confirmed 2026-11-19; mailbox round-trip test is Cowork workstream F
   editorialByline: "The Plans Past Five Editors",
   social: {
     pinterest: "", // e.g. https://pinterest.com/planspastfive

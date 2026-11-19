@@ -33,31 +33,38 @@ export function pinterestCreateUrl(opts: {
 
 export type ShareOutcome = "shared" | "copied" | "cancelled" | "failed";
 
-type ShareNavigator = { share?: (d: ShareData) => Promise<void> };
+type ShareNavigator = {
+  share?: (d: ShareData) => Promise<void>;
+  canShare?: (d: ShareData) => boolean;
+};
 
 /**
- * "Send to the group chat": the native share sheet where it exists, otherwise copy the text.
- * A person closing the share sheet is not an error and does not trigger the copy fallback.
+ * "Send to the group chat": the ONE helper behind every send/share button. It tries the native
+ * share sheet (title, text and the canonical URL), and otherwise copies the text. A person closing
+ * the share sheet is not an error and does not trigger the copy fallback.
+ * Set `textIncludesUrl` when `text` already ends with the link, so a copy does not repeat it.
  */
 export async function sendToGroupChat(
-  data: { title: string; text: string; url?: string },
+  data: { title: string; text: string; url?: string; textIncludesUrl?: boolean; files?: File[] },
   nav: ShareNavigator | undefined = typeof navigator === "undefined" ? undefined : navigator,
   copy: (t: string) => Promise<boolean> = copyText,
 ): Promise<ShareOutcome> {
   if (nav && typeof nav.share === "function") {
+    const payload: ShareData = {
+      title: data.title,
+      text: data.text,
+      ...(data.url ? { url: data.url } : {}),
+    };
+    if (data.files?.length && nav.canShare?.({ files: data.files })) payload.files = data.files;
     try {
-      await nav.share({
-        title: data.title,
-        text: data.text,
-        ...(data.url ? { url: data.url } : {}),
-      });
+      await nav.share(payload);
       return "shared";
     } catch (e) {
       if (e instanceof Error && e.name === "AbortError") return "cancelled";
       // Any other failure: fall through to copying.
     }
   }
-  const full = data.url ? `${data.text}\n${data.url}` : data.text;
+  const full = data.url && !data.textIncludesUrl ? `${data.text}\n${data.url}` : data.text;
   return (await copy(full)) ? "copied" : "failed";
 }
 

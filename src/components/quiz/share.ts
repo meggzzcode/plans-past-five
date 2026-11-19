@@ -1,11 +1,11 @@
 /**
  * Client-side sharing for a quiz result: render the card to a PNG with <canvas> (no backend),
- * then share it with the Web Share API where available, else copy the link. Nothing personal is
+ * then hand it to the shared sendToGroupChat helper (src/lib/share.ts). Nothing personal is
  * in the card or the link: only the persona, three hobby names and the encoded quiz choices.
  */
 import { images } from "@/data/images";
 import type { Hobby } from "@/data/hobbies";
-import { shareText, wrapText, type Persona } from "@/lib/finder";
+import { wrapText, type Persona } from "@/lib/finder";
 import { site } from "@/config/site";
 
 const W = 1080;
@@ -106,44 +106,4 @@ export function downloadBlob(blob: Blob, name: string) {
   a.download = name;
   a.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
-}
-
-async function copy(text: string) {
-  try {
-    await navigator.clipboard.writeText(text);
-    return true;
-  } catch {
-    return false;
-  }
-}
-
-export async function copyLink(url: string): Promise<string> {
-  return (await copy(url))
-    ? "Link copied. Send it to a friend."
-    : "Couldn't copy. Copy the address bar instead.";
-}
-
-/** Native share sheet (with the PNG when the browser allows files), else copy the link. */
-export async function shareResult(persona: Persona, picks: Hobby[], url: string): Promise<string> {
-  const text = shareText(persona, picks[0]?.name);
-  const data: ShareData = { title: `My hobby era: ${persona.name}`, text, url };
-  if (typeof navigator !== "undefined" && typeof navigator.share === "function") {
-    try {
-      const file = new File([await renderCardPng(persona, picks)], fileNameFor(persona), {
-        type: "image/png",
-      });
-      if (navigator.canShare?.({ files: [file] })) data.files = [file];
-    } catch {
-      /* share without the image */
-    }
-    try {
-      await navigator.share(data);
-      return "";
-    } catch (e) {
-      if ((e as Error)?.name === "AbortError") return "";
-    }
-  }
-  return (await copy(`${text.split("\n")[0]}\n${url}`))
-    ? "Link copied. Paste it anywhere."
-    : "Couldn't copy. Copy the address bar instead.";
 }

@@ -32,6 +32,7 @@ export function ShopSections({
   afterPick,
   alsoNeed,
   cardClassName,
+  subheadingAs: Sub = "h4",
 }: {
   pick?: ShopItem | undefined;
   groups: ShopGroup[];
@@ -42,17 +43,19 @@ export function ShopSections({
   /** Other essentials the list needs, named under the one pick. */
   alsoNeed?: string[];
   cardClassName?: string;
+  /** Level of the group headings: "h3" under an h2 block, "h4" (default) under an h3 block. */
+  subheadingAs?: "h3" | "h4";
 }) {
   return (
     <>
       {note && <p className="mt-3 max-w-prose text-sm text-espresso">{note}</p>}
       {pick && (
         <section className="mt-6" aria-label="If you only buy one thing">
-          <h4 className="font-display text-xl italic text-cherry">
+          <Sub className="font-display text-xl italic text-cherry">
             {alsoNeed && alsoNeed.length > 0
               ? "Your one pick to start"
               : "If you only buy one thing, buy this"}
-          </h4>
+          </Sub>
           <div className="mt-3">
             <ProductCard
               featured
@@ -71,9 +74,9 @@ export function ShopSections({
         .filter((g) => g.items.length > 0)
         .map((g) => (
           <section key={g.heading} className="mt-8" aria-label={g.heading}>
-            <h4 className={g.quiet ? "font-display text-xl italic" : "font-display text-xl"}>
+            <Sub className={g.quiet ? "font-display text-xl italic" : "font-display text-xl"}>
               {g.heading}
-            </h4>
+            </Sub>
             <div className="mt-4 grid gap-8 sm:grid-cols-2">
               {g.items.map((it) => (
                 <div key={it.product.id} className="min-w-0">

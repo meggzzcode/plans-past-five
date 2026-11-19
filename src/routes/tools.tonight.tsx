@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { Check, Copy, RefreshCw, Share2 } from "lucide-react";
+import { RefreshCw } from "lucide-react";
 import {
   formatMinutes,
   parseTonightSearch,
@@ -19,6 +19,7 @@ import { images } from "@/data/images";
 import { SaveButton } from "@/components/editorial/SaveButton";
 import { TonightExtras } from "@/components/share/TonightExtras";
 import { NearBox } from "@/components/share/Near";
+import { ShareActions } from "@/components/share/ShareActions";
 import { Kicker } from "@/components/editorial/Section";
 import { ChoicePill } from "@/components/planner/ChoicePill";
 import { useHydrated, waitingProps } from "@/lib/use-hydrated";
@@ -105,14 +106,12 @@ function Tonight() {
   const [init] = useState(() => parseTonightSearch(search));
   const [input, setInput] = useState<TonightInput>(init.input);
   const [seed, setSeed] = useState(init.seed);
-  const [copied, setCopied] = useState<"idle" | "yes" | "no">("idle");
   const hydrated = useHydrated();
   const formRef = useRef<HTMLFormElement>(null);
   // The radios are uncontrolled (so a choice made before scripts load is never overwritten); this
   // rebuilds them when the answers change from outside the form (the "change one answer" buttons).
   const [formKey, setFormKey] = useState(0);
   const result = tonightIdeas(input, seed);
-  const canShare = typeof navigator !== "undefined" && typeof navigator.share === "function";
 
   // Keep the address bar on the exact answers so refresh and a copied link restore them.
   const href = tonightHref(input, seed);
@@ -150,35 +149,6 @@ function Tonight() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const text = () => tonightText(input, result.suggestions, canonicalUrl(href));
-  const copy = async () => {
-    try {
-      await navigator.clipboard.writeText(text());
-      setCopied("yes");
-    } catch {
-      try {
-        const ta = document.createElement("textarea");
-        ta.value = text();
-        ta.style.position = "fixed";
-        ta.style.opacity = "0";
-        document.body.appendChild(ta);
-        ta.select();
-        const ok = document.execCommand("copy");
-        ta.remove();
-        setCopied(ok ? "yes" : "no");
-      } catch {
-        setCopied("no");
-      }
-    }
-  };
-  const share = async () => {
-    try {
-      await navigator.share({ title: "Ideas for tonight", text: text() });
-    } catch {
-      // Cancelled or blocked: nothing to do.
-    }
-  };
-
   return (
     <>
       <section className="bg-matcha/70">
@@ -311,36 +281,15 @@ function Tonight() {
                 <RefreshCw className="h-4 w-4" />
                 Shuffle ideas
               </button>
-              <button
-                type="button"
-                onClick={copy}
-                {...waitingProps(hydrated)}
-                className="inline-flex min-h-11 items-center gap-2 border-2 border-ink/25 px-4 py-2 text-sm font-semibold text-ink hover:border-cherry disabled:cursor-wait disabled:opacity-60"
-              >
-                {copied === "yes" ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                {copied === "yes" ? "Copied" : "Copy as text"}
-              </button>
-              {canShare && (
-                <button
-                  type="button"
-                  onClick={share}
-                  {...waitingProps(hydrated)}
-                  className="inline-flex min-h-11 items-center gap-2 border-2 border-ink/25 px-4 py-2 text-sm font-semibold text-ink hover:border-cherry disabled:cursor-wait disabled:opacity-60"
-                >
-                  <Share2 className="h-4 w-4" />
-                  Share
-                </button>
-              )}
             </div>
+            <ShareActions
+              className="mt-3"
+              title="Ideas for tonight"
+              text={tonightText(input, result.suggestions, canonicalUrl(href))}
+              url={canonicalUrl(href)}
+              textIncludesUrl
+            />
             <NearBox className="mt-6 max-w-xl" />
-            <p
-              role="status"
-              aria-live="polite"
-              className="mt-3 min-h-5 text-sm font-medium text-garden"
-            >
-              {copied === "yes" && "Copied with a link to these ideas."}
-              {copied === "no" && "Couldn't copy. Your browser blocked it."}
-            </p>
           </>
         ) : (
           <div className="border-2 border-dashed border-cherry bg-cream p-8 text-center">

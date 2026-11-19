@@ -2,15 +2,12 @@ import { useCallback, useState } from "react";
 import {
   Bookmark,
   BookmarkCheck,
-  Check,
-  Copy,
   Feather,
   Footprints,
   Moon,
   Printer,
   RefreshCw,
   Repeat,
-  Share2,
   TriangleAlert,
 } from "lucide-react";
 import { Bow, Flower, Sparkle, Star } from "@/components/brand/Doodles";
@@ -29,6 +26,7 @@ import {
 import { canonicalUrl } from "@/lib/share";
 import { nearTermFor } from "@/lib/near";
 import { NearBox, NearLink } from "@/components/share/Near";
+import { ShareActions } from "@/components/share/ShareActions";
 import { cn } from "@/lib/utils";
 import { useHydrated, waitingProps } from "@/lib/use-hydrated";
 import { imageSrc, pickImages, tintFor } from "./planImage";
@@ -183,47 +181,12 @@ export function PlanResult({
   onRelax,
   basedOn,
 }: Props) {
-  const [copied, setCopied] = useState<"idle" | "yes" | "no">("idle");
   const hydrated = useHydrated();
   const wait = waitingProps(hydrated);
   const lighter = lighterPlan(plan);
   const imgs = pickImages(plan.slots.map((s) => s.activity));
-  const canShare = typeof navigator !== "undefined" && typeof navigator.share === "function";
 
-  const link = () => canonicalUrl(planHref(plan.input, plan.seed, plan.ids));
   const planUrl = canonicalUrl(planHref(plan.input, plan.seed, plan.ids));
-
-  const copy = async () => {
-    const text = planText(plan, link());
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopied("yes");
-    } catch {
-      try {
-        const t = document.createElement("textarea");
-        t.value = text;
-        t.setAttribute("readonly", "");
-        t.style.position = "fixed";
-        t.style.opacity = "0";
-        document.body.appendChild(t);
-        t.select();
-        const ok = document.execCommand("copy");
-        document.body.removeChild(t);
-        setCopied(ok ? "yes" : "no");
-      } catch {
-        setCopied("no");
-      }
-    }
-    window.setTimeout(() => setCopied("idle"), 2500);
-  };
-
-  const share = async () => {
-    try {
-      await navigator.share({ title: plan.title, text: planText(plan, link()) });
-    } catch {
-      // Cancelled by the person, or not allowed here: nothing to do.
-    }
-  };
 
   const btn = "inline-flex min-h-11 items-center gap-2 px-4 py-2 text-sm font-semibold";
   return (
@@ -374,40 +337,6 @@ export function PlanResult({
           </button>
           <button
             type="button"
-            disabled={plan.filled === 0}
-            onClick={copy}
-            {...wait}
-            className={cn(
-              btn,
-              "border-2 border-ink/25 text-ink hover:border-cherry disabled:cursor-wait disabled:opacity-60",
-              focusRing,
-            )}
-          >
-            {copied === "yes" ? (
-              <Check className="h-4 w-4" aria-hidden />
-            ) : (
-              <Copy className="h-4 w-4" aria-hidden />
-            )}
-            {copied === "yes" ? "Copied" : "Copy plan"}
-          </button>
-          {canShare && (
-            <button
-              type="button"
-              disabled={plan.filled === 0}
-              onClick={share}
-              {...wait}
-              className={cn(
-                btn,
-                "border-2 border-ink/25 text-ink hover:border-cherry disabled:cursor-wait disabled:opacity-60",
-                focusRing,
-              )}
-            >
-              <Share2 className="h-4 w-4" aria-hidden />
-              Share
-            </button>
-          )}
-          <button
-            type="button"
             onClick={() => window.print()}
             {...wait}
             className={cn(
@@ -421,6 +350,15 @@ export function PlanResult({
           </button>
         </div>
         {plan.filled > 0 && (
+          <ShareActions
+            className="mt-3"
+            title={plan.title}
+            text={planText(plan, planUrl)}
+            url={planUrl}
+            textIncludesUrl
+          />
+        )}
+        {plan.filled > 0 && (
           <div className="mt-3 space-y-3">
             <NearBox />
           </div>
@@ -431,8 +369,6 @@ export function PlanResult({
           className="mt-3 min-h-5 text-sm font-medium text-garden"
         >
           {saved && "Saved on this device. No account."}
-          {copied === "yes" && !saved && "Copied with a link to this plan."}
-          {copied === "no" && "Couldn't copy. Your browser blocked it."}
         </p>
       </div>
     </div>

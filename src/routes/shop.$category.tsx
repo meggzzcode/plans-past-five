@@ -60,7 +60,7 @@ export const Route = createFileRoute("/shop/$category")({
         ],
       };
     return seo({
-      title: `${c.name}: ${c.dek}`,
+      title: `${c.name}: Shop Your Hobby`,
       description: c.intro,
       path: `/shop/${c.slug}`,
     });
@@ -119,9 +119,11 @@ function CollectionPage() {
       {(hasKit || verified) && (
         <section className="mx-auto max-w-7xl px-5 md:px-8" aria-label="The picks">
           {hasKit ? (
-            kitIds.map((id) => <StarterKit key={id} kit={id} currentCollection={c.slug} />)
+            kitIds.map((id) => (
+              <StarterKit key={id} kit={id} currentCollection={c.slug} headingAs="h2" />
+            ))
           ) : (
-            <ShopMyHobby collection={c.slug} title={`Start here: ${c.name}`} />
+            <ShopMyHobby collection={c.slug} title={`Start here: ${c.name}`} headingAs="h2" />
           )}
         </section>
       )}

@@ -38,7 +38,7 @@ export const Route = createFileRoute("/journal/$slug")({
     const cat = getCategory(a.category);
     const path = `/journal/${a.slug}`;
     return seo({
-      title: a.title,
+      title: articleMetaTitle(a.slug, a.title),
       description: a.dek,
       path,
       type: "article",

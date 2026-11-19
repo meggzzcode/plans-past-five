@@ -1,7 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Clock, Wallet, Zap, Share2, Download } from "lucide-react";
-import { findHobbies, plannerSearch, type Constraint, type FinderAnswers } from "@/lib/finder";
+import { Clock, Wallet, Zap, Download } from "lucide-react";
+import {
+  findHobbies,
+  plannerSearch,
+  shareText,
+  type Constraint,
+  type FinderAnswers,
+} from "@/lib/finder";
 import { QUIZ_ORDER, type QuizKey } from "@/lib/quiz-flow";
 import type { Hobby } from "@/data/hobbies";
 import { images, type ImageKey } from "@/data/images";
@@ -16,7 +22,9 @@ import { canonicalUrl } from "@/lib/share";
 import { track } from "@/lib/track";
 import { answerLabel } from "./questions";
 import { backBtn } from "./QuizStep";
-import { copyLink, downloadBlob, fileNameFor, renderCardPng, shareResult } from "./share";
+import { downloadBlob, fileNameFor, renderCardPng } from "./share";
+import { ShareActions } from "@/components/share/ShareActions";
+import { useHydrated } from "@/lib/use-hydrated";
 
 const personaImage: Record<PersonaKey, ImageKey> = {
   creative: "junkJournal",
@@ -167,10 +175,17 @@ export function ResultsView({
       : null;
   const img = images[personaImage[persona.key]];
   const url = () => canonicalUrl(`${window.location.pathname}${window.location.search}`);
-  const share = async () => {
-    setBusy(true);
-    setNote(await shareResult(persona, picks, url()));
-    setBusy(false);
+  const hydrated = useHydrated();
+  const shareFiles = async () => {
+    try {
+      return [
+        new File([await renderCardPng(persona, picks)], fileNameFor(persona), {
+          type: "image/png",
+        }),
+      ];
+    } catch {
+      return undefined; // share without the image
+    }
   };
   const savePng = async () => {
     setBusy(true);
@@ -178,7 +193,7 @@ export function ResultsView({
       downloadBlob(await renderCardPng(persona, picks), fileNameFor(persona));
       setNote("Image saved.");
     } catch {
-      setNote("Couldn't make the image on this browser. Try Share instead.");
+      setNote("Couldn't make the image on this browser. Try Send to the group chat instead.");
     }
     setBusy(false);
   };
@@ -304,9 +319,15 @@ export function ResultsView({
         </Link>
         {strong && (
           <div className="no-print flex w-full max-w-sm flex-col gap-2">
-            <button type="button" onClick={share} disabled={busy} className={secondaryBtn}>
-              <Share2 className="h-4 w-4" aria-hidden /> Send this to the group chat
-            </button>
+            {hydrated && (
+              <ShareActions
+                title={`My hobby era: ${persona.name}`}
+                text={shareText(persona, picks[0]?.name)}
+                url={url()}
+                prepareFiles={shareFiles}
+                className="justify-center"
+              />
+            )}
             <div className="flex justify-center gap-5 text-sm font-semibold">
               <button
                 type="button"
@@ -314,13 +335,6 @@ export function ResultsView({
                 className="inline-flex items-center gap-1.5 text-ink underline underline-offset-4"
               >
                 <Download className="h-4 w-4" aria-hidden /> Save as image
-              </button>
-              <button
-                type="button"
-                onClick={async () => setNote(await copyLink(url()))}
-                className="text-ink underline underline-offset-4"
-              >
-                Copy link
               </button>
             </div>
           </div>

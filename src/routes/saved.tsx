@@ -1,20 +1,20 @@
-import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, Copy, Send, X } from "lucide-react";
+import { ArrowUpRight, X } from "lucide-react";
 import { useSaved, type SavedItem, type SavedKind } from "@/lib/saved";
-import { buildListText, copyText, productsWithStatus, useShopList } from "@/lib/shoplist";
+import { buildListText, productsWithStatus, useShopList } from "@/lib/shoplist";
 import { linkableFor, verifiedCatalog } from "@/data/catalog";
 import { OUTBOUND_BUY_REL, resolveProductLink } from "@/config/affiliate";
 import { linkLabel } from "@/components/commerce/labels";
 import { ShopDisclosure } from "@/components/commerce/ProductCard";
 import { track } from "@/lib/track";
-import { outcomeMessage, sendToGroupChat } from "@/lib/share";
+import { canonicalUrl } from "@/lib/share";
 import { hrefFor, savedShareText } from "@/lib/saved-share";
 import { seo } from "@/lib/seo";
 import { NAMES } from "@/components/layout/nav";
 import { PageHero } from "@/components/editorial/Section";
 import { Transfer } from "@/components/saved/Transfer";
 import { SavedMeta } from "@/components/saved/SavedMeta";
+import { ShareActions } from "@/components/share/ShareActions";
 import { SavedExtras } from "@/components/share/SavedExtras";
 import { NearBox } from "@/components/share/Near";
 import { Star, Bow } from "@/components/brand/Doodles";
@@ -42,41 +42,30 @@ const labels: Record<SavedKind, string> = {
 const ACTION =
   "inline-flex min-h-11 items-center gap-1.5 px-1 text-sm font-semibold text-espresso hover:text-cherry focus-visible:outline focus-visible:outline-2 focus-visible:outline-cherry";
 
-/** Copy-as-text and Send to the group chat for one block of text. */
-function ShareRow({ title, text, url }: { title: string; text: string; url?: string }) {
-  const [msg, setMsg] = useState("");
-  const flash = (m: string) => {
-    setMsg(m);
-    setTimeout(() => setMsg(""), 2500);
-  };
+/** Send to the group chat and Copy link/list for one block of text (the shared ShareActions). */
+function ShareRow({
+  title,
+  text,
+  url,
+  textIncludesUrl,
+  copyLabel,
+}: {
+  title: string;
+  text: string;
+  url?: string;
+  textIncludesUrl?: boolean;
+  copyLabel?: string;
+}) {
   return (
-    <div className="relative z-10 flex flex-wrap items-center gap-x-4">
-      <button
-        type="button"
-        className={ACTION}
-        onClick={async () =>
-          flash(
-            (await copyText(url ? `${text}\n${url}` : text))
-              ? "Copied as text."
-              : outcomeMessage.failed,
-          )
-        }
-      >
-        <Copy className="h-4 w-4" aria-hidden /> Copy as text
-      </button>
-      <button
-        type="button"
-        className={ACTION}
-        onClick={async () =>
-          flash(outcomeMessage[await sendToGroupChat({ title, text, ...(url ? { url } : {}) })])
-        }
-      >
-        <Send className="h-4 w-4" aria-hidden /> Send to the group chat
-      </button>
-      <span role="status" aria-live="polite" className="text-xs text-muted-foreground empty:hidden">
-        {msg}
-      </span>
-    </div>
+    <ShareActions
+      variant="link"
+      className="relative z-10"
+      title={title}
+      text={text}
+      {...(url ? { url } : {})}
+      {...(textIncludesUrl ? { textIncludesUrl } : {})}
+      {...(copyLabel ? { copyLabel } : {})}
+    />
   );
 }
 
@@ -281,7 +270,12 @@ function Saved() {
                           </button>
                         </div>
                         {(i.kind === "plan" || i.kind === "hobby") && (
-                          <ShareRow title={i.title} {...savedShareText(i)} />
+                          <ShareRow
+                            title={i.title}
+                            text={savedShareText(i).text}
+                            url={canonicalUrl(hrefFor(i))}
+                            textIncludesUrl={i.kind === "plan" && !!i.plan}
+                          />
                         )}
                         <div className="relative z-10">
                           <SavedExtras item={i} />

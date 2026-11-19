@@ -131,3 +131,37 @@ export function modifiedAfterPublish(a: {
   const later = [a.updatedAt, a.verifiedAt].filter((d): d is string => !!d && d > a.publishedAt);
   return later.sort().at(-1);
 }
+
+/**
+ * Shorter search-result titles for the articles whose on-page headline is long. Only the `<title>`
+ * and social title change: the H1, the slug and the dek stay as written. Keep each under about 48
+ * characters so title plus brand fits in roughly 65.
+ */
+export const ARTICLE_META_TITLES: Record<string, string> = {
+  "how-to-find-a-hobby-as-an-adult": "How to Find a Hobby as an Adult",
+  "how-to-start-air-dry-clay": "Air-Dry Clay for Beginners: A Starter Guide",
+  "flower-arranging-as-a-hobby": "Arrange Grocery-Store Flowers Like a Florist",
+  "junk-journaling-supplies-for-beginners": "Junk Journaling Supplies: A Small Starter List",
+  "watercolor-painting-for-beginners": "Watercolor for Beginners: 3 Little Paintings",
+  "at-home-creative-weekend": "At-Home Creative Weekend: Clay, Paint, Journal",
+  "creative-hobby-starter-kits-worth-considering": "Are Craft Starter Kits Worth It?",
+  "hobbies-to-try-when-life-feels-like-work-sleep-repeat": "35 Hobbies When Life Is Work, Sleep, Repeat",
+  "how-to-get-into-recreational-cycling-as-an-adult": "How to Start Cycling Again as an Adult",
+  "how-to-start-a-book-club": "How to Start a Book Club People Show Up To",
+  "how-to-plan-a-solo-saturday": "How to Plan a Solo Saturday You'll Enjoy",
+  "solo-date-ideas": "30 Solo Date Ideas You'll Actually Enjoy",
+  "things-to-do-on-the-weekend": "20 Weekend Plans for Every Mood",
+  "how-to-start-playing-tennis-as-an-adult": "How to Start Playing Tennis as an Adult",
+  "how-to-host-a-craft-night": "How to Host a Craft Night: 5 Easy Projects",
+  "creative-hobbies-you-can-start-at-home": "21 Creative Hobbies to Start at Home",
+  "how-to-host-a-paint-night-at-home": "How to Host a Paint Night at Home",
+  "affordable-hobbies-under-25": "15 Affordable Hobbies on a Small Budget",
+  "how-to-start-a-reading-journal": "How to Start a Reading Journal You'll Keep",
+  "low-energy-hobbies": "12 Low-Energy Hobbies for Tired Evenings",
+  "how-to-start-embroidery": "Your First Embroidery Hoop in One Evening",
+  "active-hobbies-for-women-who-dont-love-the-gym": "15 Active Hobbies If You Don't Love the Gym",
+};
+
+/** The `<title>` for an article: the short override when one exists, else its headline. */
+export const articleMetaTitle = (slug: string, headline: string) =>
+  ARTICLE_META_TITLES[slug] ?? headline;

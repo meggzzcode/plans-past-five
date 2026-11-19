@@ -33,7 +33,7 @@ export const Route = createFileRoute("/hobbies/$slug")({
         meta: [{ title: `Hobby not found | ${site.name}` }, { name: "robots", content: "noindex" }],
       };
     return seo({
-      title: `How to Start ${hobbyTitleName(h.name)}: What to Buy and Your First Session`,
+      title: `How to Start ${hobbyTitleName(h.name)}: What to Buy`,
       description: `${h.description} First session: ${h.timeLabel.toLowerCase()}${
         h.startupBudget
           ? `, startup roughly $${h.startupBudget.low} to $${h.startupBudget.high}`

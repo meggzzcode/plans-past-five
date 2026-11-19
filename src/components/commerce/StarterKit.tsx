@@ -47,8 +47,11 @@ export function StarterKit({
   title,
   catalog = verifiedCatalog,
   currentCollection,
+  headingAs: Heading = "h3",
 }: {
   kit: Kit | string;
+  /** "h2" when the kit sits straight under the page's h1 (collection pages); "h3" inside articles. */
+  headingAs?: "h2" | "h3";
   title?: string;
   catalog?: CatalogProduct[];
   /** Collection slug of the page showing the kit, so the "more in" link never points at itself. */
@@ -97,7 +100,7 @@ export function StarterKit({
   return (
     <aside className="not-prose my-12 border-y-2 border-ink py-8" aria-label={kit.name}>
       <p className="kicker text-cherry">{isKit ? "Starter kit" : "Where to start"}</p>
-      <h3 className="mt-2 font-display text-3xl italic">{heading}</h3>
+      <Heading className="mt-2 font-display text-3xl italic">{heading}</Heading>
       <p className="mt-2 text-muted-foreground">{kit.dek}</p>
       {!isKit && (
         <p className="mt-2 text-sm font-semibold text-espresso" data-kit-incomplete>
@@ -129,6 +132,7 @@ export function StarterKit({
         </ul>
       )}
       <ShopSections
+        subheadingAs={Heading === "h2" ? "h3" : "h4"}
         pick={pick ? itemOf(pick) : undefined}
         groups={groups}
         placement={`kit-${kit.id}`}

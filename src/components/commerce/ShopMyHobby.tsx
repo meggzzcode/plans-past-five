@@ -1,13 +1,14 @@
 import { useEffect, useId, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "@tanstack/react-router";
-import { Copy, Printer } from "lucide-react";
+import { Printer } from "lucide-react";
 import { exportPageUrl } from "@/lib/export-links";
 import { getHobby } from "@/data/hobbies";
 import { articlesForHobby } from "@/content";
 import { selectProducts, verifiedCatalog, type CatalogProduct } from "@/data/catalog";
-import { buildListText, copyText, neededProducts, useShopList } from "@/lib/shoplist";
+import { buildListText, neededProducts, useShopList } from "@/lib/shoplist";
 import { track } from "@/lib/track";
+import { ShareActions } from "@/components/share/ShareActions";
 import { ShopDisclosure, primaryButtonCls } from "./ProductCard";
 import { ShopSections } from "./ShopSections";
 import { groupsFor } from "./ShopTheArticle";
@@ -34,6 +35,7 @@ export function ShopMyHobby({
   article,
   title,
   dek,
+  headingAs: Heading = "h3",
   catalog = verifiedCatalog,
   today = new Date().toISOString().slice(0, 10),
 }: {
@@ -42,6 +44,8 @@ export function ShopMyHobby({
   article?: string;
   title?: string;
   dek?: string;
+  /** "h2" when the list sits straight under the page's h1 (collection pages); "h3" inside articles. */
+  headingAs?: "h2" | "h3";
   catalog?: CatalogProduct[];
   /** Overridable for deterministic output in tests. */
   today?: string;
@@ -55,7 +59,6 @@ export function ShopMyHobby({
     catalog,
   );
   const { state, ready, setMany, clear } = useShopList();
-  const [msg, setMsg] = useState("");
   const [mounted, setMounted] = useState(false);
   const printId = useId();
   const h = hobby ? getHobby(hobby) : undefined;
@@ -102,19 +105,12 @@ export function ShopMyHobby({
     </div>
   );
 
-  const copy = async () => {
-    const ok = await copyText(text);
-    setMsg(
-      ok
-        ? "Copied. Paste it into Notes or a message."
-        : "Couldn't copy. Try the print view instead.",
-    );
+  const onShare = (action: "send" | "copy") =>
     track("shop_article_interaction", {
-      action: "copy-list",
+      action: action === "copy" ? "copy-list" : "send-list",
       count: needed.length,
       ...(hobby ? { hobby } : {}),
     });
-  };
   const print = () => {
     document.body.setAttribute("data-print-shop", printId);
     track("shop_article_interaction", {
@@ -132,7 +128,7 @@ export function ShopMyHobby({
     <section className="not-prose my-12 bg-butter/40 px-5 py-8 md:px-8" aria-label={heading}>
       <style>{printCss(printId)}</style>
       <p className="kicker text-cherry">Shop your hobby</p>
-      <h3 className="mt-2 font-display text-3xl italic">{heading}</h3>
+      <Heading className="mt-2 font-display text-3xl italic">{heading}</Heading>
       <p className="mt-2 text-muted-foreground">
         {dek ??
           "Start with the first pick; the rest can wait. Tap the list icon to save what you want. It stays in this browser."}
@@ -154,13 +150,13 @@ export function ShopMyHobby({
         </button>
         {needed.length > 0 && (
           <>
-            <button type="button" className={btn} onClick={copy}>
-              <Copy className="h-4 w-4" /> Copy my list
-            </button>
             <button type="button" className={btn} onClick={print}>
               <Printer className="h-4 w-4" /> Print my list
             </button>
           </>
+        )}
+        {needed.length > 0 && (
+          <ShareActions title={listTitle} text={text} copyLabel="Copy my list" onShare={onShare} />
         )}
         {ready && Object.keys(state).length > 0 && (
           <button
@@ -172,11 +168,12 @@ export function ShopMyHobby({
           </button>
         )}
         <p className="text-sm" role="status" aria-live="polite">
-          {ready && needed.length > 0 ? `${needed.length} on your list` : ""} {msg}
+          {ready && needed.length > 0 ? `${needed.length} on your list` : ""}
         </p>
       </div>
 
       <ShopSections
+        subheadingAs={Heading === "h2" ? "h3" : "h4"}
         pick={grouped.pick}
         groups={grouped.groups}
         placement="hobby"
