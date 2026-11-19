@@ -455,6 +455,18 @@ function fail(errors, warnings = []) {
   process.exit(1);
 }
 
+/** Process notes that belong in the research CSV, not in the public JavaScript bundle. */
+const INTERNAL_NOTE =
+  /\b(?:manufacturer|maker) page (?:not yet checked|not found|was not|could not)|\bread (?:in browser|20\d\d)|\bcowork\b|\bTODO\b|\bto confirm\b/i;
+const FALLBACK_LIMITATION = "Check the listing for the current version and details before you buy.";
+
+/** What ships to the browser: hold reasons and internal process notes are dropped; consumer-relevant limitations stay. */
+function publicProduct(p) {
+  const kept = p.limitations.filter((l) => !INTERNAL_NOTE.test(l));
+  const limitations = kept.length ? kept : [FALLBACK_LIMITATION];
+  return { ...p, limitations, ...(p.hold ? { hold: "held" } : {}) };
+}
+
 async function main() {
   const args = process.argv.slice(2);
   if (args.includes("--help") || args.includes("-h")) {
@@ -506,7 +518,7 @@ async function main() {
 import type { CatalogProduct } from "./catalog";
 
 export const generatedCatalog: CatalogProduct[] = ${JSON.stringify(
-    products.map((p) => (p.hold ? { ...p, hold: "held" } : p)),
+    products.map(publicProduct),
     null,
     2,
   )};

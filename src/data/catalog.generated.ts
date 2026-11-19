@@ -41,7 +41,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Designs are a mixed assortment and include seasonal prints",
       "Residue and repositioning claims are the listing's, not tested by us",
-      "Manufacturer page not yet checked",
     ],
     researchSources: ["https://www.amazon.com/dp/B08L5PB8N6"],
     lastVerified: "2026-11-18",
@@ -97,7 +96,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "One width only (10 mm)",
       "Variant colour range matters: confirm the Minimalist variant is selected",
-      "Manufacturer page not yet checked",
     ],
     researchSources: ["https://www.amazon.com/dp/B0881M69D4"],
     lastVerified: "2026-11-18",
@@ -154,7 +152,6 @@ export const generatedCatalog: CatalogProduct[] = [
       "100 gsm paper will warp if the pages get glue-heavy; the listing does not promise it handles wet glue",
       "Thread-bound journals thicken at the spine as pages fill",
       "Colour is a variant (Blush)",
-      "Manufacturer page not yet checked",
     ],
     researchSources: ["https://www.amazon.com/dp/B08FC38BJ4"],
     lastVerified: "2026-11-18",
@@ -208,8 +205,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Glue sticks can wrinkle thin paper",
       "Not for bulky 3D items",
-      "Manufacturer page not yet checked",
-      "Scotch maker page (1.41 oz craft glue stick, read 2026-11-18) says acid free and photo safe in its text but its attribute table says Photo Safe: No, so photo-safe is not confirmed: keep it attributed to the listing",
       '2026-11-19 retry: RESOLVED by 3M\'s own pages. https://www.3m.com/3M/en_US/p/d/b10014172/ lists the Scotch Glue Stick (UPC 00051131761520) as non-toxic, acid free and photo safe; https://3m.com/3M/en_US/p/d/cbgnhw011067 (003, 1.41 oz, 40 g, "4 each/inner") says acid free (pH above 7.0, ASTM D-4236) and photo safe (ISO 18916). The earlier "Photo Safe: No" was a retailer table, not the maker. Pack count on the Amazon listing is not on the maker page',
     ],
     researchSources: [
@@ -266,7 +261,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Permanent adhesive: hard to reposition",
       "Runner can run out mid-page",
-      "Manufacturer page not yet checked",
       "Scotch 6061 page was not found on the maker site (2026-11-18): the claims stay attributed to the listing",
       "2026-11-19: scotchbrand.com blocked fetch; search snippets showed other Scotch double-sided runners but no 6061 page: still not confirmed",
       '2026-11-19 retry: 3M\'s own roller & runner page lists "Scotch Double Sided Adhesive Roller 6061, .27 in x 26 ft (7 mm x 8 m)" (https://www.3m.com/3M/en_US/p/c/tapes/office/roller-runner), so the product exists as sold by the maker. Acid-free / photo-safe is NOT confirmed: one retailer lists it acid-free and photo-safe (Newegg, 6-pack), another lists "Non Acid Free" (Staples, 6061). Do not say photo-safe. Pack of 3 not on the maker page. Use the confirmed Scotch glue stick for photos',
@@ -324,7 +318,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Optional: free ephemera (envelopes, tickets, wrapping paper) does the same job",
       "One fixed theme",
-      "Manufacturer page not yet checked",
     ],
     researchSources: ["https://www.amazon.com/dp/B09TB69V48"],
     lastVerified: "2026-11-18",
@@ -433,7 +426,6 @@ export const generatedCatalog: CatalogProduct[] = [
       "5 lb is a lot for a single small project",
       "Drying and cracking guidance has to come from the manufacturer, not this listing",
       "Do not call finished pieces food-safe",
-      "Crayola page (read 2026-11-18, as a search snippet) says: 5 lb resealable bucket, natural white earth clay that dries to a hard solid with no kiln or oven, designed for ages 4 and older; it is marketed to children, not as a fine-art clay",
       "The page text read did not mention food safety or a safety certification: say neither (ACMI/ASTM wording is not confirmed on crayola.com)",
     ],
     researchSources: [
@@ -489,7 +481,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "No safety certification was checked",
       "Small tubes run out quickly with large pieces",
-      "Manufacturer page not yet checked",
     ],
     researchSources: ["https://www.amazon.com/dp/B083X67QFX"],
     lastVerified: "2026-11-18",
@@ -541,7 +532,6 @@ export const generatedCatalog: CatalogProduct[] = [
       "Spray sealer needs ventilation; the listing advises a respirator and eyewear",
       "Gloss only in this listing",
       "Do not treat as food-safe",
-      "Plaid (maker) page read 2026-11-18, as a search snippet: 12 oz gloss clear acrylic sealer for wood, metal, canvas, terra cotta; the maker says it is quick-drying and will not run, drip or yellow (maker claims, not tested by us)",
       "Ventilation, respirator and eyewear advice comes from the Amazon listing, not the maker snippet",
     ],
     researchSources: [
@@ -718,7 +708,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "The 2026 card is the current edition; the League issues a new card each year",
       "American mahjong only",
-      "Manufacturer page not yet checked",
       "No NMJL card page was found (2026-11-18); card details rely on the Amazon listing, sold by the League",
       "2026-11-19: the League store (nationalmahjonggleague.org) lists the 2026 card in LARGE size (6 1/8 x 4 3/4 in) and STANDARD size (5 1/8 x 4 in); size confirmed on the maker store, the four-pack bundle is not on that page",
       "2026-11-19 re-check: the League store sells single cards (single cards only). Four-packs appear only on reseller listings (eBay, Fruugo), not on the League's pages, so the four-pack bundle stays unconfirmed. Alternative: link the League store for single cards and let the reader buy one per player. The League card is copyrighted: never show or reproduce the card (https://www.lernerdavid.com/news-successes/unscripted/copyright-issues-in-america-s-fast-growing-mah-jongg-craze)",
@@ -778,7 +767,6 @@ export const generatedCatalog: CatalogProduct[] = [
       "Ships folded and may arrive creased",
       "31.5 in suits a small square table only",
       "Sold by a third-party seller",
-      "Manufacturer page not yet checked",
     ],
     researchSources: ["https://www.amazon.com/dp/B0CXJ4PLBY"],
     lastVerified: "2026-11-18",
@@ -836,7 +824,6 @@ export const generatedCatalog: CatalogProduct[] = [
       'Drying time and "6-8 average creations" are the listing\'s claims, not tested by us',
       "Third-party seller; no safety certification seen on the listing page",
       "Do not call finished pieces food-safe",
-      "Manufacturer page not yet checked",
       "Seller on listing: Ystep",
     ],
     researchSources: ["https://www.amazon.com/dp/B0DFH9Z3BC"],
@@ -886,7 +873,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Marketed to kids",
       '"Child-safe materials" is the listing\'s claim only',
-      "Manufacturer page not yet checked",
       "Seller on listing: Shan1Gy",
     ],
     researchSources: ["https://www.amazon.com/dp/B0B45TMWTX"],
@@ -940,9 +926,7 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "No safety certification was checked: read the bottle label",
       "Matte finish only",
-      "Manufacturer page not yet checked",
       "Seller on listing: not shown on page",
-      "Plaid brand page (read 2026-11-18) covers Apple Barrel matte paint but this exact 16-colour set was not found on the maker site, so no maker claim is repeated here; Plaid says matte dries porous and should be sealed with varnish or acrylic spray",
       "2026-11-19: Plaid sells a 16 x 2 oz matte Apple Barrel set (PROMOABIII) but the colour list differs from the Amazon Vibrant Spectrum set: same family, not confirmed identical",
       "2026-11-19 retry: Amazon-derived listing data shows ASIN B076CP6F36 = \"Apple Barrel Vibrant Spectrum\" 16 x 2 fl oz, model PROMOABIII, manufacturer Plaid Enterprises, matte, non-toxic (desertcart mirror, https://www.desertcart.co.za/products/52164318-vibrant-spectrum-collection-acrylic-craft-paint-promoabiii-2-fl-oz), and Plaid's model PROMOABIII is the 16-piece 2 oz matte set (Staples, Target). Model number matches; colour names still differ between Amazon and Plaid's page, so keep as partly confirmed",
     ],
@@ -1007,7 +991,6 @@ export const generatedCatalog: CatalogProduct[] = [
       "Melamine tile quality is the listing's description only",
       "Card is not included",
       'Size per listing is "traveler"',
-      "Manufacturer page not yet checked",
       "Seller on listing: SGV Top Shelf",
     ],
     researchSources: ["https://www.amazon.com/dp/B0FM7P49H7"],
@@ -1059,7 +1042,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Listing itself says washi does not stick well to all surfaces (for example walls)",
       "Single pattern style",
-      "Manufacturer page not yet checked",
       "Seller on listing: Knaid Co., Ltd",
     ],
     researchSources: ["https://www.amazon.com/dp/B08FXQ315R"],
@@ -1108,7 +1090,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Single width",
       "Residue-free repositioning is the listing's claim",
-      "Manufacturer page not yet checked",
       "Seller on listing: Mr. Pen",
     ],
     researchSources: ["https://www.amazon.com/dp/B0BXJT2NT8"],
@@ -1157,7 +1138,6 @@ export const generatedCatalog: CatalogProduct[] = [
       "Four runners per pack; the listing says tape can be re-applied if you make a mistake soon after.",
     limitations: [
       "Listing warns low temperature may affect stickiness",
-      "Manufacturer page not yet checked",
       "Seller on listing: Secopad",
     ],
     researchSources: ["https://www.amazon.com/dp/B0CHTZD63Q"],
@@ -1203,7 +1183,6 @@ export const generatedCatalog: CatalogProduct[] = [
       "Brand not stated",
       "Paper weight and print quality not stated",
       "Vintage prints may include reproduced imagery: check rights before selling anything made from it",
-      "Manufacturer page not yet checked",
       "Seller on listing: BetterLifeforAll",
     ],
     researchSources: ["https://www.amazon.com/dp/B0DJBKT452"],
@@ -1252,7 +1231,6 @@ export const generatedCatalog: CatalogProduct[] = [
       "Brand not stated",
       "Material claims are the listing's",
       "Check rights before selling anything made from the imagery",
-      "Manufacturer page not yet checked",
       "Seller on listing: emmoolife",
     ],
     researchSources: ["https://www.amazon.com/dp/B0BXKS3HBR"],
@@ -1304,7 +1282,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Heavy glue and wet media may still warp pages (untested)",
       "Listing says it reduces ghosting and bleed-through: the listing's claim",
-      "Manufacturer page not yet checked",
       "Seller on listing: Stationery Island North America",
     ],
     researchSources: ["https://www.amazon.com/dp/B081VK1CM1"],
@@ -1358,7 +1335,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Size must match your table",
       "Machine-washable claim is the listing's",
-      "Manufacturer page not yet checked",
       "Seller on listing: YuChii",
     ],
     researchSources: ["https://www.amazon.com/dp/B09CTRNP73"],
@@ -1405,7 +1381,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Final sale / no returns per listing",
       "Fits the card for the stated year; a new card is released yearly",
-      "Manufacturer page not yet checked",
       "Seller on listing: Lseac",
     ],
     researchSources: ["https://www.amazon.com/dp/B0FRSSG8FZ"],
@@ -1453,7 +1428,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Card is for 2026: a new card is issued each year",
       "Standard vs large size is a preference",
-      "Manufacturer page not yet checked",
       "Seller on listing: The National Mah Jongg League, Inc.",
       "No NMJL card page was found (2026-11-18); card details rely on the Amazon listing, sold by the League",
       "2026-11-19: League store lists STANDARD card 5 1/8 x 4 in: size confirmed; pack size not on maker page",
@@ -1509,7 +1483,6 @@ export const generatedCatalog: CatalogProduct[] = [
       "48 colours is more than a beginner needs",
       "Pigment quality and lightfastness not stated in the text read",
       "Non-toxic status not stated: check the label",
-      "Manufacturer page not yet checked",
       "Seller on listing: not captured",
     ],
     researchSources: ["https://www.amazon.com/dp/B0BWRCKFDH"],
@@ -1563,7 +1536,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       '"Mimic sable" and spring-back are the listing\'s claims',
       "Round only: no flat brush",
-      "Manufacturer page not yet checked",
       "Seller on listing: not captured",
     ],
     researchSources: ["https://www.amazon.com/dp/B06XTMNKVF"],
@@ -1614,7 +1586,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Shedding resistance is the listing's claim",
       "All round shapes",
-      "Manufacturer page not yet checked",
       "Seller on listing: not captured",
     ],
     researchSources: ["https://www.amazon.com/dp/B07WH8T6LH"],
@@ -1669,7 +1640,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Sheet count not stated in the text read",
       "Premium paper is more than a first practice needs",
-      "Manufacturer page not yet checked",
       "Seller on listing: not captured",
     ],
     researchSources: ["https://www.amazon.com/dp/B01EQHJH10"],
@@ -1728,7 +1698,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Cotton content not stated",
       "Acid-free is the listing's claim",
-      "Manufacturer page not yet checked",
       "Seller on listing: not captured",
     ],
     researchSources: ["https://www.amazon.com/dp/B0D5R7JRKZ"],
@@ -1772,7 +1741,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Contents counts not shown in the text read",
       "Tutorial quality not tested by us",
-      "Manufacturer page not yet checked",
       "Seller on listing: not captured",
     ],
     researchSources: ["https://www.amazon.com/dp/B0B762JW55"],
@@ -1832,7 +1800,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Aida cloth is for cross stitch: check it suits your pattern",
       "Much of the 304 count is small accessories",
-      "Manufacturer page not yet checked",
       "Seller on listing: not captured",
     ],
     researchSources: ["https://www.amazon.com/dp/B087RB2K2B"],
@@ -1878,7 +1845,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Sharpness and rust resistance are the listing's claims",
       "Sharp points: keep away from children",
-      "Manufacturer page not yet checked",
       "Seller on listing: not captured",
     ],
     researchSources: ["https://www.amazon.com/dp/B07KZPRBQT"],
@@ -1916,7 +1882,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Bullet text did not load: only title and seller captured",
       "Country of manufacture not confirmed (brand name says Germany)",
-      "Manufacturer page not yet checked",
       "Seller on listing: 3 Swords - Germany",
     ],
     researchSources: ["https://www.amazon.com/dp/B0D1Y66RQZ"],
@@ -1964,7 +1929,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Random colours for several accessories",
       "Brand not stated",
-      "Manufacturer page not yet checked",
       "Seller on listing: Ming Shun Store",
     ],
     researchSources: ["https://www.amazon.com/dp/B0C33QM3KR"],
@@ -2008,7 +1972,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Listing markets them for arthritic hands: marketing, not a medical claim we can support",
       "Brand not stated",
-      "Manufacturer page not yet checked",
       "Seller on listing: RP-TECH",
     ],
     researchSources: ["https://www.amazon.com/dp/B09F9B2XTD"],
@@ -2052,7 +2015,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "One skein is small for most projects",
       "Softness and stitch-definition are the listing's claims",
-      "Manufacturer page not yet checked",
       "Seller on listing: not captured",
     ],
     researchSources: ["https://www.amazon.com/dp/B000XZY8Q4"],
@@ -2103,7 +2065,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Colour shown is one of many options: pick colour on the listing",
       "Pack size may vary by colour",
-      "Manufacturer page not yet checked",
       "Seller on listing: not captured",
     ],
     researchSources: ["https://www.amazon.com/dp/B0BBY2QVV4"],
@@ -2154,7 +2115,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       '"Studio results" and "crisp point" are the listing\'s claims',
       "Listing mentions oil use: not tested",
-      "Manufacturer page not yet checked",
       "Seller on listing: Benicci",
     ],
     researchSources: ["https://www.amazon.com/dp/B0868QQ1X6"],
@@ -2205,7 +2165,6 @@ export const generatedCatalog: CatalogProduct[] = [
     whySelected: "Many sizes for detail work.",
     limitations: [
       "Round only: no flat brush for base coats",
-      "Manufacturer page not yet checked",
       "Seller on listing: Auhoahsil Direct",
     ],
     researchSources: ["https://www.amazon.com/dp/B087W3PT95"],
@@ -2258,7 +2217,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Primed and acid-free wording is the listing's claim",
       "Ten may exceed a small group",
-      "Manufacturer page not yet checked",
       "Seller on listing: CLOYAN",
     ],
     researchSources: ["https://www.amazon.com/dp/B0CH3K5F62"],
@@ -2308,11 +2266,7 @@ export const generatedCatalog: CatalogProduct[] = [
     isEssential: false,
     audience: "Small groups",
     whySelected: "Smaller pack for four or five people.",
-    limitations: [
-      "Same maker and claims as the 10 pack",
-      "Manufacturer page not yet checked",
-      "Seller on listing: CLOYAN",
-    ],
+    limitations: ["Same maker and claims as the 10 pack", "Seller on listing: CLOYAN"],
     researchSources: ["https://www.amazon.com/dp/B0D3TWT3TX"],
     lastVerified: "2026-11-18",
     availability: "check-listing",
@@ -2366,7 +2320,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Layout fit is personal: look at the sections first",
       "Page count is the listing's claim",
-      "Manufacturer page not yet checked",
       "Seller on listing: Zicoto US",
     ],
     researchSources: ["https://www.amazon.com/dp/B0FHVQKZ1G"],
@@ -2414,7 +2367,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       '"Dries 3X faster" is the maker\'s claim on the listing',
       "Gel ink can show through thin pages",
-      "Manufacturer page not yet checked",
       "Seller on listing: not captured",
     ],
     researchSources: ["https://www.amazon.com/dp/B07BZ3L66Z"],
@@ -2467,7 +2419,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       '"Eye protection" is the listing\'s claim',
       "Battery life not captured",
-      "Manufacturer page not yet checked",
       "Seller on listing: MatriCom",
     ],
     researchSources: ["https://www.amazon.com/dp/B0C3BC4QG2"],
@@ -2511,7 +2462,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Card count not captured",
       "Questions are generic: they do not replace book-specific prompts",
-      "Manufacturer page not yet checked",
       "Seller on listing: TableTopics Conversation Starters",
     ],
     researchSources: ["https://www.amazon.com/dp/B01M4NYEG9"],
@@ -2564,7 +2514,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Listing is inconsistent on size: title says 8.5 oz, bullets say 10 oz maximum capacity",
       "Dishwasher/microwave safety is the listing's claim",
-      "Manufacturer page not yet checked",
       "Seller on listing: Dowan life",
     ],
     researchSources: ["https://www.amazon.com/dp/B07T66BYHS"],
@@ -2616,7 +2565,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       '"Waterproof" and washability are the listing\'s claims',
       "Folded size not captured",
-      "Manufacturer page not yet checked",
       "Seller on listing: WD-2020",
     ],
     researchSources: ["https://www.amazon.com/dp/B08HGY1Q4K"],
@@ -2664,7 +2612,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "12-hour claim is the maker's",
       "Listing title shows three capacities: check which size you choose",
-      "Manufacturer page not yet checked",
       "Seller on listing: not captured",
     ],
     researchSources: ["https://www.amazon.com/dp/B0CSK46585"],
@@ -2707,7 +2654,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Cannot cut thick woody stems (8 mm limit)",
       "Sharpness is the listing's claim",
-      "Manufacturer page not yet checked",
       "Seller on listing: Panago Garden",
     ],
     researchSources: ["https://www.amazon.com/dp/B08R43LHKT"],
@@ -2750,7 +2696,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Twelve small vases is a lot for one person",
       "Capacity not captured",
-      "Manufacturer page not yet checked",
       "Seller on listing: Der Rose",
     ],
     researchSources: ["https://www.amazon.com/dp/B0D46SKZMK"],
@@ -2793,7 +2738,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Sharp pins: handle carefully",
       "Material claims are the listing's",
-      "Manufacturer page not yet checked",
       "Seller on listing: Sprina-US",
     ],
     researchSources: ["https://www.amazon.com/dp/B0F2N36DSW"],
@@ -2845,7 +2789,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "USAPA approval is the listing's claim: we did not check the approved list",
       'Lists "set of 2 or 4": confirm the option chosen',
-      "Manufacturer page not yet checked",
       "Seller on listing: niupipo US",
     ],
     researchSources: ["https://www.amazon.com/dp/B08C73KK4R"],
@@ -2897,7 +2840,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "USAPA approval is the listing's claim",
       "Durability claims are the listing's",
-      "Manufacturer page not yet checked",
       "Seller on listing: CYCLOTRON SPORTS",
     ],
     researchSources: ["https://www.amazon.com/dp/B0DM8YV5XQ"],
@@ -2951,7 +2893,6 @@ export const generatedCatalog: CatalogProduct[] = [
       "Aluminum frames are for casual play, not serious improvement",
       "Many courts rent racquets: try one first",
       'Listing says "rackets": check quantity',
-      "Manufacturer page not yet checked",
       "Seller on listing: 11HOME",
     ],
     researchSources: ["https://www.amazon.com/dp/B09731Z6R8"],
@@ -2995,7 +2936,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "\"America's #1 selling\" is the maker's claim",
       "Title wording on pack count is ambiguous: check before ordering",
-      "Manufacturer page not yet checked",
       "Seller on listing: not captured",
     ],
     researchSources: ["https://www.amazon.com/dp/B0002JZEL4"],
@@ -3043,7 +2983,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Colour options vary by listing",
       "Warmth claims are the maker's",
-      "Manufacturer page not yet checked",
       "Seller on listing: Bedsure",
     ],
     researchSources: ["https://www.amazon.com/dp/B0CPS62512"],
@@ -3096,7 +3035,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "Batteries not confirmed as included",
       "Candle count not captured",
-      "Manufacturer page not yet checked",
       "Seller on listing: Nimiko",
     ],
     researchSources: ["https://www.amazon.com/dp/B0BW33BV1T"],
@@ -3144,7 +3082,6 @@ export const generatedCatalog: CatalogProduct[] = [
     whySelected: "Five varieties for a first try.",
     limitations: [
       "Herbal teas are not for everyone: check ingredients for allergies",
-      "Manufacturer page not yet checked",
       "Seller on listing: not captured",
     ],
     researchSources: ["https://www.amazon.com/dp/B004CIUU6K"],
@@ -3193,7 +3130,6 @@ export const generatedCatalog: CatalogProduct[] = [
     limitations: [
       "1000 pieces needs table space for days",
       "Quality claims are the listing's",
-      "Manufacturer page not yet checked",
       "Seller on listing: Prime Time Puzzles",
     ],
     researchSources: ["https://www.amazon.com/dp/B0DGZ7L567"],
