@@ -21,7 +21,7 @@ jobs:
   health:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
       - run: bunx vitest run
@@ -38,7 +38,7 @@ jobs:
         run: bun scripts/site-health.mjs freshness --months "${{ inputs.months || '6' }}" --out freshness-report.md
       - name: Open, update or close issues
         if: always()
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const fs = require("fs");
