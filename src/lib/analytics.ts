@@ -21,7 +21,9 @@ export function ga4Scripts(
   return [
     { src: `https://www.googletagmanager.com/gtag/js?id=${v}`, async: true },
     {
-      children: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${v}');`,
+      // Idempotent: the router re-runs head scripts on client navigation, and a second
+      // gtag('config') would send an extra page_view each time. The flag makes it run once.
+      children: `window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){dataLayer.push(arguments);};if(!window.__ppfGa4){window.__ppfGa4=1;gtag('js',new Date());gtag('config','${v}');}`,
     },
   ];
 }
