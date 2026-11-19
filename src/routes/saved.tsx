@@ -209,22 +209,10 @@ function Saved() {
                 {NAMES.quiz}
               </Link>
               <Link
-                to="/shop"
-                className="inline-flex min-h-11 items-center border-2 border-cherry px-5 text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream"
-              >
-                Pick a starter kit
-              </Link>
-              <Link
                 to="/make-plans"
                 className="inline-flex min-h-11 items-center border-2 border-cherry px-5 text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream"
               >
                 {NAMES.plans}
-              </Link>
-              <Link
-                to="/tools/tonight"
-                className="inline-flex min-h-11 items-center border-2 border-cherry px-5 text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream"
-              >
-                What should I do tonight?
               </Link>
             </div>
           </div>

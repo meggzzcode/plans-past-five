@@ -29,7 +29,7 @@ export function ContactPage() {
           Our public inbox isn't open yet, and we won't show an address until it is. When it opens,
           the address will appear right here, with the corrections contact below. Until then, take
           the <Link to="/hobby-finder">hobby quiz</Link>, build a plan on{" "}
-          <Link to="/make-plans">Make Some Plans</Link> or keep ideas in{" "}
+          <Link to="/make-plans">Make Plans</Link> or keep ideas in{" "}
           <Link to="/saved">My Plans</Link>. None of it needs an account.
         </p>
       )}

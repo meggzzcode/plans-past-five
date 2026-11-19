@@ -696,7 +696,7 @@ function BlockView({
           </p>
           <p className="!mb-0 flex flex-wrap gap-x-5 gap-y-1 text-sm font-semibold">
             <Link to="/hobby-finder" className="text-cherry underline underline-offset-4">
-              Find Your Thing
+              Find a Hobby
             </Link>
             <Link to="/make-plans" className="text-cherry underline underline-offset-4">
               Let's Make Plans

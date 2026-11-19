@@ -1,26 +1,22 @@
 import type { ComponentType } from "react";
 import {
-  Bookmark,
   BookOpen,
   CalendarHeart,
-  Compass,
+  Coffee,
   Footprints,
-  Lightbulb,
   Moon,
   Palette,
   ShoppingBag,
-  Smile,
   Sparkles,
   Sun,
   Users,
-  Coffee,
 } from "lucide-react";
 import { categories, type CategorySlug } from "@/data/categories";
 
 type Icon = ComponentType<{ className?: string }>;
 export type NavItem = { to: string; label: string; Icon: Icon };
 
-/** One icon per section. Names always come from src/data/categories.ts. */
+/** One icon per mood page. Names always come from src/data/categories.ts. */
 const sectionIcons: Record<CategorySlug, Icon> = {
   "after-hours": Moon,
   weekends: Sun,
@@ -30,6 +26,10 @@ const sectionIcons: Record<CategorySlug, Icon> = {
   movement: Footprints,
 };
 
+/**
+ * The six mood pages. They are no longer in the header, menu or footer (Stage 3a); they are reached
+ * from the Journal index until phase two turns them into Journal topics.
+ */
 export const sectionNav: NavItem[] = categories.map((c) => ({
   to: `/${c.slug}`,
   label: c.name,
@@ -37,60 +37,61 @@ export const sectionNav: NavItem[] = categories.map((c) => ({
 }));
 
 /**
- * Names, one per thing, used by the header, footer, homepage, page titles and tool headings:
- * Find Your Thing (quiz), Make Some Plans (planner), Shop Your Hobby (shop), My Plans (saved),
- * What Should I Do Tonight? (tonight tool), Hobbies (directory), The Journal.
+ * Names, one per thing, used by the header, footer, homepage, page titles and tool headings.
+ * The quiz and the hobby directory are one destination ("Find a Hobby").
  */
 export const NAMES = {
-  quiz: "Find Your Thing",
-  plans: "Make Some Plans",
-  shop: "Shop Your Hobby",
+  quiz: "Find a Hobby",
+  plans: "Make Plans",
+  shop: "The Shop",
   saved: "My Plans",
-  tonight: "What Should I Do Tonight?",
-  hobbies: "Hobbies",
+  /** Tonight is a mode of Make Plans (/make-plans?mode=tonight), not a destination. */
+  tonight: "Tonight",
+  hobbies: "Find a Hobby",
   journal: "The Journal",
-  /** Small link in article bylines and the footer; goes to the Editorial Standards page (/editorial-policy). */
+  /** Small link in article bylines; goes to the Editorial Standards page (/editorial-policy). */
   howWeMake: "How we make this",
 } as const;
 
-/** Start here: the three journeys first, then the tools that support them. */
-export const toolNav: NavItem[] = [
-  { to: "/start-here", label: "Start Here", Icon: Compass },
-  { to: "/hobby-finder", label: NAMES.quiz, Icon: Sparkles },
+/** The four destinations: desktop top bar and the mobile menu, in this order. */
+export const primaryNav: NavItem[] = [
+  { to: "/hobbies", label: NAMES.hobbies, Icon: Sparkles },
   { to: "/make-plans", label: NAMES.plans, Icon: CalendarHeart },
   { to: "/shop", label: NAMES.shop, Icon: ShoppingBag },
-  { to: "/tools/tonight", label: NAMES.tonight, Icon: Lightbulb },
-  { to: "/saved", label: NAMES.saved, Icon: Bookmark },
-];
-
-export const browseNav: NavItem[] = [
-  { to: "/hobbies", label: NAMES.hobbies, Icon: Smile },
   { to: "/journal", label: NAMES.journal, Icon: BookOpen },
 ];
 
-/** Desktop top bar (sections sit in a second row beneath it). */
-export const topNav = [
-  { to: "/make-plans", label: NAMES.plans },
-  { to: "/shop", label: NAMES.shop },
-  { to: "/hobbies", label: NAMES.hobbies },
-  { to: "/journal", label: NAMES.journal },
-] as const;
+/** Desktop top bar. */
+export const topNav = primaryNav.map(({ to, label }) => ({ to, label }));
 
-/** Mobile menu groups: the journeys first, the rest under "More". Same items as toolNav + browseNav. */
-export const menuStartNav: NavItem[] = toolNav.slice(0, 4);
-export const menuMoreNav: NavItem[] = [...toolNav.slice(4), ...browseNav];
-
-/** Everything the mobile menu lists, in order. */
-export const mobileNavItems: NavItem[] = [...toolNav, ...sectionNav, ...browseNav];
+/** Everything the mobile menu lists as a full row, in order. */
+export const mobileNavItems: NavItem[] = primaryNav;
 
 /**
- * Fine print for the mobile menu (small text links, not full rows). Labels match the footer and
- * src/config/trust-links.ts so each page has one name everywhere.
+ * Paths that belong to "Find a Hobby" for the active-link highlight: the directory, every hobby
+ * page and the quiz.
  */
+export const isFindAHobbyPath = (pathname: string) =>
+  pathname === "/hobbies" ||
+  pathname.startsWith("/hobbies/") ||
+  pathname.startsWith("/hobby-finder");
+
+/** Fine print for the mobile menu (small text links). Same labels as the footer. */
 export const finePrintNav = [
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
-  { to: "/editorial-policy", label: "Editorial Standards" },
   { to: "/affiliate-disclosure", label: "Affiliate Disclosure" },
-  { to: "/corrections", label: "Corrections" },
+  { to: "/editorial-policy", label: "Editorial Standards" },
 ] as const;
+
+/** The footer: the legal and trust links, plus the sitemap file (see SITEMAP_HREF). */
+export const footerNav: { to: string; label: string }[] = [
+  { to: "/privacy", label: "Privacy" },
+  { to: "/terms", label: "Terms" },
+  { to: "/affiliate-disclosure", label: "Affiliate Disclosure" },
+  { to: "/editorial-policy", label: "Editorial Standards" },
+  { to: "/about", label: "About" },
+  { to: "/contact", label: "Contact" },
+];
+/** A file, not a page of the app, so the footer renders it as a plain anchor. */
+export const SITEMAP_HREF = "/sitemap.xml";

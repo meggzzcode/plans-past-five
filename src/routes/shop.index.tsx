@@ -89,7 +89,7 @@ function Shop() {
         <p className="mt-3 text-espresso">
           Not sure?{" "}
           <Link to="/hobby-finder" className="font-semibold text-cherry underline">
-            Take the {NAMES.quiz} quiz
+            Take the quiz
           </Link>{" "}
           and we'll point you to one.
         </p>
