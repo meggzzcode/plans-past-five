@@ -12,3 +12,12 @@ Customers
 5. Shopper for beginner supplies: shop; pick a hobby; best first purchase; compare 8+ product cards; check link clarity (no purchase); shopping list copy/export; does the shop feel complete.
 
 Buyers (hypothetical willingness to purchase only; may read docs/buyer, README and the listing draft and inventory; inspect the live site): first-time online business buyer; experienced affiliate-website investor; lifestyle content creator acquiring a brand. Score: brand desirability, website quality, differentiation, monetization readiness, commercial potential, scalability, operating costs, maintenance complexity, technical risks, content quality, asset ownership, transferability, perceived value; list purchase objections and what would prevent an offer.
+
+
+## Customer journeys A to E (every customer reviewer completes the ones that fit their persona, and says which)
+- **A.** Discover a hobby, read the beginner guide, work out the supplies and find the relevant Amazon product (do not buy).
+- **B.** Plan an enjoyable evening after work with a limited budget and low energy.
+- **C.** Plan a realistic Saturday with appropriate breaks, travel time and estimated expenses.
+- **D.** Organise a girls' night and find suitable activities and supplies.
+- **E.** Save, share or rediscover a hobby, a shopping list or an activity plan.
+Score for each journey: completed unaided / with hesitation / failed, and where interest dropped.
