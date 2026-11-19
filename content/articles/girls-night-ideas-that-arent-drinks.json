@@ -336,25 +336,23 @@
     },
     {
       "type": "p",
-      "text": "Some of the easiest plans need no kit at all, or are best left to a studio or a venue. Check hours, group sizes and booking rules ahead."
+      "text": "Some of the easiest plans need no kit at all, or suit a studio or a venue better. Check hours, group sizes and booking rules ahead."
     },
     {
       "type": "item",
       "n": 18,
       "title": "Pottery painting",
       "hobby": "pottery-painting",
-      "note": "Many studios let you paint a ready-made piece and then glaze and fire it for you. Group bookings and minimums vary, so check ahead. Prefer to stay in? See [how to host a paint night at home](/journal/how-to-host-a-paint-night-at-home).",
+      "note": "Many studios let you paint a ready-made piece, then glaze and fire it for you. Group bookings vary, so check ahead. Prefer to stay in? See [how to host a paint night at home](/journal/how-to-host-a-paint-night-at-home).",
       "time": "2 hours",
-      "cost": "Studio fee",
       "company": "2-8 friends"
     },
     {
       "type": "item",
       "n": 19,
       "title": "Drop-in class",
-      "note": "Dance, ceramics, life drawing, cooking. Many studios offer a single session with no commitment.",
+      "note": "Dance, ceramics, life drawing, cooking: many studios offer a single session.",
       "time": "90 min",
-      "cost": "Class fee",
       "company": "2-6 friends"
     },
     {
@@ -362,7 +360,7 @@
       "n": 20,
       "title": "Museum with a coffee after",
       "hobby": "museum-exploring",
-      "note": "Choose one exhibit, then debrief over coffee. Good for friends who enjoy a post-mortem.",
+      "note": "Choose one exhibit, then debrief over coffee.",
       "time": "2-3 hours",
       "company": "2-5 friends"
     },
@@ -371,18 +369,16 @@
       "n": 21,
       "title": "Bookstore date with a book swap",
       "hobby": "reading",
-      "note": "Each friend chooses a book for another within a budget cap, then everyone reads a first page aloud over a snack.",
+      "note": "Each friend picks a book for another within a budget cap, then everyone reads a first page aloud.",
       "time": "2 hours",
-      "cost": "Your budget cap",
       "company": "3-6 friends"
     },
     {
       "type": "item",
       "n": 22,
       "title": "Walk-and-talk with a stop for treats",
-      "note": "A loop around a park with ice cream or coffee halfway. Walking side by side makes talking easy. **Worth bringing:** an insulated flask of something warm to share halfway round.",
+      "note": "A loop around a park with a treat halfway. **Worth bringing:** an insulated flask of something warm to share.",
       "time": "90 min",
-      "cost": "Price of a treat",
       "company": "2-4 friends"
     },
     {
@@ -390,9 +386,8 @@
       "n": 23,
       "title": "Volunteer shift together",
       "hobby": "volunteering",
-      "note": "Many local groups welcome one-off volunteers. Check requirements and sign-ups ahead of time.",
+      "note": "Many local groups welcome one-off volunteers. Check requirements and sign-ups ahead.",
       "time": "2-4 hours",
-      "cost": "Varies",
       "company": "2-6 friends"
     },
     {
@@ -401,14 +396,13 @@
       "title": "Dinner swap or potluck",
       "note": "Choose a theme, such as brunch for dinner, soup night or tacos, and have everyone bring one dish.",
       "time": "3 hours",
-      "cost": "Groceries",
       "company": "4-8 friends"
     },
     {
       "type": "item",
       "n": 25,
       "title": "Spa night in",
-      "note": "Face masks if you like them, foot soaks, nail polish, a playlist. Keep it low-key and follow product labels.",
+      "note": "Face masks if you like them, foot soaks, a playlist. Follow product labels.",
       "time": "2 hours",
       "company": "2-6 friends"
     },

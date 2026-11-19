@@ -2,14 +2,14 @@
   "slug": "how-to-plan-a-perfect-picnic",
   "title": "How to Plan a Dreamy Aesthetic Picnic",
   "titleItalic": "Aesthetic Picnic",
-  "dek": "A picnic that looks as good as it tastes: a timeline, a spot, a menu that survives the trip and what to pack.",
+  "dek": "A picnic that looks as good as it tastes: the timeline, the spot, a menu that survives the trip and the packing list that makes it easy.",
   "category": "weekends",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-18",
   "hero": "picnic",
   "searchIntent": "how to plan a picnic / aesthetic picnic ideas / what to bring on a picnic",
-  "angle": "A picnic as a tiny event: choose a spot, a food plan that survives travel, a packing checklist and two or three things to do on the blanket",
+  "angle": "A picnic as a tiny event: the packing list and the touches that make it look the part first, then a timeline, a spot, a food plan that survives travel and two or three things to do on the blanket",
   "hobbies": [
     "picnicking",
     "reading",
@@ -19,7 +19,15 @@
   ],
   "productIds": [
     "picnic-blankets",
-    "market-totes"
+    "cooler-bags",
+    "thermos-flasks",
+    "market-totes",
+    "water-bottles",
+    "book-sleeves",
+    "sketch-pads",
+    "portable-watercolor",
+    "pocket-notebooks",
+    "conversation-cards"
   ],
   "sources": [
     {
@@ -71,7 +79,8 @@
     "VERIFIED 2026-11-18: soap and water is best; sanitizer (at least 60% alcohol) only when soap and water are unavailable and it does not remove food allergens; wipes no longer presented as a sanitizer substitute - cdc.gov, fsis.usda.gov, foodallergy.org",
     "VERIFIED 2026-11-18: ask guests about allergies - foodallergy.org",
     "VERIFIED 2026-11-18: park rules (alcohol, flames, glass, barbecues, pets) stay 'varies by location, check local rules'; glass mention now carries the check - reworded, no claim remains",
-    "VERIFIED 2026-11-18: no prices or brands stated; citronella candle line removed (no insect-repellent claim) - reworded, no claim remains"
+    "VERIFIED 2026-11-18: no prices or brands stated; citronella candle line removed (no insect-repellent claim) - reworded, no claim remains",
+    "NOTE 2026-11-19: monetisation rewrite: the packing list and 'Making it look the part' now come first, a 'where to start' kit block (incomplete until verified products exist) and a type-card block follow the list, gear lines added for blanket, cooler bag, flask and tote, a second block after 'Once you're sitting down'; timeline, spot, menu, food-safety and allergy text unchanged and still sourced (FDA, CDC, USDA FSIS, FARE)"
   ],
   "related": [
     "things-to-do-on-the-weekend",
@@ -85,7 +94,75 @@
     },
     {
       "type": "p",
-      "text": "This guide runs in the order you'll need it: a timeline, a spot, a menu that survives the trip, a packing list, and a few ways to make the whole thing look as good as you hoped."
+      "text": "This guide starts with what to pack and how to make the whole thing look the part, then runs in the order you'll need it: a timeline, a spot, a menu that survives the trip, and a few ways to spend the time once you're sitting down."
+    },
+    {
+      "type": "h2",
+      "text": "The packing list",
+      "id": "packing"
+    },
+    {
+      "type": "whatYoullNeed",
+      "essentials": [
+        "A big blanket, ideally with a waterproof backing",
+        "A cooler or insulated bag with ice packs",
+        "Plates, cutlery, napkins and a sharp knife in a sleeve",
+        "Water, other drinks, and a bottle opener or corkscrew if needed",
+        "A trash bag for everything you take, and wet wipes for sticky fingers",
+        "Sun protection and a layer for when the shade moves"
+      ],
+      "optional": [
+        "A basket or sturdy tote that looks nice on the grass",
+        "A small cushion or two",
+        "Reusable tableware and cloth napkins",
+        "A game, a book or a sketchbook"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "A waterproof-backed blanket and an insulated bag are the two things that make the practical bits easier if you picnic more than once. You may already own much of the rest: a throw, a tote, plates, jars, napkins, an opener. A proper basket with fitted tableware is a pretty upgrade if the habit sticks."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**A waterproof-backed picnic blanket,** so the damp ground stays on the other side and there's room for everyone.",
+        "**An insulated cooler bag,** so the ice packs and the cold food travel together, as the food-safety notes below suggest.",
+        "**An insulated flask,** for iced tea that stays cold or something hot on a cool day.",
+        "**A sturdy market tote or basket,** so plates, jars and napkins go in one bag and your hands stay free."
+      ]
+    },
+    {
+      "type": "starterKit",
+      "productIds": [
+        "picnic-blankets",
+        "market-totes"
+      ],
+      "title": "Picnic: where to start"
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "picnic-blankets",
+        "cooler-bags",
+        "thermos-flasks",
+        "market-totes",
+        "water-bottles"
+      ],
+      "title": "For the packing list",
+      "dek": "A blanket with a waterproof backing, an insulated bag, a flask and a tote make setting up simple and pretty."
+    },
+    {
+      "type": "h2",
+      "text": "Making it look the part",
+      "id": "aesthetic"
+    },
+    {
+      "type": "p",
+      "text": "An aesthetic picnic is mostly a few decisions made on purpose. Pick two or three colors and let the blanket, napkins and food echo them. Decant food into small containers or jars (check whether your park allows glass) so it looks arranged rather than dumped. Cloth napkins and reusable plates photograph better than disposables, and they're gentler on the park."
+    },
+    {
+      "type": "p",
+      "text": "Add one thing with height or softness: a small bunch of flowers in a jar (the [flower arranging guide](/journal/flower-arranging-as-a-hobby) shows how), a cushion, a tall bottle. Then put your phone away after the first photo. The point of a pretty picnic is that you're actually in it."
     },
     {
       "type": "h2",
@@ -149,45 +226,6 @@
     },
     {
       "type": "h2",
-      "text": "Making it look the part",
-      "id": "aesthetic"
-    },
-    {
-      "type": "p",
-      "text": "An aesthetic picnic is mostly a few decisions made on purpose. Pick two or three colors and let the blanket, napkins and food echo them. Decant food into small containers or jars (check whether your park allows glass) so it looks arranged rather than dumped. Cloth napkins and reusable plates photograph better than disposables, and they're gentler on the park."
-    },
-    {
-      "type": "p",
-      "text": "Add one thing with height or softness: a small bunch of flowers in a jar (the [flower arranging guide](/journal/flower-arranging-as-a-hobby) shows how), a cushion, a tall bottle. Then put your phone away after the first photo. The point of a pretty picnic is that you're actually in it."
-    },
-    {
-      "type": "h2",
-      "text": "The packing list",
-      "id": "packing"
-    },
-    {
-      "type": "whatYoullNeed",
-      "essentials": [
-        "A big blanket, ideally with a waterproof backing",
-        "A cooler or insulated bag with ice packs",
-        "Plates, cutlery, napkins and a sharp knife in a sleeve",
-        "Water, other drinks, and a bottle opener or corkscrew if needed",
-        "A trash bag for everything you take, and wet wipes for sticky fingers",
-        "Sun protection and a layer for when the shade moves"
-      ],
-      "optional": [
-        "A basket or sturdy tote that looks nice on the grass",
-        "A small cushion or two",
-        "Reusable tableware and cloth napkins",
-        "A game, a book or a sketchbook"
-      ]
-    },
-    {
-      "type": "p",
-      "text": "You probably own most of this already: a blanket or large throw, a tote, plates, jars, napkins, an opener. If you picnic more than once, a waterproof-backed blanket and an insulated bag are the two things that make the practical bits easier. A proper basket with fitted tableware is a pretty upgrade if the habit sticks."
-    },
-    {
-      "type": "h2",
       "text": "Once you're sitting down",
       "id": "activities"
     },
@@ -208,7 +246,23 @@
     },
     {
       "type": "p",
+      "text": "**Worth bringing:** a book sleeve for the paperback, a pocket sketch pad with {{product:sakura-pigma-micron-8-pack-black|a black fineliner}} or a small travel watercolor set, and a deck of conversation cards, so the quiet half hour has something in it."
+    },
+    {
+      "type": "p",
       "text": "Leave the spot as you found it. Take everything you brought, scraps and napkins included, and carry a spare bag so you're never tempted to cram trash into an already overflowing bin."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "book-sleeves",
+        "sketch-pads",
+        "portable-watercolor",
+        "pocket-notebooks",
+        "conversation-cards"
+      ],
+      "title": "For once you're sitting down",
+      "dek": "A book sleeve, a sketch pad, a small watercolor set or a deck of cards make the half hour on the blanket something to look forward to."
     },
     {
       "type": "h2",
@@ -230,21 +284,12 @@
       "text": "If you're nervous about the grand version, start tiny: one friend, two sandwiches and a thermos, ninety minutes."
     },
     {
-      "type": "shopHobby",
-      "productIds": [
-        "picnic-blankets",
-        "market-totes"
-      ],
-      "title": "Picnic gear that makes it easy",
-      "dek": "A waterproof-backed blanket keeps you dry and a good tote makes carrying everything easier, so setting up is simple and pretty."
-    },
-    {
       "type": "makePlan",
       "text": "Pick a sunny day, text one friend and let Make Some Plans turn the picnic into a real plan."
     },
     {
       "type": "p",
-      "text": "Looking for more to do with the rest of the weekend? See [things to do on the weekend](/journal/things-to-do-on-the-weekend), or [cheap weekend adventures](/journal/cheap-weekend-adventures) for plans that cost little."
+      "text": "Looking for more to do with the rest of the weekend? See [things to do on the weekend](/journal/things-to-do-on-the-weekend), or [weekend adventures, packed](/journal/cheap-weekend-adventures) for easy outings with the gear for each."
     }
   ]
 }

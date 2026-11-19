@@ -1595,7 +1595,7 @@
       },
       {
         "type": "p",
-        "text": "For more ideas, see [creative hobbies you can start at home](/journal/creative-hobbies-you-can-start-at-home) and [low-energy hobbies](/journal/low-energy-hobbies). Want a new hobby to grow into? See [15 affordable hobbies](/journal/affordable-hobbies-under-25). Ready to go out instead? Try [30 solo date ideas](/journal/solo-date-ideas) or [how to plan a solo Saturday](/journal/how-to-plan-a-solo-saturday)."
+        "text": "For more ideas, see [creative hobbies you can start at home](/journal/creative-hobbies-you-can-start-at-home) and [low-energy hobbies](/journal/low-energy-hobbies). Want a new hobby to grow into? See [15 hobbies to start this month](/journal/affordable-hobbies-under-25). Ready to go out instead? Try [30 solo date ideas](/journal/solo-date-ideas) or [how to plan a solo Saturday](/journal/how-to-plan-a-solo-saturday)."
       },
       {
         "type": "h2",
@@ -1961,7 +1961,7 @@
       {
         "type": "list",
         "items": [
-          "**Pick one material**, not one of everything: paper, paint, clay or thread. If budget is on your mind, [15 affordable hobbies](/journal/affordable-hobbies-under-25) shows the cheapest sensible way into each.",
+          "**Pick one material**, not one of everything: paper, paint, clay or thread. If budget is on your mind, [15 hobbies to start this month](/journal/affordable-hobbies-under-25) shows the cheapest sensible way into each.",
           "**Pick a single starter kit.** A kit puts everything in one box and removes decision fatigue, though [not every kit is worth it](/journal/creative-hobby-starter-kits-worth-considering).",
           "**Give it three evenings** before you decide whether it's for you.",
           "**Keep it visible.** A basket on the coffee table gets used; a box under the bed doesn't.",
@@ -1988,7 +1988,7 @@
     "publishedAt": "2026-11-19",
     "verifiedAt": "2026-11-18",
     "hero": "shopCreative",
-    "searchIntent": "best creative hobby starter kits / craft starter kits for beginners / are hobby kits worth it",
+    "searchIntent": "creative hobby starter kits / craft starter kits for beginners / are hobby kits worth it",
     "angle": "A checklist-led comparison: instead of ranking named kits, give readers the questions to ask of any kit, a kit-vs-loose decision guide by hobby, and pointers to our shop collections",
     "hobbies": [
       "embroidery",
@@ -2450,7 +2450,7 @@
       },
       {
         "type": "p",
-        "text": "For more low-effort ideas, try [Things to Do After Work Instead of Scrolling](/journal/things-to-do-after-work-instead-of-scrolling), or turn a Saturday into [an at-home creative weekend](/journal/at-home-creative-weekend). Looking for your next small hobby? See [15 affordable hobbies](/journal/affordable-hobbies-under-25)."
+        "text": "For more low-effort ideas, try [Things to Do After Work Instead of Scrolling](/journal/things-to-do-after-work-instead-of-scrolling), or turn a Saturday into [an at-home creative weekend](/journal/at-home-creative-weekend). Looking for your next small hobby? See [15 hobbies to start this month](/journal/affordable-hobbies-under-25)."
       },
       {
         "type": "ifYouLoved",
@@ -2788,25 +2788,23 @@
       },
       {
         "type": "p",
-        "text": "Some of the easiest plans need no kit at all, or are best left to a studio or a venue. Check hours, group sizes and booking rules ahead."
+        "text": "Some of the easiest plans need no kit at all, or suit a studio or a venue better. Check hours, group sizes and booking rules ahead."
       },
       {
         "type": "item",
         "n": 18,
         "title": "Pottery painting",
         "hobby": "pottery-painting",
-        "note": "Many studios let you paint a ready-made piece and then glaze and fire it for you. Group bookings and minimums vary, so check ahead. Prefer to stay in? See [how to host a paint night at home](/journal/how-to-host-a-paint-night-at-home).",
+        "note": "Many studios let you paint a ready-made piece, then glaze and fire it for you. Group bookings vary, so check ahead. Prefer to stay in? See [how to host a paint night at home](/journal/how-to-host-a-paint-night-at-home).",
         "time": "2 hours",
-        "cost": "Studio fee",
         "company": "2-8 friends"
       },
       {
         "type": "item",
         "n": 19,
         "title": "Drop-in class",
-        "note": "Dance, ceramics, life drawing, cooking. Many studios offer a single session with no commitment.",
+        "note": "Dance, ceramics, life drawing, cooking: many studios offer a single session.",
         "time": "90 min",
-        "cost": "Class fee",
         "company": "2-6 friends"
       },
       {
@@ -2814,7 +2812,7 @@
         "n": 20,
         "title": "Museum with a coffee after",
         "hobby": "museum-exploring",
-        "note": "Choose one exhibit, then debrief over coffee. Good for friends who enjoy a post-mortem.",
+        "note": "Choose one exhibit, then debrief over coffee.",
         "time": "2-3 hours",
         "company": "2-5 friends"
       },
@@ -2823,18 +2821,16 @@
         "n": 21,
         "title": "Bookstore date with a book swap",
         "hobby": "reading",
-        "note": "Each friend chooses a book for another within a budget cap, then everyone reads a first page aloud over a snack.",
+        "note": "Each friend picks a book for another within a budget cap, then everyone reads a first page aloud.",
         "time": "2 hours",
-        "cost": "Your budget cap",
         "company": "3-6 friends"
       },
       {
         "type": "item",
         "n": 22,
         "title": "Walk-and-talk with a stop for treats",
-        "note": "A loop around a park with ice cream or coffee halfway. Walking side by side makes talking easy. **Worth bringing:** an insulated flask of something warm to share halfway round.",
+        "note": "A loop around a park with a treat halfway. **Worth bringing:** an insulated flask of something warm to share.",
         "time": "90 min",
-        "cost": "Price of a treat",
         "company": "2-4 friends"
       },
       {
@@ -2842,9 +2838,8 @@
         "n": 23,
         "title": "Volunteer shift together",
         "hobby": "volunteering",
-        "note": "Many local groups welcome one-off volunteers. Check requirements and sign-ups ahead of time.",
+        "note": "Many local groups welcome one-off volunteers. Check requirements and sign-ups ahead.",
         "time": "2-4 hours",
-        "cost": "Varies",
         "company": "2-6 friends"
       },
       {
@@ -2853,14 +2848,13 @@
         "title": "Dinner swap or potluck",
         "note": "Choose a theme, such as brunch for dinner, soup night or tacos, and have everyone bring one dish.",
         "time": "3 hours",
-        "cost": "Groceries",
         "company": "4-8 friends"
       },
       {
         "type": "item",
         "n": 25,
         "title": "Spa night in",
-        "note": "Face masks if you like them, foot soaks, nail polish, a playlist. Keep it low-key and follow product labels.",
+        "note": "Face masks if you like them, foot soaks, a playlist. Follow product labels.",
         "time": "2 hours",
         "company": "2-6 friends"
       },
@@ -4651,14 +4645,14 @@
     "slug": "how-to-plan-a-perfect-picnic",
     "title": "How to Plan a Dreamy Aesthetic Picnic",
     "titleItalic": "Aesthetic Picnic",
-    "dek": "A picnic that looks as good as it tastes: a timeline, a spot, a menu that survives the trip and what to pack.",
+    "dek": "A picnic that looks as good as it tastes: the timeline, the spot, a menu that survives the trip and the packing list that makes it easy.",
     "category": "weekends",
     "status": "published",
     "publishedAt": "2026-11-19",
     "verifiedAt": "2026-11-18",
     "hero": "picnic",
     "searchIntent": "how to plan a picnic / aesthetic picnic ideas / what to bring on a picnic",
-    "angle": "A picnic as a tiny event: choose a spot, a food plan that survives travel, a packing checklist and two or three things to do on the blanket",
+    "angle": "A picnic as a tiny event: the packing list and the touches that make it look the part first, then a timeline, a spot, a food plan that survives travel and two or three things to do on the blanket",
     "hobbies": [
       "picnicking",
       "reading",
@@ -4668,7 +4662,15 @@
     ],
     "productIds": [
       "picnic-blankets",
-      "market-totes"
+      "cooler-bags",
+      "thermos-flasks",
+      "market-totes",
+      "water-bottles",
+      "book-sleeves",
+      "sketch-pads",
+      "portable-watercolor",
+      "pocket-notebooks",
+      "conversation-cards"
     ],
     "sources": [
       {
@@ -4724,7 +4726,75 @@
       },
       {
         "type": "p",
-        "text": "This guide runs in the order you'll need it: a timeline, a spot, a menu that survives the trip, a packing list, and a few ways to make the whole thing look as good as you hoped."
+        "text": "This guide starts with what to pack and how to make the whole thing look the part, then runs in the order you'll need it: a timeline, a spot, a menu that survives the trip, and a few ways to spend the time once you're sitting down."
+      },
+      {
+        "type": "h2",
+        "text": "The packing list",
+        "id": "packing"
+      },
+      {
+        "type": "whatYoullNeed",
+        "essentials": [
+          "A big blanket, ideally with a waterproof backing",
+          "A cooler or insulated bag with ice packs",
+          "Plates, cutlery, napkins and a sharp knife in a sleeve",
+          "Water, other drinks, and a bottle opener or corkscrew if needed",
+          "A trash bag for everything you take, and wet wipes for sticky fingers",
+          "Sun protection and a layer for when the shade moves"
+        ],
+        "optional": [
+          "A basket or sturdy tote that looks nice on the grass",
+          "A small cushion or two",
+          "Reusable tableware and cloth napkins",
+          "A game, a book or a sketchbook"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "A waterproof-backed blanket and an insulated bag are the two things that make the practical bits easier if you picnic more than once. You may already own much of the rest: a throw, a tote, plates, jars, napkins, an opener. A proper basket with fitted tableware is a pretty upgrade if the habit sticks."
+      },
+      {
+        "type": "list",
+        "items": [
+          "**A waterproof-backed picnic blanket,** so the damp ground stays on the other side and there's room for everyone.",
+          "**An insulated cooler bag,** so the ice packs and the cold food travel together, as the food-safety notes below suggest.",
+          "**An insulated flask,** for iced tea that stays cold or something hot on a cool day.",
+          "**A sturdy market tote or basket,** so plates, jars and napkins go in one bag and your hands stay free."
+        ]
+      },
+      {
+        "type": "starterKit",
+        "productIds": [
+          "picnic-blankets",
+          "market-totes"
+        ],
+        "title": "Picnic: where to start"
+      },
+      {
+        "type": "shopHobby",
+        "productIds": [
+          "picnic-blankets",
+          "cooler-bags",
+          "thermos-flasks",
+          "market-totes",
+          "water-bottles"
+        ],
+        "title": "For the packing list",
+        "dek": "A blanket with a waterproof backing, an insulated bag, a flask and a tote make setting up simple and pretty."
+      },
+      {
+        "type": "h2",
+        "text": "Making it look the part",
+        "id": "aesthetic"
+      },
+      {
+        "type": "p",
+        "text": "An aesthetic picnic is mostly a few decisions made on purpose. Pick two or three colors and let the blanket, napkins and food echo them. Decant food into small containers or jars (check whether your park allows glass) so it looks arranged rather than dumped. Cloth napkins and reusable plates photograph better than disposables, and they're gentler on the park."
+      },
+      {
+        "type": "p",
+        "text": "Add one thing with height or softness: a small bunch of flowers in a jar (the [flower arranging guide](/journal/flower-arranging-as-a-hobby) shows how), a cushion, a tall bottle. Then put your phone away after the first photo. The point of a pretty picnic is that you're actually in it."
       },
       {
         "type": "h2",
@@ -4788,45 +4858,6 @@
       },
       {
         "type": "h2",
-        "text": "Making it look the part",
-        "id": "aesthetic"
-      },
-      {
-        "type": "p",
-        "text": "An aesthetic picnic is mostly a few decisions made on purpose. Pick two or three colors and let the blanket, napkins and food echo them. Decant food into small containers or jars (check whether your park allows glass) so it looks arranged rather than dumped. Cloth napkins and reusable plates photograph better than disposables, and they're gentler on the park."
-      },
-      {
-        "type": "p",
-        "text": "Add one thing with height or softness: a small bunch of flowers in a jar (the [flower arranging guide](/journal/flower-arranging-as-a-hobby) shows how), a cushion, a tall bottle. Then put your phone away after the first photo. The point of a pretty picnic is that you're actually in it."
-      },
-      {
-        "type": "h2",
-        "text": "The packing list",
-        "id": "packing"
-      },
-      {
-        "type": "whatYoullNeed",
-        "essentials": [
-          "A big blanket, ideally with a waterproof backing",
-          "A cooler or insulated bag with ice packs",
-          "Plates, cutlery, napkins and a sharp knife in a sleeve",
-          "Water, other drinks, and a bottle opener or corkscrew if needed",
-          "A trash bag for everything you take, and wet wipes for sticky fingers",
-          "Sun protection and a layer for when the shade moves"
-        ],
-        "optional": [
-          "A basket or sturdy tote that looks nice on the grass",
-          "A small cushion or two",
-          "Reusable tableware and cloth napkins",
-          "A game, a book or a sketchbook"
-        ]
-      },
-      {
-        "type": "p",
-        "text": "You probably own most of this already: a blanket or large throw, a tote, plates, jars, napkins, an opener. If you picnic more than once, a waterproof-backed blanket and an insulated bag are the two things that make the practical bits easier. A proper basket with fitted tableware is a pretty upgrade if the habit sticks."
-      },
-      {
-        "type": "h2",
         "text": "Once you're sitting down",
         "id": "activities"
       },
@@ -4847,7 +4878,23 @@
       },
       {
         "type": "p",
+        "text": "**Worth bringing:** a book sleeve for the paperback, a pocket sketch pad with {{product:sakura-pigma-micron-8-pack-black|a black fineliner}} or a small travel watercolor set, and a deck of conversation cards, so the quiet half hour has something in it."
+      },
+      {
+        "type": "p",
         "text": "Leave the spot as you found it. Take everything you brought, scraps and napkins included, and carry a spare bag so you're never tempted to cram trash into an already overflowing bin."
+      },
+      {
+        "type": "shopHobby",
+        "productIds": [
+          "book-sleeves",
+          "sketch-pads",
+          "portable-watercolor",
+          "pocket-notebooks",
+          "conversation-cards"
+        ],
+        "title": "For once you're sitting down",
+        "dek": "A book sleeve, a sketch pad, a small watercolor set or a deck of cards make the half hour on the blanket something to look forward to."
       },
       {
         "type": "h2",
@@ -4869,21 +4916,12 @@
         "text": "If you're nervous about the grand version, start tiny: one friend, two sandwiches and a thermos, ninety minutes."
       },
       {
-        "type": "shopHobby",
-        "productIds": [
-          "picnic-blankets",
-          "market-totes"
-        ],
-        "title": "Picnic gear that makes it easy",
-        "dek": "A waterproof-backed blanket keeps you dry and a good tote makes carrying everything easier, so setting up is simple and pretty."
-      },
-      {
         "type": "makePlan",
         "text": "Pick a sunny day, text one friend and let Make Some Plans turn the picnic into a real plan."
       },
       {
         "type": "p",
-        "text": "Looking for more to do with the rest of the weekend? See [things to do on the weekend](/journal/things-to-do-on-the-weekend), or [cheap weekend adventures](/journal/cheap-weekend-adventures) for plans that cost little."
+        "text": "Looking for more to do with the rest of the weekend? See [things to do on the weekend](/journal/things-to-do-on-the-weekend), or [weekend adventures, packed](/journal/cheap-weekend-adventures) for easy outings with the gear for each."
       }
     ]
   },
