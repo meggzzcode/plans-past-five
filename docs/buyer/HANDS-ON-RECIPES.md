@@ -42,7 +42,7 @@ Needs Pillow (`pip install pillow`), `sharp` or ImageMagick installed on your ma
 Replace `public/favicon.svg` (and `public/favicon.ico`, `public/icons/*`, which are separate files), edit `src/components/brand/Wordmark.tsx`, colours in `src/styles.css`. Regenerating the brand PNGs and pins (`design/brand/build-brand.mjs`, `scripts/build-pins.mjs`) needs Playwright with Chromium, and `design/brand/tools/build-logos.py` needs `pip install fonttools`. None of these is in `package.json`: install them yourself first.
 
 ## Analytics and verification
-`searchConsoleVerification` and `pinterestVerification` in `src/config/site.ts` render as meta tags. `googleAnalyticsId` does not load Google Analytics by itself: see `docs/buyer/ANALYTICS-SETUP.md`.
+`searchConsoleVerification` and `pinterestVerification` in `src/config/site.ts` render as meta tags. Google Analytics has its own single setting, `analytics.ga4MeasurementId` (empty means nothing loads); `integrations.googleAnalyticsId` just follows it. See `docs/buyer/ANALYTICS-SETUP.md`.
 
 ## Email and Published by
 Fill `contactEmail`, `legal.ownerName`, `legal.jurisdiction`, `publisherName`, `publisherEntityType`, `publisherAddress` in `src/config/site.ts`. The Contact and Privacy pages show the email; footer, About, Contact, Terms and Privacy show the Published-by line. To see the pre-publish check run `bunx vitest run src/test/publisher-trust-links.test.tsx --reporter=verbose`; the empty-field warning is only visible with that flag. Once you fill the fields, the test "ships empty and renders nothing" fails by design: update it.

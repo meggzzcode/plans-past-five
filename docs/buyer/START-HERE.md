@@ -1,6 +1,6 @@
 # Start here (buyer)
 
-Plans Past Five is a frontend-only website for women who want hobbies, weekend plans and friendships outside work. It is **pre-revenue and not yet public** as of 2026-11-19: no confirmed live domain, no affiliate account, no analytics, no email list, no traffic history. You are buying a built starter site and a plan, not an earning business. Nothing in these docs promises traffic or income.
+Plans Past Five is a frontend-only website for women who want hobbies, weekend plans and friendships outside work. It is **pre-revenue and not yet public** as of 2026-11-19: no confirmed live domain, no affiliate account, no analytics active (the GA4 setting is empty; see `docs/buyer/ANALYTICS-SETUP.md`), no email list, no traffic history. You are buying a built starter site and a plan, not an earning business. Nothing in these docs promises traffic or income.
 
 ## Read in this order
 

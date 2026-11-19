@@ -51,12 +51,12 @@
     {
       "title": "Safeway product listing quoting Crayola packaging",
       "url": "https://www.safeway.com/shop/product-details.960182844.3132.html",
-      "note": "Retail listing quoting packaging text: keep finished pieces away from food and liquids. Secondhand source, used only for the keep-away-from-food caution"
+      "note": "Retail listing said to quote packaging text (keep finished pieces away from food and liquids). The page is script-rendered and its text could not be read by automated fetch on 2026-11-19, so this is unconfirmed; the food caution is also supported by the Mont Marte page"
     },
     {
       "title": "Mont Marte: answers to common air dry clay questions",
       "url": "https://montmarte.com/blogs/faq/answers-to-10-common-air-dry-clay-questions",
-      "note": "Third-party maker FAQ: sealing does not make air-dry clay food safe"
+      "note": "Third-party maker FAQ, read 2026-11-19: air-dry clay is not food safe; not for open flame or high heat; dry gradually away from direct heat and sun with even thickness; sand only when fully dry"
     }
   ],
   "coworkChecks": [
@@ -67,7 +67,7 @@
     "CORRECT AS 2026-11-19: do not use pieces for food or drink, even if sealed - Crayola packaging text via safeway.com and montmarte.com; no exception for the label is stated",
     "CORRECT AS 2026-11-19: sanding - gentle, damp sponge or fine paper, ventilated space, mask optional, check the safety data sheet; no claim that a mask is required (Crayola SDS: no respirator required under normal use)",
     "REMOVED 2026-11-19: starter spend, quarter-inch thickness, thin/thick-piece crack causes, smoothing cracks (no source)",
-    "CORRECT AS 2026-11-19: 'keep away from flame and heat' has no manufacturer statement behind it; it is worded as a precaution ('as a precaution'), not as a tested fact, and no candle holder is suggested"
+    "CORRECT AS 2026-11-19: 'keep away from flame and heat' is supported by the Mont Marte FAQ (not for open flame or high heat) and consistent with the Crayola SDS (slight fire hazard); no Crayola statement on flame found; it is worded as a precaution ('as a precaution'), not as a tested fact, and no candle holder is suggested"
   ],
   "related": [
     "creative-hobbies-you-can-start-at-home",
@@ -108,7 +108,7 @@
     },
     {
       "type": "p",
-      "text": "A butter knife and toothpick do much of what sculpting tools do, a jar lid cuts a tidy circle and a baking tray holds pieces as they dry. The right supplies make it more fun, though: a mat saves your table and makes cleanup easy, sculpting tools give crisp edges and little details, and fine brushes let you paint small things like polka dots without blobbing. White clay is the easiest to paint over. A mat and a fine brush are the first extras most people will enjoy having."
+      "text": "A butter knife and toothpick do much of what sculpting tools do, a jar lid cuts a tidy circle and a baking tray holds pieces as they dry. The right supplies make it more fun, though: a mat saves your table and makes cleanup easy, sculpting tools give crisp edges and little details, and fine brushes let you paint small things like polka dots without blobbing. White clay gives a pale base for paint. A mat and a fine brush are the first extras most people will enjoy having."
     },
     {
       "type": "h2",

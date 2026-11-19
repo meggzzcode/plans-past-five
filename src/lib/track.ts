@@ -1,7 +1,8 @@
 /**
  * Central analytics helper. No-op by default: it only fires when
- * `site.integrations.googleAnalyticsId` is set AND a gtag function already exists on the page.
- * It never loads an analytics script (add that, with consent, when the owner supplies credentials).
+ * `site.integrations.googleAnalyticsId` (which follows `site.analytics.ga4MeasurementId`; the one
+ * setting) is set AND a gtag function exists on the page. It never loads a script itself:
+ * src/lib/analytics.ts renders the tag when a valid ID is set.
  * It never sends personal data: only the allow-listed keys below, and only primitive values.
  */
 import { site } from "@/config/site";

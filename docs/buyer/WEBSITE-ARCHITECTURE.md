@@ -44,7 +44,7 @@ docs/              handoff, buyer, content, commerce, marketing, SOPs
 - Products: two layers. Product TYPES (`src/data/products.ts`) link to an Amazon search. The verified catalog (`src/data/catalog.ts`, generated list in `src/data/catalog.generated.ts`) holds 64 records (37 verified, 27 candidate; ordinary non-affiliate links, listing-checked not tested) and is filled by `bun run import:products` from a researched CSV; with no verified product it renders nothing. Kits (`src/data/kits.ts`) are slots filled only by verified products.
 - Links: `resolveProductLink()` in `src/config/affiliate.ts` picks an active approved affiliate entry, else an ordinary retailer URL, else an Amazon search link. Disclosure text follows automatically.
 - SEO: `src/lib/seo.ts` builds titles, descriptions, canonicals, Open Graph and JSON-LD. `src/lib/sitemap.ts` lists published pages for `/sitemap.xml`.
-- Analytics: `src/lib/track.ts` is a no-op helper; it fires only if a Google Analytics ID is set and a gtag function already exists on the page. No script is loaded by the repo (see `docs/buyer/ANALYTICS-SETUP.md`).
+- Analytics: one setting, `analytics.ga4MeasurementId` (empty by default, so nothing loads). A valid ID makes `src/lib/analytics.ts` add the async Google tag to the root head and switches on `src/lib/track.ts` events. See `docs/buyer/ANALYTICS-SETUP.md`.
 
 ## Build and deploy output
 

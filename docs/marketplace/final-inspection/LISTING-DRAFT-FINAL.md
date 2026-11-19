@@ -19,7 +19,7 @@ Recommended: option 1 or 2 (states pre-revenue in the title).
 
 ## READ THIS FIRST (disclosures)
 - **No established revenue.** The site has earned nothing.
-- **No traffic history.** No analytics, no audience data, no ranking or indexing claim.
+- **No traffic history.** No analytics data (GA4 support is built in but off until the buyer sets an ID), no audience data, no ranking or indexing claim.
 - **Not live.** Nothing is deployed. No domain, host, mailbox or analytics exists today. [If this changes, edit this line with a dated screenshot.]
 - **Domain and email:** none are included by default. The buyer registers its own domain and mailbox. If the buyer prefers, the seller can register a domain and push it before closing, only as agreed in writing before the sale [OWNER DECISION: offer yes/no; ownership of any domain is UNCONFIRMED].
 - **AI-assisted content and AI-generated images.** The site was built with AI coding assistance; articles were drafted with AI and held as drafts until claims were checked; all site images are AI-generated. **Rights statement:** no exclusivity and no registrable copyright is promised in any AI-generated material; the image tool's terms on transfer have not been verified; the buyer should take its own advice and may wish to replace images.

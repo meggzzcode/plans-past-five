@@ -10,13 +10,9 @@ import {
   createRouter,
 } from "@tanstack/react-router";
 import type { ReactNode } from "react";
-import {
-  OUTBOUND_BUY_REL,
-  affiliateRegistry,
-  commissionStatement,
-  isMonetized,
-} from "@/config/affiliate";
+import { OUTBOUND_BUY_REL, commissionStatement, isMonetized } from "@/config/affiliate";
 import { site } from "@/config/site";
+import { restoreAffiliate, setAffiliateState, snapshotAffiliate } from "./affiliate-state";
 import { verifiedCatalog } from "@/data/catalog";
 import { ProductCard } from "@/components/commerce/ProductCard";
 import { StarterKit } from "@/components/commerce/StarterKit";
@@ -113,22 +109,18 @@ describe("2. one commission wording across Terms, Privacy and Affiliate Disclosu
     expect(read("privacy.tsx")).not.toMatch(/so we can earn a small/);
   });
   it("says we do not earn today, and 'may earn a commission' only once an entry is live", () => {
-    expect(isMonetized()).toBe(false);
-    expect(commissionStatement().live).toBe(false);
-    expect(commissionStatement().long).toMatch(/don't currently earn/);
-    const amazon = affiliateRegistry["amazon"]!;
-    const snap = { ...amazon };
-    Object.assign(amazon, {
-      websiteTrackingId: "demo-20",
-      approvalStatus: "approved",
-      active: true,
-      lastVerified: "2026-01-01",
-    });
+    const snap = snapshotAffiliate();
     try {
+      setAffiliateState("inactive");
+      expect(isMonetized()).toBe(false);
+      expect(commissionStatement().live).toBe(false);
+      expect(commissionStatement().long).toMatch(/don't currently earn/);
+      setAffiliateState("active");
+      expect(isMonetized()).toBe(true);
       expect(commissionStatement().live).toBe(true);
       expect(commissionStatement().long).toMatch(/may earn a commission/);
     } finally {
-      Object.assign(amazon, snap);
+      restoreAffiliate(snap);
     }
   });
 });

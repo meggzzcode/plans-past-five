@@ -70,7 +70,7 @@ Budget: Netlify's free plan gives 300 credits a month, 15 per production deploy 
 
 ## What is not included
 
-- No live domain, hosting account, analytics, email list or affiliate accounts. You set these up under your own logins (`docs/buyer/ACCOUNT-DEPENDENCIES.md`).
+- No live domain, hosting account, active analytics (one empty setting, `analytics.ga4MeasurementId`, turns GA4 on), email list or affiliate accounts. You set these up under your own logins (`docs/buyer/ACCOUNT-DEPENDENCIES.md`).
 - Affiliate links are not activated; the disclosure says links currently earn nothing.
 - No traffic, revenue or ranking history.
 - A working contact channel is yours to add (`docs/buyer/DOMAIN-AND-EMAIL.md`).

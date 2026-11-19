@@ -58,6 +58,10 @@ const kitRows = kits.map((k) => {
   const filled = fillKit(k, verifiedCatalog);
   return { id: k.id, picks: filled.length, full: isFullKit(filled, k) };
 });
+const ledger = readFileSync(at("docs/content/IMAGE-LICENCE-LEDGER.md"), "utf8");
+const assetSection = (ledger.split(/^## Ledger: files in `src\/assets\/`/m)[1] ?? "").split(/^## /m)[0];
+const ledgerRows = assetSection.split("\n").filter((l) => /^\| [\w-]+\.(jpe?g|png|webp)/.test(l));
+const originCount = (re) => ledgerRows.filter((l) => re.test(l.split("|")[3] ?? "")).length;
 const routeFiles = readdirSync(at("src/routes")).filter((f) => f.endsWith(".tsx") && !f.startsWith("__"));
 const pinCount = countFiles("public/pins", /\.(jpe?g|png)$/i);
 const pinCsvRows = Math.max(0, readFileSync(at("docs/pinterest-pins.csv"), "utf8").trim().split("\n").length - 1);
@@ -121,6 +125,7 @@ Generated ${date} from commit \`${commit}\`${dirty} by \`node scripts/inventory.
 | Pinterest pin images in \`public/pins\` | ${pinCount} (${Object.keys(pinFiles).length} pages have pins; ${pinCsvRows} rows in \`docs/pinterest-pins.csv\`) |
 | Image keys used by the site (\`src/data/images*.ts\`) | ${Object.keys(images).length} |
 | Image files in \`src/assets\` | ${countFiles("src/assets", /\.(jpe?g|png|webp|svg)$/i)} |
+| Origin of the \`src/assets\` images (per \`docs/content/IMAGE-LICENCE-LEDGER.md\`) | ${originCount(/Lovable/i)} Lovable AI, ${originCount(/Canva/i)} Canva AI, ${ledgerRows.length} ledger rows |
 | Article image files in \`content/images\` | ${countFiles("content/images")} |
 | Logo SVGs (\`design/brand/logos\`) | ${logoFiles} |
 | Font files (\`design/brand/fonts\`, SIL OFL) | ${fontFiles} (Fraunces, DM Sans, Caveat) |

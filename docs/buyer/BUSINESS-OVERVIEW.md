@@ -8,7 +8,7 @@ Plans Past Five is a lifestyle content site. Brand copy lives in `src/config/sit
 
 - Pre-revenue. Not yet public (domain `planspastfive.com` is configured as the placeholder `site.url`; whether it is registered, owned or connected is NOT confirmed by the repo).
 - No affiliate account is active; the site is unmonetized by default (`src/config/affiliate.ts`).
-- No analytics, newsletter, social accounts or traffic history exist.
+- No analytics is active (`analytics.ga4MeasurementId` is empty, so nothing loads; one setting turns it on, see `docs/buyer/ANALYTICS-SETUP.md`). No newsletter, social accounts or traffic history exist.
 - No earnings, traffic, ranking or audience figures exist, and none should be quoted to anyone as fact.
 
 ## What is built

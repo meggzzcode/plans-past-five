@@ -70,14 +70,14 @@ The deployed artifact is pre-rendered/edge-rendered React with no database, no a
 
 ## Third-party hosts called by the pages
 
-25 routes loaded in a real browser against the production build. Result: exactly two external origins, both Google Fonts. No analytics, tag manager, ad, chat, form-handler or CDN image host is called.
+25 routes loaded in a real browser against the production build. Result: exactly two external origins, both Google Fonts. No analytics, tag manager, ad, chat, form-handler or CDN image host is called with the shipped (empty) analytics setting. Setting `analytics.ga4MeasurementId` adds `www.googletagmanager.com` (see `docs/buyer/ANALYTICS-SETUP.md`).
 
 | Host | Type | Where | How to remove |
 | --- | --- | --- | --- |
 | `fonts.googleapis.com` | Stylesheet | `src/routes/__root.tsx` (preconnect and stylesheet link, around lines 112-116), every page | Delete the three font links and self-host Caveat, DM Sans and Fraunces. The font files and their OFL licences are already in `design/brand/fonts/`. This also removes the visitor IP disclosure to Google. |
 | `fonts.gstatic.com` | Font files | Same | Same as above. |
 
-Code that can call out but is inert by default: `src/lib/track.ts` (only fires if `site.integrations.googleAnalyticsId` is set and a `gtag` already exists; it never loads a script). Outbound links (Amazon, Pinterest) are plain anchors, not requests made by the page. The site contains no Supabase, Stripe, email or newsletter service; the buyer connects none and has none to disconnect. The privacy page already says no analytics or newsletter tools are active; if fonts are left on Google, add a one-line mention.
+Code that can call out but is inert by default: `src/lib/analytics.ts` (renders the Google tag only when `analytics.ga4MeasurementId` holds a valid GA4 ID; empty by default) and `src/lib/track.ts` (fires only when that ID is set and `gtag` exists; it never loads a script itself). Outbound links (Amazon, Pinterest) are plain anchors, not requests made by the page. The site contains no Supabase, Stripe, email or newsletter service; the buyer connects none and has none to disconnect. The privacy page says no analytics or newsletter tools are active while the ID is empty and switches to a Google Analytics sentence when one is set; if fonts are left on Google, add a one-line mention.
 
 ## What could not be checked
 

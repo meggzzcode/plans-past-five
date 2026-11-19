@@ -1,6 +1,6 @@
 # Post-sale support proposal (30 days): Plans Past Five
 
-**PROPOSAL for owner review. Not legal advice. Needs a lawyer's review and a check against the marketplace's terms (Flippa forbids circumventing the platform; keep the offer in the listing and the agreement).** Builds on HANDOVER-TERMS-SUGGESTION.md. Nothing has been sent or agreed.
+**STATUS: PROPOSAL. Needs the owner's approval AND a lawyer's review before it is offered to anyone.** Not legal advice. Also needs a check against the marketplace's terms (Flippa forbids circumventing the platform; keep the offer in the listing and the agreement). Builds on HANDOVER-TERMS-SUGGESTION.md. Nothing has been sent or agreed. Owner approval: ______ (date). Legal review: ______ (name, date).
 
 ## 1. Offer
 Limited written handover support for 30 calendar days from the date the buyer accepts the transfer, so the buyer can understand and move the assets. It is a courtesy tied to the sale, not a service contract and not operation of the site.
@@ -10,10 +10,10 @@ Limited written handover support for 30 calendar days from the date the buyer ac
 - Walking through the 20-step transfer checklist and confirming each asset arrived.
 - Clarifying what the docs say about the Amazon registry setup, image ledger, article status and verification records.
 - Pointing to the right file or doc rather than editing the buyer's setup.
-- Up to one 45-minute video or voice call if written answers are not enough [OWNER DECISION].
+- Up to one 45-minute video or voice call if written answers are not enough [OWNER DECISION]. **The call counts toward the 5-hour maximum** (recommended): the 45 minutes, plus any preparation or follow-up the seller chooses to log, are deducted from the 5 hours. It is not an extra allowance.
 
 ## 3. Hours and response
-- Cap: **5 hours total** across the 30 days, tracked by the seller and reported on request; anything beyond is separate paid work if both agree in writing.
+- Cap: **5 hours total** across the 30 days, including the optional 45-minute call, tracked by the seller and reported on request; anything beyond is separate paid work if both agree in writing.
 - Response: within **2 business days** to a written question; one agreed channel (marketplace messaging or one named email).
 - Unused hours do not roll over; the term does not extend automatically.
 
@@ -27,4 +27,4 @@ Running the site or accounts; writing, editing or fact-checking articles; settin
 - No warranty is given beyond what the listing states; the "what we do not claim" list stays attached to the sale.
 
 ## 6. Open points for the owner and a lawyer
-Governing law and disclaimers; whether the 5-hour cap and 2-day response suit the owner's time; whether to offer a paid extension rate (not set here); AI-image rights wording; consistency with the marketplace's terms and escrow acceptance period.
+Whether the optional 45-minute call should instead be extra (the recommendation is that it counts toward the 5 hours); governing law and disclaimers; whether the 5-hour cap and 2-day response suit the owner's time; whether to offer a paid extension rate (not set here); AI-image rights wording; consistency with the marketplace's terms and escrow acceptance period.

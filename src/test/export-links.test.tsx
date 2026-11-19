@@ -1,10 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
+import { configuredTag, setAffiliateState, useAffiliateRestore } from "./affiliate-state";
 import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
-import {
-  affiliateRegistry,
-  AMAZON_ASSOCIATE_STATEMENT,
-  resolveProductLink,
-} from "@/config/affiliate";
+import { AMAZON_ASSOCIATE_STATEMENT, resolveProductLink } from "@/config/affiliate";
 import { exportLinkFor, exportPageUrl } from "@/lib/export-links";
 import { buildListText, SHOPLIST_KEY } from "@/lib/shoplist";
 import { buildBundle, bundleToCode, bundleToJson } from "@/lib/saved-transfer";
@@ -29,20 +26,17 @@ const Wrap = ({ children }: { children: ReactNode }) => {
   return <RouterProvider router={router} />;
 };
 
-const amazon = affiliateRegistry["amazon"]!;
-const snapshot = { ...amazon };
+useAffiliateRestore();
 afterEach(() => {
-  Object.assign(amazon, snapshot);
   cleanup();
   window.localStorage.clear();
 });
-const enable = () =>
-  Object.assign(amazon, {
-    websiteTrackingId: "demo-20",
-    approvalStatus: "approved",
-    active: true,
-    lastVerified: "2026-01-01",
-  });
+// Both states are set explicitly (fake id), whatever the repo ships or the buyer configured.
+const TAG = "demo-20";
+const enable = () => setAffiliateState("active", TAG);
+const disable = () => setAffiliateState("inactive");
+// A buyer's own configured id must also never leak into exports.
+const CONFIGURED = configuredTag();
 
 const p: CatalogProduct = {
   id: "ex-fixture",
@@ -69,10 +63,14 @@ const p: CatalogProduct = {
   status: "verified",
 };
 
-const BANNED = /tag=|ref=|ref_=|linkCode|ascsubtag|demo-20|utm_|Associate/i;
+const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const BANNED = new RegExp(
+  `tag=|ref=|ref_=|linkCode|ascsubtag|${TAG}|utm_|Associate${CONFIGURED ? `|${escapeRe(CONFIGURED)}` : ""}`,
+  "i",
+);
 
 describe.each([
-  ["disabled", () => {}],
+  ["disabled", disable],
   ["enabled", enable],
 ])("export links with registry %s", (mode, setup) => {
   it("on-site links follow the registry; exports never carry a tag", async () => {

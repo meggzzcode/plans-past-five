@@ -56,7 +56,7 @@ Output docs/marketplace/FLIPPA-RESEARCH.md (and notes on other marketplaces). Re
 
 ## C8 Account setup in the owner's logins (after domain and host exist)
 
-Search Console domain property, sitemap submission, Bing import, GA4 property with custom dimensions and key events (event names are in src/lib/track.ts), Pinterest Business account and website claim. Follow docs/buyer/ANALYTICS-SETUP.md and docs/buyer/PINTEREST-SETUP.md. Record IDs in src/config/site.ts only by telling Claude Code. Blocked until the owner chooses a host and connects the domain.
+Search Console domain property, sitemap submission, Bing import, GA4 property with custom dimensions and key events (event names are in src/lib/track.ts), Pinterest Business account and website claim. Follow docs/buyer/ANALYTICS-SETUP.md and docs/buyer/PINTEREST-SETUP.md. Record IDs in src/config/site.ts only by telling Claude Code (GA4 goes in `analytics.ga4MeasurementId`; verification tokens in `integrations.searchConsoleVerification` / `pinterestVerification`). Blocked until the owner chooses a host and connects the domain.
 
 ## C9 Production QA after deployment
 

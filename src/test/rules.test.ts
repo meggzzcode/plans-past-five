@@ -7,6 +7,7 @@ import { search } from "@/lib/search";
 import { hobbies } from "@/data/hobbies";
 import { products, collections, collectionProducts } from "@/data/products";
 import { amazonSearchUrl } from "@/config/affiliate";
+import { restoreAffiliate, setAffiliateState, snapshotAffiliate } from "./affiliate-state";
 import { sanitizeSaved } from "@/lib/saved";
 
 describe("Find Your Thing", () => {
@@ -132,8 +133,16 @@ describe("Content rules", () => {
       for (const id of c.extraProductIds ?? [])
         expect(products.some((p) => p.id === id)).toBe(true);
   });
-  it("Amazon links carry no affiliate tag by default", () => {
-    expect(amazonSearchUrl("air dry clay")).not.toContain("tag=");
+  it("Amazon links carry no affiliate tag unless an entry is live", () => {
+    const snap = snapshotAffiliate();
+    try {
+      setAffiliateState("inactive");
+      expect(amazonSearchUrl("air dry clay")).not.toContain("tag=");
+      setAffiliateState("active");
+      expect(amazonSearchUrl("air dry clay")).toContain("tag=testsite-20");
+    } finally {
+      restoreAffiliate(snap);
+    }
   });
 });
 

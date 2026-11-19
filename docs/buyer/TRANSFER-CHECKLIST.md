@@ -11,7 +11,7 @@ Roles: **Seller** and **Buyer**. Mark each step with the date and who confirmed 
 5. **Transfer the domain** (if included and confirmed owned): registrar-to-registrar or account push per the registrar's current rules (re-read live). Buyer enables two-factor immediately.
 6. **Transfer the repository** to the buyer's GitHub account (or the buyer imports the sanitized archive). Decide whether to keep full git history; if history is kept, scan it for secrets first. Do not rewrite published history while still connected to Lovable.
 7. **Transfer or recreate hosting** under the buyer's account; set the build command (`bun run build`) and domain.
-8. **Replace analytics IDs.** Buyer sets own `googleAnalyticsId`, Search Console and Bing properties; removes any seller IDs (none are expected in the repo; verify with a search).
+8. **Replace analytics IDs.** Buyer sets own `analytics.ga4MeasurementId` (the one analytics setting), `integrations.searchConsoleVerification` / `pinterestVerification`, and Bing properties; removes any seller IDs (none are expected in the repo; verify with a search).
 9. **Replace affiliate IDs and credentials.** Buyer applies for own programs and edits `src/config/affiliate.ts` (`docs/buyer/AFFILIATE-SETUP.md`). Seller's ids are never reused. Credentials are shared only through a secure password manager channel, then rotated.
 10. **Set up the mailbox.** Buyer creates `hello@` on the buyer's domain and sets `site.contactEmail` (`docs/buyer/DOMAIN-AND-EMAIL.md`). Seller's mailbox is not included.
 11. **Transfer assets**: images, pin files (`public/pins`), pin sources (`design/`), `docs/pinterest-pins.csv`, brand files, license records (`docs/IMAGE-LICENSES.md`).

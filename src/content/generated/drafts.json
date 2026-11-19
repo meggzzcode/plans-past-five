@@ -9,18 +9,8 @@
     "hero": "picnic",
     "searchIntent": "weekend plans ideas",
     "angle": "Solo, friends and date options; budget tiers; no invented local events",
-    "hobbies": [
-      "picnicking",
-      "thrifting",
-      "hiking",
-      "pottery-painting",
-      "museum-exploring"
-    ],
-    "productIds": [
-      "picnic-blankets",
-      "market-totes",
-      "film-cameras"
-    ],
+    "hobbies": ["picnicking", "thrifting", "hiking", "pottery-painting", "museum-exploring"],
+    "productIds": ["picnic-blankets", "market-totes", "film-cameras"],
     "body": [
       {
         "type": "h2",
@@ -50,17 +40,8 @@
     "hero": "shopGirlsNight",
     "searchIntent": "how to make friends as an adult",
     "angle": "Recurring activities, classes, clubs; scripts for following up",
-    "hobbies": [
-      "book-clubs",
-      "craft-nights",
-      "pickleball",
-      "volunteering",
-      "mahjong"
-    ],
-    "productIds": [
-      "conversation-cards",
-      "mahjong-sets"
-    ],
+    "hobbies": ["book-clubs", "craft-nights", "pickleball", "volunteering", "mahjong"],
+    "productIds": ["conversation-cards", "mahjong-sets"],
     "body": [
       {
         "type": "h2",

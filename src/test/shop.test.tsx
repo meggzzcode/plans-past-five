@@ -7,7 +7,8 @@ import {
   createRouter,
 } from "@tanstack/react-router";
 import type { ReactNode } from "react";
-import { affiliateRegistry, resolveProductLink } from "@/config/affiliate";
+import { AMAZON_ASSOCIATE_STATEMENT, resolveProductLink } from "@/config/affiliate";
+import { setAffiliateState, useAffiliateRestore } from "./affiliate-state";
 import { site } from "@/config/site";
 import {
   catalog,
@@ -716,11 +717,10 @@ describe("empty-catalog parity", () => {
 });
 
 describe("links and affiliate swap", () => {
-  const amazon = affiliateRegistry["amazon"]!;
-  const snap = { ...amazon };
-  afterEach(() => Object.assign(amazon, snap));
+  useAffiliateRestore();
 
-  it("links are ordinary and not sponsored today", async () => {
+  it("links are ordinary and not sponsored while the entry is inactive", async () => {
+    setAffiliateState("inactive");
     await show(
       <>
         <ProductCard product={base} placement="test" />
@@ -736,14 +736,16 @@ describe("links and affiliate swap", () => {
     expect(document.body.textContent).not.toMatch(/As an Amazon Associate/);
   });
   it("activating the registry changes link, rel and disclosure with no component change", async () => {
-    Object.assign(amazon, {
-      websiteTrackingId: "demo-20",
-      approvalStatus: "approved",
-      active: true,
-      lastVerified: "2026-01-01",
-    });
+    setAffiliateState("active", "demo-20");
     expect(resolveProductLink(linkableFor(base)).sponsored).toBe(true);
-    await show(<ProductCard product={base} placement="test" />);
+    await show(
+      <>
+        <ProductCard product={base} placement="test" />
+        <ShopDisclosure />
+      </>,
+    );
+    expect(document.body.textContent).toContain(AMAZON_ASSOCIATE_STATEMENT);
+    expect(document.body.textContent).not.toMatch(/don't currently earn/);
     const a = screen.getByText(/See it on Amazon/).closest("a")!;
     expect(a.getAttribute("href")).toBe("https://www.amazon.com/dp/B0TESTFIX1?tag=demo-20");
     expect(a.getAttribute("rel")).toBe("sponsored noopener noreferrer");

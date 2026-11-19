@@ -34,7 +34,7 @@ src/test/rules.test.ts    quiz/planner/content rules
 - **Quiz matching:** `src/lib/finder.ts` — hard filters (location, time, budget, company, energy ≤ +1), score craving +4, energy +2, beginner +1; theme from top categories; <3 results → suggests which constraint to loosen.
 - **Planner:** `src/lib/planner.ts` + `src/data/activities.ts` — slots by when/length, filters part/company/budget/minutes/at-home, vibe score, `seed` rotates within top 4 (Shuffle). Activities never name real places, events or prices.
 - **Saved items:** `src/lib/saved.ts`, key `ppf:my-plans:v1` in localStorage, read after mount.
-- **Newsletter/analytics:** flags in `site.integrations` are placeholders; nothing is wired. Add Kit/MailerLite form and GA only with owner credentials, and update the privacy page + consent.
+- **Newsletter/analytics:** newsletter flags in `site.integrations` are placeholders; nothing is wired (add Kit/MailerLite only with owner credentials). Analytics is wired but off: set `analytics.ga4MeasurementId` (empty by default) to load GA4; decide consent first (`docs/buyer/ANALYTICS-SETUP.md`).
 
 ## Testing results (this build)
 - Original build: typecheck clean, 12 tests (historical). Current (2026-11-19): typecheck clean; `bunx vitest run` → 523 tests passing in 34 files.
@@ -71,7 +71,7 @@ Historical list from the first build; superseded by `docs/content/ARTICLE-ROADMA
 2. Revise the 5 remaining drafts and source-check the 4 original articles (Cowork C4).
 3. Generate missing imagery (see IMAGE-LICENSES.md) and an OG image.
 4. Build Pinterest templates.
-5. Wire newsletter + analytics with consent once credentials exist.
+5. Wire the newsletter once credentials exist; set `analytics.ga4MeasurementId` once the owner supplies a GA4 ID and has decided on consent.
 
 
 ## Turnkey build-out (2026-11-19, branch claude/vibrant-dirac-amdf7r)
@@ -84,4 +84,4 @@ Plan and work split: `docs/TURNKEY-PLAN.md`. Checkpoint: `docs/RESUME.md`. Cowor
 - **Newsletter:** the homepage no longer promises one (standing decision: no newsletters for now).
 - Printables and digital products were removed by owner decision (2026-11-19).
 - Amazon Associates is the only affiliate program; nothing is applied for or active. Nothing is deployed.
-- Not yet true: no domain, host, analytics or affiliate account is set up; legal pages are starter text.
+- Not yet true: no domain, host, GA4 property (the setting is empty) or affiliate account is set up; legal pages are starter text.

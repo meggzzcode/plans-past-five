@@ -41,7 +41,7 @@ Status: DRAFT, 2026-11-19. Flippa rules were researched on 2026-11-18 (FLIPPA-RE
 
 Keep this list with the listing. If a statement below becomes true, it needs evidence first (a dated screenshot, a receipt or a written record), and this list must be edited, not ignored.
 
-- **No traffic.** The site has no visitor history and no analytics. We state no visitor, ranking or audience figure.
+- **No traffic.** The site has no visitor history and no analytics data (GA4 support is built in but switched off until you set your own ID). We state no visitor, ranking or audience figure.
 - **No revenue.** The site has earned nothing.
 - **No approved affiliate account.** Amazon Associates is not applied for and not approved. See `docs/buyer/AMAZON-ASSOCIATES-PATH.md`. The seller's own accounts are not included.
 - **No claim of indexing before Search Console shows it.** Say "submitted" at most; say "indexed" only for pages the Console lists as indexed, with the date.
