@@ -111,3 +111,11 @@ Report: what worked, screenshots or the exact text of any error, whether Pages C
 
 ## C18 Netlify credit check (added 2026-11-19)
 On the plans-past-five Netlify project: read the Usage page and report credits used so far this cycle and per deploy; confirm whether builds skipped by the `ignore` command in netlify.toml (it skips unless the commit message contains the deploy marker) consume any credits; confirm whether auto publishing is on and whether the production branch is still claude/vibrant-dirac-amdf7r; after Claude Code merges to main, change the production branch to main. Report only; change no plan or billing setting.
+
+
+## C19 Publisher filing rules (added 2026-11-19; run ONLY after the owner names their state)
+Do not start until the owner has told you which state (or country) they will publish from and which option from docs/buyer/PUBLISHER-SETUP.md they are considering. Never guess the state.
+1. Using only official pages (the state's Secretary of State or business-registration site, and the county or city page if the state delegates DBA filing), read the CURRENT rules for (a) registering an assumed name / DBA as a sole proprietor and (b) forming an LLC.
+2. For each, record: what must be filed and where, the filing fee, any renewal period and fee, any publication requirement, whether a registered agent is required, and whether a PO box or mail-forwarding address is accepted as the public address. Quote the exact wording that matters.
+3. Give every fact the official URL and the date you read it. Mark anything you could not find as NOT FOUND. Do not give legal or tax advice, do not pick an option for the owner, and do not file, pay, apply or enter any personal details.
+Output: docs/buyer/PUBLISHER-FILING-RULES-<state>.md. Do not edit code.

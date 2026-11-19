@@ -115,7 +115,7 @@ describe("trust pages", () => {
   it("article route shows sources only when present", () => {
     const s = read("src/routes/journal.$slug.tsx");
     expect(s).toMatch(/sources\.length > 0/);
-    expect(s).toMatch(/Sources and when we checked/);
+    expect(s).toMatch(/aria-label="Sources and checks"/);
     expect(s).toMatch(/Facts last checked/);
   });
 });
