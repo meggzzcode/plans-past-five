@@ -1,0 +1,64 @@
+{
+  "id": "paperage-blank-journal-160-pages",
+  "name": "Blank Journal Notebook, 160 Pages, Medium 5.6 x 8 in (Blush)",
+  "brand": "PAPERAGE",
+  "category": "Journals",
+  "order": 3,
+  "status": "verified",
+  "description": "A hardcover thread-bound blank journal with 100 gsm acid-free ivory paper, inner pocket, ribbon and elastic closure.",
+  "asin": "B08FC38BJ4",
+  "specs": [
+    {
+      "label": "Pages",
+      "value": "160"
+    },
+    {
+      "label": "Size",
+      "value": "5.6 x 8 in"
+    },
+    {
+      "label": "Paper",
+      "value": "100 gsm acid-free ivory"
+    },
+    {
+      "label": "Binding",
+      "value": "thread-bound, lay-flat"
+    }
+  ],
+  "hobbies": [
+    "junk-journaling"
+  ],
+  "articles": [
+    "junk-journaling-supplies-for-beginners",
+    "how-to-start-junk-journaling"
+  ],
+  "collections": [
+    "journaling-era",
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "junk-journaling",
+      "slot": "journal"
+    }
+  ],
+  "role": "aesthetic-upgrade",
+  "isEssential": false,
+  "audience": "People who want a smaller, bag-size journal in blush",
+  "whySelected": "The listing names junk journaling as a use and describes thicker acid-free paper than ordinary notebooks.",
+  "limitations": [
+    "100 gsm paper will warp if the pages get glue-heavy; the listing does not promise it handles wet glue",
+    "Thread-bound journals thicken at the spine as pages fill",
+    "Colour is a variant (Blush)",
+    "Manufacturer page not yet checked"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B08FC38BJ4"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "shortName": "Blush blank journal, 160 pages",
+  "benefit": "A blush-pink journal that slips into a bag, with 160 pages for tickets, notes and half-finished ideas.",
+  "compare": "Smaller bag-size blush journal; thinner 100 gsm paper, so glue-heavy pages warp sooner."
+}

@@ -1,0 +1,61 @@
+{
+  "id": "paxcoo-488pc-friendship-bracelet-kit",
+  "name": "String Bracelet Making Kit, 488 Pcs, 50 Skeins Floss, 400 Beads, 37 Tools",
+  "brand": "PAXCOO",
+  "category": "Bracelet kit",
+  "order": 63,
+  "status": "candidate",
+  "description": "A friendship bracelet kit with 50 skeins of embroidery floss, 400 beads (100 letter beads, 300 glass seed beads), 37 embroidery tools and a storage box.",
+  "asin": "B0BZ73SYN4",
+  "specs": [
+    {
+      "label": "Floss",
+      "value": "50 skeins"
+    },
+    {
+      "label": "Beads",
+      "value": "400 (100 letter, 300 glass seed)"
+    },
+    {
+      "label": "Tools",
+      "value": "37 incl. needles, scissors, thimble"
+    },
+    {
+      "label": "Storage",
+      "value": "box"
+    }
+  ],
+  "hobbies": [
+    "craft-nights",
+    "friendship-bracelets"
+  ],
+  "articles": [
+    "how-to-host-a-craft-night"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "pottery-paint-night",
+      "slot": "main-project"
+    }
+  ],
+  "role": "complete-kit",
+  "isEssential": true,
+  "audience": "Hosts planning an easy bracelet night for a small group",
+  "whySelected": "Everything for several bracelets in one box (thread, beads, tools), no mess, quick to learn: the easiest of the article's five projects.",
+  "limitations": [
+    "One kit stretches to about 3 to 5 people, not a big group (our estimate, not a listing claim)",
+    "Small beads and sharp needles: not for young children",
+    "Instructions quality not tested by us",
+    "Brand is a store-brand name with no maker page found",
+    "Seller on listing: Paxcoo Direct"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0BZ73SYN4 (read in browser 2026-11-19: In Stock, bullets about 50 skeins, 400 beads, 37 tools, 1 pair of scissors, storage box)"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated"
+}

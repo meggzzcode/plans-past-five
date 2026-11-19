@@ -1,0 +1,67 @@
+{
+  "id": "apple-barrel-16-acrylic-craft-paints-2oz",
+  "name": "Vibrant Spectrum Acrylic Craft Paint, 16 Assorted Matte Colors, 2 fl oz",
+  "brand": "Apple Barrel",
+  "category": "Acrylic paint",
+  "order": 17,
+  "status": "held",
+  "statusReason": "Plain craft-store paint that duplicates the lead paint set. Held to keep the choice small.",
+  "description": "A 16-bottle set of matte acrylic craft paint in 2 fl oz bottles.",
+  "asin": "B076CP6F36",
+  "specs": [
+    {
+      "label": "Count",
+      "value": "16"
+    },
+    {
+      "label": "Size",
+      "value": "2 fl oz each"
+    },
+    {
+      "label": "Finish",
+      "value": "matte"
+    },
+    {
+      "label": "Origin per listing",
+      "value": "made in USA"
+    }
+  ],
+  "hobbies": [
+    "air-dry-clay",
+    "paint-by-numbers"
+  ],
+  "articles": [
+    "how-to-start-air-dry-clay"
+  ],
+  "collections": [
+    "pottery-era",
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "air-dry-clay",
+      "slot": "paint"
+    }
+  ],
+  "role": "affordable",
+  "isEssential": false,
+  "audience": "Beginners who want a bigger colour range for dry clay",
+  "whySelected": "Larger colour range than a 12 ml tube set; listing says it cleans up with soap and water while wet.",
+  "limitations": [
+    "No safety certification was checked: read the bottle label",
+    "Matte finish only",
+    "Manufacturer page not yet checked",
+    "Seller on listing: not shown on page",
+    "Plaid brand page (read 2026-11-18) covers Apple Barrel matte paint but this exact 16-colour set was not found on the maker site, so no maker claim is repeated here; Plaid says matte dries porous and should be sealed with varnish or acrylic spray",
+    "2026-11-19: Plaid sells a 16 x 2 oz matte Apple Barrel set (PROMOABIII) but the colour list differs from the Amazon Vibrant Spectrum set: same family, not confirmed identical",
+    "2026-11-19 retry: Amazon-derived listing data shows ASIN B076CP6F36 = \"Apple Barrel Vibrant Spectrum\" 16 x 2 fl oz, model PROMOABIII, manufacturer Plaid Enterprises, matte, non-toxic (desertcart mirror, https://www.desertcart.co.za/products/52164318-vibrant-spectrum-collection-acrylic-craft-paint-promoabiii-2-fl-oz), and Plaid's model PROMOABIII is the 16-piece 2 oz matte set (Staples, Target). Model number matches; colour names still differ between Amazon and Plaid's page, so keep as partly confirmed"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B076CP6F36",
+    "https://plaidonline.com/brands/apple-barrel/matte-acrylic-paint"
+  ],
+  "lastVerified": "2026-11-18",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "manufacturerUrl": "https://plaidonline.com/apple-barrel-colors-acrylic-paint-16-color-set-pro"
+}

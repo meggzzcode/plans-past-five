@@ -22,26 +22,6 @@
     "film-photography",
     "reading"
   ],
-  "productIds": [
-    "air-dry-clay",
-    "clay-tools",
-    "junk-journals",
-    "washi-tape",
-    "walking-shoes",
-    "trekking-socks",
-    "daypacks",
-    "water-bottles",
-    "picnic-blankets",
-    "thermos-flasks",
-    "phone-armband",
-    "market-totes",
-    "pocket-notebooks",
-    "board-games",
-    "friendship-bracelet-kits",
-    "group-painting-kits",
-    "cozy-night-in",
-    "tea-sets"
-  ],
   "sources": [
     {
       "title": "National Park Service: hiking safety (Mount Rainier)",
@@ -119,7 +99,7 @@
       "n": 1,
       "title": "Shape a ring dish from clay",
       "hobby": "air-dry-clay",
-      "note": "Air-dry clay, a rolling pin or a bottle, and an afternoon. Paint it once it has dried. [Here's the beginner guide](/journal/how-to-start-air-dry-clay). **What makes it easier:** {{product:crayola-air-dry-clay-5-lb-bucket|air-dry clay}}, a small set of sculpting tools and a craft mat, so the table stays clean and the edges come out crisp.",
+      "note": "Air-dry clay, a rolling pin or a bottle, and an afternoon. Paint it once it has dried. [Here's the beginner guide](/journal/how-to-start-air-dry-clay). **What makes it easier:** air-dry clay, a small set of sculpting tools and a craft mat, so the table stays clean and the edges come out crisp.",
       "time": "1-2 hours",
       "company": "Solo or social"
     },
@@ -144,11 +124,9 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
+      "hobbies": [
         "air-dry-clay",
-        "clay-tools",
-        "junk-journals",
-        "washi-tape"
+        "junk-journaling"
       ],
       "title": "For a make-something Saturday",
       "dek": "A block of clay, a small set of tools, a thick-paged journal and washi tape: kept in one drawer, they turn an open afternoon into a finished thing."
@@ -212,13 +190,11 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "walking-shoes",
-        "daypacks",
-        "water-bottles",
-        "picnic-blankets",
-        "thermos-flasks",
-        "phone-armband"
+      "hobbies": [
+        "hiking",
+        "tennis",
+        "picnicking",
+        "running"
       ],
       "title": "For the park and the trail",
       "dek": "Walking shoes, a small daypack, a bottle, a blanket, a flask and a phone armband: the bag that makes leaving the house the easy option."
@@ -247,10 +223,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "board-games",
-        "friendship-bracelet-kits",
-        "group-painting-kits"
+      "hobbies": [
+        "jigsaw-puzzles",
+        "friendship-bracelets",
+        "craft-nights"
       ],
       "title": "For an afternoon with friends",
       "dek": "A board game, a bracelet kit or a group painting kit gives everyone something to do with their hands while you catch up."

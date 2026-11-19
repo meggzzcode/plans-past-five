@@ -1,0 +1,57 @@
+{
+  "id": "secopad-glue-tape-runner-4-pack",
+  "name": "Scrapbook Tape, Glue Tape for Crafts, 4 Pack, 0.3 in x 26 ft",
+  "brand": "Secopad",
+  "category": "Tape runner",
+  "order": 21,
+  "status": "held",
+  "statusReason": "Third adhesive option and a budget duplicate of the tape runner. Held.",
+  "description": "A four-pack of double-sided tape runners for scrapbooking and crafts.",
+  "asin": "B0CHTZD63Q",
+  "specs": [
+    {
+      "label": "Pack",
+      "value": "4"
+    },
+    {
+      "label": "Width",
+      "value": "0.3 in"
+    },
+    {
+      "label": "Length",
+      "value": "26 ft each"
+    }
+  ],
+  "hobbies": [
+    "junk-journaling"
+  ],
+  "articles": [
+    "junk-journaling-supplies-for-beginners",
+    "how-to-start-junk-journaling"
+  ],
+  "collections": [
+    "journaling-era",
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "junk-journaling",
+      "slot": "adhesive"
+    }
+  ],
+  "role": "affordable",
+  "isEssential": false,
+  "audience": "Budget alternative to a name-brand tape runner",
+  "whySelected": "Four runners per pack; the listing says tape can be re-applied if you make a mistake soon after.",
+  "limitations": [
+    "Listing warns low temperature may affect stickiness",
+    "Manufacturer page not yet checked",
+    "Seller on listing: Secopad"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0CHTZD63Q"
+  ],
+  "lastVerified": "2026-11-18",
+  "availability": "available",
+  "affiliateStatus": "not-activated"
+}

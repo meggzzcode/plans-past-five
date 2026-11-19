@@ -286,10 +286,19 @@ describe("8. watercolor kit is consistent", () => {
 });
 
 describe("9. filler picks are held, not deleted", () => {
-  it("the 200-piece ephemera pack and the white-tile mahjong duplicate are on hold", () => {
-    const held = (id: string) => catalog.find((p) => p.id === id)?.hold;
+  it("the 200-piece ephemera pack and the white-tile mahjong duplicate are on hold in the product source", () => {
+    const held = (id: string) => {
+      const o = JSON.parse(
+        readFileSync(path.resolve(__dirname, `../../content/products/${id}.json`), "utf8"),
+      );
+      return o.status === "held" ? o.statusReason : undefined;
+    };
     expect(held("knaid-200-piece-vintage-ephemera-cottagecore")).toBeTruthy();
     expect(held("jongyance-american-mahjong-set-white-tiles")).toBeTruthy();
+    // held products are not even shipped to the browser
+    expect(catalog.some((p) => p.id === "knaid-200-piece-vintage-ephemera-cottagecore")).toBe(
+      false,
+    );
     expect(
       verifiedCatalog.some((p) => p.id === "knaid-200-piece-vintage-ephemera-cottagecore"),
     ).toBe(false);

@@ -1,0 +1,55 @@
+{
+  "id": "prime-time-puzzles-1000-piece-mountain-cabin",
+  "name": "Adult Jigsaw Puzzle 1000 Piece Mountain Cabin",
+  "brand": "Prime Time Puzzles",
+  "category": "Jigsaw puzzle",
+  "order": 62,
+  "status": "candidate",
+  "description": "A 1000-piece puzzle of a lake cabin scene, finished size 20 x 27 in, matte finish.",
+  "asin": "B0DGZ7L567",
+  "specs": [
+    {
+      "label": "Pieces",
+      "value": "1000"
+    },
+    {
+      "label": "Finished size",
+      "value": "20 x 27 in"
+    },
+    {
+      "label": "Finish",
+      "value": "matte, non-glare"
+    }
+  ],
+  "hobbies": [
+    "jigsaw-puzzles"
+  ],
+  "articles": [
+    "cozy-solo-dates-at-home"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "reading-book-club",
+      "slot": "puzzle"
+    }
+  ],
+  "role": "nice-to-have",
+  "isEssential": false,
+  "audience": "People who like a long, quiet project",
+  "whySelected": "Thick pieces and a non-glare finish per listing.",
+  "limitations": [
+    "1000 pieces needs table space for days",
+    "Quality claims are the listing's",
+    "Manufacturer page not yet checked",
+    "Seller on listing: Prime Time Puzzles"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0DGZ7L567"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated"
+}

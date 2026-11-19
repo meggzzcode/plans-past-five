@@ -6,7 +6,7 @@ import { readingMinutes } from "@/content";
 import { getCategory } from "@/data/categories";
 import { images } from "@/data/images";
 import { categoryLabels, type Hobby } from "@/data/hobbies";
-import type { Product, Collection } from "@/data/products";
+import type { Collection } from "@/data/products";
 import { OUTBOUND_BUY_REL, resolveProductLink } from "@/config/affiliate";
 import { linkLabel } from "@/components/commerce/labels";
 import { SaveButton } from "@/components/editorial/SaveButton";
@@ -218,59 +218,6 @@ export function HobbyCard({ h, className }: { h: Hobby; className?: string }) {
           }}
         />
       </div>
-    </article>
-  );
-}
-
-/** Editorial product recommendation. Button text reflects the real destination. */
-export function ProductCard({
-  p,
-  index,
-  className,
-}: {
-  p: Product;
-  index?: number;
-  className?: string;
-}) {
-  const link = resolveProductLink(p);
-  return (
-    <article className={cn("not-prose flex flex-col border-t-2 border-ink pt-4", className)}>
-      <div className="flex items-baseline justify-between gap-3">
-        {index !== undefined && (
-          <span className="font-display text-3xl italic text-cherry">
-            {String(index + 1).padStart(2, "0")}
-          </span>
-        )}
-        <SaveButton
-          compact
-          className="!h-8 !w-8 !shadow-none !bg-transparent"
-          item={{
-            key: `product:${p.id}`,
-            kind: "product",
-            title: p.name,
-            href: `/shop/${p.collection}`,
-          }}
-        />
-      </div>
-      <h3 className="mt-1 text-xl leading-tight">{p.name}</h3>
-      <p className="mt-2 text-sm text-espresso">{p.blurb}</p>
-      <p className="mt-3 text-sm">
-        <span className="hand text-lg text-cherry">look for → </span>
-        <span className="font-medium text-espresso">{p.lookFor}</span>
-      </p>
-      {p.noSpend && (
-        <p className="mt-2 text-sm text-garden">
-          <strong>No-spend swap:</strong> {p.noSpend}
-        </p>
-      )}
-      <a
-        href={link.href}
-        target="_blank"
-        rel={OUTBOUND_BUY_REL}
-        className="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-1.5 border-2 border-cherry px-4 py-2 text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream sm:w-fit"
-      >
-        {linkLabel(link, p.name)} <ArrowUpRight className="h-4 w-4" />
-      </a>
     </article>
   );
 }

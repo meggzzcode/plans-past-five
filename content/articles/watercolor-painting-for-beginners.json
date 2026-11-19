@@ -14,11 +14,6 @@
     "watercolor-painting",
     "outdoor-sketching"
   ],
-  "productIds": [
-    "watercolor-sets",
-    "watercolor-sketchbooks",
-    "portable-watercolor"
-  ],
   "sources": [
     {
       "title": "ACMI: materials safety",
@@ -212,10 +207,8 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "watercolor-sets",
-        "watercolor-sketchbooks",
-        "portable-watercolor"
+      "hobbies": [
+        "watercolor-painting"
       ],
       "title": "For the second set: a pocket kit and a sketchbook",
       "dek": "When you want to paint away from the kitchen table, a travel set and a sketchbook of proper watercolor paper keep everything in one small bag."

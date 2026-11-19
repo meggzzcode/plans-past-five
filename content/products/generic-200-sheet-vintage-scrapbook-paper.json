@@ -1,0 +1,58 @@
+{
+  "id": "generic-200-sheet-vintage-scrapbook-paper",
+  "name": "200 Sheets Vintage Scrapbook Paper, Journaling Supplies",
+  "brand": "not stated on listing",
+  "category": "Scrapbook paper",
+  "order": 23,
+  "status": "candidate",
+  "description": "A 200-sheet vintage-style paper pack in six style themes.",
+  "asin": "B0BXKS3HBR",
+  "specs": [
+    {
+      "label": "Sheets",
+      "value": "200"
+    },
+    {
+      "label": "Sizes",
+      "value": "mostly 6.8 x 4.8 in"
+    },
+    {
+      "label": "Material per listing",
+      "value": "washi-type paper"
+    }
+  ],
+  "hobbies": [
+    "junk-journaling"
+  ],
+  "articles": [
+    "junk-journaling-supplies-for-beginners",
+    "how-to-start-junk-journaling"
+  ],
+  "collections": [
+    "journaling-era",
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "junk-journaling",
+      "slot": "paper"
+    }
+  ],
+  "role": "nice-to-have",
+  "isEssential": false,
+  "audience": "People who want themed ephemera",
+  "whySelected": "Six themes in one pack.",
+  "limitations": [
+    "Brand not stated",
+    "Material claims are the listing's",
+    "Check rights before selling anything made from the imagery",
+    "Manufacturer page not yet checked",
+    "Seller on listing: emmoolife"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0BXKS3HBR"
+  ],
+  "lastVerified": "2026-11-18",
+  "availability": "available",
+  "affiliateStatus": "not-activated"
+}

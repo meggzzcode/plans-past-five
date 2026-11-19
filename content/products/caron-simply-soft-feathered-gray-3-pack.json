@@ -1,0 +1,57 @@
+{
+  "id": "caron-simply-soft-feathered-gray-3-pack",
+  "name": "Simply Soft Yarn, Feathered Gray, 3-Pack",
+  "brand": "Caron",
+  "category": "Yarn",
+  "order": 40,
+  "status": "verified",
+  "description": "Three skeins of machine-washable 100% acrylic worsted-weight (4) yarn in grey.",
+  "asin": "B0BBY2QVV4",
+  "specs": [
+    {
+      "label": "Weight",
+      "value": "worsted (4)"
+    },
+    {
+      "label": "Fibre",
+      "value": "100% acrylic"
+    },
+    {
+      "label": "Care",
+      "value": "machine wash and dry"
+    },
+    {
+      "label": "Skeins",
+      "value": "3"
+    }
+  ],
+  "hobbies": [
+    "crochet"
+  ],
+  "articles": [
+    "how-to-start-crocheting"
+  ],
+  "collections": [
+    "creative-girl"
+  ],
+  "kitSlots": [],
+  "role": "nice-to-have",
+  "isEssential": false,
+  "audience": "People who want a softer feel and a few skeins",
+  "whySelected": "Listing states gauge and machine-wash care.",
+  "limitations": [
+    "Colour shown is one of many options: pick colour on the listing",
+    "Pack size may vary by colour",
+    "Manufacturer page not yet checked",
+    "Seller on listing: not captured"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0BBY2QVV4"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "check-listing",
+  "affiliateStatus": "not-activated",
+  "shortName": "Caron Simply Soft yarn, gray 3-pack",
+  "benefit": "Three skeins of softer yarn in a gentle gray.",
+  "compare": "Softer feel and three skeins, enough for a small project."
+}

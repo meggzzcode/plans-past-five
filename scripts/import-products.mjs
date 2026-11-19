@@ -1,16 +1,19 @@
 #!/usr/bin/env bun
 /**
- * Import researched products from CSV into src/data/catalog.generated.ts.
+ * DEVELOPER / BULK-MIGRATION TOOL. Not part of the owner's workflow: the owner edits products in
+ * Pages CMS (content/products/*.json, see docs/buyer/PRODUCT-MANAGEMENT.md).
  *
- *   bun run import:products [path/to/file.csv]            validate, then write src/data/catalog.generated.ts
- *   bun run import:products [path/to/file.csv] --check    validate only, write nothing (dry run)
- *   --force                                               allow a write that shrinks the catalog by more than 30%
- *   --out <path>                                          write there instead of src/data/catalog.generated.ts (tests)
- *   (canonical source: docs/commerce/product-research.csv; blank template: PRODUCT-RESEARCH-TEMPLATE.csv)
+ * Import researched products from a CSV into content/products/<id>.json (one file per product).
+ *
+ *   bun run import:products file.csv            validate, then write NEW products into content/products
+ *   bun run import:products file.csv --check    validate only, write nothing (dry run)
+ *   --update                                    also overwrite products whose id already has a file (default: skipped and reported)
+ *   --out <dir>                                 write there instead of content/products (tests)
+ *   (blank template: docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv; docs/commerce/product-research.csv is a frozen snapshot of the 66 migrated rows)
  *
  * Safety: nothing is written unless the WHOLE file validates; the write is atomic (temp file, then
- * rename), so a failed or interrupted import never leaves a half-written catalog. A write that would
- * leave 30% or more fewer products than the current catalog is refused unless --force is given.
+ * rename), so a failed or interrupted import never leaves a half-written file. Existing product files
+ * are never overwritten unless --update is given, and nothing is ever deleted.
  *
  * Schema: COLUMNS below (copied into docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv; explained in
  * PRODUCT-RESEARCH-TEMPLATE.md). `notes` is an internal, optional column: read, never stored or published. One row per product. Array fields use "|".
@@ -39,29 +42,10 @@ import {
   catalogReferenceProblems,
   isForbiddenField,
   validateCatalogProduct,
-} from "../src/data/catalog.ts";
+} from "../src/data/catalog-rules.ts";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const DEFAULT_OUT = resolve(root, "src/data/catalog.generated.ts");
-/** Refuse a write that drops more than this share of the current catalog (override with --force). */
-export const MAX_SHRINK = 0.3;
-
-/** Number of products in an existing generated catalog file (0 when missing or unreadable). */
-export function countExistingProducts(file) {
-  try {
-    return (readFileSync(file, "utf8").match(/^ {4}"?id"?: /gm) ?? []).length;
-  } catch {
-    return 0;
-  }
-}
-
-/** Returns a problem message when `next` products would shrink `current` by more than MAX_SHRINK. */
-export function shrinkProblem(current, next) {
-  if (current > 0 && next < current * (1 - MAX_SHRINK))
-    return `the new file has ${next} products but the current catalog has ${current} (${Math.round((1 - next / current) * 100)}% fewer, more than ${MAX_SHRINK * 100}%). This looks like the wrong or an incomplete file. If it is intended, run again with --force.`;
-  return "";
-}
-
+const DEFAULT_OUT = resolve(root, "content/products");
 /** Every column the template defines, in canonical spelling. */
 export const COLUMNS = [
   "id",
@@ -365,6 +349,10 @@ export function importCsv(text, known, now = new Date()) {
         issues.push(`column ${i + 1} has data but no header name`);
     });
     const p = rowToProduct(header, cells, issues);
+    if (p.imageUrl || p.imageCredit || p.imageSource || (p.imageRights && p.imageRights !== "none"))
+      issues.push(
+        "picture columns must stay empty: pictures are recorded per product in Pages CMS with their rights, never imported",
+      );
     issues.forEach((m) => errors.push(`line ${line}: ${m}`));
     const id = String(p.id);
     const reserved = RESERVED_ID_PREFIXES.find((pre) => id.startsWith(pre));
@@ -455,28 +443,42 @@ function fail(errors, warnings = []) {
   process.exit(1);
 }
 
-/** Process notes that belong in the research CSV, not in the public JavaScript bundle. */
-const INTERNAL_NOTE =
-  /\b(?:manufacturer|maker) page (?:not yet checked|not found|was not|could not)|\bread (?:in browser|20\d\d)|\bcowork\b|\bTODO\b|\bto confirm\b/i;
-const FALLBACK_LIMITATION = "Check the listing for the current version and details before you buy.";
+const KEY_ORDER = ["id", "name", "brand", "category", "status", "statusReason", "replacedBy"];
 
-/** What ships to the browser: hold reasons and internal process notes are dropped; consumer-relevant limitations stay. */
-function publicProduct(p) {
-  const kept = p.limitations.filter((l) => !INTERNAL_NOTE.test(l));
-  const limitations = kept.length ? kept : [FALLBACK_LIMITATION];
-  return { ...p, limitations, ...(p.hold ? { hold: "held" } : {}) };
+/** CSV product -> the source file shape (a held product becomes status "held" with its reason). */
+export function toSourceRecord(p) {
+  // The Amazon address is derived from the ASIN, so it is not stored.
+  // Pictures are managed per product in the CMS (rights recorded), never imported.
+  const {
+    hold,
+    amazonUrl: _derived,
+    imageUrl: _i,
+    imageCredit: _c,
+    imageSource: _s,
+    imageRights: _r,
+    ...rest
+  } = p;
+  void [_derived, _i, _c, _s, _r];
+  const rec = {
+    ...rest,
+    status: hold ? "held" : p.status,
+    ...(hold ? { statusReason: hold } : {}),
+  };
+  const ordered = {};
+  for (const k of KEY_ORDER) if (rec[k] !== undefined) ordered[k] = rec[k];
+  for (const k of Object.keys(rec)) if (!(k in ordered)) ordered[k] = rec[k];
+  return ordered;
 }
 
 async function main() {
   const args = process.argv.slice(2);
   if (args.includes("--help") || args.includes("-h")) {
     console.log(
-      "Usage: bun run import:products <path/to/file.csv> [--check] [--force] [--out <path>]\n  --check   validate only, write nothing\n  --force   allow writing a catalog more than 30% smaller than the current one\n  --out     write to this file instead of src/data/catalog.generated.ts\nSafety: a file path is required to write, and an empty file or the blank template never overwrites the catalog.",
+      "Usage: bun run import:products <path/to/file.csv> [--check] [--update] [--out <dir>]\n  --check   validate only, write nothing\n  --update  overwrite products that already have a file (default: skipped)\n  --out     write into this folder instead of content/products\nDeveloper tool for bulk loading. Owners edit products in Pages CMS.",
     );
     return;
   }
   const check = args.includes("--check");
-  const force = args.includes("--force");
   const outIdx = args.indexOf("--out");
   const OUT = outIdx >= 0 && args[outIdx + 1] ? resolve(args[outIdx + 1]) : DEFAULT_OUT;
   if (outIdx >= 0 && !args[outIdx + 1]) return fail(["--out needs a file path."]);
@@ -501,38 +503,35 @@ async function main() {
   for (const w of warnings) console.warn(`(warning) ${w}`);
 
   if (products.length === 0 && !check)
-    return fail(["the file has no product rows, so the catalog was NOT overwritten."]);
+    return fail(["the file has no product rows, so nothing was written."]);
   const verified = products.filter((p) => p.status === "verified").length;
   const summary = `${products.length} products (${verified} verified, ${products.length - verified} candidates)`;
   if (check) {
     console.log(`OK: ${summary} pass validation. Nothing was written (--check).`);
     return;
   }
-  const shrink = force ? "" : shrinkProblem(countExistingProducts(OUT), products.length);
-  if (shrink) return fail([shrink]);
-  const inRepo = file.startsWith(root + "/");
-  const body = `/**
- * GENERATED by \`bun run import:products\` from ${inRepo ? file.slice(root.length + 1) : basename(file)}.
- * Do not hand-edit. Only status "verified" records render publicly.
- */
-import type { CatalogProduct } from "./catalog";
-
-export const generatedCatalog: CatalogProduct[] = ${JSON.stringify(
-    products.map(publicProduct),
-    null,
-    2,
-  )};
-`;
-  const tmp = `${OUT}.tmp-${process.pid}`;
+  const update = args.includes("--update");
+  mkdirSync(OUT, { recursive: true });
+  const written = [];
+  const skipped = [];
   try {
-    mkdirSync(dirname(OUT), { recursive: true });
-    writeFileSync(tmp, body);
-    renameSync(tmp, OUT);
+    for (const p of products) {
+      const target = resolve(OUT, `${p.id}.json`);
+      if (existsSync(target) && !update) {
+        skipped.push(p.id);
+        continue;
+      }
+      const tmp = `${target}.tmp-${process.pid}`;
+      writeFileSync(tmp, `${JSON.stringify(toSourceRecord(p), null, 2)}\n`);
+      renameSync(tmp, target);
+      written.push(p.id);
+    }
   } catch (e) {
-    rmSync(tmp, { force: true });
-    return fail([`could not write ${OUT}: ${e.message}. The current catalog is unchanged.`]);
+    return fail([`could not write into ${OUT}: ${e.message}`]);
   }
-  console.log(`Wrote ${summary} to ${OUT === DEFAULT_OUT ? "src/data/catalog.generated.ts" : OUT}`);
+  console.log(
+    `Wrote ${written.length} product file(s) to ${OUT === DEFAULT_OUT ? "content/products" : OUT}${skipped.length ? `; skipped ${skipped.length} that already exist (use --update to overwrite): ${skipped.join(", ")}` : ""}.`,
+  );
 }
 
 if (import.meta.main ?? process.argv[1] === fileURLToPath(import.meta.url)) await main();

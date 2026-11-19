@@ -1,0 +1,60 @@
+{
+  "id": "sakura-pigma-micron-8-pack-black",
+  "name": "Pigma Micron Fineliner Pens, Black, Assorted Points, 8 Pack",
+  "brand": "Sakura",
+  "category": "Pens",
+  "order": 7,
+  "status": "verified",
+  "description": "Eight black archival fineliner pens in assorted tip sizes.",
+  "asin": "B004QHI43S",
+  "specs": [
+    {
+      "label": "Pack",
+      "value": "8 pens"
+    },
+    {
+      "label": "Ink",
+      "value": "pigment-based, listing says waterproof, fade-resistant, pH neutral"
+    }
+  ],
+  "hobbies": [
+    "junk-journaling"
+  ],
+  "articles": [
+    "junk-journaling-supplies-for-beginners",
+    "how-to-start-junk-journaling"
+  ],
+  "collections": [
+    "journaling-era",
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "junk-journaling",
+      "slot": "pens"
+    }
+  ],
+  "role": "nice-to-have",
+  "isEssential": false,
+  "audience": "People who want to add handwriting or fine details",
+  "whySelected": "Archival-style fineliners; the listing and the manufacturer page describe waterproof pigment ink.",
+  "limitations": [
+    "Black only",
+    "Pen set contents come from the Amazon listing: the manufacturer page does not list the 8-pack set",
+    "2026-11-19: Sakura page lists archival ink, waterproof, ACMI non-toxic, fade/chemical resistant, but no sets or point sizes: 8-pack contents not confirmed",
+    "2026-11-19 retry: the 8-pack (item 30067) exists: six Pigma Micron pens (005, 01, 02, 03, 05, 08), one Pigma Brush and one Pigma Graphic 1 mm, per Dick Blick (https://www.dickblick.com/items/20702-2089/), Staples, Utrecht and a distributor. Sakura's own site still lists no sets. RISK: a distributor page says \"Sakura products may not be sold on third-party marketplace websites such as Amazon, eBay, Etsy, or Walmart\" (https://www.checkerdist.com/products/30067), so the Amazon seller may be unauthorised; check the seller, or point to an art-supply retailer. Alternative: link the single-size sets only where Sakura or Blick sells them",
+    "2026-11-19: Amazon seller is Pattern Professional, a third-party reseller, and a distributor says Sakura bars marketplace sales: REPLACE with staedtler-pigment-liner-8-pack-black",
+    "The listing is sold by a reseller, not by Sakura: check the seller"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B004QHI43S",
+    "https://www.sakuraofamerica.com/product/pigma-micron/"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "manufacturerUrl": "https://www.sakuraofamerica.com/product/pigma-micron/",
+  "shortName": "Pigma Micron pens, 8-pack",
+  "benefit": "Fine black pens for handwriting and small details on your pages.",
+  "lead": true
+}

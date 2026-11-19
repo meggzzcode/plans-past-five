@@ -1,0 +1,62 @@
+{
+  "id": "gustaria-large-mahjong-mat-blue-31-5",
+  "name": "Large Mahjong Mat with Black Carrying Bag (Blue, 31.5 in)",
+  "brand": "GUSTARIA",
+  "category": "Mahjong accessories",
+  "order": 14,
+  "status": "verified",
+  "description": "A 31.5 inch square non-slip, noise-reducing table mat with a carrying bag.",
+  "asin": "B0CXJ4PLBY",
+  "specs": [
+    {
+      "label": "Size",
+      "value": "31.5 x 31.5 in"
+    },
+    {
+      "label": "Backing",
+      "value": "non-slip rubber"
+    },
+    {
+      "label": "Includes",
+      "value": "carrying bag"
+    },
+    {
+      "label": "Note",
+      "value": "ships folded, creases usually flatten with use"
+    }
+  ],
+  "hobbies": [
+    "mahjong"
+  ],
+  "articles": [
+    "how-to-host-a-mahjong-night"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "mahjong-night",
+      "slot": "mat"
+    }
+  ],
+  "role": "nice-to-have",
+  "isEssential": false,
+  "audience": "Hosts playing on a hard or good table",
+  "whySelected": "Protects the table, cuts tile noise and rolls up for storage, per the listing.",
+  "limitations": [
+    "Ships folded and may arrive creased",
+    "31.5 in suits a small square table only",
+    "Sold by a third-party seller",
+    "Manufacturer page not yet checked"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0CXJ4PLBY"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "check-listing",
+  "affiliateStatus": "not-activated",
+  "shortName": "Mahjong mat with carry bag, 31.5 in",
+  "benefit": "Softens tile clatter and protects the table, then rolls up into its own carry bag.",
+  "lead": true
+}

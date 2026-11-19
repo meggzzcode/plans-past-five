@@ -37,7 +37,7 @@ Optional verified-research fields:
 
 ## The named-product catalog (cards, kits, shopping lists)
 
-Specific products live in `docs/commerce/product-research.csv` and are imported with `bun run import:products docs/commerce/product-research.csv` into `src/data/catalog.generated.ts` (never hand-edit that file). The importer validates every row with the same code the site uses. The importer refuses to write a catalog more than 30% smaller than the current one unless you add `--force`; `--check` is a dry run that writes nothing. A product shows only when `status` is `verified`, it passes validation and it has no `hold`.
+Specific products live in `content/products/<id>.json` (one file per product, edited in Pages CMS; owner steps in `docs/buyer/PRODUCT-MANAGEMENT.md`). The build writes `src/data/catalog.generated.ts` (shown products only; never hand-edit it). `docs/commerce/product-research.csv` is the frozen snapshot the 66 records were migrated from.
 
 Card fields you edit in the CSV (all optional except where noted):
 

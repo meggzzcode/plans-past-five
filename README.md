@@ -37,7 +37,7 @@ Articles and images are plain JSON files, so they can be edited without touching
 
 A published article must have sources, a `verifiedAt` date and no open checks or the build refuses it (a field check, not a fact check).
 
-Products come from a spreadsheet: edit `docs/commerce/product-research.csv`, then run `bun run import:products docs/commerce/product-research.csv --check` and, if it passes, without `--check` to regenerate `src/data/catalog.generated.ts`. **The importer replaces the whole catalog** from the CSV you give it, so always start from the full file; a guard refuses a write that shrinks the catalog by 30% or more. See `docs/buyer/PRODUCT-MANAGEMENT.md`. Brand copy lives in `src/config/site.ts`; retailer links are built only in `src/config/affiliate.ts`.
+Products are managed in Pages CMS (section Products, one file per product in `content/products/`); the build checks every product and every article mention before publishing. Owner steps: `docs/buyer/PRODUCT-MANAGEMENT.md`. The CSV importer (`bun run import:products`) is an optional developer bulk-load tool that only adds new product files.
 
 ## Folder map
 

@@ -27,22 +27,6 @@
     "creative-writing",
     "thrifting"
   ],
-  "productIds": [
-    "watercolor-sets",
-    "air-dry-clay",
-    "embroidery-kits",
-    "paint-by-number-kits",
-    "friendship-bracelet-kits",
-    "sketch-pads",
-    "jigsaw-puzzles",
-    "indoor-plant-basics",
-    "pocket-notebooks",
-    "book-lights",
-    "binoculars",
-    "walking-shoes",
-    "daypacks",
-    "market-totes"
-  ],
   "sources": [
     {
       "title": "ASPCA: toxic and non-toxic plants",
@@ -107,7 +91,7 @@
       "n": 3,
       "title": "Air-dry clay",
       "hobby": "air-dry-clay",
-      "note": "One block of clay and a few acrylic paints will see you through several small projects. No kiln needed, and few special tools. [How to start air-dry clay](/journal/how-to-start-air-dry-clay) covers a first project. **What makes it easier:** a block of {{product:crayola-air-dry-clay-5-lb-bucket|air-dry clay}} and {{product:apple-barrel-16-acrylic-craft-paints-2oz|a set of small acrylic craft paints}}, so a trinket dish goes from pinch to painted in one sitting.",
+      "note": "One block of clay and a few acrylic paints will see you through several small projects. No kiln needed, and few special tools. [How to start air-dry clay](/journal/how-to-start-air-dry-clay) covers a first project. **What makes it easier:** a block of air-dry clay and a set of small acrylic craft paints, so a trinket dish goes from pinch to painted in one sitting.",
       "cost": "Varies; check local prices",
       "first": "Pinch a small trinket dish and leave it to dry overnight."
     },
@@ -149,13 +133,13 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "watercolor-sets",
+      "hobbies": [
+        "watercolor-painting",
         "air-dry-clay",
-        "embroidery-kits",
-        "paint-by-number-kits",
-        "friendship-bracelet-kits",
-        "sketch-pads"
+        "embroidery",
+        "paint-by-numbers",
+        "friendship-bracelets",
+        "outdoor-sketching"
       ],
       "title": "A first purchase for a making evening",
       "dek": "A small paint set, a block of clay, an embroidery kit or a bracelet kit each arrive ready to use, so the first evening is about making, not shopping. Start with the one you're most curious about."
@@ -216,11 +200,11 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
+      "hobbies": [
         "jigsaw-puzzles",
-        "indoor-plant-basics",
-        "pocket-notebooks",
-        "book-lights"
+        "indoor-gardening",
+        "creative-writing",
+        "reading"
       ],
       "title": "For a cozy evening in",
       "dek": "A puzzle for the coffee table, jars for a cutting, a pocket notebook and a clip-on light make a quiet night feel planned."
@@ -272,11 +256,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "binoculars",
-        "walking-shoes",
-        "daypacks",
-        "market-totes"
+      "hobbies": [
+        "birdwatching",
+        "hiking",
+        "picnicking"
       ],
       "title": "For your first walk-and-look outing",
       "dek": "Binoculars, walking shoes, a daypack and a tote turn a local walk into an outing worth repeating."

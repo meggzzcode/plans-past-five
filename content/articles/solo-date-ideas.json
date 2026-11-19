@@ -18,27 +18,6 @@
     "picnicking",
     "thrifting"
   ],
-  "productIds": [
-    "pocket-notebooks",
-    "portable-watercolor",
-    "sketch-pads",
-    "film-cameras",
-    "junk-journals",
-    "book-sleeves",
-    "walking-shoes",
-    "trekking-socks",
-    "daypacks",
-    "water-bottles",
-    "phone-armband",
-    "binoculars",
-    "picnic-blankets",
-    "thermos-flasks",
-    "skate-protective-gear",
-    "market-totes",
-    "vases",
-    "flower-snips",
-    "letter-writing-sets"
-  ],
   "sources": [
     {
       "title": "Solo outings: well-lit areas and companions (US DOJ/OJP guide)",
@@ -192,13 +171,13 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "pocket-notebooks",
-        "portable-watercolor",
-        "sketch-pads",
-        "film-cameras",
-        "junk-journals",
-        "book-sleeves"
+      "hobbies": [
+        "creative-writing",
+        "watercolor-painting",
+        "outdoor-sketching",
+        "film-photography",
+        "junk-journaling",
+        "reading"
       ],
       "title": "For a make-something date",
       "dek": "A pocket watercolor set, a sketch pad, a film camera, a thick-paged journal or a notebook that fits in a coat pocket: each makes a date out easier and prettier. Pick the one that matches the date you're dreaming up."
@@ -278,13 +257,11 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "walking-shoes",
-        "trekking-socks",
-        "daypacks",
-        "water-bottles",
-        "phone-armband",
-        "binoculars"
+      "hobbies": [
+        "hiking",
+        "tennis",
+        "running",
+        "birdwatching"
       ],
       "title": "For a date outdoors",
       "dek": "Walking shoes, trekking-style socks, a small daypack and a bottle, plus a phone armband for the map or the music and binoculars for the bench."
@@ -323,13 +300,11 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "picnic-blankets",
-        "thermos-flasks",
-        "skate-protective-gear",
-        "market-totes",
-        "letter-writing-sets",
-        "vases"
+      "hobbies": [
+        "picnicking",
+        "roller-skating",
+        "creative-writing",
+        "flower-arranging"
       ],
       "title": "For the picnic, the rink and the treat",
       "dek": "A blanket and a flask for the park, protective gear for the rink, a market tote and a small vase for the treats you carry home."

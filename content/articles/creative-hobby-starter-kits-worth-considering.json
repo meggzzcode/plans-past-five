@@ -17,14 +17,6 @@
     "junk-journaling",
     "pottery-painting"
   ],
-  "productIds": [
-    "embroidery-kits",
-    "ceramic-painting-kits",
-    "air-dry-clay",
-    "watercolor-sets",
-    "junk-journals",
-    "group-painting-kits"
-  ],
   "sources": [
     {
       "title": "CPSC: art materials safety",
@@ -138,7 +130,7 @@
       "n": 3,
       "title": "Air-dry clay",
       "hobby": "air-dry-clay",
-      "note": "[How to start air-dry clay](/journal/how-to-start-air-dry-clay) covers a first project. Fine as a kit if there is enough clay for several pieces, a few tools and paint. Read the label for age notes, and don't use finished pieces for food or drink, even if sealed. **What makes it easier:** {{product:uhapeer-air-dry-clay-kit-3-lb|an air-dry clay kit}}, or {{product:crayola-air-dry-clay-5-lb-bucket|a bucket of clay}} plus {{product:apple-barrel-16-acrylic-craft-paints-2oz|small acrylic craft paints}} bought loose."
+      "note": "[How to start air-dry clay](/journal/how-to-start-air-dry-clay) covers a first project. Fine as a kit if there is enough clay for several pieces, a few tools and paint. Read the label for age notes, and don't use finished pieces for food or drink, even if sealed. **What makes it easier:** {{product:uhapeer-air-dry-clay-kit-3-lb|an air-dry clay kit}}, or a bucket of clay plus small acrylic craft paints bought loose."
     },
     {
       "type": "item",
@@ -210,12 +202,12 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "embroidery-kits",
-        "ceramic-painting-kits",
+      "hobbies": [
+        "embroidery",
+        "pottery-painting",
         "air-dry-clay",
-        "watercolor-sets",
-        "group-painting-kits"
+        "watercolor-painting",
+        "craft-nights"
       ],
       "title": "A first-purchase pick for each craft",
       "dek": "Embroidery and ceramic painting kits put everything in one box; for watercolor and clay, look closely at what is included. Here are the types to compare, with what to check on each listing."

@@ -14,12 +14,6 @@
     "pickleball",
     "tennis"
   ],
-  "productIds": [
-    "pickleball-sets",
-    "water-bottles",
-    "sports-totes",
-    "pickleball-shoes"
-  ],
   "sources": [
     {
       "title": "USA Pickleball Official Rulebook",
@@ -111,9 +105,9 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "pickleball-sets",
-        "water-bottles"
+      "hobbies": [
+        "pickleball",
+        "tennis"
       ],
       "title": "Your first pickleball kit",
       "dek": "A starter set bundles paddles and balls, so you and a friend can play whenever the mood strikes. Add a water bottle and a tote for the court bag."
@@ -180,9 +174,9 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "pickleball-shoes",
-        "sports-totes"
+      "hobbies": [
+        "pickleball",
+        "tennis"
       ],
       "title": "For the second month",
       "dek": "Court shoes made for racquet sports and a tote that carries the lot, once you know you're hooked."

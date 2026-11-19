@@ -1,0 +1,50 @@
+{
+  "id": "der-rose-12-glass-bud-vases",
+  "name": "12pcs Glass Bud Vases, Clear, Vintage Pattern",
+  "brand": "Der Rose",
+  "category": "Vase",
+  "order": 53,
+  "status": "candidate",
+  "description": "Twelve small clear glass bud vases with a vintage pattern.",
+  "asin": "B0D46SKZMK",
+  "specs": [
+    {
+      "label": "Count",
+      "value": "12"
+    },
+    {
+      "label": "Material",
+      "value": "glass"
+    },
+    {
+      "label": "Use",
+      "value": "single stems and small bunches"
+    }
+  ],
+  "hobbies": [
+    "flower-arranging"
+  ],
+  "articles": [
+    "flower-arranging-as-a-hobby"
+  ],
+  "collections": [
+    "creative-girl"
+  ],
+  "kitSlots": [],
+  "role": "essential",
+  "isEssential": true,
+  "audience": "Beginners arranging small bunches",
+  "whySelected": "Several small vases suit single stems.",
+  "limitations": [
+    "Twelve small vases is a lot for one person",
+    "Capacity not captured",
+    "Manufacturer page not yet checked",
+    "Seller on listing: Der Rose"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0D46SKZMK"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated"
+}

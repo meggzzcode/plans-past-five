@@ -16,12 +16,6 @@
     "collage-art",
     "creative-writing"
   ],
-  "productIds": [
-    "junk-journals",
-    "washi-tape",
-    "sticker-sets",
-    "pocket-notebooks"
-  ],
   "sources": [
     {
       "title": "Liquid glue vs glue stick (LePage)",
@@ -69,11 +63,9 @@
     },
     {
       "type": "starterKit",
-      "productIds": [
-        "junk-journals",
-        "washi-tape",
-        "sticker-sets",
-        "pocket-notebooks"
+      "hobbies": [
+        "junk-journaling",
+        "creative-writing"
       ],
       "title": "The small set that makes page one prettier"
     },

@@ -1,0 +1,51 @@
+{
+  "id": "penn-championship-extra-duty-tennis-balls",
+  "name": "Championship Tennis Balls, Extra Duty Felt, 3 Balls (Pack of 4)",
+  "brand": "Penn",
+  "category": "Tennis balls",
+  "order": 58,
+  "status": "candidate",
+  "description": "Pressurized extra-duty felt tennis balls, packs of three cans.",
+  "asin": "B0002JZEL4",
+  "specs": [
+    {
+      "label": "Type",
+      "value": "pressurized, extra duty"
+    },
+    {
+      "label": "Cans",
+      "value": "3 balls per can"
+    }
+  ],
+  "hobbies": [
+    "tennis"
+  ],
+  "articles": [
+    "how-to-start-playing-tennis-as-an-adult"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "racquet-sports",
+      "slot": "tennis-balls"
+    }
+  ],
+  "role": "essential",
+  "isEssential": true,
+  "audience": "Players on hard courts",
+  "whySelected": "Listing says suited to hard courts and usable on all surfaces.",
+  "limitations": [
+    "\"America's #1 selling\" is the maker's claim",
+    "Title wording on pack count is ambiguous: check before ordering",
+    "Manufacturer page not yet checked",
+    "Seller on listing: not captured"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0002JZEL4"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated"
+}

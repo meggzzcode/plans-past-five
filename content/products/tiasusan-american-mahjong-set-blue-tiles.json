@@ -1,0 +1,62 @@
+{
+  "id": "tiasusan-american-mahjong-set-blue-tiles",
+  "name": "American Mahjong Tile Set, 166 Blue Tiles, Bag and Accessories, 4 All-in-One Racks/Pushers",
+  "brand": "TIASUSAN",
+  "category": "Mahjong sets",
+  "order": 12,
+  "status": "verified",
+  "description": "A 166-tile American mahjong set with racks and pushers, dice, chips, a wind indicator, a manual, protective sleeves and a bag.",
+  "asin": "B0F6SDSQGF",
+  "specs": [
+    {
+      "label": "Tiles",
+      "value": "166 melamine"
+    },
+    {
+      "label": "Tile size",
+      "value": "1.2 x 0.9 x 0.5 in"
+    },
+    {
+      "label": "Includes",
+      "value": "3 dice, chips, wind indicator, manual, sleeves, bag"
+    },
+    {
+      "label": "Racks",
+      "value": "4 all-in-one rack/pushers"
+    }
+  ],
+  "hobbies": [
+    "mahjong"
+  ],
+  "articles": [
+    "how-to-host-a-mahjong-night"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "mahjong-night",
+      "slot": "set"
+    }
+  ],
+  "role": "researched-pick",
+  "isEssential": true,
+  "audience": "Beginners who want accessories included",
+  "whySelected": "Lists dice, chips, a wind indicator and a manual as included, which a new group would otherwise have to find.",
+  "limitations": [
+    "Sold by a third-party seller; confirm seller and stock",
+    "Private-label brand with no manufacturer page found yet",
+    "Only for the American 166-tile variant"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0F6SDSQGF"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "check-listing",
+  "affiliateStatus": "not-activated",
+  "shortName": "American mahjong set, blue tiles",
+  "benefit": "Built for game one: 166 blue tiles, racks, a carry bag and extras like dice and a wind indicator.",
+  "lead": true,
+  "onlyOne": true
+}

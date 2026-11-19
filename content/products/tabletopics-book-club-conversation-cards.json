@@ -1,0 +1,51 @@
+{
+  "id": "tabletopics-book-club-conversation-cards",
+  "name": "Book Club Conversation Cards for Adults",
+  "brand": "TableTopics",
+  "category": "Discussion cards",
+  "order": 48,
+  "status": "candidate",
+  "description": "A deck of book-club discussion questions usable for any book.",
+  "asin": "B01M4NYEG9",
+  "specs": [
+    {
+      "label": "Use",
+      "value": "book club prompts"
+    },
+    {
+      "label": "Players",
+      "value": "3 or more"
+    }
+  ],
+  "hobbies": [
+    "book-clubs"
+  ],
+  "articles": [
+    "how-to-start-a-book-club"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "reading-book-club",
+      "slot": "discussion-guide"
+    }
+  ],
+  "role": "nice-to-have",
+  "isEssential": false,
+  "audience": "Hosts who want ready-made questions",
+  "whySelected": "Questions cover writing style, characters, plot, setting and themes.",
+  "limitations": [
+    "Card count not captured",
+    "Questions are generic: they do not replace book-specific prompts",
+    "Manufacturer page not yet checked",
+    "Seller on listing: TableTopics Conversation Starters"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B01M4NYEG9"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated"
+}

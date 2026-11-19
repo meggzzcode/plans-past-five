@@ -1,0 +1,63 @@
+{
+  "id": "scotch-glue-stick-photo-safe-4-pack",
+  "name": "Glue Stick, Photo-Safe Adhesive, 1.41 oz, 4-Pack",
+  "brand": "Scotch",
+  "category": "Adhesive",
+  "order": 4,
+  "status": "verified",
+  "description": "A four-pack of glue sticks that the listing describes as acid-free and photo-safe.",
+  "asin": "B07BVQFKM8",
+  "specs": [
+    {
+      "label": "Pack",
+      "value": "4"
+    },
+    {
+      "label": "Total weight",
+      "value": "1.41 oz"
+    },
+    {
+      "label": "Claims on listing",
+      "value": "acid free, photo safe"
+    }
+  ],
+  "hobbies": [
+    "junk-journaling"
+  ],
+  "articles": [
+    "junk-journaling-supplies-for-beginners",
+    "how-to-start-junk-journaling"
+  ],
+  "collections": [
+    "journaling-era",
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "junk-journaling",
+      "slot": "adhesive"
+    }
+  ],
+  "role": "essential",
+  "isEssential": true,
+  "audience": "Beginners who need a cheap, reliable paper adhesive",
+  "whySelected": "A cheap paper adhesive from a familiar stationery brand; the listing says acid-free and photo-safe.",
+  "limitations": [
+    "Glue sticks can wrinkle thin paper",
+    "Not for bulky 3D items",
+    "Manufacturer page not yet checked",
+    "Scotch maker page (1.41 oz craft glue stick, read 2026-11-18) says acid free and photo safe in its text but its attribute table says Photo Safe: No, so photo-safe is not confirmed: keep it attributed to the listing",
+    "2026-11-19 retry: RESOLVED by 3M's own pages. https://www.3m.com/3M/en_US/p/d/b10014172/ lists the Scotch Glue Stick (UPC 00051131761520) as non-toxic, acid free and photo safe; https://3m.com/3M/en_US/p/d/cbgnhw011067 (003, 1.41 oz, 40 g, \"4 each/inner\") says acid free (pH above 7.0, ASTM D-4236) and photo safe (ISO 18916). The earlier \"Photo Safe: No\" was a retailer table, not the maker. Pack count on the Amazon listing is not on the maker page"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B07BVQFKM8",
+    "https://www.3m.com/3M/en_US/p/d/b10014172/",
+    "https://3m.com/3M/en_US/p/d/cbgnhw011067"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "shortName": "Scotch glue sticks, 4-pack",
+  "benefit": "A glue stick you'll recognise, four to a pack, so there's always a spare mid-page.",
+  "lead": true
+}

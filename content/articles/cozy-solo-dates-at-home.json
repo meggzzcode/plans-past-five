@@ -18,22 +18,6 @@
     "baking",
     "indoor-gardening"
   ],
-  "productIds": [
-    "cozy-night-in",
-    "book-lights",
-    "jigsaw-puzzles",
-    "paint-by-number-kits",
-    "air-dry-clay",
-    "junk-journals",
-    "brush-pens",
-    "letter-writing-sets",
-    "photo-albums",
-    "reading-journals",
-    "indoor-plant-basics",
-    "tea-sets",
-    "portable-speakers",
-    "washi-tape"
-  ],
   "sources": [
     {
       "title": "U.S. Fire Administration: candle fire safety",
@@ -105,9 +89,8 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "cozy-night-in",
-        "book-lights",
+      "hobbies": [
+        "reading",
         "jigsaw-puzzles"
       ],
       "title": "The night-in kit",
@@ -180,7 +163,7 @@
       "n": 7,
       "title": "Air-dry clay ring dish",
       "hobby": "air-dry-clay",
-      "note": "Roll, press and smooth, then leave it to dry for a couple of days (check your clay's label). No kiln needed ([how to start air-dry clay](/journal/how-to-start-air-dry-clay) has more ideas), and it's decorative only, so keep food and drink off it, even if sealed. **What makes it easier:** {{product:crayola-air-dry-clay-5-lb-bucket|air-dry clay}} and a few small acrylic paints, so a ring dish goes from pinch to painted in one place.",
+      "note": "Roll, press and smooth, then leave it to dry for a couple of days (check your clay's label). No kiln needed ([how to start air-dry clay](/journal/how-to-start-air-dry-clay) has more ideas), and it's decorative only, so keep food and drink off it, even if sealed. **What makes it easier:** air-dry clay and a few small acrylic paints, so a ring dish goes from pinch to painted in one place.",
       "time": "45 min + drying",
       "company": "Solo"
     },
@@ -222,13 +205,13 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "paint-by-number-kits",
+      "hobbies": [
+        "paint-by-numbers",
         "air-dry-clay",
-        "junk-journals",
-        "brush-pens",
-        "letter-writing-sets",
-        "photo-albums"
+        "junk-journaling",
+        "calligraphy",
+        "creative-writing",
+        "scrapbooking"
       ],
       "title": "For a gentle, creative evening",
       "dek": "A kit, a journal, a pen or an album arrives ready to use, so the date starts with making rather than shopping."
@@ -282,10 +265,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "indoor-plant-basics",
-        "tea-sets",
-        "portable-speakers"
+      "hobbies": [
+        "indoor-gardening",
+        "book-clubs",
+        "craft-nights"
       ],
       "title": "Little extras for the evening",
       "dek": "A watering can and a pot, a tea set and a small speaker make the kitchen and plant-corner dates feel like occasions."

@@ -19,31 +19,6 @@
     "pickleball",
     "embroidery"
   ],
-  "productIds": [
-    "paint-by-number-kits",
-    "jigsaw-puzzles",
-    "book-lights",
-    "reading-journals",
-    "indoor-plant-basics",
-    "watercolor-sets",
-    "air-dry-clay",
-    "embroidery-kits",
-    "junk-journals",
-    "crochet-hooks",
-    "knitting-needles",
-    "brush-pens",
-    "tennis-rackets",
-    "pickleball-sets",
-    "walking-shoes",
-    "daypacks",
-    "binoculars",
-    "picnic-blankets",
-    "mahjong-sets",
-    "conversation-cards",
-    "group-painting-kits",
-    "friendship-bracelet-kits",
-    "ceramic-painting-kits"
-  ],
   "sources": [
     {
       "title": "The New York Times Crossword Puzzle (NYT Games Help Center)",
@@ -161,12 +136,11 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "paint-by-number-kits",
+      "hobbies": [
+        "paint-by-numbers",
         "jigsaw-puzzles",
-        "book-lights",
-        "reading-journals",
-        "indoor-plant-basics"
+        "reading",
+        "indoor-gardening"
       ],
       "title": "For a very tired evening",
       "dek": "A paint-by-number kit, a puzzle, a book light, a reading journal or a jar for a cutting: each makes the couch version of a hobby easier to start."
@@ -192,7 +166,7 @@
       "n": 9,
       "title": "Air-dry clay",
       "hobby": "air-dry-clay",
-      "note": "Pottery without a wheel or kiln. Make a ring dish tonight, let it dry (check your clay's label for timing), then paint it and keep it forever even if it's lopsided. [How to start air-dry clay](/journal/how-to-start-air-dry-clay) has the steps. **What makes it easier:** {{product:crayola-air-dry-clay-5-lb-bucket|a bucket of air-dry clay}} and a few small acrylic paints, so tonight's ring dish can be painted once it dries."
+      "note": "Pottery without a wheel or kiln. Make a ring dish tonight, let it dry (check your clay's label for timing), then paint it and keep it forever even if it's lopsided. [How to start air-dry clay](/journal/how-to-start-air-dry-clay) has the steps. **What makes it easier:** a bucket of air-dry clay and a few small acrylic paints, so tonight's ring dish can be painted once it dries."
     },
     {
       "type": "item",
@@ -252,13 +226,13 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "watercolor-sets",
+      "hobbies": [
+        "watercolor-painting",
         "air-dry-clay",
-        "embroidery-kits",
-        "junk-journals",
-        "crochet-hooks",
-        "knitting-needles"
+        "embroidery",
+        "junk-journaling",
+        "crochet",
+        "knitting"
       ],
       "title": "A first pick for a creative evening",
       "dek": "A small paint set, a block of clay, a stitching kit, a journal or a set of hooks or needles each make the first session easier. Choose the one you are most curious about."
@@ -341,13 +315,12 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "tennis-rackets",
-        "pickleball-sets",
-        "walking-shoes",
-        "daypacks",
-        "binoculars",
-        "picnic-blankets"
+      "hobbies": [
+        "tennis",
+        "pickleball",
+        "hiking",
+        "birdwatching",
+        "picnicking"
       ],
       "title": "For a weekend outside",
       "dek": "A racket or paddle, walking shoes, a daypack, binoculars or a picnic blanket each turn a free Saturday morning into a plan."
@@ -398,12 +371,11 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "mahjong-sets",
-        "conversation-cards",
-        "group-painting-kits",
-        "friendship-bracelet-kits",
-        "ceramic-painting-kits"
+      "hobbies": [
+        "mahjong",
+        "craft-nights",
+        "friendship-bracelets",
+        "pottery-painting"
       ],
       "title": "For a table of friends",
       "dek": "A game set, a deck of conversation cards or a painting or bracelet kit gives a night in a shape and everyone something to do."

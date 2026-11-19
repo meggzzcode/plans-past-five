@@ -1,0 +1,58 @@
+{
+  "id": "knaid-grid-washi-tape-14-rolls-15mm",
+  "name": "Grid Washi Tape Set, 14 Rolls, 15 mm",
+  "brand": "Knaid",
+  "category": "Washi tape",
+  "order": 19,
+  "status": "held",
+  "statusReason": "Third washi option with a single pattern style; adds a decision, not a new look. Held.",
+  "description": "A 14-roll set of 15 mm grid-pattern washi tape.",
+  "asin": "B08FXQ315R",
+  "specs": [
+    {
+      "label": "Rolls",
+      "value": "14"
+    },
+    {
+      "label": "Width",
+      "value": "15 mm"
+    },
+    {
+      "label": "Length per roll",
+      "value": "8 m (26.3 ft)"
+    }
+  ],
+  "hobbies": [
+    "junk-journaling"
+  ],
+  "articles": [
+    "junk-journaling-supplies-for-beginners",
+    "how-to-start-junk-journaling"
+  ],
+  "collections": [
+    "journaling-era",
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "junk-journaling",
+      "slot": "washi-tape"
+    }
+  ],
+  "role": "nice-to-have",
+  "isEssential": false,
+  "audience": "People who want a neat, grid look for notes and journals",
+  "whySelected": "The listing says it tears by hand and repositions; one pattern family keeps pages cohesive.",
+  "limitations": [
+    "Listing itself says washi does not stick well to all surfaces (for example walls)",
+    "Single pattern style",
+    "Manufacturer page not yet checked",
+    "Seller on listing: Knaid Co., Ltd"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B08FXQ315R"
+  ],
+  "lastVerified": "2026-11-18",
+  "availability": "available",
+  "affiliateStatus": "not-activated"
+}

@@ -1,0 +1,50 @@
+{
+  "id": "leize-floral-shears-flower-scissors",
+  "name": "Flower Scissors, Floral Shears, Stainless Steel Pruner",
+  "brand": "Leize",
+  "category": "Floral snips",
+  "order": 52,
+  "status": "candidate",
+  "description": "Slender floral shears that cut stems up to 8 mm, with non-slip handles.",
+  "asin": "B08R43LHKT",
+  "specs": [
+    {
+      "label": "Cutting diameter",
+      "value": "up to 8 mm"
+    },
+    {
+      "label": "Blade",
+      "value": "high carbon steel per listing"
+    },
+    {
+      "label": "Handle",
+      "value": "non-slip PP"
+    }
+  ],
+  "hobbies": [
+    "flower-arranging"
+  ],
+  "articles": [
+    "flower-arranging-as-a-hobby"
+  ],
+  "collections": [
+    "creative-girl"
+  ],
+  "kitSlots": [],
+  "role": "essential",
+  "isEssential": true,
+  "audience": "Arrangers cutting soft stems",
+  "whySelected": "Maker lists stem diameter limit.",
+  "limitations": [
+    "Cannot cut thick woody stems (8 mm limit)",
+    "Sharpness is the listing's claim",
+    "Manufacturer page not yet checked",
+    "Seller on listing: Panago Garden"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B08R43LHKT"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated"
+}
