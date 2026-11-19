@@ -4,8 +4,9 @@
   "titleItalic": "Air-Dry Clay Era",
   "dek": "Trinket dishes, jewelry holders, ornaments and tiny figurines, no kiln required, with honest notes on what air-dry clay can and cannot do.",
   "category": "creative-corner",
-  "status": "draft",
-  "publishedAt": "",
+  "status": "published",
+  "publishedAt": "2026-11-19",
+  "verifiedAt": "2026-11-19",
   "hero": "shopPottery",
   "searchIntent": "how to start air dry clay / air dry clay for beginners / air dry clay projects",
   "angle": "A beginner walkthrough that sets honest expectations: what air-dry clay is good for, what it is not, and how to make a first trinket dish, then a jewelry holder, ornaments and figurines",
@@ -25,17 +26,32 @@
     {
       "title": "Crayola: can air dry clay pieces be sealed? (FAQ)",
       "url": "https://www.crayola.com/products/brands/scribble-scrubbie/faqs/can-air-dry-clay-pieces-be-sealed-faq",
-      "note": "Sealing will not waterproof; display indoors. Read via search snippet only, 2026-11-18"
+      "note": "Read directly on crayola.com, checked 2026-11-19: seal only once fully dry after 72 hours, suggests an acrylic varnish and testing compatibility, sealing will not waterproof, display indoors"
+    },
+    {
+      "title": "Crayola: how long does it take for Air-Dry Clay to dry? (FAQ)",
+      "url": "https://www.crayola.com/faqs/how-long-does-it-take-for-air-dry-clay-to-dry-faq",
+      "note": "Checked 2026-11-19: generally 24 hours to dry to the touch and 72 hours to dry completely; varies with conditions and piece size; thoroughly dry pieces may be painted with tempera, acrylic or watercolor"
+    },
+    {
+      "title": "Crayola: how long can I store unused Air-Dry Clay? (FAQ)",
+      "url": "https://www.crayola.com/faqs/how-long-can-i-store-unused-air-dry-clay-in-an-airtight-container-faq",
+      "note": "Checked 2026-11-19: store unused clay in an airtight container; avoid storing clay with added water"
+    },
+    {
+      "title": "Crayola: Air Dry Clay product category",
+      "url": "https://www.crayola.com/products/clay-and-modeling-compounds/air-dry-clay",
+      "note": "Checked 2026-11-19: no kiln or oven required; dries naturally"
     },
     {
       "title": "Crayola Air Dry Clay safety data sheet (2014)",
       "url": "https://cdn.schoolspecialty.com/6def59d9-1456-402d-8d0b-b0f10093639f/1280534_2015-04-07_Original%20file.pdf",
-      "note": "No respirator required under normal use; hosted by a retailer, not crayola.com"
+      "note": "No respirator required under normal use; hosted by a retailer, not crayola.com. Used only to avoid claiming a mask is required"
     },
     {
       "title": "Safeway product listing quoting Crayola packaging",
       "url": "https://www.safeway.com/shop/product-details.960182844.3132.html",
-      "note": "Retail listing quoting packaging text: no baking or firing, 2-3 days drying, keep away from food and liquids, airtight storage. Secondhand source"
+      "note": "Retail listing quoting packaging text: keep finished pieces away from food and liquids. Secondhand source, used only for the keep-away-from-food caution"
     },
     {
       "title": "Mont Marte: answers to common air dry clay questions",
@@ -44,13 +60,14 @@
     }
   ],
   "coworkChecks": [
-    "VERIFIED 2026-11-18 (retail text, snippet only): needs no kiln or oven, about 2-3 days to dry, keep from food and liquids, airtight storage, add water to join - Crayola packaging via safeway.com; article hedges to 'usually' and 'check your label'",
-    "VERIFIED 2026-11-18 (snippet only): not waterproof, sealing does not waterproof, indoors only - crayola.com FAQ",
-    "VERIFIED 2026-11-18: do not use for food or drink even if sealed (the 'unless the label says so' exception was unsupported and has been dropped) - safeway.com (Crayola packaging), montmarte.com",
-    "RESOLVED 2026-11-19: starter spend $15-$40, quarter-inch thickness, thin/thick-piece crack causes, smoothing cracks - removed (no source)",
-    "RESOLVED 2026-11-19: slip/joining - now 'score both surfaces and join with a little water'; sanding - gentle, damp sponge or fine paper, ventilated, optional mask, check safety data sheet (no mask claimed as required); ornaments/jewelry holders stay decorative-only; spray sealer defers to the can's instructions",
-    "OPEN: Crayola pages were read only through search snippets and retail listings; re-read crayola.com directly (packaging, drying time, sealing, children's-age warning) before publishing. No safety certification is stated in the article and none should be added from secondhand sources",
-    "OPEN: 'not for use near flame or heat' has no manufacturer statement behind it; it stays as a deliberately conservative caution - decide whether that counts as verified for publication"
+    "SUPPORTED 2026-11-19: no kiln or oven needed; dries naturally - crayola.com air dry clay page",
+    "SUPPORTED 2026-11-19: drying generally 24 hours to touch, 72 hours completely, varies with size and conditions - crayola.com drying FAQ (article says about two to three days and to check the label)",
+    "SUPPORTED 2026-11-19: sealing will not waterproof; display indoors; acrylic varnish suggested, test first - crayola.com sealing FAQ (read directly)",
+    "SUPPORTED 2026-11-19: store unused clay airtight, do not store clay with added water; thoroughly dry pieces may be painted - crayola.com FAQs",
+    "CORRECT AS 2026-11-19: do not use pieces for food or drink, even if sealed - Crayola packaging text via safeway.com and montmarte.com; no exception for the label is stated",
+    "CORRECT AS 2026-11-19: sanding - gentle, damp sponge or fine paper, ventilated space, mask optional, check the safety data sheet; no claim that a mask is required (Crayola SDS: no respirator required under normal use)",
+    "REMOVED 2026-11-19: starter spend, quarter-inch thickness, thin/thick-piece crack causes, smoothing cracks (no source)",
+    "CORRECT AS 2026-11-19: 'keep away from flame and heat' has no manufacturer statement behind it; it is worded as a precaution ('as a precaution'), not as a tested fact, and no candle holder is suggested"
   ],
   "related": [
     "creative-hobbies-you-can-start-at-home",
@@ -65,7 +82,7 @@
     },
     {
       "type": "p",
-      "text": "One honest note first. Air-dry clay is a decorative material. Do not use air-dry clay pieces for food or drink, even if sealed. It is not waterproof, and it is not for use near flame or heat. Check your clay's label for age warnings and other product notes. Plan on pretty things for shelves, desks and dressers and you won't be disappointed."
+      "text": "One honest note first. Air-dry clay is a decorative material. Do not use air-dry clay pieces for food or drink, even if sealed. It is not waterproof, and, as a precaution, keep it away from flame and heat. Check your clay's label for age warnings and other product notes. Plan on pretty things for shelves, desks and dressers and you won't be disappointed."
     },
     {
       "type": "h2",
@@ -136,7 +153,7 @@
       "type": "item",
       "n": 6,
       "title": "Dry",
-      "note": "Leave it somewhere dry and out of direct sun, and flip it after a day so both sides dry evenly. Drying usually takes about two to three days, longer for thick pieces or humid rooms, so check your clay's label. Resist speeding it up with heat; drying too fast or unevenly is a common cause of cracks."
+      "note": "Leave it somewhere dry and out of direct sun, and flip it after a day so both sides dry evenly. Crayola says its clay generally takes 24 hours to feel dry and about 72 hours to dry completely, longer for thick pieces or humid rooms, so check your own clay's label. Resist speeding it up with heat; drying too fast or unevenly is a common cause of cracks."
     },
     {
       "type": "p",
@@ -162,7 +179,7 @@
     },
     {
       "type": "p",
-      "text": "When the piece is fully dry, sand gently, ideally with a damp sponge or fine paper, in a ventilated space; if a dust mask makes you more comfortable, wear one, and check your clay's safety data sheet. Paint with acrylics, let the color dry, then use a water-based sealer if you want a protected finish, following the label. For a spray sealer, follow the can's ventilation and protective-gear instructions. A sealed piece is still not waterproof, so keep it off the sink edge and away from drinks."
+      "text": "When the piece is fully dry, sand gently, ideally with a damp sponge or fine paper, in a ventilated space; if a dust mask makes you more comfortable, wear one, and check your clay's safety data sheet. Paint with acrylics and let the color dry. Crayola suggests an acrylic varnish if you want a protected finish, tested on a scrap first, and only once the piece is completely dry. For a spray sealer, follow the can's ventilation and protective-gear instructions. A sealed piece is still not waterproof, so keep it off the sink edge and away from drinks."
     },
     {
       "type": "h2",

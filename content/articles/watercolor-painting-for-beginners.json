@@ -4,8 +4,9 @@
   "titleItalic": "Three Little Paintings",
   "dek": "A small supply list, a few techniques worth learning first, and three projects that make practice feel like painting.",
   "category": "creative-corner",
-  "status": "draft",
-  "publishedAt": "",
+  "status": "published",
+  "publishedAt": "2026-11-19",
+  "verifiedAt": "2026-11-19",
   "hero": "watercolor",
   "searchIntent": "watercolor painting for beginners / watercolor supplies / easy watercolor projects",
   "angle": "A calm, practice-first guide: buy little, learn water control before drawing skill, and finish three small projects that look good without being good at drawing",
@@ -33,16 +34,41 @@
       "title": "ACMI partners: how the labeling law (LHAMA) affects you",
       "url": "https://partners.acmiart.org/index.php/art-material-safety/lhama-how-does-it-affect-you",
       "note": "Labeling law explained"
+    },
+    {
+      "title": "Artists Network: painting a flat wash and a gradated wash",
+      "url": "https://www.artistsnetwork.com/uncategorized/perfect-watercolor-wash-michael-reardon/",
+      "note": "Checked 2026-11-19: tape paper down, a flat wash is one color and value made with overlapping strokes and a bead of paint, gradated wash shifts gradually"
+    },
+    {
+      "title": "Artists Network: watercolor glossary of terms",
+      "url": "https://www.artistsnetwork.com/art-techniques/watercolor-glossary-of-terms/",
+      "note": "Checked 2026-11-19: definitions of flat wash, gradated wash and drybrush"
+    },
+    {
+      "title": "Artists Network: watercolor painting techniques, wet-into-wet washes",
+      "url": "https://www.artistsnetwork.com/art-mediums/watercolor/watercolor-painting-techniques/",
+      "note": "Checked 2026-11-19: wet-into-wet looks strong while wet but loses intensity as it dries; example on 140-lb (300gsm) cold-pressed paper"
+    },
+    {
+      "title": "Artists Network: watercolor for beginners",
+      "url": "https://www.artistsnetwork.com/art-mediums/watercolor/all-in-one-guide-to-watercolor-for-beginners/",
+      "note": "Checked 2026-11-19: watercolors come in tubes or dry pans; check the ASTM rating on the label"
+    },
+    {
+      "title": "Winsor & Newton: watercolour paper, gummed pad, 300gsm/140lb",
+      "url": "https://www.winsornewton.com/products/watercolour-paper-gummed-300gsm-140lb",
+      "note": "Manufacturer page, checked 2026-11-19: 300gsm cold press paper; maker says its watercolour papers are designed to withstand saturation without cockling"
     }
   ],
   "coworkChecks": [
-    "VERIFIED 2026-11-18: ACMI AP seal means non-toxic when used as intended; CL seal means health warnings on the label - acmiart.org",
-    "VERIFIED 2026-11-18: some pigments (lead, cadmium, other heavy metals) can be toxic; read labels - cpsc.gov, acmiart.org",
-    "RESOLVED 2026-11-19: starter spend ($20-$50) - removed; verification found no source for prices",
-    "OPEN: 'never point a brush with your mouth' has no source in the verification file; either source it or remove",
-    "OPEN: no verification covered technique or materials - paper weight (300 gsm / 140 lb) and buckling, cold-press for beginners, student vs artist grade, brush sizing, taping paper, light-to-dark painting, brush care",
-    "OPEN: confirm descriptions of flat wash, graded wash, wet-on-wet and wet-on-dry, and that pans need a few minutes of wetting, are accurate",
-    "OPEN: 'a non-toxic claim on a specific paint' must be read off the maker's label or ACMI list per product; article makes no such claim, but the later product pass must not add one unchecked"
+    "VERIFIED 2026-11-19: ACMI AP seal means non-toxic when used as intended; CL seal means health warnings on the label - acmiart.org (read directly)",
+    "VERIFIED 2026-11-19: avoid materials with lead, cadmium and other heavy metals - cpsc.gov art and craft safety guide (read directly)",
+    "VERIFIED 2026-11-19: never hold brushes in the mouth or tip them with the lips - same CPSC guide; article now says to keep brushes out of your mouth",
+    "SUPPORTED 2026-11-19: flat wash, graded (gradated) wash, tape paper down, wet-into-wet dries lighter - artistsnetwork.com pages; wet-on-dry kept as the plain definition (paint on dry paper, crisper edges) and drybrush term appears in the same glossary",
+    "SUPPORTED 2026-11-19: 300gsm (140 lb) cold press is a common watercolor paper weight; heavier paper copes better with water - winsornewton.com paper page, artistsnetwork.com; worded as 'many guides suggest'",
+    "REMOVED 2026-11-19: starter spend; 'improves every painting more than expensive paint'; 'a couple of minutes' of wetting pans; 'mix two colors at most' (now a suggestion)",
+    "CORRECT AS 2026-11-19: no per-paint non-toxic claim is made; shop block names no safety certification"
   ],
   "related": [
     "creative-hobbies-you-can-start-at-home",
@@ -61,12 +87,12 @@
     },
     {
       "type": "p",
-      "text": "Paper matters more than anything else. Thin paper buckles and shows every mistake, so a heavier, textured watercolor paper makes a beginner feel better at it than they are."
+      "text": "Paper matters more than anything else. Thin paper tends to buckle when wet and shows every mistake, so a heavier, textured watercolor paper is kinder to a beginner. Many guides suggest 300gsm (140 lb) cold-press paper, a weight sold by makers such as Winsor & Newton."
     },
     {
       "type": "whatYoullNeed",
       "essentials": [
-        "A small pan or tube set of watercolors, student grade is fine",
+        "A small pan or tube set of watercolors, a student-grade set is a sensible place to start",
         "Watercolor paper or a watercolor sketchbook, heavier than ordinary sketch paper",
         "One round brush in a middling size",
         "A jar of water and a cloth or paper towel",
@@ -81,11 +107,11 @@
     },
     {
       "type": "p",
-      "text": "You probably own a plate for mixing, a jar for water, a hard surface to work on and a hairdryer for impatient moments. A pan set is the least fuss, since you wet it and paint. Pick one small set: if the box turns out to hold far more colors than you need (many do), start with three and ignore the rest, and use the brushes that come with it until you want better ones. A sketchbook of proper watercolor paper keeps all your practice in one place, and a portable set suits a park bench or a café table. If you're going to spend on one thing, make it better paper: it improves every painting more than expensive paint does, and artist-grade paints can wait."
+      "text": "You probably own a plate for mixing, a jar for water, a hard surface to work on and a hairdryer for impatient moments. A pan set is the least fuss, since you wet it and paint. Pick one small set: if the box turns out to hold far more colors than you need (many do), start with three and ignore the rest, and use the brushes that come with it until you want better ones. A sketchbook of proper watercolor paper keeps all your practice in one place, and a portable set suits a park bench or a café table. If you're going to spend on one thing, make it better paper, and artist-grade paints can wait."
     },
     {
       "type": "p",
-      "text": "Prices vary by shop and brand. Read labels before you buy: avoid materials with lead, cadmium and other heavy metals. Look for the AP seal from ACMI, which marks products certified non-toxic when used as intended; a CL seal means the product carries health warnings. Wash up after painting, and never point a brush with your mouth."
+      "text": "Prices vary by shop and brand, so check local prices. Read labels before you buy: avoid materials with lead, cadmium and other heavy metals. Look for the AP seal from ACMI, which marks products certified non-toxic when used as intended; a CL seal means the product carries health warnings. Wash up after painting, and keep brushes out of your mouth: do not point or tip them with your lips."
     },
     {
       "type": "h2",
@@ -114,7 +140,7 @@
       "type": "item",
       "n": 4,
       "title": "Wet-on-dry",
-      "note": "Paint onto fully dry paper for crisp edges. Use it for details once a wash has dried, like leaves on a branch or a window frame."
+      "note": "Paint onto dry paper, where strokes stay put and edges stay crisp. Use it for details once a wash has dried, like leaves on a branch or a window frame."
     },
     {
       "type": "p",
@@ -129,11 +155,11 @@
       "type": "first30",
       "steps": [
         "Tape the edges of a sheet to a board or a table if you have masking tape. It helps the paper stay flat.",
-        "Wet your paints for a couple of minutes so they soften, and fill your water jar.",
+        "Add a few drops of water to your pans so they soften, and fill your water jar.",
         "Paint a flat wash across the top half of the page, then a graded wash below it.",
         "While it is still damp, drop in a second color and watch what it does.",
         "Let everything dry completely, then add one detail on top with the tip of the brush.",
-        "Peel the tape slowly. Put the page somewhere you will see it."
+        "Once the page is completely dry, peel the tape slowly, low and parallel to the paper. Put the page somewhere you will see it."
       ]
     },
     {
@@ -162,7 +188,7 @@
       "type": "list",
       "items": [
         "**The paper has buckled.** Too much water on thin paper. Switch to heavier paper, tape it down, and let it dry flat under a book.",
-        "**The colors turned muddy.** Too many colors mixed, or layers painted over damp paint. Mix two colors at most and wait for each layer to dry.",
+        "**The colors turned muddy.** Too many colors mixed, or layers painted over damp paint. Try mixing fewer colors and wait for each layer to dry.",
         "**It looks washed out.** Watercolor dries lighter than it looks wet. Add more pigment and less water next time, and layer a second coat once it is dry."
       ]
     },

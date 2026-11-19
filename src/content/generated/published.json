@@ -21,7 +21,12 @@
       "thrifting",
       "flower-arranging"
     ],
-    "productIds": ["tennis-rackets", "pickleball-sets", "daypacks", "water-bottles"],
+    "productIds": [
+      "tennis-rackets",
+      "pickleball-sets",
+      "daypacks",
+      "water-bottles"
+    ],
     "sources": [
       {
         "title": "CDC: adult physical activity guidelines",
@@ -291,13 +296,285 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["pickleball-sets", "tennis-rackets", "water-bottles", "sports-totes"],
+        "productIds": [
+          "pickleball-sets",
+          "tennis-rackets",
+          "water-bottles",
+          "sports-totes"
+        ],
         "title": "Your first-session kit",
         "dek": "Borrow a racket first. When you're back for a second go, these make the walk to the court nicer."
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["pickleball", "tennis", "hiking"]
+        "hobbies": [
+          "pickleball",
+          "tennis",
+          "hiking"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "affordable-hobbies-under-25",
+    "title": "15 Affordable Hobbies You Can Start on a Small Budget",
+    "titleItalic": "Small Budget",
+    "dek": "Fifteen hobbies you can start with little or nothing new, with the cheapest sensible way into each one.",
+    "category": "after-hours",
+    "status": "published",
+    "publishedAt": "2026-11-19",
+    "verifiedAt": "2026-11-19",
+    "hero": "soloCafe",
+    "searchIntent": "cheap hobbies / affordable hobbies for women / low-cost hobbies to start",
+    "angle": "Free and low-cost framing: the cheapest sensible way into each hobby, borrow-first and secondhand habits, and a plain explanation of why costs vary, with no prices stated",
+    "hobbies": [
+      "watercolor-painting",
+      "junk-journaling",
+      "air-dry-clay",
+      "paint-by-numbers",
+      "embroidery",
+      "friendship-bracelets",
+      "jigsaw-puzzles",
+      "reading",
+      "birdwatching",
+      "outdoor-sketching",
+      "hiking",
+      "baking",
+      "indoor-gardening",
+      "creative-writing",
+      "thrifting"
+    ],
+    "productIds": [
+      "watercolor-sets",
+      "air-dry-clay",
+      "embroidery-kits",
+      "pocket-notebooks"
+    ],
+    "sources": [
+      {
+        "title": "ASPCA: toxic and non-toxic plants",
+        "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants",
+        "note": "Checked 2026-11-19: searchable list; some common houseplants are harmful to pets"
+      },
+      {
+        "title": "ASPCA: these houseplants can cause trouble for your pets",
+        "url": "https://www.aspca.org/news/these-houseplants-can-cause-trouble-your-pets",
+        "note": "Checked 2026-11-19: pothos, peace lily, dumb cane and others are toxic to pets if eaten"
+      }
+    ],
+    "related": [
+      "how-to-find-a-hobby-as-an-adult",
+      "creative-hobbies-you-can-start-at-home",
+      "how-to-start-junk-journaling",
+      "cheap-weekend-adventures"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "A hobby starts to sound like a line item somewhere between the pottery-studio membership and the camera that needs its own backpack. It doesn't have to. Most of the ones people stick with begin with one small purchase, or none."
+      },
+      {
+        "type": "p",
+        "text": "Below are fifteen, each with the cheapest sensible way in, a note on cost and a first small step. Treat it as a menu. You only need to order one."
+      },
+      {
+        "type": "h2",
+        "text": "About costs",
+        "id": "prices"
+      },
+      {
+        "type": "p",
+        "text": "We've left out dollar figures on purpose. Prices differ with where you live, new versus secondhand, and what's on offer this month, and they go stale fast, so check local prices before you buy. Online prices also often leave out shipping and tax."
+      },
+      {
+        "type": "p",
+        "text": "Two habits keep costs down whatever you pick. Borrow first, since your library may lend more than books and a friend may own a hoop or a spare set of paints. And check secondhand: charity shops, swaps and neighborhood groups are full of barely used supplies."
+      },
+      {
+        "type": "h2",
+        "text": "Make-something hobbies",
+        "id": "creative"
+      },
+      {
+        "type": "item",
+        "n": 1,
+        "title": "Watercolor painting",
+        "hobby": "watercolor-painting",
+        "note": "A small pan set, one decent brush and a pad of paper will do. Hold off on fancy paper until you've filled a dozen pages with practice.",
+        "cost": "Low cost; check local prices",
+        "first": "Paint a wash in three colors and let them bleed into each other."
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "title": "Junk journaling",
+        "hobby": "junk-journaling",
+        "note": "A plain notebook, a glue stick and the things you'd normally recycle. The [beginner's guide](/journal/how-to-start-junk-journaling) walks through the first page.",
+        "cost": "Often free or nearly free",
+        "first": "Glue in one receipt and one ticket, then add a sentence about the day."
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "title": "Air-dry clay",
+        "hobby": "air-dry-clay",
+        "note": "One block of clay and a few acrylic paints will see you through several small projects. No kiln needed, and few special tools.",
+        "cost": "Low cost; check local prices",
+        "first": "Pinch a small trinket dish and leave it to dry overnight."
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "title": "Paint by numbers",
+        "hobby": "paint-by-numbers",
+        "note": "Kits usually include the numbered canvas, paints and a brush, which spares you the blank-page wobble; check the listing. Choose a small size over a giant canvas.",
+        "cost": "Low cost; check local prices",
+        "first": "Fill in every shape marked with the same number."
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "title": "Embroidery",
+        "hobby": "embroidery",
+        "note": "Beginner kits often bundle a hoop, fabric, floss and a needle; check the listing. Learn three stitches (running, back, satin) and you can make plenty.",
+        "cost": "Low cost; check local prices",
+        "first": "Stitch the first outline of the pattern."
+      },
+      {
+        "type": "item",
+        "n": 6,
+        "title": "Friendship bracelets",
+        "hobby": "friendship-bracelets",
+        "note": "A few skeins of embroidery floss and a safety pin to hold your work in place. Make one for yourself before you start on gifts.",
+        "cost": "Low cost; check local prices",
+        "first": "Learn the forward knot and make a short striped band."
+      },
+      {
+        "type": "h2",
+        "text": "Cozy-at-home hobbies",
+        "id": "cozy"
+      },
+      {
+        "type": "item",
+        "n": 7,
+        "title": "Jigsaw puzzles",
+        "hobby": "jigsaw-puzzles",
+        "note": "Secondhand puzzles are everywhere. Check the pieces are all there before you pay, or swap with a friend.",
+        "cost": "Often cheaper secondhand",
+        "first": "Sort the edge pieces and build the frame."
+      },
+      {
+        "type": "item",
+        "n": 8,
+        "title": "Reading",
+        "hobby": "reading",
+        "note": "A library card is one of the best-value ways to read more. A cheap clip-on light makes it cozier still.",
+        "cost": "Often free with a library card",
+        "first": "Borrow three books and read the first twenty pages of each."
+      },
+      {
+        "type": "item",
+        "n": 9,
+        "title": "Baking",
+        "hobby": "baking",
+        "note": "You probably own most of what a simple batch of cookies or banana bread needs. A mixing bowl and a tray are enough.",
+        "cost": "Often groceries you'd buy anyway",
+        "first": "Bake a one-bowl recipe and give half away."
+      },
+      {
+        "type": "item",
+        "n": 10,
+        "title": "Indoor gardening",
+        "hobby": "indoor-gardening",
+        "note": "A cutting from a friend's plant in a jar of water costs nothing. Add a small pot and compost when it grows roots. If you share your home with pets, check plants against the ASPCA's toxic and non-toxic plant list first, because some common houseplants are harmful to pets.",
+        "cost": "Free if a friend shares a cutting; otherwise low cost",
+        "first": "Take a cutting, put it by a bright window and check it weekly."
+      },
+      {
+        "type": "item",
+        "n": 11,
+        "title": "Creative writing",
+        "hobby": "creative-writing",
+        "note": "A notebook and a pen. Ten minutes on anything at all: a memory, a stranger on the bus, tonight's dinner.",
+        "cost": "Low cost: a notebook and a pen",
+        "first": "Set a ten-minute timer and write without editing."
+      },
+      {
+        "type": "h2",
+        "text": "Out-and-about hobbies",
+        "id": "outdoors"
+      },
+      {
+        "type": "item",
+        "n": 12,
+        "title": "Birdwatching",
+        "hobby": "birdwatching",
+        "note": "Your eyes, a window or a park bench, and a bird-ID app or a library field guide. Binoculars are a nice later upgrade, not a ticket in.",
+        "cost": "Free to start",
+        "first": "Sit for fifteen minutes and note every bird you see."
+      },
+      {
+        "type": "item",
+        "n": 13,
+        "title": "Outdoor sketching",
+        "hobby": "outdoor-sketching",
+        "note": "A pencil and a small sketchbook. Draw a tree, a bench or your coffee cup. The fancy pencils can wait.",
+        "cost": "Low cost; check local prices",
+        "first": "Draw one object for ten minutes without looking at the paper."
+      },
+      {
+        "type": "item",
+        "n": 14,
+        "title": "Hiking and local walks",
+        "hobby": "hiking",
+        "note": "Comfortable shoes, water and a trail near you. Many public trails are free, though some parks charge for parking or entry.",
+        "cost": "Free to start; some parks charge for parking or entry",
+        "first": "Walk a short trail with a friend and turn back at the halfway point."
+      },
+      {
+        "type": "item",
+        "n": 15,
+        "title": "Thrifting",
+        "hobby": "thrifting",
+        "note": "Set a spending cap before you leave, a number you're happy to part with. Look for one thing you'd never buy new.",
+        "cost": "Your own cap",
+        "first": "Visit one secondhand shop, choose one item and go home."
+      },
+      {
+        "type": "h2",
+        "text": "Before you buy anything",
+        "id": "own"
+      },
+      {
+        "type": "p",
+        "text": "Walk around your home first. Most starter lists are shorter than they look: a notebook, pens, scissors, a glue stick, a mixing bowl, a baking tray, old jars, comfortable shoes and a tote are probably already here. For the craft hobbies, if you buy anything, consider a small kit or set in the smallest size, so everything arrives in a box. Better paper, a nicer brush, binoculars and a trail-ready daypack can wait until you've done the hobby five times."
+      },
+      {
+        "type": "p",
+        "text": "Still stuck choosing? Ask what you want from your evenings. Something for your hands: start with the first list. Something quiet: the second. Something that gets you out the door: the third. The [Hobby Finder quiz](/hobby-finder) narrows it down in a couple of minutes."
+      },
+      {
+        "type": "noSpend",
+        "text": "Several of these can start today with nothing new: reading what you already own or can borrow, birdwatching, a local walk and ten minutes of writing."
+      },
+      {
+        "type": "shopHobby",
+        "productIds": [
+          "watercolor-sets",
+          "air-dry-clay",
+          "embroidery-kits",
+          "pocket-notebooks"
+        ],
+        "title": "If you want a starter kit",
+        "dek": "Optional. Start with what you have, then upgrade if a hobby sticks."
+      },
+      {
+        "type": "ifYouLoved",
+        "hobbies": [
+          "watercolor-painting",
+          "air-dry-clay",
+          "birdwatching"
+        ]
       }
     ]
   },
@@ -399,7 +676,11 @@
           "A notebook, glue stick, scissors and paper scraps for journaling",
           "Newspaper or a wipeable cloth, a jar of water, paper towels"
         ],
-        "optional": ["Washi tape and stickers", "A craft apron", "A sealer for finished clay"]
+        "optional": [
+          "Washi tape and stickers",
+          "A craft apron",
+          "A sealer for finished clay"
+        ]
       },
       {
         "type": "p",
@@ -535,7 +816,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["air-dry-clay", "watercolor-painting", "craft-nights"]
+        "hobbies": [
+          "air-dry-clay",
+          "watercolor-painting",
+          "craft-nights"
+        ]
       }
     ]
   },
@@ -561,7 +846,12 @@
       "volunteering",
       "outdoor-sketching"
     ],
-    "productIds": ["daypacks", "pocket-notebooks", "market-totes", "binoculars"],
+    "productIds": [
+      "daypacks",
+      "pocket-notebooks",
+      "market-totes",
+      "binoculars"
+    ],
     "sources": [
       {
         "title": "National Park Service: hiking safety",
@@ -893,13 +1183,22 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["binoculars", "daypacks", "pocket-notebooks", "market-totes"],
+        "productIds": [
+          "binoculars",
+          "daypacks",
+          "pocket-notebooks",
+          "market-totes"
+        ],
         "title": "For your first adventure",
         "dek": "A bag for the snacks, a notebook for the finds and binoculars if the pond calls. Nothing here is required."
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["hiking", "birdwatching", "thrifting"]
+        "hobbies": [
+          "hiking",
+          "birdwatching",
+          "thrifting"
+        ]
       }
     ]
   },
@@ -1217,7 +1516,12 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["junk-journals", "washi-tape", "book-lights", "reading-journals"],
+        "productIds": [
+          "junk-journals",
+          "washi-tape",
+          "book-lights",
+          "reading-journals"
+        ],
         "title": "The night-in kit",
         "dek": "Nothing here is required. They just make staying in feel a bit more like an occasion."
       },
@@ -1236,7 +1540,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["air-dry-clay", "paint-by-numbers", "jigsaw-puzzles"]
+        "hobbies": [
+          "air-dry-clay",
+          "paint-by-numbers",
+          "jigsaw-puzzles"
+        ]
       }
     ]
   },
@@ -1248,6 +1556,7 @@
     "category": "creative-corner",
     "status": "published",
     "publishedAt": "2026-11-18",
+    "verifiedAt": "2026-11-19",
     "hero": "potteryNight",
     "searchIntent": "creative hobbies at home for adults",
     "angle": "Small-apartment friendly, grouped by material, with mess level and what to buy first",
@@ -1266,6 +1575,23 @@
       "junk-journals",
       "friendship-bracelet-kits",
       "washi-tape"
+    ],
+    "sources": [
+      {
+        "title": "How long does air-dry clay take to dry? (Crayola FAQ)",
+        "url": "https://www.crayola.com/faqs/how-long-does-it-take-for-air-dry-clay-to-dry-faq",
+        "note": "Crayola Air-Dry clay generally takes 24 hours to dry to the touch and 72 hours to dry completely. Checked 2026-11-19."
+      },
+      {
+        "title": "Crayola Air-Dry Clay, White (Crayola product page)",
+        "url": "https://www.crayola.com/en-ca/products/clay-and-modeling-compounds/crayola-air-dry-clay-white-575050",
+        "note": "Dries to a hard solid with no kiln or oven; paint when dry. Checked 2026-11-19."
+      },
+      {
+        "title": "Propagating houseplants (University of Illinois Extension)",
+        "url": "https://extension.illinois.edu/blogs/good-growing/2025-02-21-winter-gardening-propagating-houseplants-beat-winter-blues",
+        "note": "Pothos can be rooted in water; trim the cut near a node. Checked 2026-11-19."
+      }
     ],
     "body": [
       {
@@ -1304,7 +1630,7 @@
         "n": 3,
         "title": "Collage",
         "hobby": "collage-art",
-        "note": "Cut up old magazines and arrange images into postcards or a framed piece. It costs nothing and is surprisingly revealing about your taste."
+        "note": "Cut up old magazines and arrange images into postcards or a framed piece. It can cost nothing and is surprisingly revealing about your taste."
       },
       {
         "type": "item",
@@ -1322,7 +1648,7 @@
       },
       {
         "type": "noSpend",
-        "text": "Paper hobbies are the easiest to start for free: old magazines, catalogs, receipts, gift wrap and an old notebook will carry you for weeks."
+        "text": "Paper hobbies are the easiest to start for little or nothing: old magazines, catalogs, receipts, gift wrap and an old notebook can carry you for weeks."
       },
       {
         "type": "h2",
@@ -1372,14 +1698,14 @@
         "n": 9,
         "title": "Air-dry clay",
         "hobby": "air-dry-clay",
-        "note": "No wheel or kiln required. Ring dishes, incense holders and tiny vases air-dry at home, then you can paint them. Check your clay's label before sealing, and keep finished pieces for display."
+        "note": "No wheel or kiln required. Ring dishes, trinket trays and small ornaments air-dry at home (about a day to the touch for Crayola's, longer for thick pieces; check the label), then you can paint them. Keep finished pieces for display, not for food, drink or water."
       },
       {
         "type": "item",
         "n": 10,
         "title": "At-home pottery painting",
         "hobby": "pottery-painting",
-        "note": "Get a ceramic painting kit and follow its instructions. Check whether the finished piece is decorative only before it goes near food or drink."
+        "note": "Get a ceramic painting kit and follow its instructions. Unless the kit says the finished piece is food safe, keep it for display rather than food or drink."
       },
       {
         "type": "item",
@@ -1397,7 +1723,12 @@
       },
       {
         "type": "starterKit",
-        "productIds": ["air-dry-clay", "clay-tools", "acrylic-paints", "clay-mats"],
+        "productIds": [
+          "air-dry-clay",
+          "clay-tools",
+          "acrylic-paints",
+          "clay-mats"
+        ],
         "title": "The Pottery Era starter kit"
       },
       {
@@ -1477,7 +1808,7 @@
         "n": 20,
         "title": "Indoor gardening and propagation",
         "hobby": "indoor-gardening",
-        "note": "A row of glass jars with pothos cuttings on a windowsill is a creative project and living decor."
+        "note": "A row of glass jars with pothos cuttings (cut just below a node) on a windowsill is a creative project and living decor."
       },
       {
         "type": "item",
@@ -1517,7 +1848,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["watercolor-painting", "embroidery", "craft-nights"]
+        "hobbies": [
+          "watercolor-painting",
+          "embroidery",
+          "craft-nights"
+        ]
       }
     ]
   },
@@ -1733,7 +2068,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["embroidery", "watercolor-painting", "air-dry-clay"]
+        "hobbies": [
+          "embroidery",
+          "watercolor-painting",
+          "air-dry-clay"
+        ]
       }
     ]
   },
@@ -1749,7 +2088,11 @@
     "hero": "flowerArranging",
     "searchIntent": "flower arranging for beginners / how to arrange flowers at home / flower arranging hobby",
     "angle": "A low-commitment weekly ritual: a simple formula (focal, filler, greenery), a minimal toolkit, and flower care basics, using only grocery-store stems and what you already own",
-    "hobbies": ["flower-arranging", "indoor-gardening", "collage-art"],
+    "hobbies": [
+      "flower-arranging",
+      "indoor-gardening",
+      "collage-art"
+    ],
     "productIds": [],
     "sources": [
       {
@@ -1953,7 +2296,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["indoor-gardening", "collage-art", "watercolor-painting"]
+        "hobbies": [
+          "indoor-gardening",
+          "collage-art",
+          "watercolor-painting"
+        ]
       }
     ]
   },
@@ -2141,7 +2488,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["group-painting-kits", "board-games", "conversation-cards"],
+        "productIds": [
+          "group-painting-kits",
+          "board-games",
+          "conversation-cards"
+        ],
         "title": "Keep a night-in kit in the cupboard",
         "dek": "A painting kit, a board game and a deck of conversation cards mean \"should we do something?\" has an answer."
       },
@@ -2343,7 +2694,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["craft-nights", "pottery-painting", "book-clubs"]
+        "hobbies": [
+          "craft-nights",
+          "pottery-painting",
+          "book-clubs"
+        ]
       }
     ]
   },
@@ -2355,6 +2710,7 @@
     "category": "after-hours",
     "status": "published",
     "publishedAt": "2026-11-18",
+    "verifiedAt": "2026-11-19",
     "hero": "potteryNight",
     "searchIntent": "hobbies to try when bored of routine / hobbies for working women",
     "angle": "Sorted by energy level and setting, each with a realistic first session, not a vague 'try painting!'",
@@ -2373,6 +2729,43 @@
       "junk-journals",
       "tennis-rackets",
       "board-games"
+    ],
+    "sources": [
+      {
+        "title": "The New York Times Crossword Puzzle (NYT Games Help Center)",
+        "url": "https://thenewyorktimeshelpcenter.helpjuice.com/360011158491-New-York-Times-Games/360052406391-The-New-York-Times-Crossword-Puzzle",
+        "note": "Difficulty increases from Monday to Saturday. Checked 2026-11-19."
+      },
+      {
+        "title": "Propagating houseplants (University of Illinois Extension)",
+        "url": "https://extension.illinois.edu/blogs/good-growing/2025-02-21-winter-gardening-propagating-houseplants-beat-winter-blues",
+        "note": "Pothos can be rooted in water; trim the cut near a node. Checked 2026-11-19."
+      },
+      {
+        "title": "Library Card Sign-up Month fact sheet (American Library Association)",
+        "url": "https://www.ala.org/news/library-card-sign-month-fact-sheet",
+        "note": "Cards are generally free for people in the library's service area; rules vary by library. Checked 2026-11-19."
+      },
+      {
+        "title": "Book clubs (Lake Agassiz Regional Library)",
+        "url": "https://larl.org/books-movies-more/book-clubs",
+        "note": "One library's page says all its clubs are free and open to all; an example, not a rule for every library. Checked 2026-11-19."
+      },
+      {
+        "title": "How long does air-dry clay take to dry? (Crayola FAQ)",
+        "url": "https://www.crayola.com/faqs/how-long-does-it-take-for-air-dry-clay-to-dry-faq",
+        "note": "Crayola Air-Dry clay generally takes 24 hours to dry to the touch and 72 hours to dry completely. Checked 2026-11-19."
+      },
+      {
+        "title": "Crayola Air-Dry Clay, White (Crayola product page)",
+        "url": "https://www.crayola.com/en-ca/products/clay-and-modeling-compounds/crayola-air-dry-clay-white-575050",
+        "note": "Dries to a hard solid with no kiln or oven; paint when dry. Checked 2026-11-19."
+      },
+      {
+        "title": "Tennis courts (City of Bloomington, Indiana)",
+        "url": "https://bloomington.in.gov/node/823",
+        "note": "Example of free first-come public courts; other cities charge or take reservations. Checked 2026-11-19."
+      }
     ],
     "body": [
       {
@@ -2419,21 +2812,21 @@
         "n": 3,
         "title": "Reading (properly)",
         "hobby": "reading",
-        "note": "Reading counts as a hobby the minute you start doing it on purpose. Try fiction before bed instead of your phone, and get a library card so trying books costs nothing."
+        "note": "Reading counts as a hobby the minute you start doing it on purpose. Try fiction before bed instead of your phone, and get a library card (most public libraries issue them free to residents) so trying books costs nothing."
       },
       {
         "type": "item",
         "n": 4,
         "title": "Crossword puzzles",
         "hobby": "crossword-puzzles",
-        "note": "Start with Monday puzzles, which are the easiest of the week. A crossword and a coffee is a very respectable solo café plan."
+        "note": "Start with Monday puzzles: the New York Times crossword, for one, gets harder from Monday to Saturday. A crossword and a coffee is a very respectable solo café plan."
       },
       {
         "type": "item",
         "n": 5,
         "title": "Indoor gardening",
         "hobby": "indoor-gardening",
-        "note": "Five minutes of watering and fussing over a pothos is a gentle way to end a workday. Propagating cuttings in jars is weirdly addictive."
+        "note": "Five minutes of watering and fussing over a pothos is a gentle way to end a workday. Propagating pothos cuttings in jars of water (cut just below a node) is weirdly addictive."
       },
       {
         "type": "item",
@@ -2458,7 +2851,7 @@
       },
       {
         "type": "noSpend",
-        "text": "Library books, magazine collage and crosswords cut from a newspaper are all completely free. A no-spend hobby still counts."
+        "text": "Library books, magazine collage and newspaper crosswords can cost little or nothing. A no-spend hobby still counts."
       },
       {
         "type": "h2",
@@ -2481,14 +2874,14 @@
         "n": 10,
         "title": "Air-dry clay",
         "hobby": "air-dry-clay",
-        "note": "Pottery without a wheel or kiln. Make a ring dish tonight, paint it tomorrow, and keep it forever even if it's lopsided."
+        "note": "Pottery without a wheel or kiln. Make a ring dish tonight, let it dry (check your clay's label for timing), then paint it and keep it forever even if it's lopsided."
       },
       {
         "type": "item",
         "n": 11,
         "title": "Jewelry making",
         "hobby": "jewelry-making",
-        "note": "A beading kit and pliers will get you a dozen pairs of earrings. Making gifts for friends is half the fun."
+        "note": "A beading kit and pliers will get you started on earrings. Making gifts for friends is half the fun."
       },
       {
         "type": "item",
@@ -2509,7 +2902,7 @@
         "n": 14,
         "title": "Collage art",
         "hobby": "collage-art",
-        "note": "Old magazines, scissors and glue. It's free, fast, and you'll learn a lot about what you're drawn to."
+        "note": "Old magazines, scissors and glue. It can cost nothing, it's fast, and you'll learn a lot about what you're drawn to."
       },
       {
         "type": "item",
@@ -2541,7 +2934,12 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["watercolor-sets", "embroidery-kits", "junk-journals", "air-dry-clay"],
+        "productIds": [
+          "watercolor-sets",
+          "embroidery-kits",
+          "junk-journals",
+          "air-dry-clay"
+        ],
         "title": "If a creative one caught your eye",
         "dek": "Only if you need them. Most creative hobbies start with what's already in your drawer."
       },
@@ -2559,14 +2957,14 @@
         "n": 19,
         "title": "Tennis",
         "hobby": "tennis",
-        "note": "Golden-hour rallies with a friend are a lovely way to move. You don't need to keep score for months. Start by rallying on a free public court."
+        "note": "Golden-hour rallies with a friend are a lovely way to move. You don't need to keep score for months. Many public courts are free to use, so start by rallying on one near you."
       },
       {
         "type": "item",
         "n": 20,
         "title": "Pickleball",
         "hobby": "pickleball",
-        "note": "Easier to pick up than tennis, and extremely social. Many parks run open play where beginners are welcome."
+        "note": "Easier to pick up than tennis, and extremely social. Ask your local parks department or rec center about open play and beginner sessions."
       },
       {
         "type": "item",
@@ -2580,7 +2978,7 @@
         "n": 22,
         "title": "Roller skating",
         "hobby": "roller-skating",
-        "note": "Expect wobbling. Expect laughing. Look for an adult skate night to ease in."
+        "note": "Expect wobbling. Expect laughing. Many rinks run adult skate nights, so check your local rink's schedule to ease in."
       },
       {
         "type": "item",
@@ -2635,7 +3033,7 @@
         "n": 28,
         "title": "Book clubs",
         "hobby": "book-clubs",
-        "note": "A recurring plan with built-in conversation. Libraries and bookstores often host free ones, or start your own with two friends."
+        "note": "A recurring plan with built-in conversation. Libraries often host free ones (check your local branch), or start your own with two friends."
       },
       {
         "type": "item",
@@ -2663,7 +3061,7 @@
         "n": 32,
         "title": "Pottery painting",
         "hobby": "pottery-painting",
-        "note": "A paint-your-own-pottery studio is a no-skill, very cute group plan, and you get a mug out of it."
+        "note": "A paint-your-own-pottery studio is a no-skill, very cute group plan, and you take home something you made."
       },
       {
         "type": "item",
@@ -2697,7 +3095,7 @@
         "n": 35,
         "title": "Museum exploring",
         "hobby": "museum-exploring",
-        "note": "Many museums have free or pay-what-you-wish hours. Visit just one room and stay with your favorite piece for ten minutes."
+        "note": "Some museums have free or pay-what-you-wish hours, so check your local museum's website. Visit just one room and stay with your favorite piece for ten minutes."
       },
       {
         "type": "h2",
@@ -2727,7 +3125,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["junk-journaling", "watercolor-painting", "tennis"]
+        "hobbies": [
+          "junk-journaling",
+          "watercolor-painting",
+          "tennis"
+        ]
       }
     ]
   },
@@ -2753,7 +3155,12 @@
       "book-clubs",
       "craft-nights"
     ],
-    "productIds": ["watercolor-sets", "air-dry-clay", "pocket-notebooks", "daypacks"],
+    "productIds": [
+      "watercolor-sets",
+      "air-dry-clay",
+      "pocket-notebooks",
+      "daypacks"
+    ],
     "sources": [
       {
         "title": "National Park Service: hiking safety",
@@ -2847,7 +3254,10 @@
           "A free evening or weekend slot for each",
           "One rule: starter versions only"
         ],
-        "optional": ["A friend to join one of them", "A tiny set of supplies for one hobby"]
+        "optional": [
+          "A friend to join one of them",
+          "A tiny set of supplies for one hobby"
+        ]
       },
       {
         "type": "h2",
@@ -2931,7 +3341,12 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["watercolor-sets", "air-dry-clay", "pocket-notebooks", "daypacks"],
+        "productIds": [
+          "watercolor-sets",
+          "air-dry-clay",
+          "pocket-notebooks",
+          "daypacks"
+        ],
         "title": "Three small trials",
         "dek": "A pocket notebook, a mini paint set and a lump of clay cover three very different evenings. Borrow or skip anything you can."
       },
@@ -2941,7 +3356,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["watercolor-painting", "hiking", "craft-nights"]
+        "hobbies": [
+          "watercolor-painting",
+          "hiking",
+          "craft-nights"
+        ]
       }
     ]
   },
@@ -2957,8 +3376,16 @@
     "hero": "cyclingLane",
     "searchIntent": "how to start cycling as an adult / recreational cycling for beginners",
     "angle": "A confidence-first plan: borrow or hire a bike, learn to fit a helmet, practice in a quiet place, take a short first ride, then build routes",
-    "hobbies": ["hiking", "nature-photography", "birdwatching"],
-    "productIds": ["daypacks", "water-bottles", "market-totes"],
+    "hobbies": [
+      "hiking",
+      "nature-photography",
+      "birdwatching"
+    ],
+    "productIds": [
+      "daypacks",
+      "water-bottles",
+      "market-totes"
+    ],
     "sources": [
       {
         "title": "CDC Heads Up: bike helmet fact sheet",
@@ -3197,7 +3624,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["daypacks", "water-bottles", "market-totes"],
+        "productIds": [
+          "daypacks",
+          "water-bottles",
+          "market-totes"
+        ],
         "title": "For the first ride",
         "dek": "A bag for water and a snack, a bottle and a tote for the café stop."
       },
@@ -3211,7 +3642,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["hiking", "birdwatching", "nature-photography"]
+        "hobbies": [
+          "hiking",
+          "birdwatching",
+          "nature-photography"
+        ]
       }
     ]
   },
@@ -3227,7 +3662,12 @@
     "hero": "girlsNight",
     "searchIntent": "craft night ideas for adults / how to host a craft night",
     "angle": "A hosting checklist, five beginner-proof craft menus with timing, a cost-sharing plan and troubleshooting for mixed skill levels",
-    "hobbies": ["craft-nights", "friendship-bracelets", "air-dry-clay", "pottery-painting"],
+    "hobbies": [
+      "craft-nights",
+      "friendship-bracelets",
+      "air-dry-clay",
+      "pottery-painting"
+    ],
     "productIds": [
       "friendship-bracelet-kits",
       "group-painting-kits",
@@ -3417,7 +3857,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["craft-nights", "friendship-bracelets", "air-dry-clay"]
+        "hobbies": [
+          "craft-nights",
+          "friendship-bracelets",
+          "air-dry-clay"
+        ]
       }
     ]
   },
@@ -3433,8 +3877,16 @@
     "hero": "shopGirlsNight",
     "searchIntent": "how to start a mahjong night / mahjong for beginners / what you need to host mahjong",
     "angle": "An invitation to a recurring tradition: why a standing game night beats another crowded restaurant, how to organize the first night, how to learn, what to buy by kind with strict set-to-version compatibility, and cultural respect. Teaches no variant's rules and states no tile counts.",
-    "hobbies": ["mahjong", "craft-nights", "book-clubs"],
-    "productIds": ["mahjong-sets", "conversation-cards", "board-games"],
+    "hobbies": [
+      "mahjong",
+      "craft-nights",
+      "book-clubs"
+    ],
+    "productIds": [
+      "mahjong-sets",
+      "conversation-cards",
+      "board-games"
+    ],
     "sources": [
       {
         "title": "National Mah Jongg League",
@@ -3644,7 +4096,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["mahjong", "book-clubs", "craft-nights"]
+        "hobbies": [
+          "mahjong",
+          "book-clubs",
+          "craft-nights"
+        ]
       }
     ]
   },
@@ -3660,8 +4116,17 @@
     "hero": "watercolor",
     "searchIntent": "how to host a paint night at home / paint and sip at home ideas / paint night supplies",
     "angle": "A host's plan for a paint night without a studio: a shared supply list, one easy follow-along painting, a setup that protects the table, and gentle ways to handle the friend who is convinced she can't paint",
-    "hobbies": ["craft-nights", "paint-by-numbers", "pottery-painting"],
-    "productIds": ["group-painting-kits", "acrylic-paints", "detail-brushes", "conversation-cards"],
+    "hobbies": [
+      "craft-nights",
+      "paint-by-numbers",
+      "pottery-painting"
+    ],
+    "productIds": [
+      "group-painting-kits",
+      "acrylic-paints",
+      "detail-brushes",
+      "conversation-cards"
+    ],
     "sources": [
       {
         "title": "CPSC: art materials safety",
@@ -3838,7 +4303,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["craft-nights", "paint-by-numbers", "pottery-painting"]
+        "hobbies": [
+          "craft-nights",
+          "paint-by-numbers",
+          "pottery-painting"
+        ]
       }
     ]
   },
@@ -3854,8 +4323,17 @@
     "hero": "picnic",
     "searchIntent": "how to plan a picnic / aesthetic picnic ideas / what to bring on a picnic",
     "angle": "A picnic as a tiny event: choose a spot, a food plan that survives travel, a packing checklist and two or three things to do on the blanket",
-    "hobbies": ["picnicking", "reading", "outdoor-sketching", "birdwatching", "film-photography"],
-    "productIds": ["picnic-blankets", "market-totes"],
+    "hobbies": [
+      "picnicking",
+      "reading",
+      "outdoor-sketching",
+      "birdwatching",
+      "film-photography"
+    ],
+    "productIds": [
+      "picnic-blankets",
+      "market-totes"
+    ],
     "sources": [
       {
         "title": "FDA: handling food safely while eating outdoors",
@@ -4056,7 +4534,10 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["picnic-blankets", "market-totes"],
+        "productIds": [
+          "picnic-blankets",
+          "market-totes"
+        ],
         "title": "Picnic gear",
         "dek": "A blanket that stays dry and a tote that looks good on the grass. Use what you own first."
       },
@@ -4082,8 +4563,19 @@
     "hero": "shopAdventures",
     "searchIntent": "how to spend a Saturday alone / solo Saturday ideas",
     "angle": "A simple framework (anchor, treat, wander, rest) with three sample Saturdays at different budgets and energy levels, and a fallback plan for when you flake",
-    "hobbies": ["picnicking", "thrifting", "museum-exploring", "reading", "outdoor-sketching"],
-    "productIds": ["picnic-blankets", "pocket-notebooks", "market-totes", "portable-watercolor"],
+    "hobbies": [
+      "picnicking",
+      "thrifting",
+      "museum-exploring",
+      "reading",
+      "outdoor-sketching"
+    ],
+    "productIds": [
+      "picnic-blankets",
+      "pocket-notebooks",
+      "market-totes",
+      "portable-watercolor"
+    ],
     "sources": [
       {
         "title": "Solo outings: well-lit areas and companions (US DOJ/OJP guide)",
@@ -4218,7 +4710,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["picnic-blankets", "market-totes", "pocket-notebooks"],
+        "productIds": [
+          "picnic-blankets",
+          "market-totes",
+          "pocket-notebooks"
+        ],
         "title": "Packing for a good day out",
         "dek": "A tote, a blanket and a notebook turn a wander into an outing."
       },
@@ -4244,8 +4740,15 @@
     "hero": "shopGirlsNight",
     "searchIntent": "how to start a book club / book club ideas with friends",
     "angle": "Rules-lite, burnout-proof book club setup: size, schedule, book-selection systems, discussion questions and a 'nobody read it' plan",
-    "hobbies": ["book-clubs", "reading"],
-    "productIds": ["conversation-cards", "book-lights", "reading-journals"],
+    "hobbies": [
+      "book-clubs",
+      "reading"
+    ],
+    "productIds": [
+      "conversation-cards",
+      "book-lights",
+      "reading-journals"
+    ],
     "sources": [
       {
         "title": "Food Allergy Research & Education: tips for staying safe",
@@ -4384,7 +4887,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["conversation-cards", "book-lights", "reading-journals"],
+        "productIds": [
+          "conversation-cards",
+          "book-lights",
+          "reading-journals"
+        ],
         "title": "For your book club",
         "dek": "Conversation cards for slow moments, a light for late chapters and a journal for the thoughts you'll want to bring."
       },
@@ -4410,8 +4917,16 @@
     "hero": "shopBookish",
     "searchIntent": "how to start a reading journal / reading journal ideas / what to write in a reading journal",
     "angle": "A low-pressure reading journal: a tiny entry template, three layouts to choose from, honest advice about what to buy and what to skip, and a way to abandon the habit gracefully and restart",
-    "hobbies": ["reading", "book-clubs", "creative-writing"],
-    "productIds": ["reading-journals", "pocket-notebooks", "book-lights"],
+    "hobbies": [
+      "reading",
+      "book-clubs",
+      "creative-writing"
+    ],
+    "productIds": [
+      "reading-journals",
+      "pocket-notebooks",
+      "book-lights"
+    ],
     "sources": [],
     "related": [
       "how-to-start-a-book-club",
@@ -4495,7 +5010,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["reading-journals", "pocket-notebooks", "book-lights"],
+        "productIds": [
+          "reading-journals",
+          "pocket-notebooks",
+          "book-lights"
+        ],
         "title": "Journal picks",
         "dek": "A notebook and a pen are enough to begin. If you want the pretty version, these are the ones to look at."
       },
@@ -4555,6 +5074,552 @@
     ]
   },
   {
+    "slug": "how-to-start-air-dry-clay",
+    "title": "Your Air-Dry Clay Era: A Beginner's Guide to Making Cute Little Things at Home",
+    "titleItalic": "Air-Dry Clay Era",
+    "dek": "Trinket dishes, jewelry holders, ornaments and tiny figurines, no kiln required, with honest notes on what air-dry clay can and cannot do.",
+    "category": "creative-corner",
+    "status": "published",
+    "publishedAt": "2026-11-19",
+    "verifiedAt": "2026-11-19",
+    "hero": "shopPottery",
+    "searchIntent": "how to start air dry clay / air dry clay for beginners / air dry clay projects",
+    "angle": "A beginner walkthrough that sets honest expectations: what air-dry clay is good for, what it is not, and how to make a first trinket dish, then a jewelry holder, ornaments and figurines",
+    "hobbies": [
+      "air-dry-clay",
+      "pottery-painting",
+      "craft-nights"
+    ],
+    "productIds": [
+      "air-dry-clay",
+      "clay-tools",
+      "clay-mats",
+      "acrylic-paints",
+      "detail-brushes"
+    ],
+    "sources": [
+      {
+        "title": "Crayola: can air dry clay pieces be sealed? (FAQ)",
+        "url": "https://www.crayola.com/products/brands/scribble-scrubbie/faqs/can-air-dry-clay-pieces-be-sealed-faq",
+        "note": "Read directly on crayola.com, checked 2026-11-19: seal only once fully dry after 72 hours, suggests an acrylic varnish and testing compatibility, sealing will not waterproof, display indoors"
+      },
+      {
+        "title": "Crayola: how long does it take for Air-Dry Clay to dry? (FAQ)",
+        "url": "https://www.crayola.com/faqs/how-long-does-it-take-for-air-dry-clay-to-dry-faq",
+        "note": "Checked 2026-11-19: generally 24 hours to dry to the touch and 72 hours to dry completely; varies with conditions and piece size; thoroughly dry pieces may be painted with tempera, acrylic or watercolor"
+      },
+      {
+        "title": "Crayola: how long can I store unused Air-Dry Clay? (FAQ)",
+        "url": "https://www.crayola.com/faqs/how-long-can-i-store-unused-air-dry-clay-in-an-airtight-container-faq",
+        "note": "Checked 2026-11-19: store unused clay in an airtight container; avoid storing clay with added water"
+      },
+      {
+        "title": "Crayola: Air Dry Clay product category",
+        "url": "https://www.crayola.com/products/clay-and-modeling-compounds/air-dry-clay",
+        "note": "Checked 2026-11-19: no kiln or oven required; dries naturally"
+      },
+      {
+        "title": "Crayola Air Dry Clay safety data sheet (2014)",
+        "url": "https://cdn.schoolspecialty.com/6def59d9-1456-402d-8d0b-b0f10093639f/1280534_2015-04-07_Original%20file.pdf",
+        "note": "No respirator required under normal use; hosted by a retailer, not crayola.com. Used only to avoid claiming a mask is required"
+      },
+      {
+        "title": "Safeway product listing quoting Crayola packaging",
+        "url": "https://www.safeway.com/shop/product-details.960182844.3132.html",
+        "note": "Retail listing quoting packaging text: keep finished pieces away from food and liquids. Secondhand source, used only for the keep-away-from-food caution"
+      },
+      {
+        "title": "Mont Marte: answers to common air dry clay questions",
+        "url": "https://montmarte.com/blogs/faq/answers-to-10-common-air-dry-clay-questions",
+        "note": "Third-party maker FAQ: sealing does not make air-dry clay food safe"
+      }
+    ],
+    "related": [
+      "creative-hobbies-you-can-start-at-home",
+      "creative-hobby-starter-kits-worth-considering",
+      "how-to-start-junk-journaling",
+      "how-to-host-a-craft-night"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Air-dry clay is pottery without the kiln: soft, forgiving, and it dries on its own on a shelf. Shape something small on Saturday, paint it once it's dry, and you have a dish for your rings. Follow your clay's label for specifics."
+      },
+      {
+        "type": "p",
+        "text": "One honest note first. Air-dry clay is a decorative material. Do not use air-dry clay pieces for food or drink, even if sealed. It is not waterproof, and, as a precaution, keep it away from flame and heat. Check your clay's label for age warnings and other product notes. Plan on pretty things for shelves, desks and dressers and you won't be disappointed."
+      },
+      {
+        "type": "h2",
+        "text": "What you need",
+        "id": "need"
+      },
+      {
+        "type": "whatYoullNeed",
+        "essentials": [
+          "A block of air-dry clay, a small one is plenty for a lumpy first attempt",
+          "A rolling pin, a smooth glass or a straight-sided bottle",
+          "A work surface you can wipe down, or baking paper taped flat",
+          "A small bowl of water",
+          "A few acrylic paints and a fine brush for decorating"
+        ],
+        "optional": [
+          "A small set of sculpting tools with wooden handles",
+          "A silicone mat or craft mat",
+          "A fine sanding sponge for dried edges",
+          "A water-based sealer, used as its label directs",
+          "Cookie cutters for ornaments"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "A butter knife and toothpick do much of what sculpting tools do. A jar lid cuts a tidy circle, a fork or button makes texture, and a baking tray holds pieces as they dry. White clay is the easiest to paint over. A mat saves your table, and fine brushes let you paint small things like polka dots without blobbing. Buy tools and a mat after you've made three things and know you'll make a fourth."
+      },
+      {
+        "type": "h2",
+        "text": "Make a trinket dish",
+        "id": "first-project"
+      },
+      {
+        "type": "p",
+        "text": "A trinket dish is the friendliest first project: flat, shallow and hard to get wrong. Rings by the sink, earrings on a desk, a spare key. The making takes one relaxed evening; drying is where the patience comes in."
+      },
+      {
+        "type": "item",
+        "n": 1,
+        "title": "Knead",
+        "note": "Take a golf-ball-sized piece, or a bit larger, and knead until it is warm and smooth."
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "title": "Roll",
+        "note": "Roll it to an even thickness all over. Uneven slabs can crack as they dry."
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "title": "Cut",
+        "note": "Press a jar lid or small bowl into the slab and cut around it, or freehand a blob you like."
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "title": "Smooth",
+        "note": "Dip a fingertip in water and smooth the edges and any seams. A little water goes a long way."
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "title": "Curve",
+        "note": "Lift the edges slightly, or press the slab gently into a shallow bowl lined with baking paper."
+      },
+      {
+        "type": "item",
+        "n": 6,
+        "title": "Dry",
+        "note": "Leave it somewhere dry and out of direct sun, and flip it after a day so both sides dry evenly. Crayola says its clay generally takes 24 hours to feel dry and about 72 hours to dry completely, longer for thick pieces or humid rooms, so check your own clay's label. Resist speeding it up with heat; drying too fast or unevenly is a common cause of cracks."
+      },
+      {
+        "type": "p",
+        "text": "A realistic schedule: shape on Saturday, flip on Sunday, paint midweek."
+      },
+      {
+        "type": "h2",
+        "text": "Three more things to make",
+        "id": "projects"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**A jewelry holder.** Shape a small dish with a raised lip, or press a few short pegs into a slab to hang rings or hoops. Keep it as a decorative tray for a dresser, not as protection for jewelry.",
+          "**Ornaments.** Roll a slab, cut shapes with a cookie cutter and poke a hole with a straw before drying. Press in a leaf, a bit of lace or a stamp for texture. Keep them indoors, since clay is not weatherproof.",
+          "**Little figurines.** Start with chunky forms: a rounded mushroom, a small cat, a stack of pebbles. Build from a few balls and coils, and score both surfaces before joining them with a little water."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Finishing",
+        "id": "finishing"
+      },
+      {
+        "type": "p",
+        "text": "When the piece is fully dry, sand gently, ideally with a damp sponge or fine paper, in a ventilated space; if a dust mask makes you more comfortable, wear one, and check your clay's safety data sheet. Paint with acrylics and let the color dry. Crayola suggests an acrylic varnish if you want a protected finish, tested on a scrap first, and only once the piece is completely dry. For a spray sealer, follow the can's ventilation and protective-gear instructions. A sealed piece is still not waterproof, so keep it off the sink edge and away from drinks."
+      },
+      {
+        "type": "h2",
+        "text": "If something goes wrong",
+        "id": "troubleshooting"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**It cracked while drying.** Drying too fast or unevenly is the usual cause. Next time dry it slowly, out of direct sun and away from heat.",
+          "**The edges look rough.** Smooth them while the clay is still soft with a lightly damp fingertip, and go easy on the water.",
+          "**The clay has gone hard in the pack.** Store unused clay in an airtight container between sessions, and do not store clay that has had water added to it."
+        ]
+      },
+      {
+        "type": "shopTheArticle",
+        "articleSlug": "how-to-start-air-dry-clay",
+        "title": "Shop your hobby",
+        "dek": "Start with clay and what you own. Add the rest when you know what you reach for."
+      },
+      {
+        "type": "p",
+        "text": "Want company for it? [How to Host a Craft Night](/journal/how-to-host-a-craft-night) turns a block of clay into a good excuse for friends to come over."
+      }
+    ]
+  },
+  {
+    "slug": "how-to-start-crocheting",
+    "title": "Crochet Your First Thing This Weekend",
+    "titleItalic": "Your First Thing",
+    "dek": "The hook, the yarn, the three stitches that unlock nearly everything, and a first project you can finish in a weekend.",
+    "category": "creative-corner",
+    "status": "published",
+    "publishedAt": "2026-11-19",
+    "verifiedAt": "2026-11-19",
+    "hero": "crochetHands",
+    "searchIntent": "how to start crocheting / crochet for beginners / easy first crochet project",
+    "angle": "A calm, practical start: choose forgiving supplies, learn the chain, single crochet and double crochet, and finish a flat dishcloth-style square before anything shaped",
+    "hobbies": [
+      "crochet",
+      "knitting",
+      "embroidery"
+    ],
+    "productIds": [],
+    "sources": [
+      {
+        "title": "Lion Brand: how to crochet, a step-by-step guide for beginners",
+        "url": "https://www.lionbrand.com/community/blog/how-to-crochet/",
+        "note": "Yarn company guide, checked 2026-11-19: slip knot, foundation chain and single crochet as the core three moves; medium-weight light or solid yarn shows stitches; use the hook size on the yarn label; practice swatches catch tension and counting errors; count stitches at the end of each row"
+      },
+      {
+        "title": "Craft Yarn Council: crochet abbreviations and U.S./U.K. term differences",
+        "url": "https://www.craftyarncouncil.com/standards/crochet-abbreviations",
+        "note": "Checked 2026-11-19: table shows US single crochet = UK double crochet, US double crochet = UK treble; US gauge = UK tension"
+      },
+      {
+        "title": "Craft Yarn Council: standard yarn weight system",
+        "url": "https://www.craftyarncouncil.com/standards/yarn-weight-system",
+        "note": "Checked 2026-11-19: yarn weight categories with recommended hook ranges; the label and your pattern are the practical guide"
+      }
+    ],
+    "related": [
+      "how-to-start-embroidery",
+      "creative-hobbies-you-can-start-at-home",
+      "creative-hobby-starter-kits-worth-considering"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "One hook, one strand of yarn and three stitches get you a surprising distance. Crochet looks harder than it is, partly because a written pattern reads like code. This guide starts with the stitches, then walks you through a flat square."
+      },
+      {
+        "type": "p",
+        "text": "Crochet uses a single hook where knitting uses two needles. The first row will be wonky. That's normal."
+      },
+      {
+        "type": "h2",
+        "text": "What you need",
+        "id": "need"
+      },
+      {
+        "type": "whatYoullNeed",
+        "essentials": [
+          "One crochet hook, in the size your yarn label suggests",
+          "A ball of smooth, medium-weight (worsted) yarn in a light, solid color",
+          "Scissors",
+          "A blunt yarn needle for weaving in ends"
+        ],
+        "optional": [
+          "A few stitch markers, or safety pins, to mark the start of a row",
+          "A small tape measure",
+          "A tote to carry it everywhere",
+          "A second hook in a different size to see how the stitches change"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "You probably own scissors and a bag already, and a friend may have a spare hook and half a ball of yarn. Light, smooth yarn shows each stitch clearly and unpicks without fuss; dark or fuzzy yarn hides your stitches, so keep it for later. If your hand tires, a hook with a comfortable handle is worth the upgrade."
+      },
+      {
+        "type": "h2",
+        "text": "The three stitches that open the door",
+        "id": "stitches"
+      },
+      {
+        "type": "item",
+        "n": 1,
+        "title": "The slip knot and the chain",
+        "note": "Every project starts with a loop on the hook, then a row of chains pulled through one after another. It is the foundation of everything."
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "title": "Single crochet",
+        "note": "A short stitch that makes dense fabric, and the one the first square below uses."
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "title": "Double crochet",
+        "note": "A taller stitch, so rows grow faster. Try it once single crochet feels comfortable."
+      },
+      {
+        "type": "p",
+        "text": "A heads-up before you follow any pattern: US and UK crochet terms differ. What US patterns call single crochet is double crochet in UK terms, and US double crochet is UK treble, so check which one a pattern uses. A pattern that says \"sc\" is written in US terms."
+      },
+      {
+        "type": "h2",
+        "text": "Make a flat square",
+        "id": "first-project"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Make a slip knot and slide it onto the hook, snug but not tight.",
+          "Chain 20, or about as wide as you want the square. Count as you go.",
+          "Skip the first chain next to the hook, then work a single crochet into each chain along the row.",
+          "Chain one, turn the work around, and work single crochet into each stitch of the previous row.",
+          "Count your stitches at the end of every row. If the number changes, the edges are drifting. A small practice swatch like this one catches tension and counting slips before they waste yarn.",
+          "Repeat until it is roughly square, then cut the yarn and pull the tail through the last loop."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Weave the ends in with the yarn needle. Check the yarn label before washing the finished piece, as care varies by fiber. A single row before dinner is a perfectly good first day, and if your hands ache, shake them out and stop. A relaxed grip also makes more even stitches."
+      },
+      {
+        "type": "h2",
+        "text": "Reading a pattern without panicking",
+        "id": "patterns"
+      },
+      {
+        "type": "p",
+        "text": "A written pattern looks like code at first glance: ch 20, sc in 2nd ch from hook, turn. It's shorthand, and a pattern should list its abbreviations at the top. Read one line at a time with a finger under the part you are on, and do exactly what it says even when it seems odd. The sense arrives a few rows later."
+      },
+      {
+        "type": "p",
+        "text": "The yarn label does quiet work too: it lists the weight, the suggested hook and care instructions. Keep a label in your project bag so you can match the yarn when you need more."
+      },
+      {
+        "type": "p",
+        "text": "Once a flat square feels easy, the natural next steps are a longer rectangle for a scarf, a handful of small squares to join into something bigger, or a simple round coaster. They're the same few stitches in a new arrangement."
+      },
+      {
+        "type": "h2",
+        "text": "Common mistakes and fixes",
+        "id": "troubleshooting"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**The edges keep growing or shrinking.** You are gaining or losing stitches at the turn. Count at the end of every row and mark the first stitch of each row.",
+          "**It's too tight to work.** Try a hook one size up and hold the yarn more loosely. Everyone grips too hard at first.",
+          "**A mistake three rows back.** Pull out the hook and gently unravel to the mistake, which smooth yarn allows. Redoing a row is part of the craft, not a failure."
+        ]
+      },
+      {
+        "type": "shopTheArticle",
+        "articleSlug": "how-to-start-crocheting",
+        "title": "Shop your hobby",
+        "dek": "A hook and one plain ball of yarn are enough to start."
+      },
+      {
+        "type": "p",
+        "text": "Want a second thread craft to compare? [How to Start Embroidery](/journal/how-to-start-embroidery) uses just a hoop and floss."
+      }
+    ]
+  },
+  {
+    "slug": "how-to-start-embroidery",
+    "title": "Your First Embroidery Hoop, Finished in One Evening",
+    "titleItalic": "Finished in One Evening",
+    "dek": "The supplies, the stitches worth learning first, and a small first hoop that is easy to finish in an evening.",
+    "category": "creative-corner",
+    "status": "published",
+    "publishedAt": "2026-11-19",
+    "verifiedAt": "2026-11-19",
+    "hero": "shopCreative",
+    "searchIntent": "how to start embroidery / embroidery for beginners / basic embroidery stitches",
+    "angle": "A stitch-first beginner path: learn a handful of stitches on scrap fabric, then finish a single small hoop, with fixes for the most common frustrations",
+    "hobbies": [
+      "embroidery",
+      "crochet",
+      "craft-nights"
+    ],
+    "productIds": [
+      "embroidery-kits"
+    ],
+    "sources": [
+      {
+        "title": "DMC: step by step embroidery stitch guide",
+        "url": "https://www.dmc.com/US/en/sbs-embroidery-stitch-diagrams",
+        "note": "Manufacturer guide, checked 2026-11-19: back stitch (continuous line, outlines), split stitch (outlines and padding), stem stitch (lettering and outlines), satin stitch (fills shapes with parallel stitches; outline first), French knot, running stitch"
+      },
+      {
+        "title": "DMC: how to use stranded embroidery floss",
+        "url": "https://www.dmc.com/US/en/technique-embroidery-use-stranded-thread",
+        "note": "Checked 2026-11-19: pull about 50cm (18 inches) of floss, roughly an arm's length; separate one strand at a time; patterns say how many strands to use"
+      },
+      {
+        "title": "DMC: embroidery needles",
+        "url": "https://www.dmc.com/US/en/products/embroidery-needles",
+        "note": "Checked 2026-11-19: slender shaft, sharp point, medium/long eye to ease threading several strands"
+      },
+      {
+        "title": "DMC: fabric (cotton evenweave)",
+        "url": "https://www.dmc.com/en/fabrics",
+        "note": "Checked 2026-11-19: cotton evenweave has a regular weave that suits beginners and professionals for counted and hand embroidery"
+      }
+    ],
+    "related": [
+      "how-to-start-crocheting",
+      "creative-hobbies-you-can-start-at-home",
+      "creative-hobby-starter-kits-worth-considering"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Six stitches are enough to start. Learn them on one small hoop and you can draw a daisy, your initials or a wobbly mug in thread. It's portable, quiet and fits in a tote bag."
+      },
+      {
+        "type": "h2",
+        "text": "Kit or loose supplies?",
+        "id": "need"
+      },
+      {
+        "type": "p",
+        "text": "A kit bundles a hoop, thread, fabric and a pattern, which takes the guessing out of the first project. Loose supplies let you choose your own colors. If you're unsure, a small kit is a sensible first purchase; if you already own scissors and a scrap of cotton, loose supplies let you use what you have."
+      },
+      {
+        "type": "whatYoullNeed",
+        "essentials": [
+          "A small hoop",
+          "A few skeins of cotton embroidery floss in colors you like",
+          "Embroidery needles, which have a medium-to-long eye for threading several strands",
+          "A piece of cotton fabric, such as evenweave cotton, bigger than the hoop",
+          "Small, sharp scissors"
+        ],
+        "optional": [
+          "A water-soluble pen or a pencil for drawing the design",
+          "A thread organizer or a few bobbins",
+          "A needle minder, a magnet that keeps your needle from vanishing into the sofa",
+          "A small pattern book"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "You probably own scissors, a pencil and a scrap of plain cotton from an old tea towel or shirt. A good small pair of embroidery scissors is a worthwhile upgrade."
+      },
+      {
+        "type": "h2",
+        "text": "Six stitches worth learning first",
+        "id": "stitches"
+      },
+      {
+        "type": "item",
+        "n": 1,
+        "title": "Running stitch",
+        "note": "In and out along a line. The simplest stitch to begin with."
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "title": "Backstitch",
+        "note": "Each stitch goes back to meet the last, making a continuous solid line. It is useful for outlines."
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "title": "Stem stitch",
+        "note": "Straight stitches staggered beside one another, popular for lettering and outlines."
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "title": "Split stitch",
+        "note": "Each stitch splits the one before, a little like a tiny chain. It is used for outlines and for padding other stitches."
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "title": "Satin stitch",
+        "note": "Straight stitches laid side by side to fill a shape with smooth color. Outlining the shape first, for example with split stitch, gives a neat edge."
+      },
+      {
+        "type": "item",
+        "n": 6,
+        "title": "French knot",
+        "note": "A small knot made by wrapping the thread around the needle, good for flower centers and texture. It takes a couple of tries, so practice on scrap first."
+      },
+      {
+        "type": "h2",
+        "text": "Your first evening",
+        "id": "first-session"
+      },
+      {
+        "type": "first30",
+        "steps": [
+          "Stretch the fabric in the hoop and tighten the screw until it is taut like a drum.",
+          "Draw a simple shape on it: a leaf, a heart, your initial.",
+          "Cut a piece of floss about as long as your arm (no more than about 50 cm, or 18 inches), and separate out the number of strands your pattern or floss label calls for, one strand at a time.",
+          "Thread the needle and tie a small knot at the end.",
+          "Backstitch along the outline, keeping stitches about the same length.",
+          "Fill the shape with satin stitch, or add three French knots for a flower."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "When finished, check the floss label for care instructions before washing. Test the pen or transfer method on scrap fabric first, and follow its label."
+      },
+      {
+        "type": "h2",
+        "text": "Keeping it going",
+        "id": "habit"
+      },
+      {
+        "type": "p",
+        "text": "Embroidery rewards small sessions: ten minutes while the kettle boils moves a leaf along, and a hoop left on the arm of the sofa tends to get picked up. A little pouch with the needle, a few colors and the scissors means a spare half hour doesn't begin with a search."
+      },
+      {
+        "type": "p",
+        "text": "Before committing to a full pattern, spend an evening stitching a row of each stitch on a scrap, one beneath the other. It becomes a tiny reference sampler and shows you which stitches your hands enjoy. For a second project, trace a simple outline from something you like. Lettering is a good one, since backstitch alone does the job."
+      },
+      {
+        "type": "p",
+        "text": "Needles are sharp, so store them in a case or a needle minder."
+      },
+      {
+        "type": "h2",
+        "text": "Common mistakes and fixes",
+        "id": "troubleshooting"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**The thread keeps tangling.** The piece is too long, or the thread is twisting. Shorten it, and let the needle dangle from time to time so it untwists.",
+          "**The fabric puckers.** Pulling stitches too tight is the usual cause. Let each stitch sit flat, and keep the fabric drum-tight in the hoop.",
+          "**The back looks messy.** It does for everyone. Keep the knots small and trim the loose ends."
+        ]
+      },
+      {
+        "type": "shopHobby",
+        "productIds": [
+          "embroidery-kits"
+        ],
+        "title": "Shop your hobby",
+        "dek": "A small kit takes the guessing out of the first hoop."
+      },
+      {
+        "type": "p",
+        "text": "Like using your hands but fancy a different craft? [How to Start Crocheting](/journal/how-to-start-crocheting) is the natural next door."
+      }
+    ]
+  },
+  {
     "slug": "how-to-start-junk-journaling",
     "title": "How to Start Junk Journaling: A Beginner's Guide",
     "titleItalic": "Junk Journaling",
@@ -4562,11 +5627,34 @@
     "category": "creative-corner",
     "status": "published",
     "publishedAt": "2026-11-18",
+    "verifiedAt": "2026-11-19",
     "hero": "junkJournal",
     "searchIntent": "how to start junk journaling / junk journal supplies for beginners",
     "angle": "A no-pressure beginner walkthrough with a free-first supply list and a step-by-step first page",
-    "hobbies": ["junk-journaling", "scrapbooking", "collage-art", "creative-writing"],
-    "productIds": ["junk-journals", "washi-tape", "sticker-sets", "pocket-notebooks"],
+    "hobbies": [
+      "junk-journaling",
+      "scrapbooking",
+      "collage-art",
+      "creative-writing"
+    ],
+    "productIds": [
+      "junk-journals",
+      "washi-tape",
+      "sticker-sets",
+      "pocket-notebooks"
+    ],
+    "sources": [
+      {
+        "title": "Liquid glue vs glue stick (LePage)",
+        "url": "https://lepage.ca/en/know-how/glue/liquid-glue-vs-glue-stick.html",
+        "note": "Manufacturer page: glue sticks do not wrinkle paper; liquid glue gives a stronger bond. Checked 2026-11-19."
+      },
+      {
+        "title": "Best glues for scrapbooking (Bustle)",
+        "url": "https://www.bustle.com/life/best-glues-for-scrapbooking",
+        "note": "Excess wet glue can wrinkle paper. Checked 2026-11-19."
+      }
+    ],
     "body": [
       {
         "type": "p",
@@ -4589,11 +5677,16 @@
           "Scissors",
           "Paper scraps you already have: receipts, tickets, envelopes, magazine pages, packaging"
         ],
-        "optional": ["A pen you like writing with", "Washi tape", "Stickers", "Fineliner pens"]
+        "optional": [
+          "A pen you like writing with",
+          "Washi tape",
+          "Stickers",
+          "Fineliner pens"
+        ]
       },
       {
         "type": "p",
-        "text": "Cereal boxes make sturdy backgrounds, envelopes often have patterned linings, and a single magazine gives you months of images and words. Once you start, you'll see material everywhere, so keep an envelope in your bag for café receipts and coffee sleeves, ticket stubs, tags and labels, pressed leaves from walks, fortune-cookie fortunes, handwritten notes, free postcards and maps."
+        "text": "Cereal boxes make sturdy backgrounds, envelopes often have patterned linings, and a single magazine gives you months of images and words. Once you start, you'll see material everywhere, so keep an envelope in your bag for café receipts and coffee sleeves, ticket stubs, tags and labels, pressed leaves from walks, fortune-cookie fortunes, handwritten notes, postcards and maps."
       },
       {
         "type": "h2",
@@ -4618,7 +5711,12 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["junk-journals", "washi-tape", "sticker-sets", "pocket-notebooks"],
+        "productIds": [
+          "junk-journals",
+          "washi-tape",
+          "sticker-sets",
+          "pocket-notebooks"
+        ],
         "title": "Junk journaling picks",
         "dek": "You can start tonight with what's in the house. If you'd like the pretty stuff, these are the four things worth buying first."
       },
@@ -4666,7 +5764,7 @@
         "items": [
           "**'My pages look messy.'** That's the style. Junk journals are supposed to look layered and lived-in. Give a page a day; it usually looks better tomorrow.",
           "**'I don't know what to write.'** You don't have to write anything. A date and one word is enough, or copy down a line from what you're reading.",
-          "**'The pages are wrinkling.'** Use a glue stick rather than liquid glue, and close the book under something heavy overnight. Thicker paper helps too."
+          "**'The pages are wrinkling.'** Use a glue stick rather than liquid glue, and keep the layer thin, because wet glue can wrinkle paper. You could also try closing the book under something heavy overnight; thicker paper may help too."
         ]
       },
       {
@@ -4691,8 +5789,16 @@
     "hero": "tennis",
     "searchIntent": "how to start playing tennis as an adult / tennis for beginners",
     "angle": "A four-week plan: borrow before you buy, learn two shots, play in short sessions, then add a lesson or a social format",
-    "hobbies": ["tennis", "pickleball"],
-    "productIds": ["tennis-rackets", "tennis-balls", "water-bottles", "sports-totes"],
+    "hobbies": [
+      "tennis",
+      "pickleball"
+    ],
+    "productIds": [
+      "tennis-rackets",
+      "tennis-balls",
+      "water-bottles",
+      "sports-totes"
+    ],
     "sources": [
       {
         "title": "USTA: tennis scoring rules",
@@ -4827,7 +5933,12 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["tennis-rackets", "tennis-balls", "water-bottles", "sports-totes"],
+        "productIds": [
+          "tennis-rackets",
+          "tennis-balls",
+          "water-bottles",
+          "sports-totes"
+        ],
         "title": "When you're ready for your own gear",
         "dek": "Play a few times first. Then these are the basics to look for."
       },
@@ -4853,8 +5964,18 @@
     "hero": "soloCafe",
     "searchIntent": "solo coffee shop date / how to go to a cafe alone",
     "angle": "A step-by-step first-timer's guide: choosing the place, ordering, what to bring, how to handle the awkward minutes, and six things to do once you're seated",
-    "hobbies": ["reading", "outdoor-sketching", "creative-writing", "junk-journaling"],
-    "productIds": ["pocket-notebooks", "book-sleeves", "reading-journals", "portable-watercolor"],
+    "hobbies": [
+      "reading",
+      "outdoor-sketching",
+      "creative-writing",
+      "junk-journaling"
+    ],
+    "productIds": [
+      "pocket-notebooks",
+      "book-sleeves",
+      "reading-journals",
+      "portable-watercolor"
+    ],
     "sources": [
       {
         "title": "Food Allergy Research & Education: tips for staying safe",
@@ -4915,7 +6036,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["pocket-notebooks", "reading-journals", "book-sleeves"],
+        "productIds": [
+          "pocket-notebooks",
+          "reading-journals",
+          "book-sleeves"
+        ],
         "title": "Pack the date",
         "dek": "A pocket notebook, a book sleeve and a journal to carry, so you always have something good to do with your hands."
       },
@@ -5015,8 +6140,17 @@
     "hero": "junkJournal",
     "searchIntent": "junk journaling supplies for beginners / junk journal supply list / what do I need to start a junk journal",
     "angle": "A product-focused companion to the starter guide: sort supplies into essentials, things you already own, optional extras and later upgrades, so beginners spend only where it changes the result",
-    "hobbies": ["junk-journaling", "scrapbooking", "collage-art"],
-    "productIds": ["junk-journals", "washi-tape", "sticker-sets", "pocket-notebooks"],
+    "hobbies": [
+      "junk-journaling",
+      "scrapbooking",
+      "collage-art"
+    ],
+    "productIds": [
+      "junk-journals",
+      "washi-tape",
+      "sticker-sets",
+      "pocket-notebooks"
+    ],
     "sources": [
       {
         "title": "NEDCC: storage enclosures for photographic materials",
@@ -5190,7 +6324,10 @@
       "crossword-puzzles",
       "collage-art"
     ],
-    "productIds": ["book-lights", "embroidery-kits"],
+    "productIds": [
+      "book-lights",
+      "embroidery-kits"
+    ],
     "sources": [],
     "related": [
       "things-to-do-after-work-instead-of-scrolling",
@@ -5355,7 +6492,10 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["book-lights", "embroidery-kits"],
+        "productIds": [
+          "book-lights",
+          "embroidery-kits"
+        ],
         "title": "Cozy-evening extras",
         "dek": "Not needed to begin. Nice once something sticks."
       },
@@ -5381,8 +6521,14 @@
     "hero": "shopSporty",
     "searchIntent": "pickleball for beginners / how to start playing pickleball / pickleball equipment",
     "angle": "A no-jargon starter guide: what you really need, the handful of rules that matter on day one, and how to join open play without feeling like the new kid",
-    "hobbies": ["pickleball", "tennis"],
-    "productIds": ["pickleball-sets", "water-bottles"],
+    "hobbies": [
+      "pickleball",
+      "tennis"
+    ],
+    "productIds": [
+      "pickleball-sets",
+      "water-bottles"
+    ],
     "sources": [
       {
         "title": "USA Pickleball Official Rulebook",
@@ -5529,7 +6675,10 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["pickleball-sets", "water-bottles"],
+        "productIds": [
+          "pickleball-sets",
+          "water-bottles"
+        ],
         "title": "Your first pickleball kit",
         "dek": "Borrow a paddle for your first game. When you're hooked, a starter set covers you and a friend."
       },
@@ -6017,6 +7166,7 @@
     "category": "after-hours",
     "status": "published",
     "publishedAt": "2026-11-18",
+    "verifiedAt": "2026-11-19",
     "hero": "shopCreative",
     "searchIntent": "things to do after work / what to do in the evening instead of phone",
     "angle": "Weeknight-sized, budget-aware ideas grouped by mood, with time and cost for each",
@@ -6034,6 +7184,43 @@
       "junk-journals",
       "board-games",
       "air-dry-clay"
+    ],
+    "sources": [
+      {
+        "title": "Library Card Sign-up Month fact sheet (American Library Association)",
+        "url": "https://www.ala.org/news/library-card-sign-month-fact-sheet",
+        "note": "Cards are generally free for people in the library's service area; rules vary by library. Checked 2026-11-19."
+      },
+      {
+        "title": "Book clubs (Lake Agassiz Regional Library)",
+        "url": "https://larl.org/books-movies-more/book-clubs",
+        "note": "One library's page says all its clubs are free and open to all; an example, not a rule for every library. Checked 2026-11-19."
+      },
+      {
+        "title": "How long does air-dry clay take to dry? (Crayola FAQ)",
+        "url": "https://www.crayola.com/faqs/how-long-does-it-take-for-air-dry-clay-to-dry-faq",
+        "note": "Crayola Air-Dry clay generally takes 24 hours to dry to the touch and 72 hours to dry completely. Checked 2026-11-19."
+      },
+      {
+        "title": "Crayola Air-Dry Clay, White (Crayola product page)",
+        "url": "https://www.crayola.com/en-ca/products/clay-and-modeling-compounds/crayola-air-dry-clay-white-575050",
+        "note": "Dries to a hard solid with no kiln or oven; paint when dry. Checked 2026-11-19."
+      },
+      {
+        "title": "Tennis courts (City of Bloomington, Indiana)",
+        "url": "https://bloomington.in.gov/node/823",
+        "note": "Example of free first-come public courts; other cities charge or take reservations. Checked 2026-11-19."
+      },
+      {
+        "title": "Roller Rink Tickets (Oaks Park, Portland)",
+        "url": "https://www.oakspark.com/prices",
+        "note": "Example of a rink with recurring 18+ skate sessions; schedules vary by rink. Checked 2026-11-19."
+      },
+      {
+        "title": "Free Late-Night Wednesdays (Museum of the City of New York)",
+        "url": "https://www.mcny.org/node/8234",
+        "note": "Example of a museum with a free late evening each week; check your local museum. Checked 2026-11-19."
+      }
     ],
     "body": [
       {
@@ -6060,7 +7247,7 @@
         "hobby": "jigsaw-puzzles",
         "note": "Put on a podcast or an album and work on a jigsaw for half an hour. Your hands stay busy, your eyes get a break, and you can stop whenever you like.",
         "time": "30–60 min",
-        "cost": "Under $25",
+        "cost": "Low cost (or borrow one)",
         "company": "Solo or with a housemate"
       },
       {
@@ -6070,7 +7257,7 @@
         "hobby": "reading",
         "note": "Take your book somewhere that isn't your bed or your desk. A bath, a balcony, the floor in a patch of light. It makes reading feel like a little event.",
         "time": "30 min",
-        "cost": "Free",
+        "cost": "Often free (library books)",
         "company": "Solo"
       },
       {
@@ -6080,7 +7267,7 @@
         "hobby": "paint-by-numbers",
         "note": "No blank canvas, no decisions. Do just one color tonight and leave the rest for another evening.",
         "time": "30 min",
-        "cost": "Under $25",
+        "cost": "Low cost",
         "company": "Solo"
       },
       {
@@ -6117,7 +7304,7 @@
         "hobby": "watercolor-painting",
         "note": "Grab a small watercolor set and paint your mug, a lemon or the flowers on the table. Twenty minutes, three colors, no erasing.",
         "time": "20–40 min",
-        "cost": "Under $25 to start",
+        "cost": "Low cost to start",
         "company": "Solo"
       },
       {
@@ -6125,9 +7312,9 @@
         "n": 7,
         "title": "Make a clay ring dish",
         "hobby": "air-dry-clay",
-        "note": "Air-dry clay doesn't need a kiln. Roll a ball, press your thumb in, smooth the edges and leave it overnight. Paint it tomorrow.",
+        "note": "Air-dry clay doesn't need a kiln. Roll a ball, press your thumb in, smooth the edges and let it dry (about a day to the touch for Crayola's, longer for thick pieces; check your clay's label), then paint it.",
         "time": "45 min + drying",
-        "cost": "Under $25",
+        "cost": "Low cost",
         "company": "Solo or social"
       },
       {
@@ -6137,7 +7324,7 @@
         "hobby": "junk-journaling",
         "note": "Empty your bag. Receipts, tickets, the coffee sleeve. Glue three of them into a notebook with a line about your week.",
         "time": "30 min",
-        "cost": "Free–$20",
+        "cost": "Free to low cost",
         "company": "Solo"
       },
       {
@@ -6187,16 +7374,16 @@
         "n": 12,
         "title": "Play pickleball or tennis",
         "hobby": "pickleball",
-        "note": "Many public courts have lights and evening open play. New to either? Start with [pickleball for beginners](/journal/pickleball-for-beginners) or [tennis as an adult](/journal/how-to-start-playing-tennis-as-an-adult).",
+        "note": "Many public courts are free to use, and some have lights for evening play; check your parks department for hours and any booking fees. New to either? Start with [pickleball for beginners](/journal/pickleball-for-beginners) or [tennis as an adult](/journal/how-to-start-playing-tennis-as-an-adult).",
         "time": "60 min",
-        "cost": "Courts often free; gear optional",
+        "cost": "Many public courts are free; gear optional",
         "company": "With a friend"
       },
       {
         "type": "item",
         "n": 13,
         "title": "Take a drop-in class",
-        "note": "Pottery, life drawing, dance, yoga. Lots of studios offer single drop-in sessions so you can try without committing.",
+        "note": "Pottery, life drawing, dance, yoga. Many studios offer single drop-in sessions, so check their schedules and try without committing.",
         "time": "60–90 min",
         "cost": "Varies",
         "company": "Solo, then social"
@@ -6206,7 +7393,7 @@
         "n": 14,
         "title": "Go to an adult skate night",
         "hobby": "roller-skating",
-        "note": "Rinks often run adults-only evenings with great music. You will wobble. Everybody wobbles.",
+        "note": "Some rinks run adults-only evenings, so check your local rink's schedule. You will wobble. Everybody wobbles.",
         "time": "90 min",
         "cost": "Rental + entry",
         "company": "Solo or with friends"
@@ -6242,7 +7429,7 @@
         "hobby": "craft-nights",
         "note": "Not a dinner party. Just a table, snacks and a bracelet kit. Text two friends 'craft hour Thursday?', which is easier to say yes to than a big plan. [How to host a craft night](/journal/how-to-host-a-craft-night) has the plan.",
         "time": "90 min",
-        "cost": "Under $25",
+        "cost": "Low cost",
         "company": "With friends"
       },
       {
@@ -6260,9 +7447,9 @@
         "n": 19,
         "title": "Join a library book club",
         "hobby": "book-clubs",
-        "note": "Libraries and bookstores often host free monthly book clubs. Showing up once is a fine start.",
+        "note": "Libraries often host free book clubs (check your local branch), and some bookstores do too. Showing up once is a fine start.",
         "time": "90 min",
-        "cost": "Free",
+        "cost": "Often free",
         "company": "Group"
       },
       {
@@ -6295,7 +7482,7 @@
         "hobby": "calligraphy",
         "note": "A new knot, a calligraphy alphabet, three phrases in a language for your next trip. Small skills feel big.",
         "time": "20–30 min",
-        "cost": "Free",
+        "cost": "Often free",
         "company": "Solo"
       },
       {
@@ -6303,7 +7490,7 @@
         "n": 23,
         "title": "Go to a museum's late night",
         "hobby": "museum-exploring",
-        "note": "Some museums stay open late one evening a week, sometimes with music or lower prices. Check your local museum's calendar.",
+        "note": "Some museums stay open late one evening a week, sometimes with free or lower-priced entry. Check your local museum's calendar.",
         "time": "90 min",
         "cost": "Varies",
         "company": "Solo or with a friend"
@@ -6353,7 +7540,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["air-dry-clay", "reading", "craft-nights"]
+        "hobbies": [
+          "air-dry-clay",
+          "reading",
+          "craft-nights"
+        ]
       }
     ]
   },
@@ -6381,7 +7572,11 @@
       "film-photography",
       "reading"
     ],
-    "productIds": ["picnic-blankets", "board-games", "daypacks"],
+    "productIds": [
+      "picnic-blankets",
+      "board-games",
+      "daypacks"
+    ],
     "sources": [
       {
         "title": "National Park Service: hiking safety (Mount Rainier)",
@@ -6681,13 +7876,218 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["picnic-blankets", "daypacks", "board-games"],
+        "productIds": [
+          "picnic-blankets",
+          "daypacks",
+          "board-games"
+        ],
         "title": "Weekend picks",
         "dek": "A blanket, a daypack and a game for the afternoon you don't want to end."
       },
       {
         "type": "makePlan",
         "text": "Want the shape without the thinking? Plan my weekend: Make Some Plans will build one around your mood, time and budget. For a fuller, four-part day, see [how to plan a solo Saturday](/journal/how-to-plan-a-solo-saturday)."
+      }
+    ]
+  },
+  {
+    "slug": "watercolor-painting-for-beginners",
+    "title": "Watercolor for Beginners: Three Little Paintings You Can Finish Tonight",
+    "titleItalic": "Three Little Paintings",
+    "dek": "A small supply list, a few techniques worth learning first, and three projects that make practice feel like painting.",
+    "category": "creative-corner",
+    "status": "published",
+    "publishedAt": "2026-11-19",
+    "verifiedAt": "2026-11-19",
+    "hero": "watercolor",
+    "searchIntent": "watercolor painting for beginners / watercolor supplies / easy watercolor projects",
+    "angle": "A calm, practice-first guide: buy little, learn water control before drawing skill, and finish three small projects that look good without being good at drawing",
+    "hobbies": [
+      "watercolor-painting",
+      "outdoor-sketching"
+    ],
+    "productIds": [
+      "watercolor-sets",
+      "watercolor-sketchbooks",
+      "portable-watercolor"
+    ],
+    "sources": [
+      {
+        "title": "ACMI: materials safety",
+        "url": "https://www.acmiart.org/materials-safety",
+        "note": "AP seal = non-toxic when used as intended; CL seal = carries health warnings"
+      },
+      {
+        "title": "CPSC: art and craft material safety",
+        "url": "https://www.cpsc.gov/s3fs-public/5015.pdf",
+        "note": "Avoid materials with lead, cadmium and other heavy metals"
+      },
+      {
+        "title": "ACMI partners: how the labeling law (LHAMA) affects you",
+        "url": "https://partners.acmiart.org/index.php/art-material-safety/lhama-how-does-it-affect-you",
+        "note": "Labeling law explained"
+      },
+      {
+        "title": "Artists Network: painting a flat wash and a gradated wash",
+        "url": "https://www.artistsnetwork.com/uncategorized/perfect-watercolor-wash-michael-reardon/",
+        "note": "Checked 2026-11-19: tape paper down, a flat wash is one color and value made with overlapping strokes and a bead of paint, gradated wash shifts gradually"
+      },
+      {
+        "title": "Artists Network: watercolor glossary of terms",
+        "url": "https://www.artistsnetwork.com/art-techniques/watercolor-glossary-of-terms/",
+        "note": "Checked 2026-11-19: definitions of flat wash, gradated wash and drybrush"
+      },
+      {
+        "title": "Artists Network: watercolor painting techniques, wet-into-wet washes",
+        "url": "https://www.artistsnetwork.com/art-mediums/watercolor/watercolor-painting-techniques/",
+        "note": "Checked 2026-11-19: wet-into-wet looks strong while wet but loses intensity as it dries; example on 140-lb (300gsm) cold-pressed paper"
+      },
+      {
+        "title": "Artists Network: watercolor for beginners",
+        "url": "https://www.artistsnetwork.com/art-mediums/watercolor/all-in-one-guide-to-watercolor-for-beginners/",
+        "note": "Checked 2026-11-19: watercolors come in tubes or dry pans; check the ASTM rating on the label"
+      },
+      {
+        "title": "Winsor & Newton: watercolour paper, gummed pad, 300gsm/140lb",
+        "url": "https://www.winsornewton.com/products/watercolour-paper-gummed-300gsm-140lb",
+        "note": "Manufacturer page, checked 2026-11-19: 300gsm cold press paper; maker says its watercolour papers are designed to withstand saturation without cockling"
+      }
+    ],
+    "related": [
+      "creative-hobbies-you-can-start-at-home",
+      "creative-hobby-starter-kits-worth-considering",
+      "how-to-start-junk-journaling"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Watercolor has a reputation for being fussy, and most of the difficulty is water, not drawing. Learn how paint and water behave and the pictures follow, even if you can't sketch a convincing teapot. A soft blue wash is a nice thing all by itself, so practice already looks pretty."
+      },
+      {
+        "type": "h2",
+        "text": "What you need",
+        "id": "need"
+      },
+      {
+        "type": "p",
+        "text": "Paper matters more than anything else. Thin paper tends to buckle when wet and shows every mistake, so a heavier, textured watercolor paper is kinder to a beginner. Many guides suggest 300gsm (140 lb) cold-press paper, a weight sold by makers such as Winsor & Newton."
+      },
+      {
+        "type": "whatYoullNeed",
+        "essentials": [
+          "A small pan or tube set of watercolors, a student-grade set is a sensible place to start",
+          "Watercolor paper or a watercolor sketchbook, heavier than ordinary sketch paper",
+          "One round brush in a middling size",
+          "A jar of water and a cloth or paper towel",
+          "A plate or old saucer for mixing"
+        ],
+        "optional": [
+          "A second, smaller brush for details",
+          "Masking tape to hold paper flat",
+          "A travel set with a built-in palette",
+          "A fine pen for outlines"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "You probably own a plate for mixing, a jar for water, a hard surface to work on and a hairdryer for impatient moments. A pan set is the least fuss, since you wet it and paint. Pick one small set: if the box turns out to hold far more colors than you need (many do), start with three and ignore the rest, and use the brushes that come with it until you want better ones. A sketchbook of proper watercolor paper keeps all your practice in one place, and a portable set suits a park bench or a café table. If you're going to spend on one thing, make it better paper, and artist-grade paints can wait."
+      },
+      {
+        "type": "p",
+        "text": "Prices vary by shop and brand, so check local prices. Read labels before you buy: avoid materials with lead, cadmium and other heavy metals. Look for the AP seal from ACMI, which marks products certified non-toxic when used as intended; a CL seal means the product carries health warnings. Wash up after painting, and keep brushes out of your mouth: do not point or tip them with your lips."
+      },
+      {
+        "type": "h2",
+        "text": "Four techniques, in the order they help",
+        "id": "techniques"
+      },
+      {
+        "type": "item",
+        "n": 1,
+        "title": "Flat wash",
+        "note": "Load the brush, then pull an even stripe of color across dry paper, picking up the bead of pigment at the bottom of each stroke. This is the sky, the table, the background of nearly everything."
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "title": "Graded wash",
+        "note": "Start with strong color at the top and add more water as you go down, so it fades to nothing. It is the quickest way to make a sunset look deliberate."
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "title": "Wet-on-wet",
+        "note": "Touch color to paper that is already damp and watch it bloom. It is unpredictable and delightful, and perfect for clouds, petals and moody backgrounds."
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "title": "Wet-on-dry",
+        "note": "Paint onto dry paper, where strokes stay put and edges stay crisp. Use it for details once a wash has dried, like leaves on a branch or a window frame."
+      },
+      {
+        "type": "p",
+        "text": "Generally, paint light to dark. Leave bare paper where you want a highlight, because getting white back later is hard."
+      },
+      {
+        "type": "h2",
+        "text": "Your first evening",
+        "id": "first-session"
+      },
+      {
+        "type": "first30",
+        "steps": [
+          "Tape the edges of a sheet to a board or a table if you have masking tape. It helps the paper stay flat.",
+          "Add a few drops of water to your pans so they soften, and fill your water jar.",
+          "Paint a flat wash across the top half of the page, then a graded wash below it.",
+          "While it is still damp, drop in a second color and watch what it does.",
+          "Let everything dry completely, then add one detail on top with the tip of the brush.",
+          "Once the page is completely dry, peel the tape slowly, low and parallel to the paper. Put the page somewhere you will see it."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Three small projects that look better than they should",
+        "id": "projects"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**A sunset gradient** (about 30 minutes). A graded wash from warm yellow into pink and a dusty purple, with a dark strip of hills painted on top once it is dry.",
+          "**A wet-on-wet bouquet** (about 40 minutes). Dab blobs of color onto damp paper, then add a few green stems and leaves after it dries. The flowers are just soft shapes.",
+          "**A color-swatch card** (about 20 minutes). Paint a grid of small squares, mixing a new shade for each. It is practice, a reference chart and a handsome little card at once."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Once you're comfortable, pocket a small set on your next walk and paint the same view twice, once quickly and once slowly. Compare the two."
+      },
+      {
+        "type": "h2",
+        "text": "Common mistakes and troubleshooting",
+        "id": "troubleshooting"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**The paper has buckled.** Too much water on thin paper. Switch to heavier paper, tape it down, and let it dry flat under a book.",
+          "**The colors turned muddy.** Too many colors mixed, or layers painted over damp paint. Try mixing fewer colors and wait for each layer to dry.",
+          "**It looks washed out.** Watercolor dries lighter than it looks wet. Add more pigment and less water next time, and layer a second coat once it is dry."
+        ]
+      },
+      {
+        "type": "shopHobby",
+        "productIds": [
+          "watercolor-sets",
+          "watercolor-sketchbooks",
+          "portable-watercolor"
+        ],
+        "title": "Shop your hobby",
+        "dek": "A small set and good paper are plenty to begin."
+      },
+      {
+        "type": "p",
+        "text": "If you would like a small ready-made box instead of loose pieces, [Creative Hobby Starter Kits That Are Actually Worth Considering](/journal/creative-hobby-starter-kits-worth-considering) explains what to look for."
       }
     ]
   }

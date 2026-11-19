@@ -4,8 +4,9 @@
   "titleItalic": "Finished in One Evening",
   "dek": "The supplies, the stitches worth learning first, and a small first hoop that is easy to finish in an evening.",
   "category": "creative-corner",
-  "status": "draft",
-  "publishedAt": "",
+  "status": "published",
+  "publishedAt": "2026-11-19",
+  "verifiedAt": "2026-11-19",
   "hero": "shopCreative",
   "searchIntent": "how to start embroidery / embroidery for beginners / basic embroidery stitches",
   "angle": "A stitch-first beginner path: learn a handful of stitches on scrap fabric, then finish a single small hoop, with fixes for the most common frustrations",
@@ -17,12 +18,35 @@
   "productIds": [
     "embroidery-kits"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "title": "DMC: step by step embroidery stitch guide",
+      "url": "https://www.dmc.com/US/en/sbs-embroidery-stitch-diagrams",
+      "note": "Manufacturer guide, checked 2026-11-19: back stitch (continuous line, outlines), split stitch (outlines and padding), stem stitch (lettering and outlines), satin stitch (fills shapes with parallel stitches; outline first), French knot, running stitch"
+    },
+    {
+      "title": "DMC: how to use stranded embroidery floss",
+      "url": "https://www.dmc.com/US/en/technique-embroidery-use-stranded-thread",
+      "note": "Checked 2026-11-19: pull about 50cm (18 inches) of floss, roughly an arm's length; separate one strand at a time; patterns say how many strands to use"
+    },
+    {
+      "title": "DMC: embroidery needles",
+      "url": "https://www.dmc.com/US/en/products/embroidery-needles",
+      "note": "Checked 2026-11-19: slender shaft, sharp point, medium/long eye to ease threading several strands"
+    },
+    {
+      "title": "DMC: fabric (cotton evenweave)",
+      "url": "https://www.dmc.com/en/fabrics",
+      "note": "Checked 2026-11-19: cotton evenweave has a regular weave that suits beginners and professionals for counted and hand embroidery"
+    }
+  ],
   "coworkChecks": [
-    "RESOLVED 2026-11-19: starter spend ($10-$30), 5-6 inch hoop, 'six-strand' and 'two to three strands', cold-water wash and face-down pressing - removed or reworded to defer to labels (no source); verification found no source for prices",
-    "OPEN: no verification covered technique - confirm beginner guidance on even-weave cotton or linen-blend fabric, embroidery needles having a larger eye than sewing needles, and arm's-length thread",
-    "OPEN: confirm descriptions of running stitch, backstitch, stem stitch, split stitch, satin stitch and French knot are accurate",
-    "OPEN: water-soluble pen and transfer wording ('test on scrap, follow the label') and needle/scissor safety around children and pets are common-sense but not source-checked"
+    "REMOVED 2026-11-19: starter spend, hoop size in inches, 'cheaper than a kit' comparison - no source; cost wording removed",
+    "SUPPORTED 2026-11-19: stitch descriptions (running, backstitch, stem, split, satin, French knot) - dmc.com stitch guide; wording adjusted to match it",
+    "SUPPORTED 2026-11-19: floss is stranded and separated before use; follow the pattern or label for strand count; cut about arm's length (max 50cm / 18 inches) - dmc.com",
+    "SUPPORTED 2026-11-19: embroidery needles have a medium/long eye for threading several strands (article no longer compares to sewing needles) - dmc.com",
+    "SUPPORTED 2026-11-19: cotton evenweave is a regular, easy-to-work fabric for beginners - dmc.com fabrics; worded as 'such as'",
+    "CORRECT AS 2026-11-19: pen/transfer wording defers to the product label and a scrap test; needle safety reduced to 'needles are sharp, store them in a case' (the children-and-pets line was removed because it had no source)"
   ],
   "related": [
     "how-to-start-crocheting",
@@ -32,7 +56,7 @@
   "body": [
     {
       "type": "p",
-      "text": "Six stitches cover most of embroidery. Learn them on one small hoop and you can draw a daisy, your initials or a wobbly mug in thread. It's portable, quiet and fits in a tote bag, and mistakes mostly disappear into the texture."
+      "text": "Six stitches are enough to start. Learn them on one small hoop and you can draw a daisy, your initials or a wobbly mug in thread. It's portable, quiet and fits in a tote bag."
     },
     {
       "type": "h2",
@@ -41,15 +65,15 @@
     },
     {
       "type": "p",
-      "text": "A kit bundles a hoop, thread, fabric and a pattern, which takes the guessing out of the first project. Loose supplies let you choose your own colors. If you're unsure, a small kit is a sensible first purchase; if you already own scissors and a scrap of cotton, loose is cheaper."
+      "text": "A kit bundles a hoop, thread, fabric and a pattern, which takes the guessing out of the first project. Loose supplies let you choose your own colors. If you're unsure, a small kit is a sensible first purchase; if you already own scissors and a scrap of cotton, loose supplies let you use what you have."
     },
     {
       "type": "whatYoullNeed",
       "essentials": [
         "A small hoop",
         "A few skeins of cotton embroidery floss in colors you like",
-        "Embroidery needles, which have a bigger eye than ordinary sewing needles",
-        "A piece of even-weave cotton or linen-blend fabric, bigger than the hoop",
+        "Embroidery needles, which have a medium-to-long eye for threading several strands",
+        "A piece of cotton fabric, such as evenweave cotton, bigger than the hoop",
         "Small, sharp scissors"
       ],
       "optional": [
@@ -61,7 +85,7 @@
     },
     {
       "type": "p",
-      "text": "You probably own scissors, a pencil and a scrap of plain cotton from an old tea towel or shirt. A good small pair of embroidery scissors is the one upgrade you'll feel every time you stitch."
+      "text": "You probably own scissors, a pencil and a scrap of plain cotton from an old tea towel or shirt. A good small pair of embroidery scissors is a worthwhile upgrade."
     },
     {
       "type": "h2",
@@ -72,37 +96,37 @@
       "type": "item",
       "n": 1,
       "title": "Running stitch",
-      "note": "In and out along a line. The simplest, and it makes dashes and borders."
+      "note": "In and out along a line. The simplest stitch to begin with."
     },
     {
       "type": "item",
       "n": 2,
       "title": "Backstitch",
-      "note": "Go back on yourself to make a solid line. This is your outline stitch for letters and shapes."
+      "note": "Each stitch goes back to meet the last, making a continuous solid line. It is useful for outlines."
     },
     {
       "type": "item",
       "n": 3,
       "title": "Stem stitch",
-      "note": "A twisted rope of a line, ideal for curved stems and flower outlines."
+      "note": "Straight stitches staggered beside one another, popular for lettering and outlines."
     },
     {
       "type": "item",
       "n": 4,
       "title": "Split stitch",
-      "note": "Each stitch splits the one before. It makes a neat line and a good edge for filling."
+      "note": "Each stitch splits the one before, a little like a tiny chain. It is used for outlines and for padding other stitches."
     },
     {
       "type": "item",
       "n": 5,
       "title": "Satin stitch",
-      "note": "Rows of straight stitches laid side by side to fill a shape with smooth color. Keep stitches short so they do not snag."
+      "note": "Straight stitches laid side by side to fill a shape with smooth color. Outlining the shape first, for example with split stitch, gives a neat edge."
     },
     {
       "type": "item",
       "n": 6,
       "title": "French knot",
-      "note": "A small raised dot for flower centers and eyes. It takes a couple of tries, so practice on scrap first."
+      "note": "A small knot made by wrapping the thread around the needle, good for flower centers and texture. It takes a couple of tries, so practice on scrap first."
     },
     {
       "type": "h2",
@@ -114,7 +138,7 @@
       "steps": [
         "Stretch the fabric in the hoop and tighten the screw until it is taut like a drum.",
         "Draw a simple shape on it: a leaf, a heart, your initial.",
-        "Cut a piece of floss about as long as your arm, and separate out a few of its strands, following the floss label.",
+        "Cut a piece of floss about as long as your arm (no more than about 50 cm, or 18 inches), and separate out the number of strands your pattern or floss label calls for, one strand at a time.",
         "Thread the needle and tie a small knot at the end.",
         "Backstitch along the outline, keeping stitches about the same length.",
         "Fill the shape with satin stitch, or add three French knots for a flower."
@@ -139,7 +163,7 @@
     },
     {
       "type": "p",
-      "text": "Needles are sharp. Store them in a case or a needle minder, and keep them away from small children and pets."
+      "text": "Needles are sharp, so store them in a case or a needle minder."
     },
     {
       "type": "h2",

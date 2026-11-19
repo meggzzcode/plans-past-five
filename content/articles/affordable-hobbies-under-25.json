@@ -1,14 +1,15 @@
 {
   "slug": "affordable-hobbies-under-25",
-  "title": "15 Affordable Hobbies You Can Start for Under $25",
-  "titleItalic": "Under $25",
-  "dek": "Fifteen hobbies you can start on a small budget, with the cheapest sensible way into each one.",
+  "title": "15 Affordable Hobbies You Can Start on a Small Budget",
+  "titleItalic": "Small Budget",
+  "dek": "Fifteen hobbies you can start with little or nothing new, with the cheapest sensible way into each one.",
   "category": "after-hours",
-  "status": "draft",
-  "publishedAt": "",
+  "status": "published",
+  "publishedAt": "2026-11-19",
+  "verifiedAt": "2026-11-19",
   "hero": "soloCafe",
-  "searchIntent": "cheap hobbies / hobbies under $25 / affordable hobbies for women",
-  "angle": "Honest starter budgets with a 'what to skip' note for each, plus a plain explanation of why costs vary",
+  "searchIntent": "cheap hobbies / affordable hobbies for women / low-cost hobbies to start",
+  "angle": "Free and low-cost framing: the cheapest sensible way into each hobby, borrow-first and secondhand habits, and a plain explanation of why costs vary, with no prices stated",
   "hobbies": [
     "watercolor-painting",
     "junk-journaling",
@@ -32,12 +33,25 @@
     "embroidery-kits",
     "pocket-notebooks"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "title": "ASPCA: toxic and non-toxic plants",
+      "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants",
+      "note": "Checked 2026-11-19: searchable list; some common houseplants are harmful to pets"
+    },
+    {
+      "title": "ASPCA: these houseplants can cause trouble for your pets",
+      "url": "https://www.aspca.org/news/these-houseplants-can-cause-trouble-your-pets",
+      "note": "Checked 2026-11-19: pothos, peace lily, dumb cane and others are toxic to pets if eaten"
+    }
+  ],
   "coworkChecks": [
-    "OPEN: headline 'Under $25' and every 'Typically under $X' cost label (items 1-7, 9-11, 13, 15; creative writing 'under $10'; plants 'free to $25'; thrifting 'your cap, typically under $25') - Cowork 2026-11-18: NOT VERIFIABLE GENERALLY (no live retail price source). Needs live retail verification per item with a date, or an editorial decision to drop the numeric framing and retitle.",
-    "OPEN: the per-hobby claims that a small kit, pan set, clay and paints, or floss and hoop fits the budget (items 1, 3, 4, 5, 6) depend on the same unverified prices.",
-    "VERIFIED 2026-11-18: free and low-cost libraries, trails, parks described as 'many' / 'often', with parking and entry fees flagged and 'check locally' - reworded, no claim remains (Cowork: not verifiable generally, hedge kept)",
-    "VERIFIED 2026-11-18: charity-shop, secondhand and swap suggestions general, no shop or group named; baking 'probably already own' and thrifting cap are phrased as the reader's own - reworded, no claim remains"
+    "RESOLVED 2026-11-19: headline '$25' and every 'Typically under $X' label removed. The article states no prices; cost labels are now free or low-cost guidance with 'check local prices'. Title changed to 'Small Budget'; slug and URL unchanged",
+    "RESOLVED 2026-11-19: kit, pan set, clay and floss 'fits the budget' claims removed with the prices",
+    "RESOLVED 2026-11-19: free and low-cost libraries, trails and parks phrased as 'often' / 'may' with parking and entry fees flagged and 'check locally'; no place or program named",
+    "RESOLVED 2026-11-19: secondhand, swap and borrow suggestions are general; no shop or group named; thrifting cap is the reader's own number",
+    "SUPPORTED 2026-11-19: some houseplants are harmful to pets - aspca.org; indoor gardening item now says to check plants against the ASPCA list if you share your home with pets",
+    "REMOVED 2026-11-19: 'free bird-ID app' (Merlin site returned 403 to automated reads, so free status is not confirmed); now 'a bird-ID app or library field guide'; 'library lends more than books' softened to 'may lend'"
   ],
   "related": [
     "how-to-find-a-hobby-as-an-adult",
@@ -52,20 +66,20 @@
     },
     {
       "type": "p",
-      "text": "Below are fifteen, each with a ballpark starter cost, the cheapest sensible way in, and a first small step. Treat it as a menu. You only need to order one."
+      "text": "Below are fifteen, each with the cheapest sensible way in, a note on cost and a first small step. Treat it as a menu. You only need to order one."
     },
     {
       "type": "h2",
-      "text": "About those prices",
+      "text": "About costs",
       "id": "prices"
     },
     {
       "type": "p",
-      "text": "Every cost here is a ballpark marked 'typically', and yours will differ with where you live, new versus secondhand, and what's on offer this month. We've left out exact figures on purpose because they go stale fast. Online prices also often leave out shipping and tax."
+      "text": "We've left out dollar figures on purpose. Prices differ with where you live, new versus secondhand, and what's on offer this month, and they go stale fast, so check local prices before you buy. Online prices also often leave out shipping and tax."
     },
     {
       "type": "p",
-      "text": "Two habits keep costs down whatever you pick. Borrow first, since many libraries lend more than books and a friend may own a hoop or a spare set of paints. And check secondhand: charity shops, swaps and neighborhood groups are full of barely used supplies."
+      "text": "Two habits keep costs down whatever you pick. Borrow first, since your library may lend more than books and a friend may own a hoop or a spare set of paints. And check secondhand: charity shops, swaps and neighborhood groups are full of barely used supplies."
     },
     {
       "type": "h2",
@@ -78,7 +92,7 @@
       "title": "Watercolor painting",
       "hobby": "watercolor-painting",
       "note": "A small pan set, one decent brush and a pad of paper will do. Hold off on fancy paper until you've filled a dozen pages with practice.",
-      "cost": "Typically under $25",
+      "cost": "Low cost; check local prices",
       "first": "Paint a wash in three colors and let them bleed into each other."
     },
     {
@@ -87,7 +101,7 @@
       "title": "Junk journaling",
       "hobby": "junk-journaling",
       "note": "A plain notebook, a glue stick and the things you'd normally recycle. The [beginner's guide](/journal/how-to-start-junk-journaling) walks through the first page.",
-      "cost": "Typically under $25, often free",
+      "cost": "Often free or nearly free",
       "first": "Glue in one receipt and one ticket, then add a sentence about the day."
     },
     {
@@ -95,8 +109,8 @@
       "n": 3,
       "title": "Air-dry clay",
       "hobby": "air-dry-clay",
-      "note": "One block of clay and a few acrylic paints will see you through several small projects. No kiln, no special tools.",
-      "cost": "Typically under $25",
+      "note": "One block of clay and a few acrylic paints will see you through several small projects. No kiln needed, and few special tools.",
+      "cost": "Low cost; check local prices",
       "first": "Pinch a small trinket dish and leave it to dry overnight."
     },
     {
@@ -104,8 +118,8 @@
       "n": 4,
       "title": "Paint by numbers",
       "hobby": "paint-by-numbers",
-      "note": "The kit includes everything and spares you the blank-page wobble. Choose a small size over a giant canvas.",
-      "cost": "Typically under $25",
+      "note": "Kits usually include the numbered canvas, paints and a brush, which spares you the blank-page wobble; check the listing. Choose a small size over a giant canvas.",
+      "cost": "Low cost; check local prices",
       "first": "Fill in every shape marked with the same number."
     },
     {
@@ -113,8 +127,8 @@
       "n": 5,
       "title": "Embroidery",
       "hobby": "embroidery",
-      "note": "Beginner kits usually bundle a hoop, fabric, floss and a needle. Learn three stitches (running, back, satin) and you can make plenty.",
-      "cost": "Typically under $25",
+      "note": "Beginner kits often bundle a hoop, fabric, floss and a needle; check the listing. Learn three stitches (running, back, satin) and you can make plenty.",
+      "cost": "Low cost; check local prices",
       "first": "Stitch the first outline of the pattern."
     },
     {
@@ -123,7 +137,7 @@
       "title": "Friendship bracelets",
       "hobby": "friendship-bracelets",
       "note": "A few skeins of embroidery floss and a safety pin to hold your work in place. Make one for yourself before you start on gifts.",
-      "cost": "Typically under $25",
+      "cost": "Low cost; check local prices",
       "first": "Learn the forward knot and make a short striped band."
     },
     {
@@ -137,7 +151,7 @@
       "title": "Jigsaw puzzles",
       "hobby": "jigsaw-puzzles",
       "note": "Secondhand puzzles are everywhere. Check the pieces are all there before you pay, or swap with a friend.",
-      "cost": "Typically under $25, often cheaper used",
+      "cost": "Often cheaper secondhand",
       "first": "Sort the edge pieces and build the frame."
     },
     {
@@ -145,8 +159,8 @@
       "n": 8,
       "title": "Reading",
       "hobby": "reading",
-      "note": "A library membership is the best-value hobby upgrade going. A cheap clip-on light makes it cozier still.",
-      "cost": "Often free at most libraries",
+      "note": "A library card is one of the best-value ways to read more. A cheap clip-on light makes it cozier still.",
+      "cost": "Often free with a library card",
       "first": "Borrow three books and read the first twenty pages of each."
     },
     {
@@ -155,7 +169,7 @@
       "title": "Baking",
       "hobby": "baking",
       "note": "You probably own most of what a simple batch of cookies or banana bread needs. A mixing bowl and a tray are enough.",
-      "cost": "Groceries you'd buy anyway, or typically under $25 for basics",
+      "cost": "Often groceries you'd buy anyway",
       "first": "Bake a one-bowl recipe and give half away."
     },
     {
@@ -163,8 +177,8 @@
       "n": 10,
       "title": "Indoor gardening",
       "hobby": "indoor-gardening",
-      "note": "A cutting from a friend's plant in a jar of water costs nothing. Add a small pot and compost when it grows roots.",
-      "cost": "Typically free to $25",
+      "note": "A cutting from a friend's plant in a jar of water costs nothing. Add a small pot and compost when it grows roots. If you share your home with pets, check plants against the ASPCA's toxic and non-toxic plant list first, because some common houseplants are harmful to pets.",
+      "cost": "Free if a friend shares a cutting; otherwise low cost",
       "first": "Take a cutting, put it by a bright window and check it weekly."
     },
     {
@@ -173,7 +187,7 @@
       "title": "Creative writing",
       "hobby": "creative-writing",
       "note": "A notebook and a pen. Ten minutes on anything at all: a memory, a stranger on the bus, tonight's dinner.",
-      "cost": "Typically under $10",
+      "cost": "Low cost: a notebook and a pen",
       "first": "Set a ten-minute timer and write without editing."
     },
     {
@@ -186,7 +200,7 @@
       "n": 12,
       "title": "Birdwatching",
       "hobby": "birdwatching",
-      "note": "Your eyes, a window or a park bench, and a free bird-ID app. Binoculars are a nice later upgrade, not a ticket in.",
+      "note": "Your eyes, a window or a park bench, and a bird-ID app or a library field guide. Binoculars are a nice later upgrade, not a ticket in.",
       "cost": "Free to start",
       "first": "Sit for fifteen minutes and note every bird you see."
     },
@@ -196,7 +210,7 @@
       "title": "Outdoor sketching",
       "hobby": "outdoor-sketching",
       "note": "A pencil and a small sketchbook. Draw a tree, a bench or your coffee cup. The fancy pencils can wait.",
-      "cost": "Typically under $25",
+      "cost": "Low cost; check local prices",
       "first": "Draw one object for ten minutes without looking at the paper."
     },
     {
@@ -205,7 +219,7 @@
       "title": "Hiking and local walks",
       "hobby": "hiking",
       "note": "Comfortable shoes, water and a trail near you. Many public trails are free, though some parks charge for parking or entry.",
-      "cost": "Free to start",
+      "cost": "Free to start; some parks charge for parking or entry",
       "first": "Walk a short trail with a friend and turn back at the halfway point."
     },
     {
@@ -214,7 +228,7 @@
       "title": "Thrifting",
       "hobby": "thrifting",
       "note": "Set a spending cap before you leave, a number you're happy to part with. Look for one thing you'd never buy new.",
-      "cost": "Your cap, typically under $25",
+      "cost": "Your own cap",
       "first": "Visit one secondhand shop, choose one item and go home."
     },
     {
@@ -224,7 +238,7 @@
     },
     {
       "type": "p",
-      "text": "Walk around your home first. Most starter lists are shorter than they look: a notebook, pens, scissors, a glue stick, a mixing bowl, a baking tray, old jars, comfortable shoes and a tote are probably already here. For the craft hobbies, the one thing worth buying is a small kit or set in the smallest size, so everything arrives in a box. Better paper, a nicer brush, binoculars and a trail-ready daypack can wait until you've done the hobby five times."
+      "text": "Walk around your home first. Most starter lists are shorter than they look: a notebook, pens, scissors, a glue stick, a mixing bowl, a baking tray, old jars, comfortable shoes and a tote are probably already here. For the craft hobbies, if you buy anything, consider a small kit or set in the smallest size, so everything arrives in a box. Better paper, a nicer brush, binoculars and a trail-ready daypack can wait until you've done the hobby five times."
     },
     {
       "type": "p",
@@ -232,7 +246,7 @@
     },
     {
       "type": "noSpend",
-      "text": "Four of these can start today for nothing: library reading, birdwatching, a local walk and ten minutes of writing."
+      "text": "Several of these can start today with nothing new: reading what you already own or can borrow, birdwatching, a local walk and ten minutes of writing."
     },
     {
       "type": "shopHobby",

@@ -6,6 +6,7 @@
   "category": "after-hours",
   "status": "published",
   "publishedAt": "2026-11-18",
+  "verifiedAt": "2026-11-19",
   "hero": "potteryNight",
   "searchIntent": "hobbies to try when bored of routine / hobbies for working women",
   "angle": "Sorted by energy level and setting, each with a realistic first session, not a vague 'try painting!'",
@@ -24,6 +25,43 @@
     "junk-journals",
     "tennis-rackets",
     "board-games"
+  ],
+  "sources": [
+    {
+      "title": "The New York Times Crossword Puzzle (NYT Games Help Center)",
+      "url": "https://thenewyorktimeshelpcenter.helpjuice.com/360011158491-New-York-Times-Games/360052406391-The-New-York-Times-Crossword-Puzzle",
+      "note": "Difficulty increases from Monday to Saturday. Checked 2026-11-19."
+    },
+    {
+      "title": "Propagating houseplants (University of Illinois Extension)",
+      "url": "https://extension.illinois.edu/blogs/good-growing/2025-02-21-winter-gardening-propagating-houseplants-beat-winter-blues",
+      "note": "Pothos can be rooted in water; trim the cut near a node. Checked 2026-11-19."
+    },
+    {
+      "title": "Library Card Sign-up Month fact sheet (American Library Association)",
+      "url": "https://www.ala.org/news/library-card-sign-month-fact-sheet",
+      "note": "Cards are generally free for people in the library's service area; rules vary by library. Checked 2026-11-19."
+    },
+    {
+      "title": "Book clubs (Lake Agassiz Regional Library)",
+      "url": "https://larl.org/books-movies-more/book-clubs",
+      "note": "One library's page says all its clubs are free and open to all; an example, not a rule for every library. Checked 2026-11-19."
+    },
+    {
+      "title": "How long does air-dry clay take to dry? (Crayola FAQ)",
+      "url": "https://www.crayola.com/faqs/how-long-does-it-take-for-air-dry-clay-to-dry-faq",
+      "note": "Crayola Air-Dry clay generally takes 24 hours to dry to the touch and 72 hours to dry completely. Checked 2026-11-19."
+    },
+    {
+      "title": "Crayola Air-Dry Clay, White (Crayola product page)",
+      "url": "https://www.crayola.com/en-ca/products/clay-and-modeling-compounds/crayola-air-dry-clay-white-575050",
+      "note": "Dries to a hard solid with no kiln or oven; paint when dry. Checked 2026-11-19."
+    },
+    {
+      "title": "Tennis courts (City of Bloomington, Indiana)",
+      "url": "https://bloomington.in.gov/node/823",
+      "note": "Example of free first-come public courts; other cities charge or take reservations. Checked 2026-11-19."
+    }
   ],
   "body": [
     {
@@ -70,21 +108,21 @@
       "n": 3,
       "title": "Reading (properly)",
       "hobby": "reading",
-      "note": "Reading counts as a hobby the minute you start doing it on purpose. Try fiction before bed instead of your phone, and get a library card so trying books costs nothing."
+      "note": "Reading counts as a hobby the minute you start doing it on purpose. Try fiction before bed instead of your phone, and get a library card (most public libraries issue them free to residents) so trying books costs nothing."
     },
     {
       "type": "item",
       "n": 4,
       "title": "Crossword puzzles",
       "hobby": "crossword-puzzles",
-      "note": "Start with Monday puzzles, which are the easiest of the week. A crossword and a coffee is a very respectable solo café plan."
+      "note": "Start with Monday puzzles: the New York Times crossword, for one, gets harder from Monday to Saturday. A crossword and a coffee is a very respectable solo café plan."
     },
     {
       "type": "item",
       "n": 5,
       "title": "Indoor gardening",
       "hobby": "indoor-gardening",
-      "note": "Five minutes of watering and fussing over a pothos is a gentle way to end a workday. Propagating cuttings in jars is weirdly addictive."
+      "note": "Five minutes of watering and fussing over a pothos is a gentle way to end a workday. Propagating pothos cuttings in jars of water (cut just below a node) is weirdly addictive."
     },
     {
       "type": "item",
@@ -109,7 +147,7 @@
     },
     {
       "type": "noSpend",
-      "text": "Library books, magazine collage and crosswords cut from a newspaper are all completely free. A no-spend hobby still counts."
+      "text": "Library books, magazine collage and newspaper crosswords can cost little or nothing. A no-spend hobby still counts."
     },
     {
       "type": "h2",
@@ -132,14 +170,14 @@
       "n": 10,
       "title": "Air-dry clay",
       "hobby": "air-dry-clay",
-      "note": "Pottery without a wheel or kiln. Make a ring dish tonight, paint it tomorrow, and keep it forever even if it's lopsided."
+      "note": "Pottery without a wheel or kiln. Make a ring dish tonight, let it dry (check your clay's label for timing), then paint it and keep it forever even if it's lopsided."
     },
     {
       "type": "item",
       "n": 11,
       "title": "Jewelry making",
       "hobby": "jewelry-making",
-      "note": "A beading kit and pliers will get you a dozen pairs of earrings. Making gifts for friends is half the fun."
+      "note": "A beading kit and pliers will get you started on earrings. Making gifts for friends is half the fun."
     },
     {
       "type": "item",
@@ -160,7 +198,7 @@
       "n": 14,
       "title": "Collage art",
       "hobby": "collage-art",
-      "note": "Old magazines, scissors and glue. It's free, fast, and you'll learn a lot about what you're drawn to."
+      "note": "Old magazines, scissors and glue. It can cost nothing, it's fast, and you'll learn a lot about what you're drawn to."
     },
     {
       "type": "item",
@@ -215,14 +253,14 @@
       "n": 19,
       "title": "Tennis",
       "hobby": "tennis",
-      "note": "Golden-hour rallies with a friend are a lovely way to move. You don't need to keep score for months. Start by rallying on a free public court."
+      "note": "Golden-hour rallies with a friend are a lovely way to move. You don't need to keep score for months. Many public courts are free to use, so start by rallying on one near you."
     },
     {
       "type": "item",
       "n": 20,
       "title": "Pickleball",
       "hobby": "pickleball",
-      "note": "Easier to pick up than tennis, and extremely social. Many parks run open play where beginners are welcome."
+      "note": "Easier to pick up than tennis, and extremely social. Ask your local parks department or rec center about open play and beginner sessions."
     },
     {
       "type": "item",
@@ -236,7 +274,7 @@
       "n": 22,
       "title": "Roller skating",
       "hobby": "roller-skating",
-      "note": "Expect wobbling. Expect laughing. Look for an adult skate night to ease in."
+      "note": "Expect wobbling. Expect laughing. Many rinks run adult skate nights, so check your local rink's schedule to ease in."
     },
     {
       "type": "item",
@@ -291,7 +329,7 @@
       "n": 28,
       "title": "Book clubs",
       "hobby": "book-clubs",
-      "note": "A recurring plan with built-in conversation. Libraries and bookstores often host free ones, or start your own with two friends."
+      "note": "A recurring plan with built-in conversation. Libraries often host free ones (check your local branch), or start your own with two friends."
     },
     {
       "type": "item",
@@ -319,7 +357,7 @@
       "n": 32,
       "title": "Pottery painting",
       "hobby": "pottery-painting",
-      "note": "A paint-your-own-pottery studio is a no-skill, very cute group plan, and you get a mug out of it."
+      "note": "A paint-your-own-pottery studio is a no-skill, very cute group plan, and you take home something you made."
     },
     {
       "type": "item",
@@ -353,7 +391,7 @@
       "n": 35,
       "title": "Museum exploring",
       "hobby": "museum-exploring",
-      "note": "Many museums have free or pay-what-you-wish hours. Visit just one room and stay with your favorite piece for ten minutes."
+      "note": "Some museums have free or pay-what-you-wish hours, so check your local museum's website. Visit just one room and stay with your favorite piece for ten minutes."
     },
     {
       "type": "h2",

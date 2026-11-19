@@ -4,8 +4,9 @@
   "titleItalic": "Your First Thing",
   "dek": "The hook, the yarn, the three stitches that unlock nearly everything, and a first project you can finish in a weekend.",
   "category": "creative-corner",
-  "status": "draft",
-  "publishedAt": "",
+  "status": "published",
+  "publishedAt": "2026-11-19",
+  "verifiedAt": "2026-11-19",
   "hero": "crochetHands",
   "searchIntent": "how to start crocheting / crochet for beginners / easy first crochet project",
   "angle": "A calm, practical start: choose forgiving supplies, learn the chain, single crochet and double crochet, and finish a flat dishcloth-style square before anything shaped",
@@ -15,13 +16,30 @@
     "embroidery"
   ],
   "productIds": [],
-  "sources": [],
+  "sources": [
+    {
+      "title": "Lion Brand: how to crochet, a step-by-step guide for beginners",
+      "url": "https://www.lionbrand.com/community/blog/how-to-crochet/",
+      "note": "Yarn company guide, checked 2026-11-19: slip knot, foundation chain and single crochet as the core three moves; medium-weight light or solid yarn shows stitches; use the hook size on the yarn label; practice swatches catch tension and counting errors; count stitches at the end of each row"
+    },
+    {
+      "title": "Craft Yarn Council: crochet abbreviations and U.S./U.K. term differences",
+      "url": "https://www.craftyarncouncil.com/standards/crochet-abbreviations",
+      "note": "Checked 2026-11-19: table shows US single crochet = UK double crochet, US double crochet = UK treble; US gauge = UK tension"
+    },
+    {
+      "title": "Craft Yarn Council: standard yarn weight system",
+      "url": "https://www.craftyarncouncil.com/standards/yarn-weight-system",
+      "note": "Checked 2026-11-19: yarn weight categories with recommended hook ranges; the label and your pattern are the practical guide"
+    }
+  ],
   "coworkChecks": [
-    "RESOLVED 2026-11-19: starter spend ($10-$25), 5-6 mm hook size, 'friendlier than knitting' comparison, US single = UK double equivalence - removed or reworded (no source); verification found no source for prices",
-    "OPEN: no verification covered technique - confirm beginner yarn guidance (smooth, light, medium-weight cotton or acrylic blend), 'follow the yarn label for hook size', 'one hook vs two needles', and yarn care-label advice against a craft or yarn-council source",
-    "OPEN: confirm descriptions of slip knot, chain, single crochet, double crochet and turning chain, and the counting-stitches tip, are accurate",
-    "OPEN: hand and wrist comfort wording ('stop if anything aches') is hedged but not source-checked",
-    "OPEN: no product records exist for crochet supplies; the later product pass must add verified hook and yarn types before any shopHobby block is attached"
+    "REMOVED 2026-11-19: starter spend and numeric hook size - no source; article defers to the yarn label",
+    "SUPPORTED 2026-11-19: slip knot, foundation chain and single crochet are the core beginner moves; skip the first chain from the hook; chain one to turn - lionbrand.com",
+    "SUPPORTED 2026-11-19: light or solid medium-weight yarn shows stitches; use the hook size on the yarn label; make a swatch; count stitches at the end of each row - lionbrand.com (fiber type claim removed)",
+    "SUPPORTED 2026-11-19: US single crochet is UK double crochet and US double crochet is UK treble - craftyarncouncil.com term differences table",
+    "CORRECT AS 2026-11-19: 'friendlier than knitting' and 'only one live loop' comparisons removed; stitch uses softened to 'often'; hand-comfort line is a general suggestion, not a health claim",
+    "NOTE 2026-11-19: no product ids are set on this article; the shopTheArticle block shows only catalog products tagged to this article (hooks and yarn), which match the topic"
   ],
   "related": [
     "how-to-start-embroidery",
@@ -35,7 +53,7 @@
     },
     {
       "type": "p",
-      "text": "Crochet uses a single hook where knitting uses two needles, so there is only one live loop to keep track of. The first row will be wonky. That's normal."
+      "text": "Crochet uses a single hook where knitting uses two needles. The first row will be wonky. That's normal."
     },
     {
       "type": "h2",
@@ -46,7 +64,7 @@
       "type": "whatYoullNeed",
       "essentials": [
         "One crochet hook, in the size your yarn label suggests",
-        "A ball of smooth, medium-weight (worsted) yarn in a light color, cotton or an acrylic blend",
+        "A ball of smooth, medium-weight (worsted) yarn in a light, solid color",
         "Scissors",
         "A blunt yarn needle for weaving in ends"
       ],
@@ -76,17 +94,17 @@
       "type": "item",
       "n": 2,
       "title": "Single crochet",
-      "note": "A short, tight stitch that makes dense fabric, good for dishcloths and bags."
+      "note": "A short stitch that makes dense fabric, and the one the first square below uses."
     },
     {
       "type": "item",
       "n": 3,
       "title": "Double crochet",
-      "note": "A taller, quicker stitch with a looser drape, good for blankets and scarves."
+      "note": "A taller stitch, so rows grow faster. Try it once single crochet feels comfortable."
     },
     {
       "type": "p",
-      "text": "A heads-up before you follow any pattern: US and UK crochet terms differ, so check which one a pattern uses."
+      "text": "A heads-up before you follow any pattern: US and UK crochet terms differ. What US patterns call single crochet is double crochet in UK terms, and US double crochet is UK treble, so check which one a pattern uses. A pattern that says \"sc\" is written in US terms."
     },
     {
       "type": "h2",
@@ -100,7 +118,7 @@
         "Chain 20, or about as wide as you want the square. Count as you go.",
         "Skip the first chain next to the hook, then work a single crochet into each chain along the row.",
         "Chain one, turn the work around, and work single crochet into each stitch of the previous row.",
-        "Count your stitches at the end of every row. If the number changes, the edges are drifting.",
+        "Count your stitches at the end of every row. If the number changes, the edges are drifting. A small practice swatch like this one catches tension and counting slips before they waste yarn.",
         "Repeat until it is roughly square, then cut the yarn and pull the tail through the last loop."
       ]
     },

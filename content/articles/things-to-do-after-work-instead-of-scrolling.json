@@ -6,6 +6,7 @@
   "category": "after-hours",
   "status": "published",
   "publishedAt": "2026-11-18",
+  "verifiedAt": "2026-11-19",
   "hero": "shopCreative",
   "searchIntent": "things to do after work / what to do in the evening instead of phone",
   "angle": "Weeknight-sized, budget-aware ideas grouped by mood, with time and cost for each",
@@ -23,6 +24,43 @@
     "junk-journals",
     "board-games",
     "air-dry-clay"
+  ],
+  "sources": [
+    {
+      "title": "Library Card Sign-up Month fact sheet (American Library Association)",
+      "url": "https://www.ala.org/news/library-card-sign-month-fact-sheet",
+      "note": "Cards are generally free for people in the library's service area; rules vary by library. Checked 2026-11-19."
+    },
+    {
+      "title": "Book clubs (Lake Agassiz Regional Library)",
+      "url": "https://larl.org/books-movies-more/book-clubs",
+      "note": "One library's page says all its clubs are free and open to all; an example, not a rule for every library. Checked 2026-11-19."
+    },
+    {
+      "title": "How long does air-dry clay take to dry? (Crayola FAQ)",
+      "url": "https://www.crayola.com/faqs/how-long-does-it-take-for-air-dry-clay-to-dry-faq",
+      "note": "Crayola Air-Dry clay generally takes 24 hours to dry to the touch and 72 hours to dry completely. Checked 2026-11-19."
+    },
+    {
+      "title": "Crayola Air-Dry Clay, White (Crayola product page)",
+      "url": "https://www.crayola.com/en-ca/products/clay-and-modeling-compounds/crayola-air-dry-clay-white-575050",
+      "note": "Dries to a hard solid with no kiln or oven; paint when dry. Checked 2026-11-19."
+    },
+    {
+      "title": "Tennis courts (City of Bloomington, Indiana)",
+      "url": "https://bloomington.in.gov/node/823",
+      "note": "Example of free first-come public courts; other cities charge or take reservations. Checked 2026-11-19."
+    },
+    {
+      "title": "Roller Rink Tickets (Oaks Park, Portland)",
+      "url": "https://www.oakspark.com/prices",
+      "note": "Example of a rink with recurring 18+ skate sessions; schedules vary by rink. Checked 2026-11-19."
+    },
+    {
+      "title": "Free Late-Night Wednesdays (Museum of the City of New York)",
+      "url": "https://www.mcny.org/node/8234",
+      "note": "Example of a museum with a free late evening each week; check your local museum. Checked 2026-11-19."
+    }
   ],
   "body": [
     {
@@ -49,7 +87,7 @@
       "hobby": "jigsaw-puzzles",
       "note": "Put on a podcast or an album and work on a jigsaw for half an hour. Your hands stay busy, your eyes get a break, and you can stop whenever you like.",
       "time": "30–60 min",
-      "cost": "Under $25",
+      "cost": "Low cost (or borrow one)",
       "company": "Solo or with a housemate"
     },
     {
@@ -59,7 +97,7 @@
       "hobby": "reading",
       "note": "Take your book somewhere that isn't your bed or your desk. A bath, a balcony, the floor in a patch of light. It makes reading feel like a little event.",
       "time": "30 min",
-      "cost": "Free",
+      "cost": "Often free (library books)",
       "company": "Solo"
     },
     {
@@ -69,7 +107,7 @@
       "hobby": "paint-by-numbers",
       "note": "No blank canvas, no decisions. Do just one color tonight and leave the rest for another evening.",
       "time": "30 min",
-      "cost": "Under $25",
+      "cost": "Low cost",
       "company": "Solo"
     },
     {
@@ -106,7 +144,7 @@
       "hobby": "watercolor-painting",
       "note": "Grab a small watercolor set and paint your mug, a lemon or the flowers on the table. Twenty minutes, three colors, no erasing.",
       "time": "20–40 min",
-      "cost": "Under $25 to start",
+      "cost": "Low cost to start",
       "company": "Solo"
     },
     {
@@ -114,9 +152,9 @@
       "n": 7,
       "title": "Make a clay ring dish",
       "hobby": "air-dry-clay",
-      "note": "Air-dry clay doesn't need a kiln. Roll a ball, press your thumb in, smooth the edges and leave it overnight. Paint it tomorrow.",
+      "note": "Air-dry clay doesn't need a kiln. Roll a ball, press your thumb in, smooth the edges and let it dry (about a day to the touch for Crayola's, longer for thick pieces; check your clay's label), then paint it.",
       "time": "45 min + drying",
-      "cost": "Under $25",
+      "cost": "Low cost",
       "company": "Solo or social"
     },
     {
@@ -126,7 +164,7 @@
       "hobby": "junk-journaling",
       "note": "Empty your bag. Receipts, tickets, the coffee sleeve. Glue three of them into a notebook with a line about your week.",
       "time": "30 min",
-      "cost": "Free–$20",
+      "cost": "Free to low cost",
       "company": "Solo"
     },
     {
@@ -176,16 +214,16 @@
       "n": 12,
       "title": "Play pickleball or tennis",
       "hobby": "pickleball",
-      "note": "Many public courts have lights and evening open play. New to either? Start with [pickleball for beginners](/journal/pickleball-for-beginners) or [tennis as an adult](/journal/how-to-start-playing-tennis-as-an-adult).",
+      "note": "Many public courts are free to use, and some have lights for evening play; check your parks department for hours and any booking fees. New to either? Start with [pickleball for beginners](/journal/pickleball-for-beginners) or [tennis as an adult](/journal/how-to-start-playing-tennis-as-an-adult).",
       "time": "60 min",
-      "cost": "Courts often free; gear optional",
+      "cost": "Many public courts are free; gear optional",
       "company": "With a friend"
     },
     {
       "type": "item",
       "n": 13,
       "title": "Take a drop-in class",
-      "note": "Pottery, life drawing, dance, yoga. Lots of studios offer single drop-in sessions so you can try without committing.",
+      "note": "Pottery, life drawing, dance, yoga. Many studios offer single drop-in sessions, so check their schedules and try without committing.",
       "time": "60–90 min",
       "cost": "Varies",
       "company": "Solo, then social"
@@ -195,7 +233,7 @@
       "n": 14,
       "title": "Go to an adult skate night",
       "hobby": "roller-skating",
-      "note": "Rinks often run adults-only evenings with great music. You will wobble. Everybody wobbles.",
+      "note": "Some rinks run adults-only evenings, so check your local rink's schedule. You will wobble. Everybody wobbles.",
       "time": "90 min",
       "cost": "Rental + entry",
       "company": "Solo or with friends"
@@ -231,7 +269,7 @@
       "hobby": "craft-nights",
       "note": "Not a dinner party. Just a table, snacks and a bracelet kit. Text two friends 'craft hour Thursday?', which is easier to say yes to than a big plan. [How to host a craft night](/journal/how-to-host-a-craft-night) has the plan.",
       "time": "90 min",
-      "cost": "Under $25",
+      "cost": "Low cost",
       "company": "With friends"
     },
     {
@@ -249,9 +287,9 @@
       "n": 19,
       "title": "Join a library book club",
       "hobby": "book-clubs",
-      "note": "Libraries and bookstores often host free monthly book clubs. Showing up once is a fine start.",
+      "note": "Libraries often host free book clubs (check your local branch), and some bookstores do too. Showing up once is a fine start.",
       "time": "90 min",
-      "cost": "Free",
+      "cost": "Often free",
       "company": "Group"
     },
     {
@@ -284,7 +322,7 @@
       "hobby": "calligraphy",
       "note": "A new knot, a calligraphy alphabet, three phrases in a language for your next trip. Small skills feel big.",
       "time": "20–30 min",
-      "cost": "Free",
+      "cost": "Often free",
       "company": "Solo"
     },
     {
@@ -292,7 +330,7 @@
       "n": 23,
       "title": "Go to a museum's late night",
       "hobby": "museum-exploring",
-      "note": "Some museums stay open late one evening a week, sometimes with music or lower prices. Check your local museum's calendar.",
+      "note": "Some museums stay open late one evening a week, sometimes with free or lower-priced entry. Check your local museum's calendar.",
       "time": "90 min",
       "cost": "Varies",
       "company": "Solo or with a friend"

@@ -1,0 +1,184 @@
+# Kit completion plan
+
+Prepared 2026-11-19. Research and planning only: no source file, `product-research.csv` or `kits.ts` was changed. Candidate rows for Cowork are in `docs/commerce/kit-candidates-for-cowork.csv` (not imported; ASIN and Amazon URL blank on purpose).
+
+Two separate questions are kept apart throughout:
+
+- **Listing verification** = does the Amazon listing match the brand and product? Only Cowork can do this on Amazon.com. Nothing here claims it.
+- **Quality research** = is this a sensible beginner product, according to sources other than Amazon reviews? Done here from manufacturer pages, art-supply retailers and buying guides. No ratings or prices are recorded.
+
+Evidence is of uneven strength. Many "best of" pages are affiliate roundups, and several manufacturer pages could not be fetched. Each row says how strong its evidence is. Where I could not find a decent source, the row says so instead of guessing.
+
+## 1. Gap map (computed from `src/data/kits.ts` and `docs/commerce/product-research.csv`)
+
+Method: for each kit slot, count CSV rows whose `kitSlots` contains `kit/slot`. Verified = `status=verified` and no `hold`. Held = verified but on editorial hold (not shown). Candidate = listing not yet checked (not shown). A kit renders as a full kit only with at least 4 filled slots (`MIN_KIT_PICKS`) including an essential; otherwise it is a "Where to start" card.
+
+Note: `docs/commerce/STARTER-KITS.md` is stale. It lists 15 kits and says 7 render. `kits.ts` now has 8 collection kits, and embroidery, crochet, flower-arranging, reading-journal and others were merged or dropped.
+
+| Kit | Slots (E/O/P) | Filled by verified | Essentials still open | Held | Candidate-only slots | Renders today as | Picks needed to render as kit |
+|---|---|---|---|---|---|---|---|
+| junk-journaling | 6 (2/3/1) | 4: journal, washi-tape, adhesive, pens | none | 4 products (washi x2, adhesive, paper) | paper (2 unbranded candidates) | Full kit | 0 |
+| watercolor | 6 (2/2/2) | 3: paints, brushes, paper | none | 0 | none | Where to start card | 1 more filled slot (palette is the only non-"probably own" slot left) |
+| air-dry-clay | 6 (2/3/1) | 4: clay, paint, brushes, sealer | none | 3 (Crayola bucket, tools, Apple Barrel paint) | none | Full kit | 0 |
+| mahjong-night | 4 (2/1/1) | 3: set, mat, card | none | 1 (white-tile set) | snack-bowls (probably own); card sleeve exists as an orphan candidate with no slot | Where to start card | 1 (a sleeve slot, or bowls) |
+| picnic | 4 (1/2/1) | 0 | blanket | 0 | blanket, cooler | Nothing / card of 0 | 4 (blanket, carrier, cooler, tableware), or stay a card |
+| reading-book-club | 13 (2/9/2) | 0 | journal, pens | 0 | journal, pens, reading-light, discussion-guide, snack-bowls, blanket, candle, tea, puzzle (9 candidates) | Nothing | 4 |
+| pottery-paint-night | 10 (5/4/1) | 2: canvas, brushes | paint, main-project, shared-tools | 0 | main-project (bracelet kit), shared-tools (scissors); brushes has a 2nd candidate | Where to start card | 2 (paint plus one more), and the essentials problem below |
+| racquet-sports | 7 (4/3/0) | 0 | paddles, pickleballs, racquet, tennis-balls | 0 | all 4 essentials (unbranded or no independent source) | Nothing | 4 |
+
+Slot counts by need: E = essential, O = optional, P = probably-own. `court-shoes` is optional.
+
+### Slot-by-slot detail (V verified, H held, C candidate)
+
+- **junk-journaling**: journal V (PAPERAGE, Stationery Island); washi-tape V (Mr. Pen 21, Knaid slim) H (Knaid grid, Mr. Pen 10); adhesive V (Scotch glue stick, Scotch 6061 runner) H (Secopad); scissors none (probably own); paper H (Knaid 200 ephemera), C (2 unbranded vintage paper packs); pens V (Sakura Pigma Micron 8).
+- **watercolor**: paints V (Artecho 48); brushes V (Transon 8, Fenorkey 12); paper V (Arches 140 lb pad, Hapikalor); palette, masking-tape, water-jar: none.
+- **air-dry-clay**: clay V (UHAPEER 3 lb kit) H (Crayola bucket, audience fit); tools H (LINPHCEY, kids); paint V (Shuttle Art 15 tubes) H (Apple Barrel); brushes V (Benicci 12); sealer V (Mod Podge spray); work-surface none.
+- **mahjong-night**: set V (TIASUSAN, MUTEX) H (Jongyance); mat V (GUSTARIA, Plusvivo felt cover); card V (NMJL 2026 large and standard); snack-bowls C (DOWAN).
+- **picnic**: blanket C (ZAZE); cooler C (Maelstrom); carrier, tableware none.
+- **reading-book-club**: C only: Zicoto journal, Paper Mate InkJoy pens, Gritin book light, TableTopics cards, DOWAN bowls, Bedsure throw, Nimiko flameless candles, Celestial Seasonings tea, Prime Time puzzle. bookmark, highlighters, club-notebook, mug: none.
+- **pottery-paint-night**: canvas V (ESRICH 10-pack, 5-pack); brushes V (Benicci) C (Auhoahsil); paint none; main-project C (PAXCOO bracelet kit); shared-tools C (iBayam scissors); palette, aprons, easel, table-cover, extra-supplies none.
+- **racquet-sports**: paddles C (niupipo set of 2 with balls); pickleballs C (cyclotron 6); racquet C (HIRALIY 27 in); tennis-balls C (Penn Championship Extra Duty); bag, racquet-bag, court-shoes none.
+
+### Totals
+
+- 8 kits, 56 slots in `kits.ts`. **16 slots are filled by verified, un-held products across 5 kits** (junk-journaling 4, air-dry-clay 4, watercolor 3, mahjong-night 3, pottery-paint-night 2). Three kits (picnic, reading-book-club, racquet-sports) have none.
+- Full kits today: 2 (junk-journaling, air-dry-clay). Cards today: watercolor, mahjong-night, pottery-paint-night. Nothing renders: picnic, reading-book-club, racquet-sports.
+- **10 essential slots are open**: picnic 1, reading-book-club 2, pottery-paint-night 3, racquet-sports 4.
+- Held products: 8 (junk-journaling 4, air-dry-clay 3, mahjong 1).
+
+### Hobbies from published articles that have no kit and few or no verified products
+
+The article shop blocks (`shopHobby`, `shopTheArticle`, `starterKit`) list `productIds` that are category ids resolved from `src/data/products.ts` (search-style entries), not catalog ASINs. Verified catalog products by hobby (from the CSV):
+
+| Hobby | Published/draft buying guide | Verified products | Gap |
+|---|---|---|---|
+| junk-journaling | published x2 (supplies guide, how-to-start) | 12 | none |
+| air-dry-clay | draft how-to-start; also in 5 published roundups | 9 | none material (clay choice is kid-marketed or a kit) |
+| watercolor-painting | draft how-to; published roundups | 5 | palette; paints quality unresearched |
+| mahjong | published how-to-host | 7 | none for essentials |
+| embroidery | draft how-to; published roundups | 3 (2 complete kits, scissors) | no hoop, floss, needles, fabric; no kit in kits.ts |
+| crochet | draft how-to; published roundups | 2 yarns, 0 hooks | **hook missing** (both hook sets are unbranded candidates) |
+| pickleball / tennis | published x3 | 0 | all essentials |
+| pottery-painting / craft-nights / paint-by-numbers | published paint night, craft night | canvas x2, brushes | paint; craft-night project |
+| reading / book-clubs | published x3 | 0 | everything |
+| picnicking | published picnic guide | 0 | blanket |
+| flower-arranging | published (no shop block, 0 productIds) | 0 (3 candidates) | not tied to a shop block; no kit |
+
+## 2. Per-slot research (1 starter + 1 alternative; full detail in the CSV)
+
+Every row: ASIN and Amazon URL blank. "Cowork search" phrases are in section 4.
+
+### 2.1 Racquet sports (4 essentials, all researched)
+
+| Slot | Starter | Alternative | Quality evidence | Strength |
+|---|---|---|---|---|
+| paddles | HEAD Gravity Tour carbon fiber pickleball paddle | Selkirk SLK Dauntless Widebody | Pickleball Union beginner guide (lab figures from JustPaddles Paddle Lab plus a 3,600-response owner survey): Gravity Tour "best budget", lightest-swinging, but low on spin and HEAD owner satisfaction below average; Dauntless widebody has a large sweet spot but weak consistency. Pickleheads (tests many paddles) picks different paddles, so there is no consensus pick. | Medium. Both guides earn affiliate commissions. |
+| pickleballs | Franklin X-40 outdoor pickleballs | none researched (existing candidate: cyclotron 6-pack, no independent source found) | Retailer listings say X-40 is USA Pickleball approved and a US Open ball; USA Pickleball's list page would not load for me. | Low to medium. Confirm on USA Pickleball's equipment list. |
+| tennis racquet | HEAD Ti.S6 (prestrung) | Babolat Boost (Aero or Drive; prestrung) | Tennis Warehouse guide names Ti.S6 "all-around value, strung, easy to swing" and Boost "more control, strung". Search roundups also name Wilson Clash and Wilson Tour Slam. | Medium (Tennis Warehouse is a specialist retailer). |
+| tennis balls | Penn Championship Extra Duty (existing candidate) | none researched | Retailer pages describe it as official ball of USTA League Tennis and extra-duty felt for hard courts; Penn's own page not found. | Low to medium. |
+
+Existing candidates niupipo (paddle set of 2 with balls) and HIRALIY (27 in racquet with bag): no independent quality source found. Do not use as starters unless Cowork finds one.
+
+Limitations: pickleball paddles and tennis racquets are personal-fit items; the dek already says borrow or rent first. I found no cited source for protective eyewear or injury advice, so none is stated.
+
+### 2.2 Pottery and paint night
+
+| Slot | Starter | Alternative | Quality evidence |
+|---|---|---|---|
+| paint | Liquitex BASICS acrylic paint (small tube set) | Reuse already-verified Shuttle Art 15 tubes (add a kitSlot; needs quality sources first), or Winsor & Newton Galeria acrylic set | Roundup consensus (My Modern Met, Acrylic Painting School review) names Liquitex Basics the top beginner student-grade acrylic, Galeria and Blick Studio as budget alternatives. Blick describes Basics as ACMI-certified (ASTM D4236). Liquitex safety page says Basics keeps the AP seal outside the EU and carries different warnings in EU packaging. |
+| 4th pick | Not researched (palette, disposable palette pad, or table cover). Round 2. | | |
+
+Structural problem: the kit has three essentials (`main-project`, `shared-tools`, plus paint) that belong to a craft night, not a paint night, and the only candidate for `main-project` is a friendship-bracelet kit. A kit cannot honestly be "complete" while essential slots stay empty.
+
+### 2.3 Watercolor (paints already filled; one more slot needed)
+
+| Slot | Starter | Alternative | Quality evidence |
+|---|---|---|---|
+| paints | Winsor & Newton Cotman watercolour pocket set (12 half pans with travel brush) | Sakura Koi water colors pocket sketch box (12 colors; exact set name to confirm) | Blick describes Cotman as a student-grade range for beginners and Koi as pigment-based student-grade cakes. W&N's own beginner guide recommends the 16-colour Deluxe Sketchers' Pocket Box. A travel-set review notes Koi's dark tones are less transparent. Limits: student grade has less pigment; W&N page carries a health note (MBIT, IPBC); the W&N US page showed sold out when I looked. |
+| palette | Not researched | | Round 2, or accept Where to start. |
+
+Existing verified paint is Artecho 48-color (listing verified, quality not researched); the kit note tells readers to start with three colors, so a small researched set suits the note better.
+
+### 2.4 Crochet hook (hobby-level, no kit in kits.ts)
+
+| Starter | Alternative | Quality evidence |
+|---|---|---|
+| Clover Amour crochet hook, 5.0 mm (H-8) | Susan Bates Silvalume aluminum hook, 5.0 mm (H-8) | Yarn.com's guide names Amour "best overall" (retailer, sells them) and a soft-grip aluminum hook as budget pick; crochet blogs call Amour the comfort favorite and Susan Bates the budget classic. Clover's own page confirms Amour as an ergonomic range from 2.0 mm up (sizes K and above are plastic per a retailer). |
+
+Limits: sources are affiliate or retailer pages; none is the Craft Yarn Council, so the draft article's resolved check ("hook size removed, no source") still stands. Blogs suggest 5.0 or 5.5 mm for worsted, but the safest rule is to read the verified yarn label. The verified Red Heart yarn is plain white, which several guides say is harder to see stitches in; the verified Caron gray is a lighter-contrast alternative.
+
+### 2.5 Mahjong 4th pick
+
+Card sleeve already exists as candidate `protective-sleeve-large-mahjong-card-4-pack` (unbranded, ASIN in `product-research.csv`). It needs an owner decision to add a `mahjong-night/card-sleeve` slot and a Cowork size check against the verified large NMJL card. No independent quality source exists or is needed beyond fit. Do not pad with the snack bowls ("probably own").
+
+### 2.6 Air-dry clay (optional improvement, no kit change needed)
+
+Alternative to the kit-marketed UHAPEER: DAS Air-Hardening Modeling Clay (Bob Vila names it best overall; consumer guides say it is the most consistently recommended adult pick; one guide notes it looks dry and fibrous when new; all air-dry clays shrink and crack in thick pieces). Optional.
+
+### 2.7 Reading and book club (thin evidence)
+
+- Journals: Book Riot's roundup names almost no brands and says it reflects the author's picks. Aggregator pages repeatedly mention Kunitsa Co. and Clever Fox, but I could not confirm exact product names or find a trustworthy tested source. Both are rows in the CSV with quality marked **low**.
+- Pens: reuse the verified Sakura Pigma Micron 8 (archival ink, already verified) by adding a kitSlot rather than verifying Paper Mate.
+- Discussion cards: TableTopics candidate exists; no independent source found.
+- Book light, throw, candle, tea, puzzle: not researched. If a candle ever fills a slot, check heat-safety wording first (flameless Nimiko candle is the candidate).
+
+### 2.8 Picnic
+
+I could not reach Wirecutter or a comparable tested source. The existing ZAZE candidate has one unnamed hands-on review in a search result. Not enough to recommend. A blanket with waterproof backing is the only essential.
+
+## 3. Recommendation
+
+**Complete soon, honestly:**
+
+1. junk-journaling: already a full kit (journal, washi, adhesive, pens). Optional: scissors and paper stay unfilled on purpose.
+2. air-dry-clay: already a full kit. Optional DAS row if the owner wants a non-kit clay.
+3. mahjong-night: all essentials are filled; needs one more pick only because of the 4-pick rule. Add a sleeve slot and verify the existing candidate, or leave as a card (which is also honest).
+4. racquet-sports: complete with 4 verified products (researched). Keep it merged; each pick is labelled for its sport.
+
+**Keep as "Where to start" cards until round-2 research:**
+
+5. watercolor: needs one more researched slot (palette). Swap the primary paint for a small researched set.
+6. pottery-paint-night: fill paint, then one more. Recommend rename to **Paint night kit**, remove pottery-painting and craft-nights from the kit, and make `main-project` and `shared-tools` optional or delete them. The craft-night article can use its own project suggestions instead of a kit.
+7. reading-book-club: evidence too thin for essentials; keep the single journal or pen pick as a card.
+8. picnic: stay a card (blanket only, once researched). Consider deleting `carrier` and `tableware` slots, since a kit of four would need two unresearched filler products.
+
+**Not kits (do not re-add):** embroidery, crochet, flower-arranging. They already have no kit in `kits.ts`; embroidery is served by verified complete kits; crochet needs only the hook.
+
+**Doc cleanup:** update `STARTER-KITS.md` to the 8-kit reality.
+
+## 4. Cowork must verify (listing only; do not infer quality from Amazon)
+
+For each: open Amazon.com, search the phrase, confirm brand and product match exactly, record ASIN, set `amazonUrl` to `https://www.amazon.com/dp/<ASIN>`, record variant/size/count. No prices, no ratings, no affiliate tag.
+
+- [ ] `HEAD Gravity Tour pickleball paddle carbon fiber` (check core thickness/weight variant; check USA Pickleball approved list)
+- [ ] `Selkirk SLK Dauntless Widebody pickleball paddle`
+- [ ] `Franklin X-40 outdoor pickleballs` (choose a 3 or 6 pack; check the USA Pickleball approved list)
+- [ ] `HEAD Ti.S6 tennis racquet prestrung` (grip size variant; confirm prestrung)
+- [ ] `Babolat Boost Aero tennis racquet` (alternative; or Boost Drive; confirm strung)
+- [ ] `Penn Championship Extra Duty tennis balls` (existing candidate B0002JZEL4: confirm brand, extra-duty, can count)
+- [ ] `Liquitex BASICS acrylic paint set 12` (confirm 12-color Liquitex-brand set, tube size)
+- [ ] `Winsor & Newton Galeria acrylic 10 colour set` (alternative) or confirm reuse of Shuttle Art
+- [ ] `Winsor & Newton Cotman watercolour sketchers pocket set 12 half pans` (confirm it is Cotman, 12 pans, with brush; W&N US page was sold out)
+- [ ] `Sakura Koi water colors pocket field sketch box 12` (confirm exact set name)
+- [ ] `Clover Amour crochet hook 5.0 mm H-8` (single hook; confirm size variant)
+- [ ] `Susan Bates Silvalume crochet hook H-8 5.0 mm` (alternative; confirm size)
+- [ ] `protective sleeve large mahjong card 4 pack` (existing candidate B0FRSSG8FZ): confirm it fits the verified NMJL large card
+- [ ] Optional: `DAS Air Hardening Modeling Clay` (clay alternative)
+- [ ] Optional, low evidence: `Kunitsa Co reading journal`, `Clever Fox reading journal`, `TableTopics Book Club conversation cards`
+
+Cowork should also record, for each verified listing, whether the listing is a single item or a bundle and any pack count, and should not copy any claim from the listing into the quality columns.
+
+## 5. Open research (round 2)
+
+1. Watercolor palette or other 4th slot (source needed).
+2. Paint night 4th slot (disposable palette pad, easel or table cover; source needed).
+3. Picnic blanket from a tested source (Wirecutter was not reachable).
+4. Reading journal brand and exact product from a source that names products.
+5. Manufacturer pages I could not fetch: Penn, HEAD, Franklin, Clover USA, Sakura Koi, W&N US product page. URLs in the CSV marked "to confirm" are domain-level or search-found and have not been opened by me.
+6. USA Pickleball approval for the chosen paddle and ball, and USTA/ITF status of Penn, from the official lists.
+
+## 6. Minimum new verified products
+
+- Fully researched and enough to complete 3 more kits (mahjong 1 existing candidate, racquet-sports 4, plus crochet hook 1): **6 listings**, 4 of which are new searches (mahjong sleeve and Penn balls already exist as candidates).
+- Adding watercolor and paint night (4th slot each, plus paint reuse of Shuttle Art): **8 listings**.
+- If the owner also wants reading-book-club (journal, discussion cards, one more) and picnic (blanket): **12 listings**, but I would not stretch to this without better evidence.

@@ -6,6 +6,7 @@
   "category": "creative-corner",
   "status": "published",
   "publishedAt": "2026-11-18",
+  "verifiedAt": "2026-11-19",
   "hero": "potteryNight",
   "searchIntent": "creative hobbies at home for adults",
   "angle": "Small-apartment friendly, grouped by material, with mess level and what to buy first",
@@ -24,6 +25,23 @@
     "junk-journals",
     "friendship-bracelet-kits",
     "washi-tape"
+  ],
+  "sources": [
+    {
+      "title": "How long does air-dry clay take to dry? (Crayola FAQ)",
+      "url": "https://www.crayola.com/faqs/how-long-does-it-take-for-air-dry-clay-to-dry-faq",
+      "note": "Crayola Air-Dry clay generally takes 24 hours to dry to the touch and 72 hours to dry completely. Checked 2026-11-19."
+    },
+    {
+      "title": "Crayola Air-Dry Clay, White (Crayola product page)",
+      "url": "https://www.crayola.com/en-ca/products/clay-and-modeling-compounds/crayola-air-dry-clay-white-575050",
+      "note": "Dries to a hard solid with no kiln or oven; paint when dry. Checked 2026-11-19."
+    },
+    {
+      "title": "Propagating houseplants (University of Illinois Extension)",
+      "url": "https://extension.illinois.edu/blogs/good-growing/2025-02-21-winter-gardening-propagating-houseplants-beat-winter-blues",
+      "note": "Pothos can be rooted in water; trim the cut near a node. Checked 2026-11-19."
+    }
   ],
   "body": [
     {
@@ -62,7 +80,7 @@
       "n": 3,
       "title": "Collage",
       "hobby": "collage-art",
-      "note": "Cut up old magazines and arrange images into postcards or a framed piece. It costs nothing and is surprisingly revealing about your taste."
+      "note": "Cut up old magazines and arrange images into postcards or a framed piece. It can cost nothing and is surprisingly revealing about your taste."
     },
     {
       "type": "item",
@@ -80,7 +98,7 @@
     },
     {
       "type": "noSpend",
-      "text": "Paper hobbies are the easiest to start for free: old magazines, catalogs, receipts, gift wrap and an old notebook will carry you for weeks."
+      "text": "Paper hobbies are the easiest to start for little or nothing: old magazines, catalogs, receipts, gift wrap and an old notebook can carry you for weeks."
     },
     {
       "type": "h2",
@@ -130,14 +148,14 @@
       "n": 9,
       "title": "Air-dry clay",
       "hobby": "air-dry-clay",
-      "note": "No wheel or kiln required. Ring dishes, incense holders and tiny vases air-dry at home, then you can paint them. Check your clay's label before sealing, and keep finished pieces for display."
+      "note": "No wheel or kiln required. Ring dishes, trinket trays and small ornaments air-dry at home (about a day to the touch for Crayola's, longer for thick pieces; check the label), then you can paint them. Keep finished pieces for display, not for food, drink or water."
     },
     {
       "type": "item",
       "n": 10,
       "title": "At-home pottery painting",
       "hobby": "pottery-painting",
-      "note": "Get a ceramic painting kit and follow its instructions. Check whether the finished piece is decorative only before it goes near food or drink."
+      "note": "Get a ceramic painting kit and follow its instructions. Unless the kit says the finished piece is food safe, keep it for display rather than food or drink."
     },
     {
       "type": "item",
@@ -240,7 +258,7 @@
       "n": 20,
       "title": "Indoor gardening and propagation",
       "hobby": "indoor-gardening",
-      "note": "A row of glass jars with pothos cuttings on a windowsill is a creative project and living decor."
+      "note": "A row of glass jars with pothos cuttings (cut just below a node) on a windowsill is a creative project and living decor."
     },
     {
       "type": "item",
