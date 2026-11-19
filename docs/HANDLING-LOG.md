@@ -1,0 +1,75 @@
+# How things were handled: Plans Past Five (running log)
+
+Purpose: a plain record, kept in GitHub, of who did what, what was decided, what went wrong and how it was fixed, so the owner, Cowork, a buyer or an auditor can see how the work was handled. Newest entries at the bottom of each section. Claude Code maintains this file; Cowork adds its own entries in `docs/cowork/COWORK-PROGRESS.md` and Claude Code folds them in here. No secrets, credentials or personal data belong in this file.
+
+Last updated: 2026-11-19 (Claude Code). Branch: `claude/vibrant-dirac-amdf7r`. `main` is older and is updated only at a tested release commit.
+
+## 1. Who does what
+
+| Party | Does | Does NOT do |
+|---|---|---|
+| Owner | Purchases (domain, mailbox), logins and 2FA, approvals, legal acceptance, listing decisions | Day-to-day code or research |
+| Claude Code (with parallel sub-agents) | All repository work: code, content files, tests, docs, importer, build and release, tracker updates | Live web accounts, purchases, anything needing the owner's logins, Amazon page reading |
+| Cowork (browser agent, owner's logins) | Live research and verification (Amazon listings, licences, fees), account setup, CMS and hosting tests, live QA, screenshots | Editing site code; purchasing; accepting agreements; publishing |
+
+Working method: independent tasks ran in parallel with one owner per file area (articles, shop and commerce, planner and tools, importer and tooling, docs). Research agents wrote reports and never edited shared implementation files. A coordinating step merged results, ran the full gates (eslint, tsc, vitest, production build) and committed. Cowork worked on separate branches/files to avoid collisions.
+
+## 2. Standing decisions (owner, with dates)
+
+- 2026-11-19 No newsletter, no accounts, no database, no paid advertising, no fictional authors or experiences or testing.
+- 2026-11-19 Amazon Associates only; ordinary product-specific Amazon links; affiliate tracking NOT active; master affiliate accounts excluded from the sale.
+- 2026-11-19 Removed by decision: printables, premium digital products, calendar export (.ics).
+- 2026-11-19 AI-use disclosure lives only on the Editorial Standards page (a neutral "How we make this" link points there).
+- 2026-11-19 No named publisher details will be supplied; the "Published by" line is config-driven and blank for the buyer to set.
+- 2026-11-19 Scope frozen: no new tools, major redesign, extra articles or unsupported Amazon cart features.
+- 2026-11-19 Domain planspastfive.com registered (Namecheap order 220011258, $12.28) and Private Email purchased ($14.88); both auto-renew OFF; total $27.16. Not yet connected to hosting; mailbox untested.
+- Deploy budget: Netlify free plan (300 credits a month, about 15 per production deploy). A build runs only when the latest commit message carries the release marker.
+
+## 3. Timeline of the work (summary)
+
+1. Repository review and tracker setup (Google Sheet "Website Flipping Tracker"): site tab, Overview, Checklist, Buyer Handoff, Accounts, Log kept in sync.
+2. Turnkey build-out: planner and quiz rewrite, tools, shop system, affiliate registry, trust pages, 88 Pinterest assets, buyer docs.
+3. Customer and buyer review rounds (simulated AI personas, never real customer data): round 1 and 2 informed redesigns; round 3 and the final inspection produced the fix lists below.
+4. Marketing review across every page, then implementation by area owner.
+5. Pages CMS data files, validator and publish gate; Netlify configuration with a deploy marker; Cowork created the Netlify project (private).
+6. Final inspection: five customer and three buyer reviews, technical QA, simulated buyer takeover, commercial audit, asset-rights audit, operating-cost and maintenance measurement, marketplace research.
+7. Remediation: five drafts verified and published, four originals source-checked, export links separated from affiliate links, CMS publish workflow fixed, kits made honest, planner defects fixed, security triage, performance investigation, editorial cleanup, importer safeguards, analytics loader.
+8. Cowork handover pack consolidated into one file (`docs/cowork/COWORK-FINAL-PACK.md`) plus a run-now prompt.
+
+## 4. Incidents and how each was handled
+
+| Date | What happened | Cause | Fix and safeguard |
+|---|---|---|---|
+| 2026-11-19 | Invisible button text on a cherry callout | A prose link style overrode utility colours inside `.not-prose` blocks | CSS selector scoped away from `.not-prose`; contrast test added; sweep of all pages |
+| 2026-11-19 | Four Netlify production deploys in three minutes | Production branch pointed at the working branch and every WIP push built | Deploy-marker rule in `netlify.toml` (only commits carrying the marker build); documented; credit budget about 8 a month |
+| 2026-11-19 | Product catalog overwritten with an empty catalog | A tool ran the importer with `--help`, which wrote the (empty) default | Restored byte-for-byte from git; importer now refuses to write without a file, never writes an empty file, refuses a more than 30% shrink without `--force`, writes via temp file and rename; tests added |
+| 2026-11-19 | Product spreadsheet rejected by the importer more than once | Cowork rows used an invalid `role` value (`alternative`), a stale kit name and price wording | Rows corrected; allowed roles written into the template and the Cowork pack; one canonical file (`docs/commerce/product-research.csv`); stale spreadsheet removed |
+| 2026-11-19 | Wrong products shown in two articles (canvases under conversation cards) | Products tagged to a hobby and collection used by other articles | Tags corrected; product and heading checks added to the commercial audit |
+| 2026-11-19 | Internal verification notes shipped in the public JavaScript | Generated bundles included `coworkChecks` and hold reasons | `coworkChecks` removed from the public bundle; hold reasons no longer written to the generated catalog; test scans rendered cards for internal phrases |
+| 2026-11-19 | Push collisions with Cowork on the shared branch | Both parties pushed to the same branch | Merged without force; product CSV merged field by field; Cowork now uses `cowork/<task>` branches only |
+| 2026-11-19 | Test failures during parallel editing | Several agents edited related files at once | File ownership per agent; failures rechecked on the integrated tree before any merge to `main` |
+| 2026-11-19 | Local lint "hang" reported in a scratch copy | Scratch-copy artefact; real repo lints in about 6 seconds | Noted; no change |
+
+## 5. How content and products were handled
+
+- Articles are data files (`content/articles/*.json`), validated at build time (`scripts/build-content.mjs`). Published articles must have sources, a `verifiedAt` date and resolved checks; drafts are excluded from the public bundle.
+- Five previously held drafts were verified against sources read directly and published on 2026-11-19; weaker claims were softened and listed for Cowork (`docs/content/verification-final/OPEN-CLAIMS-FOR-COWORK.md`).
+- "Verified" for a product means the Amazon listing matched brand and product. It does not mean quality was researched and is not proof the listing is live today; Cowork re-verifies listings. Candidates are never styled as verified. Kits render as complete only with at least four verified picks and every essential verified.
+- No prices, ratings or review counts are shown. Product photos appear only where rights are recorded (none yet); Amazon images are never stored.
+- Copied, printed and exported shopping lists contain no Amazon URLs (separate export resolver, tested with affiliate enabled and disabled).
+
+## 6. What was independently tested vs not
+
+Tested by agents (automated or browser): full test suite, typecheck, lint, production build, 98 sitemap pages at three widths, tool scenario matrices, saved-data import and corrupted storage, simulated buyer takeover from a clean export, security triage in a scratch copy.
+Not tested or only partly: real Pages CMS login workflow, live deployment and headers, live Amazon listings, live licence terms, real-user behaviour (all reviewer scores are simulated sentiment, not customer data), GA4 with a real property, real mailbox.
+
+## 6a. Scores in context (simulated)
+
+Reviewer scores moved only a little between rounds on trust, product desirability, and purchase willingness, because the limiting factors are real-world facts (no live site, no product photos, no working contact address yet, anonymous byline by decision, AI-generated images with unverified transfer terms). They are not marketplace demand and were not adjusted.
+
+## 7. Entries added after this file was created
+
+(Claude Code appends dated lines here as work completes; Cowork's progress is in `docs/cowork/COWORK-PROGRESS.md`.)
+
+- 2026-11-19: Domain registered; tracker updated (site tab, Overview, Buyer Handoff, Checklist, Accounts, Log).
+- 2026-11-19: Cowork consolidated pack and run-now prompt written; optional 30-day activation planning started (nothing activated).

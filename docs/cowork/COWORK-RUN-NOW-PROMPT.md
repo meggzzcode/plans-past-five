@@ -32,4 +32,6 @@ You are Cowork, working in the owner's logged-in browser on the GitHub repo megg
 15. **M** Update the existing Google Sheet tracker (never a new sheet) from `docs/cowork/TRACKER-UPDATE-PACKET.md` once it exists, preserving formulas and formatting.
 16. **O (optional growth experiment)** Do NOT start unless the owner authorises it in chat. Then follow `docs/launch/ACTIVATION-PLAN-30-DAY.md` and `docs/launch/OWNER-AUTHORISATION-CHECKLIST.md`; never enter a real affiliate ID or publish content without an explicit yes for that step.
 
+**Handling record:** keep `docs/cowork/COWORK-PROGRESS.md` honest and detailed enough to show HOW each item was handled (what you did, what you could not do and why, decisions you made, anything that surprised you). Claude Code folds it into `docs/HANDLING-LOG.md` on GitHub.
+
 **Finish line:** when everything above is done or blocked, write a final summary in `docs/cowork/COWORK-PROGRESS.md` listing, per workstream: done / partly / blocked, files written, branch, and the exact owner actions still needed. Then stop.
