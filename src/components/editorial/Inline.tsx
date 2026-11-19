@@ -9,6 +9,9 @@ import { track } from "@/lib/track";
  * A product mention links to its Amazon page only when that catalog product is verified; otherwise it
  * shows the plain label, so unverified products never become links.
  */
+/** Inline links carry their own affordance so they read as links inside callouts (.not-prose) too. */
+export const inlineLinkClass = "text-cherry underline underline-offset-[3px]";
+
 export function Inline({ text }: { text: string }) {
   const parts = text.split(
     /(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\)|\{\{product:[a-z0-9-]+\|[^}]+\}\})/g,
@@ -27,6 +30,7 @@ export function Inline({ text }: { text: string }) {
             <a
               key={i}
               href={link.href}
+              className={inlineLinkClass}
               target="_blank"
               rel={link.sponsored ? "sponsored noopener" : "noopener"}
               onClick={() =>
@@ -51,11 +55,11 @@ export function Inline({ text }: { text: string }) {
         if (l) {
           const href = l[2] ?? "/";
           return href.startsWith("/") ? (
-            <Link key={i} to={href}>
+            <Link key={i} to={href} className={inlineLinkClass}>
               {l[1]}
             </Link>
           ) : (
-            <a key={i} href={href} rel="noopener">
+            <a key={i} href={href} rel="noopener" className={inlineLinkClass}>
               {l[1]}
             </a>
           );

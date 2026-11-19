@@ -179,7 +179,12 @@ function ArticlePage() {
               <ul className="mt-3 space-y-2">
                 {sources.map((s) => (
                   <li key={s.url}>
-                    <a href={s.url} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={s.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-cherry underline underline-offset-[3px]"
+                    >
                       {s.title}
                     </a>
                     {s.note ? <span className="text-muted-foreground"> ({s.note})</span> : null}

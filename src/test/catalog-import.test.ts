@@ -187,7 +187,7 @@ describe("spreadsheet export quirks", () => {
   it("flags a row with more cells than the header (an unquoted comma)", () => {
     const text = csv([good]).replace("A set of washi tape rolls.", "A set, of washi tape rolls.");
     const r = importCsv(text, known, NOW);
-    expect(r.errors.join("\n")).toMatch(/line 2: has \d+ cells but the header has 27 columns/);
+    expect(r.errors.join("\n")).toMatch(/line 2: has \d+ cells but the header has \d+ columns/);
   });
   it("flags spreadsheet-mangled dates, ASINs and invisible characters", () => {
     const r = run([

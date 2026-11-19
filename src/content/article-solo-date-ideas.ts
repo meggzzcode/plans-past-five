@@ -109,6 +109,17 @@ export const articleSoloDateIdeas: Article = {
       type: "p",
       text: "Most of the discomfort is an imagined audience: you picture a room full of people noticing you're alone, while they're looking at their own plate, phone or conversation. Three small habits help. Bring something for your hands, like a book, a notebook or a sketchbook. Choose a spot with a natural place for one, like a counter or a window ledge. And decide in advance how long you're staying, so there's an end in sight.",
     },
+    { type: "h2", text: "Not sure where to start?", id: "chooser" },
+    {
+      type: "list",
+      items: [
+        "**First time out alone:** the coffee shop and a chapter (9), or the library wander (1). Both are short, indoors and easy to leave.",
+        "**Only an hour free:** a golden-hour walk (2), a bookstore browse (7) or a fresh-flower stop (15).",
+        "**Want something to show for it:** the film walk (19), the junk-journal page (20) or the pocket watercolor outing (17).",
+        "**Need to be outside:** the birdwatching bench (24), a lakeside sit (30) or a rainy-day walk (29), which is better than it sounds.",
+        "**Feeling brave:** the museum visit (22) or the paddle rental (26).",
+      ],
+    },
     { type: "h2", text: "Free and wandering", id: "free" },
     it(
       1,

@@ -233,7 +233,7 @@ describe("selection", () => {
     expect(sel.optional.map((p) => p.id)).toEqual(["test-fixture-pens"]);
     expect(sel.all).toHaveLength(2);
   });
-  it("renders essentials before optional upgrades", async () => {
+  it("renders the single best buy, then essentials, then optional extras", async () => {
     await show(
       <ShopTheArticle
         article="test-article"
@@ -241,23 +241,89 @@ describe("selection", () => {
       />,
     );
     const heads = [...document.querySelectorAll("h4")].map((h) => h.textContent);
-    expect(heads).toEqual(["Start with these", "Optional upgrades"]);
+    expect(heads).toEqual(["If you only buy one thing", "Optional extras"]);
   });
 });
 
-describe("seller wording", () => {
-  it("says Available on Amazon for available products", async () => {
-    await show(<ProductCard product={base} placement="test" />);
-    expect(document.body.textContent).toContain("Available on Amazon");
-  });
-  it("flags third-party sellers and never says Sold by Amazon", async () => {
+describe("card content", () => {
+  it("has a role label, one benefit line and one ordinary Amazon button, with no per-card disclaimers", async () => {
     await show(
-      <ProductCard product={{ ...base, availability: "check-listing" }} placement="test" />,
+      <ProductCard
+        product={{
+          ...base,
+          benefit: "Pastel rolls in three widths.",
+          availability: "check-listing",
+          limitations: ["Sold by a third-party seller", "Confirm before buying"],
+        }}
+        placement="test"
+      />,
     );
-    expect(document.body.textContent).toContain(
-      "Sold by a third-party seller on Amazon: check the listing",
+    const text = document.body.textContent ?? "";
+    expect(text).toContain("Essential");
+    expect(text).toContain("Pastel rolls in three widths.");
+    expect(screen.getAllByText(/View on Amazon/)).toHaveLength(1);
+    expect(text).not.toMatch(/Worth knowing|third-party|Sold by|Available on Amazon|confirm|Details checked/i);
+    expect(text).not.toMatch(/\$|price|rating|review/i);
+  });
+  it("labels extras as optional and offers a single list icon, no checkboxes", async () => {
+    await show(<ProductCard product={second} placement="test" />);
+    expect(document.body.textContent).toContain("Optional extra");
+    expect(document.querySelectorAll("input[type=checkbox]")).toHaveLength(0);
+    expect(document.body.textContent).not.toMatch(/I need this|I already own|Save for later/);
+    expect(screen.getAllByRole("button", { name: /Add to my shopping list/ })).toHaveLength(1);
+  });
+  it("shows a photo only when rights and a credit are recorded", async () => {
+    const photo = {
+      imageUrl: "/images/products/test.jpg",
+      imageCredit: "Photo: Test Brand press kit",
+      imageSource: "https://example.com/press-terms",
+    };
+    const { unmount } = await show(
+      <ProductCard product={{ ...base, ...photo, imageRights: "licensed" }} placement="test" />,
     );
-    expect(document.body.textContent).not.toMatch(/Sold by Amazon/);
+    expect(document.querySelector("img")?.getAttribute("src")).toBe("/images/products/test.jpg");
+    expect(document.body.textContent).toContain("Photo: Test Brand press kit");
+    unmount();
+    await show(<ProductCard product={{ ...base, ...photo, imageRights: "none" }} placement="test" />);
+    expect(document.querySelector("img")).toBeNull();
+    expect(document.querySelector("[data-product-tile]")).not.toBeNull();
+  });
+  it("validates photo fields", () => {
+    const v = (o: object) => validateCatalogProduct({ ...base, ...o }).join("\n");
+    expect(v({ imageUrl: "/x.jpg" })).toMatch(/needs documented imageRights/);
+    expect(v({ imageUrl: "/x.jpg", imageRights: "licensed", imageSource: "https://a.example/t" })).toMatch(
+      /needs an imageCredit/,
+    );
+    expect(
+      v({
+        imageUrl: "https://m.media-amazon.com/images/I/x.jpg",
+        imageRights: "licensed",
+        imageSource: "https://a.example/t",
+        imageCredit: "x",
+      }),
+    ).toMatch(/must not point at Amazon/);
+    expect(
+      v({
+        imageUrl: "/x.jpg",
+        imageRights: "owned",
+        imageSource: "own photo",
+        imageCredit: "Photo: us",
+      }),
+    ).toBe("");
+    expect(v({ benefit: "Only $9 today" })).toMatch(/price/);
+    expect(v({ hold: "" })).toMatch(/hold needs a reason/);
+  });
+  it("keeps held products off the site", () => {
+    expect(filterVerified([base, { ...second, hold: "Kid-marketed" }]).map((p) => p.id)).toEqual([
+      "test-fixture-washi",
+    ]);
+  });
+  it("every shipped, displayed product has a benefit line and a short name", () => {
+    for (const p of verifiedCatalog) {
+      expect(p.benefit, p.id).toBeTruthy();
+      expect(p.shortName, p.id).toBeTruthy();
+      expect(p.benefit!.length, p.id).toBeLessThanOrEqual(140);
+    }
   });
 });
 
@@ -303,15 +369,49 @@ describe("alternatives for one kit slot", () => {
     expect(sel.optional).toHaveLength(1);
     expect(sel.alternatives).toHaveLength(0);
   });
-  it("labels alternatives 'Another option for this slot', not 'Essential'", async () => {
-    await show(<ShopTheArticle article="alt-article" catalog={[a1, a2, a3]} />);
-    const labels = [...document.querySelectorAll("article .kicker")].map((k) =>
-      k.textContent?.replace(/^\d+/, ""),
+  it("folds alternatives under the pick, with a comparison line, instead of separate cards", async () => {
+    await show(
+      <ShopTheArticle
+        article="alt-article"
+        catalog={[
+          a1,
+          { ...a2, compare: "Cheaper, fewer extras." },
+          { ...a3, compare: "Bigger tiles." },
+        ]}
+      />,
     );
-    expect(labels.filter((l) => l === "Essential")).toHaveLength(1);
-    expect(labels.filter((l) => l === "Another option for this slot")).toHaveLength(2);
+    const cards = [...document.querySelectorAll("article[data-product-id]")];
+    expect(cards.map((c) => c.getAttribute("data-product-id"))).toEqual(["alt-two"]);
+    const rows = [...document.querySelectorAll("li[data-product-id]")];
+    expect(rows.map((c) => c.getAttribute("data-product-id")).sort()).toEqual(["alt-one", "alt-three"]);
+    expect(document.body.textContent).toContain("Also consider");
+    expect(document.body.textContent).toContain("Bigger tiles.");
+    expect(document.body.textContent).not.toMatch(/Another option for this slot/);
   });
-  it("tick-all-essentials ticks only the primary per slot", async () => {
+  it("shows at most two alternatives per slot", () => {
+    const extra = [4, 5, 6].map((n) => mk(`alt-x${n}`, n + 10, { role: "complete-kit" }));
+    const sel = selectProducts({ article: "alt-article" }, [a1, a2, a3, ...extra]);
+    expect(sel.alternatives).toHaveLength(2);
+    expect(sel.all).toHaveLength(3);
+    expect(sel.alternativesOf["alt-two"]).toHaveLength(2);
+  });
+  it("a lead product is the primary and beats a researched pick", () => {
+    const sel = selectProducts({ article: "alt-article" }, [a2, { ...a1, lead: true }, a3]);
+    expect(sel.essentials.map((p) => p.id)).toEqual(["alt-one"]);
+  });
+  it("the single best buy is the flagged product, else a complete kit, else the first essential", () => {
+    const sel = selectProducts({ article: "alt-article" }, [
+      a1,
+      { ...a2, onlyOne: true },
+      loose,
+      { ...a3, onlyOne: true },
+    ]);
+    expect(sel.pick?.id).toBe("alt-two"); // a3 is an alternative, so it cannot be the pick
+    expect(selectProducts({ article: "alt-article" }, [a1, loose]).pick?.id).toBe("alt-one");
+    const sel2 = selectProducts({ article: "alt-article" }, [{ ...loose, onlyOne: true }, a2]);
+    expect(sel2.pick?.id).toBe("alt-loose");
+  });
+  it("add-all-essentials saves only the primary per slot", async () => {
     await show(
       <ShopMyHobby
         hobby="junk-journaling"
@@ -319,7 +419,7 @@ describe("alternatives for one kit slot", () => {
       />,
     );
     await act(async () => {
-      fireEvent.click(screen.getByText("Tick all essentials"));
+      fireEvent.click(screen.getByText("Add all essentials"));
     });
     const stored = readShopList();
     expect(Object.keys(stored)).toEqual(["alt-two"]);
@@ -364,7 +464,7 @@ describe("kits", () => {
     expect(container.textContent).toBe("");
     unmount();
     await show(<StarterKit kit="junk-journaling" catalog={filterVerified(fixtures)} />);
-    expect(document.body.textContent).toMatch(/not a bundle sold by Plans Past Five/);
+    expect(document.body.textContent).toMatch(/not a bundle we sell/);
   });
 });
 
@@ -385,7 +485,7 @@ describe("shopping list", () => {
   it("round-trips through the UI and localStorage", async () => {
     const cat = filterVerified(fixtures);
     const { unmount } = await show(<ShopMyHobby hobby="junk-journaling" catalog={cat} />);
-    fireEvent.click(screen.getAllByLabelText(/^I need this: TEST FIXTURE washi/)[0]!);
+    fireEvent.click(screen.getAllByLabelText(/^Add to my shopping list: TEST FIXTURE washi/)[0]!);
     await act(async () => {});
     expect(JSON.parse(window.localStorage.getItem(SHOPLIST_KEY)!)).toEqual({
       v: 1,
@@ -393,12 +493,11 @@ describe("shopping list", () => {
     });
     unmount();
     await show(<ShopMyHobby hobby="junk-journaling" catalog={cat} />);
-    expect(
-      (screen.getAllByLabelText(/^I need this: TEST FIXTURE washi/)[0] as HTMLInputElement).checked,
-    ).toBe(true);
-    fireEvent.click(screen.getAllByLabelText(/^I already own this: TEST FIXTURE washi/)[0]!);
+    const saved = screen.getAllByLabelText(/^On my shopping list: TEST FIXTURE washi/)[0]!;
+    expect(saved.getAttribute("aria-pressed")).toBe("true");
+    fireEvent.click(saved);
     await act(async () => {});
-    expect(readShopList()).toEqual({ "test-fixture-washi": "own" });
+    expect(readShopList()).toEqual({});
   });
   it("copy text has names and ordinary URLs only for ticked items", () => {
     const text = buildListText(
@@ -507,9 +606,10 @@ describe("links and affiliate swap", () => {
     const a = screen.getByText(/View on Amazon/).closest("a")!;
     expect(a.getAttribute("href")).toBe("https://www.amazon.com/dp/B0TESTFIX1");
     expect(a.getAttribute("rel")).toBe("noopener");
-    expect(document.body.textContent).toMatch(/Available on Amazon/);
     expect(document.body.textContent).not.toMatch(/Sold by Amazon/);
     expect(document.body.textContent).toMatch(/don't currently earn/);
+    expect(document.body.textContent).toMatch(/own Amazon page/);
+    expect(document.body.textContent).not.toMatch(/As an Amazon Associate/);
   });
   it("activating the registry changes link, rel and disclosure with no component change", async () => {
     Object.assign(amazon, {
@@ -562,11 +662,11 @@ describe("legacy blocks use the catalog strictly", () => {
     },
   ];
   it("does not pull a many-product hobby into an untagged article", async () => {
-    // air-dry-clay has far more than 4 verified products and none are tagged to this slug
+    // junk-journaling has far more than 4 verified products and none are tagged to this slug
     const { container } = await show(
       <ArticleBody
         articleSlug="some-other-article"
-        blocks={[{ type: "shopHobby", productIds: ["air-dry-clay"], title: "Legacy title" }]}
+        blocks={[{ type: "shopHobby", productIds: ["washi-tape"], title: "Legacy title" }]}
       />,
     );
     expect(container.textContent).toContain("Legacy title");
