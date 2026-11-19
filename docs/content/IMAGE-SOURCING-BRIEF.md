@@ -243,3 +243,6 @@ Shot list for the images the site still needs, so that every article ends with a
 - **Avoid:** identifiable minors, brand logos or names, text, watermarks.
 - **Alt text suggestion:** A close-up of an embroidery hoop with a half-stitched cherry and leaf pattern
 - **CSV:** `heroFor` = `how-to-start-embroidery`
+
+## Status 2026-11-19 (C11)
+NOT DONE for the 18 stock-sourced slots. Reason: finding and downloading photos needs Unsplash/Pexels/Pixabay search and file downloads; an attempt to query Unsplash's internal search endpoint from the shell was blocked, and I did not work around it. No image was downloaded, no licence invented. The four Canva AI heroes (crochet, flower arranging, cycling, cozy corner) are prepared as rows in docs/content/new-images.canva-pending.csv but their files still have to be downloaded by the owner from the Canva links (the Canva link opened for the crochet image in the owner's browser on 2026-11-19, so the assets exist). Slugs not found: all 18 non-Canva slots.

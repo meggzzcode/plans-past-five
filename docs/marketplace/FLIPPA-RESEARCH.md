@@ -34,3 +34,21 @@ Separation: ASKING PRICES, AUCTION BIDS, UNSOLD LISTINGS and VERIFIED COMPLETED 
 
 ## 6. Other marketplaces (notes only, not researched)
 Empire Flippers, Motion Invest and Investors Club appear in a third-party newsletter as places where content sites are listed (https://acquire.substack.com/p/monday-m-and-a-26-new-marketplace), but that source describes established earning sites, not no-revenue starters. Their fees and eligibility were NOT READ. Next step if wanted: read each marketplace's seller requirements page.
+
+## 7. Update 2026-11-19 (second pass; search snippets, not full pages)
+### Flippa
+- Pricing conflict widened. "Listing sale pricing" (https://support.flippa.com/hc/en-us/articles/12856932906767-Listing-sale-pricing, about 539 days old) still caps New / Starter / Non-Revenue assets at $9,999 asking or reserve, and now shows a separate Projects & Concepts maximum asking price of $999,999 (the older "Cannot be listed" article says up to $99,999). So three pages give three ceilings. For our site the $9,999 starter ceiling is the one that matters; the listing flow will show the real rule.
+- "Can I sell if I'm not profitable?": Flippa's category page FAQ says yes, including startups, apps, websites and e-commerce "regardless of their current profitability" (https://flippa.com/buy/categories/internet/internet-marketing). The same FAQ says the Entry Level Package "starts at $29" and success fees "start from 3%": newer than the 5% / 10% figures in section 3, so fees are still unresolved. Confirm on the live pricing page at listing time.
+- Documents Flippa lists for sellers (https://flippa.com/buy/websites, FAQ): revenue proof, Google Analytics traffic verification, and a business assets inventory (domains, files, customer lists). For a site with no revenue, only the traffic and assets inventory apply. Flippa's onboarding guide (https://flippa.com/blog/guide-to-seller-onboarding/, 891 days old) lists listing details (URL, name, registration date, description) and ID verification, which must be repeated at the time of sale.
+- Transfer rules: domain push if both parties use the same registrar, otherwise unlock plus EPP/authorization code (https://support.flippa.com/hc/en-us/articles/360000081635-How-to-transfer-Ownership-of-a-Domain, 3,185 days old; https://support.flippa.com/hc/en-us/articles/8801222841615-Content-Site-Asset-Transfer-Guide, 1,040 days old). Hosting need not move: the website and domain inside it do. Transfers happen after funds are secured in escrow.
+- Sold listings: Flippa's own search surfaced listing pages titled "Website Sold on Flippa" that still show an ASKING price (example: an affiliate site, 2 years old, $224/month profit, listed at $2,000, https://flippa.com/10888367-affiliate-website-with-unique-content-comparisons-alternatives-post-type). That is an ASKING PRICE on a revenue-earning site; the final sale price is behind a login. Still NO verified completed sale of a pre-revenue site found.
+
+### Other marketplaces (read from search snippets 2026-11-19)
+| Marketplace | Minimum to list | Fit for our pre-revenue site |
+|---|---|---|
+| Empire Flippers (https://empireflippers.com/how-to-sell-my-website/) | At least 12 months of history and $24,000/yr net profit; page says "We Don't Need: Sites Without Revenue" | NO |
+| Motion Invest (https://motioninvest.com/?p=238874; third-party fee table https://investors.club/?p=5091) | "we don't sell sites that aren't making any money... about 3 months of earnings data at the minimum" (maker page, date not shown) | NO until it earns |
+| Investors Club (https://investors.club/sellers-faq/) | Average revenue of at least $30/month over 12 months and one year of verifiable history | NO |
+| Acquire.com (third-party description, https://investors.club/?p=5034) | Open marketplace; "suggest not listing pre-revenue startups"; 4% success fee (third-party) | Possible but discouraged; mostly SaaS (about 1% content sites per same source) |
+Conclusion: Flippa is the only listed marketplace that explicitly accepts pre-revenue sites. The others need earnings history, so the sale path depends on earning first.
+Dates of Motion Invest and Investors Club figures are not shown on those pages; re-read before relying on them. Third-party sources (investors.club is itself a competing marketplace) are labelled.

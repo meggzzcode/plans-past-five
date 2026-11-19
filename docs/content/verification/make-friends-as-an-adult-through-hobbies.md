@@ -1,0 +1,3 @@
+# Verification: make-friends-as-an-adult-through-hobbies (C16)
+Checked 2026-11-19. Status in the repo: draft. The JSON body holds only five section headings (Why hobbies work, Where to find groups, How to go back a second time, Turning acquaintances into friends, Starting your own group) and no sentences, so there is nothing to verify yet.
+Action: this topic invites research claims ("it takes about 50 hours to make a friend", loneliness statistics). Do not add any figure without a named primary source and date. Library and bookstore clubs being free is confirmed in things-to-do-after-work-instead-of-scrolling.md.
