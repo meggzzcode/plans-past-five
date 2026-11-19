@@ -15,9 +15,10 @@ export const articleLowEnergyHobbies: Article = {
   titleItalic: "Cozy Hobbies",
   dek: "For the evenings when your brain has clocked out and your body wants a soft surface: twenty small, forgiving things to do that aren't scrolling.",
   category: "after-hours",
-  status: "draft",
-  publishedAt: "",
-  hero: "soloCafe",
+  status: "published",
+  publishedAt: "2026-11-19",
+  verifiedAt: "2026-11-18",
+  hero: "junkJournal",
   searchIntent:
     "cozy hobbies after work / low energy hobbies / relaxing hobbies when tired in the evening",
   angle:
@@ -42,15 +43,12 @@ export const articleLowEnergyHobbies: Article = {
   ],
   sources: [],
   coworkChecks: [
-    "Confirm 'typically under $25' framing for starter costs of puzzles, paint-by-numbers, crossword books, a beginner embroidery kit and a skein of yarn with needles or a hook (approximate, varies by shop and region).",
-    "Confirm that most beginner knitting and crochet patterns are described as suitable for watching a show with simple repeated stitches (general craft-community guidance; no specific claim is made about health benefits).",
-    "Check that no health or stress-relief claim slipped in; the piece should stay at 'many people find it relaxing'.",
-    "Confirm that a basic pothos or similar houseplant is commonly described as forgiving for beginners (plant-care source).",
-    "Confirm 'free with a library card' for books, and that many libraries also lend audiobooks through an app; availability varies by library.",
-    "Confirm 'typically free to $15' for plant-care items (a cutting, a small pot, a bag of compost) is a fair approximate range.",
-    "Confirm air-dry clay typically dries on its own over roughly a day (varies with thickness and humidity; follow the packet).",
-    "Check the closing note about persistent tiredness: wording must stay a gentle suggestion to mention it to a doctor, with no diagnosis or medical claim.",
-    "Check the gentle-stretch item keeps the 'stop if anything hurts' caveat and makes no fitness or health claim.",
+    "RESOLVED 2026-11-19: all 'typically under $25', 'free to $15', 'free-$10' cost labels - replaced with 'Varies'; verification found no source for prices",
+    "RESOLVED 2026-11-19: 'free with a library card' / library app - reworded to 'Often free from a library'; no library or app named",
+    "RESOLVED 2026-11-19: air-dry clay drying 'overnight' - removed the time claim (the clay guide's checked figure is about 2-3 days, see label)",
+    "RESOLVED 2026-11-19: knitting/crochet 'good for a rewatch', pothos/plant care, stretch item - editorial and hedged; stretch keeps 'stop if anything hurts'; no health or stress-relief claim (one wellbeing-sounding phrase softened to 'can feel settling')",
+    "RESOLVED 2026-11-19: persistent-tiredness note - stays a gentle suggestion to mention it to a doctor, no diagnosis",
+    "NOTE 2026-11-19: verification-file items on nap length and gardening-as-moderate-activity do not apply; neither claim appears in this article",
   ],
   body: [
     {
@@ -77,7 +75,7 @@ export const articleLowEnergyHobbies: Article = {
       "Jigsaw puzzles",
       "Tip out the pieces, find the straight edges, and let your mind drift. A puzzle on a tray can be carried off the table when guests come, and there's no penalty for leaving it half done.",
       "20-60 min",
-      "Typically under $25",
+      "Varies",
       "jigsaw-puzzles",
     ),
     it(
@@ -85,7 +83,7 @@ export const articleLowEnergyHobbies: Article = {
       "Paint by numbers",
       "Someone else has already made the decisions. Match the number to the color, fill the shape, move on. One corner is a full evening's work and nobody will check.",
       "20-45 min",
-      "Typically under $25",
+      "Varies",
       "paint-by-numbers",
     ),
     it(
@@ -93,7 +91,7 @@ export const articleLowEnergyHobbies: Article = {
       "Knitting",
       "Once you've got the basic stitch, a plain scarf is mostly rhythm. It pairs well with a rewatch, since you don't need to follow every line of dialogue.",
       "20-60 min",
-      "Typically under $25 to start",
+      "Varies",
       "knitting",
     ),
     it(
@@ -101,7 +99,7 @@ export const articleLowEnergyHobbies: Article = {
       "Crochet",
       "One hook, one ball of yarn, a pattern that repeats. Make a flat practice square first; it's unglamorous and makes an excellent coaster.",
       "20-60 min",
-      "Typically under $25 to start",
+      "Varies",
       "crochet",
     ),
     it(
@@ -109,7 +107,7 @@ export const articleLowEnergyHobbies: Article = {
       "Embroidery",
       "A beginner kit arrives with the design already printed on the fabric. Three or four stitches will get you a tiny flower, and a tiny flower is plenty.",
       "20-45 min",
-      "Typically under $25 for a kit",
+      "Varies",
       "embroidery",
     ),
     it(
@@ -117,7 +115,7 @@ export const articleLowEnergyHobbies: Article = {
       "Friendship bracelets",
       "Pin a few threads to a cushion and knot a simple pattern on autopilot. Make the first one for yourself, since you're also the one who needs it.",
       "20-40 min",
-      "Typically under $25",
+      "Varies",
       "friendship-bracelets",
     ),
     {
@@ -135,7 +133,7 @@ export const articleLowEnergyHobbies: Article = {
       "A book you actually want to read",
       "Not the one you feel you ought to finish. Pick the one that made you curious, add a blanket and a small lamp, and give it twenty minutes.",
       "20-60 min",
-      "Free with a library card",
+      "Often free from a library",
       "reading",
     ),
     it(
@@ -143,7 +141,7 @@ export const articleLowEnergyHobbies: Article = {
       "Crossword puzzles",
       "Start with the easy ones. They give you a small, certain win, and looking up one answer is part of how everyone learns the clue-writers' habits.",
       "15-30 min",
-      "Free-ish",
+      "Varies",
       "crossword-puzzles",
     ),
     it(
@@ -151,7 +149,7 @@ export const articleLowEnergyHobbies: Article = {
       "An audiobook and a gentle chore",
       "Pair a story with something the hands can do: folding laundry, watering plants, sorting the drawer of mystery cables. The chore turns into a small ritual.",
       "30 min",
-      "Free with a library app",
+      "Often free from a library",
     ),
     it(
       10,
@@ -173,7 +171,7 @@ export const articleLowEnergyHobbies: Article = {
       "A magazine collage",
       "Tear out whatever catches your eye, glue it to a page, and you've made a mood board without drawing a line.",
       "20-40 min",
-      "Free-$10",
+      "Varies",
       "collage-art",
     ),
     it(
@@ -187,15 +185,15 @@ export const articleLowEnergyHobbies: Article = {
     it(
       14,
       "An air-dry clay pinch pot",
-      "Roll a ball, press your thumb in, smooth the rim. No tools, and it dries by itself overnight, so there is nothing to finish tonight.",
+      "Roll a ball, press your thumb in, smooth the rim. No tools, and it dries by itself, so there is nothing to finish tonight.",
       "20-30 min",
-      "Typically under $25",
+      "Varies",
       "air-dry-clay",
     ),
     it(
       15,
       "Doodling one shape over and over",
-      "Leaves, circles, mugs: choose one and repeat it down the page. The repetition settles you, and the page ends up oddly charming.",
+      "Leaves, circles, mugs: choose one and repeat it down the page. The repetition can feel settling, and the page ends up oddly charming.",
       "10-20 min",
       "Free",
     ),
@@ -213,7 +211,7 @@ export const articleLowEnergyHobbies: Article = {
       "Plant care, slowly",
       "Wipe the leaves, check the soil with a finger, repot the one that's outgrown its home. Plants work on a slow clock, which is the whole appeal.",
       "10-20 min",
-      "Typically free to $15",
+      "Varies",
       "indoor-gardening",
     ),
     it(
@@ -266,6 +264,10 @@ export const articleLowEnergyHobbies: Article = {
     {
       type: "p",
       text: "If you're tired all the time, not only after work, it's worth mentioning to a doctor. Hobbies are lovely, but they aren't a substitute for rest or care.",
+    },
+    {
+      type: "p",
+      text: "Not sure any of these is quite you? [How to find a hobby as an adult](/journal/how-to-find-a-hobby-as-an-adult) starts from what you already like, and [things to do after work instead of scrolling](/journal/things-to-do-after-work-instead-of-scrolling) has more ideas for the evening.",
     },
     {
       type: "shopHobby",

@@ -2,26 +2,30 @@
 
 Status: DRAFT for owner review. Nothing has been published, listed or offered. Facts below were read from the repo on 2026-11-19 and will drift; re-check with LISTING-CHECKLIST.md before use.
 
-Marketplace-specific wording rules, fee rules and revenue-claim rules for pre-revenue sites are PENDING COWORK (task C7, output expected at docs/marketplace/FLIPPA-RESEARCH.md). Nothing here guesses them. Adjust this draft to the marketplace's rules once C7 is done.
+## Flippa rules this draft follows (Cowork, docs/marketplace/FLIPPA-RESEARCH.md, read 2026-11-18)
+
+> Cowork's summary of Flippa's rule (not a verbatim quote; re-read the page before listing): claims of revenue or traffic must be supported by evidence; potential-revenue or potential-traffic claims must be clearly marked as potential and accompanied by robust workings and assumptions; specific potential revenue or traffic numbers are expressly forbidden in listing titles. Source: https://support.flippa.com/hc/en-us/articles/360000217435-Making-potential-revenue-claims-on-sites-without-revenue (read 2026-11-18, page about 3,097 days old). Also Flippa's Prohibited Content page bars unverified performance or financial claims, promises or guarantees (https://support.flippa.com/hc/en-us/articles/360000298675-Prohibited-Content), and Site Rules require full details with nothing hidden (https://support.flippa.com/hc/en-us/articles/203110254-Site-Rules-for-Buyers-Sellers).
+
+How this draft complies: it states "no revenue yet" and "no traffic history"; the title carries no earnings or traffic number; there is no "will earn" wording; "Growth opportunities" are labelled hypothetical and carry no figures or workings, so they are not presented as potential-revenue claims. Pricing limits for sites without revenue are in PRICING-STRATEGY.md (Flippa's pre-revenue price ceiling, with a recorded conflict between pages). Flippa's required listing fields and handover rules were NOT READ; check them at listing time.
 
 How to read the check boxes: every line marked **AVAILABLE AT LISTING ONLY IF COMPLETE** depends on work that is not finished today. The lead must tick the box only after confirming the claim is true on the day of listing, and must delete the line otherwise.
 
 ## Title
 
-Plans Past Five — Turnkey Women's Lifestyle Brand With Interactive Hobby Tools, SEO Content, Affiliate-Ready Shopping & Pinterest Assets
+Plans Past Five — Turnkey Women's Lifestyle Brand With Interactive Hobby Tools, SEO Content, Shopping Section & Pinterest Assets
 
 (Pre-revenue is disclosed in the first line of the description, below. No earnings figure appears anywhere in this listing.)
 
 ## Short description
 
-Plans Past Five is a pre-revenue, newly built women's lifestyle and hobby publication prepared as a transparent turnkey starter site. It has no traffic history and no earnings. It includes a built website with interactive hobby tools, a 36-hobby directory, 4 published articles plus drafts awaiting source verification, 88 Pinterest pin images and a full brand asset set. Affiliate links are not activated and affiliate and payment accounts are not included; the buyer sets up their own. No earnings are claimed or guaranteed.
+Plans Past Five is a pre-revenue, newly built women's lifestyle and hobby publication prepared as a transparent turnkey starter site. It has no traffic history and no earnings. It includes a built website with interactive hobby tools, a 36-hobby directory, 4 published articles plus drafts awaiting source verification, 88 Pinterest pin images and a full brand asset set. Amazon Associates links are not activated, no application has been made, and affiliate and payment accounts are not included; the buyer sets up their own. No earnings are claimed or guaranteed.
 
 ## Long description
 
 ### Read this first: what this is and is not
 
 - Plans Past Five is **pre-revenue**. It has earned nothing and has **no traffic history**.
-- Affiliate links are **not yet activated**. Affiliate approval is **not guaranteed** and is the buyer's to apply for.
+- Amazon Associates links are **not yet activated** and nothing has been applied for. Approval is **not guaranteed** and is the buyer's to apply for.
 - The seller's master or portfolio affiliate accounts are **not included**. The buyer must create or connect their own affiliate and payment accounts.
 - There is **no guarantee of future earnings**. Any forecast a buyer makes is hypothetical.
 
@@ -63,7 +67,7 @@ Women who want a hobby or a better weekend but are unsure where to start, with a
 
 - Original interactive tools (a rule-based quiz, a deterministic planner, a budget tool, a tonight picker) rather than only articles.
 - An honesty-first design: no invented experiences, experts, prices or ratings; drafts stay hidden until their claims are verified; an editorial policy, methodology and corrections page exist.
-- A shopping system that works without any affiliate account: ordinary links by default, with affiliate links activating only when a buyer sets up approved accounts.
+- A shopping system that works without any affiliate account: ordinary links by default, with Amazon Associates links activating only when a buyer sets up their own approved account.
 - A complete brand system and a large Pinterest asset set ready for an owner to start from.
 - Extensive buyer documentation, including a transfer checklist and an operating-cost page that keeps unknowns marked UNCONFIRMED.
 
@@ -77,7 +81,7 @@ Women who want a hobby or a better weekend but are unsure where to start, with a
 
 ### Monetization methods (none active)
 
-- **Affiliate links:** the system is built and unit-tested but **not activated**. Setting a tracking tag is not enough; the Amazon entry in `src/config/affiliate.ts` must also be approved and active, using the buyer's own approved account (`docs/buyer/AFFILIATE-ACTIVATION.md`). Approval is not guaranteed.
+- **Amazon Associates links:** the system is built and unit-tested but **not activated**; no application has been made. Amazon Associates is the only program the site is built for. Setting a tracking tag is not enough; the Amazon entry in `src/config/affiliate.ts` must also be approved and active, using the buyer's own approved account (`docs/buyer/AFFILIATE-ACTIVATION.md`). Per Amazon's application help (read 2026-11-18), an account must drive at least three qualified sales within 180 days, and approval is not guaranteed. The Associates account cannot be transferred without Amazon's prior written approval, so the buyer applies in their own name.
 - No sponsorship, advertising or newsletter revenue exists. A newsletter is deliberately not wired.
 - **No earnings are claimed. No earnings are guaranteed.**
 
@@ -105,7 +109,7 @@ Open-source dependencies managed with Bun; no paid dependencies found. Hosting, 
 
 ### Required maintenance
 
-Weekly and monthly checklists exist (`docs/buyer/WEEKLY-MAINTENANCE.md`, about 30 minutes for the weekly routine per that doc, and `MONTHLY-MAINTENANCE.md`). The main ongoing work is writing and source-verifying articles and checking product and affiliate links. Content growth is manual.
+Weekly and monthly checklists exist (`docs/buyer/WEEKLY-MAINTENANCE.md`, about 30 minutes for the weekly routine per that doc, and `MONTHLY-MAINTENANCE.md`). The main ongoing work is writing and source-verifying articles and checking product and Amazon links. Content growth is manual.
 
 ### Included assets
 
@@ -117,7 +121,7 @@ Seller's affiliate master or portfolio accounts, any tracking IDs, payment accou
 
 ### Growth opportunities (hypothetical, no outcome implied)
 
-Verify and publish the 28 drafts; load verified products; apply for the buyer's own affiliate programs; launch the Pinterest schedule; extend the roadmap beyond the 30-article target. Whether any of this earns money is unknown.
+Verify and publish the 28 drafts; load verified products; apply for the buyer's own Amazon Associates account; launch the Pinterest schedule; extend the roadmap beyond the 30-article target. Whether any of this earns money is unknown.
 
 ### Ownership transfer process
 

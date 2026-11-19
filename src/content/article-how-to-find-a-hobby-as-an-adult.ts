@@ -6,9 +6,10 @@ export const articleHowToFindAHobbyAsAnAdult: Article = {
   titleItalic: "Don't Know Where to Start",
   dek: "For the person who says 'I don't really have any interests': a small, low-stakes way to find out what you'd happily do again, with a one-week experiment at the end.",
   category: "after-hours",
-  status: "draft",
-  publishedAt: "",
-  hero: "junkJournal",
+  status: "published",
+  publishedAt: "2026-11-19",
+  verifiedAt: "2026-11-18",
+  hero: "soloCafe",
   searchIntent: "how to find a hobby as an adult / I don't have any hobbies",
   angle:
     "Treat finding a hobby as a small experiment, not a personality test: audit, pick a craving, try cheap, review, repeat",
@@ -26,18 +27,27 @@ export const articleHowToFindAHobbyAsAnAdult: Article = {
   related: [
     "hobbies-to-try-when-life-feels-like-work-sleep-repeat",
     "things-to-do-after-work-instead-of-scrolling",
-    "low-energy-hobbies",
-    "affordable-hobbies-under-25",
+    "creative-hobbies-you-can-start-at-home",
   ],
-  sources: [],
+  sources: [
+    {
+      title: "National Park Service: hiking safety",
+      url: "https://www.nps.gov/articles/hiking-safety.htm",
+      note: "Tell someone your route, check weather, carry water; hiking alone not recommended",
+    },
+    {
+      title: "NPS Mount Rainier: hiking safety",
+      url: "https://www.nps.gov/mora/planyourvisit/hiking-safety.htm",
+      note: "The ten essentials",
+    },
+  ],
   coworkChecks: [
-    "Confirm that library, community-center and studio 'drop-in' or beginner sessions are described generally ('many', 'often') and typically low-cost, since availability and prices vary by area.",
-    "Confirm that the free hobby-finder quiz referenced is /hobby-finder and that its description (a few questions, deterministic suggestions, no sign-up) still matches the live tool.",
-    "Check that no claim about habit formation timelines (e.g. how long it takes to stick with something) appears; none intended. If added, cite a source.",
-    "Verify library and community-center class availability is described as 'many' not 'all' and typically low cost (varies widely by area).",
-    "Confirm 'typically under $25' for a small watercolor set, a block of air-dry clay and a pocket notebook is a fair approximate range; vary by store and region.",
-    "Confirm the hiking suggestion stays general (easy, well-marked trail, water, tell someone) and consistent with basic outdoor-safety guidance.",
-    "Confirm that studios and courts offering single-session or drop-in rates is described as 'many' and varies by location.",
+    "VERIFIED 2026-11-18: hiking appears only as a hobby suggestion with no safety instructions; NPS advises telling someone your route, checking weather and carrying water, and not hiking alone - nps.gov",
+    "VERIFIED 2026-11-18: library, community-center, studio and court drop-in sessions described as 'many' with 'check locally'; no price claim - reworded, no claim remains",
+    "VERIFIED 2026-11-18: no cost ranges appear in the article ('typically under $25' items not present) - reworded, no claim remains",
+    "VERIFIED 2026-11-18: /hobby-finder quiz description updated to match the live tool (seven questions about time, budget, energy and company; no sign-up) - src/routes/hobby-finder.tsx",
+    "VERIFIED 2026-11-18: no habit-formation timeline appears in the article - nothing to cite",
+    "VERIFIED 2026-11-18: cross-links - related list trimmed to published articles (low-energy-hobbies and affordable-hobbies-under-25 removed) - reworded",
   ],
   body: [
     {
@@ -71,7 +81,7 @@ export const articleHowToFindAHobbyAsAnAdult: Article = {
       type: "list",
       items: [
         "**Making something:** [watercolor](/hobbies/watercolor-painting) or [air-dry clay](/hobbies/air-dry-clay).",
-        "**Slowing down:** [reading](/hobbies/reading), puzzles, anything repetitive and gentle.",
+        "**Slowing down:** [reading](/hobbies/reading), puzzles, anything repetitive and gentle. For tired evenings, see [low-energy hobbies](/journal/low-energy-hobbies).",
         "**Moving without a gym:** [hiking](/hobbies/hiking) or [pickleball](/hobbies/pickleball).",
         "**Company:** a [book club](/hobbies/book-clubs) or a [craft night](/hobbies/craft-nights).",
         "**A change of scenery:** [thrifting](/hobbies/thrifting) in a neighborhood you never visit.",
@@ -79,7 +89,7 @@ export const articleHowToFindAHobbyAsAnAdult: Article = {
     },
     {
       type: "p",
-      text: "Can't pick? The [Hobby Finder quiz](/hobby-finder) asks a few questions about your time, budget and mood and hands back a short list. No sign-up required.",
+      text: "Can't pick? The [Hobby Finder quiz](/hobby-finder) asks seven quick questions about your time, budget, energy and company and hands back a short list. No sign-up required. Prefer to browse? [Thirty-five hobbies to try](/journal/hobbies-to-try-when-life-feels-like-work-sleep-repeat) sorts them by how much energy you have.",
     },
     { type: "h2", text: "Pick three and try the smallest version", id: "pick" },
     {
@@ -92,7 +102,7 @@ export const articleHowToFindAHobbyAsAnAdult: Article = {
         "**Borrow first.** Library books, a friend's racket, a community taster session.",
         "**Buy the mini version.** One small paint set, not a studio.",
         "**Raid your own home.** A notebook, an old tote, a pen that works.",
-        "**Drop in.** Many studios and courts sell single sessions, which costs less than committing to a block.",
+        "**Drop in.** Many studios and courts sell single sessions, which can be a lighter commitment than a block. Check locally.",
       ],
     },
     {

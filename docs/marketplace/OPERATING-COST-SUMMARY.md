@@ -1,6 +1,6 @@
 # Operating cost summary
 
-Status: DRAFT, 2026-11-19. Source: `docs/buyer/OPERATING-COSTS.md`. **No figure in this file is confirmed. No numbers are given.** Not tax or financial advice. Provider pricing research is PENDING COWORK.
+Status: DRAFT, 2026-11-19. Source: `docs/buyer/OPERATING-COSTS.md`. **No figure in this file is confirmed. No numbers are given.** Not tax or financial advice. Provider pricing for domain, host and mailbox has not been researched (UNCONFIRMED).
 
 Rule: a promotional first-term price is never a renewal price. Record both separately, with the date read and the source page, and use only the renewal price for ongoing cost.
 
@@ -28,7 +28,7 @@ Cash and time are tracked separately and never added together.
 | Analytics, Search Console, Bing | Optional | UNCONFIRMED | usually free; verify |
 | Newsletter provider | Optional, not wired | UNCONFIRMED | free-tier limits |
 | Pinterest business account | Optional | UNCONFIRMED | verify |
-| Affiliate programs | Optional | UNCONFIRMED | typically free to join; verify |
+| Amazon Associates (only program used) | Optional | UNCONFIRMED | joining cost not recorded by Cowork; a tax interview and payment method are required (read 2026-11-18); verify |
 | Open-source dependencies | Yes | CONFIRMED free (no paid dependencies found) | n/a |
 | Database, auth, AI APIs, payment backend | No | NOT NEEDED (frontend-only) | n/a |
 
@@ -49,3 +49,7 @@ About 30 minutes per week for the routine checklist per `docs/buyer/OPERATING-CO
 ## 6. What this does not do
 
 It does not recommend buying anything, state prices or break-even points, or predict revenue.
+
+## 7. Seller-side marketplace fees
+
+Flippa listing and success fees are not site operating costs; they come out of a sale. Cowork's recorded rates (conflicting, old pages) and a worked calculator are in PRICING-STRATEGY.md. Listing fees are payable whether or not the asset sells (https://flippa.com/buy/startups). The seller's cash costs for Plans Past Five stay UNCONFIRMED until read from the owner's tracker and receipts.

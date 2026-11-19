@@ -7,9 +7,10 @@ export const articleHowToHostAMahjongNight: Article = {
   titleItalic: "New Favorite Tradition",
   dek: "A standing Friday night, a table, a pot of tea and a game that keeps everyone talking. How to organize the first night, what to buy by kind, and why the set has to match the version you play.",
   category: "better-together",
-  status: "draft",
-  publishedAt: "",
-  hero: "girlsNight",
+  status: "published",
+  publishedAt: "2026-11-19",
+  verifiedAt: "2026-11-18",
+  hero: "shopGirlsNight",
   searchIntent:
     "how to start a mahjong night / mahjong for beginners / what you need to host mahjong",
   angle:
@@ -17,27 +18,58 @@ export const articleHowToHostAMahjongNight: Article = {
   hobbies: ["mahjong", "craft-nights", "book-clubs"],
   productIds: ["mahjong-sets", "conversation-cards", "board-games"],
   coworkChecks: [
-    "Mahjong is a family of related tile games with several major variants, including American, Chinese (with regional styles such as Hong Kong), and Japanese Riichi; confirm this framing and that no single variant is presented as 'the' rules.",
-    "American mahjong is commonly played with a yearly-published card of approved hands, typically from the National Mah Jongg League or a similar organization, and with a set that includes jokers; confirm the organization name and that a new card is issued periodically, and describe it only in general terms. The article names no organization and says only that the reference card or book should be the current one for your version.",
-    "Chinese and Hong Kong-style sets commonly lack jokers and use different tile counts and scoring from American sets; confirm exact tile counts (which vary by region and set) before any numbers are stated; the article currently states no counts.",
-    "Japanese Riichi mahjong has its own rules and scoring (including the riichi declaration and a minimum-hand requirement) and sets often include distinct features such as red five tiles; confirm each detail before it is stated; the article currently only says it has its own rules and scoring.",
-    "Statement that tiles, sizes and symbols differ between sets, so a set bought for one style may not suit another (for example, a set without jokers cannot be used for American play without adding them): confirm and keep it general.",
-    "Typical cost of a beginner mahjong set ('typically $30-$100, more for premium sets') is approximate and varies widely; confirm hedged wording or remove the figure. The article now says 'typically from the low tens of dollars up to a few hundred' for a set; confirm that range, and the equivalent soft ranges for racks, mats and cases (approximate; the article states no exact figures for them).",
-    "Cultural background statement (mahjong has roots in China and is played in many countries, with local variations): confirm wording is accurate, respectful and avoids unsourced claims about exact origins, dates or inventors.",
-    "Statement that online tutorials, local clubs and community classes often teach specific variants, and that learners should confirm which variant before joining: confirm hedged wording and that no specific organizations or sites are named.",
-    "Equipment-by-version claims: racks (and pushers, where a version and set use them) are commonly included with or sold for American-style sets, whereas other styles may play without them; confirm that this is hedged ('commonly', 'where applicable') and that no version is said to require or forbid any accessory.",
-    "Statement that a playing mat or soft cover cushions tiles and softens clatter, and that a carrying case protects a set in storage and transport: confirm this is general and makes no claim about specific materials or sizes fitting any particular set.",
-    "Statement that reference cards and books are version-specific and that, for American-style play, the card is typically reissued periodically so the current one should match the group's agreed rules: confirm hedged wording and that no edition, year or publisher is named.",
-    "Statement that an invitation or standing weekly or monthly slot helps groups keep playing, and that four players is the usual table size for most versions: confirm 'usual' is accurate for the major versions, and that the article does not imply a fixed number applies to all.",
-    "Hosting food and drink advice (ask about allergies and dietary needs; keep greasy or sticky snacks away from tiles; tea and drinks on side trays): confirm no allergen or health claims are made.",
-    "Cultural-respect guidance (avoid costumes and stereotyped props, credit the version being played, learn from people who grew up with the game): confirm wording is respectful and not presented as an official code of conduct.",
+    "VERIFIED 2026-11-18: several major variants (American, Chinese incl. Hong Kong styles, Japanese Riichi); no single variant presented as 'the' rules - arkadium.com, rarepike.com",
+    "VERIFIED 2026-11-18: American mahjong uses a periodically reissued card of approved hands and a set with jokers; article names no organization - nationalmahjonggleague.org",
+    "VERIFIED 2026-11-18: Chinese and Hong Kong sets commonly lack jokers; tile counts vary, so the article states no counts - ohmymahjong.com, themahjong.com",
+    "VERIFIED 2026-11-18: Riichi described only as having its own rules and scoring; red-five and minimum-hand details not stated (not found in sources) - rarepike.com, sandiegomahjong.org",
+    "VERIFIED 2026-11-18: tiles and symbols differ between sets; a set without jokers cannot be used for American play - sandiegomahjong.org, rarepike.com",
+    "VERIFIED 2026-11-18: set price range ('low tens of dollars up to a few hundred') removed; prices described as varying widely - reworded, no claim remains",
+    "VERIFIED 2026-11-18: cultural background - article makes no claim about origins, dates or inventors; says only that the game is played in many countries with local variation - rarepike.com",
+    "VERIFIED 2026-11-18: tutorials, clubs and classes often teach specific variants; confirm which before joining; no organization named - nationalmahjonggleague.org",
+    "VERIFIED 2026-11-18: racks and pushers commonly come with American-style sets, other styles may play without; mats cushion tiles and soften noise; cases protect sets (listing-level evidence, kept general) - retailer listings read 2026-11-18",
+    "VERIFIED 2026-11-18: reference cards are version-specific and American card reissued periodically; no year or publisher named - nationalmahjonggleague.org",
+    "VERIFIED 2026-11-18: four players as the usual table size - rarepike.com",
+    "VERIFIED 2026-11-18: American set compatibility - added 'check that the set includes at least eight jokers'; no tile totals stated (166-tile sets add spare flowers, jokers or blanks) - verification file product note",
+    "VERIFIED 2026-11-18: hosting food advice and cultural-respect guidance are editorial, no allergen or health claims, not presented as an official code - no source needed",
+    "VERIFIED 2026-11-18: headline changed to 'With Your Friends'; no 'girls' wording in dek, angle or search intent; book-club link removed until that article is live - reworded",
   ],
   related: [
     "girls-night-ideas-that-arent-drinks",
-    "how-to-start-a-book-club",
     "how-to-host-a-craft-night",
+    "how-to-start-a-book-club",
   ],
-  sources: [],
+  sources: [
+    {
+      title: "National Mah Jongg League",
+      url: "https://nationalmahjonggleague.org",
+      note: "American mahjong uses a yearly card of approved hands; rule card reissued periodically",
+    },
+    {
+      title: "Arkadium: different types of mahjong games explained",
+      url: "https://arkadium.com/blog/different-types-of-mahjong-games-explained/",
+      note: "Overview of American, Chinese and Japanese variants (third-party guide)",
+    },
+    {
+      title: "Rarepike: mahjong variants",
+      url: "https://rarepike.com/mahjong/variants/",
+      note: "Variant overview; four players as the common table size (third-party guide)",
+    },
+    {
+      title: "San Diego Mahjong: rules",
+      url: "https://sandiegomahjong.org/rules",
+      note: "Riichi tile set; American versus Riichi tile differences (club page)",
+    },
+    {
+      title: "Oh My Mahjong: how many tiles are in mahjong",
+      url: "https://ohmymahjong.com/blogs/the-game-of-mahjong/how-many-tiles-are-in-mahjong",
+      note: "Hong Kong sets usually have no jokers; counts vary by region (retailer blog)",
+    },
+    {
+      title: "The Mahjong: types of mahjong",
+      url: "https://themahjong.com/blog/types-of-mahjong",
+      note: "Tile counts differ by style (retailer blog)",
+    },
+  ],
   body: [
     {
       type: "p",
@@ -105,7 +137,7 @@ export const articleHowToHostAMahjongNight: Article = {
     {
       type: "list",
       items: [
-        "**A beginner set suited to your version.** This is the big one. It typically runs from the low tens of dollars up to a few hundred, depending on materials and extras. Check the listing names your version, see what's included, and prefer tiles that are easy to read. Larger tiles are kind to tired eyes.",
+        "**A beginner set suited to your version.** This is the big one, and prices vary widely with materials and extras. Check the listing names your version, see what's included, and prefer tiles that are easy to read. Larger tiles are kind to tired eyes.",
         "**Racks.** They keep each player's tiles upright and tidy. Commonly sold with American-style sets; other styles may play without them. Check whether your set already includes them.",
         "**Pushers, where applicable.** Some set styles use them to help move tiles along the table. Only worth buying if your version and set call for them.",
         "**A playing mat.** It softens the sound, protects the tiles and your table, and gives the game a defined little stage.",
@@ -117,7 +149,7 @@ export const articleHowToHostAMahjongNight: Article = {
     },
     {
       type: "p",
-      text: "A quick compatibility check before you click buy: Does the listing name your version? Are the extras it includes the ones your version uses? Does the reference card or book match that version? If any answer is 'not sure', ask the seller or your teacher first.",
+      text: "A quick compatibility check before you click buy: Does the listing name your version? For American mahjong, does the set include at least eight jokers? Are the extras it includes the ones your version uses? Does the reference card or book match that version? If any answer is 'not sure', ask the seller or your teacher first.",
     },
     { type: "h2", text: "Learning the basics before you host", id: "learn" },
     {
@@ -193,10 +225,10 @@ export const articleHowToHostAMahjongNight: Article = {
       text: "Message your group chat: 'Does anyone play mahjong, and which version?' You may find a hidden expert, a borrowable set, or a table of friends who've all been wanting to learn.",
     },
     {
-      type: "shopHobby",
-      productIds: ["mahjong-sets", "conversation-cards"],
+      type: "shopTheArticle",
+      articleSlug: "how-to-host-a-mahjong-night",
       title: "Before you buy a set",
-      dek: "Check which version a set is made for and what it includes before ordering. A search is not a recommendation of a specific product.",
+      dek: "Pick one set, not all of them: check which version it is made for and what it includes, and match the card to your version. The listing is the source for price and stock.",
     },
     {
       type: "p",

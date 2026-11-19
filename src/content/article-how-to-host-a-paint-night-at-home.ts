@@ -6,33 +6,50 @@ export const articleHowToHostAPaintNightAtHome: Article = {
   titleItalic: "Paint Night at Home",
   dek: "A simple setup, a one-painting plan everyone can follow and a few ways to keep the night relaxed, for friends who say they cannot draw.",
   category: "better-together",
-  status: "draft",
-  publishedAt: "",
-  hero: "girlsNight",
+  status: "published",
+  publishedAt: "2026-11-19",
+  verifiedAt: "2026-11-18",
+  hero: "potteryNight",
   searchIntent:
     "how to host a paint night at home / paint and sip at home ideas / paint night supplies",
   angle:
     "A host's plan for a paint night without a studio: a shared supply list, one easy follow-along painting, a setup that protects the table, and gentle ways to handle the friend who is convinced she can't paint",
   hobbies: ["craft-nights", "paint-by-numbers", "pottery-painting"],
   productIds: ["group-painting-kits", "acrylic-paints", "detail-brushes", "conversation-cards"],
-  sources: [],
+  sources: [
+    {
+      title: "CPSC: art materials safety",
+      url: "https://www.cpsc.gov/s3fs-public/5015.pdf",
+      note: "Read labels; avoid lead, cadmium and other heavy metals in art paints",
+    },
+    {
+      title: "Art & Creative Materials Institute: materials safety",
+      url: "https://www.acmiart.org/materials-safety",
+      note: "AP and CL seals on art materials",
+    },
+    {
+      title: "Food Allergy Research & Education: tips for staying safe with food allergies",
+      url: "https://www.foodallergy.org/resources/tips-staying-safe-food-allergies",
+      note: "Ask what food will be served and alert the host",
+    },
+    {
+      title: "Food Allergy Research & Education: cleaning methods",
+      url: "https://www.foodallergy.org/resources/cleaning-methods",
+      note: "Soap and water; hand sanitizers do not remove food allergens",
+    },
+  ],
   coworkChecks: [
-    "Typical cost of hosting a paint night at home (claimed: roughly $10 to $20 per guest for canvases, paint and snacks; varies widely)",
-    "Acrylic paints are water-based and wash from skin and fabric more easily while wet, but may stain once dry (claimed general property)",
-    "Art paints and pigments: check labels for non-toxic marking and age notes; keep paint, brushes and water away from food and drink; confirm wording is hedged and that no paint is described as safe to eat",
-    "Ventilation and spills: confirm the advice to cover surfaces and ventilate is general, not a safety guarantee",
-    "Allergies and dietary needs: confirm the advice to ask guests before choosing snacks is present, and that no health claims are made",
-    "Alcohol: confirm any mention is optional and balanced by non-alcoholic options; no promotion of drinking",
-    "Canvas panels or boards are commonly cheaper than stretched canvas (claimed general observation)",
-    "Disposal of paint water: confirm no claim that it is safe to pour anywhere; local guidance applies",
-    "Pets and children: confirm hedged wording about keeping paint out of reach",
-    "Group painting kits typically bundle canvases, paints and brushes for several people; confirm against shop product descriptions",
+    "VERIFIED 2026-11-18: art and craft paints - read labels, ACMI AP or CL seals, avoid lead, cadmium and other heavy metals; no paint called safe to eat or non-toxic; paint, brushes and water kept apart from food - cpsc.gov, acmiart.org",
+    "VERIFIED 2026-11-18: ask guests about allergies; wash hands with soap and water - foodallergy.org",
+    "VERIFIED 2026-11-18: per-guest cost ($10-$20) removed; claims that panels or loose supplies are cheaper than kits removed; kit contents described as 'check what is included' - reworded, no claim remains",
+    "VERIFIED 2026-11-18: acrylic 'washes out while wet' claim reworded to 'paint can stain fabric; rinse right away' - reworded, no claim remains",
+    "VERIFIED 2026-11-18: ventilation, pets and children, alcohol-optional and paint-water disposal lines are general advice that defers to labels and local guidance, no safety guarantee or health claim - reworded, no claim remains",
+    "VERIFIED 2026-11-18: cross-links - air-dry clay and watercolor articles removed from related until live - reworded",
   ],
   related: [
     "how-to-host-a-craft-night",
     "girls-night-ideas-that-arent-drinks",
-    "how-to-start-air-dry-clay",
-    "watercolor-painting-for-beginners",
+    "creative-hobbies-you-can-start-at-home",
   ],
   body: [
     {
@@ -46,7 +63,7 @@ export const articleHowToHostAPaintNightAtHome: Article = {
     { type: "h2", text: "Why it is worth hosting", id: "why" },
     {
       type: "p",
-      text: "It takes about two to three hours, suits any skill level and gives a group something to do with its hands, which makes conversation easier. Everyone leaves with something made. Start-up effort is a table, some paint and a plan. Typically it runs about $10 to $20 per guest, depending on how fancy the snacks get.",
+      text: "It takes about two to three hours, suits any skill level and gives a group something to do with its hands, which makes conversation easier. Everyone leaves with something made. Start-up effort is a table, some paint and a plan, and the cost depends mostly on how fancy the snacks get.",
     },
     { type: "h2", text: "What you need", id: "need" },
     {
@@ -60,7 +77,7 @@ export const articleHowToHostAPaintNightAtHome: Article = {
         "Aprons or old shirts",
       ],
       optional: [
-        "A group painting kit that bundles canvases, paints and brushes for several people",
+        "A group painting kit, if you want canvases, paints and brushes in one box (check what is included)",
         "A small easel or a stack of books to prop canvases",
         "Conversation cards for slow moments",
         "A shared playlist",
@@ -73,7 +90,7 @@ export const articleHowToHostAPaintNightAtHome: Article = {
     },
     {
       type: "p",
-      text: "**What the optional pieces do.** A group kit saves you shopping for six sets of everything, though loose supplies often cost less. Conversation cards are useful when the room goes quiet halfway through. Fine brushes let guests add details like stars and stripes without smudging.",
+      text: "**What the optional pieces do.** A group kit saves you shopping for six sets of everything. Conversation cards are useful when the room goes quiet halfway through. Fine brushes let guests add details like stars and stripes without smudging.",
     },
     {
       type: "saveSplurge",
@@ -86,9 +103,9 @@ export const articleHowToHostAPaintNightAtHome: Article = {
       type: "list",
       items: [
         "**Cover the table** with a cloth, paper or an old sheet, and keep a damp towel nearby.",
-        "**Open a window** if the room is stuffy, and read the paint labels.",
+        "**Open a window** if the room is stuffy. Read the paint labels, look for the ACMI AP or CL seal, and avoid products containing lead, cadmium or other heavy metals. Don't treat any paint as safe to eat.",
         "**Put snacks on a separate table.** Paint, brushes and water stay away from food and drink.",
-        "**Ask about allergies** before you plan the food.",
+        "**Ask about allergies** before you plan the food, and wash hands with soap and water before anyone eats.",
         "**Keep paint out of reach** of pets and small children.",
         "**Set out a paper plate per person** with small dabs of each color.",
       ],
@@ -156,7 +173,7 @@ export const articleHowToHostAPaintNightAtHome: Article = {
     {
       type: "item",
       title: "Paint got on clothes",
-      note: "Acrylic is easier to wash out while wet. Rinse fabric right away, and wear things you do not mind spoiling next time.",
+      note: "Paint can stain fabric. Rinse it right away, and wear things you do not mind spoiling next time.",
     },
     {
       type: "item",
@@ -166,7 +183,7 @@ export const articleHowToHostAPaintNightAtHome: Article = {
     {
       type: "shopHobby",
       title: "Shop the hobby",
-      dek: "Optional. Shared supplies are often cheaper than individual kits, and kits are handy when you do not want to shop around.",
+      dek: "Optional. Kits are handy when you do not want to shop around.",
       productIds: ["group-painting-kits", "acrylic-paints", "detail-brushes", "conversation-cards"],
     },
     {

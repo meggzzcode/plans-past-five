@@ -1,13 +1,35 @@
 # Pricing strategy framework
 
-Status: DRAFT framework, 2026-11-19. Every market number, fee and comparable sale is PENDING COWORK (task C7, output docs/marketplace/FLIPPA-RESEARCH.md). This file contains **no prices, no fee rates and no comparable sales** and none should be invented. Not financial advice.
+Status: DRAFT framework, updated 2026-11-19 from `docs/marketplace/FLIPPA-RESEARCH.md` (Cowork, read 2026-11-18). Facts below carry Cowork's source and page age; Flippa's pages conflict and are old in places, so re-read the live pages at listing time. Plans Past Five prices, cash costs and hours are **UNCONFIRMED** and no price is suggested here. Not financial advice. Nothing is listed or accepted without the owner's approval.
 
 ## Principles
 
 - **No price is guaranteed.** A sale may not happen, or may happen below any figure here.
 - **Established-revenue valuation multiples do not apply.** Methods that multiply monthly profit or revenue need an earnings history. This site is pre-revenue with no traffic history, so those multiples have nothing to multiply and must not be used or implied.
-- A pre-revenue starter site is priced by what is built, what a buyer would have to spend to recreate it, and what comparable pre-revenue listings actually sold for, once C7 supplies verified sales.
+- A pre-revenue starter site is priced by what is built, what a buyer would have to spend to recreate it, and what comparable pre-revenue listings actually sold for, once verified sales are found (none so far).
 - Never price off anything speculative: no earnings forecasts, traffic targets or affiliate projections appear in a listing, and any buyer forecast is hypothetical.
+
+## Flippa facts recorded by Cowork (read 2026-11-18; USD)
+
+Page ages are the search tool's estimates. Sources are Flippa's own pages unless marked.
+
+### Pricing rules for a site with no revenue
+- New, starter, template and non-revenue-generating assets (including newly built sites without verified revenue or user data) have a maximum asking (classified) or reserve (auction) price of $9,999. Source: https://support.flippa.com/hc/en-us/articles/12856932906767-Listing-sale-pricing (about 539 days old).
+- "An asset that has not yet produced revenue cannot have an Asking Price above $9,999." Source: https://support.flippa.com/hc/en-us/articles/360000649315-How-to-value-an-asset-or-business (about 2,902 days old).
+- CONFLICT: another page says assets without a revenue stream cannot be priced at $9,999 or more, and that pre-revenue projects can be listed in a Projects & Concepts category for up to $99,999. Source: https://support.flippa.com/hc/en-us/articles/5974444302351-Businesses-and-digital-assets-which-cannot-be-listed-for-sale-on-Flippa (about 1,449 days old). Whether $9,999 is a cap or a threshold into another category is unresolved; re-read at listing time.
+- Cowork's planning note: our site is pre-revenue with no traffic history, so plan for the starter-site bracket, not a multiple of earnings.
+
+### Fees (conflicting and old; re-check the live pricing page)
+| Fact | Source | Page age |
+|---|---|---|
+| Self-service entry package $29 flat fee, 60-day term; "most picked" $49 for a three-month term; premium $199 per 6 months with NDA protection; success fee "starts from 5%"; for the "sub $10K" bracket the page shows a 10% success fee | https://flippa.com/pricing | about 1,912 days |
+| Platform fees start from $39; success fee for self-service sales is 10% of final transaction value | https://flippa.com/free-valuation | newer, age not recorded |
+| Listing fee is charged when an asset is listed; success fee is a percentage of transaction value; sellers must not circumvent Flippa (payment outside the platform still owes the fee) | https://flippa.com/terms-of-service | about 27 days |
+| Success fees are mandatory; FlippaPay and escrow fees exist for transactions of $10,000 and above (details NOT READ) | https://support.flippa.com/hc/en-us/articles/360000774276-Pricing-Escrow-Fees-FlippaPay-Fees-and-Buyer-Verification | about 2,834 days |
+| Listing fees are payable whether or not the asset sells | https://flippa.com/buy/startups | age not recorded |
+| Third-party estimate (not Flippa's statement): seller keeps about 83-88% of a $500-$2,000 sale after fees | https://gauravtiwari.org/flippa-value-sell-a-website-with-no-revenue/ | 79 days |
+
+Not read: required listing fields, domain-transfer and handover rules, category rules for content sites, title rules beyond the revenue-claim rule (quoted in LISTING-DRAFT.md and LISTING-CHECKLIST.md). Other marketplaces (Empire Flippers, Motion Invest, Investors Club) were NOT researched.
 
 ## Keep the evidence types separate
 
@@ -18,13 +40,29 @@ Status: DRAFT framework, 2026-11-19. Every market number, fee and comparable sal
 | Auction bids (including unmet reserves) | Shows interest, not a sale | Low |
 | Unsold or expired listings | Evidence that an asking level did not clear | Informational |
 
-Record, for each comparable: marketplace, date, type (from the table), stated price, whether it is a site without revenue, content size, and what was included. All blank until C7 is done.
+Record, for each comparable: marketplace, date, type (from the table), stated price, whether it is a site without revenue, content size, and what was included.
 
-## Tiers (definitions only; values blank until C7)
+### What Cowork found, kept in separate lists (FLIPPA-RESEARCH.md section 5)
+
+**Verified completed sales of comparable sites: NONE FOUND.** Cowork did not open Flippa's sold-listing history (needs a logged-in marketplace session). There is therefore no verified anchor for a price range yet.
+
+**Asking prices (not sales):** an unrelated crypto community site listed at $2,950 with monthly revenue of $8 (https://flippa.com/buy/categories/internet/online-community). Different kind of site; context only.
+
+**Auction bids:** none recorded.
+
+**Unsold or expired listings:** none recorded.
+
+**Unverified third-party seller anecdotes (self-reported, NOT sales evidence, do not present as comparables):** a one-year-old Amazon-affiliate site said to have sold for about $1,400 (Medium, 923 days old); a zero-revenue e-commerce site said to have sold for $3,500 (Medium, 380 days old, promotional); a $12,500 sale of a two-year-old 50-post affiliate site (3,253 days old); forum reports of starter sites at about $350 and $800 (2,291 days old). Not comparable to this site and none is verified.
+
+**Not comparable:** Flippa's own social post of a $330K sale of a 17-year-old news site (https://x.com/Flippa/status/2018791794926850050).
+
+Cowork's reading, stated as an opinion and not a fact: on anecdote evidence only, expectations for a brand-new site with no traffic history stay low, bounded above by Flippa's pre-revenue ceiling, and it may not sell.
+
+## Tiers (definitions only; values blank until the owner decides)
 
 | Tier | Meaning | Value |
 |---|---|---|
-| Quick-sale price | Price at which the owner would accept a fast sale | ______ (owner decides after C7) |
+| Quick-sale price | Price at which the owner would accept a fast sale | ______ (owner decides) |
 | Standard asking price | Mid-range ask supported by verified completed sales | ______ |
 | Premium asking price | Higher ask, only if more is complete at listing (domain, live host, more verified articles, verified products) | ______ |
 | Suggested auction reserve | Not lower than the minimum acceptable net proceeds once fees are covered | ______ |
@@ -34,16 +72,16 @@ Premium pricing should not be set unless the items marked AVAILABLE AT LISTING O
 
 ## Calculator (formulas in words)
 
-Inputs (blank; owner fills, fee figures come from C7):
+Inputs (blank; owner fills, fee figures from the Flippa facts above; re-check):
 
 | Input | Value |
 |---|---|
 | A. Cash costs to date (from receipts) | ______ |
 | B. Hours invested | ______ |
 | C. Owner's value per hour for own time (owner chooses; optional) | ______ |
-| D. Success or commission fee, percent | ______ % (PENDING COWORK) |
-| E. Listing fee | ______ (PENDING COWORK) |
-| F. Escrow fee | ______ (PENDING COWORK; who pays is a term to confirm) |
+| D. Success or commission fee, percent | ______ % (see Flippa facts above; conflicting, re-check) |
+| E. Listing fee | ______ (see Flippa facts above; conflicting, re-check) |
+| F. Escrow fee | ______ (not stated for sales under $10,000; details NOT READ) |
 | G. Other fees (payment, currency, transfer) | ______ |
 | P. Candidate sale price | ______ |
 
@@ -55,13 +93,38 @@ Arithmetic:
 4. Total marketplace and transaction fees = (3) + E + F + G.
 5. **Estimated net proceeds = P minus (4).**
 6. Net result against cash = (5) minus A.
-7. **Minimum acceptable net proceeds** = the owner's chosen floor, at least A if the owner wants to recover cash. Floor price needed = (floor + E + F + G) divided by (1 minus D/100), because the success fee is a share of P. Re-check that formula against how the marketplace actually computes its fee (C7).
+7. **Minimum acceptable net proceeds** = the owner's chosen floor, at least A if the owner wants to recover cash. Floor price needed = (floor + E + F + G) divided by (1 minus D/100), because the success fee is a share of P. Re-check that formula against how the marketplace actually computes its fee.
 8. **Suggested reserve** = the floor price from step 7, rounded up by the owner, never below it.
 
-Worked example: not provided on purpose, because any example number would look like a market figure.
+### Worked example A: blank inputs for Plans Past Five (UNCONFIRMED)
+
+Cash costs (A) are in the owner's tracker and were not read. Hours (B), value per hour (C), the floor and the candidate price (P) are the owner's to supply.
+
+| Step | Formula | Result |
+|---|---|---|
+| Cash basis | A | ______ |
+| Success fee | P x D / 100 (Cowork: 10% shown for the sub-$10K bracket, old page) | ______ |
+| Listing fee E | one of $29 / $39 / $49 / $199 depending on package (conflicting sources above) | ______ |
+| Escrow F | not stated for sales under $10,000 (details NOT READ); confirm | ______ |
+| Net proceeds | P - success fee - E - F - G | ______ |
+| Net result against cash | net proceeds - A | ______ |
+| Floor price | (floor + E + F + G) / (1 - D/100) | ______ |
+
+### Worked example B: ILLUSTRATIVE ONLY
+
+**This is arithmetic, not a market figure, not a suggested price and not a prediction.** P = $1,000 is a round number chosen only to show the formula. D = 10% and E = $49 are among the fee figures Cowork recorded (old pages that conflict; re-check). F = G = 0 is an assumption (escrow details NOT READ). A is left symbolic because the owner's cash costs are UNCONFIRMED.
+
+1. Success fee = 1,000 x 10 / 100 = $100.
+2. Total fees = 100 + 49 + 0 + 0 = $149.
+3. Net proceeds = 1,000 - 149 = **$851**.
+4. Net result against cash = 851 - A.
+5. If the owner's floor were $500 net: floor price = (500 + 49) / (1 - 0.10) = 549 / 0.9 = **$610** (rounded up). Same formula with E = $29 gives (500 + 29) / 0.9 = $588 (rounded up).
+6. Note: the listing fee is payable even if the asset does not sell, so a no-sale outcome costs E and recovers nothing.
+
+Whether Flippa computes the success fee on the final sale price in exactly this way for a given package must be confirmed on the live pricing page.
 
 ## Pending before any price is set
 
-- C7: marketplace fees, listing requirements, revenue-claim rules for sites without revenue, verified completed comparable sales.
+- C7 is done (Cowork, 2026-11-18) but left open: verified completed comparable sales (none found), the live fee schedule (sources conflict), the cap versus Projects & Concepts conflict, listing field and handover rules (NOT READ), other marketplaces (NOT researched).
 - NEEDS OWNER: cash costs (A), hours (B), floor, and whether the domain is included.
-- Re-run the calculator when the marketplace's fees are known.
+- Re-run the calculator against the live fee page at listing time. Any asking price must respect Flippa's pre-revenue price rule above.

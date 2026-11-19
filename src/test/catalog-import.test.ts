@@ -8,7 +8,7 @@ import {
   importCsv,
   parseCsv,
 } from "../../scripts/import-products.mjs";
-import { verifiedCatalog, type KnownRefs } from "@/data/catalog";
+import { validateCatalogProduct, verifiedCatalog, type KnownRefs } from "@/data/catalog";
 import { generatedCatalog } from "@/data/catalog.generated";
 import { hobbies } from "@/data/hobbies";
 import { collections } from "@/data/products";
@@ -72,9 +72,17 @@ const withRow = (o: Row): Row => ({ ...good, ...o });
 const second = (o: Row = {}): Row => withRow({ id: "second-item", asin: "B0IMAGINA2", ...o });
 
 describe("shipped data", () => {
-  it("ships an empty catalog and the committed generated file has no fixture rows", () => {
-    expect(generatedCatalog).toEqual([]);
-    expect(verifiedCatalog).toEqual([]);
+  it("every product in the committed generated file is verified and the file has no fixture rows", () => {
+    expect(generatedCatalog.length).toBeGreaterThan(0);
+    for (const p of generatedCatalog) expect(validateCatalogProduct(p), p.id).toEqual([]);
+    for (const p of verifiedCatalog) {
+      expect(p.status, p.id).toBe("verified");
+      expect(p.amazonUrl, p.id).toBe(`https://www.amazon.com/dp/${p.asin}`);
+      expect(p.amazonUrl, p.id).not.toMatch(/[?#]/);
+      expect(p.researchSources.length, p.id).toBeGreaterThan(0);
+      expect(p.lastVerified, p.id).toBeTruthy();
+    }
+    expect(verifiedCatalog.some((p) => p.status !== "verified")).toBe(false);
     const src = readFileSync(path.resolve(__dirname, "../data/catalog.generated.ts"), "utf8");
     expect(src).not.toMatch(/fixture|B0IMAGINA/i);
   });

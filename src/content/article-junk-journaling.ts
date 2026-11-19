@@ -64,6 +64,10 @@ export const articleJunkJournaling: Article = {
       type: "noSpend",
       text: "Raid your recycling. Cereal boxes become sturdy backgrounds, envelopes have lovely security patterns inside, and a single magazine will give you months of images and words.",
     },
+    {
+      type: "p",
+      text: "When you are ready to buy something, the [junk journaling supplies guide](/journal/junk-journaling-supplies-for-beginners) sorts what is worth having first from what can wait.",
+    },
     { type: "h3", text: "What to collect during the week" },
     {
       type: "p",
@@ -167,7 +171,7 @@ export const articleJunkJournaling: Article = {
     {
       type: "shopHobby",
       title: "Shop the hobby",
-      dek: "Optional upgrades once you know you love it. Start with what you have.",
+      dek: "Start with what you have. When you are ready to buy, the essentials come first and the extras can wait.",
       productIds: ["junk-journals", "washi-tape", "sticker-sets", "pocket-notebooks"],
     },
     {
@@ -176,7 +180,7 @@ export const articleJunkJournaling: Article = {
     },
     {
       type: "p",
-      text: "Want more ideas? Explore more in [Creative Corner](/creative-corner).",
+      text: "Want more ideas? Explore more in [Creative Corner](/creative-corner), or keep notes on what you read in [a reading journal](/journal/how-to-start-a-reading-journal).",
     },
     { type: "ifYouLoved", hobbies: ["scrapbooking", "collage-art", "watercolor-painting"] },
   ],

@@ -6,9 +6,10 @@ export const articleHowToStartAReadingJournal: Article = {
   titleItalic: "Actually Keep",
   dek: "A notebook, a few prompts and a five-minute habit, for remembering what you read without turning books into homework.",
   category: "creative-corner",
-  status: "draft",
-  publishedAt: "",
-  hero: "soloCafe",
+  status: "published",
+  publishedAt: "2026-11-19",
+  verifiedAt: "2026-11-18",
+  hero: "shopBookish",
   searchIntent:
     "how to start a reading journal / reading journal ideas / what to write in a reading journal",
   angle:
@@ -17,14 +18,10 @@ export const articleHowToStartAReadingJournal: Article = {
   productIds: ["reading-journals", "pocket-notebooks", "book-lights", "magnetic-bookmarks"],
   sources: [],
   coworkChecks: [
-    "Typical beginner starter spend for a reading journal (claimed: roughly $0 to $20, from an existing notebook to a purpose-made journal with pen)",
-    "Libraries commonly lend books, e-books and audiobooks free to cardholders; availability varies, and no specific library or app is named (claimed general fact)",
-    "Gel and fountain pen ink may bleed through thin paper; confirm wording is a general caution, not a product claim",
-    "Five minutes per entry is an editorial suggestion, not a research finding",
-    "Confirm no real book titles, authors or ratings appear; examples are genres and made-up shapes only",
-    "Confirm no claim that journaling improves memory, comprehension or wellbeing",
-    "Reading by a clip-on light in a shared space: confirm no claim about eye health or sleep",
-    "Star-rating and tracker layout ideas are original and not copied from any competitor layout",
+    "RESOLVED 2026-11-19: starter spend ('under about $20') - removed; verification found no source for prices",
+    "RESOLVED 2026-11-19: libraries lend books, e-books, audiobooks - reworded to 'check whether your library lends...; varies'; no library or app named",
+    "RESOLVED 2026-11-19: five minutes per entry - already framed in text as a suggestion, not a rule",
+    "RESOLVED 2026-11-19: no real titles, authors or ratings; no memory/comprehension/wellbeing or eye-health claims; layouts are original - checked against article text",
   ],
   related: [
     "how-to-start-a-book-club",
@@ -74,10 +71,6 @@ export const articleHowToStartAReadingJournal: Article = {
       type: "saveSplurge",
       save: "A notebook you already own and one good pen.",
       splurge: "A journal with a lay-flat spine and thick pages that you look forward to opening.",
-    },
-    {
-      type: "p",
-      text: "Typically, even a fully kitted-out setup stays under about $20, and the free version costs nothing.",
     },
     { type: "h2", text: "A tiny entry template", id: "template" },
     {
@@ -139,7 +132,7 @@ export const articleHowToStartAReadingJournal: Article = {
     },
     {
       type: "p",
-      text: "Libraries often lend books, e-books and audiobooks for free, and availability varies, so a library-holds list also earns its keep. It stops you buying a book on impulse that a library could lend you next week.",
+      text: "Check whether your library lends books, e-books or audiobooks, since what is on offer varies. If it does, a library-holds list also earns its keep, because it can stop you buying on impulse a book you could borrow.",
     },
     { type: "h2", text: "Common mistakes and fixes", id: "troubleshooting" },
     {

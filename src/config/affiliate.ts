@@ -86,15 +86,19 @@ export const affiliateRegistry: Record<string, AffiliateEntry> = {
 
 /**
  * Required Amazon Associates identification sentence, shown whenever the Amazon entry is live.
- * TODO-VERIFY (Cowork): confirm against the current Amazon Associates Program Operating
- * Agreement / Associates Central that this exact wording is still required.
+ * Verified wording: Associates Program Operating Agreement, section 5 "Identifying Yourself as an
+ * Associate", https://affiliate-program.amazon.com/help/operating/agreement (read 2026-11-18,
+ * recorded in docs/commerce/AMAZON-DISCLOSURE.md). First person singular, as Amazon states it.
+ * Re-check against the current Agreement before going live.
  */
 export const AMAZON_ASSOCIATE_STATEMENT =
-  "As an Amazon Associate we earn from qualifying purchases.";
+  "As an Amazon Associate I earn from qualifying purchases.";
 
 /**
- * Longer program-participation sentence used on the disclosure page. Same TODO-VERIFY as above.
- * TODO-VERIFY (Cowork): confirm wording against the current Operating Agreement.
+ * Longer program-participation sentence used on the disclosure page.
+ * NOT prescribed by Amazon in the pages Cowork read (docs/commerce/AMAZON-DISCLOSURE.md, 2026-11-18),
+ * so it stays unverified wording: keep it consistent and do not claim approval until Amazon has given
+ * final acceptance. Used only when the Amazon entry is live.
  */
 export const AMAZON_PROGRAM_STATEMENT =
   "is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.";

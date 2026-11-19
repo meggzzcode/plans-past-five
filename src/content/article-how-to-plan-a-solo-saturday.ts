@@ -6,24 +6,19 @@ export const articleHowToPlanASoloSaturday: Article = {
   titleItalic: "Look Forward To",
   dek: "Give your Saturday a storyline: an anchor, a treat, a wander and a rest. Three sample days and a plan for when it all wobbles.",
   category: "solo-dates",
-  status: "draft",
-  publishedAt: "",
-  hero: "picnic",
+  status: "published",
+  publishedAt: "2026-11-19",
+  verifiedAt: "2026-11-18",
+  hero: "shopAdventures",
   searchIntent: "how to spend a Saturday alone / solo Saturday ideas",
   angle:
     "A simple framework (anchor, treat, wander, rest) with three sample Saturdays at different budgets and energy levels, and a fallback plan for when you flake",
   hobbies: ["picnicking", "thrifting", "museum-exploring", "reading", "outdoor-sketching"],
   productIds: ["picnic-blankets", "pocket-notebooks", "market-totes", "portable-watercolor"],
   coworkChecks: [
-    "Cost labels in the sample Saturdays ('typically under $20', '$30-$60' etc.) are rough ranges and vary by city; confirm hedged wording or remove the figures.",
-    "Statement that many museums, libraries and parks have free or low-cost access, and that some museums offer free hours: keep hedged and generic, with no venue named.",
-    "Statement that many farmers' markets operate on Saturday mornings in many areas: confirm it is hedged ('often', 'many') and not a universal claim.",
-    "Safety guidance for solo outings (share your plan and location with someone, daylight for unfamiliar places, charged phone): confirm it matches general personal-safety advice.",
-    "Statement that museums, libraries, markets and studios exist in many areas but their hours, tickets and reservation rules vary and should be checked; confirm hedged and that no venue is named.",
-    "Statement that walking, daylight and a charged phone are sensible basics for a solo outing: confirm it matches mainstream safety advice and makes no guarantees.",
-    "Class cost range ('typically $30-$60, but it varies a great deal') for a one-off workshop: confirm hedged wording or remove.",
-    "Statement that a flower market or independent-shop street may or may not exist near the reader: confirm the wording stays conditional.",
-    "Statement that opening hours, class schedules and reservations vary and should be checked in advance: ensure no specific times are promised.",
+    "VERIFIED 2026-11-18: solo outings, well-lit areas and company when possible - ojp.gov (older DOJ guide; location sharing and charged phone kept as plain tips, no claim made)",
+    "RESOLVED 2026-11-19: free or low-cost museums, libraries, parks and market/class availability - kept generic and hedged ('hours, tickets and reservations vary', no venue named), per verification note 'many, check locally'",
+    "RESOLVED 2026-11-19: all cost labels (typically under $10, $10-$20, $30-$60) - figures removed, wording now 'prices vary'; verification found no source for prices",
   ],
   related: [
     "solo-date-ideas",
@@ -31,7 +26,13 @@ export const articleHowToPlanASoloSaturday: Article = {
     "cozy-solo-dates-at-home",
     "things-to-do-after-work-instead-of-scrolling",
   ],
-  sources: [],
+  sources: [
+    {
+      title: "Solo outings: well-lit areas and companions (US DOJ/OJP guide)",
+      url: "https://www.ojp.gov/pdffiles1/Digitization/81199NCJRS.pdf",
+      note: "Older US Department of Justice guide recommending well-lit areas and going with others. Supports only that general advice; sharing location and a charged phone are personal tips, not sourced.",
+    },
+  ],
   body: [
     {
       type: "p",
@@ -50,7 +51,7 @@ export const articleHowToPlanASoloSaturday: Article = {
       type: "list",
       items: [
         "**One anchor.** What the day is about: a hike, a museum, a market, a class, a long lunch. The one you'd be sorry to skip.",
-        "**One treat.** A small, specific pleasure, like a pastry, a new paperback or flowers.",
+        "**One treat.** A small, specific pleasure, like a pastry, a new paperback or [flowers to arrange at home](/journal/flower-arranging-as-a-hobby).",
         "**One wander.** An unplanned window for following your nose down a side street or into a shop.",
         "**One rest.** A block with nothing in it, so the day doesn't quietly become a to-do list.",
       ],
@@ -76,7 +77,7 @@ export const articleHowToPlanASoloSaturday: Article = {
       type: "list",
       items: [
         "**Anchor:** A long walk through a neighborhood you rarely visit, with a camera or your phone for ten photos.",
-        "**Treat:** A coffee or pastry (typically under $10), eaten on a bench like you've nowhere to be.",
+        "**Treat:** A coffee or pastry, eaten on a bench like you've nowhere to be.",
         "**Wander:** A library or small independent bookshop for a half hour of unplanned browsing.",
         "**Rest:** A park bench, a podcast and nothing else for twenty minutes.",
       ],
@@ -86,7 +87,7 @@ export const articleHowToPlanASoloSaturday: Article = {
       type: "list",
       items: [
         "**Anchor:** A museum or gallery. Choose one wing and see it properly instead of racing the whole building.",
-        "**Treat:** Lunch from a deli or bakery, carried to a park (typically $10-$20).",
+        "**Treat:** Lunch from a deli or bakery, carried to a park ([how to plan a perfect picnic](/journal/how-to-plan-a-perfect-picnic) has the checklist).",
         "**Wander:** A used bookstore or thrift shop nearby. Set a budget and a mission.",
         "**Rest:** An hour of sketching in the park, or simply lying on a blanket.",
       ],
@@ -95,7 +96,7 @@ export const articleHowToPlanASoloSaturday: Article = {
     {
       type: "list",
       items: [
-        "**Anchor:** A one-off class, like pottery painting or a drop-in workshop (typically $30-$60, but it varies a great deal).",
+        "**Anchor:** A one-off class, like pottery painting or a drop-in workshop (prices vary a great deal, so check before you book).",
         "**Treat:** A sit-down lunch at the counter, dessert included.",
         "**Wander:** A flower market or a street of small shops, if there's one nearby.",
         "**Rest:** A bath and an early night with a book you're enjoying.",
@@ -144,7 +145,7 @@ export const articleHowToPlanASoloSaturday: Article = {
     },
     {
       type: "p",
-      text: "For more inspiration, see [50 solo date ideas](/journal/solo-date-ideas) and [how to take yourself on a solo coffee shop date](/journal/how-to-take-yourself-on-a-solo-coffee-shop-date).",
+      text: "For more inspiration, see [50 solo date ideas](/journal/solo-date-ideas) and [how to take yourself on a solo coffee shop date](/journal/how-to-take-yourself-on-a-solo-coffee-shop-date). For more weekend plans, see [things to do on the weekend](/journal/things-to-do-on-the-weekend).",
     },
     { type: "h2", text: "A note on doing it alone" },
     {

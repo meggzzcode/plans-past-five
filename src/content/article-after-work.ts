@@ -47,6 +47,10 @@ export const articleAfterWork: Article = {
     },
     { type: "quote", text: "Sorry, I have plans past five." },
     { type: "h2", text: "If you're exhausted", id: "exhausted" },
+    {
+      type: "p",
+      text: "If most evenings feel like this, [low-energy hobbies](/journal/low-energy-hobbies) has more gentle ideas.",
+    },
     it(
       1,
       "Do a puzzle with a podcast",
@@ -160,7 +164,7 @@ export const articleAfterWork: Article = {
     it(
       12,
       "Play pickleball or tennis",
-      "Many public courts have lights and evening open play. An hour of rallying with a friend beats a treadmill every time.",
+      "Many public courts have lights and evening open play. An hour of rallying with a friend beats a treadmill every time. New to either? Start with [pickleball for beginners](/journal/pickleball-for-beginners) or [tennis as an adult](/journal/how-to-start-playing-tennis-as-an-adult).",
       "60 min",
       "Under $50 for gear, courts often free",
       "With a friend",
@@ -204,7 +208,7 @@ export const articleAfterWork: Article = {
     it(
       17,
       "Host a 90-minute craft hour",
-      "Not a dinner party. Just a table, snacks and a bracelet kit. Text two friends 'craft hour Thursday?' and see what happens.",
+      "Not a dinner party. Just a table, snacks and a bracelet kit. Text two friends 'craft hour Thursday?' and see what happens. [How to host a craft night](/journal/how-to-host-a-craft-night) has the plan.",
       "90 min",
       "Under $25",
       "With friends",
@@ -213,7 +217,7 @@ export const articleAfterWork: Article = {
     it(
       18,
       "Start a standing game night",
-      "Mahjong, cards, a cooperative board game. Same night every week or every other week, so nobody has to plan.",
+      "Mahjong, cards, a cooperative board game. Same night every week or every other week, so nobody has to plan. If it is mahjong, see [how to host a mahjong night](/journal/how-to-host-a-mahjong-night).",
       "2 hours",
       "Varies",
       "Group",

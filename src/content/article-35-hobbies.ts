@@ -53,7 +53,7 @@ export const article35Hobbies: Article = {
     { type: "h2", text: "When you've got nothing left: low-energy hobbies", id: "low-energy" },
     {
       type: "p",
-      text: "For the days when you closed the laptop and felt your brain leave your body. These all work on the couch, need almost no setup, and are gentle on screen-tired eyes. If you want more, we've got a whole list of [low-energy hobbies for when work has worn you out](/after-hours).",
+      text: "For the days when you closed the laptop and felt your brain leave your body. These all work on the couch, need almost no setup, and are gentle on screen-tired eyes. If you want more, we've got a whole list of [low-energy hobbies for when work has worn you out](/journal/low-energy-hobbies).",
     },
     it(
       1,
@@ -170,7 +170,7 @@ export const article35Hobbies: Article = {
       18,
       "Flower arranging",
       "flower-arranging",
-      "Split one supermarket bunch into three small jars and you've got arrangements for every room.",
+      "Split one supermarket bunch into three small jars and you've got arrangements for every room. Our [flower arranging guide](/journal/flower-arranging-as-a-hobby) shows how.",
     ),
     {
       type: "shopHobby",
@@ -302,7 +302,7 @@ export const article35Hobbies: Article = {
     { type: "h2", text: "How to actually pick one", id: "how-to-pick" },
     {
       type: "p",
-      text: "Don't overthink this part. Choose based on the energy you actually have on a Tuesday, not the energy you wish you had. If you're wiped out most evenings, start in the low-energy section. If you're craving people, start social.",
+      text: "Don't overthink this part. Choose based on the energy you actually have on a Tuesday, not the energy you wish you had. If you're wiped out most evenings, start in the low-energy section. If you're craving people, start social. Still stuck? [How to find a hobby as an adult](/journal/how-to-find-a-hobby-as-an-adult) starts from the very beginning.",
     },
     {
       type: "list",

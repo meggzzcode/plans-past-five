@@ -16,7 +16,7 @@ export const articleCreativeHome: Article = {
   category: "creative-corner",
   status: "published",
   publishedAt: "2026-11-18",
-  hero: "junkJournal",
+  hero: "potteryNight",
   searchIntent: "creative hobbies at home for adults",
   angle: "Small-apartment friendly, grouped by material, with mess level and what to buy first",
   hobbies: [
@@ -53,7 +53,7 @@ export const articleCreativeHome: Article = {
     it(
       1,
       "Junk journaling",
-      "Layer receipts, tickets and scraps into a notebook. It's part diary, part collage, and impossible to do wrong. Read our full [beginner's guide to junk journaling](/journal/how-to-start-junk-journaling).",
+      "Layer receipts, tickets and scraps into a notebook. It's part diary, part collage, and impossible to do wrong. Read our full [beginner's guide to junk journaling](/journal/how-to-start-junk-journaling), then the [supplies guide](/journal/junk-journaling-supplies-for-beginners) before you shop.",
       "junk-journaling",
     ),
     it(
@@ -216,7 +216,7 @@ export const articleCreativeHome: Article = {
     it(
       19,
       "Flower arranging",
-      "One supermarket bunch, three jars. Learn about height and texture, then break every rule.",
+      "One supermarket bunch, three jars. Learn about height and texture, then break every rule. Start with our [flower arranging guide](/journal/flower-arranging-as-a-hobby).",
       "flower-arranging",
     ),
     it(
@@ -240,7 +240,7 @@ export const articleCreativeHome: Article = {
       type: "list",
       items: [
         "**Pick one material**, not one of everything. Paper, paint, clay or thread.",
-        "**Buy (or borrow) a single starter kit.** Kits remove decision fatigue.",
+        "**Buy (or borrow) a single starter kit.** Kits remove decision fatigue, though [not every kit is worth it](/journal/creative-hobby-starter-kits-worth-considering).",
         "**Give it three evenings** before you decide whether it's for you.",
         "**Keep it visible.** A basket on the coffee table gets used; a box under the bed doesn't.",
       ],

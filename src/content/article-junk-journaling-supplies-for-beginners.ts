@@ -6,8 +6,9 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
   titleItalic: "Everything You Actually Need",
   dek: "A free-first supply list, a sensible first shopping basket, and the pretty things that can wait until you know your style.",
   category: "creative-corner",
-  status: "draft",
-  publishedAt: "",
+  status: "published",
+  publishedAt: "2026-11-19",
+  verifiedAt: "2026-11-18",
   hero: "junkJournal",
   searchIntent:
     "junk journaling supplies for beginners / junk journal supply list / what do I need to start a junk journal",
@@ -15,18 +16,30 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
     "A product-focused companion to the starter guide: sort supplies into essentials, things you already own, optional extras and later upgrades, so beginners spend only where it changes the result",
   hobbies: ["junk-journaling", "scrapbooking", "collage-art"],
   productIds: ["junk-journals", "washi-tape", "sticker-sets", "pocket-notebooks"],
-  sources: [],
+  sources: [
+    {
+      title: "NEDCC: storage enclosures for photographic materials",
+      url: "https://www.nedcc.org/free-resources/preservation-leaflets/5.-photographs/5.5-storage-enclosures-for-photographic-materials",
+      note: "Acid-free labels do not guarantee safety with photographs; Photographic Activity Test (ISO 18916)",
+    },
+    {
+      title: "Archival Methods: what 'photo safe' and 'archival' mean",
+      url: "https://archivalmethods.com/blog/beyond-photo-safe-mean/",
+      note: "No official standard for 'archival'; acid-free and lignin-free are the common attributes",
+    },
+    {
+      title: "Gaylord Archival: what is the Photographic Activity Test",
+      url: "https://gaylord.com/resources/what-is-the-photographic-activity-test",
+      note: "ISO 18916 explained",
+    },
+  ],
   coworkChecks: [
-    "Typical beginner starter spend for junk journaling (claimed: roughly $0 to $25 for a first page, $25 to $50 for a comfortable kit)",
-    "Glue sticks wrinkle thin paper less than liquid glue (claimed general craft guidance)",
-    "Acid-free / archival paper and adhesives are marketed to reduce yellowing over time; confirm what the labels actually promise",
-    "Washi tape is designed to be repositionable and low-tack (claimed; varies by tape and paper)",
-    "Photos printed at home on ordinary paper may fade or smear if wet glue is applied; check recommended adhesives for photos",
-    "Heavier paper (cardstock, kraft) handles layering better than printer paper (claimed general craft guidance)",
-    "Matte stickers sit more naturally against paper than glossy ones (editorial opinion; confirm it is framed as a preference)",
-    "Pens: ink that does not bleed or smear over dry glue is a sensible test; confirm wording stays advice, not a product claim",
-    "Leaving a journal under heavy books overnight to flatten buckled pages is standard craft advice (claimed)",
-    "Check that no product category description implies a specific brand, price or verified listing; the later product pass must attach only verified catalog items",
+    "VERIFIED 2026-11-18: 'acid-free' and 'archival' are marketing terms with no single standard; acid-free alone is not photo-safe; use copies and PAT-passing adhesives - nedcc.org, archivalmethods.com, gaylord.com",
+    "RESOLVED 2026-11-19: starter spend bands ($0-$25, $25-$50) and 'typically under $25' - removed; section now 'A realistic shopping order' with no prices",
+    "RESOLVED 2026-11-19: washi tape low-tack claim - reworded to 'usually sold as removable; test a scrap first' (seller wording only, not stated as fact)",
+    "RESOLVED 2026-11-19: matte stickers - reframed as a matter of taste",
+    "RESOLVED 2026-11-19: heavier paper, glue-stick comparison, pen smear test, pressing under books - kept only as hedged advice ('often', 'a common fix', 'test'); glue-stick-vs-liquid comparison not present in article; home-printer smear claim not present in article",
+    "RESOLVED 2026-11-19: no brand, price or verified-listing wording in the article body (re-read in full)",
   ],
   related: [
     "how-to-start-junk-journaling",
@@ -84,12 +97,12 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
     { type: "h3", text: "A mixed set of washi tape" },
     {
       type: "p",
-      text: "Tape is how scrappy paper starts to look like it belongs together. Look for a few plain colors alongside the patterns, so there is something quiet to balance the busy rolls. It is made to peel and reposition, which is handy while you are still deciding.",
+      text: "Tape is how scrappy paper starts to look like it belongs together. Look for a few plain colors alongside the patterns, so there is something quiet to balance the busy rolls. It is usually sold as removable, which is handy while you are still deciding, but test a scrap on your paper first.",
     },
     { type: "h3", text: "One sticker set in a single style" },
     {
       type: "p",
-      text: "Pick a lane, whether botanical, vintage labels or small icons. Matte finishes tend to sit better on paper than glossy ones. One set you reuse beats five you scatter.",
+      text: "Pick a lane, whether botanical, vintage labels or small icons. Many people prefer matte finishes to glossy ones, but it is a matter of taste. One set you reuse beats five you scatter.",
     },
     { type: "h3", text: "A fine pen or two" },
     {
@@ -135,17 +148,17 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
       splurge:
         "A lay-flat journal with mixed papers already built in, and one sticker collection you truly love the look of.",
     },
-    { type: "h2", text: "A realistic starter budget", id: "budget" },
+    { type: "h2", text: "A realistic shopping order", id: "budget" },
     {
       type: "p",
-      text: "Typically, a first page costs nothing, and a comfortable basket of notebook, tape, one sticker set and a pen lands in the low double digits. If you are well past that before one page is finished, you are probably shopping rather than making.",
+      text: "A first page can cost nothing if you use what you own. Prices vary by shop, so compare before you buy, and if you have spent a lot before one page is finished, you are probably shopping rather than making.",
     },
     {
       type: "list",
       items: [
         "**About nothing:** a notebook you own, a glue stick, scraps.",
-        "**Typically under $25:** a purpose-made journal, a tape set, a pen.",
-        "**Typically $25 to $50:** add stickers, a stamp and a few extra pens and papers.",
+        "**A small basket:** a purpose-made journal, a tape set, a pen.",
+        "**A bigger basket:** add stickers, a stamp and a few extra pens and papers.",
       ],
     },
     { type: "h2", text: "Choosing without the overwhelm", id: "choosing" },
@@ -154,8 +167,8 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
       items: [
         "**Pick a palette first.** Three colors, say cream, deep green and a warm red, keep every purchase compatible.",
         "**Buy for this weekend's page,** not the one you might make in June.",
-        "**Check paper weight** when a listing mentions it. Heavier is easier to layer.",
-        "**Look for acid-free or archival labels** if photos will live in the book for years.",
+        "**Check paper weight** when a listing mentions it. Heavier paper is often easier to layer.",
+        "**Read acid-free and archival labels with care.** They are marketing terms with no single official standard, and acid-free alone does not make something safe for photographs. For photos you care about, use copies rather than originals, and look for adhesives that say they passed the Photographic Activity Test (ISO 18916).",
       ],
     },
     { type: "h2", text: "Your first evening", id: "first-session" },
@@ -174,7 +187,7 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
     {
       type: "item",
       title: "The pages puff up and the book will not close",
-      note: "There are more layers than the spine can hold. Take a page or two out, keep the middle layers thin, and close the book under a stack of heavy books overnight.",
+      note: "There are more layers than the spine can hold. Take a page or two out, keep the middle layers thin, and a common fix is to close the book under a stack of heavy books overnight.",
     },
     {
       type: "item",
@@ -191,10 +204,10 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
       text: "Do a supplies audit on Saturday morning. Lay out everything you own, make one page from only that, and note the one thing you truly wished you had. That is your first purchase.",
     },
     {
-      type: "shopHobby",
+      type: "shopTheArticle",
+      articleSlug: "junk-journaling-supplies-for-beginners",
       title: "Shop the hobby",
-      dek: "Only once you have made a page and know what you reached for.",
-      productIds: ["junk-journals", "washi-tape", "sticker-sets", "pocket-notebooks"],
+      dek: "Start with the essentials, and only if you do not already own them. The optional picks can wait until you have made a page and know what you reached for.",
     },
     {
       type: "makePlan",

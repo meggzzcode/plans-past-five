@@ -6,8 +6,9 @@ export const articleHowToPlanAPerfectPicnic: Article = {
   titleItalic: "Aesthetic Picnic",
   dek: "A picnic that looks as good as it tastes: a simple timeline, a spot, a menu that survives the trip, what to pack, and a couple of things to do once you've sat down.",
   category: "weekends",
-  status: "draft",
-  publishedAt: "",
+  status: "published",
+  publishedAt: "2026-11-19",
+  verifiedAt: "2026-11-18",
   hero: "picnic",
   searchIntent: "how to plan a picnic / aesthetic picnic ideas / what to bring on a picnic",
   angle:
@@ -15,20 +16,57 @@ export const articleHowToPlanAPerfectPicnic: Article = {
   hobbies: ["picnicking", "reading", "outdoor-sketching", "birdwatching", "film-photography"],
   productIds: ["picnic-blankets", "market-totes", "water-bottles", "pocket-notebooks"],
   related: ["things-to-do-on-the-weekend", "cheap-weekend-adventures", "at-home-creative-weekend"],
-  sources: [],
+  sources: [
+    {
+      title: "FDA: handling food safely while eating outdoors",
+      url: "https://www.fda.gov/food/buy-store-serve-safe-food/handling-food-safely-while-eating-outdoors",
+      note: "Two hours, or one hour above 90 F; cold food at or below 40 F; separate drinks cooler",
+    },
+    {
+      title: "CDC: food safety prevention",
+      url: "https://www.cdc.gov/food-safety/prevention/index.html",
+      note: "Perishable foods and time limits",
+    },
+    {
+      title: "USDA FSIS: food safety while hiking and camping",
+      url: "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-safety-while-hiking-camping",
+      note: "Shaded, closed cooler with plenty of ice; do not reuse raw-meat platters and utensils; sanitizer only without soap and water",
+    },
+    {
+      title: "USDA FSIS: leftovers and food safety",
+      url: "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety",
+      note: "Throw away perishables left out over 2 hours (1 hour over 90 F)",
+    },
+    {
+      title: "USDA FSIS: grilling food safely",
+      url: "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/grilling-food-safely",
+      note: "Cooler in the shade, closed; drinks in a separate cooler",
+    },
+    {
+      title: "CDC: hand sanitizer",
+      url: "https://www.cdc.gov/clean-hands/about/hand-sanitizer.html",
+      note: "Soap and water is best; sanitizer at least 60% alcohol when unavailable",
+    },
+    {
+      title: "Food Allergy Research & Education: cleaning methods",
+      url: "https://www.foodallergy.org/resources/cleaning-methods",
+      note: "Soap and water; hand sanitizers do not remove food allergens",
+    },
+    {
+      title: "Food Allergy Research & Education: tips for staying safe with food allergies",
+      url: "https://www.foodallergy.org/resources/tips-staying-safe-food-allergies",
+      note: "Ask what food will be served and alert the host",
+    },
+  ],
   coworkChecks: [
-    "Food safety: confirm the general guideline that perishable food should not sit out for more than about two hours, and about one hour when the outdoor temperature is hot, using official food-safety guidance (e.g., a national food safety agency).",
-    "Food safety: confirm that keeping cold food at or below roughly 40°F (4°C) with ice packs or a cooler, and keeping the cooler shaded, is standard official guidance.",
-    "Food safety: confirm advice to keep raw meat separate from ready-to-eat food and to wash hands or use sanitizer before eating.",
-    "Confirm that cooked foods generally should not be left out and that leftovers that have been out beyond the recommended time should be discarded.",
-    "Check any mention of food allergies; the piece advises asking guests about allergies, which should match official guidance.",
-    "Check that park rules (alcohol, open flames, barbecues, glass, litter) are described as 'varies by location, check local rules'.",
-    "Confirm the 'typically' ranges for a picnic basket, a waterproof-backed blanket, reusable tableware and an insulated bag are approximate; no exact price or brand is stated.",
-    "Food safety: confirm hot-weather guidance (about one hour) and the two-hour guideline apply to perishables only, per the official source; and that suggestions like hard-boiled eggs, dairy and cut melon are covered by the same advice.",
-    "Food safety: confirm the advice to pack cold food straight from the fridge and to keep the cooler closed and shaded matches the official source.",
-    "Check that the styling advice (cloth napkins, reusable tableware, glass jars) mentions glass only with 'check local rules' since many parks restrict glass.",
-    "Check that the citronella candle line is hedged ('only where open flames are allowed') and that no insect-repellent efficacy claim appears.",
-    "Confirm that no claim is made that a particular food item is 'safe' beyond the official general guidance.",
+    "VERIFIED 2026-11-18: perishables out no more than 2 hours, 1 hour above 90 F (32 C); discard anything left out longer - fda.gov, cdc.gov, fsis.usda.gov",
+    "VERIFIED 2026-11-18: cold food at or below 40 F (4 C) with ice or gel packs; cooler shaded, closed, plenty of ice; drinks in a separate cooler - fda.gov, fsis.usda.gov",
+    "VERIFIED 2026-11-18: raw meat kept separate; platters and utensils that held raw meat not reused for cooked food - fsis.usda.gov",
+    "VERIFIED 2026-11-18: meat, dairy, cut fruit and cooked dishes are perishables covered by the same time limits - cdc.gov, fsis.usda.gov",
+    "VERIFIED 2026-11-18: soap and water is best; sanitizer (at least 60% alcohol) only when soap and water are unavailable and it does not remove food allergens; wipes no longer presented as a sanitizer substitute - cdc.gov, fsis.usda.gov, foodallergy.org",
+    "VERIFIED 2026-11-18: ask guests about allergies - foodallergy.org",
+    "VERIFIED 2026-11-18: park rules (alcohol, flames, glass, barbecues, pets) stay 'varies by location, check local rules'; glass mention now carries the check - reworded, no claim remains",
+    "VERIFIED 2026-11-18: no prices or brands stated; citronella candle line removed (no insect-repellent claim) - reworded, no claim remains",
   ],
   body: [
     {
@@ -78,20 +116,20 @@ export const articleHowToPlanAPerfectPicnic: Article = {
     { type: "h3", text: "The unglamorous bit" },
     {
       type: "p",
-      text: "Food safety isn't pretty, but it matters. As a general guide, keep cold food cold with ice packs in an insulated cooler, keep the cooler in the shade, and don't leave perishables out for more than about two hours, or around one hour in hot weather. Keep raw meat away from everything else, pack hand sanitizer or wipes, and bin anything that's been out too long rather than gambling. Your local food-safety agency has guidance specific to your region.",
+      text: "Food safety isn't pretty, but it matters. As a general guide, keep cold food at or below 40 °F (4 °C) with ice packs or plenty of ice in an insulated cooler, and keep the cooler in the shade and closed as much as you can; a separate cooler for drinks means the food cooler gets opened less. Don't leave perishables, such as meat, dairy, cut fruit and cooked dishes, out for more than two hours, or one hour when it's above 90 °F (32 °C). Keep raw meat separate from everything else, and don't reuse a platter or utensils that held raw meat for cooked food. Bin anything that's been out too long rather than gambling. Your local food-safety agency has guidance specific to your region.",
     },
     {
       type: "p",
-      text: "Ask guests about allergies and dietary needs before you plan the menu. It's far easier than finding out at the blanket that half the spread is off limits.",
+      text: "Ask guests about allergies and dietary needs before you plan the menu. It's far easier than finding out at the blanket that half the spread is off limits. Wash hands with soap and water where you can. Hand sanitizer with at least 60% alcohol is a backup for when soap and water aren't available, and it doesn't remove food allergens.",
     },
     { type: "h2", text: "Making it look the part", id: "aesthetic" },
     {
       type: "p",
-      text: "An aesthetic picnic is mostly a few decisions made on purpose. Pick two or three colors and let the blanket, napkins and food echo them. Decant food into small containers or jars so it looks arranged rather than dumped. Cloth napkins and reusable plates photograph better than disposables, and they're gentler on the park.",
+      text: "An aesthetic picnic is mostly a few decisions made on purpose. Pick two or three colors and let the blanket, napkins and food echo them. Decant food into small containers or jars (check whether your park allows glass) so it looks arranged rather than dumped. Cloth napkins and reusable plates photograph better than disposables, and they're gentler on the park.",
     },
     {
       type: "p",
-      text: "Add one thing with height or softness: a small bunch of flowers in a jar, a cushion, a tall bottle. Then put your phone away after the first photo. The point of a pretty picnic is that you're actually in it.",
+      text: "Add one thing with height or softness: a small bunch of flowers in a jar (our [flower arranging guide](/journal/flower-arranging-as-a-hobby) shows how), a cushion, a tall bottle. Then put your phone away after the first photo. The point of a pretty picnic is that you're actually in it.",
     },
     { type: "h2", text: "The packing list", id: "packing" },
     {
@@ -101,7 +139,7 @@ export const articleHowToPlanAPerfectPicnic: Article = {
         "A cooler or insulated bag with ice packs",
         "Plates, cutlery, napkins and a sharp knife in a sleeve",
         "Water, other drinks, and a bottle opener or corkscrew if needed",
-        "A rubbish bag for everything you take, and wet wipes",
+        "A rubbish bag for everything you take, and wet wipes for sticky fingers",
         "Sun protection and a layer for when the shade moves",
       ],
       optional: [
@@ -154,7 +192,7 @@ export const articleHowToPlanAPerfectPicnic: Article = {
       items: [
         "**Rain threatens:** a living-room-floor picnic still counts, and the food is already made.",
         "**Wind:** weigh down napkins and use lidded containers.",
-        "**Insects:** choose a breezier spot and keep food covered. A citronella candle only where open flames are allowed.",
+        "**Insects:** choose a breezier spot and keep food covered.",
         "**Too hot:** go in the evening or earlier in the morning, with the cooler in shade.",
         "**Forgot something:** keep an always-packed pouch with wipes, napkins, a bag and an opener.",
       ],
@@ -170,6 +208,10 @@ export const articleHowToPlanAPerfectPicnic: Article = {
       title: "Picnic essentials",
       dek: "Optional extras. Start with what you have.",
       productIds: ["picnic-blankets", "market-totes", "water-bottles", "pocket-notebooks"],
+    },
+    {
+      type: "p",
+      text: "Looking for more to do with the rest of the weekend? See [things to do on the weekend](/journal/things-to-do-on-the-weekend), or [cheap weekend adventures](/journal/cheap-weekend-adventures) for plans that cost little.",
     },
     {
       type: "tryThisWeekend",

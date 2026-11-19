@@ -161,9 +161,17 @@ describe("catalog validation", () => {
       /isEssential/,
     );
   });
-  it("ships an empty catalog with no test fixtures", () => {
-    expect(catalog).toEqual([]);
-    expect(verifiedCatalog).toEqual([]);
+  it("every shipped product passes validation and is verified with an ordinary Amazon link", () => {
+    expect(verifiedCatalog.length).toBeGreaterThan(0);
+    for (const p of catalog) expect(validateCatalogProduct(p), p.id).toEqual([]);
+    for (const p of verifiedCatalog) {
+      expect(p.status, p.id).toBe("verified");
+      expect(p.amazonUrl, p.id).toBe(`https://www.amazon.com/dp/${p.asin}`);
+      expect(p.amazonUrl, p.id).not.toMatch(/[?#]/);
+      expect(p.researchSources.length, p.id).toBeGreaterThan(0);
+      expect(p.lastVerified, p.id).toBeTruthy();
+    }
+    expect(verifiedCatalog.some((p) => p.status !== "verified")).toBe(false);
     expect(catalog.some((p) => /^(test-fixture|example-)/.test(p.id))).toBe(false);
   });
   it("cross-references hobbies, collections and kit slots", () => {
@@ -369,6 +377,15 @@ describe("print view and list extras", () => {
 });
 
 describe("empty-catalog parity", () => {
+  // Build the empty list explicitly instead of relying on the shipped file: empty the live
+  // verified list for these tests only, then restore it.
+  let saved: typeof verifiedCatalog = [];
+  beforeEach(() => {
+    saved = verifiedCatalog.splice(0, verifiedCatalog.length);
+  });
+  afterEach(() => {
+    verifiedCatalog.splice(0, verifiedCatalog.length, ...saved);
+  });
   it("shop blocks render nothing and legacy blocks fall back to type cards", async () => {
     const { container } = await show(
       <ArticleBody

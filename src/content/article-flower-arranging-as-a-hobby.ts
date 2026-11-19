@@ -6,9 +6,10 @@ export const articleFlowerArrangingAsAHobby: Article = {
   titleItalic: "Flower Arranging",
   dek: "A small weekly habit: a few stems, a simple recipe, and the tricks that make a grocery-store bunch look like it came from a florist.",
   category: "creative-corner",
-  status: "draft",
-  publishedAt: "",
-  hero: "picnic",
+  status: "published",
+  publishedAt: "2026-11-19",
+  verifiedAt: "2026-11-18",
+  hero: "shopAdventures",
   searchIntent:
     "flower arranging for beginners / how to arrange flowers at home / flower arranging hobby",
   angle:
@@ -19,32 +20,76 @@ export const articleFlowerArrangingAsAHobby: Article = {
     {
       title: "Iowa State Extension: how to harvest, condition and care for cut flowers",
       url: "https://yardandgarden.extension.iastate.edu/how-to/how-harvest-condition-and-care-cut-flowers",
-      note: "Recutting not needed if you are quick (Cowork C4)",
+      note: "Recutting not needed if you are quick; leaves below waterline; floral preservative",
+    },
+    {
+      title: "Iowa State Extension: how to create a floral arrangement",
+      url: "https://yardandgarden.extension.iastate.edu/how-to/how-create-floral-arrangement",
+      note: "Clean, sharp knife or shears; scissors can pinch stems",
+    },
+    {
+      title: "Iowa State Extension: all about daffodils",
+      url: "https://yardandgarden.extension.iastate.edu/how-to/all-about-daffodils",
+      note: "Daffodil sap and cut-flower arrangements",
+    },
+    {
+      title: "University of Illinois Extension: daffodils, a symbol of renewal and hope",
+      url: "https://extension.illinois.edu/blogs/good-growing/2025-03-21-daffodils-symbol-renewal-and-hope",
+      note: "Isolate daffodils in cool water for 3-4 hours",
+    },
+    {
+      title: "UC ANR: Daffodils Rarely Disappoint (PDF)",
+      url: "https://ucanr.edu/sites/default/files/2025-12/Daffodils%20Rarely%20Disappoint.pdf",
+      note: "Separate vase for about 24 hours; sources differ on time",
     },
     {
       title: "UC Marin Master Gardeners: extending vase life",
       url: "https://ucanr.edu/site/uc-marin-master-gardeners/article/extending-vase-life-garden-arrangement",
-      note: "Refresh water every 2 to 3 days (Cowork C4)",
+      note: "Refresh water every 2 to 3 days, sooner if cloudy; flower food",
+    },
+    {
+      title: "University of Minnesota Extension: fresh cut flower care",
+      url: "https://extension.umn.edu/news/fresh-cut-flower-care",
+      note: "Remove leaves below the waterline; keep away from ethylene sources and heat",
+    },
+    {
+      title: "University of Illinois Extension: bright blooms, how to care for flower bouquets",
+      url: "https://extension.illinois.edu/blogs/good-growing/2026-02-13-bright-blooms-how-care-flower-bouquets",
+      note: "Heat, direct sun and fruit shorten vase life",
+    },
+    {
+      title: "ASPCA: gardening safety 101",
+      url: "https://www.aspca.org/news/gardening-safety-101-your-guide-keeping-your-pet-safe",
+      note: "Lilies are the plant of most concern for cats",
+    },
+    {
+      title: "ASPCA: keeping your springtime garden safe for your pets",
+      url: "https://www.aspca.org/news/keeping-your-springtime-garden-safe-your-pets",
+      note: "Tulips, hyacinths and irises; bulbs most concentrated",
+    },
+    {
+      title: "ASPCA: daffodil",
+      url: "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/daffodil",
+      note: "Toxic to dogs and cats; bulbs most poisonous",
     },
   ],
   coworkChecks: [
-    "Cowork C4 (2026-11-19): 'cut at an angle' has no source and was removed; removing leaves below the waterline still needs a source.",
-    "Cowork C4 (2026-11-19): UC says refresh vase water every 2 to 3 days (updated); Iowa State says recutting is not needed if you were quick (wording softened). Recheck both sources at publish time.",
-    "Flower food packets are intended to feed cut flowers and slow bacterial growth; use as directed on the packet (claimed)",
-    "Some common flowers and plants (e.g. lilies, daffodils, tulips) are toxic to cats or dogs; check a pet-safety source such as the ASPCA list (claimed safety note)",
-    "Daffodil sap can harm other cut flowers in the same vase unless conditioned separately (claimed)",
-    "Typical starter spend of roughly $10 to $25 a week for a grocery-store bunch plus a few extras; seasonal and regional variation (claimed range)",
-    "Hot sun, direct heat and ripening fruit can shorten vase life (ethylene) (claimed general guidance)",
-    "Flower foam and chicken wire / tape-grid techniques are described accurately here",
-    "Arrangements by the odd number (three, five) look more natural: confirm it is framed as a design rule of thumb, not a fact",
-    "Pollen can stain fabric and may irritate allergies; confirm hedged wording and that no health claim is made",
-    "Sharp tools: confirm safety wording about scissors, snips and knives, and keeping them away from children and pets",
-    "No product records exist for flower supplies yet; the later product pass must add verified vase, snips and tape-grid types before any shopHobby block is attached",
+    "VERIFIED 2026-11-18: lilies are the plant of most concern for cats (pollen groomed from fur can cause kidney damage); tulips and daffodils toxic to cats and dogs, bulbs most concentrated; check the ASPCA list - aspca.org",
+    "VERIFIED 2026-11-18: daffodil sap harms other cut flowers; keep separate for several hours to a day (sources differ on time) - extension.iastate.edu, extension.illinois.edu, ucanr.edu",
+    "VERIFIED 2026-11-18: remove leaves below the waterline and use a clean vase to limit bacteria - extension.umn.edu, extension.iastate.edu, ucanr.edu",
+    "VERIFIED 2026-11-18: recutting - wording is 'trim an inch if stems have been out of water' (sources differ; 'cut at an angle' removed as unsourced) - extension.iastate.edu, extension.illinois.edu",
+    "VERIFIED 2026-11-18: change water every 2-3 days, sooner if cloudy - ucanr.edu (UC Marin Master Gardeners)",
+    "VERIFIED 2026-11-18: flower food helps and is used as directed on the packet; no percentage repeated - ucanr.edu, extension.iastate.edu",
+    "VERIFIED 2026-11-18: avoid hot sun, heaters and ripening fruit (ethylene) - extension.illinois.edu, extension.umn.edu",
+    "VERIFIED 2026-11-18: use clean, sharp knife or shears; scissors can pinch stems - extension.iastate.edu, extension.illinois.edu",
+    "VERIFIED 2026-11-18: starter spend range ($10-$25) removed; cost described as varying - reworded, no claim remains",
+    "VERIFIED 2026-11-18: odd-number rule framed as a style rule of thumb; chicken wire and foam mentioned only as optional ('some arrangers'), no technique claim; pollen/allergy wording hedged with no health claim; sharp-tool habits are general care - reworded, no claim remains",
+    "VERIFIED 2026-11-18: no shopHobby block or product ids attached (no product records for flower supplies yet) - nothing to verify",
   ],
   related: [
     "creative-hobbies-you-can-start-at-home",
     "creative-hobby-starter-kits-worth-considering",
-    "things-to-do-after-work-instead-of-scrolling",
+    "at-home-creative-weekend",
   ],
   body: [
     {
@@ -89,19 +134,19 @@ export const articleFlowerArrangingAsAHobby: Article = {
     },
     {
       type: "p",
-      text: "Typically, a weekly bunch and a few extras runs around $10 to $25, and varies with the season and where you live.",
+      text: "What a weekly bunch costs varies with the season and where you live, so start with one and see.",
     },
     { type: "h2", text: "A recipe you can reuse", id: "recipe" },
     {
       type: "p",
-      text: "Think in three layers. A focal flower is the star, such as a rose or a ranunculus. A filler adds softness. Greenery frames everything. Choosing one of each, in an odd number of stems, tends to look natural.",
+      text: "Think in three layers. A focal flower is the star, such as a rose or a ranunculus. A filler adds softness. Greenery frames everything. Choosing one of each, in an odd number of stems, is a rule of thumb many arrangers like for a natural look; it is style advice, not a rule.",
     },
     {
       type: "first30",
       steps: [
-        "Fill the vase about two-thirds with cool water and add flower food if you have it.",
+        "Fill a clean vase about two-thirds with cool water and add flower food if you have it, following the packet.",
         "Strip any leaves that would sit below the waterline, because they rot and cloud the water.",
-        "Give each stem a fresh trim with clean, sharp scissors.",
+        "Use clean, sharp scissors or a knife, and trim an inch off any stems that have been out of water.",
         "Start with the greenery, building a loose frame around the rim.",
         "Add the focal flowers, set at different heights, with the biggest in the lower middle.",
         "Tuck the filler into the gaps, turn the vase, and step back.",
@@ -109,21 +154,21 @@ export const articleFlowerArrangingAsAHobby: Article = {
     },
     {
       type: "p",
-      text: "If stems keep flopping, crisscross strips of clear tape over the vase mouth to make a grid, or crumple a little chicken wire inside. Foam is another option, but it is not needed to begin.",
+      text: "If stems keep flopping, crisscross strips of clear tape over the vase mouth to make a grid, or some arrangers crumple a little chicken wire inside. Floral foam is another option, but it is not needed to begin.",
     },
     { type: "h2", text: "Keeping them fresh", id: "care" },
     {
       type: "list",
       items: [
-        "Refresh the water every two to three days and top it up in between. A fresh trim can help, though one university extension says it isn't necessary if the flowers went into water quickly.",
+        "Refresh the water every two to three days, sooner if it turns cloudy, and top it up in between. Trim an inch off stems that have been out of water; one university extension says recutting isn't necessary if the flowers went into water quickly.",
         "Keep the vase away from hot sun, heaters and a fruit bowl, since ripening fruit can shorten vase life.",
-        "Condition daffodils separately, because their sap can harm other flowers.",
+        "Keep daffodils in their own container of cool water for several hours to a day before mixing them in, because their sap can harm other flowers.",
         "Pull out any stem that wilts early, which helps the rest.",
       ],
     },
     {
       type: "p",
-      text: "A note for pet households. Some common flowers, including lilies, tulips and daffodils, are toxic to cats and dogs. Check a pet-safety list before bringing a bunch home, and keep vases out of reach.",
+      text: "A note for pet households. Lilies are the flower of most concern for cats, and even a little pollen groomed from fur can cause serious kidney damage, so it is safest to skip them if you have a cat. Tulips and daffodils are toxic to cats and dogs, and the bulbs are the most concentrated. Check the ASPCA list before bringing a bunch home, and keep vases out of reach.",
     },
     { type: "h2", text: "Making it a weekly ritual", id: "ritual" },
     {
@@ -144,7 +189,7 @@ export const articleFlowerArrangingAsAHobby: Article = {
     },
     {
       type: "p",
-      text: "Sharp tools deserve a little respect. Cut away from yourself, put snips back where they live, and keep them out of reach of children and pets. A clean, sharp cut also helps stems drink, so the safe habit and the good habit are the same one.",
+      text: "Sharp tools deserve a little respect. Cut away from yourself, put snips back where they live, and keep them out of reach of children and pets. Clean, sharp tools also make a tidier cut, so the safe habit and the good habit are the same one.",
     },
     { type: "h2", text: "Common mistakes and fixes", id: "troubleshooting" },
     {
@@ -155,7 +200,7 @@ export const articleFlowerArrangingAsAHobby: Article = {
     {
       type: "item",
       title: "The flowers droop within a day",
-      note: "The stems may not be taking up water. Give them a fresh trim, use fresh cool water, and check the vase is clean.",
+      note: "The stems may not be taking up water. Trim an inch if they have been out of water, use fresh cool water, and check the vase is clean.",
     },
     {
       type: "item",
@@ -172,7 +217,7 @@ export const articleFlowerArrangingAsAHobby: Article = {
     },
     {
       type: "p",
-      text: "For more low-effort ideas, try [Things to Do After Work Instead of Scrolling](/journal/things-to-do-after-work-instead-of-scrolling).",
+      text: "For more low-effort ideas, try [Things to Do After Work Instead of Scrolling](/journal/things-to-do-after-work-instead-of-scrolling), or turn a Saturday into [an at-home creative weekend](/journal/at-home-creative-weekend).",
     },
     { type: "ifYouLoved", hobbies: ["indoor-gardening", "collage-art", "watercolor-painting"] },
   ],

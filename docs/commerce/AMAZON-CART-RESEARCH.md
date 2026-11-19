@@ -77,3 +77,7 @@ Keep the shopping checklist; build no cart button. Reasons: the only documented 
 ## What to ship meanwhile
 
 An honest shopping checklist: the reader ticks what she needs, marks what she already owns, saves things for later, and opens each item's own listing. The wording says what it is: a list, not a cart.
+
+## Decision
+
+Decision (2026-11-19, from Cowork's findings read 2026-11-18): ship the honest shopping checklist and build no add-to-cart button. Cowork found no officially supported, currently documented mechanism: the only documented cart mechanism (an Add to Cart form) sits in PA-API documentation, PA-API 5 is deprecated, and its current support is UNCONFIRMED (the page was only seen as a search snippet). The Creators API lists SearchItems, GetItems, GetVariations and GetBrowseNodes only, with no cart operation, and uses OAuth 2.0 client credentials that cannot live in a frontend-only repo. Even if a mechanism were confirmed, using the Creators API would also need an Associates account with final acceptance and referred qualified sales (a buyer-side requirement we cannot meet pre-revenue) and a server-side secret, which conflicts with the frontend-only constraint. We are therefore not building it now. Unchanged unknowns: item limits, mobile behaviour, and unavailable-item handling (NOT FOUND). Reopen only if Amazon confirms in writing that the Add to Cart form remains supported, and ask the owner before building anything.

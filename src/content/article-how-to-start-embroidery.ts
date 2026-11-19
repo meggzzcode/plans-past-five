@@ -8,7 +8,7 @@ export const articleHowToStartEmbroidery: Article = {
   category: "creative-corner",
   status: "draft",
   publishedAt: "",
-  hero: "junkJournal",
+  hero: "shopCreative",
   searchIntent: "how to start embroidery / embroidery for beginners / basic embroidery stitches",
   angle:
     "A stitch-first beginner path: learn a handful of stitches on scrap fabric, then finish a single small hoop, with fixes for the most common frustrations",
@@ -16,16 +16,10 @@ export const articleHowToStartEmbroidery: Article = {
   productIds: ["embroidery-kits"],
   sources: [],
   coworkChecks: [
-    "Embroidery floss is commonly sold as six-strand cotton thread that can be separated; using two to three strands is typical for beginners (claimed general guidance)",
-    "Hoop sizes of about 5 to 6 inches are a common beginner recommendation (claimed)",
-    "Even-weave cotton or linen-blend fabric is commonly recommended over stretchy or very loosely woven fabric (claimed)",
-    "Typical beginner starter spend of roughly $10 to $30 for loose supplies, or a bit more for a kit (claimed range)",
-    "Basic stitch descriptions (backstitch, running stitch, satin stitch, stem stitch, split stitch, French knot) are accurate here",
-    "Washing and pressing guidance for finished embroidery (cold water, gentle handling, press face-down on a towel) is accurate for cotton floss",
-    "Needle sizes and types: embroidery needles have a larger eye than sewing needles (claimed general property)",
-    "Water-soluble pens and transfer methods: confirm instructions to follow the pen label and test on scrap before using on final fabric",
-    "Keeping the thread length to roughly an arm's length or less to limit tangling is standard advice (claimed)",
-    "Needle and scissor safety around children and pets: confirm hedged wording",
+    "RESOLVED 2026-11-19: starter spend ($10-$30), 5-6 inch hoop, 'six-strand' and 'two to three strands', cold-water wash and face-down pressing - removed or reworded to defer to labels (no source); verification found no source for prices",
+    "OPEN: no verification covered technique - confirm beginner guidance on even-weave cotton or linen-blend fabric, embroidery needles having a larger eye than sewing needles, and arm's-length thread",
+    "OPEN: confirm descriptions of running stitch, backstitch, stem stitch, split stitch, satin stitch and French knot are accurate",
+    "OPEN: water-soluble pen and transfer wording ('test on scrap, follow the label') and needle/scissor safety around children and pets are common-sense but not source-checked",
   ],
   related: [
     "how-to-start-crocheting",
@@ -50,8 +44,8 @@ export const articleHowToStartEmbroidery: Article = {
     {
       type: "whatYoullNeed",
       essentials: [
-        "A hoop, around 5 to 6 inches across",
-        "A few skeins of six-strand cotton floss in colors you like",
+        "A small hoop",
+        "A few skeins of cotton embroidery floss in colors you like",
         "Embroidery needles, which have a bigger eye than ordinary sewing needles",
         "A piece of even-weave cotton or linen-blend fabric, bigger than the hoop",
         "Small, sharp scissors",
@@ -69,7 +63,7 @@ export const articleHowToStartEmbroidery: Article = {
     },
     {
       type: "p",
-      text: "**Kit or loose?** A kit bundles a hoop, thread, fabric and a pattern, which takes the guessing out of the first project. Loose supplies cost a little less and let you choose your own colors. Typically, loose beginner supplies land around $10 to $30, and a kit costs a bit more. If you are unsure, a small kit is a sensible first purchase.",
+      text: "**Kit or loose?** A kit bundles a hoop, thread, fabric and a pattern, which takes the guessing out of the first project. Loose supplies let you choose your own colors. If you are unsure, a small kit is a sensible first purchase.",
     },
     {
       type: "saveSplurge",
@@ -120,7 +114,7 @@ export const articleHowToStartEmbroidery: Article = {
       steps: [
         "Stretch the fabric in the hoop and tighten the screw until it is taut like a drum.",
         "Draw a simple shape on it: a leaf, a heart, your initial.",
-        "Cut a piece of floss about as long as your arm, and separate out two or three of its six strands.",
+        "Cut a piece of floss about as long as your arm, and separate out a few of its strands, following the floss label.",
         "Thread the needle and tie a small knot at the end.",
         "Backstitch along the outline, keeping stitches about the same length.",
         "Fill the shape with satin stitch, or add three French knots for a flower.",
@@ -128,7 +122,7 @@ export const articleHowToStartEmbroidery: Article = {
     },
     {
       type: "p",
-      text: "When finished, wash gently in cold water if needed and press face-down on a towel. Test the pen or transfer method on scrap fabric first, and follow its label.",
+      text: "When finished, check the floss label for care instructions before washing. Test the pen or transfer method on scrap fabric first, and follow its label.",
     },
     { type: "h2", text: "Making it a habit", id: "habit" },
     {

@@ -8,29 +8,42 @@ export const articleHowToStartAirDryClay: Article = {
   category: "creative-corner",
   status: "draft",
   publishedAt: "",
-  hero: "potteryNight",
+  hero: "shopPottery",
   searchIntent: "how to start air dry clay / air dry clay for beginners / air dry clay projects",
   angle:
     "A beginner walkthrough that sets honest expectations: what air-dry clay is good for, what it is not, and how to make a first trinket dish, then a jewelry holder, ornaments and figurines",
   hobbies: ["air-dry-clay", "pottery-painting", "craft-nights"],
   productIds: ["air-dry-clay", "clay-tools", "clay-mats", "acrylic-paints", "detail-brushes"],
-  sources: [],
+  sources: [
+    {
+      title: "Crayola: can air dry clay pieces be sealed? (FAQ)",
+      url: "https://www.crayola.com/products/brands/scribble-scrubbie/faqs/can-air-dry-clay-pieces-be-sealed-faq",
+      note: "Sealing will not waterproof; display indoors. Read via search snippet only, 2026-11-18",
+    },
+    {
+      title: "Crayola Air Dry Clay safety data sheet (2014)",
+      url: "https://cdn.schoolspecialty.com/6def59d9-1456-402d-8d0b-b0f10093639f/1280534_2015-04-07_Original%20file.pdf",
+      note: "No respirator required under normal use; hosted by a retailer, not crayola.com",
+    },
+    {
+      title: "Safeway product listing quoting Crayola packaging",
+      url: "https://www.safeway.com/shop/product-details.960182844.3132.html",
+      note: "Retail listing quoting packaging text: no baking or firing, 2-3 days drying, keep away from food and liquids, airtight storage. Secondhand source",
+    },
+    {
+      title: "Mont Marte: answers to common air dry clay questions",
+      url: "https://montmarte.com/blogs/faq/answers-to-10-common-air-dry-clay-questions",
+      note: "Third-party maker FAQ: sealing does not make air-dry clay food safe",
+    },
+  ],
   coworkChecks: [
-    "Air-dry clay cures by evaporation and does not need a kiln or oven; confirm per product, as some types differ (claimed general property)",
-    "Air-dry clay is not food-safe unless the product explicitly says so, and sealed dishes should not hold food or drink (claimed safety guidance; check manufacturer labels)",
-    "Typical drying time of roughly 24 to 72 hours depending on thickness and humidity (claimed range)",
-    "Dust from sanding dried clay should not be inhaled; recommended precautions (damp sanding, ventilation, mask) need a source",
-    "Air-dry clay is generally not waterproof and can soften or crumble if it stays wet, even when sealed; check sealer instructions",
-    "Typical starter spend of roughly $15 to $40 for clay, a few tools and paint (claimed range)",
-    "Cracking is commonly caused by uneven or very fast drying and by pieces that are very thin or very thick (claimed general guidance)",
-    "Check each clay's label for product-specific warnings, e.g. suitability for children and any added ingredients",
-    "Air-dry clay is not candle-safe or heat-safe; confirm the article never suggests candle holders or anything near a flame",
-    "A thickness of roughly a quarter inch (about 6 mm) for flat pieces is a common guideline; confirm against clay labels",
-    "Slip (clay softened with a little water) is commonly used to join pieces and smooth cracks; confirm that works for air-dry clay as described",
-    "Keeping unused clay wrapped airtight to stop it drying out is standard advice; confirm against labels",
-    "Ornaments and jewelry holders are decorative: confirm no claim that jewelry holders protect jewelry from moisture or that clay ornaments are weatherproof",
-    "Acrylic paint and water-based sealer are commonly used on dried air-dry clay; confirm wording stays general and defers to labels",
-    "Paint and sealer labels: check for ventilation and age warnings (art pigment note)",
+    "VERIFIED 2026-11-18 (retail text, snippet only): needs no kiln or oven, about 2-3 days to dry, keep from food and liquids, airtight storage, add water to join - Crayola packaging via safeway.com; article hedges to 'usually' and 'check your label'",
+    "VERIFIED 2026-11-18 (snippet only): not waterproof, sealing does not waterproof, indoors only - crayola.com FAQ",
+    "VERIFIED 2026-11-18: do not use for food or drink even if sealed (the 'unless the label says so' exception was unsupported and has been dropped) - safeway.com (Crayola packaging), montmarte.com",
+    "RESOLVED 2026-11-19: starter spend $15-$40, quarter-inch thickness, thin/thick-piece crack causes, smoothing cracks - removed (no source)",
+    "RESOLVED 2026-11-19: slip/joining - now 'score both surfaces and join with a little water'; sanding - gentle, damp sponge or fine paper, ventilated, optional mask, check safety data sheet (no mask claimed as required); ornaments/jewelry holders stay decorative-only; spray sealer defers to the can's instructions",
+    "OPEN: Crayola pages were read only through search snippets and retail listings; re-read crayola.com directly (packaging, drying time, sealing, children's-age warning) before publishing. No safety certification is stated in the article and none should be added from secondhand sources",
+    "OPEN: 'not for use near flame or heat' has no manufacturer statement behind it; it stays as a deliberately conservative caution - decide whether that counts as verified for publication",
   ],
   related: [
     "creative-hobbies-you-can-start-at-home",
@@ -45,7 +58,7 @@ export const articleHowToStartAirDryClay: Article = {
     },
     {
       type: "p",
-      text: "Air-dry clay gives it back. It is soft, forgiving and dries on its own, so there is no kiln, no studio fee and no firing schedule. You shape something small on Saturday and paint it when it is dry. That is the whole process.",
+      text: "Air-dry clay gives it back. It is soft, forgiving and dries on its own, so there is usually no kiln, no studio fee and no firing schedule. Follow your clay's label. You shape something small on Saturday and paint it when it is dry. That is the whole process.",
     },
     { type: "h2", text: "Why it is worth trying", id: "why" },
     {
@@ -54,13 +67,13 @@ export const articleHowToStartAirDryClay: Article = {
     },
     {
       type: "p",
-      text: "One honest note. Air-dry clay is a decorative material. It is not food-safe unless a label explicitly says so, it is not waterproof, and it should never go near a candle flame. Plan on pretty things for shelves, desks and dressers, and you will not be disappointed.",
+      text: "One honest note. Air-dry clay is a decorative material. Do not use air-dry clay pieces for food or drink, even if sealed. It is not waterproof, and it is not for use near flame or heat. Check your clay's label for age warnings and other product notes. Plan on pretty things for shelves, desks and dressers, and you will not be disappointed.",
     },
     { type: "h2", text: "What you need", id: "need" },
     {
       type: "whatYoullNeed",
       essentials: [
-        "A block of air-dry clay, a pound or two so a lumpy first attempt does not feel expensive",
+        "A block of air-dry clay, a small one is plenty for a lumpy first attempt",
         "A rolling pin, a smooth glass or a straight-sided bottle",
         "A work surface you can wipe down, or baking paper taped flat",
         "A small bowl of water",
@@ -88,10 +101,6 @@ export const articleHowToStartAirDryClay: Article = {
       splurge:
         "A good mixed set of sculpting tools and a reusable mat, once you have made three things and know you will make a fourth.",
     },
-    {
-      type: "p",
-      text: "Typically, a first setup of clay, a few tools and paints lands somewhere around $15 to $40. You can spend less if the kitchen drawer cooperates.",
-    },
     { type: "h2", text: "Your first evening: a trinket dish", id: "first-project" },
     {
       type: "p",
@@ -101,7 +110,7 @@ export const articleHowToStartAirDryClay: Article = {
       type: "first30",
       steps: [
         "Knead a golf-ball-sized piece, or a bit larger, until it is warm and smooth.",
-        "Roll it out to roughly a quarter inch thick, even all over. Uneven slabs crack.",
+        "Roll it out to an even thickness all over. Uneven slabs can crack as they dry.",
         "Press a jar lid or a small bowl into it and cut around the shape, or just freehand a blob you like.",
         "Dip a fingertip in water and smooth the edges and any seams. A little water goes a long way.",
         "Lift the edges slightly, or press the slab gently into a shallow bowl lined with baking paper, to give it a curve.",
@@ -110,7 +119,7 @@ export const articleHowToStartAirDryClay: Article = {
     },
     {
       type: "p",
-      text: "Drying usually takes somewhere between one and three days depending on thickness and humidity. Resist the urge to speed it up with heat. Fast, uneven drying is a common cause of cracks.",
+      text: "Drying usually takes about two to three days, longer for thick pieces or humid rooms, so check your clay's label. Resist the urge to speed it up with heat. Drying too fast or unevenly is a common cause of cracks.",
     },
     { type: "h2", text: "Three more things to make", id: "projects" },
     {
@@ -128,35 +137,35 @@ export const articleHowToStartAirDryClay: Article = {
     {
       type: "item",
       title: "Little figurines",
-      note: "Start with simple forms: a rounded mushroom, a small cat, a stack of tiny pebbles. Build from a few balls and coils, and join parts with a dab of softened clay and a little water. Thin limbs snap, so keep shapes chunky.",
+      note: "Start with simple forms: a rounded mushroom, a small cat, a stack of tiny pebbles. Build from a few balls and coils, and score both surfaces before joining them with a little water. Chunky shapes are easier to manage.",
       time: "One to two evenings plus drying",
     },
     { type: "h2", text: "Finishing", id: "finishing" },
     {
       type: "p",
-      text: "When the piece is fully dry, smooth rough edges with a fine sanding sponge, ideally damp, and avoid breathing in the dust. Paint with acrylics, let the color dry, then use a water-based sealer if you want a protected finish, following the label. A sealed piece is still not waterproof, so keep it off the sink edge and away from drinks.",
+      text: "When the piece is fully dry, sand gently, ideally with a damp sponge or fine paper, in a ventilated space; if a dust mask makes you more comfortable, wear one, and check your clay's safety data sheet. Paint with acrylics, let the color dry, then use a water-based sealer if you want a protected finish, following the label. For a spray sealer, follow the can's ventilation and protective-gear instructions. A sealed piece is still not waterproof, so keep it off the sink edge and away from drinks.",
     },
     { type: "h2", text: "Common mistakes and troubleshooting", id: "troubleshooting" },
     {
       type: "item",
       title: "Cracks appeared while it dried",
-      note: "Thin spots and very quick drying are the usual causes. Fill small cracks with a little softened clay and smooth with a damp finger, then dry slowly in a cool spot.",
+      note: "Drying too fast or unevenly is the usual cause. Next time, dry the piece slowly, out of direct sun and away from heat.",
     },
     {
       type: "item",
       title: "The edges look rough",
-      note: "Smooth them while the clay is still soft with a lightly damp fingertip. Too much water makes it sticky and mushy, so keep it light.",
+      note: "Smooth them while the clay is still soft with a lightly damp fingertip, and go easy on the water.",
     },
     {
       type: "item",
       title: "The clay has gone hard in the pack",
-      note: "Wrap leftovers tightly in plastic or a sealed bag between sessions. A hard block is hard to revive, so seal it every time.",
+      note: "Store unused clay in an airtight container between sessions, and do not store clay that has had water added to it.",
     },
     {
-      type: "shopHobby",
+      type: "shopTheArticle",
+      articleSlug: "how-to-start-air-dry-clay",
       title: "Shop the hobby",
       dek: "Start with clay and what you own. Add the rest when you know what you reach for.",
-      productIds: ["air-dry-clay", "clay-tools", "clay-mats", "acrylic-paints", "detail-brushes"],
     },
     {
       type: "makePlan",

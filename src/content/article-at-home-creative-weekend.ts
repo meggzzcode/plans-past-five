@@ -6,9 +6,10 @@ export const articleAtHomeCreativeWeekend: Article = {
   titleItalic: "At-Home Creative Weekend",
   dek: "A two-day plan with a supply list, a loose schedule and enough built-in rest that you finish Sunday feeling restored, not behind.",
   category: "weekends",
-  status: "draft",
-  publishedAt: "",
-  hero: "potteryNight",
+  status: "published",
+  publishedAt: "2026-11-19",
+  verifiedAt: "2026-11-18",
+  hero: "shopPottery",
   searchIntent: "at home creative weekend / staycation craft weekend / weekend at home ideas",
   angle:
     "A full two-day itinerary that treats home like a retreat: prep on Friday, a main project each day, and a Sunday-evening wrap-up",
@@ -24,20 +25,34 @@ export const articleAtHomeCreativeWeekend: Article = {
   productIds: ["air-dry-clay", "acrylic-paints", "watercolor-sets", "junk-journals", "washi-tape"],
   related: [
     "creative-hobbies-you-can-start-at-home",
-    "things-to-do-on-the-weekend",
     "how-to-start-junk-journaling",
-    "low-energy-hobbies",
+    "things-to-do-after-work-instead-of-scrolling",
   ],
-  sources: [],
+  sources: [
+    {
+      title: "CPSC: art materials safety",
+      url: "https://www.cpsc.gov/s3fs-public/5015.pdf",
+      note: "Read labels; avoid lead, cadmium and other heavy metals in art paints",
+    },
+    {
+      title: "Art & Creative Materials Institute: materials safety",
+      url: "https://www.acmiart.org/materials-safety",
+      note: "AP and CL seals on art materials",
+    },
+    {
+      title: "Air-dry clay maker FAQ: can air-dry clay pieces be sealed",
+      url: "https://www.crayola.com/products/brands/scribble-scrubbie/faqs/can-air-dry-clay-pieces-be-sealed-faq",
+      note: "Sealing will not waterproof the piece; display indoors",
+    },
+  ],
   coworkChecks: [
-    "Confirm that air-dry clay typically needs about 24 hours to dry fully, varying with thickness and humidity; follow the product's own instructions.",
-    "Confirm that watercolor on cold-press paper behaves as described (paper buckles when heavily wetted; heavier paper handles water better).",
-    "Check that the 'typically under $50' total for the supply list is described as an approximate and variable budget.",
-    "Confirm advice to use acrylic paint on dried clay and to seal with a water-based sealer where the clay maker recommends it.",
-    "Confirm the 'typically under $50' total for the supply list is approximate, varies by store and region, and is not tied to any named product.",
-    "Confirm that drying clay with a hair dryer or oven is discouraged unless the clay maker says it is fine (follow the packet).",
-    "Check that the 'probably already own' split (notebook, scissors, glue stick, paper scraps, jar, paper towels) is described as typical, not assumed.",
-    "Confirm advice on ventilation or sealer use stays 'follow the product's directions' with no safety claim of our own.",
+    "VERIFIED 2026-11-18: art and craft paints - read labels, avoid lead, cadmium and other heavy metals, look for ACMI AP or CL seals; no paint called 'safe to eat' or 'non-toxic' - cpsc.gov, acmiart.org",
+    "VERIFIED 2026-11-18: air-dry clay drying time reworded to 'about 2 to 3 days, longer for thick pieces or humidity', per the clay maker's guidance (schedule note added for an undried Sunday) - crayola.com FAQ, clay verification file",
+    "VERIFIED 2026-11-18: acrylic over dried clay and water-based sealer where the maker recommends it; sealing does not make it waterproof or food safe; spray sealer follows the can's ventilation and protective-gear directions - crayola.com FAQ",
+    "VERIFIED 2026-11-18: no hair dryer or oven unless the maker says it is fine; cracking linked to drying too fast or unevenly - crayola.com FAQ, clay verification file",
+    "VERIFIED 2026-11-18: 'under $50' total removed; supply list makes no price claim - reworded, no claim remains",
+    "VERIFIED 2026-11-18: watercolor paper buckling reworded as a conditional tip ('if your paper wrinkles') - reworded, no claim remains",
+    "VERIFIED 2026-11-18: 'probably already own' split phrased as 'you may already own' - reworded, no claim remains",
   ],
   body: [
     {
@@ -54,7 +69,7 @@ export const articleAtHomeCreativeWeekend: Article = {
       items: [
         "**Friday evening:** set up, gather supplies, pick a playlist. Fifteen to thirty minutes.",
         "**Saturday:** clay in the morning, a proper lunch away from the mess, watercolor in the afternoon.",
-        "**Sunday:** paint what dried, make a journal spread, then a small wrap-up to look at what you made.",
+        "**Sunday:** paint the clay if it has dried, make a journal spread, then a small wrap-up to look at what you made.",
       ],
     },
     {
@@ -79,7 +94,7 @@ export const articleAtHomeCreativeWeekend: Article = {
     },
     {
       type: "p",
-      text: "Before you shop, check the cupboards. Most people already own a notebook, scissors, a glue stick, a jar and some paper towels. What's left is mainly clay, paints and paper, and a total of under $50 is typical if you buy small sizes, though prices vary by store and region.",
+      text: "Before you shop, check the cupboards. You may already own a notebook, scissors, a glue stick, a jar and some paper towels. What's left is mainly clay, paints and paper, and buying small sizes keeps the shopping list modest; prices vary by store and region. Read the labels on any paints you buy, look for the ACMI AP or CL seal, and avoid products containing lead, cadmium or other heavy metals. Don't treat any paint as safe to eat unless its label says so.",
     },
     {
       type: "list",
@@ -97,7 +112,7 @@ export const articleAtHomeCreativeWeekend: Article = {
     { type: "h2", text: "Saturday morning: clay", id: "saturday-am" },
     {
       type: "p",
-      text: "Clay goes first because it needs time to dry. Roll a slab about as thick as your finger, cut a circle with a glass, press up the edges, and that's a trinket dish. Make three. Pinch a small pot for number four and press a pattern into it.",
+      text: "Clay goes first because it needs time to dry. Roll out a slab of even thickness, cut a circle with a glass, press up the edges, and that's a trinket dish. It's decorative only, so don't use it for food or drink, even if you seal it. Make three. Pinch a small pot for number four and press a pattern into it.",
     },
     {
       type: "first30",
@@ -105,13 +120,13 @@ export const articleAtHomeCreativeWeekend: Article = {
         "Knead the clay for a minute until it's smooth and warm.",
         "Roll it out on a mat or baking paper.",
         "Cut shapes with a glass, a cookie cutter or a blunt knife.",
-        "Smooth any cracks with a damp finger.",
+        "Smooth rough edges with a damp finger.",
         "Leave everything to dry somewhere safe, away from direct heat.",
       ],
     },
     {
       type: "p",
-      text: "Clay often takes a day or more to dry, depending on thickness and humidity. Follow the packet, and resist the hair dryer or oven unless the maker says it's fine.",
+      text: "Air-dry clay usually takes about 2 to 3 days to dry, longer for thick pieces or a humid room. Follow the packet, and resist the hair dryer or oven unless the maker says it's fine.",
     },
     { type: "h2", text: "Lunch, and a proper break", id: "lunch" },
     {
@@ -128,7 +143,7 @@ export const articleAtHomeCreativeWeekend: Article = {
       items: [
         "Lots of water for soft backgrounds, less for details.",
         "Let layers dry a little before adding the next, or let colors bleed on purpose.",
-        "Thin paper may buckle when it's very wet. Tape the edges down or use heavier paper.",
+        "If your paper wrinkles when it's very wet, tape the edges down or try heavier paper.",
         "Make a swatch page, a small grid of every color you own, so you know what each does.",
       ],
     },
@@ -140,7 +155,7 @@ export const articleAtHomeCreativeWeekend: Article = {
     { type: "h2", text: "Sunday morning: paint the clay", id: "sunday-am" },
     {
       type: "p",
-      text: "Check the clay. If it's dry and hard, paint it with acrylics: a base coat first, then dots, stripes or tiny flowers. Give each coat time to dry. If your clay maker recommends a sealer, add it once the paint is dry, following the product's directions.",
+      text: "Check the clay. If it's dry and hard, paint it with acrylics: a base coat first, then dots, stripes or tiny flowers. Give each coat time to dry. If it isn't dry yet, leave it, do the journal spread first and paint it later in the week. If your clay maker recommends a sealer, add it once the paint is dry, following the product's directions, including any ventilation and protective-gear instructions on a spray can. A sealer won't make the piece waterproof or food safe, so keep it indoors and for display.",
     },
     { type: "h2", text: "Sunday afternoon: a journal spread", id: "sunday-pm" },
     {
@@ -160,7 +175,7 @@ export const articleAtHomeCreativeWeekend: Article = {
     {
       type: "list",
       items: [
-        "**Clay cracks while drying:** smooth with a little water and dry it more slowly, away from heat.",
+        "**Clay cracks while drying:** cracks usually come from drying too fast or unevenly, so dry it slowly, away from heat.",
         "**Paint looks streaky:** add a second coat once the first is dry.",
         "**You're bored by Saturday afternoon:** swap the project. Bake, read, rearrange a shelf.",
         "**You don't feel creative:** copy something. Trace, follow a tutorial, paint a photograph. Copying is how most people start.",
@@ -183,6 +198,10 @@ export const articleAtHomeCreativeWeekend: Article = {
         "junk-journals",
         "washi-tape",
       ],
+    },
+    {
+      type: "p",
+      text: "Not sure what to buy? [Creative hobby starter kits worth considering](/journal/creative-hobby-starter-kits-worth-considering) weighs up the bundles. For a different kind of weekend, see [things to do on the weekend](/journal/things-to-do-on-the-weekend).",
     },
     {
       type: "makePlan",

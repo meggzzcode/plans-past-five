@@ -39,6 +39,14 @@ describe("affiliate defaults", () => {
   });
 });
 
+describe("disclosure wording", () => {
+  it("matches the Amazon Operating Agreement sentence (first person singular)", () => {
+    expect(AMAZON_ASSOCIATE_STATEMENT).toBe(
+      "As an Amazon Associate I earn from qualifying purchases.",
+    );
+  });
+});
+
 describe("swap procedure", () => {
   it("changing one tracking id changes every link", () => {
     activate("first-20");
@@ -173,13 +181,16 @@ describe("affiliate program register", () => {
     expect(affiliatePrograms.map((p) => p.id)).toEqual(["amazon-associates"]);
     for (const p of affiliatePrograms) {
       expect(p.status).toBe("candidate");
-      expect(p.applicationRequirements).toBe(UNVERIFIED);
+      // Commission rate card was not read; it must stay null and unpublished.
+      expect(p.commission).toBeNull();
+      expect(p.applicationRequirements).not.toBe(UNVERIFIED);
+      expect(p.verifiedAt).toBe("2026-11-18");
     }
   });
   it("no entry claims commission/cookie without source and verifiedAt", () => {
     expect(validatePrograms()).toEqual([]);
-    const bad = { ...affiliatePrograms[0]!, commission: "5%" };
-    expect(validatePrograms([bad])).not.toEqual([]);
-    expect(validatePrograms([{ ...affiliatePrograms[0]!, cookieDays: 1 }])).not.toEqual([]);
+    const bare = { ...affiliatePrograms[0]!, source: null, verifiedAt: null };
+    expect(validatePrograms([{ ...bare, commission: "5%" }])).not.toEqual([]);
+    expect(validatePrograms([{ ...bare, cookieDays: 1 }])).not.toEqual([]);
   });
 });

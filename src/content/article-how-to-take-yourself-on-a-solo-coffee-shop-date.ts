@@ -6,8 +6,9 @@ export const articleHowToTakeYourselfOnASoloCoffeeShopDate: Article = {
   titleItalic: "Solo Coffee Shop Date",
   dek: "The gentlest first solo date there is: a window seat, a good drink and a plan for what to do with your hands.",
   category: "solo-dates",
-  status: "draft",
-  publishedAt: "",
+  status: "published",
+  publishedAt: "2026-11-19",
+  verifiedAt: "2026-11-18",
   hero: "soloCafe",
   searchIntent: "solo coffee shop date / how to go to a cafe alone",
   angle:
@@ -15,13 +16,10 @@ export const articleHowToTakeYourselfOnASoloCoffeeShopDate: Article = {
   hobbies: ["reading", "outdoor-sketching", "creative-writing", "junk-journaling"],
   productIds: ["pocket-notebooks", "book-sleeves", "reading-journals", "portable-watercolor"],
   coworkChecks: [
-    "Typical cost of a cafe drink and pastry ('typically $5-$15 total') is a rough range that varies widely by city; confirm hedged wording or remove the figure.",
-    "Statement that many cafes are happy for customers to sit with a book or notebook, but that busy cafes may expect you to free up a table at peak times: confirm it is hedged as 'many' and not stated as universal etiquette.",
-    "Etiquette guidance (buy something, don't take up a large table at a rush, avoid leaving belongings to 'save' seats): confirm it reflects commonly accepted cafe etiquette and keep it framed as general advice.",
-    "Caffeine/dietary notes (decaf, herbal tea, milk alternatives are commonly offered; allergens should be asked about directly): confirm the wording defers to the cafe staff on allergens and makes no health claims.",
-    "Statement that cafes commonly offer window, counter or bar seating that suits one person, and that quieter mid-morning or mid-afternoon weekday visits are usually easier: confirm hedged ('often', 'commonly') and not universal.",
-    "Statement that a drink and a small bite typically costs 'about what a lunch would' is approximate and varies by city; confirm hedged or remove.",
-    "Safety wording (keep valuables close, don't leave laptop or bag unattended): confirm it is consistent with general personal-safety advice.",
+    "VERIFIED 2026-11-18: ask about allergens and dietary needs directly - foodallergy.org (article defers to cafe staff, makes no health claims)",
+    "RESOLVED 2026-11-19: drink and snack cost ($5-$15) and 'about what a lunch would' - removed; verification found no source for prices",
+    "RESOLVED 2026-11-19: quiet-hours, seating, etiquette and decaf/herbal/milk-alternative statements - all hedged ('often', 'many'); not stated as universal",
+    "RESOLVED 2026-11-19: keep-your-bag-close line - a plain common-sense tip with no factual claim and no official source in the verification pass; not presented as researched advice",
   ],
   related: [
     "solo-date-ideas",
@@ -29,7 +27,13 @@ export const articleHowToTakeYourselfOnASoloCoffeeShopDate: Article = {
     "how-to-plan-a-solo-saturday",
     "how-to-start-junk-journaling",
   ],
-  sources: [],
+  sources: [
+    {
+      title: "Food Allergy Research & Education: tips for staying safe",
+      url: "https://www.foodallergy.org/resources/tips-staying-safe-food-allergies",
+      note: "Ask about allergies",
+    },
+  ],
   body: [
     {
       type: "p",
@@ -37,7 +41,7 @@ export const articleHowToTakeYourselfOnASoloCoffeeShopDate: Article = {
     },
     {
       type: "p",
-      text: "They won't. A coffee shop is built for people on their own: laptops, paperbacks, one-person tables, nobody asking questions. It costs about what a lunch would, takes an hour and lets you leave whenever you like. Here's how to do it, from picking the place to the faint 'now what?' once you're seated.",
+      text: "They won't. A coffee shop is built for people on their own: laptops, paperbacks, one-person tables, nobody asking questions. It takes an hour and lets you leave whenever you like. Here's how to do it, from picking the place to the faint 'now what?' once you're seated.",
     },
     { type: "h2", text: "Step 1: Pick the right kind of place", id: "pick-place" },
     {
@@ -54,7 +58,7 @@ export const articleHowToTakeYourselfOnASoloCoffeeShopDate: Article = {
     },
     {
       type: "p",
-      text: "Go at a quieter time for your first outing. A mid-morning or mid-afternoon weekday visit means easier seat choices, less pressure and staff with a little more time to chat.",
+      text: "Go at a quieter time for your first outing. A mid-morning or mid-afternoon weekday visit often means easier seat choices, less pressure and staff with a little more time to chat.",
     },
     { type: "h2", text: "Step 2: Decide your date, then pack it", id: "pack" },
     {
@@ -78,7 +82,7 @@ export const articleHowToTakeYourselfOnASoloCoffeeShopDate: Article = {
     },
     {
       type: "p",
-      text: "A drink and a small bite will typically land somewhere in the $5-$15 range, though that varies a lot by city. Think of it as your ticket to a seat for the hour.",
+      text: "Prices vary a lot by cafe and city, so think of your order as your ticket to a seat for the hour.",
     },
     { type: "h2", text: "Step 4: Choose a seat with an escape hatch", id: "seat" },
     {
@@ -146,7 +150,7 @@ export const articleHowToTakeYourselfOnASoloCoffeeShopDate: Article = {
     },
     {
       type: "p",
-      text: "When you're ready for something bigger, browse [50 solo date ideas](/journal/solo-date-ideas), or build a whole day with [how to plan a solo Saturday](/journal/how-to-plan-a-solo-saturday). If the page-and-pen part appeals, [junk journaling](/journal/how-to-start-junk-journaling) is a good next step.",
+      text: "When you're ready for something bigger, browse [50 solo date ideas](/journal/solo-date-ideas), or build a whole day with [how to plan a solo Saturday](/journal/how-to-plan-a-solo-saturday). If the page-and-pen part appeals, [junk journaling](/journal/how-to-start-junk-journaling) is a good next step, and so is [a reading journal](/journal/how-to-start-a-reading-journal) if you would rather keep notes on what you read.",
     },
     { type: "h2", text: "Make it a habit" },
     {

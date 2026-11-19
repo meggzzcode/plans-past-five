@@ -11,10 +11,10 @@ Status: RECOMMENDED plan. Nothing has been posted, no account exists, and no aud
 
 | Template | Pins |
 |---|---|
-| editorial | 18 |
+| headline | 23 |
 | checklist | 16 |
-| cover | 15 |
-| headline | 15 |
+| cover | 13 |
+| editorial | 12 |
 | steps | 12 |
 | quote | 8 |
 | quiz | 4 |
@@ -102,10 +102,10 @@ Dates assume the placeholder start `2027-01-04`. `HOLD` = `hold-until-published`
 | 35 | 2027-02-07 | `public/pins/10-watercolor-1-editorial.jpg` | editorial | `/journal/watercolor-painting-for-beginners` | Creative Hobbies for Beginners | HOLD |
 | 36 | 2027-02-08 | `public/pins/11-embroidery-1-headline.png` | headline | `/journal/how-to-start-embroidery` | Cozy Hobbies | HOLD |
 | 37 | 2027-02-09 | `public/pins/12-crochet-1-headline.png` | headline | `/journal/how-to-start-crocheting` | Cozy Hobbies | HOLD |
-| 38 | 2027-02-10 | `public/pins/13-flower-arranging-1-editorial.jpg` | editorial | `/journal/flower-arranging-as-a-hobby` | Cozy Hobbies | HOLD |
+| 38 | 2027-02-10 | `public/pins/13-flower-arranging-1-headline.png` | headline | `/journal/flower-arranging-as-a-hobby` | Cozy Hobbies | HOLD |
 | 39 | 2027-02-11 | `public/pins/14-starter-kits-1-cover.jpg` | cover | `/journal/creative-hobby-starter-kits-worth-considering` | Hobby Starter Kits | HOLD |
 | 40 | 2027-02-12 | `public/pins/15-weekend-things-1-cover.jpg` | cover | `/journal/things-to-do-on-the-weekend` | Weekend Activities | HOLD |
-| 41 | 2027-02-13 | `public/pins/16-creative-weekend-1-editorial.jpg` | editorial | `/journal/at-home-creative-weekend` | Weekend Activities | HOLD |
+| 41 | 2027-02-13 | `public/pins/16-creative-weekend-1-headline.png` | headline | `/journal/at-home-creative-weekend` | Weekend Activities | HOLD |
 | 42 | 2027-02-14 | `public/pins/17-picnic-1-editorial.jpg` | editorial | `/journal/how-to-plan-a-perfect-picnic` | Weekend Activities | HOLD |
 | 43 | 2027-02-15 | `public/pins/18-cheap-adventures-1-cover.jpg` | cover | `/journal/cheap-weekend-adventures` | Affordable Adventures | HOLD |
 | 43 | 2027-02-15 | `public/pins/19-solo-dates-1-cover.jpg` | cover | `/journal/solo-date-ideas` | Solo Date Ideas | HOLD |
@@ -120,7 +120,7 @@ Dates assume the placeholder start `2027-01-04`. `HOLD` = `hold-until-published`
 | 52 | 2027-02-24 | `public/pins/27-active-no-gym-1-cover.jpg` | cover | `/journal/active-hobbies-for-women-who-dont-love-the-gym` | Active Hobbies | HOLD |
 | 53 | 2027-02-25 | `public/pins/28-tennis-1-editorial.jpg` | editorial | `/journal/how-to-start-playing-tennis-as-an-adult` | Active Hobbies | HOLD |
 | 54 | 2027-02-26 | `public/pins/29-pickleball-1-headline.png` | headline | `/journal/pickleball-for-beginners` | Active Hobbies | HOLD |
-| 55 | 2027-02-27 | `public/pins/05-low-energy-2-editorial.jpg` | editorial | `/journal/low-energy-hobbies` | Cozy Hobbies | HOLD |
+| 55 | 2027-02-27 | `public/pins/05-low-energy-2-headline.png` | headline | `/journal/low-energy-hobbies` | Cozy Hobbies | HOLD |
 | 55 | 2027-02-27 | `public/pins/30-cycling-1-headline.png` | headline | `/journal/how-to-get-into-recreational-cycling-as-an-adult` | Active Hobbies | HOLD |
 | 56 | 2027-02-28 | `public/pins/06-find-a-hobby-2-steps.png` | steps | `/journal/how-to-find-a-hobby-as-an-adult` | Creative Hobbies for Beginners | HOLD |
 | 57 | 2027-03-01 | `public/pins/07-affordable-hobbies-2-checklist.png` | checklist | `/journal/affordable-hobbies-under-25` | Affordable Adventures | HOLD |
@@ -138,8 +138,8 @@ Dates assume the placeholder start `2027-01-04`. `HOLD` = `hold-until-published`
 | 68 | 2027-03-12 | `public/pins/19-solo-dates-2-quote.png` | quote | `/journal/solo-date-ideas` | Solo Date Ideas | HOLD |
 | 69 | 2027-03-13 | `public/pins/20-solo-coffee-2-steps.png` | steps | `/journal/how-to-take-yourself-on-a-solo-coffee-shop-date` | Solo Date Ideas | HOLD |
 | 70 | 2027-03-14 | `public/pins/34-tonight-tool-1-headline.png` | headline | `/tools/tonight` | After Work Activities | HOLD |
-| 71 | 2027-03-15 | `public/pins/21-cozy-solo-home-2-editorial.jpg` | editorial | `/journal/cozy-solo-dates-at-home` | Solo Date Ideas | HOLD |
-| 72 | 2027-03-16 | `public/pins/22-solo-saturday-2-cover.jpg` | cover | `/journal/how-to-plan-a-perfect-solo-saturday` | Solo Date Ideas | HOLD |
+| 71 | 2027-03-15 | `public/pins/21-cozy-solo-home-2-headline.png` | headline | `/journal/cozy-solo-dates-at-home` | Solo Date Ideas | HOLD |
+| 72 | 2027-03-16 | `public/pins/22-solo-saturday-2-headline.png` | headline | `/journal/how-to-plan-a-perfect-solo-saturday` | Solo Date Ideas | HOLD |
 | 73 | 2027-03-17 | `public/pins/23-girls-night-2-checklist.png` | checklist | `/journal/girls-night-ideas-that-arent-drinks` | Girls' Night Ideas | HOLD |
 | 74 | 2027-03-18 | `public/pins/24-craft-night-2-steps.png` | steps | `/journal/how-to-host-a-craft-night` | Girls' Night Ideas | HOLD |
 | 75 | 2027-03-19 | `public/pins/25-book-club-2-steps.png` | steps | `/journal/how-to-start-a-book-club` | Girls' Night Ideas | HOLD |
@@ -150,10 +150,10 @@ Dates assume the placeholder start `2027-01-04`. `HOLD` = `hold-until-published`
 | 79 | 2027-03-23 | `public/pins/30-cycling-2-steps.png` | steps | `/journal/how-to-get-into-recreational-cycling-as-an-adult` | Active Hobbies | HOLD |
 | 80 | 2027-03-24 | `public/pins/05-low-energy-3-checklist.png` | checklist | `/journal/low-energy-hobbies` | Cozy Hobbies | HOLD |
 | 81 | 2027-03-25 | `public/pins/06-find-a-hobby-3-quote.png` | quote | `/journal/how-to-find-a-hobby-as-an-adult` | Creative Hobbies for Beginners | HOLD |
-| 82 | 2027-03-26 | `public/pins/07-affordable-hobbies-3-editorial.jpg` | editorial | `/journal/affordable-hobbies-under-25` | Affordable Adventures | HOLD |
-| 83 | 2027-03-27 | `public/pins/08-junk-supplies-3-cover.jpg` | cover | `/journal/junk-journaling-supplies-for-beginners` | Junk Journaling | HOLD |
+| 82 | 2027-03-26 | `public/pins/07-affordable-hobbies-3-headline.png` | headline | `/journal/affordable-hobbies-under-25` | Affordable Adventures | HOLD |
+| 83 | 2027-03-27 | `public/pins/08-junk-supplies-3-headline.png` | headline | `/journal/junk-journaling-supplies-for-beginners` | Junk Journaling | HOLD |
 | 84 | 2027-03-28 | `public/pins/10-watercolor-3-quote.png` | quote | `/journal/watercolor-painting-for-beginners` | Creative Hobbies for Beginners | HOLD |
-| 85 | 2027-03-29 | `public/pins/14-starter-kits-3-editorial.jpg` | editorial | `/journal/creative-hobby-starter-kits-worth-considering` | Hobby Starter Kits | HOLD |
+| 85 | 2027-03-29 | `public/pins/14-starter-kits-3-headline.png` | headline | `/journal/creative-hobby-starter-kits-worth-considering` | Hobby Starter Kits | HOLD |
 | 86 | 2027-03-30 | `public/pins/15-weekend-things-3-checklist.png` | checklist | `/journal/things-to-do-on-the-weekend` | Weekend Activities | HOLD |
 | 87 | 2027-03-31 | `public/pins/19-solo-dates-3-checklist.png` | checklist | `/journal/solo-date-ideas` | Solo Date Ideas | HOLD |
 | 88 | 2027-04-01 | `public/pins/23-girls-night-3-quote.png` | quote | `/journal/girls-night-ideas-that-arent-drinks` | Girls' Night Ideas | HOLD |

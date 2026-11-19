@@ -1,0 +1,35 @@
+# Research applied (Cowork notes, read 2026-11-18)
+
+Status: 2026-11-19. Nothing is listed, applied for or accepted. Owner decisions in force: Amazon Associates only; ordinary non-affiliate Amazon links for now; no printables or digital products; pre-revenue turnkey sale; nothing listed without owner approval.
+
+## Applied, by source file
+
+| Cowork file | Applied to | What |
+|---|---|---|
+| docs/commerce/AMAZON-DISCLOSURE.md | `src/config/affiliate.ts`, `src/test/affiliate.test.ts` | `AMAZON_ASSOCIATE_STATEMENT` changed from "we" to "As an Amazon Associate I earn from qualifying purchases." (Operating Agreement s.5, read 2026-11-18). Test added. `AMAZON_PROGRAM_STATEMENT` left as is: Cowork says Amazon does not prescribe it in the pages read; its comment now says so. Both used only while the Amazon entry is live. |
+| docs/commerce/affiliate-research.md | `src/data/affiliate-programs.ts` (amazon-associates only), buyer docs | programUrl, application requirements (3 qualified sales in 180 days, original content, at least 10 posts guideline), cookieDays 1 (24-hour session; 89-day cart window noted in docs), payment (tax interview and payment method), restrictions, transfer policy, buyer activation, source, verifiedAt 2026-11-18. Status stays "candidate". Other networks were not carried over (Amazon-only decision). |
+| docs/commerce/AMAZON-CART-RESEARCH.md | same file, "Decision" paragraph | Ship the checklist; no cart button. |
+| docs/marketplace/FLIPPA-RESEARCH.md | PRICING-STRATEGY, LISTING-DRAFT, LISTING-CHECKLIST, OPERATING-COST-SUMMARY, BUYER-FAQ, HANDOVER-TERMS-SUGGESTION | Fee and listing facts with sources and page ages; pre-revenue price ceiling; revenue-claim rule quoted as Cowork summarized it; comparable evidence kept in separate lists; worked calculator with blank inputs plus one ILLUSTRATIVE example. |
+| docs/commerce/image-rights-notes.md | Not applied in this pass | Outside this worker's files; BUYER-FAQ now only points to it. |
+
+## Kept UNCONFIRMED or NOT FOUND
+
+- Amazon commission rates: rate card in the owner's signed-in account, NOT READ. `commission` stays null. Rates must not appear on public pages (Amazon restricts public communication about the Agreement beyond the disclosure).
+- Amazon multi-website policy and tracking-ID limits: NOT FOUND.
+- Amazon payment details beyond "tax interview and payment method": not read.
+- Add to Cart form current support: UNCONFIRMED. Item limits, mobile behaviour: NOT FOUND.
+- Flippa: live fee schedule (sources conflict: $29, $39, $49, $199 packages; 5% to 10% success fee, old pages), whether $9,999 is a cap or a category threshold (conflict), escrow and FlippaPay detail, listing fields and handover rules (NOT READ), other marketplaces (NOT researched).
+- Verified completed comparable sales: NONE FOUND. Only asking-price context and unverified anecdotes, kept separate.
+- The owner's cash costs, hours, floor and any prices: UNCONFIRMED; calculator inputs are blank.
+- The AMAZON_PROGRAM_STATEMENT wording: not verified against an Amazon page.
+- Domain ownership, host, operating costs: UNCONFIRMED (unchanged).
+
+## Open questions for the owner
+
+1. Will you open Flippa's sold-listing history (needs a logged-in session) so verified comparables can be recorded?
+2. What are your cash costs from the tracker and receipts, your hours, and your minimum acceptable net proceeds?
+3. Which Flippa package and category (starter site under the pre-revenue price rule, or Projects & Concepts) do you prefer, once the live pricing and category pages are re-read?
+4. Do you own planspastfive.com, and will it transfer?
+5. Will you ask Amazon Associates support about using one account across several websites, and whether the Add to Cart form is still supported?
+6. Do you want other marketplaces researched, or Flippa only?
+7. Should the seller state that no Amazon application has been made, as the draft listing now does?

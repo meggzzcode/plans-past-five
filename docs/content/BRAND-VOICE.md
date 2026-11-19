@@ -75,3 +75,7 @@ Short version: write like a thoughtful, encouraging friend who has done her home
 - Search for the avoid-list words above.
 - Read the first two sentences aloud. If they could open any article on the internet, rewrite them.
 - Confirm every number is sourced (`sources` field) or phrased as advice. See `docs/content/ARTICLE-QUALITY-CHECKLIST.md`.
+
+
+## Owner clarification (2026-11-19)
+"Girls" and "bestie" are fine to use. The rule is only to avoid constantly addressing the reader that way. Use them where they sound natural, not as a tic.

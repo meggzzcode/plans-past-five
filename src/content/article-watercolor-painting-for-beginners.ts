@@ -15,20 +15,31 @@ export const articleWatercolorPaintingForBeginners: Article = {
     "A calm, practice-first guide: buy little, learn water control before drawing skill, and finish three small projects that look good without being good at drawing",
   hobbies: ["watercolor-painting", "outdoor-sketching"],
   productIds: ["watercolor-sets", "watercolor-sketchbooks", "portable-watercolor"],
-  sources: [],
+  sources: [
+    {
+      title: "ACMI: materials safety",
+      url: "https://www.acmiart.org/materials-safety",
+      note: "AP seal = non-toxic when used as intended; CL seal = carries health warnings",
+    },
+    {
+      title: "CPSC: art and craft material safety",
+      url: "https://www.cpsc.gov/s3fs-public/5015.pdf",
+      note: "Avoid materials with lead, cadmium and other heavy metals",
+    },
+    {
+      title: "ACMI partners: how the labeling law (LHAMA) affects you",
+      url: "https://partners.acmiart.org/index.php/art-material-safety/lhama-how-does-it-affect-you",
+      note: "Labeling law explained",
+    },
+  ],
   coworkChecks: [
-    "Watercolor paper weight guidance: 300 gsm (140 lb) paper buckles less than thin sketch paper (claimed general guidance)",
-    "Cold-press paper has a textured surface and hot-press a smooth one; cold-press is commonly recommended for beginners (claimed)",
-    "Student-grade vs artist-grade paints differ in pigment concentration and price (claimed general property)",
-    "Typical beginner starter spend of roughly $20 to $50 for paints, brushes and paper (claimed range)",
-    "Round brushes sized roughly 6 to 8 are a common beginner recommendation; sizing varies by maker (claimed)",
-    "Wet-on-wet, wet-on-dry, flat wash and graded wash are standard watercolor techniques and are described accurately here",
-    "Watercolor pans typically need a few minutes of wetting to activate, and dried pans can be reused (claimed general property)",
-    "Some pigments are toxic (e.g. certain cadmium or cobalt pigments); check labels and do not point brushes with your mouth (claimed safety note)",
-    "Taping paper edges to a board reduces buckling (claimed general guidance)",
-    "Painting light to dark and leaving white paper for highlights is standard watercolor practice (claimed)",
-    "Rinsing brushes and not leaving them standing in water protects bristles (claimed general care guidance)",
-    "Water disposal and wiping up: confirm no claim that pigment water is safe to pour anywhere; labels and local guidance apply",
+    "VERIFIED 2026-11-18: ACMI AP seal means non-toxic when used as intended; CL seal means health warnings on the label - acmiart.org",
+    "VERIFIED 2026-11-18: some pigments (lead, cadmium, other heavy metals) can be toxic; read labels - cpsc.gov, acmiart.org",
+    "RESOLVED 2026-11-19: starter spend ($20-$50) - removed; verification found no source for prices",
+    "OPEN: 'never point a brush with your mouth' has no source in the verification file; either source it or remove",
+    "OPEN: no verification covered technique or materials - paper weight (300 gsm / 140 lb) and buckling, cold-press for beginners, student vs artist grade, brush sizing, taping paper, light-to-dark painting, brush care",
+    "OPEN: confirm descriptions of flat wash, graded wash, wet-on-wet and wet-on-dry, and that pans need a few minutes of wetting, are accurate",
+    "OPEN: 'a non-toxic claim on a specific paint' must be read off the maker's label or ACMI list per product; article makes no such claim, but the later product pass must not add one unchecked",
   ],
   related: [
     "creative-hobbies-you-can-start-at-home",
@@ -86,7 +97,7 @@ export const articleWatercolorPaintingForBeginners: Article = {
     },
     {
       type: "p",
-      text: "Typically, a first setup of paints, a brush and paper lands around $20 to $50. Check pigment labels, since a few pigments are toxic. Wash up after painting, and never point a brush with your mouth.",
+      text: "Prices vary by shop and brand. Read labels before you buy: avoid materials with lead, cadmium and other heavy metals. Look for the AP seal from ACMI, which marks products certified non-toxic when used as intended; a CL seal means the product carries health warnings. Wash up after painting, and never point a brush with your mouth.",
     },
     { type: "h2", text: "Four techniques, in the order they help", id: "techniques" },
     {

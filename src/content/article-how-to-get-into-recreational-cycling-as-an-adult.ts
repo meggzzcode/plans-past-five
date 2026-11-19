@@ -6,8 +6,9 @@ export const articleHowToGetIntoRecreationalCyclingAsAnAdult: Article = {
   titleItalic: "Recreational Cycling",
   dek: "A gentle plan for getting back on a bike: choosing one, staying safe and visible, planning an easy first ride and building up without feeling like an athlete.",
   category: "movement",
-  status: "draft",
-  publishedAt: "",
+  status: "published",
+  publishedAt: "2026-11-19",
+  verifiedAt: "2026-11-18",
   hero: "hiking",
   searchIntent: "how to start cycling as an adult / recreational cycling for beginners",
   angle:
@@ -17,39 +18,71 @@ export const articleHowToGetIntoRecreationalCyclingAsAnAdult: Article = {
   related: [
     "active-hobbies-for-women-who-dont-love-the-gym",
     "cheap-weekend-adventures",
-    "things-to-do-on-the-weekend",
+    "how-to-plan-a-perfect-picnic",
   ],
   sources: [
     {
+      title: "CDC Heads Up: bike helmet fact sheet",
+      url: "https://www.cdc.gov/heads-up/media/pdfs/helmets/HeadsUp_HelmetFactSheet_Bike_508.pdf",
+      note: "Helmet fit: level, one to two finger widths above eyebrows, V straps, snug chin strap",
+    },
+    {
+      title: "National Safety Council: bicycle safety",
+      url: "https://www.nsc.org/community-safety/safety-topics/seasonal-safety/summer-safety/bicycles",
+      note: "Helmet recommended; chin strap fit. Page is several years old; re-check",
+    },
+    {
       title: "CPSC: which helmet",
       url: "https://www.cpsc.gov/s3fs-public/349-WhichHelmetBrochure_5-13-22_WEB_508_0.pdf",
-      note: "Replace within 5 to 10 years (Cowork C4)",
+      note: "Replace after a crash; may be prudent to replace within 5 to 10 years",
     },
     {
-      title: "Bicycle Helmet Safety Institute: replacement",
+      title: "Bicycle Helmet Safety Institute: replacing a helmet",
       url: "https://helmets.org/replace/",
-      note: "Most manufacturers recommend about 5 years (Cowork C4)",
+      note: "Replace after any crash where the head hit; many makers say 3 to 5 years",
     },
     {
-      title: "NHTSA bicycle safety sheet",
+      title: "NHTSA: bicycle safety",
+      url: "https://www.nhtsa.gov/road-safety/bicycle-safety",
+      note: "Lights and visibility at night",
+    },
+    {
+      title: "NHTSA bicycle safety sheet (PDF)",
       url: "https://www.nhtsa.gov/sites/nhtsa.gov/files/811557.pdf",
-      note: "Lights: sources differ on all States versus many States; keep check local law (Cowork C4)",
+      note: "Lights: sources differ on all States versus many States; check local law",
+    },
+    {
+      title: "League of American Bicyclists: Ride Smart",
+      url: "https://bikeleague.org/ridesmart/commuting/",
+      note: "White front light and red rear light or reflector at night",
+    },
+    {
+      title: "National Park Service: bike safety",
+      url: "https://home.nps.gov/articles/bike-safety.htm",
+      note: "Shared-path etiquette: slow down, warn, pass on the left, keep right",
+    },
+    {
+      title: "REI Expert Advice: cycling repair checklist (retailer guide)",
+      url: "https://www.rei.com/learn/expert-advice/cycling-repair-checklist.html",
+      note: "Spare tube or patch kit, tire levers, pump, multi-tool",
+    },
+    {
+      title: "REI Expert Advice: getting into biking (retailer guide)",
+      url: "https://www.rei.com/learn/expert-advice/getting-into-biking.html",
+      note: "Saddle height: slight knee bend at the bottom of the stroke",
     },
   ],
   coworkChecks: [
-    "Confirm that borrowing, renting or bike-share are realistic options in most areas; availability varies by location and no schemes are named.",
-    "Confirm that typical costs for a bike, helmet, lights and a lock are described only as approximate ranges, if at all; the piece states no prices.",
-    "Confirm that padded shorts or a more comfortable saddle is reasonable, general advice for saddle soreness.",
-    "Confirm that shifting to an easier gear before a climb is standard beginner guidance from a cycling-education source.",
-    "Confirm that a basic puncture repair kit and pump are standard beginner carry items, and that free workshops exist in some areas (varies by location).",
-    "Confirm that sharing paths with walkers (slow down, ring a bell or call out) matches typical shared-path etiquette guidance from a local authority or cycling body.",
-    "Safety: confirm helmet-fit guidance (helmet sits level, about two finger-widths above the eyebrows, side straps form a V under the ears, chin strap snug with about one finger of space) against an official safety source such as a national safety council or helmet-safety organization.",
-    "Safety: confirm that wearing a helmet is recommended by official safety bodies, and that helmet laws differ by location; the piece says to check local rules.",
-    "Safety: Cowork C4 (2026-11-19): replacing a helmet after a crash is not in dispute. Replacement by age conflicts across sources (CPSC suggests 5 to 10 years from purchase; the Bicycle Helmet Safety Institute says most manufacturers now say about 5), so the text states both and defers to the manufacturer.",
-    "Safety: confirm lights and visibility guidance (a white front light and a red rear light or reflector when riding in low light, and many places legally require them); mark as 'varies by location, check local law'. Cowork C4: NHTSA sheets disagree (one says required in all States, another says many States), so keep 'check local law'.",
-    "Safety: confirm general road-position and hand-signal guidance (ride in the same direction as traffic where required, signal turns, obey signals) matches local traffic laws; laws vary by location, so the piece defers to local rules.",
-    "Fit: confirm the standover-clearance and saddle-height guidance (a small gap when standing over the top tube; a slight bend in the knee at the bottom of the pedal stroke) against a bike-fit or retailer source.",
-    "Maintenance: confirm the 'ABC quick check' (air, brakes, chain) and tire-pressure advice follows the sidewall marking on the tire.",
+    "VERIFIED 2026-11-18: helmet fit - level, about one to two fingers above the eyebrows; side straps form a V under the ears; chin strap snug, about one finger of space - cdc.gov (Heads Up helmet fact sheet), nsc.org",
+    "VERIFIED 2026-11-18: helmet recommended for adults on every ride; helmet laws differ so check local rules. Note: the NSC page is about 5.8 years old, re-check before relying on it - nsc.org, cdc.gov",
+    "VERIFIED 2026-11-18: replace helmet after a crash (foam single-use); periodic replacement conflicts across sources, so text says follow the maker's guidance, many say 3-5 years - cpsc.gov, helmets.org",
+    "VERIFIED 2026-11-18: white front light and red rear light or reflector at night; law wording varies (NHTSA sheets say 'all States' and 'many States'), so 'check your local rules' - nhtsa.gov, bikeleague.org",
+    "VERIFIED 2026-11-18: shared-path etiquette - slow down, warn, pass on the left, keep right - nps.gov",
+    "VERIFIED 2026-11-18: saddle height - slight bend in the knee at the bottom of the stroke - rei.com (retailer guide)",
+    "VERIFIED 2026-11-18: tires at recommended pressure, chain lubed about monthly; spare tube or patch kit, tire levers, pump, multi-tool as optional carry items - rei.com (retailer guide)",
+    "VERIFIED 2026-11-18: unsourced details removed or softened - standover clearance, brake feel, quick-release check, bright-clothing and reflector visibility claims, bell laws, gear-shifting advice, padded shorts - reworded, no claim remains",
+    "VERIFIED 2026-11-18: borrowing, renting, bike-share, workshops and beginner rides described as options 'if available'; no schemes or prices named - reworded, no claim remains",
+    "VERIFIED 2026-11-18: road-position and hand-signal guidance stays generic ('follow local traffic laws', signal turns) and defers to local rules - reworded, no claim remains",
   ],
   body: [
     {
@@ -72,35 +105,32 @@ export const articleHowToGetIntoRecreationalCyclingAsAnAdult: Article = {
     {
       type: "list",
       items: [
-        "**Comfort over speed.** For casual riding, upright bikes with a relaxed posture are easier on the back and wrists.",
-        "**Standover check.** Stand over the bike with both feet flat. You should have a little clearance between you and the top bar or frame.",
-        "**Saddle height.** When sitting, with your heel on the pedal at its lowest point, your leg should be nearly straight. With the ball of your foot on the pedal, there should be a slight bend in the knee.",
-        "**Reach.** You shouldn't feel stretched out or cramped. A bike shop can adjust it in minutes.",
+        "**Comfort over speed.** For casual riding, many people find an upright bike with a relaxed posture the most comfortable.",
+        "**Saddle height.** With the ball of your foot on the pedal at its lowest point, there should be a slight bend in your knee.",
+        "**Reach.** You shouldn't feel stretched out or cramped. A bike shop can help adjust the fit.",
       ],
     },
     { type: "h2", text: "Step 2: Get a helmet and learn to fit it", id: "helmet" },
     {
       type: "p",
-      text: "Safety organizations recommend wearing a helmet, and in some places it's a legal requirement for some riders. A helmet only helps if it fits properly, so take a minute to adjust it.",
+      text: "Safety organizations recommend wearing a helmet, and helmet laws differ from place to place, so check yours. A helmet only helps if it fits properly, so take a minute to adjust it.",
     },
     {
       type: "list",
       items: [
-        "**Level, not tilted back.** The helmet should sit flat on your head, about two fingers above your eyebrows.",
+        "**Level, not tilted back.** The helmet should sit flat on your head, about one to two fingers above your eyebrows.",
         "**Side straps in a V** that meets just below your ears.",
         "**Chin strap snug.** You should be able to fit about one finger between the strap and your chin, and it should feel firm when you open your mouth wide.",
         "**No wobble.** Shake your head. If the helmet shifts, tighten the dial or add the supplied pads.",
-        "**Replace after a crash.** Beyond that, advice on age varies: the U.S. Consumer Product Safety Commission suggests five to ten years from purchase, while the Bicycle Helmet Safety Institute says most manufacturers now recommend about five. Follow your helmet maker's guidance.",
+        "**Replace after a crash** in which your head hit something, because the foam is single-use. Beyond that, advice on age varies, so follow your helmet maker's guidance; many makers say three to five years.",
       ],
     },
     { type: "h2", text: "Step 3: Be seen", id: "visible" },
     {
       type: "list",
       items: [
-        "**Bright or light-colored clothes** help you stand out during the day.",
-        "**Lights at dusk and after dark.** A white front light and a red rear light are standard, and many places require them by law. Check yours.",
-        "**Reflectors and reflective details** add visibility from the side.",
-        "**A bell** is polite and legally required in some places.",
+        "**Lights at dusk and after dark.** Use a white front light and a red rear light or reflector at night. Rules on lights vary by place, so check your local rules.",
+        "**A bell** is polite on shared paths.",
       ],
     },
     { type: "h2", text: "Step 4: Do a thirty-second safety check", id: "check" },
@@ -108,9 +138,8 @@ export const articleHowToGetIntoRecreationalCyclingAsAnAdult: Article = {
       type: "list",
       items: [
         "**Air.** Squeeze the tires and check the pressure range printed on the tire sidewall. Pump up if soft.",
-        "**Brakes.** Squeeze both levers. They should engage firmly before reaching the handlebar. Roll the bike and test them.",
-        "**Chain.** It should look clean and oiled, not rusty or dry. A little lubricant helps.",
-        "**Quick-release parts** should be closed and tight.",
+        "**Brakes.** Test both levers before you set off. If anything feels off, ask a bike shop to take a look.",
+        "**Chain.** It should look clean, not rusty or dry. A little lubricant every month or so helps.",
       ],
     },
     {
@@ -123,7 +152,12 @@ export const articleHowToGetIntoRecreationalCyclingAsAnAdult: Article = {
         "Phone, ID and a small amount of cash or a card",
         "A lock if you'll stop somewhere",
       ],
-      optional: ["A small daypack or basket", "A bell", "A puncture repair kit and pump", "Gloves"],
+      optional: [
+        "A small daypack or basket",
+        "A bell",
+        "A spare tube or patch kit, tire levers, a pump and a multi-tool",
+        "Gloves",
+      ],
     },
     { type: "h2", text: "Step 5: Practice somewhere quiet", id: "practice" },
     {
@@ -150,7 +184,7 @@ export const articleHowToGetIntoRecreationalCyclingAsAnAdult: Article = {
       items: [
         "**Follow local traffic laws.** Obey signals and signs, and give way as required.",
         "**Ride predictably.** Hold a steady line, signal your turns and look ahead.",
-        "**Share paths politely.** Slow down near walkers and pass with a bell or a friendly hello.",
+        "**Share paths politely.** Slow down near walkers, call out or ring a bell before you pass, pass on the left and keep to the right.",
         "**Keep your phone away.** Stop to take photos, not while riding.",
         "**Know your route** and tell someone where you're going if you're heading somewhere remote.",
       ],
@@ -164,7 +198,7 @@ export const articleHowToGetIntoRecreationalCyclingAsAnAdult: Article = {
     { type: "h3", text: "'My seat hurts.'" },
     {
       type: "p",
-      text: "Some soreness at first is normal, but check your saddle height and angle. Padded shorts or a more comfortable saddle can help. If pain is sharp or persistent, check with a bike shop or a doctor.",
+      text: "A bike shop can help with saddle height, angle and comfort. If pain is sharp or persistent, check with a bike shop or a doctor.",
     },
     { type: "h3", text: "'I'm scared of traffic.'" },
     {
@@ -174,12 +208,12 @@ export const articleHowToGetIntoRecreationalCyclingAsAnAdult: Article = {
     { type: "h3", text: "'Hills are awful.'" },
     {
       type: "p",
-      text: "Shift to an easier gear before you start climbing, not halfway up. It's perfectly fine to get off and walk.",
+      text: "Take hills slowly. It's perfectly fine to get off and walk.",
     },
     { type: "h3", text: "'I got a flat tire.'" },
     {
       type: "p",
-      text: "Walk to the nearest bike shop or call a friend. Later, learn to fix one at home, or take a free workshop if your area has them.",
+      text: "Walk to the nearest bike shop or call a friend. Later, learn to fix one at home, or take a workshop if your area offers them.",
     },
     {
       type: "saveSplurge",
@@ -196,6 +230,10 @@ export const articleHowToGetIntoRecreationalCyclingAsAnAdult: Article = {
     {
       type: "tryThisWeekend",
       text: "Borrow or rent a bike for an hour, fit your helmet and spend twenty minutes wobbling happily in a quiet spot. That's all.",
+    },
+    {
+      type: "p",
+      text: "For other gentle ways to move, see [active hobbies for women who don't love the gym](/journal/active-hobbies-for-women-who-dont-love-the-gym), or plan a destination with [cheap weekend adventures](/journal/cheap-weekend-adventures).",
     },
     {
       type: "makePlan",

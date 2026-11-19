@@ -71,7 +71,7 @@
     "date": "2027-01-09",
     "publish_status": "published-article",
     "kind": "article",
-    "image": "junk-journal-flatlay.jpg",
+    "image": "hero-pottery-night.jpg",
     "minFitFontPx": null
   },
   {
@@ -465,10 +465,10 @@
     "minFitFontPx": null
   },
   {
-    "id": "13-flower-arranging-1-editorial",
-    "file": "13-flower-arranging-1-editorial.jpg",
-    "template": "editorial",
-    "variant": "split",
+    "id": "13-flower-arranging-1-headline",
+    "file": "13-flower-arranging-1-headline.png",
+    "template": "headline",
+    "variant": "stack",
     "theme": "straw",
     "board": "Cozy Hobbies",
     "destination": "/journal/flower-arranging-as-a-hobby",
@@ -476,8 +476,8 @@
     "date": "2027-02-10",
     "publish_status": "hold-until-published",
     "kind": "article",
-    "image": "weekend-picnic.jpg",
-    "minFitFontPx": 86
+    "image": null,
+    "minFitFontPx": null
   },
   {
     "id": "14-starter-kits-1-cover",
@@ -510,10 +510,10 @@
     "minFitFontPx": null
   },
   {
-    "id": "16-creative-weekend-1-editorial",
-    "file": "16-creative-weekend-1-editorial.jpg",
-    "template": "editorial",
-    "variant": "postcard",
+    "id": "16-creative-weekend-1-headline",
+    "file": "16-creative-weekend-1-headline.png",
+    "template": "headline",
+    "variant": "stack",
     "theme": "straw",
     "board": "Weekend Activities",
     "destination": "/journal/at-home-creative-weekend",
@@ -521,7 +521,7 @@
     "date": "2027-02-13",
     "publish_status": "hold-until-published",
     "kind": "article",
-    "image": "junk-journal-flatlay.jpg",
+    "image": null,
     "minFitFontPx": null
   },
   {
@@ -551,7 +551,7 @@
     "date": "2027-02-15",
     "publish_status": "hold-until-published",
     "kind": "article",
-    "image": "hiking-wildflowers.jpg",
+    "image": "shop-little-adventures.jpg",
     "minFitFontPx": null
   },
   {
@@ -686,7 +686,7 @@
     "date": "2027-02-23",
     "publish_status": "hold-until-published",
     "kind": "article",
-    "image": "girls-night-crafts.jpg",
+    "image": "shop-girls-night-in.jpg",
     "minFitFontPx": null
   },
   {
@@ -701,7 +701,7 @@
     "date": "2027-02-24",
     "publish_status": "hold-until-published",
     "kind": "article",
-    "image": "tennis-golden-hour.jpg",
+    "image": "hiking-wildflowers.jpg",
     "minFitFontPx": null
   },
   {
@@ -750,10 +750,10 @@
     "minFitFontPx": null
   },
   {
-    "id": "05-low-energy-2-editorial",
-    "file": "05-low-energy-2-editorial.jpg",
-    "template": "editorial",
-    "variant": "split",
+    "id": "05-low-energy-2-headline",
+    "file": "05-low-energy-2-headline.png",
+    "template": "headline",
+    "variant": "stack",
     "theme": "cream",
     "board": "Cozy Hobbies",
     "destination": "/journal/low-energy-hobbies",
@@ -761,7 +761,7 @@
     "date": "2027-02-27",
     "publish_status": "hold-until-published",
     "kind": "article",
-    "image": "watercolor-evening.jpg",
+    "image": null,
     "minFitFontPx": null
   },
   {
@@ -882,7 +882,7 @@
     "publish_status": "hold-until-published",
     "kind": "article",
     "image": null,
-    "minFitFontPx": 96
+    "minFitFontPx": null
   },
   {
     "id": "14-starter-kits-2-checklist",
@@ -1005,10 +1005,10 @@
     "minFitFontPx": null
   },
   {
-    "id": "21-cozy-solo-home-2-editorial",
-    "file": "21-cozy-solo-home-2-editorial.jpg",
-    "template": "editorial",
-    "variant": "split",
+    "id": "21-cozy-solo-home-2-headline",
+    "file": "21-cozy-solo-home-2-headline.png",
+    "template": "headline",
+    "variant": "center",
     "theme": "cream",
     "board": "Solo Date Ideas",
     "destination": "/journal/cozy-solo-dates-at-home",
@@ -1016,14 +1016,14 @@
     "date": "2027-03-15",
     "publish_status": "hold-until-published",
     "kind": "article",
-    "image": "shop-bookish-girl.jpg",
+    "image": null,
     "minFitFontPx": null
   },
   {
-    "id": "22-solo-saturday-2-cover",
-    "file": "22-solo-saturday-2-cover.jpg",
-    "template": "cover",
-    "variant": null,
+    "id": "22-solo-saturday-2-headline",
+    "file": "22-solo-saturday-2-headline.png",
+    "template": "headline",
+    "variant": "center",
     "theme": "cherry",
     "board": "Solo Date Ideas",
     "destination": "/journal/how-to-plan-a-perfect-solo-saturday",
@@ -1031,7 +1031,7 @@
     "date": "2027-03-16",
     "publish_status": "hold-until-published",
     "kind": "article",
-    "image": "solo-cafe-date.jpg",
+    "image": null,
     "minFitFontPx": null
   },
   {
@@ -1185,10 +1185,10 @@
     "minFitFontPx": null
   },
   {
-    "id": "07-affordable-hobbies-3-editorial",
-    "file": "07-affordable-hobbies-3-editorial.jpg",
-    "template": "editorial",
-    "variant": "arch",
+    "id": "07-affordable-hobbies-3-headline",
+    "file": "07-affordable-hobbies-3-headline.png",
+    "template": "headline",
+    "variant": "center",
     "theme": "straw",
     "board": "Affordable Adventures",
     "destination": "/journal/affordable-hobbies-under-25",
@@ -1196,14 +1196,14 @@
     "date": "2027-03-26",
     "publish_status": "hold-until-published",
     "kind": "article",
-    "image": "shop-creative-girl.jpg",
+    "image": null,
     "minFitFontPx": null
   },
   {
-    "id": "08-junk-supplies-3-cover",
-    "file": "08-junk-supplies-3-cover.jpg",
-    "template": "cover",
-    "variant": null,
+    "id": "08-junk-supplies-3-headline",
+    "file": "08-junk-supplies-3-headline.png",
+    "template": "headline",
+    "variant": "center",
     "theme": "cream",
     "board": "Junk Journaling",
     "destination": "/journal/junk-journaling-supplies-for-beginners",
@@ -1211,7 +1211,7 @@
     "date": "2027-03-27",
     "publish_status": "hold-until-published",
     "kind": "article",
-    "image": "shop-creative-girl.jpg",
+    "image": null,
     "minFitFontPx": null
   },
   {
@@ -1230,10 +1230,10 @@
     "minFitFontPx": null
   },
   {
-    "id": "14-starter-kits-3-editorial",
-    "file": "14-starter-kits-3-editorial.jpg",
-    "template": "editorial",
-    "variant": "arch",
+    "id": "14-starter-kits-3-headline",
+    "file": "14-starter-kits-3-headline.png",
+    "template": "headline",
+    "variant": "center",
     "theme": "butter",
     "board": "Hobby Starter Kits",
     "destination": "/journal/creative-hobby-starter-kits-worth-considering",
@@ -1241,8 +1241,8 @@
     "date": "2027-03-29",
     "publish_status": "hold-until-published",
     "kind": "article",
-    "image": "shop-pottery-era.jpg",
-    "minFitFontPx": null
+    "image": null,
+    "minFitFontPx": 40
   },
   {
     "id": "15-weekend-things-3-checklist",

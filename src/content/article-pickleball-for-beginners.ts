@@ -6,9 +6,10 @@ export const articlePickleballForBeginners: Article = {
   titleItalic: "Pickleball Era",
   dek: "What to bring, the few rules worth knowing before your first game, and how to join in when you don't know a soul.",
   category: "movement",
-  status: "draft",
-  publishedAt: "",
-  hero: "tennis",
+  status: "published",
+  publishedAt: "2026-11-19",
+  verifiedAt: "2026-11-18",
+  hero: "shopSporty",
   searchIntent: "pickleball for beginners / how to start playing pickleball / pickleball equipment",
   angle:
     "A no-jargon starter guide: what you really need, the handful of rules that matter on day one, and how to join open play without feeling like the new kid",
@@ -23,23 +24,42 @@ export const articlePickleballForBeginners: Article = {
     {
       title: "USA Pickleball Official Rulebook",
       url: "https://usapickleball.org/docs/rules/USAP-Official-Rulebook.pdf",
-      note: "Approved balls acceptable indoors or outdoors (Cowork C4, 2026-11-19)",
+      note: "Approved balls acceptable indoors or outdoors (applied by lead 2026-11-19)",
+    },
+    {
+      title: "USA Pickleball: What is pickleball",
+      url: "https://usapickleball.org/what-is-pickleball/",
+      note: "Court 20 ft x 44 ft; non-volley zone 7 ft; net 36 in at sidelines and 34 in at center; solid paddle, perforated plastic ball, underhand serve; scoring to 11 win by 2",
+    },
+    {
+      title: "USA Pickleball: How to play",
+      url: "https://usapickleball.org/strategies/how-to-play-pickleball/",
+      note: "Two-bounce rule; underhand or drop serve, diagonal, clearing the kitchen line",
+    },
+    {
+      title: "USA Pickleball: Rules summary",
+      url: "https://usapickleball.org/docs/rules/USAP-Rules-Summary.pdf",
+      note: "Scoring to 11, win by 2, only serving side scores in traditional scoring; doubles most common",
+    },
+    {
+      title: "USA Pickleball: Sportsmanship guide",
+      url: "https://usapickleball.org/sportsmanship-guide/",
+      note: "Open-play etiquette",
+    },
+    {
+      title: "PlayPickleball.com: types of rec play",
+      url: "https://playpickleball.com/types-of-pickleball-rec-play/",
+      note: "Open play and paddle stacking (stacking varies by court); directory site, not a governing body",
     },
   ],
   coworkChecks: [
-    "Confirm that most casual play is doubles and that open play or paddle-stacking systems are common at public courts (varies by location); name no venues.",
-    "Confirm that borrowing paddles at community beginner sessions is common; availability varies by location.",
-    "Confirm that court shoes (lateral support) are commonly recommended over running shoes for pickleball by a coaching or governing-body source.",
-    "Confirm the 'hold the paddle like a handshake' grip tip against a coaching source, or soften.",
-    "Confirm that mixed-level open play is the norm and that rotation etiquette (waiting for a break in play before crossing behind a court, returning stray balls) matches governing-body etiquette guidance.",
-    "Confirm that 'typically a modest spend' for a paddle and ball set is expressed as an approximate range, with no price stated as fact.",
-    "Equipment: confirm that pickleball uses a solid paddle (not a stringed racket) and a perforated plastic ball, per the official rulebook (USA Pickleball or the relevant national body).",
-    "Equipment: RESOLVED by Cowork C4 (2026-11-19): the indoor-versus-outdoor ball difference was removed; the USA Pickleball official rulebook says approved balls are acceptable indoors or outdoors. Recheck the rulebook wording at publish time.",
-    "Court: confirm that the court is the same size as a doubles badminton court, 20 feet by 44 feet, with a non-volley zone ('kitchen') extending 7 feet from the net on each side, and a net 36 inches at the sidelines and 34 inches at the center.",
-    "Rules: confirm that the serve is underhand, must clear the non-volley zone and land in the diagonal service court, and that the ball must bounce once on each side before volleys are allowed (the two-bounce rule).",
-    "Rules: confirm that scoring is typically to 11, win by 2, and that only the serving side scores in traditional scoring; also confirm the caller convention (server score, receiver score, server number).",
-    "Rules: confirm that players may not volley (hit the ball out of the air) while standing in the non-volley zone.",
-    "Cost: confirm that a beginner paddle and ball set typically fits a modest budget and that public courts are often free; both vary by region.",
+    "VERIFIED 2026-11-18: court 20 ft x 44 ft; kitchen 7 ft from net; net 36 in sidelines, 34 in center - usapickleball.org",
+    "VERIFIED 2026-11-18: solid paddle, perforated plastic ball, underhand serve diagonally past the kitchen, two-bounce rule - usapickleball.org",
+    "VERIFIED 2026-11-18: scoring to 11 win by 2, only serving side scores in traditional scoring; doubles most common - usapickleball.org (article says 'most games'; server-score caller convention removed, not confirmed)",
+    "VERIFIED 2026-11-19: approved balls acceptable indoors or outdoors, so no indoor/outdoor ball claim - usapickleball.org rulebook",
+    "VERIFIED 2026-11-18: open play and paddle stacking, stacking varies by court; call own side's lines, meet at the net after a game - usapickleball.org, playpickleball.com",
+    "RESOLVED 2026-11-19: 'court shoes' recommendation - replaced with 'shoes with good grip that will not mark the court' (non-marking per USA Pickleball rule as described on playpickleball.com); running-shoe slipping claim removed",
+    "RESOLVED 2026-11-19: handshake grip tip, 'often borrow' paddles, paddle/ball price, free public courts, 'mix of ages' and 'fastest way to improve' claims - removed or reworded to 'some clubs', 'prices vary', 'check what is near you'",
   ],
   body: [
     {
@@ -48,24 +68,24 @@ export const articlePickleballForBeginners: Article = {
     },
     {
       type: "p",
-      text: "Good news. This is one of the more forgiving things you can walk into as a beginner. The court is small, the pace is manageable, and a first-timer can usually be rallying within the hour. Here's what to bring, what to know, and how to turn up without feeling like the new kid.",
+      text: "Good news. This is one of the more forgiving things you can walk into as a beginner. The court is small and the pace is manageable. Here's what to bring, what to know, and how to turn up without feeling like the new kid.",
     },
     {
       type: "p",
-      text: "There's also a social side that explains a lot of its popularity. Games are short, partners rotate, and the court is close enough that you can talk to the people on the other side of the net. It's an easy sport to be bad at in good company, which is a fine place to start.",
+      text: "There's also a social side that explains a lot of its popularity. Partners often rotate, and the court is close enough that you can talk to the people on the other side of the net. It's an easy sport to be bad at in good company, which is a fine place to start.",
     },
     { type: "h2", text: "What it actually is", id: "what" },
     {
       type: "p",
-      text: "Pickleball is a paddle sport played over a low net on a small court, most often as doubles. It borrows from tennis, badminton and table tennis. You hit a light, perforated plastic ball with a solid paddle, not a stringed racket. Because the court is compact, there's more rallying and less sprinting, which is a big part of why such a wide mix of ages and abilities end up on the same court.",
+      text: "Pickleball is a paddle sport played over a low net on a small court, most often as doubles. It borrows from tennis, badminton and table tennis. You hit a light, perforated plastic ball with a solid paddle, not a stringed racket. Because the court is compact, there's less ground to cover.",
     },
     { type: "h2", text: "What to bring, and what to skip", id: "gear" },
     {
       type: "whatYoullNeed",
       essentials: [
-        "A paddle, which you can often borrow for a first session",
+        "A paddle, which you may be able to borrow for a first session",
         "A few pickleballs; per the official rulebook, approved balls are fine indoors or outdoors, so one kind covers you",
-        "Court shoes or trainers with good side-to-side grip",
+        "Shoes with good grip that will not mark the court",
         "Water and sun protection",
       ],
       optional: [
@@ -77,7 +97,7 @@ export const articlePickleballForBeginners: Article = {
     },
     {
       type: "p",
-      text: "You probably own more of this than you think: the shoes, the water bottle and a bag to carry it all. Community centers and beginner sessions often lend paddles, and anyone who already plays tends to have a spare. A paddle and ball set is typically a modest spend, though that depends on where and when you shop.",
+      text: "You probably own more of this than you think: the shoes, the water bottle and a bag to carry it all. Some clubs and beginner sessions lend paddles, so it is worth asking before you buy. Prices vary by shop and season, so check before you spend.",
     },
     {
       type: "p",
@@ -86,16 +106,16 @@ export const articlePickleballForBeginners: Article = {
     { type: "h2", text: "The court, in plain English", id: "court" },
     {
       type: "p",
-      text: "Think of a small court with a low net, similar in scale to a badminton court. Close to the net on each side is a marked zone nicknamed 'the kitchen'. It's the part that trips up almost every beginner, because in general you aren't allowed to hit the ball out of the air while you're standing in it. You can step in to play a ball that has already bounced. Ask whoever you're playing with to point out the lines on your first day.",
+      text: "The court is small, 20 feet by 44 feet, with a low net: 36 inches at the sidelines and 34 inches in the middle. Close to the net on each side, 7 feet out, is a marked zone nicknamed 'the kitchen' (officially the non-volley zone). It's the part that trips up almost every beginner, because in general you aren't allowed to hit the ball out of the air while you're standing in it. You can step in to play a ball that has already bounced. Ask whoever you're playing with to point out the lines on your first day.",
     },
     { type: "h2", text: "Four rules worth knowing", id: "rules" },
     {
       type: "list",
       items: [
         "**Serve underhand,** diagonally across the court and past the kitchen. Ask a friendly player to show you the box.",
-        "**Let it bounce twice.** After the serve, the ball typically has to bounce once on each side before anyone can volley. It keeps rallies alive.",
+        "**Let it bounce twice.** After the serve, the ball has to bounce once on each side before anyone can volley. It keeps rallies alive.",
         "**Mind the kitchen** when volleying, as above.",
-        "**Say the score out loud.** Games are commonly played to eleven, winning by two, and the server calls the score before each serve. The order of the numbers takes one game to learn.",
+        "**Say the score out loud.** Most games are played to eleven, winning by two, and in traditional scoring only the serving side scores. Calling the score before each serve keeps everyone on the same page.",
       ],
     },
     {
@@ -116,20 +136,20 @@ export const articlePickleballForBeginners: Article = {
     { type: "h2", text: "Finding your people", id: "people" },
     {
       type: "p",
-      text: "The easiest route is a friend, plus a second friend to make four. Failing that, look at your local recreation department or community board for beginner clinics and drop-in times. Many public courts run open play with a sign-in or paddle-stacking system. If you're nervous, arrive early and watch for ten minutes to see how people rotate, then say, 'Hi, I'm new. Can I join the next game?' It works more often than you'd expect.",
+      text: "The easiest route is a friend, plus a second friend to make four. Failing that, look at your local recreation department or community board for beginner clinics and drop-in times. Many public courts run open play, and some use a sign-in or paddle-stacking system, which varies from court to court. If you're nervous, arrive early and watch for ten minutes to see how people rotate, then say, 'Hi, I'm new. Can I join the next game?'",
     },
     {
       type: "p",
-      text: "Open play usually mixes levels, which is the fastest way to improve. Call the score clearly, return stray balls politely and wait for a break in play before walking behind a court. That covers most of the etiquette.",
+      text: "Open play often mixes levels, which is a friendly way to learn. Call lines fairly on your own side of the net, meet at the net after a game, and check how the paddle rack works on each court, since it varies.",
     },
     { type: "h2", text: "Beginner habits to retire early", id: "mistakes" },
     {
       type: "p",
-      text: "Swinging too hard is the classic; the game rewards placement and patience over power. Standing in the kitchen to volley is next. Forgetting the double bounce comes third, and a quiet reminder before each serve fixes it. Wearing running shoes can also leave you slipping sideways, so choose grip when you can. If your shoulder or wrist aches, rest, loosen your grip (think handshake, not hammer) and see a doctor if it lingers.",
+      text: "Swinging too hard is a common beginner habit; placement and patience go a long way. Standing in the kitchen to volley is next. Forgetting the double bounce comes third, and a quiet reminder before each serve fixes it. If your shoulder or wrist aches, rest and see a doctor if it lingers.",
     },
     {
       type: "saveSplurge",
-      save: "Borrow a paddle or buy a simple set, and play on free public courts.",
+      save: "Borrow a paddle or buy a simple set, and check what public courts near you offer.",
       splurge:
         "A better paddle after ten or so games, once you know whether you like a lighter feel or something with more punch.",
     },
@@ -138,6 +158,10 @@ export const articlePickleballForBeginners: Article = {
       title: "Pickleball essentials",
       dek: "Optional. Play first, buy later.",
       productIds: ["pickleball-sets", "water-bottles", "sports-totes", "tennis-rackets"],
+    },
+    {
+      type: "p",
+      text: "Want to try the other racket sport? Read [how to start playing tennis as an adult](/journal/how-to-start-playing-tennis-as-an-adult), or browse [active hobbies for women who don't love the gym](/journal/active-hobbies-for-women-who-dont-love-the-gym).",
     },
     {
       type: "makePlan",

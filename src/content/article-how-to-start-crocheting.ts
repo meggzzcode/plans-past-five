@@ -16,18 +16,11 @@ export const articleHowToStartCrocheting: Article = {
   productIds: [],
   sources: [],
   coworkChecks: [
-    "Medium-weight (worsted) smooth cotton or acrylic-blend yarn in a light color is commonly recommended for beginners (claimed general guidance)",
-    "A hook size around 5 to 6 mm is a common starting size for worsted yarn; sizing varies by yarn label (claimed)",
-    "Yarn labels list a recommended hook size and gauge; follow the label (claimed)",
-    "Typical beginner starter spend of roughly $10 to $25 for a hook, yarn and a few notions (claimed range)",
-    "Stitch abbreviations and US vs UK terminology differ: US single crochet equals UK double crochet (claimed)",
-    "Descriptions of chain, single crochet, double crochet, slip knot and turning chains are accurate here",
-    "Yarn care instructions vary by fiber; check the label before washing a finished piece (claimed)",
-    "Light-colored yarn makes stitches easier to see; smooth yarn is easier to unpick than fuzzy (claimed general guidance)",
-    "Crochet is typically done with one hook and knitting with two needles (claimed general fact)",
-    "Counting stitches at the end of each row to keep edges straight is standard guidance (claimed)",
-    "Hand and wrist comfort: confirm any advice about breaks stays hedged and makes no health claim",
-    "No product records exist for crochet supplies yet; the later product pass must add verified hook and yarn types before any shopHobby block is attached",
+    "RESOLVED 2026-11-19: starter spend ($10-$25), 5-6 mm hook size, 'friendlier than knitting' comparison, US single = UK double equivalence - removed or reworded (no source); verification found no source for prices",
+    "OPEN: no verification covered technique - confirm beginner yarn guidance (smooth, light, medium-weight cotton or acrylic blend), 'follow the yarn label for hook size', 'one hook vs two needles', and yarn care-label advice against a craft or yarn-council source",
+    "OPEN: confirm descriptions of slip knot, chain, single crochet, double crochet and turning chain, and the counting-stitches tip, are accurate",
+    "OPEN: hand and wrist comfort wording ('stop if anything aches') is hedged but not source-checked",
+    "OPEN: no product records exist for crochet supplies; the later product pass must add verified hook and yarn types before any shopHobby block is attached",
   ],
   related: [
     "how-to-start-embroidery",
@@ -46,13 +39,13 @@ export const articleHowToStartCrocheting: Article = {
     { type: "h2", text: "Why it is worth trying", id: "why" },
     {
       type: "p",
-      text: "A flat square is a weekend project, and a hook and a ball of yarn cost little. Crochet is generally considered friendlier to beginners than knitting because you only manage one live loop at a time, so a dropped stitch is easier to fix. Some things are worth being a beginner at, and the first row will be wonky.",
+      text: "A flat square is a weekend project. Crochet uses one hook, where knitting uses two needles, so there is just one live loop to look after. Some things are worth being a beginner at, and the first row will be wonky.",
     },
     { type: "h2", text: "What you need", id: "need" },
     {
       type: "whatYoullNeed",
       essentials: [
-        "One crochet hook, around 5 to 6 mm for medium-weight yarn",
+        "One crochet hook, in the size your yarn label suggests",
         "A ball of smooth, medium-weight (worsted) yarn in a light color, cotton or an acrylic blend",
         "Scissors",
         "A blunt yarn needle for weaving in ends",
@@ -70,7 +63,7 @@ export const articleHowToStartCrocheting: Article = {
     },
     {
       type: "p",
-      text: "**What the choices do.** Light, smooth yarn shows each stitch clearly and unpicks without fuss. Dark or fuzzy yarn hides your stitches, so keep it for later. The yarn label lists a suggested hook size, so follow it. Typically, a hook and a couple of balls of yarn run around $10 to $25.",
+      text: "**What the choices do.** Light, smooth yarn shows each stitch clearly and unpicks without fuss. Dark or fuzzy yarn hides your stitches, so keep it for later. The yarn label lists a suggested hook size, so follow it.",
     },
     {
       type: "saveSplurge",
@@ -99,7 +92,7 @@ export const articleHowToStartCrocheting: Article = {
     },
     {
       type: "p",
-      text: "A heads-up before you follow any pattern: US and UK terms differ. A US single crochet is a UK double crochet, so check which one a pattern uses.",
+      text: "A heads-up before you follow any pattern: US and UK crochet terms differ, so check which one a pattern uses.",
     },
     { type: "h2", text: "Your first project: a flat square", id: "first-project" },
     {
