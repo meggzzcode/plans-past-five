@@ -18,6 +18,7 @@ import { cn } from "@/lib/utils";
 import { track } from "@/lib/track";
 import { getHobby } from "@/data/hobbies";
 import { ShopMyHobby } from "@/components/commerce/ShopMyHobby";
+import { TonightMode } from "@/components/planner/TonightMode";
 
 const SEARCH_KEYS = [
   "when",
@@ -37,10 +38,27 @@ const SEARCH_KEYS = [
   "def",
 ] as const;
 
+/** The Tonight mode's answers (see parseTonightSearch) and the mode switch itself. */
+const TONIGHT_KEYS = ["t", "e", "b", "c", "w", "s"] as const;
+type MakePlansSearch = PlanSearch & {
+  mode?: string;
+} & Partial<Record<(typeof TONIGHT_KEYS)[number], string>>;
+
+/**
+ * Which half of Make Plans to show. `?mode=plan` and `?mode=tonight` are explicit. With no mode, any
+ * planner answer in the address (a quiz hand-off, a saved plan, a shared link) means the planner; a
+ * bare /make-plans opens Tonight, which shows ideas straight away.
+ */
+export function makePlansMode(s: MakePlansSearch): "tonight" | "plan" {
+  if (s.mode === "plan") return "plan";
+  if (s.mode === "tonight") return "tonight";
+  return SEARCH_KEYS.some((k) => s[k] !== undefined) ? "plan" : "tonight";
+}
+
 export const Route = createFileRoute("/make-plans")({
-  validateSearch: (s: Record<string, unknown>): PlanSearch => {
-    const out: PlanSearch = {};
-    for (const k of SEARCH_KEYS) {
+  validateSearch: (s: Record<string, unknown>): MakePlansSearch => {
+    const out: MakePlansSearch = {};
+    for (const k of [...SEARCH_KEYS, ...TONIGHT_KEYS, "mode"] as const) {
       const v = s[k];
       if (typeof v === "string" || typeof v === "number") out[k] = String(v);
     }
@@ -48,14 +66,60 @@ export const Route = createFileRoute("/make-plans")({
   },
   head: () =>
     seo({
-      title: "Plan Your Evening or Weekend in 30 Seconds",
+      title: "Make Plans: Tonight, This Evening or the Weekend",
       description:
-        "An empty calendar? We can work with that. Pick your time, budget and mood and get a realistic after-work or weekend plan, with the supplies to make it happen.",
+        "An empty calendar? We can work with that. Get three ideas for tonight, or pick your time, budget and mood for a realistic after-work or weekend plan, with the supplies to make it happen.",
       path: "/make-plans",
       image: absoluteUrl(images.picnic.src),
     }),
-  component: Planner,
+  component: MakePlans,
 });
+
+function MakePlans() {
+  const search = Route.useSearch();
+  const mode = makePlansMode(search);
+  return (
+    <>
+      <ModeSwitch mode={mode} />
+      {mode === "tonight" ? <TonightMode search={search} /> : <Planner />}
+    </>
+  );
+}
+
+/** Tonight and Plan ahead: two links (they work without scripts), the current one marked. */
+function ModeSwitch({ mode }: { mode: "tonight" | "plan" }) {
+  const tab = (active: boolean) =>
+    cn(
+      "inline-flex min-h-11 items-center border-2 border-cherry px-5 text-sm font-semibold",
+      active ? "bg-cherry text-cream" : "text-cherry hover:bg-cherry hover:text-cream",
+      focusRing,
+    );
+  return (
+    <div className="no-print bg-matcha/70">
+      <nav
+        aria-label="Make Plans mode"
+        className="mx-auto flex max-w-5xl flex-wrap gap-2 px-5 pt-6 md:px-8"
+      >
+        <Link
+          to="/make-plans"
+          search={{ mode: "tonight" }}
+          className={tab(mode === "tonight")}
+          aria-current={mode === "tonight" ? "page" : undefined}
+        >
+          Tonight
+        </Link>
+        <Link
+          to="/make-plans"
+          search={{ mode: "plan" }}
+          className={tab(mode === "plan")}
+          aria-current={mode === "plan" ? "page" : undefined}
+        >
+          Plan ahead
+        </Link>
+      </nav>
+    </div>
+  );
+}
 
 type Group = {
   key: keyof PlanInput;
@@ -163,7 +227,7 @@ function withValidLength(next: PlanInput): PlanInput {
 const FORM_KEYS = ["when", "length", "vibe", "who", "budget", "setting", "energy"] as const;
 
 function Planner() {
-  const search = Route.useSearch();
+  const search = Route.useSearch() as PlanSearch;
   const [init] = useState(() => {
     const p = parsePlanSearch(search);
     return { ...p, input: withValidLength(p.input) };
@@ -318,7 +382,7 @@ function Planner() {
     <>
       <section className="no-print bg-matcha/70">
         <div className="mx-auto max-w-5xl px-5 py-12 md:px-8 md:py-16">
-          <Kicker>Make Some Plans</Kicker>
+          <Kicker>Make Plans</Kicker>
           <h1 className="mt-3 text-5xl leading-[1] md:text-7xl">
             An empty calendar? <em className="text-cherry">We can work with that.</em>
           </h1>
@@ -362,6 +426,7 @@ function Planner() {
               run();
             }}
           >
+            <input type="hidden" name="mode" value="plan" />
             <input type="hidden" name="go" value="yes" />
             <input
               type="hidden"
@@ -487,7 +552,7 @@ function Planner() {
           <p className="mt-6 text-sm text-espresso">
             Need supplies for something on your plan?{" "}
             <Link to="/shop" className="font-semibold text-cherry underline underline-offset-4">
-              Shop Your Hobby
+              The Shop
             </Link>{" "}
             has starter lists for first sessions.
           </p>

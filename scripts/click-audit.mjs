@@ -55,14 +55,14 @@ const ROUTE_BUDGET_MS = Number(opt("route-budget", "240000")); // stop tapping o
 
 const STATIC = [
   "/",
-  "/start-here",
+  "/make-plans?mode=plan",
   "/hobbies",
   "/journal",
   "/shop",
   "/hobby-finder",
   "/make-plans",
   "/tools/hobby-budget",
-  "/tools/tonight",
+  "/make-plans?mode=tonight",
   "/saved",
   "/search",
   "/about",

@@ -127,7 +127,7 @@ describe("every share surface uses the one helper", () => {
         url={site.url + href}
         textIncludesUrl
       />,
-      { urlRe: /tools\/tonight/ },
+      { urlRe: /make-plans\?mode=tonight/ },
     );
   });
 

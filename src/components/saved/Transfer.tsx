@@ -16,6 +16,12 @@ import {
 const BTN =
   "inline-flex min-h-11 items-center gap-2 border-2 border-cherry px-4 text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cherry";
 
+/**
+ * Stage 3a: the backup/import panel is hidden from My Plans (it is a power-user extra). The panel,
+ * its library and its tests are intact. To bring it back, set this to true.
+ */
+export const SHOW_TRANSFER = false;
+
 /** Export and import so My Plans can move between devices. Merge only: an import never deletes anything. */
 export function Transfer() {
   const { replaceAll } = useSaved();

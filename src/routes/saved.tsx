@@ -12,11 +12,11 @@ import { hrefFor, savedShareText } from "@/lib/saved-share";
 import { seo } from "@/lib/seo";
 import { NAMES } from "@/components/layout/nav";
 import { PageHero } from "@/components/editorial/Section";
-import { Transfer } from "@/components/saved/Transfer";
+import { SHOW_TRANSFER, Transfer } from "@/components/saved/Transfer";
 import { SavedMeta } from "@/components/saved/SavedMeta";
 import { ShareActions } from "@/components/share/ShareActions";
 import { SavedExtras } from "@/components/share/SavedExtras";
-import { NearBox } from "@/components/share/Near";
+import { NearBox, SHOW_NEAR_BOX } from "@/components/share/Near";
 import { Star, Bow } from "@/components/brand/Doodles";
 import { site } from "@/config/site";
 
@@ -186,7 +186,7 @@ function Saved() {
         >
           Saved on this device only
           <span className="font-normal text-espresso">
-            Not synced. Clearing browser data removes it. Export to move devices.
+            Not synced. Clearing browser data removes it.
           </span>
         </p>
       </PageHero>
@@ -274,7 +274,7 @@ function Saved() {
                 </ul>
               </div>
             ))}
-            {items.length > 0 && <NearBox className="mb-8 max-w-xl" />}
+            {items.length > 0 && SHOW_NEAR_BOX && <NearBox className="mb-8 max-w-xl" />}
             {items.length > 0 && (
               <button
                 onClick={() => {
@@ -287,7 +287,7 @@ function Saved() {
             )}
           </>
         )}
-        {ready && <Transfer />}
+        {ready && SHOW_TRANSFER && <Transfer />}
       </section>
     </>
   );

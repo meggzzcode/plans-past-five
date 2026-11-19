@@ -3,22 +3,21 @@ import { articles, articlesForHobby } from "@/content";
 import { categories } from "@/data/categories";
 import { collections } from "@/data/products";
 import { hobbies } from "@/data/hobbies";
+import { redirectedPaths } from "@/config/redirects";
 
 /**
  * Public, indexable paths only. Excluded on purpose: /saved and /search (personal/utility pages),
- * drafts (never exposed by `articles`) and hobby profiles without a published guide (noindexed).
+ * drafts (never exposed by `articles`), hobby profiles without a published guide (noindexed), every
+ * path that redirects (src/config/redirects.ts) and the unlinked Hobby Budget utility (noindexed).
  */
 export function sitemapPaths(): string[] {
-  return [
+  const paths = [
     "/",
-    "/start-here",
     "/hobbies",
     "/journal",
     "/shop",
     "/hobby-finder",
     "/make-plans",
-    "/tools/hobby-budget",
-    "/tools/tonight",
     "/about",
     "/contact",
     "/privacy",
@@ -33,6 +32,7 @@ export function sitemapPaths(): string[] {
     ...collections.map((c) => `/shop/${c.slug}`),
     ...hobbies.filter((h) => articlesForHobby(h.slug).length > 0).map((h) => `/hobbies/${h.slug}`),
   ];
+  return paths.filter((p) => !redirectedPaths.includes(p));
 }
 
 export function sitemapXml(): string {

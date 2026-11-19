@@ -25,7 +25,7 @@ import {
 } from "@/lib/planner";
 import { canonicalUrl } from "@/lib/share";
 import { nearTermFor } from "@/lib/near";
-import { NearBox, NearLink } from "@/components/share/Near";
+import { NearBox, NearLink, SHOW_NEAR_BOX } from "@/components/share/Near";
 import { ShareActions } from "@/components/share/ShareActions";
 import { cn } from "@/lib/utils";
 import { useHydrated, waitingProps } from "@/lib/use-hydrated";
@@ -358,7 +358,7 @@ export function PlanResult({
             textIncludesUrl
           />
         )}
-        {plan.filled > 0 && (
+        {plan.filled > 0 && SHOW_NEAR_BOX && (
           <div className="mt-3 space-y-3">
             <NearBox />
           </div>

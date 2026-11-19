@@ -24,6 +24,7 @@ export const Route = createFileRoute("/tools/hobby-budget")({
       description:
         "How much does it really cost to start? Pick a hobby, tick what you already own, and see a realistic starting range plus a checklist. Estimates, not live prices.",
       path: "/tools/hobby-budget",
+      noindex: true,
       image: absoluteUrl(images.junkJournal.src),
     }),
   component: HobbyBudget,

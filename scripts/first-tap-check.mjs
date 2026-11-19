@@ -38,7 +38,7 @@ async function heldPage(width = 390) {
 // 1. Planner: tap a choice and the main button before any script has run.
 {
   const { page, release, ctx } = await heldPage();
-  await page.goto(`${base}/make-plans`, { waitUntil: "domcontentloaded" });
+  await page.goto(`${base}/make-plans?mode=plan`, { waitUntil: "domcontentloaded" });
   await page.getByText("Low-key", { exact: true }).click();
   await page.getByText("Cozy", { exact: true }).first().click();
   await page.getByRole("button", { name: /Plan my/ }).click();
@@ -71,7 +71,7 @@ async function heldPage(width = 390) {
 // 2. Planner choices made before hydration survive hydration.
 {
   const { page, release, ctx } = await heldPage();
-  await page.goto(`${base}/make-plans`, { waitUntil: "domcontentloaded" });
+  await page.goto(`${base}/make-plans?mode=plan`, { waitUntil: "domcontentloaded" });
   await page.getByText("High energy", { exact: true }).click();
   release();
   await page.waitForFunction(() => {
@@ -93,7 +93,7 @@ async function heldPage(width = 390) {
 // 3. Tonight: answers before hydration travel in the URL.
 {
   const { page, release, ctx } = await heldPage();
-  await page.goto(`${base}/tools/tonight`, { waitUntil: "domcontentloaded" });
+  await page.goto(`${base}/make-plans?mode=tonight`, { waitUntil: "domcontentloaded" });
   await page.getByText("Bursting", { exact: true }).click();
   await page.getByRole("button", { name: /Show my 3 ideas/ }).click();
   await page.waitForURL(/e=high/, { waitUntil: "commit" });
@@ -112,7 +112,7 @@ async function heldPage(width = 390) {
   const page = await ctx.newPage();
   const cdp = await ctx.newCDPSession(page);
   await cdp.send("Emulation.setCPUThrottlingRate", { rate: 4 });
-  await page.goto(`${base}/make-plans`, { waitUntil: "domcontentloaded" });
+  await page.goto(`${base}/make-plans?mode=plan`, { waitUntil: "domcontentloaded" });
   // Tap the very first thing as soon as the plan button exists, hydrated or not.
   await page.getByText("Low-key", { exact: true }).click();
   await page.getByRole("button", { name: /Plan my/ }).click();
