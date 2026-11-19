@@ -15,8 +15,8 @@ export const COLUMNS = [
   "dateSourced",
   "heroFor",
   "pinFor",
-  "hobbyFor",
   "notes",
+  "hobbyFor",
 ];
 
 export const SOURCES = [
