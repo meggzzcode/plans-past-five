@@ -43,3 +43,6 @@ Kits still with NO product: reading-journal, girls-craft-night, book-club, picni
 - Still not confirmed (stay candidate): Scotch 6061 runner, Scotch glue stick (photo-safe conflict), NMJL four-packs, Pigma 8-pack, Apple Barrel Amazon set.
 - 18 rows added, one Amazon page read per ASIN, filling reading-journal, book-club, picnic-adventure, flower-arranging, pickleball, tennis, cozy-night-in (plus mahjong snack-bowls). girls-craft-night still has no row: its slots are generic (main project, shared tools, table cover) and need a decision on which project.
 - CSV now 62 rows. All candidate except the 2 maker-verified. No prices, ratings or review counts recorded.
+
+## C12 review (2026-11-19)
+See PRODUCT-DESIRABILITY-REVIEW.csv (62 rows: recommendation per product) and product-photo-permissions.md. The review is qualitative; no listing was read live. Counts are in the CSV.
