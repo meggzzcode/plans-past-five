@@ -61,7 +61,7 @@ Start with `docs/buyer/START-HERE.md`, which lists the rest in reading order (bu
 
 ## Deploy
 
-Netlify is the configured host: `netlify.toml` holds the build (it sets the Netlify Nitro preset, publishes `dist` and uses a server-rendering function). One test deploy ran on the seller's own Netlify account; it is not transferred. Other hosts (Cloudflare, for example) are alternatives that need their own setup and verification, and the free Vercel Hobby plan is not recommended for a monetised site (its commercial-use terms were not found). To protect the free plan's deploy allowance, a build runs only when the latest commit message contains the marker `[deploy]`; every other push is skipped. Deploy on purpose:
+Netlify is the configured host: `netlify.toml` holds the build (it sets the Netlify Nitro preset, publishes `dist` and uses a server-rendering function). One test deploy ran on the seller's own Netlify account; it is not transferred. Other hosts (Cloudflare, for example) are alternatives that need their own setup and verification, and the free Vercel Hobby plan is not recommended for a monetised site (its commercial-use terms were not found). To protect the free plan's deploy allowance, a PRODUCTION build runs only when the latest commit message contains the marker `[deploy]`; the CMS **Publish site** button (GitHub workflow `.github/workflows/publish-content.yml`) adds it for you, so a non-coder edits, previews and publishes in a browser (`docs/buyer/PUBLISH-AND-ROLLBACK.md`; not yet tested with a real login). Previews of the `content-edits` branch and pull requests always build and cost 0 credits. Developers can still deploy on purpose:
 
 ```sh
 git commit --allow-empty -m "Release: what changed [deploy]"

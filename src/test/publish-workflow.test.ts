@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any -- parsed YAML/config is untyped by nature */
 import { execFileSync } from "node:child_process";
 import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, rmSync } from "node:fs";
 import { createRequire } from "node:module";
@@ -22,7 +23,7 @@ const runScripts = steps.map((s) => String(s.run ?? "")).join("\n");
 
 describe("publish workflow (.github/workflows/publish-content.yml)", () => {
   it("parses and is a manual (workflow_dispatch) workflow only", () => {
-    const on = wf.on ?? wf[true];
+    const on = wf.on;
     expect(Object.keys(on)).toEqual(["workflow_dispatch"]);
     expect(on.workflow_dispatch.inputs.payload.type).toBe("string");
     // Manual runs by hand must work, so the Pages CMS payload cannot be a required input.
@@ -54,7 +55,9 @@ describe("publish workflow (.github/workflows/publish-content.yml)", () => {
   it("puts nothing untrusted inside a shell command", () => {
     // Expressions appear only in `env:` blocks (read by the shell as variables), never in `run:`.
     expect(runScripts).not.toMatch(/\$\{\{/);
-    expect(runScripts).not.toMatch(/github\.event|github\.head_ref|inputs\.payload|\.commits|github\.actor/);
+    expect(runScripts).not.toMatch(
+      /github\.event|github\.head_ref|inputs\.payload|\.commits|github\.actor/,
+    );
     expect(workflowText).not.toMatch(/github\.event\.(inputs|head_commit|pull_request)/);
     // branches are fixed in the file
     expect(runScripts).toContain("origin/content-edits");
@@ -116,18 +119,32 @@ describe(".pages.yml publish button", () => {
     expect(publish.label).toBe("Publish site");
     expect(publish.workflow).toBe("publish-content.yml");
     expect(publish.ref).toBe("main");
-    expect(readFileSync(path.join(repo, ".github/workflows", publish.workflow), "utf8")).toBeTruthy();
+    expect(
+      readFileSync(path.join(repo, ".github/workflows", publish.workflow), "utf8"),
+    ).toBeTruthy();
   });
 
   it("uses only keys documented at pagescms.org/docs/configuration/actions", () => {
-    const documented = ["name", "label", "workflow", "ref", "scope", "cancelable", "confirm", "fields"];
-    for (const a of pages.actions) expect(Object.keys(a).filter((k) => !documented.includes(k))).toEqual([]);
+    const documented = [
+      "name",
+      "label",
+      "workflow",
+      "ref",
+      "scope",
+      "cancelable",
+      "confirm",
+      "fields",
+    ];
+    for (const a of pages.actions)
+      expect(Object.keys(a).filter((k) => !documented.includes(k))).toEqual([]);
     expect(Object.keys(publish.confirm).sort()).toEqual(["button", "message", "title"]);
   });
 
   it("keeps the other CMS config intact", () => {
     expect(pages.settings.content.merge).toBe(true);
-    expect(pages.content.map((c: any) => c.name)).toEqual(expect.arrayContaining(["articles", "images"]));
+    expect(pages.content.map((c: any) => c.name)).toEqual(
+      expect.arrayContaining(["articles", "images"]),
+    );
   });
 });
 
@@ -135,7 +152,10 @@ describe("workflow guard logic, run for real in a scratch git repo", () => {
   // Extracts the guard step's shell and runs it, so the plain-English refusal is exercised, not just read.
   const guardStep = steps.find((s) => /content only/i.test(String(s.name)));
   const git = (cwd: string, ...a: string[]) =>
-    execFileSync("git", ["-c", "user.name=t", "-c", "user.email=t@t", ...a], { cwd, encoding: "utf8" });
+    execFileSync("git", ["-c", "user.name=t", "-c", "user.email=t@t", ...a], {
+      cwd,
+      encoding: "utf8",
+    });
   const runGuard = (touch: Record<string, string>) => {
     const dir = mkdtempSync(path.join(tmpdir(), "ppf-guard-"));
     try {
@@ -154,7 +174,10 @@ describe("workflow guard logic, run for real in a scratch git repo", () => {
       git(dir, "commit", "-q", "-m", "edit");
       git(dir, "update-ref", "refs/remotes/origin/content-edits", "HEAD");
       try {
-        const out = execFileSync("bash", ["-c", String(guardStep.run)], { cwd: dir, encoding: "utf8" });
+        const out = execFileSync("bash", ["-c", String(guardStep.run)], {
+          cwd: dir,
+          encoding: "utf8",
+        });
         return { code: 0, out };
       } catch (e: any) {
         return { code: e.status as number, out: String(e.stdout) };
@@ -168,7 +191,13 @@ describe("workflow guard logic, run for real in a scratch git repo", () => {
     expect(runGuard({ "content/a.json": '{"x":1}', "public/uploads/p.jpg": "x" }).code).toBe(0);
   });
   it("refuses code, workflow or config changes, even odd file names", () => {
-    for (const f of ["src/app.ts", ".github/workflows/x.yml", "netlify.toml", "x", "scripts/$(id).sh"]) {
+    for (const f of [
+      "src/app.ts",
+      ".github/workflows/x.yml",
+      "netlify.toml",
+      "x",
+      "scripts/$(id).sh",
+    ]) {
       const r = runGuard({ [f]: "x" });
       expect(r.code, f).toBe(1);
       expect(r.out).toContain("Nothing published");
@@ -182,7 +211,7 @@ describe("undo-last-publish workflow (.github/workflows/undo-last-publish.yml)",
   const usteps: any[] = u.jobs.undo.steps;
 
   it("is manual, main-only, least-privilege, action-free and secret-free", () => {
-    expect(Object.keys(u.on ?? u[true])).toEqual(["workflow_dispatch"]);
+    expect(Object.keys(u.on)).toEqual(["workflow_dispatch"]);
     expect(u.jobs.undo.if).toContain("github.ref == 'refs/heads/main'");
     expect(u.permissions).toEqual({});
     expect(u.jobs.undo.permissions).toEqual({ contents: "write" });
@@ -201,7 +230,10 @@ describe("undo-last-publish workflow (.github/workflows/undo-last-publish.yml)",
       const dir = mkdtempSync(path.join(tmpdir(), "ppf-undo-"));
       try {
         const g = (...a: string[]) =>
-          execFileSync("git", ["-c", "user.name=t", "-c", "user.email=t@t", ...a], { cwd: dir, encoding: "utf8" });
+          execFileSync("git", ["-c", "user.name=t", "-c", "user.email=t@t", ...a], {
+            cwd: dir,
+            encoding: "utf8",
+          });
         g("init", "-q", "-b", "main");
         writeFileSync(path.join(dir, "a.json"), "1");
         g("add", "-A");

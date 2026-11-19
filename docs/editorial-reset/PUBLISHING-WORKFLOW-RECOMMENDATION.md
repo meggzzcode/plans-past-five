@@ -1,6 +1,6 @@
 # Publishing workflow recommendation (Stage 2b / 2c)
 
-Date: 2026-11-19. Status: RECOMMENDATION. Nothing here has been run on a real GitHub, Pages CMS or Netlify account; the mandatory real-login test is described in `CMS-ACCEPTANCE-TEST-OWNER-ACTIONS.md`. No production publish was made.
+Date: 2026-11-19. Status: RECOMMENDATION, owner-approved and INSTALLED in Stage 2c (`.github/workflows/publish-content.yml`, `undo-last-publish.yml`, `.pages.yml` `actions:`, `docs/buyer/PUBLISH-AND-ROLLBACK.md`, `docs/editorial-reset/changes/stage2c.md`); still NOT tested with real accounts. Nothing here has been run on a real GitHub, Pages CMS or Netlify account; the mandatory real-login test is described in `CMS-ACCEPTANCE-TEST-OWNER-ACTIONS.md`. No production publish was made.
 
 ## 1. What is known, with sources (all read 2026-11-19)
 
@@ -50,14 +50,14 @@ Option C rests on two things nobody has verified (does Trigger deploy honour the
 
 **Validation:** `scripts/build-content.mjs` (settings, articles, images, integrity gate) runs on every branch preview build, in the Publish workflow before the merge, and on the production build. A bad edit fails with a plain-English list; live site untouched.
 
-**Recovery (rollback):** (1) Netlify Deploys, an earlier Published deploy, Publish deploy: 0 credits, seconds. (2) Then undo the change in Git: GitHub, the Publish merge commit, Revert. (3) Reset the `content-edits` branch to `main` (delete it and re-create it from `main`, two clicks) so the reverted edits do not return. Never force-push `main`.
+**Recovery (rollback):** (1) Netlify Deploys, an earlier Published deploy, Publish deploy: 0 credits, seconds. (2) Then undo the change in Git: GitHub Actions, Undo last publish (Stage 2c finding: GitHub's web page offers Revert only for merged pull requests, and the Publish merge is not one). (3) Reset the `content-edits` branch to `main` (delete it and re-create it from `main`, two clicks) so the reverted edits do not return. Never force-push `main`.
 
 ## 4. What to change, and what was changed
 
 Changed now (safe, reversible, production behaviour identical):
 - `netlify.toml` `ignore` rule: Deploy Previews and branch deploys are no longer skipped by the marker rule (they cost 0 credits and are the preview); production is unchanged (skipped unless the newest commit message contains the release marker; Trigger deploy behaviour still UNKNOWN). If `CONTEXT` were ever unset the rule falls back to the old production behaviour. Test: `bash scripts/check-netlify-ignore.sh` (now 9 cases). Restore: `git revert <commit>` or put the previous single-line rule back (see `changes/stage2b.md`).
 
-Not changed, for the owner's approval (files are ready in `docs/editorial-reset/proposed/`):
+Originally not changed pending approval (installed in Stage 2c; the copies in `docs/editorial-reset/proposed/` are superseded and kept for history):
 - `publish-content.yml` (copy to `.github/workflows/`): the Publish workflow.
 - The `actions:` block for `.pages.yml` (a Publish button), kept out of the live config because an invalid key could break the whole CMS form and cannot be tested without a login.
 - Create the `content-edits` branch from `main`; enable branch deploys for it in Netlify; set the repository's Actions workflow permission to read and write; make sure `main` has no branch protection that blocks the workflow's push.
