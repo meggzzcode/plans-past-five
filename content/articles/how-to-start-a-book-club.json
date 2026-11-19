@@ -169,8 +169,8 @@
         "book-lights",
         "reading-journals"
       ],
-      "dek": "Conversation cards for slow moments, a light for late chapters and a journal for the thoughts you'll want to bring.",
-      "title": "For your book club"
+      "title": "For your book club",
+      "dek": "Conversation cards for slow moments, a light for late chapters and a journal for the thoughts you'll want to bring."
     },
     {
       "type": "makePlan",

@@ -1,0 +1,25 @@
+# M5 implemented: shop, collections, kits, product cards
+
+Source: docs/marketplace/marketing/M5-SHOP-PRODUCTS.md. No commit made.
+
+## Done
+- Product tile: no photo. Category colour, hand-drawn doodle (16 kinds), result headline ("Decorate every page"), category kicker; near-white tint removed; compact strip on standard cards, larger tile with an "Our one pick" tag on the pick. (src/components/commerce/ProductTile.tsx, ProductCard.tsx)
+- Card: brand hidden when the name starts with it; role labels Start with this / Pretty extra / Nice later / When you're hooked / Check your drawer (labels.ts); primary cherry "See it on Amazon" button, full width on phones, 44px; type-level cards say "Find <type> on Amazon"; alternatives collapsed under "Prefer something different?"; visible "Add to my list" on the pick; pick shows "Why we picked it" (first sentence of whySelected) and "You'll also need ..." for multi-essential kits; "Good for gifting: it's all in one box" only on complete-kit role.
+- Kits: benefit headlines and rewritten deks (kits.ts, new optional `headline`), things-count line, in-kit doodle chips, kits with under 3 filled slots or no essential render as "Where to start", links to the hobby guide and the collection (existing pages only), headings "Then add / Pretty extras for later / Check the drawer first".
+- Disclosure: SHOP_LINK_FACTS gets `short` and the button wording (only constants edited in affiliate.ts); one short line (kit, article, hobby, collection hero, /shop) next to the first ask; kit "not a bundle" note merged into the same line; full wording kept under type-level cards. /methodology and /affiliate-disclosure button names updated to match.
+- /shop: new H1/dek/meta/trust line, quiz link, honest tile tags from data ("Starter kit inside", "2 starter kits", "What to look for"), 2-up grid on phones, "Start here" row (3 kit one-picks), gift row from complete-kit sets, shortened footnote.
+- Collection pages: picks directly under hero, per-collection kicker and who-for copy, essentials/extras trio hidden when a kit exists (else capped at 4 and retitled), new no-picks banner, "More ideas, by product type", "Read first, then shop", hero intros rewritten (no "affordable").
+- ShopMyHobby: outcome heading, primary "Add the starters to my list", Copy/Print only once something is saved, count hidden at 0.
+- /saved shopping list: "My shopping list", benefit line, "See it on Amazon", Got it / Later / Back to my list, Maybe later / Already have it, disclosure, "Pick a starter kit" in empty state. shoplist.ts text: "Already have it", "Maybe later".
+- CSV (docs/commerce/product-research.csv) re-imported: the 10 rewritten examples (benefit, plus shortName for mahjong set/cards, watercolor, canvases). Only research-supported claims; "none needs scissors" and "good for gifting" on loose items not used.
+- Tests updated in src/test/shop.test.tsx for the intentional copy changes.
+
+## Checks
+prettier on touched files, eslint --quiet clean, tsc clean, vitest 523/524 (the one failure, build-content byte-stable, is from other agents' article JSON edits). Playwright /shop, /shop/journaling-era, /shop/sporty-girl, an article kit, /saved at 390 and 1280: no horizontal overflow, no console errors, no CTA under 44px.
+
+## Skipped (needs photos, new products or owner decision)
+- New hero images for Journaling Era and Cozy After Hours (they still reuse other photos) and gift tile image: Cowork C12.
+- Filling Sporty, Bookish, Little Adventures, Cozy collections and the empty/partial kits (pickleball, tennis, reading journal, picnic, book club, flower arranging, craft night, cozy night in, crochet hook): need verified products.
+- Banded startup cost range on kits (owner decision on numbers on shop pages).
+- Sticky mobile "add starters" bar, quiz-to-kit handoff, "Same group, second night" Girls' Night cross-sell, collection-guide dedupe beyond the cap of 4.
+- Nav/"My Plans" naming, hobby-page copy, article copy (other agents).
