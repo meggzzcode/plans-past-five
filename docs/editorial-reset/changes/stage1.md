@@ -82,3 +82,12 @@ Cause: the planner matrix suites (`wave-b-tools`, `planner-quiz`, `tool-scenario
 ## Step 6 NOT done: public/pins stays deployed
 
 `src/components/editorial/ShareButtons.tsx` calls `pinImageFor(path, image)` (`src/lib/pins.ts`, `PIN_DIR = "/pins/"`) and builds the Pinterest share link with `media=<site.url>/pins/<file>`, which Pinterest fetches from the deployed site (`src/test/pins.test.tsx` asserts this). Moving the images would break the Pin button on articles, hobby pages and tools. Left in place; no files moved. Options later (owner decision): deploy only the pins a page actually offers (small saving), or serve one pin per page from the hero image. The upcoming `pinImage` article field also needs a deployed location, so `public/` is the right home.
+
+## Commits
+
+| Batch | Commit |
+|---|---|
+| 1 unused UI, hook, components.json, 39 deps | 0505aaa |
+| 2 react-query, router-plugin pin | e4fff62 |
+| 3 Lovable error reporter | 8e7707f |
+| 4 test timeouts, pins decision | 1b573a2 |
