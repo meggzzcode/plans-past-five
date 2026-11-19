@@ -289,6 +289,72 @@ content:
       - { name: license, label: "Licence (e.g. Unsplash License)", type: string }
       - { name: licenseUrl, label: "Link to the licence terms", type: string }
 
-  # Not offered yet: Hobbies (still code in src/data/hobbies.ts), products (importer CSV flow, see
-  # docs/buyer/PRODUCT-MANAGEMENT.md) and site settings (src/config/site.ts holds identity and
-  # affiliate settings that should not be edited from a form). See docs/buyer/EDITING-WITHOUT-CODE.md.
+  # ---------------------------------------------------------------- Site settings
+  # ONE file, content/settings.json. Public values only (no passwords, API keys or private tokens).
+  # The build checks every value (scripts/build-content.mjs) and stops with a plain-English message if
+  # one is wrong, so the live site stays as it was.
+  - name: settings
+    label: Site settings
+    type: file
+    path: content/settings.json
+    format: json
+    fields:
+      - name: siteName
+        label: Site name
+        type: string
+        required: true
+        description: "Shown in the header, page titles, the footer and when the site is installed on a phone. The logo pictures and Pinterest pin images are artwork and do not change."
+      - name: tagline
+        label: Tagline
+        type: string
+        required: true
+        description: "One short line under the site name."
+      - name: siteUrl
+        label: Website address
+        type: string
+        required: true
+        description: "Starts with https:// and has nothing after the domain, e.g. https://www.example.com. Change it only after the domain is connected in Netlify."
+      - name: contactEmail
+        label: Contact email
+        type: string
+        description: "Shown on the Contact page. Use an inbox you really read, like hello@yourdomain.com. Leave empty and the page says there is no inbox yet."
+      - name: ga4MeasurementId
+        label: Google Analytics 4 measurement ID
+        type: string
+        description: "Looks like G-ABC123XYZ9. EMPTY = analytics is OFF and no Google script loads. See docs/buyer/ANALYTICS-SETUP.md."
+      - name: searchConsoleVerification
+        label: Google Search Console verification code
+        type: string
+        description: "Only the code (the content=\"...\" part), not the whole tag. Empty = none."
+      - name: bingVerification
+        label: Bing Webmaster verification code
+        type: string
+        description: "Only the code, not the whole tag. Empty = none."
+      - name: pinterestVerification
+        label: Pinterest verification code
+        type: string
+        description: "Only the code, not the whole tag. Empty = none."
+      - name: amazonTrackingId
+        label: Amazon Associates tracking ID (your own)
+        type: string
+        description: "Looks like yourstore-20. This is a public value that appears in link addresses. Never type a password or key here. Typing an ID does NOT switch tracking on."
+      - name: amazonMarketplace
+        label: Amazon marketplace
+        type: select
+        default: amazon.com
+        options:
+          values:
+            - { value: amazon.com, label: "Amazon.com (United States)" }
+        description: "Only Amazon.com (United States) is supported today."
+      - name: amazonTrackingEnabled
+        label: Switch Amazon affiliate tracking ON
+        type: boolean
+        default: false
+        description: "Leave OFF until Amazon has approved YOUR Associates account for this website and you have read docs/buyer/AFFILIATE-ACTIVATION.md. Turning it on adds your ID to Amazon links and shows the earnings disclosure automatically."
+      - name: amazonLastVerified
+        label: Date you last confirmed your Amazon approval
+        type: string
+        description: "Like 2026-11-19. Required when tracking is ON."
+
+  # Not offered in the CMS yet: Hobbies (still code in src/data/hobbies.ts) and products (importer CSV
+  # flow, see docs/buyer/PRODUCT-MANAGEMENT.md; Stage 2a is reworking that). See docs/buyer/EDITING-WITHOUT-CODE.md.

@@ -5,10 +5,15 @@ import { ga4Scripts, validGa4Id } from "@/lib/analytics";
 import { site } from "@/config/site";
 
 describe("GA4 snippet", () => {
-  it("is empty by default: no third-party script", () => {
-    expect(site.analytics.ga4MeasurementId).toBe("");
-    expect(ga4Scripts()).toEqual([]);
-    expect(validGa4Id()).toBe("");
+  it("follows the owner setting: no third-party script when empty, one loader for that id when set", () => {
+    const id = site.analytics.ga4MeasurementId;
+    if (id === "") {
+      expect(ga4Scripts()).toEqual([]);
+      expect(validGa4Id()).toBe("");
+    } else {
+      expect(validGa4Id()).toBe(id);
+      expect(ga4Scripts()[0]?.src).toContain(`id=${id}`);
+    }
   });
   it("renders the async gtag loader and config for a valid ID", () => {
     const s = ga4Scripts("G-ABC123XYZ9");

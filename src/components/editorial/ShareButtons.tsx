@@ -1,6 +1,7 @@
 import { canonicalUrl, pinterestCreateUrl } from "@/lib/share";
 import { ShareActions } from "@/components/share/ShareActions";
 import { pinImageFor } from "@/lib/pins";
+import { site } from "@/config/site";
 
 const BTN =
   "inline-flex min-h-11 items-center gap-1.5 text-espresso hover:text-cherry focus-visible:outline focus-visible:outline-2 focus-visible:outline-cherry";
@@ -36,7 +37,7 @@ export function ShareButtons({
       variant="link"
       className="gap-x-4 text-sm"
       title={title}
-      text={`${title} (Plans Past Five)`}
+      text={`${title} (${site.name})`}
       url={canonicalUrl(path)}
       extra={
         <button type="button" onClick={pin} className={BTN} aria-label="Save to Pinterest">

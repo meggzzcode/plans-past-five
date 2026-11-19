@@ -1,24 +1,68 @@
+import settingsJson from "../../content/settings.json";
+
 /**
- * Analytics: the ONE place to configure it. Leave empty for no analytics at all. A valid GA4
- * measurement ID (like G-ABC123XYZ9) adds the standard Google tag to every page; see
- * docs/buyer/ANALYTICS-SETUP.md. An invalid value is ignored.
+ * OWNER SETTINGS live in content/settings.json (edited in Pages CMS > Site settings, validated with
+ * plain-English messages by `node scripts/build-content.mjs`, which runs before every build). This
+ * file only reads them; everything else below is fixed brand copy. Public values only: never put a
+ * password, API key or private token in settings.
  */
-const analytics = { ga4MeasurementId: "" };
+export type OwnerSettings = {
+  siteName: string;
+  tagline: string;
+  siteUrl: string;
+  contactEmail: string;
+  ga4MeasurementId: string;
+  searchConsoleVerification: string;
+  bingVerification: string;
+  pinterestVerification: string;
+  amazonTrackingId: string;
+  amazonMarketplace: string;
+  amazonTrackingEnabled: boolean;
+  amazonLastVerified: string;
+};
+const text = (v: unknown, fallback = "") => (typeof v === "string" ? v.trim() : fallback);
+const raw = settingsJson as Record<string, unknown>;
+/** Defensive read (the build has already validated the file; a bad value here is never trusted). */
+export const ownerSettings: OwnerSettings = {
+  siteName: text(raw["siteName"], "Plans Past Five") || "Plans Past Five",
+  tagline: text(raw["tagline"]),
+  siteUrl: text(raw["siteUrl"]).replace(/\/+$/, ""),
+  contactEmail: text(raw["contactEmail"]),
+  ga4MeasurementId: text(raw["ga4MeasurementId"]),
+  searchConsoleVerification: text(raw["searchConsoleVerification"]),
+  bingVerification: text(raw["bingVerification"]),
+  pinterestVerification: text(raw["pinterestVerification"]),
+  amazonTrackingId: text(raw["amazonTrackingId"]),
+  amazonMarketplace: text(raw["amazonMarketplace"], "amazon.com") || "amazon.com",
+  amazonTrackingEnabled: raw["amazonTrackingEnabled"] === true,
+  amazonLastVerified: text(raw["amazonLastVerified"]),
+};
+
+const hostOf = (u: string) => {
+  try {
+    return new URL(u).hostname;
+  } catch {
+    return "";
+  }
+};
+
+/** Analytics: the ONE place it is configured is content/settings.json (empty = no analytics). */
+const analytics = { ga4MeasurementId: ownerSettings.ga4MeasurementId };
 
 /** Central brand + site settings. Edit here; every page reads from this file. */
 export const site = {
-  name: "Plans Past Five",
-  domain: "planspastfive.com",
-  url: "https://planspastfive.com", // update after the domain is connected
-  tagline: "Making a life, not just a living.",
+  name: ownerSettings.siteName,
+  domain: hostOf(ownerSettings.siteUrl).replace(/^www\./, ""),
+  url: ownerSettings.siteUrl,
+  tagline: ownerSettings.tagline,
   slogan: "For the plot, not the paycheck.",
   signature: "Professionally off duty.",
   mission: "Helping women fall in love with the life they live outside of work.",
   philosophy: "Your career can be a big part of your life without being your whole life.",
   description:
     "Creative hobbies, cute weekend plans, solo dates, new friendships and little adventures for women building a life they love outside of work.",
-  contactEmail: "hello@planspastfive.com", // owner confirmed 2026-11-19; mailbox round-trip test is Cowork workstream F
-  editorialByline: "The Plans Past Five Editors",
+  contactEmail: ownerSettings.contactEmail,
+  editorialByline: `The ${ownerSettings.siteName} Editors`,
   social: {
     pinterest: "", // e.g. https://pinterest.com/planspastfive
     instagram: "",
@@ -42,8 +86,9 @@ export const site = {
   integrations: {
     newsletter: { enabled: false, provider: "" as "" | "kit" | "mailerlite", formAction: "" },
     googleAnalyticsId: analytics.ga4MeasurementId, // follows analytics.ga4MeasurementId; do not set separately
-    searchConsoleVerification: "",
-    pinterestVerification: "",
+    searchConsoleVerification: ownerSettings.searchConsoleVerification,
+    bingVerification: ownerSettings.bingVerification,
+    pinterestVerification: ownerSettings.pinterestVerification,
   },
 } as const;
 

@@ -8,8 +8,7 @@ export const Route = createFileRoute("/corrections")({
   head: () =>
     seo({
       title: "Corrections",
-      description:
-        "How Plans Past Five handles errors, and a dated log of corrections made to our stories and pages.",
+      description: `How ${site.name} handles errors, and a dated log of corrections made to our stories and pages.`,
       path: "/corrections",
       jsonLd: [
         breadcrumbJsonLd([

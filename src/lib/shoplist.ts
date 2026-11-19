@@ -6,6 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 import { exportPageUrl } from "@/lib/export-links";
 import type { CatalogProduct } from "@/data/catalog";
 import { track } from "@/lib/track";
+import { site } from "@/config/site";
 
 export type ShopStatus = "need" | "own" | "later";
 /** product id -> status. A product with no entry is neither ticked nor owned. */
@@ -107,7 +108,7 @@ export function buildListText(
 ): string {
   const needed = neededProducts(products, state);
   const lines = [
-    `${title} (Plans Past Five)`,
+    `${title} (${site.name})`,
     `Made ${today}. Check each listing for current availability.`,
     "",
   ];

@@ -177,6 +177,156 @@ export const imageSchema = z
   })
   .strict();
 
+// ------------------------------------------------------------------ owner settings
+
+/**
+ * Owner settings (content/settings.json, edited in Pages CMS under "Site settings").
+ * Public values only: names, an email address, a public analytics id, public verification codes and
+ * a public affiliate tag. Never put a password, API key or private token here.
+ * Every message is plain English and tells the owner what to type instead.
+ */
+const emptyOr = (re, message) =>
+  z
+    .string()
+    .trim()
+    .refine((v) => v === "" || re.test(v), message);
+const verificationCode = (what) =>
+  emptyOr(
+    /^[A-Za-z0-9_-]{10,128}$/,
+    `paste only the code from ${what} (letters, numbers, - and _), not the whole <meta> tag`,
+  );
+
+export const settingsSchema = z
+  .object({
+    siteName: z
+      .string()
+      .trim()
+      .min(1, "the site name must not be empty")
+      .max(60, "the site name is too long (60 characters at most)"),
+    tagline: z
+      .string()
+      .trim()
+      .min(1, "the tagline must not be empty")
+      .max(140, "the tagline is too long (140 characters at most)"),
+    siteUrl: z
+      .string()
+      .trim()
+      .refine((v) => {
+        try {
+          const u = new URL(v);
+          return (
+            u.protocol === "https:" &&
+            (u.pathname === "/" || u.pathname === "") &&
+            !u.search &&
+            !u.hash
+          );
+        } catch {
+          return false;
+        }
+      }, "must be your website address starting with https:// and nothing after the domain, like https://www.example.com")
+      .transform((v) => v.replace(/\/+$/, "")),
+    contactEmail: emptyOr(
+      /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]{2,}$/,
+      "is not an email address. Write it like hello@yourdomain.com, or leave it empty if you have no inbox yet",
+    ),
+    ga4MeasurementId: emptyOr(
+      /^G-[A-Z0-9]{8,12}$/,
+      'is not a Google Analytics 4 measurement ID. It starts with "G-" followed by 8 to 12 capital letters or digits, like G-ABC123XYZ9. Leave it empty to keep analytics off',
+    ),
+    searchConsoleVerification: verificationCode("Google Search Console"),
+    bingVerification: verificationCode("Bing Webmaster Tools"),
+    pinterestVerification: verificationCode("Pinterest"),
+    amazonTrackingId: emptyOr(
+      /^[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*-\d{2,3}$/,
+      'is not an Amazon Associates tracking ID. It looks like "yourstore-20" (letters or digits, then a dash and two digits)',
+    ),
+    amazonMarketplace: z.enum(["amazon.com"], {
+      message:
+        'must be "amazon.com" (Amazon.com, United States). Other Amazon countries need their own Associates account, links and disclosure wording and are not supported yet',
+    }),
+    amazonTrackingEnabled: z.boolean({ message: "must be switched on or off" }),
+    amazonLastVerified: z
+      .string()
+      .trim()
+      .refine((v) => v === "" || DATE.test(v), "must be a date written like 2026-11-19, or empty"),
+  })
+  .strict();
+
+/** Validate a parsed settings object. Returns { settings, problems } with plain-English problems. */
+export function validateSettings(raw, file = "content/settings.json") {
+  const r = settingsSchema.safeParse(raw ?? {});
+  const problems = [];
+  if (!r.success) {
+    for (const i of r.error.issues)
+      problems.push(
+        i.code === "unrecognized_keys"
+          ? `${file}: unknown setting(s) ${i.keys.map((k) => `"${k}"`).join(", ")}. Remove them or use the Site settings form`
+          : `${file}, field "${i.path.join(" > ")}": ${i.message}`,
+      );
+    return { settings: null, problems };
+  }
+  const s = r.data;
+  if (s.amazonTrackingEnabled && !s.amazonTrackingId)
+    problems.push(
+      `${file}, field "amazonTrackingId": Amazon tracking is switched on but there is no tracking ID. Add the ID from your own Amazon Associates account, or switch tracking off`,
+    );
+  if (s.amazonTrackingEnabled && !s.amazonLastVerified)
+    problems.push(
+      `${file}, field "amazonLastVerified": Amazon tracking is switched on, so write the date you last confirmed your Associates approval, like 2026-11-19`,
+    );
+  return { settings: s, problems };
+}
+
+/** Read and validate content/settings.json under `root`. */
+export function readSettings(root) {
+  const file = "content/settings.json";
+  const p = join(root, file);
+  if (!existsSync(p))
+    return {
+      settings: null,
+      problems: [
+        `${file}: the site settings file is missing. Restore it from GitHub history or add it back in the Site settings form`,
+      ],
+    };
+  let raw;
+  try {
+    raw = JSON.parse(readFileSync(p, "utf8"));
+  } catch (e) {
+    return {
+      settings: null,
+      problems: [
+        `${file}: this file is not valid JSON (${e.message}). Undo the last change in GitHub history.`,
+      ],
+    };
+  }
+  return validateSettings(raw, file);
+}
+
+/**
+ * Keep the two static public files in step with the settings: the app name in
+ * public/manifest.webmanifest and the Sitemap line in public/robots.txt. Returns { rel: text }
+ * for files that exist under `root` and need changing.
+ */
+export function publicFileOutputs(root, s) {
+  const out = {};
+  const m = join(root, "public/manifest.webmanifest");
+  if (existsSync(m)) {
+    const q = JSON.stringify(s.siteName);
+    const cur = readFileSync(m, "utf8");
+    const next = cur
+      .replace(/^(\s*"name":\s*).*?(,?)$/m, (_, a, b) => `${a}${q}${b}`)
+      .replace(/^(\s*"short_name":\s*).*?(,?)$/m, (_, a, b) => `${a}${q}${b}`);
+    if (next !== cur) out["public/manifest.webmanifest"] = next;
+  }
+  const r = join(root, "public/robots.txt");
+  if (existsSync(r)) {
+    const cur = readFileSync(r, "utf8");
+    const next = cur.replace(/^Sitemap:.*$/m, () => `Sitemap: ${s.siteUrl}/sitemap.xml`);
+    if (next !== cur) out["public/robots.txt"] = next;
+  }
+  return out;
+}
+
 // ------------------------------------------------------------------ helpers
 
 /** Drop empty-string and null values from object keys (a CMS writes these for blank fields). */
@@ -284,6 +434,10 @@ function readJsonDir(root, rel) {
 export function validateContent(root, opts = {}) {
   const problems = [];
   const cats = opts.categories ?? categorySlugs(root);
+
+  // owner settings
+  const settingsRead = readSettings(root);
+  problems.push(...settingsRead.problems);
 
   // images
   const imgRead = readJsonDir(root, "content/images");
@@ -424,7 +578,7 @@ export function validateContent(root, opts = {}) {
           `content/articles/${a.slug}.json, field "related": there is no article "${s}"`,
         );
     }
-  return { articles, images, problems };
+  return { articles, images, problems, settings: settingsRead.settings };
 }
 
 // ------------------------------------------------------------------ outputs
@@ -460,7 +614,7 @@ export function generatedImagesModule(images) {
  * With { write: false } returns the file texts without touching disk.
  */
 export function buildContent(root, opts = {}) {
-  const { articles, images, problems } = validateContent(root, opts);
+  const { articles, images, problems, settings } = validateContent(root, opts);
   if (problems.length) throw new ContentError(problems);
   // Internal verification notes (coworkChecks) stay in the content files and drafts bundle; they are
   // not shipped in the public client bundle.
@@ -473,6 +627,7 @@ export function buildContent(root, opts = {}) {
     "src/content/generated/published.json": json(published),
     "src/content/generated/drafts.json": json(drafts),
     "src/data/images.generated.ts": generatedImagesModule(images),
+    ...publicFileOutputs(root, settings),
   };
   if (opts.write !== false) {
     for (const [rel, text] of Object.entries(outputs)) {

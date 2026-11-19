@@ -18,6 +18,7 @@ import { ShareActions } from "@/components/share/ShareActions";
 import { SavedExtras } from "@/components/share/SavedExtras";
 import { NearBox } from "@/components/share/Near";
 import { Star, Bow } from "@/components/brand/Doodles";
+import { site } from "@/config/site";
 
 export const Route = createFileRoute("/saved")({
   head: () =>
@@ -155,7 +156,7 @@ function ShoppingList() {
       {group("Saved for later", later)}
       {group("Already own", own)}
       <div className="mt-3 flex flex-wrap items-center gap-x-6">
-        <ShareRow title="My shopping list (Plans Past Five)" text={text} />
+        <ShareRow title={`My shopping list (${site.name})`} text={text} />
         <Link to="/shop" className={ACTION}>
           Back to {NAMES.shop}
         </Link>
