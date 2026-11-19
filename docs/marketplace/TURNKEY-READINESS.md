@@ -11,7 +11,7 @@ This score measures how ready the site is to be handed to a buyer. It is separat
 - Conservative rules applied: drafts awaiting source verification do not count as published; unverified products do not count; no domain, host, analytics or affiliate account means those criteria score 0; something this worker did not run itself and could not see evidence for scores 0 or 0.5.
 - This is a checklist tally, not an arbitrary score. Change a criterion and the arithmetic changes with it.
 
-Evidence used: commits (`git log --oneline`): 062f8a7 (brand asset library, 88 pins, CSV, schedule, brand and pinterest buyer docs), caed574 (turnkey build-out: planner and quiz rewrite, tools, affiliate registry, shoppable components, trust pages, CI, 28 article drafts, buyer docs), 3bc8274 (turnkey plan, resume file), 99dd329 (lint, saved-items hardening), d488ac8 (README), 379a296 (site build). Tests: `bunx vitest run` gave 9 test files, 206 tests passed. `bunx tsc --noEmit` gave no errors. The working tree had uncommitted edits by another worker (docs/buyer/SECURITY-AND-BACKUPS.md, docs/buyer/SEO-GUIDE.md, src/routes/__root.tsx, src/server.ts, new src/lib/security-headers.ts), so these results may shift.
+Evidence used: commits (`git log --oneline`): 062f8a7 (brand asset library, 88 pins, CSV, schedule, brand and pinterest buyer docs), caed574 (turnkey build-out: planner and quiz rewrite, tools, affiliate registry, shoppable components, trust pages, CI, 28 article drafts, buyer docs), 3bc8274 (turnkey plan, resume file), 99dd329 (lint, saved-items hardening), d488ac8 (README), 379a296 (site build). Tests: `bunx vitest run` gave 9 test files, 235 tests passed. `bunx tsc --noEmit` gave no errors. The working tree had uncommitted edits by another worker (docs/buyer/SECURITY-AND-BACKUPS.md, docs/buyer/SEO-GUIDE.md, src/routes/__root.tsx, src/server.ts, new src/lib/security-headers.ts), so these results may shift.
 
 ## Score summary
 
@@ -24,11 +24,11 @@ Evidence used: commits (`git log --oneline`): 062f8a7 (brand asset library, 88 p
 | SEO and performance | 10% | 4 of 8 | 50.0% | 5.00 of 10 |
 | Original tools | 10% | 6 of 6 | 100.0% | 10.00 of 10 |
 | Marketing package | 10% | 4.26136 of 8 | 53.3% | 5.33 of 10 |
-| Security and maintenance | 5% | 4.5 of 8 | 56.2% | 2.81 of 5 |
+| Security and maintenance | 5% | 7 of 8 | 87.5% | 4.38 of 5 |
 | Documentation and transferability | 10% | 5.5 of 8 | 68.8% | 6.88 of 10 |
-| **Total** | 100% | | | **62.73 of 100** |
+| **Total** | 100% | | | **64.29 of 100** |
 
-**Computed readiness total: 62.7 out of 100 (rounded).** That is a tally of work done against objective criteria. It does not mean the site is 63 percent ready to sell: the mandatory sale gates below are pass or fail and are not averaged into this number.
+**Computed readiness total: 64.3 out of 100 (rounded).** That is a tally of work done against objective criteria. It does not mean the site is 63 percent ready to sell: the mandatory sale gates below are pass or fail and are not averaged into this number.
 
 ## Criteria and evidence by category
 
@@ -48,7 +48,7 @@ Evidence used: commits (`git log --oneline`): 062f8a7 (brand asset library, 88 p
 | Criterion | Score |
 |---|---|
 | All routes implemented (about 30 route files in src/routes) | 1 |
-| Automated tests pass (206 passing, 11 files, run 2026-11-19) | 1 |
+| Automated tests pass (235 passing, 14 files, run 2026-11-19) | 1 |
 | Typecheck clean (bunx tsc --noEmit, no errors, 2026-11-19) | 1 |
 | CI workflow defined (.github/workflows/ci.yml: tests, tsc, build); no CI run result seen by this worker | 0.5 |
 | Production build confirmed successful (local build passed 2026-11-19; hosted build not run) | 0.5 |
@@ -117,16 +117,16 @@ Removed criteria: the printable PDFs, premium kits, kit usage terms and kits-for
 | Buyer presentation (not started per RESUME.md) | 0 |
 | CSV verify_before_posting items cleared | 0 |
 
-### Security and maintenance (5%): 2.81 of 5
+### Security and maintenance (5%): 4.38 of 5
 
 | Criterion | Score |
 |---|---|
 | CI workflow file present | 1 |
 | Dependabot configured | 1 |
 | Site-health and monthly-digest workflows present | 1 |
-| Static security headers file (public/_headers); code-level headers work IN PROGRESS by another worker; host not chosen | 0.5 |
-| Secrets scan of repo and history run for this package (not run) | 0 |
-| Dependency audit run (not run) | 0 |
+| Security headers: public/_headers plus headers on server-rendered HTML (src/server.ts, tested) | 1 |
+| Secrets scan of working tree and all 18 commits run 2026-11-19 (pattern matching; no dedicated scanner offline); none found (SECURITY-AUDIT.md) | 1 |
+| Dependency audit run 2026-11-19 (no critical; 8 production advisories remain, unreachable by visitors; SECURITY-AUDIT.md) | 1 |
 | HTTPS and host configured (no host) | 0 |
 | Security and backup docs | 1 |
 
@@ -149,7 +149,7 @@ The owner decided the business has no printables or digital products. Two catego
 
 - Monetization infrastructure: the criterion "Storefront for premium kits" (scored 0) was removed. 4 of 8 becomes 4 of 7 = 57.14%; 57.14% x 15 = 8.57 (was 7.50).
 - Original tools: the criteria for six printable PDFs (1), two premium kits (1), kit usage terms (0) and kits listed for sale (0) were removed; a shopping checklist criterion (1, src/lib/shoplist.ts exists) was added because the shopping list is part of the original tools. Earlier 7 of 9 = 77.8%; now 6 of 6 = 100%; 100% x 10 = 10.00 (was 7.78).
-- Total, exact values: 6.6667 + 9.6429 + 7.8333 + 8.5714 + 5.0000 + 10.0000 + 5.3267 + 2.8125 + 6.8750 = 62.7285, shown as 62.73 (the rounded rows above add to 62.72 because of rounding). Previous total: 59.50.
+- Total, exact values: 6.6667 + 9.6429 + 7.8333 + 8.5714 + 5.0000 + 10.0000 + 5.3267 + 4.3750 + 6.8750 = 64.2910, shown as 64.29 (rounded rows may differ by 0.01). Previous total: 59.50.
 - The total rose partly because the removed criteria were mostly unmet or dropped from the denominator, not because the site became more ready. The mandatory gates below still decide whether a listing is recommended.
 
 ## Mandatory sale gates
@@ -161,12 +161,12 @@ Status words: PASS (evidenced), FAIL (evidence shows it is not met), BLOCKED (ca
 | # | Gate | Status | Evidence |
 |---|---|---|---|
 | 1 | Public production site functions correctly | BLOCKED | No host or domain chosen (docs/buyer/BUSINESS-OVERVIEW.md; docs/RESUME.md). Cowork task C9 needs a deployed URL. |
-| 2 | No broken critical journeys | BLOCKED | Unit and route tests pass (206), but journeys have not been exercised on production (C9). Earlier local Playwright pass was on an older build (CLAUDE-HANDOFF.md). |
+| 2 | No broken critical journeys | BLOCKED | Unit and route tests pass (235), but journeys have not been exercised on production (C9). Earlier local Playwright pass was on an older build (CLAUDE-HANDOFF.md). |
 | 3 | Professional desktop and mobile experience | BLOCKED | Needs current browser QA on a deployed build; only the older local check exists. |
 | 4 | No unfinished public pages | FAIL | CLAUDE-HANDOFF.md known issues: hobby profile pages are short, contact email, socials and legal owner name are empty in src/config/site.ts, Privacy and Terms are starter text. Owner may decide some are acceptable. |
 | 5 | No placeholder articles | NEEDS OWNER | Drafts are kept out of routes, lists, search and sitemap (src/test/rules.test.ts checks drafts). Only 4 articles are published. Owner must confirm those 4 were source-checked; the C4 verification process was written for the drafts. The 28 new draft files are now registered in src/content/index.ts (`all` array) and are tested to stay hidden (checked 2026-11-19 after wiring). |
 | 6 | No fabricated claims | BLOCKED | Policy forbids invented prices, ratings, experts and traffic, but the full claim audit (C4, 0 of 28 drafts verified) and listing-text audit are not done. |
-| 7 | No known critical security issues | BLOCKED | None found, but no secrets scan or dependency audit was run for this package, security-header code is in progress by another worker, and no host exists. |
+| 7 | No known critical security issues | PASS (on what was checked) | docs/marketplace/SECURITY-AUDIT.md (2026-11-19): no critical advisories, no admin/debug routes, no source maps or env values in the build, drafts no longer ship in the public bundle (found and fixed), only Google Fonts as an external host. Not checked: host headers and TLS (no host), account 2FA, GitHub settings. Re-run at listing time. |
 | 8 | No unauthorized included assets | BLOCKED | docs/IMAGE-LICENSES.md says images were generated with Lovable's AI image tool and may be transferred; confirming the tool terms allow transfer is PENDING COWORK (C10). Fonts are SIL OFL. |
 | 9 | Important SEO infrastructure operational | BLOCKED | Sitemap, robots, metadata exist in the repo, but nothing is live, no Search Console or Bing property, no domain. |
 | 10 | Affiliate configuration tested | BLOCKED | Registry is unit-tested in code. No approved account exists, so a real tracked link has never been tested. Buyer creates their own account. |
@@ -175,15 +175,15 @@ Status words: PASS (evidenced), FAIL (evidence shows it is not met), BLOCKED (ca
 | 13 | Buyer documentation completed | FAIL | 25 buyer docs exist, but the buyer presentation is not started (docs/RESUME.md) and the marketplace documents here depend on C7. |
 | 14 | Operating costs documented | NEEDS OWNER | docs/buyer/OPERATING-COSTS.md documents every line as UNCONFIRMED. Owner must confirm any real cash spent before costs are stated. |
 | 15 | Business dependencies documented | PASS | docs/buyer/ACCOUNT-DEPENDENCIES.md exists. |
-| 16 | Technical tests passed | PASS | 206 of 206 tests, 11 files; tsc clean (2026-11-19). Re-run at listing time. |
+| 16 | Technical tests passed | PASS | 235 of 235 tests, 14 files; tsc clean (2026-11-19). Re-run at listing time. |
 | 17 | Production build successful | PASS (local) | `bunx vite build` succeeded locally on 2026-11-19 after the final wiring (Nitro output built). A hosted deploy build has not run because no host is connected; re-check at deploy. |
 | 18 | Transfer procedures documented | PASS | docs/buyer/TRANSFER-CHECKLIST.md (20 steps); docs/marketplace/HANDOVER-TERMS-SUGGESTION.md. |
-| 19 | Personal credentials excluded | NEEDS OWNER | No credentials are expected in the repo, but the scan in TRANSFER-CHECKLIST step 4 has not been run and git history has not been scanned. |
+| 19 | Personal credentials excluded | PASS (working tree and history) | SECURITY-AUDIT.md: no keys, tokens, .env, passwords, tax or bank values, or personal emails in 18 commits. Owner handle appears only in the git remote URL and gitignored build output; build the handover archive from a clean export. |
 | 20 | Listing description accurate | BLOCKED | The draft listing is accurate to the repo today, but depends on facts (published articles, domain, host, verified products) that change; see LISTING-CHECKLIST.md. |
 | 21 | Pre-revenue status disclosed | PASS | Stated in LISTING-DRAFT.md, BUYER-FAQ.md and docs/buyer/BUSINESS-OVERVIEW.md. Draft only until the owner approves a listing. |
 | 22 | Buyer monetization activation requirements disclosed | PASS | docs/buyer/AFFILIATE-ACTIVATION.md and LISTING-DRAFT.md. |
 
-Count: PASS 7 (gates 11, 15, 16, 17 local, 18, 21, 22), FAIL 2 (4, 13), BLOCKED 9 (1, 2, 3, 6, 7, 8, 9, 10, 20), NEEDS OWNER 3 (5, 14, 19), NOT APPLICABLE 1 (12). Total 22 gates, 21 applicable.
+Count: PASS 9 (gates 7, 11, 15, 16, 17 local, 18, 19, 21, 22), FAIL 2 (4, 13), BLOCKED 8 (1, 2, 3, 6, 8, 9, 10, 20), NEEDS OWNER 2 (5, 14), NOT APPLICABLE 1 (12). Total 22 gates, 21 applicable.
 
 ## Conclusion
 

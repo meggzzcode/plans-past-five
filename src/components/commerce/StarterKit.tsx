@@ -46,7 +46,7 @@ export function StarterKit({
             <h4 className="font-display text-xl">{heading}</h4>
             <div className="mt-4 grid gap-8 sm:grid-cols-2">
               {rows.map(({ slot, product }) => (
-                <div key={slot.id}>
+                <div key={slot.id} className="min-w-0">
                   <p className="hand mb-1 text-lg text-cherry">{slot.label}</p>
                   <ProductCard product={product} placement={`kit-${kit.id}`} />
                 </div>

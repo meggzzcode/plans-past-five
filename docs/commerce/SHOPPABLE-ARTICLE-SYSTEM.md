@@ -18,14 +18,14 @@ Readers get a curated list of specific, verified products with honest reasons, c
 | Checklist storage (`ppf:shop-list:v1`), copy text             | `src/lib/shoplist.ts`                                                                 |
 | Analytics vocabulary (no-op by default)                       | `src/lib/track.ts`                                                                    |
 | CSV importer                                                  | `scripts/import-products.mjs`, template `docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv` |
-| Tests                                                         | `src/test/shop.test.tsx`                                                              |
+| Tests                                                         | `src/test/shop.test.tsx`, `src/test/catalog-import.test.ts`                           |
 
 Rules enforced in code: only `status: "verified"` records that pass `validateCatalogProduct` and are not `unavailable` ever render. No prices, ratings, review counts, discounts or stock claims (the validator rejects those fields and price-like text). `amazonUrl` must be exactly `https://www.amazon.com/dp/<ASIN>` with no tracking parameters. Cards are photo-less. Components call `resolveProductLink`, so `rel="sponsored"`, tagged URLs and the disclosure sentence switch on automatically when the Amazon entry is activated in `src/config/affiliate.ts`; no component edit is needed.
 
 ## Add a verified product
 
 1. Research it (official page, Amazon listing). Fill one row of `docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv` (arrays use `|`, specs are `label:value`, kit slots are `kit/slot`, dates `YYYY-MM-DD`). Set `status` to `verified` only after checking; use `candidate` to keep it hidden.
-2. Run `bun run import:products path/to/file.csv`. It prints precise errors and writes nothing if any row fails; otherwise it regenerates `src/data/catalog.generated.ts`. Rows with ids starting `example-` are rejected.
+2. Dry-run first: `bun run import:products path/to/file.csv --check` validates and writes nothing. Then `bun run import:products path/to/file.csv` regenerates `src/data/catalog.generated.ts`. Every problem is printed with its line number and nothing is written if any row fails. Rows whose id starts `example-`, `fixture-`, `test-`, `demo-` or `sample-` are always rejected, so invented rows cannot ship. See `docs/commerce/IMPORT-DRY-RUN.md` for the full walkthrough, error messages and the review checklist.
 3. Commit the regenerated file. The build re-validates; invalid records are silently excluded from public pages and fail the tests' reference checks.
 
 ## Use it
@@ -35,6 +35,10 @@ Rules enforced in code: only `status: "verified"` records that pass `validateCat
 - Existing `shopHobby` and `starterKit` blocks use the verified catalog automatically when it has products for the same hobbies (based on the first hobby of each listed product); otherwise they render exactly as before.
 - Inline mention: `{{product:catalog-id|link text}}` becomes a link only if that product is verified; otherwise plain text.
 - Starter kits: `<StarterKit kit="junk-journaling" />`. A slot appears only when a verified product lists it in `kitSlots`. Kits state they are curated shopping lists, not bundles sold by Plans Past Five.
+
+Printing: "Print list" portals a plain list to `<body>` and hides every other body child while printing (one clean page, no blank sheets). "Copy list" and the print view include ticked items, a "Saved for later" line and, only when affiliate links are live, the required disclosure sentence.
+
+Avoid showing the same products twice on one page: `/shop/<collection>` renders both `ShopMyHobby` and `StarterKit`, and a kit slot and a collection tag may select the same product. The ticks stay in sync, but prefer tagging so the two blocks differ, or drop one block on that page. A `shopTheArticle` block with a `collection` also pulls in every product tagged to that collection, so use `collection` only when the whole collection fits the article.
 
 Selection order: products tagged for the article, then matching hobbies, then the collection; de-duplicated by id and ASIN; essentials (`isEssential`) first, optional upgrades after.
 

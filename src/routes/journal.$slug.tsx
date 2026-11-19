@@ -122,6 +122,7 @@ function ArticlePage() {
           alt={img.alt}
           width={img.w}
           height={img.h}
+          fetchPriority="high"
           className="max-h-[640px] w-full object-cover"
         />
       </figure>

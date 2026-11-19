@@ -34,6 +34,6 @@ Status: DRAFT, 2026-11-19. Marketplace-specific rules are PENDING COWORK (C7). N
 
 **Is there post-sale support?** A short, fixed, written-questions-only handover period is suggested (HANDOVER-TERMS-SUGGESTION.md). It is a suggestion for the parties and their lawyers. No indefinite free support.
 
-**Is the technical state tested?** 206 automated tests passed and typecheck was clean on 2026-11-19. A production build and live QA have not been recorded.
+**Is the technical state tested?** 235 automated tests passed and typecheck was clean on 2026-11-19. A production build and live QA have not been recorded.
 
 **What is the price?** Not set. See PRICING-STRATEGY.md; all market figures are PENDING COWORK (C7). No price is guaranteed.

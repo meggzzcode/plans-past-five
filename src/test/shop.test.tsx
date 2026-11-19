@@ -328,6 +328,46 @@ describe("shopping list", () => {
   });
 });
 
+describe("print view and list extras", () => {
+  it("lists saved-for-later items in the copied text", () => {
+    const text = buildListText(
+      [base, second],
+      { [base.id]: "need", [second.id]: "later" },
+      "2026-02-03",
+    );
+    expect(text).toContain("Saved for later: TEST FIXTURE pens");
+  });
+  it("portals the print list to <body> so printing leaves no blank pages", async () => {
+    const cat = filterVerified(fixtures);
+    window.localStorage.setItem(
+      SHOPLIST_KEY,
+      JSON.stringify({ v: 1, items: { "test-fixture-washi": "need" } }),
+    );
+    window.print = vi.fn();
+    await show(<ShopMyHobby hobby="junk-journaling" catalog={cat} today="2026-02-03" />);
+    const area = document.body.querySelector(":scope > .shop-print-area");
+    expect(area).not.toBeNull();
+    expect(area!.textContent).toContain("TEST FIXTURE washi tape set");
+    expect(area!.textContent).toContain("https://www.amazon.com/dp/B0TESTFIX1");
+    expect(area!.textContent).not.toMatch(/tag=/);
+    fireEvent.click(screen.getByRole("button", { name: /Print list/ }));
+    expect(document.body.getAttribute("data-print-shop")).toBe(area!.getAttribute("data-print-id"));
+    expect(window.print).toHaveBeenCalled();
+    window.dispatchEvent(new Event("afterprint"));
+    expect(document.body.hasAttribute("data-print-shop")).toBe(false);
+    window.localStorage.removeItem(SHOPLIST_KEY);
+  });
+  it("lets long product names wrap instead of overflowing the card", async () => {
+    await show(
+      <ProductCard
+        product={{ ...base, name: "TEST FIXTURE " + "extraordinarily".repeat(6) }}
+        placement="test"
+      />,
+    );
+    expect(document.querySelector("article")!.className).toMatch(/min-w-0.*overflow-wrap:anywhere/);
+  });
+});
+
 describe("empty-catalog parity", () => {
   it("shop blocks render nothing and legacy blocks fall back to type cards", async () => {
     const { container } = await show(

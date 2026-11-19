@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { findHobbies } from "@/lib/finder";
 import { makePlan } from "@/lib/planner";
-import { articles, allArticlesIncludingDrafts, getArticle } from "@/content";
+import { articles, getArticle } from "@/content";
+import { allArticlesIncludingDrafts } from "@/content/draft-registry";
 import { search } from "@/lib/search";
 import { hobbies } from "@/data/hobbies";
 import { products, collections, collectionProducts } from "@/data/products";

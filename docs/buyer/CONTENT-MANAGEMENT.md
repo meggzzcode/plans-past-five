@@ -13,7 +13,7 @@ bunx vite build
 1. The article file is `src/content/article-<slug>.ts`, exporting an `Article` (`src/content/types.ts`).
 2. Pass `docs/content/ARTICLE-QUALITY-CHECKLIST.md` and `docs/SOP-publish-article.md`: resolve every `coworkChecks` item, fill `sources`, set `verifiedAt`.
 3. Set `status: "published"` and `publishedAt: "YYYY-MM-DD"`.
-4. Make sure it is imported and in the `all` array in `src/content/index.ts` (add the import if the file is new).
+4. Registration: published articles are imported in `src/content/index.ts` (the `all` array). Drafts are imported only in `src/content/draft-registry.ts`, so unpublished text never ships in the public site. To publish a draft, change its `status`, then move its import from `draft-registry.ts` to `index.ts`. `src/test/content-registry.test.ts` catches mistakes.
 5. After deploy, confirm it appears in `/sitemap.xml` and request indexing.
 
 ## Update an article

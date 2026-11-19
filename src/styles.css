@@ -46,7 +46,9 @@
 :root {
   --radius: 0.25rem;
   /* Brand palette */
-  --cherry: oklch(0.54 0.15 22); /* #B83F43 Cherry Girl */
+  --cherry: oklch(
+    0.5 0.15 22
+  ); /* ~#A93438 Cherry Girl, deepened from #B83F43 so cherry text passes 4.5:1 on cream, butter, strawberry and sunday tints */
   --cream: oklch(0.982 0.014 75); /* #FFF8EF Vanilla Cream */
   --garden: oklch(0.4 0.04 150); /* #394D3C Garden Green */
   --espresso: oklch(0.36 0.03 45); /* #48362E Espresso */
@@ -225,4 +227,9 @@
   body {
     background: white;
   }
+}
+
+/* Cherry text on the lighter matcha tint falls under 4.5:1, so kickers there use Garden Green. */
+[class*="bg-matcha"] .kicker.text-cherry {
+  color: var(--garden);
 }

@@ -27,6 +27,7 @@ function Journal() {
         tone="strawberry"
       />
       <section className="mx-auto mt-16 max-w-7xl px-5 md:px-8">
+        <h2 className="sr-only">All stories</h2>
         {first && <ArticleCard a={first} size="lg" className="mx-auto max-w-4xl" />}
         <div className="mt-16 grid gap-12 md:grid-cols-3">
           {rest.map((a) => (

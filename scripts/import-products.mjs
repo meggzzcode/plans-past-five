@@ -2,47 +2,128 @@
 /**
  * Import researched products from CSV into src/data/catalog.generated.ts.
  *
- *   bun run import:products [path/to/file.csv]
- *   (default: docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv)
+ *   bun run import:products [path/to/file.csv]            validate, then write src/data/catalog.generated.ts
+ *   bun run import:products [path/to/file.csv] --check    validate only, write nothing (dry run)
+ *   (default file: docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv)
  *
  * Schema: docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv. One row per product. Array fields use "|".
  * Validation is the same code the site uses (validateCatalogProduct), so anything that imports
- * here also passes at build time. On any error, NOTHING is written and every problem is printed.
- * Runs under bun (it imports TypeScript directly).
+ * here also passes at build time. On any error, NOTHING is written and every problem is printed
+ * with its line number in the file. Runs under bun (it imports TypeScript directly).
+ *
+ * Accepts what Google Sheets ("Comma Separated Values (.csv)") and Excel ("CSV UTF-8") export:
+ * BOM, CRLF line endings, quoted commas/newlines, empty trailing rows and columns, TRUE/FALSE
+ * booleans, header names in any letter case. It refuses, with a precise message: semicolon/tab
+ * exports, .xlsx files, unknown or price-like columns, and rows wider than the header.
  */
-import { readFileSync, writeFileSync } from "node:fs";
-import { resolve, dirname } from "node:path";
+import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { basename, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   amazonProductUrl,
   catalogReferenceProblems,
+  isForbiddenField,
   validateCatalogProduct,
 } from "../src/data/catalog.ts";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const file = resolve(
-  process.argv[2] ?? resolve(root, "docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv"),
-);
 const OUT = resolve(root, "src/data/catalog.generated.ts");
 
-/** RFC-4180-ish parser: quotes, escaped quotes, commas and newlines inside quotes. Skips # comment lines. */
-export function parseCsv(text) {
+/** Every column the template defines, in canonical spelling. */
+export const COLUMNS = [
+  "id",
+  "name",
+  "brand",
+  "category",
+  "description",
+  "asin",
+  "amazonUrl",
+  "manufacturerUrl",
+  "altRetailerUrl",
+  "specs",
+  "hobbies",
+  "articles",
+  "collections",
+  "kitSlots",
+  "role",
+  "isEssential",
+  "audience",
+  "whySelected",
+  "limitations",
+  "imageSource",
+  "imageRights",
+  "researchSources",
+  "lastVerified",
+  "availability",
+  "affiliateNetwork",
+  "affiliateStatus",
+  "status",
+];
+/** Optional columns: may be missing from the header entirely. */
+const OPTIONAL = new Set([
+  "amazonUrl",
+  "manufacturerUrl",
+  "altRetailerUrl",
+  "imageSource",
+  "imageRights",
+  "affiliateNetwork",
+  "availability",
+  "affiliateStatus",
+  "status",
+]);
+const OPTIONAL_STRINGS = [
+  "manufacturerUrl",
+  "altRetailerUrl",
+  "imageSource",
+  "imageRights",
+  "affiliateNetwork",
+];
+
+/** Id prefixes that mark invented rows. They are refused here so a fixture can never ship by accident. */
+export const RESERVED_ID_PREFIXES = ["example-", "fixture-", "test-", "demo-", "sample-"];
+
+/** Decode a file: UTF-8 (BOM stripped) or the UTF-16 Excel's "Unicode Text" writes. Refuses .xlsx. */
+export function decodeCsvBuffer(buf) {
+  if (buf.length >= 2 && buf[0] === 0x50 && buf[1] === 0x4b)
+    throw new Error(
+      "this is a spreadsheet file (.xlsx), not a CSV. Export it: Google Sheets > File > Download > Comma Separated Values (.csv); Excel > Save As > CSV UTF-8",
+    );
+  if (buf.length >= 2 && buf[0] === 0xff && buf[1] === 0xfe)
+    return buf.toString("utf16le").slice(1);
+  return buf.toString("utf8");
+}
+
+/**
+ * RFC-4180-ish parser: quotes, escaped quotes, commas and newlines inside quotes, CRLF, BOM.
+ * Skips blank lines, rows that are only commas, and lines starting with # (outside quotes).
+ * The returned array has a parallel `lines` property: the 1-based file line each row starts on.
+ */
+export function parseCsv(input) {
+  const text = input.charCodeAt(0) === 0xfeff ? input.slice(1) : input;
   const rows = [];
+  rows.lines = [];
   let row = [];
   let cell = "";
   let quoted = false;
   let atLineStart = true;
   let skipping = false;
+  let line = 1;
+  let start = 1;
   const endRow = () => {
     row.push(cell);
-    if (row.some((c) => c.trim() !== "")) rows.push(row);
+    if (row.some((c) => c.trim() !== "")) {
+      rows.push(row);
+      rows.lines.push(start);
+    }
     row = [];
     cell = "";
     atLineStart = true;
     skipping = false;
+    start = line;
   };
   for (let i = 0; i < text.length; i++) {
     const c = text[i];
+    if (c === "\n") line++;
     if (skipping) {
       if (c === "\n") endRow();
       continue;
@@ -55,12 +136,16 @@ export function parseCsv(text) {
     if (quoted) {
       if (c === '"' && text[i + 1] === '"') ((cell += '"'), i++);
       else if (c === '"') quoted = false;
+      else if (c === "\r" && text[i + 1] === "\n") continue;
       else cell += c;
     } else if (c === '"') quoted = true;
     else if (c === ",") (row.push(cell), (cell = ""));
     else if (c === "\r") continue;
     else if (c === "\n") endRow();
     else cell += c;
+  }
+  if (quoted) {
+    rows.unterminatedQuoteLine = start;
   }
   if (cell !== "" || row.length) endRow();
   return rows;
@@ -72,10 +157,81 @@ const list = (v) =>
     .map((s) => s.trim())
     .filter(Boolean);
 const opt = (v) => (v && v.trim() ? v.trim() : undefined);
+// Zero-width, bidi and other invisible characters that survive copy-paste from web pages.
+const INVISIBLE = new RegExp("[\\u200b-\\u200f\\u2028\\u2029\\u202a-\\u202e\\u2060\\u00ad\\ufeff]");
 
-export function rowToProduct(header, cells) {
-  const g = Object.fromEntries(header.map((h, i) => [h.trim(), (cells[i] ?? "").trim()]));
+/**
+ * Validate and canonicalise the header row. Returns { header, errors }: `header` has canonical
+ * column names ("" for ignorable empty columns).
+ */
+export function checkHeader(rawHeader) {
+  const errors = [];
+  if (rawHeader.length === 1) {
+    if (/[;\t]/.test(rawHeader[0]))
+      errors.push(
+        'the header is one cell with ";" or tab characters in it: the file is not comma-separated. Re-export as "Comma Separated Values (.csv)" (Excel: choose "CSV UTF-8", not "CSV (semicolon delimited)" or "Text (tab delimited)")',
+      );
+    else errors.push("the header row has a single column; is this a comma-separated CSV?");
+    return { header: [], errors };
+  }
+  const byLower = new Map(COLUMNS.map((c) => [c.toLowerCase(), c]));
+  const seen = new Map();
+  const header = rawHeader.map((h, i) => {
+    const name = h.replace(/\s+/g, " ").trim();
+    if (name === "") return "";
+    const canon = byLower.get(name.toLowerCase());
+    if (!canon) {
+      errors.push(
+        isForbiddenField(name)
+          ? `column "${name}" is not allowed (no prices, ratings, review counts, discounts or stock claims). Delete the column`
+          : `unknown column "${name}". Delete it or keep it in a separate sheet; allowed columns: ${COLUMNS.join(", ")}`,
+      );
+      return `?${i}`;
+    }
+    if (seen.has(canon))
+      errors.push(`column "${canon}" appears twice (columns ${seen.get(canon) + 1} and ${i + 1})`);
+    seen.set(canon, i);
+    return canon;
+  });
+  const missing = COLUMNS.filter((c) => !OPTIONAL.has(c) && !seen.has(c));
+  if (missing.length) errors.push(`missing required column(s): ${missing.join(", ")}`);
+  return { header, errors };
+}
+
+/** Convert one row to a product-shaped object. Per-field format problems are pushed onto `issues`. */
+export function rowToProduct(header, cells, issues = []) {
+  const g = {};
+  header.forEach((h, i) => {
+    if (h && !h.startsWith("?")) g[h] = (cells[i] ?? "").trim();
+  });
+  for (const c of COLUMNS) g[c] ??= "";
+  for (const k of ["id", "asin", "amazonUrl", "lastVerified"])
+    if (INVISIBLE.test(g[k]) || /[^\x20-\x7e]/.test(g[k]))
+      issues.push(
+        `${k} "${g[k]}" contains invisible or non-ASCII characters (often from copy-paste). Retype it`,
+      );
   const asin = g.asin; // never silently change an ASIN
+  if (/^\d{8,9}$/.test(asin))
+    issues.push(
+      `asin "${asin}" has only digits and is ${asin.length} long: a spreadsheet probably dropped a leading zero. Format the column as plain text and re-enter it`,
+    );
+  if (/^\d{4,6}$/.test(g.lastVerified) || /^\d{1,2}[/.-]\d{1,2}[/.-]\d{2,4}$/.test(g.lastVerified))
+    issues.push(
+      `lastVerified "${g.lastVerified}" was reformatted by the spreadsheet. Format the column as plain text and type the date as YYYY-MM-DD`,
+    );
+  const specs = list(g.specs).map((s) => {
+    const i = s.indexOf(":");
+    if (i < 0)
+      issues.push(`specs entry "${s}" needs the form label:value (separate entries with |)`);
+    return { label: i < 0 ? s : s.slice(0, i).trim(), value: i < 0 ? "" : s.slice(i + 1).trim() };
+  });
+  const kitSlots = list(g.kitSlots).map((s) => {
+    if (!s.includes("/"))
+      issues.push(`kitSlots entry "${s}" needs the form kit/slot (separate entries with |)`);
+    const [kit = "", slot = ""] = s.split("/");
+    return { kit: kit.trim(), slot: slot.trim() };
+  });
+  const bool = g.isEssential.toLowerCase();
   const p = {
     id: g.id,
     name: g.name,
@@ -84,24 +240,13 @@ export function rowToProduct(header, cells) {
     description: g.description,
     asin,
     amazonUrl: g.amazonUrl || (/^[A-Z0-9]{10}$/.test(asin) ? amazonProductUrl(asin) : ""),
-    specs: list(g.specs).map((s) => {
-      const i = s.indexOf(":");
-      return { label: i < 0 ? s : s.slice(0, i).trim(), value: i < 0 ? "" : s.slice(i + 1).trim() };
-    }),
+    specs,
     hobbies: list(g.hobbies),
     articles: list(g.articles),
     collections: list(g.collections),
-    kitSlots: list(g.kitSlots).map((s) => {
-      const [kit = "", slot = ""] = s.split("/");
-      return { kit: kit.trim(), slot: slot.trim() };
-    }),
+    kitSlots,
     role: g.role,
-    isEssential:
-      g.isEssential.toLowerCase() === "true"
-        ? true
-        : g.isEssential.toLowerCase() === "false"
-          ? false
-          : g.isEssential,
+    isEssential: bool === "true" ? true : bool === "false" ? false : g.isEssential,
     audience: g.audience,
     whySelected: g.whySelected,
     limitations: list(g.limitations),
@@ -111,31 +256,110 @@ export function rowToProduct(header, cells) {
     affiliateStatus: g.affiliateStatus || "not-activated",
     status: g.status || "candidate",
   };
-  for (const k of [
-    "affiliateUrl",
-    "manufacturerUrl",
-    "altRetailerUrl",
-    "imageSource",
-    "imageRights",
-    "affiliateNetwork",
-  ])
-    if (opt(g[k])) p[k] = opt(g[k]);
-  // Surface forbidden columns (price, rating...) so validation reports them.
-  for (const h of header)
-    if (
-      !(h.trim() in p) &&
-      ![
-        "affiliateUrl",
-        "manufacturerUrl",
-        "altRetailerUrl",
-        "imageSource",
-        "imageRights",
-        "affiliateNetwork",
-      ].includes(h.trim()) &&
-      opt(g[h.trim()])
-    )
-      p[h.trim()] = g[h.trim()];
+  for (const k of OPTIONAL_STRINGS) if (opt(g[k])) p[k] = opt(g[k]);
   return p;
+}
+
+/**
+ * Pure conversion of CSV text. Never touches the filesystem except to read article slugs when
+ * `known.articles` is not supplied by the caller. Returns { products, errors, warnings }.
+ * `known` = { hobbies, collections, kits, articles? } (see catalogReferenceProblems).
+ */
+export function importCsv(text, known, now = new Date()) {
+  const errors = [];
+  const warnings = [];
+  const rows = parseCsv(text);
+  if (rows.unterminatedQuoteLine)
+    errors.push(
+      `line ${rows.unterminatedQuoteLine}: a quoted cell is never closed (a stray " character). Every " inside text must be doubled ("")`,
+    );
+  if (rows.length === 0) {
+    errors.push("the CSV has no header row (is the file empty?)");
+    return { products: [], errors, warnings };
+  }
+  const [rawHeader, ...data] = rows;
+  const { header, errors: headerErrors } = checkHeader(rawHeader);
+  headerErrors.forEach((m) => errors.push(`line ${rows.lines[0]}: ${m}`));
+  if (headerErrors.length) return { products: [], errors, warnings };
+
+  const products = [];
+  const lineOf = new Map();
+  const idLine = new Map();
+  const asinLine = new Map();
+  data.forEach((cells, n) => {
+    const line = rows.lines[n + 1];
+    const issues = [];
+    const extra = cells.slice(header.length).some((c) => c.trim() !== "");
+    if (extra)
+      issues.push(
+        `has ${cells.length} cells but the header has ${header.length} columns. A text cell with a comma in it must be wrapped in "double quotes" (spreadsheets do this automatically)`,
+      );
+    cells.forEach((c, i) => {
+      if (header[i] === "" && c.trim() !== "")
+        issues.push(`column ${i + 1} has data but no header name`);
+    });
+    const p = rowToProduct(header, cells, issues);
+    issues.forEach((m) => errors.push(`line ${line}: ${m}`));
+    const id = String(p.id);
+    const reserved = RESERVED_ID_PREFIXES.find((pre) => id.startsWith(pre));
+    if (reserved) {
+      errors.push(
+        `line ${line}: id "${id}" starts with "${reserved}", which marks an example or test row; delete the row or give it a real id`,
+      );
+      return;
+    }
+    if (/FIXTUR|EXAMPLE|PLACEHOLD/i.test(String(p.asin)))
+      errors.push(`line ${line}: asin "${p.asin}" looks like a placeholder`);
+    for (const m of validateCatalogProduct(p, now)) {
+      // With a bad ASIN there is nothing to derive the link from; the ASIN message already says what to fix.
+      if (/amazonUrl is required/.test(m) && !p.amazonUrl && !/^[A-Z0-9]{10}$/.test(p.asin))
+        continue;
+      errors.push(`line ${line}: ${m}`);
+    }
+    if (idLine.has(id))
+      errors.push(
+        `line ${line}: id "${id}" is already used on line ${idLine.get(id)}; ids must be unique`,
+      );
+    else idLine.set(id, line);
+    if (p.asin && asinLine.has(p.asin))
+      errors.push(
+        `line ${line}: ASIN ${p.asin} is already used on line ${asinLine.get(p.asin)}; one row per product`,
+      );
+    else asinLine.set(p.asin, line);
+    products.push(p);
+    lineOf.set(p, line);
+  });
+  if (known) {
+    const { articles: knownArticles, ...refsOnly } = known;
+    const refs = catalogReferenceProblems(products, refsOnly).filter(
+      (m) => !/duplicate id|same ASIN/.test(m),
+    );
+    for (const m of refs) {
+      const hit = products.find((p) => m.startsWith(`${p.id}:`));
+      errors.push(hit ? `line ${lineOf.get(hit)}: ${m}` : m);
+    }
+    if (knownArticles)
+      for (const p of products)
+        for (const a of p.articles)
+          if (!knownArticles.includes(a))
+            warnings.push(
+              `line ${lineOf.get(p)}: ${p.id}: article "${a}" does not exist yet (typo? Products tagged to a missing article never appear there)`,
+            );
+  }
+  return { products, errors, warnings };
+}
+
+/** Article slugs from src/content/article-*.ts (published and draft), read as text so no module is loaded. */
+function articleSlugs() {
+  try {
+    const dir = resolve(root, "src/content");
+    return readdirSync(dir)
+      .filter((f) => /^article-.*\.ts$/.test(f))
+      .map((f) => /\bslug:\s*"([^"]+)"/.exec(readFileSync(resolve(dir, f), "utf8"))?.[1])
+      .filter(Boolean);
+  } catch {
+    return undefined;
+  }
 }
 
 async function knownRefs() {
@@ -145,10 +369,12 @@ async function knownRefs() {
       import("../src/data/products.ts"),
       import("../src/data/kits.ts"),
     ]);
+    const articles = articleSlugs();
     return {
       hobbies: hobbies.map((h) => h.slug),
       collections: collections.map((c) => c.slug),
       kits: kitSlotIndex(),
+      ...(articles ? { articles } : {}),
     };
   } catch (e) {
     console.warn(`(skipping hobby/collection/kit cross-checks: ${e.message})`);
@@ -156,39 +382,41 @@ async function knownRefs() {
   }
 }
 
-async function main() {
-  const rows = parseCsv(readFileSync(file, "utf8"));
-  if (rows.length === 0) return fail(["CSV has no header row"]);
-  const [header, ...data] = rows;
-  const errors = [];
-  const products = [];
-  data.forEach((cells, n) => {
-    const line = n + 2;
-    const p = rowToProduct(header, cells);
-    if (String(p.id).startsWith("example-")) {
-      errors.push(
-        `row ${line}: id "${p.id}" is a template example; delete the row or give it a real id`,
-      );
-      return;
-    }
-    const problems = validateCatalogProduct(p);
-    problems.forEach((m) => errors.push(`row ${line}: ${m}`));
-    products.push(p);
-  });
-  const known = await knownRefs();
-  if (known) errors.push(...catalogReferenceProblems(products, known));
-  else
-    errors.push(
-      ...catalogReferenceProblems(products, {
-        hobbies: products.flatMap((p) => p.hobbies),
-        collections: products.flatMap((p) => p.collections),
-        kits: Object.fromEntries(products.flatMap((p) => p.kitSlots).map((s) => [s.kit, [s.slot]])),
-      }).filter((m) => /duplicate|same ASIN/.test(m)),
-    );
-  if (errors.length) return fail(errors);
+function fail(errors, warnings = []) {
+  console.error(`Import failed. Nothing was written.\n`);
+  for (const e of errors) console.error(`  - ${e}`);
+  for (const w of warnings) console.error(`  (warning) ${w}`);
+  console.error(`\n${errors.length} problem(s). Fix the CSV and run again.`);
+  process.exit(1);
+}
 
+async function main() {
+  const args = process.argv.slice(2);
+  const check = args.includes("--check");
+  const file = resolve(
+    args.find((a) => !a.startsWith("--")) ??
+      resolve(root, "docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv"),
+  );
+  if (!existsSync(file)) return fail([`file not found: ${file}`]);
+  let text;
+  try {
+    text = decodeCsvBuffer(readFileSync(file));
+  } catch (e) {
+    return fail([e.message]);
+  }
+  const { products, errors, warnings } = importCsv(text, await knownRefs());
+  if (errors.length) return fail(errors, warnings);
+  for (const w of warnings) console.warn(`(warning) ${w}`);
+
+  const verified = products.filter((p) => p.status === "verified").length;
+  const summary = `${products.length} products (${verified} verified, ${products.length - verified} candidates)`;
+  if (check) {
+    console.log(`OK: ${summary} pass validation. Nothing was written (--check).`);
+    return;
+  }
+  const inRepo = file.startsWith(root + "/");
   const body = `/**
- * GENERATED by \`bun run import:products\` from ${file.replace(root + "/", "")}.
+ * GENERATED by \`bun run import:products\` from ${inRepo ? file.slice(root.length + 1) : basename(file)}.
  * Do not hand-edit. Only status "verified" records render publicly.
  */
 import type { CatalogProduct } from "./catalog";
@@ -196,17 +424,7 @@ import type { CatalogProduct } from "./catalog";
 export const generatedCatalog: CatalogProduct[] = ${JSON.stringify(products, null, 2)};
 `;
   writeFileSync(OUT, body);
-  const verified = products.filter((p) => p.status === "verified").length;
-  console.log(
-    `Wrote ${products.length} products (${verified} verified, ${products.length - verified} candidates) to src/data/catalog.generated.ts`,
-  );
-}
-
-function fail(errors) {
-  console.error(`Import failed. Nothing was written.\n`);
-  for (const e of errors) console.error(`  - ${e}`);
-  console.error(`\n${errors.length} problem(s). Fix the CSV and run again.`);
-  process.exit(1);
+  console.log(`Wrote ${summary} to src/data/catalog.generated.ts`);
 }
 
 if (import.meta.main ?? process.argv[1] === fileURLToPath(import.meta.url)) await main();

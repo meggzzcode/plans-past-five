@@ -75,7 +75,7 @@ src/test/rules.test.ts    quiz/planner/content rules
 
 ## Turnkey build-out (2026-11-19, branch claude/vibrant-dirac-amdf7r)
 Plan and work split: `docs/TURNKEY-PLAN.md`. Checkpoint: `docs/RESUME.md`. Cowork tasks: `docs/cowork/PLANS-PAST-FIVE-COWORK-TASKS.md`. Buyer docs: `docs/buyer/`. Content and commerce docs: `docs/content/`, `docs/commerce/`, `docs/marketing/`.
-- **Articles:** 26 new drafts exist (`src/content/article-*.ts`, registered in `src/content/index.ts`). They stay `status: "draft"` until every `coworkChecks` item is verified and `verifiedAt`/`sources` are set. Only 4 are published.
+- **Articles:** 26 new drafts exist (`src/content/article-*.ts`, registered in `src/content/draft-registry.ts`, which only tests and scripts import, so draft text is not bundled into the public site; published articles are registered in `src/content/index.ts`). They stay `status: "draft"` until every `coworkChecks` item is verified and `verifiedAt`/`sources` are set. Only 4 are published.
 - **Affiliate behavior changed:** setting `associatesTag` alone no longer monetizes. The Amazon entry in `src/config/affiliate.ts` must also be `approved` and `active`. See `docs/buyer/AFFILIATE-ACTIVATION.md`. The older "Monetize" note above is superseded.
 - **Shoppable system:** `src/data/catalog.ts` (empty until verified products are imported with `bun run import:products`), `src/components/commerce/*`, `src/lib/shoplist.ts`. Nothing renders until verified products exist.
 - **Planner and quiz** were rewritten (total budget, time slots, restoring saved plans, energy, quiz handoff). New tools at `/tools/hobby-budget` and `/tools/tonight`.

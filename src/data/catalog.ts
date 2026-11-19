@@ -86,6 +86,8 @@ const ID_RE = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 const FORBIDDEN_KEY =
   /price|rating|review|stars?$|discount|coupon|deal|countdown|stock|sale|scarcity/i;
+/** True for field/column names that would carry prices, ratings, review counts, discounts or stock claims. */
+export const isForbiddenField = (name: string) => FORBIDDEN_KEY.test(name);
 const TRACKING_PARAM =
   /^(utm_.*|tag|ref|ref_|linkcode|linkid|camp|creative|creativeasin|psc|smid|aff.*|affid|cmpid|gclid|fbclid|ascsubtag)$/i;
 const PRICE_TEXT =
@@ -174,7 +176,11 @@ export function validateCatalogProduct(input: unknown, now: Date = new Date()): 
         bad(`researchSources entry "${s}" has tracking parameters`);
     }
   if (typeof r["lastVerified"] !== "string" || !r["lastVerified"]) bad("lastVerified is required");
-  else if (!ISO_DATE.test(r["lastVerified"]) || Number.isNaN(Date.parse(r["lastVerified"])))
+  else if (
+    !ISO_DATE.test(r["lastVerified"]) ||
+    Number.isNaN(Date.parse(r["lastVerified"])) ||
+    new Date(r["lastVerified"]).toISOString().slice(0, 10) !== r["lastVerified"]
+  )
     bad("lastVerified must be a real YYYY-MM-DD date");
   else if (Date.parse(r["lastVerified"]) > now.getTime() + 24 * 3600 * 1000)
     bad("lastVerified is in the future");

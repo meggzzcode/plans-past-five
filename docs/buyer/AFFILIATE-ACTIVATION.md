@@ -11,7 +11,7 @@ Affiliate accounts belong to the person who applied. Amazon Associates accounts 
 | What                                         | File                                                                                |
 | -------------------------------------------- | ----------------------------------------------------------------------------------- |
 | Registry, link builder, disclosure sentences | `src/config/affiliate.ts`                                                           |
-| Candidate programs (research register)       | `src/data/affiliate-programs.ts`                                                    |
+| Amazon program research register | `src/data/affiliate-programs.ts`                                                    |
 | Product records                              | `src/data/products.ts`                                                              |
 | Disclosure page / note                       | `src/routes/affiliate-disclosure.tsx`, `src/components/editorial/AffiliateNote.tsx` |
 
@@ -30,7 +30,9 @@ Affiliate accounts belong to the person who applied. Amazon Associates accounts 
 
 Replacing an id later: change `websiteTrackingId` in that one place; every link follows. If any of `active`, `approvalStatus: "approved"` or a tracking id is missing, the site falls back to plain links automatically.
 
-## Other networks (Awin, Impact, CJ, direct programs)
+## Other networks (not used)
+
+Plans Past Five uses Amazon Associates only (owner decision 2026-11-19). A buyer who wants another program can follow these steps:
 
 1. Apply and get approved in your own account; copy the deep-link format from your network dashboard.
 2. Copy the Amazon entry shape into a new key in `affiliateRegistry` with `id` equal to the key, the retailer's `retailerHosts`, your `websiteTrackingId`, and `affiliateUrlTemplate` using `{tag}`, `{url}` or `{urlEncoded}`. Must start with `https://`. Never guess a template.

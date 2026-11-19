@@ -335,7 +335,7 @@ export const products: Product[] = [
     "sporty-girl",
     "Pickleball paddle set",
     "Two or four paddles plus balls, so you can bring a friend along.",
-    "A set with outdoor balls and a carry bag.",
+    "A set with balls and a carry bag.",
     "pickleball paddle set of 2",
     ["pickleball"],
   ),

@@ -46,3 +46,7 @@ Star, Sparkle, Bow, Flower, Arrow, Squiggle, Divider; utilities `gingham`, `ging
 
 ## Voice
 Creative, witty best friend. Contractions, specific everyday moments, gentle cheek. No hustle culture, no medical/mental-health claims, no fake stats or testimonials.
+
+
+## Accessibility note (2026-11-19)
+The site's `--cherry` text colour in `src/styles.css` was deepened slightly (about #A93438, from #B83F43) so cherry text passes 4.5:1 contrast on the cream, butter, strawberry and sunday backgrounds (axe audit, docs/marketplace/QA-REPORT.md). Logos and exported brand files still use #B83F43. Owner to confirm the deeper cherry or ask for the original back.

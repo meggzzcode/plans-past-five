@@ -51,7 +51,7 @@ Women who want a hobby or a better weekend but are unsure where to start, with a
 | Pinterest pins | 88 pin images, CSV with metadata, 90-day schedule; 23 point to published articles or live pages, 65 are marked hold-until-published | COMPLETED as assets; no account | `public/pins`, `docs/pinterest-pins.csv` |
 | Brand assets | 12 logo files, 11 board covers, 4 social images (including a 1200x630 OG image), 4 article templates, 5 favicon files, fonts with licences | COMPLETED | `design/brand` |
 | Documentation | 87 Markdown files under docs, including 25 buyer guides and a 20-step transfer checklist | COMPLETED (some depend on pending research) | `docs/` |
-| Automated tests | 206 passing in 11 files; typecheck clean | VERIFIED 2026-11-19 | `src/test` |
+| Automated tests | 235 passing in 14 files; typecheck clean | VERIFIED 2026-11-19 | `src/test` |
 | Trust pages | About, Contact, Privacy, Terms, Affiliate Disclosure, Editorial Policy, Methodology, Corrections, Start Here | COMPLETED; legal pages are starter text | `src/routes` |
 
 - [ ] AVAILABLE AT LISTING ONLY IF COMPLETE: state a higher published-article count only if drafts have been verified and flipped to published (check `grep -H 'status:' src/content/article-*.ts`).

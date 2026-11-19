@@ -116,6 +116,8 @@ export function buildListText(
   }
   const owned = products.filter((p) => state[p.id] === "own");
   if (owned.length) lines.push("", `Already own: ${owned.map((p) => p.name).join(", ")}`);
+  const later = products.filter((p) => state[p.id] === "later");
+  if (later.length) lines.push("", `Saved for later: ${later.map((p) => p.name).join(", ")}`);
   if (isMonetized()) lines.push("", liveDisclosureSentences().join(" "));
   return lines.join("\n");
 }

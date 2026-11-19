@@ -15,10 +15,21 @@ export const articleFlowerArrangingAsAHobby: Article = {
     "A low-commitment weekly ritual: a simple formula (focal, filler, greenery), a minimal toolkit, and flower care basics, using only grocery-store stems and what you already own",
   hobbies: ["flower-arranging", "indoor-gardening", "collage-art"],
   productIds: [],
-  sources: [],
+  sources: [
+    {
+      title: "Iowa State Extension: how to harvest, condition and care for cut flowers",
+      url: "https://yardandgarden.extension.iastate.edu/how-to/how-harvest-condition-and-care-cut-flowers",
+      note: "Recutting not needed if you are quick (Cowork C4)",
+    },
+    {
+      title: "UC Marin Master Gardeners: extending vase life",
+      url: "https://ucanr.edu/site/uc-marin-master-gardeners/article/extending-vase-life-garden-arrangement",
+      note: "Refresh water every 2 to 3 days (Cowork C4)",
+    },
+  ],
   coworkChecks: [
-    "Cutting stems at an angle and removing leaves below the waterline are standard fresh-flower care practices (claimed general guidance)",
-    "Changing the water every day or two and recutting stems extends vase life (claimed general guidance)",
+    "Cowork C4 (2026-11-19): 'cut at an angle' has no source and was removed; removing leaves below the waterline still needs a source.",
+    "Cowork C4 (2026-11-19): UC says refresh vase water every 2 to 3 days (updated); Iowa State says recutting is not needed if you were quick (wording softened). Recheck both sources at publish time.",
     "Flower food packets are intended to feed cut flowers and slow bacterial growth; use as directed on the packet (claimed)",
     "Some common flowers and plants (e.g. lilies, daffodils, tulips) are toxic to cats or dogs; check a pet-safety source such as the ASPCA list (claimed safety note)",
     "Daffodil sap can harm other cut flowers in the same vase unless conditioned separately (claimed)",
@@ -90,7 +101,7 @@ export const articleFlowerArrangingAsAHobby: Article = {
       steps: [
         "Fill the vase about two-thirds with cool water and add flower food if you have it.",
         "Strip any leaves that would sit below the waterline, because they rot and cloud the water.",
-        "Cut each stem at an angle, about an inch from the bottom.",
+        "Give each stem a fresh trim with clean, sharp scissors.",
         "Start with the greenery, building a loose frame around the rim.",
         "Add the focal flowers, set at different heights, with the biggest in the lower middle.",
         "Tuck the filler into the gaps, turn the vase, and step back.",
@@ -104,7 +115,7 @@ export const articleFlowerArrangingAsAHobby: Article = {
     {
       type: "list",
       items: [
-        "Change the water every day or two and recut the stems.",
+        "Refresh the water every two to three days and top it up in between. A fresh trim can help, though one university extension says it isn't necessary if the flowers went into water quickly.",
         "Keep the vase away from hot sun, heaters and a fruit bowl, since ripening fruit can shorten vase life.",
         "Condition daffodils separately, because their sap can harm other flowers.",
         "Pull out any stem that wilts early, which helps the rest.",
@@ -144,7 +155,7 @@ export const articleFlowerArrangingAsAHobby: Article = {
     {
       type: "item",
       title: "The flowers droop within a day",
-      note: "The stems may not be taking up water. Recut them at an angle, use fresh cool water, and check the vase is clean.",
+      note: "The stems may not be taking up water. Give them a fresh trim, use fresh cool water, and check the vase is clean.",
     },
     {
       type: "item",

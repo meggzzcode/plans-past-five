@@ -62,7 +62,7 @@ export function ProductCard({
   return (
     <article
       className={cn(
-        "flex flex-col border-t-2 border-ink pt-4",
+        "flex min-w-0 flex-col border-t-2 border-ink pt-4 [overflow-wrap:anywhere]",
         status === "own" && "opacity-70",
         className,
       )}

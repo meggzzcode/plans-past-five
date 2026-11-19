@@ -169,7 +169,8 @@ describe("product records", () => {
 
 describe("affiliate program register", () => {
   it("lists candidates only, with unverified facts", () => {
-    expect(affiliatePrograms.length).toBeGreaterThanOrEqual(19);
+    // Amazon Associates only (owner decision 2026-11-19).
+    expect(affiliatePrograms.map((p) => p.id)).toEqual(["amazon-associates"]);
     for (const p of affiliatePrograms) {
       expect(p.status).toBe("candidate");
       expect(p.applicationRequirements).toBe(UNVERIFIED);

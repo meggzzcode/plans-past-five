@@ -477,7 +477,7 @@
     "publish_status": "hold-until-published",
     "kind": "article",
     "image": "weekend-picnic.jpg",
-    "minFitFontPx": null
+    "minFitFontPx": 86
   },
   {
     "id": "14-starter-kits-1-cover",
@@ -882,7 +882,7 @@
     "publish_status": "hold-until-published",
     "kind": "article",
     "image": null,
-    "minFitFontPx": null
+    "minFitFontPx": 96
   },
   {
     "id": "14-starter-kits-2-checklist",

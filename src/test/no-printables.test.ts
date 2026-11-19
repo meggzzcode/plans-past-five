@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
-import { allArticlesIncludingDrafts } from "@/content";
+import { allArticlesIncludingDrafts } from "@/content/draft-registry";
 import { search } from "@/lib/search";
 import { sitemapPaths } from "@/lib/sitemap";
 

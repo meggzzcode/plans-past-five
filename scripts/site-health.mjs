@@ -81,7 +81,8 @@ async function freshness() {
 }
 
 async function digest() {
-  const { articles, allArticlesIncludingDrafts } = await load("src/content/index.ts");
+  const { articles } = await load("src/content/index.ts");
+  const { allArticlesIncludingDrafts } = await load("src/content/draft-registry.ts");
   const { hobbies } = await load("src/data/hobbies.ts");
   const { products, collections } = await load("src/data/products.ts");
   const drafts = allArticlesIncludingDrafts.length - articles.length;

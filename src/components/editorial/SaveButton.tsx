@@ -22,12 +22,18 @@ export function SaveButton({
         toggle(item);
       }}
       aria-pressed={saved}
-      aria-label={saved ? `Remove ${item.title} from My Plans` : `Save ${item.title} to My Plans`}
+      aria-label={
+        compact
+          ? saved
+            ? `Remove ${item.title} from My Plans`
+            : `Save ${item.title} to My Plans`
+          : `${saved ? "Saved to My Plans" : "Save to My Plans"}: ${item.title}`
+      }
       className={cn(
         "no-print inline-flex items-center gap-1.5 text-sm font-semibold transition",
         compact
-          ? "grid h-9 w-9 place-items-center rounded-full bg-cream/95 text-cherry shadow hover:scale-105"
-          : "border-b-2 border-cherry pb-0.5 text-cherry hover:border-transparent",
+          ? "grid h-11 w-11 place-items-center rounded-full md:h-9 md:w-9 bg-cream/95 text-cherry shadow hover:scale-105"
+          : "relative border-b-2 border-cherry pb-0.5 text-cherry after:absolute after:inset-x-0 after:-inset-y-2.5 after:content-[''] hover:border-transparent",
         className,
       )}
     >

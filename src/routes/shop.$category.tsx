@@ -9,6 +9,7 @@ import { ProductCard, CollectionCard, ArticleCard } from "@/components/cards/Car
 import { AffiliateNote } from "@/components/editorial/AffiliateNote";
 import { Kicker, toneBg } from "@/components/editorial/Section";
 import { StarterKit } from "@/components/commerce/StarterKit";
+import { getKit, fillKit } from "@/data/kits";
 import { ShopMyHobby } from "@/components/commerce/ShopMyHobby";
 import { cn } from "@/lib/utils";
 
@@ -37,6 +38,10 @@ function CollectionPage() {
   const c = getCollection(slug)!;
   const img = images[c.image];
   const g = collectionGuide(c.slug);
+  const hasKit = g.kitIds.some((id) => {
+    const kit = getKit(id);
+    return !!kit && fillKit(kit, verifiedCatalog).length > 0;
+  });
   const ps = g.products;
   const verified = selectProducts({ collection: c.slug }, verifiedCatalog).all.length > 0;
   return (
@@ -151,10 +156,12 @@ function CollectionPage() {
         </div>
       </section>
       <section className="mx-auto max-w-7xl px-5 md:px-8">
-        <ShopMyHobby collection={c.slug} title={`Shop ${c.name}`} />
-        {g.kitIds.map((id) => (
-          <StarterKit key={id} kit={id} />
-        ))}
+        {/* Show starter kits when verified products fill them; otherwise the collection list. Never both, so no product appears twice. */}
+        {hasKit ? (
+          g.kitIds.map((id) => <StarterKit key={id} kit={id} />)
+        ) : (
+          <ShopMyHobby collection={c.slug} title={`Shop ${c.name}`} />
+        )}
         <p className="kicker text-cherry">Hobby guides this collection supports</p>
         <div className="mt-4 flex flex-wrap gap-2">
           {g.hobbies.map((h) => (

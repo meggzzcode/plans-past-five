@@ -19,7 +19,13 @@ export const articlePickleballForBeginners: Article = {
     "active-hobbies-for-women-who-dont-love-the-gym",
     "things-to-do-after-work-instead-of-scrolling",
   ],
-  sources: [],
+  sources: [
+    {
+      title: "USA Pickleball Official Rulebook",
+      url: "https://usapickleball.org/docs/rules/USAP-Official-Rulebook.pdf",
+      note: "Approved balls acceptable indoors or outdoors (Cowork C4, 2026-11-19)",
+    },
+  ],
   coworkChecks: [
     "Confirm that most casual play is doubles and that open play or paddle-stacking systems are common at public courts (varies by location); name no venues.",
     "Confirm that borrowing paddles at community beginner sessions is common; availability varies by location.",
@@ -28,7 +34,7 @@ export const articlePickleballForBeginners: Article = {
     "Confirm that mixed-level open play is the norm and that rotation etiquette (waiting for a break in play before crossing behind a court, returning stray balls) matches governing-body etiquette guidance.",
     "Confirm that 'typically a modest spend' for a paddle and ball set is expressed as an approximate range, with no price stated as fact.",
     "Equipment: confirm that pickleball uses a solid paddle (not a stringed racket) and a perforated plastic ball, per the official rulebook (USA Pickleball or the relevant national body).",
-    "Equipment: confirm that indoor and outdoor balls differ (outdoor balls typically harder with smaller holes) per official guidance.",
+    "Equipment: RESOLVED by Cowork C4 (2026-11-19): the indoor-versus-outdoor ball difference was removed; the USA Pickleball official rulebook says approved balls are acceptable indoors or outdoors. Recheck the rulebook wording at publish time.",
     "Court: confirm that the court is the same size as a doubles badminton court, 20 feet by 44 feet, with a non-volley zone ('kitchen') extending 7 feet from the net on each side, and a net 36 inches at the sidelines and 34 inches at the center.",
     "Rules: confirm that the serve is underhand, must clear the non-volley zone and land in the diagonal service court, and that the ball must bounce once on each side before volleys are allowed (the two-bounce rule).",
     "Rules: confirm that scoring is typically to 11, win by 2, and that only the serving side scores in traditional scoring; also confirm the caller convention (server score, receiver score, server number).",
@@ -58,7 +64,7 @@ export const articlePickleballForBeginners: Article = {
       type: "whatYoullNeed",
       essentials: [
         "A paddle, which you can often borrow for a first session",
-        "A few pickleballs; outdoor and indoor balls tend to differ, so ask which you'll need",
+        "A few pickleballs; per the official rulebook, approved balls are fine indoors or outdoors, so one kind covers you",
         "Court shoes or trainers with good side-to-side grip",
         "Water and sun protection",
       ],

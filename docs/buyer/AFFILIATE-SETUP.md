@@ -19,7 +19,7 @@ Short checklist. The full explanation, file edits and cautions are in `docs/buye
 - [ ] Update `site.legal.lastUpdated`.
 - [ ] Run `bunx vitest run`; check a product link carries your tag and `rel="sponsored"`.
 - [ ] Spot-check that button text still describes the real destination.
-- [ ] Add other networks only after approval; do not guess link templates.
+- [ ] Plans Past Five is Amazon-only. If you add another network later, do it only after approval and never guess link templates.
 - [ ] Record accounts and who owns them in your password manager and `docs/buyer/ACCOUNT-DEPENDENCIES.md`.
 
 ## Do not

@@ -62,29 +62,15 @@ const c = (id: string, name: string, relevantPages: string[]): AffiliateProgram 
 });
 
 const shop = ["/shop"];
-const learn = ["/hobby-finder", "/journal"];
-const outings = ["/make-plans", "/solo-dates"];
 
+/**
+ * Owner decision 2026-11-19: Plans Past Five uses Amazon Associates ONLY for affiliate links.
+ * The earlier candidate list (Awin, Impact, CJ, Rakuten, Ascend, AvantLink, Etsy, Walmart, Target,
+ * Michaels, Blick, Cricut, course and experience providers) was removed on purpose. A buyer who wants
+ * another program adds an entry here with c(...) and a matching entry in src/config/affiliate.ts.
+ */
 export const affiliatePrograms: AffiliateProgram[] = [
   c("amazon-associates", "Amazon Associates", shop),
-  c("awin", "Awin", shop),
-  c("impact", "Impact", shop),
-  c("cj", "CJ Affiliate", shop),
-  c("rakuten", "Rakuten Advertising", shop),
-  c("ascend", "Ascend (Partnerize)", shop),
-  c("avantlink", "AvantLink", ["/shop/sporty-girl"]),
-  c("etsy", "Etsy", shop),
-  c("walmart", "Walmart", shop),
-  c("target", "Target", shop),
-  c("michaels", "Michaels", ["/shop/pottery-era", "/shop/creative-girl"]),
-  c("blick", "Blick Art Materials", ["/shop/creative-girl"]),
-  c("cricut", "Cricut", ["/shop/creative-girl"]),
-  c("skillshare", "Skillshare", learn),
-  c("udemy", "Udemy", learn),
-  c("domestika", "Domestika", learn),
-  c("classbento", "ClassBento", [...learn, ...outings]),
-  c("viator", "Viator", outings),
-  c("getyourguide", "GetYourGuide", outings),
 ];
 
 /** Problems: a commission or cookie claim needs a source URL and a verifiedAt date. */

@@ -76,6 +76,7 @@ function Directory() {
             {list.length} {list.length === 1 ? "hobby" : "hobbies"}
           </p>
         </div>
+        <h2 className="sr-only">Hobbies</h2>
         {list.length ? (
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {list.map((h) => (

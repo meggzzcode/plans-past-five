@@ -745,7 +745,7 @@ export const articles = [
         headline: "An arrangement in *4 moves*",
         steps: [
           ["Clean the stems", "Remove leaves that would sit in the water."],
-          ["Cut at an angle", "A fresh cut helps flowers drink."],
+          ["Fresh trim", "A clean cut helps flowers drink."],
           ["Start with greenery", "Build the shape first."],
           ["Add the stars", "Place the big blooms, then fillers."],
         ],

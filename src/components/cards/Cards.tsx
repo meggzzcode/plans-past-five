@@ -127,9 +127,7 @@ export function HobbyCard({ h, className }: { h: Hobby; className?: string }) {
               toneBg[hobbyTone[h.category]],
             )}
           >
-            <span className="font-display text-5xl italic text-cherry/90">
-              {h.name.split(" ")[0]}
-            </span>
+            <span className="font-display text-5xl italic text-cherry">{h.name.split(" ")[0]}</span>
           </div>
         )}
         <div className="flex flex-1 flex-col p-5">

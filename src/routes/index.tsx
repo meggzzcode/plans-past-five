@@ -40,6 +40,8 @@ function Img({
       width={i.w}
       height={i.h}
       loading={eager ? "eager" : "lazy"}
+      fetchPriority={eager ? "high" : "auto"}
+      decoding={eager ? undefined : "async"}
       className={cn("h-full w-full object-cover", className)}
     />
   );
@@ -110,13 +112,13 @@ function Home() {
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 to="/hobby-finder"
-                className="bg-cherry px-7 py-3.5 font-semibold text-cream shadow-[4px_4px_0_var(--ink)] transition hover:-translate-y-0.5 hover:shadow-[6px_6px_0_var(--ink)]"
+                className="inline-flex min-h-11 items-center bg-cherry px-7 py-3.5 font-semibold text-cream shadow-[4px_4px_0_var(--ink)] transition hover:-translate-y-0.5 hover:shadow-[6px_6px_0_var(--ink)]"
               >
                 Find Your Thing
               </Link>
               <Link
                 to="/make-plans"
-                className="border-b-2 border-ink pb-1 font-semibold text-ink hover:border-cherry hover:text-cherry"
+                className="inline-flex min-h-11 items-end border-b-2 border-ink pb-1 font-semibold text-ink hover:border-cherry hover:text-cherry"
               >
                 Let's Make Plans →
               </Link>

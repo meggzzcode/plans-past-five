@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { allArticlesIncludingDrafts } from "@/content";
+import { allArticlesIncludingDrafts } from "@/content/draft-registry";
 import { hobbies } from "@/data/hobbies";
 import { collections } from "@/data/products";
 

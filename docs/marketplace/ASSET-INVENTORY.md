@@ -7,7 +7,7 @@ Status: DRAFT, 2026-11-19. Paths are relative to the repo root. Transfer method 
 | Asset | Path | Status | Transfer method |
 |---|---|---|---|
 | Repository and git history | whole repo (branch claude/vibrant-dirac-amdf7r) | COMPLETED; secrets scan of history not yet run (NEEDS OWNER) | GitHub repo transfer or sanitized archive; scan history first |
-| Application code | `src/`, `scripts/`, `.github/` | COMPLETED; 206 tests pass | with repo |
+| Application code | `src/`, `scripts/`, `.github/` | COMPLETED; 235 tests pass | with repo |
 | Brand assets (12 logos, 11 board covers, 4 social incl. OG, 4 article templates, 5 favicon, fonts and OFL licences, palette) | `design/brand` | COMPLETED | with repo |
 | Published articles (4) | `src/content/article-35-hobbies.ts`, `article-after-work.ts`, `article-creative-home.ts`, `article-junk-journaling.ts` | COMPLETED | with repo |
 | Draft articles (28 files plus 2 outline entries) | `src/content/article-*.ts`, `src/content/drafts.ts` | IN PROGRESS, NEEDS Cowork verification; not public | with repo |

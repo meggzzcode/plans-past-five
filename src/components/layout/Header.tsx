@@ -25,8 +25,9 @@ export function Header() {
         <Star className="ml-2 inline h-3 w-3 align-[-1px]" />
       </div>
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 md:px-8">
-        <Link to="/" className="text-[1.15rem] md:text-[1.3rem]" aria-label={`${site.name} home`}>
+        <Link to="/" className="inline-flex min-h-11 items-center text-[1.15rem] md:text-[1.3rem]">
           <WordmarkInline />
+          <span className="sr-only"> home</span>
         </Link>
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Main">
           {nav.map((n) => (
@@ -44,14 +45,14 @@ export function Header() {
           <Link
             to="/search"
             search={{ q: "" }}
-            className="p-2 text-espresso hover:text-cherry"
+            className="grid h-11 w-11 place-items-center text-espresso hover:text-cherry"
             aria-label="Search"
           >
             <Search className="h-5 w-5" />
           </Link>
           <Link
             to="/saved"
-            className="relative p-2 text-espresso hover:text-cherry"
+            className="relative grid h-11 w-11 place-items-center text-espresso hover:text-cherry"
             aria-label="My Plans"
           >
             <Bookmark className="h-5 w-5" />
@@ -68,7 +69,7 @@ export function Header() {
             Find Your Thing
           </Link>
           <button
-            className="p-2 text-espresso lg:hidden"
+            className="grid h-11 w-11 place-items-center text-espresso lg:hidden"
             onClick={() => setOpen(!open)}
             aria-expanded={open}
             aria-label="Menu"
