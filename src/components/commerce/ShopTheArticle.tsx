@@ -89,7 +89,6 @@ export function ShopTheArticle({
           </Link>
         </p>
       )}
-      <ShopDisclosure className="mt-4" />
     </aside>
   );
 }

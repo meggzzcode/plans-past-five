@@ -46,8 +46,7 @@ export type Kit = {
   slots: KitSlot[];
 };
 
-export const KIT_DISCLAIMER =
-  "A list we put together, not a bundle we sell. Each item links to its own Amazon page.";
+export const KIT_DISCLAIMER = "A list we put together, not a bundle we sell.";
 
 const s = (
   id: string,
