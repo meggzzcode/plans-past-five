@@ -22,7 +22,9 @@
     "health:links": "bun scripts/site-health.mjs links --base http://localhost:3000",
     "health:freshness": "bun scripts/site-health.mjs freshness",
     "health:digest": "bun scripts/site-health.mjs digest",
-    "import:products": "bun scripts/import-products.mjs"
+    "import:products": "bun scripts/import-products.mjs",
+    "inventory": "node scripts/inventory.mjs",
+    "buyer-package": "node scripts/make-buyer-package.mjs"
   },
   "overrides": {
     "rolldown": "1.2.1",

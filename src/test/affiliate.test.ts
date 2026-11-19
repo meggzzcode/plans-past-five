@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it } from "vitest";
+import { describe, expect, it } from "vitest";
 import {
   AMAZON_ASSOCIATE_STATEMENT,
   affiliate,
@@ -13,19 +13,18 @@ import {
 import { affiliatePrograms, validatePrograms, UNVERIFIED } from "@/data/affiliate-programs";
 import { products, validateProduct } from "@/data/products";
 
+import { setAffiliateState, useAffiliateRestore, useAffiliateState } from "./affiliate-state";
+
 const amazon = affiliateRegistry["amazon"]!;
-const snapshot = { ...amazon };
-afterEach(() => Object.assign(amazon, snapshot));
+// Every test starts from the state it asks for and the entry is restored afterwards, so the
+// results never depend on whether the repo ships inactive or the buyer has activated it.
+useAffiliateRestore();
 
-const activate = (tag = "demo-20") => {
-  amazon.websiteTrackingId = tag;
-  amazon.approvalStatus = "approved";
-  amazon.active = true;
-  amazon.lastVerified = "2026-01-01";
-};
+const activate = (tag = "demo-20") => setAffiliateState("active", tag);
 
-describe("affiliate defaults", () => {
-  it("ships unmonetized with no tag and no sponsored links", () => {
+describe("inactive registry (shipped default state)", () => {
+  useAffiliateState("inactive");
+  it("an inactive registry yields no tag and no sponsored links", () => {
     expect(affiliate.associatesTag).toBe("");
     expect(isMonetized()).toBe(false);
     expect(liveDisclosureSentences()).toEqual([]);
@@ -34,8 +33,22 @@ describe("affiliate defaults", () => {
     expect(l.href).toBe("https://www.amazon.com/s?k=air+dry+clay");
     expect(validateRegistry()).toEqual([]);
   });
-  it("every shipped product link is a plain search link", () => {
+  it("every product link is a plain link while inactive", () => {
     for (const p of products) expect(productHref(p)).not.toContain("tag=");
+  });
+});
+
+describe("active registry (buyer state, fake id)", () => {
+  useAffiliateState("active", "testsite-20");
+  it("is valid, monetized, and tags every product link with the one id", () => {
+    expect(validateRegistry()).toEqual([]);
+    expect(isMonetized()).toBe(true);
+    expect(liveDisclosureSentences()).toContain(AMAZON_ASSOCIATE_STATEMENT);
+    for (const p of products) {
+      const l = resolveProductLink(p);
+      expect(new URL(l.href).searchParams.getAll("tag")).toEqual(["testsite-20"]);
+      expect(l.sponsored).toBe(true);
+    }
   });
 });
 
@@ -58,6 +71,7 @@ describe("swap procedure", () => {
     expect(liveDisclosureSentences()).toContain(AMAZON_ASSOCIATE_STATEMENT);
   });
   it("legacy associatesTag setter writes the registry entry", () => {
+    setAffiliateState("inactive");
     affiliate.associatesTag = "x-20";
     expect(amazon.websiteTrackingId).toBe("x-20");
   });
@@ -104,6 +118,7 @@ describe("exactUrl handling", () => {
     expect(l.exact).toBe(true);
   });
   it("leaves exactUrl untouched when not live and replaces a stale tag when live", () => {
+    setAffiliateState("inactive");
     const url = "https://www.amazon.com/dp/EXAMPLE?th=1";
     expect(productHref({ amazonQuery: "x", exactUrl: url })).toBe(url);
     activate("new-20");
@@ -146,12 +161,16 @@ describe("no fake URLs", () => {
       delete affiliateRegistry["testnet"];
     }
   });
-  it("shipped registry has no tracking ids or templates", () => {
+  it("inactive registry has no tracking ids or templates; any state has no invented template", () => {
+    setAffiliateState("inactive");
     for (const e of Object.values(affiliateRegistry)) {
       expect(e.websiteTrackingId).toBe("");
       expect(e.affiliateUrlTemplate).toBeNull();
       expect(e.active).toBe(false);
     }
+    setAffiliateState("active");
+    // Amazon uses the tag parameter, never an invented deep-link template.
+    expect(affiliateRegistry["amazon"]!.affiliateUrlTemplate).toBeNull();
   });
 });
 
