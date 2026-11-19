@@ -1,0 +1,41 @@
+{
+  "slug": "cute-weekend-plans-that-arent-brunch",
+  "title": "25 Cute Weekend Plans That Aren't Just Brunch",
+  "dek": "Twenty-five weekend plans with a little more sparkle than eggs and a mimosa, sorted by who you're going with.",
+  "category": "weekends",
+  "status": "draft",
+  "publishedAt": "",
+  "hero": "picnic",
+  "searchIntent": "weekend plans ideas",
+  "angle": "Solo, friends and date options; budget tiers; no invented local events",
+  "hobbies": [
+    "picnicking",
+    "thrifting",
+    "hiking",
+    "pottery-painting",
+    "museum-exploring"
+  ],
+  "productIds": [
+    "picnic-blankets",
+    "market-totes",
+    "film-cameras"
+  ],
+  "body": [
+    {
+      "type": "h2",
+      "text": "Saturday mornings"
+    },
+    {
+      "type": "h2",
+      "text": "Afternoon plans"
+    },
+    {
+      "type": "h2",
+      "text": "Rainy-day plans"
+    },
+    {
+      "type": "h2",
+      "text": "Sunday resets"
+    }
+  ]
+}

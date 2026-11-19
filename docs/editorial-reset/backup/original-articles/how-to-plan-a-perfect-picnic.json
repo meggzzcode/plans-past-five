@@ -1,0 +1,295 @@
+{
+  "slug": "how-to-plan-a-perfect-picnic",
+  "title": "How to Plan a Dreamy Aesthetic Picnic",
+  "titleItalic": "Aesthetic Picnic",
+  "dek": "A picnic that looks as good as it tastes: the timeline, the spot, a menu that survives the trip and the packing list that makes it easy.",
+  "category": "weekends",
+  "status": "published",
+  "publishedAt": "2026-11-19",
+  "verifiedAt": "2026-11-18",
+  "hero": "picnic",
+  "searchIntent": "how to plan a picnic / aesthetic picnic ideas / what to bring on a picnic",
+  "angle": "A picnic as a tiny event: the packing list and the touches that make it look the part first, then a timeline, a spot, a food plan that survives travel and two or three things to do on the blanket",
+  "hobbies": [
+    "picnicking",
+    "reading",
+    "outdoor-sketching",
+    "birdwatching",
+    "film-photography"
+  ],
+  "productIds": [
+    "picnic-blankets",
+    "cooler-bags",
+    "thermos-flasks",
+    "market-totes",
+    "water-bottles",
+    "book-sleeves",
+    "sketch-pads",
+    "portable-watercolor",
+    "pocket-notebooks",
+    "conversation-cards"
+  ],
+  "sources": [
+    {
+      "title": "FDA: handling food safely while eating outdoors",
+      "url": "https://www.fda.gov/food/buy-store-serve-safe-food/handling-food-safely-while-eating-outdoors",
+      "note": "Two hours, or one hour above 90 F; cold food at or below 40 F; separate drinks cooler"
+    },
+    {
+      "title": "CDC: food safety prevention",
+      "url": "https://www.cdc.gov/food-safety/prevention/index.html",
+      "note": "Perishable foods and time limits"
+    },
+    {
+      "title": "USDA FSIS: food safety while hiking and camping",
+      "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-safety-while-hiking-camping",
+      "note": "Shaded, closed cooler with plenty of ice; do not reuse raw-meat platters and utensils; sanitizer only without soap and water"
+    },
+    {
+      "title": "USDA FSIS: leftovers and food safety",
+      "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety",
+      "note": "Throw away perishables left out over 2 hours (1 hour over 90 F)"
+    },
+    {
+      "title": "USDA FSIS: grilling food safely",
+      "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/grilling-food-safely",
+      "note": "Cooler in the shade, closed; drinks in a separate cooler"
+    },
+    {
+      "title": "CDC: hand sanitizer",
+      "url": "https://www.cdc.gov/clean-hands/about/hand-sanitizer.html",
+      "note": "Soap and water is best; sanitizer at least 60% alcohol when unavailable"
+    },
+    {
+      "title": "Food Allergy Research & Education: cleaning methods",
+      "url": "https://www.foodallergy.org/resources/cleaning-methods",
+      "note": "Soap and water; hand sanitizers do not remove food allergens"
+    },
+    {
+      "title": "Food Allergy Research & Education: tips for staying safe with food allergies",
+      "url": "https://www.foodallergy.org/resources/tips-staying-safe-food-allergies",
+      "note": "Ask what food will be served and alert the host"
+    }
+  ],
+  "coworkChecks": [
+    "VERIFIED 2026-11-18: perishables out no more than 2 hours, 1 hour above 90 F (32 C); discard anything left out longer - fda.gov, cdc.gov, fsis.usda.gov",
+    "VERIFIED 2026-11-18: cold food at or below 40 F (4 C) with ice or gel packs; cooler shaded, closed, plenty of ice; drinks in a separate cooler - fda.gov, fsis.usda.gov",
+    "VERIFIED 2026-11-18: raw meat kept separate; platters and utensils that held raw meat not reused for cooked food - fsis.usda.gov",
+    "VERIFIED 2026-11-18: meat, dairy, cut fruit and cooked dishes are perishables covered by the same time limits - cdc.gov, fsis.usda.gov",
+    "VERIFIED 2026-11-18: soap and water is best; sanitizer (at least 60% alcohol) only when soap and water are unavailable and it does not remove food allergens; wipes no longer presented as a sanitizer substitute - cdc.gov, fsis.usda.gov, foodallergy.org",
+    "VERIFIED 2026-11-18: ask guests about allergies - foodallergy.org",
+    "VERIFIED 2026-11-18: park rules (alcohol, flames, glass, barbecues, pets) stay 'varies by location, check local rules'; glass mention now carries the check - reworded, no claim remains",
+    "VERIFIED 2026-11-18: no prices or brands stated; citronella candle line removed (no insect-repellent claim) - reworded, no claim remains",
+    "NOTE 2026-11-19: monetisation rewrite: the packing list and 'Making it look the part' now come first, a 'where to start' kit block (incomplete until verified products exist) and a type-card block follow the list, gear lines added for blanket, cooler bag, flask and tote, a second block after 'Once you're sitting down'; timeline, spot, menu, food-safety and allergy text unchanged and still sourced (FDA, CDC, USDA FSIS, FARE)"
+  ],
+  "related": [
+    "things-to-do-on-the-weekend",
+    "cheap-weekend-adventures",
+    "at-home-creative-weekend"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "A great picnic is a blanket in the shade, food that stayed cold, a jar of flowers and nobody wishing they'd brought an opener. Most of the magic is dull prep, and the pretty part follows."
+    },
+    {
+      "type": "p",
+      "text": "This guide starts with what to pack and how to make the whole thing look the part, then runs in the order you'll need it: a timeline, a spot, a menu that survives the trip, and a few ways to spend the time once you're sitting down."
+    },
+    {
+      "type": "h2",
+      "text": "The packing list",
+      "id": "packing"
+    },
+    {
+      "type": "whatYoullNeed",
+      "essentials": [
+        "A big blanket, ideally with a waterproof backing",
+        "A cooler or insulated bag with ice packs",
+        "Plates, cutlery, napkins and a sharp knife in a sleeve",
+        "Water, other drinks, and a bottle opener or corkscrew if needed",
+        "A trash bag for everything you take, and wet wipes for sticky fingers",
+        "Sun protection and a layer for when the shade moves"
+      ],
+      "optional": [
+        "A basket or sturdy tote that looks nice on the grass",
+        "A small cushion or two",
+        "Reusable tableware and cloth napkins",
+        "A game, a book or a sketchbook"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "A waterproof-backed blanket and an insulated bag are the two things that make the practical bits easier if you picnic more than once. You may already own much of the rest: a throw, a tote, plates, jars, napkins, an opener. A proper basket with fitted tableware is a pretty upgrade if the habit sticks."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**A waterproof-backed picnic blanket,** so the damp ground stays on the other side and there's room for everyone.",
+        "**An insulated cooler bag,** so the ice packs and the cold food travel together, as the food-safety notes below suggest.",
+        "**An insulated flask,** for iced tea that stays cold or something hot on a cool day.",
+        "**A sturdy market tote or basket,** so plates, jars and napkins go in one bag and your hands stay free."
+      ]
+    },
+    {
+      "type": "starterKit",
+      "productIds": [
+        "picnic-blankets",
+        "market-totes"
+      ],
+      "title": "Picnic: where to start"
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "picnic-blankets",
+        "cooler-bags",
+        "thermos-flasks",
+        "market-totes",
+        "water-bottles"
+      ],
+      "title": "For the packing list",
+      "dek": "A blanket with a waterproof backing, an insulated bag, a flask and a tote make setting up simple and pretty."
+    },
+    {
+      "type": "h2",
+      "text": "Making it look the part",
+      "id": "aesthetic"
+    },
+    {
+      "type": "p",
+      "text": "An aesthetic picnic is mostly a few decisions made on purpose. Pick two or three colors and let the blanket, napkins and food echo them. Decant food into small containers or jars (check whether your park allows glass) so it looks arranged rather than dumped. Cloth napkins and reusable plates photograph better than disposables, and they're gentler on the park."
+    },
+    {
+      "type": "p",
+      "text": "Add one thing with height or softness: a small bunch of flowers in a jar (the [flower arranging guide](/journal/flower-arranging-as-a-hobby) shows how), a cushion, a tall bottle. Then put your phone away after the first photo. The point of a pretty picnic is that you're actually in it."
+    },
+    {
+      "type": "h2",
+      "text": "A timeline that fits real life",
+      "id": "timeline"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Three days out:** choose the day, the spot and the guests. Peek at the forecast.",
+        "**The day before:** settle the menu, shop, and make whatever can be made ahead.",
+        "**That morning:** pack the cooler and the bag, chill the drinks, check the weather again.",
+        "**An hour before:** load up, grab the ice packs, leave a margin for wrong turns."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Choose the spot like a location scout",
+      "id": "spot"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Shade beats a view.** Some tree cover keeps food and people cooler, and it photographs more softly anyway.",
+        "**Flat ground,** not a slope. Your drinks will stay put.",
+        "**Near a toilet** if you're staying longer than an hour or two.",
+        "**Quieter is nicer.** Go early, or on a weekday evening.",
+        "**Check the local rules.** Parks differ on alcohol, barbecues, glass and pets, so look before you pack."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "A menu that travels well",
+      "id": "food"
+    },
+    {
+      "type": "p",
+      "text": "Aim for food that's cold or room temperature, easy to hold and unbothered by a bumpy walk. One main, two sides, something fresh and something sweet is plenty."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Mains:** sandwiches or wraps on sturdy bread, a pasta or grain salad, a frittata cut into squares.",
+        "**Sides:** crudités and dip, a bean salad, crackers and cheese, olives, pickles.",
+        "**Fresh:** grapes, berries, cucumber, sliced fruit kept in a lidded box.",
+        "**Sweet:** brownies, cookies, granola bars, or fruit with a little chocolate.",
+        "**Drinks:** water first, then iced tea, lemonade or a thermos of something hot on a cool day."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "The unglamorous bit"
+    },
+    {
+      "type": "p",
+      "text": "Food safety isn't pretty, but it matters. As a general guide, keep cold food at or below 40 °F (4 °C) with ice packs or plenty of ice in an insulated cooler, and keep the cooler in the shade and closed as much as you can; a separate cooler for drinks means the food cooler gets opened less. Don't leave perishables, such as meat, dairy, cut fruit and cooked dishes, out for more than two hours, or one hour when it's above 90 °F (32 °C). Keep raw meat separate from everything else, and don't reuse a platter or utensils that held raw meat for cooked food. Bin anything that's been out too long rather than gambling. Your local food-safety agency has guidance specific to your region."
+    },
+    {
+      "type": "p",
+      "text": "Ask guests about allergies and dietary needs before you plan the menu. It's far easier than finding out at the blanket that half the spread is off limits. Wash hands with soap and water where you can. Hand sanitizer with at least 60% alcohol is a backup for when soap and water aren't available, and it doesn't remove food allergens."
+    },
+    {
+      "type": "h2",
+      "text": "Once you're sitting down",
+      "id": "activities"
+    },
+    {
+      "type": "p",
+      "text": "Set up in this order: weigh down the blanket corners, open the drinks first (everyone settles faster with one in hand), then put the food out in small containers so people can graze. After that, a loose agenda keeps you off your phone. Pick two."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Read in company.** Everyone brings a book and reads in companionable quiet for half an hour.",
+        "**Sketch the view** or each other. [Outdoor sketching](/hobbies/outdoor-sketching) needs only a pencil and a notebook, or a small watercolor set if you'd like color ([watercolor painting for beginners](/journal/watercolor-painting-for-beginners)).",
+        "**Play something wind-proof,** like cards or a pocket game.",
+        "**Take a photo walk** after eating, with a theme.",
+        "**Watch for birds** from the blanket. [Birdwatching](/hobbies/birdwatching) works even on a small lawn.",
+        "**Pass round conversation prompts** written on little cards."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**Worth bringing:** a book sleeve for the paperback, a pocket sketch pad with {{product:sakura-pigma-micron-8-pack-black|a black fineliner}} or a small travel watercolor set, and a deck of conversation cards, so the quiet half hour has something in it."
+    },
+    {
+      "type": "p",
+      "text": "Leave the spot as you found it. Take everything you brought, scraps and napkins included, and carry a spare bag so you're never tempted to cram trash into an already overflowing bin."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "book-sleeves",
+        "sketch-pads",
+        "portable-watercolor",
+        "pocket-notebooks",
+        "conversation-cards"
+      ],
+      "title": "For once you're sitting down",
+      "dek": "A book sleeve, a sketch pad, a small watercolor set or a deck of cards make the half hour on the blanket something to look forward to."
+    },
+    {
+      "type": "h2",
+      "text": "When it goes a bit wrong",
+      "id": "troubleshooting"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Rain threatens:** a living-room-floor picnic still counts, and the food is already made.",
+        "**Wind:** weigh down napkins and use lidded containers.",
+        "**Insects:** choose a breezier spot and keep food covered.",
+        "**Too hot:** go in the evening or earlier in the morning, with the cooler in shade.",
+        "**Forgot something:** keep an always-packed pouch with wipes, napkins, a bag and an opener."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "If you're nervous about the grand version, start tiny: one friend, two sandwiches and a thermos, ninety minutes."
+    },
+    {
+      "type": "makePlan",
+      "text": "Pick a sunny day, text one friend and let Make Some Plans turn the picnic into a real plan."
+    },
+    {
+      "type": "p",
+      "text": "Looking for more to do with the rest of the weekend? See [things to do on the weekend](/journal/things-to-do-on-the-weekend), or [weekend adventures, packed](/journal/cheap-weekend-adventures) for easy outings with the gear for each."
+    }
+  ]
+}

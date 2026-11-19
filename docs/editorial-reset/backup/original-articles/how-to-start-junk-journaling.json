@@ -1,0 +1,165 @@
+{
+  "slug": "how-to-start-junk-journaling",
+  "title": "How to Start Junk Journaling: A Beginner's Guide",
+  "titleItalic": "Junk Journaling",
+  "dek": "How to begin: tickets, tags and receipts glued into a notebook, with no rules and no talent required. A first page you can make tonight, and the few supplies that make it prettier.",
+  "category": "creative-corner",
+  "status": "published",
+  "publishedAt": "2026-11-18",
+  "verifiedAt": "2026-11-19",
+  "hero": "junkJournal",
+  "searchIntent": "how to start junk journaling / junk journal supplies for beginners / first junk journal page",
+  "angle": "A no-pressure beginner walkthrough built around the few supplies that make pages sturdier and prettier (a thick-paged journal, tape, glue, a fine pen), plus a step-by-step first page",
+  "hobbies": [
+    "junk-journaling",
+    "scrapbooking",
+    "collage-art",
+    "creative-writing"
+  ],
+  "productIds": [
+    "junk-journals",
+    "washi-tape",
+    "sticker-sets",
+    "pocket-notebooks"
+  ],
+  "sources": [
+    {
+      "title": "Liquid glue vs glue stick (LePage)",
+      "url": "https://lepage.ca/en/know-how/glue/liquid-glue-vs-glue-stick.html",
+      "note": "Manufacturer page: glue sticks do not wrinkle paper; liquid glue gives a stronger bond. Checked 2026-11-19."
+    },
+    {
+      "title": "Best glues for scrapbooking (Bustle)",
+      "url": "https://www.bustle.com/life/best-glues-for-scrapbooking",
+      "note": "Excess wet glue can wrinkle paper. Checked 2026-11-19."
+    }
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "Somewhere in your bag right now is the start of a very pretty page: a ticket stub, a coffee sleeve, a receipt from a day you liked. A junk journal is what you get when you stop throwing those away and start gluing them into a notebook instead. It sits somewhere between a diary, a scrapbook and a collage, with layers of paper, tape, handwriting and the occasional pressed flower. There's no wrong way to do it, and no reason for it to be neat."
+    },
+    {
+      "type": "p",
+      "text": "This guide is how to begin: what junk journaling is and a first page you can make tonight. If you are deciding what to buy, the [supplies guide](/journal/junk-journaling-supplies-for-beginners) sorts what is worth having first from what can wait."
+    },
+    {
+      "type": "h2",
+      "text": "What you need (and what's fun to add)",
+      "id": "supplies"
+    },
+    {
+      "type": "whatYoullNeed",
+      "essentials": [
+        "A notebook (any notebook, or an old hardback book)",
+        "A glue stick",
+        "Scissors",
+        "Paper scraps you already have: receipts, tickets, envelopes, magazine pages, packaging"
+      ],
+      "optional": [
+        "A pen you like writing with",
+        "Washi tape",
+        "Stickers",
+        "Fineliner pens"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Cereal boxes make sturdy backgrounds, envelopes often have patterned linings, and a single magazine gives you months of images and words. A little washi tape, a few stickers and a pen you love make pages look pulled-together fast. Once you start, you'll see material everywhere, so keep an envelope in your bag for café receipts and coffee sleeves, ticket stubs, tags and labels, pressed leaves from walks, fortune-cookie fortunes, handwritten notes, postcards and maps."
+    },
+    {
+      "type": "starterKit",
+      "productIds": [
+        "junk-journals",
+        "washi-tape",
+        "sticker-sets",
+        "pocket-notebooks"
+      ],
+      "title": "The small set that makes page one prettier"
+    },
+    {
+      "type": "h2",
+      "text": "Your first page",
+      "id": "first-page"
+    },
+    {
+      "type": "first30",
+      "steps": [
+        "Choose a theme for the page. Keep it small: 'this week', 'my Saturday', 'things that made me smile'.",
+        "Lay down a background. Glue a magazine page, a piece of patterned paper or a torn envelope across part of the page.",
+        "Add your main piece. A ticket, a receipt or a photo, slightly off-center.",
+        "Layer two or three smaller bits around it. Overlap them. Let things hang off the edge.",
+        "Add a strip of tape or a sticker to tie the colors together.",
+        "Write one or two lines. What happened, how you felt, a quote you heard. Handwriting doesn't need to be pretty."
+      ]
+    },
+    {
+      "type": "image",
+      "image": "junkJournal",
+      "caption": "Layer, overlap, let things hang off the edge. Tidy is optional."
+    },
+    {
+      "type": "p",
+      "text": "**What makes it easier:** a washi tape set and a glue stick or tape runner, so layers stay put and the edges look tidy even when the paper is scrappy."
+    },
+    {
+      "type": "h2",
+      "text": "Four techniques that make pages look intentional",
+      "id": "techniques"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Stick to three colors.** Pick two main colors from your main piece and one accent. A page in cream, red and green looks curated even if everything on it came from your recycling bin.",
+        "**Tear instead of cutting.** Torn edges look soft and vintage, and they're more forgiving than scissors. Tear slowly toward yourself for a feathered edge.",
+        "**Make pockets.** Glue three sides of an envelope or a folded piece of paper to the page and you have a pocket for tickets and notes.",
+        "**Use tip-ins.** Tape a piece of paper along one edge so it flips up like a flap, and write something private underneath."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**Nice to have:** a fine black pen, for captions and borders that stay readable on top of layered paper."
+    },
+    {
+      "type": "h2",
+      "text": "Ideas for your next pages",
+      "id": "page-ideas"
+    },
+    {
+      "type": "list",
+      "items": [
+        "A café you love: receipt, sugar packet, a sketch of your cup. Take the journal along and make the page while you're sitting there.",
+        "Your current favorites: song, snack, book, outfit",
+        "A neighborhood walk: pressed leaves, a map snippet, three things you noticed",
+        "A friend page: a note they wrote, a photo, an inside joke",
+        "A 'small wins' page from your week, or a bucket list for the season",
+        "A 'dear future me' letter tucked into a pocket"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**Worth bringing:** a slim tape runner and a pen in your bag, so a café or park page can be finished right where you are."
+    },
+    {
+      "type": "girlsNight",
+      "text": "Host a journal night: everyone brings a notebook and a bag of paper scraps to swap. Put out tape, scissors, stickers and snacks. Trading ephemera is half the fun."
+    },
+    {
+      "type": "h2",
+      "text": "Common worries",
+      "id": "worries"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**'My pages look messy.'** That's the style. Junk journals are supposed to look layered and lived-in. Give a page a day; it usually looks better tomorrow.",
+        "**'I don't know what to write.'** You don't have to write anything. A date and one word is enough, or copy down a line from what you're reading.",
+        "**'The pages are wrinkling.'** Use a glue stick rather than liquid glue, and keep the layer thin, because wet glue can wrinkle paper. You could also try closing the book under something heavy overnight; thicker paper may help too."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Ready for page one? Pick tonight, glue down one scrap and notice what you'd love to have next; that's your first pick from the shop above. Want a notebook for what you read? Try [a reading journal](/journal/how-to-start-a-reading-journal). Like crafting with your hands? [Air-dry clay](/journal/how-to-start-air-dry-clay) and [watercolor](/journal/watercolor-painting-for-beginners) are fun next steps, [embroidery](/journal/how-to-start-embroidery) and [crochet](/journal/how-to-start-crocheting) suit quiet evenings, and you can explore more in [Creative Corner](/creative-corner)."
+    }
+  ]
+}

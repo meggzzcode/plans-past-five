@@ -1,0 +1,243 @@
+{
+  "slug": "how-to-plan-a-solo-saturday",
+  "title": "How to Plan a Solo Saturday You'll Actually Look Forward To: Three Ways to Pack It",
+  "titleItalic": "Look Forward To",
+  "dek": "Give your Saturday a storyline: one anchor, one treat, a wander and a rest. Three sample days, each with the bag that goes with it, plus what to do when plans wobble.",
+  "category": "solo-dates",
+  "status": "published",
+  "publishedAt": "2026-11-19",
+  "verifiedAt": "2026-11-18",
+  "hero": "shopAdventures",
+  "searchIntent": "how to spend a Saturday alone / solo Saturday ideas / what to pack for a solo day out",
+  "angle": "A simple framework (anchor, treat, wander, rest) with three sample Saturdays, each built around a small kit (a wander kit, a park kit and a make-something kit), and a fallback plan for when you flake",
+  "hobbies": [
+    "picnicking",
+    "thrifting",
+    "museum-exploring",
+    "reading",
+    "outdoor-sketching"
+  ],
+  "productIds": [
+    "walking-shoes",
+    "trekking-socks",
+    "daypacks",
+    "water-bottles",
+    "phone-armband",
+    "film-cameras",
+    "picnic-blankets",
+    "market-totes",
+    "thermos-flasks",
+    "portable-watercolor",
+    "sketch-pads",
+    "pocket-notebooks"
+  ],
+  "sources": [
+    {
+      "title": "Solo outings: well-lit areas and companions (US DOJ/OJP guide)",
+      "url": "https://www.ojp.gov/pdffiles1/Digitization/81199NCJRS.pdf",
+      "note": "Older US Department of Justice guide recommending well-lit areas and going with others. Supports only that general advice; sharing location and a charged phone are personal tips, not sourced."
+    }
+  ],
+  "coworkChecks": [
+    "VERIFIED 2026-11-18: solo outings, well-lit areas and company when possible - ojp.gov (older DOJ guide; location sharing and charged phone kept as plain tips, no claim made)",
+    "RESOLVED 2026-11-19: free or low-cost museums, libraries, parks and market/class availability - kept generic and hedged ('hours, tickets and reservations vary', no venue named), per verification note 'many, check locally'",
+    "RESOLVED 2026-11-19: all cost labels (typically under $10, $10-$20, $30-$60) - figures removed, wording now 'prices vary'; verification found no source for prices"
+  ],
+  "related": [
+    "solo-date-ideas",
+    "how-to-take-yourself-on-a-solo-coffee-shop-date",
+    "cozy-solo-dates-at-home",
+    "things-to-do-after-work-instead-of-scrolling"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "Saturdays that feel good tend to have a shape: something to look forward to, something sweet, somewhere to wander and a proper rest. Four ingredients, no itinerary, and suddenly the day feels like yours instead of disappearing into laundry and cereal over the sink."
+    },
+    {
+      "type": "h2",
+      "text": "The four-part Saturday",
+      "id": "framework"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**One anchor.** What the day is about: a long walk, a park picnic, a painting afternoon, a market, a long lunch. The one you'd be sorry to skip.",
+        "**One treat.** A small, specific pleasure, like a pastry, a new paperback or [flowers to arrange at home](/journal/flower-arranging-as-a-hobby).",
+        "**One wander.** An unplanned window for following your nose down a side street or into a shop.",
+        "**One rest.** A block with nothing in it, so the day doesn't quietly become a to-do list."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Choose each ahead of time, write them down, and let the rest of the day arrange itself around them. If four feels like a lot, an anchor and a treat on a sticky note is a good start, and a small kit packed the night before makes the day easier to begin."
+    },
+    {
+      "type": "h2",
+      "text": "Three Saturdays, three kits",
+      "id": "kits"
+    },
+    {
+      "type": "p",
+      "text": "Pick the kit that matches your energy: the wander kit for a restless Saturday, the park kit for a slow one, the make-something kit for the day you want to come home with a page."
+    },
+    {
+      "type": "h3",
+      "text": "The wander kit"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Anchor:** a long walk through a neighborhood you rarely visit, with ten photos as your only goal.",
+        "**Treat:** a coffee or pastry, eaten on a bench like you've nowhere to be.",
+        "**Wander:** a small independent bookshop or a side street for half an hour of unplanned browsing.",
+        "**Rest:** a park bench, a podcast and nothing else for twenty minutes."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**What makes it easier:** comfortable walking shoes and trekking-style socks, a small daypack and a water bottle, so water, a snack and a spare layer ride on your back instead of in your hands. A phone armband keeps your music or map in reach, and a reusable film camera makes the ten photos feel like a keepsake."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "walking-shoes",
+        "trekking-socks",
+        "daypacks",
+        "water-bottles",
+        "phone-armband",
+        "film-cameras"
+      ],
+      "title": "For a long wander",
+      "dek": "Walking shoes, trekking-style socks, a small daypack, a bottle, a phone armband and a pocket camera for the day you follow your nose."
+    },
+    {
+      "type": "h3",
+      "text": "The park kit"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Anchor:** lunch from a deli or bakery, carried to a park ([how to plan a picnic](/journal/how-to-plan-a-perfect-picnic) has the checklist).",
+        "**Treat:** something sweet to finish, and a warm drink if the day is cool.",
+        "**Wander:** a used bookstore or thrift shop nearby. Set a budget and a mission.",
+        "**Rest:** an hour lying on a blanket with a book, or simply watching the clouds."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**What makes it easier:** a picnic blanket and a reusable market tote, so lunch, a book and a layer travel together and you have somewhere comfortable to sit; an insulated flask keeps a warm drink warm."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "picnic-blankets",
+        "market-totes",
+        "thermos-flasks"
+      ],
+      "title": "For a day in the park",
+      "dek": "A blanket, a roomy tote and an insulated flask turn a bench lunch into an afternoon."
+    },
+    {
+      "type": "h3",
+      "text": "The make-something kit"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Anchor:** an hour or two of sketching or [watercolor](/journal/watercolor-painting-for-beginners) in a park or at a cafe table.",
+        "**Treat:** lunch you didn't have to cook, with dessert included.",
+        "**Wander:** a flower market or a street of small shops, if there's one nearby.",
+        "**Rest:** a bath and an early night with a book you're enjoying."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**What makes it easier:** a pocket watercolor set, a small sketch pad and a pocket notebook, so you can paint a view or jot down the good bits wherever you sit."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "portable-watercolor",
+        "sketch-pads",
+        "pocket-notebooks"
+      ],
+      "title": "For a make-something afternoon",
+      "dek": "A travel watercolor set, a sketch pad and a pocket notebook fit in a coat pocket and make any bench a studio."
+    },
+    {
+      "type": "p",
+      "text": "Short on time? Pack the kit on Friday night and choose the anchor on Saturday morning. Prefer a ready-made plan? Tell [Make Some Plans](/make-plans) your energy and free hours and get a Saturday matched to them."
+    },
+    {
+      "type": "h2",
+      "text": "Thursday: set it up",
+      "id": "plan"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Open your calendar and block late morning to late afternoon. Give it a name that sounds like a plan.",
+        "Choose your anchor. If you're stuck, try the [hobby finder](/hobby-finder) quiz or browse [Make Some Plans](/make-plans).",
+        "Check opening hours, tickets or reservations the day before, since they vary.",
+        "Pack the bag Friday night: water, notebook, snack, a charged phone and something to read.",
+        "Tell a friend or family member roughly where you'll be, especially somewhere new."
+      ]
+    },
+    {
+      "type": "makePlan",
+      "text": "Thursday is a good day to book it. Pick your anchor and block the time, or tell us your energy, budget and free hours and get a Saturday plan matched to them."
+    },
+    {
+      "type": "h2",
+      "text": "Saturday, hour by hour",
+      "id": "shape"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Morning:** a slow start. Coffee, no emails, clothes you like.",
+        "**Late morning:** your anchor.",
+        "**Early afternoon:** lunch and your treat.",
+        "**Mid-afternoon:** the wander, or the rest. Resist scheduling it.",
+        "**Evening:** keep it easy, with dinner, a film or a book, and a line in your planner about what you'd repeat."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "When the day goes sideways",
+      "id": "fallbacks"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**You slept in.** Shift the anchor to the afternoon and have the treat first.",
+        "**It's raining.** Swap to indoors: a museum, a cafe or a cozy day at home. See [20 cozy solo dates](/journal/cozy-solo-dates-at-home).",
+        "**You don't feel like going out.** Do the at-home version of the same plan. You're after something to look forward to, not a performance.",
+        "**You flaked entirely.** Pick a smaller version for Sunday morning and go."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "If your first solo Saturday feels a bit flat, change one thing next time: the anchor, the length, the start time. Keep a running list of what you'd do again, and a small ritual, like the same playlist or the same first coffee, can mark the day as yours."
+    },
+    {
+      "type": "h2",
+      "text": "Out and about",
+      "id": "out-and-about"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**A museum or gallery.** Choose one wing and see it properly instead of racing the whole building. Worth bringing: a pocket notebook for the details you want to keep.",
+        "**A drop-in class,** like pottery painting or a workshop. Prices vary a great deal, so check before you book.",
+        "**A sit-down lunch at the counter,** dessert included.",
+        "**A library visit.** A quiet hour with a book and nothing to buy."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "For more to try, see [30 solo date ideas](/journal/solo-date-ideas). The lighter, three-part version of this plan is in [things to do on the weekend](/journal/things-to-do-on-the-weekend)."
+    }
+  ]
+}

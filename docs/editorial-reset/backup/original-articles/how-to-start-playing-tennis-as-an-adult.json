@@ -1,0 +1,225 @@
+{
+  "slug": "how-to-start-playing-tennis-as-an-adult",
+  "title": "How to Start Playing Tennis as an Adult: A Four-Week Plan, Gear Included",
+  "titleItalic": "A Four-Week Plan",
+  "dek": "Four weeks from 'I haven't held a racket since school' to a short rally and a real game, with the racket, balls and bottle that make it easier, plus what to do when the ball goes everywhere but over the net.",
+  "category": "movement",
+  "status": "published",
+  "publishedAt": "2026-11-19",
+  "verifiedAt": "2026-11-18",
+  "hero": "tennis",
+  "searchIntent": "how to start playing tennis as an adult / tennis for beginners / beginner tennis racket and balls",
+  "angle": "A four-week plan built around the gear that makes each week easier (a beginner racket, balls, a tote and later court shoes): learn two shots, play in short sessions, then add a lesson or a social format",
+  "hobbies": [
+    "tennis",
+    "pickleball"
+  ],
+  "productIds": [
+    "tennis-rackets",
+    "tennis-balls",
+    "water-bottles",
+    "sports-totes",
+    "tennis-shoes"
+  ],
+  "sources": [
+    {
+      "title": "USTA: tennis scoring rules",
+      "url": "https://www.usta.com/en/home/improve/tips-and-instruction/national/tennis-scoring-rules.html",
+      "note": "Points 15, 30, 40, game; deuce; first to six games, win by two; 7-point tiebreak at 6-all"
+    },
+    {
+      "title": "USTA: wounded warrior curriculum (grips)",
+      "url": "https://www.usta.com/content/dam/usta/pdfs/20180302_WoundedWarriorCurricula.pdf",
+      "note": "Eastern forehand grip described as shaking hands with the racquet"
+    },
+    {
+      "title": "USTA: Public Parks resource guide 2026",
+      "url": "https://www.usta.com/content/dam/usta/2026-pdfs/usta-public-parks-resource-guide-26.pdf",
+      "note": "Adult Red Ball leagues for beginner adults use slower balls"
+    },
+    {
+      "title": "USTA: find the right tennis level for you",
+      "url": "https://www.usta.com/en/home/improve/gear-up/national/find-the-right-tennis-level-for-you.html",
+      "note": "Red/Orange/Green balls bounce lower and slower (framed for juniors)"
+    }
+  ],
+  "coworkChecks": [
+    "VERIFIED 2026-11-18: scoring 15, 30, 40, game; deuce; set = first to six games win by two, tiebreak at 6-all - usta.com",
+    "VERIFIED 2026-11-18: shake-hands (Eastern forehand) starting grip - usta.com",
+    "VERIFIED 2026-11-18: lower-compression/slower balls can slow the game down; adult beginner leagues use them - usta.com",
+    "RESOLVED 2026-11-19: underhand serve - kept only as a beginner tip ('check with whoever you're playing'); 'most people won't mind' removed; USTA treats underhand as a junior-curriculum allowance, not an adult rule",
+    "RESOLVED 2026-11-19: 'most beginners hit too low', 'hardest shot to teach yourself', 'adults pick it up faster', 'still playing a year later', 'spare months of habits' - removed or reworded to plain suggestions (no source)",
+    "RESOLVED 2026-11-19: ready-position details and the warm-up / stop-if-it-hurts / see a doctor lines - kept as hedged general-caution suggestions ('Try...'), no health claims, per verification note",
+    "RESOLVED 2026-11-19: costs, lesson pace, venues, doubles/social formats, wall and public-court use - no prices; reworded to 'check what's nearby', 'if your area has one', 'check local rules'"
+  ],
+  "related": [
+    "pickleball-for-beginners",
+    "active-hobbies-for-women-who-dont-love-the-gym",
+    "things-to-do-after-work-instead-of-scrolling"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "Four weeks is enough to go from 'haven't held a racket since school' to keeping a short rally going and keeping score. Evening courts, a can of fresh balls and a friend to rally with: here's the plan. It assumes minimal gear, no club and no audience. The courts will have people who've played since they were nine; they're not your benchmark."
+    },
+    {
+      "type": "h2",
+      "text": "Your first racket and what goes with it",
+      "id": "gear"
+    },
+    {
+      "type": "p",
+      "text": "Your own racket is the one thing worth choosing with a little care: a grip that feels comfortable and a size made for adults, ready whenever a friend texts 'court at six?'. The listing's size and weight tell you more than a name does, and a racket that comes with a ball bag keeps the first sessions simple. Add a can of balls and a water bottle, and you can walk onto any court."
+    },
+    {
+      "type": "whatYoullNeed",
+      "essentials": [
+        "A beginner racket with a grip that feels comfortable",
+        "A can of balls",
+        "Sports shoes with some grip, which you probably own",
+        "Water and sun protection",
+        "A friend, a practice wall or a public court"
+      ],
+      "optional": [
+        "A small tote or ball bag for balls and water",
+        "A visor or sweatband",
+        "Softer, slower balls designed for beginners, if you can find them",
+        "Court shoes made for tennis, as a later upgrade",
+        "A first group lesson"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Costs depend heavily on where you live, so check public court, club and lesson options nearby before you spend. Arrive ten minutes early so the warm-up doesn't feel rushed. And expect small wins: the ball landing roughly where you meant it to, then doing it twice in a row. Those are the whole point of the first month."
+    },
+    {
+      "type": "p",
+      "text": "**What makes it easier:** a ball bag or small tote, so balls, water and a spare layer ride together and you can walk straight to the court."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "tennis-rackets",
+        "tennis-balls",
+        "water-bottles",
+        "sports-totes"
+      ],
+      "title": "A racket, balls and a bottle for week one",
+      "dek": "A beginner racket you feel comfortable holding, a can of balls for drop-and-hit practice, a water bottle and a tote to carry it all."
+    },
+    {
+      "type": "h2",
+      "text": "Week 1: meet the ball",
+      "id": "week1"
+    },
+    {
+      "type": "p",
+      "text": "Forget the net for now. You're learning how it feels to make contact."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**The grip.** Shake hands with the handle. It's a forgiving place to begin, and a coach can adjust it later.",
+        "**The ready position.** Try feet apart, knees soft, racket out in front, weight a little forward.",
+        "**Drop and hit.** Let the ball bounce once and tap it toward a wall or across the net. Do about forty.",
+        "**Small steps.** Shuffle your feet so your body gets sideways to the ball, rather than stretching with just your arm."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "A session can be as simple as five minutes of walking and shoulder loosening, ten swings with no ball, forty drop-and-hits, then a gentle stretch. Stop if anything hurts."
+    },
+    {
+      "type": "p",
+      "text": "**Worth bringing:** a small ball bag or tote, so forty drop-and-hits don't end with hunting for the last ball."
+    },
+    {
+      "type": "h2",
+      "text": "Week 2: rally small",
+      "id": "week2"
+    },
+    {
+      "type": "p",
+      "text": "Stand closer to the net than feels dignified and trade gentle shots with a friend. You aren't playing a match. You're counting how many hits you can string together, then trying to beat that number next time. Practice forehands first, backhands second, and if you can find them, ask a coach or club about lower-compression balls, which can slow the game down."
+    },
+    {
+      "type": "p",
+      "text": "**Nice to have:** a can of lower-compression balls, which bounce lower and slower, so rallies last longer while you find your timing."
+    },
+    {
+      "type": "h2",
+      "text": "Week 3: serve, then count",
+      "id": "week3"
+    },
+    {
+      "type": "p",
+      "text": "If an overhand serve feels like too much, start underhand while you find your feet, and check with whoever you're playing. A lesson is a good place to learn the overhand serve, where a coach can help you build good habits early."
+    },
+    {
+      "type": "p",
+      "text": "Scoring runs 15, 30, 40, then game; at 40-all it's deuce, and you win by two points. A set goes to the first to six games, winning by two, with a tiebreak at six-all. If that sounds like a lot, ignore the score for another session or two. It makes more sense in person than on paper."
+    },
+    {
+      "type": "p",
+      "text": "**Worth bringing:** a water bottle you like, so a longer practice set doesn't end early."
+    },
+    {
+      "type": "h2",
+      "text": "Week 4: a real game, plus company",
+      "id": "week4"
+    },
+    {
+      "type": "p",
+      "text": "Play a short set with a friend. First to four games is plenty. Then widen the circle: look for a beginner clinic, a group lesson or a relaxed social session where nobody keeps a ranking, if your area has one. Pick a regular slot if you can. The same time each week is what turns a nice idea into a habit."
+    },
+    {
+      "type": "p",
+      "text": "If once a week is all you have, that's fine. Hit a ball against a wall in between (check local rules on wall use), or shadow a swing in the kitchen while the kettle boils. Short, frequent repetition can help more than one long session."
+    },
+    {
+      "type": "p",
+      "text": "**For the second month:** court shoes made for tennis, a natural upgrade once you're playing every week; they are in the second shop block below."
+    },
+    {
+      "type": "h2",
+      "text": "When it goes sideways",
+      "id": "troubleshooting"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**The ball won't clear the net.** Aim a little higher than feels right and finish your swing upward.",
+        "**It goes everywhere.** Hit softer and think only about contact. Control comes before power.",
+        "**Your arm aches.** Stop, shorten the session and check your grip. See a doctor or physiotherapist if it persists.",
+        "**You feel silly.** Everyone on that court has sent a ball into the next one."
+      ]
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "tennis-shoes",
+        "water-bottles",
+        "sports-totes"
+      ],
+      "title": "Once you're playing every week",
+      "dek": "Court shoes made for tennis, a bottle that keeps up with longer sessions and a tote that carries the lot."
+    },
+    {
+      "type": "h2",
+      "text": "Free ways to start",
+      "id": "free-start"
+    },
+    {
+      "type": "p",
+      "text": "A friend, a club or a rental scheme may lend you a racket for your first few sessions, so you can learn what feels comfortable before buying your own. Free public courts, where your area has them, and a practice wall (check local rules on wall use) keep the first sessions easy to arrange, and a few lessons are a great place to spend."
+    },
+    {
+      "type": "p",
+      "text": "Week one only asks for a court and a friend to rally with. Which day this week could you spare for it?"
+    },
+    {
+      "type": "p",
+      "text": "Curious about the other racket sport? Read [pickleball for beginners](/journal/pickleball-for-beginners), or browse [active hobbies for women who don't love the gym](/journal/active-hobbies-for-women-who-dont-love-the-gym)."
+    }
+  ]
+}

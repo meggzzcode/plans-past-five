@@ -1,0 +1,193 @@
+{
+  "slug": "how-to-start-crocheting",
+  "title": "Crochet Your First Thing This Weekend: Hook, Yarn and Three Stitches",
+  "titleItalic": "Your First Thing",
+  "dek": "The hook, the yarn and the three stitches that open the door to most beginner projects, plus a first square you can finish in a weekend.",
+  "category": "creative-corner",
+  "status": "published",
+  "publishedAt": "2026-11-19",
+  "verifiedAt": "2026-11-19",
+  "hero": "crochetHands",
+  "searchIntent": "how to start crocheting / crochet for beginners / easy first crochet project",
+  "angle": "A calm, practical start built around the hook and yarn that make a first square easy: choose forgiving supplies, learn the chain, single crochet and double crochet, and finish a flat dishcloth-style square before anything shaped",
+  "hobbies": [
+    "crochet",
+    "knitting",
+    "embroidery"
+  ],
+  "productIds": [
+    "crochet-hooks",
+    "yarn"
+  ],
+  "sources": [
+    {
+      "title": "Lion Brand: how to crochet, a step-by-step guide for beginners",
+      "url": "https://www.lionbrand.com/community/blog/how-to-crochet/",
+      "note": "Yarn company guide, checked 2026-11-19: slip knot, foundation chain and single crochet as the core three moves; medium-weight light or solid yarn shows stitches; use the hook size on the yarn label; practice swatches catch tension and counting errors; count stitches at the end of each row"
+    },
+    {
+      "title": "Craft Yarn Council: crochet abbreviations and U.S./U.K. term differences",
+      "url": "https://www.craftyarncouncil.com/standards/crochet-abbreviations",
+      "note": "Checked 2026-11-19: table shows US single crochet = UK double crochet, US double crochet = UK treble; US gauge = UK tension"
+    },
+    {
+      "title": "Craft Yarn Council: standard yarn weight system",
+      "url": "https://www.craftyarncouncil.com/standards/yarn-weight-system",
+      "note": "Checked 2026-11-19: yarn weight categories with recommended hook ranges; the label and your pattern are the practical guide"
+    }
+  ],
+  "coworkChecks": [
+    "REMOVED 2026-11-19: starter spend and numeric hook size - no source; article defers to the yarn label",
+    "SUPPORTED 2026-11-19: slip knot, foundation chain and single crochet are the core beginner moves; skip the first chain from the hook; chain one to turn - lionbrand.com",
+    "SUPPORTED 2026-11-19: light or solid medium-weight yarn shows stitches; use the hook size on the yarn label; make a swatch; count stitches at the end of each row - lionbrand.com (fiber type claim removed)",
+    "SUPPORTED 2026-11-19: US single crochet is UK double crochet and US double crochet is UK treble - craftyarncouncil.com term differences table",
+    "CORRECT AS 2026-11-19: 'friendlier than knitting' and 'only one live loop' comparisons removed; stitch uses softened to 'often'; hand-comfort line is a general suggestion, not a health claim",
+    "NOTE 2026-11-19: no product ids are set on this article; the shopTheArticle block shows only catalog products tagged to this article (hooks and yarn), which match the topic"
+  ],
+  "related": [
+    "how-to-start-embroidery",
+    "creative-hobbies-you-can-start-at-home",
+    "creative-hobby-starter-kits-worth-considering"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "One hook, one strand of yarn and three stitches get you a surprising distance, and by Sunday you could be holding something you made. Crochet looks harder than it is, partly because a written pattern reads like code. This guide starts with the stitches, then walks you through a flat square."
+    },
+    {
+      "type": "p",
+      "text": "Crochet uses a single hook where knitting uses two needles. The first row will be wonky. That's normal."
+    },
+    {
+      "type": "h2",
+      "text": "What you need",
+      "id": "need"
+    },
+    {
+      "type": "whatYoullNeed",
+      "essentials": [
+        "One crochet hook, in the size your yarn label suggests",
+        "A ball of smooth, medium-weight (worsted) yarn in a light, solid color",
+        "Scissors",
+        "A blunt yarn needle for weaving in ends"
+      ],
+      "optional": [
+        "A few stitch markers, or safety pins, to mark the start of a row",
+        "A small tape measure",
+        "A tote to carry it everywhere",
+        "A second hook in a different size to see how the stitches change"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "You probably own scissors and a bag already, and a friend may have a spare hook and half a ball of yarn. Light, solid-colored yarn shows each stitch clearly, which makes it a friendly choice for a first square; dark or variegated yarn can make stitches harder to see, so keep it for later. A hook with a comfortable handle is a lovely upgrade if your hand tires, and a few stitch markers make counting rows easier."
+    },
+    {
+      "type": "shopTheArticle",
+      "articleSlug": "how-to-start-crocheting",
+      "title": "What to grab for your first square",
+      "dek": "A hook and one plain ball of smooth, light yarn are all a first square needs. Pick the hook size your yarn label suggests."
+    },
+    {
+      "type": "h2",
+      "text": "The three stitches that open the door",
+      "id": "stitches"
+    },
+    {
+      "type": "item",
+      "n": 1,
+      "title": "The slip knot and the chain",
+      "note": "Every project starts with a loop on the hook, then a row of chains pulled through one after another. It is the foundation of everything."
+    },
+    {
+      "type": "item",
+      "n": 2,
+      "title": "Single crochet",
+      "note": "A short stitch that makes dense fabric, and the one the first square below uses."
+    },
+    {
+      "type": "item",
+      "n": 3,
+      "title": "Double crochet",
+      "note": "A taller stitch, so rows grow faster. Try it once single crochet feels comfortable."
+    },
+    {
+      "type": "p",
+      "text": "A heads-up before you follow any pattern: US and UK crochet terms differ. What US patterns call single crochet is double crochet in UK terms, and US double crochet is UK treble, so check which one a pattern uses. A pattern that says \"sc\" is written in US terms."
+    },
+    {
+      "type": "p",
+      "text": "**What makes it easier:** a hook with a comfortable handle, so longer sessions stay pleasant when your hand tires."
+    },
+    {
+      "type": "h2",
+      "text": "Make a flat square",
+      "id": "first-project"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Make a slip knot and slide it onto the hook, snug but not tight.",
+        "Chain 20, or about as wide as you want the square. Count as you go.",
+        "Skip the first chain next to the hook, then work a single crochet into each chain along the row.",
+        "Chain one, turn the work around, and work single crochet into each stitch of the previous row.",
+        "Count your stitches at the end of every row. If the number changes, the edges are drifting. A small practice swatch like this one catches tension and counting slips before they waste yarn.",
+        "Repeat until it is roughly square, then cut the yarn and pull the tail through the last loop."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Weave the ends in with the yarn needle. Check the yarn label before washing the finished piece, as care varies by fiber. A single row before dinner is a good first day, and if your hands ache, shake them out and stop. A relaxed grip also makes more even stitches."
+    },
+    {
+      "type": "p",
+      "text": "**What makes it easier:** a few stitch markers or safety pins in a contrasting color, so the first stitch of each row is easy to find and your count stays right."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "crochet-hooks"
+      ],
+      "title": "A comfortable hook, for when you want to keep going",
+      "dek": "Hooks come in sets with a range of sizes and handles. A set lets you try the size your yarn label suggests, and then the next size up when a row feels tight."
+    },
+    {
+      "type": "h2",
+      "text": "Reading a pattern without panicking",
+      "id": "patterns"
+    },
+    {
+      "type": "p",
+      "text": "A written pattern looks like code at first glance: ch 20, sc in 2nd ch from hook, turn. It's shorthand, and a pattern should list its abbreviations at the top. Read one line at a time with a finger under the part you are on, and do exactly what it says even when it seems odd. The sense arrives a few rows later."
+    },
+    {
+      "type": "p",
+      "text": "The yarn label does quiet work too: it lists the weight, the suggested hook and care instructions. Keep a label in your project bag so you can match the yarn when you need more."
+    },
+    {
+      "type": "p",
+      "text": "**Worth bringing:** a small project pouch or tote, so the hook, yarn, scissors and a yarn label for matching travel together."
+    },
+    {
+      "type": "p",
+      "text": "Once a flat square feels easy, the natural next steps are a longer rectangle for a scarf, a handful of small squares to join into something bigger, or a simple round coaster. They're the same few stitches in a new arrangement."
+    },
+    {
+      "type": "h2",
+      "text": "Common mistakes and fixes",
+      "id": "troubleshooting"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**The edges keep growing or shrinking.** You are gaining or losing stitches at the turn. Count at the end of every row and mark the first stitch of each row.",
+        "**It's too tight to work.** Try a hook one size up and hold the yarn more loosely. Everyone grips too hard at first.",
+        "**A mistake three rows back.** Pull out the hook and gently unravel to the mistake. Redoing a row is part of the craft, not a failure."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Want a second thread craft to compare? [How to Start Embroidery](/journal/how-to-start-embroidery) uses just a hoop and floss."
+    }
+  ]
+}

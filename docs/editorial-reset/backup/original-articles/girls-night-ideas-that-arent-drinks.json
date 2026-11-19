@@ -1,0 +1,431 @@
+{
+  "slug": "girls-night-ideas-that-arent-drinks",
+  "title": "25 Girls' Night Ideas That Aren't Drinks: What to Set Out for Each",
+  "titleItalic": "Aren't Drinks",
+  "dek": "Plans for the group chat that give everyone something to do and something to say, with the kit that gets each one started.",
+  "category": "better-together",
+  "status": "published",
+  "publishedAt": "2026-11-19",
+  "verifiedAt": "2026-11-18",
+  "hero": "girlsNight",
+  "searchIntent": "girls night ideas / girls night ideas that aren't drinking",
+  "angle": "Twenty-five concrete friend plans, led by the ones with a kit to set out (craft, games, mahjong, cards, tea), then outings with a bag packed, with how to pick one for a mixed group, how to get the group chat to commit, and the venue and no-purchase ideas kept short at the end",
+  "hobbies": [
+    "craft-nights",
+    "pottery-painting",
+    "pickleball",
+    "book-clubs",
+    "mahjong",
+    "baking"
+  ],
+  "productIds": [
+    "group-painting-kits",
+    "friendship-bracelet-kits",
+    "cookie-decorating-kits",
+    "board-games",
+    "conversation-cards",
+    "mahjong-sets",
+    "cozy-night-in",
+    "jigsaw-puzzles",
+    "letter-writing-sets",
+    "tea-sets",
+    "picnic-blankets",
+    "daypacks",
+    "pickleball-sets",
+    "skate-protective-gear",
+    "market-totes"
+  ],
+  "sources": [
+    {
+      "title": "Food Allergy Research & Education: tips for staying safe with food allergies",
+      "url": "https://www.foodallergy.org/resources/tips-staying-safe-food-allergies",
+      "note": "Ask what food will be served and alert the host"
+    },
+    {
+      "title": "Food Allergy Research & Education: cleaning methods",
+      "url": "https://www.foodallergy.org/resources/cleaning-methods",
+      "note": "Soap and water; hand sanitizers do not remove food allergens"
+    },
+    {
+      "title": "National Park Service: hiking safety",
+      "url": "https://www.nps.gov/articles/hiking-safety.htm",
+      "note": "Tell someone your route, check weather, carry water; hiking alone not recommended"
+    },
+    {
+      "title": "U.S. DOJ Office of Justice Programs: personal safety guide (older publication)",
+      "url": "https://www.ojp.gov/pdffiles1/Digitization/81199NCJRS.pdf",
+      "note": "Well-lit areas and companions; used only as common-sense guidance"
+    },
+    {
+      "title": "CPSC: skating safety",
+      "url": "https://www.cpsc.gov/s3fs-public/5014.pdf",
+      "note": "Protective gear for skating"
+    },
+    {
+      "title": "AAOS OrthoInfo: inline skating injury prevention",
+      "url": "https://orthoinfo.aaos.org/en/staying-healthy/inline-skating-injury-prevention",
+      "note": "Helmet, wrist guards, pads; smooth surfaces; not at night"
+    }
+  ],
+  "coworkChecks": [
+    "VERIFIED 2026-11-18: ask guests about allergies and dietary needs; wash hands with soap and water, sanitizer does not remove food allergens - foodallergy.org",
+    "VERIFIED 2026-11-18: hiking - daylight, tell someone your route, check weather, carry water, stay together (hiking alone not recommended) - nps.gov",
+    "VERIFIED 2026-11-18: group outings and evening plans - well-lit areas, companions, tell someone your plan kept as common-sense advice with no guarantee - ojp.gov (older DOJ guide)",
+    "VERIFIED 2026-11-18: skating - helmet, wrist guards, knee and elbow pads, smooth surface, daylight - cpsc.gov, orthoinfo.aaos.org",
+    "VERIFIED 2026-11-18: all per-person cost figures ($10-$60 ranges, thrift '$15') replaced with 'Varies' or 'Whatever cap you set'; no prices stated - reworded, no claim remains",
+    "VERIFIED 2026-11-18: studios, public courts, museums, markets and volunteering described with 'many' and 'check locally'; no venue or organization named - reworded, no claim remains",
+    "VERIFIED 2026-11-18: mahjong entry stays a general pointer ('sets and rules differ'; four friends as the usual table) with no rules claims - reworded, no claim remains",
+    "VERIFIED 2026-11-18: group-size labels are stated to be suggestions; inclusion advice is editorial - reworded, no claim remains",
+    "VERIFIED 2026-11-18: cross-links - book-club link removed until that article is live; craft-night and mahjong guides are in the same batch - reworded",
+    "NOTE 2026-11-19: monetisation rewrite: title adds 'What to set out for each' (count of 25 unchanged), the kit-led at-home ideas come first with gear lines, a shop block and a mahjong shopTheArticle block follow the first section, gear-led outdoor ideas (picnic, hike, court, skating, thrift) moved into one 'with a bag packed' section with a second block, venue and no-purchase ideas grouped in one short closing section, 'Getting the group chat to commit' moved up mid-article; hiking and skating safety text unchanged and still sourced; spa night has no product"
+  ],
+  "related": [
+    "how-to-host-a-craft-night",
+    "how-to-host-a-mahjong-night",
+    "how-to-host-a-paint-night-at-home"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "'We should do something' tends to end in drinks. Drinks are lovely, but they're also loud, pricey, hard to talk over and an awkward fit for friends who aren't drinking, are driving, are saving or want to be home by ten."
+    },
+    {
+      "type": "p",
+      "text": "Here are twenty-five alternatives, grouped by how much effort they take. Costs vary by city and group size, and the group sizes shown are suggestions rather than rules."
+    },
+    {
+      "type": "h2",
+      "text": "How to pick one for your group",
+      "id": "picking"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Ask two questions in the chat:** what's your budget, and do you want to talk or do something?",
+        "**Offer two options, not ten.** 'What does everyone want to do?' gets silence. 'Pottery or picnic?' gets answers.",
+        "**Pick the date first.** A plan with a date beats a plan with enthusiasm.",
+        "**Make it easy to say yes.** Under three hours, near transport.",
+        "**Ask about food needs.** Check for allergies and dietary requirements before you plan any snacks, and wash hands with soap and water before handling food; hand sanitizer doesn't remove food allergens."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Cozy and at home",
+      "id": "home"
+    },
+    {
+      "type": "item",
+      "n": 1,
+      "title": "Craft night",
+      "hobby": "craft-nights",
+      "note": "One simple craft, a big table, snacks. Everyone makes something a bit different and shows it off at the end. For a keepsake, [air-dry clay](/journal/how-to-start-air-dry-clay), [embroidery](/journal/how-to-start-embroidery) and [watercolor](/journal/watercolor-painting-for-beginners) all suit a table of friends. **What makes it easier:** a group painting kit or {{product:esrich-8x10-stretched-canvas-10-pack|a 10-pack of 8x10 canvases}} with acrylic paints, so everyone starts with the same thing in front of them. [How to host a paint night at home](/journal/how-to-host-a-paint-night-at-home) has the plan.",
+      "time": "2-3 hours",
+      "cost": "Depends on the craft",
+      "company": "3-8 friends"
+    },
+    {
+      "type": "item",
+      "n": 2,
+      "title": "Cookie decorating party",
+      "hobby": "baking",
+      "note": "Bake or buy plain cookies, set out icing and sprinkles and hold a very friendly contest. **What makes it easier:** a cookie decorating kit with icing and sprinkles, so the contest starts the moment the cookies cool.",
+      "time": "2 hours",
+      "cost": "Cookies and icing",
+      "company": "3-8 friends"
+    },
+    {
+      "type": "item",
+      "n": 3,
+      "title": "Board game night",
+      "note": "Choose a game you can explain in ten minutes, and keep a backup for whoever's knocked out first. **What makes it easier:** a party-size board game with simple rules, so the first round starts after one read-through.",
+      "time": "2-3 hours",
+      "cost": "Varies",
+      "company": "3-6 friends"
+    },
+    {
+      "type": "item",
+      "n": 4,
+      "title": "Friendship-bracelet or bead night",
+      "hobby": "friendship-bracelets",
+      "note": "Matching bracelets are quick, forgiving for beginners and lovely to hand over at the end. **What makes it easier:** a friendship bracelet kit, so the floss, beads and instructions arrive together. Check the label for small parts.",
+      "time": "90 min",
+      "company": "2-6 friends"
+    },
+    {
+      "type": "item",
+      "n": 5,
+      "title": "Mahjong night",
+      "hobby": "mahjong",
+      "note": "Ideal if one friend already plays. Sets and rules differ by version, so agree which you're playing first; the [mahjong night guide](/journal/how-to-host-a-mahjong-night) covers how to start. **What makes it easier:** a set made for your version, a playing mat and the current reference card, so the first night starts with the game, not a hunt for pieces.",
+      "time": "2-3 hours",
+      "company": "4 friends"
+    },
+    {
+      "type": "item",
+      "n": 6,
+      "title": "Movie marathon with a theme",
+      "note": "Choose three films around a theme, like underrated rom-coms, and give each a matching snack. **What makes it easier:** a few big throws and flameless candles, so the living room turns into a cinema for the evening.",
+      "time": "4-6 hours",
+      "company": "3-8 friends"
+    },
+    {
+      "type": "item",
+      "n": 7,
+      "title": "Puzzle and podcast evening",
+      "hobby": "jigsaw-puzzles",
+      "note": "Tip a puzzle onto the table and let people drift in and out. Good for friends who don't want to perform. **What makes it easier:** a jigsaw puzzle sized for the table, so the edge pieces are sorted before the podcast starts.",
+      "time": "2-3 hours",
+      "company": "2-5 friends"
+    },
+    {
+      "type": "item",
+      "n": 8,
+      "title": "Conversation-cards dinner",
+      "note": "Draw a card between courses. Works well with friends you're sure you already know. **What makes it easier:** a deck of conversation cards, so there's a question ready between courses.",
+      "time": "2-3 hours",
+      "company": "3-6 friends"
+    },
+    {
+      "type": "item",
+      "n": 9,
+      "title": "Vision-board and goals evening",
+      "note": "Old magazines, scissors, glue sticks. Share one goal each and set a reminder to check in three months on. **What makes it easier:** card for the boards, scissors and {{product:scotch-glue-stick-photo-safe-4-pack|a glue stick}} each, so nobody waits for a turn with the glue.",
+      "time": "2 hours",
+      "cost": "Varies",
+      "company": "3-6 friends"
+    },
+    {
+      "type": "item",
+      "n": 10,
+      "title": "Letter-writing night",
+      "note": "Everyone writes postcards to people who aren't in the room. Bring stamps and good pens. **What makes it easier:** a letter-writing set or a pack of postcards and good pens, so everyone can start writing the moment they sit down.",
+      "time": "90 min",
+      "cost": "Stamps and paper",
+      "company": "3-6 friends"
+    },
+    {
+      "type": "item",
+      "n": 11,
+      "title": "Mocktail or tea tasting",
+      "note": "Everyone brings an ingredient. Rank the results, crown a winner and ask about dietary needs beforehand. **What makes it easier:** a pot and a few mugs from a tea set, plus a tea sampler, so the tasting feels like an occasion.",
+      "time": "90 min",
+      "cost": "Everyone brings an ingredient",
+      "company": "3-8 friends"
+    },
+    {
+      "type": "item",
+      "n": 12,
+      "title": "Book club (one night only)",
+      "hobby": "book-clubs",
+      "note": "Read a short story or essay instead of a novel and talk it over. If it goes well, make it regular with [how to start a book club](/journal/how-to-start-a-book-club). **Worth bringing:** magnetic bookmarks and a small notebook each, so a favorite line is easy to mark and share.",
+      "time": "2 hours",
+      "company": "4-8 friends"
+    },
+    {
+      "type": "girlsNight",
+      "text": "The easiest hosting rule is one activity, one snack table and one end time. People relax when they know how the evening ends."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "group-painting-kits",
+        "board-games",
+        "conversation-cards",
+        "friendship-bracelet-kits",
+        "cookie-decorating-kits"
+      ],
+      "title": "Start with a night-in kit",
+      "dek": "A painting kit, a board game, a deck of conversation cards or a bracelet kit means \"should we do something?\" already has an answer."
+    },
+    {
+      "type": "shopTheArticle",
+      "hobbies": [
+        "mahjong"
+      ],
+      "title": "For a mahjong night",
+      "dek": "These picks are for American mahjong. Playing another version? Match the set and reference card to it, and check what the listing includes."
+    },
+    {
+      "type": "h2",
+      "text": "Out and about, with a bag packed",
+      "id": "out"
+    },
+    {
+      "type": "item",
+      "n": 13,
+      "title": "Farmers' market and picnic",
+      "hobby": "picnicking",
+      "note": "Everyone buys one thing, then you assemble the lot on a blanket in a nearby park. **What makes it easier:** a picnic blanket and an insulated cooler bag, so the spread sits on one blanket and stays cold on the walk.",
+      "time": "2-3 hours",
+      "cost": "What you buy",
+      "company": "3-6 friends"
+    },
+    {
+      "type": "item",
+      "n": 14,
+      "title": "Beginner hike and snacks",
+      "hobby": "hiking",
+      "note": "Pick a popular, well-marked trail in daylight, tell someone your route, check the weather and pack water. Stay together as a group. **What makes it easier:** a daypack, a water bottle and walking shoes with grip, so snacks, water and a layer travel with you.",
+      "time": "2-3 hours",
+      "cost": "Varies",
+      "company": "2-6 friends"
+    },
+    {
+      "type": "item",
+      "n": 15,
+      "title": "Pickleball or tennis on a public court",
+      "hobby": "pickleball",
+      "note": "Many public courts are free or low cost, and beginner doubles is chatty and forgiving. Courts may have booking or time rules, so check locally. **What makes it easier:** a paddle set for four, so you don't depend on borrowed equipment; borrowing works too if a friend has spares.",
+      "time": "90 min",
+      "cost": "Often free",
+      "company": "2-4 friends"
+    },
+    {
+      "type": "item",
+      "n": 16,
+      "title": "Roller-skating night",
+      "hobby": "roller-skating",
+      "note": "Pure nostalgia. Everyone wobbles, which levels the field. Wear a helmet, wrist guards, and knee and elbow pads, and stay on the rink or a smooth paved surface in daylight. **What makes it easier:** a set of skate protective gear in your size, so the helmet, wrist guards and pads are ready before the night starts.",
+      "time": "2 hours",
+      "company": "3-8 friends"
+    },
+    {
+      "type": "item",
+      "n": 17,
+      "title": "Thrift crawl with a challenge",
+      "hobby": "thrifting",
+      "note": "Agree a spending cap and twenty minutes per shop each. Regroup, reveal your finds and vote. **Worth bringing:** a sturdy tote each, so finds ride on a shoulder and both hands stay free for the next rack.",
+      "time": "2-3 hours",
+      "cost": "Whatever cap you set",
+      "company": "3-5 friends"
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "picnic-blankets",
+        "daypacks",
+        "pickleball-sets",
+        "skate-protective-gear",
+        "market-totes"
+      ],
+      "title": "For the outing nights",
+      "dek": "A blanket, a daypack, a paddle set, skate pads and a tote each get a group out the door with everything in hand."
+    },
+    {
+      "type": "h2",
+      "text": "Getting the group chat to commit",
+      "id": "commit"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Send one short message with two options, a date and a rough cost.",
+        "Give a deadline for replies, like 'let me know by Thursday'.",
+        "Be the one who books. Plans rarely survive committees.",
+        "Send a reminder two days before, and keep a smaller version of the plan for no-shows."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "If craft night sounds like your group, start with [how to host a craft night](/journal/how-to-host-a-craft-night). Looking for a hobby of your own to start? See [15 hobbies to start this month](/journal/affordable-hobbies-under-25). For more ideas, browse [things to do after work instead of scrolling](/journal/things-to-do-after-work-instead-of-scrolling)."
+    },
+    {
+      "type": "h2",
+      "text": "Free ways to start, and venue nights",
+      "id": "secondary"
+    },
+    {
+      "type": "p",
+      "text": "Some of the easiest plans need no kit at all, or suit a studio or a venue better. Check hours, group sizes and booking rules ahead."
+    },
+    {
+      "type": "item",
+      "n": 18,
+      "title": "Pottery painting",
+      "hobby": "pottery-painting",
+      "note": "Many studios let you paint a ready-made piece, then glaze and fire it for you. Group bookings vary, so check ahead. Prefer to stay in? See [how to host a paint night at home](/journal/how-to-host-a-paint-night-at-home).",
+      "time": "2 hours",
+      "company": "2-8 friends"
+    },
+    {
+      "type": "item",
+      "n": 19,
+      "title": "Drop-in class",
+      "note": "Dance, ceramics, life drawing, cooking: many studios offer a single session.",
+      "time": "90 min",
+      "company": "2-6 friends"
+    },
+    {
+      "type": "item",
+      "n": 20,
+      "title": "Museum with a coffee after",
+      "hobby": "museum-exploring",
+      "note": "Choose one exhibit, then debrief over coffee.",
+      "time": "2-3 hours",
+      "company": "2-5 friends"
+    },
+    {
+      "type": "item",
+      "n": 21,
+      "title": "Bookstore date with a book swap",
+      "hobby": "reading",
+      "note": "Each friend picks a book for another within a budget cap, then everyone reads a first page aloud.",
+      "time": "2 hours",
+      "company": "3-6 friends"
+    },
+    {
+      "type": "item",
+      "n": 22,
+      "title": "Walk-and-talk with a stop for treats",
+      "note": "A loop around a park with a treat halfway. **Worth bringing:** an insulated flask of something warm to share.",
+      "time": "90 min",
+      "company": "2-4 friends"
+    },
+    {
+      "type": "item",
+      "n": 23,
+      "title": "Volunteer shift together",
+      "hobby": "volunteering",
+      "note": "Many local groups welcome one-off volunteers. Check requirements and sign-ups ahead.",
+      "time": "2-4 hours",
+      "company": "2-6 friends"
+    },
+    {
+      "type": "item",
+      "n": 24,
+      "title": "Dinner swap or potluck",
+      "note": "Choose a theme, such as brunch for dinner, soup night or tacos, and have everyone bring one dish.",
+      "time": "3 hours",
+      "company": "4-8 friends"
+    },
+    {
+      "type": "item",
+      "n": 25,
+      "title": "Spa night in",
+      "note": "Face masks if you like them, foot soaks, a playlist. Follow product labels.",
+      "time": "2 hours",
+      "company": "2-6 friends"
+    },
+    {
+      "type": "h2",
+      "text": "Keeping it inclusive",
+      "id": "inclusive"
+    },
+    {
+      "type": "p",
+      "text": "Think about who might be quietly left out. Choose a time that works around early mornings and childcare, a price nobody has to do sums over, and a place reachable without a car. If someone doesn't drink, don't build the plan around alcohol and don't ask why. Give people a graceful way to opt out of anything physical or messy. Rotating who chooses helps too, so nobody carries the planning alone."
+    },
+    {
+      "type": "p",
+      "text": "Found one? Send this to the group chat and book the date before the thread goes quiet."
+    },
+    {
+      "type": "ifYouLoved",
+      "hobbies": [
+        "craft-nights",
+        "pottery-painting",
+        "book-clubs"
+      ]
+    }
+  ]
+}

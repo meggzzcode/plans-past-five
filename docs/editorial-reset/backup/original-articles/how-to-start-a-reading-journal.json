@@ -1,0 +1,188 @@
+{
+  "slug": "how-to-start-a-reading-journal",
+  "title": "How to Start a Reading Journal You Will Actually Keep: Notebook, Pen, Five Lines",
+  "titleItalic": "Actually Keep",
+  "dek": "Start a reading journal in five minutes with a notebook and five lines per book. Three layouts, and the small things that make the habit easier to keep.",
+  "category": "creative-corner",
+  "status": "published",
+  "publishedAt": "2026-11-19",
+  "verifiedAt": "2026-11-19",
+  "hero": "shopBookish",
+  "searchIntent": "how to start a reading journal / reading journal ideas / what to write in a reading journal",
+  "angle": "A low-pressure reading journal built around the few things that make it feel good: a notebook or prompted journal, a pen, a pocket notebook and a book light, with a tiny entry template, three layouts and a graceful way to restart",
+  "hobbies": [
+    "reading",
+    "book-clubs",
+    "creative-writing"
+  ],
+  "productIds": [
+    "reading-journals",
+    "pocket-notebooks",
+    "book-lights",
+    "magnetic-bookmarks"
+  ],
+  "sources": [
+    {
+      "title": "Los Angeles County Library: eBooks and audiobooks",
+      "url": "https://lacountylibrary.org/ebooks-audiobooks",
+      "note": "Read 2026-11-19. One example: cardholders can borrow e-books and audiobooks for free; loan periods and limits are set by each library, so the article says what is on offer varies"
+    }
+  ],
+  "coworkChecks": [
+    "RESOLVED 2026-11-19: starter spend ('under about $20') - removed; verification found no source for prices",
+    "RESOLVED 2026-11-19: libraries lend books, e-books, audiobooks - reworded to 'check whether your library lends...; varies'; no library or app named",
+    "RESOLVED 2026-11-19: five minutes per entry - already framed in text as a suggestion, not a rule",
+    "RESOLVED 2026-11-19: no real titles, authors or ratings; no memory/comprehension/wellbeing or eye-health claims; layouts are original - checked against article text",
+    "VERIFIED 2026-11-19: library holds list is conditional ('if your library lends books, e-books or audiobooks; what's on offer varies') - lacountylibrary.org example",
+    "NOTE 2026-11-19: entry template, layouts, five minutes and mood words are editorial suggestions; no factual, health or memory claims remain"
+  ],
+  "related": [
+    "how-to-start-a-book-club",
+    "how-to-start-junk-journaling",
+    "how-to-take-yourself-on-a-solo-coffee-shop-date",
+    "cozy-solo-dates-at-home"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "'What was it about?' is a surprisingly hard question about a book you loved a month ago. The feeling is still there; the lighthouse, or whatever it was, has gone fuzzy."
+    },
+    {
+      "type": "p",
+      "text": "A reading journal is a small net for those details, and it takes about five minutes a book. Here's the smallest version that works, three ways to lay it out and what to do when you fall off."
+    },
+    {
+      "type": "h2",
+      "text": "An entry in five lines",
+      "id": "template"
+    },
+    {
+      "type": "p",
+      "text": "Keep it small enough that skipping it feels silly. Five minutes is a suggestion, not a rule."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**The basics:** title, author, the dates you started and finished.",
+        "**One line on the plot,** as you would explain it to a friend.",
+        "**One thing that stuck:** a scene, a character, a sentence.",
+        "**A mood word** for how it left you, such as restless, cozy or hungry for more.",
+        "**A rating,** if you like ratings. Stars, hearts or a single tick all work."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Pick a layout",
+      "id": "layouts"
+    },
+    {
+      "type": "item",
+      "n": 1,
+      "title": "The running list",
+      "note": "One line per book, in the order you finish them. Fast, and easy to keep going. **What makes it easier:** a pocket notebook that rides in your bag, so the line gets added the day you finish a book."
+    },
+    {
+      "type": "item",
+      "n": 2,
+      "title": "The page per book",
+      "note": "A full page for each book, with room for quotes, favorite scenes and what you would tell a friend. Slower, and more of a keepsake. **What makes it easier:** a hardcover reading journal with prompts, so each page already has room for quotes and favorite scenes."
+    },
+    {
+      "type": "item",
+      "n": 3,
+      "title": "The bookshelf spread",
+      "note": "Draw a little shelf across a page and fill in a spine per book you finish, colored by mood. It is a reading record that looks like decoration. **What makes it easier:** a few fine-tip pens in different colors, so each spine can be colored by mood."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "reading-journals",
+        "pocket-notebooks",
+        "book-lights",
+        "magnetic-bookmarks"
+      ],
+      "title": "Make your reading journal easier and prettier",
+      "dek": "A journal with prompts for the blank-page days, a pocket notebook for favorite lines, a light for late chapters and a magnetic bookmark for the lines you want to copy out. Start with whichever solves your biggest hurdle."
+    },
+    {
+      "type": "h2",
+      "text": "What makes a reading journal feel good",
+      "id": "need"
+    },
+    {
+      "type": "whatYoullNeed",
+      "essentials": [
+        "A notebook with pages you like writing on",
+        "A pen that does not bleed through the paper",
+        "A book, naturally"
+      ],
+      "optional": [
+        "A purpose-made reading journal with prompts and a book list",
+        "A pocket notebook to take everywhere for quotes",
+        "A clip-on book light for reading in a shared room",
+        "A magnetic bookmark, or sticky flags, for marking lines you want to copy out"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "A notebook and a pen are all it takes to begin. A purpose-made journal makes it easier and prettier: the prompts and book list mean you never face a blank page. A pocket notebook catches a favorite line when the main journal is at home, and a clip-on light lets you read and jot in the same cozy corner. If you already own a half-empty notebook, start there and move to a beautiful one whenever you like."
+    },
+    {
+      "type": "h2",
+      "text": "Your first evening",
+      "id": "first-session"
+    },
+    {
+      "type": "first30",
+      "steps": [
+        "Pick the notebook and write the date and 'books' on the first page.",
+        "Choose one layout and rule up a page, or just start writing.",
+        "Fill in the entry for the book you finished most recently, even if the details are fuzzy.",
+        "Add an entry for the book you are reading now, with the start date.",
+        "Start a short wish list on the back page.",
+        "Put the journal where you read, so it is within reach next time."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Pages worth adding later",
+      "id": "ideas"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**A wish list** of books to read, added to whenever something catches your eye.",
+        "**A quotes page** for lines you want to remember.",
+        "**A genre tally,** with a tick per book, so you can see where your reading drifts.",
+        "**A borrowed-books page,** so you remember what you lent and who has it.",
+        "**A library-holds list,** if your library lends books, e-books or audiobooks (what's on offer varies). It can stop you buying a book you could borrow."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**Nice to have:** a magnetic bookmark or page flags, so the lines you want to copy out are marked while you read."
+    },
+    {
+      "type": "h2",
+      "text": "When it stalls",
+      "id": "troubleshooting"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**You stopped for a month.** Lower the bar to one line a book and don't go back to fill the gaps. A journal with holes is still a journal.",
+        "**Entries feel like homework.** Drop the summary and write only what you felt. This is a diary of your reading, not a report on it.",
+        "**You want it prettier.** Go for it. Pretty pages are a lovely second habit once the first one, five lines a book, is settled.",
+        "**You abandoned a book.** Log it too, with the page where you stopped. That is data about your taste, and an honest way to read."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Which book are you on right now? Write its title at the top of a fresh page tonight, and the journal has begun."
+    },
+    {
+      "type": "p",
+      "text": "Want company for the books themselves? [How to Start a Book Club](/journal/how-to-start-a-book-club) pairs well with a journal full of things to say. For a quiet place to write, see [How to Take Yourself on a Solo Coffee Shop Date](/journal/how-to-take-yourself-on-a-solo-coffee-shop-date)."
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "slug": "cheap-weekend-adventures",
+  "title": "15 Weekend Adventures, Packed: Easy Outings and the Small Gear That Makes Each Nicer",
+  "titleItalic": "Packed",
+  "dek": "Trails, markets, picnic spots and sketching benches, each with the one thing worth putting in the bag. Pick one for Saturday.",
+  "category": "weekends",
+  "status": "published",
+  "publishedAt": "2026-11-19",
+  "verifiedAt": "2026-11-18",
+  "hero": "shopAdventures",
+  "searchIntent": "weekend adventures / easy outings for the weekend / what to pack for a day out",
+  "angle": "Generic categories of outings, led by the ones where the right gear changes the day (trail and park days, look-closer outings, market and picnic days), with a 'how to find yours' prompt for each and the no-purchase ideas kept to one short closing list",
+  "hobbies": [
+    "hiking",
+    "birdwatching",
+    "thrifting",
+    "museum-exploring",
+    "picnicking",
+    "nature-photography",
+    "volunteering",
+    "outdoor-sketching"
+  ],
+  "productIds": [
+    "walking-shoes",
+    "trekking-socks",
+    "daypacks",
+    "water-bottles",
+    "phone-armband",
+    "binoculars",
+    "pocket-notebooks",
+    "sketch-pads",
+    "portable-watercolor",
+    "film-cameras",
+    "picnic-blankets",
+    "thermos-flasks",
+    "market-totes",
+    "cooler-bags",
+    "book-sleeves"
+  ],
+  "sources": [
+    {
+      "title": "National Park Service: hiking safety",
+      "url": "https://www.nps.gov/articles/hiking-safety.htm",
+      "note": "Tell someone your route, check weather, carry water; hiking alone not recommended"
+    },
+    {
+      "title": "NPS Mount Rainier: hiking safety",
+      "url": "https://www.nps.gov/mora/planyourvisit/hiking-safety.htm",
+      "note": "The ten essentials and trip planning"
+    },
+    {
+      "title": "U.S. DOJ Office of Justice Programs: personal safety guide (older publication)",
+      "url": "https://www.ojp.gov/pdffiles1/Digitization/81199NCJRS.pdf",
+      "note": "Well-lit areas and companions; used only as common-sense guidance, no guarantee"
+    }
+  ],
+  "coworkChecks": [
+    "VERIFIED 2026-11-18: hiking safety - tell someone your route, check weather, carry water; hiking alone not recommended so the trail item is tagged social - nps.gov",
+    "VERIFIED 2026-11-18: solo-outing wording kept as common sense with no guarantee (well-lit areas, go with someone when possible, tell someone your plan); no source claims made for 'share your location' - ojp.gov (older DOJ guide)",
+    "VERIFIED 2026-11-18: free and low-cost parks, museums, libraries, events, volunteering and classes described as 'many' / 'some' / 'often' with 'check locally'; parking and entry fees flagged - reworded, no claim remains",
+    "VERIFIED 2026-11-18: all cost labels replaced with 'Varies' (scavenger hunt 'Free' kept as it needs no purchase); 'roughly half cost nothing' claim and 'typically under $10' removed; fares not priced - reworded, no claim remains",
+    "VERIFIED 2026-11-18: place-of-worship item stays general ('many', follow local etiquette), no site named - reworded, no claim remains",
+    "NOTE 2026-11-19: monetisation rewrite: cut from 25 to 15 outings (title now says 15), gear-led trail, look-closer and market/picnic outings first with three shop blocks, the library, museum, gallery, event, volunteering, class, quiet-building, neighborhood and scavenger-hunt ideas merged into one short 'Free ways to start' list with their existing hedged wording; spending-cap rule dropped; hiking and solo-outing safety text unchanged and still sourced"
+  ],
+  "related": [
+    "hobbies-to-try-when-life-feels-like-work-sleep-repeat",
+    "how-to-plan-a-perfect-picnic",
+    "things-to-do-on-the-weekend"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "Picture the daypack by the door: water, a snack, a notebook, a charged phone and a plan for Saturday. Most towns already have the rest, whether that's a trail, a big park, a river path or a market, and a few small things in the bag make each one nicer."
+    },
+    {
+      "type": "p",
+      "text": "This list gives you fifteen outings, each with the one piece of gear worth bringing and a prompt for finding your own version. It uses kinds of places rather than named ones, so it works wherever you live. Entry fees and rules vary by place, so check before you go."
+    },
+    {
+      "type": "h2",
+      "text": "Four things to pack",
+      "id": "pack"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Water and a snack.** A daypack or bag makes it easy to carry both, plus a spare layer.",
+        "**A bag that carries it all.** Hands free beats hands full.",
+        "**A small notebook.** For finds, names of birds and the café you want to come back to.",
+        "**A charged phone.** For the map, the time and a photo or two."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**Before you leave:** check opening times and local rules, since a closed gate is the quickest way to flatten an adventure. Go with someone when you can, and tell someone your plan, especially somewhere remote or after dark. Stick to well-lit areas, check the weather and daylight, and trust your instincts; no plan removes every risk."
+    },
+    {
+      "type": "h2",
+      "text": "Trail and park days",
+      "id": "trail"
+    },
+    {
+      "type": "item",
+      "n": 1,
+      "title": "A nature trail you've never walked",
+      "hobby": "hiking",
+      "note": "Search your area for a short, marked trail under two hours, and wear comfortable shoes. Go with a friend, tell someone your route, check the weather and carry water. **What makes it easier:** walking shoes with grip, trekking-style socks and a small daypack, so your feet are comfortable and water and a layer ride on your back.",
+      "time": "2 hours",
+      "cost": "Varies by place",
+      "company": "Social"
+    },
+    {
+      "type": "item",
+      "n": 2,
+      "title": "The big park on the far side of town",
+      "note": "Not your nearest one; the one you always mean to visit. Take a ball, a blanket and a book. **What makes it easier:** a picnic blanket and a daypack, so a ball, a book and a snack travel together and there's always a dry place to sit.",
+      "time": "2-3 hours",
+      "cost": "Varies by place",
+      "company": "Solo or social"
+    },
+    {
+      "type": "item",
+      "n": 3,
+      "title": "A river or lakeside path",
+      "note": "Water makes any walk feel like a small trip. Walk to the first bench, sit, then carry on. **What makes it easier:** a phone armband, so a playlist or a map is there without a hand on your phone.",
+      "time": "1-2 hours",
+      "cost": "Varies by place",
+      "company": "Solo or social"
+    },
+    {
+      "type": "item",
+      "n": 4,
+      "title": "A sunrise or sunset spot",
+      "note": "Find a high point or an open field. Check local times and bring a layer. **Worth bringing:** an insulated flask of something warm, so the wait for the light is cozy.",
+      "time": "1 hour",
+      "cost": "Varies by place",
+      "company": "Solo or social"
+    },
+    {
+      "type": "item",
+      "n": 5,
+      "title": "A bike or bus ride to the end of the line",
+      "note": "Choose a route, get off at the last stop and have a look around. Bring a map or a charged phone. If you would rather ride, [how to get into recreational cycling as an adult](/journal/how-to-get-into-recreational-cycling-as-an-adult) starts from a borrowed bike. **What makes it easier:** a compact daypack, so a snack, water and a layer stay on your back at the last stop.",
+      "time": "2-3 hours",
+      "cost": "Bus fare, or by bike",
+      "company": "Solo or social"
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "walking-shoes",
+        "trekking-socks",
+        "daypacks",
+        "water-bottles",
+        "phone-armband"
+      ],
+      "title": "For your first trail morning",
+      "dek": "Walking shoes, socks made for walking, a daypack, a bottle and a phone armband turn \"let's go for a walk\" into a plan you can leave the house for."
+    },
+    {
+      "type": "h2",
+      "text": "Look-closer outings",
+      "id": "look-closer"
+    },
+    {
+      "type": "item",
+      "n": 6,
+      "title": "A morning of birdwatching",
+      "hobby": "birdwatching",
+      "note": "A pond, wetland or quiet corner of a park. Bring a notebook and a bird-ID app or a field guide. **Worth bringing:** compact binoculars and a pocket notebook, which bring a distant branch close enough to see the colors and give each sighting a line.",
+      "time": "1-2 hours",
+      "cost": "Varies by place",
+      "company": "Solo or social"
+    },
+    {
+      "type": "item",
+      "n": 7,
+      "title": "A sketching afternoon in public",
+      "hobby": "outdoor-sketching",
+      "note": "Take a pencil and a small sketchbook somewhere with a view and draw what's in front of you for an hour. Fancy adding color? [Watercolor painting for beginners](/journal/watercolor-painting-for-beginners) shows how small the setup can be. **What makes it easier:** a pocket-size sketch pad and a black fineliner ({{product:sakura-pigma-micron-8-pack-black|a pack of black fineliner pens}} is one option), so outlines go down quickly on a bench.",
+      "time": "1-2 hours",
+      "cost": "Varies by place",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 8,
+      "title": "A stargazing night",
+      "note": "Find a dark spot away from streetlights, bring a blanket and a flask, and check the forecast for clear skies. Go with a friend or tell someone where you'll be. **What makes it easier:** a picnic blanket you can lie back on, so the ground is comfortable while you look up.",
+      "time": "1-2 hours",
+      "cost": "Varies by place",
+      "company": "Solo or social"
+    },
+    {
+      "type": "item",
+      "n": 9,
+      "title": "A photo walk through an old quarter",
+      "hobby": "nature-photography",
+      "note": "Walk it like a visitor. Read the plaques, look above the shopfronts, take a few photographs. **Nice to have:** a reusable film camera, so each frame is one you chose rather than one you snapped.",
+      "time": "1-2 hours",
+      "cost": "Varies by place",
+      "company": "Solo or social"
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "binoculars",
+        "pocket-notebooks",
+        "sketch-pads",
+        "portable-watercolor",
+        "film-cameras"
+      ],
+      "title": "For slower, closer looking",
+      "dek": "Binoculars, a pocket notebook, a sketch pad, a travel watercolor set or a film camera give a quiet hour something to do and something to bring home."
+    },
+    {
+      "type": "h2",
+      "text": "Market and picnic days",
+      "id": "market"
+    },
+    {
+      "type": "item",
+      "n": 10,
+      "title": "A farmers' or flea market",
+      "note": "Go early. Bring a tote, a little cash and a plan to taste something new. **What makes it easier:** a roomy market tote, so produce and finds ride on your shoulder and your hands stay free.",
+      "time": "2 hours",
+      "cost": "Varies by place",
+      "company": "Solo or social"
+    },
+    {
+      "type": "item",
+      "n": 11,
+      "title": "A thrift-store crawl",
+      "hobby": "thrifting",
+      "note": "Visit three in an afternoon with a small budget. Look for one thing you'd never buy new. **Worth bringing:** a sturdy tote for the finds, plus comfortable walking shoes for the walk between shops.",
+      "time": "2 hours",
+      "cost": "Varies by place",
+      "company": "Solo or social"
+    },
+    {
+      "type": "item",
+      "n": 12,
+      "title": "A picnic or potluck in the park",
+      "hobby": "picnicking",
+      "note": "Everyone brings one dish. A feast on a tiny budget, with logistics that mostly look after themselves. **What makes it easier:** a picnic blanket and an insulated cooler bag, so everyone's dish has a place to sit and the spread looks like a spread.",
+      "time": "2-3 hours",
+      "cost": "Varies by place",
+      "company": "Social"
+    },
+    {
+      "type": "item",
+      "n": 13,
+      "title": "A secondhand bookshop",
+      "note": "Head for a section you never visit and buy one book on instinct. **Worth bringing:** a book sleeve, so the book you pick on instinct gets home with its cover intact.",
+      "time": "1 hour",
+      "cost": "Varies by place",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 14,
+      "title": "A group walk with tea",
+      "note": "Ask a few friends to meet at a trailhead or park. Finish with tea or a shared snack. **What makes it easier:** an insulated flask, so there's tea at the halfway bench for everyone to share.",
+      "time": "2 hours",
+      "cost": "Varies by place",
+      "company": "Social"
+    },
+    {
+      "type": "item",
+      "n": 15,
+      "title": "A day as a tourist in your own city",
+      "note": "Build a mini itinerary: morning walk, lunch, a gallery, an evening view. Do it with a visitor's curiosity. **What makes it easier:** comfortable walking shoes and a small daypack, so a morning walk, lunch, a gallery and an evening view fit into one day.",
+      "time": "Half to full day",
+      "cost": "Varies by place",
+      "company": "Solo or social"
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "picnic-blankets",
+        "thermos-flasks",
+        "market-totes",
+        "cooler-bags",
+        "book-sleeves"
+      ],
+      "title": "For market and picnic days",
+      "dek": "A blanket, a flask, a tote and an insulated bag carry the day, so the spread, the finds and the tea all arrive in one piece."
+    },
+    {
+      "type": "h2",
+      "text": "Free ways to start",
+      "id": "free"
+    },
+    {
+      "type": "p",
+      "text": "Some of the nicest outings need no ticket at all. Check entry fees, hours and parking before you go; many places have free days or free hours."
+    },
+    {
+      "type": "list",
+      "items": [
+        "A library branch you've never entered: some have gardens, exhibitions or beautiful reading rooms. Borrow something unexpected.",
+        "A museum on a free or discounted day, or a free gallery or community art space. Choose the piece you'd take home.",
+        "A botanical or public garden, many of which have free or low-cost days.",
+        "A community event or open day, a volunteering shift or a free or pay-what-you-can class. Check notice boards, library bulletins and neighborhood groups, and contact organizers first.",
+        "A quiet public building: many places of worship and historic halls welcome visitors for a look around. Follow local etiquette and dress codes.",
+        "A neighborhood you never go to, or a scavenger hunt of your own: write ten things to spot around town and see who reaches ten first."
+      ]
+    },
+    {
+      "type": "tryThisWeekend",
+      "text": "Pick one category from this list and search your area for a nearby match. Check opening times, entry costs and any rules, pack water, a snack and one small thing to do there, and put it in your calendar with a start time."
+    },
+    {
+      "type": "p",
+      "text": "For a fuller list, see [things to do on the weekend](/journal/things-to-do-on-the-weekend), or stay in with an [at-home creative weekend](/journal/at-home-creative-weekend). Curious about a new hobby? See [15 hobbies to start this month](/journal/affordable-hobbies-under-25)."
+    },
+    {
+      "type": "ifYouLoved",
+      "hobbies": [
+        "hiking",
+        "birdwatching",
+        "thrifting"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "slug": "how-to-get-into-recreational-cycling-as-an-adult",
+  "title": "How to Start Cycling Again as an Adult: A Gentle, No-Lycra Plan",
+  "titleItalic": "A Gentle, No-Lycra Plan",
+  "dek": "A well-fitted helmet, lights for dusk, a small repair kit and a bakery at the end. How to get back on a bike without feeling like an athlete.",
+  "category": "movement",
+  "status": "published",
+  "publishedAt": "2026-11-19",
+  "verifiedAt": "2026-11-18",
+  "hero": "cyclingLane",
+  "searchIntent": "how to start cycling as an adult / recreational cycling for beginners",
+  "angle": "A confidence-first plan: borrow or hire a bike, learn to fit a helmet, practice in a quiet place, take a short first ride, then build routes",
+  "hobbies": [
+    "hiking",
+    "nature-photography",
+    "birdwatching"
+  ],
+  "productIds": [
+    "bike-helmets",
+    "bike-lights",
+    "bike-bells",
+    "bike-repair-kits",
+    "daypacks",
+    "water-bottles",
+    "market-totes"
+  ],
+  "sources": [
+    {
+      "title": "CDC Heads Up: bike helmet fact sheet",
+      "url": "https://www.cdc.gov/heads-up/media/pdfs/helmets/HeadsUp_HelmetFactSheet_Bike_508.pdf",
+      "note": "Helmet fit: level, one to two finger widths above eyebrows, V straps, snug chin strap"
+    },
+    {
+      "title": "National Safety Council: bicycle safety",
+      "url": "https://www.nsc.org/community-safety/safety-topics/seasonal-safety/summer-safety/bicycles",
+      "note": "Helmet recommended; chin strap fit. Page is several years old; re-check"
+    },
+    {
+      "title": "CPSC: which helmet",
+      "url": "https://www.cpsc.gov/s3fs-public/349-WhichHelmetBrochure_5-13-22_WEB_508_0.pdf",
+      "note": "Replace after a crash; may be prudent to replace within 5 to 10 years"
+    },
+    {
+      "title": "Bicycle Helmet Safety Institute: replacing a helmet",
+      "url": "https://helmets.org/replace/",
+      "note": "Replace after any crash where the head hit; many makers say 3 to 5 years"
+    },
+    {
+      "title": "NHTSA: bicycle safety",
+      "url": "https://www.nhtsa.gov/road-safety/bicycle-safety",
+      "note": "Lights and visibility at night"
+    },
+    {
+      "title": "NHTSA bicycle safety sheet (PDF)",
+      "url": "https://www.nhtsa.gov/sites/nhtsa.gov/files/811557.pdf",
+      "note": "Lights: sources differ on all States versus many States; check local law"
+    },
+    {
+      "title": "League of American Bicyclists: Ride Smart",
+      "url": "https://bikeleague.org/ridesmart/commuting/",
+      "note": "White front light and red rear light or reflector at night"
+    },
+    {
+      "title": "National Park Service: bike safety",
+      "url": "https://home.nps.gov/articles/bike-safety.htm",
+      "note": "Shared-path etiquette: slow down, warn, pass on the left, keep right"
+    },
+    {
+      "title": "REI Expert Advice: cycling repair checklist (retailer guide)",
+      "url": "https://www.rei.com/learn/expert-advice/cycling-repair-checklist.html",
+      "note": "Spare tube or patch kit, tire levers, pump, multi-tool"
+    },
+    {
+      "title": "REI Expert Advice: getting into biking (retailer guide)",
+      "url": "https://www.rei.com/learn/expert-advice/getting-into-biking.html",
+      "note": "Saddle height: slight knee bend at the bottom of the stroke"
+    }
+  ],
+  "coworkChecks": [
+    "VERIFIED 2026-11-18: helmet fit - level, about one to two fingers above the eyebrows; side straps form a V under the ears; chin strap snug, about one finger of space - cdc.gov (Heads Up helmet fact sheet), nsc.org",
+    "VERIFIED 2026-11-18: helmet recommended for adults on every ride; helmet laws differ so check local rules. Note: the NSC page is about 5.8 years old, re-check before relying on it - nsc.org, cdc.gov",
+    "VERIFIED 2026-11-18: replace helmet after a crash (foam single-use); periodic replacement conflicts across sources, so text says follow the maker's guidance, many say 3-5 years - cpsc.gov, helmets.org",
+    "VERIFIED 2026-11-18: white front light and red rear light or reflector at night; law wording varies (NHTSA sheets say 'all States' and 'many States'), so 'check your local rules' - nhtsa.gov, bikeleague.org",
+    "VERIFIED 2026-11-18: shared-path etiquette - slow down, warn, pass on the left, keep right - nps.gov",
+    "VERIFIED 2026-11-18: saddle height - slight bend in the knee at the bottom of the stroke - rei.com (retailer guide)",
+    "VERIFIED 2026-11-18: tires at recommended pressure, chain lubed about monthly; spare tube or patch kit, tire levers, pump, multi-tool as optional carry items - rei.com (retailer guide)",
+    "VERIFIED 2026-11-18: unsourced details removed or softened - standover clearance, brake feel, quick-release check, bright-clothing and reflector visibility claims, bell laws, gear-shifting advice, padded shorts - reworded, no claim remains",
+    "VERIFIED 2026-11-18: borrowing, renting, bike-share, workshops and beginner rides described as options 'if available'; no schemes or prices named - reworded, no claim remains",
+    "VERIFIED 2026-11-18: road-position and hand-signal guidance stays generic ('follow local traffic laws', signal turns) and defers to local rules - reworded, no claim remains",
+    "NOTE 2026-11-19: monetisation rewrite: helmet, lights and bell block moved to directly after Step 3, repair kit gear line added at Step 4 and a second block after Step 6; all gear lines describe convenience only and defer to the label, local rules and the maker's guidance; every existing safety step is unchanged and still within the CDC, CPSC, NSC, BHSI, NHTSA, NPS and REI sources listed"
+  ],
+  "related": [
+    "active-hobbies-for-women-who-dont-love-the-gym",
+    "cheap-weekend-adventures",
+    "how-to-plan-a-perfect-picnic"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "If the last time you rode a bike you were fourteen, riding for fun can feel nostalgic on a sunny day and slightly terrifying on every other one. Both reactions are normal, and neither means you've forgotten how."
+    },
+    {
+      "type": "p",
+      "text": "Recreational cycling is the unhurried kind: no special outfit, no speed targets, no clip-in shoes. Just you, a bike and somewhere pleasant to end up, like a flat canal path on a Saturday morning with a bakery stop at the far end. This guide goes from a borrowed bike to a calm first ride, with safety built in from step one."
+    },
+    {
+      "type": "p",
+      "text": "Rules differ from place to place. Everything below is general guidance, so check your local rules on helmets, lights, where you may ride and how to signal, and follow those over anything written here."
+    },
+    {
+      "type": "h2",
+      "text": "Step 1: Get a bike that fits",
+      "id": "bike"
+    },
+    {
+      "type": "p",
+      "text": "You don't need to buy a bike to start. Borrow one from a friend, rent one for an hour, or look into a local bike-share scheme or community bike library. The point is to find out how much you enjoy it, and if you fall for it, a bike that fits you properly is the nicest upgrade."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Comfort over speed.** For casual riding, many people find an upright bike with a relaxed posture the most comfortable.",
+        "**Saddle height.** With the ball of your foot on the pedal at its lowest point, there should be a slight bend in your knee.",
+        "**Reach.** You shouldn't feel stretched out or cramped. A bike shop can help adjust the fit."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Step 2: Get a helmet and learn to fit it",
+      "id": "helmet"
+    },
+    {
+      "type": "p",
+      "text": "Safety organizations recommend wearing a helmet, and helmet laws differ from place to place, so check yours. A helmet only helps if it fits properly, so take a minute to adjust it."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Level, not tilted back.** The helmet should sit flat on your head, about one to two fingers above your eyebrows.",
+        "**Side straps in a V** that meets just below your ears.",
+        "**Chin strap snug.** You should be able to fit about one finger between the strap and your chin, and it should feel firm when you open your mouth wide.",
+        "**No wobble.** Shake your head. If the helmet shifts, tighten the dial or add the supplied pads.",
+        "**Replace after a crash** in which your head hit something, because the foam is single-use. Beyond that, advice on age varies, so follow your helmet maker's guidance; many makers say three to five years."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**What makes it easier:** a bike helmet with an adjustable dial and fit pads, so the fit steps above take a minute rather than a guess. Read the label and follow the maker's guidance on fit and replacement."
+    },
+    {
+      "type": "h2",
+      "text": "Step 3: Be seen",
+      "id": "visible"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Lights at dusk and after dark.** Use a white front light and a red rear light or reflector at night. Rules on lights vary by place, so check your local rules.",
+        "**A bell** is polite on shared paths."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**What makes it easier:** a white front light and a red rear light, so dusk doesn't change your plans, plus a small bell for shared paths. Rules on lights vary by place, so check your local rules."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "bike-helmets",
+        "bike-lights",
+        "bike-bells"
+      ],
+      "title": "Helmet, lights, bell",
+      "dek": "Three small things to sort before the first ride. Check each listing and its label for fit, lights and local requirements."
+    },
+    {
+      "type": "h2",
+      "text": "Step 4: Do a thirty-second safety check",
+      "id": "check"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Air.** Squeeze the tires and check the pressure range printed on the tire sidewall. Pump up if soft.",
+        "**Brakes.** Test both levers before you set off. If anything feels off, ask a bike shop to take a look.",
+        "**Chain.** It should look clean, not rusty or dry. A little lubricant every month or so helps."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**What makes it easier:** a small repair kit with a spare tube or patch kit, tire levers and a pump (a multi-tool is a common extra), so a flat is something you can deal with on the spot."
+    },
+    {
+      "type": "whatYoullNeed",
+      "essentials": [
+        "A bike that fits (borrowed, rented or owned)",
+        "A properly fitted helmet",
+        "Lights and reflectors if you'll ride near dusk",
+        "A water bottle and a snack",
+        "Phone, ID and a small amount of cash or a card",
+        "A lock if you'll stop somewhere"
+      ],
+      "optional": [
+        "A small daypack or basket",
+        "A bell",
+        "A spare tube or patch kit, tire levers, a pump and a multi-tool",
+        "Gloves"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Step 5: Practice somewhere quiet",
+      "id": "practice"
+    },
+    {
+      "type": "p",
+      "text": "Choose an empty parking lot, a quiet park path or a traffic-free trail, and spend twenty minutes getting comfortable."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Do the safety check, put on your helmet and adjust the saddle.",
+        "Push off, coast and practice braking gently with both brakes.",
+        "Ride in a slow, wide circle. Then try a figure-eight.",
+        "Practice looking over your shoulder without wobbling. Then practice signaling with one hand.",
+        "Try a few gentle starts and stops. Stop when you feel tired, not when you feel wobbly."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Step 6: Your first real ride",
+      "id": "first-ride"
+    },
+    {
+      "type": "p",
+      "text": "Choose a flat, traffic-free or very quiet route of about thirty minutes. A paved trail, a canal path or a park loop is a good place to begin. Ride with a friend if you can. Go on a weekday morning or a quiet weekend time to avoid crowds."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Follow local traffic laws.** Obey signals and signs, and give way as required.",
+        "**Ride predictably.** Hold a steady line, signal your turns and look ahead.",
+        "**Share paths politely.** Slow down near walkers, call out or ring a bell before you pass, pass on the left and keep to the right.",
+        "**Keep your phone away.** Stop to take photos, not while riding.",
+        "**Know your route** and tell someone where you're going if you're heading somewhere remote."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**What makes it easier:** a small daypack, a water bottle within reach and a tote for the bakery stop, so water, a snack, your phone and the pastry all have somewhere to go."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "bike-repair-kits",
+        "daypacks",
+        "water-bottles",
+        "market-totes"
+      ],
+      "title": "For a longer first ride",
+      "dek": "A repair kit for the unexpected, a daypack for the snack, a bottle within reach and a tote for the bakery stop make a ride feel easy."
+    },
+    {
+      "type": "h2",
+      "text": "Step 7: Build up to the bakery",
+      "id": "build"
+    },
+    {
+      "type": "p",
+      "text": "Add a little at a time: ten more minutes, a slightly hillier route, a café at the far end. A ride with a destination tends to be more motivating than a loop, and a bakery is a respectable destination. If you'd like company, look for a local beginner or social ride; many areas have one."
+    },
+    {
+      "type": "h2",
+      "text": "Troubleshooting",
+      "id": "troubleshooting"
+    },
+    {
+      "type": "h3",
+      "text": "'My seat hurts.'"
+    },
+    {
+      "type": "p",
+      "text": "A bike shop can help with saddle height, angle and comfort. If pain is sharp or persistent, check with a bike shop or a doctor."
+    },
+    {
+      "type": "h3",
+      "text": "'I'm scared of traffic.'"
+    },
+    {
+      "type": "p",
+      "text": "Stay off busy roads at first. Plan routes along paths and quiet streets, and build confidence there. You don't have to ride on roads you don't feel good about."
+    },
+    {
+      "type": "h3",
+      "text": "'Hills are awful.'"
+    },
+    {
+      "type": "p",
+      "text": "Take hills slowly. It's completely fine to get off and walk."
+    },
+    {
+      "type": "h3",
+      "text": "'I got a flat tire.'"
+    },
+    {
+      "type": "p",
+      "text": "Walk to the nearest bike shop or call a friend. Later, learn to fix one at home, or take a workshop if your area offers them."
+    },
+    {
+      "type": "tryThisWeekend",
+      "text": "Borrow or rent a bike for an hour, fit your helmet and spend twenty minutes wobbling happily in a quiet spot. That's all."
+    },
+    {
+      "type": "p",
+      "text": "For other gentle ways to move, see [active hobbies for women who don't love the gym](/journal/active-hobbies-for-women-who-dont-love-the-gym), or plan a destination with [weekend adventures, packed](/journal/cheap-weekend-adventures)."
+    },
+    {
+      "type": "ifYouLoved",
+      "hobbies": [
+        "hiking",
+        "birdwatching",
+        "nature-photography"
+      ]
+    }
+  ]
+}

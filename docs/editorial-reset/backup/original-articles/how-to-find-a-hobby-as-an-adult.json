@@ -1,0 +1,244 @@
+{
+  "slug": "how-to-find-a-hobby-as-an-adult",
+  "title": "How to Find a Hobby as an Adult (When You Say \"I Don't Really Have Any Interests\")",
+  "titleItalic": "I Don't Really Have Any Interests",
+  "dek": "A nosy little audit, three small trial kits and a one-week experiment to find the thing you'd happily do again. No passion required.",
+  "category": "after-hours",
+  "status": "published",
+  "publishedAt": "2026-11-19",
+  "verifiedAt": "2026-11-18",
+  "hero": "soloCafe",
+  "searchIntent": "how to find a hobby as an adult / I don't have any hobbies",
+  "angle": "Treat finding a hobby as a small experiment, not a personality test: audit, pick a craving, try the smallest kit, review, repeat",
+  "hobbies": [
+    "watercolor-painting",
+    "air-dry-clay",
+    "hiking",
+    "pickleball",
+    "reading",
+    "thrifting",
+    "book-clubs",
+    "craft-nights"
+  ],
+  "productIds": [
+    "pocket-notebooks",
+    "watercolor-sets",
+    "air-dry-clay",
+    "daypacks",
+    "pickleball-sets",
+    "conversation-cards",
+    "friendship-bracelet-kits",
+    "market-totes"
+  ],
+  "sources": [
+    {
+      "title": "National Park Service: hiking safety",
+      "url": "https://www.nps.gov/articles/hiking-safety.htm",
+      "note": "Tell someone your route, check weather, carry water; hiking alone not recommended"
+    },
+    {
+      "title": "NPS Mount Rainier: hiking safety",
+      "url": "https://www.nps.gov/mora/planyourvisit/hiking-safety.htm",
+      "note": "The ten essentials"
+    }
+  ],
+  "coworkChecks": [
+    "VERIFIED 2026-11-18: hiking appears only as a hobby suggestion with no safety instructions; NPS advises telling someone your route, checking weather and carrying water, and not hiking alone - nps.gov",
+    "VERIFIED 2026-11-18: library, community-center, studio and court drop-in sessions described as 'many' with 'check locally'; no price claim - reworded, no claim remains",
+    "VERIFIED 2026-11-18: no cost ranges appear in the article ('typically under $25' items not present) - reworded, no claim remains",
+    "VERIFIED 2026-11-18: /hobby-finder quiz description updated to match the live tool (seven questions about time, budget, energy and company; no sign-up) - src/routes/hobby-finder.tsx",
+    "VERIFIED 2026-11-18: no habit-formation timeline appears in the article - nothing to cite",
+    "VERIFIED 2026-11-18: cross-links - related list trimmed to published articles (low-energy-hobbies and affordable-hobbies-under-25 removed) - reworded",
+    "NOTE 2026-11-19: monetisation rewrite: a 'Three trial kits' shop block moved to directly after 'Pick three and try the smallest version', gear lines added to each craving row, 'buy the mini version' now leads the trial options (borrow-first kept as one bullet); audit and method unchanged; no health or self-help claims"
+  ],
+  "related": [
+    "hobbies-to-try-when-life-feels-like-work-sleep-repeat",
+    "things-to-do-after-work-instead-of-scrolling",
+    "creative-hobbies-you-can-start-at-home"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "What do you do for fun? If you hear yourself say, 'Oh, you know. Watch things,' it's not a crisis. It's just a little flat, and you know you used to have a longer answer."
+    },
+    {
+      "type": "p",
+      "text": "Nobody finds a passion by waiting for a lightning bolt. Hobbies tend to turn up the other way round: you try small things, notice which ones you'd happily repeat, and keep those. The steps below just make that tidy."
+    },
+    {
+      "type": "h2",
+      "text": "Start with a nosy little audit",
+      "id": "audit"
+    },
+    {
+      "type": "p",
+      "text": "Get a notebook and answer four questions quickly. The first answer is usually the honest one."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**What did you love at ten?** Drawing, building forts, inventing a language with a friend. The form may have changed but the itch hasn't.",
+        "**What eats an afternoon without you noticing?** Even if it's reorganizing the spice rack or reading about lighthouses. That's useful data.",
+        "**What do you keep watching and never try?** Pottery videos, trail photos, someone's sourdough. Curiosity you've been politely ignoring.",
+        "**Whose weekend do you quietly envy?** The friend with the tennis racket, the colleague with the gorgeous notebooks. Envy is a signpost, not a flaw."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Work out what you're hungry for",
+      "id": "craving"
+    },
+    {
+      "type": "p",
+      "text": "Different hobbies do different jobs, so it helps to decide what you want from this one right now. Roughly:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Making something:** [watercolor](/hobbies/watercolor-painting) ([beginner's guide](/journal/watercolor-painting-for-beginners)), [air-dry clay](/hobbies/air-dry-clay) ([how to start](/journal/how-to-start-air-dry-clay)) or [embroidery](/journal/how-to-start-embroidery). **What makes it easier:** a mini paint set or a block of clay, so the first session starts the evening it arrives.",
+        "**Slowing down:** [reading](/hobbies/reading), puzzles, anything repetitive and gentle, like [crochet](/journal/how-to-start-crocheting). For tired evenings, see [low-energy hobbies](/journal/low-energy-hobbies). **What makes it easier:** a pocket notebook for jotting what you read, or a hook and a ball of yarn.",
+        "**Moving without a gym:** [hiking](/hobbies/hiking) or [pickleball](/hobbies/pickleball). **What makes it easier:** a small daypack and comfortable walking shoes for a trail, or a paddle set for pickleball.",
+        "**Company:** a [book club](/hobbies/book-clubs) or a [craft night](/hobbies/craft-nights). **What makes it easier:** a deck of conversation cards or a bracelet kit, so the evening has something to do and something to say.",
+        "**A change of scenery:** [thrifting](/hobbies/thrifting) in a neighborhood you never visit. **What makes it easier:** a roomy market tote, so finds ride on your shoulder."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Can't pick? Take the [Hobby Finder quiz](/hobby-finder): up to six quick questions about your time, budget, energy and company, and a short list of hobbies out. No sign-up required. Prefer to browse? [Thirty-five hobbies to try](/journal/hobbies-to-try-when-life-feels-like-work-sleep-repeat) sorts them by how much energy you have."
+    },
+    {
+      "type": "h2",
+      "text": "Pick three and try the smallest version",
+      "id": "pick"
+    },
+    {
+      "type": "p",
+      "text": "Choose three things that sound even faintly interesting. Not the ideal three, just three. Then give each a small, low-pressure trial: a starter set, a borrowed racket or a single session is plenty."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Buy the mini version.** One small paint set, a block of clay or a pocket notebook is a happy first purchase, because it makes starting easy.",
+        "**Borrow first.** Library books, a friend's racket, a community taster session.",
+        "**Raid your own home.** A notebook, an old tote, a pen that works.",
+        "**Drop in.** Many studios and courts sell single sessions, which can be a lighter commitment than a block. Check locally."
+      ]
+    },
+    {
+      "type": "whatYoullNeed",
+      "essentials": [
+        "A notebook for jotting how each try felt",
+        "Three hobbies you're curious about",
+        "A free evening or weekend slot for each",
+        "One approach: small starter versions"
+      ],
+      "optional": [
+        "A friend to join one of them",
+        "A mini kit for each pick: a pocket notebook, a small paint set or a block of clay, a daypack for the outdoor trial"
+      ]
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "pocket-notebooks",
+        "watercolor-sets",
+        "air-dry-clay",
+        "daypacks"
+      ],
+      "title": "Three trial kits",
+      "dek": "A pocket notebook, a mini paint set or a block of clay and a daypack for an outdoor trial cover three very different evenings, and each makes starting simple."
+    },
+    {
+      "type": "h2",
+      "text": "Run a one-week experiment",
+      "id": "experiment"
+    },
+    {
+      "type": "p",
+      "text": "Seven days, three short sessions, thirty to sixty minutes each. Afterwards, jot down how you felt before, how you felt after, and whether you'd go again. Skill doesn't matter. The after-feeling does: lighter, curious, a bit pleased with yourself."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Monday: thirty minutes with your first pick. Aim for nothing good.",
+        "Wednesday: the second pick, ideally somewhere different (outside, or with a friend).",
+        "Saturday: the third, or a return visit to whichever felt most fun.",
+        "Sunday: read your notes and underline the one you'd happily repeat."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Skip your most frazzled week and pick an ordinary one. Three modest tries beat one heroic plan that collapses by Tuesday."
+    },
+    {
+      "type": "h2",
+      "text": "Keep one, park one, drop one",
+      "id": "decide"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Keep** the one you'd do again, and put it in next week's calendar.",
+        "**Park** the one that was fine but not right now. It goes on a list for another season.",
+        "**Drop** the one that felt like homework. That's the system working, not you failing."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Keep a 'maybe' list in your phone notes while you're at it. A class poster, a friend's project, a video you watched twice: add it. When you run the experiment again, you'll have candidates waiting, and you'll see which ideas keep coming back."
+    },
+    {
+      "type": "h2",
+      "text": "When it doesn't go smoothly",
+      "id": "troubleshooting"
+    },
+    {
+      "type": "h3",
+      "text": "'I'm not good at anything.'"
+    },
+    {
+      "type": "p",
+      "text": "Wonderful, because you aren't auditioning. You're collecting evenings you like."
+    },
+    {
+      "type": "h3",
+      "text": "'Nothing sticks.'"
+    },
+    {
+      "type": "p",
+      "text": "Change the format before you change the hobby. A solo pursuit can feel lonely and a group one can feel like a second job. Swap one variable and try again."
+    },
+    {
+      "type": "h3",
+      "text": "'I don't have time.'"
+    },
+    {
+      "type": "p",
+      "text": "Try fifteen minutes, twice a week. If it deserves more, it'll tell you. If not, you've lost almost nothing."
+    },
+    {
+      "type": "h3",
+      "text": "'I felt ridiculous.'"
+    },
+    {
+      "type": "p",
+      "text": "Very common, and mostly a first-session problem. The second visit is noticeably easier."
+    },
+    {
+      "type": "p",
+      "text": "A small starter set is a fine first buy, and borrowing, renting or booking a single beginner session works too if you'd like to test the waters. Once you've tried something three times and still want more, treat yourself to one good thing that makes it nicer. [15 hobbies to start this month](/journal/affordable-hobbies-under-25) lists the first thing to buy for each of fifteen."
+    },
+    {
+      "type": "tryThisWeekend",
+      "text": "Do the audit on Friday evening with something warm to drink. By Saturday morning you'll have three hobbies to try."
+    },
+    {
+      "type": "ifYouLoved",
+      "hobbies": [
+        "watercolor-painting",
+        "hiking",
+        "craft-nights"
+      ]
+    }
+  ]
+}
