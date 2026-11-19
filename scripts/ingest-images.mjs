@@ -8,7 +8,8 @@
  *
  * For every row: validate (see scripts/ingest-images.lib.mjs), resize to at most 1600 px wide JPEG
  * (quality 82, metadata stripped) into src/assets/<kebab-key>.jpg, register the image in the
- * generated src/data/images.extra.ts, set `hero:` in the article files named in heroFor, and append
+ * generated src/data/images.extra.ts, set `hero:` in the article files named in heroFor, set
+ * `image:` on the hobbies named in hobbyFor (hobby slugs, src/data/hobbies.ts), and append
  * a row to docs/IMAGE-LICENSES.md. Nothing is written if any row is invalid. Re-running with the
  * same CSV changes nothing (rows already ingested are skipped).
  *
@@ -33,6 +34,8 @@ import {
   kebabKey,
   MAX_WIDTH,
   parseCsv,
+  parseHobbySeeds,
+  setHobbyImage,
   rowsFromRecords,
   splitList,
   validateRow,
@@ -43,7 +46,7 @@ const INCOMING = join(root, "docs/content/incoming-images");
 const ASSETS = join(root, "src/assets");
 const EXTRA = join(root, "src/data/images.extra.ts");
 const LICENSES = join(root, "docs/IMAGE-LICENSES.md");
-const CONTENT = join(root, "src/content");
+const HOBBIES = join(root, "src/data/hobbies.ts");
 
 const args = process.argv.slice(2);
 const check = args.includes("--check");
@@ -274,6 +277,7 @@ const extra = readExtra();
 const ingested = new Map(extra.map((e) => [e.key, e]));
 const articles = articleFiles();
 const knownSlugs = new Set(articles.keys());
+const hobbies = new Map(parseHobbySeeds(readFileSync(HOBBIES, "utf8")).map((h) => [h.slug, h.image]));
 const seen = new Set();
 let problems = 0;
 const plan = [];
@@ -289,6 +293,7 @@ rows.forEach((row, i) => {
     fileExists,
     info,
     knownSlugs,
+    hobbies,
   });
   // a row already ingested no longer needs its source file
   const already = ingested.has(row.key) && ingested.get(row.key).alt === row.alt;
@@ -328,6 +333,12 @@ for (const { row, already, path } of plan) {
     entries.push({ key: row.key, file, alt: row.alt, w: dims.w, h: dims.h });
     note = `new ${dims.w}x${dims.h}`;
   }
+  const hobbyList = splitList(row.hobbyFor);
+  if (hobbyList.length) {
+    let text = readFileSync(HOBBIES, "utf8");
+    for (const slug of hobbyList) text = setHobbyImage(text, slug, row.key);
+    writeFileSync(HOBBIES, text);
+  }
   const heroes = [];
   for (const slug of splitList(row.heroFor)) {
     const f = articles.get(slug);
@@ -344,9 +355,9 @@ for (const { row, already, path } of plan) {
         `| Key | File | Source | Creator | Source URL | Licence (terms and URL) | Date sourced | Hero of | Notes |\n|---|---|---|---|---|---|---|---|---|\n`;
     }
     const cell = (s) => (s || "").replace(/\|/g, "/").replace(/\n/g, " ");
-    licenseText += `| \`${row.key}\` | src/assets/${file} | ${cell(row.source)} | ${cell(row.creator)} | ${cell(row.sourceUrl)} | ${cell(row.licenseName)} (${cell(row.licenseUrl)}) | ${cell(row.dateSourced)} | ${cell(row.heroFor) || "-"} | ${cell(row.notes) || "-"} |\n`;
+    licenseText += `| \`${row.key}\` | src/assets/${file} | ${cell(row.source)} | ${cell(row.creator)} | ${cell(row.sourceUrl)} | ${cell(row.licenseName)} (${cell(row.licenseUrl)}) | ${cell(row.dateSourced)} | ${cell([row.heroFor, row.hobbyFor && `hobby: ${row.hobbyFor}`].filter(Boolean).join("; ")) || "-"} | ${cell(row.notes) || "-"} |\n`;
   }
-  summary.push({ key: row.key, file, note, heroes, pinFor: row.pinFor });
+  summary.push({ key: row.key, file, note, heroes, hobbies: hobbyList, pinFor: row.pinFor });
 }
 if (licenseText) writeFileSync(LICENSES, licenseText.replace(/\n*$/, "\n"));
 if (entries.length !== extra.length || !existsSync(EXTRA)) writeExtra(entries);
@@ -355,6 +366,7 @@ console.log("\nIngest summary:");
 for (const s of summary) {
   console.log(`  ${s.key}: src/assets/${s.file} (${s.note})`);
   if (s.heroes.length) console.log(`    hero of: ${s.heroes.join(", ")}`);
+  if (s.hobbies.length) console.log(`    hobby image for: ${s.hobbies.join(", ")}`);
   if (s.pinFor) console.log(`    pinFor (apply by hand in the pin data): ${s.pinFor}`);
 }
 console.log(

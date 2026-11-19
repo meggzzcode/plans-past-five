@@ -5,6 +5,23 @@ import { hobbies } from "@/data/hobbies";
 const hobbyHits = (q: string) => search(q).filter((h) => h.kind === "Hobby");
 
 describe("search understands human phrases", () => {
+  it("the generic word 'hobby' does not block concept filters ('cheap solo hobby at home')", () => {
+    for (const q of [
+      "cheap solo hobby at home",
+      "free hobby alone",
+      "hobby at home",
+      "cheap solo hobbies",
+    ]) {
+      const h = hobbyHits(q);
+      expect(h.length, q).toBeGreaterThan(2);
+    }
+    for (const hit of hobbyHits("free hobby alone")) {
+      const hobby = hobbies.find((x) => `/hobbies/${x.slug}` === hit.to)!;
+      expect(hobby.company).toContain("solo");
+    }
+    expect(search("hobbies").length).toBeGreaterThan(0);
+  });
+
   it("finds yoga", () => {
     const hits = search("yoga");
     expect(hits[0]?.title).toBe("Yoga for Beginners");

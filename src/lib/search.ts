@@ -249,6 +249,21 @@ export const searchStopwords = new Set([
   "try",
 ]);
 
+/**
+ * Generic nouns that describe every hobby ("cheap solo hobby at home"). They are dropped when the
+ * sentence also carries a known concept (cheap, solo, at home...), so the concept filters decide
+ * the hobby list instead of demanding the literal word "hobby" in each profile. On their own they
+ * still search normally ("hobbies" alone is not an empty query).
+ */
+const genericHobbyWords = new Set([
+  "hobby",
+  "hobbies",
+  "activity",
+  "activities",
+  "pastime",
+  "pastimes",
+]);
+
 const normalize = (q: string) =>
   ` ${q
     .toLowerCase()
@@ -328,7 +343,11 @@ export function searchDetailed(q: string, limit = 60): SearchOutcome {
       rest = rest.replace(new RegExp(`(?<=\\s)${escapeRe(p)}(?=\\s)`, "g"), " ");
     }
   }
-  const terms = rest.split(" ").filter((t) => t.length > 1 && !searchStopwords.has(t));
+  const terms = rest
+    .split(" ")
+    .filter(
+      (t) => t.length > 1 && !searchStopwords.has(t) && !(found.length && genericHobbyWords.has(t)),
+    );
   if (!found.length && !terms.length) return none();
 
   const scored: { e: Entry; s: number }[] = [];

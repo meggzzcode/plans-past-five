@@ -15,6 +15,7 @@ export const COLUMNS = [
   "dateSourced",
   "heroFor",
   "pinFor",
+  "hobbyFor",
   "notes",
 ];
 
@@ -30,6 +31,8 @@ export const SOURCES = [
 export const AI_SOURCES = ["Canva AI", "Lovable AI"];
 export const MIN_WIDTH = 1600;
 export const MAX_WIDTH = 1600;
+/** Minimum width for rows that only feed small hobby cards (hobbyFor set, no heroFor). */
+export const MIN_WIDTH_CARD = 600;
 export const ALT_MIN = 20;
 export const ALT_MAX = 160;
 export const IMAGE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".webp"];
@@ -147,6 +150,9 @@ export function validateRow(row, ctx) {
   const source = (row.source ?? "").trim();
   const need = (name) => !(row[name] ?? "").trim() && errors.push(`${name} is required`);
 
+  const cardOnly = splitList(row.hobbyFor).length > 0 && splitList(row.heroFor).length === 0;
+  const minWidth = cardOnly ? MIN_WIDTH_CARD : MIN_WIDTH;
+
   if (!key) errors.push("key is required");
   else if (!isCamelCaseKey(key))
     errors.push(`key "${key}" must be camelCase (letters and digits, starting lowercase)`);
@@ -163,8 +169,8 @@ export function validateRow(row, ctx) {
   if (key) ctx.seenKeys?.add(key);
 
   if (!file) errors.push("file is required");
-  else if (file !== file.replace(/^.*[\\/]/, ""))
-    errors.push(`file "${file}" must be a bare file name inside docs/content/incoming-images/`);
+  else if (/(^|[\\/])\.\.([\\/]|$)|^[\\/]|\\/.test(file))
+    errors.push(`file "${file}" must be a relative path inside docs/content/incoming-images/ (no .. or absolute paths)`);
   else if (!IMAGE_EXTENSIONS.some((e) => file.toLowerCase().endsWith(e)))
     errors.push(`file "${file}" must be one of ${IMAGE_EXTENSIONS.join(", ")}`);
   else if (!ctx.fileExists)
@@ -172,9 +178,9 @@ export function validateRow(row, ctx) {
   else if (!ctx.info) errors.push(`file "${file}" could not be inspected`);
   else if (ctx.info.error)
     errors.push(`file "${file}" is not a readable image (${ctx.info.error})`);
-  else if (ctx.info.width < MIN_WIDTH)
+  else if (ctx.info.width < minWidth)
     errors.push(
-      `file "${file}" is ${ctx.info.width} px wide (${ctx.info.width}x${ctx.info.height}); at least ${MIN_WIDTH} px wide is required. Download the larger or original size.`,
+      `file "${file}" is ${ctx.info.width} px wide (${ctx.info.width}x${ctx.info.height}); at least ${minWidth} px wide is required. Download the larger or original size.`,
     );
 
   if (alt.length < ALT_MIN || alt.length > ALT_MAX)
@@ -201,7 +207,55 @@ export function validateRow(row, ctx) {
     if (ctx.knownSlugs && !ctx.knownSlugs.has(slug))
       errors.push(`heroFor: no article file with slug "${slug}"`);
   }
+  for (const slug of splitList(row.hobbyFor)) {
+    if (!ctx.hobbies) continue;
+    if (!ctx.hobbies.has(slug)) errors.push(`hobbyFor: no hobby with slug "${slug}"`);
+    else {
+      const current = ctx.hobbies.get(slug);
+      if (current && current !== key)
+        errors.push(`hobbyFor: hobby "${slug}" already has image "${current}"`);
+    }
+  }
   return errors;
+}
+
+/**
+ * Find hobby seeds in the text of src/data/hobbies.ts: [{slug, image|null}]. A seed starts at a
+ * 4-space-indented `name: "..."` line and ends at the next 2-space `},`.
+ */
+export function parseHobbySeeds(text) {
+  const out = [];
+  const re = /^ {4}name: "([^"]+)",\n([\s\S]*?)^ {2}\},$/gm;
+  for (const m of text.matchAll(re)) {
+    const slug = m[1]
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+    const img = /^ {4}image: "(\w+)",$/m.exec(m[2]);
+    out.push({ slug, image: img ? img[1] : null });
+  }
+  return out;
+}
+
+/** Return hobbies.ts text with `image: "<key>"` set on the seed for `slug` (unchanged if already set). */
+export function setHobbyImage(text, slug, key) {
+  const re = /^( {4}name: "([^"]+)",\n)([\s\S]*?)(^ {2}\},$)/gm;
+  let done = false;
+  const next = text.replace(re, (all, head, name, body, tail) => {
+    const s = name
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+    if (s !== slug) return all;
+    done = true;
+    if (/^ {4}image: "/m.test(body)) return all;
+    if (!/^ {4}productIds:/m.test(body)) throw new Error(`hobby "${slug}" has no productIds line`);
+    return head + body.replace(/^( {4}productIds:)/m, `    image: "${key}",\n$1`) + tail;
+  });
+  if (!done) throw new Error(`no hobby with slug "${slug}"`);
+  return next;
 }
 
 /** Minimal RFC 4180 CSV parser. Lines starting with # (at a record start) are comments. */
