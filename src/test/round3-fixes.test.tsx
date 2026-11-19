@@ -148,13 +148,14 @@ describe("3. link text before 'has more ...' agrees with the verb", () => {
 });
 
 describe("4. Tonight: home entry, save, carry into the planner", () => {
-  it("the home page has a small Tonight link, not a fourth journey tile", () => {
+  it("the home page has the three journeys (one primary) and no separate Tonight link or tile", () => {
     const src = readFileSync(path.join(root, "src/routes/index.tsx"), "utf8");
-    expect(src).toContain('data-testid="home-tonight"');
-    expect(src).toContain('to="/tools/tonight"');
+    expect(src).not.toContain("/tools/tonight");
+    expect(src).not.toContain("home-tonight");
     const tiles = src.match(/const startTiles[\s\S]*?\n\];/)![0];
-    expect(tiles).not.toContain("/tools/tonight");
+    expect(tiles.match(/to: "/g)).toHaveLength(3);
     expect(tiles.match(/primary: true/g)).toHaveLength(1);
+    for (const to of ["/hobby-finder", "/make-plans", "/shop"]) expect(tiles).toContain(to);
   });
 
   const input = {
@@ -189,8 +190,8 @@ describe("4. Tonight: home entry, save, carry into the planner", () => {
   it("an unknown 'with' id is ignored", () => {
     expect(parsePlanSearch({ with: "not-a-real-idea" }).pin).toBeNull();
   });
-  it("the Tonight page saves through My Plans and links with search params", () => {
-    const src = readFileSync(path.join(root, "src/routes/tools.tonight.tsx"), "utf8");
+  it("the Tonight mode of Make Plans saves through My Plans and links with search params", () => {
+    const src = readFileSync(path.join(root, "src/components/planner/TonightMode.tsx"), "utf8");
     expect(src).toContain("<SaveButton");
     expect(src).toContain("tonightPlanSearch(input, s)");
   });
