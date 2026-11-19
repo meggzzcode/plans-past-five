@@ -9,7 +9,7 @@ export const Route = createFileRoute("/editorial-policy")({
     seo({
       title: "Editorial Standards",
       description:
-        "How Plans Past Five researches, writes and updates its stories, how we use AI tools and images, and what we will not do.",
+        "How Plans Past Five picks hobbies and products, how we use AI tools and images, what we'll never make up, and how we fix mistakes.",
       path: "/editorial-policy",
       jsonLd: [
         breadcrumbJsonLd([
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/editorial-policy")({
     <ProsePage
       kicker="The fine print"
       title="Editorial standards"
-      dek="How we write, what we won't do, and how we keep things honest."
+      dek="How we pick hobbies and products, what we'll never make up, and how we fix mistakes."
       tone="matcha"
     >
       <h2>Original and useful</h2>
@@ -30,6 +30,14 @@ export const Route = createFileRoute("/editorial-policy")({
         Every story is written to be genuinely useful to a beginner: realistic time, approximate
         cost ranges, what you actually need, and an easy first step.
       </p>
+      <aside className="not-prose my-8 border-2 border-dashed border-cherry bg-cream p-5">
+        <p className="kicker text-cherry">Why you can trust the picks</p>
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-ink">
+          <li>We name a product only after checking its Amazon listing.</li>
+          <li>We never invent reviews, prices, ratings or personal experiences.</li>
+          <li>If something changes or turns out wrong, we update the page and say so.</li>
+        </ul>
+      </aside>
       <h2>What we won't do</h2>
       <ul>
         <li>Invent personal experiences, product testing, testimonials or community statistics.</li>
@@ -55,10 +63,11 @@ export const Route = createFileRoute("/editorial-policy")({
       </p>
       <h2>Commercial independence</h2>
       <p>
-        Recommendations are chosen because they help someone start a hobby. We show product names
-        and brands only for products we have checked against their Amazon listing, and we have not
-        tested them ourselves. We do not currently earn a commission from our links; if that
-        changes, the disclosure beside the links changes with it.
+        Picks are chosen because they help you start, and we show product names and brands only for
+        products we've checked against their Amazon listing. We haven't tested them ourselves. Our
+        shopping links are ordinary Amazon links today, and we don't currently earn a commission
+        from them. If that ever changes, the note beside every link changes with it, and what we
+        recommend stays the same.
       </p>
       <h2>More on how we work</h2>
       <p>

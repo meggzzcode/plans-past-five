@@ -6,6 +6,7 @@ import { QUIZ_ORDER, type QuizKey } from "@/lib/quiz-flow";
 import type { Hobby } from "@/data/hobbies";
 import { images, type ImageKey } from "@/data/images";
 import type { PersonaKey } from "@/lib/finder";
+import { selectProducts } from "@/data/catalog";
 import { toneBg } from "@/components/editorial/Section";
 import { Bow, Flower, Sparkle, Star } from "@/components/brand/Doodles";
 import { SaveButton } from "@/components/editorial/SaveButton";
@@ -14,14 +15,7 @@ import { cn } from "@/lib/utils";
 import { track } from "@/lib/track";
 import { answerLabel } from "./questions";
 import { backBtn } from "./QuizStep";
-import {
-  copyLink,
-  downloadBlob,
-  fileNameFor,
-  firstSentence,
-  renderCardPng,
-  shareResult,
-} from "./share";
+import { copyLink, downloadBlob, fileNameFor, renderCardPng, shareResult } from "./share";
 
 const personaImage: Record<PersonaKey, ImageKey> = {
   creative: "junkJournal",
@@ -122,10 +116,18 @@ function ResultCard({ h, badge, note }: { h: Hobby; badge?: string | undefined; 
           </li>
         </ul>
         {note && <p className="text-xs font-semibold text-cherry">{note}</p>}
-        <p className="line-clamp-2 bg-butter px-3 py-2 text-sm text-ink">
-          <span className="font-semibold text-cherry">First step: </span>
+        <p className="bg-butter px-3 py-2 text-sm text-ink">
+          <span className="font-semibold text-cherry">Tonight, try: </span>
           {h.firstActivity}
         </p>
+        <Link
+          to="/hobbies/$slug"
+          params={{ slug: h.slug }}
+          hash="kit"
+          className="mt-auto inline-flex min-h-11 items-center text-sm font-semibold text-cherry underline underline-offset-4 hover:text-ink"
+        >
+          What you'll need <span className="sr-only">for {h.name}</span>
+        </Link>
       </div>
     </li>
   );
@@ -149,6 +151,7 @@ export function ResultsView({
   const { results, persona, strength, nearest, loosen, beginnerPick } = findHobbies(a);
   const strong = strength === "strong";
   const picks = results.slice(0, 3).map((r) => r.hobby);
+  const hasList = strong && !!picks[0] && selectProducts({ hobby: picks[0].slug }).all.length > 0;
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [note, setNote] = useState("");
   const [busy, setBusy] = useState(false);
@@ -201,19 +204,19 @@ export function ResultsView({
             <h1 ref={titleRef} tabIndex={-1} className="text-5xl italic outline-none md:text-6xl">
               {persona.name}
             </h1>
-            <p className="mt-2 text-lg text-ink">{firstSentence(persona.line)}</p>
+            <p className="mt-2 text-lg text-ink">{persona.line}</p>
           </div>
         </header>
       ) : (
         <header className="mx-auto mt-6 max-w-2xl border-2 border-dashed border-cherry bg-cream p-5 text-center">
           <h1 ref={titleRef} tabIndex={-1} className="text-4xl italic outline-none md:text-5xl">
             {results.length
-              ? `Only ${results.length} fit${results.length === 1 ? "s" : ""} every answer`
+              ? `${results.length === 1 ? "One hobby fits" : `${results.length} hobbies fit`} every answer`
               : "Nothing fits every answer"}
           </h1>
           <p className="mt-2 text-espresso">
             {loosen
-              ? `Here are the nearest. Loosening your ${loosen.label} opens up more.`
+              ? `More come close. Loosening your ${loosen.label} opens up even more.`
               : "Here are the nearest matches."}
           </p>
           {loosenKey && (
@@ -279,17 +282,29 @@ export function ResultsView({
       </ol>
 
       <div className="mt-10 flex flex-col items-center gap-3">
+        {hasList && (
+          <a
+            href="#starter-list"
+            className="inline-flex min-h-12 w-full max-w-sm items-center justify-center bg-cherry px-6 py-3 text-center text-base font-semibold text-cream hover:bg-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+          >
+            Get my starter list
+          </a>
+        )}
         <Link
           to="/make-plans"
           search={plannerSearch(a, persona)}
-          className="inline-flex min-h-12 w-full max-w-sm items-center justify-center bg-cherry px-6 py-3 text-center text-base font-semibold text-cream hover:bg-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+          className={
+            hasList
+              ? secondaryBtn + " w-full max-w-sm"
+              : "inline-flex min-h-12 w-full max-w-sm items-center justify-center bg-cherry px-6 py-3 text-center text-base font-semibold text-cream hover:bg-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+          }
         >
           Plan my weekend with this
         </Link>
         {strong && (
           <div className="no-print flex w-full max-w-sm flex-col gap-2">
             <button type="button" onClick={share} disabled={busy} className={secondaryBtn}>
-              <Share2 className="h-4 w-4" aria-hidden /> Share my result
+              <Share2 className="h-4 w-4" aria-hidden /> Send this to the group chat
             </button>
             <div className="flex justify-center gap-5 text-sm font-semibold">
               <button
@@ -320,17 +335,19 @@ export function ResultsView({
           Take it again
         </button>
         <p className="text-xs text-muted-foreground">
-          Made on your device. The link holds only your quiz choices.
+          Made on your device, no email asked. The link holds only your answers, so you can send it
+          to a friend.
         </p>
       </div>
 
-      {strong && picks[0] && (
-        <details className="mt-10">
-          <summary className="cursor-pointer text-center text-sm font-semibold text-cherry underline underline-offset-4">
-            Shop your hobby
-          </summary>
-          <ShopMyHobby hobby={picks[0].slug} />
-        </details>
+      {strong && picks[0] && hasList && (
+        <div id="starter-list" className="scroll-mt-24">
+          <ShopMyHobby
+            hobby={picks[0].slug}
+            title={`Your starter list for ${picks[0].name}`}
+            dek="Everything you need for the first session, nothing you don't. Tap the list icon on anything you want, then copy or print it."
+          />
+        </div>
       )}
     </div>
   );

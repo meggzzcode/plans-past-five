@@ -776,7 +776,7 @@ export const articles = [
         sub: "How to choose a kit without buying a closet of supplies.",
         burst: "Kit guide",
         title: "Creative Hobby Starter Kits Worth Considering",
-        desc: "What to look for in a creative hobby kit, and how to avoid the ones that do not include enough to actually get started. (Some links may be affiliate links.)",
+        desc: "What to look for in a creative hobby kit, and how to avoid the ones that do not include enough to actually get started.",
         concept: "Cover with creative shop still life (illustrative)",
       }),
       P({
@@ -1612,7 +1612,7 @@ export const extras = [
         },
         note: "six questions, no email",
         title: "What's Your Hobby Era? Take the Hobby Quiz",
-        desc: "Six quick questions about your time, budget, energy and company. Get three to five hobbies that genuinely fit your life outside work. No email needed.",
+        desc: "Up to six taps, no email: tell us your energy, company and budget and get hobbies that fit your after-work life, plus what you need for the first session.",
         concept: "Quiz UI mockup on cherry (built from the real quiz questions)",
       }),
       P({
@@ -1677,7 +1677,7 @@ export const extras = [
         sub: "Tell us your time, budget and vibe. Get a plan.",
         note: "shuffle until it feels right",
         title: "Weekend Plan Generator: Let's Give Saturday a Storyline",
-        desc: "An empty calendar? We can work with that. Build a realistic after-work, Saturday or Sunday plan around your time, budget, energy and company.",
+        desc: "An empty calendar? We can work with that. Pick your time, budget and mood and get a realistic after-work or weekend plan in about 30 seconds.",
         concept: "Headline pin for the planner tool",
       }),
       P({
@@ -1759,7 +1759,7 @@ export const extras = [
           ["sparkle", 850, 120, 80, 10],
         ],
         title: "What Should I Do Tonight? A Quick Idea Generator",
-        desc: "Time, energy and who is coming: get one realistic idea for tonight, then shuffle if it is not the one.",
+        desc: "Tired, bored or somewhere in between? Five taps get you three ideas that fit your time, energy and budget tonight. No email, no account.",
         concept: "Headline pin for the Tonight tool (page pending)",
       }),
     ],

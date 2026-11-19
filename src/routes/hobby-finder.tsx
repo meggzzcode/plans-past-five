@@ -22,6 +22,8 @@ import { QuizStep } from "@/components/quiz/QuizStep";
 import { ResultsView } from "@/components/quiz/ResultsView";
 import { questions } from "@/components/quiz/questions";
 
+const upToCap = () => `${quizUpToWord()[0]!.toUpperCase()}${quizUpToWord().slice(1)}`;
+
 type Search = { q?: number; a?: string };
 
 export const Route = createFileRoute("/hobby-finder")({
@@ -35,8 +37,8 @@ export const Route = createFileRoute("/hobby-finder")({
   },
   head: () =>
     seo({
-      title: "Find Your Thing: The Hobby Quiz",
-      description: `${quizUpToWord()} taps about your energy, company, time and budget. Get three hobbies that genuinely fit your life outside work.`,
+      title: "Hobby Quiz: Find a Hobby You'll Actually Do",
+      description: `${upToCap()} quick taps, no email. Tell us your energy, company, time and budget and get hobbies that fit your after-work life, plus an easy first step for each.`,
       path: "/hobby-finder",
     }),
   component: Finder,
@@ -103,7 +105,7 @@ function Finder() {
                 Let's find your <em className="text-cherry">hobby era.</em>
               </h1>
               <p className="mt-3 text-espresso">
-                {`${quizUpToWord()[0]!.toUpperCase()}${quizUpToWord().slice(1)}`} taps. No email.
+                {upToCap()} taps for hobbies that fit your evenings. No email, no account.
               </p>
             </div>
             <QuizStep

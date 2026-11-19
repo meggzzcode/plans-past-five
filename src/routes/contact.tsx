@@ -8,7 +8,8 @@ export const Route = createFileRoute("/contact")({
   head: () =>
     seo({
       title: "Contact",
-      description: "Get in touch with Plans Past Five about stories, partnerships or corrections.",
+      description:
+        "Story ideas, corrections and partnership questions for Plans Past Five, and how we handle each.",
       path: "/contact",
       jsonLd: [
         breadcrumbJsonLd([
@@ -32,8 +33,10 @@ export const Route = createFileRoute("/contact")({
         </p>
       ) : (
         <p>
-          Our contact inbox is being set up. Please check back soon. In the meantime, you can still
-          save ideas to My Plans and explore the site.
+          Our public inbox isn't open yet, and we won't show an address until it is. When it opens,
+          it will appear here. Until then, take the <Link to="/hobby-finder">hobby quiz</Link>,
+          build a plan on <Link to="/make-plans">Make Some Plans</Link> or keep ideas in{" "}
+          <Link to="/saved">My Plans</Link>. None of it needs an account.
         </p>
       )}
       <h2>Corrections</h2>
@@ -43,8 +46,8 @@ export const Route = createFileRoute("/contact")({
       </p>
       <h2>Brands and partnerships</h2>
       <p>
-        We don't accept payment for editorial coverage. See our editorial policy for how we choose
-        what to recommend.
+        We don't accept payment for editorial coverage. See our{" "}
+        <Link to="/editorial-policy">editorial standards</Link> for how we choose what to recommend.
       </p>
     </ProsePage>
   ),

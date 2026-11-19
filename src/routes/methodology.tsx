@@ -8,7 +8,7 @@ export const Route = createFileRoute("/methodology")({
     seo({
       title: "How We Choose Hobbies and Products",
       description:
-        "How Plans Past Five picks hobbies and starter products, what manufacturer claims mean here, and why we show no prices or ratings.",
+        "How Plans Past Five picks beginner hobbies and starter products, what we have and haven't checked, and why we show no prices or ratings.",
       path: "/methodology",
       jsonLd: [
         breadcrumbJsonLd([
@@ -24,6 +24,13 @@ export const Route = createFileRoute("/methodology")({
       dek="How hobbies and starter products make it onto the site, and what our recommendations are and are not."
       tone="matcha"
     >
+      <aside className="not-prose mb-8 border-2 border-dashed border-cherry bg-cream p-5">
+        <p className="kicker text-cherry">The short version</p>
+        <p className="mt-2 text-ink">
+          We pick things a beginner can start this week on a modest budget, and we say plainly what
+          we have and haven't checked.
+        </p>
+      </aside>
       <h2>Choosing hobbies</h2>
       <p>
         We include hobbies that a beginner can realistically start with limited time, a modest
@@ -37,21 +44,21 @@ export const Route = createFileRoute("/methodology")({
         <li>
           <strong>Named products.</strong> For a growing number of hobbies we name a specific
           product and brand, and we have checked it against its Amazon listing: we compared the
-          listing with what we say about it and recorded the date. The button reads "View on Amazon"
-          and opens that product's own page. A product only appears once that check is done;
+          listing with what we say about it and recorded the date. The button reads "See it on
+          Amazon" and opens that product's own page. A product only appears once that check is done;
           anything still being researched stays off the site.
         </li>
         <li>
           <strong>Types of product.</strong> Elsewhere we describe what to look for ("a round brush,
-          a notebook that takes glue") and the button reads "Browse options on Amazon", which opens
-          a search so you can compare for yourself.
+          a notebook that takes glue") and the button reads "Find ... on Amazon" (for example "Find
+          beginner rackets on Amazon"), which opens a search so you can compare for yourself.
         </li>
       </ul>
       <p>
-        In each starter kit we lead with the one thing to buy if you only buy one, mark what is
-        essential and what is an optional extra, and fold other options for the same need under the
-        pick with a line on how they differ. We aim for picks that look good and fit a modest
-        budget, and a kit can say you probably own something already.
+        In each starter kit we lead with the one thing to buy if you only buy one, mark what to
+        start with and what can wait, and fold other options for the same need under the pick with a
+        line on how they differ. We aim for picks that look good and fit a modest budget, and a kit
+        can say you probably own something already.
       </p>
       <h2>Manufacturer claims versus independent testing</h2>
       <p>

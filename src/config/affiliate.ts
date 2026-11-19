@@ -245,15 +245,17 @@ export function liveDisclosureSentences(): string[] {
  * ONE wording for what shopping links are, used by the shop cards, the /shop pages, the /methodology
  * page and /affiliate-disclosure. Edit here and every place changes. Keep it true to what the catalog
  * does: named products link to their ordinary Amazon page; where we only describe a type of product
- * the button opens an Amazon search and is labelled "Browse options". No prices are ever shown.
+ * the button opens an Amazon search and is labelled "Find ... on Amazon". No prices are ever shown.
  */
 export const SHOP_LINK_FACTS = {
+  /** One short line near the first ask (hero, kit). */
+  short: "Ordinary Amazon links. We show no prices: Amazon or the seller sets them.",
   /** Beside blocks of named products. */
   product:
     "Each button opens that product's own Amazon page. We show no prices: Amazon or the seller sets price, shipping and returns.",
   /** Beside anything that may mix named products and type-level search links. */
   general:
-    'Buttons that say "View on Amazon" open a named product\'s own page; "Browse options" opens an Amazon search for a type of product. We show no prices: Amazon or the seller sets price, shipping and returns.',
+    'Buttons that say "See it on Amazon" open a named product\'s own page; "Find ... on Amazon" opens an Amazon search for a type of product. We show no prices: Amazon or the seller sets price, shipping and returns.',
   /** When no affiliate entry is live. */
   notEarning: "We don't currently earn from these links.",
   /** When an entry is live (appended after the Associates statement). */
@@ -264,7 +266,9 @@ export const SHOP_LINK_FACTS = {
  * The sentences shown beside shopping links, in order. Includes the Associates identification
  * statement ONLY when an Amazon entry is live; call this only where links actually appear.
  */
-export function shopDisclosureSentences(kind: "product" | "general" = "product"): string[] {
+export function shopDisclosureSentences(
+  kind: "product" | "general" | "short" = "product",
+): string[] {
   const facts = SHOP_LINK_FACTS[kind];
   return isMonetized()
     ? [facts, ...liveDisclosureSentences(), SHOP_LINK_FACTS.neutral]

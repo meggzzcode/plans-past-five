@@ -1,4 +1,5 @@
 import { site } from "@/config/site";
+import { images } from "@/data/images";
 
 type SeoInput = {
   title: string;
@@ -10,6 +11,12 @@ type SeoInput = {
   /** Optional JSON-LD objects rendered as application/ld+json scripts. */
   jsonLd?: Record<string, unknown>[];
 };
+
+/**
+ * Preview image used when a page sets none, so every shared link has a card. It is the bundled
+ * asset URL, which Vite hashes into /assets/... in a built site (never /src/assets/...).
+ */
+const defaultImage = () => absoluteUrl(images.potteryNight.src);
 
 /** Builds head() meta + canonical for a route. Titles get the brand suffix. */
 export function seo({
@@ -35,8 +42,13 @@ export function seo({
     { name: "twitter:title", content: full },
     { name: "twitter:description", content: description },
   ];
-  if (image)
-    meta.push({ property: "og:image", content: image }, { name: "twitter:image", content: image });
+  const preview = image ?? (noindex ? undefined : defaultImage());
+  if (preview) {
+    meta.push(
+      { property: "og:image", content: preview },
+      { name: "twitter:image", content: preview },
+    );
+  }
   if (noindex) meta.push({ name: "robots", content: "noindex, follow" });
   return {
     meta,

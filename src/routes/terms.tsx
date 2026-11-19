@@ -7,7 +7,8 @@ export const Route = createFileRoute("/terms")({
   head: () =>
     seo({
       title: "Terms of Use",
-      description: "Terms for using the Plans Past Five website.",
+      description:
+        "Plain-English ground rules for using Plans Past Five: personal use, sharing and pinning welcome, ideas not advice.",
       path: "/terms",
       jsonLd: [
         breadcrumbJsonLd([

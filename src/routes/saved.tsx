@@ -113,7 +113,7 @@ function ShoppingList() {
     <div className="mb-12" data-testid="saved-shoplist">
       <h2 className="flex items-center gap-2 text-3xl italic">
         <Star className="h-4 w-4 text-cherry" />
-        Shopping list
+        Your shopping list
       </h2>
       {group("To buy", need)}
       {group("Saved for later", later)}
@@ -177,10 +177,17 @@ function Saved() {
               >
                 {NAMES.plans}
               </Link>
+              <Link
+                to="/tools/tonight"
+                className="inline-flex min-h-11 items-center border-2 border-cherry px-5 text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream"
+              >
+                What should I do tonight?
+              </Link>
             </div>
           </div>
         ) : (
           <>
+            <ShoppingList />
             {kinds.map((k) => (
               <div key={k} className="mb-12">
                 <h2 className="flex items-center gap-2 text-3xl italic">
@@ -231,7 +238,6 @@ function Saved() {
                 </ul>
               </div>
             ))}
-            <ShoppingList />
             {items.length > 0 && (
               <button
                 onClick={() => {

@@ -22,7 +22,7 @@ export const Route = createFileRoute("/corrections")({
     <ProsePage
       kicker="The fine print"
       title="Corrections"
-      dek="We will get things wrong sometimes. Here is how we fix them, and what we have fixed."
+      dek="We'll get things wrong sometimes. Here is how we fix them, and what we've fixed."
       tone="butter"
     >
       <h2>Our policy</h2>
@@ -39,10 +39,9 @@ export const Route = createFileRoute("/corrections")({
         </p>
       ) : (
         <p>
-          We do not have a public corrections inbox yet. Once the{" "}
-          <Link to="/contact">contact page</Link> is live, you will be able to send corrections
-          there with the page link and what needs fixing. Every correction we make is logged on this
-          page with its date.
+          Our public inbox isn't open yet. When it is, the address will appear on the{" "}
+          <Link to="/contact">contact page</Link>, and you can send the page link and what needs
+          fixing. Every correction we make is logged below with its date.
         </p>
       )}
       <h2>Corrections log</h2>

@@ -19,9 +19,9 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/tools/hobby-budget")({
   head: () =>
     seo({
-      title: "Hobby Starter Budget Calculator",
+      title: "How Much Does a New Hobby Cost? Starter Budget Calculator",
       description:
-        "Pick a hobby and see an approximate startup cost range plus an equipment checklist. Mark what you already own and keep it as lean as you like.",
+        "How much does it really cost to start? Pick a hobby, tick what you already own, and see a realistic starting range plus a checklist. Estimates, not live prices.",
       path: "/tools/hobby-budget",
     }),
   component: HobbyBudget,
@@ -244,7 +244,7 @@ function HobbyBudget() {
                                   params={{ category: col.slug }}
                                   className="font-semibold text-cherry underline underline-offset-4"
                                 >
-                                  Browse {col.name}
+                                  See options<span className="sr-only"> ({col.name})</span>
                                 </Link>
                               </>
                             )}
@@ -257,16 +257,20 @@ function HobbyBudget() {
               ))}
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-4 text-sm font-semibold">
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold">
               <Link
                 to="/hobbies/$slug"
                 params={{ slug: result.hobbySlug }}
-                className="text-cherry underline underline-offset-4"
+                hash="kit"
+                className="inline-flex min-h-12 items-center bg-cherry px-6 py-3 text-base text-cream hover:bg-ink"
               >
-                {result.hobbyName} guide
+                See the starter kit for {result.hobbyName}
               </Link>
               <Link to="/shop" className="text-ink underline underline-offset-4">
-                Shop Your Hobby
+                Browse Shop Your Hobby
+              </Link>
+              <Link to="/make-plans" className="text-ink underline underline-offset-4">
+                Plan a first session
               </Link>
             </div>
 

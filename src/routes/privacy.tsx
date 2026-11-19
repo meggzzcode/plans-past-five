@@ -8,7 +8,8 @@ export const Route = createFileRoute("/privacy")({
   head: () =>
     seo({
       title: "Privacy Policy",
-      description: "How Plans Past Five handles your information.",
+      description:
+        "What Plans Past Five collects (very little), what stays on your device, and how to clear it.",
       path: "/privacy",
       jsonLd: [
         breadcrumbJsonLd([

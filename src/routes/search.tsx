@@ -8,8 +8,9 @@ export const Route = createFileRoute("/search")({
   validateSearch: (s: Record<string, unknown>) => ({ q: typeof s["q"] === "string" ? s["q"] : "" }),
   head: () =>
     seo({
-      title: "Search",
-      description: "Search hobbies, stories and shop collections.",
+      title: "Search Hobbies, Plans and Starter Picks",
+      description:
+        "Looking for something to do? Search hobby ideas, weekend plans and starter picks by mood, budget or time.",
       path: "/search",
       noindex: true,
     }),

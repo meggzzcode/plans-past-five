@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   makePlan,
@@ -14,6 +14,7 @@ import { Kicker } from "@/components/editorial/Section";
 import { PlanResult } from "@/components/planner/PlanResult";
 import { cn } from "@/lib/utils";
 import { track } from "@/lib/track";
+import { getHobby } from "@/data/hobbies";
 import { ShopMyHobby } from "@/components/commerce/ShopMyHobby";
 
 const SEARCH_KEYS = [
@@ -41,9 +42,9 @@ export const Route = createFileRoute("/make-plans")({
   },
   head: () =>
     seo({
-      title: "Make Some Plans: After-Work & Weekend Plan Generator",
+      title: "Plan Your Evening or Weekend in 30 Seconds",
       description:
-        "An empty calendar? We can work with that. Build a realistic after-work, Saturday, Sunday or full-weekend itinerary around your time, budget, energy and company.",
+        "An empty calendar? We can work with that. Pick your time, budget and mood and get a realistic after-work or weekend plan, with the supplies to make it happen.",
       path: "/make-plans",
     }),
   component: Planner,
@@ -183,6 +184,7 @@ function Planner() {
     }
   }, [planUrl]);
   const saved = ready && plan && isSaved(`plan:${planUrl}`);
+  const planLabel = isDayWhen(input.when) ? "Plan my weekend" : "Plan my evening";
   const lengthOptions = isDayWhen(input.when) ? dayLengths : stopLengths;
   const cur = (k: keyof PlanInput): string => {
     const v = input[k];
@@ -199,8 +201,8 @@ function Planner() {
             An empty calendar? <em className="text-cherry">We can work with that.</em>
           </h1>
           <p className="mt-4 max-w-xl text-lg text-ink">
-            Pick a few things and we'll build a realistic itinerary from our curated ideas. No
-            invented events, no fake opening hours: just good ideas that work wherever you live.
+            Pick a few things and get a plan you can start tonight. Every idea works wherever you
+            live, so there's nothing to book and nothing to cancel.
           </p>
           {fromQuiz && (
             <p
@@ -208,7 +210,7 @@ function Planner() {
               className="mt-5 max-w-xl border-2 border-dashed border-cherry bg-cream p-4 text-sm text-ink"
             >
               <strong>Carried over from your quiz.</strong> We filled in what we could. Change
-              anything, then press "Make my plan".
+              anything, then press "{planLabel}".
             </p>
           )}
           <div className="mt-10 grid gap-7">
@@ -261,6 +263,17 @@ function Planner() {
               setShown(true);
               setSeed(0);
               setRestored(null);
+              window.setTimeout(() => {
+                const el = document.getElementById("your-plan");
+                if (el && typeof el.scrollIntoView === "function") {
+                  el.scrollIntoView({
+                    behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
+                      ? "auto"
+                      : "smooth",
+                    block: "start",
+                  });
+                }
+              }, 50);
               track("planner_use", { when: input.when, length: input.length });
             }}
             className={cn(
@@ -268,14 +281,15 @@ function Planner() {
               focusRing,
             )}
           >
-            Make my plan
+            {planLabel}
           </button>
         </div>
       </section>
 
       {shown && plan && (
         <section
-          className="mx-auto max-w-3xl px-4 py-10 md:px-8 md:py-14"
+          id="your-plan"
+          className="mx-auto max-w-3xl scroll-mt-4 px-4 py-10 md:px-8 md:py-14"
           aria-live="polite"
           aria-label="Your plan"
         >
@@ -309,11 +323,22 @@ function Planner() {
           {[...new Set(plan.slots.map((s) => s.activity?.hobby).filter((x): x is string => !!x))]
             .slice(0, 2)
             .map((slug) => (
-              <ShopMyHobby key={slug} hobby={slug} />
+              <ShopMyHobby
+                key={slug}
+                hobby={slug}
+                title={`Grab what you need for ${getHobby(slug)?.name ?? "this plan"}`}
+              />
             ))}
-          <p className="mt-6 text-xs text-muted-foreground">
-            Ideas are general and location-independent. Costs are rough ranges for planning, not
-            quotes. Check local hours, prices and safety before you go.
+          <p className="mt-6 text-sm text-espresso">
+            Need supplies for something on your plan?{" "}
+            <Link to="/shop" className="font-semibold text-cherry underline underline-offset-4">
+              Shop Your Hobby
+            </Link>{" "}
+            has starter lists for first sessions.
+          </p>
+          <p className="mt-4 text-xs text-muted-foreground">
+            Ideas are general, and costs are rough ranges, not quotes. Check local hours, prices and
+            safety before you go.
           </p>
         </section>
       )}

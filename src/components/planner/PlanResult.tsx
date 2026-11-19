@@ -171,7 +171,7 @@ export function PlanResult({ plan, saved, onShuffle, onToggleSave, onSwap, onRel
     <div className="paper relative p-5 md:p-10">
       <Flower className="absolute -top-4 right-6 h-10 w-10 text-cherry" />
       <p className="kicker text-cherry">Your plan</p>
-      <h2 className="mt-2 text-3xl uppercase italic leading-[1.05] tracking-tight md:text-5xl">
+      <h2 className="mt-2 text-3xl italic leading-[1.05] tracking-tight md:text-5xl">
         {plan.title}
       </h2>
       {plan.filled > 0 && (

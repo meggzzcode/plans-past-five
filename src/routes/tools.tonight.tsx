@@ -19,9 +19,9 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/tools/tonight")({
   head: () =>
     seo({
-      title: "What Should I Do Tonight?",
+      title: "What Should I Do Tonight? 3 Ideas for After Work",
       description:
-        "Tell us your time, energy, budget and company, and get three realistic ideas for tonight. Shuffle for more.",
+        "Tired, bored or somewhere in between? Answer five taps and get three ideas that fit your time, energy and budget tonight. No email, no account.",
       path: "/tools/tonight",
     }),
   validateSearch: (s: Record<string, unknown>) => {
@@ -146,8 +146,8 @@ function Tonight() {
             What should I do <em className="text-cherry">tonight?</em>
           </h1>
           <p className="mt-4 max-w-xl text-lg text-ink">
-            It's after five and the sofa is calling. Answer five quick questions for three ideas
-            that fit. Nothing is saved or sent anywhere.
+            It's after five and the sofa is calling. Five taps, three ideas that fit. Nothing is
+            saved or sent anywhere.
           </p>
           <div className="mt-10 grid gap-7">
             {groups.map((g) => (
@@ -199,9 +199,10 @@ function Tonight() {
                       <Link
                         to="/hobbies/$slug"
                         params={{ slug: s.hobbySlug }}
+                        hash="kit"
                         className="text-cherry underline underline-offset-4"
                       >
-                        Hobby page
+                        What you'll need
                       </Link>
                     )}
                     {s.guideSlug && (
@@ -210,14 +211,12 @@ function Tonight() {
                         params={{ slug: s.guideSlug }}
                         className="text-ink underline underline-offset-4"
                       >
-                        Read the guide
+                        Read the how-to guide
                       </Link>
                     )}
-                    {!s.hobbySlug && (
-                      <Link to="/make-plans" className="text-ink underline underline-offset-4">
-                        Build a bigger plan
-                      </Link>
-                    )}
+                    <Link to="/make-plans" className="text-ink underline underline-offset-4">
+                      Make it a whole plan
+                    </Link>
                   </div>
                 </li>
               ))}

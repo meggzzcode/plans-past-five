@@ -15,7 +15,8 @@ export const Route = createFileRoute("/affiliate-disclosure")({
   head: () =>
     seo({
       title: "Affiliate Disclosure",
-      description: "How shopping links work on Plans Past Five.",
+      description:
+        "How our shopping links work: ordinary Amazon links, no prices shown, and a plain-English note on whether we earn anything from them.",
       path: "/affiliate-disclosure",
     }),
   component: () => {
@@ -55,12 +56,13 @@ export const Route = createFileRoute("/affiliate-disclosure")({
         <h2>What the buttons do</h2>
         <ul>
           <li>
-            <strong>"View on Amazon"</strong> opens the Amazon page of a named product we checked.
+            <strong>"See it on Amazon"</strong> opens the Amazon page of a named product we checked.
             That is the kind of link in our starter kits and shopping lists.
           </li>
           <li>
-            <strong>"Browse options on Amazon"</strong> opens an Amazon search. We use it where we
-            only describe a type of product ("what to look for").
+            <strong>"Find ... on Amazon"</strong> (for example "Find beginner rackets on Amazon")
+            opens an Amazon search. We use it where we only describe a type of product ("what to
+            look for").
           </li>
           <li>
             We show no prices, star ratings or review counts. Amazon or the seller sets price,
