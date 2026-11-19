@@ -3,13 +3,13 @@ import { collections, products } from "@/data/products";
 import { seo } from "@/lib/seo";
 import { PageHero, SectionHead } from "@/components/editorial/Section";
 import { CollectionCard } from "@/components/cards/Cards";
-import { AffiliateNote } from "@/components/editorial/AffiliateNote";
+import { Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/shop/")({
   head: () =>
     seo({
-      title: "Off Duty Essentials: Beginner Hobby Supplies",
-      description: `${collections.length} curated collections of beginner hobby supply types for pottery, journaling, painting, tennis, reading, cozy nights in and little adventures.`,
+      title: "Shop Your Hobby: Beginner Starter Picks",
+      description: `${collections.length} collections of starter picks for pottery, journaling, painting, tennis, reading, cozy nights in and little adventures: a few named products where we have checked the listing, plain guidance everywhere else.`,
       path: "/shop",
     }),
   component: Shop,
@@ -19,14 +19,12 @@ function Shop() {
   return (
     <>
       <PageHero
-        kicker="The Shop"
-        title="Off Duty Essentials"
-        italic="Essentials"
-        dek={`${products.length} product types that make starting a new hobby a little easier, across ${collections.length} collections. We describe what to look for rather than pushing one brand, and we'll always tell you when you don't need to buy anything at all.`}
+        kicker="Off Duty Essentials"
+        title="Shop your hobby"
+        italic="hobby"
+        dek={`Starter picks for ${collections.length} kinds of after-work evening. Where we name a product, we checked its Amazon page and say why it made the list; everywhere else we tell you what to look for. And we'll always say when you don't need to buy anything.`}
         tone="strawberry"
-      >
-        <AffiliateNote className="mt-6 max-w-xl" />
-      </PageHero>
+      />
       <section className="mx-auto mt-16 max-w-7xl px-5 md:px-8">
         <SectionHead kicker="The collections" title="Shop by your era" italic="era" />
         <div className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -35,8 +33,17 @@ function Shop() {
           ))}
         </div>
         <p className="mt-10 text-sm text-muted-foreground">
-          {products.length} product types, not specific listings. There are no prices, ratings or
-          brand claims, because those change and we haven't tested them.
+          Named products link to their own Amazon page; "what to look for" guidance across{" "}
+          {products.length} product types opens an Amazon search instead. We never show prices,
+          ratings or review counts. How we choose is on the{" "}
+          <Link to="/methodology" className="underline">
+            methodology page
+          </Link>
+          , and how links work is in the{" "}
+          <Link to="/affiliate-disclosure" className="underline">
+            affiliate disclosure
+          </Link>
+          .
         </p>
       </section>
     </>

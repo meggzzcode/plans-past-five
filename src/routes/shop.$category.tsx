@@ -51,7 +51,7 @@ function CollectionPage() {
           <div>
             <nav className="text-xs text-ink" aria-label="Breadcrumb">
               <Link to="/shop" className="hover:text-cherry">
-                Off Duty Essentials
+                Shop your hobby
               </Link>{" "}
               / {c.name}
             </nav>
@@ -142,18 +142,35 @@ function CollectionPage() {
         </div>
         {!verified && (
           <p className="mt-8 border-l-4 border-cherry bg-butter/40 px-4 py-3 text-sm text-ink">
-            These are product types, not specific listings. We describe what to look for, and the
-            buttons open an ordinary Amazon search so you can compare options yourself.
+            We haven't picked named products for this collection yet. The cards below describe what
+            to look for, and their buttons open an Amazon search so you can compare options
+            yourself.
           </p>
         )}
       </section>
-      <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
-        <h2 className="mb-8 text-3xl italic">What to look for</h2>
-        <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-          {ps.map((p, i) => (
-            <ProductCard key={p.id} p={p} index={i} />
-          ))}
-        </div>
+      <section className="mx-auto max-w-7xl px-5 pb-16 pt-14 md:px-8">
+        {/* With named picks on the page, the type-level search cards fold away so they do not compete. */}
+        {verified || hasKit ? (
+          <details className="group">
+            <summary className="min-h-11 cursor-pointer font-display text-2xl italic">
+              Or browse by product type
+            </summary>
+            <div className="mt-6 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+              {ps.map((p, i) => (
+                <ProductCard key={p.id} p={p} index={i} />
+              ))}
+            </div>
+          </details>
+        ) : (
+          <>
+            <h2 className="mb-8 text-3xl italic">What to look for</h2>
+            <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+              {ps.map((p, i) => (
+                <ProductCard key={p.id} p={p} index={i} />
+              ))}
+            </div>
+          </>
+        )}
       </section>
       <section className="mx-auto max-w-7xl px-5 md:px-8">
         {/* Show starter kits when verified products fill them; otherwise the collection list. Never both, so no product appears twice. */}

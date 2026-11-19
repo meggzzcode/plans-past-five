@@ -302,6 +302,8 @@ export type SearchOutcome = {
   empty?: EmptySearchSuggestions;
 };
 
+const KIND_ORDER = ["Hobby", "Journal", "Section", "Off Duty Essentials", "Shop pick"];
+
 type Entry = SearchHit & { hay: string; hobby?: Hobby };
 
 export function searchDetailed(q: string, limit = 30): SearchOutcome {
@@ -361,7 +363,9 @@ export function searchDetailed(q: string, limit = 30): SearchOutcome {
     }
     scored.push({ e, s });
   }
-  scored.sort((a, b) => b.s - a.s || (a.e.hobby ? 0 : 1) - (b.e.hobby ? 0 : 1));
+  // Hobbies first (they are what people come for), then guides, then sections and shop pages.
+  const order = (e: Entry) => KIND_ORDER.indexOf(e.kind);
+  scored.sort((a, b) => order(a.e) - order(b.e) || b.s - a.s);
   const hits = scored
     .slice(0, limit)
     .map(({ e }) => ({ kind: e.kind, title: e.title, text: e.text, to: e.to }));

@@ -30,16 +30,11 @@ export const articleHowToStartCrocheting: Article = {
   body: [
     {
       type: "p",
-      text: "Picture a train, a long wait or a slow Sunday, and a small bag with a ball of yarn in it. Your hands are busy and your head quietly is not. That small, repetitive rhythm is much of why crochet has so many devoted fans.",
+      text: "One hook, one strand of yarn and three stitches get you a surprising distance. Crochet looks harder than it is, partly because a written pattern reads like code. This guide starts with the stitches, then walks you through a flat square.",
     },
     {
       type: "p",
-      text: "It is also a lot less mysterious than it looks. One hook, one strand of yarn and three stitches get you a surprising distance. The rest is variation.",
-    },
-    { type: "h2", text: "Why it is worth trying", id: "why" },
-    {
-      type: "p",
-      text: "A flat square is a weekend project. Crochet uses one hook, where knitting uses two needles, so there is just one live loop to look after. Some things are worth being a beginner at, and the first row will be wonky.",
+      text: "Crochet uses a single hook where knitting uses two needles, so there is only one live loop to keep track of. The first row will be wonky. That's normal.",
     },
     { type: "h2", text: "What you need", id: "need" },
     {
@@ -59,17 +54,7 @@ export const articleHowToStartCrocheting: Article = {
     },
     {
       type: "p",
-      text: "**What you probably own.** Scissors, a tape measure and a bag. If someone you know has a spare hook and a half-used ball of yarn, ask.",
-    },
-    {
-      type: "p",
-      text: "**What the choices do.** Light, smooth yarn shows each stitch clearly and unpicks without fuss. Dark or fuzzy yarn hides your stitches, so keep it for later. The yarn label lists a suggested hook size, so follow it.",
-    },
-    {
-      type: "saveSplurge",
-      save: "A basic hook and one plain ball of yarn.",
-      splurge:
-        "A hook with a comfortable handle if your hand tires, and a yarn in a color you truly love, since you will see it for hours.",
+      text: "You probably own scissors and a bag already, and a friend may have a spare hook and half a ball of yarn. Light, smooth yarn shows each stitch clearly and unpicks without fuss; dark or fuzzy yarn hides your stitches, so keep it for later. If your hand tires, a hook with a comfortable handle is worth the upgrade.",
     },
     { type: "h2", text: "The three stitches that open the door", id: "stitches" },
     {
@@ -94,10 +79,10 @@ export const articleHowToStartCrocheting: Article = {
       type: "p",
       text: "A heads-up before you follow any pattern: US and UK crochet terms differ, so check which one a pattern uses.",
     },
-    { type: "h2", text: "Your first project: a flat square", id: "first-project" },
+    { type: "h2", text: "Make a flat square", id: "first-project" },
     {
-      type: "first30",
-      steps: [
+      type: "list",
+      items: [
         "Make a slip knot and slide it onto the hook, snug but not tight.",
         "Chain 20, or about as wide as you want the square. Count as you go.",
         "Skip the first chain next to the hook, then work a single crochet into each chain along the row.",
@@ -108,53 +93,39 @@ export const articleHowToStartCrocheting: Article = {
     },
     {
       type: "p",
-      text: "Weave the ends in with the yarn needle. Check the yarn label before washing the finished piece, as care varies by fiber.",
+      text: "Weave the ends in with the yarn needle. Check the yarn label before washing the finished piece, as care varies by fiber. A single row before dinner is a perfectly good first day, and if your hands ache, shake them out and stop. A relaxed grip also makes more even stitches.",
     },
     { type: "h2", text: "Reading a pattern without panicking", id: "patterns" },
     {
       type: "p",
-      text: "A written pattern looks like code at first glance: ch 20, sc in 2nd ch from hook, turn. It is shorthand, and a pattern should list its abbreviations at the top. Read one line at a time, with a finger under the part you are on, and do exactly what it says even when it seems odd. The sense arrives a few rows later.",
+      text: "A written pattern looks like code at first glance: ch 20, sc in 2nd ch from hook, turn. It's shorthand, and a pattern should list its abbreviations at the top. Read one line at a time with a finger under the part you are on, and do exactly what it says even when it seems odd. The sense arrives a few rows later.",
     },
     {
       type: "p",
-      text: "The yarn label does a lot of quiet work too. It tells you the weight, the suggested hook and care instructions. Keep a label or two in your project bag, so you can find the hook size again when you run out and need more of the same.",
+      text: "The yarn label does quiet work too: it lists the weight, the suggested hook and care instructions. Keep a label in your project bag so you can match the yarn when you need more.",
     },
     {
       type: "p",
-      text: "Once a flat square feels easy, the natural follow-ups are a longer rectangle for a scarf, a set of small squares to join into something larger, or a simple round coaster. They are all the same few stitches in a new arrangement.",
-    },
-    {
-      type: "p",
-      text: "One last practical thing. Hands get tired when you grip a hook tightly for a long stretch, so shake them out now and then and stop if anything aches. A relaxed hold also makes more even stitches.",
+      text: "Once a flat square feels easy, the natural next steps are a longer rectangle for a scarf, a handful of small squares to join into something bigger, or a simple round coaster. They're the same few stitches in a new arrangement.",
     },
     { type: "h2", text: "Common mistakes and fixes", id: "troubleshooting" },
     {
-      type: "item",
-      title: "The edges keep growing or shrinking",
-      note: "You are gaining or losing stitches at the turn. Count at the end of every row and mark the first stitch of each row.",
+      type: "list",
+      items: [
+        "**The edges keep growing or shrinking.** You are gaining or losing stitches at the turn. Count at the end of every row and mark the first stitch of each row.",
+        "**It's too tight to work.** Try a hook one size up and hold the yarn more loosely. Everyone grips too hard at first.",
+        "**A mistake three rows back.** Pull out the hook and gently unravel to the mistake, which smooth yarn allows. Redoing a row is part of the craft, not a failure.",
+      ],
     },
     {
-      type: "item",
-      title: "It is too tight to work",
-      note: "Try a hook one size up and hold the yarn more loosely. Everyone grips too hard at first.",
-    },
-    {
-      type: "item",
-      title: "A mistake three rows back",
-      note: "Pull out the hook and gently unravel to the mistake, which smooth yarn allows. Starting a row again is part of the craft, not a failure.",
-    },
-    {
-      type: "tryThisWeekend",
-      text: "Choose a ball of yarn on Saturday, make a slip knot and chain 20. A single row of single crochet before dinner is a perfectly good first day. If your hands ache, take a break.",
-    },
-    {
-      type: "makePlan",
-      text: "Give yourself a standing twenty minutes in [Make Some Plans](/make-plans). A little most evenings beats one long afternoon.",
+      type: "shopTheArticle",
+      articleSlug: "how-to-start-crocheting",
+      title: "Shop the hobby",
+      dek: "A hook and one plain ball of yarn are enough to start.",
     },
     {
       type: "p",
       text: "Want a second thread craft to compare? [How to Start Embroidery](/journal/how-to-start-embroidery) uses just a hoop and floss.",
     },
-    { type: "ifYouLoved", hobbies: ["knitting", "embroidery", "craft-nights"] },
   ],
 };

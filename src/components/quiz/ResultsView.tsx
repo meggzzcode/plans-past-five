@@ -43,6 +43,7 @@ const tiles: Record<Hobby["category"], { tone: keyof typeof toneBg; Icon: typeof
 };
 
 const breakLabel: Record<Constraint, string> = {
+  craving: "Fits the rest, not your craving",
   where: "Different setting",
   time: "Takes longer",
   budget: "Costs more",

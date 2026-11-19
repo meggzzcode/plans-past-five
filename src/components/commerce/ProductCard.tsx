@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight, Bookmark, BookmarkCheck } from "lucide-react";
+import { ArrowUpRight, ListChecks, ListPlus } from "lucide-react";
 import { productLinkLabel, resolveProductLink, shopDisclosureSentences } from "@/config/affiliate";
 import { linkableFor, photoFor, type CatalogProduct } from "@/data/catalog";
 import { useShopList } from "@/lib/shoplist";
@@ -112,11 +112,11 @@ function SaveButton({ product: p }: { product: CatalogProduct }) {
       type="button"
       onClick={() => setStatus(p, "need")}
       aria-pressed={saved}
-      aria-label={`${saved ? "Saved to my list" : "Save to my list"}: ${p.shortName ?? p.name}`}
-      title={saved ? "Saved to my list" : "Save to my list"}
+      aria-label={`${saved ? "On my shopping list" : "Add to my shopping list"}: ${p.shortName ?? p.name}`}
+      title={saved ? "On my shopping list" : "Add to my shopping list"}
       className="no-print -mr-2 -mt-2 flex h-11 w-11 shrink-0 items-center justify-center text-cherry"
     >
-      {saved ? <BookmarkCheck className="h-5 w-5" /> : <Bookmark className="h-5 w-5" />}
+      {saved ? <ListChecks className="h-5 w-5" /> : <ListPlus className="h-5 w-5" />}
     </button>
   );
 }

@@ -61,7 +61,7 @@ export const daytimeOnlyHobbies: readonly string[] = [
 
 /** Wording that ties an idea to another day or part of the day, which is wrong for "tonight". */
 export const notTonightWording =
-  /\b(mon|tues|wednes|thurs|fri|satur|sun)day\b|\bweekends?\b|\btomorrow\b|\bnext week\b|\b(this |in the )?(morning|afternoon)\b/i;
+  /\b(mon|tues|wednes|thurs|fri|satur|sun)day\b|\bweekends?\b|\btomorrow\b|\bnext week\b|\b(this |in the )?(morning|afternoon)\b|\bgolden[- ]hour\b|\bsunrise\b|\bbreakfast\b|\bbrunch\b|\bfarmers?[ -]market\b/i;
 
 /** Wording that needs another person. Used to keep "Just me" free of ideas that need a friend. */
 export const needsOthersWording =

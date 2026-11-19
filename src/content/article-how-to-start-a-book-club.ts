@@ -43,11 +43,7 @@ export const articleHowToStartABookClub: Article = {
   body: [
     {
       type: "p",
-      text: "The group chat has been quietly saying 'we should start a book club' since spring. Everyone means it. Nobody organizes it. Meanwhile the paperback on your nightstand is gathering dust like it's been waiting for an invitation.",
-    },
-    {
-      type: "p",
-      text: "A good club is part reading, part excuse to see your friends regularly, and part gentle accountability. A bad one turns into homework and fizzles by autumn. The difference is nearly always structure, not enthusiasm. Here's a rules-lite setup for busy people, with a fair way to choose books and a plan for the month nobody finished.",
+      text: "Book clubs rarely die of too little enthusiasm. They die of small admin gaps: nobody picks the next book, the date drifts, one cancelled night becomes three. A little structure fixes most of it, and this is a rules-lite version for busy people.",
     },
     { type: "h2", text: "Step 1: Decide what kind of club it is", id: "kind" },
     {
@@ -61,12 +57,12 @@ export const articleHowToStartABookClub: Article = {
     },
     {
       type: "p",
-      text: "Not sure? Start with a one-off silent session or a short read. You can switch later.",
+      text: "Not sure? Start with a one-off silent session or a short read. You can switch later. A text like 'Tiny book club? First meeting is a silent read at my place. Bring any book' is enough to get the first night on the calendar.",
     },
     { type: "h2", text: "Step 2: Choose your people and your size", id: "people" },
     {
       type: "p",
-      text: "A group of about five to ten is a suggestion that tends to work, not a rule. With fewer than five, one cancellation can sink the evening; beyond ten, it's hard for everyone to speak. Invite friends, coworkers or neighbors, and say plainly that it's casual and flexible. Over-invite slightly, since not everyone makes every meeting.",
+      text: "Five to ten people is a suggestion that tends to work, not a rule. With fewer than five, one cancellation can sink the evening; beyond ten, it's hard for everyone to speak. Invite friends, coworkers or neighbors, say plainly that it's casual, and over-invite slightly, since not everyone makes every meeting.",
     },
     { type: "h2", text: "Step 3: Set a simple schedule", id: "schedule" },
     {
@@ -81,7 +77,7 @@ export const articleHowToStartABookClub: Article = {
     { type: "h2", text: "Step 4: Choose books fairly", id: "choose-books" },
     {
       type: "p",
-      text: "Choosing books is where clubs get stuck. A system means nobody has to carry the guilt of 'I picked it and nobody liked it.'",
+      text: "Choosing books is where clubs get stuck. A system means nobody carries the guilt of 'I picked it and nobody liked it.'",
     },
     {
       type: "list",
@@ -94,18 +90,20 @@ export const articleHowToStartABookClub: Article = {
       ],
     },
     { type: "h2", text: "Step 5: Run the night", id: "run" },
-    { type: "h3", text: "Running the night, in order" },
     {
       type: "list",
       items: [
         "Settle in with snacks and drinks and let the catching-up run for ten minutes.",
         "Open with a quick round: one word for the book, or a score out of five.",
-        "Use two or three prompts (below), not the whole list.",
+        "Use two or three prompts, not the whole list.",
         "Let tangents happen. Clubs thrive when people feel free to wander.",
         "Close by choosing the next book and the next date.",
       ],
     },
-    { type: "h3", text: "Prompts that work for almost any book" },
+    {
+      type: "p",
+      text: "Prompts that work for almost any book:",
+    },
     {
       type: "list",
       items: [
@@ -129,28 +127,17 @@ export const articleHowToStartABookClub: Article = {
       ],
     },
     {
-      type: "tryThisWeekend",
-      text: "Message three friends: 'Tiny book club? First meeting is a silent read at my place. Bring any book.' Sort out the rest after the first night.",
+      type: "p",
+      text: "Give the club a name, even a silly one, and keep a shared note of every book with who chose it and what the group thought. After six meetings you'll have a record that's fun to revisit and a clear sense of what the group likes. Book-themed snacks are lovely but optional.",
     },
     {
       type: "shopHobby",
       productIds: ["conversation-cards", "book-lights", "reading-journals"],
-      title: "For the club shelf",
       dek: "Small extras that make the meeting, or the reading, a little nicer.",
     },
     {
       type: "p",
-      text: "If you're building a wider social life, try [25 girls' night ideas that aren't drinks](/journal/girls-night-ideas-that-arent-drinks) or [how to host a craft night](/journal/how-to-host-a-craft-night). A standing [mahjong night](/journal/how-to-host-a-mahjong-night) works the same way, and [a reading journal](/journal/how-to-start-a-reading-journal) gives members something to bring to the discussion. For more reading-adjacent ideas, see [hobbies to try when life feels like work-sleep-repeat](/journal/hobbies-to-try-when-life-feels-like-work-sleep-repeat).",
+      text: "A standing [mahjong night](/journal/how-to-host-a-mahjong-night) or [craft night](/journal/how-to-host-a-craft-night) works the same way, and [a reading journal](/journal/how-to-start-a-reading-journal) gives members something to bring to the discussion. For a wider menu of plans with friends, try [25 girls' night ideas that aren't drinks](/journal/girls-night-ideas-that-arent-drinks).",
     },
-    { type: "h2", text: "A few ways to make it feel like yours" },
-    {
-      type: "p",
-      text: "Give the club a name, even a silly one, and a group chat that stays friendly rather than administrative. Keep a shared note of every book, with who chose it and what the group thought. After six meetings you'll have a record that's fun to revisit and a clear sense of what the group enjoys.",
-    },
-    {
-      type: "p",
-      text: "If someone wants to bring book-themed snacks, lovely, but keep it optional. The simplest clubs last longest: a date, a book, a few good questions and somewhere comfortable to sit.",
-    },
-    { type: "ifYouLoved", hobbies: ["book-clubs", "reading", "craft-nights"] },
   ],
 };

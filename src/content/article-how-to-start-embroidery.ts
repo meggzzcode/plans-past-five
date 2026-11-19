@@ -29,18 +29,13 @@ export const articleHowToStartEmbroidery: Article = {
   body: [
     {
       type: "p",
-      text: "Say you are on a sofa, half-watching something you have already seen, hands idle and mind elsewhere. A hoop in your lap changes that. The screen is background and your hands have a job.",
+      text: "Six stitches cover most of embroidery. Learn them on one small hoop and you can draw a daisy, your initials or a wobbly mug in thread. It's portable, quiet and fits in a tote bag, and mistakes mostly disappear into the texture.",
     },
+    { type: "h2", text: "Kit or loose supplies?", id: "need" },
     {
       type: "p",
-      text: "Embroidery looks intricate, but it is a few simple stitches repeated. Learn six and you can draw nearly anything in thread, from a wobbly daisy to your initials.",
+      text: "A kit bundles a hoop, thread, fabric and a pattern, which takes the guessing out of the first project. Loose supplies let you choose your own colors. If you're unsure, a small kit is a sensible first purchase; if you already own scissors and a scrap of cotton, loose is cheaper.",
     },
-    { type: "h2", text: "Why it is worth trying", id: "why" },
-    {
-      type: "p",
-      text: "It is portable, quiet and fits in a tote bag. A small hoop takes an evening or two, and mistakes mostly disappear into the texture. Start-up effort is slight: a hoop, thread, needle and a piece of fabric. Being good at it is completely optional, and a wonky first daisy is still a daisy.",
-    },
-    { type: "h2", text: "What you need", id: "need" },
     {
       type: "whatYoullNeed",
       essentials: [
@@ -59,24 +54,14 @@ export const articleHowToStartEmbroidery: Article = {
     },
     {
       type: "p",
-      text: "**What you probably own.** Scissors, a pencil, a scrap of plain cotton from an old tea towel or shirt and maybe a sewing needle (though a proper embroidery needle makes threading easier).",
-    },
-    {
-      type: "p",
-      text: "**Kit or loose?** A kit bundles a hoop, thread, fabric and a pattern, which takes the guessing out of the first project. Loose supplies let you choose your own colors. If you are unsure, a small kit is a sensible first purchase.",
-    },
-    {
-      type: "saveSplurge",
-      save: "A basic hoop, a handful of floss colors and a pack of needles.",
-      splurge:
-        "A good small pair of embroidery scissors, which is a pleasure to use every single time.",
+      text: "You probably own scissors, a pencil and a scrap of plain cotton from an old tea towel or shirt. A good small pair of embroidery scissors is the one upgrade you'll feel every time you stitch.",
     },
     { type: "h2", text: "Six stitches worth learning first", id: "stitches" },
     {
       type: "item",
       n: 1,
       title: "Running stitch",
-      note: "In and out along a line. It is the simplest, and it makes dashes and borders.",
+      note: "In and out along a line. The simplest, and it makes dashes and borders.",
     },
     {
       type: "item",
@@ -124,38 +109,27 @@ export const articleHowToStartEmbroidery: Article = {
       type: "p",
       text: "When finished, check the floss label for care instructions before washing. Test the pen or transfer method on scrap fabric first, and follow its label.",
     },
-    { type: "h2", text: "Making it a habit", id: "habit" },
+    { type: "h2", text: "Keeping it going", id: "habit" },
     {
       type: "p",
-      text: "Embroidery rewards small sessions. Ten minutes while the kettle boils moves a leaf along, and a hoop left on the arm of the sofa tends to get picked up. Keep a little pouch with the needle, a few colors and the scissors, so a spare half hour does not begin with a search.",
+      text: "Embroidery rewards small sessions: ten minutes while the kettle boils moves a leaf along, and a hoop left on the arm of the sofa tends to get picked up. A little pouch with the needle, a few colors and the scissors means a spare half hour doesn't begin with a search.",
     },
     {
       type: "p",
-      text: "Before you commit to a full pattern, spend an evening stitching rows of each stitch on a scrap, one beneath the other. It becomes a tiny reference sampler, and it shows you which stitches your hands enjoy. Plenty of people discover they love one stitch and quietly build every design around it.",
+      text: "Before committing to a full pattern, spend an evening stitching a row of each stitch on a scrap, one beneath the other. It becomes a tiny reference sampler and shows you which stitches your hands enjoy. For a second project, trace a simple outline from something you like. Lettering is a good one, since backstitch alone does the job.",
     },
     {
       type: "p",
       text: "Needles are sharp. Store them in a case or a needle minder, and keep them away from small children and pets.",
     },
-    {
-      type: "p",
-      text: "When you are ready for a second project, trace a simple outline from something you like: a leaf, a small word, a favorite mug. Lettering is a good one, since backstitch alone does the whole job. Stitch it on a bit of fabric and pin it somewhere you will see it, so each stitch has a visible reward.",
-    },
     { type: "h2", text: "Common mistakes and fixes", id: "troubleshooting" },
     {
-      type: "item",
-      title: "The thread keeps tangling",
-      note: "The piece is too long, or the thread is twisting. Shorten it, and let the needle dangle from time to time so it untwists.",
-    },
-    {
-      type: "item",
-      title: "The fabric puckers",
-      note: "Pulling stitches too tight is the usual cause. Let each stitch sit flat, and keep the fabric drum-tight in the hoop.",
-    },
-    {
-      type: "item",
-      title: "The back looks messy",
-      note: "It does for everyone. Keep the knots small and trim the loose ends. Nobody sees the back.",
+      type: "list",
+      items: [
+        "**The thread keeps tangling.** The piece is too long, or the thread is twisting. Shorten it, and let the needle dangle from time to time so it untwists.",
+        "**The fabric puckers.** Pulling stitches too tight is the usual cause. Let each stitch sit flat, and keep the fabric drum-tight in the hoop.",
+        "**The back looks messy.** It does for everyone. Keep the knots small and trim the loose ends.",
+      ],
     },
     {
       type: "shopHobby",
@@ -164,13 +138,8 @@ export const articleHowToStartEmbroidery: Article = {
       productIds: ["embroidery-kits"],
     },
     {
-      type: "makePlan",
-      text: "Pick a regular evening for stitching in [Make Some Plans](/make-plans), and keep the hoop where you will see it.",
-    },
-    {
       type: "p",
       text: "Like using your hands but fancy a different craft? [How to Start Crocheting](/journal/how-to-start-crocheting) is the natural next door.",
     },
-    { type: "ifYouLoved", hobbies: ["crochet", "knitting", "craft-nights"] },
   ],
 };

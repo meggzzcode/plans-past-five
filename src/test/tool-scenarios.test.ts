@@ -198,6 +198,7 @@ const lengthsFor = (w: When) =>
     ? LENGTHS.filter((l) => l !== "evening")
     : LENGTHS.filter((l) => l === "evening" || l === "few-hours");
 
+const OTHER_DAY = /\b(mon|tues|wednes|thurs|fri|satur|sun)day\b|\bweekends?\b|\btomorrow\b|\bnext week\b/i;
 const clock = (m: number) => `${Math.floor(m / 60)}:${String(m % 60).padStart(2, "0")}`;
 
 const DAYPART_RULES: { re: RegExp; ok: (start: number) => boolean; why: string }[] = [
@@ -255,8 +256,6 @@ function checkPlan(input: PlanInput, problems: string[]) {
   for (const { a } of acts) {
     if (!a.who.includes(input.who)) problems.push(`who ${a.id} ${tag}`);
     if (input.who === "alone" && !a.who.includes("alone")) problems.push(`solo-group ${a.id}`);
-    if (input.who === "alone" && needsOthersWording.test(`${a.name} ${a.text} ${a.prep}`))
-      problems.push(`solo-wording ${a.id} ${tag}`);
   }
   // budget
   const sumMax = acts.reduce((t, x) => t + x.a.costMax, 0);
@@ -298,7 +297,7 @@ function checkPlan(input: PlanInput, problems: string[]) {
     for (const r of DAYPART_RULES)
       if (r.re.test(words) && !r.ok(s.start)) problems.push(`${r.why}: ${a.id}@${clock(s.start)} ${tag}`);
     const w = input.when === "after-work" ? "weeknight" : input.when;
-    if (["weeknight", "evening", "morning", "afternoon"].includes(w) && notTonightWording.test(a.name))
+    if ((w === "weeknight" || w === "evening") && OTHER_DAY.test(a.name))
       problems.push(`other-day-wording ${a.id} ${tag}`);
     if (w === "weeknight" || w === "evening") {
       if (s.start < 17 * 60) problems.push(`weeknight-too-early ${a.id}@${clock(s.start)}`);

@@ -8,7 +8,9 @@ import { articlesForHobby } from "@/content";
 import { selectProducts, verifiedCatalog, linkableFor, type CatalogProduct } from "@/data/catalog";
 import { buildListText, copyText, neededProducts, useShopList } from "@/lib/shoplist";
 import { track } from "@/lib/track";
-import { ProductCard, ShopDisclosure } from "./ProductCard";
+import { ShopDisclosure } from "./ProductCard";
+import { ShopSections } from "./ShopSections";
+import { groupsFor } from "./ShopTheArticle";
 
 /**
  * Print view. The list is portalled to <body> and every other body child is removed from the
@@ -23,7 +25,7 @@ const printCss = (id: string) => `
 }`;
 
 /**
- * "Shop my hobby": the reusable checklist. Drop `<ShopMyHobby hobby="watercolor-painting" />` into any
+ * "Shop your hobby": the reusable shopping list (the component keeps its historical name). Drop `<ShopMyHobby hobby="watercolor-painting" />` into any
  * hobby page, article, collection, quiz result or planner result. Renders nothing without verified products.
  */
 export function ShopMyHobby({
@@ -57,7 +59,7 @@ export function ShopMyHobby({
   const [mounted, setMounted] = useState(false);
   const printId = useId();
   const h = hobby ? getHobby(hobby) : undefined;
-  const heading = title ?? (h ? `Shop my ${h.name.toLowerCase()} list` : "Shop my list");
+  const heading = title ?? (h ? `Shop your ${h.name.toLowerCase()} kit` : "Shop your hobby");
 
   useEffect(() => {
     const done = () => document.body.removeAttribute("data-print-shop");
@@ -71,17 +73,18 @@ export function ShopMyHobby({
   const needed = ready ? neededProducts(sel.all, state) : [];
   const listTitle = h ? `${h.name} shopping list` : "My shopping list";
   const text = buildListText(sel.all, ready ? state : {}, today, listTitle);
+  const grouped = groupsFor(sel);
   const related = hobby ? articlesForHobby(hobby).slice(0, 3) : [];
 
   const later = ready ? sel.all.filter((p) => state[p.id] === "later") : [];
   const printArea = (
     <div className="shop-print-area" data-print-id={printId} aria-hidden="true">
       <h2>{listTitle}</h2>
-      <p>Made {today}. Prices and availability are set by the retailer, so check each listing.</p>
+      <p>Made {today}. Amazon or the seller sets price, shipping and returns.</p>
       <ul style={{ listStyle: "none", padding: 0 }}>
         {needed.map((p) => (
           <li key={p.id} style={{ margin: "10px 0", overflowWrap: "anywhere" }}>
-            {"☐"} <strong>{p.name}</strong> ({p.brand})
+            {"☐"} <strong>{p.shortName ?? p.name}</strong> ({p.brand})
             <br />
             <span style={{ fontSize: "0.85em" }}>{resolveProductLink(linkableFor(p)).href}</span>
           </li>
@@ -120,11 +123,11 @@ export function ShopMyHobby({
   return (
     <section className="not-prose my-12 bg-butter/40 px-5 py-8 md:px-8" aria-label={heading}>
       <style>{printCss(printId)}</style>
-      <p className="kicker text-cherry">Shopping checklist</p>
+      <p className="kicker text-cherry">Shop your hobby</p>
       <h3 className="mt-2 font-display text-3xl italic">{heading}</h3>
       <p className="mt-2 text-muted-foreground">
         {dek ??
-          "Tick what you need and mark what you already own. Your list stays in this browser."}
+          "Tap the list icon on anything you want, then copy or print the list. It stays in this browser."}
       </p>
 
       <div className="no-print mt-5 flex flex-wrap items-center gap-3">
@@ -139,7 +142,7 @@ export function ShopMyHobby({
           }
           disabled={sel.essentials.length === 0}
         >
-          Tick all essentials
+          Add all essentials
         </button>
         <button type="button" className={btn} onClick={copy} disabled={needed.length === 0}>
           <Copy className="h-4 w-4" /> Copy list
@@ -159,56 +162,12 @@ export function ShopMyHobby({
         </p>
       </div>
 
-      {sel.essentials.length > 0 && (
-        <div className="mt-6">
-          <h4 className="font-display text-xl">Essentials</h4>
-          <div className="mt-4 grid gap-8 sm:grid-cols-2">
-            {sel.essentials.map((p) => (
-              <ProductCard
-                key={p.id}
-                product={p}
-                placement="hobby-essential"
-                className="bg-cream/60 px-4 pb-3"
-              />
-            ))}
-          </div>
-        </div>
-      )}
-      {sel.optional.length > 0 && (
-        <div className="mt-8">
-          <h4 className="font-display text-xl italic">Optional upgrades</h4>
-          <div className="mt-4 grid gap-8 sm:grid-cols-2">
-            {sel.optional.map((p) => (
-              <ProductCard
-                key={p.id}
-                product={p}
-                placement="hobby-optional"
-                className="bg-cream/60 px-4 pb-3"
-              />
-            ))}
-          </div>
-        </div>
-      )}
-
-      {sel.alternatives.length > 0 && (
-        <div className="mt-8">
-          <h4 className="font-display text-xl italic">Other options</h4>
-          <p className="mt-1 text-sm text-muted-foreground">
-            These fill the same need as a pick above. Choose one, not all.
-          </p>
-          <div className="mt-4 grid gap-8 sm:grid-cols-2">
-            {sel.alternatives.map((p) => (
-              <ProductCard
-                key={p.id}
-                product={p}
-                placement="hobby-alternative"
-                alternative
-                className="bg-cream/60 px-4 pb-3"
-              />
-            ))}
-          </div>
-        </div>
-      )}
+      <ShopSections
+        pick={grouped.pick}
+        groups={grouped.groups}
+        placement="hobby"
+        cardClassName="bg-cream/60 p-3"
+      />
 
       {related.length > 0 && (
         <p className="mt-6 text-sm">

@@ -6,13 +6,32 @@ import {
   verifiedCatalog,
   type CatalogProduct,
   type ProductContext,
+  type Selection,
 } from "@/data/catalog";
 import { track } from "@/lib/track";
-import { ProductCard, ShopDisclosure } from "./ProductCard";
+import { ShopDisclosure } from "./ProductCard";
+import { ShopSections, type ShopGroup, type ShopItem } from "./ShopSections";
+
+/** Selection -> the shared layout: pick on top, then the remaining essentials and optional extras. */
+export function groupsFor(sel: Selection): { pick: ShopItem | undefined; groups: ShopGroup[] } {
+  const withAlts = (p: CatalogProduct): ShopItem => ({
+    product: p,
+    alternatives: sel.alternativesOf[p.id],
+  });
+  const pick = sel.pick ? withAlts(sel.pick) : undefined;
+  const rest = (xs: CatalogProduct[]) => xs.filter((p) => p.id !== sel.pick?.id).map(withAlts);
+  return {
+    pick,
+    groups: [
+      { heading: "Start with these", items: rest(sel.essentials) },
+      { heading: "Optional extras", quiet: true, items: rest(sel.optional) },
+    ],
+  };
+}
 
 /**
- * "Shop the article": essentials first, optional upgrades separately, no duplicates.
- * Renders nothing when there are no verified products for the context.
+ * "Shop the article": the one best buy first, essentials, optional extras, and at most two
+ * alternatives per product. Renders nothing when there are no verified products for the context.
  */
 export function ShopTheArticle({
   title = "Shop this guide",
@@ -42,6 +61,7 @@ export function ShopTheArticle({
   if (empty) return null;
 
   const coll = getCollection(collection ?? sel.all.flatMap((p) => p.collections)[0] ?? "");
+  const { pick, groups } = groupsFor(sel);
   return (
     <aside className="not-prose my-12 border-y-2 border-ink py-8" aria-labelledby={`shop-${key}`}>
       <p className="kicker text-cherry">Off Duty Essentials</p>
@@ -49,42 +69,9 @@ export function ShopTheArticle({
         {title}
       </h3>
       <p className="mt-2 text-muted-foreground">
-        {dek ??
-          "Specific picks we researched, with the reason for each. Tick what you need, skip what you own."}
+        {dek ?? "A few named products, picked with the reason for each. Skip anything you own."}
       </p>
-      {sel.essentials.length > 0 && (
-        <section className="mt-6" aria-label="Essentials">
-          <h4 className="font-display text-xl">Start with these</h4>
-          <div className="mt-4 grid gap-8 sm:grid-cols-2">
-            {sel.essentials.map((p, i) => (
-              <ProductCard key={p.id} product={p} index={i} placement="article-essential" />
-            ))}
-          </div>
-        </section>
-      )}
-      {sel.optional.length > 0 && (
-        <section className="mt-8" aria-label="Optional upgrades">
-          <h4 className="font-display text-xl italic">Optional upgrades</h4>
-          <div className="mt-4 grid gap-8 sm:grid-cols-2">
-            {sel.optional.map((p) => (
-              <ProductCard key={p.id} product={p} placement="article-optional" />
-            ))}
-          </div>
-        </section>
-      )}
-      {sel.alternatives.length > 0 && (
-        <section className="mt-8" aria-label="Other options for the same slot">
-          <h4 className="font-display text-xl italic">Other options</h4>
-          <p className="mt-1 text-sm text-muted-foreground">
-            These fill the same need as a pick above. Choose one, not all.
-          </p>
-          <div className="mt-4 grid gap-8 sm:grid-cols-2">
-            {sel.alternatives.map((p) => (
-              <ProductCard key={p.id} product={p} placement="article-alternative" alternative />
-            ))}
-          </div>
-        </section>
-      )}
+      <ShopSections pick={pick} groups={groups} placement="article" />
       {coll && (
         <p className="mt-6 text-sm">
           More in{" "}

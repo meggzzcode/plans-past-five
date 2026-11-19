@@ -155,8 +155,9 @@ const hobbyCostRank = (c: Cost) => (c === "flexible" ? 2 : costRank[c]); // flex
 const maxMinutes = { short: 45, couple: 120, halfday: 240, any: Infinity } as const;
 const energyRank: Record<Energy, number> = { low: 0, medium: 1, high: 2 };
 
-export type Constraint = "where" | "time" | "budget" | "company" | "energy" | "level";
+export type Constraint = "craving" | "where" | "time" | "budget" | "company" | "energy" | "level";
 const constraintLabels: Record<Constraint, string> = {
+  craving: "main craving",
   where: "location",
   time: "time",
   budget: "budget",
@@ -207,6 +208,7 @@ function reasons(h: Hobby, a: FinderAnswers): string[] {
 
 /** The constraints a hobby can fail one at a time (used for the nearest-match list). */
 function fails(h: Hobby, a: FinderAnswers, c: Constraint) {
+  if (c === "craving") return !h.cravings.includes(a.craving);
   const only: FinderAnswers = {
     craving: a.craving,
     where: "anywhere",
@@ -260,7 +262,10 @@ export function findHobbies(a: FinderAnswers) {
     suggestions = (Object.keys(constraintLabels) as Constraint[])
       .map((c) => ({
         constraint: constraintLabels[c],
-        extra: hobbies.filter((h) => passes(h, a, c) && h.cravings.includes(a.craving)).length,
+        extra:
+          c === "craving"
+            ? hobbies.filter((h) => passes(h, a)).length
+            : hobbies.filter((h) => passes(h, a, c) && h.cravings.includes(a.craving)).length,
       }))
       .filter((s) => s.extra > scored.length)
       .sort((x, y) => y.extra - x.extra);

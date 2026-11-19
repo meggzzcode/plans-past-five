@@ -1,0 +1,26 @@
+# Article refinement, batch A (slugs a-h, through how-to-host-*)
+
+Scope: 15 files from article-active-... to article-how-to-host-a-paint-night-at-home. Files starting with how-to-plan-/how-to-start-/how-to-take- and article-35-hobbies were left for other batches. Status, sources, verifiedAt and coworkChecks were not changed. No file has an Imagine/Picture/Think of opener now.
+
+| Article | Old opener | New opener | Structure | Cut | Product notes |
+|---|---|---|---|---|---|
+| active-hobbies | Tuesday-evening gym scene | "Not loving the gym is not a character flaw..." (myth bust) | Grouped list by temperament (friends, outdoors, music, purpose), one try-it callout | "Plan your first try" list, saveSplurge, makePlan, tote optional line, repeated gym paragraph | shopHobby swapped from tennis racket/pickleball paddle set to daypacks, water bottles, sports totes to match the gear list |
+| affordable-hobbies-under-25 (draft) | "pottery-studio membership" line | Same idea, no takeaway-price claim | Menu list with first step per item | Price-wobble bullets, saveSplurge, makePlan, own-home list folded to one paragraph | Open price checks remain; "Under $25"/"Typically under" labels untouched (unverified, still draft) |
+| after-work | 6:14 p.m. kitchen scene | "Scrolling after work isn't a character flaw..." | 25 ideas by mood, one first30 (a true 30-minute timer), one noSpend | quote, girlsNight, makePlan, "Under $50 for gear" claim, making-it-stick list collapsed | none |
+| at-home-creative-weekend | "Saturdays go one of two ways" | "A weekend at home doesn't have to mean chores or the sofa" | Itinerary, Friday to Sunday | saveSplurge, makePlan, repeated essentials/own/optional list | none |
+| cheap-weekend-adventures | "Adventure has become a product" | "You don't need a booking, an upgrade or a paid sunset" | Category list, merged cheap tips and kit into one tryThisWeekend | "Plan your first adventure" h3, makePlan, duplicate kit list | none |
+| cozy-solo-dates-at-home | Rainy-Friday battery scene | "Staying in isn't a failure to make plans" | Set-the-scene then 20 ideas by energy | first30 (duplicated setup), makePlan, second series paragraph | none |
+| creative-hobby-starter-kits | 11 p.m. cart scene | "Is a craft kit worth it...?" (question) | Compare and choose: when kit, when loose, seven questions, by hobby | saveSplurge, makePlan, two gift/free-sample paragraphs merged | none |
+| creative-hobbies-at-home | "between school art class and first job" | "Do you still make things with your hands?" | Grouped by material, light callouts | quote, saveSplurge, makePlan; girlsNight became tryThisWeekend; unverified kit prices changed to "Varies"; pottery-painting coffee-mug line and "seal them" reworded to match the clay and label sources | starterKit pottery block matches clay section |
+| flower-arranging | Friday shop-run scene | "A grocery-store bunch shoved straight into a jar..." | Tutorial: why, kit, recipe steps, care, mistakes | saveSplurge, makePlan, first30 (arranging is about 20 minutes, now a plain step list), duplicate pollen/tool paragraphs | no product block (none exist for flowers) |
+| girls-night-ideas | group-chat "we should do something" scene | "'We should do something' tends to end in drinks." | 25 ideas by effort, then commit and inclusion | duplicate "get it into the group chat" h3, rotating-chooser paragraph merged | none |
+| how-to-find-a-hobby | "What do you do for fun?" | kept the question, tightened second paragraph | Audit, craving, try three, one-week experiment | saveSplurge, makePlan, duplicate experiment h3 and shopping-list paragraph | none |
+| recreational-cycling | "Say there's a bike at the back of the garage" | "If the last time you rode a bike you were fourteen..." | Seven-step tutorial | saveSplurge, makePlan, first30 (20-minute practice) now a list | none |
+| host-a-craft-night | table-of-friends scene | "Craft night is one of the easiest ways to host" | Host guide: menus, budget and invites, test run, timed run of show, fixes | saveSplurge, girlsNight (ritual folded into timeline), separate hosting-checklist h2, test run moved earlier | none |
+| host-a-mahjong-night | restaurant-vs-table scene | Myth bust: mahjong night needs an expert | Host guide: version, teacher, kit, first-night countdown, tradition, respect | eight-bullet buy list cut to four, "why a standing night" shortened, duplicate mistakes list | shopTheArticle kept |
+| host-a-paint-night | living-room scene | "A paint night runs on one painting..." | Tutorial-first: painting, supplies, room, timeline | saveSplurge, girlsNight, makePlan, duplicate steps vs timeline | none |
+
+## Notes for the lead
+- Top-level `productIds` were left as they were. In active-hobbies it still lists tennis-rackets and pickleball-sets (tennis and pickleball are items 1 and 2), but the on-page shop block no longer shows them.
+- Raw markdown: all remaining links are `[text](/path)` inside p or item note text; no editor notes were found in these 15 files.
+- Items that cite "Typically under $X" in affordable-hobbies-under-25 and in after-work cost labels remain; they carry unverified price framing and should be settled before affordable is published.
