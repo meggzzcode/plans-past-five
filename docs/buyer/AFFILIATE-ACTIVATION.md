@@ -97,3 +97,6 @@ Update `site.legal.lastUpdated` when going live. Keep the disclosure on the affi
 
 ## Exports stay ordinary
 Activating Amazon tags on-site changes nothing in copied lists, printed lists, backups or shares. They use `src/lib/export-links.ts` (names plus a link back to this site, never a tagged link) because Amazon bars Special Links in printed and offline material. See docs/commerce/EXPORT-LINK-POLICY.md. Do not switch them to the affiliate resolver.
+
+## Seller note (2026-11-19)
+The Amazon entry is live on the seller's own Associates account with tracking id `planspastfive-20`. The buyer must replace `websiteTrackingId` (and `accountOwnershipNote`) with their own account's id before or at handover; the account and id do not transfer. Do not run `check-affiliate-config.mjs --expect-inactive` on this branch.

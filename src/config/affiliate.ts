@@ -75,13 +75,22 @@ const blank = (
  * Only `amazon` ships; add others after approval (do not pre-fill templates).
  */
 export const affiliateRegistry: Record<string, AffiliateEntry> = {
-  amazon: blank(
-    "amazon",
-    "Amazon Associates",
-    "Amazon",
-    ["amazon.com", "www.amazon.com"],
-    "https://www.amazon.com",
-  ),
+  amazon: {
+    ...blank(
+      "amazon",
+      "Amazon Associates",
+      "Amazon",
+      ["amazon.com", "www.amazon.com"],
+      "https://www.amazon.com",
+    ),
+    websiteTrackingId: "planspastfive-20",
+    approvalStatus: "approved",
+    active: true,
+    lastVerified: "2026-11-19",
+    approvedPromotionMethods: ["website content"],
+    accountOwnershipNote:
+      "Owner's Associates account (tracking id planspastfive-20). Not included with the site; the buyer opens their own account and replaces this id.",
+  },
 };
 
 /**
