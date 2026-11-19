@@ -32,6 +32,17 @@ export type AffiliateStatus = "not-activated" | "pending" | "active";
 export type CatalogStatus = "candidate" | "verified";
 export type CatalogImageRights = "none" | "owned" | "licensed" | "retailer-permission";
 
+/**
+ * How a product reaches a reader.
+ * - amazon-affiliate-ready: an exact Amazon listing. We store ONLY the ASIN and the ordinary
+ *   https://www.amazon.com/dp/ASIN address. The tracking ID is added centrally at render time
+ *   (src/config/affiliate.ts) and is never stored in a product or article file.
+ * - editorial-pick: recommended on merit although it is not (or not best) on Amazon. Links to the
+ *   maker's or retailer's own https page, unmonetised, with no Amazon fields needed.
+ */
+export type LinkType = "amazon-affiliate-ready" | "editorial-pick";
+export const LINK_TYPES: LinkType[] = ["amazon-affiliate-ready", "editorial-pick"];
+
 export type KitSlotRef = { kit: string; slot: string };
 
 export type CatalogProduct = {
@@ -41,9 +52,12 @@ export type CatalogProduct = {
   category: string;
   /** One neutral factual sentence about what it is. */
   description: string;
+  /** Amazon product number. Empty for an editorial pick that is not sold on Amazon. */
   asin: string;
   /** Ordinary link: exactly https://www.amazon.com/dp/<ASIN>. No tracking params, ever. */
   amazonUrl: string;
+  /** Defaults to amazon-affiliate-ready when absent. */
+  linkType?: LinkType;
   /** Reserved. Must stay unset while affiliateStatus is "not-activated" (tags are added by src/config/affiliate.ts). */
   affiliateUrl?: string;
   manufacturerUrl?: string;
@@ -157,27 +171,44 @@ export function validateCatalogProduct(input: unknown, now: Date = new Date()): 
   for (const k of ["name", "brand", "category", "description", "audience", "whySelected"])
     if (!str(r[k])) bad(`${k} is required`);
 
-  // ASIN + ordinary Amazon URL
-  if (!isValidAsin(r["asin"]))
-    bad(
-      `invalid or placeholder ASIN "${String(r["asin"] ?? "")}" (need 10 uppercase letters/digits)`,
-    );
-  if (typeof r["amazonUrl"] !== "string" || !r["amazonUrl"]) bad("amazonUrl is required");
-  else {
-    const params = trackingParamsIn(r["amazonUrl"]);
-    if (params.length)
-      bad(`amazonUrl has tracking parameters (${params.join(", ")}); ordinary links only`);
-    if (isValidAsin(r["asin"]) && r["amazonUrl"] !== amazonProductUrl(r["asin"]))
-      bad(`amazonUrl must equal ${amazonProductUrl(r["asin"])}`);
+  // How the reader is sent to the product (see LinkType)
+  const linkType = r["linkType"] ?? "amazon-affiliate-ready";
+  if (!LINK_TYPES.includes(linkType as LinkType))
+    bad(`linkType must be one of ${LINK_TYPES.join(", ")}`);
+  if (linkType === "editorial-pick") {
+    const dest = [r["altRetailerUrl"], r["manufacturerUrl"]].find((u) => str(u));
+    if (!dest)
+      bad(
+        "an editorial pick needs a maker or retailer web address (altRetailerUrl or manufacturerUrl)",
+      );
+    else if (
+      /(^|\.)(amazon\.[a-z.]+|amzn\.to|a\.co)(\/|$)/i.test(new URL(String(dest)).hostname + "/")
+    )
+      bad(
+        "an editorial pick must link to a non-Amazon page; use amazon-affiliate-ready for Amazon",
+      );
+    if (str(r["asin"]) && !isValidAsin(r["asin"])) bad(`invalid ASIN "${String(r["asin"])}"`);
+  } else {
+    // ASIN + ordinary Amazon URL
+    if (!isValidAsin(r["asin"]))
+      bad(
+        `invalid or placeholder ASIN "${String(r["asin"] ?? "")}" (need 10 uppercase letters/digits)`,
+      );
+    if (typeof r["amazonUrl"] !== "string" || !r["amazonUrl"]) bad("amazonUrl is required");
+    else {
+      const params = trackingParamsIn(r["amazonUrl"]);
+      if (params.length)
+        bad(`amazonUrl has tracking parameters (${params.join(", ")}); ordinary links only`);
+      if (isValidAsin(r["asin"]) && r["amazonUrl"] !== amazonProductUrl(r["asin"]))
+        bad(`amazonUrl must equal ${amazonProductUrl(r["asin"])}`);
+    }
   }
 
-  if (r["affiliateUrl"] !== undefined && r["affiliateUrl"] !== "") {
-    if ((r["affiliateStatus"] ?? "not-activated") === "not-activated")
-      bad(
-        "affiliateUrl must stay empty while affiliateStatus is not-activated (activate centrally in src/config/affiliate.ts)",
-      );
-    else if (!isHttps(r["affiliateUrl"])) bad("affiliateUrl must be https");
-  }
+  // The affiliate tag is never stored: links are built centrally from the ASIN plus the one site-wide tracking ID.
+  if (r["affiliateUrl"] !== undefined && r["affiliateUrl"] !== "")
+    bad(
+      "affiliateUrl is not allowed. Never store an affiliate link: the site builds it from the ASIN and the one tracking ID in the site settings",
+    );
   for (const k of ["manufacturerUrl", "altRetailerUrl"]) {
     const v = r[k];
     if (v === undefined || v === "") continue;
@@ -324,9 +355,11 @@ export function catalogReferenceProblems(list: CatalogProduct[], known: KnownRef
   for (const p of list) {
     if (seen.has(p.id)) out.push(`${p.id}: duplicate id`);
     seen.add(p.id);
-    const prev = asins.get(p.asin);
-    if (prev) out.push(`${p.id}: same ASIN as ${prev}`);
-    asins.set(p.asin, p.id);
+    if (p.asin) {
+      const prev = asins.get(p.asin);
+      if (prev) out.push(`${p.id}: same ASIN as ${prev}`);
+      asins.set(p.asin, p.id);
+    }
     for (const h of p.hobbies)
       if (!known.hobbies.includes(h)) out.push(`${p.id}: unknown hobby "${h}"`);
     for (const c of p.collections)
@@ -369,7 +402,9 @@ export type ProductStatus = "candidate" | "verified" | "held" | "discontinued";
 export const PRODUCT_STATUSES: ProductStatus[] = ["candidate", "verified", "held", "discontinued"];
 
 /** A product file as stored in content/products. Same facts as CatalogProduct; lifecycle is one field plus a reason. */
-export type ProductSource = Omit<CatalogProduct, "status" | "hold"> & {
+export type ProductSource = Omit<CatalogProduct, "status" | "hold" | "asin" | "amazonUrl"> & {
+  asin?: string;
+  amazonUrl?: string;
   status: ProductStatus;
   /** Plain-English reason for held / discontinued. Internal: written for the owner, never shipped to the site. */
   statusReason?: string;
@@ -384,7 +419,11 @@ export function toCatalogProduct(s: ProductSource): CatalogProduct {
   const { statusReason, replacedBy, order, status, ...rest } = s;
   void replacedBy;
   void order;
-  const base = rest as Omit<CatalogProduct, "status" | "hold">;
+  const base = {
+    ...rest,
+    asin: rest.asin ?? "",
+    amazonUrl: rest.amazonUrl ?? "",
+  } as Omit<CatalogProduct, "status" | "hold">;
   if (status === "held") return { ...base, status: "verified", hold: statusReason ?? "held" };
   if (status === "discontinued")
     return { ...base, status: "verified", availability: "unavailable" };

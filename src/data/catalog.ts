@@ -148,9 +148,9 @@ export function selectProducts(
   const ids = new Set<string>();
   const asins = new Set<string>();
   const add = (p: CatalogProduct) => {
-    if (ids.has(p.id) || asins.has(p.asin)) return;
+    if (ids.has(p.id) || (p.asin && asins.has(p.asin))) return;
     ids.add(p.id);
-    asins.add(p.asin);
+    if (p.asin) asins.add(p.asin);
     picked.push(p);
   };
   if (ctx.article) list.filter((p) => p.articles.includes(ctx.article!)).forEach(add);
@@ -190,4 +190,7 @@ export function photoFor(
 }
 
 /** The shape `resolveProductLink` expects. The exact URL is the ordinary ASIN page; the registry adds tags later. */
-export const linkableFor = (p: CatalogProduct) => ({ amazonQuery: p.name, exactUrl: p.amazonUrl });
+export const linkableFor = (p: CatalogProduct) => ({
+  amazonQuery: p.name,
+  exactUrl: p.linkType === "editorial-pick" ? (p.altRetailerUrl ?? p.manufacturerUrl) : p.amazonUrl,
+});

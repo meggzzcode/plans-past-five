@@ -439,7 +439,16 @@ function fail(errors, warnings = []) {
   process.exit(1);
 }
 
-const KEY_ORDER = ["id", "name", "brand", "category", "status", "statusReason", "replacedBy"];
+const KEY_ORDER = [
+  "id",
+  "name",
+  "brand",
+  "category",
+  "status",
+  "statusReason",
+  "replacedBy",
+  "linkType",
+];
 
 /** CSV product -> the source file shape (a held product becomes status "held" with its reason). */
 export function toSourceRecord(p) {
