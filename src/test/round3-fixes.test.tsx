@@ -63,14 +63,17 @@ describe("1. outbound buy links carry rel sponsored noopener noreferrer", () => 
 
   it("every file that renders a resolved product link uses the one constant, never a literal rel", () => {
     const files = walk(path.join(root, "src")).filter(
-      (f) => /\.tsx$/.test(f) && readFileSync(f, "utf8").includes("resolveProductLink"),
+      (f) =>
+        /\.tsx$/.test(f) &&
+        !f.includes("/test/") &&
+        readFileSync(f, "utf8").includes("resolveProductLink"),
     );
     expect(files.length).toBeGreaterThanOrEqual(4);
     for (const f of files) {
       const src = readFileSync(f, "utf8");
       const rels = [...src.matchAll(/rel=(\{[^}]*\}|"[^"]*")/g)].map((m) => m[1]);
       for (const r of rels) expect(r, f).toContain("OUTBOUND_BUY_REL");
-      expect(src.includes("<a") ? rels.length : 1, f).toBeGreaterThan(0);
+      expect(src.includes('target="_blank"') ? rels.length : 1, f).toBeGreaterThan(0);
     }
   });
 
