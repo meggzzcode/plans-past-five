@@ -7,16 +7,29 @@ Status 2026-11-19. Baseline: `b376648` (plus Cowork round-2 prompt `6111700`). T
 - **Stays:** URLs, route architecture, the hobby directory, My Plans (browser storage only), the importer + catalog pipeline, affiliate registry (tracking OFF), CMS, tests, security headers, docs set. No accounts, database, newsletter, paid ads, new tools.
 - **Not wasted from last week:** the 30 article-only product types, hobby gear blocks, Amazon-only link test, catalog (66 records), 13 Cowork-verified additions, source lists, safety wording. They are inputs, not the base copy.
 
-## 2. Decisions I need from you before Phase B starts (short list)
-1. **Branch.** This session is set to push to `claude/vibrant-dirac-amdf7r`. I propose tagging the baseline (`baseline-pre-reset`) and working there, with backups under `docs/editorial-reset/backup/` (private repo only; excluded from the sale package). A separate `editorial-reset` branch needs your OK to push.
-2. **Product pictures.** Brief wants cards that show "visual appearance", but Amazon forbids stored images and only API-fed images are allowed (needs sales). Options: (a) text + editorial inspiration image per collection, no product photos (safe, my default); (b) Cowork confirms SiteStripe image embeds are allowed for this site type (workstream P) and we use them. Choose after Cowork reports; default is (a).
-3. **Cycling article.** It carries safety guidance. Default: keep the page live, noindex-free, folded into "Active hobbies" as a section with a 301 once the replacement is validated; never delete.
-4. **Consolidation redirects.** Netlify `_redirects` entries add real redirects (needs one release deploy anyway). Default: 301s, canonical to the merged guide, old slugs kept in the sitemap history file.
-5. **Pilot approval gate.** I will stop after Phase B and present the four pilots for your approval. Nothing else is rewritten before that.
+## 2. Owner decisions (approved 2026-11-19)
+1. **Branch:** dedicated `editorial-reset` branch, created from `b376648`-era HEAD; the current development branch (`claude/vibrant-dirac-amdf7r`) and tag `baseline-pre-reset` preserve the baseline. Original articles are backed up under `docs/editorial-reset/backup/` (seller-private, excluded from the buyer package). All useful existing work is preserved.
+2. **Product photography:** NOT text-first. Visual merchandising is central. Cowork investigates compliant options and reports (see workstream Q in the Cowork round-2 prompt): authorised manufacturer photography, licensed product photography, brand media kits with commercial-use permission, approved affiliate imagery (SiteStripe or equivalent), original editorial/lifestyle imagery. No paid API, no recurring cost, no complicated external dependency. Product photography and inspirational imagery stay visibly distinct. Until Cowork reports, nothing from Amazon is stored.
+3. **Cycling article:** approved in principle. Validate search intent first, keep the safety information, 301 to a genuinely relevant destination if consolidated.
+4. **Redirects:** approved only where the destination is genuinely relevant; preserve valuable URLs wherever possible.
+5. **Pilot gate:** stop after the four pilots and present rendered results for approval.
+
+## 2b. Strategic refinements (approved 2026-11-19): feel sophisticated, be simple to own
+Goal: a sophisticated lifestyle destination for the customer and an exceptionally simple business to own. Luxury through curation, not quantity. We are finishing, not building more.
+
+- **Phase A.1 Website Simplification and Buyer Maintenance Audit (runs before any rewriting).** Every page, feature, component, dataset, external dependency and customer journey is classified Keep / Improve / Simplify / Merge / Hide / Remove against: customer value, commercial value, brand alignment, ease of use, ongoing maintenance, technical complexity, ownership transferability, duplication. Previously approved decisions may be challenged. Recommendations are presented before any destructive change; nothing is deleted without a backup and approval.
+- **Navigation:** investigate four primary destinations: Find a Hobby, Make Plans, The Shop, The Journal. My Plans / saved favourites become a heart icon (secondary). Tonight folds into Make Plans. Legal/trust pages move to the footer.
+- **12 signature hobbies (provisional, to be challenged by research):** junk journaling, air-dry clay, watercolor, embroidery, crochet, reading, flower arranging, mahjong, puzzles, pickleball, tennis, scrapbooking. They get the strongest photography, editorial, shopping and beginner experience. The rest of the 43-hobby directory stays as lighter discovery with no extensive product research. Reconcile with the article library: scrapbooking and puzzles have no flagship article today; craft/paint night, picnic and weekend guides belong to hosting/weekend collections.
+- **Six signature shop collections (replacing the eight):** The Paper Edit (journaling, scrapbooking, stationery), The Creative Edit (painting, pottery, embroidery, crochet), The Cozy Edit (reading, puzzles, relaxing), The Hosting Edit (mahjong, craft nights, gatherings), The Sporty Edit (tennis, pickleball, recreational movement), The Weekend Edit (picnics, little adventures). Target about 48 exceptional products (not a quota). The 66-record catalog and 13 Cowork-verified additions are research inputs, not guaranteed inclusions; each product must pass the scoring model (80 shortlist, 90 flagship) plus safety, compatibility and listing verification.
+- **One authoritative product source:** audit and test that replacing a discontinued product once updates articles, hobby pages, collections, kits and planner suggestions. Test the importer, catalog pipeline and CMS as a nontechnical owner; remove any operational complexity they add.
+- **Protect the low-maintenance model.** Do not introduce: customer accounts, customer-profile databases, newsletter obligations, community moderation, physical inventory, checkout, live AI integrations, paid dependencies without approval, manually maintained deals/discounts, anything needing daily updates. Maintenance target 3 to 5 hours per month (excluding marketing, growth, new content, major repairs); we test whether that is realistic by walking real workflows (link check, product swap, article publish, image change, collection update, renewal tasks) and recording measured time.
+- **Stronger pilot evaluation:** for each of the four pilots a before/after covering desktop and mobile appearance, editorial quality, emotional appeal, product desirability, photography, commercial effectiveness, SEO and search intent, customer usefulness, maintenance requirements, with an explanation of why the new version is better (not just different).
+- **Final buyer lens:** reassess the whole business as someone buying with their own money: what excites, what concerns, what would be simplified at once.
+- All previous safety, verification, affiliate, backup and deployment restrictions remain in force.
 
 ## 3. Phases, owners, parallelism
 
-**Phase A: Baseline and research (parallel, about 4 agents)**
+**Phase A and A.1: Baseline, research and simplification audit (parallel). A.1 audit is detailed in section 3b.**
 - A1 Tag baseline, snapshot article JSON + rendered screenshots (desktop 1280, mobile 390) of all 32 pages, copy to backup folder. Confirm which listed problems still reproduce (adhesive claims, watercolor hero, broad product fallback, impression counting, blank analytics/contact, planner equipment assumptions). Many are already fixed: report each as FIXED / OPEN with evidence, not from old audits.
 - A2 Keyword-intent validation for all 32 (search intent, overlap, cannibalisation pairs, the 4 consolidation candidates). Source: SERP reading via web search; no invented volumes.
 - A3 Product research framework: `docs/commerce/research/SCORING.md` (the 25/20/20/10/10/10/5 model, 80 shortlist, 90 flagship, safety/compatibility/listing gates), schema for `PRODUCT-RESEARCH-DB.csv` with every field in brief section 6, internal scores never shown to readers or labelled as ratings.
@@ -53,3 +66,12 @@ No purchases, payments, agreements, affiliate applications or real IDs, no listi
 
 ## 8. Order of work once approved
 A (parallel) -> B -> your approval -> C and D in parallel batches -> E -> F -> final release commit -> Cowork go.
+
+
+## 3b. Phase A.1 audit workstreams (all read-only, report files only)
+- **A.1-1 Pages, navigation and journeys:** every route, overlaps, 4-destination nav proposal, Tonight into Make Plans, heart for My Plans, legal pages to footer.
+- **A.1-2 Data, products and the no-code owner test:** one authoritative product source; what duplicates; walk replace-product, publish-article, change-image, update-collection, manage-affiliate-links in a temp copy without touching source; evaluate importer/catalog/CMS complexity; signature-hobby and six-collection mapping from the existing 43 hobbies, 66 records, 32 articles.
+- **A.1-3 Code, components and dependencies:** unused deps and UI components (tried only in a temp copy with tests, build, bundle size), outside services with cost and failure modes, which tests a buyer needs.
+- **A.1-4 Docs, repo weight and buyer workload:** buyer-essential vs seller-private vs duplicate docs, contradictions, big assets, one-page owner guide, measured monthly-hours estimate vs the 3-5 hour target.
+- **A.2 Baseline and problem verification:** tag, backup, screenshots, which listed problems still reproduce; keyword-intent validation including the cycling and the four consolidation candidates; signature-hobby validation.
+- Output: `docs/editorial-reset/SIMPLIFICATION-AUDIT.md` with Keep/Improve/Simplify/Merge/Hide/Remove per item; recommendations presented to the owner BEFORE any destructive change. Phase B starts after the owner has seen the audit headline recommendations; the pilot gate remains.
