@@ -74,3 +74,11 @@ No `useQuery`/`useMutation` existed. Removed: `QueryClient` creation and router 
 | src/lib/lovable-error-reporting.ts | 70 |
 
 Reason: it only called `window.__lovableEvents` / `__lovableReportRuntimeError`, which exist only inside the Lovable editor preview; a silent no-op on Netlify. Its only caller was the `useEffect` in `ErrorComponent` in `src/routes/__root.tsx` (removed; the `console.error` and friendly error page stay). Left alone on purpose (later step): `vite.config.ts`, `@lovable.dev/vite-tanstack-config`, `bunfig.toml` excludes, `.lovable/`, comments in `src/start.ts` and security headers, AGENTS.md wording.
+
+## Batch 4: test reliability (nothing removed)
+
+Cause: the planner matrix suites (`wave-b-tools`, `planner-quiz`, `tool-scenarios`, `planner-flow`, `planner-realism`) loop over every planner input combination. Measured alone each heavy test takes 1 to 3 s (the affiliate guard test 5 s but it already has a 240 s limit); when several vitest runs share the machine they take about 3x longer and hit vitest's 5 s default. Fix: `vi.setConfig({ testTimeout: 60_000 })` at the top of those five files only (no global change, no reduction of coverage). Before: 3 of 5 full runs failed under load in the A3 audit, and a sequence of 3 simultaneous full runs failed two planner-flow tests. After: 3 sequential and 3 simultaneous full runs (6 of 6) all 754/754.
+
+## Step 6 NOT done: public/pins stays deployed
+
+`src/components/editorial/ShareButtons.tsx` calls `pinImageFor(path, image)` (`src/lib/pins.ts`, `PIN_DIR = "/pins/"`) and builds the Pinterest share link with `media=<site.url>/pins/<file>`, which Pinterest fetches from the deployed site (`src/test/pins.test.tsx` asserts this). Moving the images would break the Pin button on articles, hobby pages and tools. Left in place; no files moved. Options later (owner decision): deploy only the pins a page actually offers (small saving), or serve one pin per page from the hero image. The upcoming `pinImage` article field also needs a deployed location, so `public/` is the right home.
