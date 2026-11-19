@@ -60,3 +60,9 @@ Files removed:
 | src/components/ui/tooltip.tsx | 32 |
 | src/hooks/use-mobile.tsx | 19 |
 | components.json | 22 |
+
+Dependencies removed in batch 1 (39): 27 `@radix-ui/*` packages, `@hookform/resolvers`, `class-variance-authority`, `cmdk`, `date-fns`, `embla-carousel-react`, `input-otp`, `react-day-picker`, `react-hook-form`, `react-resizable-panels`, `recharts`, `sonner`, `vaul`, `tw-animate-css` (its `@import` removed from `src/styles.css`). Kept on purpose: `eslint-config-prettier` (eslint-plugin-prettier needs it), `@tailwindcss/vite` and `vite-tsconfig-paths` (loaded dynamically by `@lovable.dev/vite-tanstack-config`), `zod`, `clsx`, `tailwind-merge`, `lucide-react`. Docs references to `components/ui` and `components.json` removed from `docs/buyer/WEBSITE-ARCHITECTURE.md` and `BUYER-PACKAGE-CONTENTS.md`.
+
+## Batch 2: react-query wiring and redundant router-plugin pin
+
+No `useQuery`/`useMutation` existed. Removed: `QueryClient` creation and router context in `src/router.tsx`; `QueryClientProvider` and `createRootRouteWithContext` in `src/routes/__root.tsx` (now `createRootRoute`); the QueryClient in `src/test/app-routing.test.tsx`; dependencies `@tanstack/react-query` and `@tanstack/router-plugin` (still installed transitively at the same version via `@tanstack/start-plugin-core`). Restore: revert the batch 2 commit.
