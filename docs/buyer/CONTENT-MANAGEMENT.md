@@ -1,6 +1,6 @@
 # Content management
 
-**There is no CMS.** Content is TypeScript data edited in files and deployed with the site. Nothing is configured for browser-based editing. Evaluating a free Git-based CMS (a tool that edits files in the repo through a web interface) is PENDING: nobody has chosen or tested one, and adopting one would need a code change and a security review. Until then, the steps below are the process. After any change run:
+**There is no CMS.** For a non-coding buyer see `docs/buyer/EDITING-WITHOUT-CODE.md` (what works today and the recommended browser editor). Content is TypeScript data edited in files and deployed with the site. Nothing is configured for browser-based editing. Evaluating a free Git-based CMS (a tool that edits files in the repo through a web interface) is PENDING: nobody has chosen or tested one, and adopting one would need a code change and a security review. Until then, the steps below are the process. After any change run:
 
 ```
 bunx vitest run
