@@ -80,6 +80,7 @@ function ArticlePage() {
   const date = longDate(a.publishedAt);
   const short = shortVersion(a);
   const shop = hasShopBlock(a.body);
+  const tocLinks = sections.flatMap((s) => (s.id ? [{ id: s.id, text: s.text }] : []));
   const hasIfYouLoved = a.body.some((b) => b.type === "ifYouLoved");
   const sources = (a.sources ?? []).filter((s) => /^https?:\/\//.test(s.url));
   return (
@@ -185,7 +186,7 @@ function ArticlePage() {
         </aside>
         <div className="min-w-0 max-w-[680px]">
           <ShortVersion items={short} />
-          {sections.length > 3 && <MiniToc sections={sections} shop={shop} />}
+          {sections.length > 3 && <MiniToc sections={tocLinks} shop={shop} />}
           <ArticleBody blocks={a.body} />
           <aside
             aria-label="Sources and checks"

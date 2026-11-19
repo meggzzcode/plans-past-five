@@ -41,3 +41,6 @@ Scope: PATH-TO-8 Phase 0 steps 0.7, 0.8, 0.9 (manifest part) and the "near-me po
 ## Touched outside the owned list (small edits)
 
 `src/routes/saved.tsx`, `src/routes/tools.tonight.tsx`, `src/routes/privacy.tsx`, `src/routes/hobbies.$slug.tsx`, `src/routes/journal.$slug.tsx` (Pin description), `src/components/planner/PlanResult.tsx` (three insertions: calendar, near box, near link per card). Merge these by hand if the planner or article agents changed the same files.
+
+## Owner decision 2026-11-19: NO CALENDAR
+The `.ics` download and Google Calendar links (item 1 above) were removed at the owner's request: `src/lib/ics.ts`, `src/components/share/AddToCalendar.tsx` and their test no longer exist. Everything else in this document stands. Treat any other mention of calendar export in the path-to-8 documents as superseded.

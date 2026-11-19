@@ -712,10 +712,10 @@ function bufferBetween(
 }
 
 const energyWhy: Record<EnergyPref, string> = {
-  any: "no energy limit, so it starts livelier and ends gentler where it can",
-  low: "low-key energy, so nothing is more than gentle",
-  medium: "medium energy, so nothing is more tiring than moderate",
-  high: "high energy, so every stop has some real effort in it",
+  any: "no energy limit (livelier first and gentler to finish, where it can)",
+  low: "low-key energy (nothing more than gentle effort)",
+  medium: "medium energy (nothing more tiring than moderate)",
+  high: "high energy (every stop takes real effort)",
 };
 
 /** "Why this plan": one line naming the choices that shaped it. Only states what is checked in code. */
@@ -978,7 +978,7 @@ export type PlanSearch = Partial<{
   energy: string;
   seed: string;
   ids: string;
-  /** "1" when the form was submitted as a plain page load (before scripts ran): show the plan. */
+  /** "yes" when the form was submitted as a plain page load (before scripts ran): show the plan. */
   go: string;
   /** "1" for a lighter plan (longer breaks between stops). */
   light: string;
@@ -1021,7 +1021,7 @@ export function parsePlanSearch(s: Record<string, unknown>): ParsedSearch {
   const budget = pick(s["budget"], BUDGETS);
   const setting = pick(s["setting"], SETTINGS);
   const energy = pick(s["energy"], ENERGIES);
-  const home = s["home"] === "1" || s["home"] === 1 || s["home"] === true;
+  const home = s["home"] === "1" || s["home"] === "yes" || s["home"] === 1 || s["home"] === true;
   const input: PlanInput = {
     when: when ?? DEFAULT_INPUT.when,
     length: length ?? DEFAULT_INPUT.length,

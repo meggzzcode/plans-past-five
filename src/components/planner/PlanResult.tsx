@@ -27,9 +27,7 @@ import {
   type PlanSlot,
 } from "@/lib/planner";
 import { canonicalUrl } from "@/lib/share";
-import { eventsFromPlan, type CalendarPresetId } from "@/lib/ics";
 import { nearTermFor } from "@/lib/near";
-import { AddToCalendar } from "@/components/share/AddToCalendar";
 import { NearBox, NearLink } from "@/components/share/Near";
 import { cn } from "@/lib/utils";
 import { useHydrated, waitingProps } from "@/lib/use-hydrated";
@@ -185,10 +183,6 @@ export function PlanResult({
 
   const link = () => canonicalUrl(planHref(plan.input, plan.seed, plan.ids));
   const planUrl = canonicalUrl(planHref(plan.input, plan.seed, plan.ids));
-  const buildEvents = useCallback(
-    (preset: CalendarPresetId, now: Date) => eventsFromPlan(plan, preset, now, planUrl),
-    [plan, planUrl],
-  );
 
   const copy = async () => {
     const text = planText(plan, link());
@@ -406,7 +400,6 @@ export function PlanResult({
         </div>
         {plan.filled > 0 && (
           <div className="mt-3 space-y-3">
-            <AddToCalendar title={plan.title} build={buildEvents} />
             <NearBox />
           </div>
         )}

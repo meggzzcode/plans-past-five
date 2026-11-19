@@ -14,15 +14,39 @@ import { NAMES } from "@/components/layout/nav";
 import { AffiliateNote } from "@/components/editorial/AffiliateNote";
 import { cn } from "@/lib/utils";
 
+/**
+ * The one image that is the page's largest paint: a 960px copy for phones and most laptops (the
+ * 1440px original is only used on very sharp screens). Same picture, less to download.
+ */
+const HERO_SMALL = "/lcp/hero-pottery-night-960.jpg";
+const HERO_SIZES = "(min-width: 1024px) 500px, (min-width: 640px) 420px, 340px";
+const heroSrcSet = () => `${HERO_SMALL} 960w, ${images.potteryNight.src} ${images.potteryNight.w}w`;
+
 export const Route = createFileRoute("/")({
-  head: () =>
-    seo({
+  head: () => {
+    const page = seo({
       title: `${site.name}: Hobbies, Weekend Plans & Starter Supplies for After Work`,
       description:
         "Find a hobby you'll actually look forward to, plan a weekend with a storyline, and shop simple starter supplies. For women with plans past five.",
       path: "/",
       image: absoluteUrl(images.potteryNight.src),
-    }),
+    });
+    return {
+      ...page,
+      links: [
+        ...page.links,
+        // Start the hero download before the stylesheet is parsed; nothing else on the page is preloaded.
+        {
+          rel: "preload",
+          as: "image",
+          href: HERO_SMALL,
+          imageSrcSet: heroSrcSet(),
+          imageSizes: HERO_SIZES,
+          fetchPriority: "high",
+        },
+      ],
+    };
+  },
   component: Home,
 });
 
@@ -46,9 +70,10 @@ function Pic({
         alt={i.alt}
         width={i.w}
         height={i.h}
+        {...(eager ? { srcSet: heroSrcSet(), sizes: HERO_SIZES } : {})}
         loading={eager ? "eager" : "lazy"}
         fetchPriority={eager ? "high" : "auto"}
-        decoding={eager ? undefined : "async"}
+        decoding={eager ? "sync" : "async"}
         className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
       />
     </div>

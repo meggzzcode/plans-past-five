@@ -173,7 +173,7 @@ function Planner() {
   const [restored, setRestored] = useState<string[] | null>(init.ids);
   // `go=1` is the plain page load from the form (the answers are in the address), so the plan is
   // already on the page before any script runs.
-  const [shown, setShown] = useState(init.ids !== null || init.pin !== null || search.go === "1");
+  const [shown, setShown] = useState(init.ids !== null || init.pin !== null || search.go === "yes");
   const formRef = useRef<HTMLFormElement>(null);
   // Bumped when the choices change from outside the form (the "nothing found" buttons): the form's
   // radios are uncontrolled, so they are rebuilt from the new choices.
@@ -209,7 +209,7 @@ function Planner() {
     const f = formRef.current;
     if (!f) return null;
     const fd = new FormData(f);
-    const out: Record<string, unknown> = { atHome: fd.get("home") === "1" };
+    const out: Record<string, unknown> = { atHome: fd.get("home") === "yes" };
     for (const k of FORM_KEYS) {
       const v = fd.get(k);
       if (typeof v === "string") out[k] = v;
@@ -315,7 +315,7 @@ function Planner() {
               run();
             }}
           >
-            <input type="hidden" name="go" value="1" />
+            <input type="hidden" name="go" value="yes" />
             {init.pin && <input type="hidden" name="with" value={init.pin} />}
             {init.from && <input type="hidden" name="from" value={init.from} />}
             <div key={formKey} className="mt-10 grid gap-7">
@@ -351,7 +351,7 @@ function Planner() {
                 <input
                   type="checkbox"
                   name="home"
-                  value="1"
+                  value="yes"
                   defaultChecked={input.atHome}
                   className={cn("h-5 w-5 accent-[var(--cherry)]", focusRing)}
                 />
