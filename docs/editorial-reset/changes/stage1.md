@@ -66,3 +66,11 @@ Dependencies removed in batch 1 (39): 27 `@radix-ui/*` packages, `@hookform/reso
 ## Batch 2: react-query wiring and redundant router-plugin pin
 
 No `useQuery`/`useMutation` existed. Removed: `QueryClient` creation and router context in `src/router.tsx`; `QueryClientProvider` and `createRootRouteWithContext` in `src/routes/__root.tsx` (now `createRootRoute`); the QueryClient in `src/test/app-routing.test.tsx`; dependencies `@tanstack/react-query` and `@tanstack/router-plugin` (still installed transitively at the same version via `@tanstack/start-plugin-core`). Restore: revert the batch 2 commit.
+
+## Batch 3: Lovable error reporter
+
+| Path | Lines |
+|---|---|
+| src/lib/lovable-error-reporting.ts | 70 |
+
+Reason: it only called `window.__lovableEvents` / `__lovableReportRuntimeError`, which exist only inside the Lovable editor preview; a silent no-op on Netlify. Its only caller was the `useEffect` in `ErrorComponent` in `src/routes/__root.tsx` (removed; the `console.error` and friendly error page stay). Left alone on purpose (later step): `vite.config.ts`, `@lovable.dev/vite-tanstack-config`, `bunfig.toml` excludes, `.lovable/`, comments in `src/start.ts` and security headers, AGENTS.md wording.
