@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seo, breadcrumbJsonLd } from "@/lib/seo";
 import { site } from "@/config/site";
+import { commissionStatement } from "@/config/affiliate";
 import { Link } from "@tanstack/react-router";
 import { ProsePage } from "@/components/pages/ProsePage";
 
@@ -65,9 +66,12 @@ export const Route = createFileRoute("/editorial-policy")({
       <p>
         Picks are chosen because they help you start, and we show product names and brands only for
         products we've checked against their Amazon listing. We haven't tested them ourselves. Our
-        shopping links are ordinary Amazon links today, and we don't currently earn a commission
-        from them. If that ever changes, the note beside every link changes with it, and what we
-        recommend stays the same.
+        shopping links go to Amazon.{" "}
+        {commissionStatement().live
+          ? "We may earn a commission on qualifying purchases at no extra cost to you."
+          : "Today they are ordinary links and we don't earn a commission from them."}{" "}
+        If that changes, the note beside every link changes with it, and what we recommend stays the
+        same.
       </p>
       <h2>More on how we work</h2>
       <p>

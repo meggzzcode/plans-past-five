@@ -1,0 +1,168 @@
+# Commercial audit (independent, 2026-11-19)
+
+Scope: 27 published articles, every product shown on the site, affiliate activation, top-10 commercial potential. Method: read every article's JSON in full; built the site (`vite build`), served it on port 4871 and crawled all 93 sitemap pages plus a few others (HTML as rendered, SSR); ran a scratch copy with a changed affiliate entry (port 4872, scratch dir only; real `src/config/affiliate.ts` untouched); screenshots at 390 and 1280 via headless Chrome. Prior docs were not trusted.
+
+Limits: I cannot verify live Amazon pages (Amazon was not scraped). Everything about ASIN identity, availability and "is this the product named" is unverified here; see Open items. All "demand" statements below are qualitative judgment, not data. No search volumes, traffic or conversion numbers are claimed.
+
+## 1. Headline findings
+
+1. **Wrong products on two article pages (real defect).** `how-to-start-a-book-club` shows two ESRICH canvases under "For your book club / Conversation cards ... a light ... a journal". `girls-night-ideas-that-arent-drinks` shows the same canvases under "A painting kit, a board game and a deck of conversation cards". Cause: `verifiedFor()` in `ArticleBody.tsx` falls back to hobby matching (`craft-nights`) when the block's product types map to a hobby; canvases then replace the type cards. Fix needs a code or data change (not minor, not done here).
+2. **`docs/commerce/product-research.csv` does not import.** `bun scripts/import-products.mjs ... --check` fails with 3 problems: two NMJL card rows contain a "$" price in an internal retry note in `limitations`; `ibayam-8in-heavy-duty-scissors-3-pack` has role `alternative` (not an allowed role). The CSV has 64 rows, the generated catalog 62 (missing `paxcoo-488pc-friendship-bracelet-kit`, `ibayam-8in-heavy-duty-scissors-3-pack`), and 8 rows differ in `limitations`/`researchSources` text. The site renders from the generated file, so nothing wrong shows, but a buyer re-running the import hits an error and the two files are out of sync.
+3. **Internal notes ship in the public JS bundle** (not rendered on any page): `coworkChecks` of all articles (strings like "OPEN: ... Cowork 2026-11-18") are inside `index-*.js`; catalog `limitations` ("Manufacturer page not yet checked", "scotchbrand.com blocked fetch", price text for NMJL) are inside `shoplist-*.js`. A visitor reading the bundle can see them. Strip or exclude these fields from the client bundle, or reword them.
+4. **Affiliate activation works from the one entry, with one exception** (section 4): `/editorial-policy` hard-codes "we don't currently earn a commission".
+5. **Price-like numbers remain in published copy.** `things-to-do-after-work-instead-of-scrolling` item cost chips: "Under $25" (items 1, 3, 7, 17), "Under $25 to start" (6), "Free-$20" (8). Hobby records render "Under $50 to start" (e.g. picnicking on `/shop/little-adventures`). The `affordable-hobbies-under-25` draft was held back for exactly this reason (its own coworkChecks), yet the published article still carries unsourced dollar caps. Editorial decision needed.
+6. Content is strong overall: warm, practical, mostly usable with zero spend. No raw markdown, no editor-speak, no AI mentions outside Editorial Standards/Policy, and all internal links resolve (checked by HTTP status on every unique internal href across all crawled pages; `/search` returns 307, expected).
+
+## 2. Articles (27 published)
+
+Value = genuine usefulness and quality (1-10). Commercial = potential to earn from this page given its products and intent (1-10). Both are my judgment.
+
+Shop block key: CAT = specific catalog products with exact `/dp/` links; TYPE = type-level "Find ... on Amazon" search links.
+
+| Slug | Value | Comm. | Shop block as rendered | One-line reason / issues |
+|---|---|---|---|---|
+| active-hobbies-for-women-who-dont-love-the-gym | 8 | 4 | TYPE x4 (paddles, racket, bottle, tote) | Good menu, sourced safety, sensible "borrow first". Racket/paddle ideas but generic search links. |
+| at-home-creative-weekend | 9 | 7 | TYPE x5 | Best "plan" article: schedule, safety (ACMI seal, not food safe), troubleshooting. Whole supply list is shoppable. Intro says "everything you need is on one list under Friday" (the list is there; fine). |
+| cheap-weekend-adventures | 7 | 3 | TYPE x4 | Useful prompts, correctly low-spend. Repeats "Varied" cost chip 20+ times; little to sell. |
+| cozy-solo-dates-at-home | 8 | 5 | TYPE x4 | Warm, practical, candle and pet-plant safety. Cozy/seasonal fit for Q4. |
+| creative-hobbies-you-can-start-at-home | 8 | 7 | CAT x4 (clay kit, acrylics, Benicci brushes, Mod Podge) via starterKit + TYPE x4 | Strong list with mess levels. Note: kit shows 4 catalog items and the second shop block shows searches: two shop blocks, fine. No `sources`/`related` (older article). |
+| creative-hobby-starter-kits-worth-considering | 8 | 6 | TYPE x5 | Honest buyer's guide ("not every kit is worth it", no ranking, no testing claims). High buying intent but zero named products. |
+| flower-arranging-as-a-hobby | 8 | 3 | none | Excellent how-to, pet safety. Has no shop block: lost opportunity (vases/shears candidates exist but are not shown). `[item ]` blocks without numbers render fine. |
+| girls-night-ideas-that-arent-drinks | 8 | 6 | CAT x2 canvases (MISMATCH) | Broad shareable list, inclusion section. Shop copy promises painting kit + board game + conversation cards; page shows only canvases. |
+| hobbies-to-try-when-life-feels-like-work-sleep-repeat | 8 | 4 | TYPE x4 | Big, warm, well sorted. Fixed unsourced "huge moment among women's social clubs" claim (see fixes). |
+| how-to-find-a-hobby-as-an-adult | 9 | 3 | TYPE x4 | Very good, encouraging, genuinely useful with nothing bought. |
+| how-to-get-into-recreational-cycling-as-an-adult | 8 | 2 | TYPE x3 (daypack, bottle, tote) | Careful safety content, hedged by locale. Shopping block is incidental; no helmet/bike (deliberately, correct). "Picture it:" opener repeats paint night. |
+| how-to-host-a-craft-night | 8 | 6 | TYPE x4 | Practical run of show. Group purchase intent. Closing line "Found your craft? Send this to the group chat" repeats (3 articles). |
+| how-to-host-a-mahjong-night | 9 | 8 | CAT x6 (2 sets, 2 cards, mat, table cover) | Strongest piece: version-first logic, respectful framing, checklist before buying. Products are American-only, matching article's primary example. See card note in section 3. |
+| how-to-host-a-paint-night-at-home | 8 | 7 | CAT x3 (2 canvases, Benicci brushes) | Clear plan. Block title "Paint night, boxed / A group kit means one purchase" but no kit is shown, and no acrylic paint (the essential). |
+| how-to-plan-a-perfect-picnic | 8 | 4 | TYPE x2 | Good food-safety content. Seasonal; Pinterest-friendly "aesthetic" angle. Little product depth. |
+| how-to-plan-a-solo-saturday | 8 | 3 | TYPE x3 | Distinct, shaped, 3 sample days. |
+| how-to-start-a-book-club | 8 | 4 (would be 6 with right products) | CAT x2 canvases (MISMATCH) | Useful structure and invite text. Shop block is wrong (section 1). |
+| how-to-start-a-reading-journal | 8 | 5 | TYPE x3 | Light, friendly, "five lines per book". Good gift/Pinterest angle; candidate journal/book-light products exist but are not shown (candidate status). |
+| how-to-start-junk-journaling | 8 | 8 | CAT x7 | Evergreen, visual, tangible first page, pairs with supplies guide. |
+| how-to-start-playing-tennis-as-an-adult | 8 | 5 | TYPE x4 | Solid four-week plan, hedged. "Golden-hour" phrase recurs across articles. |
+| how-to-take-yourself-on-a-solo-coffee-shop-date | 8 | 3 | TYPE x3 | Encouraging, practical, etiquette-aware. |
+| junk-journaling-supplies-for-beginners | 9 | 9 | CAT x7 | Best buyer-intent page; honest "what can wait". Text says "product types, not specific products" yet 7 named products follow; shop block title mentions "one sticker set" but no sticker product is shown. |
+| low-energy-hobbies | 9 | 4 | CAT x3 embroidery (kit, floss set, scissors) | Kind, short, useful; doctor note. Block says "Cozy-evening extras" (book light + embroidery type) but shows embroidery only. |
+| pickleball-for-beginners | 8 | 5 | TYPE x2 | Clear, accurate-sounding court facts (not independently sourced here; has 7 coworkChecks). Paddle sets only as search. |
+| solo-date-ideas | 9 | 4 | TYPE x5 | Strong list with "where to start" map and safety. Longest article. |
+| things-to-do-after-work-instead-of-scrolling | 8 | 3 | TYPE x5 | Relatable, well sorted. Fixed "our guide to our guide to" typo. Contains dollar chips (finding 5). |
+| things-to-do-on-the-weekend | 8 | 3 | TYPE x3 | Good method (anchor/treat/rest); overlaps with solo-saturday and cheap-weekend. |
+
+Voice and repetition (judgment): voice is consistently warm, second person, non-shaming; dry-humour lines vary. Repeated patterns a reader would notice across the set: (a) "makePlan" callout ending nearly every article ("... let Make Some Plans ..."), 17 articles; (b) closers "Send this to the group chat and book the date" in 3 Better Together pieces; (c) openers "Picture it: ..." (cycling, paint night); (d) "golden-hour" in tennis, walks, adventures; (e) shop-block deks that say "Nothing here is required / Only if you need them / Not needed to begin" in 7 articles (honest, but formulaic); (f) near-identical safety sentences (ACMI AP/CL seal, allergies/hand-washing, "tell someone your route") in 8+ articles, deliberate but heavy. The "cost: Varies" chip appears dozens of times; it carries no information.
+
+Factual-risk statements without sources (kept, hedged; sourced or hedged elsewhere): pickleball court dimensions and net heights (`pickleball-for-beginners`, no sources list), tennis scoring, cycling helmet fit rules (hedged "check local rules"), mahjong set contents (hedged), "air-dry clay usually takes 2 to 3 days". These read as general knowledge but are not cited.
+
+Usefulness without buying: all 27 are fully usable with no purchase; 20 explicitly say borrow, use what you own, or buy later.
+
+## 3. Products shown on the site (29 verified, not on hold)
+
+Rendered set confirmed from the crawl: all 29 appear on at least one page. Checks done by reading the CSV, the generated catalog and rendered links:
+
+- ASIN format: 64 of 64 CSV rows are 10 chars starting `B0` (no ISBNs). Pass.
+- `amazonUrl` equals `https://www.amazon.com/dp/<ASIN>`, no params: 64 of 64 CSV rows and 62 of 62 generated rows. Pass.
+- ASIN unique: no duplicates in CSV or generated. Pass.
+- CSV vs generated ASINs for the 62 shared rows: identical. Pass. (Other text drift: see finding 2.)
+- Rendered `/dp/` links match the catalog ASIN for every product (anchored to `data-product-id`): pass.
+- `rel`: all 253 Amazon links on the crawled pages carry `sponsored noopener noreferrer`, including search links; opens in a new tab.
+- Rendered text: grep of all 94 crawled pages found no "Cowork", "verify", "TODO", "retry" or limitation text. Rendered fields are category, shortName/name, brand, benefit/description, first sentence of whySelected (one-pick only), "Good for gifting" on complete-kits.
+- Visual: shopping links are cherry-red solid buttons (cards) or underlined links ("Prefer something different?" rows) labelled "See it on Amazon" (named product) or "Find ... on Amazon" (search); a disclosure line sits under each block. Screenshots reviewed: junk-journaling-supplies, book-club, paint-night, girls-night, low-energy, active-hobbies (type links), creative kit at 390 and 1280 in `/tmp/claude-0/-home-user/420c3478-0e47-52f4-ba2f-d308d2b025c8/scratchpad/audit-shots/` (scratch, not committed). The mahjong 390 capture failed (clip landed on the footer); not retaken. Tap targets look at least 44 px; no horizontal scroll seen on the pages viewed.
+
+| Product id | ASIN | Role | Shown on | Fits article/kit? |
+|---|---|---|---|---|
+| mr-pen-washi-tape-21-rolls | B08L5PB8N6 | affordable | how-to-start-junk-journaling, junk-journaling-supplies-for-beginners, /shop/creative-girl, /shop/journaling-era, /hobbies/junk-journaling | yes |
+| knaid-slim-washi-tape-40-rolls-minimalist | B0881M69D4 | aesthetic-upgrade | same as above | yes |
+| paperage-blank-journal-160-pages | B08FC38BJ4 | aesthetic-upgrade | same | yes |
+| scotch-glue-stick-photo-safe-4-pack | B07BVQFKM8 | essential | same | yes. Product id says "photo-safe"; CSV note says the maker's attribute table says Photo Safe: No. Rendered copy avoids the claim; keep it that way |
+| scotch-6061-tape-runner-3-pack | B0FP6NW64R | researched-pick | same | yes |
+| sakura-pigma-micron-8-pack-black | B004QHI43S | nice-to-have | same | yes (8-pack contents unconfirmed per CSV) |
+| stationery-island-a5-blank-journal-180-pages | B081VK1CM1 | essential | same + /shop | yes |
+| shuttle-art-acrylic-paint-15-tubes | B083X67QFX | affordable | creative-hobbies-you-can-start-at-home (kit), /shop/pottery-era, /hobbies/air-dry-clay, /hobbies/paint-by-numbers | yes (not tagged to that article; reached via kit) |
+| mod-podge-acrylic-sealer-spray-gloss-12-oz | B003VYD9DM | nice-to-have | creative-hobbies kit, pottery-era, air-dry-clay | acceptable; article elsewhere says clay pieces are decorative only |
+| uhapeer-air-dry-clay-kit-3-lb | B0DFH9Z3BC | complete-kit | creative-hobbies kit, /shop, pottery-era, air-dry-clay | yes |
+| benicci-12-piece-artist-paint-brush-set | B0868QQ1X6 | essential | creative-hobbies kit, how-to-host-a-paint-night-at-home, pottery-era, hobby pages | yes |
+| esrich-8x10-stretched-canvas-10-pack | B0CH3K5F62 | essential | paint-night (ok), **how-to-start-a-book-club (MISMATCH)**, **girls-night-ideas-that-arent-drinks (partial mismatch)**, pottery-era, cozy-after-hours, paint-by-numbers, craft-nights | see mismatch list |
+| esrich-8x10-stretched-canvas-5-pack | B0D3TWT3TX | affordable | same as above | same |
+| tiasusan-american-mahjong-set-blue-tiles | B0F6SDSQGF | researched-pick | how-to-host-a-mahjong-night, /shop, girls-night-in, /hobbies/mahjong | yes |
+| mutex-american-mahjong-set-166-walnut-racks | B0FM7P49H7 | complete-kit | same | yes |
+| nmjl-2026-large-size-cards-four-pack | B0GRCBQ3Y2 | essential | mahjong article, /hobbies/mahjong | yes; "four-pack bundle" unconfirmed per CSV note, benefit text says "four large-size cards" |
+| nmjl-2026-standard-size-cards-four-pack | B0GRCCTYJ5 | essential | same | yes; same caveat |
+| gustaria-large-mahjong-mat-blue-31-5 | B0CXJ4PLBY | nice-to-have | same | yes |
+| plusvivo-felt-game-table-cover-36-blue | B09CTRNP73 | affordable | same | yes |
+| artecho-48-color-watercolor-set-3-brushes | B0BWRCKFDH | essential | /shop/creative-girl, /shop/little-adventures, /hobbies/watercolor-painting | ok; on Little Adventures it is a heavy 48-pan box offered as "Where to start: watercolor starter kit" for a portable afternoon (loose fit) |
+| transon-8-round-watercolor-brushes | B06XTMNKVF | nice-to-have | /hobbies/watercolor-painting | yes |
+| fenorkey-12-round-watercolor-brushes | B07WH8T6LH | affordable | same | yes |
+| arches-watercolor-pad-140lb-cold-press-9x12 | B01EQHJH10 | nice-to-have | same | yes |
+| hapikalor-watercolor-pad-140lb-9x12 | B0D5R7JRKZ | affordable | same | yes |
+| bradove-classic-embroidery-kit | B0B762JW55 | complete-kit | low-energy-hobbies, /shop, /hobbies/embroidery | yes |
+| inscraft-304-piece-embroidery-starter-kit | B087RB2K2B | affordable | low-energy-hobbies, /hobbies/embroidery | yes; name says "304 Pack ... 200 Colors" while shortName says "200 floss colors": consistent |
+| aqueenly-stork-embroidery-scissors-2-pack | B07KZPRBQT | affordable | low-energy-hobbies, /hobbies/embroidery | yes |
+| red-heart-super-saver-white-worsted | B000XZY8Q4 | essential | /hobbies/crochet | yes |
+| caron-simply-soft-feathered-gray-3-pack | B0BBY2QVV4 | nice-to-have | /hobbies/crochet | yes |
+
+Products on hold (not shown, not audited for fit): 11 rows with `hold`. Candidates (not shown): 22 rows including 2026-11-19 additions (floral shears, picnic blanket, pickleball paddles/balls, tennis racket/balls, book light, journals, etc.).
+
+### Mismatches (article slug + product id)
+
+| Article slug | Product id(s) | Severity | Problem |
+|---|---|---|---|
+| how-to-start-a-book-club | esrich-8x10-stretched-canvas-10-pack, esrich-8x10-stretched-canvas-5-pack | High | Block titled "For your book club" (conversation cards, light, journal) renders canvases. |
+| girls-night-ideas-that-arent-drinks | same two canvases | Medium | Block "Keep a night-in kit" (painting kit, board game, conversation cards) renders only canvases; no board game or cards. |
+| how-to-host-a-paint-night-at-home | canvases + benicci | Low | Title "Paint night, boxed / A group kit" but no kit shown; acrylic paint missing. |
+| low-energy-hobbies | bradove, inscraft, aqueenly | Low | "Cozy-evening extras" (book light + embroidery) shows embroidery only; the three are not tagged to this article (reached via hobby matching). |
+| junk-journaling-supplies-for-beginners | all 7 | Low | Body says "product types, not specific products"; block title promises a sticker set that is not in the 7. |
+| /shop/little-adventures (not an article) | artecho-48-color-watercolor-set-3-brushes | Low | Heavy 48-colour box as the "portable" starter. |
+
+## 4. Affiliate activation test (scratch copy)
+
+Copied the repo (without `node_modules`, `.output`, docs) to the scratchpad, linked `node_modules`, edited ONLY the single `amazon` entry in the copy's `src/config/affiliate.ts` (`websiteTrackingId: "scratchtest-20"`, `approvalStatus: "approved"`, `active: true`, `lastVerified: "2026-11-19"`), rebuilt and crawled all 93 sitemap pages. Real file confirmed unchanged (`grep scratchtest` = 0).
+
+Result:
+- 253 of 253 Amazon links (exact `/dp/` and `/s?k=` search) gained `tag=scratchtest-20`; all remained `rel="sponsored noopener noreferrer"`.
+- "As an Amazon Associate I earn from qualifying purchases." appeared on 64 pages; every page that has Amazon links also has the sentence.
+- `/affiliate-disclosure` switched to the live Associates program statement ("is a participant in the Amazon Services LLC Associates Program ...") and "We may earn a commission". `/terms`, `/privacy`, `/methodology` switched to "may earn a commission" wording.
+- Exception: `/editorial-policy` still says "we don't currently earn a commission from them" (hard-coded in `src/routes/editorial-policy.tsx`, lines ~66-70). It should call `commissionStatement()` like the other pages. Not fixed (route code, outside my brief).
+- The program-participation sentence in `AMAZON_PROGRAM_STATEMENT` is flagged in code as unverified wording and "do not claim approval until Amazon has given final acceptance" (good).
+
+Docs: `docs/buyer/AFFILIATE-ACTIVATION.md` (line 29) and `docs/buyer/AMAZON-ASSOCIATES-PATH.md` (line 17) both contain the exact sentence "As an Amazon Associate I earn from qualifying purchases." with the Operating Agreement s.5 source. Confirmed.
+
+## 5. Top 10 by commercial potential (qualitative judgment, no data)
+
+Ranking logic: buyer intent of the query ("what do I buy" beats "what do I do"), whether named products with exact links exist on the page, how many items a reader would need at once, giftability, how well it works as a Pinterest pin, seasonality, and where the shopping block sits (these all put it at the bottom after the content; the "Skip to shopping" anchor helps).
+
+1. **junk-journaling-supplies-for-beginners.** Explicit shopping-list intent ("what to buy"), seven named products with `/dp/` links, short list so low decision fatigue, and a craft niche that skews to buyers with several small purchases per project. Very Pinterest-able (flat-lay supplies, aesthetic). Not seasonal. Links in from the how-to and the starter-kits article. Weakness: individually small orders.
+2. **how-to-host-a-mahjong-night.** Highest-ticket products on the site (full sets, cards that must be bought yearly, mats), a version-confusion problem that creates real pre-purchase research, and a social/gifting angle that suits a women's audience. The mahjong-for-friends trend is a plausible tailwind (judgment, not measured). Pinterest fit: table setups, tea and tiles. Linked from three other articles.
+3. **how-to-start-junk-journaling.** Beginner intent leads straight to the supplies page and shows the same seven products; evergreen; strongly visual first-page steps. Slightly lower than the supplies page because it teaches you can start free.
+4. **how-to-host-a-paint-night-at-home.** Group event means buying for several people at once (10 canvases, brushes), repeatable, giftable, and easily pinned (finished-canvas galleries). Seasonal lift around holidays and birthdays. Fix the block (acrylic paint, group-kit mismatch) and it would rank higher.
+5. **creative-hobbies-you-can-start-at-home.** Broad browsing query with many hobbies, so many entry points into product types, plus a clay kit block with four catalog items (clay kit is the best "complete-kit/giftable" item). Mid-funnel; strong internal-link hub (hobbies, journal, shop).
+6. **at-home-creative-weekend.** A single supply list covering clay, acrylics, watercolor and a journal means a basket of 4-5 purchases from one page; cold-weather, cozy-season fit (this is November). Currently only search links; swapping in catalog items would lift it.
+7. **how-to-host-a-craft-night.** Event-driven group purchase (bracelet kits, painting kits, clay, cookie kits), friend-share behavior, Pinterest-friendly party planning. Type links only.
+8. **creative-hobby-starter-kits-worth-considering.** Late-funnel, "should I buy this?" intent, the closest thing on the site to a comparison page. Trust-building tone should convert readers who are about to purchase; the gap is that it names no products.
+9. **pickleball-for-beginners.** Strong beginner demand logic (a fast-growing, social sport, qualitative), paddles are a mid-ticket purchase people do research before, and it is a natural pair with the tennis page. Seasonal (outdoor, spring/summer). Currently two search links; named paddle/ball products exist as candidates but are not shown.
+10. **girls-night-ideas-that-arent-drinks.** Broadest social-sharing potential on the site (group chat, Pinterest "ideas" format, high traffic-type query logic) and many product tie-ins (kits, board games, cards, mahjong, bracelets). Conversion is lower per visitor because the page is a menu; today the block is wrong (canvases). Fix before relying on it.
+
+Near misses: `how-to-plan-a-perfect-picnic` (seasonal peak is spring/summer; very Pinterest-able; little product depth), `cozy-solo-dates-at-home` (cozy-season fit, light products), `how-to-start-a-reading-journal` (giftable; candidate products not yet shown).
+
+## 6. Fixes made
+
+| # | File | Change |
+|---|---|---|
+| 1 | `content/articles/things-to-do-after-work-instead-of-scrolling.json` | Typo "our guide to our guide to [low-energy hobbies]" changed to "our guide to [low-energy hobbies]". |
+| 2 | `content/articles/hobbies-to-try-when-life-feels-like-work-sleep-repeat.json` | Unsourced claim "The tile game having a huge moment among women's social clubs." changed to "A tile game that many friend groups love." |
+
+Both written with `articleToJson` from `scripts/content-lib.mjs`; `node scripts/build-content.mjs` ran OK (27 published, 7 drafts); `bunx vitest run`: 44 files, 645 tests, all passing. No prettier used. Real `src/config/affiliate.ts` untouched.
+
+I did not fix (not minor or outside brief): the book-club and girls-night product mismatch (code/data), CSV import errors, editorial-policy hard-coded sentence, dollar chips in published copy, internal notes in the client bundle.
+
+## 7. Open items
+
+For Cowork (F1 in `docs/cowork/COWORK-FINAL-PACK.md`): open `https://www.amazon.com/dp/<ASIN>` for each of the 29 shown products (all ASINs in section 3) and confirm brand/variant, availability, and that the "why we picked it" line still holds. Do not save Amazon images, prices or ratings. Highest priority: the two NMJL cards (`B0GRCBQ3Y2`, `B0GRCCTYJ5`, "four-pack bundle" unconfirmed; the League store sells single cards), the two mahjong sets (`B0F6SDSQGF`, `B0FM7P49H7`, availability "check-listing"), the clay kit (`B0DFH9Z3BC`), the Scotch glue stick (`B07BVQFKM8`, "photo-safe" disputed by maker table) and the Pigma 8-pack (`B004QHI43S`, contents unconfirmed). 15 more are marked `check-listing` in the CSV (watercolor set, brushes and pads, embroidery kits and scissors, yarn, canvases, mat, table cover).
+
+For the owner or developer:
+1. Fix the book-club and girls-night shop blocks (tag canvases only to paint-night; add explicit `shopTheArticle`/type blocks or restrict the hobby fallback).
+2. Repair `product-research.csv` so `import:products --check` passes (remove the "$" retry text and `alternative` role) and re-run the import so CSV and `catalog.generated.ts` agree; decide whether `paxcoo` and `ibayam` rows should be added.
+3. Keep `coworkChecks` and catalog `limitations` out of the client bundle (or move them to docs).
+4. Make `/editorial-policy` use `commissionStatement()`.
+5. Decide on the remaining dollar labels ("Under $25", "Under $50 to start").
+6. Reduce repeated closers/openers (makePlan callouts, "send this to the group chat", "Picture it:") for a more varied voice.
+7. Consider adding shop blocks to `flower-arranging-as-a-hobby`, `how-to-start-a-reading-journal` (verified products) once candidates are verified.

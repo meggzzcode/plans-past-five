@@ -440,7 +440,12 @@ export function generatedImagesModule(images) {
 export function buildContent(root, opts = {}) {
   const { articles, images, problems } = validateContent(root, opts);
   if (problems.length) throw new ContentError(problems);
-  const published = articles.filter((a) => a.status === "published");
+  // Internal verification notes (coworkChecks) stay in the content files and drafts bundle; they are
+  // not shipped in the public client bundle.
+  const published = articles
+    .filter((a) => a.status === "published")
+    // eslint-disable-next-line no-unused-vars
+    .map(({ coworkChecks, ...rest }) => rest);
   const drafts = articles.filter((a) => a.status === "draft");
   const outputs = {
     "src/content/generated/published.json": json(published),

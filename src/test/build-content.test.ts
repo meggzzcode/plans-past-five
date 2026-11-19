@@ -116,9 +116,12 @@ describe("content validator", () => {
 describe("converted data renders identically", () => {
   it("is byte-stable: converting an article again gives the same text", () => {
     for (const a of allArticlesIncludingDrafts) {
-      const text = lib.articleToJson(a);
+      const onDisk = readFileSync(articlePath(repo, a.slug), "utf8");
+      // The public bundle leaves out internal coworkChecks, so put them back from the file to compare.
+      const full = { ...a, coworkChecks: JSON.parse(onDisk).coworkChecks } as Article;
+      const text = lib.articleToJson(full);
       expect(lib.articleToJson(JSON.parse(text))).toBe(text);
-      expect(readFileSync(articlePath(repo, a.slug), "utf8")).toBe(text);
+      expect(onDisk).toBe(text);
     }
   });
   it("round-trips every article: same object, same block text, same reading time", () => {

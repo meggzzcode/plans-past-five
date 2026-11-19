@@ -2240,9 +2240,9 @@ export const generatedCatalog: CatalogProduct[] = [
         value: "8 oz per listing",
       },
     ],
-    hobbies: ["craft-nights", "paint-by-numbers"],
+    hobbies: ["paint-by-numbers"],
     articles: ["how-to-host-a-paint-night-at-home"],
-    collections: ["girls-night-in"],
+    collections: [],
     kitSlots: [
       {
         kit: "pottery-paint-night",
@@ -2293,9 +2293,9 @@ export const generatedCatalog: CatalogProduct[] = [
         value: "5/8 in pine",
       },
     ],
-    hobbies: ["craft-nights", "paint-by-numbers"],
+    hobbies: ["paint-by-numbers"],
     articles: ["how-to-host-a-paint-night-at-home"],
-    collections: ["girls-night-in"],
+    collections: [],
     kitSlots: [
       {
         kit: "pottery-paint-night",
