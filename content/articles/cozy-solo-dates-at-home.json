@@ -1,0 +1,354 @@
+{
+  "slug": "cozy-solo-dates-at-home",
+  "title": "20 Cozy Solo Date Ideas You Can Do at Home",
+  "titleItalic": "Cozy Solo Date",
+  "dek": "Rainy day, low battery or happily a homebody? Twenty at-home dates that feel planned, not defaulted into.",
+  "category": "solo-dates",
+  "status": "published",
+  "publishedAt": "2026-11-19",
+  "verifiedAt": "2026-11-18",
+  "hero": "shopBookish",
+  "searchIntent": "solo date ideas at home / things to do alone at home",
+  "angle": "A date is a plan plus a few small touches. How to set the scene at home, then twenty ideas sorted by energy level, with the phone-in-another-room rule",
+  "hobbies": [
+    "reading",
+    "jigsaw-puzzles",
+    "air-dry-clay",
+    "paint-by-numbers",
+    "baking",
+    "indoor-gardening"
+  ],
+  "productIds": [
+    "book-lights",
+    "junk-journals",
+    "air-dry-clay",
+    "reading-journals",
+    "washi-tape"
+  ],
+  "sources": [
+    {
+      "title": "U.S. Fire Administration: candle fire safety",
+      "url": "https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/candle/",
+      "note": "Never leave unattended; keep 12 inches from anything that burns; flameless candles"
+    },
+    {
+      "title": "NFPA: home fire safety educational messages",
+      "url": "https://www.nfpa.org/-/media/project/storefront/catalog/files/home-fire-safety/emac/educationalmessagesdeskreference.pdf",
+      "note": "Candle guidance, including not in bedrooms"
+    },
+    {
+      "title": "ASPCA: houseplants that can cause trouble for pets",
+      "url": "https://www.aspca.org/news/these-houseplants-can-cause-trouble-your-pets",
+      "note": "Some houseplants are harmful to pets"
+    },
+    {
+      "title": "ASPCA: toxic and non-toxic plants",
+      "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants",
+      "note": "Check any plant against the ASPCA list"
+    },
+    {
+      "title": "Air-dry clay maker FAQ: can air-dry clay pieces be sealed",
+      "url": "https://www.crayola.com/products/brands/scribble-scrubbie/faqs/can-air-dry-clay-pieces-be-sealed-faq",
+      "note": "Sealing will not waterproof the piece; display indoors"
+    }
+  ],
+  "coworkChecks": [
+    "VERIFIED 2026-11-18: candle safety - never leave unattended, keep 12 inches from anything that burns, stable holder, not in bedrooms, flameless option - usfa.fema.gov, nfpa.org",
+    "VERIFIED 2026-11-18: air-dry clay is decorative, not for food or drink even if sealed; dries over a couple of days per the label; no kiln - crayola.com FAQ, clay verification file",
+    "VERIFIED 2026-11-18: some houseplants harm pets; text defers to a pet-safety source and names no plants - aspca.org",
+    "VERIFIED 2026-11-18: cost labels replaced with 'Varies' (non-numeric ones such as Groceries, Pantry staples, A stamp, and 'Free' for no-purchase dates kept); no prices stated - reworded, no claim remains",
+    "VERIFIED 2026-11-18: baking note gives no temperatures or allergen claims; spa, bath and foot-soak lines follow product labels with no health claims; cocktail idea frames alcohol as optional with no amounts or brands - reworded, no claim remains",
+    "VERIFIED 2026-11-18: cross-links trimmed to published articles; solo-date-ideas and solo-Saturday links removed until those articles are live - reworded"
+  ],
+  "related": [
+    "creative-hobbies-you-can-start-at-home",
+    "things-to-do-after-work-instead-of-scrolling",
+    "hobbies-to-try-when-life-feels-like-work-sleep-repeat"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "Staying in isn't a failure to make plans. It can be the plan, provided you actually make it."
+    },
+    {
+      "type": "p",
+      "text": "The difference is three small decisions: a start time, a little setup and a rule about your phone. Do those and the sofa becomes a venue. Here's how to set the scene, then twenty ideas sorted by how much energy you have."
+    },
+    {
+      "type": "h2",
+      "text": "Set the scene in ten minutes",
+      "id": "set-scene"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Pick a start time** and put it in your calendar. A plan with a time on it is a plan.",
+        "**Move your phone to another room**, or at least to Do Not Disturb, face down.",
+        "**Change something small.** Swap the overhead light for a lamp, put on a playlist, light a flameless candle. If you use a real one, set it in a stable holder, keep it at least 12 inches from anything that can burn, never leave it unattended, and skip it in the bedroom.",
+        "**Plate the snack.** Not whatever's loose in the cupboard: something you'd be happy to serve a guest.",
+        "**Wear the good pajamas.** You're the guest of honor."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "When you have almost no energy",
+      "id": "low-energy"
+    },
+    {
+      "type": "item",
+      "n": 1,
+      "title": "Bath and a book",
+      "hobby": "reading",
+      "note": "Run the water, set your book somewhere dry, and stay until the water cools. A book light helps if you like the room dim.",
+      "time": "60 min",
+      "cost": "Free",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 2,
+      "title": "Home spa hour",
+      "note": "A mask or foot soak if you like them, soft towels, a podcast. Follow the product labels and skip anything that irritates your skin.",
+      "time": "45-60 min",
+      "cost": "Varies",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 3,
+      "title": "Blanket-fort film night",
+      "note": "Choose a film you've never seen, build a nest of pillows and make the popcorn. No second screen allowed.",
+      "time": "2 hours",
+      "cost": "Free",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 4,
+      "title": "Audiobook and a puzzle",
+      "hobby": "jigsaw-puzzles",
+      "note": "The pleasure is in the pairing: busy hands, a gently occupied mind and no decisions.",
+      "time": "60-120 min",
+      "cost": "Varies",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 5,
+      "title": "Re-read a favorite",
+      "hobby": "reading",
+      "note": "Choose the book you loved at sixteen or twenty-five and notice what you see in it now. A [reading journal](/journal/how-to-start-a-reading-journal) is a nice place to jot it down.",
+      "time": "60 min",
+      "cost": "Free",
+      "company": "Solo"
+    },
+    {
+      "type": "h2",
+      "text": "When you want something gentle and creative",
+      "id": "creative"
+    },
+    {
+      "type": "item",
+      "n": 6,
+      "title": "Paint by numbers, one color",
+      "hobby": "paint-by-numbers",
+      "note": "Pick one color, fill its areas, then stop. A finished patch of color is the whole date.",
+      "time": "45-60 min",
+      "cost": "Varies",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 7,
+      "title": "Air-dry clay ring dish",
+      "hobby": "air-dry-clay",
+      "note": "Roll, press and smooth, then leave it to dry for a couple of days (check your clay's label). No kiln needed, and it's decorative only, so keep food and drink off it, even if sealed.",
+      "time": "45 min + drying",
+      "cost": "Varies",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 8,
+      "title": "Junk journal your week",
+      "hobby": "junk-journaling",
+      "note": "Dig out receipts, tickets and ribbon. Glue three things into a notebook and give each a one-line caption.",
+      "time": "30-45 min",
+      "cost": "Varies",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 9,
+      "title": "Write a letter you'll actually send",
+      "note": "To a friend, a relative or yourself a year from now. Use real paper.",
+      "time": "30 min",
+      "cost": "A stamp",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 10,
+      "title": "Make a playlist for a specific mood",
+      "note": "Give it a silly name. Play it start to finish while you tidy a single drawer.",
+      "time": "45 min",
+      "cost": "Free",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 11,
+      "title": "Calligraphy or hand-lettering practice",
+      "hobby": "calligraphy",
+      "note": "Print a free practice sheet, fill a page, then write a favorite song lyric in your best hand.",
+      "time": "30-45 min",
+      "cost": "Varies",
+      "company": "Solo"
+    },
+    {
+      "type": "h2",
+      "text": "When you want to make something delicious",
+      "id": "kitchen"
+    },
+    {
+      "type": "item",
+      "n": 12,
+      "title": "Dinner for one, properly served",
+      "hobby": "baking",
+      "note": "Choose a recipe you'd cook for a guest. Plate it and eat at the table, napkin and all.",
+      "time": "60-90 min",
+      "cost": "Groceries",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 13,
+      "title": "Bake something and give half away",
+      "hobby": "baking",
+      "note": "A small batch, and a friend or neighbor to hand half to tomorrow. Go by the recipe's timings and keep an eye on it, since ovens vary.",
+      "time": "90 min",
+      "cost": "Pantry staples",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 14,
+      "title": "Cocktail or mocktail lab",
+      "note": "Choose a classic and make it properly. Skip the alcohol entirely if you like; there's no pressure either way.",
+      "time": "30-45 min",
+      "cost": "Varies",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 15,
+      "title": "Breakfast-for-dinner night",
+      "note": "Pancakes, eggs, a fruit plate. It's a weeknight, and it's a treat.",
+      "time": "45 min",
+      "cost": "Groceries",
+      "company": "Solo"
+    },
+    {
+      "type": "h2",
+      "text": "When you want to feel productive in a nice way",
+      "id": "productive"
+    },
+    {
+      "type": "item",
+      "n": 16,
+      "title": "Plant corner refresh",
+      "hobby": "indoor-gardening",
+      "note": "Wipe the leaves, repot one plant, move another to better light. If you have pets, check any plant against a pet-safety source first.",
+      "time": "45 min",
+      "cost": "Varies",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 17,
+      "title": "Photo-album night",
+      "hobby": "scrapbooking",
+      "note": "Pick one trip or one year, choose twelve photos and arrange them in a scrapbook or on a shelf.",
+      "time": "60 min",
+      "cost": "Varies",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 18,
+      "title": "Dream-board or plan-the-season session",
+      "note": "Cut out or write down what you want from this season, and pin it where you'll see it daily.",
+      "time": "45 min",
+      "cost": "Free",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 19,
+      "title": "Rearrange one shelf like a boutique",
+      "note": "Books, a plant, a frame and one thrifted object. Step back, then nudge it once more.",
+      "time": "30 min",
+      "cost": "Free",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 20,
+      "title": "Plan your next outing",
+      "note": "Flip through a list of solo dates, pick one and write it in. A night in that books a night out is a good night.",
+      "time": "15 min",
+      "cost": "Free",
+      "company": "Solo"
+    },
+    {
+      "type": "noSpend",
+      "text": "Most of these need only what's already in the house: the bath, the book, the letter, the shelf, the dinner."
+    },
+    {
+      "type": "h2",
+      "text": "Troubleshooting a date with yourself",
+      "id": "troubleshooting"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**You keep reaching for your phone.** Put it in a drawer. If it's your music, set the playlist first and turn the screen off.",
+        "**You're restless after twenty minutes.** Switch activities. A date can have chapters.",
+        "**You feel a bit lonely.** That's normal, and it passes. Text a friend something you're enjoying, or pencil in something social for later in the week.",
+        "**You start cleaning instead.** Give the dishes ten minutes on a timer, then come back to your date."
+      ]
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "junk-journals",
+        "washi-tape",
+        "book-lights",
+        "reading-journals"
+      ],
+      "title": "Small things for a better night in",
+      "dek": "Nothing here is required. They just make staying in feel a bit more like an occasion."
+    },
+    {
+      "type": "p",
+      "text": "For more ideas, see [creative hobbies you can start at home](/journal/creative-hobbies-you-can-start-at-home) and [low-energy hobbies](/journal/low-energy-hobbies). Ready to go out instead? Try [30 solo date ideas](/journal/solo-date-ideas) or [how to plan a solo Saturday](/journal/how-to-plan-a-solo-saturday)."
+    },
+    {
+      "type": "h2",
+      "text": "Make it a series",
+      "id": "series"
+    },
+    {
+      "type": "p",
+      "text": "Once you've found two or three favorites, rotate them. Give the month a theme, such as clay, cooking or re-reading, and keep a short list on the fridge so that when the evening arrives you pick instead of decide. A cozy night booked in advance also gives you permission to rest. Book it like a plan, even if the plan is a blanket."
+    },
+    {
+      "type": "ifYouLoved",
+      "hobbies": [
+        "air-dry-clay",
+        "paint-by-numbers",
+        "jigsaw-puzzles"
+      ]
+    }
+  ]
+}

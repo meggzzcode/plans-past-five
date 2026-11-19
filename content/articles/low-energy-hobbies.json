@@ -1,0 +1,213 @@
+{
+  "slug": "low-energy-hobbies",
+  "title": "12 Low-Energy Hobbies for When You Have Nothing Left",
+  "titleItalic": "Nothing Left",
+  "dek": "Twelve things for the evenings when your brain has clocked out, sorted by how much setup they ask for, from none at all to a tray on your lap.",
+  "category": "after-hours",
+  "status": "published",
+  "publishedAt": "2026-11-19",
+  "verifiedAt": "2026-11-18",
+  "hero": "junkJournal",
+  "searchIntent": "cozy hobbies after work / low energy hobbies / relaxing hobbies when tired in the evening",
+  "angle": "Cozy hobbies sorted by how little they ask of you (hands only, eyes only, barely moving), with a stop-whenever rule built in",
+  "hobbies": [
+    "jigsaw-puzzles",
+    "reading",
+    "paint-by-numbers",
+    "knitting",
+    "crochet",
+    "embroidery",
+    "air-dry-clay",
+    "indoor-gardening",
+    "crossword-puzzles",
+    "collage-art"
+  ],
+  "productIds": [
+    "book-lights",
+    "embroidery-kits"
+  ],
+  "sources": [],
+  "coworkChecks": [
+    "RESOLVED 2026-11-19: all 'typically under $25', 'free to $15', 'free-$10' cost labels - replaced with 'Varies'; verification found no source for prices",
+    "RESOLVED 2026-11-19: 'free with a library card' / library app - reworded to 'Often free from a library'; no library or app named",
+    "RESOLVED 2026-11-19: air-dry clay drying 'overnight' - removed the time claim (the clay guide's checked figure is about 2-3 days, see label)",
+    "RESOLVED 2026-11-19: knitting/crochet 'good for a rewatch', pothos/plant care, stretch item - editorial and hedged; stretch keeps 'stop if anything hurts'; no health or stress-relief claim (one wellbeing-sounding phrase softened to 'can feel settling')",
+    "RESOLVED 2026-11-19: persistent-tiredness note - stays a gentle suggestion to mention it to a doctor, no diagnosis",
+    "NOTE 2026-11-19: verification-file items on nap length and gardening-as-moderate-activity do not apply; neither claim appears in this article"
+  ],
+  "related": [
+    "things-to-do-after-work-instead-of-scrolling",
+    "hobbies-to-try-when-life-feels-like-work-sleep-repeat",
+    "how-to-find-a-hobby-as-an-adult"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "Some evenings you have nothing left, and a hobby with setup, a tutorial and a cleared table is off the table. This list is for those nights only. Everything here starts in about two minutes, survives being abandoned halfway and takes less than the scroll would have."
+    },
+    {
+      "type": "p",
+      "text": "They're sorted by how much they ask of you. If you'd rather browse a wider menu, including hobbies that get you out of the house, the [thirty-five hobbies list](/journal/hobbies-to-try-when-life-feels-like-work-sleep-repeat) goes further. Reading, collage, clay and junk journaling live there, so they're left out here on purpose."
+    },
+    {
+      "type": "h2",
+      "text": "Four rules for a tired evening",
+      "id": "rules"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Two-minute setup.** If it needs a cleared table and a video, it belongs to Saturday.",
+        "**Pausable.** Everything here can be left mid-way and picked up tomorrow with nothing lost.",
+        "**Where you can see it.** A puzzle on the coffee table beats a kit in the wardrobe, every time.",
+        "**Ten minutes is a result.** Past ten, bonus. Before ten, you still did something."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Battery nearly flat: no setup at all",
+      "id": "flat"
+    },
+    {
+      "type": "item",
+      "n": 1,
+      "title": "One album, start to finish",
+      "note": "Lie on the floor and listen to a whole record with the phone in another room. Sometimes the hobby is paying attention to one good thing.",
+      "time": "20-40 min",
+      "cost": "Free"
+    },
+    {
+      "type": "item",
+      "n": 2,
+      "title": "Three lines of writing",
+      "note": "What happened, what was nice, what you'd like tomorrow. It's the smallest journal possible, which is why it tends to survive.",
+      "time": "5 min",
+      "cost": "Free"
+    },
+    {
+      "type": "item",
+      "n": 3,
+      "title": "A slow stretch with a playlist",
+      "note": "Put on an album you love and stretch gently on the floor. Nobody's marking it. Stop if anything hurts.",
+      "time": "10-20 min",
+      "cost": "Free"
+    },
+    {
+      "type": "item",
+      "n": 4,
+      "title": "An audiobook and a gentle chore",
+      "note": "Pair a story with something the hands can do: folding laundry, watering plants, sorting the drawer of mystery cables. Check whether your library lends audiobooks; what's on offer varies.",
+      "time": "30 min",
+      "cost": "Varies"
+    },
+    {
+      "type": "item",
+      "n": 5,
+      "title": "A cookbook, read like a novel",
+      "note": "Sit with a cookbook you own and flag three recipes for the weekend. Write the shopping list while you're there. Future you will be smug.",
+      "time": "20 min",
+      "cost": "Free"
+    },
+    {
+      "type": "item",
+      "n": 6,
+      "title": "A photo-album sort",
+      "note": "Scroll an old album, or flip through a box of prints, and pick ten to keep. It's a quiet sort of nostalgia that feels more productive than it has any right to.",
+      "time": "20-30 min",
+      "cost": "Free"
+    },
+    {
+      "type": "item",
+      "n": 7,
+      "title": "Plant care, slowly",
+      "note": "Wipe the leaves, check the soil with a finger, repot the one that's outgrown its home. Plants work on a slow clock, which is rather the point.",
+      "time": "10-20 min",
+      "cost": "Varies"
+    },
+    {
+      "type": "h2",
+      "text": "Hands busy, brain quiet: a little setup",
+      "id": "hands"
+    },
+    {
+      "type": "item",
+      "n": 8,
+      "title": "Jigsaw puzzles",
+      "hobby": "jigsaw-puzzles",
+      "note": "Tip out the pieces, find the straight edges and let your mind drift. A puzzle on a tray can be carried off the table when guests come, and there's no penalty for leaving it half done.",
+      "time": "20-60 min",
+      "cost": "Varies"
+    },
+    {
+      "type": "item",
+      "n": 9,
+      "title": "Paint by numbers",
+      "hobby": "paint-by-numbers",
+      "note": "Someone else has already made the decisions. Match the number to the color, fill the shape, move on. One corner is a full evening's work and nobody will check.",
+      "time": "20-45 min",
+      "cost": "Varies"
+    },
+    {
+      "type": "item",
+      "n": 10,
+      "title": "Knitting",
+      "hobby": "knitting",
+      "note": "Once you've got the basic stitch, a plain scarf is mostly rhythm. It pairs well with a rewatch, since you don't need to follow every line of dialogue. Crochet works the same way.",
+      "time": "20-60 min",
+      "cost": "Varies"
+    },
+    {
+      "type": "item",
+      "n": 11,
+      "title": "Embroidery",
+      "hobby": "embroidery",
+      "note": "A beginner kit arrives with the design already printed on the fabric. Three or four stitches will get you a tiny flower, and a tiny flower is plenty.",
+      "time": "20-45 min",
+      "cost": "Varies"
+    },
+    {
+      "type": "item",
+      "n": 12,
+      "title": "Friendship bracelets",
+      "hobby": "friendship-bracelets",
+      "note": "Pin a few threads to a cushion and knot a simple pattern on autopilot. Make the first one for yourself, since you're also the one who needs it.",
+      "time": "20-40 min",
+      "cost": "Varies"
+    },
+    {
+      "type": "h2",
+      "text": "What to have on hand",
+      "id": "supplies"
+    },
+    {
+      "type": "p",
+      "text": "Almost nothing here needs shopping. You probably own a pen, a notebook, a blanket, a lamp and a mug already. If you want something, buy the cheapest honest version and let the hobby earn the upgrade: a library book, a secondhand jigsaw, plain yarn from the basic range. A small reading light and a blanket you love turn your evening spot into somewhere you're glad to land."
+    },
+    {
+      "type": "h2",
+      "text": "If even these feel like too much",
+      "id": "still-too-much"
+    },
+    {
+      "type": "p",
+      "text": "Some weeks the easiest idea still won't land. Shrink it. Open the puzzle box without tipping it out. Read one page. Stand on the doorstep with a cup of tea and look at the sky. Choosing something other than the scroll, even in miniature, counts."
+    },
+    {
+      "type": "p",
+      "text": "If you're tired all the time, not only after work, it's worth mentioning to a doctor. Hobbies are lovely, but they aren't a substitute for rest or care."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "book-lights",
+        "embroidery-kits"
+      ],
+      "title": "Cozy-evening extras",
+      "dek": "Not needed to begin. Nice once something sticks."
+    },
+    {
+      "type": "p",
+      "text": "Not sure any of these is quite you? [How to find a hobby as an adult](/journal/how-to-find-a-hobby-as-an-adult) starts from what you already like, and [things to do after work instead of scrolling](/journal/things-to-do-after-work-instead-of-scrolling) has more ideas for the evening."
+    }
+  ]
+}

@@ -1,0 +1,327 @@
+{
+  "slug": "active-hobbies-for-women-who-dont-love-the-gym",
+  "title": "15 Active Hobbies for Women Who Don't Love the Gym",
+  "titleItalic": "Don't Love the Gym",
+  "dek": "Fifteen ways to move that have more in common with a good Saturday than a treadmill, sorted by what you like: friends, fresh air or a good playlist.",
+  "category": "movement",
+  "status": "published",
+  "publishedAt": "2026-11-19",
+  "verifiedAt": "2026-11-18",
+  "hero": "hiking",
+  "searchIntent": "active hobbies / exercise that isn't the gym / fun ways to move",
+  "angle": "Movement chosen for enjoyment, grouped by what you like (people, nature, music, competition) with an easy first session for each",
+  "hobbies": [
+    "tennis",
+    "pickleball",
+    "hiking",
+    "roller-skating",
+    "birdwatching",
+    "nature-photography",
+    "thrifting",
+    "flower-arranging"
+  ],
+  "productIds": [
+    "tennis-rackets",
+    "pickleball-sets",
+    "daypacks",
+    "water-bottles"
+  ],
+  "sources": [
+    {
+      "title": "CDC: adult physical activity guidelines",
+      "url": "https://www.cdc.gov/physical-activity-basics/guidelines/index.html",
+      "note": "150 minutes a week of moderate activity; brisk walking and fast dancing count"
+    },
+    {
+      "title": "ODPHP: Physical Activity Guidelines top 10 things to know",
+      "url": "https://odphp.health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines/top-10-things-know",
+      "note": "Adult guideline summary"
+    },
+    {
+      "title": "American Red Cross: water safety",
+      "url": "https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/water-safety.html",
+      "note": "Swim where lifeguards are present; never swim alone"
+    },
+    {
+      "title": "CDC: drowning prevention",
+      "url": "https://www.cdc.gov/drowning/prevention/index.html",
+      "note": "Water safety"
+    },
+    {
+      "title": "CDC: swimming and arthritis",
+      "url": "https://www.cdc.gov/arthritis/prevention/index.html",
+      "note": "Swimming and water exercise as joint-friendly"
+    },
+    {
+      "title": "CPSC: skating safety",
+      "url": "https://www.cpsc.gov/s3fs-public/5014.pdf",
+      "note": "Protective gear for skating"
+    },
+    {
+      "title": "AAOS OrthoInfo: inline skating injury prevention",
+      "url": "https://orthoinfo.aaos.org/en/staying-healthy/inline-skating-injury-prevention",
+      "note": "Helmet, wrist guards, pads; smooth surfaces; not at night"
+    },
+    {
+      "title": "National Park Service: hiking safety",
+      "url": "https://www.nps.gov/articles/hiking-safety.htm",
+      "note": "Tell someone your route, check weather, carry water; hiking alone not recommended"
+    },
+    {
+      "title": "American Heart Association: physical activity recommendations for adults",
+      "url": "https://www.heart.org/en/healthy-living/exercise-and-physical-activity/fitness-basics/aha-recs-for-physical-activity-in-adults",
+      "note": "Gardening listed among moderate activities (light gardening)"
+    }
+  ],
+  "coworkChecks": [
+    "VERIFIED 2026-11-18: adults 150 minutes a week of moderate activity; brisk walking and fast dancing count; 'thirty minutes, twice a week' is framed as a gentle start, not a guideline - cdc.gov, odphp.health.gov",
+    "VERIFIED 2026-11-18: swim where lifeguards are present and never swim alone - redcross.org, cdc.gov",
+    "VERIFIED 2026-11-18: swimming described as low-impact (no medical claim) - cdc.gov",
+    "VERIFIED 2026-11-18: skating needs helmet, wrist guards, knee and elbow pads, a smooth paved surface, not at night - cpsc.gov, orthoinfo.aaos.org",
+    "VERIFIED 2026-11-18: hiking: tell someone your route, check weather, carry water; go with company rather than alone - nps.gov",
+    "VERIFIED 2026-11-18: light gardening counts as activity - heart.org (AHA), cdc.gov",
+    "VERIFIED 2026-11-18: all cost labels replaced with 'Varies' or 'Free' only for no-purchase activities; no prices stated - reworded, no claim remains",
+    "VERIFIED 2026-11-18: community-center and public-court availability hedged ('often', 'check locally') - reworded, no claim remains",
+    "VERIFIED 2026-11-18: doctor-advice line reworded to 'ask a clinician what suits you' (advice, not a medical claim) - reworded, no claim remains",
+    "VERIFIED 2026-11-18: cross-links trimmed to cycling (same batch) and already-published articles; pickleball, tennis and weekend links removed until those articles are live - reworded"
+  ],
+  "related": [
+    "how-to-get-into-recreational-cycling-as-an-adult",
+    "things-to-do-after-work-instead-of-scrolling",
+    "hobbies-to-try-when-life-feels-like-work-sleep-repeat"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "Not loving the gym is not a character flaw, and it doesn't mean you don't like moving. Plenty of people who dread a treadmill will happily spend three hours walking around a flea market or chasing a ball around a court. Same legs, better setting."
+    },
+    {
+      "type": "p",
+      "text": "So here are fifteen things to do with your body that come with a view, a friend, a ball or a soundtrack. Pick by what sounds fun, not by what burns the most."
+    },
+    {
+      "type": "h2",
+      "text": "How to choose",
+      "id": "choose"
+    },
+    {
+      "type": "p",
+      "text": "Start with temperament. If you like company, look at racket sports, classes and walking groups. If you need air and space, try hiking, cycling or skating. If music is half the point, try dancing or a rink night. If you like watching yourself improve, try swimming or tennis. If you want it to feel like play, pick anything with a ball or wheels."
+    },
+    {
+      "type": "p",
+      "text": "Give each one more than one try, because the first session is mostly about being new. The better test is whether you're curious to go back, even if you were terrible. If you have a health condition or an injury, or it's been a long while since you were active, ask a clinician what suits you before you start."
+    },
+    {
+      "type": "h2",
+      "text": "With friends",
+      "id": "friends"
+    },
+    {
+      "type": "item",
+      "n": 1,
+      "title": "Pickleball",
+      "hobby": "pickleball",
+      "note": "Simple rules, a small court and a lot of laughing. One of the friendliest ways to try a paddle sport. See [pickleball for beginners](/journal/pickleball-for-beginners).",
+      "time": "60 min",
+      "cost": "Varies; check local courts",
+      "company": "Social"
+    },
+    {
+      "type": "item",
+      "n": 2,
+      "title": "Tennis",
+      "hobby": "tennis",
+      "note": "Rallying is a workout disguised as a conversation. Start with a friend and a few lessons; [how to start playing tennis as an adult](/journal/how-to-start-playing-tennis-as-an-adult) covers the first session.",
+      "time": "60 min",
+      "cost": "Varies",
+      "company": "Social"
+    },
+    {
+      "type": "item",
+      "n": 3,
+      "title": "Badminton or table tennis",
+      "note": "Quick and social, and often on offer at community centers, so check locally. You'll move more than you expect.",
+      "time": "45-60 min",
+      "cost": "Varies",
+      "company": "Social"
+    },
+    {
+      "type": "item",
+      "n": 4,
+      "title": "A walking club",
+      "note": "Regular, no-fuss and surprisingly sociable. Walk with a friend or find a local group, and bring a thermos.",
+      "time": "60 min",
+      "cost": "Free",
+      "company": "Social"
+    },
+    {
+      "type": "item",
+      "n": 5,
+      "title": "A group class you can hide in the back of",
+      "note": "Dance, yoga, aqua aerobics, community fitness. Choose one that lists beginners and stand near the door.",
+      "time": "45-60 min",
+      "cost": "Varies",
+      "company": "Social"
+    },
+    {
+      "type": "h2",
+      "text": "Outdoors",
+      "id": "outdoors"
+    },
+    {
+      "type": "item",
+      "n": 6,
+      "title": "Hiking",
+      "hobby": "hiking",
+      "note": "Start with an easy, marked trail and build up. Go with a friend, tell someone your route, check the weather and bring water.",
+      "time": "1-3 hours",
+      "cost": "Varies",
+      "company": "Social"
+    },
+    {
+      "type": "item",
+      "n": 7,
+      "title": "Recreational cycling",
+      "note": "Flat, scenic and easy to chat through. The [cycling guide](/journal/how-to-get-into-recreational-cycling-as-an-adult) covers the basics.",
+      "time": "1 hour",
+      "cost": "Varies",
+      "company": "Solo or social"
+    },
+    {
+      "type": "item",
+      "n": 8,
+      "title": "Birdwatching walks",
+      "hobby": "birdwatching",
+      "note": "Slow, but it adds up. A two-hour walk looking for birds covers more ground than you'd guess.",
+      "time": "1-2 hours",
+      "cost": "Varies",
+      "company": "Solo or social"
+    },
+    {
+      "type": "item",
+      "n": 9,
+      "title": "Nature photography walks",
+      "hobby": "nature-photography",
+      "note": "Choose a theme and walk until you've captured it. Your phone is enough.",
+      "time": "1-2 hours",
+      "cost": "Free",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 10,
+      "title": "Outdoor swimming or a local pool",
+      "note": "If you like water, swimming is low-impact and a nice change of scene. Swim where a lifeguard is present, never swim alone, and follow local rules.",
+      "time": "30-45 min",
+      "cost": "Varies",
+      "company": "Social"
+    },
+    {
+      "type": "h2",
+      "text": "To music",
+      "id": "music"
+    },
+    {
+      "type": "item",
+      "n": 11,
+      "title": "Roller skating",
+      "hobby": "roller-skating",
+      "note": "A rink night with a disco ball beats a treadmill. While you learn, wear a helmet, wrist guards, and knee and elbow pads, and skate on a smooth paved surface or at a rink, not at night.",
+      "time": "60 min",
+      "cost": "Varies",
+      "company": "Social"
+    },
+    {
+      "type": "item",
+      "n": 12,
+      "title": "Dance classes",
+      "note": "Salsa, swing, line dancing, whatever sounds fun. Many beginner sessions don't expect a partner, but check with the class first.",
+      "time": "60 min",
+      "cost": "Varies",
+      "company": "Social"
+    },
+    {
+      "type": "item",
+      "n": 13,
+      "title": "Kitchen disco",
+      "note": "Make a playlist and dance for three songs while dinner cooks. Free, and it counts.",
+      "time": "10-15 min",
+      "cost": "Free",
+      "company": "Solo or social"
+    },
+    {
+      "type": "h2",
+      "text": "Active, with a purpose",
+      "id": "purpose"
+    },
+    {
+      "type": "item",
+      "n": 14,
+      "title": "Gardening or a community plot",
+      "hobby": "flower-arranging",
+      "note": "Light gardening counts as gentle activity, and you end up with flowers or vegetables.",
+      "time": "1-2 hours",
+      "cost": "Varies",
+      "company": "Solo or social"
+    },
+    {
+      "type": "item",
+      "n": 15,
+      "title": "Thrifting on foot",
+      "hobby": "thrifting",
+      "note": "Make it a long walk between shops and carry a tote. Retail becomes cardio.",
+      "time": "2-3 hours",
+      "cost": "Varies",
+      "company": "Solo or social"
+    },
+    {
+      "type": "h2",
+      "text": "Making it stick",
+      "id": "stick"
+    },
+    {
+      "type": "p",
+      "text": "Book it with another person, because a friend waiting at the court is a stronger nudge than any app. Keep your shoes, water bottle and tote by the door so that going takes no thinking. Start shorter than feels worthwhile: half an hour twice a week survives a busy month, and an ambitious plan usually doesn't."
+    },
+    {
+      "type": "p",
+      "text": "Treat that as a gentle start rather than a target. Public-health guidance for adults is about 150 minutes of moderate activity a week, and brisk walking and fast dancing both count. Afterwards, write one line about how it felt rather than how long it lasted. That line tells you what to do more of."
+    },
+    {
+      "type": "tryThisWeekend",
+      "text": "Pick the one activity above that made you curious rather than obligated, find its easiest version (a short trail, a drop-in session, a friend with a spare racket) and put it in your calendar at a time of day when you have energy. Stop when it stops being fun."
+    },
+    {
+      "type": "whatYoullNeed",
+      "essentials": [
+        "Comfortable shoes with decent grip, which you may already own",
+        "A water bottle",
+        "Clothes you can move in without adjusting them every five minutes"
+      ],
+      "optional": [
+        "A borrowed racket or paddle for the racket sports, before you buy one",
+        "A daypack for hikes and walks that run past lunchtime",
+        "Helmet, wrist guards, and knee and elbow pads if skating appeals; a helmet if cycling does"
+      ]
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "daypacks",
+        "water-bottles",
+        "sports-totes"
+      ],
+      "title": "Gear for getting started",
+      "dek": "Optional, and best bought after you've tried a thing twice."
+    },
+    {
+      "type": "ifYouLoved",
+      "hobbies": [
+        "pickleball",
+        "tennis",
+        "hiking"
+      ]
+    }
+  ]
+}

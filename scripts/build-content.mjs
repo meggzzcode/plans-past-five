@@ -21,8 +21,12 @@ try {
 } catch (e) {
   if (!(e instanceof ContentError)) throw e;
   console.error("\nThe website was NOT rebuilt because some content needs fixing.");
-  console.error("The live site is unchanged and still online. Fix the items below in Pages CMS and save again.\n");
+  console.error(
+    "The live site is unchanged and still online. Fix the items below in Pages CMS and save again.\n",
+  );
   for (const p of e.problems) console.error(`  - ${p}`);
-  console.error("\nTip: open the file named above and look at the field named. To undo your last edit, use GitHub history (docs/buyer/CMS-SETUP.md).\n");
+  console.error(
+    "\nTip: open the file named above and look at the field named. To undo your last edit, use GitHub history (docs/buyer/CMS-SETUP.md).\n",
+  );
   process.exit(1);
 }

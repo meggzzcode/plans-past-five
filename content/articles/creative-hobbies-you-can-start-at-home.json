@@ -1,0 +1,290 @@
+{
+  "slug": "creative-hobbies-you-can-start-at-home",
+  "title": "21 Creative Hobbies You Can Start at Home",
+  "titleItalic": "at Home",
+  "dek": "No studio, no car, no expensive equipment: twenty-one things to make with your hands at a kitchen table, grouped by material and mess level.",
+  "category": "creative-corner",
+  "status": "published",
+  "publishedAt": "2026-11-18",
+  "hero": "potteryNight",
+  "searchIntent": "creative hobbies at home for adults",
+  "angle": "Small-apartment friendly, grouped by material, with mess level and what to buy first",
+  "hobbies": [
+    "watercolor-painting",
+    "air-dry-clay",
+    "embroidery",
+    "junk-journaling",
+    "jewelry-making",
+    "crochet"
+  ],
+  "productIds": [
+    "watercolor-sets",
+    "air-dry-clay",
+    "embroidery-kits",
+    "junk-journals",
+    "friendship-bracelet-kits",
+    "washi-tape"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "Do you still make things with your hands? For a lot of adults the answer slipped from yes to no sometime after school art class, mostly because nobody asked for a drawing or a clay pot anymore."
+    },
+    {
+      "type": "p",
+      "text": "Consider this your reason. Every hobby below works in a small apartment, at a kitchen table, after work. Each one notes the mess level, what to buy first (often nothing) and one small project that shows whether you like it."
+    },
+    {
+      "type": "h2",
+      "text": "Paper people",
+      "id": "paper"
+    },
+    {
+      "type": "p",
+      "text": "Low mess, low cost, and very easy to pack away. Great if you share a small space."
+    },
+    {
+      "type": "item",
+      "n": 1,
+      "title": "Junk journaling",
+      "hobby": "junk-journaling",
+      "note": "Layer receipts, tickets and scraps into a notebook. It's part diary, part collage, and impossible to do wrong. Start with the [beginner's guide to junk journaling](/journal/how-to-start-junk-journaling), then the [supplies guide](/journal/junk-journaling-supplies-for-beginners) before you shop."
+    },
+    {
+      "type": "item",
+      "n": 2,
+      "title": "Scrapbooking",
+      "hobby": "scrapbooking",
+      "note": "Print photos from one weekend and build a two-page spread around them. It's more structured than junk journaling, if you like a plan."
+    },
+    {
+      "type": "item",
+      "n": 3,
+      "title": "Collage",
+      "hobby": "collage-art",
+      "note": "Cut up old magazines and arrange images into postcards or a framed piece. It costs nothing and is surprisingly revealing about your taste."
+    },
+    {
+      "type": "item",
+      "n": 4,
+      "title": "Calligraphy and brush lettering",
+      "hobby": "calligraphy",
+      "note": "Brush pens and practice sheets are all you need. Drills are oddly soothing after a day of typing."
+    },
+    {
+      "type": "item",
+      "n": 5,
+      "title": "Creative writing",
+      "hobby": "creative-writing",
+      "note": "A notebook and a prompt. Write a tiny story set in the café you visited last weekend. Nobody has to read it."
+    },
+    {
+      "type": "noSpend",
+      "text": "Paper hobbies are the easiest to start for free: old magazines, catalogs, receipts, gift wrap and an old notebook will carry you for weeks."
+    },
+    {
+      "type": "h2",
+      "text": "Paint and color",
+      "id": "paint"
+    },
+    {
+      "type": "p",
+      "text": "A little more mess, still very manageable. Put down a tea towel and keep a jar of water handy."
+    },
+    {
+      "type": "item",
+      "n": 6,
+      "title": "Watercolor painting",
+      "hobby": "watercolor-painting",
+      "note": "No studio and no free Sunday needed. A little paint set, a sketchbook and twenty minutes at your kitchen table are enough. Try painting the flowers on your counter, your favorite mug, or whatever happens to be in front of you."
+    },
+    {
+      "type": "item",
+      "n": 7,
+      "title": "Paint by numbers",
+      "hobby": "paint-by-numbers",
+      "note": "The no-pressure way to paint something frame-worthy. Ideal when you want to be creative but don't want to make a single decision."
+    },
+    {
+      "type": "item",
+      "n": 8,
+      "title": "Painting thrifted frames and objects",
+      "note": "Pick up a plain frame, vase or tray from a thrift store and give it stripes, checks or cherries with acrylics. Instant decor, very low risk.",
+      "time": "1 hour",
+      "cost": "Varies",
+      "company": "Solo or social",
+      "first": "Paint a thrifted wooden frame with a simple checkerboard border."
+    },
+    {
+      "type": "image",
+      "image": "watercolor",
+      "caption": "Twenty minutes, three colors, one jar of flowers."
+    },
+    {
+      "type": "h2",
+      "text": "Clay and things you can hold",
+      "id": "clay"
+    },
+    {
+      "type": "item",
+      "n": 9,
+      "title": "Air-dry clay",
+      "hobby": "air-dry-clay",
+      "note": "No wheel or kiln required. Ring dishes, incense holders and tiny vases dry overnight and can be painted the next day. Check your clay's label before sealing, and keep finished pieces for display."
+    },
+    {
+      "type": "item",
+      "n": 10,
+      "title": "At-home pottery painting",
+      "hobby": "pottery-painting",
+      "note": "Get a ceramic painting kit and follow its instructions. Check whether the finished piece is decorative only before it goes near food or drink."
+    },
+    {
+      "type": "item",
+      "n": 11,
+      "title": "Jewelry making",
+      "hobby": "jewelry-making",
+      "note": "Beads, wire and a pair of pliers. Make earrings to match an outfit or matching bracelets for friends."
+    },
+    {
+      "type": "item",
+      "n": 12,
+      "title": "Friendship bracelets",
+      "hobby": "friendship-bracelets",
+      "note": "Quick, nostalgic and perfect for doing with friends. Letter beads make them yours."
+    },
+    {
+      "type": "starterKit",
+      "productIds": [
+        "air-dry-clay",
+        "clay-tools",
+        "acrylic-paints",
+        "clay-mats"
+      ],
+      "title": "The Pottery Era starter kit"
+    },
+    {
+      "type": "h2",
+      "text": "Thread and yarn",
+      "id": "thread"
+    },
+    {
+      "type": "p",
+      "text": "Portable, quiet and perfect to do while watching something. If you like keeping your hands busy, start here."
+    },
+    {
+      "type": "item",
+      "n": 13,
+      "title": "Embroidery",
+      "hobby": "embroidery",
+      "note": "A kit gives you a pre-printed design, a hoop and the right thread. Learn three stitches and you're away."
+    },
+    {
+      "type": "item",
+      "n": 14,
+      "title": "Cross-stitch",
+      "note": "Little x-shaped stitches on gridded fabric following a chart. Very beginner-friendly and very satisfying to watch fill in.",
+      "time": "30–60 min",
+      "cost": "Varies",
+      "company": "Solo",
+      "first": "Stitch a small motif from a beginner kit, like a strawberry or a star."
+    },
+    {
+      "type": "item",
+      "n": 15,
+      "title": "Punch needle",
+      "note": "A tool that pushes loops of yarn through fabric. Makes fluffy, textured pieces fast, great for cushion covers and wall hangings.",
+      "time": "1 hour",
+      "cost": "Varies",
+      "company": "Solo",
+      "first": "Punch a small heart or flower on a 6-inch hoop."
+    },
+    {
+      "type": "item",
+      "n": 16,
+      "title": "Crochet",
+      "hobby": "crochet",
+      "note": "One hook, one ball of yarn. The first hour is fiddly; then it clicks. Granny squares first, bags and hats later."
+    },
+    {
+      "type": "item",
+      "n": 17,
+      "title": "Knitting",
+      "hobby": "knitting",
+      "note": "Two needles and very soothing rhythm. A coaster-sized square is a perfect first evening."
+    },
+    {
+      "type": "item",
+      "n": 18,
+      "title": "Sewing a simple tote",
+      "note": "A straight seam on a sewing machine (or by hand) gets you a tote bag in an afternoon. Look for a free beginner pattern.",
+      "time": "2 hours",
+      "cost": "Varies",
+      "company": "Solo",
+      "first": "Sew a simple lined tote from a free beginner pattern."
+    },
+    {
+      "type": "h2",
+      "text": "Living, growing and edible",
+      "id": "living"
+    },
+    {
+      "type": "item",
+      "n": 19,
+      "title": "Flower arranging",
+      "hobby": "flower-arranging",
+      "note": "One supermarket bunch, three jars. Learn about height and texture, then break every rule. Start with the [flower arranging guide](/journal/flower-arranging-as-a-hobby)."
+    },
+    {
+      "type": "item",
+      "n": 20,
+      "title": "Indoor gardening and propagation",
+      "hobby": "indoor-gardening",
+      "note": "A row of glass jars with pothos cuttings on a windowsill is a creative project and living decor."
+    },
+    {
+      "type": "item",
+      "n": 21,
+      "title": "Baking and decorating",
+      "hobby": "baking",
+      "note": "Cookie decorating is basically painting with icing. Practice on a Sunday and bring the results on Monday."
+    },
+    {
+      "type": "tryThisWeekend",
+      "text": "Turn any of these into a craft night: pick one, set out supplies for four and add snacks. Clay, bracelets and cookie decorating are the easiest for groups."
+    },
+    {
+      "type": "h2",
+      "text": "How to start without buying everything",
+      "id": "start-small"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Pick one material**, not one of everything. Paper, paint, clay or thread.",
+        "**Buy (or borrow) a single starter kit.** Kits remove decision fatigue, though [not every kit is worth it](/journal/creative-hobby-starter-kits-worth-considering).",
+        "**Give it three evenings** before you decide whether it's for you.",
+        "**Keep it visible.** A basket on the coffee table gets used; a box under the bed doesn't."
+      ]
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "watercolor-sets",
+        "embroidery-kits",
+        "washi-tape",
+        "friendship-bracelet-kits"
+      ],
+      "title": "Shop your hobby",
+      "dek": "Starter picks from The Creative Girl and The Pottery Era."
+    },
+    {
+      "type": "ifYouLoved",
+      "hobbies": [
+        "watercolor-painting",
+        "embroidery",
+        "craft-nights"
+      ]
+    }
+  ]
+}

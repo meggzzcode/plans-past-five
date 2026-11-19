@@ -96,3 +96,18 @@ Finish C4 for hobbies-to-try-when-life-feels-like-work-sleep-repeat, things-to-d
 
 ## C12 priority list (from the commerce refinement, 2026-11-19)
 Eight kits currently show no products because their items are only candidates. Verify these first so the shop is not empty: reading journal, craft night, book club, picnic, flower arranging, pickleball, tennis, cozy night in. Also see docs/commerce/DESIRABILITY-AUDIT.md (12 items needing live research: unknown brands, the crochet kit, the tennis racket candidate). 25 products are candidates and 6 verified products are held for audience fit (kid-marketed clay, kids' clay tools, Apple Barrel paint, three washi options): suggest better-looking replacements.
+
+## C17 Pages CMS first live test (owner's GitHub login)
+
+Goal: prove the browser editor configured in `.pages.yml` works on the real repository. Do NOT change production content.
+1. In the owner's browser open https://pagescms.org and sign in with the owner's GitHub account (the owner approves any GitHub prompt; never type or store their password).
+2. Add the Plans Past Five repository and pick the branch for the test: preferably create a scratch branch (for example `cms-test`) in GitHub first; if a scratch branch is not possible, use the main branch ONLY for a throwaway draft article (Status Draft, slug `cms-test-delete-me`) and delete it afterwards.
+3. Confirm the left menu shows Articles and Images, and that each article opens without a configuration error. Note any field that renders oddly (Top picture drop-down, Related articles, the block list for the body).
+4. Test edit: in the throwaway draft (create it with all required fields, Status Draft), add one block of each of at least five types, save, and check the commit that appears in GitHub is a single small JSON change under `content/articles/`. Add one test image with a description under Images (a small free image, scratch branch only).
+5. Check the Netlify deploy preview or deploy log for that branch: the content check should pass. Then deliberately save a second throwaway edit with a source address missing `https://` and confirm the build fails with a plain-English message and that the previous production deploy is untouched.
+6. Delete the throwaway article and image (or leave them on the scratch branch). Do not merge the scratch branch.
+Report: what worked, screenshots or the exact text of any error, whether Pages CMS rewrote the JSON in a different key order or format than the files in the repo, whether blank fields were written as empty strings, and anything in `.pages.yml` that needs changing. Do not edit code or `.pages.yml` yourself.
+
+
+## C18 Netlify credit check (added 2026-11-19)
+On the plans-past-five Netlify project: read the Usage page and report credits used so far this cycle and per deploy; confirm whether builds skipped by the `ignore` command in netlify.toml (it skips unless the commit message contains the deploy marker) consume any credits; confirm whether auto publishing is on and whether the production branch is still claude/vibrant-dirac-amdf7r; after Claude Code merges to main, change the production branch to main. Report only; change no plan or billing setting.

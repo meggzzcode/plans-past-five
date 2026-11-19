@@ -26,9 +26,12 @@ const outDir = arg("out", "content");
 /** Every Article exported from the article modules and drafts.ts. */
 export async function loadArticles(dir) {
   const found = [];
-  for (const f of readdirSync(dir).filter((n) => /^article-.*\.ts$/.test(n)).sort()) {
+  for (const f of readdirSync(dir)
+    .filter((n) => /^article-.*\.ts$/.test(n))
+    .sort()) {
     const mod = await import(pathToFileURL(join(dir, f)).href);
-    for (const v of Object.values(mod)) if (v && typeof v === "object" && typeof v.slug === "string") found.push(v);
+    for (const v of Object.values(mod))
+      if (v && typeof v === "object" && typeof v.slug === "string") found.push(v);
   }
   if (existsSync(join(dir, "drafts.ts"))) {
     const { drafts } = await import(pathToFileURL(join(dir, "drafts.ts")).href);
@@ -42,12 +45,22 @@ export async function loadArticles(dir) {
 export function loadImages(dir) {
   const p = join(dir, "images.ts");
   const text = readFileSync(p, "utf8");
-  const files = new Map([...text.matchAll(/^import (\w+) from "@\/assets\/([^"]+)";/gm)].map((m) => [m[1], m[2]]));
+  const files = new Map(
+    [...text.matchAll(/^import (\w+) from "@\/assets\/([^"]+)";/gm)].map((m) => [m[1], m[2]]),
+  );
   const out = [];
-  for (const m of text.matchAll(/^ {2}(\w+): \{\n {4}src: (\w+),\n {4}alt: ("(?:[^"\\]|\\.)*"),\n {4}w: (\d+),\n {4}h: (\d+),\n {2}\},/gm)) {
+  for (const m of text.matchAll(
+    /^ {2}(\w+): \{\n {4}src: (\w+),\n {4}alt: ("(?:[^"\\]|\\.)*"),\n {4}w: (\d+),\n {4}h: (\d+),\n {2}\},/gm,
+  )) {
     const file = files.get(m[2]);
     if (!file) throw new Error(`images.ts: no import found for ${m[2]}`);
-    out.push({ key: m[1], file: `src/assets/${file}`, alt: JSON.parse(m[3]), w: Number(m[4]), h: Number(m[5]) });
+    out.push({
+      key: m[1],
+      file: `src/assets/${file}`,
+      alt: JSON.parse(m[3]),
+      w: Number(m[4]),
+      h: Number(m[5]),
+    });
   }
   return out;
 }
@@ -60,7 +73,8 @@ if (import.meta.main ?? process.argv[1] === fileURLToPath(import.meta.url)) {
     slugs.add(a.slug);
   }
   mkdirSync(join(outDir, "articles"), { recursive: true });
-  for (const a of articles) writeFileSync(join(outDir, "articles", `${a.slug}.json`), articleToJson(a));
+  for (const a of articles)
+    writeFileSync(join(outDir, "articles", `${a.slug}.json`), articleToJson(a));
   let images = [];
   if (existsSync(join(dataDir, "images.ts"))) images = loadImages(dataDir);
   mkdirSync(join(outDir, "images"), { recursive: true });

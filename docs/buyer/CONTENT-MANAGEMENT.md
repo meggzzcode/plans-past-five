@@ -1,6 +1,6 @@
 # Content management
 
-**There is no CMS.** For a non-coding buyer see `docs/buyer/EDITING-WITHOUT-CODE.md` (what works today and the recommended browser editor). Content is TypeScript data edited in files and deployed with the site. Nothing is configured for browser-based editing. Evaluating a free Git-based CMS (a tool that edits files in the repo through a web interface) is PENDING: nobody has chosen or tested one, and adopting one would need a code change and a security review. Until then, the steps below are the process. After any change run:
+Articles and images are data files (`content/articles/*.json`, `content/images/*.json`) that a developer edits directly or a non-coder edits in Pages CMS (`docs/buyer/CMS-SETUP.md`, `docs/buyer/EDITING-WITHOUT-CODE.md`; first live login test is Cowork task C17). `bun run content:build` validates them and writes the generated files; it runs automatically before every build. Hobbies, products and settings remain code. After any change run:
 
 ```
 bunx vitest run
@@ -10,19 +10,19 @@ bunx vite build
 
 ## Publish an article
 
-1. The article file is `src/content/article-<slug>.ts`, exporting an `Article` (`src/content/types.ts`).
+1. The article file is `content/articles/<slug>.json` (same fields as the `Article` type in `src/content/types.ts`).
 2. Pass `docs/content/ARTICLE-QUALITY-CHECKLIST.md` and `docs/SOP-publish-article.md`: resolve every `coworkChecks` item, fill `sources`, set `verifiedAt`.
-3. Set `status: "published"` and `publishedAt: "YYYY-MM-DD"`.
-4. Registration: published articles are imported in `src/content/index.ts` (the `all` array). Drafts are imported only in `src/content/draft-registry.ts`, so unpublished text never ships in the public site. To publish a draft, change its `status`, then move its import from `draft-registry.ts` to `index.ts`. `src/test/content-registry.test.ts` catches mistakes.
+3. Set `"status": "published"` and `"publishedAt": "YYYY-MM-DD"`.
+4. Registration is automatic: `scripts/build-content.mjs` writes only published articles to `src/content/generated/published.json` (the public bundle) and drafts to `drafts.json` (tests and scripts only). `src/test/content-registry.test.ts` checks that no draft reaches the public bundle.
 5. After deploy, confirm it appears in `/sitemap.xml` and request indexing.
 
 ## Update an article
 
-Edit the file; set `updatedAt: "YYYY-MM-DD"`. If you correct a factual error, also follow `docs/SOP-corrections.md` and add an entry in `src/content/corrections.ts` if the process there says so.
+Edit the JSON (or use Pages CMS); set `updatedAt: "YYYY-MM-DD"`. If you correct a factual error, also follow `docs/SOP-corrections.md` and add an entry in `src/content/corrections.ts` if the process there says so.
 
 ## Write a new article
 
-Copy a similar `article-*.ts`. Blocks available: `p`, `h2` (give an `id` for the table of contents), `h3`, `list`, `quote`, `image`, `item`, `whatYoullNeed`, `starterKit`, `shopHobby`, `saveSplurge`, `tryThisWeekend`, `girlsNight`, `first30`, `noSpend`, `makePlan`, `ifYouLoved`. Inline text supports `**bold**` and `[link](/path)`. Keep it `status: "draft"` until the gate passes. Voice: `docs/content/BRAND-VOICE.md`.
+Copy a similar `content/articles/*.json` (or use Add an entry in Pages CMS). Blocks available: `p`, `h2` (give an `id` for the table of contents), `h3`, `list`, `quote`, `image`, `item`, `whatYoullNeed`, `starterKit`, `shopHobby`, `saveSplurge`, `tryThisWeekend`, `girlsNight`, `first30`, `noSpend`, `makePlan`, `ifYouLoved`. Inline text supports `**bold**` and `[link](/path)`. Keep it `status: "draft"` until the gate passes. Voice: `docs/content/BRAND-VOICE.md`.
 
 ## Add a hobby
 
@@ -43,7 +43,7 @@ Edit `src/routes/index.tsx` (hero, categories, 5:01 Edit, Weekend Edit, shop and
 ## Upload an image
 
 1. Put the file in `src/assets/` (the repo stores article and shop imagery there).
-2. Register it in `src/data/images.ts` with real alt text; use the new key as an article's `hero` or an `image` block.
+2. Add `content/images/<key>.json` (key, file, alt, credit, source, licence; w and h are read from the file) or use the Images form in Pages CMS; use the key as an article's `hero` or an `image` block.
 3. Record source and license in `docs/IMAGE-LICENSES.md`. Do not add images you cannot document (`docs/buyer/IMAGE-AND-ASSET-RIGHTS.md` from another worker, when present).
 4. Keep files small enough for fast pages; PENDING: set a size budget.
 

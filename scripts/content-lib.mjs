@@ -7,7 +7,7 @@
  * Nothing here reaches the network.
  */
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
-import { join, relative } from "node:path";
+import { join } from "node:path";
 import { z } from "zod";
 
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
@@ -37,16 +37,28 @@ const httpsUrl = z
       return false;
     }
   }, "must be a full web address starting with https://");
-const slugStr = z.string().regex(KEBAB, "must be lowercase words joined by hyphens, e.g. my-new-article");
+const slugStr = z
+  .string()
+  .regex(KEBAB, "must be lowercase words joined by hyphens, e.g. my-new-article");
 
 /** Every block type in src/content/types.ts. Key order here is the order written to disk. */
 export const blockSchemas = {
   p: z.object({ type: z.literal("p"), text: str }).strict(),
-  h2: z.object({ type: z.literal("h2"), text: str, id: z.string().regex(KEBAB, "must be lowercase words joined by hyphens").optional() }).strict(),
+  h2: z
+    .object({
+      type: z.literal("h2"),
+      text: str,
+      id: z.string().regex(KEBAB, "must be lowercase words joined by hyphens").optional(),
+    })
+    .strict(),
   h3: z.object({ type: z.literal("h3"), text: str }).strict(),
-  list: z.object({ type: z.literal("list"), items: strList.min(1, "needs at least one item") }).strict(),
+  list: z
+    .object({ type: z.literal("list"), items: strList.min(1, "needs at least one item") })
+    .strict(),
   quote: z.object({ type: z.literal("quote"), text: str }).strict(),
-  image: z.object({ type: z.literal("image"), image: str, caption: z.string().optional() }).strict(),
+  image: z
+    .object({ type: z.literal("image"), image: str, caption: z.string().optional() })
+    .strict(),
   item: z
     .object({
       type: z.literal("item"),
@@ -60,9 +72,24 @@ export const blockSchemas = {
       first: z.string().optional(),
     })
     .strict(),
-  whatYoullNeed: z.object({ type: z.literal("whatYoullNeed"), essentials: strList.min(1, "needs at least one item"), optional: strList.optional() }).strict(),
-  starterKit: z.object({ type: z.literal("starterKit"), productIds: strList, title: z.string().optional() }).strict(),
-  shopHobby: z.object({ type: z.literal("shopHobby"), productIds: strList, title: z.string().optional(), dek: z.string().optional() }).strict(),
+  whatYoullNeed: z
+    .object({
+      type: z.literal("whatYoullNeed"),
+      essentials: strList.min(1, "needs at least one item"),
+      optional: strList.optional(),
+    })
+    .strict(),
+  starterKit: z
+    .object({ type: z.literal("starterKit"), productIds: strList, title: z.string().optional() })
+    .strict(),
+  shopHobby: z
+    .object({
+      type: z.literal("shopHobby"),
+      productIds: strList,
+      title: z.string().optional(),
+      dek: z.string().optional(),
+    })
+    .strict(),
   shopTheArticle: z
     .object({
       type: z.literal("shopTheArticle"),
@@ -73,14 +100,25 @@ export const blockSchemas = {
       dek: z.string().optional(),
     })
     .strict(),
-  shopMyHobby: z.object({ type: z.literal("shopMyHobby"), hobby: str, title: z.string().optional(), dek: z.string().optional() }).strict(),
+  shopMyHobby: z
+    .object({
+      type: z.literal("shopMyHobby"),
+      hobby: str,
+      title: z.string().optional(),
+      dek: z.string().optional(),
+    })
+    .strict(),
   saveSplurge: z.object({ type: z.literal("saveSplurge"), save: str, splurge: str }).strict(),
   tryThisWeekend: z.object({ type: z.literal("tryThisWeekend"), text: str }).strict(),
   girlsNight: z.object({ type: z.literal("girlsNight"), text: str }).strict(),
-  first30: z.object({ type: z.literal("first30"), steps: strList.min(1, "needs at least one step") }).strict(),
+  first30: z
+    .object({ type: z.literal("first30"), steps: strList.min(1, "needs at least one step") })
+    .strict(),
   noSpend: z.object({ type: z.literal("noSpend"), text: str }).strict(),
   makePlan: z.object({ type: z.literal("makePlan"), text: str }).strict(),
-  ifYouLoved: z.object({ type: z.literal("ifYouLoved"), hobbies: strList.min(1, "needs at least one hobby") }).strict(),
+  ifYouLoved: z
+    .object({ type: z.literal("ifYouLoved"), hobbies: strList.min(1, "needs at least one hobby") })
+    .strict(),
 };
 export const BLOCK_TYPES = Object.keys(blockSchemas);
 
@@ -102,7 +140,9 @@ export const articleSchema = z
     angle: str,
     hobbies: strList,
     productIds: strList,
-    sources: z.array(z.object({ title: str, url: httpsUrl, note: z.string().optional() }).strict()).optional(),
+    sources: z
+      .array(z.object({ title: str, url: httpsUrl, note: z.string().optional() }).strict())
+      .optional(),
     coworkChecks: strList.optional(),
     related: z.array(slugStr).optional(),
     body: z.array(z.any()),
@@ -113,7 +153,13 @@ export const imageSchema = z
   .object({
     key: z.string().regex(CAMEL, "must be one camelCase word, e.g. crochetHands"),
     file: str,
-    alt: z.string().trim().min(20, "alt text is required: describe the photo in at least 20 characters for people who cannot see it"),
+    alt: z
+      .string()
+      .trim()
+      .min(
+        20,
+        "alt text is required: describe the photo in at least 20 characters for people who cannot see it",
+      ),
     w: z.number().int().positive().optional(),
     h: z.number().int().positive().optional(),
     credit: z.string().optional(),
@@ -155,7 +201,8 @@ function legacyImageKeys(root) {
   for (const f of ["src/data/images.ts", "src/data/images.extra.ts"]) {
     const p = join(root, f);
     if (!existsSync(p)) continue;
-    for (const m of readFileSync(p, "utf8").matchAll(/^ {2}([a-zA-Z][A-Za-z0-9]*): \{/gm)) keys.add(m[1]);
+    for (const m of readFileSync(p, "utf8").matchAll(/^ {2}([a-zA-Z][A-Za-z0-9]*): \{/gm))
+      keys.add(m[1]);
   }
   return keys;
 }
@@ -170,7 +217,8 @@ function categorySlugs(root) {
 export function imageSize(buf) {
   if (buf.length > 24 && buf[0] === 0x89 && buf.toString("ascii", 1, 4) === "PNG")
     return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) };
-  if (buf.toString("ascii", 0, 3) === "GIF") return { w: buf.readUInt16LE(6), h: buf.readUInt16LE(8) };
+  if (buf.toString("ascii", 0, 3) === "GIF")
+    return { w: buf.readUInt16LE(6), h: buf.readUInt16LE(8) };
   if (buf[0] === 0xff && buf[1] === 0xd8) {
     let i = 2;
     while (i + 9 < buf.length) {
@@ -201,12 +249,20 @@ function readJsonDir(root, rel) {
   if (!existsSync(dir)) return { files: [], problems: [] };
   const files = [];
   const problems = [];
-  for (const f of readdirSync(dir).filter((n) => n.endsWith(".json")).sort()) {
+  for (const f of readdirSync(dir)
+    .filter((n) => n.endsWith(".json"))
+    .sort()) {
     const file = `${rel}/${f}`;
     try {
-      files.push({ file, name: f.slice(0, -5), data: JSON.parse(readFileSync(join(dir, f), "utf8")) });
+      files.push({
+        file,
+        name: f.slice(0, -5),
+        data: JSON.parse(readFileSync(join(dir, f), "utf8")),
+      });
     } catch (e) {
-      problems.push(`${file}: this file is not valid JSON (${e.message}). If you edited it by hand, undo the last change in GitHub history.`);
+      problems.push(
+        `${file}: this file is not valid JSON (${e.message}). If you edited it by hand, undo the last change in GitHub history.`,
+      );
     }
   }
   return { files, problems };
@@ -227,29 +283,38 @@ export function validateContent(root, opts = {}) {
   problems.push(...imgRead.problems);
   const images = [];
   const imageKeys = new Set();
-  for (const { file, name, data } of imgRead.files) {
+  for (const { file, data } of imgRead.files) {
     const r = imageSchema.safeParse(dropBlanks(data));
     if (!r.success) {
       problems.push(...zodProblems(file, r.error));
       continue;
     }
     const img = r.data;
-    if (img.key !== name) problems.push(`${file}: the file name must match the image key "${img.key}" (rename the file to ${img.key}.json)`);
     if (imageKeys.has(img.key)) problems.push(`${file}: the image key "${img.key}" is used twice`);
     imageKeys.add(img.key);
-    const diskPath = img.file.startsWith("/uploads/") ? join(root, "public", img.file) : img.file.startsWith("src/assets/") ? join(root, img.file) : null;
+    const diskPath = img.file.startsWith("/uploads/")
+      ? join(root, "public", img.file)
+      : img.file.startsWith("src/assets/")
+        ? join(root, img.file)
+        : null;
     if (!diskPath) {
-      problems.push(`${file}, field "file": must be a photo uploaded through the CMS (starts with /uploads/) or an existing site photo (src/assets/...)`);
+      problems.push(
+        `${file}, field "file": must be a photo uploaded through the CMS (starts with /uploads/) or an existing site photo (src/assets/...)`,
+      );
       continue;
     }
     if (!existsSync(diskPath)) {
-      problems.push(`${file}, field "file": the photo "${img.file}" does not exist. Upload it again in the Images section.`);
+      problems.push(
+        `${file}, field "file": the photo "${img.file}" does not exist. Upload it again in the Images section.`,
+      );
       continue;
     }
     if (!img.w || !img.h) {
       const size = imageSize(readFileSync(diskPath));
       if (!size) {
-        problems.push(`${file}: could not read the size of "${img.file}". Use a JPG, PNG or WebP photo.`);
+        problems.push(
+          `${file}: could not read the size of "${img.file}". Use a JPG, PNG or WebP photo.`,
+        );
         continue;
       }
       img.w = size.w;
@@ -264,9 +329,10 @@ export function validateContent(root, opts = {}) {
   problems.push(...artRead.problems);
   const articles = [];
   const seen = new Map();
-  for (const { file, name, data } of artRead.files) {
+  for (const { file, data } of artRead.files) {
     const raw = dropBlanks(data);
-    if (raw && typeof raw === "object" && raw.status === "draft" && raw.publishedAt === undefined) raw.publishedAt = "";
+    if (raw && typeof raw === "object" && raw.status === "draft" && raw.publishedAt === undefined)
+      raw.publishedAt = "";
     const r = articleSchema.safeParse(raw);
     const before = problems.length;
     if (!r.success) problems.push(...zodProblems(file, r.error));
@@ -277,35 +343,64 @@ export function validateContent(root, opts = {}) {
     (art.body ?? []).forEach((b, i) => {
       const schema = b && typeof b === "object" ? blockSchemas[b.type] : undefined;
       if (!schema) {
-        problems.push(`${file}, block #${i + 1}: unknown block type "${b?.type}". Allowed types: ${BLOCK_TYPES.join(", ")}.`);
+        problems.push(
+          `${file}, block #${i + 1}: unknown block type "${b?.type}". Allowed types: ${BLOCK_TYPES.join(", ")}.`,
+        );
         return;
       }
       const br = schema.safeParse(b);
       if (!br.success) {
-        for (const iss of br.error.issues) problems.push(`${file}, block #${i + 1} (${b.type}), field "${iss.path.join(" > ") || "type"}": ${iss.message}`);
+        for (const iss of br.error.issues)
+          problems.push(
+            `${file}, block #${i + 1} (${b.type}), field "${iss.path.join(" > ") || "type"}": ${iss.message}`,
+          );
         return;
       }
       if (b.type === "image" && !allKeys.has(b.image))
-        problems.push(`${file}, block #${i + 1} (image), field "image": there is no picture called "${b.image}". Choose one from the list.`);
+        problems.push(
+          `${file}, block #${i + 1} (image), field "image": there is no picture called "${b.image}". Choose one from the list.`,
+        );
       body.push(br.data);
     });
     if (problems.length > before || !r.success) continue;
-    if (name !== art.slug) problems.push(`${file}: the file name must match the slug "${art.slug}" (rename the file to ${art.slug}.json)`);
-    if (seen.has(art.slug)) problems.push(`${file}: the slug "${art.slug}" is already used by ${seen.get(art.slug)}. Every article needs its own web address name.`);
+    if (seen.has(art.slug))
+      problems.push(
+        `${file}: the slug "${art.slug}" is already used by ${seen.get(art.slug)}. Every article needs its own web address name.`,
+      );
     seen.set(art.slug, file);
-    if (cats && !cats.has(art.category)) problems.push(`${file}, field "category": "${art.category}" is not a category on the site (${[...cats].join(", ")})`);
-    if (!allKeys.has(art.hero)) problems.push(`${file}, field "hero": there is no picture called "${art.hero}". Choose one from the list.`);
-    if (art.titleItalic && !art.title.includes(art.titleItalic)) problems.push(`${file}, field "titleItalic": must be a phrase that appears inside the title`);
-    if (art.status === "published" && !DATE.test(art.publishedAt)) problems.push(`${file}, field "publishedAt": a published article needs a date written like 2026-11-19`);
-    if (art.status === "draft" && art.publishedAt !== "" && !DATE.test(art.publishedAt)) problems.push(`${file}, field "publishedAt": must be empty or a date written like 2026-11-19`);
-    if (art.updatedAt && art.updatedAt < art.publishedAt && art.publishedAt) problems.push(`${file}, field "updatedAt": is earlier than publishedAt`);
+    if (cats && !cats.has(art.category))
+      problems.push(
+        `${file}, field "category": "${art.category}" is not a category on the site (${[...cats].join(", ")})`,
+      );
+    if (!allKeys.has(art.hero))
+      problems.push(
+        `${file}, field "hero": there is no picture called "${art.hero}". Choose one from the list.`,
+      );
+    if (art.titleItalic && !art.title.includes(art.titleItalic))
+      problems.push(`${file}, field "titleItalic": must be a phrase that appears inside the title`);
+    if (art.status === "published" && !DATE.test(art.publishedAt))
+      problems.push(
+        `${file}, field "publishedAt": a published article needs a date written like 2026-11-19`,
+      );
+    if (art.status === "draft" && art.publishedAt !== "" && !DATE.test(art.publishedAt))
+      problems.push(
+        `${file}, field "publishedAt": must be empty or a date written like 2026-11-19`,
+      );
+    if (art.updatedAt && art.updatedAt < art.publishedAt && art.publishedAt)
+      problems.push(`${file}, field "updatedAt": is earlier than publishedAt`);
     articles.push({ ...art, body });
   }
-  const slugs = new Set(articles.map((a) => a.slug));
+  const slugs = new Set(artRead.files.map((f) => f.data?.slug).filter(Boolean));
   for (const a of articles)
     for (const s of a.related ?? []) {
-      if (s === a.slug) problems.push(`content/articles/${a.slug}.json, field "related": an article cannot be related to itself`);
-      else if (!slugs.has(s)) problems.push(`content/articles/${a.slug}.json, field "related": there is no article "${s}"`);
+      if (s === a.slug)
+        problems.push(
+          `content/articles/${a.slug}.json, field "related": an article cannot be related to itself`,
+        );
+      else if (!slugs.has(s))
+        problems.push(
+          `content/articles/${a.slug}.json, field "related": there is no article "${s}"`,
+        );
     }
   return { articles, images, problems };
 }
@@ -359,5 +454,5 @@ export function buildContent(root, opts = {}) {
       if (!existsSync(p) || readFileSync(p, "utf8") !== text) writeFileSync(p, text);
     }
   }
-  return { articles, published, drafts, images, outputs, count: relative(root, root) };
+  return { articles, published, drafts, images, outputs };
 }

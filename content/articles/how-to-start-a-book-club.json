@@ -1,0 +1,175 @@
+{
+  "slug": "how-to-start-a-book-club",
+  "title": "How to Start a Book Club With Friends",
+  "titleItalic": "Book Club",
+  "dek": "A simple structure that survives busy months: who to ask, how to pick books, how to run the night and what to do when nobody finished.",
+  "category": "better-together",
+  "status": "published",
+  "publishedAt": "2026-11-19",
+  "verifiedAt": "2026-11-18",
+  "hero": "shopBookish",
+  "searchIntent": "how to start a book club / book club ideas with friends",
+  "angle": "Rules-lite, burnout-proof book club setup: size, schedule, book-selection systems, discussion questions and a 'nobody read it' plan",
+  "hobbies": [
+    "book-clubs",
+    "reading"
+  ],
+  "productIds": [
+    "conversation-cards",
+    "book-lights",
+    "reading-journals"
+  ],
+  "sources": [
+    {
+      "title": "Food Allergy Research & Education: tips for staying safe",
+      "url": "https://www.foodallergy.org/resources/tips-staying-safe-food-allergies",
+      "note": "Ask about allergies"
+    },
+    {
+      "title": "Food Allergy Research & Education: cleaning methods",
+      "url": "https://www.foodallergy.org/resources/cleaning-methods",
+      "note": "Hand washing with soap and water"
+    }
+  ],
+  "coworkChecks": [
+    "VERIFIED 2026-11-18: ask guests about allergies; wash hands with soap and water - foodallergy.org",
+    "RESOLVED 2026-11-19: book cost range ($10-$20) - removed, no source for prices",
+    "RESOLVED 2026-11-19: library lending and wait times - reworded to 'may lend... availability varies'; no library or app named",
+    "RESOLVED 2026-11-19: group size 5-10 and 90 min-2 hr length - now explicitly framed as suggestions, not findings",
+    "RESOLVED 2026-11-19: silent book club, rotating pickers, shortlist and vote, theme months, attendance tips, discussion prompts - editorial suggestions described generically; no real titles, authors or organizations named (checked against article text)"
+  ],
+  "related": [
+    "girls-night-ideas-that-arent-drinks",
+    "how-to-host-a-craft-night",
+    "how-to-start-a-reading-journal",
+    "hobbies-to-try-when-life-feels-like-work-sleep-repeat"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "Book clubs rarely die of too little enthusiasm. They die of small admin gaps: nobody picks the next book, the date drifts, one cancelled night becomes three. A little structure fixes most of it, and this is a rules-lite version for busy people."
+    },
+    {
+      "type": "h2",
+      "text": "Step 1: Decide what kind of club it is",
+      "id": "kind"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Everyone reads the same book.** The classic, and best for a proper shared conversation.",
+        "**Everyone reads something different around a theme.** Handy for busy groups: 'a book you've been meaning to read', 'something under 250 pages', 'a cozy mystery'.",
+        "**Short reads only.** Stories, essays or novellas, so anyone can join at the last minute.",
+        "**Silent book club.** Everyone brings their own book, reads together for an hour and chats at the end. No homework whatsoever."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Not sure? Start with a one-off silent session or a short read. You can switch later. A text like 'Tiny book club? First meeting is a silent read at my place. Bring any book' is enough to get the first night on the calendar."
+    },
+    {
+      "type": "h2",
+      "text": "Step 2: Choose your people and your size",
+      "id": "people"
+    },
+    {
+      "type": "p",
+      "text": "Five to ten people is a suggestion that tends to work, not a rule. With fewer than five, one cancellation can sink the evening; beyond ten, it's hard for everyone to speak. Invite friends, coworkers or neighbors, say plainly that it's casual, and over-invite slightly, since not everyone makes every meeting."
+    },
+    {
+      "type": "h2",
+      "text": "Step 3: Set a simple schedule",
+      "id": "schedule"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Meet monthly** at a predictable time, like the first Sunday or second Thursday.",
+        "**Aim for about 90 minutes to two hours,** as a starting suggestion. Long enough for real conversation, short enough for a weeknight.",
+        "**Rotate hosts or places.** A cafe, a living room, a park when the weather behaves.",
+        "**Pick the next book at the end of every meeting,** so people can plan their reading."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Step 4: Choose books fairly",
+      "id": "choose-books"
+    },
+    {
+      "type": "p",
+      "text": "Choosing books is where clubs get stuck. A system means nobody carries the guilt of 'I picked it and nobody liked it.'"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Rotate pickers.** Each member chooses on their turn and pitches it in one sentence.",
+        "**Shortlist and vote.** Everyone nominates one, then you vote on the top three.",
+        "**Theme months.** Choose a theme, like 'a book set somewhere you'd visit', and everyone brings a suggestion.",
+        "**Check availability.** Your library may lend popular titles, e-books or audiobooks, though what is on offer and the wait for popular books vary. Favor something with a few copies in circulation.",
+        "**Mix it up.** Varied lengths and genres keep people coming back."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Step 5: Run the night",
+      "id": "run"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Settle in with snacks and drinks and let the catching-up run for ten minutes.",
+        "Open with a quick round: one word for the book, or a score out of five.",
+        "Use two or three prompts, not the whole list.",
+        "Let tangents happen. Clubs thrive when people feel free to wander.",
+        "Close by choosing the next book and the next date."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Prompts that work for almost any book:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "What surprised you?",
+        "Which character would you want to spend a day with, and why?",
+        "Was there a moment when you wanted to stop reading? What kept you going?",
+        "If you could change one thing about the ending, what would it be?",
+        "Who would you recommend this book to?"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Step 6: Keep it going",
+      "id": "keep-going"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Nobody finished.** Switch to 'what did you read instead?' or share how far everyone got. It still counts.",
+        "**One person dominates.** Try a round-robin start, or pass a talking token.",
+        "**Spoilers.** Agree on a rule: finish the book first or step out for the ending.",
+        "**Disagreement.** It's a feature. 'I didn't like it' starts the best conversations.",
+        "**Attendance drops.** Skip a month, lower the stakes or try short reads.",
+        "**Hosting food.** Keep it simple and ask about allergies and dietary needs."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Give the club a name, even a silly one, and keep a shared note of every book with who chose it and what the group thought. After six meetings you'll have a record that's fun to revisit and a clear sense of what the group likes. Book-themed snacks are lovely but optional."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "conversation-cards",
+        "book-lights",
+        "reading-journals"
+      ],
+      "dek": "Small extras that make the meeting, or the reading, a little nicer."
+    },
+    {
+      "type": "p",
+      "text": "A standing [mahjong night](/journal/how-to-host-a-mahjong-night) or [craft night](/journal/how-to-host-a-craft-night) works the same way, and [a reading journal](/journal/how-to-start-a-reading-journal) gives members something to bring to the discussion. For a wider menu of plans with friends, try [25 girls' night ideas that aren't drinks](/journal/girls-night-ideas-that-arent-drinks)."
+    }
+  ]
+}

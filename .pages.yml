@@ -1,0 +1,290 @@
+# Pages CMS configuration (https://pagescms.org/docs/configuration/).
+# This file tells Pages CMS which forms to show. It only edits files in /content and photos in
+# /public/uploads. It cannot change the website's code.
+#
+# STATUS: written from the published Pages CMS documentation. It has NOT yet been opened in the live
+# Pages CMS app (that needs the owner's GitHub login). Cowork task C17 does that first test.
+#
+# Every save in the CMS is a commit to GitHub. Netlify then checks the content (scripts/build-content.mjs)
+# and rebuilds the site; if something is wrong the build stops and the live site stays as it was.
+
+# Keep any setting in a file that this form doesn't know about, instead of deleting it on save.
+settings:
+  content:
+    merge: true
+
+# Photos you upload are saved here and appear on the site at /uploads/<file name>.
+media:
+  input: public/uploads
+  output: /uploads
+  categories: [image]
+
+content:
+  # ---------------------------------------------------------------- Articles
+  - name: articles
+    label: Articles
+    type: collection
+    path: content/articles
+    format: json
+    filename: "{primary}.json"
+    exclude: [".gitkeep"]
+    view:
+      fields: [title, category, status, publishedAt]
+      primary: title
+      sort: [publishedAt, title]
+      default:
+        sort: publishedAt
+        order: desc
+    fields:
+      - name: slug
+        label: Web address name
+        type: string
+        required: true
+        description: "Lowercase words joined by hyphens, e.g. how-to-start-crocheting. It becomes the address (/journal/your-name). Never change it after the article is published, or old links and Google results will break."
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: titleItalic
+        label: Words in the title to show in italics (optional)
+        type: string
+        description: "Copy a phrase exactly as it appears in the title, e.g. Instead of Scrolling."
+      - name: dek
+        label: One-sentence summary (shown under the title)
+        type: text
+        required: true
+      - name: category
+        label: Section of the site
+        type: select
+        required: true
+        options:
+          values:
+            - { value: after-hours, label: "After Hours (weeknights)" }
+            - { value: weekends, label: "The Weekend Edit" }
+            - { value: solo-dates, label: "Solo Dates" }
+            - { value: better-together, label: "Better Together" }
+            - { value: creative-corner, label: "Creative Corner" }
+            - { value: movement, label: "Movement" }
+      - name: status
+        label: Status
+        type: select
+        required: true
+        description: "Keep on Draft while you write: a draft is never shown on the website. Switch to Published when it is finished, checked and the dates below are filled in."
+        options:
+          values:
+            - { value: draft, label: "Draft (not on the website)" }
+            - { value: published, label: "Published (live after the next build)" }
+      - name: publishedAt
+        label: First published on
+        type: string
+        description: "Required for a published article. Write the date like 2026-11-19 (year-month-day). Leave empty for a draft."
+      - name: updatedAt
+        label: Last updated on (optional)
+        type: string
+        description: "Write the date like 2026-11-19. Fill in whenever you make a real change to the facts."
+      - name: verifiedAt
+        label: Facts last checked on
+        type: string
+        description: "The day every claim in the checklist below was checked against its source. Write it like 2026-11-19. Publish only after this is set."
+      - name: hero
+        label: Top picture
+        type: reference
+        required: true
+        description: "Choose a picture from the Images section. Add new pictures there first."
+        options:
+          collection: images
+          search: "key,alt"
+          value: "{fields.key}"
+          label: "{fields.key}: {fields.alt}"
+      - name: searchIntent
+        label: What people search for to find this
+        type: string
+        required: true
+        description: "A few words, e.g. things to do after work / what to do instead of scrolling."
+      - name: angle
+        label: What makes this article different (for the writer)
+        type: text
+        required: true
+      - name: hobbies
+        label: Hobbies this article is about
+        type: string
+        list: true
+        description: "The web-address names of hobbies (e.g. watercolor-painting, pickleball), one per line. Used for related reading and shop picks."
+      - name: productIds
+        label: Product types to show in the shop picks
+        type: string
+        list: true
+        description: "The short names from the product list (e.g. air-dry-clay). Leave empty if unsure: the products are managed separately."
+      - name: sources
+        label: Sources (where the facts came from)
+        type: object
+        list: true
+        description: "Pages you checked. Add one for every price, rule, safety or availability claim."
+        fields:
+          - { name: title, label: Page name, type: string, required: true }
+          - { name: url, label: "Web address (starts with https://)", type: string, required: true }
+          - { name: note, label: "Note, e.g. date you checked it (optional)", type: string }
+      - name: coworkChecks
+        label: Facts still waiting to be checked
+        type: string
+        list: true
+        description: "Prices, rules or claims that still need a source. Empty this list before you publish."
+      - name: related
+        label: Related articles (shown at the end)
+        type: reference
+        options:
+          collection: articles
+          multiple: true
+          search: "title,slug"
+          value: "{fields.slug}"
+          label: "{fields.title}"
+        description: "Optional. Similar articles are also suggested automatically."
+      - name: body
+        label: Article content
+        type: block
+        list: true
+        blockKey: type
+        description: "Add blocks one after another. Text boxes accept **bold** and links written like [link words](/journal/another-article)."
+        blocks:
+          - name: p
+            label: Paragraph
+            fields:
+              - { name: text, label: Text, type: text, required: true }
+          - name: h2
+            label: Big heading
+            fields:
+              - { name: text, label: Heading, type: string, required: true }
+              - { name: id, label: "Jump-link name (optional)", type: string, description: "Lowercase words with hyphens. Adds this heading to the table of contents." }
+          - name: h3
+            label: Small heading
+            fields:
+              - { name: text, label: Heading, type: string, required: true }
+          - name: list
+            label: Bullet list
+            fields:
+              - { name: items, label: Items, type: string, list: true, required: true }
+          - name: quote
+            label: Quote
+            fields:
+              - { name: text, label: Quote, type: text, required: true }
+          - name: image
+            label: Picture
+            fields:
+              - name: image
+                label: Picture
+                type: reference
+                required: true
+                options:
+                  collection: images
+                  search: "key,alt"
+                  value: "{fields.key}"
+                  label: "{fields.key}: {fields.alt}"
+              - { name: caption, label: "Caption (optional)", type: string }
+          - name: item
+            label: Idea or activity (numbered entry)
+            fields:
+              - { name: n, label: "Number (optional)", type: number }
+              - { name: title, label: Name of the idea, type: string, required: true }
+              - { name: note, label: What to do and why, type: text, required: true }
+              - { name: time, label: "How long (e.g. 30-60 min)", type: string }
+              - { name: cost, label: "Cost (e.g. Under $25)", type: string }
+              - { name: company, label: "Solo or with others", type: string }
+              - { name: first, label: "First step (optional)", type: string }
+              - { name: hobby, label: "Hobby it links to (web-address name, optional)", type: string }
+          - name: whatYoullNeed
+            label: "What you'll need"
+            fields:
+              - { name: essentials, label: "The essentials (one per line)", type: string, list: true, required: true }
+              - { name: optional, label: "Nice to have (one per line)", type: string, list: true }
+          - name: saveSplurge
+            label: Save or splurge
+            fields:
+              - { name: save, label: Where to save, type: text, required: true }
+              - { name: splurge, label: Where to splurge, type: text, required: true }
+          - name: tryThisWeekend
+            label: "Try this weekend box"
+            fields:
+              - { name: text, label: Text, type: text, required: true }
+          - name: girlsNight
+            label: "Girls' night box"
+            fields:
+              - { name: text, label: Text, type: text, required: true }
+          - name: first30
+            label: "Your first 30 minutes (steps)"
+            fields:
+              - { name: steps, label: "Steps (one per line)", type: string, list: true, required: true }
+          - name: noSpend
+            label: "No-spend version box"
+            fields:
+              - { name: text, label: Text, type: text, required: true }
+          - name: makePlan
+            label: "Make a plan box"
+            fields:
+              - { name: text, label: Text, type: text, required: true }
+          - name: ifYouLoved
+            label: "If you loved this (hobby links)"
+            fields:
+              - { name: hobbies, label: "Hobbies (web-address names, one per line)", type: string, list: true, required: true }
+          - name: starterKit
+            label: Starter kit (shop)
+            fields:
+              - { name: productIds, label: "Product short names (one per line)", type: string, list: true }
+              - { name: title, label: "Heading (optional)", type: string }
+          - name: shopHobby
+            label: Shop for a hobby
+            fields:
+              - { name: productIds, label: "Product short names (one per line)", type: string, list: true }
+              - { name: title, label: "Heading (optional)", type: string }
+              - { name: dek, label: "Short intro (optional)", type: string }
+          - name: shopTheArticle
+            label: "Shop this article (verified products)"
+            description: "Shows nothing until the shop has verified products for it."
+            fields:
+              - { name: articleSlug, label: "Article name (optional)", type: string }
+              - { name: hobbies, label: "Hobbies (optional, one per line)", type: string, list: true }
+              - { name: collection, label: "Collection (optional)", type: string }
+              - { name: title, label: "Heading (optional)", type: string }
+              - { name: dek, label: "Short intro (optional)", type: string }
+          - name: shopMyHobby
+            label: "Shopping checklist for one hobby"
+            fields:
+              - { name: hobby, label: "Hobby (web-address name)", type: string, required: true }
+              - { name: title, label: "Heading (optional)", type: string }
+              - { name: dek, label: "Short intro (optional)", type: string }
+
+  # ---------------------------------------------------------------- Images
+  - name: images
+    label: Images
+    type: collection
+    path: content/images
+    format: json
+    filename: "{primary}.json"
+    exclude: [".gitkeep"]
+    view:
+      fields: [key, alt]
+      primary: key
+    fields:
+      - name: key
+        label: Picture name
+        type: string
+        required: true
+        description: "One word, no spaces, letters and numbers only, e.g. crochetHands. This is the name you pick in an article. Never change it once an article uses it."
+      - name: file
+        label: Photo
+        type: image
+        required: true
+        description: "Upload a JPG, PNG or WebP photo about 1600 pixels wide and under 400 KB. Only use photos you have the right to publish."
+      - name: alt
+        label: Describe the photo (required)
+        type: text
+        required: true
+        description: "One sentence for people who cannot see it, e.g. A woman crocheting a yellow blanket on a sofa. At least 20 characters. No brand names."
+      - { name: credit, label: "Photographer or creator (if any)", type: string }
+      - { name: source, label: "Where it came from (e.g. Unsplash, my own photo)", type: string }
+      - { name: sourceUrl, label: "Link to the photo's page", type: string }
+      - { name: license, label: "Licence (e.g. Unsplash License)", type: string }
+      - { name: licenseUrl, label: "Link to the licence terms", type: string }
+
+  # Not offered yet: Hobbies (still code in src/data/hobbies.ts), products (importer CSV flow, see
+  # docs/buyer/PRODUCT-MANAGEMENT.md) and site settings (src/config/site.ts holds identity and
+  # affiliate settings that should not be edited from a form). See docs/buyer/EDITING-WITHOUT-CODE.md.

@@ -1,0 +1,347 @@
+{
+  "slug": "things-to-do-after-work-instead-of-scrolling",
+  "title": "25 Things to Do After Work Instead of Scrolling",
+  "titleItalic": "Instead of Scrolling",
+  "dek": "Realistic weeknight ideas for when you've got two hours, some energy and absolutely no desire to look at another screen.",
+  "category": "after-hours",
+  "status": "published",
+  "publishedAt": "2026-11-18",
+  "hero": "watercolor",
+  "searchIntent": "things to do after work / what to do in the evening instead of phone",
+  "angle": "Weeknight-sized, budget-aware ideas grouped by mood, with time and cost for each",
+  "hobbies": [
+    "watercolor-painting",
+    "air-dry-clay",
+    "reading",
+    "jigsaw-puzzles",
+    "pickleball",
+    "baking"
+  ],
+  "productIds": [
+    "group-painting-kits",
+    "book-lights",
+    "junk-journals",
+    "board-games",
+    "air-dry-clay"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "Scrolling after work isn't a character flaw. It's the easiest thing within reach when your brain is tired, and that's the whole problem: the alternative has to be almost as easy."
+    },
+    {
+      "type": "p",
+      "text": "Here are twenty-five ideas that fit inside a normal weeknight, sorted by how you feel when you clock out: exhausted, creative, a bit restless, or in need of people. Pick one, not all of them."
+    },
+    {
+      "type": "h2",
+      "text": "If you're exhausted",
+      "id": "exhausted"
+    },
+    {
+      "type": "p",
+      "text": "If most evenings feel like this, [low-energy hobbies](/journal/low-energy-hobbies) has more gentle ideas."
+    },
+    {
+      "type": "item",
+      "n": 1,
+      "title": "Do a puzzle with a podcast",
+      "hobby": "jigsaw-puzzles",
+      "note": "Put on a podcast or an album and work on a jigsaw for half an hour. Your hands stay busy, your eyes get a break, and you can stop whenever you like.",
+      "time": "30–60 min",
+      "cost": "Under $25",
+      "company": "Solo or with a housemate"
+    },
+    {
+      "type": "item",
+      "n": 2,
+      "title": "Read in a different room",
+      "hobby": "reading",
+      "note": "Take your book somewhere that isn't your bed or your desk. A bath, a balcony, the floor in a patch of light. It makes reading feel like a little event.",
+      "time": "30 min",
+      "cost": "Free",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 3,
+      "title": "Paint by numbers",
+      "hobby": "paint-by-numbers",
+      "note": "No blank canvas, no decisions. Do just one color tonight and leave the rest for another evening.",
+      "time": "30 min",
+      "cost": "Under $25",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 4,
+      "title": "Take a slow golden-hour walk",
+      "note": "No step count, no destination. Walk until something catches your eye, then walk home. Bring a phone for safety, not for scrolling.",
+      "time": "30 min",
+      "cost": "Free",
+      "company": "Solo or with a friend"
+    },
+    {
+      "type": "item",
+      "n": 5,
+      "title": "Make a 'nice' dinner for one",
+      "note": "Light a candle, use the good plate, eat at the table. The meal can be pasta. The point is treating your own Tuesday like it matters.",
+      "time": "45 min",
+      "cost": "Groceries you'd buy anyway",
+      "company": "Solo"
+    },
+    {
+      "type": "noSpend",
+      "text": "Half of this section is completely free: walks, library books, cooking what's in the fridge. You don't need to buy anything to have a nicer evening."
+    },
+    {
+      "type": "h2",
+      "text": "If you want to make something",
+      "id": "make-something"
+    },
+    {
+      "type": "item",
+      "n": 6,
+      "title": "Paint whatever is on your counter",
+      "hobby": "watercolor-painting",
+      "note": "Grab a small watercolor set and paint your mug, a lemon or the flowers on the table. Twenty minutes, three colors, no erasing.",
+      "time": "20–40 min",
+      "cost": "Under $25 to start",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 7,
+      "title": "Make a clay ring dish",
+      "hobby": "air-dry-clay",
+      "note": "Air-dry clay doesn't need a kiln. Roll a ball, press your thumb in, smooth the edges and leave it overnight. Paint it tomorrow.",
+      "time": "45 min + drying",
+      "cost": "Under $25",
+      "company": "Solo or social"
+    },
+    {
+      "type": "item",
+      "n": 8,
+      "title": "Start a junk journal page",
+      "hobby": "junk-journaling",
+      "note": "Empty your bag. Receipts, tickets, the coffee sleeve. Glue three of them into a notebook with a line about your week.",
+      "time": "30 min",
+      "cost": "Free–$20",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 9,
+      "title": "Bake something to give away",
+      "hobby": "baking",
+      "note": "Cookies are a forty-minute project, and giving half to a neighbor or coworker is the best part.",
+      "time": "60 min",
+      "cost": "Pantry staples",
+      "company": "Solo or with a friend"
+    },
+    {
+      "type": "item",
+      "n": 10,
+      "title": "Write a letter to a friend",
+      "note": "An actual letter, on paper, with a stamp. It takes fifteen minutes and makes someone's whole week.",
+      "time": "15–30 min",
+      "cost": "A stamp",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 11,
+      "title": "Rearrange one shelf",
+      "note": "Style one shelf with books, a plant and something you've thrifted. A small home project can scratch the creative itch without a big commitment.",
+      "time": "30 min",
+      "cost": "Free",
+      "company": "Solo"
+    },
+    {
+      "type": "first30",
+      "steps": [
+        "Put your phone on the charger in another room.",
+        "Clear one corner of the kitchen table.",
+        "Set a 30-minute timer and make something, anything, with what you have.",
+        "When the timer goes off, you're allowed to stop. You probably won't want to."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "If you still have some energy",
+      "id": "some-energy"
+    },
+    {
+      "type": "item",
+      "n": 12,
+      "title": "Play pickleball or tennis",
+      "hobby": "pickleball",
+      "note": "Many public courts have lights and evening open play. New to either? Start with [pickleball for beginners](/journal/pickleball-for-beginners) or [tennis as an adult](/journal/how-to-start-playing-tennis-as-an-adult).",
+      "time": "60 min",
+      "cost": "Courts often free; gear optional",
+      "company": "With a friend"
+    },
+    {
+      "type": "item",
+      "n": 13,
+      "title": "Take a drop-in class",
+      "note": "Pottery, life drawing, dance, yoga. Lots of studios offer single drop-in sessions so you can try without committing.",
+      "time": "60–90 min",
+      "cost": "Varies",
+      "company": "Solo, then social"
+    },
+    {
+      "type": "item",
+      "n": 14,
+      "title": "Go to an adult skate night",
+      "hobby": "roller-skating",
+      "note": "Rinks often run adults-only evenings with great music. You will wobble. Everybody wobbles.",
+      "time": "90 min",
+      "cost": "Rental + entry",
+      "company": "Solo or with friends"
+    },
+    {
+      "type": "item",
+      "n": 15,
+      "title": "Do a sunset photo walk",
+      "hobby": "nature-photography",
+      "note": "Give yourself a theme, like 'red things' or 'windows,' and photograph twenty examples before the light goes.",
+      "time": "45 min",
+      "cost": "Free",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 16,
+      "title": "Run one weeknight errand the scenic way",
+      "note": "Walk to the farther grocery store, the one by the park. A small detour can turn a chore into a little outing.",
+      "time": "30–60 min",
+      "cost": "Free",
+      "company": "Solo"
+    },
+    {
+      "type": "h2",
+      "text": "If you want people",
+      "id": "people"
+    },
+    {
+      "type": "item",
+      "n": 17,
+      "title": "Host a 90-minute craft hour",
+      "hobby": "craft-nights",
+      "note": "Not a dinner party. Just a table, snacks and a bracelet kit. Text two friends 'craft hour Thursday?', which is easier to say yes to than a big plan. [How to host a craft night](/journal/how-to-host-a-craft-night) has the plan.",
+      "time": "90 min",
+      "cost": "Under $25",
+      "company": "With friends"
+    },
+    {
+      "type": "item",
+      "n": 18,
+      "title": "Start a standing game night",
+      "hobby": "mahjong",
+      "note": "Mahjong, cards, a cooperative board game. Same night every week or every other week, so nobody has to plan. If it is mahjong, see [how to host a mahjong night](/journal/how-to-host-a-mahjong-night).",
+      "time": "2 hours",
+      "cost": "Varies",
+      "company": "Group"
+    },
+    {
+      "type": "item",
+      "n": 19,
+      "title": "Join a library book club",
+      "hobby": "book-clubs",
+      "note": "Libraries and bookstores often host free monthly book clubs. Showing up once is a perfectly fine start.",
+      "time": "90 min",
+      "cost": "Free",
+      "company": "Group"
+    },
+    {
+      "type": "item",
+      "n": 20,
+      "title": "Cook with a friend",
+      "note": "One of you brings a recipe, the other brings the ingredients. You eat what you make and wash up together.",
+      "time": "2 hours",
+      "cost": "Split groceries",
+      "company": "With a friend"
+    },
+    {
+      "type": "item",
+      "n": 21,
+      "title": "Call someone instead of texting",
+      "note": "Go for a walk and call a friend you've been 'meaning to catch up with' for months.",
+      "time": "30 min",
+      "cost": "Free",
+      "company": "With a friend"
+    },
+    {
+      "type": "h2",
+      "text": "If you want to feel like a new person",
+      "id": "new-person"
+    },
+    {
+      "type": "item",
+      "n": 22,
+      "title": "Learn something tiny",
+      "hobby": "calligraphy",
+      "note": "A new knot, a calligraphy alphabet, three phrases in a language for your next trip. Small skills feel big.",
+      "time": "20–30 min",
+      "cost": "Free",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 23,
+      "title": "Go to a museum's late night",
+      "hobby": "museum-exploring",
+      "note": "Some museums stay open late one evening a week, sometimes with music or lower prices. Check your local museum's calendar.",
+      "time": "90 min",
+      "cost": "Varies",
+      "company": "Solo or with a friend"
+    },
+    {
+      "type": "item",
+      "n": 24,
+      "title": "Have a solo dinner out",
+      "note": "Sit at the bar or by the window with a book. A table for one is an easy plan to say yes to.",
+      "time": "60–90 min",
+      "cost": "Your choice",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 25,
+      "title": "Plan your weekend on paper",
+      "note": "Grab a planner and sketch out one fun thing for Saturday and one for Sunday. Having something to look forward to changes how the rest of the week feels.",
+      "time": "15 min",
+      "cost": "Free",
+      "company": "Solo"
+    },
+    {
+      "type": "h2",
+      "text": "Making it stick",
+      "id": "making-it-stick"
+    },
+    {
+      "type": "p",
+      "text": "Willpower is the wrong tool. Change the friction instead. Leave the hobby out where you'll see it, since a puzzle on the table gets used and a kit in a closet doesn't. Charge your phone in the kitchen for the first hour after you get home. Decide your evening at lunchtime, when you're not tired. And lower the bar: twenty minutes counts, and so does one page."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "group-painting-kits",
+        "book-lights",
+        "board-games",
+        "air-dry-clay"
+      ],
+      "title": "Weeknight starter picks",
+      "dek": "Small, affordable things that make the fun option the easy one."
+    },
+    {
+      "type": "ifYouLoved",
+      "hobbies": [
+        "air-dry-clay",
+        "reading",
+        "craft-nights"
+      ]
+    }
+  ]
+}

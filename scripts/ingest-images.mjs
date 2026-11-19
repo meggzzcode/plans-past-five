@@ -237,10 +237,10 @@ export const extraImages = {${body ? `\n${body}\n` : ""}} satisfies Record<strin
 
 function articleFiles() {
   const map = new Map();
-  for (const f of readdirSync(CONTENT).filter((n) => /^article-.*\.ts$/.test(n))) {
-    const m = /slug:\s*"([^"]+)"/.exec(readFileSync(join(CONTENT, f), "utf8"));
-    if (m) map.set(m[1], join(CONTENT, f));
-  }
+  const dir = join(root, "content/articles");
+  if (existsSync(dir))
+    for (const f of readdirSync(dir).filter((n) => n.endsWith(".json")))
+      map.set(f.slice(0, -5), join(dir, f));
   return map;
 }
 
@@ -327,10 +327,10 @@ for (const { row, already, path } of plan) {
   const heroes = [];
   for (const slug of splitList(row.heroFor)) {
     const f = articles.get(slug);
-    const text = readFileSync(f, "utf8");
-    if (!/^ {2}hero: "[^"]*",$/m.test(text)) die(`${f} has no \`  hero: "..."\` line`);
-    const next = text.replace(/^( {2}hero: )"[^"]*",$/m, `$1"${row.key}",`);
-    if (next !== text) writeFileSync(f, next);
+    const data = JSON.parse(readFileSync(f, "utf8"));
+    if (typeof data.hero !== "string") die(`${f} has no "hero" field`);
+    if (data.hero !== row.key)
+      writeFileSync(f, `${JSON.stringify({ ...data, hero: row.key }, null, 2)}\n`);
     heroes.push(slug);
   }
   if (!licenseText.includes(`\`${row.key}\``)) {

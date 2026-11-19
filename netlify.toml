@@ -4,8 +4,10 @@
 [build]
   command = "bun install --frozen-lockfile && bun run build"
   publish = "dist"
-  # Skip deploys (each production deploy costs credits on the free plan) when only docs, scripts or tests changed.
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- src public package.json bun.lock vite.config.ts tsconfig.json netlify.toml ':(exclude)src/test'"
+  # DEPLOY BUDGET: the free plan allows about 20 production deploys a month. A build runs ONLY when the
+  # latest commit message contains the marker [deploy]. Every other push is skipped (exit 0 = skip).
+  # Deploy on purpose: git commit --allow-empty -m "Release: <what changed> [deploy]" and push.
+  ignore = "! git log -1 --pretty=%B HEAD | grep -q '\\[deploy\\]'"
 
 [build.environment]
   NITRO_PRESET = "netlify"

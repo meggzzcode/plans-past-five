@@ -51,3 +51,7 @@ Git is the backup (`docs/buyer/SECURITY-AND-BACKUPS.md`). Redeploy a previous co
 
 1. Which host options currently support Nitro `cloudflare-module` output without code changes, and with what free-plan limits? (Official docs, dated.)
 2. Can a Lovable project be transferred or exported to a buyer's account, and how? (Official Lovable docs.)
+
+## Netlify deploy budget (added 2026-11-19)
+
+Netlify's free plan has a monthly credit allowance (about 20 production deploys). `netlify.toml` therefore skips every build unless the latest commit message contains the deploy marker (square brackets around the word deploy). To publish: make a commit whose message ends with that marker and push it to the production branch, for example `git commit --allow-empty -m "Release: new articles [deploy]"`. Batch several edits into one release. Content saved through a CMS commits without the marker, so it will NOT go live until a release commit is pushed or you trigger a deploy by hand in Netlify (Deploys, Trigger deploy). Check Netlify's usage page monthly. Whether a skipped build costs credits has not been confirmed (Cowork to check).

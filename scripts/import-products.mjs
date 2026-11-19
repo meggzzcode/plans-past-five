@@ -380,14 +380,13 @@ export function importCsv(text, known, now = new Date()) {
   return { products, errors, warnings };
 }
 
-/** Article slugs from src/content/article-*.ts (published and draft), read as text so no module is loaded. */
+/** Article slugs from content/articles/*.json (published and draft), read from file names. */
 function articleSlugs() {
   try {
-    const dir = resolve(root, "src/content");
+    const dir = resolve(root, "content/articles");
     return readdirSync(dir)
-      .filter((f) => /^article-.*\.ts$/.test(f))
-      .map((f) => /\bslug:\s*"([^"]+)"/.exec(readFileSync(resolve(dir, f), "utf8"))?.[1])
-      .filter(Boolean);
+      .filter((f) => f.endsWith(".json"))
+      .map((f) => f.slice(0, -5));
   } catch {
     return undefined;
   }
