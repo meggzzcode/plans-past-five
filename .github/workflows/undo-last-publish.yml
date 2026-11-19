@@ -1,0 +1,114 @@
+# Undo the last publish: a point-and-click way to revert the newest "Publish: content edits" merge on
+# `main`, because GitHub's web page has no Revert button for a merge that did not come from a pull request.
+# Plain-English guide: docs/buyer/PUBLISH-AND-ROLLBACK.md (Rollback, step 2).
+#
+# WHO CAN START IT: only "Run workflow" on GitHub's Actions tab, by someone with write access, and only
+# on `main`. It never runs on any other event. It does NOT touch the content-edits branch (your saved
+# but unpublished edits are never discarded by this workflow).
+#
+# WHAT IT DOES: finds the newest merge commit on main made by the Publish content workflow, creates a
+# new commit that undoes it (history is kept, nothing is rewritten, nothing is force-pushed), checks the
+# content is still valid, and pushes main. By default the new commit has NO release marker, so Netlify
+# does not spend credits: use Netlify's "Publish deploy" on the previous deploy first (instant, 0
+# credits), then run this so GitHub matches. Tick "also deploy" only if you want Netlify to build the undo
+# (15 credits).
+#
+# SAFETY: same as publish-content.yml: built-in GITHUB_TOKEN with contents: write only, no secrets, no
+# third-party actions, fixed branch names, token given only to the steps that talk to GitHub.
+name: Undo last publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: "Also build the live website from the undo now (uses 15 Netlify credits). Leave unticked if you already used Netlify Publish deploy."
+        required: false
+        default: false
+        type: boolean
+
+permissions: {}
+
+concurrency:
+  group: publish-content
+  cancel-in-progress: false
+
+env:
+  BUN_VERSION: "1.4.4"
+
+jobs:
+  undo:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Get main
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          cred="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          echo "::add-mask::$cred"
+          git -c "http.extraheader=Authorization: Basic $cred" clone --quiet "https://github.com/$REPO.git" repo
+          cd repo
+          git checkout --quiet main
+
+      - name: Undo the newest publish on this temporary machine (nothing pushed yet)
+        id: undo
+        working-directory: repo
+        env:
+          WANT_DEPLOY: ${{ inputs.deploy }}
+        run: |
+          set -euo pipefail
+          git config user.name "Plans Past Five publisher"
+          git config user.email "noreply@users.noreply.github.com"
+          target="$(git log --first-parent --format=%H --grep='^Publish: content edits' -n 1 main)"
+          if [ -z "$target" ]; then
+            echo "::error title=Nothing undone::No earlier publish was found on main, so there is nothing to undo. Nothing was changed."
+            exit 1
+          fi
+          if ! git revert --no-commit -m 1 "$target"; then
+            git revert --abort || true
+            echo "::error title=Nothing undone::The newest publish cannot be undone automatically because later changes touch the same files. Nothing was changed. Ask the site maintainer (docs/buyer/PUBLISH-AND-ROLLBACK.md, When something fails)."
+            exit 1
+          fi
+          if [ "$WANT_DEPLOY" = "true" ]; then
+            git commit --quiet -m "Undo the last publish of content edits [deploy]"
+          else
+            git commit --quiet -m "Undo the last publish of content edits (no live build requested)"
+          fi
+          echo "Undid publish commit ${target}"
+
+      - name: Install the project tools
+        working-directory: repo
+        run: |
+          set -euo pipefail
+          npm install --global --silent "bun@${BUN_VERSION}"
+          bun install --frozen-lockfile
+
+      - name: Check all the content
+        working-directory: repo
+        run: |
+          if ! node scripts/build-content.mjs --check; then
+            echo "::error title=Nothing undone::After the undo the content check found a problem (listed above). Nothing was changed. Ask the site maintainer."
+            exit 1
+          fi
+
+      - name: Push main
+        working-directory: repo
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cred="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          echo "::add-mask::$cred"
+          if ! git -c "http.extraheader=Authorization: Basic $cred" push origin HEAD:refs/heads/main; then
+            echo "::error title=Nothing undone::GitHub refused the push (main changed while this ran, or main is protected, or Actions may not write). Nothing was changed."
+            exit 1
+          fi
+          echo "### Undone. Next: reset the content-edits branch (docs/buyer/PUBLISH-AND-ROLLBACK.md) so the undone edits do not come back." >> "$GITHUB_STEP_SUMMARY"

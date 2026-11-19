@@ -168,10 +168,60 @@ describe("workflow guard logic, run for real in a scratch git repo", () => {
     expect(runGuard({ "content/a.json": '{"x":1}', "public/uploads/p.jpg": "x" }).code).toBe(0);
   });
   it("refuses code, workflow or config changes, even odd file names", () => {
-    for (const f of ["src/app.ts", ".github/workflows/x.yml", "netlify.toml", "content/../x", "scripts/$(id).sh"]) {
-      const r = runGuard({ [f.replace("content/../x", "x")]: "x" });
+    for (const f of ["src/app.ts", ".github/workflows/x.yml", "netlify.toml", "x", "scripts/$(id).sh"]) {
+      const r = runGuard({ [f]: "x" });
       expect(r.code, f).toBe(1);
       expect(r.out).toContain("Nothing published");
+    }
+  });
+});
+
+describe("undo-last-publish workflow (.github/workflows/undo-last-publish.yml)", () => {
+  const text = read(".github/workflows/undo-last-publish.yml");
+  const u = yaml.load(text);
+  const usteps: any[] = u.jobs.undo.steps;
+
+  it("is manual, main-only, least-privilege, action-free and secret-free", () => {
+    expect(Object.keys(u.on ?? u[true])).toEqual(["workflow_dispatch"]);
+    expect(u.jobs.undo.if).toContain("github.ref == 'refs/heads/main'");
+    expect(u.permissions).toEqual({});
+    expect(u.jobs.undo.permissions).toEqual({ contents: "write" });
+    for (const s of usteps) expect(s.uses).toBeUndefined();
+    expect(text).not.toMatch(/secrets\./);
+    expect(usteps.map((s) => String(s.run ?? "")).join("\n")).not.toMatch(/\$\{\{/);
+    // shares the publish lock so the two never run at once
+    expect(u.concurrency.group).toBe("publish-content");
+    // never touches content-edits
+    expect(text.replace(/^\s*#.*$/gm, "")).not.toMatch(/push origin [^\n]*content-edits/);
+  });
+
+  it("really undoes a publish merge, and only carries the release marker when asked", () => {
+    const step = usteps.find((s) => /Undo the newest publish/i.test(String(s.name)));
+    for (const deploy of ["false", "true"]) {
+      const dir = mkdtempSync(path.join(tmpdir(), "ppf-undo-"));
+      try {
+        const g = (...a: string[]) =>
+          execFileSync("git", ["-c", "user.name=t", "-c", "user.email=t@t", ...a], { cwd: dir, encoding: "utf8" });
+        g("init", "-q", "-b", "main");
+        writeFileSync(path.join(dir, "a.json"), "1");
+        g("add", "-A");
+        g("commit", "-q", "-m", "base");
+        g("checkout", "-q", "-b", "content-edits");
+        writeFileSync(path.join(dir, "a.json"), "2");
+        g("commit", "-q", "-am", "edit");
+        g("checkout", "-q", "main");
+        g("merge", "--no-ff", "content-edits", "-m", "Publish: content edits [deploy]");
+        execFileSync("bash", ["-c", String(step.run)], {
+          cwd: dir,
+          encoding: "utf8",
+          env: { ...process.env, WANT_DEPLOY: deploy },
+        });
+        expect(readFileSync(path.join(dir, "a.json"), "utf8")).toBe("1");
+        const msg = g("log", "-1", "--format=%B");
+        expect(msg.includes("[deploy]")).toBe(deploy === "true");
+      } finally {
+        rmSync(dir, { recursive: true, force: true });
+      }
     }
   });
 });
