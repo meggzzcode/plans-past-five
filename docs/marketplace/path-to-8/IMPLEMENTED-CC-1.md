@@ -1,0 +1,35 @@
+# Implemented CC-1: planner realism, first-tap, reading mode, home LCP
+
+Date 2026-11-19. Branch only, nothing committed or deployed. Checks at the end: prettier (src), `eslint . --quiet`, `tsc --noEmit`, `vitest run` (645 tests) all clean. Playwright at 390, 320 and 1280: no horizontal overflow on /make-plans, /tools/tonight, an article, home.
+
+## Done
+
+**Planner (`src/lib/planner.ts`, `src/data/evening-templates.ts`, `PlanResult.tsx`)**
+- Every energy value gives its own plan. Low-key, Medium, High and No preference are settled in order; each takes the first variation not identical to an earlier one. "No preference" also prefers livelier first, gentler last. Test: `src/test/planner-realism.test.tsx` runs 9 realistic scenarios x 4 energy values and asserts 4 different, constraint-respecting plans. Over a 504-case matrix (when x vibe x who x budget) 31 thin-pool cases (for example free + group + cozy, single stop) still cannot differ; that is stated, not hidden.
+- Buffer rows between stops ("Get there and settle in", "Head home and settle in", "A breather and a reset"), open time shown separately, and a wind-down row on evening plans.
+- "Why this plan" line under each plan, built only from checked choices.
+- 14 curated two-stop evening templates (at least 3 each for low, medium, high and no-preference), made only of existing activity ids; used only when every idea fits the choices.
+- Same-day feasibility: `pottery-studio` ("check whether you need to book") joins `volunteer` as `advance`; neither appears outside a whole-weekend plan; a chip on the card says so.
+- "Too much? Make it lighter": drops the most tiring stop, adds 15 min to every break, restorable from the URL (`light=1`).
+- No repeated activity family anywhere in a plan (across days too), unless that would leave a whole day empty.
+- Plans that stretch far beyond the chosen length are no longer accepted as "good".
+
+**First tap**
+- Planner and Tonight questions are now real radio inputs in `<form method="get">`; answers travel in the URL (`go=yes` for the planner). They work before JavaScript, choices made before hydration are kept, and Tonight shows a plain "Show my 3 ideas" button until hydrated.
+- `useHydrated` hook (`src/lib/use-hydrated.ts`): Shuffle, Save, Copy, Share, Print, Swap, Lighter and the relax buttons are visibly disabled (dimmed, wait cursor, tooltip) until hydration.
+- Test: hook unit test (server render disabled, hydrated enabled) plus `scripts/first-tap-check.mjs` (Playwright, holds all scripts back, then 4x CPU throttle). Run against the production build: all 7 checks pass.
+
+**Mobile reading mode**
+- Sticky mini "In this story" bar (native details, phone only) showing the current section, with "Skip to shopping" when the article has a shop block (also in the desktop sidebar).
+- Long sections (about 160 words or 6 blocks, when an article has two or more) are native details: open without scripts and on desktop, folded after hydration on phones except the first. Links to a folded section or to the shop block open it. All text stays in the DOM.
+
+**Home LCP**
+- Only the hero is eager/high priority, with width/height in a fixed frame, a preload hint and a 960px `srcset` copy. See `LIGHTHOUSE-LAB.md` (lab data, not field data).
+
+## Skipped or limited, with reasons
+- Home "tonight" shortcut: already present (`data-testid="home-tonight"`), unchanged.
+- "Skim" toggle and `content-visibility`: not asked for in this step; skipped.
+- Desktop home LCP still 6.5 s in lab; cause not isolated.
+- The router rewrites numeric-looking params (`seed=0`, `t=60`) to quoted forms with a 307; this predates my work and lives in router config, so I avoided numeric values for new params (`go=yes`, `home=yes`).
+- I did not run the ics/share/Pinterest tests I do not own; the full suite passes as of the last run.
+- Added `public/lcp/hero-pottery-night-960.jpg` (a resized copy of an existing licensed hero) in `public/` instead of `src/assets/` so the image-ledger test needs no new row.
