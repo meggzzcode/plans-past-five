@@ -9,7 +9,9 @@ export function AffiliateNote({ className }: { className?: string }) {
       {isMonetized()
         ? "As an Amazon Associate we earn from qualifying purchases. It never changes what we recommend. "
         : "Links open an Amazon search so you can compare options. We don't currently earn from these links. "}
-      <Link to="/affiliate-disclosure" className="underline">Disclosure</Link>
+      <Link to="/affiliate-disclosure" className="underline">
+        Disclosure
+      </Link>
     </p>
   );
 }

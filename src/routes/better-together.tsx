@@ -6,6 +6,7 @@ import { seo } from "@/lib/seo";
 const c = getCategory("better-together")!;
 
 export const Route = createFileRoute("/better-together")({
-  head: () => seo({ title: `${c.name}: ${c.short}`, description: c.intro, path: "/better-together" }),
+  head: () =>
+    seo({ title: `${c.name}: ${c.short}`, description: c.intro, path: "/better-together" }),
   component: () => <CategoryPage c={c} />,
 });

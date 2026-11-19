@@ -11,19 +11,56 @@ export type PlanInput = {
 };
 
 export type PlanSlot = { label: string; activity: Activity };
-export type Plan = { title: string; slots: PlanSlot[]; totalMinutes: number; input: PlanInput; seed: number };
+export type Plan = {
+  title: string;
+  slots: PlanSlot[];
+  totalMinutes: number;
+  input: PlanInput;
+  seed: number;
+};
 
-const HOME = new Set(["slow-breakfast", "watercolor", "clay", "collage", "journal", "bracelets", "bake", "puzzle", "read-bath", "dinner-for-one", "cook-together", "game-night", "letter", "flowers", "vinyl", "embroidery", "plan-weekend"]);
+const HOME = new Set([
+  "slow-breakfast",
+  "watercolor",
+  "clay",
+  "collage",
+  "journal",
+  "bracelets",
+  "bake",
+  "puzzle",
+  "read-bath",
+  "dinner-for-one",
+  "cook-together",
+  "game-night",
+  "letter",
+  "flowers",
+  "vinyl",
+  "embroidery",
+  "plan-weekend",
+]);
 const costRank: Record<Cost, number> = { free: 0, under25: 1, under50: 2, flexible: 3 };
 const actCost = (c: Cost) => (c === "flexible" ? 2 : costRank[c]);
 
 export function slotsFor(input: PlanInput): { label: string; part: Part; maxMinutes: number }[] {
   if (input.when === "after-work" || input.length === "evening")
-    return input.length === "few-hours" || input.length === "half-day" || input.length === "full-day"
-      ? [{ label: "First", part: "evening", maxMinutes: 90 }, { label: "Then", part: "evening", maxMinutes: 90 }]
+    return input.length === "few-hours" ||
+      input.length === "half-day" ||
+      input.length === "full-day"
+      ? [
+          { label: "First", part: "evening", maxMinutes: 90 },
+          { label: "Then", part: "evening", maxMinutes: 90 },
+        ]
       : [{ label: "Tonight", part: "evening", maxMinutes: 90 }];
-  if (input.length === "few-hours") return [{ label: "First", part: "afternoon", maxMinutes: 120 }, { label: "Then", part: "afternoon", maxMinutes: 90 }];
-  if (input.length === "half-day") return [{ label: "Morning", part: "morning", maxMinutes: 180 }, { label: "Afternoon", part: "afternoon", maxMinutes: 150 }];
+  if (input.length === "few-hours")
+    return [
+      { label: "First", part: "afternoon", maxMinutes: 120 },
+      { label: "Then", part: "afternoon", maxMinutes: 90 },
+    ];
+  if (input.length === "half-day")
+    return [
+      { label: "Morning", part: "morning", maxMinutes: 180 },
+      { label: "Afternoon", part: "afternoon", maxMinutes: 150 },
+    ];
   return [
     { label: "Morning", part: "morning", maxMinutes: 180 },
     { label: "Afternoon", part: "afternoon", maxMinutes: 180 },
@@ -39,13 +76,22 @@ export function candidates(input: PlanInput, part: Part, maxMinutes: number, use
     .filter((a) => actCost(a.cost) <= costRank[input.budget])
     .filter((a) => a.minutes <= maxMinutes)
     .filter((a) => !input.atHome || HOME.has(a.id))
-    .map((a) => ({ a, score: (a.vibes.includes(input.vibe) ? 3 : 0) + (a.vibes[0] === input.vibe ? 1 : 0) }))
+    .map((a) => ({
+      a,
+      score: (a.vibes.includes(input.vibe) ? 3 : 0) + (a.vibes[0] === input.vibe ? 1 : 0),
+    }))
     .filter((r) => r.score > 0)
     .sort((x, y) => y.score - x.score || x.a.id.localeCompare(y.a.id));
 }
 
 const dayWord = { "after-work": "evening", saturday: "Saturday", sunday: "Sunday" } as const;
-const vibeWord: Record<Vibe, string> = { cozy: "cozy", creative: "creative", outdoorsy: "outdoorsy", social: "social", adventurous: "adventurous" };
+const vibeWord: Record<Vibe, string> = {
+  cozy: "cozy",
+  creative: "creative",
+  outdoorsy: "outdoorsy",
+  social: "social",
+  adventurous: "adventurous",
+};
 
 export function makePlan(input: PlanInput, seed = 0): Plan | null {
   const used = new Set<string>();

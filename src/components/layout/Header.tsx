@@ -21,7 +21,8 @@ export function Header() {
     <header className="no-print sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur-sm">
       <div className="bg-cherry px-4 py-1.5 text-center text-[0.72rem] font-medium tracking-[0.14em] uppercase text-cream">
         <Star className="mr-2 inline h-3 w-3 align-[-1px]" />
-        {site.signature} <span className="hidden sm:inline">· New: the free Out-of-Office Bucket List</span>
+        {site.signature}{" "}
+        <span className="hidden sm:inline">· New: the free Out-of-Office Bucket List</span>
         <Star className="ml-2 inline h-3 w-3 align-[-1px]" />
       </div>
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 md:px-8">
@@ -30,19 +31,49 @@ export function Header() {
         </Link>
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Main">
           {nav.map((n) => (
-            <Link key={n.to} to={n.to} className="text-sm font-medium text-espresso decoration-cherry decoration-2 underline-offset-[6px] hover:text-cherry hover:underline" activeProps={{ className: "text-cherry underline" }}>
+            <Link
+              key={n.to}
+              to={n.to}
+              className="text-sm font-medium text-espresso decoration-cherry decoration-2 underline-offset-[6px] hover:text-cherry hover:underline"
+              activeProps={{ className: "text-cherry underline" }}
+            >
               {n.label}
             </Link>
           ))}
         </nav>
         <div className="flex items-center gap-1">
-          <Link to="/search" search={{ q: "" }} className="p-2 text-espresso hover:text-cherry" aria-label="Search"><Search className="h-5 w-5" /></Link>
-          <Link to="/saved" className="relative p-2 text-espresso hover:text-cherry" aria-label="My Plans">
-            <Bookmark className="h-5 w-5" />
-            {ready && items.length > 0 && <span className="absolute right-0.5 top-0.5 grid h-4 min-w-4 place-items-center rounded-full bg-cherry px-1 text-[0.6rem] font-bold text-cream">{items.length}</span>}
+          <Link
+            to="/search"
+            search={{ q: "" }}
+            className="p-2 text-espresso hover:text-cherry"
+            aria-label="Search"
+          >
+            <Search className="h-5 w-5" />
           </Link>
-          <Link to="/hobby-finder" className="ml-2 hidden border-2 border-cherry bg-cherry px-4 py-2 text-sm font-semibold text-cream transition hover:bg-transparent hover:text-cherry md:inline-block">Find Your Thing</Link>
-          <button className="p-2 text-espresso lg:hidden" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Menu">
+          <Link
+            to="/saved"
+            className="relative p-2 text-espresso hover:text-cherry"
+            aria-label="My Plans"
+          >
+            <Bookmark className="h-5 w-5" />
+            {ready && items.length > 0 && (
+              <span className="absolute right-0.5 top-0.5 grid h-4 min-w-4 place-items-center rounded-full bg-cherry px-1 text-[0.6rem] font-bold text-cream">
+                {items.length}
+              </span>
+            )}
+          </Link>
+          <Link
+            to="/hobby-finder"
+            className="ml-2 hidden border-2 border-cherry bg-cherry px-4 py-2 text-sm font-semibold text-cream transition hover:bg-transparent hover:text-cherry md:inline-block"
+          >
+            Find Your Thing
+          </Link>
+          <button
+            className="p-2 text-espresso lg:hidden"
+            onClick={() => setOpen(!open)}
+            aria-expanded={open}
+            aria-label="Menu"
+          >
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
@@ -50,8 +81,19 @@ export function Header() {
       {open && (
         <div className="border-t border-border bg-cream px-5 pb-8 pt-4 lg:hidden">
           <nav className="flex flex-col" aria-label="Mobile">
-            {[...nav, { to: "/hobby-finder", label: "Find Your Thing" }, { to: "/make-plans", label: "Let's Make Plans" }, { to: "/printables", label: "Free Printables" }, { to: "/saved", label: "My Plans" }].map((n) => (
-              <Link key={n.to} to={n.to} onClick={() => setOpen(false)} className="border-b border-border py-3.5 font-display text-2xl text-ink hover:text-cherry hover:italic">
+            {[
+              ...nav,
+              { to: "/hobby-finder", label: "Find Your Thing" },
+              { to: "/make-plans", label: "Let's Make Plans" },
+              { to: "/printables", label: "Free Printables" },
+              { to: "/saved", label: "My Plans" },
+            ].map((n) => (
+              <Link
+                key={n.to}
+                to={n.to}
+                onClick={() => setOpen(false)}
+                className="border-b border-border py-3.5 font-display text-2xl text-ink hover:text-cherry hover:italic"
+              >
                 {n.label}
               </Link>
             ))}

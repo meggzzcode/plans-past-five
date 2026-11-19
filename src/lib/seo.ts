@@ -1,6 +1,13 @@
 import { site } from "@/config/site";
 
-type SeoInput = { title: string; description: string; path: string; image?: string; type?: "website" | "article"; noindex?: boolean };
+type SeoInput = {
+  title: string;
+  description: string;
+  path: string;
+  image?: string;
+  type?: "website" | "article";
+  noindex?: boolean;
+};
 
 /** Builds head() meta + canonical for a route. Titles get the brand suffix. */
 export function seo({ title, description, path, image, type = "website", noindex }: SeoInput) {
@@ -18,7 +25,8 @@ export function seo({ title, description, path, image, type = "website", noindex
     { name: "twitter:title", content: full },
     { name: "twitter:description", content: description },
   ];
-  if (image) meta.push({ property: "og:image", content: image }, { name: "twitter:image", content: image });
+  if (image)
+    meta.push({ property: "og:image", content: image }, { name: "twitter:image", content: image });
   if (noindex) meta.push({ name: "robots", content: "noindex, follow" });
   return { meta, links: [{ rel: "canonical", href: url }] };
 }

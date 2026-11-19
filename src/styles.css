@@ -46,17 +46,17 @@
 :root {
   --radius: 0.25rem;
   /* Brand palette */
-  --cherry: oklch(0.54 0.15 22);        /* #B83F43 Cherry Girl */
-  --cream: oklch(0.982 0.014 75);       /* #FFF8EF Vanilla Cream */
-  --garden: oklch(0.4 0.04 150);        /* #394D3C Garden Green */
-  --espresso: oklch(0.36 0.03 45);      /* #48362E Espresso */
-  --butter: oklch(0.92 0.09 92);        /* #F8E5A3 Butter Yellow */
-  --strawberry: oklch(0.89 0.04 10);    /* #F4D4D7 Strawberry Milk */
-  --matcha: oklch(0.78 0.06 125);       /* #B5C19C Matcha */
-  --sunday: oklch(0.88 0.03 240);       /* #C9DDEC Sunday Blue */
-  --warm-white: oklch(0.993 0.006 75);  /* #FFFCF8 */
-  --soft-border: oklch(0.89 0.02 70);   /* #E4D9CD */
-  --ink: oklch(0.27 0.008 95);          /* #292722 */
+  --cherry: oklch(0.54 0.15 22); /* #B83F43 Cherry Girl */
+  --cream: oklch(0.982 0.014 75); /* #FFF8EF Vanilla Cream */
+  --garden: oklch(0.4 0.04 150); /* #394D3C Garden Green */
+  --espresso: oklch(0.36 0.03 45); /* #48362E Espresso */
+  --butter: oklch(0.92 0.09 92); /* #F8E5A3 Butter Yellow */
+  --strawberry: oklch(0.89 0.04 10); /* #F4D4D7 Strawberry Milk */
+  --matcha: oklch(0.78 0.06 125); /* #B5C19C Matcha */
+  --sunday: oklch(0.88 0.03 240); /* #C9DDEC Sunday Blue */
+  --warm-white: oklch(0.993 0.006 75); /* #FFFCF8 */
+  --soft-border: oklch(0.89 0.02 70); /* #E4D9CD */
+  --ink: oklch(0.27 0.008 95); /* #292722 */
 
   --background: var(--cream);
   --foreground: var(--espresso);
@@ -78,35 +78,82 @@
   --input: var(--soft-border);
   --ring: var(--cherry);
 
-  --gingham: repeating-linear-gradient(0deg, color-mix(in oklab, var(--cherry) 38%, transparent) 0 8px, transparent 8px 16px),
-    repeating-linear-gradient(90deg, color-mix(in oklab, var(--cherry) 38%, transparent) 0 8px, transparent 8px 16px);
-  --shadow-paper: 0 1px 0 var(--soft-border), 0 14px 30px -18px color-mix(in oklab, var(--espresso) 45%, transparent);
+  --gingham:
+    repeating-linear-gradient(
+      0deg,
+      color-mix(in oklab, var(--cherry) 38%, transparent) 0 8px,
+      transparent 8px 16px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--cherry) 38%, transparent) 0 8px,
+      transparent 8px 16px
+    );
+  --shadow-paper:
+    0 1px 0 var(--soft-border),
+    0 14px 30px -18px color-mix(in oklab, var(--espresso) 45%, transparent);
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); color: var(--color-ink); letter-spacing: -0.015em; }
-  ::selection { background: var(--strawberry); color: var(--ink); }
-  :focus-visible { outline: 2px solid var(--cherry); outline-offset: 3px; }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+    letter-spacing: -0.015em;
+  }
+  ::selection {
+    background: var(--strawberry);
+    color: var(--ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--cherry);
+    outline-offset: 3px;
+  }
 }
 
-@utility gingham { background-color: var(--cream); background-image: var(--gingham); }
-@utility gingham-strip { height: 14px; background-color: var(--cream); background-image: var(--gingham); }
-@utility paper { background: var(--warm-white); box-shadow: var(--shadow-paper); }
-@utility kicker {
-  font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
-  letter-spacing: 0.18em; text-transform: uppercase;
+@utility gingham {
+  background-color: var(--cream);
+  background-image: var(--gingham);
 }
-@utility hand { font-family: var(--font-hand); font-weight: 600; }
+@utility gingham-strip {
+  height: 14px;
+  background-color: var(--cream);
+  background-image: var(--gingham);
+}
+@utility paper {
+  background: var(--warm-white);
+  box-shadow: var(--shadow-paper);
+}
+@utility kicker {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+@utility hand {
+  font-family: var(--font-hand);
+  font-weight: 600;
+}
 @utility editorial-underline {
-  background-image: linear-gradient(transparent 62%, color-mix(in oklab, var(--butter) 90%, transparent) 62%);
+  background-image: linear-gradient(
+    transparent 62%,
+    color-mix(in oklab, var(--butter) 90%, transparent) 62%
+  );
   padding: 0 0.1em;
 }
 @utility scallop-bottom {
@@ -115,25 +162,67 @@
   padding-bottom: 14px;
 }
 @utility postcard {
-  background: var(--warm-white); padding: 0.6rem 0.6rem 2.2rem; box-shadow: var(--shadow-paper);
+  background: var(--warm-white);
+  padding: 0.6rem 0.6rem 2.2rem;
+  box-shadow: var(--shadow-paper);
 }
 @utility tape {
-  position: absolute; width: 84px; height: 22px; background: color-mix(in oklab, var(--butter) 80%, transparent);
+  position: absolute;
+  width: 84px;
+  height: 22px;
+  background: color-mix(in oklab, var(--butter) 80%, transparent);
   box-shadow: 0 1px 2px color-mix(in oklab, var(--espresso) 15%, transparent);
 }
 @utility prose-editorial {
-  font-size: 1.075rem; line-height: 1.78; color: var(--espresso);
-  & p { margin: 0 0 1.2em; }
-  & h2 { font-size: 1.9rem; line-height: 1.15; margin: 2.2em 0 0.6em; }
-  & h3 { font-size: 1.35rem; line-height: 1.25; margin: 1.6em 0 0.5em; }
-  & a { color: var(--cherry); text-decoration: underline; text-underline-offset: 3px; }
-  & ul { list-style: none; padding: 0; margin: 0 0 1.2em; }
-  & ul li { padding-left: 1.4em; position: relative; margin-bottom: 0.4em; }
-  & ul li::before { content: "✶"; color: var(--cherry); position: absolute; left: 0; font-size: 0.85em; top: 0.15em; }
-  & strong { color: var(--ink); }
+  font-size: 1.075rem;
+  line-height: 1.78;
+  color: var(--espresso);
+  & p {
+    margin: 0 0 1.2em;
+  }
+  & h2 {
+    font-size: 1.9rem;
+    line-height: 1.15;
+    margin: 2.2em 0 0.6em;
+  }
+  & h3 {
+    font-size: 1.35rem;
+    line-height: 1.25;
+    margin: 1.6em 0 0.5em;
+  }
+  & a {
+    color: var(--cherry);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  & ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.2em;
+  }
+  & ul li {
+    padding-left: 1.4em;
+    position: relative;
+    margin-bottom: 0.4em;
+  }
+  & ul li::before {
+    content: "✶";
+    color: var(--cherry);
+    position: absolute;
+    left: 0;
+    font-size: 0.85em;
+    top: 0.15em;
+  }
+  & strong {
+    color: var(--ink);
+  }
 }
 
 @media print {
-  .no-print { display: none !important; }
-  body { background: white; }
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
 }

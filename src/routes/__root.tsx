@@ -27,8 +27,18 @@ function NotFoundComponent() {
           It doesn't exist or has moved. Good news: there's plenty else to do tonight.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Link to="/" className="bg-cherry px-5 py-2.5 text-sm font-semibold text-cream hover:bg-ink">Back home</Link>
-          <Link to="/hobby-finder" className="border-2 border-cherry px-5 py-2 text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream">Find Your Thing</Link>
+          <Link
+            to="/"
+            className="bg-cherry px-5 py-2.5 text-sm font-semibold text-cream hover:bg-ink"
+          >
+            Back home
+          </Link>
+          <Link
+            to="/hobby-finder"
+            className="border-2 border-cherry px-5 py-2 text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream"
+          >
+            Find Your Thing
+          </Link>
         </div>
       </div>
     </div>
@@ -129,7 +139,12 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-cherry focus:px-4 focus:py-2 focus:text-cream">Skip to content</a>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-cherry focus:px-4 focus:py-2 focus:text-cream"
+      >
+        Skip to content
+      </a>
       <Header />
       <main id="main">
         <Outlet />

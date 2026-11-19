@@ -1,7 +1,21 @@
 import type { ReactNode } from "react";
 import { PageHero, toneBg } from "@/components/editorial/Section";
 
-export function ProsePage({ kicker, title, italic, dek, tone = "butter", children }: { kicker: string; title: string; italic?: string | undefined; dek: string; tone?: keyof typeof toneBg; children: ReactNode }) {
+export function ProsePage({
+  kicker,
+  title,
+  italic,
+  dek,
+  tone = "butter",
+  children,
+}: {
+  kicker: string;
+  title: string;
+  italic?: string | undefined;
+  dek: string;
+  tone?: keyof typeof toneBg;
+  children: ReactNode;
+}) {
   return (
     <>
       <PageHero kicker={kicker} title={title} italic={italic} dek={dek} tone={tone} />
