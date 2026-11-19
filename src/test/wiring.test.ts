@@ -39,6 +39,9 @@ describe("HTML security headers", () => {
   it("leaves non-HTML responses alone and survives immutable headers", async () => {
     const json = new Response("{}", { headers: { "content-type": "application/json" } });
     expect(withSecurityHeaders(json).headers.get("referrer-policy")).toBeNull();
+    const xml = new Response("<urlset/>", { headers: { "content-type": "application/xml" } });
+    expect(withSecurityHeaders(xml).headers.get("x-content-type-options")).toBe("nosniff");
+    expect(withSecurityHeaders(xml).headers.get("referrer-policy")).toBeNull();
     const frozen = new Response("x", { headers: { "content-type": "text/html" } });
     Object.defineProperty(frozen.headers, "set", {
       value: () => {

@@ -137,7 +137,7 @@ export const articleSchema = z
     dek: str,
     category: str,
     status: z.enum(["draft", "published"], {
-      errorMap: () => ({ message: 'must be "draft" or "published"' }),
+      message: 'must be "draft" or "published"',
     }),
     publishedAt: z.string(),
     updatedAt: date.optional(),

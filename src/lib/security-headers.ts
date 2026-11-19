@@ -11,8 +11,23 @@ export const HTML_SECURITY_HEADERS: Readonly<Record<string, string>> = {
 
 /** Returns the response with the headers set when it is HTML; other responses pass through untouched. */
 export function withSecurityHeaders(response: Response): Response {
-  const type = response.headers.get("content-type") ?? "";
-  if (!type.toLowerCase().includes("text/html")) return response;
+  const type = (response.headers.get("content-type") ?? "").toLowerCase();
+  // Sitemap and robots (XML or plain text) only need nosniff.
+  if (type.includes("xml") || type.includes("text/plain")) {
+    try {
+      response.headers.set("X-Content-Type-Options", "nosniff");
+      return response;
+    } catch {
+      const headers = new Headers(response.headers);
+      headers.set("X-Content-Type-Options", "nosniff");
+      return new Response(response.body, {
+        status: response.status,
+        statusText: response.statusText,
+        headers,
+      });
+    }
+  }
+  if (!type.includes("text/html")) return response;
   try {
     for (const [k, v] of Object.entries(HTML_SECURITY_HEADERS)) response.headers.set(k, v);
     return response;
