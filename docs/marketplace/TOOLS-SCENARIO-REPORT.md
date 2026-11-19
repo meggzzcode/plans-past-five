@@ -1,0 +1,57 @@
+# Interactive tools: scenario report
+
+Test file: `src/test/tool-scenarios.test.ts` (16 tests, runs in about 3 seconds). Set `SCENARIO_COUNTS_FILE=/path.json` to dump the counts below.
+
+## Scenarios enumerated
+
+| Tool | Matrix | Count |
+|---|---|---|
+| Quiz | craving x where (incl. "indoors") x time x budget x company x energy | 4,320 (+72 difficulty-filter scenarios) |
+| Planner | when (7 windows) x valid lengths x vibe x who x budget x energy | 7,616 |
+| Planner | setting x keep-at-home x who x budget x vibe | 1,344 |
+| Planner | every empty day checked for named relax buttons | 363 days |
+| Tonight | time x energy x company x budget x setting, 3 shuffle seeds each | 288 (864 result sets) |
+| Search | human phrases, ordering, findability, empty states | 21 |
+| Data | 43 hobbies (tags, settings, cost sources), 52 planner activities | all |
+
+## Invariants asserted
+
+- Solo never returns a social-only hobby or activity; social never a solo-only one (quiz, planner, tonight).
+- Tonight never returns a weekday/weekend/morning/afternoon/golden-hour/breakfast/market idea or a daylight-only hobby; no 3-hour trek for "whole evening".
+- Planner: every stop starts inside the activity's allowed window and inside the chosen window; no overlaps; weeknight/evening stops start after 5 pm; no wrong-day wording; time-of-day words (golden hour, sunrise, breakfast, brunch, dinner, stargazing) match the start time.
+- Budget: the cap is checked against the shown total; typical total is inside the range and under the cap; free never returns paid; cost buckets match cost ranges.
+- Indoor/outdoor, keep-at-home and energy are honoured. Plan length covers at least 75% of the chosen window or says why it does not. One-stop plans have one stop.
+- Plans restore exactly from their ids.
+- No silent empty result. Every empty planner day has a reason and relax buttons, and each button leads to a non-empty plan. Every tonight button is verified to open up exactly the count it states.
+- Tags agree with settings/energy/cost/company (Reading is not Outdoors). Card bucket, profile range and budget tool all derive from `src/data/equipment.ts`.
+
+## Violations found and fixed
+
+1. Planner "nothing found" had text but no buttons. Added `PlanSlot.relax` (verified against the real assembler) and tappable buttons in `PlanResult` ("Allow $50", "Allow indoors or outdoors", "Plan it with a friend instead", ...).
+2. Tonight "nothing fits" had text only, and its "loosen" hint could be useless (e.g. flipping solo/social did not add ideas, 14 combinations). Now computes real one-step patches, shows buttons with the idea count each opens, and tests that the stated count is true.
+3. Tonight idea cards showed the generic first step "Start with the first small step" (every idea). Now uses each idea's own "how to start" line.
+4. Tonight offered "golden-hour walk", breakfast, farmers market as tonight ideas (91 combinations). Now excluded.
+5. Quiz "nothing fits" gave no named blocker in 714 combinations (the nearest hobbies fitted everything except the craving). Craving is now a nameable constraint with a "Change my main craving" button.
+6. Reading was tagged Outdoors. Removed the `outdoors` setting (now Home/Out).
+7. Search ranked guides above hobbies (e.g. "solo": hobbies buried). Hobbies now always first, then guides, sections, shop. Raised result limit to 60 so guides are not cut off. Search page now shows "looking for: ..." for understood phrases, hobby and guide sections, and tappable suggestions plus quiz/directory/planner links on empty results ("cheap date", "after work", "with friends", "tired" were already mapped to tags in `search.ts`).
+8. Planner totals were a bare summed range. Added `totalCost.typical` (sum of stop midpoints) and the display is now "about $12 (range $0 to $25)"; the cap is still checked against the maximums, so the shown range never exceeds the budget.
+9. Directory filter chips scrolled sideways on phones (clipped) and the sticky bar would have been 4 rows tall; chips now wrap and the bar is not sticky. Directory title/description counts are now computed, not hard-coded "36".
+
+## Pool widened
+
+Added Running, Climbing, Board Games, Cooking Classes and Language Learning (43 hobbies; Active now 6, was 4; Yoga and Dance already existed). Each has equipment ranges (honest assumptions in `equipment.ts`), a profile and tests. No prices are stated as facts. Hobby-count assertions in `hobbies.test.ts`, `rules.test.ts` and the solo/social band in `costs.test.ts` were updated deliberately, with comments.
+
+## Sharing and state (verified in Playwright at 320, 390, 1280)
+
+- Quiz result: Share (navigator.share, copy-link fallback), Copy link, Save card as PNG (verified PNG signature, `my-hobby-era-creative.png`). Refresh restores the result; Back steps through questions.
+- Planner: Copy plan (text with times, total and restorable URL), Share, URL always holds the exact plan; refresh restores it.
+- Tonight: new. Answers and shuffle seed are in the URL (`?t=&e=&b=&c=&w=&s=`), refresh restores them; Copy as text (with link) and Share; a "For: ..." line echoes the answers above the results.
+- No horizontal overflow or off-screen chips on /hobby-finder, /make-plans, /tools/tonight, /tools/hobby-budget, /search, /hobbies and new hobby profiles at 320/390/1280.
+
+## Remaining
+
+- 1,356 of 4,320 quiz combinations have fewer than 3 exact matches. The live flow already hides options that would cause this, and the result page is honest and names the blocker, but the pool is still thin for narrow combinations (for example free + outdoors + solo + short). More hobbies would help.
+- Article cost figures live in `article-*.ts` (not edited here). They should be checked against `equipment.ts` ranges; no test links them yet.
+- The new hobbies have no images and no published guide, so their profile pages are noindex by the existing rule.
+- Planner golden-hour walk can still start at 6 pm on a weeknight; the app has no date or location, so it cannot know sunset. Its prep line says to check sunset time.
+- `shop.test.tsx` and `trust-format.test.tsx` were failing mid-session from other agents' commerce/article work; at the last full run all 501 tests passed.

@@ -19,7 +19,7 @@ function Shop() {
   return (
     <>
       <PageHero
-        kicker="Off Duty Essentials"
+        kicker="Shop Your Hobby"
         title="Shop your hobby"
         italic="hobby"
         dek={`Starter picks for ${collections.length} kinds of after-work evening. Where we name a product, we checked its Amazon page and say why it made the list; everywhere else we tell you what to look for. And we'll always say when you don't need to buy anything.`}

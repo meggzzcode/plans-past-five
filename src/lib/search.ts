@@ -23,7 +23,7 @@ function index(): (SearchHit & { hay: string; hobby?: Hobby })[] {
       hobby: h,
     })),
     ...collections.map((c) => ({
-      kind: "Off Duty Essentials",
+      kind: "Shop Your Hobby",
       title: c.name,
       text: c.dek,
       to: `/shop/${c.slug}`,
@@ -302,7 +302,7 @@ export type SearchOutcome = {
   empty?: EmptySearchSuggestions;
 };
 
-const KIND_ORDER = ["Hobby", "Journal", "Section", "Off Duty Essentials", "Shop pick"];
+const KIND_ORDER = ["Hobby", "Journal", "Section", "Shop Your Hobby", "Shop pick"];
 
 type Entry = SearchHit & { hay: string; hobby?: Hobby };
 

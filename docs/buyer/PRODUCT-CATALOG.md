@@ -41,14 +41,14 @@ Specific products live in `docs/commerce/product-research.csv` and are imported 
 
 Card fields you edit in the CSV (all optional except where noted):
 
-| Column                  | What it does                                                                                                                                       |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `shortName`             | Card title ("Floral washi tape, 21 rolls"). `name` stays the exact Amazon listing title. Max 70 characters.                                        |
-| `benefit`               | One practical sentence on the card. No prices, ratings or claims you cannot support. Max 140 characters.                                           |
-| `compare`               | For an alternative: one line on how it differs from the pick. Shown under the pick as "Also consider".                                             |
-| `lead`                  | TRUE makes it the pick for its kit slot (otherwise the "researched-pick", then list order). Max two alternatives per slot are shown.               |
-| `onlyOne`               | TRUE makes it the "If you only buy one thing" product for its kit, hobby or collection (otherwise the first complete kit, then first essential). |
-| `hold`                  | A reason. The product stays in the catalog but is not shown (poor audience fit, kid-marketed, duplicate). It never changes `status`.               |
+| Column                    | What it does                                                                                                                                                   |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `shortName`               | Card title ("Floral washi tape, 21 rolls"). `name` stays the exact Amazon listing title. Max 70 characters.                                                    |
+| `benefit`                 | One practical sentence on the card. No prices, ratings or claims you cannot support. Max 140 characters.                                                       |
+| `compare`                 | For an alternative: one line on how it differs from the pick. Shown under the pick as "Also consider".                                                         |
+| `lead`                    | TRUE makes it the pick for its kit slot (otherwise the "researched-pick", then list order). Max two alternatives per slot are shown.                           |
+| `onlyOne`                 | TRUE makes it the "If you only buy one thing" product for its kit, hobby or collection (otherwise the first complete kit, then first essential).               |
+| `hold`                    | A reason. The product stays in the catalog but is not shown (poor audience fit, kid-marketed, duplicate). It never changes `status`.                           |
 | `imageUrl`, `imageCredit` | A photo. Shown only with `imageRights` owned / licensed / retailer-permission, an `imageSource` recording the permission, and a credit. Never an Amazon image. |
 
 Without a photo the card shows a brand-tinted typographic label. Cards never show prices, ratings, review counts or per-card disclaimers; one short honest note per kit lives in `src/data/kits.ts` (`note`), and the shared disclosure wording lives in `src/config/affiliate.ts` (`SHOP_LINK_FACTS`).

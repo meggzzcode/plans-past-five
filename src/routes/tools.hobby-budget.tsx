@@ -266,7 +266,7 @@ function HobbyBudget() {
                 {result.hobbyName} guide
               </Link>
               <Link to="/shop" className="text-ink underline underline-offset-4">
-                Off Duty Essentials
+                Shop Your Hobby
               </Link>
             </div>
 

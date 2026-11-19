@@ -93,3 +93,6 @@ The owner creates hello@ on the chosen domain; Cowork sends and receives a test 
 
 ## C16 Source check of the 4 original published articles and the 5 drafts
 Finish C4 for hobbies-to-try-when-life-feels-like-work-sleep-repeat, things-to-do-after-work-instead-of-scrolling, creative-hobbies-you-can-start-at-home, how-to-start-junk-journaling, and the 5 drafts. Output docs/content/verification/<slug>.md as before.
+
+## C12 priority list (from the commerce refinement, 2026-11-19)
+Eight kits currently show no products because their items are only candidates. Verify these first so the shop is not empty: reading journal, craft night, book club, picnic, flower arranging, pickleball, tennis, cozy night in. Also see docs/commerce/DESIRABILITY-AUDIT.md (12 items needing live research: unknown brands, the crochet kit, the tennis racket candidate). 25 products are candidates and 6 verified products are held for audience fit (kid-marketed clay, kids' clay tools, Apple Barrel paint, three washi options): suggest better-looking replacements.

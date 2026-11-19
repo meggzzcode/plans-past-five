@@ -64,7 +64,7 @@ export function ShopTheArticle({
   const { pick, groups } = groupsFor(sel);
   return (
     <aside className="not-prose my-12 border-y-2 border-ink py-8" aria-labelledby={`shop-${key}`}>
-      <p className="kicker text-cherry">Off Duty Essentials</p>
+      <p className="kicker text-cherry">Shop Your Hobby</p>
       <h3 id={`shop-${key}`} className="mt-2 font-display text-3xl italic">
         {title}
       </h3>

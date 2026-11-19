@@ -234,7 +234,7 @@ function HobbyPage() {
       </section>
       {ps.length > 0 && (
         <section className="mx-auto max-w-6xl px-5 md:px-8">
-          <Divider label="Shop the hobby" />
+          <Divider label="Shop your hobby" />
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {ps.map((p) => (
               <ProductCard key={p.id} p={p} />

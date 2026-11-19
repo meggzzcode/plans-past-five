@@ -55,7 +55,7 @@ function CollectionPage() {
               </Link>{" "}
               / {c.name}
             </nav>
-            <Kicker className="mt-6">Off Duty Essentials</Kicker>
+            <Kicker className="mt-6">Shop Your Hobby</Kicker>
             <h1 className="mt-3 text-5xl italic leading-[1] md:text-7xl">{c.name}</h1>
             <p className="mt-5 max-w-lg text-lg text-ink">{c.intro}</p>
             <AffiliateNote className="mt-6 text-ink" />

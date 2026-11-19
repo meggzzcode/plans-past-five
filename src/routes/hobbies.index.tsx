@@ -10,8 +10,7 @@ export const Route = createFileRoute("/hobbies/")({
   head: () =>
     seo({
       title: `Find a Hobby: ${hobbies.length} Hobbies to Try Outside Work`,
-      description:
-        `A filterable directory of ${hobbies.length} beginner-friendly hobbies, sorted by time, cost, energy and whether you'd rather go solo or social.`,
+      description: `A filterable directory of ${hobbies.length} beginner-friendly hobbies, sorted by time, cost, energy and whether you'd rather go solo or social.`,
       path: "/hobbies",
     }),
   component: Directory,
@@ -43,11 +42,7 @@ function Directory() {
       </PageHero>
       <section className="mx-auto mt-10 max-w-7xl px-5 md:px-8">
         <div className="py-4">
-          <div
-            className="flex flex-wrap gap-2"
-            role="group"
-            aria-label="Filter hobbies"
-          >
+          <div className="flex flex-wrap gap-2" role="group" aria-label="Filter hobbies">
             {hobbyFilters.map((f) => (
               <button
                 key={f.tag}

@@ -153,7 +153,7 @@ export const articleHowToStartAirDryClay: Article = {
     {
       type: "shopTheArticle",
       articleSlug: "how-to-start-air-dry-clay",
-      title: "Shop the hobby",
+      title: "Shop your hobby",
       dek: "Start with clay and what you own. Add the rest when you know what you reach for.",
     },
     {

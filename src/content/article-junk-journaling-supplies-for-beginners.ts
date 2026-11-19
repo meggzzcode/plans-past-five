@@ -140,7 +140,7 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
     {
       type: "shopTheArticle",
       articleSlug: "junk-journaling-supplies-for-beginners",
-      title: "Shop the hobby",
+      title: "Shop your hobby",
       dek: "Start with the essentials, and only if you do not already own them. The optional picks can wait until you have made a page and know what you reached for.",
     },
     {

@@ -120,7 +120,7 @@ export const articleHowToStartCrocheting: Article = {
     {
       type: "shopTheArticle",
       articleSlug: "how-to-start-crocheting",
-      title: "Shop the hobby",
+      title: "Shop your hobby",
       dek: "A hook and one plain ball of yarn are enough to start.",
     },
     {

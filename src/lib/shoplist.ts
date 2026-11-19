@@ -106,7 +106,7 @@ export function buildListText(
   const needed = neededProducts(products, state);
   const lines = [
     `${title} (Plans Past Five)`,
-    `Made ${today}. Prices and availability are set by the retailer, so check each listing.`,
+    `Made ${today}. Check each listing for current availability.`,
     "",
   ];
   for (const p of needed) {

@@ -145,7 +145,7 @@ export const articleWatercolorPaintingForBeginners: Article = {
     },
     {
       type: "shopHobby",
-      title: "Shop the hobby",
+      title: "Shop your hobby",
       dek: "A small set and good paper are plenty to begin.",
       productIds: ["watercolor-sets", "watercolor-sketchbooks", "portable-watercolor"],
     },

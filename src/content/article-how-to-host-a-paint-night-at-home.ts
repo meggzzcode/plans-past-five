@@ -157,7 +157,7 @@ export const articleHowToHostAPaintNightAtHome: Article = {
     },
     {
       type: "shopHobby",
-      title: "Shop the hobby",
+      title: "Shop your hobby",
       dek: "Optional. Kits are handy when you do not want to shop around.",
       productIds: ["group-painting-kits", "acrylic-paints", "detail-brushes", "conversation-cards"],
     },

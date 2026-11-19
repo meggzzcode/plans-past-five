@@ -315,7 +315,7 @@ export function ResultsView({
       {strong && picks[0] && (
         <details className="mt-10">
           <summary className="cursor-pointer text-center text-sm font-semibold text-cherry underline underline-offset-4">
-            Shop the starter pieces
+            Shop your hobby
           </summary>
           <ShopMyHobby hobby={picks[0].slug} />
         </details>

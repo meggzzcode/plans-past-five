@@ -467,9 +467,9 @@ function BlockView({
       return (
         <ShopFold>
           <aside className="not-prose my-12 border-y-2 border-ink py-8">
-            <p className="kicker text-cherry">Off Duty Essentials</p>
+            <p className="kicker text-cherry">Shop Your Hobby</p>
             <h3 className="mt-2 font-display text-3xl italic">
-              {b.title ?? (b.type === "starterKit" ? "The Starter Kit" : "Shop the hobby")}
+              {b.title ?? (b.type === "starterKit" ? "The Starter Kit" : "Shop your hobby")}
             </h3>
             {"dek" in b && b.dek && (
               <p className="mt-2 text-muted-foreground">

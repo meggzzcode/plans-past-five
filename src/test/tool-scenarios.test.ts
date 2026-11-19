@@ -562,9 +562,14 @@ describe("search scenario matrix", () => {
 });
 
 describe("scenario counts", () => {
-  it("prints the totals for the report", () => {
+  it("prints the totals for the report", async () => {
     // eslint-disable-next-line no-console
     console.log("SCENARIO COUNTS", JSON.stringify(counts, null, 2));
+    if (process.env["SCENARIO_COUNTS_FILE"])
+      (await import("node:fs")).writeFileSync(
+        process.env["SCENARIO_COUNTS_FILE"],
+        JSON.stringify(counts, null, 2),
+      );
     expect(Object.keys(counts).length).toBeGreaterThan(0);
   });
 });

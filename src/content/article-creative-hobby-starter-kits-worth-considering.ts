@@ -177,7 +177,7 @@ export const articleCreativeHobbyStarterKitsWorthConsidering: Article = {
     },
     {
       type: "shopHobby",
-      title: "Shop the hobby",
+      title: "Shop your hobby",
       dek: "Types of kits and supplies to compare. Check every listing's contents, labels and instructions first.",
       productIds: [
         "embroidery-kits",

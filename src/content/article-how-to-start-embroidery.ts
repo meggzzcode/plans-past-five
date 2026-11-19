@@ -133,7 +133,7 @@ export const articleHowToStartEmbroidery: Article = {
     },
     {
       type: "shopHobby",
-      title: "Shop the hobby",
+      title: "Shop your hobby",
       dek: "A small kit takes the guessing out of the first hoop.",
       productIds: ["embroidery-kits"],
     },

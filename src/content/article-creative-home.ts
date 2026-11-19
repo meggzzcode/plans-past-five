@@ -241,7 +241,7 @@ export const articleCreativeHome: Article = {
     },
     {
       type: "shopHobby",
-      title: "Shop the hobby",
+      title: "Shop your hobby",
       dek: "Starter picks from The Creative Girl and The Pottery Era.",
       productIds: ["watercolor-sets", "embroidery-kits", "washi-tape", "friendship-bracelet-kits"],
     },

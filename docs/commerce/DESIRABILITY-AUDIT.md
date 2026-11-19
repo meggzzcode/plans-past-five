@@ -4,19 +4,19 @@ Audience: women 22-40, aesthetic-minded, budget-aware. Scope: every row in `docs
 
 ## What was changed (no live research needed)
 
-| Item                                                                         | Action                                                                                         |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| Crayola air-dry clay 5 lb bucket                                             | Held (`hold`): marketed to children ages 4+, 5 lb is a lot for a first project.                 |
-| LINPHCEY clay tools "Ages 8+"                                                | Held: kid-marketed, and the adult clay kit already includes tools.                              |
-| Apple Barrel 16 craft paints                                                 | Held: plain craft-store paint that duplicates the lead paint set.                               |
-| Knaid grid washi, Mr. Pen 10-roll washi, Secopad tape runner                 | Held: extra choices that add a decision, not a different look.                                  |
-| Mr. Pen 21-roll washi tape                                                   | No longer "essential" (the junk-journaling article calls washi a nice-to-have). Kit slot is optional. |
-| Embroidery floss slot                                                        | Now optional: the Bradove kit already contains thread.                                          |
-| Pickleball kit, tennis racket                                                | The racket belongs only to the tennis kit. Pickleball kit note says a racket will not work. Tote card text now says "paddle or racket". |
-| Insulated water bottle (product type) "whole match or trail"                 | Reworded to "through a match, a trail or an afternoon in the park" and tagged for picnicking.   |
+| Item                                                                                   | Action                                                                                                                                                                            |
+| -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Crayola air-dry clay 5 lb bucket                                                       | Held (`hold`): marketed to children ages 4+, 5 lb is a lot for a first project.                                                                                                   |
+| LINPHCEY clay tools "Ages 8+"                                                          | Held: kid-marketed, and the adult clay kit already includes tools.                                                                                                                |
+| Apple Barrel 16 craft paints                                                           | Held: plain craft-store paint that duplicates the lead paint set.                                                                                                                 |
+| Knaid grid washi, Mr. Pen 10-roll washi, Secopad tape runner                           | Held: extra choices that add a decision, not a different look.                                                                                                                    |
+| Mr. Pen 21-roll washi tape                                                             | No longer "essential" (the junk-journaling article calls washi a nice-to-have). Kit slot is optional.                                                                             |
+| Embroidery floss slot                                                                  | Now optional: the Bradove kit already contains thread.                                                                                                                            |
+| Pickleball kit, tennis racket                                                          | The racket belongs only to the tennis kit. Pickleball kit note says a racket will not work. Tote card text now says "paddle or racket".                                           |
+| Insulated water bottle (product type) "whole match or trail"                           | Reworded to "through a match, a trail or an afternoon in the park" and tagged for picnicking.                                                                                     |
 | NMJL card note "confirm when the next card is released before recommending a purchase" | Replaced by a reader-facing note: "The 2026 card is the current edition; the League issues a new card each year." Removed a price from the research note (prices are not stored). |
-| Mahjong kit                                                                  | Kit note says the sets are American (166 tiles with jokers); one pick, two alternatives per slot. |
-| `low-energy-hobbies` hobby slug on four cozy-night rows                      | Not a hobby in the site; changed to `reading` / `jigsaw-puzzles` so the CSV imports.            |
+| Mahjong kit                                                                            | Kit note says the sets are American (166 tiles with jokers); one pick, two alternatives per slot.                                                                                 |
+| `low-energy-hobbies` hobby slug on four cozy-night rows                                | Not a hobby in the site; changed to `reading` / `jigsaw-puzzles` so the CSV imports.                                                                                              |
 
 ## Candidates (still invisible, never styled as verified)
 
