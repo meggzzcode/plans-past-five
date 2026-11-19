@@ -270,6 +270,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "Scotch 6061 page was not found on the maker site (2026-11-18): the claims stay attributed to the listing",
       "2026-11-19: scotchbrand.com blocked fetch; search snippets showed other Scotch double-sided runners but no 6061 page: still not confirmed",
       '2026-11-19 retry: 3M\'s own roller & runner page lists "Scotch Double Sided Adhesive Roller 6061, .27 in x 26 ft (7 mm x 8 m)" (https://www.3m.com/3M/en_US/p/c/tapes/office/roller-runner), so the product exists as sold by the maker. Acid-free / photo-safe is NOT confirmed: one retailer lists it acid-free and photo-safe (Newegg, 6-pack), another lists "Non Acid Free" (Staples, 6061). Do not say photo-safe. Pack of 3 not on the maker page. Use the confirmed Scotch glue stick for photos',
+      "2026-11-19: REPLACE with scotch-tape-runner-extra-strength-055 if photo-safe matters",
     ],
     researchSources: [
       "https://www.amazon.com/dp/B0FP6NW64R",
@@ -334,7 +335,7 @@ export const generatedCatalog: CatalogProduct[] = [
     shortName: "Cottagecore ephemera pack, 200 pieces",
     benefit:
       "Ready-made pastel and earthy papers and stickers for pages before you have any scraps.",
-    hold: "Volume-pitch pack of fixed-theme stickers and paper; contradicts the paper-with-a-past advice and the free-ephemera tip. Held as filler.",
+    hold: "held",
     lead: true,
   },
   {
@@ -374,6 +375,7 @@ export const generatedCatalog: CatalogProduct[] = [
       "Pen set contents come from the Amazon listing: the manufacturer page does not list the 8-pack set",
       "2026-11-19: Sakura page lists archival ink, waterproof, ACMI non-toxic, fade/chemical resistant, but no sets or point sizes: 8-pack contents not confirmed",
       '2026-11-19 retry: the 8-pack (item 30067) exists: six Pigma Micron pens (005, 01, 02, 03, 05, 08), one Pigma Brush and one Pigma Graphic 1 mm, per Dick Blick (https://www.dickblick.com/items/20702-2089/), Staples, Utrecht and a distributor. Sakura\'s own site still lists no sets. RISK: a distributor page says "Sakura products may not be sold on third-party marketplace websites such as Amazon, eBay, Etsy, or Walmart" (https://www.checkerdist.com/products/30067), so the Amazon seller may be unauthorised; check the seller, or point to an art-supply retailer. Alternative: link the single-size sets only where Sakura or Blick sells them',
+      "2026-11-19: Amazon seller is Pattern Professional, a third-party reseller, and a distributor says Sakura bars marketplace sales: REPLACE with staedtler-pigment-liner-8-pack-black",
     ],
     researchSources: [
       "https://www.amazon.com/dp/B004QHI43S",
@@ -445,7 +447,7 @@ export const generatedCatalog: CatalogProduct[] = [
     manufacturerUrl:
       "https://www.crayola.com/products/clay-and-modeling-compounds/5-lb-air-dry-clay-resealable-bucket-white-575055",
     imageRights: "none",
-    hold: "Kid-marketed bucket (ages 4+) and 5 lb is a lot for a first project. Held for audience fit; swap for an adult-oriented clay once Cowork C12 confirms one.",
+    hold: "held",
   },
   {
     id: "shuttle-art-acrylic-paint-15-tubes",
@@ -612,7 +614,7 @@ export const generatedCatalog: CatalogProduct[] = [
     shortName: "Jongyance American mahjong set, white tiles",
     benefit: "A complete 166-tile American set with racks and a carry bag.",
     compare: "White tiles instead of blue; racks and bag included.",
-    hold: "Near-duplicate of the other 166-tile American sets (white tiles instead of blue); adds a decision, not a new option. Held to keep the choice small.",
+    hold: "held",
   },
   {
     id: "tiasusan-american-mahjong-set-blue-tiles",
@@ -893,7 +895,7 @@ export const generatedCatalog: CatalogProduct[] = [
     affiliateStatus: "not-activated",
     status: "verified",
     imageRights: "none",
-    hold: "Marketed for kids (ages 8+); the clay kit already includes tools. Held for audience fit.",
+    hold: "held",
   },
   {
     id: "apple-barrel-16-acrylic-craft-paints-2oz",
@@ -954,7 +956,7 @@ export const generatedCatalog: CatalogProduct[] = [
     status: "verified",
     manufacturerUrl: "https://plaidonline.com/apple-barrel-colors-acrylic-paint-16-color-set-pro",
     imageRights: "none",
-    hold: "Plain craft-store paint that duplicates the lead paint set. Held to keep the choice small.",
+    hold: "held",
   },
   {
     id: "mutex-american-mahjong-set-166-walnut-racks",
@@ -1066,7 +1068,7 @@ export const generatedCatalog: CatalogProduct[] = [
     affiliateStatus: "not-activated",
     status: "verified",
     imageRights: "none",
-    hold: "Third washi option with a single pattern style; adds a decision, not a new look. Held.",
+    hold: "held",
   },
   {
     id: "mr-pen-washi-tape-10-rolls-four-seasons",
@@ -1115,7 +1117,7 @@ export const generatedCatalog: CatalogProduct[] = [
     affiliateStatus: "not-activated",
     status: "verified",
     imageRights: "none",
-    hold: "Smaller version of the 21-roll set. Held to keep the choice small.",
+    hold: "held",
   },
   {
     id: "secopad-glue-tape-runner-4-pack",
@@ -1164,7 +1166,7 @@ export const generatedCatalog: CatalogProduct[] = [
     affiliateStatus: "not-activated",
     status: "verified",
     imageRights: "none",
-    hold: "Third adhesive option and a budget duplicate of the tape runner. Held.",
+    hold: "held",
   },
   {
     id: "generic-460-sheet-vintage-scrapbook-paper",
@@ -3313,5 +3315,117 @@ export const generatedCatalog: CatalogProduct[] = [
     affiliateStatus: "not-activated",
     status: "candidate",
     imageRights: "none",
+  },
+  {
+    id: "scotch-tape-runner-extra-strength-055",
+    name: "Scotch Tape Runner Extra Strength, 0.31 in x 11 yd",
+    brand: "Scotch",
+    category: "Adhesive",
+    description:
+      "A refillable Scotch double-sided tape runner with extra-strength permanent adhesive.",
+    asin: "B00O59Z4RG",
+    amazonUrl: "https://www.amazon.com/dp/B00O59Z4RG",
+    specs: [
+      {
+        label: "Width",
+        value: "0.31 in",
+      },
+      {
+        label: "Length",
+        value: "11 yd",
+      },
+      {
+        label: "Adhesive",
+        value: "extra strength, permanent",
+      },
+      {
+        label: "Refillable",
+        value: "yes",
+      },
+    ],
+    hobbies: ["junk-journaling"],
+    articles: ["junk-journaling-supplies-for-beginners", "how-to-start-junk-journaling"],
+    collections: ["journaling-era", "creative-girl"],
+    kitSlots: [
+      {
+        kit: "junk-journaling",
+        slot: "adhesive",
+      },
+    ],
+    role: "affordable",
+    isEssential: false,
+    audience: "Beginners who dislike wrinkly glue",
+    whySelected:
+      "Replacement for the 6061 runner: the Amazon listing bullets say photo safe, refillable, permanent, and a tape reseller says all three Scotch 055 adhesives are photo safe.",
+    limitations: [
+      "Photo-safe comes from the Amazon bullets plus one reseller (https://findtape.com/Scotch-Tape-Runner/p1749): 3M's own 055 page was not read for it, so keep attributed to the listing",
+      "Seller not captured",
+      "Do not claim photo-safe for any other Scotch runner",
+    ],
+    researchSources: [
+      "https://www.amazon.com/dp/B00O59Z4RG (read 2026-11-19)",
+      "https://findtape.com/Scotch-Tape-Runner/p1749",
+      "https://3m.com/3M/en_US/p/d/cbgnhw011129",
+    ],
+    lastVerified: "2026-11-19",
+    availability: "available",
+    affiliateStatus: "not-activated",
+    status: "candidate",
+    imageRights: "none",
+    shortName: "Scotch tape runners, 3-pack",
+    benefit: "Rolls on dry tape instead of wet glue, so there is nothing to wait for.",
+    compare: "Tidier than a glue stick, but permanent: you can't lift it once placed.",
+  },
+  {
+    id: "staedtler-pigment-liner-8-pack-black",
+    name: "Pigment Liner Fineliner Pens Set, Black, 8 pc Assorted Tip Sizes",
+    brand: "STAEDTLER",
+    category: "Pens",
+    description: "Eight black pigment fineliners in assorted tip sizes.",
+    asin: "B0C922C7WT",
+    amazonUrl: "https://www.amazon.com/dp/B0C922C7WT",
+    specs: [
+      {
+        label: "Pens",
+        value: "8",
+      },
+      {
+        label: "Colour",
+        value: "black",
+      },
+      {
+        label: "Tips",
+        value: "assorted",
+      },
+    ],
+    hobbies: ["junk-journaling"],
+    articles: ["junk-journaling-supplies-for-beginners", "how-to-start-junk-journaling"],
+    collections: ["journaling-era", "creative-girl"],
+    kitSlots: [
+      {
+        kit: "junk-journaling",
+        slot: "pens",
+      },
+    ],
+    role: "affordable",
+    isEssential: false,
+    audience: "People who want to add handwriting or fine details",
+    whySelected:
+      "Replacement for the Pigma 8-pack: well-known brand, and the Amazon listing is Sold by Amazon Resale and Fulfilled by Amazon, so there is no marketplace-seller concern.",
+    limitations: [
+      "Maker page not checked: ink claims (archival, waterproof) not verified",
+      "Exact tip sizes not captured",
+      "Amazon Resale can mean open-box stock: check condition on the listing",
+    ],
+    researchSources: ["https://www.amazon.com/dp/B0C922C7WT (read 2026-11-19: In Stock)"],
+    lastVerified: "2026-11-19",
+    availability: "available",
+    affiliateStatus: "not-activated",
+    status: "candidate",
+    manufacturerUrl: "https://www.sakuraofamerica.com/product/pigma-micron/",
+    imageRights: "none",
+    shortName: "Pigma Micron pens, 8-pack",
+    benefit: "Fine black pens for handwriting and small details on your pages.",
+    lead: true,
   },
 ];

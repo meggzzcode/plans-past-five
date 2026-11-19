@@ -505,7 +505,11 @@ async function main() {
  */
 import type { CatalogProduct } from "./catalog";
 
-export const generatedCatalog: CatalogProduct[] = ${JSON.stringify(products, null, 2)};
+export const generatedCatalog: CatalogProduct[] = ${JSON.stringify(
+    products.map((p) => (p.hold ? { ...p, hold: "held" } : p)),
+    null,
+    2,
+  )};
 `;
   const tmp = `${OUT}.tmp-${process.pid}`;
   try {
