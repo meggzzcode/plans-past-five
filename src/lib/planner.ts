@@ -1032,6 +1032,8 @@ export type PlanSearch = Partial<{
   from: string;
   /** Activity id to build the plan around (from the Tonight tool). */
   with: string;
+  /** Comma-separated choices the person never picked (the form's starting values), for "Based on:". */
+  def: string;
 }>;
 
 const pick = <T extends string>(v: unknown, allowed: readonly T[]): T | undefined =>

@@ -34,6 +34,7 @@ const SEARCH_KEYS = [
   "go",
   "from",
   "with",
+  "def",
 ] as const;
 
 export const Route = createFileRoute("/make-plans")({
@@ -184,7 +185,7 @@ function Planner() {
     () =>
       new Set(
         (["when", "length", "vibe", "who", "budget", "setting", "energy", "home"] as const).filter(
-          (k) => search[k] !== undefined,
+          (k) => search[k] !== undefined && !(search.def ?? "").split(",").includes(k),
         ),
       ),
   );
@@ -269,10 +270,18 @@ function Planner() {
   useEffect(() => {
     if (!planUrl) return;
     try {
-      window.history.replaceState(window.history.state, "", planUrl);
+      const untouched = (["when", "length", "vibe", "who", "budget"] as const).filter(
+        (k) => !touched.has(k),
+      );
+      window.history.replaceState(
+        window.history.state,
+        "",
+        untouched.length ? `${planUrl}&def=${untouched.join(",")}` : planUrl,
+      );
     } catch {
       // Some embedded browsers block history changes: sharing still works from the Copy button.
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [planUrl]);
   const saved = ready && plan && isSaved(`plan:${planUrl}`);
   const planLabel = isDayWhen(input.when) ? "Plan my weekend" : "Plan my evening";
@@ -354,6 +363,13 @@ function Planner() {
             }}
           >
             <input type="hidden" name="go" value="yes" />
+            <input
+              type="hidden"
+              name="def"
+              value={(["when", "length", "vibe", "who", "budget"] as const)
+                .filter((k) => !touched.has(k))
+                .join(",")}
+            />
             {init.pin && <input type="hidden" name="with" value={init.pin} />}
             {init.from && <input type="hidden" name="from" value={init.from} />}
             <div key={formKey} className="mt-10 grid gap-7">
