@@ -9,8 +9,11 @@
 # "Saved". The site is "Published" when the owner presses Netlify's Deploys > Trigger deploy > Deploy
 # site (see netlify.toml and docs/buyer/CMS-SETUP.md). The build then checks the content
 # (scripts/build-content.mjs); if something is wrong the build stops and the live site stays as it was.
-# Pages CMS has documented commit-message templates (settings.commit.templates) but no documented
-# branch, pull-request or publish workflow, so the commit messages are left at their defaults.
+# Pages CMS also reads its configuration per branch and has repository "Actions" buttons; a branch plus
+# "Publish site" button route is PROPOSED, not active (docs/editorial-reset/PUBLISHING-WORKFLOW-
+# RECOMMENDATION.md, docs/editorial-reset/proposed/). Commit messages stay at their defaults.
+# IMAGES: use the Images form only (it records alt text, source and licence). Pages CMS writes JSON with
+# 2-space indent and no final newline; the content build understands and tidies that layout.
 
 # Keep any setting in a file that this form doesn't know about, instead of deleting it on save.
 settings:

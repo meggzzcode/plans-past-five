@@ -2,7 +2,7 @@
 
 ## The one setting
 
-Analytics has **one** switch: `analytics.ga4MeasurementId` in `src/config/site.ts`.
+Analytics has **one** switch: the **Google Analytics 4 measurement ID** field in Pages CMS > Site settings (stored as `ga4MeasurementId` in `content/settings.json`). Empty means off. A malformed ID (not like `G-ABC123XYZ9`) stops the build with a plain message.
 
 - **Empty (the default): nothing loads.** No script, no request to Google, no analytics cookie, no `track()` events. The Privacy page says no analytics is active.
 - **A valid GA4 ID** (format `G-` then 8 to 12 capital letters or digits, e.g. `G-ABC123XYZ9`): adds the standard async Google tag to the head of every page (`src/lib/analytics.ts`, rendered by `src/routes/__root.tsx`), switches on the `track()` events (`src/lib/track.ts`), and changes the Privacy page analytics sentence to say Google Analytics is used.
@@ -12,7 +12,7 @@ Analytics has **one** switch: `analytics.ga4MeasurementId` in `src/config/site.t
 
 ## Search Console and Pinterest verification
 
-These are separate and independent of analytics. Both live in `integrations.*` in `src/config/site.ts` and render as meta tags in every page head (`src/lib/verification.ts`) as soon as they are non-empty:
+These are separate and independent of analytics. Both (plus Bing) are fields in Site settings (`searchConsoleVerification`, `bingVerification`, `pinterestVerification`, bare code only) and render as meta tags in every page head (`src/lib/verification.ts`) as soon as they are non-empty:
 
 - `integrations.searchConsoleVerification` renders `<meta name="google-site-verification">`.
 - `integrations.pinterestVerification` renders `<meta name="p:domain_verify">`.

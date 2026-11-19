@@ -1,0 +1,59 @@
+# PROPOSED, NOT ACTIVE. Copy to .github/workflows/publish-content.yml only after the owner approves
+# (see docs/editorial-reset/PUBLISHING-WORKFLOW-RECOMMENDATION.md and CMS-ACCEPTANCE-TEST-OWNER-ACTIONS.md).
+# Never run against the production repository before it has passed on the throwaway test repository.
+#
+# What it does when the owner presses "Publish site" in Pages CMS:
+#   1. checks out main and the content-edits branch
+#   2. merges content-edits into main LOCALLY (stops with a plain message on a conflict)
+#   3. validates the content and runs the test suite on the merged result
+#   4. only if all of that passes, pushes main (the merge commit message carries the release marker
+#      that netlify.toml requires, so Netlify builds exactly one production deploy)
+#   5. fast-forwards content-edits to main so the two branches start level again
+# It uses only the built-in GITHUB_TOKEN: no secret is stored anywhere.
+# Needs: Settings > Actions > General > Workflow permissions = Read and write; no branch protection on
+# main that blocks this push.
+name: Publish content
+on:
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: Pages CMS payload as JSON (sent by the Publish site button)
+        required: true
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: publish-content
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Merge the content branch (not pushed yet)
+        run: |
+          git config user.name "Plans Past Five publisher"
+          git config user.email "noreply@users.noreply.github.com"
+          git fetch origin content-edits
+          if git merge-base --is-ancestor origin/content-edits HEAD; then
+            echo "Nothing to publish: content-edits has no changes that main lacks."; exit 0
+          fi
+          if ! git merge --no-ff origin/content-edits -m "Publish: content edits [deploy]"; then
+            git merge --abort || true
+            echo "::error::These edits clash with a change made directly on main. Nothing was published. Ask the site maintainer to reset the content-edits branch (docs/buyer/CMS-SETUP.md, Roll back)."
+            exit 1
+          fi
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - name: Validate the content (plain-English list on failure)
+        run: node scripts/build-content.mjs --check
+      - name: Run the tests on the merged result
+        run: bunx vitest run
+      - name: Publish (push main) and level the branches
+        run: |
+          if [ "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)" ]; then echo "Nothing to push."; exit 0; fi
+          git push origin HEAD:main
+          git push origin HEAD:refs/heads/content-edits

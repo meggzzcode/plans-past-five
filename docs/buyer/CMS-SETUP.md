@@ -1,50 +1,76 @@
 # Pages CMS setup and daily use
 
-> **NOT YET TESTED WITH A REAL LOGIN.** The CMS is configured (`.pages.yml`) and the content checks are tested, but nobody has yet signed in to Pages CMS with the owner's GitHub login, edited a real article, or pressed Netlify's Trigger deploy on this site. Do not treat it as fully operational until `docs/buyer/CMS-TEST-PLAN.md` has been run and recorded as passed.
+> **NOT YET TESTED WITH A REAL LOGIN.** The CMS is configured (`.pages.yml`) and the content checks are tested, but nobody has yet signed in to Pages CMS with a real GitHub login, edited a real article, or published from it on this site. The required test, with the exact accounts and a safe throwaway setup, is in `docs/editorial-reset/CMS-ACCEPTANCE-TEST-OWNER-ACTIONS.md` and the checklist is `docs/buyer/CMS-TEST-PLAN.md`. Do not treat the CMS as proven until that test is recorded as passed.
 
-For the owner or buyer. No coding. You need: a GitHub account that can edit the Plans Past Five repository, a Netlify login for the site, and a web browser.
+For the owner or buyer. No coding. You need: a GitHub account that can edit the Plans Past Five repository (or an email invitation as a Pages CMS collaborator, see below), a Netlify login for the site, and a web browser. Pages CMS is free (pagescms.org says "100% free", MIT licence, read 2026-11-19).
+
+## What you can change here
+| Task | Form | Works today? |
+|---|---|---|
+| Write, edit, publish or unpublish an article | **Articles** | Configured; build checks tested with simulated CMS saves; real login test pending |
+| Add or change a picture | **Images** (the only picture route) | Same |
+| Site name, tagline, website address, contact email, Google Analytics ID, Search Console / Bing / Pinterest codes | **Site settings** | Same |
+| Amazon tracking ID, marketplace, tracking on/off | **Site settings** | Same. Stays OFF until you switch it on |
+
+Not in the CMS: hobbies and products (code and the product importer; see `docs/buyer/PRODUCT-MANAGEMENT.md`), the logo and pin pictures, page layout.
 
 ## The two words that matter
-- **Saved**: you pressed Save in the CMS. It is stored in GitHub. **The website does not change.**
-- **Published**: you pressed Netlify **Deploys > Trigger deploy > Deploy site**. The website updates in 2 to 5 minutes. Each publish uses 15 of your 300 monthly Netlify credits, so batch your edits (aim for 8 publishes a month at most). Details: `docs/buyer/NETLIFY-CREDITS-AND-RELEASES.md`.
+- **Saved**: you pressed Save in the CMS. It is stored in GitHub.
+- **Published**: the live website changed.
+
+**How Saved becomes Published today (until the owner approves the new route below):** a save does not rebuild the site. Publish with Netlify **Deploys > Trigger deploy > Deploy site**. Whether that button honours the skip rule in `netlify.toml` is UNKNOWN until the real test; if the deploy says **Skipped**, edit `RELEASES.md` on GitHub with a commit message ending in `[deploy]`.
+
+**Why saves are not live automatically (verified 2026-11-19, Netlify docs):** the free Netlify plan has 300 credits a month as a hard limit, a successful production deploy costs 15 credits, and when credits run out the whole site shows "Site not available". Automatic deploy on every save could therefore take the site offline after about 20 saves. Rollbacks and failed builds cost 0, and so do Deploy Previews and branch deploys. Sources and the recommended one-button route (edit on a branch, preview free, press Publish) are in `docs/editorial-reset/PUBLISHING-WORKFLOW-RECOMMENDATION.md`. A paid Netlify plan changes this: re-read Netlify's pricing before relying on the numbers.
 
 ## One-time setup
 1. Go to https://pagescms.org, choose **Sign in with GitHub**, approve.
 2. **Add a project**, pick the Plans Past Five repository (use the GitHub link on that screen to allow access to this one repository if it is missing).
-3. Choose branch **main**.
-4. You should see **Articles** and **Images**. If you see a message about `.pages.yml`, copy it and send it to the person who maintains the site.
+3. Choose branch **main** (or `content-edits` once the Publish route is approved).
+4. You should see **Articles**, **Images** and **Site settings**. If you see a message about `.pages.yml`, copy it and send it to the person who maintains the site.
+5. To let a helper edit without a GitHub account, invite them by email in Pages CMS (Collaborators). Their edits are written through the Pages CMS app (docs read 2026-11-19; not yet tested here).
 
 ## Edit an article
 1. Articles, click the article, change the blocks (arrows reorder, Add inserts). Text boxes accept `**bold**` and `[link words](/journal/another-article)`.
 2. Press **Save**. That is Saved, not Published.
 3. When your batch is ready, Publish (below).
 
-## Add an image
+Pages CMS writes the file in its own layout (2-space indent, no final newline). That is fine: the build understands it and tidies it, and no test fails because of layout.
+
+## Hide an article or change its web address
+Setting an article to **Draft**, or changing its web address name, fails the build with a plain list if anything still points at it: links in other articles, the "Related" list, shop blocks, Pinterest pins, page-title overrides or the corrections log. Fix each line listed (change or remove the link) and save again. Pins and page-title overrides are in code (`src/data/pins.ts`, `src/lib/seo.ts`): ask your developer or assistant, or keep the article published.
+
+## Add an image (the only picture route)
 1. Images, **Add an entry**. One-word **Picture name** such as `crochetHands`.
 2. Upload the photo (JPG, PNG or WebP, about 1600 px wide, under 400 KB) and write the **Describe the photo** text (required).
-3. Fill in creator, source, licence (`docs/buyer/IMAGE-AND-ASSET-RIGHTS.md`). Save. Then pick it in an article.
+3. Fill in **Where it came from** and **Licence** (for example "my own photo", or the licence the photo came with). The build refuses an uploaded photo without them, so the record of your right to use it is always kept. See `docs/buyer/IMAGE-AND-ASSET-RIGHTS.md`.
+4. Save. Then pick it in an article ("Top picture" or an image block).
+Do not upload loose files in the Media tab and do not put photos in `src/assets/`: those routes skip the descriptions and licence record.
 
-## Publish (exact clicks)
+## Site settings (one form, validated)
+Open **Site settings**. Every value is checked at build time and a wrong one stops the build with a plain message (for example "is not a Google Analytics 4 measurement ID ... like G-ABC123XYZ9"), leaving the live site as it was. Public values only: never type a password, key or private token. Details of each field are on the form. To remove analytics, empty the Google Analytics field.
+
+## Amazon affiliate tracking (stays OFF until you authorise it)
+Shipped state: no ID, switch OFF, so links are plain Amazon links and the site says it does not earn from them. To turn on: (1) your own Amazon Associates account must be approved for this website (the seller's account does not transfer: Amazon's Operating Agreement restricts assignment without its written approval, `docs/buyer/AFFILIATE-ACTIVATION.md`); (2) in Site settings type **your** tracking ID (like `yourstore-20`), the date you confirmed the approval, and switch **Amazon tracking ON**; (3) Save and publish. One ID changes every Amazon link site-wide, and the earnings disclosure appears by itself. **To replace the ID** (new owner, new account): change the one field, Save, publish; no other place holds an ID. Typing an ID with the switch off changes nothing. The exact disclosure wording is read from `src/config/affiliate.ts`; the current Amazon wording still has to be re-read from Amazon's Operating Agreement before switching on (open item, see `docs/editorial-reset/changes/stage2b.md`).
+
+## Publish (exact clicks, current method)
 1. Netlify, your site, **Deploys**, **Trigger deploy**, **Deploy site**.
 2. Wait for green **Published**. If **Failed**, the live site is unchanged; open the deploy and read the list, for example `content/articles/how-to-start-crocheting.json, field "sources > #1 > url": must be a full web address starting with https://`. Fix it in the CMS, Save, Publish again.
 3. If the deploy says **Skipped**, use the backup: github.com, open `RELEASES.md`, pencil icon, add a line, commit to main with a message ending in `[deploy]`.
 
 ## Drafts, unpublish
 - Status **Draft** is never on the website. For a new article keep Draft until finished.
-- To go live: Status Published, fill **First published on** and **Facts last checked on** (like 2026-11-19), add at least one source, and resolve every "Facts still waiting to be checked" line (start it with RESOLVED and a date) or the deploy fails; Save, Publish.
-- **Unpublish**: set Status to Draft, Save, Publish.
+- To go live: Status Published, fill **First published on** and **Facts last checked on** (like 2026-11-19), add at least one source, and resolve every "Facts still waiting to be checked" line (start it with RESOLVED and a date) or the build fails; Save, Publish.
+- **Unpublish**: set Status to Draft, Save, Publish (see the note above about links to it).
 
 ## Preview
-There is no live preview of a draft by design (a draft's text never reaches the site build). Check the Pages CMS form, publish when ready, then view `/journal/<slug>`; unpublish if something is wrong.
+A draft is never built into the site, so it has no live preview; check it in the CMS form. Once the Publish route is approved, saving to the `content-edits` branch gives a free Netlify preview of the whole site with your edits (costs 0 credits).
 
 ## Roll back
-- Netlify Deploys, click an earlier Published deploy, **Publish deploy**, then switch **Auto publish** back on.
-- Or in GitHub: Commits on main, open your edit, **...**, **Revert**, Create pull request, Merge, then Publish. Never force-push (the site is also connected to Lovable).
-
-## Things Pages CMS cannot do
-Change design or code, edit hobbies, products or site settings (`docs/buyer/EDITING-WITHOUT-CODE.md`, `docs/buyer/PRODUCT-MANAGEMENT.md`), or fix a broken build by itself.
+- Fast, no code: Netlify Deploys, click an earlier Published deploy, **Publish deploy** (0 credits per Netlify's docs), then switch **Auto publish** back on.
+- Permanent: in GitHub, Commits on main, open your edit, **...**, **Revert**, Create pull request, Merge, then Publish. Otherwise the next publish rebuilds the bad commit. Never force-push `main`.
 
 ## For the maintainer
-- Pages CMS offers `settings.commit.templates` for commit messages but no documented branch, PR or publish workflow (pagescms.org docs, checked 2026-11-19). Options weighed: (A) saves wait for Trigger deploy: chosen; (B) marker in every save message: 15 credits per save; (C) side branch plus merge: not supported by Pages CMS docs; (D) ignore rule builds whenever `content/` changes: also 15 credits per save.
-- `netlify.toml` rule test: `bash scripts/check-netlify-ignore.sh`. Content check: `node scripts/build-content.mjs --check` (runs as `prebuild`, so an invalid edit fails the build and the live site stays).
-- Generated files under `src/content/generated/` and `src/data/images.generated.ts` come from `bun run content:build`; the committed copy can lag a CMS edit until the next build.
+- Settings live in `content/settings.json` and are read by `src/config/site.ts` and `src/config/affiliate.ts`. The check is `settingsSchema` in `scripts/content-lib.mjs`.
+- Pages CMS has documented commit templates, per-branch configuration and Actions buttons. Proposed (not active) Publish route: `docs/editorial-reset/proposed/`.
+- `netlify.toml` rule test: `bash scripts/check-netlify-ignore.sh`. Content check: `node scripts/build-content.mjs --check` (runs as `prebuild`).
+- Generated files under `src/content/generated/`, `src/data/images.generated.ts`, the app name in `public/manifest.webmanifest` and the sitemap line in `public/robots.txt` come from `bun run content:build`; the tests run it first.

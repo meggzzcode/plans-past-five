@@ -12,7 +12,8 @@ The step-by-step path, dates and the replacement of the "we don't currently earn
 
 | What                                         | File                                                                                |
 | -------------------------------------------- | ----------------------------------------------------------------------------------- |
-| Registry, link builder, disclosure sentences | `src/config/affiliate.ts`                                                           |
+| Your tracking ID, marketplace, on/off switch | Pages CMS > Site settings, stored in `content/settings.json` (the ONLY place an ID lives) |
+| Registry, link builder, disclosure sentences | `src/config/affiliate.ts` (reads the settings; no ID is written in code)            |
 | Amazon Associates research register | `src/data/affiliate-programs.ts`                                                    |
 | Product records                              | `src/data/products.ts`                                                              |
 | Disclosure page / note                       | `src/routes/affiliate-disclosure.tsx`, `src/components/editorial/AffiliateNote.tsx` |
@@ -39,28 +40,16 @@ Timing: the three-sale window means the site needs real visitors first. Nothing 
 Do these in order. Nothing else in the code needs to change.
 
 1. **Get your own approval.** Apply to Amazon Associates in your own name, listing your site URL. Complete the tax interview and payment method. You have 180 days to drive three qualified sales (your own orders do not count). Read the current Operating Agreement. Create a tracking id for this website in Associates Central (Manage Your Tracking IDs).
-2. **Replace the id and flip the one entry.** In `src/config/affiliate.ts` there is exactly one entry, `affiliateRegistry.amazon`. It is built with `blank(...)`; add these fields to it (spread the `blank(...)` result and override):
+2. **Enter your ID and switch tracking on, in the CMS.** Pages CMS > Site settings: type your tracking ID (like `yourstore-20`) in **Amazon Associates tracking ID**, today's date in **Date you last confirmed your Amazon approval**, leave **Amazon marketplace** on Amazon.com (United States, the only supported value), then switch **Amazon tracking ON**. Save and publish. The build refuses a bad ID format, or tracking switched on without an ID or date, with a plain message and leaves the live site unchanged. Typing an ID with the switch OFF changes nothing. Use your own ID only; never reuse another site's ID. **Never enter a real ID until your own Associates approval for this website exists.**
 
-   ```ts
-   amazon: {
-     ...blank("amazon", "Amazon Associates", "Amazon",
-       ["amazon.com", "www.amazon.com"], "https://www.amazon.com"),
-     websiteTrackingId: "your-tag-20", // the tracking id Amazon gave THIS website
-     approvalStatus: "approved",
-     active: true,
-     lastVerified: "YYYY-MM-DD", // today
-     approvedPromotionMethods: ["website content"], // what Amazon approved
-     accountOwnershipNote: "Account owned by <your name or company>.",
-   },
-   ```
+   **To replace the ID later** (a new owner, a new account): change that one field and publish. One ID changes every Amazon link site-wide and no other file holds an ID. **The seller's Associates account does not transfer**: Amazon's Operating Agreement may not be assigned without its express prior written approval, so the buyer applies in their own name and uses their own ID.
 
-   Use your own id only. Never reuse another site's id. If any of `active`, `approvalStatus: "approved"` or a tracking id is missing, the site falls back to plain links automatically.
 3. **Know what the disclosure will say.** The moment the entry is live, these appear automatically beside shop links, on the disclosure page, and in Terms and Privacy:
    - "As an Amazon Associate I earn from qualifying purchases." (`AMAZON_ASSOCIATE_STATEMENT`, Amazon's wording as read on 2026-11-18; confirm it still matches the Operating Agreement.)
    - "It never changes what we recommend."
    - "We may earn a commission on qualifying purchases at no extra cost to you." (replaces "We don't currently earn from these links.")
    - The longer program sentence `AMAZON_PROGRAM_STATEMENT` is not prescribed by Amazon in the pages Cowork read; review it and do not claim approval before Amazon's final acceptance.
-4. **Run the tests.** The suite does not depend on the shipped configuration, so it must be green with your id in place:
+4. **Run the tests (maintainer or assistant; optional for a non-coder).** The suite does not depend on the shipped configuration, so it must be green with your id in place:
 
    ```
    bunx vitest run                          # your real configuration
@@ -69,10 +58,10 @@ Do these in order. Nothing else in the code needs to change.
    ```
 
    Do not run `scripts/check-affiliate-config.mjs --expect-inactive`; that flag is only for the seller's release branch and fails once you activate. Your real id is never written into a test.
-5. **Review the live wording.** Update `site.legal.lastUpdated`, open `/affiliate-disclosure`, `/shop`, a product card and `/terms` and read the disclosure once.
+5. **Review the live wording.** Open `/affiliate-disclosure`, `/shop`, a product card and `/terms` and read the disclosure once.
 6. **Deploy** as described in `docs/buyer/HOSTING-AND-DEPLOYMENT.md` (`bun run build`, then publish). After deploying, click a product link on the live site and check the URL ends in `?tag=your-tag-20`.
 
-Replacing an id later: change `websiteTrackingId` in that one place; every link follows.
+Replacing an id later: change the tracking ID field in Site settings; every link follows.
 
 ### How this was tested
 
