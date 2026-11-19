@@ -6,7 +6,7 @@ vi.setConfig({ testTimeout: 60_000 });
 import { hobbies, type Cost, type Energy } from "@/data/hobbies";
 import { activities } from "@/data/activities";
 import { findHobbies, type FinderAnswers } from "@/lib/finder";
-import { QUIZ_VALUES } from "@/lib/quiz-flow";
+import { FINDER_TIME, FINDER_WHERE, QUIZ_VALUES } from "@/lib/quiz-flow";
 import {
   BUDGETS,
   ENERGIES,
@@ -51,13 +51,13 @@ const bump = (k: string, n = 1) => (counts[k] = (counts[k] ?? 0) + n);
 
 /* ------------------------------------------------------------------ quiz */
 
-const WHERE = [...QUIZ_VALUES.where, "indoors"] as FinderAnswers["where"][];
+const WHERE = [...FINDER_WHERE, "indoors"] as FinderAnswers["where"][];
 const LEVELS = [undefined, "easy", "some", "any"] as const;
 
 function* quizAnswers(): Generator<FinderAnswers> {
   for (const craving of QUIZ_VALUES.craving)
     for (const where of WHERE)
-      for (const time of QUIZ_VALUES.time)
+      for (const time of FINDER_TIME)
         for (const budget of QUIZ_VALUES.budget)
           for (const company of QUIZ_VALUES.company)
             for (const energy of QUIZ_VALUES.energy)

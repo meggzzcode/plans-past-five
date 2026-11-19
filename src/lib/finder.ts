@@ -363,8 +363,9 @@ export function plannerSearch(a: FinderAnswers, persona: Persona): PlanSearch {
     out.when = "saturday";
     out.length = "half-day";
   } else {
+    // "No limit", or not asked (the quiz has no time question): size the day by the energy answer.
     out.when = "saturday";
-    out.length = "full-day";
+    out.length = a.energy === "low" ? "few-hours" : a.energy === "medium" ? "half-day" : "full-day";
   }
   out.from = persona.key;
   return out;

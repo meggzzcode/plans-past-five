@@ -16,12 +16,29 @@ const base = process.argv[2] ?? "http://127.0.0.1:3000";
 const executablePath =
   process.env.CHROMIUM ?? "/opt/pw-browsers/chromium-1243/chrome-linux64/chrome";
 
-// Each path is the option index to tap on every question that is asked (clamped to what is offered).
+// Each path lists the answers (by their visible text) to tap on whichever question is asked, so the
+// same person is simulated before and after the quiz was shortened. The first option is the fallback.
 const paths = [
-  { name: "creative, low energy, solo, cheap", picks: [0, 0, 0, 1] },
-  { name: "creative, medium energy, friends, flexible", picks: [0, 1, 1, 3] },
-  { name: "relaxation, low energy, solo, under $25", picks: [1, 0, 0, 1] },
-  { name: "friendship, medium energy, any, under $50", picks: [3, 1, 2, 2] },
+  {
+    name: "makes things, low energy, solo, under $25",
+    picks: [/Making things/, /Running on fumes/, /Just me/, /At home/, /Under 45/, /Under \$25/],
+  },
+  {
+    name: "makes things, medium energy, friends, flexible",
+    picks: [/Making things/, /Some left/, /^Friends/, /Anywhere/, /No limit/, /Flexible/],
+  },
+  {
+    name: "unwind, low energy, solo, under $25",
+    picks: [/Time to unwind/, /Running on fumes/, /Just me/, /At home/, /Under 45/, /Under \$25/],
+  },
+  {
+    name: "new friends, medium energy, under $50",
+    picks: [/New friends/, /Some left/, /Anywhere/, /No limit/, /Under \$50/],
+  },
+  {
+    name: "moving, medium energy, either, under $50",
+    picks: [/Moving my body/, /Some left/, /Either/, /Outside/, /An hour/, /Under \$50/],
+  },
 ];
 
 const browser = await chromium.launch({ executablePath, args: ["--no-sandbox"] });
@@ -40,7 +57,11 @@ for (const p of paths) {
     if ((await page.locator('[aria-label^="Your answers"]').count()) > 0) break; // results
     const options = page.locator("main button[aria-pressed]");
     const n = await options.count();
-    const idx = Math.min(p.picks[asked] ?? 0, n - 1);
+    const texts = await options.allInnerTexts();
+    const idx = Math.max(
+      0,
+      texts.findIndex((t) => p.picks.some((re) => re.test(t.trim()))),
+    );
     await options.nth(idx).click();
     taps++;
     asked++;
@@ -51,14 +72,20 @@ for (const p of paths) {
   const buy = page.locator('main a[href*="amazon."]');
   const starter = page.getByRole("link", { name: /starter list/i });
   const result = { name: p.name, questions: asked, tapsToResult: taps };
-  result.productOnResultWithoutTap = (await buy.count()) > 0 && (await starter.count()) === 0;
+  result.productOnResultPage = (await buy.count()) > 0;
   if ((await starter.count()) > 0) {
+    // The old result page: the product list sat far below, behind a "Get my starter list" button.
     await starter.first().click();
     taps++;
     result.extraTap = "Get my starter list";
   }
   result.productButton = (await buy.count()) > 0;
   result.tapsToProductButtonClick = result.productButton ? taps + 1 : null;
+  if (result.productButton)
+    result.productButtonTopPx = await buy
+      .first()
+      .evaluate((el) => Math.round(el.getBoundingClientRect().top + window.scrollY));
+  result.resultPageHeightPx = await page.evaluate(() => document.documentElement.scrollHeight);
   result.url = page.url().replace(base, "");
   rows.push(result);
   await ctx.close();

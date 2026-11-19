@@ -39,7 +39,7 @@ export const Route = createFileRoute("/hobby-finder")({
   head: () =>
     seo({
       title: "Hobby Quiz: Find a Hobby You'll Actually Do",
-      description: `${upToCap()} quick taps, no email. Tell us your energy, company, time and budget and get hobbies that fit your after-work life, plus an easy first step for each.`,
+      description: `${upToCap()} quick taps, no email. Tell us what you want more of, your energy, company and budget and get hobbies that fit your after-work life, plus an easy first step for each.`,
       path: "/hobby-finder",
       image: absoluteUrl(images.potteryNight.src),
     }),
