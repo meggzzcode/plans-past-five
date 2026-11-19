@@ -5,8 +5,12 @@
 # STATUS: written from the published Pages CMS documentation. It has NOT yet been opened in the live
 # Pages CMS app (that needs the owner's GitHub login). Cowork task C17 does that first test.
 #
-# Every save in the CMS is a commit to GitHub. Netlify then checks the content (scripts/build-content.mjs)
-# and rebuilds the site; if something is wrong the build stops and the live site stays as it was.
+# Every save in the CMS is a commit to GitHub. A save does NOT change the live website: it is only
+# "Saved". The site is "Published" when the owner presses Netlify's Deploys > Trigger deploy > Deploy
+# site (see netlify.toml and docs/buyer/CMS-SETUP.md). The build then checks the content
+# (scripts/build-content.mjs); if something is wrong the build stops and the live site stays as it was.
+# Pages CMS has documented commit-message templates (settings.commit.templates) but no documented
+# branch, pull-request or publish workflow, so the commit messages are left at their defaults.
 
 # Keep any setting in a file that this form doesn't know about, instead of deleting it on save.
 settings:
@@ -73,7 +77,7 @@ content:
         options:
           values:
             - { value: draft, label: "Draft (not on the website)" }
-            - { value: published, label: "Published (live after the next build)" }
+            - { value: published, label: "Published (live after you press Publish in Netlify)" }
       - name: publishedAt
         label: First published on
         type: string

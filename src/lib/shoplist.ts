@@ -3,8 +3,8 @@
  * Frontend-only: nothing leaves the device. Read after mount so SSR output never mismatches.
  */
 import { useCallback, useEffect, useState } from "react";
-import { resolveProductLink, liveDisclosureSentences, isMonetized } from "@/config/affiliate";
-import { linkableFor, type CatalogProduct } from "@/data/catalog";
+import { exportPageUrl } from "@/lib/export-links";
+import type { CatalogProduct } from "@/data/catalog";
 import { track } from "@/lib/track";
 
 export type ShopStatus = "need" | "own" | "later";
@@ -93,15 +93,17 @@ export const neededProducts = (products: CatalogProduct[], state: ShopListState)
   products.filter((p) => state[p.id] === "need");
 
 /**
- * Plain-text list for clipboard or printing: product names, brands and the real destination URLs.
- * URLs come from `resolveProductLink`, so they are ordinary links today and tagged only after a buyer
- * activates the registry (in which case the required disclosure sentence is appended).
+ * Plain-text list for clipboard, printing or sharing: product names and brands plus ONE link back to
+ * our own page. It never contains retailer or affiliate links (see src/lib/export-links.ts and
+ * docs/commerce/EXPORT-LINK-POLICY.md), so no Associates tag or Associate statement can appear here,
+ * whatever the registry says.
  */
 export function buildListText(
   products: CatalogProduct[],
   state: ShopListState,
   today: string,
   title = "My shopping list",
+  pageUrl: string = exportPageUrl(),
 ): string {
   const needed = neededProducts(products, state);
   const lines = [
@@ -109,16 +111,12 @@ export function buildListText(
     `Made ${today}. Check each listing for current availability.`,
     "",
   ];
-  for (const p of needed) {
-    const link = resolveProductLink(linkableFor(p));
-    lines.push(`[ ] ${p.name}${p.brand ? ` (${p.brand})` : ""}`);
-    lines.push(`    ${link.retailer}: ${link.href}`);
-  }
+  for (const p of needed) lines.push(`[ ] ${p.name}${p.brand ? ` (${p.brand})` : ""}`);
+  if (needed.length) lines.push("", `Find each item and its details: ${pageUrl}`);
   const owned = products.filter((p) => state[p.id] === "own");
   if (owned.length) lines.push("", `Already own: ${owned.map((p) => p.name).join(", ")}`);
   const later = products.filter((p) => state[p.id] === "later");
   if (later.length) lines.push("", `Maybe later: ${later.map((p) => p.name).join(", ")}`);
-  if (isMonetized()) lines.push("", liveDisclosureSentences().join(" "));
   return lines.join("\n");
 }
 

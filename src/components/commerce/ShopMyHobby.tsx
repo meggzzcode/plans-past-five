@@ -2,10 +2,10 @@ import { useEffect, useId, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "@tanstack/react-router";
 import { Copy, Printer } from "lucide-react";
-import { isMonetized, liveDisclosureSentences, resolveProductLink } from "@/config/affiliate";
+import { exportPageUrl } from "@/lib/export-links";
 import { getHobby } from "@/data/hobbies";
 import { articlesForHobby } from "@/content";
-import { selectProducts, verifiedCatalog, linkableFor, type CatalogProduct } from "@/data/catalog";
+import { selectProducts, verifiedCatalog, type CatalogProduct } from "@/data/catalog";
 import { buildListText, copyText, neededProducts, useShopList } from "@/lib/shoplist";
 import { track } from "@/lib/track";
 import { ShopDisclosure, primaryButtonCls } from "./ProductCard";
@@ -76,7 +76,8 @@ export function ShopMyHobby({
 
   const needed = ready ? neededProducts(sel.all, state) : [];
   const listTitle = h ? `${h.name} shopping list` : "My shopping list";
-  const text = buildListText(sel.all, ready ? state : {}, today, listTitle);
+  const pageUrl = exportPageUrl(hobby);
+  const text = buildListText(sel.all, ready ? state : {}, today, listTitle, pageUrl);
   const grouped = groupsFor(sel);
   const related = hobby ? articlesForHobby(hobby).slice(0, 3) : [];
 
@@ -89,13 +90,15 @@ export function ShopMyHobby({
         {needed.map((p) => (
           <li key={p.id} style={{ margin: "10px 0", overflowWrap: "anywhere" }}>
             {"☐"} <strong>{p.shortName ?? p.name}</strong> ({p.brand})
-            <br />
-            <span style={{ fontSize: "0.85em" }}>{resolveProductLink(linkableFor(p)).href}</span>
           </li>
         ))}
       </ul>
       {later.length > 0 && <p>Saved for later: {later.map((p) => p.name).join(", ")}</p>}
-      {isMonetized() && <p style={{ fontSize: "0.85em" }}>{liveDisclosureSentences().join(" ")}</p>}
+      {needed.length > 0 && (
+        <p style={{ fontSize: "0.85em", overflowWrap: "anywhere" }}>
+          Find each item and its details: {pageUrl}
+        </p>
+      )}
     </div>
   );
 

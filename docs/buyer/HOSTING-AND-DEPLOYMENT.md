@@ -45,7 +45,7 @@ Do not pick a host because of this table; compare current pricing and terms from
 
 ## Rollback and backups
 
-Git is the backup (`docs/buyer/SECURITY-AND-BACKUPS.md`). Redeploy a previous commit if a release breaks; do not rewrite published history if the repo remains connected to Lovable.
+Git is the backup (`docs/buyer/SECURITY-AND-BACKUPS.md`). In Netlify choose an earlier deploy and Publish deploy if a release breaks; do not rewrite published history if the repo remains connected to Lovable.
 
 ## Open items to check live
 
@@ -56,4 +56,4 @@ Git is the backup (`docs/buyer/SECURITY-AND-BACKUPS.md`). Redeploy a previous co
 
 Credit cap, bandwidth cost and the recommended limit of 8 deploys a month: `docs/buyer/NETLIFY-CREDITS-AND-RELEASES.md`.
 
-Netlify's free plan has a monthly credit allowance (about 20 production deploys). `netlify.toml` therefore skips every build unless the latest commit message contains the deploy marker (square brackets around the word deploy). To publish: make a commit whose message ends with that marker and push it to the production branch, for example `git commit --allow-empty -m "Release: new articles [deploy]"`. Batch several edits into one release. Content saved through a CMS commits without the marker, so it will NOT go live until a release commit is pushed or you trigger a deploy by hand in Netlify (Deploys, Trigger deploy). Check Netlify's usage page monthly. Whether a skipped build costs credits has not been confirmed (to be checked live).
+**Saved is not Published.** `netlify.toml` skips every build unless the newest commit message contains the release marker (the word deploy in square brackets) or you press Netlify **Deploys > Trigger deploy > Deploy site**. CMS saves carry no marker, so they wait until you publish. Each publish costs 15 of 300 monthly credits: batch edits, at most 8 publishes a month. If Trigger deploy shows Skipped, edit `RELEASES.md` on GitHub with a commit message ending in the marker. Unpublish: Status Draft in the CMS, then publish. Roll back: Netlify Deploys, earlier deploy, Publish deploy. This workflow has **not yet been tested with a real login** (`docs/buyer/CMS-TEST-PLAN.md`). Check the rule with `bash scripts/check-netlify-ignore.sh`.

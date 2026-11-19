@@ -521,7 +521,8 @@ describe("shopping list", () => {
     );
     expect(text).toContain("Test list (Plans Past Five)");
     expect(text).toContain("[ ] TEST FIXTURE washi tape set (Test Brand)");
-    expect(text).toContain("Amazon: https://www.amazon.com/dp/B0TESTFIX1");
+    expect(text).toContain("Find each item and its details: ");
+    expect(text).not.toContain("amazon.com");
     expect(text).not.toContain("B0TESTFIX2");
     expect(text).toContain("Already own: TEST FIXTURE pens");
     expect(text).not.toMatch(/tag=|utm_/);
@@ -549,7 +550,7 @@ describe("print view and list extras", () => {
     const area = document.body.querySelector(":scope > .shop-print-area");
     expect(area).not.toBeNull();
     expect(area!.textContent).toContain("TEST FIXTURE washi tape set");
-    expect(area!.textContent).toContain("https://www.amazon.com/dp/B0TESTFIX1");
+    expect(area!.textContent).not.toContain("amazon.com");
     expect(area!.textContent).not.toMatch(/tag=/);
     fireEvent.click(screen.getByRole("button", { name: /Print my list/ }));
     expect(document.body.getAttribute("data-print-shop")).toBe(area!.getAttribute("data-print-id"));
@@ -636,7 +637,9 @@ describe("links and affiliate swap", () => {
     const a = screen.getByText(/See it on Amazon/).closest("a")!;
     expect(a.getAttribute("href")).toBe("https://www.amazon.com/dp/B0TESTFIX1?tag=demo-20");
     expect(a.getAttribute("rel")).toBe("sponsored noopener noreferrer");
-    expect(buildListText([base], { [base.id]: "need" }, "2026-02-03")).toMatch(/Associate/);
+    expect(buildListText([base], { [base.id]: "need" }, "2026-02-03")).not.toMatch(
+      /Associate|tag=/,
+    );
   });
 });
 

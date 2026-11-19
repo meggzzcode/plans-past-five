@@ -4,9 +4,13 @@
 [build]
   command = "bun install --frozen-lockfile && bun run build"
   publish = "dist"
-  # DEPLOY BUDGET: the free plan allows about 20 production deploys a month. A build runs ONLY when the
-  # latest commit message contains the marker [deploy]. Every other push is skipped (exit 0 = skip).
-  # Deploy on purpose: git commit --allow-empty -m "Release: <what changed> [deploy]" and push.
+  # DEPLOY BUDGET: the free plan has 300 credits a month and a production deploy costs 15 credits.
+  # PUBLISH MODEL: saving in the CMS (or any push to main) does NOT build. A build runs only when the
+  # latest commit message contains the marker [deploy], or when the owner presses Netlify's
+  # Deploys > Trigger deploy > Deploy site. (Whether Trigger deploy honours this rule is confirmed
+  # by the CMS test in docs/buyer/CMS-TEST-PLAN.md; if it shows "Skipped", edit RELEASES.md on
+  # GitHub with a commit message ending in [deploy].) Exit 0 = skip, exit 1 = build.
+  # Test the rule: bash scripts/check-netlify-ignore.sh
   ignore = "! git log -1 --pretty=%B HEAD | grep -q '\\[deploy\\]'"
 
 [build.environment]

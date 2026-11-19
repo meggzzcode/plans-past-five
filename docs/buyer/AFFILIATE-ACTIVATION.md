@@ -65,3 +65,6 @@ Active approved entry with tracking id for the destination, then the ordinary ve
 ## Disclosure
 
 Update `site.legal.lastUpdated` when going live. Keep the disclosure on the affiliate page and near product links (automatic). Have the owner or a lawyer review for your country (FTC or local rules).
+
+## Exports stay ordinary
+Activating Amazon tags on-site changes nothing in copied lists, printed lists, backups or shares. They use `src/lib/export-links.ts` (names plus a link back to this site, never a tagged link) because Amazon bars Special Links in printed and offline material. See docs/commerce/EXPORT-LINK-POLICY.md. Do not switch them to the affiliate resolver.

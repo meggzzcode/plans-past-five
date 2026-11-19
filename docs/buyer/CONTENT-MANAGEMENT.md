@@ -1,5 +1,9 @@
 # Content management
 
+> **NOT YET TESTED WITH A REAL LOGIN.** The browser editor (Pages CMS) is configured but no real login test has been run: `docs/buyer/CMS-TEST-PLAN.md`.
+
+**Saved is not Published.** A CMS save (a commit to main) does not change the website. Publish with Netlify **Deploys > Trigger deploy > Deploy site** (or a commit message ending in `[deploy]`). Unpublish: set Status to Draft, save, publish. Rollback: Netlify Deploys > earlier deploy > Publish deploy, or git revert. About 15 credits per publish, at most 8 a month: `docs/buyer/NETLIFY-CREDITS-AND-RELEASES.md`.
+
 Articles and images are data files (`content/articles/*.json`, `content/images/*.json`) that a developer edits directly or a non-coder edits in Pages CMS (`docs/buyer/CMS-SETUP.md`, `docs/buyer/EDITING-WITHOUT-CODE.md`; first live login test is a pending follow-up task listed in `docs/cowork`). `bun run content:build` validates them and writes the generated files; it runs automatically before every build. Hobbies, products and settings remain code. After any change run:
 
 ```
@@ -14,7 +18,7 @@ bunx vite build
 2. Pass `docs/content/ARTICLE-QUALITY-CHECKLIST.md` and `docs/SOP-publish-article.md`: resolve every `coworkChecks` item, fill `sources`, set `verifiedAt`.
 3. Set `"status": "published"` and `"publishedAt": "YYYY-MM-DD"`.
 4. Registration is automatic: `scripts/build-content.mjs` writes only published articles to `src/content/generated/published.json` (the public bundle) and drafts to `drafts.json` (tests and scripts only). `src/test/content-registry.test.ts` checks that no draft reaches the public bundle.
-5. After deploy, confirm it appears in `/sitemap.xml` and request indexing.
+5. Publish (see above), then confirm it appears in `/sitemap.xml` and request indexing.
 
 ## Update an article
 
@@ -65,4 +69,4 @@ Drafts must keep `status: "draft"`. Never import `allArticlesIncludingDrafts` in
 
 ## PENDING
 
-Which free Git-based CMS, if any, fits this stack and the "no secrets in repo" rule? Research needed; nothing is installed.
+Real-login test of Pages CMS and Trigger deploy: `docs/buyer/CMS-TEST-PLAN.md`.

@@ -27,12 +27,7 @@
       "creative-writing",
       "thrifting"
     ],
-    "productIds": [
-      "watercolor-sets",
-      "air-dry-clay",
-      "embroidery-kits",
-      "pocket-notebooks"
-    ],
+    "productIds": ["watercolor-sets", "air-dry-clay", "embroidery-kits", "pocket-notebooks"],
     "sources": [],
     "coworkChecks": [
       "OPEN: headline 'Under $25' and every 'Typically under $X' cost label (items 1-7, 9-11, 13, 15; creative writing 'under $10'; plants 'free to $25'; thrifting 'your cap, typically under $25') - Cowork 2026-11-18: NOT VERIFIABLE GENERALLY (no live retail price source). Needs live retail verification per item with a date, or an editorial decision to drop the numeric framing and retitle.",
@@ -237,22 +232,13 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "watercolor-sets",
-          "air-dry-clay",
-          "embroidery-kits",
-          "pocket-notebooks"
-        ],
+        "productIds": ["watercolor-sets", "air-dry-clay", "embroidery-kits", "pocket-notebooks"],
         "title": "If you want a starter kit",
         "dek": "Optional. Start with what you have, then upgrade if a hobby sticks."
       },
       {
         "type": "ifYouLoved",
-        "hobbies": [
-          "watercolor-painting",
-          "air-dry-clay",
-          "birdwatching"
-        ]
+        "hobbies": ["watercolor-painting", "air-dry-clay", "birdwatching"]
       }
     ]
   },
@@ -266,18 +252,8 @@
     "hero": "picnic",
     "searchIntent": "weekend plans ideas",
     "angle": "Solo, friends and date options; budget tiers; no invented local events",
-    "hobbies": [
-      "picnicking",
-      "thrifting",
-      "hiking",
-      "pottery-painting",
-      "museum-exploring"
-    ],
-    "productIds": [
-      "picnic-blankets",
-      "market-totes",
-      "film-cameras"
-    ],
+    "hobbies": ["picnicking", "thrifting", "hiking", "pottery-painting", "museum-exploring"],
+    "productIds": ["picnic-blankets", "market-totes", "film-cameras"],
     "body": [
       {
         "type": "h2",
@@ -308,18 +284,8 @@
     "hero": "shopPottery",
     "searchIntent": "how to start air dry clay / air dry clay for beginners / air dry clay projects",
     "angle": "A beginner walkthrough that sets honest expectations: what air-dry clay is good for, what it is not, and how to make a first trinket dish, then a jewelry holder, ornaments and figurines",
-    "hobbies": [
-      "air-dry-clay",
-      "pottery-painting",
-      "craft-nights"
-    ],
-    "productIds": [
-      "air-dry-clay",
-      "clay-tools",
-      "clay-mats",
-      "acrylic-paints",
-      "detail-brushes"
-    ],
+    "hobbies": ["air-dry-clay", "pottery-painting", "craft-nights"],
+    "productIds": ["air-dry-clay", "clay-tools", "clay-mats", "acrylic-paints", "detail-brushes"],
     "sources": [
       {
         "title": "Crayola: can air dry clay pieces be sealed? (FAQ)",
@@ -499,11 +465,7 @@
     "hero": "crochetHands",
     "searchIntent": "how to start crocheting / crochet for beginners / easy first crochet project",
     "angle": "A calm, practical start: choose forgiving supplies, learn the chain, single crochet and double crochet, and finish a flat dishcloth-style square before anything shaped",
-    "hobbies": [
-      "crochet",
-      "knitting",
-      "embroidery"
-    ],
+    "hobbies": ["crochet", "knitting", "embroidery"],
     "productIds": [],
     "sources": [],
     "coworkChecks": [
@@ -651,14 +613,8 @@
     "hero": "shopCreative",
     "searchIntent": "how to start embroidery / embroidery for beginners / basic embroidery stitches",
     "angle": "A stitch-first beginner path: learn a handful of stitches on scrap fabric, then finish a single small hoop, with fixes for the most common frustrations",
-    "hobbies": [
-      "embroidery",
-      "crochet",
-      "craft-nights"
-    ],
-    "productIds": [
-      "embroidery-kits"
-    ],
+    "hobbies": ["embroidery", "crochet", "craft-nights"],
+    "productIds": ["embroidery-kits"],
     "sources": [],
     "coworkChecks": [
       "RESOLVED 2026-11-19: starter spend ($10-$30), 5-6 inch hoop, 'six-strand' and 'two to three strands', cold-water wash and face-down pressing - removed or reworded to defer to labels (no source); verification found no source for prices",
@@ -798,9 +754,7 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "embroidery-kits"
-        ],
+        "productIds": ["embroidery-kits"],
         "title": "Shop your hobby",
         "dek": "A small kit takes the guessing out of the first hoop."
       },
@@ -820,17 +774,8 @@
     "hero": "shopGirlsNight",
     "searchIntent": "how to make friends as an adult",
     "angle": "Recurring activities, classes, clubs; scripts for following up",
-    "hobbies": [
-      "book-clubs",
-      "craft-nights",
-      "pickleball",
-      "volunteering",
-      "mahjong"
-    ],
-    "productIds": [
-      "conversation-cards",
-      "mahjong-sets"
-    ],
+    "hobbies": ["book-clubs", "craft-nights", "pickleball", "volunteering", "mahjong"],
+    "productIds": ["conversation-cards", "mahjong-sets"],
     "body": [
       {
         "type": "h2",
@@ -865,15 +810,8 @@
     "hero": "watercolor",
     "searchIntent": "watercolor painting for beginners / watercolor supplies / easy watercolor projects",
     "angle": "A calm, practice-first guide: buy little, learn water control before drawing skill, and finish three small projects that look good without being good at drawing",
-    "hobbies": [
-      "watercolor-painting",
-      "outdoor-sketching"
-    ],
-    "productIds": [
-      "watercolor-sets",
-      "watercolor-sketchbooks",
-      "portable-watercolor"
-    ],
+    "hobbies": ["watercolor-painting", "outdoor-sketching"],
+    "productIds": ["watercolor-sets", "watercolor-sketchbooks", "portable-watercolor"],
     "sources": [
       {
         "title": "ACMI: materials safety",
@@ -1024,11 +962,7 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "watercolor-sets",
-          "watercolor-sketchbooks",
-          "portable-watercolor"
-        ],
+        "productIds": ["watercolor-sets", "watercolor-sketchbooks", "portable-watercolor"],
         "title": "Shop your hobby",
         "dek": "A small set and good paper are plenty to begin."
       },
