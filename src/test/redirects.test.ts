@@ -92,12 +92,12 @@ describe("route layer (dev server, tests and the built Nitro server)", () => {
     expect(router.state.location.pathname).toBe("/make-plans");
     expect(router.state.location.search).toMatchObject({
       mode: "tonight",
-      t: "60",
+      t: 60,
       e: "low",
       b: "free",
       c: "solo",
       w: "indoor",
-      s: "2",
+      s: 2,
     });
   });
 });

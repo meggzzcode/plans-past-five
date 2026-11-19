@@ -42,7 +42,7 @@ const SEARCH_KEYS = [
 const TONIGHT_KEYS = ["t", "e", "b", "c", "w", "s"] as const;
 type MakePlansSearch = PlanSearch & {
   mode?: string;
-} & Partial<Record<(typeof TONIGHT_KEYS)[number], string>>;
+} & Partial<Record<(typeof TONIGHT_KEYS)[number], string | number>>;
 
 /**
  * Which half of Make Plans to show. `?mode=plan` and `?mode=tonight` are explicit. With no mode, any
@@ -58,7 +58,13 @@ export function makePlansMode(s: MakePlansSearch): "tonight" | "plan" {
 export const Route = createFileRoute("/make-plans")({
   validateSearch: (s: Record<string, unknown>): MakePlansSearch => {
     const out: MakePlansSearch = {};
-    for (const k of [...SEARCH_KEYS, ...TONIGHT_KEYS, "mode"] as const) {
+    // Tonight's answers keep their type: a number stays a number, so a link like ?t=60&s=2 is already
+    // in its canonical form and is not redirected a second time. (parseTonightSearch compares as text.)
+    for (const k of TONIGHT_KEYS) {
+      const v = s[k];
+      if (typeof v === "string" || typeof v === "number") out[k] = v;
+    }
+    for (const k of [...SEARCH_KEYS, "mode"] as const) {
       const v = s[k];
       if (typeof v === "string" || typeof v === "number") out[k] = String(v);
     }

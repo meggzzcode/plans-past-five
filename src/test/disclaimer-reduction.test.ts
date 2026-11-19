@@ -35,6 +35,6 @@ describe("one concise shopping-links line per shopping page (Stage 3a)", () => {
   it("the Affiliate Disclosure page and the setting-driven statement logic are untouched", () => {
     const page = read("src/routes/affiliate-disclosure.tsx");
     expect(page).toMatch(/no prices/i);
-    expect(read("src/config/affiliate.ts")).toContain("AMAZON_ASSOCIATE_STATEMENT");
+    expect(read("src/config/affiliate.ts")).toMatch(/export const \w*ASSOCIATE_STATEMENT/);
   });
 });
