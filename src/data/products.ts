@@ -203,7 +203,7 @@ export const products: Product[] = [
     "air-dry-clay",
     "pottery-era",
     "Air-dry clay",
-    "The no-kiln way into pottery. Shape trinket dishes and ring holders, leave them overnight, paint them tomorrow.",
+    "The no-kiln way into pottery. Shape trinket dishes and ring holders, let them dry, then paint them (check your clay's label for drying time).",
     "A white or terracotta block of at least 2 lb so you can make mistakes freely.",
     "air dry clay white",
     ["air-dry-clay", "craft-nights"],

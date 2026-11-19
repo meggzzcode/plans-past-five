@@ -28,7 +28,7 @@ function Directory() {
     <>
       <PageHero
         kicker="The hobby directory"
-        title="Thirty-six ways to be a beginner again."
+        title={`${hobbies.length} ways to be a beginner again.`}
         italic="beginner again."
         dek="Filter by where, when, who with and how much energy you've got. Every hobby has a realistic first session, so you can start tonight."
         tone="butter"

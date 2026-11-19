@@ -181,7 +181,7 @@ const base: Base[] = [
   ),
   A(
     "clay",
-    "Make an air-dry clay ring dish and leave it to dry overnight.",
+    "Make an air-dry clay ring dish and let it dry (see your clay's label for timing).",
     ["creative", "cozy"],
     all,
     "under25",
@@ -282,7 +282,7 @@ const base: Base[] = [
   ),
   A(
     "tennis",
-    "Book a free public court and rally for 45 minutes.",
+    "Head to a public court (often free) and rally for 45 minutes.",
     ["outdoorsy", "social", "adventurous"],
     ["friend", "partner", "group"],
     "free",
@@ -788,7 +788,7 @@ const extras: Record<string, Extra> = {
     energy: "high",
     setting: "outdoor",
     cost: [0, 0],
-    prep: "Find a free public court and borrow rackets and balls if you can.",
+    prep: "Find a public court (often free) and borrow rackets and balls if you can.",
     supplies: ["Rackets", "Tennis balls", "Water bottle"],
     addVibes: ["active"],
   },

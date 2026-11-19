@@ -406,9 +406,10 @@ const seeds: Seed[] = [
     beginner: 1,
     cravings: ["relaxation"],
     description:
-      "Yes, it counts. Especially fiction, especially off a screen, especially with a library card.",
-    whyYoullLoveIt: "The easiest hobby to restart, and the cheapest with a library card.",
-    supplies: ["A library card or one book"],
+      "Yes, it counts. Especially fiction, especially off a screen, especially with a library card from most libraries.",
+    whyYoullLoveIt:
+      "The easiest hobby to restart, and often the cheapest, since most libraries lend books free.",
+    supplies: ["A library book or one you already own"],
     optional: ["Book light", "Reading journal", "Book sleeve"],
     firstActivity: "Pick up a short novel and read before your phone gets a chance.",
     productIds: ["book-lights", "reading-journals", "book-sleeves", "reading-stands"],
@@ -556,7 +557,8 @@ const seeds: Seed[] = [
     whyYoullLoveIt: "Golden-hour rallies with a friend are the best kind of exercise.",
     supplies: ["A beginner racket", "A can of balls", "Sneakers", "Water"],
     optional: ["Sports tote", "Beginner group lesson"],
-    firstActivity: "Book a free public court and just rally with a friend for 30 minutes.",
+    firstActivity:
+      "Head to a public court (often free) and just rally with a friend for 30 minutes.",
     image: "tennis",
     productIds: ["tennis-rackets", "tennis-balls", "water-bottles", "sports-totes"],
   },
