@@ -15,3 +15,7 @@ Canva only returns a 200 px preview to Claude Code, so the full-size files must 
 ## Slicing a sheet
 `python3 scripts/slice-sheet.py <downloaded.jpg> --cols 3 --rows 3 --names scrapbooking,embroidery,crochet,knitting,jewelry-making,friendship-bracelets,paint-by-numbers,flower-arranging,collage-art --out docs/content/incoming-images/`
 Check each tile by eye before using it: AI grids sometimes mix up subjects; skip any tile that does not match its hobby.
+
+## Full-size originals (2026-11-19)
+Exported by opening each asset in the Canva editor ("Open in editor" creates a design at the image's own size) and exporting JPG through the Canva connector. Files are in `docs/content/incoming-images/`: crochet-hands, flower-arranging-hero, cycling-lane, cozy-corner (2336x1760) and sheet-craft, sheet-home (2048x2048), sheet-outdoor (1664x2496). Tiles sliced from the sheets are in `incoming-images/sliced-tiles/` (642 px, or 798 px for the outdoor sheet): below the ingest script's 1600 px minimum, so fine for small hobby cards only. Slicing and checks by eye on 2026-11-19: every tile matches its hobby. Extra Canva designs created by this export are named "Untitled design" (7) plus two test designs ("Full-bleed knitting photo"); delete them in Canva if you like.
+Ingest check: `node scripts/ingest-images.mjs --check` currently stops with "could not find `const baseImages = { ... } satisfies` in src/data/images.ts" (the site code has changed since the script was written); not run further and not changed.
