@@ -16,3 +16,6 @@ Not fixed / open:
 - Desktop home LCP (6.5 s lab) is still slow; I did not find the cause in this pass. Likely suspects: render-blocking Google Fonts stylesheet and the 1440px fallback. Not verified.
 - Article CLS about 0.064 (under the 0.1 "good" line) probably comes from long sections folding on phones after hydration. Not measured before the change, so no before/after claim.
 - No before-change baseline was captured, so no improvement figure is claimed.
+
+
+> Update: a repeated, interleaved before/after with root-cause analysis is in `docs/marketplace/final-inspection/PERFORMANCE-RESULTS.md`. The desktop 56-64 result was not reproducible (shared-CPU noise); the hero is now also offered as a 640w copy and home card images as 480w copies.
