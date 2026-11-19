@@ -2,14 +2,14 @@
   "slug": "junk-journaling-supplies-for-beginners",
   "title": "Junk Journaling Supplies: The Small Shopping List That Gets You Started",
   "titleItalic": "The Small Shopping List",
-  "dek": "What to buy first: a short list of what's worth paying for, what you probably own already and the pretty extras that can wait until page three.",
+  "dek": "What to buy first: the four things that make pages sturdier and prettier, the longer list for when you're hooked and the pretty extras that can wait until page three.",
   "category": "creative-corner",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-18",
   "hero": "junkJournal",
   "searchIntent": "junk journaling supplies for beginners / junk journal supply list / what do I need to start a junk journal",
-  "angle": "A product-focused companion to the starter guide: sort supplies into essentials, things you already own, optional extras and later upgrades, so beginners spend only where it changes the result",
+  "angle": "A product-focused companion to the starter guide: the four things that change the result most (a thick-paged journal, washi tape, a fine pen, one sticker set), the longer shopping list for later, and what to leave until page three",
   "hobbies": [
     "junk-journaling",
     "scrapbooking",
@@ -54,31 +54,11 @@
   "body": [
     {
       "type": "p",
-      "text": "The prettiest junk journals start with paper that has already lived a bit (envelopes, tickets, tags, a torn map), so the free list is long and the shopping list is short. A few well-chosen buys make pages sturdier, prettier and more fun to make."
+      "text": "Junk journals are built from paper that has already lived a bit (envelopes, tickets, tags, a torn map), and a handful of well-chosen buys make the pages sturdier, prettier and more fun to make."
     },
     {
       "type": "p",
-      "text": "This guide is what to buy: what you probably own, the four things that make the biggest difference and what can wait. For how to begin, with your first page step by step, see the how-to linked at the end."
-    },
-    {
-      "type": "h2",
-      "text": "Start with a lap of the house",
-      "id": "free"
-    },
-    {
-      "type": "list",
-      "items": [
-        "**Scissors and a ruler.** Kitchen-drawer versions are fine.",
-        "**A half-used glue stick.** It will carry you through a few pages.",
-        "**One pen you like writing with.**",
-        "**Paper with a past:** envelope liners, receipts, tickets, tags, brown paper bags, magazine pages, a thrift-store paperback you do not mind cutting up.",
-        "**Cardboard** from cereal boxes and parcels, for sturdy backgrounds and pockets.",
-        "**Bits and pieces:** paper clips, string, gift-bag ribbon, one stray button."
-      ]
-    },
-    {
-      "type": "p",
-      "text": "Keep an envelope in your bag for a week and drop in anything flat and interesting. By the weekend you'll have more material than a first page can use. Then make one page from only what you own, and note the one thing you truly wished you had. That is your first purchase."
+      "text": "This guide is what to buy: the four things that make the biggest difference, the longer list for when you're hooked and what can wait. For how to begin, with your first page step by step, see the how-to linked at the end."
     },
     {
       "type": "h2",
@@ -99,6 +79,10 @@
       ]
     },
     {
+      "type": "p",
+      "text": "**What makes it easier:** a glue stick or tape runner kept next to the journal, so layers go down fast and you can keep going on the same page."
+    },
+    {
       "type": "whatYoullNeed",
       "essentials": [
         "A thick-paged journal or notebook",
@@ -115,6 +99,12 @@
         "A bone folder, or the back of a spoon, for smoothing",
         "Double-sided tape for heavier items"
       ]
+    },
+    {
+      "type": "shopTheArticle",
+      "articleSlug": "junk-journaling-supplies-for-beginners",
+      "title": "Your first junk journal basket",
+      "dek": "A thick-paged journal, a washi tape set, a glue stick or tape runner, a fine pen and some vintage-style paper cover pages that are sturdier and prettier from page one. Already own one? Start with whichever you're missing."
     },
     {
       "type": "h2",
@@ -139,14 +129,14 @@
     {
       "type": "list",
       "items": [
-        "**About nothing:** a notebook you own, a glue stick, scraps.",
-        "**A small basket:** a purpose-made journal, a tape set, a pen.",
-        "**A bigger basket:** add stickers, a stamp and a few extra pens and papers."
+        "**The first basket:** a purpose-made journal with thick pages, a washi tape set, a glue stick or tape runner and a fine pen.",
+        "**The second basket:** one sticker set in a single style, a small stamp and ink pad, and a few extra pens and papers.",
+        "**Already on the shelf:** a notebook you own, a half-used glue stick and scraps will start page one while the basket is on its way."
       ]
     },
     {
       "type": "p",
-      "text": "Prices vary by shop, so compare before you buy. For more starter ideas on a small budget, see [affordable hobbies](/journal/affordable-hobbies-under-25)."
+      "text": "Compare listings before you choose, since sizes, paper weights and pack counts differ. For more starter ideas, see [affordable hobbies](/journal/affordable-hobbies-under-25)."
     },
     {
       "type": "h2",
@@ -163,10 +153,17 @@
       ]
     },
     {
-      "type": "shopTheArticle",
-      "articleSlug": "junk-journaling-supplies-for-beginners",
-      "title": "Your first junk journal basket",
-      "dek": "A thick-paged journal, a washi tape set, a glue stick or tape runner and a fine pen cover pages that are sturdier and prettier from page one. Already own one? Start with whichever you're missing."
+      "type": "h2",
+      "text": "Free ways to start",
+      "id": "free"
+    },
+    {
+      "type": "p",
+      "text": "Kitchen-drawer scissors and a ruler, a half-used glue stick and one pen you like will carry you through the first few pages. Paper with a past is lovely material: envelope liners, receipts, tickets, tags, brown paper bags, magazine pages, cereal-box cardboard for sturdy backgrounds and pockets."
+    },
+    {
+      "type": "p",
+      "text": "Keep an envelope in your bag for a week and drop in anything flat and interesting. Then make one page from only what you own, and note the one thing you truly wished you had. That is your first purchase: a better journal, a tape set or a tape runner will usually make the difference."
     },
     {
       "type": "p",

@@ -1,15 +1,15 @@
 {
   "slug": "how-to-start-a-reading-journal",
-  "title": "How to Start a Reading Journal You Will Actually Keep",
+  "title": "How to Start a Reading Journal You Will Actually Keep: Notebook, Pen, Five Lines",
   "titleItalic": "Actually Keep",
-  "dek": "Start a reading journal in five minutes: a notebook, five lines per book and three layouts, so you remember what you read without the homework.",
+  "dek": "Start a reading journal in five minutes with a notebook and five lines per book. Three layouts, and the small things that make the habit easier to keep.",
   "category": "creative-corner",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-19",
   "hero": "shopBookish",
   "searchIntent": "how to start a reading journal / reading journal ideas / what to write in a reading journal",
-  "angle": "A low-pressure reading journal: a tiny entry template, three layouts to choose from, honest advice about what to buy and what to skip, and a way to abandon the habit gracefully and restart",
+  "angle": "A low-pressure reading journal built around the few things that make it feel good: a notebook or prompted journal, a pen, a pocket notebook and a book light, with a tiny entry template, three layouts and a graceful way to restart",
   "hobbies": [
     "reading",
     "book-clubs",
@@ -18,7 +18,8 @@
   "productIds": [
     "reading-journals",
     "pocket-notebooks",
-    "book-lights"
+    "book-lights",
+    "magnetic-bookmarks"
   ],
   "sources": [
     {
@@ -78,19 +79,30 @@
       "type": "item",
       "n": 1,
       "title": "The running list",
-      "note": "One line per book, in the order you finish them. Fast, and easy to keep going."
+      "note": "One line per book, in the order you finish them. Fast, and easy to keep going. **What makes it easier:** a pocket notebook that rides in your bag, so the line gets added the day you finish a book."
     },
     {
       "type": "item",
       "n": 2,
       "title": "The page per book",
-      "note": "A full page for each book, with room for quotes, favorite scenes and what you would tell a friend. Slower, and more of a keepsake."
+      "note": "A full page for each book, with room for quotes, favorite scenes and what you would tell a friend. Slower, and more of a keepsake. **What makes it easier:** a hardcover reading journal with prompts, so each page already has room for quotes and favorite scenes."
     },
     {
       "type": "item",
       "n": 3,
       "title": "The bookshelf spread",
-      "note": "Draw a little shelf across a page and fill in a spine per book you finish, colored by mood. It is a reading record that looks like decoration."
+      "note": "Draw a little shelf across a page and fill in a spine per book you finish, colored by mood. It is a reading record that looks like decoration. **What makes it easier:** a few fine-tip pens in different colors, so each spine can be colored by mood."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "reading-journals",
+        "pocket-notebooks",
+        "book-lights",
+        "magnetic-bookmarks"
+      ],
+      "title": "Make your reading journal easier and prettier",
+      "dek": "A journal with prompts for the blank-page days, a pocket notebook for favorite lines, a light for late chapters and a magnetic bookmark for the lines you want to copy out. Start with whichever solves your biggest hurdle."
     },
     {
       "type": "h2",
@@ -114,16 +126,6 @@
     {
       "type": "p",
       "text": "A notebook and a pen are all it takes to begin. A purpose-made journal makes it easier and prettier: the prompts and book list mean you never face a blank page. A pocket notebook catches a favorite line when the main journal is at home, and a clip-on light lets you read and jot in the same cozy corner. If you already own a half-empty notebook, start there and move to a beautiful one whenever you like."
-    },
-    {
-      "type": "shopHobby",
-      "productIds": [
-        "reading-journals",
-        "pocket-notebooks",
-        "book-lights"
-      ],
-      "title": "Make your reading journal easier and prettier",
-      "dek": "A journal with prompts for the blank-page days, a pocket notebook for favorite lines and a light for late chapters. Start with whichever solves your biggest hurdle."
     },
     {
       "type": "h2",
@@ -155,6 +157,10 @@
         "**A borrowed-books page,** so you remember what you lent and who has it.",
         "**A library-holds list,** if your library lends books, e-books or audiobooks (what's on offer varies). It can stop you buying a book you could borrow."
       ]
+    },
+    {
+      "type": "p",
+      "text": "**Nice to have:** a magnetic bookmark or page flags, so the lines you want to copy out are marked while you read."
     },
     {
       "type": "h2",

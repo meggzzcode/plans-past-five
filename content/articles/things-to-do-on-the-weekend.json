@@ -1,15 +1,15 @@
 {
   "slug": "things-to-do-on-the-weekend",
-  "title": "20 Weekend Plans for Every Mood (Pick One, Skip the Drift)",
+  "title": "20 Weekend Plans for Every Mood, and the Small Things That Help Them Happen",
   "titleItalic": "Every Mood",
-  "dek": "Twenty things to do this weekend, sorted by mood, plus a simple three-part plan so Saturday doesn't dissolve into errands and the sofa.",
+  "dek": "Twenty things to do this weekend, sorted by mood, each with the small thing that makes it easier, plus a simple three-part plan so Saturday doesn't dissolve into errands and the sofa.",
   "category": "weekends",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-18",
   "hero": "hiking",
-  "searchIntent": "things to do on the weekend / what to do this weekend / weekend ideas",
-  "angle": "A weekend-shaping method (one anchor, one treat, one rest) followed by twenty ideas by mood, each with time, cost and company",
+  "searchIntent": "things to do on the weekend / what to do this weekend / weekend ideas / weekend kits",
+  "angle": "A weekend-shaping method (one anchor, one treat, one rest) followed by twenty ideas by mood, led by the make-something and get-outside plans and the small kit that makes each easier, with free ways to start at the end",
   "hobbies": [
     "picnicking",
     "hiking",
@@ -23,9 +23,24 @@
     "reading"
   ],
   "productIds": [
+    "air-dry-clay",
+    "clay-tools",
+    "junk-journals",
+    "washi-tape",
+    "walking-shoes",
+    "trekking-socks",
+    "daypacks",
+    "water-bottles",
     "picnic-blankets",
+    "thermos-flasks",
+    "phone-armband",
+    "market-totes",
+    "pocket-notebooks",
     "board-games",
-    "daypacks"
+    "friendship-bracelet-kits",
+    "group-painting-kits",
+    "cozy-night-in",
+    "tea-sets"
   ],
   "sources": [
     {
@@ -96,102 +111,117 @@
     },
     {
       "type": "h2",
-      "text": "If you want to get outside",
-      "id": "outside"
-    },
-    {
-      "type": "item",
-      "n": 1,
-      "title": "Walk somewhere you've never been",
-      "note": "Choose a neighborhood, park or path you haven't explored and wander without a destination. Pack a snack.",
-      "time": "1-2 hours",
-      "cost": "Free",
-      "company": "Solo or social"
-    },
-    {
-      "type": "item",
-      "n": 2,
-      "title": "Have a proper picnic",
-      "hobby": "picnicking",
-      "note": "A blanket, something good to eat, somewhere green. The [picnic guide](/journal/how-to-plan-a-perfect-picnic) has the whole checklist.",
-      "time": "2 hours",
-      "cost": "Groceries",
-      "company": "Social"
-    },
-    {
-      "type": "item",
-      "n": 3,
-      "title": "Take a short hike",
-      "hobby": "hiking",
-      "note": "Pick an easy, well-marked trail, check the weather, carry water and tell someone where you're headed. Going with a friend is the safer choice when you can.",
-      "time": "2-3 hours",
-      "cost": "Often free",
-      "company": "Solo or social"
-    },
-    {
-      "type": "item",
-      "n": 4,
-      "title": "Watch the sunset on purpose",
-      "note": "Check the local sunset time, bring a layer and find an open spot. An hour, and it feels like a mini holiday.",
-      "time": "1 hour",
-      "cost": "Free",
-      "company": "Solo or social"
-    },
-    {
-      "type": "item",
-      "n": 5,
-      "title": "Browse a farmers' or flea market",
-      "hobby": "thrifting",
-      "note": "Go early with a tote and a small budget. Come home with one thing you really like.",
-      "time": "2 hours",
-      "cost": "A small budget",
-      "company": "Solo or social",
-      "first": "Decide on a small budget and one thing to look for before you leave the house."
-    },
-    {
-      "type": "h2",
       "text": "If you want to make something",
       "id": "make"
     },
     {
       "type": "item",
-      "n": 6,
+      "n": 1,
       "title": "Shape a ring dish from clay",
       "hobby": "air-dry-clay",
-      "note": "Air-dry clay, a rolling pin or a bottle, and an afternoon. Paint it once it has dried. [Here's the beginner guide](/journal/how-to-start-air-dry-clay).",
+      "note": "Air-dry clay, a rolling pin or a bottle, and an afternoon. Paint it once it has dried. [Here's the beginner guide](/journal/how-to-start-air-dry-clay). **What makes it easier:** {{product:crayola-air-dry-clay-5-lb-bucket|air-dry clay}}, a small set of sculpting tools and a craft mat, so the table stays clean and the edges come out crisp.",
       "time": "1-2 hours",
-      "cost": "Low cost",
+      "company": "Solo or social"
+    },
+    {
+      "type": "item",
+      "n": 2,
+      "title": "Start a junk journal",
+      "hobby": "junk-journaling",
+      "note": "Gather the week's paper scraps and build a spread. [Here's how](/journal/how-to-start-junk-journaling). **What makes it easier:** {{product:stationery-island-a5-blank-journal-180-pages|a thick-paged notebook}}, a glue stick and a few rolls of {{product:mr-pen-washi-tape-21-rolls|washi tape}}, so the week's scraps become a spread.",
+      "time": "1 hour",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 3,
+      "title": "Bake the ambitious thing",
+      "hobby": "baking",
+      "note": "The recipe you've been avoiding: cinnamon rolls, a layer cake, a proper loaf. Weekends exist for projects with rising time.",
+      "time": "2-4 hours",
+      "company": "Solo or social",
+      "first": "Read the whole recipe on Friday and check you have the ingredients and the time."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "air-dry-clay",
+        "clay-tools",
+        "junk-journals",
+        "washi-tape"
+      ],
+      "title": "For a make-something Saturday",
+      "dek": "A block of clay, a small set of tools, a thick-paged journal and washi tape: kept in one drawer, they turn an open afternoon into a finished thing."
+    },
+    {
+      "type": "h2",
+      "text": "If you want to get outside",
+      "id": "outside"
+    },
+    {
+      "type": "item",
+      "n": 4,
+      "title": "Take a short hike",
+      "hobby": "hiking",
+      "note": "Pick an easy, well-marked trail, check the weather, carry water and tell someone where you're headed. Going with a friend is the safer choice when you can. **Worth bringing:** walking shoes with some grip, trekking-style socks, a small daypack and a water bottle, so water and a snack ride on your back; a phone armband keeps a map or music in reach.",
+      "time": "2-3 hours",
+      "company": "Solo or social"
+    },
+    {
+      "type": "item",
+      "n": 5,
+      "title": "Have a proper picnic",
+      "hobby": "picnicking",
+      "note": "A blanket, something good to eat, somewhere green. The [picnic guide](/journal/how-to-plan-a-perfect-picnic) has the whole checklist. **What makes it easier:** a picnic blanket and an insulated flask, so you have somewhere comfortable to sit and something warm to drink.",
+      "time": "2 hours",
+      "company": "Social"
+    },
+    {
+      "type": "item",
+      "n": 6,
+      "title": "Watch the sunset on purpose",
+      "note": "Check the local sunset time, bring a layer and find an open spot. An hour, and it feels like a mini holiday. **Worth bringing:** a picnic blanket and an insulated flask, so the hour outside stays comfortable as the air cools.",
+      "time": "1 hour",
       "company": "Solo or social"
     },
     {
       "type": "item",
       "n": 7,
-      "title": "Bake the ambitious thing",
-      "hobby": "baking",
-      "note": "The recipe you've been avoiding: cinnamon rolls, a layer cake, a proper loaf. Weekends exist for projects with rising time.",
-      "time": "2-4 hours",
-      "cost": "Groceries",
+      "title": "Browse a farmers' or flea market",
+      "hobby": "thrifting",
+      "note": "Go early with a tote and a small budget. Come home with one thing you really like. **Worth bringing:** a roomy market tote, so the one thing you really like gets home in one piece.",
+      "time": "2 hours",
       "company": "Solo or social",
-      "first": "Read the whole recipe on Friday and check you have the ingredients and the time."
+      "first": "Decide on a small budget and one thing to look for before you leave the house."
     },
     {
       "type": "item",
       "n": 8,
-      "title": "Start a junk journal",
-      "hobby": "junk-journaling",
-      "note": "Gather the week's paper scraps and build a spread. [Here's how](/journal/how-to-start-junk-journaling).",
-      "time": "1 hour",
-      "cost": "Free to low cost",
-      "company": "Solo"
+      "title": "Walk somewhere you've never been",
+      "note": "Choose a neighborhood, park or path you haven't explored and wander without a destination. Pack a snack. **Worth bringing:** comfortable walking shoes and a phone armband, so you can set off without a destination and keep your music or map in reach.",
+      "time": "1-2 hours",
+      "company": "Solo or social"
     },
     {
       "type": "item",
       "n": 9,
-      "title": "Cook something slow and fancy",
-      "note": "A recipe with several steps, music on, and the cooking as the evening's activity rather than the chore before it.",
-      "time": "2-3 hours",
-      "cost": "Groceries",
+      "title": "Be a tourist in your own town",
+      "note": "Walk the main street as if you were visiting. Look up. Read the signs you've passed a hundred times. **Worth bringing:** a pocket notebook, so the signs you've passed a hundred times get written down.",
+      "time": "2 hours",
       "company": "Solo or social"
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "walking-shoes",
+        "daypacks",
+        "water-bottles",
+        "picnic-blankets",
+        "thermos-flasks",
+        "phone-armband"
+      ],
+      "title": "For the park and the trail",
+      "dek": "Walking shoes, a small daypack, a bottle, a blanket, a flask and a phone armband: the bag that makes leaving the house the easy option."
     },
     {
       "type": "h2",
@@ -203,110 +233,27 @@
       "n": 10,
       "title": "Host a craft night",
       "hobby": "craft-nights",
-      "note": "Snacks, supplies, everyone makes something, even a first [crochet](/journal/how-to-start-crocheting) square, an [embroidery](/journal/how-to-start-embroidery) hoop or a little [watercolor](/journal/watercolor-painting-for-beginners) painting. A craft night is among the lowest-effort ways to see friends properly. [Here's how to host one](/journal/how-to-host-a-craft-night).",
+      "note": "Snacks, supplies, everyone makes something, even a first [crochet](/journal/how-to-start-crocheting) square, an [embroidery](/journal/how-to-start-embroidery) hoop or a little [watercolor](/journal/watercolor-painting-for-beginners) painting. A craft night is among the lowest-effort ways to see friends properly. [Here's how to host one](/journal/how-to-host-a-craft-night). **What makes it easier:** a friendship bracelet kit or a beginner kit for each guest, so nobody arrives to an empty table.",
       "time": "2-3 hours",
-      "cost": "Low cost",
       "company": "Social"
     },
     {
       "type": "item",
       "n": 11,
       "title": "Hold a board-game afternoon",
-      "note": "Bring out a game and a pot of something warm. Old-fashioned, and reliably better than expected.",
+      "note": "Bring out a game and a pot of something warm. Old-fashioned, and reliably better than expected. **What makes it easier:** a board game or two and a small tea set, so the table is ready before anyone arrives.",
       "time": "2 hours",
-      "cost": "Free if you own one",
       "company": "Social"
     },
     {
-      "type": "item",
-      "n": 12,
-      "title": "Run a book swap",
-      "note": "Everyone brings two finished books and goes home with two new ones.",
-      "time": "2 hours",
-      "cost": "Free",
-      "company": "Social"
-    },
-    {
-      "type": "item",
-      "n": 13,
-      "title": "Invite someone on a walk and coffee",
-      "note": "Easier to say yes to than dinner, and just as good for catching up.",
-      "time": "1-2 hours",
-      "cost": "Price of a coffee",
-      "company": "Social"
-    },
-    {
-      "type": "item",
-      "n": 14,
-      "title": "Cook a big batch together",
-      "note": "Make one large pot of something with a friend, then split it into containers for the week.",
-      "time": "2-3 hours",
-      "cost": "Groceries",
-      "company": "Social"
-    },
-    {
-      "type": "h2",
-      "text": "If you want to explore",
-      "id": "explore"
-    },
-    {
-      "type": "item",
-      "n": 15,
-      "title": "Visit a museum or gallery",
-      "hobby": "museum-exploring",
-      "note": "Some have free days or reduced entry, so check locally. Choose one room, stay an hour and leave before you're flagging.",
-      "time": "1-2 hours",
-      "cost": "Some free days",
-      "company": "Solo or social"
-    },
-    {
-      "type": "item",
-      "n": 16,
-      "title": "Poke around a secondhand shop, bookstore or library",
-      "note": "Set a small budget and one rule: buy or borrow only what you can picture in your home.",
-      "time": "1-2 hours",
-      "cost": "A small budget",
-      "company": "Solo or social"
-    },
-    {
-      "type": "item",
-      "n": 17,
-      "title": "Be a tourist in your own town",
-      "note": "Walk the main street as if you were visiting. Look up. Read the signs you've passed a hundred times.",
-      "time": "2 hours",
-      "cost": "Free",
-      "company": "Solo or social"
-    },
-    {
-      "type": "h2",
-      "text": "If you need to recover",
-      "id": "recover"
-    },
-    {
-      "type": "item",
-      "n": 18,
-      "title": "Watch a film in broad daylight",
-      "note": "Afternoon viewing feels delightfully illicit. Draw the curtains and make it an event.",
-      "time": "2 hours",
-      "company": "Solo or social"
-    },
-    {
-      "type": "item",
-      "n": 19,
-      "title": "Nap without an alarm",
-      "note": "A short one, ideally 20 to 30 minutes, guilt-free, with your phone in another room.",
-      "time": "20-30 min",
-      "cost": "Free",
-      "company": "Solo"
-    },
-    {
-      "type": "item",
-      "n": 20,
-      "title": "Plan next week on paper",
-      "note": "Fifteen minutes with a planner and a pen makes Monday kinder. Put one plan in it that's just for you.",
-      "time": "15-30 min",
-      "cost": "Free",
-      "company": "Solo"
+      "type": "shopHobby",
+      "productIds": [
+        "board-games",
+        "friendship-bracelet-kits",
+        "group-painting-kits"
+      ],
+      "title": "For an afternoon with friends",
+      "dek": "A board game, a bracelet kit or a group painting kit gives everyone something to do with their hands while you catch up."
     },
     {
       "type": "h2",
@@ -329,21 +276,93 @@
     },
     {
       "type": "p",
-      "text": "It rains, a friend cancels, you wake up flat. Keep a short backup list: one outdoor option, one at-home option, one that takes under thirty minutes. Then you're choosing from a menu rather than starting from scratch, and a cancelled plan turns into a different plan instead of a lost day. Many of these cost little or nothing, and [cheap weekend adventures](/journal/cheap-weekend-adventures) and [affordable hobbies](/journal/affordable-hobbies-under-25) have more if you want to keep the spending low."
-    },
-    {
-      "type": "shopHobby",
-      "productIds": [
-        "picnic-blankets",
-        "daypacks",
-        "board-games"
-      ],
-      "title": "Make your weekend plans easier",
-      "dek": "A picnic blanket, a daypack and a board game make the park, the trail and the afternoon in more comfortable and more fun."
+      "text": "It rains, a friend cancels, you wake up flat. Keep a short backup list: one outdoor option, one at-home option, one that takes under thirty minutes. Then you're choosing from a menu rather than starting from scratch, and a cancelled plan turns into a different plan instead of a lost day. [More weekend adventures](/journal/cheap-weekend-adventures) and [affordable hobbies](/journal/affordable-hobbies-under-25) have more ideas to keep on that list."
     },
     {
       "type": "makePlan",
       "text": "Want the shape without the thinking? Plan my weekend: Make Some Plans will build one around your mood, time and budget. For a fuller, four-part day, see [how to plan a solo Saturday](/journal/how-to-plan-a-solo-saturday)."
+    },
+    {
+      "type": "h2",
+      "text": "Free ways to start",
+      "id": "free"
+    },
+    {
+      "type": "p",
+      "text": "Nine more ways to fill a weekend that need nothing but the time."
+    },
+    {
+      "type": "item",
+      "n": 12,
+      "title": "Run a book swap",
+      "note": "Everyone brings two finished books and goes home with two new ones. **Worth bringing:** a canvas tote each, so the two new books get home safely.",
+      "time": "2 hours",
+      "company": "Social"
+    },
+    {
+      "type": "item",
+      "n": 13,
+      "title": "Invite someone on a walk and coffee",
+      "note": "Easier to say yes to than dinner, and just as good for catching up. **Worth bringing:** a thermos flask, if you'd rather take the coffee to the park.",
+      "time": "1-2 hours",
+      "company": "Social"
+    },
+    {
+      "type": "item",
+      "n": 14,
+      "title": "Cook a big batch together",
+      "note": "Make one large pot of something with a friend, then split it into containers for the week.",
+      "time": "2-3 hours",
+      "company": "Social"
+    },
+    {
+      "type": "item",
+      "n": 15,
+      "title": "Cook something slow and fancy",
+      "note": "A recipe with several steps, music on, and the cooking as the evening's activity rather than the chore before it.",
+      "time": "2-3 hours",
+      "company": "Solo or social"
+    },
+    {
+      "type": "item",
+      "n": 16,
+      "title": "Visit a museum or gallery",
+      "hobby": "museum-exploring",
+      "note": "Some have free days or reduced entry, so check locally. Choose one room and stay an hour. **Worth bringing:** a pocket notebook for the details you want to keep.",
+      "time": "1-2 hours",
+      "company": "Solo or social"
+    },
+    {
+      "type": "item",
+      "n": 17,
+      "title": "Poke around a secondhand shop, bookstore or library",
+      "note": "Set one rule: buy or borrow only what you can picture in your home.",
+      "time": "1-2 hours",
+      "company": "Solo or social"
+    },
+    {
+      "type": "item",
+      "n": 18,
+      "title": "Watch a film in broad daylight",
+      "note": "Afternoon viewing feels delightfully illicit. Draw the curtains and make it an event. **Nice to have:** a soft throw and flameless candles, so the curtains-drawn afternoon feels like an event.",
+      "time": "2 hours",
+      "company": "Solo or social"
+    },
+    {
+      "type": "item",
+      "n": 19,
+      "title": "Nap without an alarm",
+      "note": "A short one, ideally 20 to 30 minutes, guilt-free, with your phone in another room.",
+      "time": "20-30 min",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 20,
+      "title": "Plan next week on paper",
+      "note": "Fifteen minutes with a planner and a pen makes Monday kinder. Put one plan in it that's just for you. **What makes it easier:** a pocket notebook or planner, so Monday's one fun plan is somewhere you will see it.",
+      "time": "15-30 min",
+      "company": "Solo"
     }
   ]
 }

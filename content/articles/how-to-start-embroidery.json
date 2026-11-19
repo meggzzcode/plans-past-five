@@ -2,14 +2,14 @@
   "slug": "how-to-start-embroidery",
   "title": "Your First Embroidery Hoop, Finished in One Evening",
   "titleItalic": "Finished in One Evening",
-  "dek": "The supplies, the stitches worth learning first, and a small first hoop that is easy to finish in an evening.",
+  "dek": "The kit or supplies worth choosing, the stitches worth learning first and a small first hoop that is easy to finish in an evening.",
   "category": "creative-corner",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-19",
   "hero": "cozyCorner",
   "searchIntent": "how to start embroidery / embroidery for beginners / basic embroidery stitches",
-  "angle": "A stitch-first beginner path: learn a handful of stitches on scrap fabric, then finish a single small hoop, with fixes for the most common frustrations",
+  "angle": "A stitch-first beginner path: choose a small kit or a few loose supplies, learn a handful of stitches on scrap fabric, then finish a single small hoop, with fixes for the most common frustrations",
   "hobbies": [
     "embroidery",
     "crochet",
@@ -88,6 +88,12 @@
       "text": "You probably own scissors, a pencil and a scrap of plain cotton from an old tea towel or shirt. A good small pair of embroidery scissors makes clean snips easy, and a needle minder keeps your needle from vanishing into the sofa. Embroidery is also one of the [affordable hobbies](/journal/affordable-hobbies-under-25) to start."
     },
     {
+      "type": "shopTheArticle",
+      "articleSlug": "how-to-start-embroidery",
+      "title": "A first hoop, ready to stitch",
+      "dek": "A small kit puts the hoop, thread, fabric and pattern in one box, so the first evening goes on stitching. A good small pair of scissors is the extra that makes clean snips easy."
+    },
+    {
       "type": "h2",
       "text": "Six stitches worth learning first",
       "id": "stitches"
@@ -129,6 +135,10 @@
       "note": "A small knot made by wrapping the thread around the needle, good for flower centers and texture. It takes a couple of tries, so practice on scrap first."
     },
     {
+      "type": "p",
+      "text": "**What makes it easier:** a small pair of sharp embroidery scissors, so ends trim close and clean, and a needle minder that keeps the needle where you can find it."
+    },
+    {
       "type": "h2",
       "text": "Your first evening",
       "id": "first-session"
@@ -149,6 +159,10 @@
       "text": "When finished, check the floss label for care instructions before washing. Test the pen or transfer method on scrap fabric first, and follow its label."
     },
     {
+      "type": "p",
+      "text": "**For the first hoop:** a hoop with a screw you can tighten, so the fabric stays taut and the stitches sit flat."
+    },
+    {
       "type": "h2",
       "text": "Keeping it going",
       "id": "habit"
@@ -156,6 +170,10 @@
     {
       "type": "p",
       "text": "Embroidery rewards small sessions: ten minutes while the kettle boils moves a leaf along, and a hoop left on the arm of the sofa tends to get picked up. A little pouch with the needle, a few colors and the scissors means a spare half hour doesn't begin with a search."
+    },
+    {
+      "type": "p",
+      "text": "**Worth bringing:** a small zip pouch or tote, so the needle, floss and scissors travel together and a spare half hour starts stitching straight away."
     },
     {
       "type": "p",
@@ -177,14 +195,6 @@
         "**The fabric puckers.** Pulling stitches too tight is the usual cause. Let each stitch sit flat, and keep the fabric taut in the hoop.",
         "**The back looks messy.** It does for everyone. Keep the knots small and trim the loose ends."
       ]
-    },
-    {
-      "type": "shopHobby",
-      "productIds": [
-        "embroidery-kits"
-      ],
-      "title": "A first hoop, all in one box",
-      "dek": "A small kit makes the first evening easier: hoop, thread, fabric and pattern together, so you can start stitching right away."
     },
     {
       "type": "p",

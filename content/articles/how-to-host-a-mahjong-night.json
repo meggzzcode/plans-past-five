@@ -17,8 +17,9 @@
   ],
   "productIds": [
     "mahjong-sets",
-    "conversation-cards",
-    "board-games"
+    "tea-sets",
+    "board-games",
+    "conversation-cards"
   ],
   "sources": [
     {
@@ -66,7 +67,8 @@
     "VERIFIED 2026-11-18: four players as the usual table size - rarepike.com",
     "VERIFIED 2026-11-18: American set compatibility - added 'check that the set includes at least eight jokers'; no tile totals stated (166-tile sets add spare flowers, jokers or blanks) - verification file product note",
     "VERIFIED 2026-11-18: hosting food advice and cultural-respect guidance are editorial, no allergen or health claims, not presented as an official code - no source needed",
-    "VERIFIED 2026-11-18: headline changed to 'With Your Friends'; no 'girls' wording in dek, angle or search intent; book-club link removed until that article is live - reworded"
+    "VERIFIED 2026-11-18: headline changed to 'With Your Friends'; no 'girls' wording in dek, angle or search intent; book-club link removed until that article is live - reworded",
+    "NOTE 2026-11-19: monetisation rewrite: the verified-product block (and its version caveat, listing checks and American-set wording, unchanged) moved to directly after 'What to have on the table'; a tea-set gear line and a second short block added after 'Turning it into a tradition'; 'Find your teacher' condensed into one paragraph under 'Free ways to start' near the end with all its facts kept; the 'does the listing name your version' caveat is verbatim"
   ],
   "related": [
     "girls-night-ideas-that-arent-drinks",
@@ -105,19 +107,6 @@
     },
     {
       "type": "h2",
-      "text": "Find your teacher",
-      "id": "learn"
-    },
-    {
-      "type": "p",
-      "text": "Somebody at the table needs to know the game. Look for a friend or relative who plays, or for local clubs, community classes and online tutorials. Most teach one specific version, so confirm which before you sign up and stick with it while you learn, because switching styles midway is confusing."
-    },
-    {
-      "type": "p",
-      "text": "If nobody in your group plays, take a lesson first and host after a couple of practice rounds. A table of beginners laughing at their own mistakes is a good first night."
-    },
-    {
-      "type": "h2",
       "text": "What to have on the table",
       "id": "need"
     },
@@ -139,7 +128,7 @@
     },
     {
       "type": "p",
-      "text": "You probably already own a sturdy table, chairs, mugs, small bowls, napkins and a lamp, and a tablecloth or felt-ish blanket can stand in for a mat. Borrowing a set for the first night or two works if a friend or relative has one; if not, a set made for your version is what makes the evening feel real. A fancier case and themed accessories are fun to add once you've played a few times."
+      "text": "You probably already own a sturdy table, chairs, mugs, small bowls, napkins and a lamp, and a tablecloth or felt-ish blanket can stand in for a mat. A set made for your version is what makes the evening feel real, and borrowing one for the first night or two works if a friend or relative has one. A fancier case and themed accessories are fun to add once you've played a few times."
     },
     {
       "type": "h3",
@@ -157,6 +146,12 @@
     {
       "type": "p",
       "text": "Before you click buy: does the listing name your version? For American mahjong, does the set include at least eight jokers? Does the reference card or book match that version? If any answer is 'not sure', ask the seller or your teacher first."
+    },
+    {
+      "type": "shopTheArticle",
+      "articleSlug": "how-to-host-a-mahjong-night",
+      "title": "An American-style set, ready for game night",
+      "dek": "These picks are for American mahjong: 166-tile sets with racks, the 2026 hand card and a mat. Playing Chinese, Hong Kong or Riichi instead? Look for a set made for that version and match the reference to it. The listing is the source for price and stock."
     },
     {
       "type": "h2",
@@ -207,6 +202,20 @@
       "text": "Pick a rhythm you'll honestly keep, such as every other Friday or the first Sunday of the month. Rotate hosts so nobody carries the whole load, and keep a tiny ritual like the same tea or the same opening toast. Over time it becomes less 'what are we doing?' and more 'see you Friday.'"
     },
     {
+      "type": "p",
+      "text": "**What makes it easier:** a tea set, so the pot and cups live on a side tray instead of the playing surface and refills don't interrupt a turn."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "tea-sets",
+        "board-games",
+        "conversation-cards"
+      ],
+      "title": "For the side table and the quiet moments",
+      "dek": "A tea set for the side tray, a backup game for the night you're one player short and a deck of conversation cards for the pauses between rounds."
+    },
+    {
       "type": "h2",
       "text": "Playing with respect",
       "id": "respect"
@@ -226,14 +235,17 @@
       ]
     },
     {
-      "type": "tryThisWeekend",
-      "text": "Message your group chat: 'Does anyone play mahjong, and which version?' You may find a hidden expert, a borrowable set, or a table of friends who've all been wanting to learn."
+      "type": "h2",
+      "text": "Free ways to start: find a teacher",
+      "id": "learn"
     },
     {
-      "type": "shopTheArticle",
-      "articleSlug": "how-to-host-a-mahjong-night",
-      "title": "An American-style set, ready for game night",
-      "dek": "These picks are for American mahjong: 166-tile sets with racks, the 2026 hand card and a mat. Playing Chinese, Hong Kong or Riichi instead? Look for a set made for that version and match the reference to it. The listing is the source for price and stock."
+      "type": "p",
+      "text": "Somebody at the table needs to know the game. Ask a friend or relative who plays, or look for local clubs, community classes and online tutorials. Most teach one specific version, so confirm which before you sign up and stick with it while you learn, because switching styles midway is confusing. If nobody in your group plays, take a lesson first and host after a couple of practice rounds. A table of beginners laughing at their own mistakes is a good first night."
+    },
+    {
+      "type": "tryThisWeekend",
+      "text": "Message your group chat: 'Does anyone play mahjong, and which version?' You may find a hidden expert, a borrowable set, or a table of friends who've all been wanting to learn."
     },
     {
       "type": "p",

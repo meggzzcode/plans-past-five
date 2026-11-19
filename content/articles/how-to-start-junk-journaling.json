@@ -2,14 +2,14 @@
   "slug": "how-to-start-junk-journaling",
   "title": "How to Start Junk Journaling: A Beginner's Guide",
   "titleItalic": "Junk Journaling",
-  "dek": "How to begin: tickets, tags and receipts glued into a notebook, with no rules and no talent required. Here's a first page you can make tonight.",
+  "dek": "How to begin: tickets, tags and receipts glued into a notebook, with no rules and no talent required. A first page you can make tonight, and the few supplies that make it prettier.",
   "category": "creative-corner",
   "status": "published",
   "publishedAt": "2026-11-18",
   "verifiedAt": "2026-11-19",
   "hero": "junkJournal",
-  "searchIntent": "how to start junk journaling / junk journal supplies for beginners",
-  "angle": "A no-pressure beginner walkthrough with a free-first supply list and a step-by-step first page",
+  "searchIntent": "how to start junk journaling / junk journal supplies for beginners / first junk journal page",
+  "angle": "A no-pressure beginner walkthrough built around the few supplies that make pages sturdier and prettier (a thick-paged journal, tape, glue, a fine pen), plus a step-by-step first page",
   "hobbies": [
     "junk-journaling",
     "scrapbooking",
@@ -68,6 +68,16 @@
       "text": "Cereal boxes make sturdy backgrounds, envelopes often have patterned linings, and a single magazine gives you months of images and words. A little washi tape, a few stickers and a pen you love make pages look pulled-together fast. Once you start, you'll see material everywhere, so keep an envelope in your bag for café receipts and coffee sleeves, ticket stubs, tags and labels, pressed leaves from walks, fortune-cookie fortunes, handwritten notes, postcards and maps."
     },
     {
+      "type": "starterKit",
+      "productIds": [
+        "junk-journals",
+        "washi-tape",
+        "sticker-sets",
+        "pocket-notebooks"
+      ],
+      "title": "The small set that makes page one prettier"
+    },
+    {
       "type": "h2",
       "text": "Your first page",
       "id": "first-page"
@@ -89,15 +99,8 @@
       "caption": "Layer, overlap, let things hang off the edge. Tidy is optional."
     },
     {
-      "type": "shopHobby",
-      "productIds": [
-        "junk-journals",
-        "washi-tape",
-        "sticker-sets",
-        "pocket-notebooks"
-      ],
-      "title": "Tools that make pages prettier",
-      "dek": "Start tonight with what's in the house. When you want pages that are sturdier and prettier, these are the picks: a thick-paged journal, washi tape, a glue stick or tape runner and a fine pen."
+      "type": "p",
+      "text": "**What makes it easier:** a washi tape set and a glue stick or tape runner, so layers stay put and the edges look tidy even when the paper is scrappy."
     },
     {
       "type": "h2",
@@ -114,6 +117,10 @@
       ]
     },
     {
+      "type": "p",
+      "text": "**Nice to have:** a fine black pen, for captions and borders that stay readable on top of layered paper."
+    },
+    {
       "type": "h2",
       "text": "Ideas for your next pages",
       "id": "page-ideas"
@@ -128,6 +135,10 @@
         "A 'small wins' page from your week, or a bucket list for the season",
         "A 'dear future me' letter tucked into a pocket"
       ]
+    },
+    {
+      "type": "p",
+      "text": "**Worth bringing:** a slim tape runner and a pen in your bag, so a café or park page can be finished right where you are."
     },
     {
       "type": "girlsNight",

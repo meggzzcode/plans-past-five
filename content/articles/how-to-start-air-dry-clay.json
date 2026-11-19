@@ -2,14 +2,14 @@
   "slug": "how-to-start-air-dry-clay",
   "title": "Your Air-Dry Clay Era: A Beginner's Guide to Making Cute Little Things at Home",
   "titleItalic": "Air-Dry Clay Era",
-  "dek": "Trinket dishes, jewelry holders, ornaments and tiny figurines, no kiln required, with honest notes on what air-dry clay can and cannot do.",
+  "dek": "Trinket dishes, jewelry holders, ornaments and tiny figurines, no kiln required, plus the few supplies that make the first dish easier and honest notes on what air-dry clay can and cannot do.",
   "category": "creative-corner",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-19",
   "hero": "shopPottery",
-  "searchIntent": "how to start air dry clay / air dry clay for beginners / air dry clay projects",
-  "angle": "A beginner walkthrough that sets honest expectations: what air-dry clay is good for, what it is not, and how to make a first trinket dish, then a jewelry holder, ornaments and figurines",
+  "searchIntent": "how to start air dry clay / air dry clay for beginners / air dry clay supplies and projects",
+  "angle": "A beginner walkthrough that sets honest expectations and names the supplies that make each step easier: clay, a mat, tools and fine brushes for a first trinket dish, then a jewelry holder, ornaments and figurines",
   "hobbies": [
     "air-dry-clay",
     "pottery-painting",
@@ -111,6 +111,16 @@
       "text": "A butter knife and toothpick do much of what sculpting tools do, a jar lid cuts a tidy circle and a baking tray holds pieces as they dry. The right supplies make it more fun, though: a mat saves your table and makes cleanup easy, sculpting tools give crisp edges and little details, and fine brushes let you paint small things like polka dots without blobbing. White clay gives a pale base for paint. A mat and a fine brush are the first extras most people will enjoy having."
     },
     {
+      "type": "p",
+      "text": "**What makes it easier:** a silicone craft mat, so rolling and cutting stay off your table and cleanup is a wipe."
+    },
+    {
+      "type": "shopTheArticle",
+      "articleSlug": "how-to-start-air-dry-clay",
+      "title": "Make your first dish easier and prettier",
+      "dek": "A block of clay, a mat and a fine brush are the picks that smooth the first evening. Tools, paints and a sealer are there when you want crisper edges and more detail."
+    },
+    {
       "type": "h2",
       "text": "Make a trinket dish",
       "id": "first-project"
@@ -160,6 +170,10 @@
       "text": "A realistic schedule: shape on Saturday, flip on Sunday, paint midweek."
     },
     {
+      "type": "p",
+      "text": "**Nice to have:** a small set of sculpting tools, for crisp edges, tidy circles and little details like a scored seam."
+    },
+    {
       "type": "h2",
       "text": "Three more things to make",
       "id": "projects"
@@ -173,6 +187,10 @@
       ]
     },
     {
+      "type": "p",
+      "text": "**Worth having:** a set of cookie cutters for ornaments, so each shape comes out even and you can make a few in one sitting."
+    },
+    {
       "type": "h2",
       "text": "Finishing",
       "id": "finishing"
@@ -180,6 +198,10 @@
     {
       "type": "p",
       "text": "When the piece is fully dry, sand gently, ideally with a damp sponge or fine paper, in a ventilated space; if a dust mask makes you more comfortable, wear one, and check your clay's safety data sheet. Paint with acrylics and let the color dry. Crayola suggests an acrylic varnish if you want a protected finish, tested on a scrap first, and only once the piece is completely dry. For a spray sealer, follow the can's ventilation and protective-gear instructions. A sealed piece is still not waterproof, so keep it off the sink edge and away from drinks."
+    },
+    {
+      "type": "p",
+      "text": "**Nice to have:** a small acrylic paint set and a fine detail brush, so polka dots and edges stay crisp; a water-based sealer is a later extra, used as its label directs."
     },
     {
       "type": "h2",
@@ -193,12 +215,6 @@
         "**The edges look rough.** Smooth them while the clay is still soft with a lightly damp fingertip, and go easy on the water.",
         "**The clay has gone hard in the pack.** Store unused clay in an airtight container between sessions, and do not store clay that has had water added to it."
       ]
-    },
-    {
-      "type": "shopTheArticle",
-      "articleSlug": "how-to-start-air-dry-clay",
-      "title": "Make your first dish easier and prettier",
-      "dek": "Clay, a mat and a fine brush are the picks that smooth that first evening. Tools and paints are there when you want more detail."
     },
     {
       "type": "p",

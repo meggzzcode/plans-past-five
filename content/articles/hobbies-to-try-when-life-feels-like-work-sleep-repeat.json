@@ -2,7 +2,7 @@
   "slug": "hobbies-to-try-when-life-feels-like-work-sleep-repeat",
   "title": "35 Hobbies to Try When Your Life Feels Like Work, Sleep, Repeat",
   "titleItalic": "Work, Sleep, Repeat",
-  "dek": "If your week is laptop, dinner, couch, bed: thirty-five hobbies sorted by how much energy you have left, each with an easy first session.",
+  "dek": "If your week is laptop, dinner, couch, bed: thirty-five hobbies sorted by how much energy you have left, each with an easy first session and the one small thing that makes it easier to start.",
   "category": "after-hours",
   "status": "published",
   "publishedAt": "2026-11-18",
@@ -20,11 +20,29 @@
     "embroidery"
   ],
   "productIds": [
+    "paint-by-number-kits",
+    "jigsaw-puzzles",
+    "book-lights",
+    "reading-journals",
+    "indoor-plant-basics",
     "watercolor-sets",
+    "air-dry-clay",
     "embroidery-kits",
     "junk-journals",
+    "crochet-hooks",
+    "knitting-needles",
+    "brush-pens",
     "tennis-rackets",
-    "board-games"
+    "pickleball-sets",
+    "walking-shoes",
+    "daypacks",
+    "binoculars",
+    "picnic-blankets",
+    "mahjong-sets",
+    "conversation-cards",
+    "group-painting-kits",
+    "friendship-bracelet-kits",
+    "ceramic-painting-kits"
   ],
   "sources": [
     {
@@ -63,6 +81,9 @@
       "note": "Example of free first-come public courts; other cities charge or take reservations. Checked 2026-11-19."
     }
   ],
+  "coworkChecks": [
+    "NOTE 2026-11-19: monetisation rewrite: every hobby has a gear line (verified catalog products linked inline by id), one short shop block per category, crosswords, volunteering, thrifting and museum exploring moved to one short 'Free ways to start' section as items 32 to 35 (count of 35 unchanged), noSpend block removed, thrifting '$15' figure replaced with 'a small cap', library-card line kept with its ALA source"
+  ],
   "body": [
     {
       "type": "p",
@@ -74,7 +95,7 @@
     },
     {
       "type": "p",
-      "text": "We've sorted these thirty-five by how much you've got left in the tank, with an honest time, cost and **one easy first session** for each. Don't try to pick the right one. Pick the one that made you think, 'oh, I'd actually do that.'"
+      "text": "We've sorted these thirty-five by how much you've got left in the tank, with an honest time, cost and **one easy first session** for each, plus the small thing that makes starting easier. Don't try to pick the right one. Pick the one that made you think, 'oh, I'd actually do that.'"
     },
     {
       "type": "quote",
@@ -94,60 +115,61 @@
       "n": 1,
       "title": "Paint by numbers",
       "hobby": "paint-by-numbers",
-      "note": "A no-decisions hobby, and a very soothing one. You paint the 1s, then the 2s, and an hour later there's a lake on your coffee table."
+      "note": "A no-decisions hobby, and a very soothing one. You paint the 1s, then the 2s, and an hour later there's a lake on your coffee table. **What makes it easier:** a small paint-by-number kit with the numbered canvas, paints and a brush in one box; check the listing for what's included."
     },
     {
       "type": "item",
       "n": 2,
       "title": "Jigsaw puzzles",
       "hobby": "jigsaw-puzzles",
-      "note": "Leave a puzzle out all week and do ten minutes whenever you pass it. It's the opposite of doomscrolling: slow, tactile, finishable."
+      "note": "Leave a puzzle out all week and do ten minutes whenever you pass it. It's the opposite of doomscrolling: slow, tactile, finishable. **What makes it easier:** a jigsaw puzzle sized to fit your coffee table, so there's always something waiting when you pass it."
     },
     {
       "type": "item",
       "n": 3,
       "title": "Reading (properly)",
       "hobby": "reading",
-      "note": "Reading counts as a hobby the minute you start doing it on purpose. Try fiction before bed instead of your phone, and get a library card (most public libraries issue them free to residents) so trying books costs nothing."
+      "note": "Reading counts as a hobby the minute you start doing it on purpose. Try fiction before bed instead of your phone, and get a library card (most public libraries issue them free to residents) so you can try books before you buy any. **What makes it easier:** a rechargeable book light and a small reading journal, so a dim room isn't a reason to stop and a favorite line has somewhere to go."
     },
     {
       "type": "item",
       "n": 4,
-      "title": "Crossword puzzles",
-      "hobby": "crossword-puzzles",
-      "note": "Start with Monday puzzles: the New York Times crossword, for one, gets harder from Monday to Saturday. A crossword and a coffee is a very respectable solo café plan."
+      "title": "Indoor gardening",
+      "hobby": "indoor-gardening",
+      "note": "Five minutes of watering and fussing over a pothos is a gentle way to end a workday. Propagating pothos cuttings in jars of water (cut just below a node) is weirdly addictive. **What makes it easier:** a few propagation jars and a small pot, so a cutting has somewhere to sit by the window."
     },
     {
       "type": "item",
       "n": 5,
-      "title": "Indoor gardening",
-      "hobby": "indoor-gardening",
-      "note": "Five minutes of watering and fussing over a pothos is a gentle way to end a workday. Propagating pothos cuttings in jars of water (cut just below a node) is weirdly addictive."
+      "title": "Embroidery",
+      "hobby": "embroidery",
+      "note": "Kits come with everything pre-printed, so all you're doing is following lines with thread. It keeps your hands busy during a show, and [how to start embroidery](/journal/how-to-start-embroidery) covers the first stitches. **What makes it easier:** {{product:bradove-classic-embroidery-kit|a beginner embroidery kit}}, so the hoop, fabric and floss arrive together."
     },
     {
       "type": "item",
       "n": 6,
-      "title": "Embroidery",
-      "hobby": "embroidery",
-      "note": "Kits come with everything pre-printed, so all you're doing is following lines with thread. It keeps your hands busy during a show, and [how to start embroidery](/journal/how-to-start-embroidery) covers the first stitches."
+      "title": "Junk journaling",
+      "hobby": "junk-journaling",
+      "note": "Glue this week's receipts, tickets and doodles into a notebook. Our [beginner's guide to junk journaling](/journal/how-to-start-junk-journaling) walks you through your first page. **What makes it easier:** {{product:stationery-island-a5-blank-journal-180-pages|a blank journal}} and a glue stick, so this week's receipts go straight onto the page."
     },
     {
       "type": "item",
       "n": 7,
-      "title": "Junk journaling",
-      "hobby": "junk-journaling",
-      "note": "Glue this week's receipts, tickets and doodles into a notebook. Our [beginner's guide to junk journaling](/journal/how-to-start-junk-journaling) walks you through your first page."
-    },
-    {
-      "type": "item",
-      "n": 8,
       "title": "Vinyl listening nights",
       "hobby": "vinyl-collecting",
       "note": "Choose one album, put your phone in another room, and listen to the whole thing, front to back. It turns music back into something you do."
     },
     {
-      "type": "noSpend",
-      "text": "Library books, magazine collage and newspaper crosswords can cost little or nothing. A no-spend hobby still counts."
+      "type": "shopHobby",
+      "productIds": [
+        "paint-by-number-kits",
+        "jigsaw-puzzles",
+        "book-lights",
+        "reading-journals",
+        "indoor-plant-basics"
+      ],
+      "title": "For a very tired evening",
+      "dek": "A paint-by-number kit, a puzzle, a book light, a reading journal or a jar for a cutting: each makes the couch version of a hobby easier to start."
     },
     {
       "type": "h2",
@@ -160,84 +182,86 @@
     },
     {
       "type": "item",
-      "n": 9,
+      "n": 8,
       "title": "Watercolor painting",
       "hobby": "watercolor-painting",
-      "note": "You don't need an art studio or an entire Sunday afternoon. A little paint set, a sketchbook and twenty minutes at your kitchen table are enough to start, and [watercolor painting for beginners](/journal/watercolor-painting-for-beginners) walks you through the first session."
+      "note": "You don't need an art studio or an entire Sunday afternoon. A little paint set, a sketchbook and twenty minutes at your kitchen table are enough to start, and [watercolor painting for beginners](/journal/watercolor-painting-for-beginners) walks you through the first session. **What makes it easier:** a small pan set and {{product:hapikalor-watercolor-pad-140lb-9x12|a pad of watercolor paper}}, so the first wash happens the evening the box arrives."
+    },
+    {
+      "type": "item",
+      "n": 9,
+      "title": "Air-dry clay",
+      "hobby": "air-dry-clay",
+      "note": "Pottery without a wheel or kiln. Make a ring dish tonight, let it dry (check your clay's label for timing), then paint it and keep it forever even if it's lopsided. [How to start air-dry clay](/journal/how-to-start-air-dry-clay) has the steps. **What makes it easier:** {{product:crayola-air-dry-clay-5-lb-bucket|a bucket of air-dry clay}} and a few small acrylic paints, so tonight's ring dish can be painted once it dries."
     },
     {
       "type": "item",
       "n": 10,
-      "title": "Air-dry clay",
-      "hobby": "air-dry-clay",
-      "note": "Pottery without a wheel or kiln. Make a ring dish tonight, let it dry (check your clay's label for timing), then paint it and keep it forever even if it's lopsided. [How to start air-dry clay](/journal/how-to-start-air-dry-clay) has the steps."
-    },
-    {
-      "type": "item",
-      "n": 11,
       "title": "Jewelry making",
       "hobby": "jewelry-making",
       "note": "A beading kit and pliers will get you started on earrings. Making gifts for friends is half the fun."
     },
     {
       "type": "item",
-      "n": 12,
+      "n": 11,
       "title": "Crochet",
       "hobby": "crochet",
-      "note": "Fiddly for the first hour, meditative by the tenth. Granny squares are the classic first project; little bags and bucket hats come later. [How to start crocheting](/journal/how-to-start-crocheting) covers the first hour."
+      "note": "Fiddly for the first hour, meditative by the tenth. Granny squares are the classic first project; little bags and bucket hats come later. [How to start crocheting](/journal/how-to-start-crocheting) covers the first hour. **What makes it easier:** a set of crochet hooks and {{product:red-heart-super-saver-white-worsted|a ball of worsted yarn}}, so the first hour has the right size to hand."
+    },
+    {
+      "type": "item",
+      "n": 12,
+      "title": "Knitting",
+      "hobby": "knitting",
+      "note": "Soothingly repetitive. A coaster-sized square makes a satisfying first evening, and a knitting group can add company later if you want it. **What makes it easier:** a pair of knitting needles and a ball of beginner yarn, so a coaster-sized square is one cast-on away."
     },
     {
       "type": "item",
       "n": 13,
-      "title": "Knitting",
-      "hobby": "knitting",
-      "note": "Soothingly repetitive. A coaster-sized square makes a satisfying first evening, and a knitting group can add company later if you want it."
+      "title": "Collage art",
+      "hobby": "collage-art",
+      "note": "Old magazines, scissors and glue. It's fast, and you'll learn a lot about what you're drawn to. **What makes it easier:** sharp scissors and a glue stick, so edges stay clean and images stay put."
     },
     {
       "type": "item",
       "n": 14,
-      "title": "Collage art",
-      "hobby": "collage-art",
-      "note": "Old magazines, scissors and glue. It can cost nothing, it's fast, and you'll learn a lot about what you're drawn to."
+      "title": "Calligraphy",
+      "hobby": "calligraphy",
+      "note": "Brush pen drills are strangely calming, and your birthday cards will level up immediately. **What makes it easier:** a set of brush pens, so thick and thin strokes come from one pen."
     },
     {
       "type": "item",
       "n": 15,
-      "title": "Calligraphy",
-      "hobby": "calligraphy",
-      "note": "Brush pen drills are strangely calming, and your birthday cards will level up immediately."
+      "title": "Creative writing",
+      "hobby": "creative-writing",
+      "note": "Not for publishing. For you. A 300-word story is a good evening's work. **What makes it easier:** a notebook you like holding, so a 300-word story has somewhere to land."
     },
     {
       "type": "item",
       "n": 16,
-      "title": "Creative writing",
-      "hobby": "creative-writing",
-      "note": "Not for publishing. For you. A 300-word story is a good evening's work."
-    },
-    {
-      "type": "item",
-      "n": 17,
       "title": "Baking",
       "hobby": "baking",
       "note": "The edible hobby. Bake on a Sunday, share on Monday, and become your office's favorite person."
     },
     {
       "type": "item",
-      "n": 18,
+      "n": 17,
       "title": "Flower arranging",
       "hobby": "flower-arranging",
-      "note": "Split one supermarket bunch into three small jars and you've got arrangements for every room. Our [flower arranging guide](/journal/flower-arranging-as-a-hobby) shows how."
+      "note": "Split one supermarket bunch into three small jars and you've got arrangements for every room. Our [flower arranging guide](/journal/flower-arranging-as-a-hobby) shows how. **What makes it easier:** floral snips and a small vase or jars, so one bunch turns into three tidy arrangements."
     },
     {
       "type": "shopHobby",
       "productIds": [
         "watercolor-sets",
+        "air-dry-clay",
         "embroidery-kits",
         "junk-journals",
-        "air-dry-clay"
+        "crochet-hooks",
+        "knitting-needles"
       ],
       "title": "A first pick for a creative evening",
-      "dek": "A small paint set, an embroidery kit, a junk journal or a block of clay each make the first session easier. Choose the one you are most curious about."
+      "dek": "A small paint set, a block of clay, a stitching kit, a journal or a set of hooks or needles each make the first session easier. Choose the one you are most curious about."
     },
     {
       "type": "h2",
@@ -250,70 +274,83 @@
     },
     {
       "type": "item",
-      "n": 19,
+      "n": 18,
       "title": "Tennis",
       "hobby": "tennis",
-      "note": "Evening rallies with a friend are a lovely way to move. You don't need to keep score for months. Many public courts are free to use, so start by rallying on one near you."
+      "note": "Evening rallies with a friend are a lovely way to move. You don't need to keep score for months. Many public courts are free to use, so start by rallying on one near you. **What makes it easier:** a beginner racket, a can of balls and court shoes, so an evening rally needs no borrowing."
+    },
+    {
+      "type": "item",
+      "n": 19,
+      "title": "Pickleball",
+      "hobby": "pickleball",
+      "note": "Easier to pick up than tennis, and extremely social. Ask your local parks department or rec center about open play and beginner sessions. **What makes it easier:** a paddle set for two or four, so you're ready the moment a friend says yes."
     },
     {
       "type": "item",
       "n": 20,
-      "title": "Pickleball",
-      "hobby": "pickleball",
-      "note": "Easier to pick up than tennis, and extremely social. Ask your local parks department or rec center about open play and beginner sessions."
+      "title": "Hiking",
+      "hobby": "hiking",
+      "note": "Pick a short, well-marked trail and go on a Saturday morning. The snack at the top tastes better than any brunch. **What makes it easier:** walking shoes with grip, trekking-style socks and a small daypack, so your feet are comfortable and the snack at the top rides on your back."
     },
     {
       "type": "item",
       "n": 21,
-      "title": "Hiking",
-      "hobby": "hiking",
-      "note": "Pick a short, well-marked trail and go on a Saturday morning. The snack at the top tastes better than any brunch."
+      "title": "Roller skating",
+      "hobby": "roller-skating",
+      "note": "Expect wobbling. Expect laughing. Many rinks run adult skate nights, so check your local rink's schedule to ease in. **What makes it easier:** a set of skate protective gear in your size, so the helmet, wrist guards and pads are ready for adult skate night."
     },
     {
       "type": "item",
       "n": 22,
-      "title": "Roller skating",
-      "hobby": "roller-skating",
-      "note": "Expect wobbling. Expect laughing. Many rinks run adult skate nights, so check your local rink's schedule to ease in."
+      "title": "Birdwatching",
+      "hobby": "birdwatching",
+      "note": "All you need is a bench and thirty minutes, plus a bird-ID app if you like. You'll never hear a park the same way. **Worth bringing:** compact binoculars, which bring a bird on the far side of the pond close enough to see its colors."
     },
     {
       "type": "item",
       "n": 23,
-      "title": "Birdwatching",
-      "hobby": "birdwatching",
-      "note": "All you need is a bench and thirty minutes, plus a bird-ID app if you like. You'll never hear a park the same way."
+      "title": "Film photography",
+      "hobby": "film-photography",
+      "note": "Each frame costs something, so you start paying attention. Shoot one roll on one walk and wait for the scans. **Nice to have:** a reusable film camera, so each frame is one you chose."
     },
     {
       "type": "item",
       "n": 24,
-      "title": "Film photography",
-      "hobby": "film-photography",
-      "note": "Each frame costs something, so you start paying attention. Shoot one roll on one walk and wait for the scans."
+      "title": "Nature photography",
+      "hobby": "nature-photography",
+      "note": "Use your phone. Give yourself a theme, like one color, and turn a walk into a treasure hunt. **What makes it easier:** a phone armband, so your hands stay free for the walk and the camera is one tap away."
     },
     {
       "type": "item",
       "n": 25,
-      "title": "Nature photography",
-      "hobby": "nature-photography",
-      "note": "Use your phone. Give yourself a theme, like one color, and turn a walk into a treasure hunt."
+      "title": "Outdoor sketching",
+      "hobby": "outdoor-sketching",
+      "note": "A pocket sketchbook and a pen at a café terrace. You'll remember places you drew far better than places you photographed. **What makes it easier:** a pocket sketch pad and a black fineliner ({{product:sakura-pigma-micron-8-pack-black|a pack of black fineliner pens}} is one option), so outlines go down quickly on a café terrace."
     },
     {
       "type": "item",
       "n": 26,
-      "title": "Outdoor sketching",
-      "hobby": "outdoor-sketching",
-      "note": "A pocket sketchbook and a pen at a café terrace. You'll remember places you drew far better than places you photographed."
-    },
-    {
-      "type": "item",
-      "n": 27,
       "title": "Picnicking",
       "hobby": "picnicking",
-      "note": "Yes, it's a hobby when you do it on purpose. Bread, fruit, a blanket and a book; alone or with friends."
+      "note": "Yes, it's a hobby when you do it on purpose. Bread, fruit, a blanket and a book; alone or with friends. **What makes it easier:** a picnic blanket and an insulated flask, so there's a dry place to sit and something warm to pour."
     },
     {
       "type": "tryThisWeekend",
       "text": "Pack a picnic, bring a sketchbook or a film camera, and give yourself two unhurried hours in the nearest park. That's the whole plan."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "tennis-rackets",
+        "pickleball-sets",
+        "walking-shoes",
+        "daypacks",
+        "binoculars",
+        "picnic-blankets"
+      ],
+      "title": "For a weekend outside",
+      "dek": "A racket or paddle, walking shoes, a daypack, binoculars or a picnic blanket each turn a free Saturday morning into a plan."
     },
     {
       "type": "h2",
@@ -326,45 +363,50 @@
     },
     {
       "type": "item",
-      "n": 28,
+      "n": 27,
       "title": "Book clubs",
       "hobby": "book-clubs",
-      "note": "A recurring plan with built-in conversation. Libraries often host free ones (check your local branch), or start your own with two friends."
+      "note": "A recurring plan with built-in conversation. Libraries often host free ones (check your local branch), or start your own with two friends. **What makes it easier:** a deck of conversation cards for the nights the book runs out of questions."
+    },
+    {
+      "type": "item",
+      "n": 28,
+      "title": "Craft nights",
+      "hobby": "craft-nights",
+      "note": "Easier to host than a dinner party: one simple craft, snacks and a table. Everyone leaves with something. **What makes it easier:** a group painting kit or a bracelet kit, so everyone starts with the same thing on the table."
     },
     {
       "type": "item",
       "n": 29,
-      "title": "Craft nights",
-      "hobby": "craft-nights",
-      "note": "Easier to host than a dinner party: one simple craft, snacks and a table. Everyone leaves with something."
+      "title": "Mahjong",
+      "hobby": "mahjong",
+      "note": "A tile game that many friend groups love. A weekly game is a beautiful excuse to see the same friends. **What makes it easier:** a set made for your version, a playing mat and the current reference card, so game night starts with the game."
     },
     {
       "type": "item",
       "n": 30,
-      "title": "Mahjong",
-      "hobby": "mahjong",
-      "note": "A tile game that many friend groups love. A weekly game is a beautiful excuse to see the same friends."
+      "title": "Friendship bracelets",
+      "hobby": "friendship-bracelets",
+      "note": "Nostalgic, quick and impossible to do badly. Spell out inside jokes and hand them round. **What makes it easier:** a friendship bracelet kit, so the floss, beads and instructions arrive together. Check the label for small parts."
     },
     {
       "type": "item",
       "n": 31,
-      "title": "Friendship bracelets",
-      "hobby": "friendship-bracelets",
-      "note": "Nostalgic, quick and impossible to do badly. Spell out inside jokes and hand them round."
-    },
-    {
-      "type": "item",
-      "n": 32,
       "title": "Pottery painting",
       "hobby": "pottery-painting",
-      "note": "A paint-your-own-pottery studio is a no-skill, very cute group plan, and you take home something you made."
+      "note": "A paint-your-own-pottery studio is a no-skill, very cute group plan, and you take home something you made. **What makes it easier:** a ceramic painting kit, if you'd rather paint at home; check the label for firing and use."
     },
     {
-      "type": "item",
-      "n": 33,
-      "title": "Volunteering",
-      "hobby": "volunteering",
-      "note": "Meeting people who care about the same thing skips the awkward small talk. Try a single one-off shift first."
+      "type": "shopHobby",
+      "productIds": [
+        "mahjong-sets",
+        "conversation-cards",
+        "group-painting-kits",
+        "friendship-bracelet-kits",
+        "ceramic-painting-kits"
+      ],
+      "title": "For a table of friends",
+      "dek": "A game set, a deck of conversation cards or a painting or bracelet kit gives a night in a shape and everyone something to do."
     },
     {
       "type": "p",
@@ -376,22 +418,40 @@
     },
     {
       "type": "h2",
-      "text": "When you want something different: wildcard hobbies",
-      "id": "different"
+      "text": "Free ways to start",
+      "id": "free"
+    },
+    {
+      "type": "p",
+      "text": "A few of these start with what you already have: a pencil, a library card, a free hour. A small extra makes each one nicer once you're hooked."
+    },
+    {
+      "type": "item",
+      "n": 32,
+      "title": "Crossword puzzles",
+      "hobby": "crossword-puzzles",
+      "note": "Start with Monday puzzles: the New York Times crossword, for one, gets harder from Monday to Saturday. A crossword and a coffee is a very respectable solo café plan."
+    },
+    {
+      "type": "item",
+      "n": 33,
+      "title": "Volunteering",
+      "hobby": "volunteering",
+      "note": "Meeting people who care about the same thing skips the awkward small talk. Try a single one-off shift first."
     },
     {
       "type": "item",
       "n": 34,
       "title": "Thrifting",
       "hobby": "thrifting",
-      "note": "Give yourself $15 and a challenge, like 'one piece of tableware I love.' Every trip is a small gamble."
+      "note": "Give yourself a small cap and a challenge, like 'one piece of tableware I love.' Every trip is a small gamble. **What makes it easier:** a sturdy tote, so finds ride on your shoulder between shops."
     },
     {
       "type": "item",
       "n": 35,
       "title": "Museum exploring",
       "hobby": "museum-exploring",
-      "note": "Some museums have free or pay-what-you-wish hours, so check your local museum's website. Visit just one room and stay with your favorite piece for ten minutes."
+      "note": "Some museums have free or pay-what-you-wish hours, so check your local museum's website. Visit just one room and stay with your favorite piece for ten minutes. **Worth bringing:** a pocket sketchbook, so the piece you stay with for ten minutes gets a quick drawing."
     },
     {
       "type": "h2",
@@ -407,7 +467,7 @@
       "items": [
         "**Pick two, not ten.** One for weeknights, one for weekends.",
         "**Give it three tries.** The first session of anything is awkward.",
-        "**Start small.** Borrow, use what you have, or buy one starter item that makes it easy to begin. [15 affordable hobbies](/journal/affordable-hobbies-under-25) shows the cheapest sensible way into each.",
+        "**Start small.** Borrow, use what you have, or buy one starter item that makes it easy to begin. [15 hobbies to start this month](/journal/affordable-hobbies-under-25) shows the first thing to buy for each.",
         "**Put it on the calendar.** Literally. A recurring Thursday 'craft hour' is far more likely to happen than 'sometime.'"
       ]
     },

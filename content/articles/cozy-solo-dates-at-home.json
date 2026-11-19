@@ -1,15 +1,15 @@
 {
   "slug": "cozy-solo-dates-at-home",
-  "title": "20 Cozy Solo Date Ideas You Can Do at Home",
-  "titleItalic": "Cozy Solo Date",
-  "dek": "Rainy day, low battery or happily a homebody? Twenty at-home dates that feel planned, not defaulted into.",
+  "title": "20 Cozy Solo Dates at Home, and the Small Things That Make Them Feel Planned",
+  "titleItalic": "Cozy Solo Dates",
+  "dek": "A throw, a light, a puzzle or a first page of clay: twenty at-home dates for rainy days and low batteries, with what makes each one nicer.",
   "category": "solo-dates",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-18",
   "hero": "shopBookish",
   "searchIntent": "solo date ideas at home / things to do alone at home",
-  "angle": "A date is a plan plus a few small touches. How to set the scene at home, then twenty ideas sorted by energy level, with the phone-in-another-room rule",
+  "angle": "A date is a plan plus a few small touches. How to set the scene at home with a small night-in kit, then twenty ideas sorted by energy level (gear-led first), with the phone-in-another-room rule",
   "hobbies": [
     "reading",
     "jigsaw-puzzles",
@@ -19,10 +19,19 @@
     "indoor-gardening"
   ],
   "productIds": [
+    "cozy-night-in",
     "book-lights",
-    "junk-journals",
+    "jigsaw-puzzles",
+    "paint-by-number-kits",
     "air-dry-clay",
+    "junk-journals",
+    "brush-pens",
+    "letter-writing-sets",
+    "photo-albums",
     "reading-journals",
+    "indoor-plant-basics",
+    "tea-sets",
+    "portable-speakers",
     "washi-tape"
   ],
   "sources": [
@@ -58,7 +67,8 @@
     "VERIFIED 2026-11-18: some houseplants harm pets; text defers to a pet-safety source and names no plants - aspca.org",
     "VERIFIED 2026-11-18: cost labels replaced with 'Varies' (non-numeric ones such as Groceries, Pantry staples, A stamp, and 'Free' for no-purchase dates kept); no prices stated - reworded, no claim remains",
     "VERIFIED 2026-11-18: baking note gives no temperatures or allergen claims; spa, bath and foot-soak lines follow product labels with no health claims; cocktail idea frames alcohol as optional with no amounts or brands - reworded, no claim remains",
-    "VERIFIED 2026-11-18: cross-links trimmed to published articles; solo-date-ideas and solo-Saturday links removed until those articles are live - reworded"
+    "VERIFIED 2026-11-18: cross-links trimmed to published articles; solo-date-ideas and solo-Saturday links removed until those articles are live - reworded",
+    "NOTE 2026-11-19: monetisation rewrite: the cocktail idea is now a mocktail and tea idea with no alcohol or barware; gear lines and three shop blocks added; the no-purchase dates grouped in one short 'Free ways to start' section (count of 20 unchanged); candle safety text unchanged and still sourced"
   ],
   "related": [
     "creative-hobbies-you-can-start-at-home",
@@ -72,7 +82,7 @@
     },
     {
       "type": "p",
-      "text": "The difference is three small decisions: a start time, a little setup and a rule about your phone. Do those and the sofa becomes a venue. Here's how to set the scene, then twenty ideas sorted by how much energy you have."
+      "text": "The difference is three small decisions: a start time, a little setup and a rule about your phone. Do those and the sofa becomes a venue. Here's how to set the scene, with the small things that make it easier, then twenty ideas sorted by how much energy you have."
     },
     {
       "type": "h2",
@@ -90,6 +100,20 @@
       ]
     },
     {
+      "type": "p",
+      "text": "**What makes it easier:** a soft throw, flameless candles and a rechargeable book light, so changing the room takes ten minutes and one trip to the cupboard."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "cozy-night-in",
+        "book-lights",
+        "jigsaw-puzzles"
+      ],
+      "title": "The night-in kit",
+      "dek": "Small touches that turn a night in into a date: a throw, flameless candles, a book light and a puzzle for the coffee table."
+    },
+    {
       "type": "h2",
       "text": "When you have almost no energy",
       "id": "low-energy"
@@ -99,9 +123,8 @@
       "n": 1,
       "title": "Bath and a book",
       "hobby": "reading",
-      "note": "Run the water, set your book somewhere dry, and stay until the water cools. A book light helps if you like the room dim.",
+      "note": "Run the water, set your book somewhere dry, and stay until the water cools. **What makes it easier:** a rechargeable book light, so you can read in a dim room without reaching for the lamp.",
       "time": "60 min",
-      "cost": "Free",
       "company": "Solo"
     },
     {
@@ -116,9 +139,8 @@
       "type": "item",
       "n": 3,
       "title": "Blanket-fort film night",
-      "note": "Choose a film you've never seen, build a nest of pillows and make the popcorn. No second screen allowed.",
+      "note": "Choose a film you've never seen, build a nest of pillows and make the popcorn. No second screen allowed. **What makes it easier:** a soft throw big enough to build a nest with, so the sofa becomes a fort in one pull.",
       "time": "2 hours",
-      "cost": "Free",
       "company": "Solo"
     },
     {
@@ -126,7 +148,7 @@
       "n": 4,
       "title": "Audiobook and a puzzle",
       "hobby": "jigsaw-puzzles",
-      "note": "The pleasure is in the pairing: busy hands, a gently occupied mind and no decisions.",
+      "note": "The pleasure is in the pairing: busy hands, a gently occupied mind and no decisions. **What makes it easier:** a jigsaw puzzle sized to fit your coffee table, so the pieces are ready the moment the audiobook starts.",
       "time": "60-120 min",
       "company": "Solo"
     },
@@ -135,9 +157,8 @@
       "n": 5,
       "title": "Re-read a favorite",
       "hobby": "reading",
-      "note": "Choose the book you loved at sixteen or twenty-five and notice what you see in it now. A [reading journal](/journal/how-to-start-a-reading-journal) is a nice place to jot it down.",
+      "note": "Choose the book you loved at sixteen or twenty-five and notice what you see in it now. A [reading journal](/journal/how-to-start-a-reading-journal) is a nice place to jot it down. **What makes it easier:** a small reading journal, so what you notice the second time goes straight onto the page.",
       "time": "60 min",
-      "cost": "Free",
       "company": "Solo"
     },
     {
@@ -150,7 +171,7 @@
       "n": 6,
       "title": "Paint by numbers, one color",
       "hobby": "paint-by-numbers",
-      "note": "Pick one color, fill its areas, then stop. A finished patch of color is the whole date.",
+      "note": "Pick one color, fill its areas, then stop. A finished patch of color is the whole date. **What makes it easier:** a small paint-by-number kit with the numbered canvas, paints and a brush in one box; check the listing for what's included.",
       "time": "45-60 min",
       "company": "Solo"
     },
@@ -159,7 +180,7 @@
       "n": 7,
       "title": "Air-dry clay ring dish",
       "hobby": "air-dry-clay",
-      "note": "Roll, press and smooth, then leave it to dry for a couple of days (check your clay's label). No kiln needed ([how to start air-dry clay](/journal/how-to-start-air-dry-clay) has more ideas), and it's decorative only, so keep food and drink off it, even if sealed.",
+      "note": "Roll, press and smooth, then leave it to dry for a couple of days (check your clay's label). No kiln needed ([how to start air-dry clay](/journal/how-to-start-air-dry-clay) has more ideas), and it's decorative only, so keep food and drink off it, even if sealed. **What makes it easier:** {{product:crayola-air-dry-clay-5-lb-bucket|air-dry clay}} and a few small acrylic paints, so a ring dish goes from pinch to painted in one place.",
       "time": "45 min + drying",
       "company": "Solo"
     },
@@ -168,16 +189,15 @@
       "n": 8,
       "title": "Junk journal your week",
       "hobby": "junk-journaling",
-      "note": "Dig out receipts, tickets and ribbon. Glue three things into a notebook and give each a one-line caption.",
+      "note": "Dig out receipts, tickets and ribbon. Glue three things into a notebook and give each a one-line caption. **What makes it easier:** {{product:stationery-island-a5-blank-journal-180-pages|a blank journal}}, a glue stick and {{product:mr-pen-washi-tape-21-rolls|washi tape}}, so three scraps and three captions become a spread.",
       "time": "30-45 min",
-      "cost": "Free to low cost",
       "company": "Solo"
     },
     {
       "type": "item",
       "n": 9,
       "title": "Write a letter you'll actually send",
-      "note": "To a friend, a relative or yourself a year from now. Use real paper.",
+      "note": "To a friend, a relative or yourself a year from now. Use real paper. **What makes it easier:** a letter-writing set, so paper, envelopes and a good pen are ready when the mood arrives.",
       "time": "30 min",
       "cost": "A stamp",
       "company": "Solo"
@@ -185,21 +205,33 @@
     {
       "type": "item",
       "n": 10,
-      "title": "Make a playlist for a specific mood",
-      "note": "Give it a silly name. Play it start to finish while you tidy a single drawer.",
-      "time": "45 min",
-      "cost": "Free",
+      "title": "Calligraphy or hand-lettering practice",
+      "hobby": "calligraphy",
+      "note": "Print a practice sheet, fill a page, then write a favorite song lyric in your neatest handwriting. **What makes it easier:** a set of brush pens, so thick and thin strokes come from one pen.",
+      "time": "30-45 min",
       "company": "Solo"
     },
     {
       "type": "item",
       "n": 11,
-      "title": "Calligraphy or hand-lettering practice",
-      "hobby": "calligraphy",
-      "note": "Print a free practice sheet, fill a page, then write a favorite song lyric in your neatest handwriting.",
-      "time": "30-45 min",
-      "cost": "Often free",
+      "title": "Photo-album night",
+      "hobby": "scrapbooking",
+      "note": "Pick one trip or one year, choose twelve photos and arrange them in a scrapbook or on a shelf. **What makes it easier:** a photo album or scrapbook, so the twelve photos you choose have somewhere to live.",
+      "time": "60 min",
       "company": "Solo"
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "paint-by-number-kits",
+        "air-dry-clay",
+        "junk-journals",
+        "brush-pens",
+        "letter-writing-sets",
+        "photo-albums"
+      ],
+      "title": "For a gentle, creative evening",
+      "dek": "A kit, a journal, a pen or an album arrives ready to use, so the date starts with making rather than shopping."
     },
     {
       "type": "h2",
@@ -229,18 +261,9 @@
     {
       "type": "item",
       "n": 14,
-      "title": "Cocktail or mocktail lab",
-      "note": "Choose a classic and make it properly. Skip the alcohol entirely if you like; there's no pressure either way.",
+      "title": "Mocktail and tea lab",
+      "note": "Choose a classic mocktail or a tea you've never tried and make it properly. Rank your tries if you like; there's no pressure either way. **What makes it easier:** a small tea set or teapot, so the tasting feels like an occasion.",
       "time": "30-45 min",
-      "company": "Solo"
-    },
-    {
-      "type": "item",
-      "n": 15,
-      "title": "Breakfast-for-dinner night",
-      "note": "Pancakes, eggs, a fruit plate. It's a weeknight, and it's a treat.",
-      "time": "45 min",
-      "cost": "Groceries",
       "company": "Solo"
     },
     {
@@ -250,29 +273,55 @@
     },
     {
       "type": "item",
-      "n": 16,
+      "n": 15,
       "title": "Plant corner refresh",
       "hobby": "indoor-gardening",
-      "note": "Wipe the leaves, repot one plant, move another to better light. If you have pets, check any plant against a pet-safety source first.",
+      "note": "Wipe the leaves, repot one plant, move another to better light. If you have pets, check any plant against a pet-safety source first. **What makes it easier:** a small watering can and a pot or two, so the refresh finishes in one go.",
+      "time": "45 min",
+      "company": "Solo"
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "indoor-plant-basics",
+        "tea-sets",
+        "portable-speakers"
+      ],
+      "title": "Little extras for the evening",
+      "dek": "A watering can and a pot, a tea set and a small speaker make the kitchen and plant-corner dates feel like occasions."
+    },
+    {
+      "type": "h2",
+      "text": "Free ways to start",
+      "id": "free"
+    },
+    {
+      "type": "p",
+      "text": "A few dates need nothing new. A small extra still makes one nicer, and the rest are fine exactly as they are."
+    },
+    {
+      "type": "item",
+      "n": 16,
+      "title": "Make a playlist for a specific mood",
+      "note": "Give it a silly name. Play it start to finish while you tidy a single drawer. **What makes it easier:** a small portable speaker, so the playlist fills the room without headphones.",
       "time": "45 min",
       "company": "Solo"
     },
     {
       "type": "item",
       "n": 17,
-      "title": "Photo-album night",
-      "hobby": "scrapbooking",
-      "note": "Pick one trip or one year, choose twelve photos and arrange them in a scrapbook or on a shelf.",
-      "time": "60 min",
+      "title": "Breakfast-for-dinner night",
+      "note": "Pancakes, eggs, a fruit plate. It's a weeknight, and it's a treat.",
+      "time": "45 min",
+      "cost": "Groceries",
       "company": "Solo"
     },
     {
       "type": "item",
       "n": 18,
       "title": "Dream-board or plan-the-season session",
-      "note": "Cut out or write down what you want from this season, and pin it where you'll see it daily.",
+      "note": "Cut out or write down what you want from this season, and pin it where you'll see it daily. **Worth bringing:** old magazines, scissors and {{product:scotch-glue-stick-photo-safe-4-pack|a glue stick}}, if you want to cut and paste rather than write.",
       "time": "45 min",
-      "cost": "Free",
       "company": "Solo"
     },
     {
@@ -281,7 +330,6 @@
       "title": "Rearrange one shelf like a boutique",
       "note": "Books, a plant, a frame and one thrifted object. Step back, then nudge it once more.",
       "time": "30 min",
-      "cost": "Free",
       "company": "Solo"
     },
     {
@@ -290,12 +338,7 @@
       "title": "Plan your next outing",
       "note": "Flip through a list of solo dates, pick one and write it in. A night in that books a night out is a good night.",
       "time": "15 min",
-      "cost": "Free",
       "company": "Solo"
-    },
-    {
-      "type": "noSpend",
-      "text": "Most of these need only what's already in the house: the bath, the book, the letter, the shelf, the dinner."
     },
     {
       "type": "h2",
@@ -310,17 +353,6 @@
         "**You feel a bit lonely.** That's normal, and it passes. Text a friend something you're enjoying, or pencil in something social for later in the week.",
         "**You start cleaning instead.** Give the dishes ten minutes on a timer, then come back to your date."
       ]
-    },
-    {
-      "type": "shopHobby",
-      "productIds": [
-        "junk-journals",
-        "washi-tape",
-        "book-lights",
-        "reading-journals"
-      ],
-      "title": "The night-in kit",
-      "dek": "Small touches that turn a night in into a date: a book light for cozy reading, washi tape and a journal for keepsakes."
     },
     {
       "type": "p",

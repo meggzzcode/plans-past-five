@@ -2,14 +2,14 @@
   "slug": "how-to-find-a-hobby-as-an-adult",
   "title": "How to Find a Hobby as an Adult (When You Say \"I Don't Really Have Any Interests\")",
   "titleItalic": "I Don't Really Have Any Interests",
-  "dek": "A nosy little audit, three cheap trials and a one-week experiment to find the thing you'd happily do again. No passion required.",
+  "dek": "A nosy little audit, three small trial kits and a one-week experiment to find the thing you'd happily do again. No passion required.",
   "category": "after-hours",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-18",
   "hero": "soloCafe",
   "searchIntent": "how to find a hobby as an adult / I don't have any hobbies",
-  "angle": "Treat finding a hobby as a small experiment, not a personality test: audit, pick a craving, try cheap, review, repeat",
+  "angle": "Treat finding a hobby as a small experiment, not a personality test: audit, pick a craving, try the smallest kit, review, repeat",
   "hobbies": [
     "watercolor-painting",
     "air-dry-clay",
@@ -21,10 +21,14 @@
     "craft-nights"
   ],
   "productIds": [
+    "pocket-notebooks",
     "watercolor-sets",
     "air-dry-clay",
-    "pocket-notebooks",
-    "daypacks"
+    "daypacks",
+    "pickleball-sets",
+    "conversation-cards",
+    "friendship-bracelet-kits",
+    "market-totes"
   ],
   "sources": [
     {
@@ -44,7 +48,8 @@
     "VERIFIED 2026-11-18: no cost ranges appear in the article ('typically under $25' items not present) - reworded, no claim remains",
     "VERIFIED 2026-11-18: /hobby-finder quiz description updated to match the live tool (seven questions about time, budget, energy and company; no sign-up) - src/routes/hobby-finder.tsx",
     "VERIFIED 2026-11-18: no habit-formation timeline appears in the article - nothing to cite",
-    "VERIFIED 2026-11-18: cross-links - related list trimmed to published articles (low-energy-hobbies and affordable-hobbies-under-25 removed) - reworded"
+    "VERIFIED 2026-11-18: cross-links - related list trimmed to published articles (low-energy-hobbies and affordable-hobbies-under-25 removed) - reworded",
+    "NOTE 2026-11-19: monetisation rewrite: a 'Three trial kits' shop block moved to directly after 'Pick three and try the smallest version', gear lines added to each craving row, 'buy the mini version' now leads the trial options (borrow-first kept as one bullet); audit and method unchanged; no health or self-help claims"
   ],
   "related": [
     "hobbies-to-try-when-life-feels-like-work-sleep-repeat",
@@ -90,11 +95,11 @@
     {
       "type": "list",
       "items": [
-        "**Making something:** [watercolor](/hobbies/watercolor-painting) ([beginner's guide](/journal/watercolor-painting-for-beginners)), [air-dry clay](/hobbies/air-dry-clay) ([how to start](/journal/how-to-start-air-dry-clay)) or [embroidery](/journal/how-to-start-embroidery).",
-        "**Slowing down:** [reading](/hobbies/reading), puzzles, anything repetitive and gentle, like [crochet](/journal/how-to-start-crocheting). For tired evenings, see [low-energy hobbies](/journal/low-energy-hobbies).",
-        "**Moving without a gym:** [hiking](/hobbies/hiking) or [pickleball](/hobbies/pickleball).",
-        "**Company:** a [book club](/hobbies/book-clubs) or a [craft night](/hobbies/craft-nights).",
-        "**A change of scenery:** [thrifting](/hobbies/thrifting) in a neighborhood you never visit."
+        "**Making something:** [watercolor](/hobbies/watercolor-painting) ([beginner's guide](/journal/watercolor-painting-for-beginners)), [air-dry clay](/hobbies/air-dry-clay) ([how to start](/journal/how-to-start-air-dry-clay)) or [embroidery](/journal/how-to-start-embroidery). **What makes it easier:** a mini paint set or a block of clay, so the first session starts the evening it arrives.",
+        "**Slowing down:** [reading](/hobbies/reading), puzzles, anything repetitive and gentle, like [crochet](/journal/how-to-start-crocheting). For tired evenings, see [low-energy hobbies](/journal/low-energy-hobbies). **What makes it easier:** a pocket notebook for jotting what you read, or a hook and a ball of yarn.",
+        "**Moving without a gym:** [hiking](/hobbies/hiking) or [pickleball](/hobbies/pickleball). **What makes it easier:** a small daypack and comfortable walking shoes for a trail, or a paddle set for pickleball.",
+        "**Company:** a [book club](/hobbies/book-clubs) or a [craft night](/hobbies/craft-nights). **What makes it easier:** a deck of conversation cards or a bracelet kit, so the evening has something to do and something to say.",
+        "**A change of scenery:** [thrifting](/hobbies/thrifting) in a neighborhood you never visit. **What makes it easier:** a roomy market tote, so finds ride on your shoulder."
       ]
     },
     {
@@ -113,8 +118,8 @@
     {
       "type": "list",
       "items": [
+        "**Buy the mini version.** One small paint set, a block of clay or a pocket notebook is a happy first purchase, because it makes starting easy.",
         "**Borrow first.** Library books, a friend's racket, a community taster session.",
-        "**Buy the mini version.** One small paint set or a pocket notebook is a happy first purchase, because it makes starting easy.",
         "**Raid your own home.** A notebook, an old tote, a pen that works.",
         "**Drop in.** Many studios and courts sell single sessions, which can be a lighter commitment than a block. Check locally."
       ]
@@ -129,8 +134,19 @@
       ],
       "optional": [
         "A friend to join one of them",
-        "A tiny set of supplies for one hobby"
+        "A mini kit for each pick: a pocket notebook, a small paint set or a block of clay, a daypack for the outdoor trial"
       ]
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "pocket-notebooks",
+        "watercolor-sets",
+        "air-dry-clay",
+        "daypacks"
+      ],
+      "title": "Three trial kits",
+      "dek": "A pocket notebook, a mini paint set or a block of clay and a daypack for an outdoor trial cover three very different evenings, and each makes starting simple."
     },
     {
       "type": "h2",
@@ -210,18 +226,7 @@
     },
     {
       "type": "p",
-      "text": "Borrow, rent or book a single beginner session if you'd like to test the waters; a small starter set is a fine first buy too. Once you've tried something three times and still want more, treat yourself to one good thing that makes it nicer. [15 affordable hobbies](/journal/affordable-hobbies-under-25) lists the cheapest sensible way into fifteen of them."
-    },
-    {
-      "type": "shopHobby",
-      "productIds": [
-        "watercolor-sets",
-        "air-dry-clay",
-        "pocket-notebooks",
-        "daypacks"
-      ],
-      "title": "Three easy first buys",
-      "dek": "A pocket notebook, a mini paint set and a lump of clay cover three very different evenings, and each makes starting simple. Skip anything you can borrow."
+      "text": "A small starter set is a fine first buy, and borrowing, renting or booking a single beginner session works too if you'd like to test the waters. Once you've tried something three times and still want more, treat yourself to one good thing that makes it nicer. [15 hobbies to start this month](/journal/affordable-hobbies-under-25) lists the first thing to buy for each of fifteen."
     },
     {
       "type": "tryThisWeekend",

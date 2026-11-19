@@ -2,20 +2,26 @@
   "slug": "flower-arranging-as-a-hobby",
   "title": "How to Arrange Grocery-Store Flowers So They Look Like a Florist Did It",
   "titleItalic": "Look Like a Florist Did It",
-  "dek": "One bunch, one jug and a three-layer recipe. A twenty-minute weekly habit that makes your table look arranged. No talent needed.",
+  "dek": "One bunch, one vase and a three-layer recipe, plus the small tools that make stems behave. A twenty-minute weekly habit that makes your table look arranged. No talent needed.",
   "category": "creative-corner",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-18",
   "hero": "flowerArranging",
   "searchIntent": "flower arranging for beginners / how to arrange flowers at home / flower arranging hobby",
-  "angle": "A low-commitment weekly ritual: a simple formula (focal, filler, greenery), a minimal toolkit, and flower care basics, using only grocery-store stems and what you already own",
+  "angle": "A low-commitment weekly ritual: a simple formula (focal, filler, greenery), the small tools that make it easier (snips, a vase, a flower frog), and flower care basics, using grocery-store stems",
   "hobbies": [
     "flower-arranging",
     "indoor-gardening",
     "collage-art"
   ],
-  "productIds": [],
+  "productIds": [
+    "flower-snips",
+    "vases",
+    "flower-frogs",
+    "market-totes",
+    "indoor-plant-basics"
+  ],
   "sources": [
     {
       "title": "Iowa State Extension: how to harvest, condition and care for cut flowers",
@@ -79,7 +85,8 @@
     "VERIFIED 2026-11-18: use clean, sharp knife or shears; scissors can pinch stems - extension.iastate.edu, extension.illinois.edu",
     "VERIFIED 2026-11-18: starter spend range ($10-$25) removed; cost described as varying - reworded, no claim remains",
     "VERIFIED 2026-11-18: odd-number rule framed as a style rule of thumb; chicken wire and foam mentioned only as optional ('some arrangers'), no technique claim; pollen/allergy wording hedged with no health claim; sharp-tool habits are general care - reworded, no claim remains",
-    "VERIFIED 2026-11-18: no shopHobby block or product ids attached (no product records for flower supplies yet) - nothing to verify"
+    "VERIFIED 2026-11-18: no shopHobby block or product ids attached (no product records for flower supplies yet) - nothing to verify",
+    "NOTE 2026-11-19: monetisation rewrite: product ids and two shop blocks added (type-level cards; no flower-product records are verified, so nothing is linked inline), gear lines added on the recipe, ritual and mistakes sections, 'Why it is worth trying' folded into the intro, cost sentence removed; pet-toxicity and care text unchanged and still sourced, no toxic flowers promoted"
   ],
   "related": [
     "creative-hobbies-you-can-start-at-home",
@@ -93,16 +100,7 @@
     },
     {
       "type": "p",
-      "text": "This guide gives you that structure: a three-layer recipe, a minimal toolkit and the care habits that keep stems going. All you need is what you can pick up with the milk."
-    },
-    {
-      "type": "h2",
-      "text": "Why it is worth trying",
-      "id": "why"
-    },
-    {
-      "type": "p",
-      "text": "It takes about twenty minutes and needs no talent, only a few choices. The result lands on your table, where you see it every day."
+      "text": "This guide gives you that structure: a three-layer recipe, the small tools that make stems behave and the care habits that keep them going. It takes about twenty minutes and needs no talent, only a few choices, and the result lands on your table where you see it every day."
     },
     {
       "type": "h2",
@@ -131,7 +129,17 @@
     },
     {
       "type": "p",
-      "text": "What a weekly bunch costs varies with the season and where you live, so start with one bunch. Once flowers are a habit, good snips and a vase with a shape you love are lovely upgrades, with cleaner cuts, less effort and a prettier table."
+      "text": "Start with one bunch. Once flowers are a habit, good snips and a vase with a shape you love are lovely upgrades, with cleaner cuts, less effort and a prettier table."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "flower-snips",
+        "vases",
+        "flower-frogs"
+      ],
+      "title": "The small tools for a weekly bunch",
+      "dek": "Floral snips for clean cuts, a vase with a shape you love and a flower frog to hold stems in place are the upgrades worth making once the habit sticks."
     },
     {
       "type": "h2",
@@ -155,7 +163,15 @@
     },
     {
       "type": "p",
+      "text": "**What makes it easier:** floral snips, so each stem gets a clean cut with less effort; clean, sharp shears or a knife are better than scissors that pinch stems."
+    },
+    {
+      "type": "p",
       "text": "If stems keep flopping, crisscross strips of clear tape over the vase mouth to make a grid, or some arrangers crumple a little chicken wire inside. Floral foam is another option, but it is not needed to begin."
+    },
+    {
+      "type": "p",
+      "text": "**What makes it easier:** a flower frog, a small holder that sits in the bottom of the vase, so stems stay where you place them. A narrow-necked vase does a similar job for a small bunch."
     },
     {
       "type": "h2",
@@ -194,7 +210,20 @@
     },
     {
       "type": "p",
+      "text": "**What makes it easier:** a few bud vases or small jars in different shapes, so the last stems from last week's bunch become a second arrangement and the table always has something on it."
+    },
+    {
+      "type": "p",
       "text": "Pollen can stain fabric and may bother some people with allergies, so use a surface you can wipe and choose gently scented stems if you are sensitive. Cut away from yourself and keep snips out of reach of children and pets."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "market-totes",
+        "indoor-plant-basics"
+      ],
+      "title": "For the weekly bunch",
+      "dek": "A sturdy tote carries the bunch home, and a few small jars give the last stems a second life on the windowsill."
     },
     {
       "type": "h2",
@@ -214,7 +243,7 @@
     {
       "type": "item",
       "title": "The vase is too wide and everything collapses",
-      "note": "Use the tape grid across the mouth, or switch to a narrower jar for a smaller bunch."
+      "note": "Use the tape grid across the mouth, or switch to a narrower jar for a smaller bunch. A flower frog works the same way for a wide vase."
     },
     {
       "type": "tryThisWeekend",

@@ -1,22 +1,24 @@
 {
   "slug": "pickleball-for-beginners",
-  "title": "Everything You Need for Your Pickleball Era",
-  "titleItalic": "Pickleball Era",
-  "dek": "The court in plain English, four rules that get you playing and exactly what to say when you walk up to a game where you don't know a soul.",
+  "title": "Pickleball for Beginners: The Rules, the Court and the Gear for Your First Game",
+  "titleItalic": "Your First Game",
+  "dek": "The court in plain English, four rules that get you playing, the starter paddle set and bottle worth bringing, and what to say when you walk up to a game.",
   "category": "movement",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-18",
   "hero": "shopSporty",
   "searchIntent": "pickleball for beginners / how to start playing pickleball / pickleball equipment",
-  "angle": "A no-jargon starter guide: what you really need, the handful of rules that matter on day one, and how to join open play without feeling like the new kid",
+  "angle": "A no-jargon starter guide: the gear worth bringing (a starter paddle set, a bottle, grippy shoes), the handful of rules that matter on day one, and how to join open play without feeling like the new kid",
   "hobbies": [
     "pickleball",
     "tennis"
   ],
   "productIds": [
     "pickleball-sets",
-    "water-bottles"
+    "water-bottles",
+    "sports-totes",
+    "pickleball-shoes"
   ],
   "sources": [
     {
@@ -67,7 +69,7 @@
   "body": [
     {
       "type": "p",
-      "text": "Racket, paddle or a very small tennis shoe? If you've heard 'pickleball' a hundred times and still couldn't say what you hit the ball with, here's the whole picture in a few minutes, and by the end of your first session you could be playing. It's one of the more forgiving sports to walk into as a beginner: the court is small and the pace is manageable."
+      "text": "Racket, paddle or a very small tennis shoe? If you've heard 'pickleball' a hundred times and still couldn't say what you hit the ball with, here's the whole picture in a few minutes: a paddle, a ball and a short list of rules, and by the end of your first session you could be playing. It's one of the more forgiving sports to walk into as a beginner: the court is small and the pace is manageable."
     },
     {
       "type": "h2",
@@ -77,6 +79,44 @@
     {
       "type": "p",
       "text": "Pickleball is a paddle sport played over a low net on a small court, most often as doubles. It borrows from tennis, badminton and table tennis. You hit a light, perforated plastic ball with a solid paddle, not a stringed racket. Because the court is compact, there's less ground to cover, and open play tends to rotate partners, so it's an easy sport to be bad at in good company."
+    },
+    {
+      "type": "h2",
+      "text": "What to bring, and what to skip",
+      "id": "gear"
+    },
+    {
+      "type": "whatYoullNeed",
+      "essentials": [
+        "A paddle, or a starter set that bundles paddles and balls",
+        "A few pickleballs; per the official rulebook, approved balls are fine indoors or outdoors, so one kind covers you",
+        "Shoes with good grip that will not mark the court",
+        "Water and sun protection"
+      ],
+      "optional": [
+        "A starter set that bundles paddles and balls, handy if you're playing with a friend",
+        "A visor or hat",
+        "A small tote for balls, water and a spare layer",
+        "Court shoes made for racquet sports, as a later upgrade",
+        "A better paddle once you've played enough to know what you like"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "You probably own the shoes and a water bottle already; a bottle you love is easy to keep courtside. A starter set bundles paddles and balls, which is handy for playing with a friend, and your own paddle means you can play whenever a friend texts. Some clubs and beginner sessions lend paddles if you'd like to try one first. For casual play nobody is checking your paddle; if you ever plan to compete, look at your national governing body's equipment guidance first. A better paddle can come later, once you know whether you like a lighter feel or something with more punch."
+    },
+    {
+      "type": "p",
+      "text": "**What makes it easier:** a starter set with two paddles and balls, so you and a friend can play the same afternoon you decide to."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "pickleball-sets",
+        "water-bottles"
+      ],
+      "title": "Your first pickleball kit",
+      "dek": "A starter set bundles paddles and balls, so you and a friend can play whenever the mood strikes. Add a water bottle and a tote for the court bag."
     },
     {
       "type": "h2",
@@ -107,30 +147,6 @@
     },
     {
       "type": "h2",
-      "text": "What to bring, and what to skip",
-      "id": "gear"
-    },
-    {
-      "type": "whatYoullNeed",
-      "essentials": [
-        "A paddle, which you may be able to borrow for a first session",
-        "A few pickleballs; per the official rulebook, approved balls are fine indoors or outdoors, so one kind covers you",
-        "Shoes with good grip that will not mark the court",
-        "Water and sun protection"
-      ],
-      "optional": [
-        "A starter set that bundles paddles and balls, handy if you're playing with a friend",
-        "A visor or hat",
-        "A small tote for balls, water and a spare layer",
-        "Later upgrade: a better paddle once you've played enough to know what you like"
-      ]
-    },
-    {
-      "type": "p",
-      "text": "You probably own the shoes and a water bottle already; a bottle you love makes staying hydrated easy. Some clubs and beginner sessions lend paddles, so you can try one first, and your own paddle means you can play whenever a friend texts. A starter set bundles paddles and balls, which is handy for playing with a friend. For casual play nobody is checking your paddle; if you ever plan to compete, look at your national governing body's equipment guidance first. A better paddle can come later, once you know whether you like a lighter feel or something with more punch."
-    },
-    {
-      "type": "h2",
       "text": "A first session that doesn't ask much",
       "id": "first-session"
     },
@@ -145,17 +161,8 @@
       ]
     },
     {
-      "type": "h2",
-      "text": "Finding your people",
-      "id": "people"
-    },
-    {
       "type": "p",
-      "text": "The easiest route is a friend, plus a second friend to make four. Failing that, look at your local recreation department or community board for beginner clinics and drop-in times. Many public courts run open play, and some use a sign-in or paddle-stacking system, which varies from court to court. If you're nervous, arrive early and watch for ten minutes to see how people rotate, then say, 'Hi, I'm new. Can I join the next game?'"
-    },
-    {
-      "type": "p",
-      "text": "Open play often mixes levels, which is a friendly way to learn. Call lines fairly on your own side of the net, meet at the net after a game, and check how the paddle rack works on each court, since it varies."
+      "text": "**Worth bringing:** a small tote for balls, water and a spare layer, so the whole session fits in one bag."
     },
     {
       "type": "h2",
@@ -174,11 +181,20 @@
     {
       "type": "shopHobby",
       "productIds": [
-        "pickleball-sets",
-        "water-bottles"
+        "pickleball-shoes",
+        "sports-totes"
       ],
-      "title": "Your first pickleball kit",
-      "dek": "A starter set bundles paddles and balls, so you and a friend can play whenever the mood strikes. Borrowing for your very first game works too."
+      "title": "For the second month",
+      "dek": "Court shoes made for racquet sports and a tote that carries the lot, once you know you're hooked."
+    },
+    {
+      "type": "h2",
+      "text": "Free ways to start",
+      "id": "free-start"
+    },
+    {
+      "type": "p",
+      "text": "The easiest route is a friend, plus a second friend to make four. Many public courts run open play, with a sign-in or paddle-stacking system that varies from court to court, and your local recreation department may run beginner clinics. Arrive early, watch for ten minutes to see how people rotate, then say, 'Hi, I'm new. Can I join the next game?' Open play often mixes levels, which is a friendly way to learn. Call lines fairly on your own side of the net, meet at the net after a game, and check how the paddle rack works on each court, since it varies."
     },
     {
       "type": "p",

@@ -1,15 +1,15 @@
 {
   "slug": "solo-date-ideas",
-  "title": "30 Solo Date Ideas You'll Actually Want to Take Yourself On",
+  "title": "30 Solo Date Ideas You'll Actually Want to Take Yourself On, and the Little Kit for Each",
   "titleItalic": "Actually Want",
-  "dek": "Thirty solo date ideas, from free walks to a dessert-only dinner, sorted by budget and mood. Table for one, and a very good table at that.",
+  "dek": "Thirty solo dates for every mood: a sketch outing, a film walk, a picnic for one, each with the small thing worth bringing. Table for one, and a very good table at that.",
   "category": "solo-dates",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-18",
   "hero": "watercolor",
-  "searchIntent": "solo date ideas / things to do by yourself",
-  "angle": "Grouped by budget and how outgoing you feel, with a plan for the awkward first ten minutes and for eating alone comfortably",
+  "searchIntent": "solo date ideas / things to do by yourself / solo date ideas with what to bring",
+  "angle": "Grouped by what you want to do (make something, get outside, a small treat), each idea with the small thing worth bringing, plus free ways to start, a few places to go and a plan for the awkward first ten minutes and for eating alone comfortably",
   "hobbies": [
     "reading",
     "museum-exploring",
@@ -20,10 +20,24 @@
   ],
   "productIds": [
     "pocket-notebooks",
-    "picnic-blankets",
     "portable-watercolor",
+    "sketch-pads",
+    "film-cameras",
+    "junk-journals",
     "book-sleeves",
-    "film-cameras"
+    "walking-shoes",
+    "trekking-socks",
+    "daypacks",
+    "water-bottles",
+    "phone-armband",
+    "binoculars",
+    "picnic-blankets",
+    "thermos-flasks",
+    "skate-protective-gear",
+    "market-totes",
+    "vases",
+    "flower-snips",
+    "letter-writing-sets"
   ],
   "sources": [
     {
@@ -89,7 +103,7 @@
     },
     {
       "type": "p",
-      "text": "Below are thirty ideas for getting out of the house, grouped by what you want to spend and how you feel, and plenty are free or cost about a coffee ([affordable hobbies](/journal/affordable-hobbies-under-25) have more budget-friendly ideas). Staying in is a different list: [20 cozy solo date ideas you can do at home](/journal/cozy-solo-dates-at-home). Pick one, put it in the calendar and go."
+      "text": "Below are thirty ideas for getting out of the house, starting with the dates where one small thing in your bag (a pocket watercolor set, a film camera, a good pair of walking shoes) makes the hour easier and prettier, and ending with free ways to start and a few places to go. Staying in is a different list: [20 cozy solo date ideas you can do at home](/journal/cozy-solo-dates-at-home). Pick one, put it in the calendar and go."
     },
     {
       "type": "h2",
@@ -108,172 +122,12 @@
     {
       "type": "list",
       "items": [
-        "**First time out alone:** the coffee shop and a chapter (9), or the library wander (1). Both are short, indoors and easy to leave.",
-        "**Only an hour free:** a golden-hour walk (2), a bookstore browse (7) or a fresh-flower stop (15).",
-        "**Want something to show for it:** the film walk (19), the junk-journal page (20) or the pocket watercolor outing (17).",
-        "**Need to be outside:** the birdwatching bench (24), a lakeside sit (30) or a rainy-day walk (29), which is better than it sounds.",
-        "**Feeling brave:** the museum visit (22) or the paddle rental (26)."
+        "**First time out alone:** the coffee shop and a chapter (15) or a pocket watercolor outing (1). Both are short and easy to leave.",
+        "**Only an hour free:** a sketch of a cafe corner (2), a fresh-flower stop (17) or a thrift hunt (16).",
+        "**Want something to show for it:** the film walk (3), the junk-journal page (4) or the pocket watercolor outing (1).",
+        "**Need to be outside:** the birdwatching bench (8), a picnic for one (9) or a lakeside sit (14).",
+        "**Feeling brave:** the museum visit (6) or the short beginner hike (7)."
       ]
-    },
-    {
-      "type": "h2",
-      "text": "Free and wandering",
-      "id": "free"
-    },
-    {
-      "type": "item",
-      "n": 1,
-      "title": "Library wander",
-      "note": "Give yourself twenty minutes in a section you never visit, then borrow one book purely because of the cover or the first line.",
-      "time": "45-60 min",
-      "cost": "Often free",
-      "company": "Solo"
-    },
-    {
-      "type": "item",
-      "n": 2,
-      "title": "Golden-hour walk with a theme",
-      "note": "Choose a theme like doors, blue things or cats in windows, and find ten examples before you head home.",
-      "time": "45 min",
-      "cost": "Free",
-      "company": "Solo"
-    },
-    {
-      "type": "item",
-      "n": 3,
-      "title": "Park-bench people-watching",
-      "note": "Jot down five anonymous details in a notebook: a dog's outfit, someone's excellent coat, the ice cream truck's jingle. No names, no staring.",
-      "time": "30-45 min",
-      "cost": "Free",
-      "company": "Solo"
-    },
-    {
-      "type": "item",
-      "n": 4,
-      "title": "Sunrise or sunset spot",
-      "note": "Find a hill, waterfront or open public space and arrive ten minutes early. Bring a thermos from home.",
-      "time": "45 min",
-      "cost": "Free",
-      "company": "Solo"
-    },
-    {
-      "type": "item",
-      "n": 5,
-      "title": "Neighborhood detail crawl",
-      "note": "Pick a street and photograph one detail per block: a doorknob, a tile pattern, a fire escape.",
-      "time": "60 min",
-      "cost": "Free",
-      "company": "Solo"
-    },
-    {
-      "type": "item",
-      "n": 6,
-      "title": "A free museum or gallery hour",
-      "hobby": "museum-exploring",
-      "note": "Some museums have free or pay-what-you-can hours, and some small galleries are free, so check locally. Choose one room and stay with it.",
-      "time": "60-90 min",
-      "cost": "Often free hours",
-      "company": "Solo"
-    },
-    {
-      "type": "item",
-      "n": 7,
-      "title": "Bookstore browse, no buying",
-      "note": "Read the first page of five books you'd never normally pick up, and write down the one you'd go back for.",
-      "time": "45 min",
-      "cost": "Free",
-      "company": "Solo",
-      "first": "Set a timer for twenty minutes, read five opening pages and leave without buying anything."
-    },
-    {
-      "type": "item",
-      "n": 8,
-      "title": "A postcard to future you",
-      "note": "Tell yourself what you're up to today and what you're hoping for in six months. Post it on the way home.",
-      "time": "20 min",
-      "cost": "A stamp",
-      "company": "Solo"
-    },
-    {
-      "type": "h2",
-      "text": "Low-cost treats",
-      "id": "low-cost"
-    },
-    {
-      "type": "item",
-      "n": 9,
-      "title": "Coffee shop and a chapter",
-      "note": "Order something you wouldn't make at home, take the window seat and read one chapter before you touch your phone. The full walk-through is in [how to take yourself on a solo coffee shop date](/journal/how-to-take-yourself-on-a-solo-coffee-shop-date).",
-      "time": "60 min",
-      "cost": "Price of a drink",
-      "company": "Solo"
-    },
-    {
-      "type": "item",
-      "n": 10,
-      "title": "Matinee movie",
-      "note": "Some cinemas have cheaper daytime or weekday tickets, so check yours. Sit in the middle and bring the snack you actually want.",
-      "time": "2-3 hours",
-      "cost": "A matinee ticket",
-      "company": "Solo"
-    },
-    {
-      "type": "item",
-      "n": 11,
-      "title": "Farmers' market breakfast",
-      "note": "Wander the stalls first, then buy a pastry and something seasonal. Eat on a bench and plan what you'd cook with the rest.",
-      "time": "60-90 min",
-      "cost": "Price of a pastry",
-      "company": "Solo"
-    },
-    {
-      "type": "item",
-      "n": 12,
-      "title": "Picnic for one",
-      "hobby": "picnicking",
-      "note": "A sandwich, a piece of fruit, something sweet. A blanket makes it feel planned rather than improvised. [The picnic guide](/journal/how-to-plan-a-perfect-picnic) has the checklist.",
-      "time": "60-90 min",
-      "cost": "Groceries",
-      "company": "Solo"
-    },
-    {
-      "type": "item",
-      "n": 13,
-      "title": "Thrift store treasure hunt",
-      "hobby": "thrifting",
-      "note": "Give yourself a small budget and a mission: a mug, a scarf, a frame. Leave when the money or the hour runs out.",
-      "time": "60-90 min",
-      "cost": "Your small budget",
-      "company": "Solo",
-      "first": "Pick the mission before you walk in, and only pick up what you can picture on your own shelf."
-    },
-    {
-      "type": "item",
-      "n": 14,
-      "title": "Dessert-only dinner",
-      "note": "Skip the main course and go straight to the good part. Take the counter seat if there is one.",
-      "time": "45-60 min",
-      "company": "Solo"
-    },
-    {
-      "type": "item",
-      "n": 15,
-      "title": "A fresh-flower stop",
-      "hobby": "flower-arranging",
-      "note": "Buy a small bunch, plonk it in whatever vessel you have and put it where you'll see it first thing tomorrow.",
-      "time": "30 min",
-      "cost": "A small bunch",
-      "company": "Solo"
-    },
-    {
-      "type": "item",
-      "n": 16,
-      "title": "Pottery-painting walk-in",
-      "hobby": "pottery-painting",
-      "note": "Studios where you paint a ready-made piece can suit solo visitors: no skill required, though walk-in policies and prices vary, so check first. Prefer to make your own at home? Try [air-dry clay](/journal/how-to-start-air-dry-clay).",
-      "time": "90 min",
-      "cost": "Studio price; check first",
-      "company": "Solo"
     },
     {
       "type": "h2",
@@ -282,62 +136,72 @@
     },
     {
       "type": "item",
-      "n": 17,
+      "n": 1,
       "title": "Pocket-sized watercolor outing",
       "hobby": "watercolor-painting",
-      "note": "A small travel set, a cup of water and a bench. Paint one view in three colors and call it finished. The [watercolor](/journal/watercolor-painting-for-beginners) guide has the first techniques.",
+      "note": "A small travel set, a cup of water and a bench. Paint one view in three colors and call it finished. The [watercolor](/journal/watercolor-painting-for-beginners) guide has the first techniques. **What makes it easier:** a pocket watercolor set with a built-in palette and a small sketch pad, so one view fits in a coat pocket.",
       "time": "45-60 min",
       "company": "Solo",
       "first": "Pick the view before you unpack, then paint it in three colors and stop."
     },
     {
       "type": "item",
-      "n": 18,
+      "n": 2,
       "title": "Sketch a cafe corner",
       "hobby": "outdoor-sketching",
-      "note": "Draw the lamp, the mugs, the curve of a chair. Looking closely is the point, not accuracy.",
+      "note": "Draw the lamp, the mugs, the curve of a chair. Looking closely is the point, not accuracy. **What makes it easier:** a small sketch pad and {{product:sakura-pigma-micron-8-pack-black|a fine black pen}}, so an outline of the lamp or the mugs is ready in a minute.",
       "time": "30-45 min",
-      "cost": "Price of a drink",
       "company": "Solo",
       "first": "Pick one object on your table and draw only its outline for fifteen minutes."
     },
     {
       "type": "item",
-      "n": 19,
+      "n": 3,
       "title": "Single-roll film walk",
       "hobby": "film-photography",
-      "note": "A film camera slows you down, because every frame counts. Plan a route and choose each shot.",
+      "note": "A film camera slows you down, because every frame counts. Plan a route and choose each shot. **What makes it easier:** a reusable film camera, so every frame feels chosen and the roll becomes a keepsake.",
       "time": "60-90 min",
       "company": "Solo"
     },
     {
       "type": "item",
-      "n": 20,
+      "n": 4,
       "title": "Junk journal your week",
       "hobby": "junk-journaling",
-      "note": "Collect a ticket, a receipt and a wrapper and glue them into a notebook with one sentence per day. [Here's how](/journal/how-to-start-junk-journaling).",
+      "note": "Collect a ticket, a receipt and a wrapper and glue them into a notebook with one sentence per day. [Here's how](/journal/how-to-start-junk-journaling). **What makes it easier:** {{product:stationery-island-a5-blank-journal-180-pages|a thick-paged notebook}} and a few rolls of {{product:mr-pen-washi-tape-21-rolls|washi tape}}, so the week's ticket and receipt become a page.",
       "time": "30-45 min",
-      "cost": "Free to low cost",
       "company": "Solo"
     },
     {
       "type": "item",
-      "n": 21,
+      "n": 5,
       "title": "A short story over lunch",
-      "note": "Set a timer for twenty minutes and write about the stranger at the next table. Change everything about them.",
+      "note": "Set a timer for twenty minutes and write about the stranger at the next table. Change everything about them. **What makes it easier:** a pocket notebook, so the first sentence about the stranger gets written down before it fades.",
       "time": "30 min",
-      "cost": "Free",
       "company": "Solo",
       "first": "Write the first sentence about someone you can see, then change their name, job and destination."
     },
     {
       "type": "item",
-      "n": 22,
+      "n": 6,
       "title": "Museum visit, reader's-eye edition",
-      "note": "Choose one artwork and write three sentences about what's happening in it. Then read the label and compare notes.",
+      "note": "Choose one artwork and write three sentences about what's happening in it. Then read the label and compare notes. **What makes it easier:** a slim notebook that fits in a coat pocket, for your three sentences and the label notes.",
       "time": "60-90 min",
       "company": "Solo",
       "first": "Pick a room near the entrance and sit with a single piece for ten minutes before you write anything."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "pocket-notebooks",
+        "portable-watercolor",
+        "sketch-pads",
+        "film-cameras",
+        "junk-journals",
+        "book-sleeves"
+      ],
+      "title": "For a make-something date",
+      "dek": "A pocket watercolor set, a sketch pad, a film camera, a thick-paged journal or a notebook that fits in a coat pocket: each makes a date out easier and prettier. Pick the one that matches the date you're dreaming up."
     },
     {
       "type": "h2",
@@ -346,76 +210,129 @@
     },
     {
       "type": "item",
-      "n": 23,
+      "n": 7,
       "title": "Short beginner hike",
       "hobby": "hiking",
-      "note": "Choose a well-marked, popular trail in daylight, check the weather, carry water and tell someone your route and when you'll be back. Park services advise against hiking alone, so bring a friend if you can.",
+      "note": "Choose a well-marked, popular trail in daylight, check the weather, carry water and tell someone your route and when you'll be back. Park services advise against hiking alone, so bring a friend if you can. **Worth bringing:** walking shoes with some grip, trekking-style socks, a small daypack and a water bottle, so water and a snack ride on your back; a phone armband keeps a map or music in reach.",
       "time": "1.5-3 hours",
-      "cost": "Free",
       "company": "Solo"
     },
     {
       "type": "item",
-      "n": 24,
+      "n": 8,
       "title": "Birdwatching bench",
       "hobby": "birdwatching",
-      "note": "Sit still for twenty minutes and list every bird you notice, named or not. Describe the color and the song.",
+      "note": "Sit still for twenty minutes and list every bird you notice, named or not. Describe the color and the song. **Worth bringing:** compact binoculars, which bring a distant branch close enough to see the colors, and a pocket notebook for the list.",
       "time": "30-45 min",
-      "cost": "Free",
       "company": "Solo"
     },
     {
       "type": "item",
-      "n": 25,
-      "title": "Bike ride with a destination",
-      "note": "Pick a path or park trail that ends somewhere nice: a lake, a lookout, a bakery.",
-      "time": "1-2 hours",
-      "company": "Solo"
-    },
-    {
-      "type": "item",
-      "n": 26,
-      "title": "Paddle or boat rental",
-      "note": "Some waterfronts rent kayaks, canoes or pedal boats by the hour. Check local rules and the weather first, and wear a life jacket.",
-      "time": "1-2 hours",
-      "cost": "Rental by the hour",
-      "company": "Solo"
-    },
-    {
-      "type": "item",
-      "n": 27,
-      "title": "Roller-skating session",
-      "hobby": "roller-skating",
-      "note": "Rinks and smooth paved paths are a friendly place to start, and wobbling is part of it. Wear a helmet, wrist guards and knee and elbow pads, and skate in daylight.",
+      "n": 9,
+      "title": "Picnic for one",
+      "hobby": "picnicking",
+      "note": "A sandwich, a piece of fruit, something sweet. [The picnic guide](/journal/how-to-plan-a-perfect-picnic) has the checklist. **What makes it easier:** a picnic blanket and a small insulated bag or flask, so lunch has a spot to land.",
       "time": "60-90 min",
       "company": "Solo"
     },
     {
       "type": "item",
-      "n": 28,
+      "n": 10,
       "title": "Stargazing night",
-      "note": "Find an open space that is easy to reach, bring a blanket and a flask of something warm, and give your eyes time to adjust. Tell someone where you're going and plan how you'll get home.",
+      "note": "Find an open space that is easy to reach, bring a blanket and something warm to drink, and give your eyes time to adjust. Tell someone where you're going and plan how you'll get home. **Worth bringing:** a picnic blanket and a thermos flask, so you can sit comfortably while your eyes adjust.",
       "time": "60 min",
-      "cost": "Free",
       "company": "Solo"
     },
     {
       "type": "item",
-      "n": 29,
-      "title": "Rainy-day walk",
-      "note": "Wet streets, reflections, a podcast and a decent umbrella. Pack dry socks for the end.",
-      "time": "45 min",
-      "cost": "Free",
+      "n": 11,
+      "title": "Roller-skating session",
+      "hobby": "roller-skating",
+      "note": "Rinks and smooth paved paths are a friendly place to start, and wobbling is part of it. Wear a helmet, wrist guards and knee and elbow pads, and skate in daylight. **What makes it easier:** a set of skate protective gear, so the helmet, wrist guards and pads above are ready in one bag.",
+      "time": "60-90 min",
       "company": "Solo"
     },
     {
       "type": "item",
-      "n": 30,
-      "title": "Beach or lakeside sit",
-      "note": "Bring a book you really want to read and a hat. Keep the phone in your bag for the first half hour.",
+      "n": 12,
+      "title": "Bike ride with a destination",
+      "note": "Pick a path or park trail that ends somewhere nice: a lake, a lookout, a bakery. **What makes it easier:** a small daypack and a water bottle, so a snack and a layer ride on your back.",
       "time": "1-2 hours",
-      "cost": "Free",
       "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 13,
+      "title": "Rainy-day walk",
+      "note": "Wet streets, reflections, a podcast and a decent umbrella. Pack dry socks for the end. **Worth bringing:** walking shoes and a spare pair of dry trekking-style socks in your bag, so wet streets stay fun right to the end.",
+      "time": "45 min",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 14,
+      "title": "Beach or lakeside sit",
+      "note": "Bring a book you really want to read and a hat. Keep the phone in your bag for the first half hour. **Worth bringing:** a picnic blanket and a book sleeve, so the paperback survives the bag and you have a spot to settle.",
+      "time": "1-2 hours",
+      "company": "Solo"
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "walking-shoes",
+        "trekking-socks",
+        "daypacks",
+        "water-bottles",
+        "phone-armband",
+        "binoculars"
+      ],
+      "title": "For a date outdoors",
+      "dek": "Walking shoes, trekking-style socks, a small daypack and a bottle, plus a phone armband for the map or the music and binoculars for the bench."
+    },
+    {
+      "type": "h2",
+      "text": "Small treats",
+      "id": "low-cost"
+    },
+    {
+      "type": "item",
+      "n": 15,
+      "title": "Coffee shop and a chapter",
+      "note": "Order something you wouldn't make at home, take the window seat and read one chapter before you touch your phone. The full walk-through is in [how to take yourself on a solo coffee shop date](/journal/how-to-take-yourself-on-a-solo-coffee-shop-date). **What makes it easier:** a book sleeve and a pocket notebook, so a paperback and a page of thoughts fit in one tote.",
+      "time": "60 min",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 16,
+      "title": "Thrift store treasure hunt",
+      "hobby": "thrifting",
+      "note": "Give yourself a small budget and a mission: a mug, a scarf, a frame. Leave when the money or the hour runs out. **Worth bringing:** a roomy market tote, so the mug, scarf and frame get home in one piece.",
+      "time": "60-90 min",
+      "company": "Solo",
+      "first": "Pick the mission before you walk in, and only pick up what you can picture on your own shelf."
+    },
+    {
+      "type": "item",
+      "n": 17,
+      "title": "A fresh-flower stop",
+      "hobby": "flower-arranging",
+      "note": "Buy a small bunch, plonk it in whatever vessel you have and put it where you'll see it first thing tomorrow. **What makes it easier:** a small vase and a pair of flower snips, so the bunch looks arranged by tomorrow morning.",
+      "time": "30 min",
+      "company": "Solo"
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "picnic-blankets",
+        "thermos-flasks",
+        "skate-protective-gear",
+        "market-totes",
+        "letter-writing-sets",
+        "vases"
+      ],
+      "title": "For the picnic, the rink and the treat",
+      "dek": "A blanket and a flask for the park, protective gear for the rink, a market tote and a small vase for the treats you carry home."
     },
     {
       "type": "h2",
@@ -446,16 +363,123 @@
       "text": "Pick well-lit, busy places, especially after dark, and go with someone when you can. Tell someone where you're going and when you'll be home. Two personal tips, not official advice: share your location with a friend if you're comfortable doing so, and keep your phone charged. If a place or situation feels off, leave. You never owe anyone an explanation, and a good solo date is one where you feel at ease."
     },
     {
-      "type": "shopHobby",
-      "productIds": [
-        "pocket-notebooks",
-        "picnic-blankets",
-        "portable-watercolor",
-        "book-sleeves",
-        "film-cameras"
-      ],
-      "title": "Small things that make a solo date easier",
-      "dek": "A pocket notebook, a picnic blanket, a tiny watercolor set, a book sleeve or a film camera: each one makes a date out easier and prettier. Pick the one that matches the date you're dreaming up."
+      "type": "h2",
+      "text": "Free ways to start",
+      "id": "free"
+    },
+    {
+      "type": "p",
+      "text": "Eight ways in that need nothing but a free hour."
+    },
+    {
+      "type": "item",
+      "n": 18,
+      "title": "Library wander",
+      "note": "Give yourself twenty minutes in a section you never visit, then borrow one book purely because of the cover or the first line. **Worth bringing:** a book sleeve, so the borrowed book rides safely in your bag.",
+      "time": "45-60 min",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 19,
+      "title": "Golden-hour walk with a theme",
+      "note": "Choose a theme like doors, blue things or cats in windows, and find ten examples before you head home. **Worth bringing:** comfortable walking shoes and a phone armband, so ten photos and a playlist stay within reach.",
+      "time": "45 min",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 20,
+      "title": "Park-bench people-watching",
+      "note": "Jot down five anonymous details in a notebook: a dog's outfit, someone's excellent coat, the ice cream truck's jingle. No names, no staring. **Worth bringing:** a pocket notebook for the five details.",
+      "time": "30-45 min",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 21,
+      "title": "Sunrise or sunset spot",
+      "note": "Find a hill, waterfront or open public space and arrive ten minutes early. **Worth bringing:** a thermos flask, so the warm drink is still warm when the sky changes.",
+      "time": "45 min",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 22,
+      "title": "Neighborhood detail crawl",
+      "note": "Pick a street and photograph one detail per block: a doorknob, a tile pattern, a fire escape. **What makes it easier:** a reusable film camera, so one frame per block makes a tidy little set.",
+      "time": "60 min",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 23,
+      "title": "A museum or gallery hour",
+      "hobby": "museum-exploring",
+      "note": "Some museums have free or pay-what-you-can hours, and some small galleries are free, so check locally. Choose one room and stay with it.",
+      "time": "60-90 min",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 24,
+      "title": "Bookstore browse",
+      "note": "Read the first page of five books you'd never normally pick up, and note the one you'd go back for.",
+      "time": "45 min",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 25,
+      "title": "A postcard to future you",
+      "note": "Tell yourself what you're up to today and what you're hoping for in six months. Post it on the way home. **Worth bringing:** a small letter-writing set with a few cards and envelopes, so the postcard is ready to post on the way home.",
+      "time": "20 min",
+      "company": "Solo"
+    },
+    {
+      "type": "h3",
+      "text": "Out and about"
+    },
+    {
+      "type": "item",
+      "n": 26,
+      "title": "Matinee movie",
+      "note": "Some cinemas have cheaper daytime or weekday tickets, so check yours. Sit in the middle and bring the snack you actually want.",
+      "time": "2-3 hours",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 27,
+      "title": "Farmers' market breakfast",
+      "note": "Wander the stalls first, then buy a pastry and something seasonal. Eat on a bench. **Worth bringing:** a market tote for the seasonal haul.",
+      "time": "60-90 min",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 28,
+      "title": "Dessert-only dinner",
+      "note": "Skip the main course and go straight to the good part. Take the counter seat if there is one.",
+      "time": "45-60 min",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 29,
+      "title": "Pottery-painting walk-in",
+      "hobby": "pottery-painting",
+      "note": "Studios where you paint a ready-made piece can suit solo visitors, though walk-in policies and prices vary, so check first. Prefer to make your own at home? Try [air-dry clay](/journal/how-to-start-air-dry-clay).",
+      "time": "90 min",
+      "company": "Solo"
+    },
+    {
+      "type": "item",
+      "n": 30,
+      "title": "Paddle or boat rental",
+      "note": "Some waterfronts rent kayaks, canoes or pedal boats by the hour. Check local rules and the weather first, and wear a life jacket.",
+      "time": "1-2 hours",
+      "company": "Solo"
     },
     {
       "type": "p",

@@ -1,15 +1,15 @@
 {
   "slug": "how-to-take-yourself-on-a-solo-coffee-shop-date",
-  "title": "How to Take Yourself on a Solo Coffee Shop Date",
+  "title": "How to Take Yourself on a Solo Coffee Shop Date: What to Pack and What to Do",
   "titleItalic": "Solo Coffee Shop Date",
-  "dek": "Take yourself on a solo coffee shop date: pick the place, pack the bag, order well and six things to do once you're settled.",
+  "dek": "Pack the bag, pick the place, order well and choose from six things to do once you're settled: a notebook, a book, a pocket sketch set.",
   "category": "solo-dates",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-18",
   "hero": "soloCafe",
   "searchIntent": "solo coffee shop date / how to go to a cafe alone",
-  "angle": "A step-by-step first-timer's guide: choosing the place, ordering, what to bring, how to handle the awkward minutes, and six things to do once you're seated",
+  "angle": "A step-by-step first-timer's guide that starts with the small bag that makes the hour easy (a notebook, a book sleeve, a pocket sketch set), then covers choosing the place, ordering, the awkward minutes and six things to do once you're seated",
   "hobbies": [
     "reading",
     "outdoor-sketching",
@@ -18,9 +18,12 @@
   ],
   "productIds": [
     "pocket-notebooks",
-    "book-sleeves",
     "reading-journals",
-    "portable-watercolor"
+    "book-sleeves",
+    "portable-watercolor",
+    "sketch-pads",
+    "letter-writing-sets",
+    "market-totes"
   ],
   "sources": [
     {
@@ -48,29 +51,12 @@
     },
     {
       "type": "h2",
-      "text": "Step 1: Pick the right kind of place",
-      "id": "pick-place"
-    },
-    {
-      "type": "p",
-      "text": "Not every cafe suits every mood, so decide what you want from the hour first."
-    },
-    {
-      "type": "list",
-      "items": [
-        "**Quiet and calm** if you want to read or write. Look for softer music, a few armchairs and people who are mostly alone.",
-        "**Lively and bright** if you want to people-watch and feel part of a scene. Larger windows and bar seating are your friends.",
-        "**Close to home** if you're nervous. Familiar streets lower the stakes, and a walk home afterward feels like a bonus."
-      ]
-    },
-    {
-      "type": "p",
-      "text": "Go at a quieter time for your first outing. A mid-morning or mid-afternoon weekday visit often means easier seat choices, less pressure and staff with a little more time to chat."
-    },
-    {
-      "type": "h2",
-      "text": "Step 2: Pack for the date",
+      "text": "Step 1: Pack for the date",
       "id": "pack"
+    },
+    {
+      "type": "p",
+      "text": "A small bag does most of the work. Something to read, something to write with and a tote you can keep on your lap are enough for a first hour, and a few extras make the next one even nicer."
     },
     {
       "type": "whatYoullNeed",
@@ -87,6 +73,10 @@
       ]
     },
     {
+      "type": "p",
+      "text": "**What makes it easier:** a pocket notebook, a book sleeve and a reading journal, so your bag feels date-ready and your hands have something lovely to do."
+    },
+    {
       "type": "shopHobby",
       "productIds": [
         "pocket-notebooks",
@@ -98,12 +88,33 @@
     },
     {
       "type": "h2",
+      "text": "Step 2: Pick the right kind of place",
+      "id": "pick-place"
+    },
+    {
+      "type": "p",
+      "text": "Decide what you want from the hour first."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Quiet and calm** if you want to read or write. Look for softer music, a few armchairs and people who are mostly alone.",
+        "**Lively and bright** if you want to people-watch and feel part of a scene. Larger windows and bar seating are your friends.",
+        "**Close to home** if you're nervous. Familiar streets lower the stakes, and a walk home afterward feels like a bonus."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Go at a quieter time for your first outing: a mid-morning or mid-afternoon weekday visit often means easier seat choices and less pressure."
+    },
+    {
+      "type": "h2",
       "text": "Step 3: Order like you mean it",
       "id": "order"
     },
     {
       "type": "p",
-      "text": "Treat the order as part of the date. Choose something you wouldn't make at home, like a proper pot of tea or the pastry you keep eyeing. Many cafes offer decaf, herbal tea and milk alternatives, so you can match the drink to the time of day. If you have an allergy or dietary need, ask the staff directly about ingredients rather than guessing. Prices vary a lot by cafe and city, so think of your order as your ticket to a seat for the hour."
+      "text": "Treat the order as part of the date. Choose something you wouldn't make at home, like a proper pot of tea or the pastry you keep eyeing. Many cafes offer decaf, herbal tea and milk alternatives, so you can match the drink to the time of day. If you have an allergy or dietary need, ask the staff directly about ingredients rather than guessing. Think of your order as your ticket to a seat for the hour."
     },
     {
       "type": "h2",
@@ -112,7 +123,7 @@
     },
     {
       "type": "p",
-      "text": "Window seats and counter seats are the friendliest for one. You have something to look at, you're not facing a room, and you can see what's happening outside. If the cafe is busy, a small table or a counter stool is considerate and also feels less exposed than a large one."
+      "text": "Window seats and counter seats are the friendliest for one: you have something to look at and you're not facing a room. If the cafe is busy, a small table or a counter stool is considerate and feels less exposed."
     },
     {
       "type": "p",
@@ -144,13 +155,23 @@
     {
       "type": "list",
       "items": [
-        "**Read one chapter.** Set a timer for twenty minutes if you need to protect it from your phone.",
-        "**Write three pages.** Journal, morning-pages-style or just a list of what you want this month.",
-        "**Sketch the room.** Draw the lamp, the cup, someone's hands (without staring). A tiny [watercolor](/journal/watercolor-painting-for-beginners) set makes this feel fancy.",
-        "**Make a plan for the weekend.** Write down three things you could do and circle one.",
-        "**Write a letter or postcard.** The cafe is a good place to finally answer a friend.",
+        "**Read one chapter.** Set a timer for twenty minutes if you need to protect it from your phone. **What makes it easier:** a book sleeve, so a paperback travels safely in your tote.",
+        "**Write three pages.** Journal, morning-pages-style or just a list of what you want this month. **What makes it easier:** a notebook with pages you like writing on, so the blank page feels inviting.",
+        "**Sketch the room.** Draw the lamp, the cup, someone's hands (without staring). **What makes it easier:** a tiny [watercolor](/journal/watercolor-painting-for-beginners) set and a small sketch pad, which make this feel fancy and fit in a coat pocket.",
+        "**Make a plan for the weekend.** Write down three things you could do and circle one. **What makes it easier:** a pocket notebook, so the plan lives in your bag.",
+        "**Write a letter or postcard.** The cafe is a good place to finally answer a friend. **What makes it easier:** a small letter-writing set with a few cards and envelopes, so you can post it on the way home.",
         "**Do absolutely nothing.** Watch the street. It counts, and it's harder than it sounds."
       ]
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "portable-watercolor",
+        "sketch-pads",
+        "letter-writing-sets"
+      ],
+      "title": "For the sketch-and-letter hour",
+      "dek": "A pocket watercolor set, a small sketch pad and a letter-writing set turn a spare hour at the table into something you can hold at the end."
     },
     {
       "type": "h2",

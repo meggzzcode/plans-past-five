@@ -2,14 +2,14 @@
   "slug": "watercolor-painting-for-beginners",
   "title": "Watercolor for Beginners: Three Little Paintings You Can Finish Tonight",
   "titleItalic": "Three Little Paintings",
-  "dek": "A small supply list, a few techniques worth learning first, and three projects that make practice feel like painting.",
+  "dek": "A small supply list (paints, brushes and paper that behaves), a few techniques worth learning first and three projects that make practice feel like painting.",
   "category": "creative-corner",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-19",
   "hero": "flowerArranging",
   "searchIntent": "watercolor painting for beginners / watercolor supplies / easy watercolor projects",
-  "angle": "A calm, practice-first guide: buy little, learn water control before drawing skill, and finish three small projects that look good without being good at drawing",
+  "angle": "A calm, practice-first guide: a small set of paints, a good round brush and heavier paper make water control easier to learn, so you can finish three small projects that look good without being good at drawing",
   "hobbies": [
     "watercolor-painting",
     "outdoor-sketching"
@@ -114,6 +114,12 @@
       "text": "Read labels before you buy: avoid materials with lead, cadmium and other heavy metals. Look for the AP seal from ACMI, which marks products certified non-toxic when used as intended; a CL seal means the product carries health warnings. Wash up after painting, and keep brushes out of your mouth: do not point or tip them with your lips."
     },
     {
+      "type": "shopTheArticle",
+      "articleSlug": "watercolor-painting-for-beginners",
+      "title": "Paint, brushes and paper for your first evening",
+      "dek": "A small paint set, a couple of round brushes and a pad of heavier paper are the three picks that change a first evening most. Everything else can wait until you know what you reach for."
+    },
+    {
       "type": "h2",
       "text": "Four techniques, in the order they help",
       "id": "techniques"
@@ -147,6 +153,10 @@
       "text": "Generally, paint light to dark. Leave bare paper where you want a highlight, because getting white back later is hard."
     },
     {
+      "type": "p",
+      "text": "**What makes it easier:** a round brush that comes to a good point and a pad of heavier watercolor paper, so washes spread evenly and the page stays flatter as it dries."
+    },
+    {
       "type": "h2",
       "text": "Your first evening",
       "id": "first-session"
@@ -161,6 +171,10 @@
         "Let everything dry completely, then add one detail on top with the tip of the brush.",
         "Once the page is completely dry, peel the tape slowly, low and parallel to the paper. Put the page somewhere you will see it."
       ]
+    },
+    {
+      "type": "p",
+      "text": "**What makes it easier:** masking tape and a board, so the paper stays flat while it's wet and you get a clean white border when you peel the tape."
     },
     {
       "type": "h2",
@@ -178,6 +192,10 @@
     {
       "type": "p",
       "text": "Once you're comfortable, pocket a small set on your next walk and paint the same view twice, once quickly and once slowly. Compare the two."
+    },
+    {
+      "type": "p",
+      "text": "**Nice to have:** a travel set with a built-in palette and a pocket sketchbook, so a park bench or café table becomes a studio."
     },
     {
       "type": "h2",
@@ -199,8 +217,8 @@
         "watercolor-sketchbooks",
         "portable-watercolor"
       ],
-      "title": "Paint, paper and a pocket set",
-      "dek": "A small pan set to start, watercolor paper that behaves and a travel set for painting on a park bench."
+      "title": "For the second set: a pocket kit and a sketchbook",
+      "dek": "When you want to paint away from the kitchen table, a travel set and a sketchbook of proper watercolor paper keep everything in one small bag."
     },
     {
       "type": "p",

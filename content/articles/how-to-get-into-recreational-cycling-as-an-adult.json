@@ -2,7 +2,7 @@
   "slug": "how-to-get-into-recreational-cycling-as-an-adult",
   "title": "How to Start Cycling Again as an Adult: A Gentle, No-Lycra Plan",
   "titleItalic": "A Gentle, No-Lycra Plan",
-  "dek": "Get back on a bike without feeling like an athlete: a borrowed bike, a well-fitted helmet, a quiet first ride and a bakery at the end.",
+  "dek": "A well-fitted helmet, lights for dusk, a small repair kit and a bakery at the end. How to get back on a bike without feeling like an athlete.",
   "category": "movement",
   "status": "published",
   "publishedAt": "2026-11-19",
@@ -16,6 +16,10 @@
     "birdwatching"
   ],
   "productIds": [
+    "bike-helmets",
+    "bike-lights",
+    "bike-bells",
+    "bike-repair-kits",
     "daypacks",
     "water-bottles",
     "market-totes"
@@ -82,7 +86,8 @@
     "VERIFIED 2026-11-18: tires at recommended pressure, chain lubed about monthly; spare tube or patch kit, tire levers, pump, multi-tool as optional carry items - rei.com (retailer guide)",
     "VERIFIED 2026-11-18: unsourced details removed or softened - standover clearance, brake feel, quick-release check, bright-clothing and reflector visibility claims, bell laws, gear-shifting advice, padded shorts - reworded, no claim remains",
     "VERIFIED 2026-11-18: borrowing, renting, bike-share, workshops and beginner rides described as options 'if available'; no schemes or prices named - reworded, no claim remains",
-    "VERIFIED 2026-11-18: road-position and hand-signal guidance stays generic ('follow local traffic laws', signal turns) and defers to local rules - reworded, no claim remains"
+    "VERIFIED 2026-11-18: road-position and hand-signal guidance stays generic ('follow local traffic laws', signal turns) and defers to local rules - reworded, no claim remains",
+    "NOTE 2026-11-19: monetisation rewrite: helmet, lights and bell block moved to directly after Step 3, repair kit gear line added at Step 4 and a second block after Step 6; all gear lines describe convenience only and defer to the label, local rules and the maker's guidance; every existing safety step is unchanged and still within the CDC, CPSC, NSC, BHSI, NHTSA, NPS and REI sources listed"
   ],
   "related": [
     "active-hobbies-for-women-who-dont-love-the-gym",
@@ -139,6 +144,10 @@
       ]
     },
     {
+      "type": "p",
+      "text": "**What makes it easier:** a bike helmet with an adjustable dial and fit pads, so the fit steps above take a minute rather than a guess. Read the label and follow the maker's guidance on fit and replacement."
+    },
+    {
       "type": "h2",
       "text": "Step 3: Be seen",
       "id": "visible"
@@ -149,6 +158,20 @@
         "**Lights at dusk and after dark.** Use a white front light and a red rear light or reflector at night. Rules on lights vary by place, so check your local rules.",
         "**A bell** is polite on shared paths."
       ]
+    },
+    {
+      "type": "p",
+      "text": "**What makes it easier:** a white front light and a red rear light, so dusk doesn't change your plans, plus a small bell for shared paths. Rules on lights vary by place, so check your local rules."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "bike-helmets",
+        "bike-lights",
+        "bike-bells"
+      ],
+      "title": "Helmet, lights, bell",
+      "dek": "Three small things to sort before the first ride. Check each listing and its label for fit, lights and local requirements."
     },
     {
       "type": "h2",
@@ -162,6 +185,10 @@
         "**Brakes.** Test both levers before you set off. If anything feels off, ask a bike shop to take a look.",
         "**Chain.** It should look clean, not rusty or dry. A little lubricant every month or so helps."
       ]
+    },
+    {
+      "type": "p",
+      "text": "**What makes it easier:** a small repair kit with a spare tube or patch kit, tire levers and a pump (a multi-tool is a common extra), so a flat is something you can deal with on the spot."
     },
     {
       "type": "whatYoullNeed",
@@ -219,6 +246,21 @@
       ]
     },
     {
+      "type": "p",
+      "text": "**What makes it easier:** a small daypack, a water bottle within reach and a tote for the bakery stop, so water, a snack, your phone and the pastry all have somewhere to go."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "bike-repair-kits",
+        "daypacks",
+        "water-bottles",
+        "market-totes"
+      ],
+      "title": "For a longer first ride",
+      "dek": "A repair kit for the unexpected, a daypack for the snack, a bottle within reach and a tote for the bakery stop make a ride feel easy."
+    },
+    {
       "type": "h2",
       "text": "Step 7: Build up to the bakery",
       "id": "build"
@@ -265,22 +307,12 @@
       "text": "Walk to the nearest bike shop or call a friend. Later, learn to fix one at home, or take a workshop if your area offers them."
     },
     {
-      "type": "shopHobby",
-      "productIds": [
-        "daypacks",
-        "water-bottles",
-        "market-totes"
-      ],
-      "title": "Make the first ride more comfortable",
-      "dek": "A daypack for water and a snack, a bottle within reach and a tote for the bakery stop make a ride feel easy."
-    },
-    {
       "type": "tryThisWeekend",
       "text": "Borrow or rent a bike for an hour, fit your helmet and spend twenty minutes wobbling happily in a quiet spot. That's all."
     },
     {
       "type": "p",
-      "text": "For other gentle ways to move, see [active hobbies for women who don't love the gym](/journal/active-hobbies-for-women-who-dont-love-the-gym), or plan a destination with [cheap weekend adventures](/journal/cheap-weekend-adventures)."
+      "text": "For other gentle ways to move, see [active hobbies for women who don't love the gym](/journal/active-hobbies-for-women-who-dont-love-the-gym), or plan a destination with [weekend adventures, packed](/journal/cheap-weekend-adventures)."
     },
     {
       "type": "ifYouLoved",

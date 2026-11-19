@@ -2,14 +2,14 @@
   "slug": "at-home-creative-weekend",
   "title": "Plan an At-Home Creative Weekend: Clay, Paint and a Journal Spread",
   "titleItalic": "At-Home Creative Weekend",
-  "dek": "Two slow days at home: clay on Saturday, watercolor in the afternoon, a journal spread on Sunday. A schedule, a supply list and built-in rest.",
+  "dek": "Two slow days at home: clay on Saturday, watercolor in the afternoon, a journal spread on Sunday. A schedule and one supply list you can order in a single evening, with built-in rest.",
   "category": "weekends",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-18",
   "hero": "shopPottery",
   "searchIntent": "at home creative weekend / staycation craft weekend / weekend at home ideas",
-  "angle": "A full two-day itinerary that treats home like a retreat: prep on Friday, a main project each day, and a Sunday-evening wrap-up",
+  "angle": "A full two-day itinerary that treats home like a retreat: one supply list on Friday, a main project each day built around the gear that makes it easier, and a Sunday-evening wrap-up",
   "hobbies": [
     "air-dry-clay",
     "pottery-painting",
@@ -21,10 +21,14 @@
   ],
   "productIds": [
     "air-dry-clay",
+    "clay-mats",
     "acrylic-paints",
+    "detail-brushes",
     "watercolor-sets",
+    "watercolor-sketchbooks",
     "junk-journals",
-    "washi-tape"
+    "washi-tape",
+    "sticker-sets"
   ],
   "sources": [
     {
@@ -50,7 +54,8 @@
     "VERIFIED 2026-11-18: no hair dryer or oven unless the maker says it is fine; cracking linked to drying too fast or unevenly - crayola.com FAQ, clay verification file",
     "VERIFIED 2026-11-18: 'under $50' total removed; supply list makes no price claim - reworded, no claim remains",
     "VERIFIED 2026-11-18: watercolor paper buckling reworded as a conditional tip ('if your paper wrinkles') - reworded, no claim remains",
-    "VERIFIED 2026-11-18: 'probably already own' split phrased as 'you may already own' - reworded, no claim remains"
+    "VERIFIED 2026-11-18: 'probably already own' split phrased as 'you may already own' - reworded, no claim remains",
+    "NOTE 2026-11-19: monetisation rewrite: shop block moved up to directly after the Friday supply list (headed 'Start with this', not 'everything'), gear lines added per make with verified products linked inline, a second short block for the journal spread, lunch and Saturday-evening prose trimmed (candle line removed); no new factual or safety claims"
   ],
   "related": [
     "creative-hobbies-you-can-start-at-home",
@@ -85,7 +90,7 @@
     },
     {
       "type": "p",
-      "text": "Everything you need is on one list under [Friday: make a spot](#friday): clay, paint, paper and a journal. Check the cupboard first, then tap what's missing in the shop list at the end."
+      "text": "The supply list under [Friday: make a spot](#friday) covers clay, paint, paper and a journal. Check the cupboard first, then tap what's missing in the shop list right below it."
     },
     {
       "type": "h2",
@@ -113,11 +118,24 @@
     },
     {
       "type": "p",
-      "text": "You may already own a notebook, scissors, a glue stick, a jar and paper towels, which leaves mainly the fun parts: clay, paints and paper. Small sizes keep the list modest, and prices vary by store and region. Heavier watercolor paper and better brushes are lovely upgrades for later."
+      "text": "You may already own a notebook, scissors, a glue stick, a jar and paper towels, which leaves mainly the fun parts: clay, paints and paper. Small sizes keep the list modest. Heavier watercolor paper and better brushes are lovely upgrades for later."
     },
     {
       "type": "p",
       "text": "Read the labels on any paints you buy, look for the ACMI AP or CL seal, and avoid products containing lead, cadmium or other heavy metals. Don't treat any paint as safe to eat unless its label says so."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "air-dry-clay",
+        "clay-mats",
+        "acrylic-paints",
+        "detail-brushes",
+        "watercolor-sets",
+        "watercolor-sketchbooks"
+      ],
+      "title": "Start with this",
+      "dek": "Clay, a mat, acrylic paint, a fine brush and watercolor paper cover Saturday and Sunday's painting, so Friday's setup is quick. Tick off what you already own."
     },
     {
       "type": "p",
@@ -147,13 +165,17 @@
       "text": "Air-dry clay usually takes about 2 to 3 days to dry, longer for thick pieces or a humid room. Follow the packet, and resist the hair dryer or oven unless the maker says it's fine."
     },
     {
+      "type": "p",
+      "text": "**What makes it easier:** {{product:crayola-air-dry-clay-5-lb-bucket|a bucket of air-dry clay}} and a clay work mat, so a slab rolls out evenly and cleanup is a wipe."
+    },
+    {
       "type": "h2",
       "text": "Lunch, and a proper break",
       "id": "lunch"
     },
     {
       "type": "p",
-      "text": "Leave the table. Eat somewhere that isn't the craft zone, then walk around the block or lie down with a book for twenty minutes. It keeps the afternoon fun."
+      "text": "Leave the table, eat somewhere that isn't the craft zone, then take twenty minutes for a walk or a book. It keeps the afternoon fun."
     },
     {
       "type": "h2",
@@ -163,6 +185,10 @@
     {
       "type": "p",
       "text": "Paint small and fast. Set a ten-minute timer and paint one thing on the table: a flower, a mug, a lemon. Do five. They won't all be good, and that's fine. The practice is in getting loose. If you love it, [watercolor painting for beginners](/journal/watercolor-painting-for-beginners) goes deeper on a first session."
+    },
+    {
+      "type": "p",
+      "text": "**What makes it easier:** {{product:hapikalor-watercolor-pad-140lb-9x12|a watercolor pad}} and {{product:artecho-48-color-watercolor-set-3-brushes|a pan set with brushes included}}, so a ten-minute painting starts as soon as the water jar is full."
     },
     {
       "type": "list",
@@ -180,7 +206,7 @@
     },
     {
       "type": "p",
-      "text": "Cook something easy, light a candle, put something on. Leave your supplies where they are. You're coming back tomorrow."
+      "text": "Cook something easy and leave your supplies where they are. You're coming back tomorrow."
     },
     {
       "type": "h2",
@@ -192,6 +218,10 @@
       "text": "Check the clay. If it's dry and hard, paint it with acrylics: a base coat first, then dots, stripes or tiny flowers. Give each coat time to dry. If it isn't dry yet, leave it, do the journal spread first and paint it later in the week. If your clay maker recommends a sealer, add it once the paint is dry, following the product's directions, including any ventilation and protective-gear instructions on a spray can. A sealer won't make the piece waterproof or food safe, so keep it indoors and for display."
     },
     {
+      "type": "p",
+      "text": "**What makes it easier:** {{product:apple-barrel-16-acrylic-craft-paints-2oz|small bottles of acrylic craft paint}} for the base coat and the dots, and, if your clay maker recommends one, {{product:mod-podge-acrylic-sealer-spray-gloss-12-oz|an acrylic sealer spray}} used as directed on the can."
+    },
+    {
       "type": "h2",
       "text": "Sunday afternoon: a journal spread",
       "id": "sunday-pm"
@@ -199,6 +229,10 @@
     {
       "type": "p",
       "text": "Collect the weekend's evidence: the swatch page, a paint-stained paper towel, a recipe scrap, a ticket. Glue it into a notebook and write a few lines about what you made. [The beginner's guide](/journal/how-to-start-junk-journaling) has more ideas."
+    },
+    {
+      "type": "p",
+      "text": "**What makes it easier:** {{product:stationery-island-a5-blank-journal-180-pages|a blank journal}}, {{product:scotch-glue-stick-photo-safe-4-pack|a glue stick}} and {{product:mr-pen-washi-tape-21-rolls|washi tape}}, so the weekend's evidence goes straight onto the page."
     },
     {
       "type": "h2",
@@ -230,14 +264,12 @@
     {
       "type": "shopHobby",
       "productIds": [
-        "air-dry-clay",
-        "acrylic-paints",
-        "watercolor-sets",
         "junk-journals",
-        "washi-tape"
+        "washi-tape",
+        "sticker-sets"
       ],
-      "title": "Everything for the weekend, one list",
-      "dek": "Clay, paint, paper and a journal in one list, so Friday's setup is quick and the whole weekend feels ready. Tick off what you already own."
+      "title": "For Sunday's journal spread",
+      "dek": "A blank journal, washi tape and stickers are all the spread needs, and they pack away in a tin until next time."
     },
     {
       "type": "p",

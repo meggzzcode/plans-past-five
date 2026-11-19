@@ -2,7 +2,7 @@
   "slug": "how-to-host-a-paint-night-at-home",
   "title": "How to Host a Paint Night at Home (No Talent Required)",
   "titleItalic": "Paint Night at Home",
-  "dek": "One easy painting, one table and a relaxed plan, so even the friend who says she can't draw leaves with a canvas she's proud of.",
+  "dek": "One easy painting, one table and one shopping list, so even the friend who says she can't draw leaves with a canvas she's proud of.",
   "category": "better-together",
   "status": "published",
   "publishedAt": "2026-11-19",
@@ -19,6 +19,7 @@
     "group-painting-kits",
     "acrylic-paints",
     "detail-brushes",
+    "portable-speakers",
     "conversation-cards"
   ],
   "sources": [
@@ -49,7 +50,8 @@
     "VERIFIED 2026-11-18: per-guest cost ($10-$20) removed; claims that panels or loose supplies are cheaper than kits removed; kit contents described as 'check what is included' - reworded, no claim remains",
     "VERIFIED 2026-11-18: acrylic 'washes out while wet' claim reworded to 'paint can stain fabric; rinse right away' - reworded, no claim remains",
     "VERIFIED 2026-11-18: ventilation, pets and children, alcohol-optional and paint-water disposal lines are general advice that defers to labels and local guidance, no safety guarantee or health claim - reworded, no claim remains",
-    "VERIFIED 2026-11-18: cross-links - air-dry clay and watercolor articles removed from related until live - reworded"
+    "VERIFIED 2026-11-18: cross-links - air-dry clay and watercolor articles removed from related until live - reworded",
+    "NOTE 2026-11-19: monetisation rewrite: the front-loaded type-card block became a verified-product shopTheArticle block placed after 'Choose one easy painting', a speaker and conversation-cards line and a short second block added after the timeline; ACMI seal, ventilation, allergy and paint-water text unchanged and still sourced"
   ],
   "related": [
     "how-to-host-a-craft-night",
@@ -85,6 +87,15 @@
       ]
     },
     {
+      "type": "shopTheArticle",
+      "articleSlug": "how-to-host-a-paint-night-at-home",
+      "hobbies": [
+        "paint-by-numbers"
+      ],
+      "title": "Set the table for six painters",
+      "dek": "A multi-pack of small canvases, a set of brushes and acrylic paint in the basic colors cover the table, and a fine brush lets guests add stars and stripes."
+    },
+    {
       "type": "h2",
       "text": "What you need",
       "id": "need"
@@ -108,18 +119,7 @@
     },
     {
       "type": "p",
-      "text": "You probably own old towels, plates, jars for water, a speaker and a table, and aprons can be shirts worn backwards. A group kit saves shopping for six sets of everything, and fine brushes let guests add details like stars and stripes without smudging."
-    },
-    {
-      "type": "shopHobby",
-      "productIds": [
-        "group-painting-kits",
-        "acrylic-paints",
-        "detail-brushes",
-        "conversation-cards"
-      ],
-      "title": "Set the table for six painters",
-      "dek": "A multi-pack of small canvases and a set of brushes cover the table, and a fine brush lets guests add stars and stripes. Acrylic paint in the basic colors above is the one other thing to have ready."
+      "text": "A group kit saves shopping for six sets of everything, and fine brushes let guests add details like stars and stripes without smudging. You probably own old towels, plates, jars for water, a speaker and a table, and aprons can be shirts worn backwards."
     },
     {
       "type": "h2",
@@ -150,6 +150,19 @@
         "**Painting, about 90 minutes:** with a break for drying and conversation.",
         "**Gallery, 15 minutes:** prop the canvases up and admire them."
       ]
+    },
+    {
+      "type": "p",
+      "text": "**What makes it easier:** a small portable speaker for the playlist and a deck of conversation cards for the slow moments, so the evening keeps its own rhythm."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "portable-speakers",
+        "conversation-cards"
+      ],
+      "title": "For the slow moments",
+      "dek": "A small speaker and a deck of conversation cards keep the evening moving between coats of paint."
     },
     {
       "type": "makePlan",

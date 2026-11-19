@@ -2,7 +2,7 @@
   "slug": "how-to-host-a-craft-night",
   "title": "How to Host a Craft Night: Five Easy Projects and a Plan",
   "titleItalic": "Craft Night",
-  "dek": "Easier than a dinner party, and a lot more fun. A hosting checklist, five craft menus and a simple way to share the cost.",
+  "dek": "Easier than a dinner party, and a lot more fun. A hosting checklist, five craft menus with what to set out for each, and a simple way to share the cost.",
   "category": "better-together",
   "status": "published",
   "publishedAt": "2026-11-19",
@@ -17,11 +17,14 @@
     "pottery-painting"
   ],
   "productIds": [
-    "friendship-bracelet-kits",
     "group-painting-kits",
-    "acrylic-paints",
+    "ceramic-painting-kits",
+    "friendship-bracelet-kits",
+    "air-dry-clay",
     "cookie-decorating-kits",
-    "air-dry-clay"
+    "acrylic-paints",
+    "glue-guns",
+    "portable-speakers"
   ],
   "sources": [
     {
@@ -57,7 +60,8 @@
     "VERIFIED 2026-11-18: ask guests about allergies; wash hands with soap and water; keep food apart from paint and clay - foodallergy.org",
     "VERIFIED 2026-11-18: all per-person budget figures ($8-$25 and per-craft ranges, '$15' chip-in example) removed; cost described as depending on craft and group - reworded, no claim remains",
     "VERIFIED 2026-11-18: bracelet and bead kit wording defers to the label for small parts; cookie decorating makes no ingredient or health claims; practice-run advice is editorial; no payment platform or brand named - reworded, no claim remains",
-    "VERIFIED 2026-11-18: cross-links - book-club link removed from related until that article is live - reworded"
+    "VERIFIED 2026-11-18: cross-links - book-club link removed from related until that article is live - reworded",
+    "NOTE 2026-11-19: monetisation rewrite: a 'what to set out' line added after each of the five menus (verified catalog products linked inline by id), shop block moved to after project 2 with a second block at the end, speaker line added to the run of show, glue-gun line sits beside the existing CPSC low-temperature advice; allergen and paint-label text unchanged and still sourced"
   ],
   "related": [
     "girls-night-ideas-that-arent-drinks",
@@ -71,7 +75,7 @@
     },
     {
       "type": "p",
-      "text": "Below: five craft menus to choose from, a short checklist, a two-hour run of show and fixes for the things that tend to wobble."
+      "text": "Below: five craft menus to choose from, with what to set out for each, a short checklist, a two-hour run of show and fixes for the things that tend to wobble."
     },
     {
       "type": "h2",
@@ -91,12 +95,32 @@
       "text": "Buy ready-made ceramic pieces and acrylic paints or a ceramic painting kit, and everyone paints a mug, dish or trinket. Cost depends on the piece. Treat painted pottery as display-only unless the kit or studio says it is food safe for your use. Read the paint labels too, look for the ACMI AP or CL seal, and avoid products containing lead, cadmium or other heavy metals. If your group would rather paint than craft, [how to host a paint night at home](/journal/how-to-host-a-paint-night-at-home) goes deeper on that one evening."
     },
     {
+      "type": "p",
+      "text": "**What to set out:** a ceramic painting kit or ready-made pieces, {{product:apple-barrel-16-acrylic-craft-paints-2oz|a set of acrylic craft paints}} and {{product:benicci-12-piece-artist-paint-brush-set|a brush set}} to share, so every guest has a piece and a brush from the first minute."
+    },
+    {
       "type": "h3",
       "text": "2. Friendship bracelets and beads"
     },
     {
       "type": "p",
       "text": "Kits come with thread, beads and instructions, so you can start right away. Make one for yourself and one to swap. Check the label for small parts."
+    },
+    {
+      "type": "p",
+      "text": "**What to set out:** a friendship bracelet kit for the table, so the thread, beads and instructions are all in one place and nobody waits for a turn with the beads."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "group-painting-kits",
+        "friendship-bracelet-kits",
+        "ceramic-painting-kits",
+        "air-dry-clay",
+        "cookie-decorating-kits"
+      ],
+      "title": "Start with a kit made for groups",
+      "dek": "Choose a project and the kit arrives together, so hosting is more about the fun than the shopping."
     },
     {
       "type": "h3",
@@ -107,6 +131,10 @@
       "text": "Roll, press and smooth ([how to start air-dry clay](/journal/how-to-start-air-dry-clay) has more ideas). Everyone writes their name on a bit of paper and leaves their dish to dry; air-dry clay usually takes about 2 to 3 days, so check the label. It needs no kiln, and the results are decorative only, so keep food and drink off them, even if sealed."
     },
     {
+      "type": "p",
+      "text": "**What to set out:** {{product:crayola-air-dry-clay-5-lb-bucket|a bucket of air-dry clay}}, a small set of clay tools and a mat each, so rolling and cutting stay on the table and cleanup is a wipe."
+    },
+    {
       "type": "h3",
       "text": "4. Cookie decorating"
     },
@@ -115,12 +143,20 @@
       "text": "Bake or buy plain sugar cookies, then set out icing, sprinkles and edible decorations. Ask about allergies when you invite people, and wash hands with soap and water before handling food."
     },
     {
+      "type": "p",
+      "text": "**What to set out:** a cookie decorating kit with icing and sprinkles, plus a tray per guest, so everyone's cookies stay their own."
+    },
+    {
       "type": "h3",
       "text": "5. Collage or vision boards"
     },
     {
       "type": "p",
       "text": "Old magazines, scissors, glue sticks and a piece of card per guest. Good for friends who like to talk while they work."
+    },
+    {
+      "type": "p",
+      "text": "**What to set out:** card, sharp scissors and {{product:scotch-glue-stick-photo-safe-4-pack|glue sticks}} for the table, so nobody waits for a turn with the glue."
     },
     {
       "type": "h2",
@@ -150,7 +186,9 @@
         "Aprons or old shirts",
         "Small trays for each guest's supplies",
         "A snack table set away from the craft table",
-        "A phone for a group photo at the end"
+        "A phone for a group photo at the end",
+        "A small portable speaker for the playlist",
+        "A mini glue gun with a low-temperature setting, if a project needs a quick bond"
       ]
     },
     {
@@ -178,6 +216,10 @@
       ]
     },
     {
+      "type": "p",
+      "text": "**What makes it easier:** a small portable speaker, so a playlist fills the room at a volume that still lets people talk."
+    },
+    {
       "type": "h2",
       "text": "When things wobble",
       "id": "troubleshooting"
@@ -189,20 +231,19 @@
         "**Mixed skill levels.** Offer a basic version and a stretch version of the same project.",
         "**Someone finishes early.** Keep extra supplies for a bonus project, like a card or ornament.",
         "**Mess.** Cover the table, keep wipes handy and set food apart from paints and clay.",
-        "**Hot glue or scissors.** Keep tools in one place, choose a low-temperature glue gun if you use one, unplug it when you finish and take care with burns.",
+        "**Hot glue or scissors.** Keep tools in one place, choose a low-temperature glue gun if you use one, unplug it when you finish and take care with burns. **What makes it easier:** a mini glue gun with a low-temperature setting; follow the instructions that come with it.",
         "**The night goes quiet.** Put on a familiar album, or ask 'what's the thing you're proudest of making?'"
       ]
     },
     {
       "type": "shopHobby",
       "productIds": [
-        "friendship-bracelet-kits",
-        "group-painting-kits",
-        "air-dry-clay",
-        "cookie-decorating-kits"
+        "glue-guns",
+        "portable-speakers",
+        "acrylic-paints"
       ],
-      "title": "Start with a kit made for groups",
-      "dek": "Choose a project and everything arrives together, so hosting is more about the fun than the shopping."
+      "title": "For the table and the room",
+      "dek": "A mini glue gun for quick bonds, a small speaker for the playlist and acrylic paints for the pottery pieces round out the evening."
     },
     {
       "type": "p",

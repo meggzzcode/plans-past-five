@@ -1,23 +1,26 @@
 {
   "slug": "how-to-start-a-book-club",
-  "title": "How to Start a Book Club Your Friends Will Actually Show Up To",
+  "title": "How to Start a Book Club Your Friends Will Actually Show Up To: The Kit and the Plan",
   "titleItalic": "Actually Show Up To",
-  "dek": "A simple structure for a book club that survives busy months, with the invite text, the book-picking system and what to do when nobody finished.",
+  "dek": "A simple structure that survives busy months, plus a small table kit for the night: the invite text, a book-picking system, conversation cards and what to do when nobody finished.",
   "category": "better-together",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-18",
   "hero": "shopGirlsNight",
   "searchIntent": "how to start a book club / book club ideas with friends",
-  "angle": "Rules-lite, burnout-proof book club setup: size, schedule, book-selection systems, discussion questions and a 'nobody read it' plan",
+  "angle": "Rules-lite, burnout-proof book club setup with a small table kit (conversation cards, tea and snack bowls, a journal and a book light): size, schedule, book-selection systems, discussion questions and a 'nobody read it' plan",
   "hobbies": [
     "book-clubs",
     "reading"
   ],
   "productIds": [
     "conversation-cards",
+    "tea-sets",
+    "cozy-night-in",
+    "reading-journals",
     "book-lights",
-    "reading-journals"
+    "magnetic-bookmarks"
   ],
   "sources": [
     {
@@ -47,7 +50,7 @@
   "body": [
     {
       "type": "p",
-      "text": "Wine, snacks, a few friends and a room full of opinions about the ending: that's the night you're building. The thing that keeps it going is a tiny bit of structure, so this is a rules-lite version for busy people."
+      "text": "Tea, snacks, a few friends and a room full of opinions about the ending: that's the night you're building. The thing that keeps it going is a tiny bit of structure, and a small table kit makes it feel like a ritual, so this is a rules-lite version for busy people."
     },
     {
       "type": "h2",
@@ -70,6 +73,10 @@
     {
       "type": "quote",
       "text": "Tiny book club? First meeting is a silent read at my place. Bring any book."
+    },
+    {
+      "type": "p",
+      "text": "**Worth bringing:** a clip-on book light and a soft throw for a silent session, so an hour of reading together stays comfortable."
     },
     {
       "type": "h2",
@@ -95,6 +102,16 @@
       ]
     },
     {
+      "type": "shopHobby",
+      "productIds": [
+        "conversation-cards",
+        "tea-sets",
+        "cozy-night-in"
+      ],
+      "title": "The table kit",
+      "dek": "Conversation cards for the pauses, a tea set and a soft throw for the sofa. Small things that make a living room feel like a club."
+    },
+    {
       "type": "h2",
       "text": "Step 4: Choose books fairly",
       "id": "choose-books"
@@ -112,6 +129,10 @@
         "**Check availability.** Your library may lend popular titles, e-books or audiobooks, though what is on offer and the wait for popular books vary. Favor something with a few copies in circulation.",
         "**Mix it up.** Varied lengths and genres keep people coming back."
       ]
+    },
+    {
+      "type": "p",
+      "text": "**What makes it easier:** a pocket notebook or a shared note, so nominations, votes and the next date are written down in one place."
     },
     {
       "type": "h2",
@@ -143,6 +164,10 @@
       ]
     },
     {
+      "type": "p",
+      "text": "**What makes it easier:** a set of conversation cards, so there is always a next question when the room goes quiet, and a pot of tea with small snack bowls in the middle of the table."
+    },
+    {
       "type": "h2",
       "text": "Step 6: Keep it going",
       "id": "keep-going"
@@ -160,17 +185,21 @@
     },
     {
       "type": "p",
+      "text": "**For the second meeting:** a reading journal for each member and a magnetic bookmark for marking passages to bring, so people arrive with something to say."
+    },
+    {
+      "type": "p",
       "text": "Give the club a name, even a silly one, and keep a shared note of every book with who chose it and what the group thought. After six meetings you'll have a record that's fun to revisit and a clear sense of what the group likes. Book-themed snacks are lovely but optional."
     },
     {
       "type": "shopHobby",
       "productIds": [
-        "conversation-cards",
+        "reading-journals",
         "book-lights",
-        "reading-journals"
+        "magnetic-bookmarks"
       ],
-      "title": "Make the night feel like a club",
-      "dek": "Conversation cards for the quiet moments, a book light for late chapters and a journal for the thoughts you'll want to bring."
+      "title": "For the readers: journal, light and bookmark",
+      "dek": "A journal for the thoughts you'll want to bring, a light for late chapters and a magnetic bookmark for marking a line to read aloud."
     },
     {
       "type": "p",
