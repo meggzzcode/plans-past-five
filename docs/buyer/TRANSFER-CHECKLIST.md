@@ -14,7 +14,7 @@ Roles: **Seller** and **Buyer**. Mark each step with the date and who confirmed 
 8. **Replace analytics IDs.** Buyer sets own `googleAnalyticsId`, Search Console and Bing properties; removes any seller IDs (none are expected in the repo; verify with a search).
 9. **Replace affiliate IDs and credentials.** Buyer applies for own programs and edits `src/config/affiliate.ts` (`docs/buyer/AFFILIATE-SETUP.md`). Seller's ids are never reused. Credentials are shared only through a secure password manager channel, then rotated.
 10. **Set up the mailbox.** Buyer creates `hello@` on the buyer's domain and sets `site.contactEmail` (`docs/buyer/DOMAIN-AND-EMAIL.md`). Seller's mailbox is not included.
-11. **Transfer assets**: images, pin files (`public/pins`), printable sources (`design/`), `docs/pinterest-pins.csv`, brand files, license records (`docs/IMAGE-LICENSES.md`).
+11. **Transfer assets**: images, pin files (`public/pins`), pin sources (`design/`), `docs/pinterest-pins.csv`, brand files, license records (`docs/IMAGE-LICENSES.md`).
 12. **Verify production.** Buyer builds from their repo, checks `/`, an article, `/shop`, `/sitemap.xml`, robots, headers, the contact page, and runs `bunx vitest run`, `bunx tsc --noEmit`, `bunx vite build` and the site-health workflow.
 13. **Buyer acceptance.** Buyer confirms in writing that the inventory matches and production works.
 14. **Payment release** from escrow per the agreed terms.
@@ -27,7 +27,7 @@ Roles: **Seller** and **Buyer**. Mark each step with the date and who confirmed 
 
 ## Included by default (the repo, once sanitized)
 
-Source code, content data, drafts, docs, brand assets generated for the project, printable sources and PDFs, pin images and CSV, tests, CI configuration.
+Source code, content data, drafts, docs, brand assets generated for the project, pin images and CSV, tests, CI configuration.
 
 ## Excluded by default (must be explicitly agreed to move)
 

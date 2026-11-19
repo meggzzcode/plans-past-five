@@ -15,8 +15,7 @@ export type TrackEvent =
   | "kit_interaction"
   | "shoplist_save"
   | "quiz_complete"
-  | "planner_use"
-  | "printable_download";
+  | "planner_use";
 
 export const TRACK_EVENTS: TrackEvent[] = [
   "product_impression",
@@ -28,7 +27,6 @@ export const TRACK_EVENTS: TrackEvent[] = [
   "shoplist_save",
   "quiz_complete",
   "planner_use",
-  "printable_download",
 ];
 
 /** The only parameter names that may be sent. Ids and slugs, never user-entered text. */
@@ -46,7 +44,6 @@ export const TRACK_PARAM_KEYS = [
   "action",
   "count",
   "theme",
-  "printable_id",
   "persona",
   "when",
   "length",

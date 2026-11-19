@@ -4,13 +4,13 @@ Frontend-only TanStack Start (React 19, TypeScript, Tailwind v4) site. No databa
 
 ## Completed
 - Design system, logo system, favicon, decorative kit; header with mobile menu; footer.
-- Homepage (hero collage, categories, quiz teaser, 5:01 Edit, Weekend Edit, Table for One/Better Together, Journal, shop, printable, newsletter-ready block).
-- Six section pages, Journal index, article template (breadcrumbs, byline, date, computed reading time, TOC, pull quotes, all editorial inserts, save, copy-link, Pinterest share, contextual related reading, printable CTA, JSON-LD).
+- Homepage (hero collage, categories, quiz teaser, 5:01 Edit, Weekend Edit, Table for One/Better Together, Journal, shop, newsletter-ready block).
+- Six section pages, Journal index, article template (breadcrumbs, byline, date, computed reading time, TOC, pull quotes, all editorial inserts, save, copy-link, Pinterest share, contextual related reading, JSON-LD).
 - 4 published articles (35 hobbies; 25 after-work; 21 creative at home; junk journaling guide). 8 drafts with intent/angle/links/outline.
 - 36 hobbies, directory with 10 filters, hobby profile pages (noindexed unless a published article covers the hobby).
 - Off Duty Essentials: 6 collections × 6 product types, central Amazon search links, honest disclosure.
 - Find Your Thing quiz (rule-based, 6 themes, too-few-matches handling). Make Some Plans (deterministic, save/shuffle/print).
-- My Plans (localStorage). Site search. Three printables (print / save as PDF from browser).
+- My Plans (localStorage). Site search.
 - About, Start Here, Contact, Privacy, Terms, Affiliate Disclosure, Editorial Policy, custom 404, sitemap.xml, robots.txt, per-page metadata + canonicals.
 
 ## Architecture
@@ -18,7 +18,7 @@ Frontend-only TanStack Start (React 19, TypeScript, Tailwind v4) site. No databa
 src/config/site.ts        brand, taglines, social, legal, integration flags
 src/config/affiliate.ts   Amazon link builder (associatesTag empty = unmonetized)
 src/content/              articles (types.ts, one file per article, drafts.ts, index.ts helpers)
-src/data/                 hobbies, products, categories, activities, printables, images
+src/data/                 hobbies, products, categories, activities, images
 src/lib/                  finder.ts, planner.ts, saved.ts, search.ts, seo.ts
 src/components/brand|layout|editorial|cards|pages
 src/routes/               one file per URL (see brief §10)
@@ -38,10 +38,9 @@ src/test/rules.test.ts    quiz/planner/content rules
 
 ## Testing results (this build)
 - Typecheck clean; `bunx vitest run` → 12 tests passing.
-- Playwright: home, article, shop, directory render at 1280px and 390px with no console errors; quiz → result → save, planner → save, My Plans lists 2 items, printable renders, draft URL returns 404.
+- Playwright: home, article, shop, directory render at 1280px and 390px with no console errors; quiz → result → save, planner → save, My Plans lists 2 items, draft URL returns 404.
 
 ## Known issues / not done
-- Printables are print-ready web pages (browser "Save as PDF"), not static PDF files. Consider generating PDFs.
 - `site.url`, contact email, socials, legal owner name are empty — fill in before launch.
 - Privacy/Terms are starter text; owner should get them reviewed.
 - Hobby profile pages are short; expand before indexing.
@@ -60,20 +59,17 @@ src/test/rules.test.ts    quiz/planner/content rules
 | 4 | Scrapbook guide | Your First Junk Journal Page in 30 Minutes | /journal/how-to-start-junk-journaling |
 | 5 | Editorial list | 21 Creative Hobbies You Can Start at Home | /journal/creative-hobbies-you-can-start-at-home |
 | 6 | Moodboard | Cozy Creative Evening Ideas | /after-hours |
-| 7 | Printable preview | Free Out-of-Office Bucket List | /printables/out-of-office-bucket-list |
-| 8 | Printable preview | Free Weekend Planner Printable | /printables/weekend-edit-planner |
-| 9 | Printable preview | My Hobby Era Tracker | /printables/hobby-era-tracker |
-| 10 | Magazine cover | What's Your Hobby Era? Take the Quiz | /hobby-finder |
-| 11 | Weekend moodboard | Let's Give Saturday a Storyline | /make-plans |
-| 12 | Moodboard | Pottery Night at Home Supplies | /shop/pottery-era |
-| 13 | Editorial list | Girls' Night In Ideas That Aren't Wine | /shop/girls-night-in |
-| 14 | Moodboard | Solo Date Ideas: Table for One | /solo-dates |
+| 7 | Magazine cover | What's Your Hobby Era? Take the Quiz | /hobby-finder |
+| 8 | Weekend moodboard | Let's Give Saturday a Storyline | /make-plans |
+| 9 | Moodboard | Pottery Night at Home Supplies | /shop/pottery-era |
+| 10 | Editorial list | Girls' Night In Ideas That Aren't Wine | /shop/girls-night-in |
+| 11 | Moodboard | Solo Date Ideas: Table for One | /solo-dates |
 
 ## Next steps
 1. Fill owner details in `site.ts`; connect domain; set `site.url`.
 2. Write and publish drafts (priority: solo dates, weekend plans, craft night).
 3. Generate missing imagery (see IMAGE-LICENSES.md) and an OG image.
-4. Build Pinterest templates; static PDFs for printables.
+4. Build Pinterest templates.
 5. Wire newsletter + analytics with consent once credentials exist.
 
 
@@ -85,5 +81,5 @@ Plan and work split: `docs/TURNKEY-PLAN.md`. Checkpoint: `docs/RESUME.md`. Cowor
 - **Planner and quiz** were rewritten (total budget, time slots, restoring saved plans, energy, quiz handoff). New tools at `/tools/hobby-budget` and `/tools/tonight`.
 - **Trust pages:** `/editorial-policy` (with the one AI disclosure), `/methodology`, `/corrections`.
 - **Newsletter:** the homepage no longer promises one (standing decision: no newsletters for now).
-- **Printables:** six real PDFs in `public/downloads` built by `scripts/build-printables.mjs`; premium kits live in `design/kits` and are not linked publicly.
+- Printables and digital products were removed by owner decision (2026-11-19).
 - Not yet true: no domain, host, analytics or affiliate account is set up; legal pages are starter text.

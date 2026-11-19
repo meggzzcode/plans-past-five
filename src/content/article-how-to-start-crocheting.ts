@@ -14,7 +14,6 @@ export const articleHowToStartCrocheting: Article = {
     "A calm, practical start: choose forgiving supplies, learn the chain, single crochet and double crochet, and finish a flat dishcloth-style square before anything shaped",
   hobbies: ["crochet", "knitting", "embroidery"],
   productIds: [],
-  printable: "hobby-era-tracker",
   sources: [],
   coworkChecks: [
     "Medium-weight (worsted) smooth cotton or acrylic-blend yarn in a light color is commonly recommended for beginners (claimed general guidance)",
@@ -161,7 +160,7 @@ export const articleHowToStartCrocheting: Article = {
     },
     {
       type: "p",
-      text: "Want a second thread craft to compare? [How to Start Embroidery](/journal/how-to-start-embroidery) uses just a hoop and floss. Log your finished square in the free [Find Your Hobby Workbook](/printables/hobby-era-tracker).",
+      text: "Want a second thread craft to compare? [How to Start Embroidery](/journal/how-to-start-embroidery) uses just a hoop and floss.",
     },
     { type: "ifYouLoved", hobbies: ["knitting", "embroidery", "craft-nights"] },
   ],

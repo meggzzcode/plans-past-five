@@ -11,7 +11,7 @@ Status: draft. Answers below come from reasoning only. No data has been collecte
 7. **What optional products help?** Water-soluble pen, needle minder, thread organizer, pattern book.
 8. **What would make our recommendations better than generic shopping results?** A stitch-first route on scrap fabric, kit-or-loose guidance and fixes for tangles and puckering.
 9. **Which other articles should we link?** how-to-start-crocheting, creative-hobbies-you-can-start-at-home, creative-hobby-starter-kits-worth-considering.
-10. **How does it contribute to long-term revenue?** Evergreen. Kits convert well for gifts. Supports a premium stitch kit and a sampler printable.
+10. **How does it contribute to long-term revenue?** Evergreen. Kits convert well for gifts.
 
 ## Keyword and autocomplete research
 

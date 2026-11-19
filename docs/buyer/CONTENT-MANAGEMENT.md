@@ -38,7 +38,7 @@ Never in content. Edit only the Amazon (or other) entry in `src/config/affiliate
 
 ## Update homepage features
 
-Edit `src/routes/index.tsx` (hero, categories, 5:01 Edit, Weekend Edit, shop and printable blocks). Brand text and taglines come from `src/config/site.ts`. Check mobile width after changing layout.
+Edit `src/routes/index.tsx` (hero, categories, 5:01 Edit, Weekend Edit, shop and newsletter-ready blocks). Brand text and taglines come from `src/config/site.ts`. Check mobile width after changing layout.
 
 ## Upload an image
 
@@ -46,10 +46,6 @@ Edit `src/routes/index.tsx` (hero, categories, 5:01 Edit, Weekend Edit, shop and
 2. Register it in `src/data/images.ts` with real alt text; use the new key as an article's `hero` or an `image` block.
 3. Record source and license in `docs/IMAGE-LICENSES.md`. Do not add images you cannot document (`docs/buyer/IMAGE-AND-ASSET-RIGHTS.md` from another worker, when present).
 4. Keep files small enough for fast pages; PENDING: set a size budget.
-
-## Add a downloadable
-
-Free printables are PDFs in `public/downloads/` with preview PNGs. Source HTML is in `design/printables/`; `node scripts/build-printables.mjs` rebuilds them (needs Playwright with Chromium and fonts under `design/printables/fonts`). To list one on the site, add a record to `src/data/printables.ts` and make sure a route page can render it. Premium kit sources live under `design/kits` and are never written to `public/`. See `docs/buyer/DIGITAL-PRODUCTS.md` (other worker) when present.
 
 ## Manage collections (shop)
 

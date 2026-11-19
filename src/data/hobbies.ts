@@ -370,7 +370,7 @@ const seeds: Seed[] = [
       "Decorative lettering with brush pens or a dip pen. Practice drills are oddly soothing.",
     whyYoullLoveIt: "Birthday cards and place cards will never look the same.",
     supplies: ["Brush pens", "Practice pad or smooth paper"],
-    optional: ["Printable practice sheets", "Dip pen and ink"],
+    optional: ["Practice sheets", "Dip pen and ink"],
     firstActivity: "Practice upstrokes and downstrokes for ten minutes, then write your name.",
     productIds: [],
   },
@@ -1071,7 +1071,7 @@ const enrichment: Record<string, Enrichment> = {
     ],
     "Your name or a short favorite word written five different ways.",
     ["watercolor-painting", "creative-writing", "junk-journaling"],
-    [comm, vid, "Printable practice sheets from library books"],
+    [comm, vid, "Practice sheets from library books"],
     [G_CREATIVE],
   ),
   "film-photography": e(

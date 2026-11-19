@@ -29,7 +29,6 @@ export function Footer() {
             { to: "/tools/hobby-budget", label: "Hobby Starter Budget" },
             { to: "/tools/tonight", label: "What Should I Do Tonight?" },
             { to: "/hobbies", label: "Hobby Directory" },
-            { to: "/printables", label: "The Out-of-Office Collection" },
             { to: "/shop", label: "Off Duty Essentials" },
             { to: "/saved", label: "My Plans" },
           ]}

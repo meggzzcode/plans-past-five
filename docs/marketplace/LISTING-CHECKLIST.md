@@ -10,12 +10,12 @@ Status: RECOMMENDED process, 2026-11-19. **Nothing is published, listed or offer
 ## B. Claim accuracy against the repo (re-run each, record date and result)
 - [ ] Published article count: `grep -H 'status:' src/content/article-*.ts src/content/drafts.ts` and read the `articles` export in `src/content/index.ts`. The 28 new draft files are registered in the `all` array and stay hidden while `status` is draft (fixed 2026-11-19).
 - [ ] Hobbies 36: `src/test/hobbies.test.ts`; products 36 types and 8 collections: `src/data/products.ts`; verified catalog count: `src/data/catalog.ts`.
-- [ ] Tools 4, printables 6 (`ls public/downloads/*.pdf`), kits 2 (`ls design/kits/*/dist`), pins 95 (`ls public/pins | wc -l`), brand assets (`ls design/brand/exports/*`), docs count (`find docs -name '*.md' | wc -l`).
+- [ ] Tools 4, pins 95 (`ls public/pins | wc -l`), brand assets (`ls design/brand/exports/*`), docs count (`find docs -name '*.md' | wc -l`).
 - [ ] Tests and typecheck: `bunx vitest run`, `bunx tsc --noEmit`; production build `bunx vite build`. Record counts and dates; do not copy an old number.
 - [ ] Domain: seller confirms ownership and registrar; if unconfirmed, remove every domain claim.
 - [ ] Host and live site: only claim "live" if deployed and C9 QA is done.
 - [ ] Affiliate: text says not activated, approval not guaranteed, master accounts excluded. `src/config/affiliate.ts` has no tag, no active entry.
-- [ ] Kits: text says prepared, not for sale; terms status needs-owner-review.
+- [ ] Text mentions no printables, premium kits or other digital products; none are part of the business.
 - [ ] Costs: any figure confirmed from a receipt; otherwise UNCONFIRMED stays.
 
 ## C. Content of the listing

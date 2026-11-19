@@ -80,7 +80,7 @@ await shot(
 );
 await shot("social/story-1080x1920.html", "", 1080, 1920, "exports/social/story-1080x1920.png");
 
-// 12 Pinterest board covers
+// 11 Pinterest board covers
 const boards = [
   ["Plans Past Five", "cherry", "light", "the flagship board"],
   ["After Work Activities", "butter", "", "weeknights"],
@@ -92,7 +92,6 @@ const boards = [
   ["Cozy Hobbies", "garden", "light", "soft and slow"],
   ["Hobby Starter Kits", "matcha", "", "start small"],
   ["Affordable Adventures", "sunday", "", "big feelings, small budget"],
-  ["Printable Planners", "straw", "", "print it, pin it"],
   ["Active Hobbies", "matcha", "", "move for the joy of it"],
 ];
 for (const [name, bg, fg, sub] of boards) {

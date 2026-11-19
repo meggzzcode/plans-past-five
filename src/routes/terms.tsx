@@ -7,7 +7,7 @@ export const Route = createFileRoute("/terms")({
   head: () =>
     seo({
       title: "Terms of Use",
-      description: "Terms for using the Plans Past Five website and printables.",
+      description: "Terms for using the Plans Past Five website.",
       path: "/terms",
       jsonLd: [
         breadcrumbJsonLd([
@@ -25,19 +25,14 @@ export const Route = createFileRoute("/terms")({
     >
       <h2>Content</h2>
       <p>
-        Stories, images, printables and design on {site.name} are provided for personal,
-        non-commercial use. Please don't republish them without permission. Sharing links and
-        pinning pages is very welcome.
+        Stories, images and design on {site.name} are provided for personal, non-commercial use.
+        Please don't republish them without permission. Sharing links and pinning pages is very
+        welcome.
       </p>
       <h2>Ideas, not instructions</h2>
       <p>
         Our activity and hobby suggestions are general ideas. Use your judgment about safety, local
         conditions, opening hours and costs, and check details with any venue before you go.
-      </p>
-      <h2>Printables</h2>
-      <p>
-        Free printables are for personal use. You're welcome to print as many as you like for
-        yourself, your friends or a small group activity.
       </p>
       <h2>Links and affiliate relationships</h2>
       <p>

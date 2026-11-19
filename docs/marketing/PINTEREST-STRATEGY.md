@@ -6,7 +6,7 @@ Why Pinterest fits: the topics (hobbies, supplies, hosting ideas, weekend plans)
 
 ## Principles
 
-1. **Pins point to articles, not to Amazon.** A pin's destination is `https://<site.url>/journal/<slug>` (or a section, tool or printable route). The article is where context, honest advice and disclosure live. Never link a pin straight to an affiliate or retailer URL.
+1. **Pins point to articles, not to Amazon.** A pin's destination is `https://<site.url>/journal/<slug>` (or a section or tool route). The article is where context, honest advice and disclosure live. Never link a pin straight to an affiliate or retailer URL.
 2. **No engagement tricks.** No follow-for-follow, pin-for-pin groups for the sake of numbers, comment bait, fake "limited time", fake scarcity or clickbait that the article does not deliver. Do not buy followers or saves.
 3. **Honest pin copy.** The title and description say what the article really contains. No prices, ratings or claims we have not verified. No "tested" unless someone did.
 4. **Original images.** Use images the project owns or has licensed (`docs/IMAGE-LICENSES.md`), plus designed text overlays. No copied retailer or competitor photos. See `docs/buyer/IMAGE-AND-ASSET-RIGHTS.md` (another worker) when present.
@@ -21,7 +21,7 @@ Each article gets three concepts, written in the pins CSV with different titles 
 |---|---|---|---|
 | Search-focused | Answers the question someone would type into Pinterest search | Clear text-led layout (magazine cover or editorial list style from `CLAUDE-HANDOFF.md`), the keyword phrase near the top | "How to Start Air-Dry Clay (Beginner Supply List)" |
 | Aspirational | Sells the feeling of the life | A moodboard or flat lay in brand colors, little text | "A Cozy Creative Evening, Planned" |
-| Practical | Gives a useful chunk at a glance | A checklist, step list, "what you need" or printable preview | "What You Actually Need for Junk Journaling" |
+| Practical | Gives a useful chunk at a glance | A checklist, step list, "what you need" or quiz promo | "What You Actually Need for Junk Journaling" |
 
 Rules for every pin: one idea; vertical 1000x1500 (the size used in `CLAUDE-HANDOFF.md`); readable text on a phone; one destination; alt text that describes the image; description that is plain language with natural keywords, not a keyword list. Hashtags are optional and should be few.
 
@@ -37,7 +37,6 @@ Align boards with the site sections (`src/data/categories.ts`):
 - Better Together (hosting and friend plans)
 - A Little Movement
 - Starter Kits and Supplies (kit-style guides; keep descriptions honest: curated lists, not bundles)
-- Printables (the three printables in `src/data/printables.ts`)
 
 Each board gets a plain, keyword-aware description. Pin each new article to its section board first, then to a secondary board only if it truly fits. Do not pin the same image to ten boards.
 
@@ -55,7 +54,7 @@ Pin seasonal articles ahead of the season, since people tend to plan ahead on Pi
 
 ## Pins already conceived
 
-`CLAUDE-HANDOFF.md` lists 14 early pin concepts (magazine cover, editorial list, scrapbook guide, moodboard, printable preview). Treat them as seeds; they predate the three-concept rule above.
+`CLAUDE-HANDOFF.md` lists 14 early pin concepts (magazine cover, editorial list, scrapbook guide, moodboard). Treat them as seeds; they predate the three-concept rule above.
 
 ## PENDING COWORK
 

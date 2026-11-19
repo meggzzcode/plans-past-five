@@ -9,7 +9,7 @@ export const Route = createFileRoute("/search")({
   head: () =>
     seo({
       title: "Search",
-      description: "Search hobbies, stories, shop collections and printables.",
+      description: "Search hobbies, stories and shop collections.",
       path: "/search",
       noindex: true,
     }),

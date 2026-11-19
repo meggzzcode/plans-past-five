@@ -2,7 +2,6 @@ import { articles } from "@/content";
 import { hobbies } from "@/data/hobbies";
 import { products, collections } from "@/data/products";
 import { categories } from "@/data/categories";
-import { printables } from "@/data/printables";
 
 export type SearchHit = { kind: string; title: string; text: string; to: string };
 
@@ -42,13 +41,6 @@ function index(): (SearchHit & { hay: string })[] {
       text: c.intro,
       to: `/${c.slug}`,
       hay: `${c.name} ${c.short} ${c.intro}`,
-    })),
-    ...printables.map((p) => ({
-      kind: "Printable",
-      title: p.name,
-      text: p.dek,
-      to: `/printables/${p.slug}`,
-      hay: `${p.name} ${p.description}`,
     })),
   ];
 }

@@ -28,10 +28,10 @@ A packable picnic blanket, a pocket watercolor set, a film camera, a book sleeve
 Plain-language cost bands labeled 'typically', safety and awkwardness guidance, ideas organized by mood, and product suggestions tied to what she will actually do instead of a gift-guide list. Products are described by what they help her do, claims are hedged and checked, and nothing is recommended unless it is verified.
 
 ## Articles to link
-how-to-take-yourself-on-a-solo-coffee-shop-date, cozy-solo-dates-at-home, how-to-plan-a-solo-saturday, things-to-do-after-work-instead-of-scrolling, the weekend-edit-planner printable.
+how-to-take-yourself-on-a-solo-coffee-shop-date, cozy-solo-dates-at-home, how-to-plan-a-solo-saturday, things-to-do-after-work-instead-of-scrolling.
 
 ## Long-term revenue contribution
-Evergreen pillar for the solo-dates category with strong Pinterest save potential; feeds multiple small-ticket product searches (notebooks, blankets, art sets) and the newsletter and printable funnel.
+Evergreen pillar for the solo-dates category with strong Pinterest save potential; feeds multiple small-ticket product searches (notebooks, blankets, art sets) and the newsletter funnel.
 
 ## Keyword and autocomplete research
 PENDING COWORK

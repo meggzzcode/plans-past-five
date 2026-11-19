@@ -31,7 +31,7 @@ Honest 'you may already own this' guidance, a clear essentials versus later-upgr
 pickleball-for-beginners, how-to-start-playing-tennis-as-an-adult, how-to-get-into-recreational-cycling-as-an-adult, things-to-do-on-the-weekend; later, hiking and skating guides.
 
 ## How this contributes to long-term revenue
-A broad entry hub that feeds several sport-specific articles, each with its own commercial angle. It builds trust and internal links, supports a printable (an activity picker) and, once verified, affiliate products across several categories. Expected to be a slow, evergreen earner; no figures are claimed.
+A broad entry hub that feeds several sport-specific articles, each with its own commercial angle. It builds trust and internal links, and, once verified, supports affiliate products across several categories. Expected to be a slow, evergreen earner; no figures are claimed.
 
 ## Keyword and autocomplete research
 PENDING COWORK

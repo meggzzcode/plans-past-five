@@ -35,7 +35,6 @@ export const articleCreativeHome: Article = {
     "friendship-bracelet-kits",
     "washi-tape",
   ],
-  printable: "hobby-era-tracker",
   body: [
     {
       type: "p",

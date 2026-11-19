@@ -11,7 +11,7 @@ Status: draft. Answers below come from reasoning only. No data has been collecte
 7. **What optional products help?** Second brush, travel set, fine pen, masking tape.
 8. **What would make our recommendations better than generic shopping results?** Paper-first advice, techniques in order of usefulness, three projects that look good without drawing skill and a plain-language note on pigment safety.
 9. **Which other articles should we link?** creative-hobbies-you-can-start-at-home, creative-hobby-starter-kits-worth-considering, how-to-start-junk-journaling.
-10. **How does it contribute to long-term revenue?** Evergreen with solid affiliate fit (paper, sets, sketchbooks). Supports a watercolor kit and swatch printable.
+10. **How does it contribute to long-term revenue?** Evergreen with solid affiliate fit (paper, sets, sketchbooks).
 
 ## Keyword and autocomplete research
 

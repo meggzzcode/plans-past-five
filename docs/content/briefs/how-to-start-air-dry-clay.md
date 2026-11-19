@@ -11,7 +11,7 @@ Status: draft. Answers below come from reasoning only. No data has been collecte
 7. **What optional products help?** Sculpting tool set, silicone mat, sanding sponge, sealer, cookie cutters.
 8. **What would make our recommendations better than generic shopping results?** Honest limits (not food-safe, waterproof or candle-safe unless a label says so), four concrete projects, a drying-time plan, and troubleshooting for cracks.
 9. **Which other articles should we link?** how-to-host-a-craft-night, creative-hobby-starter-kits-worth-considering, how-to-start-junk-journaling, creative-hobbies-you-can-start-at-home.
-10. **How does it contribute to long-term revenue?** Evergreen, seasonal peaks around gifts and holidays. Fits a premium kit and a printable project pack.
+10. **How does it contribute to long-term revenue?** Evergreen, seasonal peaks around gifts and holidays.
 
 ## Keyword and autocomplete research
 

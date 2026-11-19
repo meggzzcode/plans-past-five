@@ -78,7 +78,7 @@ Write the answers in the article's research brief (`docs/content/ARTICLE-RESEARC
 5. **What can go wrong?** Mess, cost, safety, frustration, wasted purchases. Say it plainly and early.
 6. **What claims need a source?** Costs, rules, safety, availability. Each goes in `coworkChecks` until verified (`docs/SOP-publish-article.md`).
 7. **What do we honestly know first-hand?** Nothing, unless the owner really did it. Never invent experience (`docs/content/BRAND-VOICE.md`).
-8. **Where does she go next?** Which one or two guides, tools or printables are the natural next step, and which are not (no forced links).
+8. **Where does she go next?** Which one or two guides or tools are the natural next step, and which are not (no forced links).
 9. **Which product roles does the article need?** Map each to a role label and a product record or a "type of thing to look for" description. Prices, ratings, brands and ASINs only once verified.
 10. **How will she find it?** The primary keyword candidate, whether Pinterest is a likely source, and the three pin concepts (`docs/marketing/PINTEREST-STRATEGY.md`).
 

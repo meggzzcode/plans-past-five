@@ -30,7 +30,7 @@ A simple, repeatable method (audit, craving, three cheap trials, keep/park/drop)
 hobbies-to-try-when-life-feels-like-work-sleep-repeat, low-energy-hobbies, affordable-hobbies-under-25, things-to-do-after-work-instead-of-scrolling, creative-hobbies-you-can-start-at-home, how-to-start-a-book-club, /hobby-finder quiz
 
 ## How does it contribute to long-term revenue?
-A top-of-funnel article that routes readers into hobby pages, the quiz and starter-kit articles, so it supports every later product page. Durable evergreen search demand, strong newsletter capture point, and a natural place for a printable. No revenue figure is claimed.
+A top-of-funnel article that routes readers into hobby pages, the quiz and starter-kit articles, so it supports every later product page. Durable evergreen search demand and a strong newsletter capture point. No revenue figure is claimed.
 
 ## Keyword and autocomplete research
 PENDING COWORK

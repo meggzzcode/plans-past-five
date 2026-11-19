@@ -40,7 +40,7 @@ Selection order: products tagged for the article, then matching hobbies, then th
 
 ## Tracking
 
-`track(event, params)` does nothing until `site.integrations.googleAnalyticsId` is set AND a `gtag` function exists on the page; it never loads a script. Events: `product_impression`, `product_click`, `retailer_outbound_click`, `affiliate_outbound_click`, `shop_article_interaction`, `kit_interaction`, `shoplist_save`, `quiz_complete`, `planner_use`, `printable_download`. Only allow-listed id/slug params are sent (see `TRACK_PARAM_KEYS`); never personal data. Update the privacy page and add consent before enabling analytics. `quiz_complete`, `planner_use` and `printable_download` are defined for those pages' owners to call; the commerce components do not fire them.
+`track(event, params)` does nothing until `site.integrations.googleAnalyticsId` is set AND a `gtag` function exists on the page; it never loads a script. Events: `product_impression`, `product_click`, `retailer_outbound_click`, `affiliate_outbound_click`, `shop_article_interaction`, `kit_interaction`, `shoplist_save`, `quiz_complete`, `planner_use`. Only allow-listed id/slug params are sent (see `TRACK_PARAM_KEYS`); never personal data. Update the privacy page and add consent before enabling analytics. `quiz_complete` and `planner_use` are defined for those pages' owners to call; the commerce components do not fire them.
 
 ## Still to do (owner / Cowork)
 

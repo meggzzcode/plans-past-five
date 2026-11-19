@@ -8,13 +8,13 @@ How to read the check boxes: every line marked **AVAILABLE AT LISTING ONLY IF CO
 
 ## Title
 
-Plans Past Five — Turnkey Women's Lifestyle Brand With Interactive Hobby Tools, SEO Content, Affiliate-Ready Shopping & Digital Products
+Plans Past Five — Turnkey Women's Lifestyle Brand With Interactive Hobby Tools, SEO Content, Affiliate-Ready Shopping & Pinterest Assets
 
 (Pre-revenue is disclosed in the first line of the description, below. No earnings figure appears anywhere in this listing.)
 
 ## Short description
 
-Plans Past Five is a pre-revenue, newly built women's lifestyle and hobby publication prepared as a transparent turnkey starter site. It has no traffic history and no earnings. It includes a built website with interactive hobby tools, a 36-hobby directory, 4 published articles plus drafts awaiting source verification, free printables, two prepared premium digital kits, 95 Pinterest pin images and a full brand asset set. Affiliate links are not activated and affiliate and payment accounts are not included; the buyer sets up their own. No earnings are claimed or guaranteed.
+Plans Past Five is a pre-revenue, newly built women's lifestyle and hobby publication prepared as a transparent turnkey starter site. It has no traffic history and no earnings. It includes a built website with interactive hobby tools, a 36-hobby directory, 4 published articles plus drafts awaiting source verification, 88 Pinterest pin images and a full brand asset set. Affiliate links are not activated and affiliate and payment accounts are not included; the buyer sets up their own. No earnings are claimed or guaranteed.
 
 ## Long description
 
@@ -24,11 +24,10 @@ Plans Past Five is a pre-revenue, newly built women's lifestyle and hobby public
 - Affiliate links are **not yet activated**. Affiliate approval is **not guaranteed** and is the buyer's to apply for.
 - The seller's master or portfolio affiliate accounts are **not included**. The buyer must create or connect their own affiliate and payment accounts.
 - There is **no guarantee of future earnings**. Any forecast a buyer makes is hypothetical.
-- The premium digital kits are **prepared but not for sale**: no storefront, checkout or payment provider exists.
 
 ### What the business is
 
-A women's lifestyle and hobby publication. Brand copy in `src/config/site.ts`: tagline "Making a life, not just a living."; mission "Helping women fall in love with the life they live outside of work."; philosophy "Your career can be a big part of your life without being your whole life." The editorial angle is creative hobbies, weekend plans, solo dates, friendships and small adventures for the hours outside work, plus a shopping section of product types and a set of tools and downloads.
+A women's lifestyle and hobby publication. Brand copy in `src/config/site.ts`: tagline "Making a life, not just a living."; mission "Helping women fall in love with the life they live outside of work."; philosophy "Your career can be a big part of your life without being your whole life." The editorial angle is creative hobbies, weekend plans, solo dates, friendships and small adventures for the hours outside work, plus a shopping section of product types and a set of tools.
 
 ### Target audience
 
@@ -49,11 +48,9 @@ Women who want a hobby or a better weekend but are unsure where to start, with a
 | Verified specific products | 0 (catalog empty; import path built) | BLOCKED on Cowork C3 | `src/data/catalog.ts` |
 | Starter kit shopping lists | 15 kit definitions as slots; render only when verified products fill them | COMPLETED as system, empty of products | `src/data/kits.ts` |
 | Interactive tools | 4: Find Your Thing quiz, Make Some Plans planner, Hobby Budget tool, Tonight tool; plus My Plans saved items and site search | COMPLETED | `src/lib`, `src/routes` |
-| Free printables | 6 PDFs with previews | COMPLETED | `public/downloads`, `src/data/printables.ts` |
-| Premium kits | 2 (Hobby Era Kit, 75 pages in 9 PDFs; Weekend Edit and Girls Night Kit, 55 pages in 9 PDFs) | PREPARED, NOT FOR SALE; terms need owner review | `design/kits`, `src/data/digital-products.ts` |
-| Pinterest pins | 95 pin images, CSV with metadata, 90-day schedule; 30 point to published articles or live pages, 65 are marked hold-until-published | COMPLETED as assets; no account | `public/pins`, `docs/pinterest-pins.csv` |
-| Brand assets | 12 logo files, 12 board covers, 4 social images (including a 1200x630 OG image), 4 article templates, 5 favicon files, fonts with licences | COMPLETED | `design/brand` |
-| Documentation | 77 Markdown files under docs, including 26 buyer guides and a 20-step transfer checklist | COMPLETED (some depend on pending research) | `docs/` |
+| Pinterest pins | 88 pin images, CSV with metadata, 90-day schedule; 23 point to published articles or live pages, 65 are marked hold-until-published | COMPLETED as assets; no account | `public/pins`, `docs/pinterest-pins.csv` |
+| Brand assets | 12 logo files, 11 board covers, 4 social images (including a 1200x630 OG image), 4 article templates, 5 favicon files, fonts with licences | COMPLETED | `design/brand` |
+| Documentation | 87 Markdown files under docs, including 25 buyer guides and a 20-step transfer checklist | COMPLETED (some depend on pending research) | `docs/` |
 | Automated tests | 206 passing in 11 files; typecheck clean | VERIFIED 2026-11-19 | `src/test` |
 | Trust pages | About, Contact, Privacy, Terms, Affiliate Disclosure, Editorial Policy, Methodology, Corrections, Start Here | COMPLETED; legal pages are starter text | `src/routes` |
 
@@ -67,7 +64,6 @@ Women who want a hobby or a better weekend but are unsure where to start, with a
 - Original interactive tools (a rule-based quiz, a deterministic planner, a budget tool, a tonight picker) rather than only articles.
 - An honesty-first design: no invented experiences, experts, prices or ratings; drafts stay hidden until their claims are verified; an editorial policy, methodology and corrections page exist.
 - A shopping system that works without any affiliate account: ordinary links by default, with affiliate links activating only when a buyer sets up approved accounts.
-- Original printables and premium kits with embedded open-licence fonts and no third-party artwork (`docs/IMAGE-LICENSES.md`).
 - A complete brand system and a large Pinterest asset set ready for an owner to start from.
 - Extensive buyer documentation, including a transfer checklist and an operating-cost page that keeps unknowns marked UNCONFIRMED.
 
@@ -82,25 +78,20 @@ Women who want a hobby or a better weekend but are unsure where to start, with a
 ### Monetization methods (none active)
 
 - **Affiliate links:** the system is built and unit-tested but **not activated**. Setting a tracking tag is not enough; the Amazon entry in `src/config/affiliate.ts` must also be approved and active, using the buyer's own approved account (`docs/buyer/AFFILIATE-ACTIVATION.md`). Approval is not guaranteed.
-- **Premium digital kits:** prepared, **not for sale**. A buyer would need to choose a storefront, review the draft usage terms and confirm fees. Suggested prices in the repo are marked as recommendations, not live prices.
 - No sponsorship, advertising or newsletter revenue exists. A newsletter is deliberately not wired.
 - **No earnings are claimed. No earnings are guaranteed.**
 
 ### Existing content
 
-Four published articles (35 hobbies; 25 things to do after work; 21 creative hobbies at home; junk journaling guide), the 36-hobby directory, six section pages, trust pages and six printables. Twenty-eight further articles are written as drafts with research briefs and a list of claims to verify before publishing.
+Four published articles (35 hobbies; 25 things to do after work; 21 creative hobbies at home; junk journaling guide), the 36-hobby directory, six section pages, and trust pages. Twenty-eight further articles are written as drafts with research briefs and a list of claims to verify before publishing.
 
 ### Interactive features
 
 Hobby finder quiz (rule-based, six result themes), Make Some Plans planner (save, shuffle, print), Hobby Budget tool, Tonight tool, My Plans (browser storage), site search, article save and share, shopping checklist.
 
-### Digital products
-
-Six free printable PDFs (`public/downloads`) and two premium kits prepared in `design/kits` (zips included) with draft usage terms that need owner review. Kits are not for sale today.
-
 ### Pinterest assets
 
-95 pin images in several template styles, a metadata CSV with destinations, boards, keywords, alt text and a `verify_before_posting` column, and a 90-day schedule with a placeholder start date. No Pinterest account exists and nothing has been posted.
+88 pin images in several template styles, a metadata CSV with destinations, boards, keywords, alt text and a `verify_before_posting` column, and a 90-day schedule with a placeholder start date. No Pinterest account exists and nothing has been posted.
 
 ### Operating expenses
 
@@ -118,7 +109,7 @@ Weekly and monthly checklists exist (`docs/buyer/WEEKLY-MAINTENANCE.md`, about 3
 
 ### Included assets
 
-Source code, content and data files, drafts and research briefs, brand files, printable sources and PDFs, premium kit sources and zips, pin images and CSV, tests, CI configuration, all docs. See ASSET-INVENTORY.md.
+Source code, content and data files, drafts and research briefs, brand files, pin images and CSV, tests, CI configuration, all docs. See ASSET-INVENTORY.md.
 
 ### Not included
 
@@ -126,7 +117,7 @@ Seller's affiliate master or portfolio accounts, any tracking IDs, payment accou
 
 ### Growth opportunities (hypothetical, no outcome implied)
 
-Verify and publish the 28 drafts; load verified products; apply for the buyer's own affiliate programs; launch the Pinterest schedule; sell the premium kits through a storefront the buyer chooses; extend the roadmap beyond the 30-article target. Whether any of this earns money is unknown.
+Verify and publish the 28 drafts; load verified products; apply for the buyer's own affiliate programs; launch the Pinterest schedule; extend the roadmap beyond the 30-article target. Whether any of this earns money is unknown.
 
 ### Ownership transfer process
 

@@ -19,9 +19,8 @@ Every account or service the site, its content or its marketing could touch. "Tr
 | Newsletter provider | Optional | disabled in `site.ts` | No list exists | Create own; update privacy first |
 | Image tools and licenses | Assets | `docs/IMAGE-LICENSES.md` (images generated with Lovable's AI image tool, stored in `src/assets`) | License terms transfer is PENDING COWORK to confirm against the tool's terms | Review `docs/buyer/IMAGE-AND-ASSET-RIGHTS.md` (other worker) before relying on it |
 | Fonts | Typography | Google Fonts (OFL per `docs/BRAND-GUIDE.md`) | Open license | Self-host if preferred |
-| Canva or design files | Pin or printable sources | Sources live in `design/` | Not account-based | None |
+| Canva or design files | Pin sources | Sources live in `design/` | Not account-based | None |
 | Password manager | Holds credentials | n/a | n/a | Buyer's own |
-| Payment or storefront | Digital products | none | Not set up | Create own if needed (`docs/buyer/DIGITAL-PRODUCTS.md` when present) |
 | Seller's other affiliate portfolio | Seller's other sites | none in repo | Must stay separate | Seller removes this site from it (`docs/buyer/TRANSFER-CHECKLIST.md`) |
 
 ## Rules

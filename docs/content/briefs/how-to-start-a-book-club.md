@@ -31,7 +31,7 @@ A fair book-choice system, a plan for the month nobody finished, discussion prom
 girls-night-ideas-that-arent-drinks, how-to-host-a-craft-night, things-to-do-after-work-instead-of-scrolling, hobbies-to-try-when-life-feels-like-work-sleep-repeat.
 
 ## Long-term revenue contribution
-Evergreen community-building content with modest, repeat-use product fit and strong newsletter and printable potential.
+Evergreen community-building content with modest, repeat-use product fit and strong newsletter potential.
 
 ## Keyword and autocomplete research
 PENDING COWORK

@@ -53,7 +53,7 @@ The OFL allows commercial use, embedding in images and logo outlines, and redist
 | Asset | Origin | Commercial use | Transferable | Exclusive? | Open risk |
 |---|---|---|---|---|---|
 | 14 site images | AI-generated (Lovable tool), Nov 2026 | Per tool terms: **owner must verify** | Per tool terms: verify | Unlikely to be protected as exclusive | Terms and copyright status unverified; AI disclosure |
-| Pins (95) | Original layouts over the images above and type | Same as images where photos used | Yes (files in repo) | Layouts only | Inherits image risks |
+| Pins (88) | Original layouts over the images above and type | Same as images where photos used | Yes (files in repo) | Layouts only | Inherits image risks |
 | Logos, favicon, templates | Original, built from the existing identity | Yes | Yes (assignment if required) | Not trademarked | No trademark clearance |
 | Fonts | OFL | Yes | Yes with licence files | No (open licence) | None known |
 | Copy | Original | Yes | Yes | Yes (as authored text) | Fact-check before publishing |

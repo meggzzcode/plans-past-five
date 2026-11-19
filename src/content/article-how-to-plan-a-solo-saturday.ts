@@ -14,7 +14,6 @@ export const articleHowToPlanASoloSaturday: Article = {
     "A simple framework (anchor, treat, wander, rest) with three sample Saturdays at different budgets and energy levels, and a fallback plan for when you flake",
   hobbies: ["picnicking", "thrifting", "museum-exploring", "reading", "outdoor-sketching"],
   productIds: ["picnic-blankets", "pocket-notebooks", "market-totes", "portable-watercolor"],
-  printable: "weekend-edit-planner",
   coworkChecks: [
     "Cost labels in the sample Saturdays ('typically under $20', '$30-$60' etc.) are rough ranges and vary by city; confirm hedged wording or remove the figures.",
     "Statement that many museums, libraries and parks have free or low-cost access, and that some museums offer free hours: keep hedged and generic, with no venue named.",
@@ -132,10 +131,6 @@ export const articleHowToPlanASoloSaturday: Article = {
     {
       type: "tryThisWeekend",
       text: "Choose just two of the four, an anchor and a treat. Write them on a sticky note and stick it where Saturday-morning you will find it.",
-    },
-    {
-      type: "p",
-      text: "If it helps to see it on paper, the [Weekend Adventure Planner](/printables/weekend-edit-planner) is a one-page printable with room for plans, people, a creative project and something new.",
     },
     {
       type: "shopHobby",

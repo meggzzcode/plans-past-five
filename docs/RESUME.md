@@ -7,10 +7,10 @@ Last updated: 2026-11-19. Plan: docs/TURNKEY-PLAN.md.
 - Google Sheets tracker: Website Flipping System V1.0 tab and progress matrix started (see tracker Log).
 
 ## Done (wave 1 and parts of 2, 2026-11-19)
-- Planner/quiz, two tools, affiliate registry, trust pages/SEO/CI, hobby enrichment, shoppable components, 26 article drafts with research briefs, printables and kits, buyer/content/commerce docs.
+- Planner/quiz, two tools, affiliate registry, trust pages/SEO/CI, hobby enrichment, shoppable components, 26 article drafts with research briefs, buyer/content/commerce docs.
 
 ## Also done (2026-11-19, later)
-- Pins (95) and brand library; HTML security headers; verification tags; tracking calls; Shop My Hobby wiring; 8 collections; link audit test; listing package, readiness score (59.5/100, listing NOT recommended), buyer presentation (docs/marketplace/presentation) and video script.
+- Pins (88) and brand library; HTML security headers; verification tags; tracking calls; Shop My Hobby wiring; 8 collections; link audit test; listing package, readiness score (59.5/100, listing NOT recommended), buyer presentation (docs/marketplace/presentation) and video script.
 
 ## In progress
 - Nothing on the Claude Code side. Waiting on Cowork and the owner.

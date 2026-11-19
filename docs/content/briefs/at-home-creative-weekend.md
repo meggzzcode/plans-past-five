@@ -27,10 +27,10 @@ Washi tape, stickers, apron, clay sealer.
 A real schedule with rest and a break from the craft zone, supply splits (essentials, own, optional, later), and troubleshooting. Generic results list kits; we show how the kit gets used across two days.
 
 ## Which other articles should link to and from it?
-creative-hobbies-you-can-start-at-home, things-to-do-on-the-weekend, how-to-start-junk-journaling, low-energy-hobbies, how-to-start-air-dry-clay, watercolor-painting-for-beginners, how-to-host-a-craft-night, weekend-edit-planner printable
+creative-hobbies-you-can-start-at-home, things-to-do-on-the-weekend, how-to-start-junk-journaling, low-energy-hobbies, how-to-start-air-dry-clay, watercolor-painting-for-beginners, how-to-host-a-craft-night
 
 ## How does it contribute to long-term revenue?
-One of the strongest commercial pages: a ready supply list for several craft categories, a printable attachment and a kit tie-in. Revenue potential is affiliate on small craft supplies plus premium kit or printable, unquantified until data exists.
+One of the strongest commercial pages: a ready supply list for several craft categories, and a link to the planner tool. Revenue potential is affiliate on small craft supplies, unquantified until data exists.
 
 ## Keyword and autocomplete research
 PENDING COWORK

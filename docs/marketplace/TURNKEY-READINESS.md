@@ -1,17 +1,17 @@
 # Turnkey readiness score
 
-Status: RECOMMENDED method, scored 2026-11-19 by a documentation worker from the repo state at that time. Re-score at listing time (other work was still in progress: security headers, docs, code edits).
+Status: RECOMMENDED method, scored 2026-11-19 by a documentation worker from the repo state at that time, then re-scored 2026-11-19 after the owner removed printables and digital products from the business (see "Re-score after removing digital products" below). Re-score at listing time (other work was still in progress: security headers, docs, code edits).
 
 This score measures how ready the site is to be handed to a buyer. It is separate from any traffic or revenue score. The site is pre-revenue with no traffic history, so there is no business-performance score to give and none is implied.
 
 ## Method
 
-- Each category has a fixed weight (from the owner's plan). Each category has objective completion criteria. A criterion scores 1 (done and evidenced), 0.5 (partly done, reason given) or 0 (not done or not evidenced). The published-articles criterion is scored proportionally (4 of 30) and the pins-on-published-content criterion proportionally (30 of 95).
+- Each category has a fixed weight (from the owner's plan). Each category has objective completion criteria. A criterion scores 1 (done and evidenced), 0.5 (partly done, reason given) or 0 (not done or not evidenced). The published-articles criterion is scored proportionally (4 of 30) and the pins-on-published-content criterion proportionally (23 of 88).
 - Category percentage = points / criteria. Weighted points = percentage x weight. Total = sum of weighted points out of 100.
 - Conservative rules applied: drafts awaiting source verification do not count as published; unverified products do not count; no domain, host, analytics or affiliate account means those criteria score 0; something this worker did not run itself and could not see evidence for scores 0 or 0.5.
 - This is a checklist tally, not an arbitrary score. Change a criterion and the arithmetic changes with it.
 
-Evidence used: commits (`git log --oneline`): 062f8a7 (brand asset library, 95 pins, CSV, schedule, brand and pinterest buyer docs), caed574 (turnkey build-out: planner and quiz rewrite, tools, affiliate registry, shoppable components, trust pages, CI, 28 article drafts, printables and kits, buyer docs), 3bc8274 (turnkey plan, resume file), 99dd329 (lint, saved-items hardening), d488ac8 (README), 379a296 (site build). Tests: `bunx vitest run` gave 9 test files, 206 tests passed. `bunx tsc --noEmit` gave no errors. The working tree had uncommitted edits by another worker (docs/buyer/SECURITY-AND-BACKUPS.md, docs/buyer/SEO-GUIDE.md, src/routes/__root.tsx, src/server.ts, new src/lib/security-headers.ts), so these results may shift.
+Evidence used: commits (`git log --oneline`): 062f8a7 (brand asset library, 88 pins, CSV, schedule, brand and pinterest buyer docs), caed574 (turnkey build-out: planner and quiz rewrite, tools, affiliate registry, shoppable components, trust pages, CI, 28 article drafts, buyer docs), 3bc8274 (turnkey plan, resume file), 99dd329 (lint, saved-items hardening), d488ac8 (README), 379a296 (site build). Tests: `bunx vitest run` gave 9 test files, 206 tests passed. `bunx tsc --noEmit` gave no errors. The working tree had uncommitted edits by another worker (docs/buyer/SECURITY-AND-BACKUPS.md, docs/buyer/SEO-GUIDE.md, src/routes/__root.tsx, src/server.ts, new src/lib/security-headers.ts), so these results may shift.
 
 ## Score summary
 
@@ -20,15 +20,15 @@ Evidence used: commits (`git log --oneline`): 062f8a7 (brand asset library, 95 p
 | Branding and presentation | 10% | 4 of 6 | 66.7% | 6.67 of 10 |
 | Website functionality and UX | 15% | 4.5 of 7 | 64.3% | 9.64 of 15 |
 | Editorial content and research | 15% | 3.13333 of 6 | 52.2% | 7.83 of 15 |
-| Monetization infrastructure | 15% | 4 of 8 | 50.0% | 7.50 of 15 |
+| Monetization infrastructure | 15% | 4 of 7 | 57.1% | 8.57 of 15 |
 | SEO and performance | 10% | 4 of 8 | 50.0% | 5.00 of 10 |
-| Original tools and digital assets | 10% | 7 of 9 | 77.8% | 7.78 of 10 |
-| Marketing package | 10% | 4.31579 of 8 | 53.9% | 5.39 of 10 |
+| Original tools | 10% | 6 of 6 | 100.0% | 10.00 of 10 |
+| Marketing package | 10% | 4.26136 of 8 | 53.3% | 5.33 of 10 |
 | Security and maintenance | 5% | 4.5 of 8 | 56.2% | 2.81 of 5 |
 | Documentation and transferability | 10% | 5.5 of 8 | 68.8% | 6.88 of 10 |
-| **Total** | 100% | | | **59.50 of 100** |
+| **Total** | 100% | | | **62.73 of 100** |
 
-**Computed readiness total: 59.5 out of 100 (rounded).** That is a tally of work done against objective criteria. It does not mean the site is 60 percent ready to sell: the mandatory sale gates below are pass or fail and are not averaged into this number.
+**Computed readiness total: 62.7 out of 100 (rounded).** That is a tally of work done against objective criteria. It does not mean the site is 63 percent ready to sell: the mandatory sale gates below are pass or fail and are not averaged into this number.
 
 ## Criteria and evidence by category
 
@@ -66,7 +66,7 @@ Evidence used: commits (`git log --oneline`): 062f8a7 (brand asset library, 95 p
 | Trust pages built (editorial policy, methodology, corrections) | 1 |
 | Cowork keyword and competitor research completed (C1, C2 pending) | 0 |
 
-### Monetization infrastructure (15%): 7.50 of 15
+### Monetization infrastructure (15%): 8.57 of 15
 
 | Criterion | Score |
 |---|---|
@@ -77,7 +77,6 @@ Evidence used: commits (`git log --oneline`): 062f8a7 (brand asset library, 95 p
 | Verified product catalog loaded (0 products; catalog empty) | 0 |
 | Approved and tested affiliate account (none exists) | 0 |
 | Affiliate program and Amazon rules research (C5, C6 pending) | 0 |
-| Storefront for premium kits (none; kits are prepared, not for sale) | 0 |
 
 ### SEO and performance (10%): 5.00 of 10
 
@@ -92,7 +91,7 @@ Evidence used: commits (`git log --oneline`): 062f8a7 (brand asset library, 95 p
 | Lighthouse or PageSpeed lab run on production (C9 pending) | 0 |
 | Domain connected and site.url real | 0 |
 
-### Original tools and digital assets (10%): 7.78 of 10
+### Original tools (10%): 10.00 of 10
 
 | Criterion | Score |
 |---|---|
@@ -100,21 +99,20 @@ Evidence used: commits (`git log --oneline`): 062f8a7 (brand asset library, 95 p
 | Make Some Plans planner | 1 |
 | Hobby budget tool | 1 |
 | Tonight tool | 1 |
-| Six free printable PDFs with previews (public/downloads) | 1 |
-| Two premium kits prepared (18 PDFs plus two zips in design/kits/*/dist) | 1 |
-| Font and artwork licence records (docs/IMAGE-LICENSES.md) | 1 |
-| Kit usage terms reviewed by owner or lawyer (marked needs-owner-review) | 0 |
-| Kits actually listed for sale | 0 |
+| Shopping checklist (src/lib/shoplist.ts) | 1 |
+| Image and font licence records (docs/IMAGE-LICENSES.md) | 1 |
 
-### Marketing package (10%): 5.39 of 10
+Removed criteria: the printable PDFs, premium kits, kit usage terms and kits-for-sale criteria no longer apply because the business has no digital products (owner decision, 2026-11-19). The category label was "Original tools and digital assets"; it is now "Original tools". The 9-category weighting is unchanged (10% for this category). The criteria here only test that the tools are built; whether they work on a live site is scored under Website functionality and UX, so 100% here is not a claim that the tools are proven.
+
+### Marketing package (10%): 5.33 of 10
 
 | Criterion | Score |
 |---|---|
-| 95 pin images rendered (public/pins) | 1 |
+| 88 pin images rendered (public/pins) | 1 |
 | Pins CSV (docs/pinterest-pins.csv, 95 rows) | 1 |
 | 90-day Pinterest schedule (docs/PINTEREST-90-DAY-SCHEDULE.md) | 1 |
 | Pinterest and distribution strategy docs | 1 |
-| Pins pointing at published content (30 of 95; 65 are hold-until-published) | 0.32 |
+| Pins pointing at published content (23 of 88; 65 are hold-until-published) | 0.26 |
 | Pinterest account created and website claimed (none) | 0 |
 | Buyer presentation (not started per RESUME.md) | 0 |
 | CSV verify_before_posting items cleared | 0 |
@@ -136,7 +134,7 @@ Evidence used: commits (`git log --oneline`): 062f8a7 (brand asset library, 95 p
 
 | Criterion | Score |
 |---|---|
-| Buyer doc set (26 files in docs/buyer) | 1 |
+| Buyer doc set (25 files in docs/buyer) | 1 |
 | 20-step transfer checklist | 1 |
 | Account dependency doc | 1 |
 | Operating-cost doc that keeps unknowns UNCONFIRMED | 1 |
@@ -144,6 +142,15 @@ Evidence used: commits (`git log --oneline`): 062f8a7 (brand asset library, 95 p
 | Marketplace package (this folder; drafts, C7 figures pending) | 0.5 |
 | Buyer presentation (not started) | 0 |
 | Legal pages reviewed by a professional (starter text only) | 0 |
+
+## Re-score after removing digital products (2026-11-19)
+
+The owner decided the business has no printables or digital products. Two categories contained such criteria; nothing else was changed.
+
+- Monetization infrastructure: the criterion "Storefront for premium kits" (scored 0) was removed. 4 of 8 becomes 4 of 7 = 57.14%; 57.14% x 15 = 8.57 (was 7.50).
+- Original tools: the criteria for six printable PDFs (1), two premium kits (1), kit usage terms (0) and kits listed for sale (0) were removed; a shopping checklist criterion (1, src/lib/shoplist.ts exists) was added because the shopping list is part of the original tools. Earlier 7 of 9 = 77.8%; now 6 of 6 = 100%; 100% x 10 = 10.00 (was 7.78).
+- Total, exact values: 6.6667 + 9.6429 + 7.8333 + 8.5714 + 5.0000 + 10.0000 + 5.3267 + 2.8125 + 6.8750 = 62.7285, shown as 62.73 (the rounded rows above add to 62.72 because of rounding). Previous total: 59.50.
+- The total rose partly because the removed criteria were mostly unmet or dropped from the denominator, not because the site became more ready. The mandatory gates below still decide whether a listing is recommended.
 
 ## Mandatory sale gates
 
@@ -164,8 +171,8 @@ Status words: PASS (evidenced), FAIL (evidence shows it is not met), BLOCKED (ca
 | 9 | Important SEO infrastructure operational | BLOCKED | Sitemap, robots, metadata exist in the repo, but nothing is live, no Search Console or Bing property, no domain. |
 | 10 | Affiliate configuration tested | BLOCKED | Registry is unit-tested in code. No approved account exists, so a real tracked link has never been tested. Buyer creates their own account. |
 | 11 | Ordinary fallback links functional | PASS (code level) | src/config/affiliate.ts resolution order and tests (src/test/affiliate.test.ts, shop.test.tsx). Live-site check still due (C9). |
-| 12 | Original digital products completed | PASS | Six free PDFs in public/downloads; two premium kits (9 PDFs and a zip each) in design/kits/*/dist. Kit usage terms still need owner review; the kits are not for sale. |
-| 13 | Buyer documentation completed | FAIL | 26 buyer docs exist, but the buyer presentation is not started (docs/RESUME.md) and the marketplace documents here depend on C7. |
+| 12 | Original digital products completed | NOT APPLICABLE | The business no longer includes digital products (printables and premium kits were removed by owner decision, 2026-11-19), so this gate cannot be met or failed. It is excluded from the pass count and the applicable-gate total. |
+| 13 | Buyer documentation completed | FAIL | 25 buyer docs exist, but the buyer presentation is not started (docs/RESUME.md) and the marketplace documents here depend on C7. |
 | 14 | Operating costs documented | NEEDS OWNER | docs/buyer/OPERATING-COSTS.md documents every line as UNCONFIRMED. Owner must confirm any real cash spent before costs are stated. |
 | 15 | Business dependencies documented | PASS | docs/buyer/ACCOUNT-DEPENDENCIES.md exists. |
 | 16 | Technical tests passed | PASS | 206 of 206 tests, 11 files; tsc clean (2026-11-19). Re-run at listing time. |
@@ -176,11 +183,11 @@ Status words: PASS (evidenced), FAIL (evidence shows it is not met), BLOCKED (ca
 | 21 | Pre-revenue status disclosed | PASS | Stated in LISTING-DRAFT.md, BUYER-FAQ.md and docs/buyer/BUSINESS-OVERVIEW.md. Draft only until the owner approves a listing. |
 | 22 | Buyer monetization activation requirements disclosed | PASS | docs/buyer/AFFILIATE-ACTIVATION.md and LISTING-DRAFT.md. |
 
-Count: PASS 8 (gates 11, 12, 15, 16, 17 local, 18, 21, 22), FAIL 2 (4, 13), BLOCKED 9 (1, 2, 3, 6, 7, 8, 9, 10, 20), NEEDS OWNER 3 (5, 14, 19). Total 22.
+Count: PASS 7 (gates 11, 15, 16, 17 local, 18, 21, 22), FAIL 2 (4, 13), BLOCKED 9 (1, 2, 3, 6, 7, 8, 9, 10, 20), NEEDS OWNER 3 (5, 14, 19), NOT APPLICABLE 1 (12). Total 22 gates, 21 applicable.
 
 ## Conclusion
 
-**Listing is not recommended now.** 15 of 22 mandatory gates are not PASS. Nothing should be published, listed or offered without the owner's explicit approval in any case.
+**Listing is not recommended now.** 14 of the 21 applicable mandatory gates are not PASS (gate 12 is not applicable). Nothing should be published, listed or offered without the owner's explicit approval in any case.
 
 Outstanding, in dependency order:
 1. NEEDS OWNER: choose and connect a domain and a host (confirm domain ownership), then deploy. This unblocks gates 1, 2, 3, 9 and the C8 and C9 Cowork tasks.

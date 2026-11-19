@@ -66,7 +66,7 @@ extras.forEach((e, ei) => {
 });
 
 // ---------------------------------------------------------------- 90-day schedule
-// Month 1 (days 1-30) uses ONLY pins whose destination is live today (published articles, quiz, planner, printables, shop).
+// Month 1 (days 1-30) uses ONLY pins whose destination is live today (published articles, quiz, planner, shop).
 // Days 31-90 carry the pins for pages that are still drafts or not yet built; those dates are EARLIEST dates and move
 // back if the page is not published yet. Within each phase the 1st / 2nd / 3rd creative approach per destination go out in
 // rounds, so repeats of one destination are spread apart and never posted back to back.

@@ -14,7 +14,6 @@ export const articleHowToStartEmbroidery: Article = {
     "A stitch-first beginner path: learn a handful of stitches on scrap fabric, then finish a single small hoop, with fixes for the most common frustrations",
   hobbies: ["embroidery", "crochet", "craft-nights"],
   productIds: ["embroidery-kits"],
-  printable: "hobby-era-tracker",
   sources: [],
   coworkChecks: [
     "Embroidery floss is commonly sold as six-strand cotton thread that can be separated; using two to three strands is typical for beginners (claimed general guidance)",
@@ -176,7 +175,7 @@ export const articleHowToStartEmbroidery: Article = {
     },
     {
       type: "p",
-      text: "Like using your hands but fancy a different craft? [How to Start Crocheting](/journal/how-to-start-crocheting) is the natural next door. The free [Find Your Hobby Workbook](/printables/hobby-era-tracker) lists both.",
+      text: "Like using your hands but fancy a different craft? [How to Start Crocheting](/journal/how-to-start-crocheting) is the natural next door.",
     },
     { type: "ifYouLoved", hobbies: ["crochet", "knitting", "craft-nights"] },
   ],

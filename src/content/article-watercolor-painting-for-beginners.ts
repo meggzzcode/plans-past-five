@@ -15,7 +15,6 @@ export const articleWatercolorPaintingForBeginners: Article = {
     "A calm, practice-first guide: buy little, learn water control before drawing skill, and finish three small projects that look good without being good at drawing",
   hobbies: ["watercolor-painting", "outdoor-sketching"],
   productIds: ["watercolor-sets", "watercolor-sketchbooks", "portable-watercolor"],
-  printable: "hobby-era-tracker",
   sources: [],
   coworkChecks: [
     "Watercolor paper weight guidance: 300 gsm (140 lb) paper buckles less than thin sketch paper (claimed general guidance)",
@@ -177,7 +176,7 @@ export const articleWatercolorPaintingForBeginners: Article = {
     },
     {
       type: "p",
-      text: "Keep a record of what you have tried in the free [Find Your Hobby Workbook](/printables/hobby-era-tracker). If you would like a small ready-made box instead of loose pieces, [Creative Hobby Starter Kits That Are Actually Worth Considering](/journal/creative-hobby-starter-kits-worth-considering) explains what to look for.",
+      text: "If you would like a small ready-made box instead of loose pieces, [Creative Hobby Starter Kits That Are Actually Worth Considering](/journal/creative-hobby-starter-kits-worth-considering) explains what to look for.",
     },
     { type: "ifYouLoved", hobbies: ["outdoor-sketching", "collage-art", "calligraphy"] },
   ],

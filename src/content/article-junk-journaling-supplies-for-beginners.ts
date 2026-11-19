@@ -15,7 +15,6 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
     "A product-focused companion to the starter guide: sort supplies into essentials, things you already own, optional extras and later upgrades, so beginners spend only where it changes the result",
   hobbies: ["junk-journaling", "scrapbooking", "collage-art"],
   productIds: ["junk-journals", "washi-tape", "sticker-sets", "pocket-notebooks"],
-  printable: "hobby-era-tracker",
   sources: [],
   coworkChecks: [
     "Typical beginner starter spend for junk journaling (claimed: roughly $0 to $25 for a first page, $25 to $50 for a comfortable kit)",
@@ -203,7 +202,7 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
     },
     {
       type: "p",
-      text: "To keep track of what you try next, the free [Find Your Hobby Workbook](/printables/hobby-era-tracker) is sized to glue into a journal. Weighing up bundles instead? See [Creative Hobby Starter Kits That Are Actually Worth Considering](/journal/creative-hobby-starter-kits-worth-considering).",
+      text: "Weighing up bundles? See [Creative Hobby Starter Kits That Are Actually Worth Considering](/journal/creative-hobby-starter-kits-worth-considering).",
     },
     { type: "ifYouLoved", hobbies: ["scrapbooking", "collage-art", "watercolor-painting"] },
   ],

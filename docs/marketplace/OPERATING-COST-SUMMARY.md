@@ -34,12 +34,11 @@ Cash and time are tracked separately and never added together.
 
 ## 3. Optional buyer expenses
 
-Lovable subscription (only if the buyer keeps using it), image tools, design tools such as Canva (pins are generated from `design/pins` without an account), legal review of Privacy and Terms, business entity and accounting (jurisdiction dependent), storefront and payment processing fees if kits are ever sold (percentage and fixed fees; PENDING COWORK), stock imagery.
+Lovable subscription (only if the buyer keeps using it), image tools, design tools such as Canva (pins are generated from `design/pins` without an account), legal review of Privacy and Terms, business entity and accounting (jurisdiction dependent), stock imagery.
 
 ## 4. Usage-based risks
 
 - Hosting request, bandwidth or compute limits if traffic grows; free tiers may stop being enough.
-- Storefront per-order fees and payout or tax handling if kits are sold.
 - Image generation credits if new images are made.
 - Any tool that bills per seat or per credit.
 

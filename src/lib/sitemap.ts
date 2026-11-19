@@ -2,7 +2,6 @@ import { site } from "@/config/site";
 import { articles, articlesForHobby } from "@/content";
 import { categories } from "@/data/categories";
 import { collections } from "@/data/products";
-import { printables } from "@/data/printables";
 import { hobbies } from "@/data/hobbies";
 
 /**
@@ -18,7 +17,6 @@ export function sitemapPaths(): string[] {
     "/shop",
     "/hobby-finder",
     "/make-plans",
-    "/printables",
     "/tools/hobby-budget",
     "/tools/tonight",
     "/about",
@@ -32,7 +30,6 @@ export function sitemapPaths(): string[] {
     ...categories.map((c) => `/${c.slug}`),
     ...articles.map((a) => `/journal/${a.slug}`),
     ...collections.map((c) => `/shop/${c.slug}`),
-    ...printables.map((p) => `/printables/${p.slug}`),
     ...hobbies.filter((h) => articlesForHobby(h.slug).length > 0).map((h) => `/hobbies/${h.slug}`),
   ];
 }

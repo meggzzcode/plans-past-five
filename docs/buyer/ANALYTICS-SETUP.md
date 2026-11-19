@@ -19,9 +19,9 @@ Important finding: these four fields are **placeholders**. At the time of checki
 
 `track(event, params)` is a no-op unless `site.integrations.googleAnalyticsId` is set AND a `gtag` function already exists on the page. It never loads a script. It sends only allow-listed keys with short primitive values (and rejects strings containing "@").
 
-Event vocabulary (`TRACK_EVENTS`): `product_impression`, `product_click`, `retailer_outbound_click`, `affiliate_outbound_click`, `shop_article_interaction`, `kit_interaction`, `shoplist_save`, `quiz_complete`, `planner_use`, `printable_download`.
+Event vocabulary (`TRACK_EVENTS`): `product_impression`, `product_click`, `retailer_outbound_click`, `affiliate_outbound_click`, `shop_article_interaction`, `kit_interaction`, `shoplist_save`, `quiz_complete`, `planner_use`.
 
-Allowed parameters (`TRACK_PARAM_KEYS`): `product_id`, `hobby`, `article`, `collection`, `kit`, `slot`, `retailer`, `link_kind`, `role`, `placement`, `action`, `count`, `theme`, `printable_id`. Ids and slugs only; never user-entered text.
+Allowed parameters (`TRACK_PARAM_KEYS`): `product_id`, `hobby`, `article`, `collection`, `kit`, `slot`, `retailer`, `link_kind`, `role`, `placement`, `action`, `count`, `theme`. Ids and slugs only; never user-entered text.
 
 Not every event is wired to every component; confirm usage with `grep -rn "track(" src`.
 
@@ -41,4 +41,4 @@ Do not send names, emails or free-text queries to analytics. The helper enforces
 
 ## What to look at
 
-Search Console: indexed pages, queries, errors. Analytics: which articles lead to checklist saves, product clicks and printable downloads. No benchmarks are given because none were measured.
+Search Console: indexed pages, queries, errors. Analytics: which articles lead to checklist saves, and product clicks. No benchmarks are given because none were measured.

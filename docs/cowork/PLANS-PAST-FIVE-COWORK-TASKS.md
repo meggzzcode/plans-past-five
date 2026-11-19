@@ -47,7 +47,7 @@ Output docs/marketplace/FLIPPA-RESEARCH.md (and notes on other marketplaces). Re
 Search Console domain property, sitemap submission, Bing import, GA4 property with custom dimensions and key events (event names are in src/lib/track.ts), Pinterest Business account and website claim. Follow docs/buyer/ANALYTICS-SETUP.md and docs/buyer/PINTEREST-SETUP.md. Record IDs in src/config/site.ts only by telling Claude Code. Blocked until the owner chooses a host and connects the domain.
 
 ## C9 Production QA after deployment
-On the live URL: open every page on desktop and a real phone-width browser, run the user journeys (quiz, planner, tools, shop list, printables), run PageSpeed Insights or Lighthouse (label them lab data, not real-user data), capture screenshots for the buyer presentation, and record a short walkthrough video if the tool supports it. Report defects as a list; do not edit code.
+On the live URL: open every page on desktop and a real phone-width browser, run the user journeys (quiz, planner, tools, shop list), run PageSpeed Insights or Lighthouse (label them lab data, not real-user data), capture screenshots for the buyer presentation, and record a short walkthrough video if the tool supports it. Report defects as a list; do not edit code.
 
 ## C10 Image and asset rights
 List any image or product photo you propose to use and the exact terms that allow us to publish and transfer it. Default is photo-less product cards. Record in docs/IMAGE-LICENSES.md style table in docs/commerce/image-rights-notes.md.

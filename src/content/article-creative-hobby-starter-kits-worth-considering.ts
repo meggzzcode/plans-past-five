@@ -28,7 +28,6 @@ export const articleCreativeHobbyStarterKitsWorthConsidering: Article = {
     "junk-journals",
     "group-painting-kits",
   ],
-  printable: "hobby-era-tracker",
   sources: [],
   coworkChecks: [
     "Kits commonly bundle a smaller quantity of materials than the same items bought loose, with a convenience premium (claimed general market observation)",

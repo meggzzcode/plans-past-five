@@ -7,7 +7,7 @@
 - Build: `bun install --frozen-lockfile`, then `bun run build` (`vite build`). CI runs the same steps (`.github/workflows/ci.yml`).
 - Output: the build writes `.output/`. Observed in `.output/nitro.json` and `.output/server/wrangler.json`: Nitro preset `cloudflare-module`, server entry `server/index.mjs`, static files in `public`, compatibility flag `nodejs_compat`, and a static-assets binding. This was also seen by another worker (`docs/buyer/SEO-GUIDE.md`). So the site is **server-rendered**: there is no pre-rendered `index.html` in `.output/public`. A host must run the Worker (or an equivalent server entry), or you must change the Nitro preset.
 - Runtime needs: HTTP request handling by the server entry (`src/server.ts` wraps the SSR entry and renders an error page on failures). No database, no environment variables, no secrets. The repo uses `VITE_*` injection from its config but none is required for the site to work (verify with a clean build in your environment).
-- Static assets: `public/` (robots.txt, `_headers`, downloads, pins, favicons).
+- Static assets: `public/` (robots.txt, `_headers`, pins, favicons).
 - Headers: `public/_headers` sets `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy` for hosts that read it; server-rendered HTML needs the same headers set in server code or host config (`docs/buyer/SECURITY-AND-BACKUPS.md`).
 - HTTPS and a domain: required before `site.url`, canonicals and the sitemap are correct (`docs/buyer/SEO-GUIDE.md`).
 

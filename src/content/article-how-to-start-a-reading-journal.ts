@@ -15,7 +15,6 @@ export const articleHowToStartAReadingJournal: Article = {
     "A low-pressure reading journal: a tiny entry template, three layouts to choose from, honest advice about what to buy and what to skip, and a way to abandon the habit gracefully and restart",
   hobbies: ["reading", "book-clubs", "creative-writing"],
   productIds: ["reading-journals", "pocket-notebooks", "book-lights", "magnetic-bookmarks"],
-  printable: "hobby-era-tracker",
   sources: [],
   coworkChecks: [
     "Typical beginner starter spend for a reading journal (claimed: roughly $0 to $20, from an existing notebook to a purpose-made journal with pen)",
@@ -179,7 +178,7 @@ export const articleHowToStartAReadingJournal: Article = {
     },
     {
       type: "p",
-      text: "Want company for the books themselves? [How to Start a Book Club](/journal/how-to-start-a-book-club) pairs well with a journal full of things to say. A reading record also fits in the free [Find Your Hobby Workbook](/printables/hobby-era-tracker). For a quiet setting, see [How to Take Yourself on a Solo Coffee Shop Date](/journal/how-to-take-yourself-on-a-solo-coffee-shop-date).",
+      text: "Want company for the books themselves? [How to Start a Book Club](/journal/how-to-start-a-book-club) pairs well with a journal full of things to say. For a quiet setting, see [How to Take Yourself on a Solo Coffee Shop Date](/journal/how-to-take-yourself-on-a-solo-coffee-shop-date).",
     },
     { type: "ifYouLoved", hobbies: ["book-clubs", "creative-writing", "junk-journaling"] },
   ],

@@ -36,7 +36,6 @@ export const articleAfterWork: Article = {
     "board-games",
     "air-dry-clay",
   ],
-  printable: "out-of-office-bucket-list",
   body: [
     {
       type: "p",
@@ -307,10 +306,6 @@ export const articleAfterWork: Article = {
     {
       type: "makePlan",
       text: "Want us to pick for you? Make Some Plans builds a realistic after-work plan from your time, energy and budget.",
-    },
-    {
-      type: "p",
-      text: "Want fifty more ideas? Print the [30-Day Hobby Challenge](/printables/out-of-office-bucket-list) and stick it on the fridge. Tick one off this week.",
     },
     { type: "ifYouLoved", hobbies: ["air-dry-clay", "reading", "craft-nights"] },
   ],

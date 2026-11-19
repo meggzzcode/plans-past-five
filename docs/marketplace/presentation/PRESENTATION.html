@@ -5,11 +5,17 @@
 <title>Plans Past Five: Buyer Presentation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-@font-face { font-family: "Fraunces"; font-style: normal; font-weight: 100 900; src: url("../../../design/printables/fonts/fraunces-normal.woff2") format("woff2"); }
-@font-face { font-family: "Fraunces"; font-style: italic; font-weight: 100 900; src: url("../../../design/printables/fonts/fraunces-italic.woff2") format("woff2"); }
-@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 100 1000; src: url("../../../design/printables/fonts/dm-sans.woff2") format("woff2"); }
-@font-face { font-family: "Caveat"; font-weight: 400 700; src: url("../../../design/printables/fonts/caveat.woff2") format("woff2"); }
-
+@font-face { font-family: "Fraunces"; font-style: normal; font-weight: 500; src: url("../../../design/brand/fonts/Fraunces-500.ttf") format("truetype"); }
+@font-face { font-family: "Fraunces"; font-style: normal; font-weight: 600; src: url("../../../design/brand/fonts/Fraunces-600.ttf") format("truetype"); }
+@font-face { font-family: "Fraunces"; font-style: normal; font-weight: 700; src: url("../../../design/brand/fonts/Fraunces-700.ttf") format("truetype"); }
+@font-face { font-family: "Fraunces"; font-style: italic; font-weight: 500; src: url("../../../design/brand/fonts/Fraunces-500-italic.ttf") format("truetype"); }
+@font-face { font-family: "Fraunces"; font-style: italic; font-weight: 600; src: url("../../../design/brand/fonts/Fraunces-600-italic.ttf") format("truetype"); }
+@font-face { font-family: "Fraunces"; font-style: italic; font-weight: 700; src: url("../../../design/brand/fonts/Fraunces-700-italic.ttf") format("truetype"); }
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 400; src: url("../../../design/brand/fonts/DMSans-400.ttf") format("truetype"); }
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 500; src: url("../../../design/brand/fonts/DMSans-500.ttf") format("truetype"); }
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 700; src: url("../../../design/brand/fonts/DMSans-700.ttf") format("truetype"); }
+@font-face { font-family: "Caveat"; font-weight: 500; src: url("../../../design/brand/fonts/Caveat-500.ttf") format("truetype"); }
+@font-face { font-family: "Caveat"; font-weight: 700; src: url("../../../design/brand/fonts/Caveat-700.ttf") format("truetype"); }
 :root{
   --cherry:#B83F43; --cream:#FFF8EF; --butter:#F8E5A3; --strawberry:#F4D4D7;
   --garden:#394D3C; --espresso:#48362E; --matcha:#B5C19C; --sunday:#C9DDEC;
@@ -102,7 +108,7 @@ code{ font-family:ui-monospace,Menlo,monospace; font-size:11px; background:rgba(
     </div>
     <div class="col n">
       <p class="hand" style="font-size:30px">You are buying:</p>
-      <p style="font-size:15px">a built site, a brand system, content, tools, downloads and a plan, with every claim labeled for what it is.</p>
+      <p style="font-size:15px">a built site, a brand system, content, tools and a plan, with every claim labeled for what it is.</p>
       <p class="hand" style="font-size:30px;margin-top:10px">You are not buying:</p>
       <p style="font-size:15px">an earning business, a store, an audience or any promise of results.</p>
     </div>
@@ -181,7 +187,6 @@ code{ font-family:ui-monospace,Menlo,monospace; font-size:11px; background:rgba(
         <li><b>Hobby directory:</b> 36 hobbies with filters and profiles</li>
         <li><b>Four interactive tools</b> and a saved-items page</li>
         <li><b>Off Duty Essentials:</b> 6 shopping collections</li>
-        <li><b>Six free printables</b> as real PDFs</li>
         <li><b>Trust pages:</b> editorial policy, methodology, corrections, affiliate disclosure, privacy, terms</li>
       </ul>
       <div class="card" style="margin-top:auto"><b>Stack:</b> TanStack Start (React 19, TypeScript, Tailwind v4), built with Vite and Bun. Frontend only: no database, accounts, payments or server secrets. Saved items live in the visitor's browser.</div>
@@ -301,48 +306,10 @@ code{ font-family:ui-monospace,Menlo,monospace; font-size:11px; background:rgba(
   <div class="foot"><span>Source: src/config/affiliate.ts, src/data/affiliate-programs.ts</span><span>Affiliate</span></div>
 </section>
 
-<!-- 10 DOWNLOADS -->
-<section class="slide bg-straw">
-  <div class="gingham"></div>
-  <p class="kicker">10 · Downloadable resources</p>
-  <h2>Six free printables, <em>real PDFs.</em></h2>
-  <div class="body">
-    <div class="col w2" style="gap:8px">
-      <div class="grid3" style="grid-template-columns:repeat(3,1fr)">
-        <div><img class="shot" style="width:100%;aspect-ratio:8.5/11;object-fit:cover;object-position:top" src="../../../public/downloads/hobby-era-tracker-preview.png" alt=""><p class="cap">Find Your Hobby Workbook · 8 pp</p></div>
-        <div><img class="shot" style="width:100%;aspect-ratio:8.5/11;object-fit:cover;object-position:top" src="../../../public/downloads/weekend-edit-planner-preview.png" alt=""><p class="cap">Weekend Adventure Planner · 5 pp</p></div>
-        <div><img class="shot" style="width:100%;aspect-ratio:8.5/11;object-fit:cover;object-position:top" src="../../../public/downloads/girls-night-hosting-planner-preview.png" alt=""><p class="cap">Girls' Night Hosting Planner · 6 pp</p></div>
-      </div>
-      <p class="note">Also: 30-Day Hobby Challenge (6 pp), Solo Date Idea Cards (6 pp), Creative Hobby Starter Checklist (5 pp).</p>
-    </div>
-    <div class="col">
-      <div class="shot" style="flex:1"><img src="screenshots/printables-index-desktop.jpg" alt="Printables page"></div><p class="cap">The /printables page.</p>
-      <ul style="margin-top:6px"><li>US Letter, fonts embedded</li><li>No email gate, no data collected</li><li>Original artwork only; fonts under OFL</li></ul>
-    </div>
-  </div>
-  <div class="foot"><span>Source: public/downloads, src/data/printables.ts, docs/IMAGE-LICENSES.md</span><span>Downloads</span></div>
-</section>
-
-<!-- 11 PREMIUM -->
-<section class="slide bg-butter">
-  <div class="gingham"></div>
-  <p class="kicker">11 · Premium digital products</p>
-  <h2>Two kits, <em>prepared. Not on sale.</em></h2>
-  <div class="body">
-    <div class="col"><div class="shot" style="flex:1;background:var(--strawberry)"><img src="../../../design/kits/hobby-era-kit/previews/cover.png" alt="Hobby Era Kit cover" style="object-fit:contain;object-position:center"></div><p class="cap"><b>Hobby Era Kit:</b> 9 PDFs, 75 pages</p></div>
-    <div class="col"><div class="shot" style="flex:1;background:var(--strawberry)"><img src="../../../design/kits/weekend-edit-kit/previews/cover.png" alt="Weekend Edit kit cover" style="object-fit:contain;object-position:center"></div><p class="cap"><b>Weekend Edit and Girls' Night Kit:</b> 9 PDFs, 55 pages</p></div>
-    <div class="col">
-      <div class="card" style="margin-bottom:10px"><span class="tag red">Prepared, not for sale</span><p style="margin:8px 0 0">No checkout, no payment provider, no price set, and nothing links to the kits from the public site.</p></div>
-      <ul><li>Editable HTML sources, built PDFs and a zip per kit</li><li>Cover and sample-page previews for listings</li><li>Customer usage terms are a draft needing owner review</li><li>A buyer must choose a storefront and handle tax</li></ul>
-    </div>
-  </div>
-  <div class="foot"><span>Source: docs/buyer/DIGITAL-PRODUCTS.md, design/kits</span><span>Premium products</span></div>
-</section>
-
-<!-- 12 PINTEREST -->
+<!-- 10 PINTEREST -->
 <section class="slide bg-garden">
-  <p class="kicker">12 · Pinterest marketing assets</p>
-  <h2>95 pin images, <em>ready to schedule.</em></h2>
+  <p class="kicker">10 · Pinterest marketing assets</p>
+  <h2>88 pin images, <em>ready to schedule.</em></h2>
   <div class="body" style="flex-direction:column;gap:12px">
     <div class="pins">
       <img src="../../../public/pins/04-junk-journal-1-cover.jpg" alt="Pin">
@@ -359,10 +326,10 @@ code{ font-family:ui-monospace,Menlo,monospace; font-size:11px; background:rgba(
   <div class="foot"><span>Source: public/pins, docs/pinterest-pins.csv, docs/PINTEREST-90-DAY-SCHEDULE.md</span><span>Pinterest</span></div>
 </section>
 
-<!-- 13 SEO -->
+<!-- 11 SEO -->
 <section class="slide">
   <div class="gingham"></div>
-  <p class="kicker">13 · SEO infrastructure</p>
+  <p class="kicker">11 · SEO infrastructure</p>
   <h2>Technical groundwork, <em>no rankings claimed.</em></h2>
   <div class="body">
     <div class="col">
@@ -382,10 +349,10 @@ code{ font-family:ui-monospace,Menlo,monospace; font-size:11px; background:rgba(
   <div class="foot"><span>Source: docs/buyer/SEO-GUIDE.md, src/lib/seo.ts, sitemap.ts</span><span>SEO</span></div>
 </section>
 
-<!-- 14 COSTS -->
+<!-- 12 COSTS -->
 <section class="slide bg-sunday">
   <div class="gingham"></div>
-  <p class="kicker">14 · Operating costs</p>
+  <p class="kicker">12 · Operating costs</p>
   <h2>What a buyer would price out. <em>Nothing is confirmed.</em></h2>
   <div class="body" style="flex-direction:column;gap:8px">
     <table>
@@ -395,8 +362,7 @@ code{ font-family:ui-monospace,Menlo,monospace; font-size:11px; background:rgba(
       <tr><td>Email mailbox</td><td>Recommended</td><td><span class="tag grey">UNCONFIRMED</span></td></tr>
       <tr><td>Analytics, newsletter, Pinterest, affiliate accounts</td><td>Optional</td><td><span class="tag grey">UNCONFIRMED</span> typically free; verify promo vs renewal pricing</td></tr>
       <tr><td>Legal review, entity, tax</td><td>Recommended / depends</td><td><span class="tag grey">UNCONFIRMED</span> not covered here</td></tr>
-      <tr><td>Payment processor (only if selling kits)</td><td>Optional</td><td><span class="tag grey">UNCONFIRMED</span></td></tr>
-      <tr><td>Dependencies</td><td>Yes</td><td><span class="tag">CONFIRMED</span> open-source packages, none paid found</td></tr>
+            <tr><td>Dependencies</td><td>Yes</td><td><span class="tag">CONFIRMED</span> open-source packages, none paid found</td></tr>
       <tr><td>Database, auth, AI APIs, payment backend</td><td>No</td><td><span class="tag">NOT NEEDED</span> frontend only by design</td></tr>
     </table>
     <p class="note">The repo holds no invoices or billing details, so no prices appear here. Your own time is the main cost: content verification and product research.</p>
@@ -404,17 +370,16 @@ code{ font-family:ui-monospace,Menlo,monospace; font-size:11px; background:rgba(
   <div class="foot"><span>Source: docs/buyer/OPERATING-COSTS.md</span><span>Costs</span></div>
 </section>
 
-<!-- 15 GROWTH -->
+<!-- 13 GROWTH -->
 <section class="slide bg-matcha">
   <div class="gingham"></div>
-  <p class="kicker">15 · Growth opportunities</p>
+  <p class="kicker">13 · Growth opportunities</p>
   <h2>Hypotheses to test, <em>not forecasts.</em></h2>
   <div class="body">
     <div class="col">
       <div class="card" style="margin-bottom:10px"><span class="tag red">Hypothetical</span><p style="margin:6px 0 0">None of these has produced revenue. No earnings, traffic or conversion figures exist.</p></div>
       <ul>
         <li><b>Affiliate links</b> on buying guides and kit lists, once you hold approved accounts of your own</li>
-        <li><b>Digital products:</b> the two prepared kits, if you choose a storefront</li>
         <li><b>Pinterest and search</b> as discovery channels, using the prepared pins and verified articles</li>
         <li><b>Publishing the 28 drafts</b> after source verification</li>
         <li><b>Later, possibly:</b> email list, display ads or sponsorships (not planned or researched)</li>
@@ -435,10 +400,10 @@ code{ font-family:ui-monospace,Menlo,monospace; font-size:11px; background:rgba(
   <div class="foot"><span>Source: docs/buyer/BUSINESS-OVERVIEW.md, MARKETING-ROADMAP.md</span><span>Growth</span></div>
 </section>
 
-<!-- 16 TRANSFERABLE -->
+<!-- 14 TRANSFERABLE -->
 <section class="slide bg-butter">
   <div class="gingham"></div>
-  <p class="kicker">16 · Transferable assets</p>
+  <p class="kicker">14 · Transferable assets</p>
   <h2>What changes hands, <em>and what doesn't.</em></h2>
   <div class="body">
     <div class="col">
@@ -448,8 +413,7 @@ code{ font-family:ui-monospace,Menlo,monospace; font-size:11px; background:rgba(
           <li>Brand system, logos, brand library, fonts under OFL</li>
           <li>4 published articles, 28 drafts and research briefs</li>
           <li>36 hobby profiles, 8 collections, 4 tools</li>
-          <li>6 free printables, 2 prepared premium kits (sources and PDFs)</li>
-          <li>95 Pinterest pin images, CSV and a 90-day schedule</li>
+          <li>88 Pinterest pin images, CSV and a 90-day schedule</li>
           <li>Buyer, content, commerce and marketing documentation</li>
           <li>14 AI-generated images created for this project (see docs/IMAGE-LICENSES.md)</li>
         </ul>

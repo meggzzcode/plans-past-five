@@ -11,7 +11,7 @@ Status: draft. Answers below come from reasoning only. No data has been collecte
 7. **What optional products help?** Purpose-made journal, book light, bookmarks, tape and stickers.
 8. **What would make our recommendations better than generic shopping results?** A five-line template, three layouts, restart advice for abandoned habits and no claims about memory or wellbeing.
 9. **Which other articles should we link?** how-to-start-a-book-club, how-to-start-junk-journaling, how-to-take-yourself-on-a-solo-coffee-shop-date, cozy-solo-dates-at-home.
-10. **How does it contribute to long-term revenue?** Evergreen with a January peak, good affiliate fit for notebooks and book accessories. Supports a printable reading log.
+10. **How does it contribute to long-term revenue?** Evergreen with a January peak, good affiliate fit for notebooks and book accessories.
 
 ## Keyword and autocomplete research
 

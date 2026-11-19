@@ -12,7 +12,7 @@ Target length about 5 minutes at a relaxed pace (roughly 700 words of narration)
 
 "This is Plans Past Five, a lifestyle site for women who want hobbies, weekend plans and friendships outside work. It is pre-revenue and not yet launched, so what you'll see is the built site running locally, not a live business. Brand line: making a life, not just a living."
 
-Scroll the homepage slowly. Point at the hero, the six section tiles, the printable and shop blocks.
+Scroll the homepage slowly. Point at the hero, the six section tiles and the shop block.
 
 ## 0:40 Navigation [Shots 3-4]
 
@@ -38,20 +38,16 @@ Scroll the homepage slowly. Point at the hero, the six section tiles, the printa
 
 "Off Duty Essentials has six collections. It is curated, not a store: nothing is sold on this site. Product records name types of items; verified products come later. Links are plain retailer searches today."
 
-## 4:00 Downloadable resources [Shots 16-17]
-
-"Six free printables, real PDFs in US Letter, no email gate. Two premium kits are prepared as files but are not for sale and are not linked anywhere on the site." Show the printable detail page, then the kit folder in a file browser (`design/kits`).
-
-## 4:25 Affiliate configuration [Shots 18-19]
+## 4:25 Affiliate configuration [Shots 16-17]
 
 "Monetization is designed to be switched on by the buyer with their own accounts. All affiliate logic lives in one file, `src/config/affiliate.ts`. Every entry ships empty: no tracking IDs, not active, not approved. The activation steps are in `docs/buyer/AFFILIATE-ACTIVATION.md`. The seller's own accounts are not included, and approval is never guaranteed."
 
 On screen: open `src/config/affiliate.ts` (registry at the top) and `docs/buyer/AFFILIATE-ACTIVATION.md` (the "Activate Amazon" steps). Then show `/affiliate-disclosure`.
 
-## 5:05 Content management [Shots 20-21]
+## 5:05 Content management [Shots 18-19]
 
-"Everything is plain files. Articles: `src/content/`. Hobbies: `src/data/hobbies.ts`. Products and collections: `src/data/products.ts`. Brand copy: `src/config/site.ts`. Printables: `src/data/printables.ts` and `public/downloads`. The how-to is `docs/buyer/CONTENT-MANAGEMENT.md`, and publishing follows `docs/SOP-publish-article.md`."
+"Everything is plain files. Articles: `src/content/`. Hobbies: `src/data/hobbies.ts`. Products and collections: `src/data/products.ts`. Brand copy: `src/config/site.ts`. The how-to is `docs/buyer/CONTENT-MANAGEMENT.md`, and publishing follows `docs/SOP-publish-article.md`."
 
-## 5:35 Close [Shot 22]
+## 5:35 Close [Shot 20]
 
 "That's the site: built, documented and honest about its status. It is pre-revenue and not launched, with no traffic history, and affiliate approval is not guaranteed. Start with `docs/buyer/START-HERE.md`."

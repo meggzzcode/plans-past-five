@@ -7,7 +7,7 @@ How an article reaches readers. The site is pre-revenue and not yet public (2026
 1. **Organic search (primary for commercial and how-to articles).** Pages are server-rendered with unique titles, descriptions, canonicals and JSON-LD (`docs/buyer/SEO-GUIDE.md`). After each publish: confirm the URL is in `/sitemap.xml`, then request indexing in Search Console once the property is verified (`docs/buyer/ANALYTICS-SETUP.md`). Do not expect results on a timeline; indexing and ranking speed is not something this repo can promise.
 2. **Pinterest (primary for visual and inspirational articles).** Three pin concepts per article, linking to the article (`docs/marketing/PINTEREST-STRATEGY.md`).
 3. **Internal links.** Hubs, related reading and cross-links carry readers between guides (`docs/content/INTERNAL-LINKING-STRATEGY.md`). A new article should never be an orphan.
-4. **Tools and printables.** The quiz (`/hobby-finder`), planner (`/make-plans`), budget and tonight tools (`/tools/hobby-budget`, `/tools/tonight`) and three printables give people reasons to arrive and return; each links back to relevant guides.
+4. **Tools.** The quiz (`/hobby-finder`), planner (`/make-plans`), budget and tonight tools (`/tools/hobby-budget`, `/tools/tonight`) give people reasons to arrive and return; each links back to relevant guides.
 5. **Newsletter.** Not wired. `site.integrations.newsletter.enabled` is `false`. Add it only with the owner's own provider account and updated privacy page.
 6. **Social (Instagram, TikTok).** Not set up; `site.social` is empty. Optional later; do not create accounts just to hold names.
 

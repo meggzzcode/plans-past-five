@@ -14,7 +14,6 @@ export const articleJunkJournaling: Article = {
     "A no-pressure beginner walkthrough with a free-first supply list and a step-by-step first page",
   hobbies: ["junk-journaling", "scrapbooking", "collage-art", "creative-writing"],
   productIds: ["junk-journals", "washi-tape", "sticker-sets", "pocket-notebooks"],
-  printable: "hobby-era-tracker",
   body: [
     {
       type: "p",
@@ -177,7 +176,7 @@ export const articleJunkJournaling: Article = {
     },
     {
       type: "p",
-      text: "Want somewhere to keep track of what you try next? Our free [Find Your Hobby Workbook](/printables/hobby-era-tracker) is made to be glued straight into a journal. Or explore more ideas in [Creative Corner](/creative-corner).",
+      text: "Want more ideas? Explore more in [Creative Corner](/creative-corner).",
     },
     { type: "ifYouLoved", hobbies: ["scrapbooking", "collage-art", "watercolor-painting"] },
   ],

@@ -3,7 +3,6 @@ import { getArticle, readingMinutes, relatedArticles, toc } from "@/content";
 import { getCategory } from "@/data/categories";
 import { images } from "@/data/images";
 import { getHobby } from "@/data/hobbies";
-import { getPrintable } from "@/data/printables";
 import { site } from "@/config/site";
 import { seo, absoluteUrl, articleJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { ArticleBody } from "@/components/editorial/ArticleBody";
@@ -64,7 +63,6 @@ function ArticlePage() {
     .map(getHobby)
     .filter((x): x is NonNullable<typeof x> => !!x)
     .slice(0, 3);
-  const printable = a.printable ? getPrintable(a.printable) : undefined;
   const parts =
     a.titleItalic && a.title.includes(a.titleItalic) ? a.title.split(a.titleItalic) : null;
   const date = new Date(a.publishedAt + "T12:00:00Z").toLocaleDateString("en-US", {
@@ -171,24 +169,6 @@ function ArticlePage() {
           </div>
         </div>
       </div>
-      {printable && (
-        <section className="mx-auto mt-16 max-w-4xl px-5 md:px-8">
-          <Link
-            to="/printables/$slug"
-            params={{ slug: printable.slug }}
-            className="group flex flex-col items-start gap-4 bg-butter p-8 md:flex-row md:items-center md:justify-between"
-          >
-            <div>
-              <p className="kicker text-cherry">Free printable</p>
-              <p className="mt-2 font-display text-3xl italic">{printable.name}</p>
-              <p className="mt-1 text-espresso">{printable.dek}</p>
-            </div>
-            <span className="bg-cherry px-5 py-2.5 text-sm font-semibold text-cream group-hover:bg-ink">
-              Print it free
-            </span>
-          </Link>
-        </section>
-      )}
       <section className="mx-auto mt-20 max-w-7xl px-5 md:px-8">
         <Divider label="You might also love" />
         {related.length > 0 && (

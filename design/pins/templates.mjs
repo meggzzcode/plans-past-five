@@ -264,29 +264,6 @@ ${brand()}`,
     );
   },
 
-  printable(p) {
-    const s = p.sheet || {};
-    const lines = (s.lines || [])
-      .map((l) => `<div class="ln"><i></i><span>${esc(l)}</span></div>`)
-      .join("");
-    const grid = s.grid
-      ? `<div class="grid">${s.grid.map((g, i) => `<div class="cell ${i % 3 === 1 ? "fill" : ""}">${esc(g)}</div>`).join("")}</div>`
-      : "";
-    return doc(
-      p,
-      "",
-      `
-${pill(p.kicker || "Free printable")}
-<div class="h disp fit chk" data-max="100" data-min="48"><div>${em(p.headline)}</div></div>
-<div class="sheetback"></div>
-<div class="sheet"><div class="st">${esc(s.title || "")}</div><div class="ss">${esc(s.sub || "")}</div>${lines}${grid}</div>
-<div class="badge" style="color:${p.theme === "butter" || p.theme === "cherry" || p.theme === "garden" ? "var(--straw)" : "var(--butter)"}">${badgeSvg("currentColor")}<span>${esc(p.burst || "Free")}</span></div>
-${p.note ? `<div class="note hand">${esc(p.note)}</div>` : ""}
-${decoHtml(p.deco || [["star", 40, 520, 70, -8]])}
-${brand()}`,
-    );
-  },
-
   quiz(p) {
     const v = p.variant || "question";
     let inner;

@@ -2,12 +2,10 @@ import { describe, expect, it } from "vitest";
 import { allArticlesIncludingDrafts } from "@/content";
 import { hobbies } from "@/data/hobbies";
 import { collections } from "@/data/products";
-import { printables } from "@/data/printables";
 
 const bySlug = new Map(allArticlesIncludingDrafts.map((a) => [a.slug, a]));
 const hobbySlugs = new Set(hobbies.map((h) => h.slug));
 const collectionSlugs = new Set<string>(collections.map((c) => c.slug));
-const printableSlugs = new Set(printables.map((p) => p.slug));
 
 /** A published article may only link to published articles; drafts may link to any registered one. */
 const articleOk = (from: { status: string }, slug: string) => {
@@ -33,7 +31,7 @@ describe("internal links", () => {
     expect(bad).toEqual([]);
   });
 
-  it("every inline link to /journal, /hobbies, /shop or /printables resolves", () => {
+  it("every inline link to /journal, /hobbies, or /shop resolves", () => {
     const bad: string[] = [];
     for (const a of allArticlesIncludingDrafts) {
       for (const href of inlineLinks(a)) {
@@ -46,20 +44,15 @@ describe("internal links", () => {
               ? hobbySlugs.has(slug)
               : section === "shop"
                 ? collectionSlugs.has(slug)
-                : section === "printables"
-                  ? printableSlugs.has(slug)
-                  : true;
+                : true;
         if (!ok) bad.push(`${a.slug}: ${href}`);
       }
     }
     expect(bad).toEqual([]);
   });
 
-  it("every `printable` and hobby tag on an article exists", () => {
+  it("every hobby tag on an article exists", () => {
     const bad = allArticlesIncludingDrafts.flatMap((a) => [
-      ...(a.printable && !printableSlugs.has(a.printable)
-        ? [`${a.slug}: printable ${a.printable}`]
-        : []),
       ...a.hobbies.filter((h) => !hobbySlugs.has(h)).map((h) => `${a.slug}: hobby ${h}`),
     ]);
     expect(bad).toEqual([]);

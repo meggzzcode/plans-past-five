@@ -4,10 +4,10 @@ Status: NEEDS OWNER. No Pinterest account was created, logged into or modified f
 
 What is already done in this repo:
 
-- 95 vertical pins (1000x1500) in `public/pins/`, built from 8 template styles (`design/pins/`, rebuild with `node scripts/build-pins.mjs`).
+- 88 vertical pins (1000x1500) in `public/pins/`, built from 7 template styles (`design/pins/`, rebuild with `node scripts/build-pins.mjs`).
 - `docs/pinterest-pins.csv`: title, description, destination, tracked URL (UTM), board, keywords, concept, publish status, suggested date.
 - `docs/PINTEREST-90-DAY-SCHEDULE.md`: day-by-day plan.
-- 12 board cover images in `design/brand/exports/board-covers/`, profile avatar `design/brand/exports/social/profile-avatar-1000.png`.
+- 11 board cover images in `design/brand/exports/board-covers/`, profile avatar `design/brand/exports/social/profile-avatar-1000.png`.
 - Article pages include a Pinterest share button (`src/components/editorial/ShareButtons.tsx`); no Pinterest tag, analytics or account ID is wired in the code.
 
 ## Prerequisites (owner)
@@ -37,7 +37,7 @@ Claiming connects your domain to the profile and unlocks analytics for your pins
 3. Use the exact domain (with or without `www`) that your canonical URLs use.
 4. Cowork can do the Verify step in the owner's logged-in session; only the owner can accept terms or enter billing details.
 
-## 3. Create the 12 boards
+## 3. Create the 11 boards
 
 Create these boards exactly (they are what the CSV references). Use the matching cover from `design/brand/exports/board-covers/`.
 
@@ -53,7 +53,6 @@ Create these boards exactly (they are what the CSV references). Use the matching
 | Cozy Hobbies | `cozy-hobbies.png` | Soft, slow hobbies for tired evenings. |
 | Hobby Starter Kits | `hobby-starter-kits.png` | How to start a hobby without buying everything. |
 | Affordable Adventures | `affordable-adventures.png` | Big feelings, small budget. |
-| Printable Planners | `printable-planners.png` | Free printables for your life outside work. |
 | Active Hobbies | `active-hobbies.png` | Move for the joy of it. |
 
 Tips: make all boards public; add keyword-rich but natural descriptions; set a cover from one of your own pins once it exists, or upload the cover images above as pins to a board and choose them as covers. Pin 5 to 10 pins to each board before promoting the account (use the first-month live pins).
@@ -106,7 +105,7 @@ Rules while posting:
 ## What Cowork can do inside the owner's logged-in browser (with the owner's go-ahead)
 
 - Claim the website (Verify step) after the tag or DNS record is in place.
-- Create the 12 boards, set covers and descriptions from this document.
+- Create the 11 boards, set covers and descriptions from this document.
 - Run the Rich Pins validator and submit the application.
 - Check each keyword in Pinterest search suggestions and Pinterest Trends and record the outcomes in the tracker (no invented volumes).
 - Upload or schedule pins in batches from `public/pins/` and `docs/pinterest-pins.csv`, then screenshot the scheduled queue.

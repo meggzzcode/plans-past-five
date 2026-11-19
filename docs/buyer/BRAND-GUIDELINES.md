@@ -46,10 +46,9 @@ See `design/brand/BRAND-VOICE.md`. One signature phrase per page. Concrete first
 |---|---|---|
 | **Website** | Cream background, cherry CTAs, serif headlines with one italic cherry word, kicker labels, gingham dividers, scalloped monogram, garden-green footer | `src/styles.css` tokens, `src/components/brand/*`, copy in `src/config/site.ts` |
 | **Articles** | Kicker, headline with italic accent, honest time/cost/who blocks, pull quotes in the brand phrases, "what you'll need" lists | `src/content/*`, templates in `design/brand/article-templates/` for hero images |
-| **Printables** | Warm-white paper, cherry gingham header strip, one signature phrase, playful headers, boxes and lines with generous space | `src/routes/printables.*`; styles in `src/styles.css` (`paper`, `gingham-strip`) |
 | **Shop (Off Duty Essentials)** | Six collections with tone colours (butter, strawberry, matcha, sunday), still-life images labelled "illustrative", honest disclosure, search links described as search links | `src/data/products.ts`, `src/config/affiliate.ts` |
 | **Tools (quiz, planner, tonight, budget)** | Cards on warm white, cherry selected states, friendly question wording, results with a playful theme name | `src/lib/finder.ts`, `src/lib/planner.ts`, route files |
-| **Pinterest pins** | 8 template styles on the palette: headline, cover, editorial photo, checklist, steps, quote, printable preview, quiz promo. Fraunces headline with italic accent, Caveat note, brand wordmark footer, gingham strip | `design/pins/`, `scripts/build-pins.mjs`, copy in `design/pins/pins.mjs` |
+| **Pinterest pins** | 7 template styles on the palette: headline, cover, editorial photo, checklist, steps, quote, quiz promo. Fraunces headline with italic accent, Caveat note, brand wordmark footer, gingham strip | `design/pins/`, `scripts/build-pins.mjs`, copy in `design/pins/pins.mjs` |
 | **Social / email** | OG image, quote post, story, avatar, board covers | `design/brand/social/` |
 
 ## Do and do not

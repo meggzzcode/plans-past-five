@@ -15,7 +15,6 @@ export const articleFlowerArrangingAsAHobby: Article = {
     "A low-commitment weekly ritual: a simple formula (focal, filler, greenery), a minimal toolkit, and flower care basics, using only grocery-store stems and what you already own",
   hobbies: ["flower-arranging", "indoor-gardening", "collage-art"],
   productIds: [],
-  printable: "weekend-edit-planner",
   sources: [],
   coworkChecks: [
     "Cutting stems at an angle and removing leaves below the waterline are standard fresh-flower care practices (claimed general guidance)",
@@ -162,7 +161,7 @@ export const articleFlowerArrangingAsAHobby: Article = {
     },
     {
       type: "p",
-      text: "The [Weekend Adventure Planner](/printables/weekend-edit-planner) has space for a small ritual like this. For more low-effort ideas, try [Things to Do After Work Instead of Scrolling](/journal/things-to-do-after-work-instead-of-scrolling).",
+      text: "For more low-effort ideas, try [Things to Do After Work Instead of Scrolling](/journal/things-to-do-after-work-instead-of-scrolling).",
     },
     { type: "ifYouLoved", hobbies: ["indoor-gardening", "collage-art", "watercolor-painting"] },
   ],

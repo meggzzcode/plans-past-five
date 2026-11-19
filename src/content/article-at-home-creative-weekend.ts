@@ -22,7 +22,6 @@ export const articleAtHomeCreativeWeekend: Article = {
     "craft-nights",
   ],
   productIds: ["air-dry-clay", "acrylic-paints", "watercolor-sets", "junk-journals", "washi-tape"],
-  printable: "weekend-edit-planner",
   related: [
     "creative-hobbies-you-can-start-at-home",
     "things-to-do-on-the-weekend",
@@ -39,7 +38,6 @@ export const articleAtHomeCreativeWeekend: Article = {
     "Confirm that drying clay with a hair dryer or oven is discouraged unless the clay maker says it is fine (follow the packet).",
     "Check that the 'probably already own' split (notebook, scissors, glue stick, paper scraps, jar, paper towels) is described as typical, not assumed.",
     "Confirm advice on ventilation or sealer use stays 'follow the product's directions' with no safety claim of our own.",
-    "Confirm the weekend-edit-planner printable link (/printables/weekend-edit-planner) still resolves and matches its description.",
   ],
   body: [
     {
@@ -185,10 +183,6 @@ export const articleAtHomeCreativeWeekend: Article = {
         "junk-journals",
         "washi-tape",
       ],
-    },
-    {
-      type: "p",
-      text: "Prefer a printable to plan it on? Try the [Weekend Adventure Planner](/printables/weekend-edit-planner).",
     },
     {
       type: "makePlan",

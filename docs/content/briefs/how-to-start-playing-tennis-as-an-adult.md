@@ -31,7 +31,7 @@ We say what to borrow first, what to skip and why a lesson beats a premium racke
 pickleball-for-beginners, active-hobbies-for-women-who-dont-love-the-gym, things-to-do-after-work-instead-of-scrolling.
 
 ## How this contributes to long-term revenue
-Racket and ball purchases are repeat-friendly (balls wear out) and a confirmed beginner is likely to buy more gear. Pairs with a printable practice plan, and routes readers toward the pickleball guide as an alternative. Revenue is unproven and pre-launch.
+Racket and ball purchases are repeat-friendly (balls wear out) and a confirmed beginner is likely to buy more gear. Routes readers toward the pickleball guide as an alternative. Revenue is unproven and pre-launch.
 
 ## Keyword and autocomplete research
 PENDING COWORK

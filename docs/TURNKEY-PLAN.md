@@ -15,7 +15,7 @@ Resume file: docs/RESUME.md. Evidence labels: VERIFIED, COMPLETED, RECOMMENDED, 
 ## Work waves
 
 Wave 1 (parallel, non-overlapping files): planner+quiz fixes; two new tools; affiliate registry+product schema; trust pages, SEO, security headers, CI; four article-writing lanes (drafts, not published); hobby directory enrichment.
-Wave 2: six printables as real PDFs; two premium kits; brand asset library; 90 pins + CSV; buyer docs; listing package; presentation; readiness score.
+Wave 2: brand asset library; 90 pins + CSV; buyer docs; listing package; presentation; readiness score.
 Wave 3 (needs Cowork results): verify claims, flip articles to published, load ~60 verified products, affiliate register, comps, production QA.
 
 ## Rules for content (all lanes)
@@ -25,4 +25,4 @@ Wave 3 (needs Cowork results): verify claims, flip articles to published, load ~
 - Never copy Paws & Passage branding, articles, analytics IDs or tracking IDs.
 
 ## Scope freeze
-Targets: 30 articles, 36 hobbies, 6 categories, 6 to 8 collections, about 60 products, 4 to 5 tools, 6 printables, 2 premium kits, 90 pins, 50-topic roadmap. Nothing beyond that without a stated buyer benefit.
+Targets: 30 articles, 36 hobbies, 6 categories, 6 to 8 collections, about 60 products, 4 to 5 tools, 90 pins, 50-topic roadmap. Nothing beyond that without a stated buyer benefit.

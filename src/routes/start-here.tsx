@@ -38,14 +38,6 @@ export const Route = createFileRoute("/start-here")({
         <Link to="/movement">A Little Movement</Link>, or the full{" "}
         <Link to="/hobbies">hobby directory</Link>.
       </p>
-      <h2>4. If you want something on paper</h2>
-      <p>
-        Print one of our free printables, starting with{" "}
-        <Link to="/printables/$slug" params={{ slug: "out-of-office-bucket-list" }}>
-          The Out-of-Office Bucket List
-        </Link>
-        .
-      </p>
       <h2>Save as you go</h2>
       <p>
         Tap the bookmark on anything to add it to <Link to="/saved">My Plans</Link>. It's stored on

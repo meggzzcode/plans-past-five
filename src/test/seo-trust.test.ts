@@ -6,7 +6,6 @@ import { articles } from "@/content";
 import { corrections } from "@/content/corrections";
 import { hobbies } from "@/data/hobbies";
 import { collections } from "@/data/products";
-import { printables } from "@/data/printables";
 import { sitemapPaths } from "@/lib/sitemap";
 import { articleJsonLd, breadcrumbJsonLd, organizationJsonLd, seo } from "@/lib/seo";
 
@@ -34,7 +33,6 @@ function collectHeads() {
     "journal.$slug": articles.map((a) => ({ slug: a.slug })),
     "hobbies.$slug": hobbies.map((h) => ({ slug: h.slug })),
     "shop.$category": collections.map((c) => ({ slug: c.slug })),
-    "printables.$slug": printables.map((p) => ({ slug: p.slug })),
   };
   for (const [file, mod] of Object.entries(modules)) {
     const name = file.replace("../routes/", "").replace(".tsx", "");

@@ -21,7 +21,6 @@ Plans Past Five is a lifestyle content site. Brand copy lives in `src/config/sit
 | Hobby directory | 36 hobbies with filters and profile pages | `src/data/hobbies.ts` |
 | Shop (Off Duty Essentials) | 6 collections, 36 product-type records, kit slots, shopping checklist | `src/data/products.ts`, `src/data/kits.ts`, `src/lib/shoplist.ts` |
 | Tools | Hobby finder quiz, Make Some Plans planner, hobby budget tool, tonight tool | `src/lib/finder.ts`, `planner.ts`, `budget.ts`, `tonight.ts` |
-| Printables | Printable pages and PDFs with previews | `src/data/printables.ts`, `public/downloads` |
 | Pinterest assets | Pin images and a pins CSV | `public/pins`, `docs/pinterest-pins.csv` |
 | Trust pages | About, Contact, Privacy, Terms, Affiliate Disclosure, Editorial Policy, Corrections, Methodology | `src/routes` |
 | Automation | CI, weekly site-health check, monthly digest, Dependabot | `.github/` |
@@ -31,15 +30,14 @@ Counts (hobbies, products, tests) were checked on 2026-11-19 and will drift; re-
 ## How it could make money (unvalidated)
 
 1. Affiliate links on buying guides and kit lists once you have your own approved accounts (`docs/buyer/AFFILIATE-ACTIVATION.md`).
-2. Possibly digital products later (printables and kits exist as files; selling them requires a storefront and tax handling you set up; see the other worker's `docs/buyer/DIGITAL-PRODUCTS.md` when present).
-3. Possibly display advertising or sponsorships much later. Not planned or researched.
+2. Possibly display advertising or sponsorships much later. Not planned or researched.
 
 All three are hypotheses. None has produced revenue. Affiliate programs require approval and have rules about how links and disclosures are used; approval is not guaranteed.
 
 ## What the site is not
 
 - Not an established-earnings business. No financial statements, traffic proof or revenue are included.
-- Not a store. It sells nothing today; kits are editorially curated lists, not bundles.
+- Not a store. It sells nothing today; kits are editorially curated lists, not bundles. Digital products (printables, kits for sale) are not part of this business.
 - Not accounts-and-database software. There are no users, no stored personal data.
 - Not medical or mental-health advice. Copy avoids those claims by policy.
 

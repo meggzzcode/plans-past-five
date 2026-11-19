@@ -11,7 +11,7 @@ Status: draft. Answers below come from reasoning only. No data has been collecte
 7. **What optional products help?** Group kit, easel, conversation cards, playlist.
 8. **What would make our recommendations better than generic shopping results?** A timeline, a single follow-along painting, set-up safety notes and handling for the friend who thinks she cannot paint.
 9. **Which other articles should we link?** how-to-host-a-craft-night, girls-night-ideas-that-arent-drinks, how-to-start-air-dry-clay, watercolor-painting-for-beginners.
-10. **How does it contribute to long-term revenue?** Evergreen with strong gifting and party seasons. Group kits are a natural product-pass target and a possible printable invite pack.
+10. **How does it contribute to long-term revenue?** Evergreen with strong gifting and party seasons. Group kits are a natural product-pass target.
 
 ## Keyword and autocomplete research
 

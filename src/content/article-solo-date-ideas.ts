@@ -36,7 +36,6 @@ export const articleSoloDateIdeas: Article = {
     "book-sleeves",
     "film-cameras",
   ],
-  printable: "weekend-edit-planner",
   coworkChecks: [
     "Cost labels (Free, 'typically under $10', 'typically $10-$30') are approximate ranges; confirm they are reasonable as general guidance and keep the 'typically' wording.",
     "Statement that many public libraries, parks and museums have free or low-cost access (some museums have free or pay-what-you-can days): confirm wording stays generic and does not imply any specific venue.",
@@ -504,7 +503,7 @@ export const articleSoloDateIdeas: Article = {
     },
     {
       type: "p",
-      text: "Want a whole day built around this? Try [how to plan a solo Saturday](/journal/how-to-plan-a-solo-saturday), or start with the cozier option, [20 solo dates you can do at home](/journal/cozy-solo-dates-at-home). The [Weekend Adventure Planner](/printables/weekend-edit-planner) has room to write it all down.",
+      text: "Want a whole day built around this? Try [how to plan a solo Saturday](/journal/how-to-plan-a-solo-saturday), or start with the cozier option, [20 solo dates you can do at home](/journal/cozy-solo-dates-at-home).",
     },
     { type: "ifYouLoved", hobbies: ["reading", "museum-exploring", "outdoor-sketching"] },
   ],

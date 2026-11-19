@@ -19,12 +19,10 @@ No video was recorded (no recording tool in this session). Cowork can record it 
 | 13 | `/tools/hobby-budget`, `/tools/tonight` | Pick options; show result | `tool-hobby-budget-desktop.jpg`, `tool-tonight-desktop.jpg` |
 | 14 | `/shop` | Scroll collections | `shop-index-desktop.jpg` |
 | 15 | `/shop/pottery-era` | Scroll a collection | `shop-collection-desktop.jpg` |
-| 16 | `/printables` | Scroll list | `printables-index-desktop.jpg` |
-| 17 | `/printables/hobby-era-tracker` | Show previews; open the PDF | `printable-detail-desktop.jpg` |
-| 18 | Editor: `src/config/affiliate.ts` | Show the registry and the `active: false` / empty tracking id fields | |
-| 19 | Editor: `docs/buyer/AFFILIATE-ACTIVATION.md`; then `/affiliate-disclosure` | Show the activation steps; show the page | `affiliate-disclosure-desktop.jpg` |
-| 20 | Editor/file tree: `src/content/`, `src/data/hobbies.ts`, `src/data/products.ts`, `src/config/site.ts` | Show the file paths; open one article file | |
-| 21 | Editor: `docs/buyer/CONTENT-MANAGEMENT.md`, `docs/SOP-publish-article.md` | Scroll headings | |
-| 22 | `/saved` | Show My Plans with a saved item (save one first); then the trust pages `/editorial-policy`, `/methodology`, `/corrections` | `my-plans-saved-desktop.jpg`, `editorial-policy-desktop.jpg` |
+| 16 | Editor: `src/config/affiliate.ts` | Show the registry and the `active: false` / empty tracking id fields | |
+| 17 | Editor: `docs/buyer/AFFILIATE-ACTIVATION.md`; then `/affiliate-disclosure` | Show the activation steps; show the page | `affiliate-disclosure-desktop.jpg` |
+| 18 | Editor/file tree: `src/content/`, `src/data/hobbies.ts`, `src/data/products.ts`, `src/config/site.ts` | Show the file paths; open one article file | |
+| 19 | Editor: `docs/buyer/CONTENT-MANAGEMENT.md`, `docs/SOP-publish-article.md` | Scroll headings | |
+| 20 | `/saved` | Show My Plans with a saved item (save one first); then the trust pages `/editorial-policy`, `/methodology`, `/corrections` | `my-plans-saved-desktop.jpg`, `editorial-policy-desktop.jpg` |
 
 Do not show: any account dashboard, billing page or personal data. Do not state traffic, rankings or earnings.

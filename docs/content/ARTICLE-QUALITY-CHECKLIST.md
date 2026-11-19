@@ -35,7 +35,7 @@ An article stays `status: "draft"` until every box below is ticked. This extends
 ## 5. Linking and tools
 - [ ] At least one inbound link from a hub or related article, and only natural outbound links (`docs/content/INTERNAL-LINKING-STRATEGY.md`).
 - [ ] All internal links resolve (run the link check in `docs/buyer/WEEKLY-MAINTENANCE.md`).
-- [ ] Printable, quiz, planner or budget-tool CTA only where it truly fits.
+- [ ] Quiz, planner or budget-tool CTA only where it truly fits.
 
 ## 6. Distribution
 - [ ] Three pin concepts written (search, aspirational, practical) and linked to the article, not to Amazon (`docs/marketing/PINTEREST-STRATEGY.md`).

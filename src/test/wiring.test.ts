@@ -71,7 +71,6 @@ describe("tracking calls", () => {
     delete (window as unknown as { gtag?: unknown }).gtag;
     expect(() => track("quiz_complete", { persona: "creative" })).not.toThrow();
     expect(() => track("planner_use", { when: "saturday", length: "full-day" })).not.toThrow();
-    expect(() => track("printable_download", { printable_id: "hobby-era-tracker" })).not.toThrow();
   });
   it("allow-lists the new params and drops everything else", () => {
     expect(

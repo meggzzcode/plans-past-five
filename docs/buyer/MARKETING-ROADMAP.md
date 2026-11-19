@@ -31,7 +31,6 @@ Pre-revenue and not yet public (2026-11-19). This is a sequence of work, not a f
 ## Phase 4: owned audience (optional)
 
 - Newsletter with your own provider; update privacy and consent first.
-- Printables as the sign-up incentive (they exist as PDFs; see `docs/buyer/DIGITAL-PRODUCTS.md` when present).
 
 ## Things not to do
 

@@ -6,7 +6,7 @@ Built from the real routes in `src/routes/` and the slugs in `docs/content/ARTIC
 
 - Inline: write `[text](/journal/slug)` inside any `p`, `item` or list text in an article file (supported by the inline renderer; see `CLAUDE-HANDOFF.md`).
 - Computed: `relatedArticles()` in `src/content/index.ts` scores other published articles by shared hobbies (x2) plus same category (x1) and shows up to three. Add `related: ["slug"]` in an article for hand-picked extras.
-- Block inserts: `ifYouLoved` (hobby profile cards), `shopHobby` and `starterKit` (product cards), the `printable` field (printable CTA), `makePlan` (planner CTA).
+- Block inserts: `ifYouLoved` (hobby profile cards), `shopHobby` and `starterKit` (product cards), `makePlan` (planner CTA).
 - Drafts never appear in any public link, list or sitemap: only published articles are public (`articles` in `src/content/index.ts`). Do not link to a draft slug from a published article; it would 404 until publishing. Check before publishing: every `/journal/...` target must be published.
 
 ## Hub and spoke map
@@ -18,11 +18,11 @@ Hubs are the six section pages plus the shop and tools. Each hub links to its ar
 | `/creative-corner` | how-to-start-junk-journaling, junk-journaling-supplies-for-beginners, how-to-start-air-dry-clay, watercolor-painting-for-beginners, creative-hobby-starter-kits-worth-considering, how-to-start-embroidery, how-to-start-crocheting, how-to-start-a-reading-journal, flower-arranging-as-a-hobby, creative-hobbies-you-can-start-at-home | `/shop/creative-girl`, `/shop/pottery-era`, `/shop/bookish-girl` |
 | `/after-hours` | hobbies-to-try-when-life-feels-like-work-sleep-repeat, things-to-do-after-work-instead-of-scrolling, low-energy-hobbies, affordable-hobbies-under-25, how-to-find-a-hobby-as-an-adult | `/hobby-finder`, `/tools/hobby-budget`, `/tools/tonight` |
 | `/better-together` | how-to-host-a-mahjong-night, how-to-host-a-craft-night, how-to-host-a-paint-night-at-home, girls-night-ideas-that-arent-drinks, how-to-start-a-book-club | `/shop/girls-night-in`, `/shop/bookish-girl` |
-| `/weekends` | how-to-plan-a-perfect-picnic, at-home-creative-weekend, things-to-do-on-the-weekend, cheap-weekend-adventures | `/make-plans`, `/printables/weekend-edit-planner`, `/shop/little-adventures` |
-| `/solo-dates` | solo-date-ideas, cozy-solo-dates-at-home, how-to-plan-a-solo-saturday | `/make-plans`, `/printables/out-of-office-bucket-list` |
+| `/weekends` | how-to-plan-a-perfect-picnic, at-home-creative-weekend, things-to-do-on-the-weekend, cheap-weekend-adventures | `/make-plans`, `/shop/little-adventures` |
+| `/solo-dates` | solo-date-ideas, cozy-solo-dates-at-home, how-to-plan-a-solo-saturday | `/make-plans` |
 | `/movement` | pickleball-for-beginners, how-to-start-playing-tennis-as-an-adult, active-hobbies-for-women-who-dont-love-the-gym | `/shop/sporty-girl` |
 
-Shop collection slugs come from `CollectionSlug` in `src/data/products.ts`: pottery-era, creative-girl, sporty-girl, girls-night-in, bookish-girl, little-adventures. Printable slugs come from `src/data/printables.ts`: out-of-office-bucket-list, weekend-edit-planner, hobby-era-tracker. Hobby profile pages are `/hobbies/<slug>`; they are noindexed until a published article covers the hobby (`isHobbyIndexable` in `src/data/hobbies.ts`), so linking a published guide to its hobby profile helps readers and unlocks indexing through the `hobbies` field.
+Shop collection slugs come from `CollectionSlug` in `src/data/products.ts`: pottery-era, creative-girl, sporty-girl, girls-night-in, bookish-girl, little-adventures. Hobby profile pages are `/hobbies/<slug>`; they are noindexed until a published article covers the hobby (`isHobbyIndexable` in `src/data/hobbies.ts`), so linking a published guide to its hobby profile helps readers and unlocks indexing through the `hobbies` field.
 
 ## Pillar relationships (flagships)
 

@@ -7,7 +7,7 @@ Status: written from editorial reasoning only. No search, traffic or price data 
 She has a free weekend day and tends to waste it; she wants a simple structure for a satisfying day alone.
 
 ## Why would someone save it on Pinterest?
-Framework-plus-three-sample-days is easy to save as a template, and links naturally to a printable planner.
+Framework-plus-three-sample-days is easy to save as a template, and links naturally to the planner tool.
 
 ## Problem and aspiration
 Problem: unstructured weekends. Aspiration: a Saturday with a storyline she looks forward to.
@@ -25,13 +25,13 @@ A tote, a notebook, a water bottle, comfortable shoes.
 A picnic blanket, a market tote, a pocket watercolor set.
 
 ## What makes our recommendations better than generic shopping results
-A four-part framework, three budget tiers with typical-range costs, fallback plans, and a real printable to support it. Products are described by what they help her do, claims are hedged and checked, and nothing is recommended unless it is verified.
+A four-part framework, three budget tiers with typical-range costs, and fallback plans. Products are described by what they help her do, claims are hedged and checked, and nothing is recommended unless it is verified.
 
 ## Articles to link
 solo-date-ideas, how-to-take-yourself-on-a-solo-coffee-shop-date, cozy-solo-dates-at-home, things-to-do-after-work-instead-of-scrolling, weekend-edit-planner.
 
 ## Long-term revenue contribution
-Printable and newsletter funnel anchor, with recurring weekly relevance and tote, blanket and notebook sales.
+Newsletter funnel anchor, with recurring weekly relevance and tote, blanket and notebook sales.
 
 ## Keyword and autocomplete research
 PENDING COWORK

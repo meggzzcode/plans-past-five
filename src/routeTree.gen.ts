@@ -34,8 +34,6 @@ import { Route as HobbiesIndexRouteImport } from './routes/hobbies.index'
 import { Route as HobbiesSlugRouteImport } from './routes/hobbies.$slug'
 import { Route as JournalIndexRouteImport } from './routes/journal.index'
 import { Route as JournalSlugRouteImport } from './routes/journal.$slug'
-import { Route as PrintablesIndexRouteImport } from './routes/printables.index'
-import { Route as PrintablesSlugRouteImport } from './routes/printables.$slug'
 import { Route as ShopIndexRouteImport } from './routes/shop.index'
 import { Route as ShopCategoryRouteImport } from './routes/shop.$category'
 import { Route as ToolsHobbyBudgetRouteImport } from './routes/tools.hobby-budget'
@@ -166,16 +164,6 @@ const JournalSlugRoute = JournalSlugRouteImport.update({
   path: '/journal/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PrintablesIndexRoute = PrintablesIndexRouteImport.update({
-  id: '/printables/',
-  path: '/printables/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrintablesSlugRoute = PrintablesSlugRouteImport.update({
-  id: '/printables/$slug',
-  path: '/printables/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ShopIndexRoute = ShopIndexRouteImport.update({
   id: '/shop/',
   path: '/shop/',
@@ -221,13 +209,11 @@ export interface FileRoutesByFullPath {
   '/weekends': typeof WeekendsRoute
   '/hobbies/$slug': typeof HobbiesSlugRoute
   '/journal/$slug': typeof JournalSlugRoute
-  '/printables/$slug': typeof PrintablesSlugRoute
   '/shop/$category': typeof ShopCategoryRoute
   '/tools/hobby-budget': typeof ToolsHobbyBudgetRoute
   '/tools/tonight': typeof ToolsTonightRoute
   '/hobbies/': typeof HobbiesIndexRoute
   '/journal/': typeof JournalIndexRoute
-  '/printables/': typeof PrintablesIndexRoute
   '/shop/': typeof ShopIndexRoute
 }
 export interface FileRoutesByTo {
@@ -254,13 +240,11 @@ export interface FileRoutesByTo {
   '/weekends': typeof WeekendsRoute
   '/hobbies/$slug': typeof HobbiesSlugRoute
   '/journal/$slug': typeof JournalSlugRoute
-  '/printables/$slug': typeof PrintablesSlugRoute
   '/shop/$category': typeof ShopCategoryRoute
   '/tools/hobby-budget': typeof ToolsHobbyBudgetRoute
   '/tools/tonight': typeof ToolsTonightRoute
   '/hobbies': typeof HobbiesIndexRoute
   '/journal': typeof JournalIndexRoute
-  '/printables': typeof PrintablesIndexRoute
   '/shop': typeof ShopIndexRoute
 }
 export interface FileRoutesById {
@@ -288,13 +272,11 @@ export interface FileRoutesById {
   '/weekends': typeof WeekendsRoute
   '/hobbies/$slug': typeof HobbiesSlugRoute
   '/journal/$slug': typeof JournalSlugRoute
-  '/printables/$slug': typeof PrintablesSlugRoute
   '/shop/$category': typeof ShopCategoryRoute
   '/tools/hobby-budget': typeof ToolsHobbyBudgetRoute
   '/tools/tonight': typeof ToolsTonightRoute
   '/hobbies/': typeof HobbiesIndexRoute
   '/journal/': typeof JournalIndexRoute
-  '/printables/': typeof PrintablesIndexRoute
   '/shop/': typeof ShopIndexRoute
 }
 export interface FileRouteTypes {
@@ -323,13 +305,11 @@ export interface FileRouteTypes {
     | '/weekends'
     | '/hobbies/$slug'
     | '/journal/$slug'
-    | '/printables/$slug'
     | '/shop/$category'
     | '/tools/hobby-budget'
     | '/tools/tonight'
     | '/hobbies/'
     | '/journal/'
-    | '/printables/'
     | '/shop/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -356,13 +336,11 @@ export interface FileRouteTypes {
     | '/weekends'
     | '/hobbies/$slug'
     | '/journal/$slug'
-    | '/printables/$slug'
     | '/shop/$category'
     | '/tools/hobby-budget'
     | '/tools/tonight'
     | '/hobbies'
     | '/journal'
-    | '/printables'
     | '/shop'
   id:
     | '__root__'
@@ -389,13 +367,11 @@ export interface FileRouteTypes {
     | '/weekends'
     | '/hobbies/$slug'
     | '/journal/$slug'
-    | '/printables/$slug'
     | '/shop/$category'
     | '/tools/hobby-budget'
     | '/tools/tonight'
     | '/hobbies/'
     | '/journal/'
-    | '/printables/'
     | '/shop/'
   fileRoutesById: FileRoutesById
 }
@@ -423,13 +399,11 @@ export interface RootRouteChildren {
   WeekendsRoute: typeof WeekendsRoute
   HobbiesSlugRoute: typeof HobbiesSlugRoute
   JournalSlugRoute: typeof JournalSlugRoute
-  PrintablesSlugRoute: typeof PrintablesSlugRoute
   ShopCategoryRoute: typeof ShopCategoryRoute
   ToolsHobbyBudgetRoute: typeof ToolsHobbyBudgetRoute
   ToolsTonightRoute: typeof ToolsTonightRoute
   HobbiesIndexRoute: typeof HobbiesIndexRoute
   JournalIndexRoute: typeof JournalIndexRoute
-  PrintablesIndexRoute: typeof PrintablesIndexRoute
   ShopIndexRoute: typeof ShopIndexRoute
 }
 
@@ -610,20 +584,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof JournalSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/printables/': {
-      id: '/printables/'
-      path: '/printables'
-      fullPath: '/printables/'
-      preLoaderRoute: typeof PrintablesIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/printables/$slug': {
-      id: '/printables/$slug'
-      path: '/printables/$slug'
-      fullPath: '/printables/$slug'
-      preLoaderRoute: typeof PrintablesSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/shop/': {
       id: '/shop/'
       path: '/shop'
@@ -679,13 +639,11 @@ const rootRouteChildren: RootRouteChildren = {
   WeekendsRoute: WeekendsRoute,
   HobbiesSlugRoute: HobbiesSlugRoute,
   JournalSlugRoute: JournalSlugRoute,
-  PrintablesSlugRoute: PrintablesSlugRoute,
   ShopCategoryRoute: ShopCategoryRoute,
   ToolsHobbyBudgetRoute: ToolsHobbyBudgetRoute,
   ToolsTonightRoute: ToolsTonightRoute,
   HobbiesIndexRoute: HobbiesIndexRoute,
   JournalIndexRoute: JournalIndexRoute,
-  PrintablesIndexRoute: PrintablesIndexRoute,
   ShopIndexRoute: ShopIndexRoute,
 }
 export const routeTree = rootRouteImport

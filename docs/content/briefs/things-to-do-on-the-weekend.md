@@ -30,7 +30,7 @@ A short method (anchor, treat, rest) before the list, ideas sorted by mood rathe
 at-home-creative-weekend, how-to-plan-a-perfect-picnic, cheap-weekend-adventures, how-to-plan-a-solo-saturday, things-to-do-after-work-instead-of-scrolling, how-to-host-a-craft-night, girls-night-ideas-that-arent-drinks, /plan tool
 
 ## How does it contribute to long-term revenue?
-A broad weekend hub that feeds the planner tool, the weekend printable and several product categories (blankets, packs, games, clay). Evergreen with recurring seasonal spikes. Good newsletter hook (a Friday weekend note). No revenue figure is claimed.
+A broad weekend hub that feeds the planner tool and several product categories (blankets, packs, games, clay). Evergreen with recurring seasonal spikes. Good newsletter hook (a Friday weekend note). No revenue figure is claimed.
 
 ## Keyword and autocomplete research
 PENDING COWORK

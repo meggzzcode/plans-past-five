@@ -47,7 +47,7 @@ Skippable:
 Does the owner actually have this experience? If not, write "none" and the article must not imply any.
 
 ## 8. Internal links
-Hub:   Spokes:   Tool/printable:   Hobby profile(s):
+Hub:   Spokes:   Tool:   Hobby profile(s):
 Only links that serve the reader (docs/content/INTERNAL-LINKING-STRATEGY.md).
 
 ## 9. Distribution

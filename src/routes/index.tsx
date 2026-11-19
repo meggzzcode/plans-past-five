@@ -450,57 +450,35 @@ function Home() {
         <AffiliateNote className="mt-4" />
       </section>
 
-      {/* PRINTABLE */}
+      {/* FIND YOUR THING */}
       <section className="mx-auto mt-24 max-w-7xl px-5 md:px-8">
         <div
           className={cn(
-            "relative grid items-center gap-10 overflow-hidden p-8 md:grid-cols-[1fr_1.1fr] md:p-14",
+            "relative grid items-center gap-6 overflow-hidden p-8 md:p-14",
             toneBg.matcha,
           )}
         >
-          <div className="paper mx-auto w-full max-w-xs -rotate-3 p-6">
-            <p className="kicker text-cherry">Free printable</p>
-            <p className="mt-2 font-display text-3xl italic leading-tight text-cherry">
-              The Out-of-Office Bucket List
-            </p>
-            <ul className="mt-4 space-y-1.5 text-sm text-espresso">
-              {[
-                "Paint a mug at a pottery studio",
-                "Have dinner out alone",
-                "Host a bracelet night",
-                "Hike a short local trail",
-                "Listen to an album start to finish",
-              ].map((t) => (
-                <li key={t} className="flex gap-2">
-                  <span className="inline-block h-3.5 w-3.5 shrink-0 translate-y-0.5 border border-cherry" />
-                  {t}
-                </li>
-              ))}
-              <li className="hand text-lg text-cherry">+ 45 more…</li>
-            </ul>
-          </div>
-          <div>
-            <Kicker>The Out-of-Office Collection</Kicker>
+          <div className="max-w-2xl">
+            <Kicker>Find Your Thing</Kicker>
             <h2 className="mt-3 text-5xl leading-[1]">
-              Fifty things to do <em className="text-cherry">outside of work.</em>
+              Not sure where to start? <em className="text-cherry">Take the quiz.</em>
             </h2>
             <p className="mt-5 max-w-md text-lg text-ink">
-              Print it, stick it on the fridge, tick one off a week. Plus a weekend planner and a
-              hobby tracker. All free, no email required.
+              A few quick questions about your time, energy and budget, and we'll suggest hobbies
+              that fit. Free, no account, no email.
             </p>
             <div className="mt-7 flex flex-wrap gap-5">
               <Link
-                to="/printables/$slug"
-                params={{ slug: "out-of-office-bucket-list" }}
+                to="/hobby-finder"
                 className="bg-cherry px-6 py-3 text-sm font-semibold text-cream hover:bg-ink"
               >
-                Print the bucket list
+                Find your thing
               </Link>
               <Link
-                to="/printables"
+                to="/make-plans"
                 className="border-b-2 border-ink pb-1 text-sm font-semibold text-ink"
               >
-                See all printables →
+                Or make some plans →
               </Link>
             </div>
           </div>

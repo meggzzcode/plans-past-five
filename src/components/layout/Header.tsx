@@ -21,8 +21,7 @@ export function Header() {
     <header className="no-print sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur-sm">
       <div className="bg-cherry px-4 py-1.5 text-center text-[0.72rem] font-medium tracking-[0.14em] uppercase text-cream">
         <Star className="mr-2 inline h-3 w-3 align-[-1px]" />
-        {site.signature}{" "}
-        <span className="hidden sm:inline">· New: the free Out-of-Office Bucket List</span>
+        {site.signature}
         <Star className="ml-2 inline h-3 w-3 align-[-1px]" />
       </div>
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 md:px-8">
@@ -85,7 +84,6 @@ export function Header() {
               ...nav,
               { to: "/hobby-finder", label: "Find Your Thing" },
               { to: "/make-plans", label: "Let's Make Plans" },
-              { to: "/printables", label: "Free Printables" },
               { to: "/saved", label: "My Plans" },
             ].map((n) => (
               <Link

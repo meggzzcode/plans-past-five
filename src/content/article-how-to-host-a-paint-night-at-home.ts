@@ -15,7 +15,6 @@ export const articleHowToHostAPaintNightAtHome: Article = {
     "A host's plan for a paint night without a studio: a shared supply list, one easy follow-along painting, a setup that protects the table, and gentle ways to handle the friend who is convinced she can't paint",
   hobbies: ["craft-nights", "paint-by-numbers", "pottery-painting"],
   productIds: ["group-painting-kits", "acrylic-paints", "detail-brushes", "conversation-cards"],
-  printable: "weekend-edit-planner",
   sources: [],
   coworkChecks: [
     "Typical cost of hosting a paint night at home (claimed: roughly $10 to $20 per guest for canvases, paint and snacks; varies widely)",
@@ -180,7 +179,7 @@ export const articleHowToHostAPaintNightAtHome: Article = {
     },
     {
       type: "p",
-      text: "Craft nights follow a similar shape, and [How to Host a Craft Night](/journal/how-to-host-a-craft-night) covers rotating themes. For gatherings without alcohol at the center, see [Girls' Night Ideas That Aren't Drinks](/journal/girls-night-ideas-that-arent-drinks). The [Weekend Adventure Planner](/printables/weekend-edit-planner) has room for the shopping list and the guest list.",
+      text: "Craft nights follow a similar shape, and [How to Host a Craft Night](/journal/how-to-host-a-craft-night) covers rotating themes. For gatherings without alcohol at the center, see [Girls' Night Ideas That Aren't Drinks](/journal/girls-night-ideas-that-arent-drinks).",
     },
     { type: "ifYouLoved", hobbies: ["craft-nights", "paint-by-numbers", "pottery-painting"] },
   ],

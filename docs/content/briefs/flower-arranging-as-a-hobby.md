@@ -10,7 +10,7 @@ Status: draft. Answers below come from reasoning only. No data has been collecte
 6. **What might she already own?** A jug, jars, kitchen scissors.
 7. **What optional products help?** Snips, narrow vase, chicken wire, tray.
 8. **What would make our recommendations better than generic shopping results?** A focal, filler and greenery recipe, flower care basics and a pet-toxicity warning pointing to a trusted list.
-9. **Which other articles should we link?** creative-hobbies-you-can-start-at-home, things-to-do-after-work-instead-of-scrolling, weekend-edit-planner printable.
+9. **Which other articles should we link?** creative-hobbies-you-can-start-at-home, things-to-do-after-work-instead-of-scrolling.
 10. **How does it contribute to long-term revenue?** Seasonal peaks around spring and holidays. A verified vase and snips pass would add modest affiliate fit.
 
 ## Keyword and autocomplete research

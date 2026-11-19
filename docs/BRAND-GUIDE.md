@@ -7,7 +7,7 @@
 **Mission:** Helping women fall in love with the life they live outside of work.
 **Philosophy:** Your career can be a big part of your life without being your whole life.
 
-Usage: tagline beneath the stacked wordmark (footer, about); slogan on select editorial/marketing moments (hero annotation, footer, printables); signature phrase as a recurring detail (announcement strip, hero kicker, printable headers). Phrase bank lives in `src/config/site.ts` — use selectively, never on every page.
+Usage: tagline beneath the stacked wordmark (footer, about); slogan on select editorial/marketing moments (hero annotation, footer); signature phrase as a recurring detail (announcement strip, hero kicker). Phrase bank lives in `src/config/site.ts` — use selectively, never on every page.
 
 ## Section names
 After Hours · The Weekend Edit · Creative Corner · Table for One · Better Together · A Little Movement · Off Duty Essentials · Find Your Thing · Make Some Plans · My Plans · The Out-of-Office Collection · The Out-of-Office Note · The Journal

@@ -30,7 +30,7 @@ Hobbies sorted by effort rather than by category, a two-minute-setup rule, hones
 things-to-do-after-work-instead-of-scrolling, hobbies-to-try-when-life-feels-like-work-sleep-repeat, how-to-find-a-hobby-as-an-adult, how-to-start-crocheting, how-to-start-embroidery, how-to-start-junk-journaling, cozy-solo-dates-at-home, affordable-hobbies-under-25
 
 ## How does it contribute to long-term revenue?
-Evergreen, high-intent for starter craft kits and cozy-evening accessories (lights, journals, blankets). Likely to resurface every autumn and winter, and a natural hub that feeds the craft how-tos and the printables. Revenue is long-tail affiliate on small-ticket items plus newsletter growth; no income claim is made.
+Evergreen, high-intent for starter craft kits and cozy-evening accessories (lights, journals, blankets). Likely to resurface every autumn and winter, and a natural hub that feeds the craft how-tos. Revenue is long-tail affiliate on small-ticket items plus newsletter growth; no income claim is made.
 
 ## Keyword and autocomplete research
 PENDING COWORK

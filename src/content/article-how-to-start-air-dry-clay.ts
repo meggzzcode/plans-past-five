@@ -14,7 +14,6 @@ export const articleHowToStartAirDryClay: Article = {
     "A beginner walkthrough that sets honest expectations: what air-dry clay is good for, what it is not, and how to make a first trinket dish, then a jewelry holder, ornaments and figurines",
   hobbies: ["air-dry-clay", "pottery-painting", "craft-nights"],
   productIds: ["air-dry-clay", "clay-tools", "clay-mats", "acrylic-paints", "detail-brushes"],
-  printable: "weekend-edit-planner",
   sources: [],
   coworkChecks: [
     "Air-dry clay cures by evaporation and does not need a kiln or oven; confirm per product, as some types differ (claimed general property)",
@@ -165,7 +164,7 @@ export const articleHowToStartAirDryClay: Article = {
     },
     {
       type: "p",
-      text: "The [Weekend Adventure Planner](/printables/weekend-edit-planner) helps slot the drying days around everything else. Want company for it? [How to Host a Craft Night](/journal/how-to-host-a-craft-night) turns a block of clay into a good excuse for friends to come over.",
+      text: "Want company for it? [How to Host a Craft Night](/journal/how-to-host-a-craft-night) turns a block of clay into a good excuse for friends to come over.",
     },
     { type: "ifYouLoved", hobbies: ["pottery-painting", "craft-nights", "paint-by-numbers"] },
   ],

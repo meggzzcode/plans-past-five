@@ -161,7 +161,7 @@ export const equipmentByHobby: Record<string, EquipmentItem[]> = {
   calligraphy: [
     e("pens", "Brush pens", ess, "tools", 6, 16, "creative-girl"),
     e("pad", "Practice pad or smooth paper", ess, "materials", 3, 9),
-    e("sheets", "Printable practice sheets", opt, "learning", 0, 5),
+    e("sheets", "Practice sheets", opt, "learning", 0, 5),
     e("dip", "Dip pen and ink", opt, "extras", 10, 22),
   ],
   "film-photography": [

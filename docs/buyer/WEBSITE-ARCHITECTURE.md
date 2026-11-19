@@ -21,22 +21,22 @@ TanStack Start (SSR) on React 19, TypeScript, Tailwind CSS v4, shadcn-style UI c
 src/config/        site.ts (brand, settings), affiliate.ts (link registry), trust-links.ts
 src/content/       articles (types.ts, article-*.ts, drafts.ts, corrections.ts, index.ts helpers)
 src/data/          hobbies, products (types), catalog (verified products), kits, categories,
-                   activities, printables, images, affiliate-programs (research register)
+                   activities, images, affiliate-programs (research register)
 src/lib/           finder, planner, budget, tonight, saved, shoplist, search, seo, sitemap, track
 src/components/    brand, layout, editorial, cards, commerce, pages, ui
 src/routes/        one file per URL (file-based routing)
 src/test/          Vitest suites
 src/server.ts      SSR entry wrapper with error handling
-public/            robots.txt, _headers, downloads (PDFs), pins (pin images), favicons
-scripts/           serve-built.mjs, site-health.mjs, build-printables.mjs, import-products.mjs
-design/            sources for brand assets, pins, printables, kits
+public/            robots.txt, _headers, pins (pin images), favicons
+scripts/           serve-built.mjs, site-health.mjs, import-products.mjs
+design/            sources for brand assets and pins
 docs/              handoff, buyer, content, commerce, marketing, SOPs
 .github/           CI, site-health, monthly-digest workflows, dependabot
 ```
 
 ## Routes (`src/routes`)
 
-`/` home, `/about`, `/after-hours`, `/weekends`, `/solo-dates`, `/better-together`, `/creative-corner`, `/movement`, `/journal` and `/journal/<slug>`, `/hobbies` and `/hobbies/<slug>`, `/shop` and `/shop/<collection>`, `/hobby-finder`, `/make-plans`, `/tools/hobby-budget`, `/tools/tonight`, `/printables` and `/printables/<slug>`, `/saved`, `/search`, `/start-here`, `/contact`, `/privacy`, `/terms`, `/affiliate-disclosure`, `/editorial-policy`, `/corrections`, `/methodology`, `/sitemap.xml`. `src/routeTree.gen.ts` is generated; never edit by hand.
+`/` home, `/about`, `/after-hours`, `/weekends`, `/solo-dates`, `/better-together`, `/creative-corner`, `/movement`, `/journal` and `/journal/<slug>`, `/hobbies` and `/hobbies/<slug>`, `/shop` and `/shop/<collection>`, `/hobby-finder`, `/make-plans`, `/tools/hobby-budget`, `/tools/tonight`, `/saved`, `/search`, `/start-here`, `/contact`, `/privacy`, `/terms`, `/affiliate-disclosure`, `/editorial-policy`, `/corrections`, `/methodology`, `/sitemap.xml`. `src/routeTree.gen.ts` is generated; never edit by hand.
 
 ## Data flow
 
@@ -57,6 +57,5 @@ docs/              handoff, buyer, content, commerce, marketing, SOPs
 ## Known limitations
 
 - No CMS: content is edited as code (`docs/buyer/CONTENT-MANAGEMENT.md`).
-- Printable PDFs are built by a script that needs Chromium via Playwright (`scripts/build-printables.mjs`).
 - Fonts load from Google Fonts (`docs/BRAND-GUIDE.md`); self-host if you prefer.
 - `site.url`, contact email, socials and legal owner name are empty in `src/config/site.ts` until the owner fills them.

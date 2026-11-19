@@ -24,7 +24,6 @@ Site status: pre-revenue, not yet public (2026-11-19).
 | Design tools (Canva etc.) | Optional | UNCONFIRMED | Free vs paid | Pin sources are generated from `design/pins` and do not require an account |
 | Legal review of Privacy/Terms | Recommended | UNCONFIRMED | One-off professional fee | Pages are starter text |
 | Business entity, tax and accounting | Depends on your situation | UNCONFIRMED | Varies by jurisdiction | Not covered by these docs; no tax or financial advice given |
-| Payment processor or storefront for digital products | Only if you sell digital products | UNCONFIRMED | Percentage and fixed fees | `docs/buyer/DIGITAL-PRODUCTS.md` when present |
 | Dependencies | Yes (free) | CONFIRMED that the repo uses open-source packages managed by Bun; paid dependencies not found | n/a | Dependabot is configured (`.github/dependabot.yml`) |
 | Database, authentication, AI APIs, payment backend | No | NOT NEEDED (frontend-only by design, `AGENTS.md`) | n/a | |
 
