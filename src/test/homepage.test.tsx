@@ -43,3 +43,21 @@ describe("quiz question count", () => {
     expect(QUIZ_ORDER.length).toBe(QUIZ_QUESTION_COUNT);
   });
 });
+
+describe("mobile menu fine print", () => {
+  it("links About, Contact, Editorial Standards, Affiliate Disclosure and Corrections", async () => {
+    const { finePrintNav } = await import("@/components/layout/nav");
+    const { trustLinks } = await import("@/config/trust-links");
+    expect(finePrintNav.map((n) => n.label)).toEqual([
+      "About",
+      "Contact",
+      "Editorial Standards",
+      "Affiliate Disclosure",
+      "Corrections",
+    ]);
+    for (const t of trustLinks.filter((t) => t.label !== "How We Choose"))
+      expect(finePrintNav.find((n) => n.label === t.label)?.to).toBe(t.to);
+    const header = readFileSync("src/components/layout/Header.tsx", "utf8");
+    expect(header).toContain("finePrintNav.map");
+  });
+});

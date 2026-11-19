@@ -8,6 +8,7 @@ import { images, type ImageKey } from "@/data/images";
 import type { PersonaKey } from "@/lib/finder";
 import { toneBg } from "@/components/editorial/Section";
 import { Bow, Flower, Sparkle, Star } from "@/components/brand/Doodles";
+import { SaveButton } from "@/components/editorial/SaveButton";
 import { ShopMyHobby } from "@/components/commerce/ShopMyHobby";
 import { cn } from "@/lib/utils";
 import { track } from "@/lib/track";
@@ -59,7 +60,7 @@ function ResultCard({ h, badge, note }: { h: Hobby; badge?: string | undefined; 
   const img = h.image ? images[h.image] : undefined;
   const tile = tiles[h.category];
   return (
-    <li className="paper flex flex-col overflow-hidden">
+    <li className="paper relative flex flex-col overflow-hidden">
       <Link
         to="/hobbies/$slug"
         params={{ slug: h.slug }}
@@ -93,6 +94,17 @@ function ResultCard({ h, badge, note }: { h: Hobby; badge?: string | undefined; 
           </span>
         )}
       </Link>
+      <div className="absolute right-3 top-3">
+        <SaveButton
+          compact
+          item={{
+            key: `hobby:${h.slug}`,
+            kind: "hobby",
+            title: h.name,
+            href: `/hobbies/${h.slug}`,
+          }}
+        />
+      </div>
       <div className="flex flex-1 flex-col gap-3 p-4">
         {img && <h3 className="text-2xl leading-tight">{h.name}</h3>}
         <ul className="flex flex-wrap gap-1.5">

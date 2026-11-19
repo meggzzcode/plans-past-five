@@ -145,9 +145,9 @@ export const generatedCatalog: CatalogProduct[] = [
         slot: "journal",
       },
     ],
-    role: "essential",
-    isEssential: true,
-    audience: "Beginners who want a sturdy first journal",
+    role: "aesthetic-upgrade",
+    isEssential: false,
+    audience: "People who want a smaller, bag-size journal in blush",
     whySelected:
       "The listing names junk journaling as a use and describes thicker acid-free paper than ordinary notebooks.",
     limitations: [
@@ -164,8 +164,8 @@ export const generatedCatalog: CatalogProduct[] = [
     imageRights: "none",
     shortName: "Blush blank journal, 160 pages",
     benefit: "A blush-pink 5.6 x 8 in journal that slips into a bag, with 160 pages to fill.",
-    lead: true,
-    onlyOne: true,
+    compare:
+      "Smaller bag-size blush journal; thinner 100 gsm paper, so glue-heavy pages warp sooner.",
   },
   {
     id: "scotch-glue-stick-photo-safe-4-pack",
@@ -1278,9 +1278,9 @@ export const generatedCatalog: CatalogProduct[] = [
         slot: "journal",
       },
     ],
-    role: "nice-to-have",
-    isEssential: false,
-    audience: "People who want thicker paper for glue and tape",
+    role: "essential",
+    isEssential: true,
+    audience: "Beginners who want paper thick enough for glue and tape",
     whySelected: "Thicker paper than a standard notebook, per the listing.",
     limitations: [
       "Heavy glue and wet media may still warp pages (untested)",
@@ -1296,8 +1296,8 @@ export const generatedCatalog: CatalogProduct[] = [
     imageRights: "none",
     shortName: "A5 hardcover journal, 120 gsm",
     benefit: "Thick 120 gsm pages in a classic black hardcover, with 180 pages.",
-    compare:
-      "Thicker 120 gsm paper, a better bet for layered pages; plain black cover instead of blush.",
+    lead: true,
+    onlyOne: true,
   },
   {
     id: "plusvivo-felt-game-table-cover-36-blue",

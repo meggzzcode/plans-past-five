@@ -77,3 +77,15 @@ export const topNav = [
 
 /** Everything the mobile menu lists, in order. */
 export const mobileNavItems: NavItem[] = [...toolNav, ...sectionNav, ...browseNav];
+
+/**
+ * Fine print for the mobile menu (small text links, not full rows). Labels match the footer and
+ * src/config/trust-links.ts so each page has one name everywhere.
+ */
+export const finePrintNav = [
+  { to: "/about", label: "About" },
+  { to: "/contact", label: "Contact" },
+  { to: "/editorial-policy", label: "Editorial Standards" },
+  { to: "/affiliate-disclosure", label: "Affiliate Disclosure" },
+  { to: "/corrections", label: "Corrections" },
+] as const;

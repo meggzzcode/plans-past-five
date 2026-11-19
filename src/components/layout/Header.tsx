@@ -7,6 +7,7 @@ import { site } from "@/config/site";
 import { useSaved } from "@/lib/saved";
 import {
   browseNav,
+  finePrintNav,
   NAMES,
   sectionNav,
   toolNav,
@@ -154,6 +155,22 @@ export function Header() {
             <MenuGroup title="Start" items={toolNav} close={close} />
             <MenuGroup title="Sections" items={sectionNav} close={close} cols />
             <MenuGroup title="Browse" items={browseNav} close={close} />
+            <ul
+              aria-label="Fine print"
+              className="mt-5 flex flex-wrap gap-x-4 border-t border-border px-2 pt-3 text-sm text-espresso"
+            >
+              {finePrintNav.map((n) => (
+                <li key={n.to}>
+                  <Link
+                    to={n.to}
+                    onClick={close}
+                    className="inline-flex min-h-11 items-center underline underline-offset-4 hover:text-cherry"
+                  >
+                    {n.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </nav>
         </div>
       )}
