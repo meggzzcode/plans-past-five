@@ -1,0 +1,11 @@
+# Netlify build for Plans Past Five (verified locally 2026-11-19: NITRO_PRESET=netlify bun run build
+# writes static files to dist/ and the server-rendering function to .netlify/functions-internal).
+# The repo's default Nitro target is Cloudflare, so the preset is set here by environment variable.
+[build]
+  command = "bun install --frozen-lockfile && bun run build"
+  publish = "dist"
+  # Skip deploys (each production deploy costs credits on the free plan) when only docs, scripts or tests changed.
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- src public package.json bun.lock vite.config.ts tsconfig.json netlify.toml ':(exclude)src/test'"
+
+[build.environment]
+  NITRO_PRESET = "netlify"
