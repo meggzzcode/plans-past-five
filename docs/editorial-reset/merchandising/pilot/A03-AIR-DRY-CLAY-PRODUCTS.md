@@ -1,6 +1,6 @@
 # A03 Air-Dry Clay for Beginners: product research record (merchandising, pre-writing)
 
-Author role: head of merchandising / retail buyer. Prepared 2026-11-19 on branch `editorial-reset`. Governed by PLAN.md sections 0000 (active monetisation: customer trust outranks commission), 000 (Premium Product Curation and Merchandising Standard) and 00 (editorial rebuild). Companion data file: `A03-AIR-DRY-CLAY-PRODUCTS.csv` (one row per candidate, 41 columns). Nothing here is approved. No article text has been written; this record comes first, by rule.
+Author role: head of merchandising / retail buyer. Prepared 2026-11-19 on branch `editorial-reset`. Governed by PLAN.md sections 0000 (active monetisation: customer trust outranks commission), 000 (Premium Product Curation and Merchandising Standard) and 00 (editorial rebuild). Companion data file: `A03-AIR-DRY-CLAY-PRODUCTS.csv` (one row per candidate, 22 rows, 37 columns). Nothing here is approved. No article text has been written; this record comes first, by rule.
 
 Labels: **SOURCED** (URL and date given; all pages read or searched 2026-11-19), **ASSUMPTION** (editorial judgement), **UNVERIFIED** (needs Cowork or the owner). Scores are internal editorial judgements, never shown to readers. No prices appear anywhere; bands only. Nothing here implies hands-on testing: nobody on this team has made anything with these products.
 
@@ -69,7 +69,7 @@ Why DAS over Mont Marte: wider independent recommendation (weak but present), a 
 |---|---|---|---|
 | **Liquitex BASICS Acrylic Set, 12 x 22 ml** | Maker page read (S13): medium viscosity, satin finish, lightfast fine-art pigments, "fully AP certified for safety & educational use" (ACMI AP seal statement), surfaces include "stone and ceramics" (clay not named), twelve colours listed: primaries, earths, black, white. Page says "six" in the description and lists twelve: internal inconsistency to confirm | 80 | **ESSENTIAL PAINT (entry-mid)**. Tints are mixed from white; tell the reader so |
 | **Winsor & Newton Galeria Acrylic, 20 x 12 ml** | Maker page read (S15): 20 colours including Pale Rose Blush, Naples Yellow, Olive Green, Permanent Rose, Burnt Sienna Opaque, Titanium White; ACMI AP statement; no finish or surface statement. Also serves paint night (M2 row A4) | 81 | **WORTHWHILE UPGRADE** |
-| Mont Marte Signature Acrylic Colour Pastel Set, 12 x 36 ml | Maker page shows name and SKU MSCP1236 only (S: montmarte.com product page); "semi-matte", "non toxic" come from stockists (search summary) | 71 | Research further (attractive palette, thin evidence) |
+| Mont Marte Signature Acrylic Colour Pastel Set, 12 x 36 ml | Maker page shows name and SKU MSCP1236 only (montmarte.com product page, see CSV PAINT-03); "semi-matte", "non toxic" come from stockists (search summary) | 71 | Research further (attractive palette, thin evidence) |
 | Apple Barrel Matte Acrylic (Plaid) | Maker page (S16): wood, canvas, paper, glass, ceramic, metal; no clay mention; no AP claim stated | 58 | Not recommended |
 
 Compatibility (SOURCED): acrylic paint on thoroughly dry clay is endorsed by Crayola (S1) and Mont Marte (S5, S6). Neither Liquitex nor W&N states clay as a surface; the endorsement comes from the clay makers.
