@@ -52,7 +52,7 @@ Replaces the earlier pieces (COWORK-MASTER-PROMPT-PATH-TO-8.md, the F1-F19 adden
 - Hand A, B and C results to Claude Code as validated files (section 5). Claude Code imports products, updates article text, re-runs tests and freezes a new release candidate.
 
 **Wave 4: needs the final deployed site (after ONE release deploy, which the owner approves):**
-- H. Live SEO and production verification
+- H. Live SEO and production verification (including confirming the GA4 loader works once the owner supplies an ID, see O)
 - K. Blind customer and buyer re-reviews on the live URL
 - L. Screenshots, walkthrough video and the marketplace package
 - M. Tracker update (can also be done earlier with a pending packet)
@@ -81,6 +81,7 @@ Do not do a production deploy until Wave 3 changes are integrated. Do not do mul
 ### B. Kit completion and buy-plan verification (priority 1)
 
 Owner direction: every article and activity should have a recommended buy (an "event elevator" or a "hobby helper"), picks must be genuinely good (well reviewed, positive sentiment), reasonably priced for beginners (budget or mid tier, never premium or expert gear), with a START option and, where sensible, a beginner STEP-UP.
+**Scope limit (owner decision):** the buy-plan CSVs hold about 200 candidate rows, with many duplicates. Do NOT treat all of them as mandatory. Our goal is a compelling, complete shopping experience, not a large catalog. Do them in this order and stop when the tiers below are done: (1) missing starter-kit essentials (racquet sports, crochet hook, mahjong card sleeve, watercolor and paint-night gaps); (2) products that support the ten strongest commercial articles; (3) everything else only if time remains, and say what you skipped.
 **Inputs:** `docs/commerce/KIT-COMPLETION-PLAN.md`, `docs/commerce/kit-candidates-for-cowork.csv` (17 rows), `docs/commerce/buy-plan/BUY-PLAN-1.md, -2.md, -3.md` and `candidates-1.csv, -2.csv, -3.csv` (about 200 rows with duplicates across articles; de-duplicate by brand and product name), and the kit slot names in `src/data/kits.ts` (read only).
 **Priority order:**
 1. racquet sports (pickleball paddle and balls, tennis racquet and balls)
@@ -169,6 +170,20 @@ Update the existing Google Sheet (https://docs.google.com/spreadsheets/d/1QOJUmp
 
 The repository was public so an independent audit could read it. After the sanitized buyer package is final, and ONLY with the owner's explicit yes: report the current visibility, set the repo to private, confirm Netlify can still build from it, and report what changed. Do not imply this removes existing copies or forks. Do not add an open-source licence.
 
+### O. OPTIONAL 30-day activation experiment (only if the owner authorises it, in writing, in chat)
+
+Context: the owner is considering operating Plans Past Five for up to 30 days while it is also listed for sale, to gather genuine performance data for the marketplace package. Personal time budget: about 6 hours in total. No paid advertising. The full plan is in `docs/launch/ACTIVATION-PLAN-30-DAY.md` (Claude Code writes it); follow it only after the owner says "activate".
+**Do nothing in this workstream without owner authorisation for each step:** do not enter a real tracking ID, do not publish or schedule pins, do not post marketing content.
+Steps, in dependency order (each one needs the owner's yes first):
+1. **GA4:** create a GA4 property and web data stream for the live domain (owner logged in; a SEPARATE property from Paws & Passage). Give Claude Code the measurement ID (G-...). After the release deploy, confirm in GA4 Realtime that a page view and a test event arrive. Record only what GA4 actually shows.
+2. **Search Console:** verify the domain property, submit `/sitemap.xml`, request indexing for the ten strongest commercial articles and the home page; Bing import. Give Claude Code the verification token only if a meta tag is needed.
+3. **Pinterest:** business account under the site mailbox, claim the website (tag token to Claude Code if needed), confirm board names from `docs/pinterest-pins.csv`. Schedule existing pins ONLY on the owner's explicit go, at a pace of at most 3 pins a day, only for published pages, and record every pin posted.
+4. **Amazon tracking ID (subject to eligibility):** read the official Associates help pages and report: whether a website-specific tracking ID can be created inside the existing master account, whether the website must first be added to the account's website list, the account's current status (the account was reported as in its 180-day review window with qualifying sales required), the exact disclosure wording Amazon requires beside links, and any rule about running the same account on a site that is being sold. Do NOT create the ID or put it in the site; report what the owner would have to do. If the owner then authorises, give Claude Code the ID (never a password), and Claude Code flips the single configuration entry and the disclosure wording, re-runs the tests and builds one release.
+5. **Weekly performance report (4 reports):** each week record, from the tools themselves and only what exists: GA4 users and page views, top pages, Search Console impressions and clicks and indexed pages, Pinterest impressions and outbound clicks, outbound product-link clicks (from GA4 events), and any Amazon Associates clicks and orders (read-only from the Associates dashboard). Never estimate. Use `docs/launch/GROWTH-EXPERIMENT-LOG.md`.
+6. **Time and cost tracking (three separate tallies, never combined):** (a) the owner's personal working hours, (b) automated or agent execution hours (Claude Code and Cowork run time; record roughly, state the method), (c) actual cash expenses (domain, mailbox, any other real charge, from receipts). Update the log every week.
+7. **Update the marketplace package** with verified performance only, dated and with the screenshot of the source dashboard; if there is no data, say so. Do not extrapolate or promise future earnings.
+**Output:** `docs/launch/GROWTH-EXPERIMENT-LOG.md` (weekly entries) and an updated `docs/marketplace/final-inspection/LISTING-DRAFT-FINAL.md` data section only after the owner approves the numbers.
+
 ## 5. Hand-back files (so Claude Code can integrate without guessing)
 
 | Workstream | Deliverable file | Who applies it |
@@ -186,6 +201,7 @@ The repository was public so an independent audit could read it. After the sanit
 | K | `docs/marketplace/reviews4/`, `docs/marketplace/USABILITY-FRIEND-PACKET.md` | defect packets to Claude Code |
 | L | `docs/marketplace/presentation/` | owner |
 | M | the Google Sheet | owner |
+| O (optional) | `docs/launch/GROWTH-EXPERIMENT-LOG.md` | Claude Code updates the listing data section after owner approval |
 
 ## 6. Defect packet (use this when you find a code problem)
 
