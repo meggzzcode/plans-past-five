@@ -1,21 +1,24 @@
-# Trademark knockout screening: "Plans Past Five" (2026-11-19)
+# Trademark knockout screening: "Plans Past Five" (2026-11-19, updated after USPTO search)
 
-**Screening only, not legal clearance.** I am not a lawyer and this does not replace a professional search.
+**Screening only, not legal clearance.** I am not a lawyer. This does not replace a professional search or a buyer's own clearance.
 
-## What I did
-Web searches for the exact phrase and the one-word form, combined with "trademark", "brand", "company", "instagram", "pinterest", "tiktok", "llc".
+## USPTO database (tmsearch.uspto.gov, searched in the owner's browser 2026-11-19)
+| Query | Results | What the top of the list showed |
+|---|---|---|
+| PLANS PAST FIVE | 8,170 (word-by-word match, relevance ordered) | Top hits were "PLANS" marks and a dead Prudential slogan ("Past performance. Present plans. Future dreams."), no mark containing PLANS PAST FIVE |
+| PAST FIVE | 7,096 | "PAST 5" (live, pending, class 33 distilled alcohol, LIT LIQ LLC, Florida), "PAST 5" (dead, cancelled, class 25), other PAST marks; no PAST FIVE mark seen |
+| PLANS AFTER FIVE | 11,091 | "AFTER FIVE" marks: live registered for dental instruments (class 10), candy (class 30), and others; live pending for tobacco (class 34); "HOOKED AFTER FIVE" live pending, class 41, online videos (Hooked After Five LLC, Texas); dead "AFTER FIVE STATIONERY" (class 16) |
 
-## What I found
-- No result for the exact phrase "Plans Past Five" or "planspastfive" as a brand, company or trademark. Hits were unrelated names (PLAN A, PLAN B, PLAN C, PLAN & PROGRESS, PLAN FOR THE PRESENT, Planswell, Plann/Planoly planner tools) on Justia and other trademark-listing sites.
-- The domain planspastfive.com was available and was registered by Megan on 2026-11-19 (Namecheap order 220011258).
-- Nearby marks exist for "plan" words, mostly in other classes (finance, toys, paper goods). Class 16 "PLAN & PROGRESS" (registered, paper goods) is the closest in field to planners. I did not judge likelihood of confusion.
+Reading: no live or dead USPTO record with the exact phrase "PLANS PAST FIVE" appeared at the top of a relevance-ordered list; I did not page through all results. The nearest live marks use "AFTER FIVE" in unrelated goods (dental, candy, tobacco) plus HOOKED AFTER FIVE in class 41 online video (the field is cut off in the list; I did not open the record). That one is the only nearby mark in an educational/entertainment class and deserves a look by the owner.
 
-## What I could NOT do
-- Search the USPTO trademark database directly (https://tmsearch.uspto.gov): it is a script-driven app and I did not run it. A web search is not a substitute. NOT DONE.
-- State registries, common-law use beyond a few web searches, Instagram/TikTok/Pinterest/X handle availability inside each platform. NOT DONE (needs logged-in or in-app checks).
-- Phonetic and design-mark variants (for example "Plans After Five", "Past 5").
+## Web search (earlier)
+No exact-phrase brand, company or social account found for "Plans Past Five" or "planspastfive". Nearby "PLAN" marks exist in other classes (PLAN & PROGRESS class 16 registered, PLAN FOR THE PRESENT).
 
-## Owner action
-1. Search "PLANS PAST FIVE", "PLANS AFTER FIVE" and "PAST FIVE" in classes 16, 35, 41 and 42 on tmsearch.uspto.gov and note any live marks.
-2. Check the handle @planspastfive on Pinterest, Instagram and TikTok.
-3. The buyer should do their own clearance; the listing should not claim the name is cleared.
+## Not done
+- State trademark registries and business-name registries; Instagram, TikTok, Pinterest and X handle availability inside each app; common-law use beyond web search; design-mark variants; "PLANS PAST 5".
+- No opinion on likelihood of confusion.
+
+## Owner actions
+1. Open the HOOKED AFTER FIVE record (serial 50056258) on tmsearch.uspto.gov and read its goods and status.
+2. Check @planspastfive on Pinterest, Instagram, TikTok.
+3. The listing should say "name not trademark-cleared; screening only".

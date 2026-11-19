@@ -46,3 +46,8 @@ I cannot give an evidence-backed asking price or negotiation range. Record that 
 
 ## 5. Not done
 Other marketplaces (Empire Flippers, Acquire.com, Investors Club) were not read; Empire Flippers does not take small sites. Flippa pricing page and Terms were not read.
+
+## Finish pass 2026-11-19
+- Flippa pricing page read directly (https://flippa.com/pricing): four one-time-fee listing packages (Enhanced, Standard, Premium, Boosted) shown with no dollar prices; add-ons for NDA and legal templates are $199 each on some packages; no success-fee percentages or tiers; a price-match promise to beat a comparable platform's success fee by 1% (conditions apply); no starter or website listing rules; discounted escrow and trust payments mentioned with no amounts. So official Flippa prices and the success-fee rate are NOT FOUND on Flippa's own pages. The $29 entry and ~10% figures remain third-party and unconfirmed.
+- Escrow.com fee conflict: Escrow.com's own domains page says 2.6% with a $50 minimum for $0 to $5,000 and carries a 2026 copyright notice but no last-updated date; Flippa's help page says 3.25% with a $10 minimum, buyer-paid, with a 20% discount through Flippa. These may be different fee schedules (domains page vs general page, and Flippa-negotiated rates). Cannot be reconciled from the pages; confirm in the Escrow.com quote at checkout.
+- Still no verified sold price for a comparable pre-revenue site. Without comps, no evidence-backed ask can be stated; the owner picks a price on cost-to-rebuild and an acceptable reserve. Not a data gap I can close from public pages (Flippa sold data sits behind login or is hidden).

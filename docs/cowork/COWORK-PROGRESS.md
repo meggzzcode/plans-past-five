@@ -35,3 +35,10 @@ No code, main branch or claude/vibrant-dirac-amdf7r changed by Cowork work; data
 6. Decide whether to send the draft photo-permission emails.
 7. Merge the cowork/* branches (data and docs only) when ready; each branch carries its own COWORK-PROGRESS lines.
 8. Claude Code defects: importer rejects the extra columns in VERIFIED-QUEUE-EXTRAS (kept as a sidecar); pins use a {SITE_URL} placeholder; see docs/cowork/DEFECT-PACKET.md.
+
+## FINISH PASS (2026-11-19)
+- B: 13 more Amazon pages read in owner's browser; docs/commerce/buy-plan/VERIFIED-ADDITIONS.csv (importer-clean VERIFIED-QUEUE.csv left untouched). Liquitex 12-set not found. Susan Bates Silvalume H-8 now FOUND (B003I5L15M; earlier NOT FOUND corrected). Decisions: keep 8, hold 5.
+- C: previously unchecked rows resolved in COWORK-SOURCE-RESULTS.md (finish pass). Remaining open: Safeway page re-open (low risk), general 'often free' claims are not sourceable.
+- E: Netlify terms, Search Console, Pinterest claim, Amazon agreement read; GA4 and Bing help pages gave no answers (NOT FOUND).
+- J: Flippa pricing page read: no dollar prices or success-fee rates published there; escrow fee pages conflict (cannot reconcile); no sold comps (NOT FOUND).
+- Trademark: USPTO database searched; no exact mark; HOOKED AFTER FIVE (class 41) to be opened by owner.
