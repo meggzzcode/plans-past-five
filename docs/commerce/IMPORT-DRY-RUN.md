@@ -1,3 +1,5 @@
+> SUPERSEDED 2026-11-19: this dry run is out of date. Validate the current file with `bun run import:products docs/commerce/product-research.csv --check`.
+
 # Product import: dry run and review guide
 
 The shoppable system ships with an EMPTY verified catalog. Before the researched products arrive, the whole pipeline was exercised with a temporary set of obviously fake products, then removed. This page records what was tested, what broke and was fixed, exactly what happens to a researched CSV, and the checklist for reviewing imported products before any article is published.

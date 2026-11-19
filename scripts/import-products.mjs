@@ -422,11 +422,22 @@ function fail(errors, warnings = []) {
 
 async function main() {
   const args = process.argv.slice(2);
+  if (args.includes("--help") || args.includes("-h")) {
+    console.log(
+      "Usage: bun run import:products <path/to/file.csv> [--check]\n  --check   validate only, write nothing\nSafety: a file path is required to write, and an empty file or the blank template never overwrites the catalog.",
+    );
+    return;
+  }
   const check = args.includes("--check");
-  const file = resolve(
-    args.find((a) => !a.startsWith("--")) ??
-      resolve(root, "docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv"),
-  );
+  const given = args.find((a) => !a.startsWith("--"));
+  const file = resolve(given ?? resolve(root, "docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv"));
+  // Without an explicit file the script only validates the template (never writes), so a stray run
+  // cannot blank the catalog.
+  if (!given && !check) {
+    return fail([
+      "no CSV file given. Run: bun run import:products docs/commerce/product-research.csv (add --check to validate only).",
+    ]);
+  }
   if (!existsSync(file)) return fail([`file not found: ${file}`]);
   let text;
   try {
@@ -438,6 +449,8 @@ async function main() {
   if (errors.length) return fail(errors, warnings);
   for (const w of warnings) console.warn(`(warning) ${w}`);
 
+  if (products.length === 0 && !check)
+    return fail(["the file has no product rows, so the catalog was NOT overwritten."]);
   const verified = products.filter((p) => p.status === "verified").length;
   const summary = `${products.length} products (${verified} verified, ${products.length - verified} candidates)`;
   if (check) {

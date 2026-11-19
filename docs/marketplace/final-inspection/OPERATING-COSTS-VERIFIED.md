@@ -1,0 +1,119 @@
+# Operating costs, verified (2026-11-19)
+
+Method: repo evidence read at its current state, local builds in a scratch copy (never the real repo), live pages read on 2026-11-19. Every price has a source and a quality tag:
+- **[OFFICIAL]** read on the provider's own page today.
+- **[SECONDARY]** from a third-party page or search result; verify at checkout.
+- **NOT FOUND** the provider page was unreachable (HTTP 403/404) or did not state it.
+No secrets, account numbers or billing details are in this file. Legal and photo figures are estimates and are flagged.
+
+## 1. Bottom line
+
+| Scenario | Monthly | Annual | What it assumes |
+|---|---|---|---|
+| **MINIMUM viable** | about $1 | about $12 | Domain at a no-markup registrar (Porkbun $11.81/yr). Netlify free plan. Email through Cloudflare Email Routing (receive only, free). Everything else free. |
+| **MINIMUM, intro-priced first year only** | about $0.56 | about $6.68 ($6.48 + $0.20 ICANN) | Namecheap new-customer promo code. NOT repeatable: renewal is $15.98 to $19.98 (section 2). |
+| **COMFORTABLE** | about $17 | about $204 | Domain about $12/yr, Netlify Personal $9/mo, Google Workspace Business Starter $7/mo on annual billing. Legal and photos excluded. |
+| **COMFORTABLE, cheap email variant** | about $11 | about $130 | As above but Zoho Mail Lite at $1/user/mo annual instead of Google Workspace. |
+| Optional tools some owners add | +$25 Lovable Pro, +$13 to $15 Canva Pro | | NOT required to run, build, deploy or edit the site (section 5). |
+| One-off optional (ESTIMATES, not read from any source) | LLC or DBA filing: varies by state, commonly tens to a few hundred dollars. Lawyer review of Privacy and Terms: low hundreds to low thousands. | | Flag as estimates only. No tax or legal advice. |
+
+Required recurring cost to be live: the domain. Hosting, DNS, repo, CMS, analytics, Amazon Associates and Pinterest can all be $0.
+
+## 2. Domain (registrar), intro versus renewal
+
+| Registrar | .com first year | .com renewal | WHOIS privacy | Source, date, quality |
+|---|---|---|---|---|
+| Porkbun | $11.81 | $11.81 (same) | free, included | https://porkbun.com/products/domains , 2026-11-19, OFFICIAL |
+| Cloudflare Registrar | about $11.17 | about $11.17 (at cost, no markup) | free (redaction) | Model OFFICIAL: https://www.cloudflare.com/products/registrar/ (no .com figure on page). Figure SECONDARY: https://domainoffer.net/tld/com/cloudflare , 2026-11 (reflects Verisign wholesale rise to $10.97 from Nov 1 2026; older sources say $10.46). |
+| Namecheap | $6.48 with code NEWCOM648 (new customers, one per customer); $12.08 without code | $19.98 regular; $15.98 with a code | listed free | https://domainoffer.net/tld/com/namecheap , 2026-11-19, SECONDARY. namecheap.com itself returned HTTP 403 (NOT FOUND officially). |
+
+Reading: the cheapest first year (Namecheap promo) is the most expensive second year. A flat-price registrar (Porkbun, Cloudflare) is the honest budget: about $11 to $12 a year. The repo only shows `planspastfive.com` as a placeholder; ownership and availability are unconfirmed (`docs/NAME-CHECK-planspastfive.md`).
+
+## 3. DNS
+
+$0 at any registrar above, or at Cloudflare. Not separately priced.
+
+## 4. Hosting
+
+### Netlify free plan (current host target)
+Source: https://www.netlify.com/pricing/ , 2026-11-19, OFFICIAL. Docs deep links I tried returned 404 (NOT FOUND).
+- Free: "300 credit limit". Personal "1,000 credits" at $9/month. Pro "3,000 credits" at $20/month. Credit pack: Personal 500 credits for $5, Pro 1,500 for $10.
+- Usage: production deploys "15 credits each"; bandwidth "20 credits per GB"; compute "10 credits per GB-hour"; web requests "2 credits per 10k requests".
+- Confirmed: 300 credits, 15 per production deploy, 20 per GB. Per-month reset is not worded on the pricing page.
+- NOT FOUND on the official page: what happens at the cap. SECONDARY evidence (search results of Netlify community forum threads and guides, 2026-11-19): free-plan sites and production deploys are paused at the cap with a "Site not available" page; several forum threads report sites staying paused after the monthly reset to 300/300. So the pause is probable, and the reset glitch is a reported risk, not a confirmed Netlify-wide bug.
+- Arithmetic from the official numbers: 8 deploys = 120 credits, leaving 180 credits = at most 9 GB of bandwidth, before request and compute credits (the site has a server-rendering function, so request and compute credits are not zero; I could not measure them without a deployed site). 0 deploys = at most 15 GB. The `netlify.toml` comment "about 20 production deploys" uses all 300 credits on deploys and leaves no bandwidth; `docs/buyer/NETLIFY-CREDITS-AND-RELEASES.md` recommends at most 8, which is the safer figure.
+- Bandwidth and function limits other than credits: NOT FOUND on the pricing page.
+
+### Does the build fit each host? (tested locally in a scratch copy)
+| Target | Command | Result | Code change needed? |
+|---|---|---|---|
+| Default | `bun run build` | OK in about 4 to 9 s. Writes `.output/` with `server/wrangler.json` (a Cloudflare Worker target). | None |
+| Netlify | `NITRO_PRESET=netlify bun run build` | OK in about 5 to 6 s. Writes static files to `dist/` (23 MB) and the function to `.netlify/functions-internal` (2.4 MB). | None. `netlify.toml` already sets `NITRO_PRESET=netlify`. |
+| Vercel | `NITRO_PRESET=vercel bun run build` | Build OK in about 6 s, writes `.vercel/output`. NOT deployed; runtime behaviour untested. | None for the build; set the env var in Vercel |
+| Cloudflare | default build output | Build OK, config file generated. NOT deployed; runtime untested. | None to build; the buyer must create a Cloudflare project and deploy |
+
+Cloudflare Workers pricing, https://developers.cloudflare.com/workers/platform/pricing/ , 2026-11-19, OFFICIAL: Free plan 100,000 requests per day and 10 ms CPU per invocation; "Requests to static assets are free and unlimited"; paid plan minimum $5/month. Whether this site's server rendering stays under 10 ms CPU per request is NOT TESTED; a Netlify-to-Cloudflare move should be trialled before relying on it.
+
+Vercel Hobby, https://vercel.com/docs/plans/hobby , 2026-11-19, OFFICIAL: free; 100 GB Fast Data Transfer, 1,000,000 function invocations a month; past limits you wait 30 days. Hobby does not say whether commercial (affiliate) use is allowed on the pages I read: NOT FOUND; read Vercel's Terms of Service before choosing it for a monetised site. Pro: developer seats "$20 per user / month".
+
+## 5. Business email
+
+| Option | Price | Source, date, quality | Notes |
+|---|---|---|---|
+| Cloudflare Email Routing | $0 | https://developers.cloudflare.com/email-routing/ , 2026-11-19, OFFICIAL | "Available on Free and Paid plans". Receive and forward only. Sending to arbitrary recipients is "Email Sending (Beta)", needing the Workers Paid plan; sending only to verified destination addresses is free. Address, rule and message-size limits: NOT FOUND on that page. So it cannot, by itself, send a reply from hello@ to a stranger. |
+| Zoho Mail Forever Free | $0 | https://www.zoho.com/mail/zohomail-pricing.html , 2026-11-19, OFFICIAL | Custom email for one domain, up to 5 users, 5 GB each. Feature limits (IMAP, ads) not stated on the fetched text; not verified. |
+| Zoho Mail Lite | US$1 per user per month (5 GB), US$1.25 (10 GB), annual only: "No monthly plan" | same page, OFFICIAL | |
+| Google Workspace Business Starter | $7 per user per month annual; $8.40 monthly | SECONDARY (search roundup, Oct 2026). workspace.google.com/pricing fetched but shows blank prices. | Intro offers exist; confirm at checkout. |
+| Namecheap Private Email Starter | about $0.99/month first year; renewal reported $1.24 (Namecheap affiliate guide) versus $1.99 (Vendr), extra mailbox $8.88/yr | SECONDARY, search results 2026-11-19; namecheap.com fetch 403 | Renewal figure conflicting: verify. |
+
+Required? One address (hello@) is needed for the contact and affiliate pages. $0 is possible for receiving; sending as the domain needs Zoho Free, a paid mailbox, or a mail-relay setup (not researched).
+
+## 6. Analytics and search tools
+Google Analytics 4, Search Console, Bing Webmaster: free per the repo docs (`docs/buyer/ANALYTICS-SETUP.md`); NOT re-read on the providers' pages today. Required: no (the site does not need analytics to run).
+
+## 7. Pages CMS
+https://pagescms.org/ , 2026-11-19, OFFICIAL: "100% free", MIT licensed, hosted version or self-host, works with GitHub only, no database. Status in this repo: `.pages.yml` is written from the docs and has NOT been opened in the live app (stated in the file header). Cost $0; function unproven.
+
+## 8. GitHub
+Repo hosting free. Workflows in `.github/workflows`: `ci.yml` (every push to main and PR), `site-health.yml` (Mondays 06:23 UTC), `monthly-digest.yml` (1st of month). All on `ubuntu-latest`, no secrets used. Source https://docs.github.com/en/billing/concepts/product-billing/github-actions , 2026-11-19, OFFICIAL: Free plan includes $12 of Actions compute a month (about 2,000 Linux 2-core minutes at $0.006/min, my arithmetic); standard runners are free for public repos. Estimated usage from local timings: one site-health run is about 1.5 to 2 minutes of work (`MAINTENANCE-MEASURED.md`), so about 4 to 5 runs plus CI and the digest is far below the allowance even in a private repo. Without a payment method on file, runs stop when the allowance is used up.
+
+## 9. Canva
+Evidence from the repo:
+- The site does not require Canva to run, build, deploy or edit. No Canva dependency or code is in the repo (grep: Canva appears only in docs and image provenance rows).
+- 4 of the 18 site images (crochet-hands, flower-arranging, cycling-lane, cozy-corner) were generated with Canva AI. The final JPGs are in `src/assets/`. The ledger (`docs/IMAGE-LICENSES.md`) records Canva share links, not editable designs. No Canva source design files exist in the repo.
+- Brand assets in `design/brand/` are SVG, HTML templates, PNG exports, CSS, JSON and OFL fonts (counts in `design/`: 97 html, 36 png, 13 svg, 11 ttf, 3 css, 2 json): editable in a code editor, browser or Inkscape/Figma, no Canva needed. Pin and social templates are HTML rendered by scripts.
+- A buyer needs Canva only if they want to generate more AI images there, or open the 4 share links.
+Pricing (SECONDARY, search results 2026-11-19, official Canva pages returned 403 in earlier checks too): free plan about 50 AI uses a month, Pro about $13 to $15 a month with larger allowances; figures disagree between sources. Required: no. Free tier is enough to open and export existing designs; whether the free tier may be used commercially for generated images is a terms question (`docs/marketplace/final-inspection/RIGHTS-AND-TRANSFERABILITY.md`).
+
+## 10. Lovable
+Does the site REQUIRE a Lovable plan or account to run, build, deploy or edit? **No, with one dependency caveat.**
+- Evidence: `@lovable.dev/vite-tanstack-config@2.27.2` is a devDependency and `vite.config.ts` calls its `defineConfig`. It resolves from the public npm registry (bun.lock integrity hash present; `bunfig.toml` excludes it from the 24h release-age guard).
+- Test: copied the repo (without node_modules, build output or .git) to a scratch directory; environment had no variables matching lovable, netlify or cloudflare; cold bun cache. `bun install --frozen-lockfile` succeeded (520 packages, 4.2 s) and `bun run build` succeeded (default, Netlify and Vercel presets). No login or key was asked for.
+- The package's Lovable-specific code reads `LOVABLE_*` environment variables only for the editor's preview sandbox (found in its dist files); the site's own `src/lib/lovable-error-reporting.ts` does nothing unless Lovable's script is on the page.
+- Caveat: build and edit depend on that one Lovable-published npm package. If it were unpublished, a fresh install would fail unless the lockfile, cache or a vendored copy exists. This is a dependency risk, not a plan requirement.
+- `AGENTS.md` says to edit through Lovable; git editing works (the verification above used plain files). Lovable plans, https://docs.lovable.dev/introduction/plans-and-credits , 2026-11-19, OFFICIAL: Free 5 daily build credits, capped at 30 per calendar month; Pro no monthly cap. Pro price $25/month is SECONDARY (third-party roundups). Whether Lovable's GitHub sync and code export are free-plan features: SECONDARY sources conflict; NOT confirmed.
+- 14 of the 18 site images were generated with Lovable's AI tool; generating more needs Lovable credits, running the site does not.
+
+## 11. Amazon Associates, Pinterest
+- Amazon Associates: free to join (SECONDARY; the official help page fetched did not state cost). Requirement of at least 3 qualifying sales within 180 days or the application can be withdrawn (SECONDARY search snippets of Amazon help text); this is a business risk for a pre-revenue site (`docs/buyer/AMAZON-ASSOCIATES-PATH.md`).
+- Pinterest business account: free per repo docs; not re-read today.
+
+## 12. Optional
+Stock photos or photography: not researched, no price recorded. NOT FOUND. Current images are AI-generated with unverified exclusivity (`docs/buyer/IMAGE-AND-ASSET-RIGHTS.md`). Legal and entity costs: estimates only, see section 1.
+
+## 13. Required versus optional summary
+| Item | Required to be live | Monthly if paid | Annual | Type |
+|---|---|---|---|---|
+| Domain | Yes | about $1 | $11.81 to $19.98 | Annual, intro versus renewal differs |
+| DNS | Yes ($0) | 0 | 0 | |
+| Hosting | Yes | 0 free; $9 Personal (Netlify) or $5 (Cloudflare paid) | 0 to 108 | Monthly |
+| Email mailbox | Recommended | 0 to $7 | 0 to 84 | Per user |
+| GitHub | Yes | 0 | 0 | |
+| Pages CMS, GA4, Search Console | No | 0 | 0 | |
+| Amazon Associates, Pinterest | For revenue | 0 | 0 | |
+| Lovable | No | 0 or $25 | 0 or 300 | Optional |
+| Canva | No | 0 or about $13 to $15 | 0 or about 156 to 180 | Optional |
+| Legal, entity, photos | No | n/a | ESTIMATES only | One-off |
+
+## 14. Source list (all read 2026-11-19)
+Porkbun, Cloudflare Registrar, Cloudflare Email Routing, Cloudflare Workers pricing, Netlify pricing, Zoho Mail pricing, Pages CMS, GitHub Actions billing docs, Vercel Hobby and fair-use pages, Lovable plans-and-credits docs: OFFICIAL pages. DomainOffer (Namecheap, Cloudflare .com), Google Workspace roundups, Namecheap Private Email roundups, Canva and Lovable pricing roundups, Netlify community forum threads, Amazon Associates search snippets: SECONDARY. Unreachable: namecheap.com (403), docs.netlify.com billing deep links (404), workspace.google.com prices (blank).
