@@ -74,5 +74,5 @@ No code, main branch or claude/vibrant-dirac-amdf7r changed by Cowork work; data
 | 7 Outreach | BLOCKED: no verified email address for YMI (form only) or NMJL (mail/phone only); nothing sent | docs/cowork/OUTREACH-LOG.md |
 | 3 Pilot verification against v2 research | NOT DONE: Task 3 used the v1 research; v2 files landed on editorial-reset afterwards | see below |
 
-### Task 3 against v2 research (partial)
+### Task 3 against v2 research (partial; second pass added 8 more rows, 26 listings total)
 18 new listings opened 2026-11-19: PILOT-VERIFICATION-V2.csv (the first file, PILOT-VERIFICATION.csv, is unchanged). Biggest result: the National Mah Jongg League 2026 four-pack listings (large print B0GRCBQ3Y2, standard B0GRCCTYJ5) ARE sold by The National Mah Jongg League, Inc., so that gate passes. NOT yet opened: the other washi colourways (B0CKW2X6BM, B0CKW38SF9, B0CKXPRJVP, B0GR14G2RT and three more), Tombow dots, Mildliner/Sarasa set parts, the clay-kit and cutter leads, Mojave/Heather alone, and all rows marked NOT SELECTED or REJECTED in v2. Task 3 status: PARTLY.
