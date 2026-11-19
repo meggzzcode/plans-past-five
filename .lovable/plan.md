@@ -10,7 +10,7 @@ A frontend-only editorial lifestyle magazine for women building a life outside w
 - Restrained decorative kit: gingham, scallops, stars, bows, flowers, hand-drawn arrows, handwritten notes, postcard frames, magazine dividers. Few rounded boxes and pill buttons; varied compositions.
 
 ## Priority 1–2: Design system and homepage
-Hero "Because the best part of your day is still ahead." with collage and CTAs Find Your Thing / Make Some Plans. Then a consolidated journey: relatable intro, six categories, Hobby Finder teaser, After Hours (5:01 Edit), Weekend Edit, Table for One + Better Together, Journal, Off Duty Essentials, free printable, Out-of-Office Note (no fake signup), footer.
+Hero "Because the best part of your day is still ahead." with supporting copy "Creative hobbies, cute weekend plans, solo dates, new friendships and little adventures. Because there's a whole lot of life waiting for you after you close your laptop." and CTAs Find Your Thing / Let's Make Plans. Tagline sits beneath the wordmark; slogan on select editorial/marketing elements; "Professionally off duty." as a recurring detail. Applied across metadata, brand guide, printables and site config. Then a consolidated journey: relatable intro, six categories, Hobby Finder teaser, After Hours (5:01 Edit), Weekend Edit, Table for One + Better Together, Journal, Off Duty Essentials, free printable, Out-of-Office Note (no fake signup), footer.
 
 ## Priority 3–4: Content and articles
 - Typed article model with search intent, angle, hobby links, product links, related content.
