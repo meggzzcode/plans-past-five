@@ -2,13 +2,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { seo, breadcrumbJsonLd } from "@/lib/seo";
 import { ProsePage } from "@/components/pages/ProsePage";
 import { SHOP_LINK_FACTS, isMonetized } from "@/config/affiliate";
+import { site } from "@/config/site";
 
 export const Route = createFileRoute("/methodology")({
   head: () =>
     seo({
       title: "How We Choose Hobbies and Products",
-      description:
-        "How Plans Past Five picks beginner hobbies and starter products, what we have and haven't checked, and why we show no prices or ratings.",
+      description: `How ${site.name} picks beginner hobbies and starter products, what we have and haven't checked, and why we show no prices or ratings.`,
       path: "/methodology",
       jsonLd: [
         breadcrumbJsonLd([

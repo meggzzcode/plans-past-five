@@ -4,14 +4,21 @@
 [build]
   command = "bun install --frozen-lockfile && bun run build"
   publish = "dist"
-  # DEPLOY BUDGET: the free plan has 300 credits a month and a production deploy costs 15 credits.
-  # PUBLISH MODEL: saving in the CMS (or any push to main) does NOT build. A build runs only when the
-  # latest commit message contains the marker [deploy], or when the owner presses Netlify's
-  # Deploys > Trigger deploy > Deploy site. (Whether Trigger deploy honours this rule is confirmed
-  # by the CMS test in docs/buyer/CMS-TEST-PLAN.md; if it shows "Skipped", edit RELEASES.md on
-  # GitHub with a commit message ending in [deploy].) Exit 0 = skip, exit 1 = build.
-  # Test the rule: bash scripts/check-netlify-ignore.sh
-  ignore = "! git log -1 --pretty=%B HEAD | grep -q '\\[deploy\\]'"
+  # CREDITS (Netlify docs, read 2026-11-19, see docs/editorial-reset/PUBLISHING-WORKFLOW-RECOMMENDATION.md):
+  # the Free plan has 300 credits a month as a hard limit (the site pauses at the cap); each successful
+  # PRODUCTION deploy costs 15; failed deploys, rollbacks, Deploy Previews and branch deploys cost 0.
+  # PUBLISH MODEL (current, until the owner approves the Publish-button workflow): a PRODUCTION build runs
+  # only when the latest commit message contains the marker [deploy], or when the owner presses Netlify's
+  # Deploys > Trigger deploy (whether Trigger deploy honours this rule is UNKNOWN until the CMS acceptance
+  # test; if it shows "Skipped", edit RELEASES.md on GitHub with a commit message ending in [deploy]).
+  # PREVIEWS: Deploy Previews and branch deploys always build (0 credits) so edits can be checked before
+  # they are published. If CONTEXT is unset the rule falls back to the production behaviour above.
+  # Exit 0 = skip, exit 1 = build. Test the rule: bash scripts/check-netlify-ignore.sh
+  # To restore the earlier single-line rule: ignore = "! git log -1 --pretty=%B HEAD | grep -q '\\[deploy\\]'"
+  ignore = '''
+case "$CONTEXT" in deploy-preview|branch-deploy) exit 1;; esac
+! git log -1 --pretty=%B HEAD | grep -q '\[deploy\]'
+'''
 
 [build.environment]
   NITRO_PRESET = "netlify"

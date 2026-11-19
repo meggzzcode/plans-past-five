@@ -1,0 +1,2 @@
+# Original article library: removed by owner instruction (2026-11-19)
+The owner chose not to keep a separate archive and gave permission to delete the 34 original articles (32 published, 2 drafts). Only `ORIGINAL-ARTICLE-URL-MAP.csv` (slug, title, status, source count, URL) is kept so valuable URLs can be preserved or redirected. Git history is not rewritten, so any article remains recoverable from commit `4dd2dd5` (e.g. `git show 4dd2dd5:content/articles/<slug>.json`).

@@ -13,7 +13,7 @@ The script is read-only on the repo, writes the zip only into the system temp di
 
 | Area | What | Notes |
 | --- | --- | --- |
-| Code and config | `src/`, `scripts/`, `content/`, `public/`, `design/`, `.github/`, `.pages.yml`, `package.json`, `bun.lock`, `bunfig.toml`, `components.json`, `eslint.config.js`, `tsconfig.json`, `vite.config.ts`, `vitest.config.ts`, `netlify.toml`, `.gitignore`, `.prettierrc`, `.prettierignore` | The whole working site |
+| Code and config | `src/`, `scripts/`, `content/`, `public/`, `design/`, `.github/`, `.pages.yml`, `package.json`, `bun.lock`, `bunfig.toml`, `eslint.config.js`, `tsconfig.json`, `vite.config.ts`, `vitest.config.ts`, `netlify.toml`, `.gitignore`, `.prettierrc`, `.prettierignore` | The whole working site |
 | Root documents | `README.md`, `AGENTS.md`, `CLAUDE-HANDOFF.md`, `RELEASES.md`, `roadmap.md`, `THIRD-PARTY-NOTICES.md` | |
 | Buyer guides | `docs/buyer/` (all, including `INVENTORY.md`, `START-HERE.md`, the rights and licence notes and this page) | |
 | Editorial and commerce reference | `docs/content/` (except the Canva archive folders), `docs/commerce/` (except `buy-plan/` and the Cowork kit-candidates CSV), `docs/marketing/` | Includes `docs/commerce/product-research.csv`, the importer's source |

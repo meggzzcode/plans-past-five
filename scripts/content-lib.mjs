@@ -6,7 +6,7 @@
  * The editable content lives in content/ (articles and images, edited through Pages CMS).
  * Nothing here reaches the network.
  */
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
 import {
@@ -183,6 +183,156 @@ export const imageSchema = z
     licenseUrl: z.string().optional(),
   })
   .strict();
+
+// ------------------------------------------------------------------ owner settings
+
+/**
+ * Owner settings (content/settings.json, edited in Pages CMS under "Site settings").
+ * Public values only: names, an email address, a public analytics id, public verification codes and
+ * a public affiliate tag. Never put a password, API key or private token here.
+ * Every message is plain English and tells the owner what to type instead.
+ */
+const emptyOr = (re, message) =>
+  z
+    .string()
+    .trim()
+    .refine((v) => v === "" || re.test(v), message);
+const verificationCode = (what) =>
+  emptyOr(
+    /^[A-Za-z0-9_-]{10,128}$/,
+    `paste only the code from ${what} (letters, numbers, - and _), not the whole <meta> tag`,
+  );
+
+export const settingsSchema = z
+  .object({
+    siteName: z
+      .string()
+      .trim()
+      .min(1, "the site name must not be empty")
+      .max(60, "the site name is too long (60 characters at most)"),
+    tagline: z
+      .string()
+      .trim()
+      .min(1, "the tagline must not be empty")
+      .max(140, "the tagline is too long (140 characters at most)"),
+    siteUrl: z
+      .string()
+      .trim()
+      .refine((v) => {
+        try {
+          const u = new URL(v);
+          return (
+            u.protocol === "https:" &&
+            (u.pathname === "/" || u.pathname === "") &&
+            !u.search &&
+            !u.hash
+          );
+        } catch {
+          return false;
+        }
+      }, "must be your website address starting with https:// and nothing after the domain, like https://www.example.com")
+      .transform((v) => v.replace(/\/+$/, "")),
+    contactEmail: emptyOr(
+      /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]{2,}$/,
+      "is not an email address. Write it like hello@yourdomain.com, or leave it empty if you have no inbox yet",
+    ),
+    ga4MeasurementId: emptyOr(
+      /^G-[A-Z0-9]{8,12}$/,
+      'is not a Google Analytics 4 measurement ID. It starts with "G-" followed by 8 to 12 capital letters or digits, like G-ABC123XYZ9. Leave it empty to keep analytics off',
+    ),
+    searchConsoleVerification: verificationCode("Google Search Console"),
+    bingVerification: verificationCode("Bing Webmaster Tools"),
+    pinterestVerification: verificationCode("Pinterest"),
+    amazonTrackingId: emptyOr(
+      /^[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*-\d{2,3}$/,
+      'is not an Amazon Associates tracking ID. It looks like "yourstore-20" (letters or digits, then a dash and two digits)',
+    ),
+    amazonMarketplace: z.enum(["amazon.com"], {
+      message:
+        'must be "amazon.com" (Amazon.com, United States). Other Amazon countries need their own Associates account, links and disclosure wording and are not supported yet',
+    }),
+    amazonTrackingEnabled: z.boolean({ message: "must be switched on or off" }),
+    amazonLastVerified: z
+      .string()
+      .trim()
+      .refine((v) => v === "" || DATE.test(v), "must be a date written like 2026-11-19, or empty"),
+  })
+  .strict();
+
+/** Validate a parsed settings object. Returns { settings, problems } with plain-English problems. */
+export function validateSettings(raw, file = "content/settings.json") {
+  const r = settingsSchema.safeParse(raw ?? {});
+  const problems = [];
+  if (!r.success) {
+    for (const i of r.error.issues)
+      problems.push(
+        i.code === "unrecognized_keys"
+          ? `${file}: unknown setting(s) ${i.keys.map((k) => `"${k}"`).join(", ")}. Remove them or use the Site settings form`
+          : `${file}, field "${i.path.join(" > ")}": ${i.message}`,
+      );
+    return { settings: null, problems };
+  }
+  const s = r.data;
+  if (s.amazonTrackingEnabled && !s.amazonTrackingId)
+    problems.push(
+      `${file}, field "amazonTrackingId": Amazon tracking is switched on but there is no tracking ID. Add the ID from your own Amazon Associates account, or switch tracking off`,
+    );
+  if (s.amazonTrackingEnabled && !s.amazonLastVerified)
+    problems.push(
+      `${file}, field "amazonLastVerified": Amazon tracking is switched on, so write the date you last confirmed your Associates approval, like 2026-11-19`,
+    );
+  return { settings: s, problems };
+}
+
+/** Read and validate content/settings.json under `root`. */
+export function readSettings(root) {
+  const file = "content/settings.json";
+  const p = join(root, file);
+  if (!existsSync(p))
+    return {
+      settings: null,
+      problems: [
+        `${file}: the site settings file is missing. Restore it from GitHub history or add it back in the Site settings form`,
+      ],
+    };
+  let raw;
+  try {
+    raw = JSON.parse(readFileSync(p, "utf8"));
+  } catch (e) {
+    return {
+      settings: null,
+      problems: [
+        `${file}: this file is not valid JSON (${e.message}). Undo the last change in GitHub history.`,
+      ],
+    };
+  }
+  return validateSettings(raw, file);
+}
+
+/**
+ * Keep the two static public files in step with the settings: the app name in
+ * public/manifest.webmanifest and the Sitemap line in public/robots.txt. Returns { rel: text }
+ * for files that exist under `root` and need changing.
+ */
+export function publicFileOutputs(root, s) {
+  const out = {};
+  const m = join(root, "public/manifest.webmanifest");
+  if (existsSync(m)) {
+    const q = JSON.stringify(s.siteName);
+    const cur = readFileSync(m, "utf8");
+    const next = cur
+      .replace(/^(\s*"name":\s*).*?(,?)$/m, (_, a, b) => `${a}${q}${b}`)
+      .replace(/^(\s*"short_name":\s*).*?(,?)$/m, (_, a, b) => `${a}${q}${b}`);
+    if (next !== cur) out["public/manifest.webmanifest"] = next;
+  }
+  const r = join(root, "public/robots.txt");
+  if (existsSync(r)) {
+    const cur = readFileSync(r, "utf8");
+    const next = cur.replace(/^Sitemap:.*$/m, () => `Sitemap: ${s.siteUrl}/sitemap.xml`);
+    if (next !== cur) out["public/robots.txt"] = next;
+  }
+  return out;
+}
 
 // ------------------------------------------------------------------ helpers
 
@@ -479,6 +629,10 @@ export function validateContent(root, opts = {}) {
   const problems = [];
   const cats = opts.categories ?? categorySlugs(root);
 
+  // owner settings
+  const settingsRead = readSettings(root);
+  problems.push(...settingsRead.problems);
+
   // images
   const imgRead = readJsonDir(root, "content/images");
   problems.push(...imgRead.problems);
@@ -507,6 +661,15 @@ export function validateContent(root, opts = {}) {
     if (!existsSync(diskPath)) {
       problems.push(
         `${file}, field "file": the photo "${img.file}" does not exist. Upload it again in the Images section.`,
+      );
+      continue;
+    }
+    if (
+      img.file.startsWith("/uploads/") &&
+      (!img.license?.trim() || !(img.source || img.credit)?.trim())
+    ) {
+      problems.push(
+        `${file}: this uploaded photo needs "Where it came from" (or the creator) and a "Licence" (for example "my own photo") so the site keeps a record of the right to use it. Fill both in the Images form.`,
       );
       continue;
     }
@@ -628,7 +791,105 @@ export function validateContent(root, opts = {}) {
   const sourceMap = new Map(prod.sources.map((p) => [p.id, p]));
   for (const a of articles)
     problems.push(...articleReferenceProblems(a, sourceMap, known, opts.now));
-  return { articles, images, products: prod.sources, searchTerms: st.terms, problems };
+  if (opts.integrity !== false) problems.push(...integrityProblems(root, articles));
+  return {
+    articles,
+    images,
+    products: prod.sources,
+    searchTerms: st.terms,
+    problems,
+    settings: settingsRead.settings,
+    articleFiles: seen,
+  };
+}
+
+// ------------------------------------------------------------------ integrity gate
+
+/** Source files that may legitimately mention any article slug (generated or test files). */
+const GATE_SKIP = /(^|\/)(test|generated)(\/|$)|routeTree\.gen\.ts$|\.generated\.ts$/;
+
+function sourceFiles(root) {
+  const out = [];
+  const walk = (rel) => {
+    const dir = join(root, rel);
+    if (!existsSync(dir)) return;
+    for (const n of readdirSync(dir)) {
+      const r = `${rel}/${n}`;
+      if (GATE_SKIP.test(r)) continue;
+      if (statSync(join(root, r)).isDirectory()) walk(r);
+      else if (/\.(ts|tsx)$/.test(n)) out.push(r);
+    }
+  };
+  walk("src");
+  return out;
+}
+
+/**
+ * Integrity gate: nothing live may point at an article that is not published. Switching an article
+ * to draft, or changing its slug, would otherwise leave dead links, pins, meta-title overrides and
+ * related-article lists behind. Every message says what to change.
+ */
+export function integrityProblems(root, articles) {
+  const problems = [];
+  const published = new Set(articles.filter((a) => a.status === "published").map((a) => a.slug));
+  const known = new Set(articles.map((a) => a.slug));
+  const gone = (slug) => !published.has(slug);
+  const why = (slug) =>
+    known.has(slug)
+      ? `"${slug}" is a draft, so it is not on the website`
+      : `there is no article "${slug}" (it was renamed or deleted)`;
+  const fix = "Point it at a published article, remove it, or set the article back to Published";
+
+  // 1. published articles: body links, related list, shop-the-article blocks
+  for (const a of articles) {
+    if (a.status !== "published") continue;
+    const file = `content/articles/${a.slug}.json`;
+    const seen = new Set();
+    for (const m of JSON.stringify(a.body).matchAll(/\/journal\/([a-z0-9]+(?:-[a-z0-9]+)*)/g)) {
+      if (gone(m[1]) && !seen.has(m[1])) {
+        seen.add(m[1]);
+        problems.push(
+          `${file}: a link in the text goes to /journal/${m[1]} but ${why(m[1])}. ${fix}.`,
+        );
+      }
+    }
+    for (const s of a.related ?? [])
+      if (s !== a.slug && gone(s)) problems.push(`${file}, field "related": ${why(s)}. ${fix}.`);
+    a.body.forEach((b, i) => {
+      if (b.type === "shopTheArticle" && b.articleSlug && gone(b.articleSlug))
+        problems.push(
+          `${file}, block #${i + 1} (shopTheArticle), field "articleSlug": ${why(b.articleSlug)}. ${fix}.`,
+        );
+    });
+  }
+
+  // 2. site files: pins, meta-title overrides, corrections log, links in pages and data
+  const draftSlugs = new Set(articles.filter((a) => a.status === "draft").map((a) => a.slug));
+  for (const rel of sourceFiles(root)) {
+    const text = readFileSync(join(root, rel), "utf8");
+    const label = /pins/.test(rel)
+      ? "a Pinterest pin"
+      : /seo\.ts$/.test(rel)
+        ? "a page-title override"
+        : /corrections/.test(rel)
+          ? "the corrections log"
+          : "a link or list";
+    const reported = new Set();
+    const report = (slug) => {
+      if (reported.has(slug)) return;
+      reported.add(slug);
+      problems.push(
+        `${rel}: ${label} refers to "${slug}" but ${why(slug)}. Remove that line or set the article back to Published.`,
+      );
+    };
+    for (const m of text.matchAll(/\/journal\/([a-z0-9]+(?:-[a-z0-9]+)*)/g))
+      if (gone(m[1]) && (known.has(m[1]) || /^[a-z0-9]+(?:-[a-z0-9]+){2,}$/.test(m[1])))
+        report(m[1]);
+    // an exact slug string in a data file (collections, overrides): only drafts, to avoid false alarms
+    for (const m of text.matchAll(/["'`]([a-z0-9]+(?:-[a-z0-9]+)+)["'`]/g))
+      if (draftSlugs.has(m[1])) report(m[1]);
+  }
+  return problems;
 }
 
 // ------------------------------------------------------------------ outputs
@@ -702,7 +963,8 @@ export function generatedImagesModule(images) {
  * With { write: false } returns the file texts without touching disk.
  */
 export function buildContent(root, opts = {}) {
-  const { articles, images, products, searchTerms, problems } = validateContent(root, opts);
+  const { articles, images, products, searchTerms, problems, settings, articleFiles } =
+    validateContent(root, opts);
   if (problems.length) throw new ContentError(problems);
   // Internal verification notes (coworkChecks) stay in the content files and drafts bundle; they are
   // not shipped in the public client bundle.
@@ -717,13 +979,28 @@ export function buildContent(root, opts = {}) {
     "src/data/images.generated.ts": generatedImagesModule(images),
     "src/data/catalog.generated.ts": generatedCatalogModule(products, opts.now),
     "src/data/search-terms.generated.ts": generatedSearchTermsModule(searchTerms),
+    ...publicFileOutputs(root, settings),
   };
+  const reformatted = [];
   if (opts.write !== false) {
+    // Tidy article files into the one canonical layout (key order, 2-space indent, trailing newline,
+    // no blank values). Pages CMS writes valid JSON in its own layout; the content is the same, so
+    // this never changes meaning and never rejects an edit, it only keeps Git diffs small.
+    for (const a of articles) {
+      const rel = articleFiles.get(a.slug);
+      if (!rel) continue;
+      const p = join(root, rel);
+      const text = articleToJson(a);
+      if (readFileSync(p, "utf8") !== text) {
+        writeFileSync(p, text);
+        reformatted.push(rel);
+      }
+    }
     for (const [rel, text] of Object.entries(outputs)) {
       const p = join(root, rel);
       mkdirSync(join(p, ".."), { recursive: true });
       if (!existsSync(p) || readFileSync(p, "utf8") !== text) writeFileSync(p, text);
     }
   }
-  return { articles, published, drafts, images, products, outputs };
+  return { articles, published, drafts, images, products, outputs, reformatted };
 }

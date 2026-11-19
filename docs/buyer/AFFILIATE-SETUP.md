@@ -14,7 +14,7 @@ Short checklist. The full explanation, file edits and cautions are in `docs/buye
 - [ ] Domain live and site publicly reachable (`docs/buyer/HOSTING-AND-DEPLOYMENT.md`).
 - [ ] Contact email set (`site.contactEmail`), Privacy, Terms and Affiliate Disclosure reviewed by a lawyer.
 - [ ] Apply to Amazon Associates under your own account, using your own site URL. Plan for **three qualified sales within 180 days** (personal orders excluded) and a tax interview plus payment method. Note what you enter and the promotion methods you declare.
-- [ ] If approved: edit `affiliateRegistry.amazon` in `src/config/affiliate.ts` (tracking id, `approvalStatus: "approved"`, `active: true`, `lastVerified`, `approvedPromotionMethods`, `accountOwnershipNote`).
+- [ ] If approved: in Pages CMS > Site settings enter your own tracking ID, the date you confirmed the approval, and switch Amazon tracking ON (stored in `content/settings.json`; `src/config/affiliate.ts` reads it).
 - [ ] Create a tracking ID for this site in Associates Central (multi-site policy NOT FOUND; check Manage Your Tracking IDs). Never reuse another site's ID.
 - [ ] Confirm the required disclosure sentence against the current agreement; update `AMAZON_ASSOCIATE_STATEMENT` and `AMAZON_PROGRAM_STATEMENT` if needed.
 - [ ] Update `site.legal.lastUpdated`.

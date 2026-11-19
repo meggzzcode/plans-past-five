@@ -1,4 +1,8 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
+
+// Exhaustive planner matrices: 1 to 3 s alone, 3x slower when several suites run in parallel.
+// A long per-file limit stops load-induced 5 s timeouts; a real hang still fails in a minute.
+vi.setConfig({ testTimeout: 60_000 });
 import {
   BUDGETS,
   ENERGIES,

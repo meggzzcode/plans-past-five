@@ -13,6 +13,8 @@
  * (If no verified retailer URL exists, an active Amazon entry tags the search link.)
  */
 
+import { ownerSettings } from "./site";
+
 export type ApprovalStatus = "not-applied" | "applied" | "approved" | "declined";
 
 export type AffiliateEntry = {
@@ -71,16 +73,37 @@ const blank = (
 });
 
 /**
+ * The owner's affiliate settings (content/settings.json > "Site settings" in Pages CMS) fill the
+ * Amazon entry. Tracking is OFF unless the owner has BOTH switched it on and entered a tracking ID
+ * and the date they last confirmed their own Amazon Associates approval; the build refuses a switched-on
+ * setting that lacks either. A tag alone never monetizes. Disclosure wording follows the registry
+ * (isMonetized), so it changes by itself. Never switch this on without the owner's own approval.
+ */
+function withOwnerSettings(e: AffiliateEntry): AffiliateEntry {
+  const s = ownerSettings;
+  const on = s.amazonTrackingEnabled && s.amazonTrackingId !== "" && s.amazonLastVerified !== "";
+  return {
+    ...e,
+    websiteTrackingId: on ? s.amazonTrackingId : "",
+    approvalStatus: on ? "approved" : "not-applied",
+    active: on,
+    lastVerified: on ? s.amazonLastVerified : null,
+  };
+}
+
+/**
  * Registry. Add entries for other networks by copying the Amazon entry shape.
  * Only `amazon` ships; add others after approval (do not pre-fill templates).
  */
 export const affiliateRegistry: Record<string, AffiliateEntry> = {
-  amazon: blank(
-    "amazon",
-    "Amazon Associates",
-    "Amazon",
-    ["amazon.com", "www.amazon.com"],
-    "https://www.amazon.com",
+  amazon: withOwnerSettings(
+    blank(
+      "amazon",
+      "Amazon Associates",
+      "Amazon",
+      [ownerSettings.amazonMarketplace, `www.${ownerSettings.amazonMarketplace}`],
+      `https://www.${ownerSettings.amazonMarketplace}`,
+    ),
   ),
 };
 
@@ -91,6 +114,10 @@ export const affiliateRegistry: Record<string, AffiliateEntry> = {
  * recorded in docs/commerce/AMAZON-DISCLOSURE.md). First person singular, as Amazon states it.
  * Re-check against the current Agreement before going live.
  */
+// TODO(owner/Cowork, before activation): the exact Amazon-required disclosure wording has NOT yet been
+// re-read from Amazon's current Operating Agreement by Cowork for this stage. Until that read is
+// recorded in docs/commerce/AMAZON-DISCLOSURE.md, keep the wording below and do not turn tracking on.
+// Once confirmed, any change is made HERE only; every page reads these constants (setting-driven).
 export const AMAZON_ASSOCIATE_STATEMENT =
   "As an Amazon Associate I earn from qualifying purchases.";
 
@@ -116,7 +143,8 @@ export const affiliate = {
     const e = affiliateRegistry["amazon"];
     if (e) e.websiteTrackingId = v;
   },
-  marketplace: "https://www.amazon.com",
+  /** Follows the owner setting "amazonMarketplace" (default Amazon.com, United States). */
+  marketplace: `https://www.${ownerSettings.amazonMarketplace}`,
 };
 
 /** True when an entry may be used to build affiliate links. */

@@ -9,10 +9,10 @@
  *   node scripts/check-affiliate-config.mjs            full suite, both states
  *   node scripts/check-affiliate-config.mjs --quick    only the affiliate-sensitive test files
  *   node scripts/check-affiliate-config.mjs --expect-inactive
- *       also fail if src/config/affiliate.ts is not in the shipped inactive state (use on the
+ *       also fail if content/settings.json does not have Amazon tracking switched off (use on the
  *       seller's release branch only; a buyer who activates their own id must NOT pass this flag).
  *   node scripts/check-affiliate-config.mjs --expect-contact
- *       also fail if src/config/site.ts has an empty contactEmail (release only: tests never fail
+ *       also fail if content/settings.json has an empty contactEmail (release only: tests never fail
  *       on it, they only warn, so a buyer can still run the suite before setting an address).
  */
 import { spawnSync } from "node:child_process";
@@ -32,15 +32,12 @@ export const SENSITIVE_FILES = [
   "src/test/affiliate-activation-safety.test.ts",
 ];
 
-/** Read the Amazon entry's configured state from source text (no TS execution needed). */
+/** Read the Amazon entry's configured state from content/settings.json (no TS execution needed). */
 export function configuredState() {
-  const src = readFileSync(path.join(root, "src/config/affiliate.ts"), "utf8");
-  const i = src.indexOf("affiliateRegistry: Record<string, AffiliateEntry> = {");
-  const block = i >= 0 ? src.slice(i) : "";
-  const tag = /websiteTrackingId:\s*"([^"]*)"/.exec(block)?.[1] ?? "";
-  const active = /\bactive:\s*true\b/.test(block);
-  const approved = /approvalStatus:\s*"approved"/.test(block);
-  return { tag, active, approved, inactive: !tag && !active && !approved };
+  const raw = JSON.parse(readFileSync(path.join(root, "content/settings.json"), "utf8"));
+  const tag = String(raw.amazonTrackingId ?? "").trim();
+  const active = raw.amazonTrackingEnabled === true;
+  return { tag, active, approved: active, inactive: !active };
 }
 
 function run(state, files) {
@@ -62,16 +59,17 @@ console.log(
 );
 if (args.has("--expect-inactive") && !cfg.inactive) {
   console.error(
-    "FAIL: --expect-inactive but src/config/affiliate.ts has an activated Amazon entry.",
+    "FAIL: --expect-inactive but content/settings.json has Amazon tracking switched on.",
   );
   process.exit(1);
 }
 if (args.has("--expect-contact")) {
-  const site = readFileSync(path.join(root, "src/config/site.ts"), "utf8");
-  const email = /contactEmail:\s*"([^"]*)"/.exec(site)?.[1]?.trim() ?? "";
+  const email = String(
+    JSON.parse(readFileSync(path.join(root, "content/settings.json"), "utf8")).contactEmail ?? "",
+  ).trim();
   if (!email) {
     console.error(
-      "FAIL: --expect-contact but site.contactEmail in src/config/site.ts is empty. The contact page would say the inbox is not open.",
+      "FAIL: --expect-contact but contactEmail in content/settings.json is empty. The contact page would say the inbox is not open.",
     );
     process.exit(1);
   }

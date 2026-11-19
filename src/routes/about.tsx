@@ -9,9 +9,8 @@ import { PublishedBy } from "@/components/layout/PublishedBy";
 export const Route = createFileRoute("/about")({
   head: () =>
     seo({
-      title: "About Plans Past Five",
-      description:
-        "Plans Past Five is for women who want something to look forward to after work: hobbies to try, plans to make and the supplies to get started.",
+      title: `About ${site.name}`,
+      description: `${site.name} is for women who want something to look forward to after work: hobbies to try, plans to make and the supplies to get started.`,
       path: "/about",
       image: absoluteUrl(images.girlsNight.src),
       jsonLd: [
@@ -31,7 +30,7 @@ export const Route = createFileRoute("/about")({
     >
       <p className="font-display text-2xl italic text-cherry">{site.philosophy}</p>
       <p>
-        Plans Past Five is for the woman who closes her laptop at 5:01 and wants something to look
+        {site.name} is for the woman who closes her laptop at 5:01 and wants something to look
         forward to. We help you find a hobby, plan the evening or weekend, and pick up simple
         supplies to start. We love a good career. We just think your life gets to be bigger than it.
       </p>

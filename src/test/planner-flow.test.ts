@@ -1,4 +1,7 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
+
+// Exhaustive planner matrices; see wave-b-tools.test.tsx for why the limit is raised.
+vi.setConfig({ testTimeout: 60_000 });
 import { activities } from "@/data/activities";
 import {
   BREAK_MINUTES,

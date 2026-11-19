@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { site } from "@/config/site";
 
 /** Primary stacked wordmark: "plans past / five." — "five." oversized italic. Pure HTML text so it stays editable. */
 export function WordmarkStacked({ className, tagline }: { className?: string; tagline?: string }) {
@@ -45,7 +46,7 @@ export function Monogram({ className, inverted }: { className?: string; inverted
   const fg = inverted ? "var(--cream)" : "var(--cherry)";
   const bg = inverted ? "var(--cherry)" : "var(--cream)";
   return (
-    <svg viewBox="0 0 64 64" className={className} role="img" aria-label="Plans Past Five monogram">
+    <svg viewBox="0 0 64 64" className={className} role="img" aria-label={`${site.name} monogram`}>
       <path fill={bg} stroke={fg} strokeWidth="2" d={scallopPath(32, 32, 28, 24, 16)} />
       <text
         x="31"
