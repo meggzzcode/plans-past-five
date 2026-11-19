@@ -12,3 +12,12 @@ Checked 2026-11-18 by search-result snippets from official pages (full pages not
 | Food allergy guidance | NOT CHECKED | | Keep "ask guests about allergies" as plain courtesy, not a medical claim. |
 | Park rules (alcohol, flames, glass) | NOT CHECKED | | Must stay "varies by location, check local rules." Cannot be verified generally. |
 | Price/brand ranges | NOT CHECKED | | Keep non-numeric. |
+
+## Follow-up pass 2026-11-18 (snippets only)
+| Check | Status | Source / note |
+|---|---|---|
+| Allergy hand hygiene | CONFIRMED | https://www.foodallergy.org/resources/cleaning-methods : soap and water; hand sanitizers are not effective at removing food allergens. If the article suggests sanitizer, add that it does not remove allergens. |
+| Asking guests/host about allergies | CONFIRMED | https://www.foodallergy.org/resources/tips-staying-safe-food-allergies lists asking what food will be served and alerting the host. |
+| Cross-contact (shared utensils) | CONFIRMED | https://www.foodallergy.org/resources/how-avoid-cross-contact-pdf |
+| Sanitizer as a germ-hygiene substitute for handwashing; shaded cooler | STILL NOT CHECKED | needs a CDC/USDA handwashing or outdoor-eating page |
+| Park rules, prices | CANNOT BE VERIFIED GENERALLY | keep "check local rules" |
