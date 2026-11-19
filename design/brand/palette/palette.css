@@ -1,0 +1,17 @@
+/* Plans Past Five palette. Same names and hex values as src/styles.css. Copy into any new surface. */
+:root {
+  --cherry: #B83F43;      /* Cherry Girl, primary */
+  --cream: #FFF8EF;       /* Vanilla Cream, background */
+  --butter: #F8E5A3;      /* Butter Yellow */
+  --strawberry: #F4D4D7;  /* Strawberry Milk */
+  --garden: #394D3C;      /* Garden Green */
+  --espresso: #48362E;    /* body text */
+  --matcha: #B5C19C;
+  --sunday: #C9DDEC;      /* Sunday Blue */
+  --warm-white: #FFFCF8;  /* cards, paper */
+  --soft-border: #E4D9CD;
+  --ink: #292722;         /* headlines */
+  --gingham:
+    repeating-linear-gradient(0deg, rgba(184,63,67,.38) 0 8px, transparent 8px 16px),
+    repeating-linear-gradient(90deg, rgba(184,63,67,.38) 0 8px, transparent 8px 16px);
+}

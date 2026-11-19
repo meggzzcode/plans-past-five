@@ -1,0 +1,12 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Article hero (photo) 1600x900</title><link rel="stylesheet" href="../social/brand.css">
+<style>body{width:1600px;height:900px;background:var(--cream)}
+.photo{left:0;top:0;width:900px;height:900px;background-size:cover;background-position:center}
+.p{left:900px;right:0;top:0;bottom:0;padding:90px 80px;display:flex;flex-direction:column;justify-content:center;background:var(--cream)}
+.k{font-size:22px;color:var(--cherry);margin-bottom:28px}.h{font-size:84px}.s{font-size:30px;margin-top:30px;line-height:1.35;font-weight:500;color:var(--espresso)}</style></head><body>
+<!-- Usage: ?img=../../../src/assets/solo-cafe-date.jpg&title=Your *headline*&kicker=The Journal&sub=Dek line -->
+<div class="abs photo" id="ph"></div>
+<div class="abs p"><div class="kicker k" id="k">The Journal</div><div class="disp h" id="h">Article title with an <em>italic word</em></div><div class="s" id="s">One sentence dek that says what the reader gets.</div>
+<div class="wm" style="font-size:36px;margin-top:50px">plans past <i>five.</i></div></div>
+<div class="gstrip" style="bottom:0;height:26px;left:900px"></div>
+<script>const q=new URLSearchParams(location.search);document.getElementById("ph").style.backgroundImage="url("+(q.get("img")||"../../../src/assets/solo-cafe-date.jpg")+")";
+for(const [k,id] of [["title","h"],["kicker","k"],["sub","s"]])if(q.get(k))document.getElementById(id).innerHTML=q.get(k).replace(/\*([^*]+)\*/g,"<em>$1</em>");</script></body></html>

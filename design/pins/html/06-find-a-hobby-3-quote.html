@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>06-find-a-hobby-3-quote</title>
+<meta name="viewport" content="width=1000">
+<link rel="stylesheet" href="../pin.css"></head>
+<body class="pin t-quote th-straw " data-pin="06-find-a-hobby-3-quote">
+
+<div class="qm">&ldquo;</div>
+<div class="q fit chk" data-max="110" data-min="46"><div>You're allowed to be <em>a beginner</em> again.</div></div>
+<div class="attr"><span class="squig" style="display:block;width:170px;height:16px;color:var(--acc)"><svg viewBox="0 0 120 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M2 6c8-6 12 6 20 0s12 6 20 0 12 6 20 0 12 6 20 0 12 6 20 0 12 6 16 0"/></svg></span></div>
+<div class="from"><div class="lab">From the guide</div><div class="ttl fit chk" data-max="46" data-min="28">How to Find a Hobby as an Adult</div></div>
+<div class="cta"><span class="pill kicker">Start here &rarr;</span></div>
+<div class="deco" style="left:820px;top:60px;width:90px;height:90px;transform:rotate(8deg)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c.6 4.6 2.4 6.4 7 7-4.6.6-6.4 2.4-7 7-.6-4.6-2.4-6.4-7-7 4.6-.6 6.4-2.4 7-7z"/></svg></div><div class="deco" style="left:810px;top:1050px;width:70px;height:70px;transform:rotate(0deg)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.3 7.2 7.2 2.3-7.2 2.3L12 20.5l-2.3-7.2L2.5 11l7.2-2.3z"/></svg></div>
+<div class="brand ">plans past <i>five.</i></div>
+<script>
+(function(){
+  function over(el){
+    var mh=+el.dataset.maxh;
+    if(mh){var c=el.firstElementChild;return c.offsetHeight>mh||c.scrollWidth>el.clientWidth+1;}
+    var single=el.children.length===1&&el.firstElementChild.tagName==='DIV';
+    var h=single?el.firstElementChild.offsetHeight>el.clientHeight+1:el.scrollHeight>el.clientHeight+1;
+    return h||el.scrollWidth>el.clientWidth+1;}
+  window.__over=over;
+  function fit(el){var max=+el.dataset.max||100,min=+el.dataset.min||24,s=max;el.style.fontSize=s+'px';
+    while(over(el)&&s>min){s-=2;el.style.fontSize=s+'px';}
+    el.dataset.size=s;if(el.dataset.maxh){el.dataset.fitH=el.firstElementChild.offsetHeight;el.style.height='auto';}}
+  function run(){document.querySelectorAll('.fit').forEach(fit);document.body.dataset.fitted='1';}
+  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){requestAnimationFrame(run)});
+})();
+</script>
+</body></html>

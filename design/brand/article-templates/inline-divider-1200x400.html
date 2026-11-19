@@ -1,0 +1,6 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Inline divider 1200x400</title><link rel="stylesheet" href="../social/brand.css">
+<style>body{width:1200px;height:400px;background:var(--strawberry)}.t{left:0;right:0;top:120px;text-align:center;font-size:92px}</style></head><body>
+<div class="abs disp t" id="t">Pick one. <em>Start tonight.</em></div>
+<div class="abs hand" style="left:0;right:0;text-align:center;top:270px;font-size:52px;color:var(--cherry)" id="n">a small plan counts</div>
+<div class="gstrip" style="top:0;height:22px"></div><div class="gstrip" style="bottom:0;height:22px"></div>
+<script>const q=new URLSearchParams(location.search);if(q.get("title"))document.getElementById("t").innerHTML=q.get("title").replace(/\*([^*]+)\*/g,"<em>$1</em>");if(q.get("note"))document.getElementById("n").textContent=q.get("note");</script></body></html>

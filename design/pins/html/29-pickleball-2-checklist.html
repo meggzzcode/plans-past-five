@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>29-pickleball-2-checklist</title>
+<meta name="viewport" content="width=1000">
+<link rel="stylesheet" href="../pin.css"></head>
+<body class="pin t-checklist th-matcha " data-pin="29-pickleball-2-checklist">
+
+<div class="pillwrap "><span class="pill kicker">First game</span></div>
+<div class="h disp fit chk" data-max="92" data-min="44"><div>Before your <em>first game</em></div></div>
+<div class="tape" style="left:130px"></div><div class="tape" style="left:700px;transform:rotate(5deg)"></div>
+<div class="card"><div class="list fit chk" data-max="54" data-min="26"><div class="li"><span class="box"></span><span>Find a beginner-friendly session</span></div><div class="li"><span class="box"></span><span>Wear comfortable court shoes</span></div><div class="li"><span class="box"></span><span>Borrow a paddle first</span></div><div class="li"><span class="box"></span><span>Learn the basic scoring</span></div><div class="li"><span class="box"></span><span>Bring water and a friend</span></div><div class="li"><span class="box"></span><span>Expect to laugh a lot</span></div></div></div>
+<div class="note hand">it's a friendly sport</div>
+<div class="deco" style="left:860px;top:70px;width:80px;height:80px;transform:rotate(8deg)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.3 7.2 7.2 2.3-7.2 2.3L12 20.5l-2.3-7.2L2.5 11l7.2-2.3z"/></svg></div><div class="deco" style="left:30px;top:1380px;width:60px;height:60px;transform:rotate(0deg)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c.6 4.6 2.4 6.4 7 7-4.6.6-6.4 2.4-7 7-.6-4.6-2.4-6.4-7-7 4.6-.6 6.4-2.4 7-7z"/></svg></div>
+<div class="brand ">plans past <i>five.</i></div>
+<script>
+(function(){
+  function over(el){
+    var mh=+el.dataset.maxh;
+    if(mh){var c=el.firstElementChild;return c.offsetHeight>mh||c.scrollWidth>el.clientWidth+1;}
+    var single=el.children.length===1&&el.firstElementChild.tagName==='DIV';
+    var h=single?el.firstElementChild.offsetHeight>el.clientHeight+1:el.scrollHeight>el.clientHeight+1;
+    return h||el.scrollWidth>el.clientWidth+1;}
+  window.__over=over;
+  function fit(el){var max=+el.dataset.max||100,min=+el.dataset.min||24,s=max;el.style.fontSize=s+'px';
+    while(over(el)&&s>min){s-=2;el.style.fontSize=s+'px';}
+    el.dataset.size=s;if(el.dataset.maxh){el.dataset.fitH=el.firstElementChild.offsetHeight;el.style.height='auto';}}
+  function run(){document.querySelectorAll('.fit').forEach(fit);document.body.dataset.fitted='1';}
+  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){requestAnimationFrame(run)});
+})();
+</script>
+</body></html>

@@ -1,0 +1,164 @@
+{
+  "$comment": "Hex values read from src/styles.css (oklch tokens carry hex comments) and docs/BRAND-GUIDE.md. Contrast ratios are WCAG 2.x computed from these hex values.",
+  "brand": "Plans Past Five",
+  "colors": [
+    {
+      "name": "Cherry Girl",
+      "token": "cherry",
+      "hex": "#B83F43",
+      "role": "Primary brand, CTAs, emphasised headline words, logo",
+      "onCream": 5.2
+    },
+    {
+      "name": "Vanilla Cream",
+      "token": "cream",
+      "hex": "#FFF8EF",
+      "role": "Dominant page background, text on cherry/garden"
+    },
+    {
+      "name": "Butter Yellow",
+      "token": "butter",
+      "hex": "#F8E5A3",
+      "role": "Editorial moments, stars, accents on dark colours"
+    },
+    {
+      "name": "Strawberry Milk",
+      "token": "strawberry",
+      "hex": "#F4D4D7",
+      "role": "Editorial moments, soft pink backgrounds"
+    },
+    {
+      "name": "Garden Green",
+      "token": "garden",
+      "hex": "#394D3C",
+      "role": "Footer, dark sections, readable accent"
+    },
+    {
+      "name": "Espresso",
+      "token": "espresso",
+      "hex": "#48362E",
+      "role": "Body text (foreground)"
+    },
+    {
+      "name": "Matcha",
+      "token": "matcha",
+      "hex": "#B5C19C",
+      "role": "Secondary sections (movement, outdoors)"
+    },
+    {
+      "name": "Sunday Blue",
+      "token": "sunday",
+      "hex": "#C9DDEC",
+      "role": "Secondary sections (calm, planning)"
+    },
+    {
+      "name": "Warm White",
+      "token": "warm-white",
+      "hex": "#FFFCF8",
+      "role": "Cards and paper"
+    },
+    {
+      "name": "Soft Border",
+      "token": "soft-border",
+      "hex": "#E4D9CD",
+      "role": "Rules and borders"
+    },
+    {
+      "name": "Dark Ink",
+      "token": "ink",
+      "hex": "#292722",
+      "role": "Headlines"
+    }
+  ],
+  "gingham": "Cherry at 38% opacity, 8px stripes on a 16px repeat, both directions, over Vanilla Cream (see --gingham in src/styles.css)",
+  "approvedPairs": [
+    {
+      "bg": "cream",
+      "fg": "ink",
+      "use": "default page"
+    },
+    {
+      "bg": "cream",
+      "fg": "cherry",
+      "use": "headlines, logo (large text)"
+    },
+    {
+      "bg": "cherry",
+      "fg": "cream",
+      "use": "banners, pins, CTA buttons"
+    },
+    {
+      "bg": "cherry",
+      "fg": "butter",
+      "use": "emphasised words on cherry"
+    },
+    {
+      "bg": "garden",
+      "fg": "cream",
+      "use": "footer, dark pins"
+    },
+    {
+      "bg": "garden",
+      "fg": "butter",
+      "use": "emphasised words on garden"
+    },
+    {
+      "bg": "butter",
+      "fg": "ink",
+      "use": "body text on butter"
+    },
+    {
+      "bg": "butter",
+      "fg": "cherry",
+      "use": "large headline words on butter (3:1+)"
+    },
+    {
+      "bg": "strawberry",
+      "fg": "ink",
+      "use": "body text on pink"
+    },
+    {
+      "bg": "strawberry",
+      "fg": "cherry",
+      "use": "large headline words on pink (3:1+)"
+    },
+    {
+      "bg": "sunday",
+      "fg": "ink",
+      "use": "body text on blue"
+    },
+    {
+      "bg": "matcha",
+      "fg": "ink",
+      "use": "body text on matcha"
+    },
+    {
+      "bg": "matcha",
+      "fg": "garden",
+      "use": "emphasised words on matcha"
+    }
+  ],
+  "avoid": [
+    "Cherry text under 24px on butter, strawberry or sunday (use ink or espresso for small text)",
+    "Butter text on cream or strawberry (too little contrast)",
+    "Pure black or pure white; use ink and warm white"
+  ],
+  "contrastRatios": {
+    "cream on cherry": 5.2,
+    "ink on cream": 14.2,
+    "espresso on cream": 10.8,
+    "butter on cherry": 4.4,
+    "cream on garden": 8.7,
+    "butter on garden": 7.3,
+    "ink on butter": 11.9,
+    "cherry on butter": 4.4,
+    "ink on strawberry": 10.8,
+    "cherry on strawberry": 4.0,
+    "ink on sunday": 10.7,
+    "cherry on sunday": 3.9,
+    "ink on matcha": 7.9,
+    "garden on matcha": 4.8,
+    "cherry on warm-white": 5.4,
+    "_note": "WCAG AA: 4.5 body text, 3.0 large text (24px regular / 18.66px bold and up). Pairs under 4.5 are for large headline text only."
+  }
+}
