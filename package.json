@@ -5,7 +5,7 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
+    "dev": "vite dev --host 127.0.0.1",
     "content:build": "node scripts/build-content.mjs",
     "content:format": "node scripts/format-article.mjs",
     "prebuild": "node scripts/build-content.mjs",

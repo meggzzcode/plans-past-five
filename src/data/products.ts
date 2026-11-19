@@ -23,6 +23,12 @@ export type Collection = {
    * creates or duplicates a product.
    */
   extraProductIds?: string[];
+  /**
+   * Starter kits (src/data/kits.ts) that belong on this collection's page, hobby-appropriate only.
+   * A collection never borrows another collection's kit under its own heading. A kit's "home"
+   * collection is the first one that lists it.
+   */
+  kitIds?: string[];
 };
 
 /**
@@ -108,15 +114,17 @@ export const collections: Collection[] = [
     tone: "butter",
     intro:
       "Pottery-class energy at your kitchen table. No kiln, no wheel, just clay, paint and a few hours of lovably lumpy.",
+    kitIds: ["air-dry-clay"],
   },
   {
     slug: "creative-girl",
     name: "The Creative Girl",
     dek: "Paper, paint and thread for quiet evenings",
-    image: "shopCreative",
+    image: "watercolor",
     tone: "strawberry",
     intro:
       "Watercolor, a journal, a hoop and thread: starter supplies small enough to put away after.",
+    kitIds: ["watercolor", "junk-journaling"],
   },
   {
     slug: "sporty-girl",
@@ -126,6 +134,7 @@ export const collections: Collection[] = [
     tone: "matcha",
     intro:
       "Gear for your first rally, game or trail. You don't need the pro version, and you can often borrow or rent first.",
+    kitIds: ["racquet-sports"],
   },
   {
     slug: "girls-night-in",
@@ -135,15 +144,17 @@ export const collections: Collection[] = [
     tone: "strawberry",
     intro:
       "Turn 'we should hang out' into a date in the group chat: a mahjong night or a paint-and-sip table, with exactly what to buy.",
+    kitIds: ["mahjong-night", "pottery-paint-night"],
   },
   {
     slug: "bookish-girl",
     name: "The Bookish Girl",
     dek: "For one-more-chapter people",
-    image: "shopBookish",
+    image: "hobbyReading",
     tone: "sunday",
     intro:
       "Little upgrades that make reading feel like an event: in bed, on the train or at your favorite café.",
+    kitIds: ["reading-book-club"],
   },
   {
     slug: "little-adventures",
@@ -152,12 +163,13 @@ export const collections: Collection[] = [
     image: "shopAdventures",
     tone: "butter",
     intro: "Small, portable things that make it easier to say yes to a spontaneous afternoon out.",
+    kitIds: ["picnic"],
   },
   {
     slug: "journaling-era",
     name: "The Journaling Era",
     dek: "Pages, tape and a pen that makes you want to write",
-    image: "shopCreative",
+    image: "junkJournal",
     tone: "sunday",
     intro:
       "A journal that can take glue, tape you'll love and the scraps already in your bag. Start with one notebook.",
@@ -168,12 +180,13 @@ export const collections: Collection[] = [
       "reading-journals",
       "pocket-notebooks",
     ],
+    kitIds: ["junk-journaling"],
   },
   {
     slug: "cozy-after-hours",
     name: "Cozy After Hours",
     dek: "Low-effort comforts for the evening you actually have",
-    image: "shopBookish",
+    image: "cozyCorner",
     tone: "cream",
     intro:
       "Small things that turn a weeknight at home into a plan: better light, a game on the table, something quiet to make.",
@@ -184,6 +197,7 @@ export const collections: Collection[] = [
       "board-games",
       "conversation-cards",
     ],
+    kitIds: [],
   },
 ];
 
@@ -553,3 +567,10 @@ export function collectionProducts(slug: string): Product[] {
 export const getCollection = (slug: string) => collections.find((c) => c.slug === slug);
 export const getProduct = (id: string) => products.find((x) => x.id === id);
 export const productsFor = (ids: string[]) => ids.map(getProduct).filter((x): x is Product => !!x);
+
+/** Kits shown on a collection page: only the ones listed for it, never another collection's. */
+export const collectionKitIds = (slug: string): string[] => getCollection(slug)?.kitIds ?? [];
+
+/** The collection a kit belongs to: the first one that lists it. Used for "More in ..." links. */
+export const kitHomeCollection = (kitId: string): Collection | undefined =>
+  collections.find((c) => c.kitIds?.includes(kitId));

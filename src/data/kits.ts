@@ -7,7 +7,18 @@
  */
 import { MAX_ALTERNATIVES, choosePrimary, type CatalogProduct, type ProductRole } from "./catalog";
 
-export type SlotNeed = "essential" | "optional" | "probably-own";
+/**
+ * How a kit item is classified:
+ * - essential: needed to start. Must be filled by a verified product for the kit to count as complete;
+ *   an essential with no verified product is "awaiting external verification" and is named in plain
+ *   text, never linked or guessed.
+ * - optional: an extra. Shown only when a verified product fills it ("Optional extra").
+ * - household: an ordinary household item (scissors, a bowl). Listed as plain text, never linked,
+ *   and never counted against the complete-kit rule.
+ * - probably-own: older name for a household item that a verified product may still fill.
+ * Padded or duplicate items are removed from the data ("Remove").
+ */
+export type SlotNeed = "essential" | "optional" | "household" | "probably-own";
 
 export type KitSlot = {
   id: string;
@@ -51,7 +62,7 @@ const s = (
 });
 const E = "essential" as const;
 const O = "optional" as const;
-const P = "probably-own" as const;
+const H = "household" as const;
 
 export const kits: Kit[] = [
   {
@@ -65,7 +76,7 @@ export const kits: Kit[] = [
       s("journal", "A journal that can take glue", E),
       s("washi-tape", "Washi tape", O, "affordable"),
       s("adhesive", "Glue stick or tape runner", E),
-      s("scissors", "Small scissors", P),
+      s("scissors", "Small scissors", H),
       s("paper", "Ephemera and patterned paper", O, "nice-to-have"),
       s("pens", "Fine-tip pens", O),
     ],
@@ -82,8 +93,8 @@ export const kits: Kit[] = [
       s("brushes", "A better round brush, once the box brushes feel limiting", O),
       s("paper", "Watercolor paper or pad", E),
       s("palette", "Palette or mixing tray", O, "affordable"),
-      s("masking-tape", "Masking tape", P),
-      s("water-jar", "A jar for water", P),
+      s("masking-tape", "Masking tape", H),
+      s("water-jar", "A jar for water", H),
     ],
   },
   {
@@ -99,7 +110,7 @@ export const kits: Kit[] = [
       s("paint", "Acrylic paint", E),
       s("brushes", "Detail brushes", O),
       s("sealer", "Sealer or varnish", O, "nice-to-have"),
-      s("work-surface", "Mat or baking paper", P),
+      s("work-surface", "Mat or baking paper", H),
     ],
   },
   {
@@ -113,7 +124,7 @@ export const kits: Kit[] = [
       s("set", "A mahjong set", E),
       s("mat", "Playing mat", O),
       s("card", "Scoring card or rules reference", E),
-      s("snack-bowls", "Snack bowls", P),
+      s("snack-bowls", "Snack bowls", H),
     ],
   },
   {
@@ -127,7 +138,7 @@ export const kits: Kit[] = [
       s("blanket", "A picnic blanket", E),
       s("carrier", "Bag or basket", O),
       s("cooler", "Insulated bag", O),
-      s("tableware", "Reusable plates and cups", P),
+      s("tableware", "Reusable plates and cups", H),
     ],
   },
   {
@@ -141,17 +152,15 @@ export const kits: Kit[] = [
     slots: [
       s("journal", "A reading journal or notebook", E),
       s("pens", "A pen you like", E),
-      s("bookmark", "Bookmark or page flags", O),
-      s("highlighters", "Highlighters or tabs", O),
+      s("bookmark", "Bookmark, page flags or tabs", O),
       s("reading-light", "Book light", O, "nice-to-have"),
       s("discussion-guide", "Discussion prompts for a book club", O),
-      s("club-notebook", "Notebook for club notes", O),
-      s("snack-bowls", "Snack bowls or a board", P),
+      s("snack-bowls", "Snack bowls or a board", H),
       s("blanket", "A soft throw", O),
       s("candle", "A candle", O),
       s("tea", "Tea or cocoa", O),
       s("puzzle", "A jigsaw puzzle", O),
-      s("mug", "A favorite mug", P),
+      s("mug", "A favorite mug", H),
     ],
   },
   {
@@ -167,12 +176,11 @@ export const kits: Kit[] = [
       s("paint", "Acrylic paint", E),
       s("brushes", "Brushes", E),
       s("palette", "Palettes", O),
-      s("aprons", "Aprons or old shirts", P),
+      s("aprons", "Aprons or old shirts", H),
       s("easel", "Tabletop easel", O, "nice-to-have"),
-      s("main-project", "The main project supplies", E, "complete-kit"),
-      s("shared-tools", "Shared scissors and glue", E),
-      s("table-cover", "Table protection", O),
-      s("extra-supplies", "Extras for people who finish early", O, "nice-to-have"),
+      s("main-project", "A boxed paint-and-sip set, if you'd rather not buy pieces separately", O, "complete-kit"),
+      s("shared-tools", "Scissors and glue to share", H),
+      s("table-cover", "An old cloth or newspaper to protect the table", H),
     ],
   },
   {
@@ -223,6 +231,7 @@ export function fillKit(kit: Kit, list: CatalogProduct[]): FilledSlot[] {
   const used = new Set<string>();
   const out: FilledSlot[] = [];
   for (const slot of kit.slots) {
+    if (slot.need === "household") continue; // ordinary household items are never linked
     const hits = list.filter(
       (p) => !used.has(p.id) && p.kitSlots.some((k) => k.kit === kit.id && k.slot === slot.id),
     );
@@ -239,9 +248,19 @@ export function fillKit(kit: Kit, list: CatalogProduct[]): FilledSlot[] {
 /** A kit needs at least this many named, verified picks (filled slots) to render as a kit. */
 export const MIN_KIT_PICKS = 4;
 
+/** Essential slots with no verified product yet: "awaiting external verification". Named in plain text only. */
+export const awaitingEssentials = (kit: Kit, filled: FilledSlot[]): KitSlot[] =>
+  kit.slots.filter((x) => x.need === "essential" && !filled.some((f) => f.slot.id === x.id));
+
+/** Household items ("You probably have: ..."). They never count against the complete-kit rule. */
+export const householdItems = (kit: Kit): KitSlot[] => kit.slots.filter((x) => x.need === "household");
+
 /**
- * The render rule: a full kit has at least MIN_KIT_PICKS named verified picks, one of them an
- * essential. Anything smaller is shown as one "Where to start" card, never padded with filler.
+ * The render rule: a complete kit has at least MIN_KIT_PICKS named verified picks AND a verified
+ * product for every essential slot. Household items do not count either way. Anything less is shown
+ * as one "Where to start" card, never padded with filler and never promoted as complete.
  */
-export const isFullKit = (filled: FilledSlot[]): boolean =>
-  filled.length >= MIN_KIT_PICKS && filled.some((f) => f.slot.need === "essential");
+export const isFullKit = (filled: FilledSlot[], kit?: Kit): boolean =>
+  filled.length >= MIN_KIT_PICKS &&
+  filled.some((f) => f.slot.need === "essential") &&
+  (!kit || awaitingEssentials(kit, filled).length === 0);

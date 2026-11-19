@@ -1,5 +1,7 @@
 # Analytics setup
 
+**One place to turn analytics on:** set `analytics.ga4MeasurementId` in `src/config/site.ts` to your GA4 ID (like `G-ABC123XYZ9`). Empty (the default) loads no third-party script. A valid ID adds the standard async Google tag to every page head (`src/lib/analytics.ts`), switches on the `track()` events, and changes the Privacy page analytics sentence. An invalid ID is ignored. Read the consent notes below first. The older paragraphs saying the loader must be added by hand are superseded by this line.
+
 **The site is analytics-ready, not tracking.** As checked on 2026-11-19: no analytics script is loaded anywhere in the repo, no cookies are set for analytics, and the Privacy page says no analytics or newsletter tools are active (`src/routes/privacy.tsx`). Nothing is measured today.
 
 ## Central IDs (`src/config/site.ts`)

@@ -4,9 +4,16 @@
  *
  *   bun run import:products [path/to/file.csv]            validate, then write src/data/catalog.generated.ts
  *   bun run import:products [path/to/file.csv] --check    validate only, write nothing (dry run)
- *   (default file: docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv)
+ *   --force                                               allow a write that shrinks the catalog by more than 30%
+ *   --out <path>                                          write there instead of src/data/catalog.generated.ts (tests)
+ *   (canonical source: docs/commerce/product-research.csv; blank template: PRODUCT-RESEARCH-TEMPLATE.csv)
  *
- * Schema: docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv. One row per product. Array fields use "|".
+ * Safety: nothing is written unless the WHOLE file validates; the write is atomic (temp file, then
+ * rename), so a failed or interrupted import never leaves a half-written catalog. A write that would
+ * leave 30% or more fewer products than the current catalog is refused unless --force is given.
+ *
+ * Schema: COLUMNS below (copied into docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv; explained in
+ * PRODUCT-RESEARCH-TEMPLATE.md). `notes` is an internal, optional column: read, never stored or published. One row per product. Array fields use "|".
  * Validation is the same code the site uses (validateCatalogProduct), so anything that imports
  * here also passes at build time. On any error, NOTHING is written and every problem is printed
  * with its line number in the file. Runs under bun (it imports TypeScript directly).
@@ -16,7 +23,15 @@
  * booleans, header names in any letter case. It refuses, with a precise message: semicolon/tab
  * exports, .xlsx files, unknown or price-like columns, and rows wider than the header.
  */
-import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  mkdirSync,
+  readdirSync,
+  readFileSync,
+  renameSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { basename, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -27,7 +42,25 @@ import {
 } from "../src/data/catalog.ts";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const OUT = resolve(root, "src/data/catalog.generated.ts");
+const DEFAULT_OUT = resolve(root, "src/data/catalog.generated.ts");
+/** Refuse a write that drops more than this share of the current catalog (override with --force). */
+export const MAX_SHRINK = 0.3;
+
+/** Number of products in an existing generated catalog file (0 when missing or unreadable). */
+export function countExistingProducts(file) {
+  try {
+    return (readFileSync(file, "utf8").match(/^ {4}"id": /gm) ?? []).length;
+  } catch {
+    return 0;
+  }
+}
+
+/** Returns a problem message when `next` products would shrink `current` by more than MAX_SHRINK. */
+export function shrinkProblem(current, next) {
+  if (current > 0 && next < current * (1 - MAX_SHRINK))
+    return `the new file has ${next} products but the current catalog has ${current} (${Math.round((1 - next / current) * 100)}% fewer, more than ${MAX_SHRINK * 100}%). This looks like the wrong or an incomplete file. If it is intended, run again with --force.`;
+  return "";
+}
 
 /** Every column the template defines, in canonical spelling. */
 export const COLUMNS = [
@@ -66,6 +99,7 @@ export const COLUMNS = [
   "affiliateNetwork",
   "affiliateStatus",
   "status",
+  "notes",
 ];
 /** Optional columns: may be missing from the header entirely. */
 const OPTIONAL = new Set([
@@ -86,6 +120,7 @@ const OPTIONAL = new Set([
   "hold",
   "imageUrl",
   "imageCredit",
+  "notes",
 ]);
 const OPTIONAL_STRINGS = [
   "manufacturerUrl",
@@ -424,12 +459,16 @@ async function main() {
   const args = process.argv.slice(2);
   if (args.includes("--help") || args.includes("-h")) {
     console.log(
-      "Usage: bun run import:products <path/to/file.csv> [--check]\n  --check   validate only, write nothing\nSafety: a file path is required to write, and an empty file or the blank template never overwrites the catalog.",
+      "Usage: bun run import:products <path/to/file.csv> [--check] [--force] [--out <path>]\n  --check   validate only, write nothing\n  --force   allow writing a catalog more than 30% smaller than the current one\n  --out     write to this file instead of src/data/catalog.generated.ts\nSafety: a file path is required to write, and an empty file or the blank template never overwrites the catalog.",
     );
     return;
   }
   const check = args.includes("--check");
-  const given = args.find((a) => !a.startsWith("--"));
+  const force = args.includes("--force");
+  const outIdx = args.indexOf("--out");
+  const OUT = outIdx >= 0 && args[outIdx + 1] ? resolve(args[outIdx + 1]) : DEFAULT_OUT;
+  if (outIdx >= 0 && !args[outIdx + 1]) return fail(["--out needs a file path."]);
+  const given = args.find((a, i) => !a.startsWith("--") && !(outIdx >= 0 && i === outIdx + 1));
   const file = resolve(given ?? resolve(root, "docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv"));
   // Without an explicit file the script only validates the template (never writes), so a stray run
   // cannot blank the catalog.
@@ -457,6 +496,8 @@ async function main() {
     console.log(`OK: ${summary} pass validation. Nothing was written (--check).`);
     return;
   }
+  const shrink = force ? "" : shrinkProblem(countExistingProducts(OUT), products.length);
+  if (shrink) return fail([shrink]);
   const inRepo = file.startsWith(root + "/");
   const body = `/**
  * GENERATED by \`bun run import:products\` from ${inRepo ? file.slice(root.length + 1) : basename(file)}.
@@ -466,8 +507,16 @@ import type { CatalogProduct } from "./catalog";
 
 export const generatedCatalog: CatalogProduct[] = ${JSON.stringify(products, null, 2)};
 `;
-  writeFileSync(OUT, body);
-  console.log(`Wrote ${summary} to src/data/catalog.generated.ts`);
+  const tmp = `${OUT}.tmp-${process.pid}`;
+  try {
+    mkdirSync(dirname(OUT), { recursive: true });
+    writeFileSync(tmp, body);
+    renameSync(tmp, OUT);
+  } catch (e) {
+    rmSync(tmp, { force: true });
+    return fail([`could not write ${OUT}: ${e.message}. The current catalog is unchanged.`]);
+  }
+  console.log(`Wrote ${summary} to ${OUT === DEFAULT_OUT ? "src/data/catalog.generated.ts" : OUT}`);
 }
 
 if (import.meta.main ?? process.argv[1] === fileURLToPath(import.meta.url)) await main();

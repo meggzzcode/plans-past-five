@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { seo, breadcrumbJsonLd } from "@/lib/seo";
 import { commissionStatement } from "@/config/affiliate";
 import { site } from "@/config/site";
+import { validGa4Id } from "@/lib/analytics";
 import { Link } from "@tanstack/react-router";
 import { ProsePage } from "@/components/pages/ProsePage";
 import { PublishedBy } from "@/components/layout/PublishedBy";
@@ -49,10 +50,9 @@ export const Route = createFileRoute("/privacy")({
       </p>
       <h2>Analytics and newsletter</h2>
       <p>
-        No analytics, tracking or newsletter tools are currently active, and we do not set analytics
-        cookies. The site is built so that analytics or a newsletter signup can be added later. If
-        that happens, this policy will be updated first, including any consent options required
-        where you live.
+        {validGa4Id()
+          ? "This site uses Google Analytics to count visits and see which pages are read. Google may set cookies or identifiers in your browser for this."
+          : "No analytics, tracking or newsletter tools are currently active, and we do not set analytics cookies. The site is built so that analytics or a newsletter signup can be added later. If that happens, this policy will be updated first, including any consent options required where you live."}
       </p>
       <h2>Affiliate links and cookies</h2>
       <p>

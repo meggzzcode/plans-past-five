@@ -11,4 +11,9 @@ describe("reduced motion", () => {
     expect(reduce).toBeGreaterThan(smooth);
     expect(css.slice(reduce, reduce + 120)).toContain("scroll-behavior: auto");
   });
+
+  it("the search results block wraps a long unbroken query instead of widening the page", () => {
+    const src = readFileSync(join(__dirname, "..", "routes", "search.tsx"), "utf8");
+    expect(src).toContain("[overflow-wrap:anywhere]");
+  });
 });

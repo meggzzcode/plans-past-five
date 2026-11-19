@@ -136,6 +136,18 @@ function dayTarget(length: Length): number | null {
         : null;
 }
 
+/**
+ * The longest a single day's plan may run, first start to last end, for the chosen day length. This
+ * keeps a plan inside a sensible waking-hours window: stops are dropped rather than stretched past it.
+ * Null for plans that are already one short window (weeknight, morning, afternoon, evening).
+ */
+export function daySpanCap(input: PlanInput): number | null {
+  const when = normWhen(input.when);
+  if (when !== "saturday" && when !== "sunday" && when !== "weekend") return null;
+  const len = when === "weekend" && input.length === "evening" ? "few-hours" : input.length;
+  return len === "full-day" ? 540 : len === "half-day" ? 330 : len === "few-hours" ? 210 : null;
+}
+
 /** The ordered stops for an input. Every stop is always returned, even if nothing fits it. */
 export function slotsFor(input: PlanInput): SlotDef[] {
   const when = normWhen(input.when);
@@ -338,6 +350,7 @@ function assemble(
   });
   const n = defs.length;
   const aim = targetMinutes(input);
+  const dayCap = daySpanCap(input);
   let best: Stop[] = [];
   let bestValue = -1;
   let nodes = 0;
@@ -378,6 +391,11 @@ function assemble(
       if (cap !== null && spent + a.costMax > cap) continue;
       const at = place(a, def, pe, brk);
       if (!at) continue;
+      if (dayCap !== null) {
+        const day = def.day ?? "";
+        const first = cur.find((c) => (defs[c.slot]!.day ?? "") === day);
+        if (at.end - (first ? first.start : at.start) > dayCap) continue; // would overflow the day
+      }
       if (sk.some((d) => place(a, d, pe, brk))) continue; // it belongs in an earlier stop
       cur.push({ slot: i, a, ...at });
       used.add(a.id);
@@ -500,6 +518,8 @@ export type Plan = {
   totalMinutes: number;
   /** Minutes from the first start to the last end, days added together. */
   spanMinutes: number;
+  /** Minutes from first start to last end for each day with stops (a weekend lists both days). */
+  daySpans: { day: Day | null; minutes: number }[];
   /** Minutes the chosen length asks for, null for a single stop. */
   targetMinutes: number | null;
   /** Set when the plan covers clearly less than the chosen length, and says why in plain words. */
@@ -643,6 +663,22 @@ function shortNote(input: PlanInput, defs: SlotDef[], seed: number, span: number
   return base;
 }
 
+/** Minutes from the first start to the last end of each day that has stops, in day order. */
+const daySpansOf = (stops: Stop[], defs: SlotDef[]): { day: Day | null; minutes: number }[] => {
+  const spans = new Map<string, [number, number]>();
+  for (const s of stops) {
+    const k = defs[s.slot]!.day ?? "";
+    const cur = spans.get(k);
+    spans.set(k, [cur ? Math.min(cur[0], s.start) : s.start, cur ? Math.max(cur[1], s.end) : s.end]);
+  }
+  return [...spans].map(([k, [from, to]]) => ({ day: (k || null) as Day | null, minutes: to - from }));
+};
+
+const withinDayCap = (stops: Stop[], defs: SlotDef[], input: PlanInput) => {
+  const cap = daySpanCap(input);
+  return cap === null || daySpansOf(stops, defs).every((d) => d.minutes <= cap);
+};
+
 const spanOf = (stops: Stop[], defs: SlotDef[]) => {
   const first = new Map<string, number>();
   const last = new Map<string, number>();
@@ -688,7 +724,9 @@ function swapFor(
         defs,
         ids.map((i) => (i === mine ? a.id : i)),
       );
-      return swapped !== null && swapped.length === stops.length;
+      return (
+        swapped !== null && swapped.length === stops.length && withinDayCap(swapped, defs, input)
+      );
     }) ?? null
   );
 }
@@ -734,7 +772,8 @@ function whyLine(input: PlanInput, stops: Stop[], cap: number | null, template?:
   parts.push(
     cap === null ? "a flexible budget" : cap === 0 ? "free" : `${fmtMoney(cap)} or less in total`,
   );
-  if (normWhen(input.when) !== "weekend") parts.push("nothing that needs booking ahead");
+  if (stops.some((x) => x.a.advance)) parts.push("one idea that needs booking or signing up ahead is marked");
+  else parts.push("nothing that needs booking ahead");
   const who = whoPhrase[input.who];
   const lead = `Chosen for a ${vibeWord[input.vibe]} ${dayWord[normWhen(input.when)]} ${who}`;
   const tail = template ? ` It is one of our ready-made evenings: ${template.title}.` : "";
@@ -806,6 +845,7 @@ function buildPlan(
     missingCount,
     totalMinutes: stops.reduce((t, s) => t + s.a.minutes, 0),
     spanMinutes: span,
+    daySpans: daySpansOf(stops, defs),
     targetMinutes: aim,
     lengthNote,
     totalCost: { min, max: total, typical },
@@ -1191,7 +1231,13 @@ export const fmtTotal = (c: { min: number; max: number; typical: number }) =>
 
 /** Short "how long and how much" line used at the top of a plan and in shared text. */
 export function planSummary(plan: Plan): string {
-  const time = plan.spanMinutes > 0 ? fmtDuration(plan.spanMinutes) : "";
+  // A two-day plan states each day, never one big total that reads like a single marathon.
+  const time =
+    plan.daySpans.length > 1
+      ? plan.daySpans.map((d) => `${d.day}: ${fmtDuration(d.minutes)}`).join(", ")
+      : plan.spanMinutes > 0
+        ? fmtDuration(plan.spanMinutes)
+        : "";
   const cost = fmtTotal(plan.totalCost);
   return [time, cost].filter(Boolean).join(" · ");
 }
@@ -1209,7 +1255,7 @@ export function planText(plan: Plan, url: string): string {
     const a = s.activity;
     if (!a) continue;
     lines.push(
-      `${fmtClock(s.start)}  ${a.name} (${fmtDuration(a.minutes)}, ${fmtRange(a.costMin, a.costMax)})`,
+      `${fmtClock(s.start)}  ${a.name} (${fmtDuration(a.minutes)}, ${fmtRange(a.costMin, a.costMax)})${a.gear ? ` - borrow or own: ${a.gear}` : ""}`,
     );
   }
   lines.push("", `Total: ${planSummary(plan)} (rough estimate)`, `Open the same plan: ${url}`);

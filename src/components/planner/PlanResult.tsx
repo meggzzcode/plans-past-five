@@ -146,6 +146,12 @@ function Card({
           <span className="font-semibold text-ink">Start: </span>
           {a.prep}
         </p>
+        {a.gear && (
+          <p className="mt-1 text-sm leading-snug text-espresso" data-testid="gear-note">
+            <span className="font-semibold text-ink">Borrow or own: </span>
+            {a.gear}. Not included in the cost.
+          </p>
+        )}
         <NearLink term={nearTermFor({ activityId: a.id })} />
       </div>
     </div>
@@ -160,6 +166,8 @@ type Props = {
   onSwap: (index: number) => void;
   /** Make this plan lighter: one stop fewer and longer breaks. Called with the new choices and ids. */
   onLighter: (next: { input: PlanInput; ids: string[] }) => void;
+  /** Short "Based on:" chips naming every choice behind this plan; those not picked are tagged default. */
+  basedOn?: { label: string; isDefault: boolean }[];
   /** Apply a one-tap change to the choices (used by the "nothing found" buttons). */
   onRelax: (patch: Partial<PlanInput>) => void;
 };
@@ -173,6 +181,7 @@ export function PlanResult({
   onSwap,
   onLighter,
   onRelax,
+  basedOn,
 }: Props) {
   const [copied, setCopied] = useState<"idle" | "yes" | "no">("idle");
   const hydrated = useHydrated();
@@ -229,6 +238,17 @@ export function PlanResult({
           <span>{planSummary(plan)}</span>
           <span className="text-xs font-medium text-muted-foreground">(rough estimate)</span>
         </p>
+      )}
+      {basedOn && basedOn.length > 0 && (
+        <div className="mt-3 flex flex-wrap items-center gap-1.5" data-testid="based-on">
+          <span className="text-sm font-semibold text-ink">Based on:</span>
+          {basedOn.map((c) => (
+            <Chip key={c.label} tone={c.isDefault ? "bg-cream" : "bg-butter/60"}>
+              {c.label}
+              {c.isDefault && <span className="ml-1 font-medium text-muted-foreground">(default)</span>}
+            </Chip>
+          ))}
+        </div>
       )}
       {plan.filled > 0 && (
         <p className="mt-3 max-w-2xl text-sm leading-snug text-espresso" data-testid="plan-why">

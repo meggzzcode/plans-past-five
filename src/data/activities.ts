@@ -37,6 +37,11 @@ export type Activity = {
    * family in one itinerary, so a plan does not bake and then cook.
    */
   family: string;
+  /**
+   * Gear the idea assumes and the cost does not cover (a paddle, a bike). The plan card says "borrow or
+   * own" so a free plan never silently assumes equipment.
+   */
+  gear?: string;
   /** Approximate cost range in whole dollars. Always labeled approximate in the UI. */
   costMin: number;
   costMax: number;
@@ -57,6 +62,7 @@ type Base = Omit<
   | "setting"
   | "home"
   | "advance"
+  | "gear"
   | "family"
   | "costMin"
   | "costMax"
@@ -171,7 +177,7 @@ const base: Base[] = [
   ),
   A(
     "bookstore",
-    "Take yourself on a bookstore date and read the first page of five books.",
+    "Go on a bookstore date and read the first page of five books.",
     ["cozy", "adventurous"],
     ["alone", "partner", "friend"],
     "under25",
@@ -347,7 +353,7 @@ const base: Base[] = [
     "book-club",
     "Start a two-person book club: same short novel, one café, two weeks.",
     ["social", "cozy"],
-    ["friend", "group"],
+    ["friend", "partner"],
     "free",
     ["afternoon", "evening"],
     90,
@@ -599,6 +605,7 @@ type Extra = {
   prep: string;
   supplies: string[];
   home?: true;
+  gear?: string;
   addVibes?: Vibe[];
 };
 
@@ -619,7 +626,7 @@ const extras: Record<string, Extra> = {
     setting: "indoor",
     home: true,
     cost: [0, 0],
-    prep: "Shop for or check you have eggs, bread and coffee the night before.",
+    prep: "Check you have eggs, bread and coffee, or pick them up first.",
     supplies: ["Whatever breakfast food you already have", "A real plate"],
     addVibes: ["relaxing"],
   },
@@ -664,7 +671,7 @@ const extras: Record<string, Extra> = {
     energy: "low",
     setting: "outdoor",
     cost: [5, 20],
-    prep: "Pick a spot, check the weather and pack food the night before.",
+    prep: "Pick a spot, check the weather and pack food just before you go.",
     supplies: ["Blanket or bedsheet", "Bread, fruit and cheese or similar", "Reusable bag"],
     addVibes: ["relaxing"],
   },
@@ -747,7 +754,7 @@ const extras: Record<string, Extra> = {
     setting: "indoor",
     home: true,
     cost: [8, 20],
-    prep: "Order or pick up a bead or thread kit ahead and prepare snacks.",
+    prep: "Use a bead or thread kit you already have, or pick one up from a craft store, and set out snacks.",
     supplies: ["Bead or thread kit", "Scissors", "Snacks"],
   },
   "pottery-studio": {
@@ -803,7 +810,7 @@ const extras: Record<string, Extra> = {
     setting: "indoor",
     home: true,
     cost: [8, 25],
-    prep: "Agree on a recipe and shop for ingredients beforehand.",
+    prep: "Agree on a recipe and pick up the ingredients on the way.",
     supplies: ["Ingredients", "Music"],
   },
   tennis: {
@@ -812,6 +819,7 @@ const extras: Record<string, Extra> = {
     setting: "outdoor",
     cost: [0, 0],
     prep: "Find a public court (often free) and borrow rackets and balls if you can.",
+    gear: "rackets and balls",
     supplies: ["Rackets", "Tennis balls", "Water bottle"],
     addVibes: ["active"],
   },
@@ -821,6 +829,7 @@ const extras: Record<string, Extra> = {
     setting: "outdoor",
     cost: [0, 0],
     prep: "Look up public open-play times near you and bring or borrow a paddle.",
+    gear: "a paddle",
     supplies: ["Paddle", "Water bottle"],
     addVibes: ["active"],
   },
@@ -968,6 +977,7 @@ const extras: Record<string, Extra> = {
     setting: "outdoor",
     cost: [0, 0],
     prep: "Check your tires and brakes, and pick a flat, quiet route.",
+    gear: "a bike and helmet",
     supplies: ["Bike", "Helmet", "Water bottle"],
   },
   frisbee: {
@@ -976,6 +986,7 @@ const extras: Record<string, Extra> = {
     setting: "outdoor",
     cost: [0, 0],
     prep: "Bring any frisbee or ball you own, and snacks.",
+    gear: "a frisbee or ball",
     supplies: ["Frisbee or ball", "Snacks"],
   },
   "kitchen-dance": {
@@ -1054,7 +1065,7 @@ const extras: Record<string, Extra> = {
     energy: "low",
     setting: "outdoor",
     cost: [0, 0],
-    prep: "Fill a thermos the night before.",
+    prep: "Fill a thermos with a hot drink before you head out.",
     supplies: ["Thermos with a hot drink", "Comfortable shoes"],
   },
   "crossword-cafe": {
@@ -1162,6 +1173,7 @@ export const activities: Activity[] = base.map((b) => {
     setting: e.setting,
     home: e.home === true,
     ...(ADVANCE_IDS.includes(b.id) ? { advance: true } : {}),
+    ...(e.gear ? { gear: e.gear } : {}),
     family: familyOf(b.id),
     costMin: e.cost[0],
     costMax: e.cost[1],

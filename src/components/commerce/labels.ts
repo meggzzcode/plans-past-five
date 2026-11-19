@@ -11,13 +11,17 @@ export function linkLabel(link: ResolvedLink, noun?: string): string {
   return what ? `Find ${what} on ${link.retailer}` : `Find options on ${link.retailer}`;
 }
 
-export type RoleNeed = "essential" | "optional" | "probably-own";
+export type RoleNeed = "essential" | "optional" | "household" | "probably-own";
 
-/** One vocabulary for a product's place in a list. Skippable, never a shrug. */
+/**
+ * One vocabulary for a product's place in a list. A "Starter pick" is what a beginner buys first. A
+ * "Step up" is a beginner's next step (a nicer version, or something to add once hooked), never an
+ * expert piece. Anything else is a skippable "Nice later". Never a price tier.
+ */
 export function roleLabel(p: CatalogProduct, need?: RoleNeed): string {
-  if (need === "probably-own") return "Check your drawer";
-  if (need === "essential" || (need === undefined && p.isEssential)) return "Start with this";
-  if (p.role === "aesthetic-upgrade") return "Pretty extra";
-  if (p.role === "later-upgrade") return "When you're hooked";
+  if (need === "household" || need === "probably-own") return "Check your drawer";
+  if (need === "essential" || (need === undefined && p.isEssential)) return "Starter pick";
+  if (p.role === "aesthetic-upgrade") return "Step up: a prettier version";
+  if (p.role === "later-upgrade") return "Step up: once you're hooked";
   return "Nice later";
 }

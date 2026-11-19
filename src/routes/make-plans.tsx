@@ -178,6 +178,16 @@ function Planner() {
   // Bumped when the choices change from outside the form (the "nothing found" buttons): the form's
   // radios are uncontrolled, so they are rebuilt from the new choices.
   const [formKey, setFormKey] = useState(0);
+  // Which choices the person actually made (or arrived with in the address). The rest are defaults,
+  // and the plan says so in its "Based on:" chips.
+  const [touched, setTouched] = useState<Set<string>>(
+    () =>
+      new Set(
+        (["when", "length", "vibe", "who", "budget", "setting", "energy", "home"] as const).filter(
+          (k) => search[k] !== undefined,
+        ),
+      ),
+  );
 
   const fromQuiz =
     init.from !== null && init.from !== "tonight" && init.prefilled && init.ids === null;
@@ -193,6 +203,11 @@ function Planner() {
   const { isSaved, toggle, ready } = useSaved();
 
   const change = (patch: Partial<PlanInput>) => {
+    setTouched((t) => {
+      const n = new Set(t);
+      for (const k of Object.keys(patch)) n.add(k === "atHome" ? "home" : k);
+      return n;
+    });
     setInput((i) => {
       const next = withValidLength({ ...i, ...patch });
       // A lighter plan is tied to the plan it came from: any new choice starts a fresh one.
@@ -262,6 +277,25 @@ function Planner() {
   const saved = ready && plan && isSaved(`plan:${planUrl}`);
   const planLabel = isDayWhen(input.when) ? "Plan my weekend" : "Plan my evening";
   const lengthOptions = isDayWhen(input.when) ? dayLengths : stopLengths;
+  const labelOf = (k: keyof PlanInput, v: string) =>
+    (k === "length" ? lengthOptions : (groups.find((g) => g.key === k)?.options ?? [])).find(
+      (o) => o.v === v,
+    )?.label ?? v;
+  const basedOn = (() => {
+    if (!plan) return [];
+    const i = plan.input;
+    const keys: (keyof PlanInput)[] = ["when", "length", "vibe", "who", "budget"];
+    const out = keys.map((k) => ({
+      label: labelOf(k, k === "when" ? (i.when === "after-work" ? "weeknight" : i.when) : String(i[k])),
+      isDefault: !touched.has(k),
+    }));
+    if (i.setting && i.setting !== "any")
+      out.push({ label: labelOf("setting", i.setting), isDefault: !touched.has("setting") });
+    if (i.energy && i.energy !== "any")
+      out.push({ label: labelOf("energy", i.energy), isDefault: !touched.has("energy") });
+    if (i.atHome) out.push({ label: "Kept at home", isDefault: false });
+    return out;
+  })();
   const cur = (k: keyof PlanInput): string => {
     const v = input[k];
     if (k === "when") return v === "after-work" ? "weeknight" : String(v);
@@ -277,8 +311,9 @@ function Planner() {
             An empty calendar? <em className="text-cherry">We can work with that.</em>
           </h1>
           <p className="mt-4 max-w-xl text-lg text-ink">
-            Pick a few things and get a plan you can start tonight. Every idea works wherever you
-            live, so there's nothing to book and nothing to cancel.
+            Pick a few things and get a plan to follow. Every idea works wherever you live. Evening
+            and single-day plans need nothing booked. A full-weekend plan may include one idea that
+            says "book ahead" on its card.
           </p>
           {pin && plan && plan.ids.includes(pin) && (
             <p
@@ -328,6 +363,12 @@ function Planner() {
                     aria-describedby={hintId}
                   >
                     <legend className="kicker mb-3 text-ink">{g.label}</legend>
+                    {(g.key === "vibe" || g.key === "who" || g.key === "budget") &&
+                      !touched.has(g.key) && (
+                        <p className="-mt-1 mb-3 text-sm text-espresso" data-testid="preselected">
+                          Starting choice, not yours yet. Pick the one that fits.
+                        </p>
+                      )}
                     {g.hint && (
                       <p id={hintId} className="-mt-1 mb-3 text-sm text-espresso">
                         {g.hint}
@@ -380,6 +421,7 @@ function Planner() {
         >
           <PlanResult
             plan={plan}
+            basedOn={basedOn}
             saved={!!saved}
             onShuffle={() => {
               setInput((i) => {

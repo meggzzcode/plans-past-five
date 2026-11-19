@@ -1,8 +1,17 @@
 import { useEffect } from "react";
 import { Link } from "@tanstack/react-router";
-import { KIT_DISCLAIMER, fillKit, getKit, isFullKit, type FilledSlot, type Kit } from "@/data/kits";
+import {
+  KIT_DISCLAIMER,
+  awaitingEssentials,
+  fillKit,
+  getKit,
+  householdItems,
+  isFullKit,
+  type FilledSlot,
+  type Kit,
+} from "@/data/kits";
 import { onlyOnePick, verifiedCatalog, type CatalogProduct } from "@/data/catalog";
-import { getCollection } from "@/data/products";
+import { kitHomeCollection } from "@/data/products";
 import { getHobby } from "@/data/hobbies";
 import { track } from "@/lib/track";
 import { ShopDisclosure } from "./ProductCard";
@@ -13,7 +22,6 @@ import { ShopSections, type ShopGroup, type ShopItem } from "./ShopSections";
 const GROUPS = [
   { need: "essential", heading: "Then add", quiet: false },
   { need: "optional", heading: "Pretty extras for later", quiet: true },
-  { need: "probably-own", heading: "Check the drawer first", quiet: true },
 ] as const;
 
 const itemOf = (f: FilledSlot): ShopItem => ({
@@ -56,7 +64,7 @@ export function StarterKit({
   if (!kit || n === 0) return null;
 
   // A kit needs at least 4 named verified picks. Fewer: one "Where to start" card, no filler.
-  const isKit = isFullKit(filled);
+  const isKit = isFullKit(filled, kit);
   const pick = kitPick(filled) ?? (isKit ? undefined : filled[0]);
   const groups: ShopGroup[] = (isKit ? GROUPS : []).map(({ need, heading, quiet }) => ({
     heading,
@@ -74,15 +82,30 @@ export function StarterKit({
   const later = n - starters;
   const boxed = filled.some((f) => f.product.role === "complete-kit");
   const hobby = kit.hobby ? getHobby(kit.hobby) : undefined;
-  const collSlug = filled.flatMap((f) => f.product.collections)[0];
-  const coll = collSlug && collSlug !== currentCollection ? getCollection(collSlug) : undefined;
-  const heading = title ?? (isKit ? (kit.headline ?? kit.name) : `Where to start: ${kit.name}`);
+  // The "More in ..." link goes to the kit's own collection, never to one that merely sells a product.
+  const home = kitHomeCollection(kit.id);
+  const coll = home && home.slug !== currentCollection ? home : undefined;
+  const awaiting = isKit ? [] : awaitingEssentials(kit, filled);
+  const household = householdItems(kit);
+  const startTitle = title ?? kit.name;
+  const heading = isKit
+    ? (title ?? kit.headline ?? kit.name)
+    : /^where to start/i.test(startTitle)
+      ? startTitle
+      : `Where to start: ${startTitle}`;
 
   return (
     <aside className="not-prose my-12 border-y-2 border-ink py-8" aria-label={kit.name}>
       <p className="kicker text-cherry">{isKit ? "Starter kit" : "Where to start"}</p>
       <h3 className="mt-2 font-display text-3xl italic">{heading}</h3>
       <p className="mt-2 text-muted-foreground">{kit.dek}</p>
+      {!isKit && (
+        <p className="mt-2 text-sm font-semibold text-espresso" data-kit-incomplete>
+          {awaiting.length > 0
+            ? "A starting point, not a complete kit: we have not verified every essential yet."
+            : "A starting point: we have named the essentials, and a full kit needs a few more verified picks."}
+        </p>
+      )}
       {isKit && (
         <p className="mt-2 text-sm font-semibold text-espresso">
           {`${n} things: ${starters} to start with${later > 0 ? `, ${later} for later or maybe already at home` : ""}.${boxed ? " One is a boxed set with everything in it." : ""}`}
@@ -113,6 +136,18 @@ export function StarterKit({
         alsoNeed={alsoNeed}
         afterPick={<ShopDisclosure kind="short" lead={KIT_DISCLAIMER} className="mt-3" />}
       />
+      {awaiting.length > 0 && (
+        <p className="mt-6 max-w-prose text-sm text-espresso" data-kit-awaiting>
+          <strong className="font-semibold">Still to choose (no verified listing yet):</strong>{" "}
+          {awaiting.map((a) => a.label.toLowerCase()).join(", ")}.
+        </p>
+      )}
+      {household.length > 0 && (
+        <p className="mt-3 max-w-prose text-sm text-espresso" data-kit-household>
+          <strong className="font-semibold">You probably have:</strong>{" "}
+          {household.map((h) => h.label.toLowerCase()).join(", ")}.
+        </p>
+      )}
       {(hobby || coll) && (
         <p className="mt-6 flex flex-wrap gap-x-6 gap-y-1 text-sm">
           {hobby && (

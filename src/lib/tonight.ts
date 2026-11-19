@@ -72,6 +72,10 @@ export const notTonightWording =
   /\b(mon|tues|wednes|thurs|fri|satur|sun)day\b|\bweekends?\b|\btomorrow\b|\bnext week\b|\b(this |in the )?(morning|afternoon)\b|\bgolden[- ]hour\b|\bsunrise\b|\bbreakfast\b|\bbrunch\b|\bfarmers?[ -]market\b/i;
 
 /** Wording that needs another person. Used to keep "Just me" free of ideas that need a friend. */
+/** Wording that is a step to do ahead of time (order, book, sign up, the night before): wrong for "tonight". */
+export const aheadOfTimeWording =
+  /\border\b|\bahead\b|\bbeforehand\b|\bnight before\b|\bin advance\b|\bsign up\b|\bbook (a|your|ahead)\b/i;
+
 export const needsOthersWording =
   /\bwith (a |your |two |three |some )?(friends?|partner|group|someone)\b|\binvite\b|\btogether\b|\bcall a friend\b|\bdoubles\b|\bsign up a friend\b/i;
 
@@ -85,7 +89,10 @@ export function tonightOk(c: {
 }): boolean {
   if (c.kind === "hobby" && c.hobbySlug && daytimeOnlyHobbies.includes(c.hobbySlug)) return false;
   if (c.kind === "idea" && c.parts && !c.parts.includes("evening")) return false;
-  return !notTonightWording.test(`${c.title} ${c.firstStep}`);
+  return (
+    !notTonightWording.test(`${c.title} ${c.firstStep}`) &&
+    !aheadOfTimeWording.test(`${c.title} ${c.firstStep}`)
+  );
 }
 
 type Candidate = Suggestion & {

@@ -152,3 +152,47 @@ export const productsWithStatus = (
   state: ShopListState,
   status: ShopStatus,
 ) => products.filter((p) => state[p.id] === status);
+
+const ARTICLES = new Set(["a", "an", "the", "some", "your", "of", "and"]);
+const SAME_AS: Record<string, string> = { bag: "tote", bottles: "bottle", balls: "ball" };
+/** Items so obvious they only pad a list. */
+const PADDING = new Set(["book", "books"]);
+
+const tokens = (t: string): Set<string> =>
+  new Set(
+    t
+      .toLowerCase()
+      .replace(/[^a-z0-9 ]+/g, " ")
+      .split(/\s+/)
+      .filter((w) => w && !ARTICLES.has(w))
+      .map((w) => SAME_AS[w] ?? w),
+  );
+
+const isSubset = (a: Set<string>, b: Set<string>) => [...a].every((x) => b.has(x));
+
+/**
+ * Remove padded and near-duplicate list items ("Water" next to "Water bottle", "Sports tote" next to
+ * "Tote bag", a bare "A book"). Groups are in priority order: an item that repeats something in an
+ * earlier group is dropped from the later one; within one group the more specific item wins.
+ * Order is otherwise kept, and every result is trimmed and unique.
+ */
+export function dedupeListGroups(groups: string[][]): string[][] {
+  const kept: { t: string; k: Set<string> }[] = [];
+  return groups.map((group) => {
+    const cand = group
+      .map((t) => t.trim())
+      .filter((t) => t && !(tokens(t).size === 1 && PADDING.has([...tokens(t)][0]!)))
+      .map((t) => ({ t, k: tokens(t) }));
+    const out = cand.filter((a, i) => {
+      if (kept.some((o) => isSubset(a.k, o.k) || isSubset(o.k, a.k))) return false;
+      return !cand.some(
+        (b, j) =>
+          j !== i &&
+          isSubset(a.k, b.k) &&
+          (b.k.size > a.k.size || (b.k.size === a.k.size && j < i)),
+      );
+    });
+    kept.push(...out);
+    return out.map((x) => x.t);
+  });
+}

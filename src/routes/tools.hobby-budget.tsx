@@ -36,7 +36,9 @@ function Chips<T extends string>({
   value,
   options,
   onChange,
+  explain,
 }: {
+  explain?: string;
   legend: string;
   value: T;
   options: { v: T; label: string; hint: string }[];
@@ -45,6 +47,7 @@ function Chips<T extends string>({
   return (
     <fieldset>
       <legend className="kicker mb-3 text-ink">{legend}</legend>
+      {explain && <p className="-mt-1 mb-3 max-w-xl text-sm text-espresso">{explain}</p>}
       <div className="flex flex-wrap gap-2">
         {options.map((o) => (
           <button
@@ -144,6 +147,7 @@ function HobbyBudget() {
             />
             <Chips
               legend="Budget preference"
+              explain="Keep it lean prices each item about 20 to 30 percent below the typical range, Balanced uses the typical range, and Treat myself prices nicer versions about 30 to 40 percent above it."
               value={pref}
               options={budgetOptions}
               onChange={setPref}
@@ -166,9 +170,11 @@ function HobbyBudget() {
 
             {optionals.length > 0 && (
               <fieldset>
-                <legend className="kicker mb-3 text-ink">
-                  Optional extras (include in my total)
-                </legend>
+                <legend className="kicker mb-1 text-ink">Optional extras</legend>
+                <p className="mb-3 max-w-xl text-sm text-espresso">
+                  Not needed for a first session. Tick any you want and they are added to your
+                  total; unticked extras are left out.
+                </p>
                 <ul className="grid gap-3 sm:grid-cols-2">
                   {optionals.map((i) => (
                     <li key={i.id} className="border border-ink/15 bg-cream p-3">
@@ -207,7 +213,7 @@ function HobbyBudget() {
               {result.items.length} item{result.items.length === 1 ? "" : "s"} counted
               {result.owned.length > 0 && `, ${result.owned.length} you already own`}
               {result.skippedOptional.length > 0 &&
-                `, ${result.skippedOptional.length} optional left out`}
+                `, ${result.skippedOptional.length} optional ${result.skippedOptional.length === 1 ? "extra" : "extras"} not added`}
               .
             </p>
             {result.items.length === 0 && (

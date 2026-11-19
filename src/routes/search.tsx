@@ -76,7 +76,7 @@ function SearchPage() {
         </p>
       )}
       {q && (
-        <div className="mt-10" aria-live="polite">
+        <div className="mt-10 [overflow-wrap:anywhere]" aria-live="polite">
           <p className="text-sm text-muted-foreground">
             {hits.length} result{hits.length === 1 ? "" : "s"} for "{q}"
             {understood.length > 0 && <> · looking for: {understood.join(", ")}</>}

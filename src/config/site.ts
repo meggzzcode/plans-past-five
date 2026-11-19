@@ -1,3 +1,10 @@
+/**
+ * Analytics: the ONE place to configure it. Leave empty for no analytics at all. A valid GA4
+ * measurement ID (like G-ABC123XYZ9) adds the standard Google tag to every page; see
+ * docs/buyer/ANALYTICS-SETUP.md. An invalid value is ignored.
+ */
+const analytics = { ga4MeasurementId: "" };
+
 /** Central brand + site settings. Edit here; every page reads from this file. */
 export const site = {
   name: "Plans Past Five",
@@ -31,9 +38,10 @@ export const site = {
   publisherEntityType: "", // free text, e.g. "sole proprietor", "DBA", "LLC"; optional
   publisherAddress: "", // a real postal, PO box or registered-agent address; optional
   publisherUrl: "", // https:// link to the publisher's own page; optional
+  analytics,
   integrations: {
     newsletter: { enabled: false, provider: "" as "" | "kit" | "mailerlite", formAction: "" },
-    googleAnalyticsId: "",
+    googleAnalyticsId: analytics.ga4MeasurementId, // follows analytics.ga4MeasurementId; do not set separately
     searchConsoleVerification: "",
     pinterestVerification: "",
   },

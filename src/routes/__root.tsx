@@ -16,6 +16,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { site } from "@/config/site";
 import { verificationMeta } from "@/lib/verification";
+import { ga4Scripts } from "@/lib/analytics";
 import { organizationJsonLd, jsonLdScript } from "@/lib/seo";
 
 function NotFoundComponent() {
@@ -111,7 +112,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#B83F43" },
       ...verificationMeta(),
     ],
-    scripts: [jsonLdScript(organizationJsonLd())],
+    scripts: [jsonLdScript(organizationJsonLd()), ...ga4Scripts()],
     links: [
       {
         rel: "stylesheet",
