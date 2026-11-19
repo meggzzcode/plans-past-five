@@ -1,0 +1,40 @@
+# Cowork round 2 (paste everything below the line)
+
+---
+
+You are Cowork, in the owner's logged-in browser, working on GitHub repo meggzzcode/plans-past-five. Fetch branch `claude/vibrant-dirac-amdf7r` (it already contains your earlier cowork/* work, merged) and read `docs/cowork/COWORK-FINAL-PACK.md` for rules and file formats, then `docs/cowork/COWORK-PROGRESS.md` for what you already did. This message lists ONLY what is still open.
+
+**Rules (unchanged)**
+- Push only to `cowork/<task>` branches. Never to `main` or `claude/vibrant-dirac-amdf7r`. Data and report files only; code defects go in `docs/cowork/DEFECT-PACKET.md`.
+- Keep going until every item is done or genuinely blocked. Stop ONLY to ask the owner a question (login, CAPTCHA, 2FA, payment screen, agreement, a step needing owner approval, information only the owner has). Ask in one line, then continue with another item.
+- Never invent: write NOT FOUND. Date every fact, record its URL. No purchases, payment or tax details, agreements, affiliate applications, real affiliate IDs, emails sent, pins posted or scheduled, listings published, ownership or visibility changes. Amazon is read like a person in the owner's browser: no scraping, no Amazon images saved in the repo, no prices, ratings or review counts in any file. Monetisation is Amazon only: do not research other retailers or networks.
+- Owner decisions: hosting is Netlify and the editor is Pages CMS (separate, free, GitHub sign-in); contact is hello@planspastfive.com; do NOT send the photo-permission emails; the owner is creating the Pinterest account now.
+- Record how you handled each item (what you did, what you could not do and why, surprises) in `docs/cowork/COWORK-PROGRESS.md`.
+
+**Part 1, no owner time needed (start immediately, in parallel)**
+
+1. **B2, products for the gear-led articles.** The articles now lead with gear. Many show type-level search cards, which only become real recommendations once a product is verified. Work through `docs/content/verification-final/MONETISATION-REWRITE-A.md` and `MONETISATION-REWRITE-B.md` (sections on product needs) and `docs/commerce/MONETISATION-GAPS.csv`. Priority: (1) walking shoes, trekking socks, daypack, bottle or flask, phone armband (free-activity gear); (2) bike helmet, bike lights, bell, repair kit; (3) picnic blanket, cooler bag, picnic tableware, portable speaker; (4) yarn, knitting needles, flower snips, vases, flower food, scissors; (5) jigsaw, paint-by-number, yoga mat, letter-writing set, tennis and pickleball shoes, skate protective gear, jewelry kit, sewing kit. Stop after tier 3 if time is short and say what you skipped. For each: open the live listing, confirm in stock, ASIN and title match, read the on-page Customers-say summary and write a qualitative sentiment line (no numbers), reject poor or overpriced picks, check the manufacturer page for anything safety-related (helmets, lights, skate gear: record what the manufacturer says, do not add claims of your own). Output `docs/commerce/buy-plan/VERIFIED-QUEUE-2.csv` in the exact importer schema (allowed role values: essential, complete-kit, researched-pick, affordable, aesthetic-upgrade, nice-to-have, later-upgrade) and run `bun scripts/import-products.mjs <file> --check`. Do not run it without `--check`.
+2. **Held picks, one decision list.** From `docs/commerce/buy-plan/VERIFIED-ADDITIONS.csv`, for the five held items (HEAD Gravity Tour, Babolat Boost Drive, Susan Bates Silvalume, the Liquitex 12-set, the mahjong sleeve) look for a better in-stock alternative that has a readable review summary; if none, leave them held. Write `docs/commerce/buy-plan/HELD-DECISIONS.md`.
+3. **C2, remaining claims.** Open the Safeway page once to confirm the clay food caution; list in `COWORK-SOURCE-RESULTS.md` every article sentence that still lacks a source so Claude Code can soften it. Also source-check any new claim in the rewritten articles (compare `content/articles/*.json` notes dated 2026-11-19 against sources): flag, do not rewrite.
+4. **Pinterest assets.** The two published articles without their own pin: write the two pin rows (title, description, destination path, image file, board) into `docs/marketplace/final-inspection/PINTEREST-VERIFICATION.md`; do not post.
+
+**Part 2, with the owner present (ask once, then continue)**
+
+5. **Pinterest account setup (owner is creating it).** Once it exists: confirm the handle `@planspastfive`, set business account, profile name, bio and the website field; do NOT claim the website until the site is deployed (see 12). Check Instagram and TikTok for `@planspastfive` availability only; do not create accounts. Record results in `docs/marketplace/final-inspection/COWORK-READ-LIVE.md`.
+6. **Console reads you could not finish.** With the owner logged in read, inside each console: GA4 (data retention, cost, ownership transfer to a new owner), Bing Webmaster Tools (cost, ownership sharing), Search Console ownership transfer. Do not create a GA4 property or enter a measurement ID. Record NOT FOUND where the console does not say.
+7. **Amazon Associates (read only).** In the owner's Associates account read the Program Policies: the 180-day and qualifying-sales rule, the definition of the Site, tag or account transfer to a buyer, image and price storage rules, and whether SiteStripe image links are allowed on this kind of site. Do not apply, create a tracking ID or change anything. Output `docs/marketplace/final-inspection/AMAZON-POLICY-READ.md`.
+8. **Trademark.** Read goods and services for USPTO serial 50056258 (HOOKED AFTER FIVE) and record whether it is near. Then paste the first result page for "PLANS PAST FIVE" in the USPTO search into `TRADEMARK-KNOCKOUT.md` (screening, not legal clearance).
+9. **Marketplace fees.** In a Flippa seller account, view (do not buy) the listing package prices, success fee, and escrow fee quote; correct `COWORK-MARKETPLACE-RESEARCH.md`. No listing, no payment.
+10. **F, email round trip.** Owner logged in to Namecheap Private Email: confirm hello@planspastfive.com and the subscriptions@ alias exist, send a test in and out, confirm replies. Do not buy anything; do not change nameservers.
+11. **G, Netlify and Pages CMS test (owner says "go" in chat first).** Production branch to `main` only once `docs/marketplace/final-inspection/RELEASE-HANDOVER.md` says the release is merged. Previews off, site private. Follow `docs/buyer/CMS-TEST-PLAN.md` with the owner's GitHub login on a throwaway draft; answer the Trigger-deploy and skipped-build-credit questions; log in `docs/cowork/CMS-LIVE-TEST-LOG.md` and `docs/cowork/NETLIFY-LIVE-LOG.md`. Exactly ONE release deploy (about 15 of 300 credits), and only after the owner says go.
+
+**Part 3, after the one deploy**
+
+12. **H** Live SEO and production checks, security headers, three Lighthouse runs (label as lab data), Search Console and Bing verification, Pinterest website claim with the owner. `docs/marketplace/final-inspection/LIVE-QA.md`.
+13. **K** Five blind customer and three buyer reviews on the live URL, briefs in `docs/marketplace/final-inspection/REVIEWER-BRIEFS.md`, no earlier scores shown; plus the friend usability packet. Output in `docs/marketplace/reviews4/`.
+14. **L** Screenshots at 1280 and 390 into `docs/marketplace/presentation/screenshots/`; no credentials or personal data visible.
+15. **M** Update the existing tracker Google Sheet (never a new one) from `docs/cowork/TRACKER-UPDATE-PACKET.md`, preserving formulas and formatting.
+16. **N** Repository visibility: report the current state only; change to private only if the owner says yes in chat.
+17. **O (optional)** Do NOT start unless the owner authorises it in chat; then follow `docs/launch/ACTIVATION-PLAN-30-DAY.md` and `docs/launch/OWNER-AUTHORISATION-CHECKLIST.md`.
+
+**Finish line:** a final summary in `docs/cowork/COWORK-PROGRESS.md`: per item done / partly / blocked, files, branch, and the exact owner actions still needed. Then stop.
