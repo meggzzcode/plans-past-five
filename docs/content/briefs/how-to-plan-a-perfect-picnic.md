@@ -46,3 +46,35 @@ PENDING COWORK
 
 ## Product shortlist
 PENDING COWORK
+
+---
+
+# Cowork research 2026-11-18
+
+## C1 audience and keyword research
+
+- Primary keyword candidate (author judgement, NOT validated by any volume tool): how to plan a perfect picnic
+- Related keyword candidates (from competitor titles and headings, not a keyword tool): NOT FOUND (not researched in this pass)
+- Google autocomplete suggestions: NOT FOUND (not collected; no sanctioned autocomplete tool in this pass)
+- Related searches / People Also Ask: NOT FOUND (search tool returns result pages, not SERP features)
+- Pinterest search suggestions: NOT FOUND (requires the owner's Pinterest login; not used)
+- Google Trends direction / date range: NOT FOUND (Trends not available in this pass); no volume or difficulty numbers exist for this topic in this file
+- Seasonal pattern: NOT FOUND (qualitative guess only if owner wants one: ask)
+- Community questions with links: NOT FOUND (communities such as Reddit were not read in this pass)
+- Product-related searches: NOT FOUND
+- Cannibalization risk vs our other articles: see the roadmap table; author assessment, unvalidated: HIGH with none obvious in the 30; verify
+- Intended traffic source: Google search plus Pinterest (per EDITORIAL-STRATEGY.md); no evidence gathered either way
+
+## C2 competitor reading
+
+Method: ran "how to plan a perfect picnic" in a live web search 2026-11-18 and recorded top results. "Covers" and "misses" come from result titles/snippets only; full pages were NOT read. No wording, photos or data copied.
+
+| URL | Covers | Misses / angle |
+|---|---|---|
+| https://www.foodnetwork.com/holidays-and-parties/packages/summer-entertaining-guide/how-to-plan-the-perfect-picnic | packing tips and recipe ideas | food-recipe focus |
+| https://www.culinaryhill.com/?p=114560 | ultimate guide with affiliate links | long food-blog |
+| https://designmom.com/?p=35803 | 12 secrets; notes keeping food at proper temperature to avoid foodborne illness | personal blog; safety is one line |
+| https://www.chowhound.com/food-news/175730/best-picnic-guide-how-to-pack-the-perfect-picnic/ | packing guide incl. indoor picnic option | food media |
+| https://california.com/the-ultimate-guide-to-planning-a-perfect-picnic | choose location, check weather, backup plan | tourism short post |
+
+What we can do better (hypotheses to test, not findings): food safety must be sourced from an official page (USDA/FDA) before the article states time or temperature rules; add activities and a checklist, not only food.

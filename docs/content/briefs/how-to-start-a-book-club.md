@@ -47,3 +47,35 @@ PENDING COWORK
 
 ## Product shortlist
 PENDING COWORK
+
+---
+
+# Cowork research 2026-11-18
+
+## C1 audience and keyword research
+
+- Primary keyword candidate (author judgement, NOT validated by any volume tool): how to start a book club
+- Related keyword candidates (from competitor titles and headings, not a keyword tool): NOT FOUND (not researched in this pass)
+- Google autocomplete suggestions: NOT FOUND (not collected; no sanctioned autocomplete tool in this pass)
+- Related searches / People Also Ask: NOT FOUND (search tool returns result pages, not SERP features)
+- Pinterest search suggestions: NOT FOUND (requires the owner's Pinterest login; not used)
+- Google Trends direction / date range: NOT FOUND (Trends not available in this pass); no volume or difficulty numbers exist for this topic in this file
+- Seasonal pattern: NOT FOUND (qualitative guess only if owner wants one: ask)
+- Community questions with links: NOT FOUND (communities such as Reddit were not read in this pass)
+- Product-related searches: NOT FOUND
+- Cannibalization risk vs our other articles: see the roadmap table; author assessment, unvalidated: HIGH with none obvious in the 30; verify
+- Intended traffic source: Google search plus Pinterest (per EDITORIAL-STRATEGY.md); no evidence gathered either way
+
+## C2 competitor reading
+
+Method: ran "how to start a book club with friends" in a live web search 2026-11-18 and recorded top results. "Covers" and "misses" come from result titles/snippets only; full pages were NOT read. No wording, photos or data copied.
+
+| URL | Covers | Misses / angle |
+|---|---|---|
+| https://theeverygirl.com/how-to-start-a-book-club/ | define your why, recruit, where to host | general |
+| https://camillestyles.com/?p=292408 | three steps; 6 to 10 members ideal for conversation | hosting-brand voice |
+| https://www.signupgenius.com/groups/how-start-book-club.cfm/ | 25 tips; icebreakers | tool funnel |
+| https://celadonbooks.com/how-to-start-a-book-club/ | what do you want from the club; start with a few close friends | publisher blog |
+| https://www.gimmesomeoven.com/life/how-to-start-a-book-club/ | 5 tips; start with friends you know | 2010s blog |
+
+What we can do better (hypotheses to test, not findings): a first-meeting agenda and a selection method with a low-budget (library, used) option; keep it practical.

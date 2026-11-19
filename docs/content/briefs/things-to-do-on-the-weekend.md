@@ -46,3 +46,35 @@ PENDING COWORK
 
 ## Product shortlist
 PENDING COWORK
+
+---
+
+# Cowork research 2026-11-18
+
+## C1 audience and keyword research
+
+- Primary keyword candidate (author judgement, NOT validated by any volume tool): things to do on the weekend
+- Related keyword candidates (from competitor titles and headings, not a keyword tool): NOT FOUND (not researched in this pass)
+- Google autocomplete suggestions: NOT FOUND (not collected; no sanctioned autocomplete tool in this pass)
+- Related searches / People Also Ask: NOT FOUND (search tool returns result pages, not SERP features)
+- Pinterest search suggestions: NOT FOUND (requires the owner's Pinterest login; not used)
+- Google Trends direction / date range: NOT FOUND (Trends not available in this pass); no volume or difficulty numbers exist for this topic in this file
+- Seasonal pattern: NOT FOUND (qualitative guess only if owner wants one: ask)
+- Community questions with links: NOT FOUND (communities such as Reddit were not read in this pass)
+- Product-related searches: NOT FOUND
+- Cannibalization risk vs our other articles: see the roadmap table; author assessment, unvalidated: HIGH with cheap-weekend-adventures and at-home-creative-weekend
+- Intended traffic source: Google search plus Pinterest (per EDITORIAL-STRATEGY.md); no evidence gathered either way
+
+## C2 competitor reading
+
+Method: ran "things to do on the weekend" in a live web search 2026-11-18 and recorded top results. "Covers" and "misses" come from result titles/snippets only; full pages were NOT read. No wording, photos or data copied.
+
+| URL | Covers | Misses / angle |
+|---|---|---|
+| https://discounts.aaa.com/discounts-articles/things-to-do-over-the-weekend | 60 things to do by budget | membership funnel |
+| https://naturalbeachliving.com/?p=89368 | 75 things to do | generic |
+| https://tinggly.com/journal/things-to-do-on-weekends | 25 ideas by energy level and budget | experience-gift brand |
+| https://theeverygirl.com/free-things-to-do-this-weekend/ | 14 free things, no-spend weekend | editorial |
+| https://blog.achievable.me/lifestyle/100-free-fun-things-to-do-this-weekend | 100 free things | very long list |
+
+What we can do better (hypotheses to test, not findings): very crowded head term; lean into our niche (cozy, creative, solo or with friends) and plan-ready weekends, not another generic list.

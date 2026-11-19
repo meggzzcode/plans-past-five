@@ -47,3 +47,35 @@ PENDING COWORK
 
 ## Product shortlist
 PENDING COWORK
+
+---
+
+# Cowork research 2026-11-18
+
+## C1 audience and keyword research
+
+- Primary keyword candidate (author judgement, NOT validated by any volume tool): how to host a craft night
+- Related keyword candidates (from competitor titles and headings, not a keyword tool): NOT FOUND (not researched in this pass)
+- Google autocomplete suggestions: NOT FOUND (not collected; no sanctioned autocomplete tool in this pass)
+- Related searches / People Also Ask: NOT FOUND (search tool returns result pages, not SERP features)
+- Pinterest search suggestions: NOT FOUND (requires the owner's Pinterest login; not used)
+- Google Trends direction / date range: NOT FOUND (Trends not available in this pass); no volume or difficulty numbers exist for this topic in this file
+- Seasonal pattern: NOT FOUND (qualitative guess only if owner wants one: ask)
+- Community questions with links: NOT FOUND (communities such as Reddit were not read in this pass)
+- Product-related searches: NOT FOUND
+- Cannibalization risk vs our other articles: see the roadmap table; author assessment, unvalidated: HIGH with how-to-host-a-paint-night-at-home and girls-night-ideas
+- Intended traffic source: Google search plus Pinterest (per EDITORIAL-STRATEGY.md); no evidence gathered either way
+
+## C2 competitor reading
+
+Method: ran "how to host a craft night with friends" in a live web search 2026-11-18 and recorded top results. "Covers" and "misses" come from result titles/snippets only; full pages were NOT read. No wording, photos or data copied.
+
+| URL | Covers | Misses / angle |
+|---|---|---|
+| https://blog.potterybarn.com/craft-party-hosting-tips/ | 5 hosting tips from a home-goods brand | brand-led, light on cost |
+| https://blog.stampinup.com/host-a-craft-night-that-everyone-will-love-easy-tips-ideas/ | pick a simple project, encourage conversation | sells paper-craft kits |
+| https://www.erinspain.com/5-tips-for-hosting-the-perfect-craft-night/ | keep projects simple for mixed skill levels | one personal event |
+| https://littleredwindow.com/how-to-host-a-craft-party/ | project choice, length, productive feeling | blog, no budget |
+| https://www.officeworks.com.au/noteworthy/post/create-crafternoon-craft-party-ideas-adults | craft party ideas with a creator | AU retailer; cites studies about friends and health (we avoid such claims) |
+
+What we can do better (hypotheses to test, not findings): a per-person budget, a no-prep project list, a supply-sharing plan, and an alcohol-optional approach; avoid health claims.

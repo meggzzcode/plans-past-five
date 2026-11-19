@@ -47,3 +47,35 @@ PENDING COWORK
 
 ## Product shortlist
 PENDING COWORK
+
+---
+
+# Cowork research 2026-11-18
+
+## C1 audience and keyword research
+
+- Primary keyword candidate (author judgement, NOT validated by any volume tool): girls night ideas that arent drinks
+- Related keyword candidates (from competitor titles and headings, not a keyword tool): NOT FOUND (not researched in this pass)
+- Google autocomplete suggestions: NOT FOUND (not collected; no sanctioned autocomplete tool in this pass)
+- Related searches / People Also Ask: NOT FOUND (search tool returns result pages, not SERP features)
+- Pinterest search suggestions: NOT FOUND (requires the owner's Pinterest login; not used)
+- Google Trends direction / date range: NOT FOUND (Trends not available in this pass); no volume or difficulty numbers exist for this topic in this file
+- Seasonal pattern: NOT FOUND (qualitative guess only if owner wants one: ask)
+- Community questions with links: NOT FOUND (communities such as Reddit were not read in this pass)
+- Product-related searches: NOT FOUND
+- Cannibalization risk vs our other articles: see the roadmap table; author assessment, unvalidated: HIGH with host articles (mahjong, craft, paint)
+- Intended traffic source: Google search plus Pinterest (per EDITORIAL-STRATEGY.md); no evidence gathered either way
+
+## C2 competitor reading
+
+Method: ran "girls night ideas that aren't drinking" in a live web search 2026-11-18 and recorded top results. "Covers" and "misses" come from result titles/snippets only; full pages were NOT read. No wording, photos or data copied.
+
+| URL | Covers | Misses / angle |
+|---|---|---|
+| https://www.chasingfoxes.com/20-girls-night-ideas/ | 20 ideas beyond Netflix and drinks (dinner, DIY, vision boards) | broad, lifestyle |
+| https://www.purewow.com/wellness/girls-night-out-ideas | 20 ideas better than dinner and drinks (trivia, laser tag, etc.) | mostly out-of-home, some include breweries |
+| https://paintingtogogh.com/blogs/news/hosting-a-girls-night-ideas | girls night in with a painting party, mocktail-friendly hosting | brand-led |
+| https://gokonfetti.com/en-us/magazine/girls-night | 11 ideas incl. sip and paint, game night | experience marketplace |
+| https://waitingonmartha.com/things-to-do-without-alcohol | things to do without alcohol | personal blog |
+
+What we can do better (hypotheses to test, not findings): organise by cost and effort and by out vs in, and make alcohol-free the default rather than an afterthought; many results still include drinks.

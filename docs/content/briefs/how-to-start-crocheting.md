@@ -15,11 +15,11 @@ Status: draft. Answers below come from reasoning only. No data has been collecte
 
 ## Keyword and autocomplete research
 
-PENDING COWORK
+See "Cowork research 2026-11-18" at the end of this file (qualitative only; no volume data available).
 
 ## Competitor review
 
-PENDING COWORK
+See "Cowork research 2026-11-18" at the end of this file.
 
 ## Pinterest research
 
@@ -32,3 +32,35 @@ PENDING COWORK
 ## Product shortlist
 
 PENDING COWORK
+
+---
+
+# Cowork research 2026-11-18
+
+## C1 audience and keyword research
+
+- Primary keyword candidate (author judgement, NOT validated by any volume tool): how to start crocheting
+- Related keyword candidates (from competitor titles and headings, not a keyword tool): NOT FOUND (not researched in this pass)
+- Google autocomplete suggestions: NOT FOUND (not collected; no sanctioned autocomplete tool in this pass)
+- Related searches / People Also Ask: NOT FOUND (search tool returns result pages, not SERP features)
+- Pinterest search suggestions: NOT FOUND (requires the owner's Pinterest login; not used)
+- Google Trends direction / date range: NOT FOUND (Trends not available in this pass); no volume or difficulty numbers exist for this topic in this file
+- Seasonal pattern: NOT FOUND (qualitative guess only if owner wants one: ask)
+- Community questions with links: NOT FOUND (communities such as Reddit were not read in this pass)
+- Product-related searches: NOT FOUND
+- Cannibalization risk vs our other articles: see the roadmap table; author assessment, unvalidated: HIGH with none obvious in the 30; verify
+- Intended traffic source: Google search plus Pinterest (per EDITORIAL-STRATEGY.md); no evidence gathered either way
+
+## C2 competitor reading
+
+Method: ran the primary keyword in a live web search 2026-11-18 and recorded the top non-forum results. "Covers" and "misses" come from the result titles/snippets only; I did NOT open and read each full page, so treat them as first impressions. No wording, photos or data copied.
+
+| URL | Covers (from snippet) | Misses / angle for us |
+|---|---|---|
+| https://www.allfreecrochet.com/Tips-for-Crochet/Crochet-for-Beginners-How-to-Start-Crocheting | short supply list, hook 4-6 mm | thin |
+| https://www.gathered.how/knitting-and-crochet/crochet/crochet-for-beginners-guide | ordered guide, crochet vs knitting | kits upsell |
+| https://ribblr.com/learn/how-to-start-crochet | chain and single crochet first | app funnel |
+| https://www.bobvila.com/articles/how-to-crochet-for-beginners/ | six stitches, markers | general-interest outlet |
+| https://joyofmotioncrochet.com/beginners-guide-to-crochet-part-1/ | picture guide for holding hook | technique only, no budget |
+
+What we can do better (hypotheses to test, not findings): a real beginner path with an honest budget, a short supply list with substitutions, no medical/benefit claims, and a clear "what to skip" section. Disclosure of affiliate links on shoppable pages.

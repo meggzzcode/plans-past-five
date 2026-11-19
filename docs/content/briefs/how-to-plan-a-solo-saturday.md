@@ -47,3 +47,35 @@ PENDING COWORK
 
 ## Product shortlist
 PENDING COWORK
+
+---
+
+# Cowork research 2026-11-18
+
+## C1 audience and keyword research
+
+- Primary keyword candidate (author judgement, NOT validated by any volume tool): how to plan a solo saturday
+- Related keyword candidates (from competitor titles and headings, not a keyword tool): NOT FOUND (not researched in this pass)
+- Google autocomplete suggestions: NOT FOUND (not collected; no sanctioned autocomplete tool in this pass)
+- Related searches / People Also Ask: NOT FOUND (search tool returns result pages, not SERP features)
+- Pinterest search suggestions: NOT FOUND (requires the owner's Pinterest login; not used)
+- Google Trends direction / date range: NOT FOUND (Trends not available in this pass); no volume or difficulty numbers exist for this topic in this file
+- Seasonal pattern: NOT FOUND (qualitative guess only if owner wants one: ask)
+- Community questions with links: NOT FOUND (communities such as Reddit were not read in this pass)
+- Product-related searches: NOT FOUND
+- Cannibalization risk vs our other articles: see the roadmap table; author assessment, unvalidated: HIGH with none obvious in the 30; verify
+- Intended traffic source: Google search plus Pinterest (per EDITORIAL-STRATEGY.md); no evidence gathered either way
+
+## C2 competitor reading
+
+Method: ran "how to plan a solo Saturday" in a live web search 2026-11-18 and recorded top results. "Covers" and "misses" come from result titles/snippets only; full pages were NOT read. No wording, photos or data copied.
+
+| URL | Covers | Misses / angle |
+|---|---|---|
+| https://www.calm.com/blog/how-to-date-yourself | set an intention, start small, choose safe familiar places, spending boundary | wellness brand |
+| https://francescaspecter.substack.com/p/how-to-spend-a-mostly-solo-weekend | author schedule and five tips for a solo weekend | newsletter, partly paywalled |
+| https://medium.com/the-business-of-being-happy-and-healthy/give-yourself-a-solitude-saturday-a2d0e792e179 | "Solitude Saturday" with no to-do lists | essay |
+| https://alove4me.substack.com/p/your-summer-solo-date-game-plan | summer solo date plan with template | summer-specific |
+| https://www.hercampus.com/school/u-mich/solo-dates-are-in-heres-why-you-should-take-yourself-out/ | start simple; coffee and people-watching | student piece |
+
+What we can do better (hypotheses to test, not findings): a time-blocked template (morning, afternoon, evening) with budget tiers; no travel-heavy or wellness-claim framing.

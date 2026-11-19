@@ -1,0 +1,36 @@
+# Flippa research (C7), read 2026-11-18
+Nothing listed, no one contacted. Sources are Flippa's own pages (search restricted to flippa.com / support.flippa.com) plus clearly labelled third-party anecdotes. The two URLs "in the owner's plan" were not present in the repo, so I located Flippa's equivalent official pages myself; confirm they are the intended ones. Page ages are the search tool's estimates; several Flippa pages are years old, so re-read before quoting.
+
+## 1. Pricing rules for a site with no revenue (most important)
+- Listing sale pricing page (https://support.flippa.com/hc/en-us/articles/12856932906767-Listing-sale-pricing, about 539 days old): new / starter / template / non-revenue-generating assets (including newly built websites and sites without verified revenue or user data) have a maximum asking (classified) or reserve (auction) price of $9,999 USD or equivalent.
+- "How to value" (https://support.flippa.com/hc/en-us/articles/360000649315-How-to-value-an-asset-or-business, about 2,902 days old): an asset that has not yet produced revenue cannot have an Asking Price above $9,999.
+- "Cannot be listed" (https://support.flippa.com/hc/en-us/articles/5974444302351-Businesses-and-digital-assets-which-cannot-be-listed-for-sale-on-Flippa, about 1,449 days old): digital assets without a revenue stream cannot have an asking or reserve price of $9,999 or more; starter sites a few months old and pre-revenue projects can be listed in the Projects & Concepts category for up to $99,999. CONFLICT with the two pages above on whether $9,999 is a cap or a threshold into another category. Re-read at listing time.
+- Our site is pre-revenue with no traffic history, so plan for the starter-site bracket, not a multiple of earnings.
+
+## 2. Revenue and traffic claims
+- "Making potential revenue claims on sites without revenue" (https://support.flippa.com/hc/en-us/articles/360000217435-Making-potential-revenue-claims-on-sites-without-revenue, about 3,097 days old): claims of revenue or traffic must be supported by evidence; potential-revenue or potential-traffic claims must be clearly marked as potential and accompanied by robust workings and assumptions; specific potential revenue or traffic numbers are expressly forbidden in listing titles.
+- Site Rules (https://support.flippa.com/hc/en-us/articles/203110254-Site-Rules-for-Buyers-Sellers): the seller must have the right to sell the item entirely, provide full details, and not hide information; claims must be supported by evidence. Prohibited Content (https://support.flippa.com/hc/en-us/articles/360000298675-Prohibited-Content) bars unverified performance or financial claims, promises or guarantees; "potential" statements are allowed only under the rules above.
+- Implication for LISTING-DRAFT.md: no earnings, no traffic projections in the title, no "will earn", no invented traffic. State "no revenue yet" and "no traffic history".
+
+## 3. Fees (all USD; conflicting and old; re-check on the live pricing page)
+- Pricing page (https://flippa.com/pricing, about 1,912 days old): self-service entry package $29 flat fee, 60-day term; "most picked" $49 for a three-month term; premium $199 per 6 months with NDA protection; success fee starts from 5%; for the "sub $10K" bracket the page shows a 10% success fee.
+- Newer valuation page (https://flippa.com/free-valuation): platform fees start from $39; success fee for self-service sales is 10% of final transaction value.
+- Terms of Service (https://flippa.com/terms-of-service, about 27 days old): listing fee charged when an asset is listed; success fee is a percentage of transaction value; sellers must not circumvent Flippa (payment outside the platform still owes the fee, and the buyer can be held liable).
+- Support article (https://support.flippa.com/hc/en-us/articles/360000774276-Pricing-Escrow-Fees-FlippaPay-Fees-and-Buyer-Verification, about 2,834 days old): success fees are mandatory; FlippaPay and escrow fees exist for transactions of $10,000 and above (details not read). Listing fees are payable whether or not the asset sells (https://flippa.com/buy/startups).
+- A third-party guide estimates the seller keeps about 83-88% of a $500-$2,000 sale after fees (https://gauravtiwari.org/flippa-value-sell-a-website-with-no-revenue/, 79 days old): third-party arithmetic, not Flippa's statement.
+
+## 4. Listing requirements seen
+- Evidence for financial claims is required on request; Flippa asks for proof of revenue for profitable businesses (due diligence checklist https://flippa.com/blog/due-diligence-checklist/); the 2019 Seller Guide asked for a P&L and proof of revenue (not applicable to a no-revenue site).
+- Not accepted: businesses that cannot verify claims when asked; e-commerce businesses priced above $25,000 operating under six months (Cannot-list article).
+- NOT READ: required listing fields, domain-transfer and handover rules, category rules for content sites, listing-title rules beyond potential-revenue numbers.
+
+## 5. Completed sales of comparable sites
+Separation: ASKING PRICES, AUCTION BIDS, UNSOLD LISTINGS and VERIFIED COMPLETED SALES are never mixed below.
+- VERIFIED COMPLETED SALES on Flippa's own pages of comparable lifestyle/hobby/pre-revenue sites: NONE FOUND. I did not open Flippa's sold-listing history (not reachable without a logged-in marketplace session in this pass).
+- Asking prices seen: an unrelated crypto community site listed at $2,950 with monthly revenue of $8 (https://flippa.com/buy/categories/internet/online-community): this is an ASKING PRICE for a different kind of site, not a sale.
+- Seller anecdotes (UNVERIFIED, third-party): a one-year-old Amazon-affiliate site sold for about $1,400 (https://medium.com/@Lauracenna/my-website-sold-on-flippa-for-1400-here-is-what-i-learned-f089241e6d4f, 923 days old); a zero-revenue e-commerce site said to have sold for $3,500 (https://medium.com/@celebmd/..., 380 days old, promotional); a $12,500 sale of a two-year-old 50-post affiliate site (https://my.wealthyaffiliate.com/blog/boston10111/12-500-website-sold-on-flippa, 3,253 days old); forum reports of starter sites at about $350 and $800 (https://www.blackhatworld.com/seo/flippa-case-study-experience.1252254/, 2,291 days old). None is a verified sale; all are self-reported.
+- Flippa's own social post cites a $330K sale of a 17-year-old news site with $14.6K monthly profit (https://x.com/Flippa/status/2018791794926850050): not comparable to a new pre-revenue site.
+- Reading for the owner: sale expectation for a brand-new site with no traffic history stays in the low hundreds to low thousands of dollars on anecdote evidence, bounded above by Flippa's $9,999 pre-revenue ceiling; it may not sell. Do not present these figures as comparables in the listing.
+
+## 6. Other marketplaces (notes only, not researched)
+Empire Flippers, Motion Invest and Investors Club appear in a third-party newsletter as places where content sites are listed (https://acquire.substack.com/p/monday-m-and-a-26-new-marketplace), but that source describes established earning sites, not no-revenue starters. Their fees and eligibility were NOT READ. Next step if wanted: read each marketplace's seller requirements page.
