@@ -431,7 +431,7 @@ describe("tonight scenario matrix", () => {
     for (const minutes of TIMES)
       for (const energy of ["low", "medium", "high"] as const)
         for (const company of ["solo", "social"] as const)
-          for (const budget of BUDGETS)
+          for (const budget of BUDGETS.filter((b): b is Cost => b !== "under100"))
             for (const setting of ["indoor", "outdoor", "either"] as const) {
               const input: TonightInput = { minutes, energy, budget, company, setting };
               const tag = JSON.stringify(input);

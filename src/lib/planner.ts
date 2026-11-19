@@ -36,7 +36,7 @@ export type PlanInput = {
   length: Length;
   vibe: Vibe;
   who: Who;
-  budget: Cost;
+  budget: PlanBudget;
   atHome: boolean;
   setting?: SettingPref;
   energy?: EnergyPref;
@@ -53,13 +53,15 @@ export const VIBES: Vibe[] = [
   "adventurous",
 ];
 export const WHOS: Who[] = ["alone", "friend", "partner", "group"];
-export const BUDGETS: Cost[] = ["free", "under25", "under50", "flexible"];
+/** The planner offers one more step than the shared Cost buckets: "under100". */
+export type PlanBudget = Cost | "under100";
+export const BUDGETS: PlanBudget[] = ["free", "under25", "under50", "under100", "flexible"];
 export const SETTINGS: SettingPref[] = ["any", "indoor", "outdoor"];
 export const ENERGIES: EnergyPref[] = ["any", "low", "medium", "high"];
 
 /** Total-itinerary spending cap in whole dollars, or null for "flexible" (no cap). */
-export const budgetCap = (b: Cost): number | null =>
-  b === "free" ? 0 : b === "under25" ? 25 : b === "under50" ? 50 : null;
+export const budgetCap = (b: PlanBudget): number | null =>
+  b === "free" ? 0 : b === "under25" ? 25 : b === "under50" ? 50 : b === "under100" ? 100 : null;
 
 export type Day = "Saturday" | "Sunday";
 /**
@@ -228,6 +230,8 @@ function score(a: Activity, input: PlanInput) {
   if (a.vibes.some((v) => set.includes(v))) s += 3;
   if (set.includes(a.vibes[0]!)) s += 1;
   if (input.energy && input.energy !== "any" && a.energy === input.energy) s += 1;
+  // A catch-all idea ("Drop-in class") ranks below a specific one that fits equally well.
+  if (a.generic) s -= 2;
   return s;
 }
 

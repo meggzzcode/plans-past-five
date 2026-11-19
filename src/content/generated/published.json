@@ -4859,7 +4859,7 @@
     "slug": "how-to-start-junk-journaling",
     "title": "How to Start Junk Journaling: A Beginner's Guide",
     "titleItalic": "Junk Journaling",
-    "dek": "The how-to: what junk journaling is, the no-rules mindset and a first page you can make tonight with what is already in the house.",
+    "dek": "How to begin: what junk journaling is, the no-rules mindset and a first page you can make tonight with what is already in the house.",
     "category": "creative-corner",
     "status": "published",
     "publishedAt": "2026-11-18",
@@ -4885,7 +4885,7 @@
       },
       {
         "type": "p",
-        "text": "This is the how-to. If you want to know what to buy, the [supplies guide](/journal/junk-journaling-supplies-for-beginners) sorts what is worth having first from what can wait."
+        "text": "This guide is how to begin: what junk journaling is and a first page you can make tonight. If you are deciding what to buy, the [supplies guide](/journal/junk-journaling-supplies-for-beginners) sorts what is worth having first from what can wait."
       },
       {
         "type": "h2",
@@ -4898,10 +4898,10 @@
           "A notebook (any notebook, or an old hardback book)",
           "A glue stick",
           "Scissors",
-          "A pen you like writing with",
-          "Paper bits: receipts, tickets, envelopes, magazine pages, packaging"
+          "Paper scraps you already have: receipts, tickets, envelopes, magazine pages, packaging"
         ],
         "optional": [
+          "A pen you like writing with",
           "Washi tape",
           "Stickers",
           "Fineliner pens"
@@ -5347,7 +5347,7 @@
     "slug": "junk-journaling-supplies-for-beginners",
     "title": "So, You Want to Start Junk Journaling? Here's Everything You Actually Need",
     "titleItalic": "Everything You Actually Need",
-    "dek": "The shopping side of junk journaling: a free-first supply list, a sensible first basket and the pretty things that can wait. Looking for the how-to? Start with the beginner's guide.",
+    "dek": "What to buy: a free-first supply list, a sensible first basket and the pretty things that can wait. For how to begin, start with the beginner's guide.",
     "category": "creative-corner",
     "status": "published",
     "publishedAt": "2026-11-19",
@@ -5403,7 +5403,7 @@
       },
       {
         "type": "p",
-        "text": "This is the buying guide: what you probably own, the four things worth paying for, and what can wait. The how-to, with your first page step by step, is in [How to Start Junk Journaling](/journal/how-to-start-junk-journaling)."
+        "text": "This guide is what to buy: what you probably own, the four things worth paying for, and what can wait. For how to begin, with your first page step by step, see the how-to linked at the end."
       },
       {
         "type": "h2",
@@ -5449,11 +5449,11 @@
           "A thick-paged journal or notebook",
           "Glue stick",
           "Scissors",
-          "A mixed set of washi tape",
-          "One fine pen",
           "Your collected paper scraps"
         ],
         "optional": [
+          "A mixed set of washi tape",
+          "One fine pen",
           "One sticker set",
           "A small stamp and ink pad",
           "Paper clips and binder clips",

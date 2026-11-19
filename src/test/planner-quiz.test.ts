@@ -7,6 +7,7 @@ import {
   WHENS,
   WHOS,
   budgetCap,
+  candidates,
   guidesFor,
   makePlan,
   parsePlanSearch,
@@ -620,6 +621,34 @@ describe("Shareable result card", () => {
       expect(svg).not.toMatch(/<script|href=|<image/i);
       expect(svg).toContain(p.name.split(" ").slice(-1)[0]!);
       expect(shareText(p, "Reading")).toContain(p.name);
+    }
+  });
+});
+
+describe("planner budget step and generic ideas", () => {
+  it("offers Under $100 and keeps the plan inside it", () => {
+    expect(BUDGETS).toContain("under100");
+    expect(budgetCap("under100")).toBe(100);
+    const plan = makePlan({ ...base, budget: "under100" }, 0);
+    expect(plan.withinBudget).toBe(true);
+    expect(plan.totalCost.max).toBeLessThanOrEqual(100);
+    expect(parsePlanSearch({ budget: "under100" }).input.budget).toBe("under100");
+  });
+
+  it("ranks a catch-all idea below specific ones that fit as well", () => {
+    const generic = activities.filter((a) => a.generic);
+    expect(generic.map((a) => a.id)).toContain("drop-in");
+    for (const vibe of VIBES) {
+      const input = { ...base, vibe, budget: "flexible" as const, who: "friend" as const };
+      for (const def of slotsFor(input)) {
+        const list = candidates(input, def);
+        const g = list.findIndex((c) => c.a.generic);
+        if (g < 0) continue;
+        const firstEqualOrWorse = list.findIndex(
+          (c, i) => i > g && !c.a.generic && c.score >= list[g]!.score,
+        );
+        expect(firstEqualOrWorse, `${vibe}`).toBe(-1);
+      }
     }
   });
 });

@@ -113,6 +113,7 @@ const groups: Group[] = [
       { v: "free", label: "Free" },
       { v: "under25", label: "Under $25" },
       { v: "under50", label: "Under $50" },
+      { v: "under100", label: "Under $100" },
       { v: "flexible", label: "Flexible" },
     ],
   },

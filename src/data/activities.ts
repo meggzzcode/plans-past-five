@@ -18,6 +18,8 @@ export type Activity = {
   minutes: number;
   lowCost?: string;
   hobby?: string;
+  /** A catch-all idea (no specific activity named). The planner prefers a specific idea that fits. */
+  generic?: boolean;
   /** Short title used as the itinerary heading. */
   name: string;
   energy: ActivityEnergy;
@@ -424,7 +426,7 @@ const base: Base[] = [
     "flexible",
     ["morning", "evening", "afternoon"],
     90,
-    { lowCost: "Follow a free beginner video at home instead." },
+    { generic: true, lowCost: "Follow a free beginner video at home instead." },
   ),
   A(
     "plan-weekend",
