@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { collections } from "@/data/products";
 import { verifiedCatalog, type CatalogProduct } from "@/data/catalog";
-import { fillKit, getKit } from "@/data/kits";
+import { fillKit, getKit, isFullKit } from "@/data/kits";
 import { collectionGuide } from "@/lib/collection-guide";
 import { seo } from "@/lib/seo";
 import { PageHero, SectionHead } from "@/components/editorial/Section";
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/shop/")({
 function tagFor(slug: string) {
   const kitCount = collectionGuide(slug).kitIds.filter((id) => {
     const kit = getKit(id);
-    return !!kit && fillKit(kit, verifiedCatalog).length > 0;
+    return !!kit && isFullKit(fillKit(kit, verifiedCatalog));
   }).length;
   if (kitCount === 0) return "What to look for";
   return kitCount === 1 ? "Starter kit inside" : `${kitCount} starter kits`;

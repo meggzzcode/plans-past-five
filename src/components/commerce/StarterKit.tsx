@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "@tanstack/react-router";
-import { KIT_DISCLAIMER, fillKit, getKit, type FilledSlot, type Kit } from "@/data/kits";
+import { KIT_DISCLAIMER, fillKit, getKit, isFullKit, type FilledSlot, type Kit } from "@/data/kits";
 import { onlyOnePick, verifiedCatalog, type CatalogProduct } from "@/data/catalog";
 import { getCollection } from "@/data/products";
 import { getHobby } from "@/data/hobbies";
@@ -15,9 +15,6 @@ const GROUPS = [
   { need: "optional", heading: "Pretty extras for later", quiet: true },
   { need: "probably-own", heading: "Check the drawer first", quiet: true },
 ] as const;
-
-/** A kit needs at least this many filled slots, one of them essential, to be called a kit. */
-const MIN_KIT_SLOTS = 3;
 
 const itemOf = (f: FilledSlot): ShopItem => ({
   product: f.product,
@@ -58,20 +55,21 @@ export function StarterKit({
   }, [kitId, n]);
   if (!kit || n === 0) return null;
 
-  const pick = kitPick(filled);
-  const groups: ShopGroup[] = GROUPS.map(({ need, heading, quiet }) => ({
+  // A kit needs at least 4 named verified picks. Fewer: one "Where to start" card, no filler.
+  const isKit = isFullKit(filled);
+  const pick = kitPick(filled) ?? (isKit ? undefined : filled[0]);
+  const groups: ShopGroup[] = (isKit ? GROUPS : []).map(({ need, heading, quiet }) => ({
     heading,
     quiet,
     items: filled.filter((f) => f.slot.need === need && f !== pick).map(itemOf),
   }));
-  const alsoNeed = pick
-    ? filled
-        .filter((f) => f.slot.need === "essential" && f !== pick)
-        .map((f) => f.slot.label.toLowerCase())
-    : [];
+  const alsoNeed =
+    pick && isKit
+      ? filled
+          .filter((f) => f.slot.need === "essential" && f !== pick)
+          .map((f) => f.slot.label.toLowerCase())
+      : [];
 
-  // A "kit" with only a thing or two filled is honest as "where to start", not a kit.
-  const isKit = n >= MIN_KIT_SLOTS && filled.some((f) => f.slot.need === "essential");
   const starters = filled.filter((f) => f.slot.need === "essential").length;
   const later = n - starters;
   const boxed = filled.some((f) => f.product.role === "complete-kit");
@@ -111,7 +109,7 @@ export function StarterKit({
         pick={pick ? itemOf(pick) : undefined}
         groups={groups}
         placement={`kit-${kit.id}`}
-        note={kit.note}
+        note={isKit ? kit.note : undefined}
         alsoNeed={alsoNeed}
         afterPick={<ShopDisclosure kind="short" lead={KIT_DISCLAIMER} className="mt-3" />}
       />

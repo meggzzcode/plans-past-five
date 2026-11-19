@@ -198,7 +198,10 @@ export const kits: Kit[] = [
 export const getKit = (id: string) => kits.find((k) => k.id === id);
 
 /** Every hobby slug a kit speaks to (its main hobby first). */
-export const kitHobbies = (k: Kit): string[] => [...(k.hobby ? [k.hobby] : []), ...(k.alsoHobbies ?? [])];
+export const kitHobbies = (k: Kit): string[] => [
+  ...(k.hobby ? [k.hobby] : []),
+  ...(k.alsoHobbies ?? []),
+];
 
 /** `{ kitId: [slotIds] }` for cross-reference validation. */
 export const kitSlotIndex = (): Record<string, string[]> =>
@@ -232,3 +235,13 @@ export function fillKit(kit: Kit, list: CatalogProduct[]): FilledSlot[] {
   }
   return out;
 }
+
+/** A kit needs at least this many named, verified picks (filled slots) to render as a kit. */
+export const MIN_KIT_PICKS = 4;
+
+/**
+ * The render rule: a full kit has at least MIN_KIT_PICKS named verified picks, one of them an
+ * essential. Anything smaller is shown as one "Where to start" card, never padded with filler.
+ */
+export const isFullKit = (filled: FilledSlot[]): boolean =>
+  filled.length >= MIN_KIT_PICKS && filled.some((f) => f.slot.need === "essential");
