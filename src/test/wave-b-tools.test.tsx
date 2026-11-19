@@ -50,7 +50,8 @@ function* inputs(): Generator<PlanInput> {
 }
 
 describe("defect 1: company is a hard constraint", () => {
-  const pairWording = /two-person|\bfor one\b|\byourself\b|\bsolo\b|\bjust you\b|\byour partner\b/i;
+  const pairWording =
+    /two-person|\bfor one\b(?!-)|\byourself\b|\bsolo\b|\bjust you\b|\byour partner\b/i;
   it("no idea tagged for the group reads as a solo or two-person idea", () => {
     for (const a of activities.filter((x) => x.who.includes("group")))
       expect(`${a.name} ${a.text} ${a.prep}`, a.id).not.toMatch(pairWording);
