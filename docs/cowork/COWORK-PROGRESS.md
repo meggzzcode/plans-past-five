@@ -55,3 +55,9 @@ No code, main branch or claude/vibrant-dirac-amdf7r changed by Cowork work; data
 | Amazon policy read | Partly | Public Operating Agreement only; 180-day rule, image/price rules, SiteStripe NOT FOUND (AMAZON-POLICY-READ.md). |
 | Domain (owner-instructed) | Done | Netlify: planspastfive.com primary, www redirect. Namecheap: removed parking URL redirect and parking CNAME; added A @ 75.2.60.5 and CNAME www plans-past-five.netlify.app. MX and SPF untouched, nameservers untouched. Netlify DNS verification passed and Let's Encrypt cert issued for both names. No release deploy yet, so the domain serves nothing. |
 | GA4/Bing/GSC, trademark serial, Flippa, email test, G, H-O | Not done | Need owner logins or "go"; G needs RELEASE-HANDOVER.md merged status and the owner's go before the one deploy. |
+
+### Round 2 addendum (2026-11-19, after owner said go)
+- **Pinterest website claim: DONE.** Added TXT record `@` = Pinterest's site-verification value in Namecheap (SPF TXT kept); Pinterest shows planspastfive.com as Connected. Pinterest tag not installed.
+- **Email round trip (F): DONE.** From a separate Gmail account, inbound to hello@ arrived; outbound from hello@ arrived in that inbox (not spam); a reply to hello@ arrived; a test to subscriptions@ arrived in the same mailbox (alias works). Not checked: spam score, DKIM/DMARC (only SPF is set).
+- **C2:** Safeway page opened; renders no product text, so it cannot be confirmed (see COWORK-SOURCE-RESULTS.md). Heuristic list of possibly-unsourced sentences appended there.
+- **G Netlify/CMS deploy: BLOCKED, not run.** Owner said go, but `main` is at 52f70ce and the release branch is at 6111700; RELEASE-HANDOVER.md has no merge record, and Netlify builds from `main`. Cowork may not push to `main`. Needed: Claude Code or owner merges the release to `main` and records it, then the one `[deploy]` marker commit.
