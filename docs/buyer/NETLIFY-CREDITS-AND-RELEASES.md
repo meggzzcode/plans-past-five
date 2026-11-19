@@ -1,5 +1,8 @@
 # Netlify credits and the publish workflow (buyer)
 
+> **VERIFIED ACCOUNT FACTS (read from the owner's Netlify dashboard, 2026-11-19; source `docs/marketplace/final-inspection/NETLIFY-ACCOUNT-FACTS.md`).** The owner's account is on the **Personal plan, $9 a month**, with **1,000 credits a month** (not the free plan's 300). Period Nov 17 to Dec 16: 855 credits already used by 57 production deploys at 15 credits each, **135 credits left, about 9 more production deploys this period**, auto-recharge disabled. So 15 credits per deploy is confirmed; 1,000 credits is about 66 deploys in a normal month. Still NOT FOUND (needs the account): whether a skipped build costs credits, and what branch deploys or previews cost (both are currently switched off for this project). Where this page or others say 'free plan, 300 credits', read it as the conservative case a buyer on the free plan would face. The Netlify plan is a recurring cost of $108 a year for this setup and belongs in the operating-cost table. The buyer opens their own Netlify account; the owner's plan does not transfer.
+
+
 > **NOT YET TESTED WITH A REAL LOGIN.** The CMS is configured (`.pages.yml`) and the content checks are tested, but nobody has yet signed in to Pages CMS with the owner's GitHub login, edited a real article, or pressed Publish site on this site. Do not treat it as fully operational until `docs/buyer/CMS-TEST-PLAN.md` has been run and recorded as passed.
 
 Status on 2026-11-19: a Netlify project exists on the seller's account as a test deploy (a `netlify.app` address; the main routes returned 200). It is not part of the handover; you create your own. Nothing was purchased.

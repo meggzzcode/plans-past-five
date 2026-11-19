@@ -2,7 +2,7 @@
 Source pages: app.netlify.com/teams/megan-bhagwandat/billing/general (Usage & billing), the project's Deploys page and Developer settings. Read only; the changes listed under "Changes made this session" were made at the owner's request in chat.
 
 ## Plan and credits (VERIFIED)
-- Plan: **Personal, $9.00 a month**, effective Nov 17, 2026 (paid invoice Nov 16, 5:19 PM). 1,000 credits a month, smart secret detection, 7-day analytics, priority email support. Payment method on file (card ending 6964; no other card detail recorded).
+- Plan: **Personal, $9.00 a month**, effective Nov 17, 2026 (paid invoice Nov 16, 5:19 PM). 1,000 credits a month, smart secret detection, 7-day analytics, priority email support. Payment method on file (no card details are recorded in this repository).
 - Billing period: Nov 17 to Dec 16. **135 of 1,000 credits remaining**, expiring Dec 16, 2026. Auto recharge: disabled. Concurrent builds: 1.
 - Credit use this period: production deploys 57 = 855 credits (**15 credits per production deploy**, as shown), web requests 19,906 = 4, compute 1.4, bandwidth 8.3, AI inference 0. Total 868.7.
 - At 15 credits per deploy, 135 credits is about 9 more production deploys this period.

@@ -80,3 +80,9 @@ Reviewer scores moved only a little between rounds on trust, product desirabilit
 ## 2026-11-19 owner decisions
 - Hosting is Netlify; editor is Pages CMS (separate, free, GitHub sign-in). Cowork workstream G may proceed on that basis once the owner says go.
 - Photo-permission emails (docs/commerce/photo-permission-emails.md): owner decided NOT to send. Do not send; photos stay on the existing licence record in docs/IMAGE-LICENSES.md.
+
+## 2026-11-19 Cowork Task 6/7 results (branch cowork/editorial-tasks merged)
+- Netlify facts verified: Personal plan $9/month, 1,000 credits, 135 left until Dec 16 (855 used, 57 production deploys at 15 credits). Skipped-build and preview cost still NOT FOUND. Docs updated to say so; card detail removed from the repo.
+- Owner changed Netlify (via Cowork, at the owner's request in chat): production branch now `main`, build status Active, one production deploy from main at about 5:26 PM; site remains private (HTTP 401). The deployed content is the OLD library on `main`.
+- Manufacturer emails: none sent (Yellow Mountain Imports has only a contact form that did not load; the League lists no email). Owner decision: ignore Yellow Mountain Imports (including its own affiliate programme; Amazon-first rule stands).
+- Pilot verification v2 (18 listings opened): kept League 2026 four-packs (sold by the League on Amazon), Tombow Mono runner, Rifle stickers, Liquitex 12-set, YMI Mojave bundle; rejected Pigma Micron (third-party sellers), Zebra 18-pack (wrong variant), one Liquitex listing (unavailable). Not yet opened: other washi colourways, clay kit and cutter leads, rows not selected.

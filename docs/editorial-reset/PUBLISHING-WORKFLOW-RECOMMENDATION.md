@@ -1,5 +1,8 @@
 # Publishing workflow recommendation (Stage 2b / 2c)
 
+> **VERIFIED ACCOUNT FACTS (read from the owner's Netlify dashboard, 2026-11-19; source `docs/marketplace/final-inspection/NETLIFY-ACCOUNT-FACTS.md`).** The owner's account is on the **Personal plan, $9 a month**, with **1,000 credits a month** (not the free plan's 300). Period Nov 17 to Dec 16: 855 credits already used by 57 production deploys at 15 credits each, **135 credits left, about 9 more production deploys this period**, auto-recharge disabled. So 15 credits per deploy is confirmed; 1,000 credits is about 66 deploys in a normal month. Still NOT FOUND (needs the account): whether a skipped build costs credits, and what branch deploys or previews cost (both are currently switched off for this project). Where this page or others say 'free plan, 300 credits', read it as the conservative case a buyer on the free plan would face. The Netlify plan is a recurring cost of $108 a year for this setup and belongs in the operating-cost table. The buyer opens their own Netlify account; the owner's plan does not transfer.
+
+
 Date: 2026-11-19. Status: RECOMMENDATION, owner-approved and INSTALLED in Stage 2c (`.github/workflows/publish-content.yml`, `undo-last-publish.yml`, `.pages.yml` `actions:`, `docs/buyer/PUBLISH-AND-ROLLBACK.md`, `docs/editorial-reset/changes/stage2c.md`); still NOT tested with real accounts. Nothing here has been run on a real GitHub, Pages CMS or Netlify account; the mandatory real-login test is described in `CMS-ACCEPTANCE-TEST-OWNER-ACTIONS.md`. No production publish was made.
 
 ## 1. What is known, with sources (all read 2026-11-19)
