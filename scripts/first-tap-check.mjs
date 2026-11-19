@@ -12,7 +12,8 @@ const require = createRequire(import.meta.url);
 const { chromium } = require("playwright");
 
 const base = process.argv[2] ?? "http://127.0.0.1:3000";
-const executablePath = process.env.CHROMIUM ?? "/opt/pw-browsers/chromium-1243/chrome-linux64/chrome";
+const executablePath =
+  process.env.CHROMIUM ?? "/opt/pw-browsers/chromium-1243/chrome-linux64/chrome";
 const results = [];
 const check = (name, ok, extra = "") => {
   results.push(ok);
@@ -44,14 +45,23 @@ async function heldPage(width = 390) {
   await page.waitForURL(/go=yes/, { waitUntil: "commit" });
   await page.getByTestId("plan-why").waitFor();
   const url = page.url();
-  check("planner: before hydration the tap loads a plan with answers in the URL", /energy=low/.test(url) && /vibe=cozy/.test(url), url);
-  check("planner: the plan is on the page without JavaScript", await page.getByTestId("plan-why").isVisible());
+  check(
+    "planner: before hydration the tap loads a plan with answers in the URL",
+    /energy=low/.test(url) && /vibe=cozy/.test(url),
+    url,
+  );
+  check(
+    "planner: the plan is on the page without JavaScript",
+    await page.getByTestId("plan-why").isVisible(),
+  );
   const disabled = await page.getByRole("button", { name: /Shuffle/ }).isDisabled();
   check("planner: Shuffle shows a disabled state until hydration", disabled);
   release();
   await page.getByRole("button", { name: /Shuffle/ }).waitFor();
   await page.waitForFunction(() => {
-    const b = [...document.querySelectorAll("button")].find((x) => /Shuffle/.test(x.textContent ?? ""));
+    const b = [...document.querySelectorAll("button")].find((x) =>
+      /Shuffle/.test(x.textContent ?? ""),
+    );
     return !!b && !b.disabled;
   });
   check("planner: Shuffle turns on once hydrated", true);
@@ -65,12 +75,18 @@ async function heldPage(width = 390) {
   await page.getByText("High energy", { exact: true }).click();
   release();
   await page.waitForFunction(() => {
-    const b = [...document.querySelectorAll("button")].find((x) => /Plan my/.test(x.textContent ?? ""));
+    const b = [...document.querySelectorAll("button")].find((x) =>
+      /Plan my/.test(x.textContent ?? ""),
+    );
     return !!b;
   });
   await page.waitForTimeout(1500);
   const checked = await page.locator('input[name="energy"]:checked').getAttribute("value");
-  check("planner: an answer ticked before hydration is still ticked after", checked === "high", String(checked));
+  check(
+    "planner: an answer ticked before hydration is still ticked after",
+    checked === "high",
+    String(checked),
+  );
   await ctx.close();
 }
 
@@ -81,7 +97,11 @@ async function heldPage(width = 390) {
   await page.getByText("Bursting", { exact: true }).click();
   await page.getByRole("button", { name: /Show my 3 ideas/ }).click();
   await page.waitForURL(/e=high/, { waitUntil: "commit" });
-  check("tonight: before hydration the tap loads ideas for the chosen answers", /e=high/.test(page.url()), page.url());
+  check(
+    "tonight: before hydration the tap loads ideas for the chosen answers",
+    /e=high/.test(page.url()),
+    page.url(),
+  );
   release();
   await ctx.close();
 }
@@ -98,7 +118,11 @@ async function heldPage(width = 390) {
   await page.getByRole("button", { name: /Plan my/ }).click();
   await page.getByTestId("plan-why").waitFor({ timeout: 15000 });
   const why = await page.getByTestId("plan-why").innerText();
-  check("planner (4x CPU): first tap on a choice and on Plan gives a plan", /low-key/i.test(why), why.slice(0, 80));
+  check(
+    "planner (4x CPU): first tap on a choice and on Plan gives a plan",
+    /low-key/i.test(why),
+    why.slice(0, 80),
+  );
   await ctx.close();
 }
 

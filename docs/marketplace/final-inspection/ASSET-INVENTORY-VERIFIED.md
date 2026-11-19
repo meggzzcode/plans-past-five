@@ -1,0 +1,88 @@
+# Verified asset inventory
+
+Verified 2026-11-19 (about 17:30 to 17:45 UTC) by running commands against `/home/user/plans-past-five`. Counts below come from the commands shown, not from earlier documents. Other agents were editing the repo during this pass (calendar export files were deleted mid-pass), so re-run the commands at listing time.
+
+Scope notes. Printables and digital products: **removed by decision (SD-16), not part of the asset**. The seller's personal and portfolio affiliate accounts: **excluded from the sale**. Build output (`dist/`, `.output/`, `.netlify/`, `.wrangler/`, `.tanstack/`, `node_modules/`) is regenerated and not counted as an asset.
+
+Completeness key: Complete / Partial / Planned only. Transfer key: Yes = travels with the repository; Buyer = buyer must create or obtain; No = excluded.
+
+## 1. Inventory
+
+| # | Asset | Location | Verified count | Command used | Status | Transfer |
+|---|---|---|---|---|---|---|
+| 1a | Website source, routes | `src/routes` | 33 files, 4,343 lines TS/TSX; 31 route/page files plus `__root.tsx` and a README; generated `src/routeTree.gen.ts` 703 lines | `find src/routes -type f \| wc -l`; `ls src/routes` | Complete | Yes |
+| 1b | Website source, components | `src/components` | 82 files, 9,365 lines: 46 shadcn `ui/` files plus 36 site components (brand 2, cards 1, commerce 7, editorial 8, home 1, layout 4, pages 2, planner 3, quiz 4, saved 1, share 3) | `find src/components -type f \| wc -l` | Complete | Yes |
+| 1c | Website source, lib / data / config / content / hooks | `src/lib` 28 files 4,433 lines; `src/data` 16 files 8,614 lines; `src/config` 3 files 382; `src/content` 7 files 241 (plus 2 generated JSON); `src/hooks` 1 file | totals as stated | `find <dir> \( -name '*.ts' -o -name '*.tsx' \) \| xargs cat \| wc -l` | Complete | Yes |
+| 1d | Tests | `src/test` | 45 test/setup files, 7,055 lines. `bunx vitest run`: **44 files passed, 629 tests passed, 0 failed** (17:39 run) | `bunx vitest run` | Complete | Yes |
+| 1e | Scripts | `scripts/` | 15 files, 3,356 lines (content build, pin build, ingest images, import products, site health, screenshots, serve) | `ls scripts` | Complete | Yes |
+| 1f | CI workflows | `.github/workflows` | 3 (`ci.yml`, `monthly-digest.yml`, `site-health.yml`) | `ls .github/workflows` | Complete | Yes (buyer re-enables in own GitHub) |
+| 2a | Published editorial articles | `content/articles/*.json` (build writes `src/content/generated/published.json`) | **27 published**, 32,903 words total (min 815, max 1,852). By section: creative-corner 6, better-together 5, solo-dates 4, weekends 4, movement 4, after-hours 4 | `node scripts/build-content.mjs --check` printed "27 published and 7 draft articles"; word count by python over body fields | Complete (23 source-checked 2026-11-18; the 4 original articles not source-checked per `docs/marketplace/ASSET-INVENTORY.md`, not re-verified here) | Yes |
+| 2b | Draft articles | `content/articles/*.json` with `status: "draft"` | **7 draft**, 5,359 words. 5 full drafts (affordable-hobbies-under-25 959 words, how-to-start-air-dry-clay 833, how-to-start-crocheting 736, how-to-start-embroidery 712, watercolor-painting-for-beginners 866) and 2 outlines (cute-weekend-plans 12 words, make-friends 27 words). Not public | same | Partial | Yes |
+| 3 | Hobby directory entries | `src/data/hobbies.ts` | **43 hobbies** (creative 16, outdoors 7, active 7, cozy 5, social 5, bookish 3); 177 equipment items across the same 43 | `bun` script importing `hobbies`, `equipmentByHobby` | Complete | Yes |
+| 4a | Researched products, catalog records | `docs/commerce/product-research.csv` (source) and `src/data/catalog.generated.ts` (generated) | **62 records in the generated catalog: 37 verified, 25 candidate**. Of 37 verified, **29 render and 8 are on editorial hold** (`verifiedCatalog.length` = 29). Candidates never render. CSV has 64 rows (37 verified, 27 candidate): 2 newer candidate rows are not yet imported | `bun` script; `python3` csv count; importer `--check` on the CSV | Partial (about 60 target; manufacturer pages mostly unchecked; links are ordinary non-affiliate Amazon links; "verified" means listing was checked, not that products were tested) | Yes |
+| 4b | Product-type recommendations | `src/data/products.ts` | 36 product types in 8 collections | `bun` script | Complete | Yes |
+| 5a | Shopping collections | `src/data/products.ts` | 8 collections (pottery-era, creative-girl, sporty-girl, girls-night-in, bookish-girl, little-adventures, journaling-era, cozy-after-hours) | `bun` script | Complete | Yes |
+| 5b | Starter kits | `src/data/kits.ts` | 8 kits, 56 slots. Only **2 kits are "full"** (4+ verified picks): junk-journaling, air-dry-clay; the other 6 render a single "Where to start" card. Not bundles sold by the site | `bun` script using `fillKit`/`isFullKit` | Partial | Yes |
+| 6 | Interactive features | see section 2 | 10 features | see section 2 | Complete (each has code and tests) | Yes |
+| 7a | Pinterest pins | `public/pins` | **88 pins** (25 JPG, 63 PNG, all 1000x1500) | `ls public/pins \| wc -l` | Complete | Yes (pin images); Pinterest account does not exist |
+| 7b | Pin sources/generator | `design/pins` (88 HTML, `pins.mjs`, `templates.mjs`, `manifest.json`, `pin.css`), `scripts/build-pins.mjs` | 88 HTML pin sources, 7 templates (headline 23, checklist 16, cover 13, editorial 12, steps 12, quote 8, quiz 4) | `ls design/pins/html \| wc -l`; python over manifest | Complete | Yes |
+| 7c | Pin CSV and schedule | `docs/pinterest-pins.csv`, `docs/PINTEREST-90-DAY-SCHEDULE.md` | 88 rows; 8 boards; 72 `published-article`, 16 `hold-until-published`; 75 article, 7 tool, 6 shop destinations; schedule start date is a placeholder | python csv | Complete (dates placeholder) | Yes |
+| 7d | Pinterest boards | `design/brand/exports/board-covers` | 11 board cover PNGs. Pinterest account/boards themselves: do not exist | `ls` | Partial (covers only) | Covers Yes; account Buyer |
+| 8a | Logos | `design/brand/logos` (SVG) and `exports/logos` (PNG) | 12 SVG, 12 PNG (primary, tagline, monogram, wordmark variants) | `ls` | Complete | Yes |
+| 8b | Palette | `design/brand/palette/palette.json`, `palette.css` | 2 files; named colours incl. Cherry Girl #B83F43, Vanilla Cream #FFF8EF, Butter Yellow #F8E5A3, Strawberry Milk #F4D4D7, Garden Green #394D3C, Espresso #48362E | read file | Complete | Yes |
+| 8c | Fonts | `design/brand/fonts` | 11 TTF (Fraunces 6, DM Sans 3, Caveat 2) plus 3 OFL texts and a README. Site itself loads fonts from Google Fonts at runtime | `ls` | Complete | Yes (OFL conditions, see rights doc) |
+| 8d | Templates | `design/brand/article-templates` (4 HTML), `design/brand/social` (6 HTML incl. OG image, story, quote, avatar, board cover), exports 4 article-template PNG, 4 social PNG, 5 favicon PNG | 10 HTML templates, 13 export PNG | `ls` | Complete | Yes |
+| 8e | Favicons/icons | `public/favicon.svg`, `favicon.ico`, `public/icons` (3 PNG), `design/brand/favicon` | 1 SVG, 1 ICO, 3 PNG | `ls` | Complete | Yes |
+| 8f | Brand build tools | `design/brand/build-brand.mjs`, `design/brand/tools/build-logos.py` | 2 | `ls` | Complete | Yes |
+| 9 | Editable source files | all of the above as text/SVG/HTML/CSV/JSON/TS. Image sources: pin HTML, logo SVG, brand HTML templates, `design/brand/favicon/favicon-source.svg`. No PSD/AI/Figma/Canva-native files in repo. Canva originals live in the seller's Canva account (not in repo) | n/a | `find` by extension | Partial (AI photos exist only as final JPEGs; Canva designs not in repo) | Repo files Yes; Canva account No |
+| 10 | Marketing plans | `docs/marketing` (2), `docs/PINTEREST-90-DAY-SCHEDULE.md`, `docs/buyer/MARKETING-ROADMAP.md`, `docs/buyer/PINTEREST-SETUP.md`, `docs/buyer/CONTENT-ROADMAP.md`, `docs/buyer/BUYER-90-DAY-PLAN.md`, `docs/marketplace/marketing` (12) | 6 plan documents plus 12 build-log docs | `ls` | Complete as plans (no execution: pre-revenue) | Yes |
+| 11 | Research documents | `docs/content/briefs` 32; `docs/content/verification` 34; `docs/content/verification-applied` 28; `docs/commerce` 15 md + 4 csv; other `docs/content` 16 | 125 md in those folders plus 4 product CSVs | `ls <dir>/*.md \| wc -l` | Partial (keyword volume and competitor data not captured; verification was by snippets, per the files) | Yes |
+| 12 | Operational procedures / SOPs | `docs/SOP-publish-article.md`, `SOP-corrections.md`, `SOP-affiliate-link-check.md`; `docs/buyer/WEEKLY-MAINTENANCE.md`, `MONTHLY-MAINTENANCE.md`, `TROUBLESHOOTING.md`, `SECURITY-AND-BACKUPS.md`, `CONTENT-MANAGEMENT.md`, `PRODUCT-MANAGEMENT.md`, `EDITING-WITHOUT-CODE.md`, `CMS-SETUP.md` | 3 SOPs + 8 buyer procedures | `ls docs` | Complete | Yes |
+| 13 | Buyer documents | `docs/buyer` (31 md, 1,466 lines), `docs/marketplace` (25 md at top level incl. listing draft, FAQ, checklist, pricing, handover terms suggestion), `docs/marketplace/presentation` (HTML deck, 17-slide PDF, 46 screenshots), `CLAUDE-HANDOFF.md`, `README.md`, `AGENTS.md` | 31 + 25 + deck | `ls docs/buyer \| wc -l` | Complete (listing figures still drafts) | Yes |
+| 14 | All documentation | `docs/**/*.md` | **235 markdown files** | `find docs -name '*.md' \| wc -l` | n/a | Yes |
+| 15 | Printables, digital products | removed | 0 | `src/test/no-printables.test.ts` passes; no printables routes | **Removed by decision (SD-16), not part of the asset** | n/a |
+| 16 | Accounts (domain, host, analytics, Pinterest, affiliate, newsletter, mailbox) | none in repo | 0 | `src/config` IDs empty; `websiteTrackingId: ""` in `src/config/affiliate.ts` | Planned only; buyer creates | Buyer. Seller personal/portfolio affiliate accounts **excluded**. Lovable project and credits excluded |
+| 17 | Licence file | repo root | **No LICENSE file; no `license` field in package.json** | `ls LICENSE*`; `grep license package.json` | Gap (see rights doc) | n/a |
+
+## 2. Interactive features (code exists, tests exist)
+
+| Feature | Code (lines) | Tests that cover it (test count) | Verified |
+|---|---|---|---|
+| Hobby finder quiz | `src/routes/hobby-finder.tsx` 146, `src/lib/quiz-flow.ts` 212, `src/lib/finder.ts` 422 | `quiz-flow.test.ts` 21, `planner-quiz.test.ts` 41, `quiz-results-save.test.tsx` 1 | Yes |
+| Plan builder (make-plans) | `src/routes/make-plans.tsx` 441, `src/lib/planner.ts` 1,217 | `planner-flow.test.ts` 16, `planner-quiz.test.ts` 41 | Yes |
+| Tonight picker | `src/routes/tools.tonight.tsx`, `src/lib/tonight.ts` 462, `src/components/share/TonightExtras.tsx` | `tonight.test.ts` 6 | Yes |
+| Hobby budget tool | `src/routes/tools.hobby-budget.tsx`, `src/lib/budget.ts` 153 | `costs.test.ts` 7, `tools.test.ts` 17 | Yes |
+| Site search | `src/routes/search.tsx` 156, `src/lib/search.ts` 379 | `search.test.ts` 11 | Yes |
+| Saved list with share and transfer | `src/routes/saved.tsx` 309, `src/lib/saved.ts`, `saved-transfer.ts` 258, `saved-share.ts` | `saved-transfer.test.ts` 12, `share.test.ts` 4 | Yes |
+| Shop checklist (need / own / save, copy, print) | `src/lib/shoplist.ts` 156, `src/components/commerce/*` | `shop.test.tsx` 50 | Yes |
+| Near-me links | `src/lib/near.ts` 81, `src/components/share/Near.tsx` 100 | `near.test.tsx` 5 | Yes |
+| Seasonal strip | `src/lib/season.ts` 158, `src/components/home/SeasonStrip.tsx` 100 | `season.test.ts` 9 | Yes |
+| Share buttons | `src/lib/share.ts` 80, `src/components/editorial/ShareButtons.tsx` 78 | `share.test.ts` 4 | Yes |
+| Calendar (ICS) export | **Deleted from the repo during this pass** (`src/lib/ics.ts`, `AddToCalendar.tsx`, `ics.test.ts` removed in commit 7cbdee0, "owner decision") | none | **Do not list**; `docs/marketplace/ASSET-INVENTORY.md` and other older docs may still mention it |
+
+Also present: 52 curated activities (`src/data/activities.ts`), 14 evening templates (`src/data/evening-templates.ts`), 6 section categories (`src/data/categories.ts`), 1 affiliate program candidate record (`src/data/affiliate-programs.ts`, status candidate, none approved).
+
+## 3. Discrepancies found in earlier documents (not corrected here, per scope)
+
+| Document | Says | Verified |
+|---|---|---|
+| `docs/marketplace/ASSET-INVENTORY.md` | 15 kits, 7 with slots filled | 8 kits, 56 slots, 2 full |
+| same | 641 tests | 629 tests in 44 files |
+| same | published articles in `src/content/article-*.ts`, 5 draft files + 2 outlines | articles are `content/articles/*.json`: 27 published, 7 draft (5 full + 2 outlines) |
+| `CLAUDE-HANDOFF.md` line 81 and `docs/buyer/WEBSITE-ARCHITECTURE.md` | 44 records (37 verified, 7 candidate) / 7 candidates | 62 records: 37 verified, 25 candidate |
+| same ASSET-INVENTORY | calendar/ICS not listed as removed | ICS code deleted today |
+| `docs/marketplace/ASSET-INVENTORY.md` | "Hosting: does not exist; repo and git history 'COMPLETED'" | repo has `.git` with 95+ commits; `.github/` workflows present (history secret scan still not run by me) |
+
+## 4. Incident disclosed
+
+During this pass I ran `bun scripts/import-products.mjs --help`. The importer treats unknown args as no CSV and **overwrote `src/data/catalog.generated.ts` with an empty catalog** (it defaults to the template CSV). I restored it byte-for-byte from git commit `a354cae` (the last commit before the overwrite; verified with `cmp`), and `catalog-import.test.ts` and `shop.test.tsx` (82 tests) and the full suite (629) pass. Commit `7cbdee0` (another agent, 17:40) briefly captured a stand-in version I had first rebuilt from the compiled bundle; the file was then replaced with the exact `a354cae` content and later commits carry it (checked with `cmp` against `a354cae` at 17:45). Separate finding: `docs/commerce/product-research.csv` currently **fails the importer's validation** (`bun scripts/import-products.mjs docs/commerce/product-research.csv --check`): two rows have a note containing the words that trip the price/scarcity filter (nmjl-2026 large and standard card rows, "retry" notes) and `ibayam-8in-heavy-duty-scissors-3-pack` has an invalid role. Do not re-run the importer until the CSV is fixed; the generated file is correct as it stands.
+
+## 5. Re-run commands
+
+```
+node scripts/build-content.mjs --check
+bunx vitest run
+ls public/pins | wc -l ; ls src/assets | wc -l
+find docs -name '*.md' | wc -l
+bunx license-checker --production --summary
+```
