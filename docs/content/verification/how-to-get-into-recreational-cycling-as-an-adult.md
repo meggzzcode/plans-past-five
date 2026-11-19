@@ -18,3 +18,12 @@ Checked 2026-11-18 (snippets only). Only the helmet items were checked in this p
 | White front light and red rear light or reflector at night, required by law | MOSTLY CONFIRMED | https://www.nhtsa.gov/sites/nhtsa.gov/files/811557.pdf says required by law in all States; another NHTSA sheet says "many States". Keep "check local law". NY example: https://www.dot.ny.gov/content/policy-planning/bicycle/safety_education/bicycle-safety-tips?nd=nysdot |
 | Shared-path etiquette: slow down, warn, pass on the left, keep right | CONFIRMED | https://home.nps.gov/articles/bike-safety.htm ; https://www.nps.gov/zion/planyourvisit/bicycling.htm?pubDate=20260914 ; https://www.nps.gov/articles/000/top-10-tips-for-biking-the-c-o-canal.htm |
 | Gears, saddle comfort, repair kit, workshops, costs, helmet laws by location | NOT CHECKED | keep hedged |
+
+## Round 3 (2026-11-18)
+| Check | Status | Source / note |
+|---|---|---|
+| White front light, red rear light/reflector at night | CONFIRMED | https://www.nhtsa.gov/road-safety/bicycle-safety ; https://bikeleague.org/ridesmart/commuting/ . Law wording varies (NHTSA fact sheets say "all States" in one, "many States" in another): keep "check your local rules". |
+| Spare tube or patch kit, tire levers, pump, multi-tool | CONFIRMED | https://www.rei.com/learn/expert-advice/cycling-repair-checklist.html (retailer guide, not a governing body) |
+| Saddle height: slight knee bend at the bottom of the stroke | CONFIRMED | https://www.rei.com/learn/expert-advice/getting-into-biking.html (retailer guide) |
+| Tires pumped to recommended pressure; lube chain monthly-ish | CONFIRMED | REI urban bicycling and pre-ride pages (retailer guide) |
+| Gears, saddle comfort preferences, workshops, costs, local helmet laws | NOT FOUND / NOT VERIFIABLE GENERALLY | keep hedged |

@@ -24,3 +24,11 @@ Checked 2026-11-18 by search snippets; ASPCA pages not fully opened.
 | Ethylene from fruit, heat, direct sun | CONFIRMED | https://extension.illinois.edu/blogs/good-growing/2026-02-13-bright-blooms-how-care-flower-bouquets ; https://extension.umn.edu/news/fresh-cut-flower-care |
 | Floral foam single-use | PARTLY | Iowa State arrangement page (snippet) ; UC notes foam must be soaked, new clean piece. |
 | Odd-number design rule, pollen, sharp tools, price range, chicken wire technique | NOT CHECKED | keep as hedged style advice or remove |
+
+## Round 3 (2026-11-18)
+| Check | Status | Source / note |
+|---|---|---|
+| Use clean, sharp knife or shears; scissors can pinch stems | CONFIRMED | https://yardandgarden.extension.iastate.edu/how-to/how-create-floral-arrangement ; https://extension.illinois.edu/news-releases/care-fresh-cut-flowers |
+| Clean vase/buckets and remove leaves below waterline to limit bacteria | CONFIRMED | Illinois and UC Cooperative Extension (https://ucanr.edu/site/uc-master-gardeners-san-luis-obispo-county/creating-cut-flower-garden) |
+| Recut stems at home | PARTLY | Iowa State arrangement page says re-cut stems to open vessels; the other Iowa State page said not needed if you were quick. Keep "trim an inch if they have been out of water." |
+| Odd-number rule, pollen/allergy wording, price range | NOT FOUND | keep as style opinion / hedged, no health claims |

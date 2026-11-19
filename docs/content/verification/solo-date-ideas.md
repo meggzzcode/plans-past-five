@@ -9,3 +9,6 @@ Checked 2026-11-18 by search snippets from official pages; full pages not opened
 | Skating: helmet, wrist guards, knee and elbow pads; smooth paved surface; not at night | CONFIRMED | https://www.cpsc.gov/s3fs-public/5014.pdf ; https://orthoinfo.aaos.org/en/staying-healthy/inline-skating-injury-prevention |
 | Free/low-cost museums, libraries, parks, courts | NOT VERIFIABLE GENERALLY | Varies by location; keep 'many' and 'check locally'. |
 | All cost ranges and 'typically under $X' labels | NOT VERIFIABLE GENERALLY | Prices vary by store and date. Keep 'typically' wording with a date, or verify each against a live retail page before publishing. No tool in this pass can read live retail prices. |
+
+## Round 3 (2026-11-18)
+| "Share your location", "keep phone charged" | NOT FOUND in official sources | Government pages found only recommend well-lit areas and company; present these two as personal tips, uncited. |

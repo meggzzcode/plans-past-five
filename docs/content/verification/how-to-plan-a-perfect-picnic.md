@@ -21,3 +21,10 @@ Checked 2026-11-18 by search-result snippets from official pages (full pages not
 | Cross-contact (shared utensils) | CONFIRMED | https://www.foodallergy.org/resources/how-avoid-cross-contact-pdf |
 | Sanitizer as a germ-hygiene substitute for handwashing; shaded cooler | STILL NOT CHECKED | needs a CDC/USDA handwashing or outdoor-eating page |
 | Park rules, prices | CANNOT BE VERIFIED GENERALLY | keep "check local rules" |
+
+## Round 3 (2026-11-18)
+| Check | Status | Source / note |
+|---|---|---|
+| Keep the cooler in the shade, closed, with plenty of ice | CONFIRMED | https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-safety-while-hiking-camping ; https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/grilling-food-safely (also: drinks in a separate cooler) |
+| Soap and water is best; sanitizer (at least 60% alcohol) only when soap and water are unavailable | CONFIRMED | https://www.cdc.gov/clean-hands/about/hand-sanitizer.html ; https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-safety-while-hiking-camping . Edit: do not present sanitizer as an equal substitute. |
+| Allergy courtesy, park rules, prices | unchanged | see above |

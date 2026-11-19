@@ -10,3 +10,7 @@ Checked 2026-11-18 by search snippets from official pages; full pages not opened
 | Hiking: tell someone your route, check weather, carry water, carry the 10 essentials | CONFIRMED | https://www.nps.gov/mora/planyourvisit/hiking-safety.htm ; https://www.nps.gov/articles/hiking-safety.htm ; https://home.nps.gov/ciro/hiking-safety.htm (also: hiking alone is not recommended by NPS pages; soften any 'hike solo' wording) |
 | All cost ranges and 'typically under $X' labels | NOT VERIFIABLE GENERALLY | Prices vary by store and date. Keep 'typically' wording with a date, or verify each against a live retail page before publishing. No tool in this pass can read live retail prices. |
 | Free/low-cost museums, libraries, parks, courts | NOT VERIFIABLE GENERALLY | Varies by location; keep 'many' and 'check locally'. |
+
+## Round 3 (2026-11-18)
+| Swimming is low-impact / gentle on joints | CONFIRMED | CDC lists swimming and water exercise as joint-friendly (https://www.cdc.gov/arthritis/prevention/index.html ; https://www.cdc.gov/healthy-swimming/about/index.html). Wording: "low-impact"; avoid medical claims. |
+| Gardening counts toward activity | CONFIRMED (light gardening) | AHA, see low-energy-hobbies.md |

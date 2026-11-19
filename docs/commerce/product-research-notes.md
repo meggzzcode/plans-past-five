@@ -25,3 +25,9 @@ B000J0AZS8 Crayola 25 lb bucket: bulk, wrong size for a beginner.
 ## Needs a decision or approval
 1. Approve WebFetch of: crayola.com, mahjongg.com (NMJL release timing for the next card), sakuraofamerica.com, 3m.com/scotch, paperage.com, knaid, mrpen, shuttleart, modpodgerocks.com.
 2. Importer: `bun run import:products <csv>` writes src/data/catalog.generated.ts; run only after owner review (I reverted my test run).
+
+## Round 3 (2026-11-18): 13 more rows (total 27), all `candidate`
+Each ASIN was opened on its own amazon.com page in the owner's Chrome and title, bullets, seller and stock text were read. No prices, ratings or review counts recorded. Added: UHAPEER clay kit, LINPHCEY clay tools, Apple Barrel 16-pack, MUTEX mahjong set, Knaid grid washi, Mr. Pen 10-roll washi, Secopad tape runners, two vintage paper packs, Stationery Island journal, Plusvivo table cover, mahjong card sleeves, NMJL standard-size cards.
+New kit slots introduced: `air-dry-clay/kit`, `mahjong-night/card-sleeve` (importer/site must accept them or map to an existing slot: check before running the importer).
+Manufacturer pages: only Sakura (Pigma Micron) was read; the Pigma row now has manufacturerUrl and notes. Crayola and 3M/Scotch fetches failed at the sites (client error); mahjongg.com and modpodgerocks.com redirected and were not followed. So 26 rows still have no manufacturer URL and none can be promoted to `verified`.
+Target of about 60 NOT reached (27). Remaining slots not researched: clay brushes, mahjong snack bowls, paper scissors.
