@@ -12,7 +12,7 @@ const routeFiles = readdirSync(routesDir).filter((f) => f.endsWith(".tsx") && f 
 const read = (f: string) => readFileSync(join(routesDir, f), "utf8");
 
 // Components that render the page's single <h1> on behalf of a route file.
-const h1Components = ["PageHero", "ProsePage", "CategoryPage"];
+const h1Components = ["PageHero", "ProsePage", "CategoryPage", "ContactPage"];
 
 describe("image registry", () => {
   it("gives every image meaningful alt text and explicit dimensions", () => {
@@ -28,7 +28,8 @@ describe("route headings", () => {
   it("every page route yields an h1 and never declares more than one in its own file", () => {
     for (const f of routeFiles) {
       const src = read(f);
-      if (f.startsWith("sitemap")) continue;
+      // The catch-all only renders the shared 404 component (which has the h1).
+      if (f.startsWith("sitemap") || f === "$.tsx") continue;
       const own = (src.match(/<h1[\s>]/g) ?? []).length;
       const viaComponent = h1Components.some((c) => src.includes(`<${c}`));
       expect(own + (viaComponent ? 1 : 0), `${f} h1 count`).toBeGreaterThanOrEqual(1);

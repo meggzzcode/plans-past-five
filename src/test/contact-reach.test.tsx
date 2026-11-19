@@ -13,10 +13,8 @@ vi.mock("@/config/site", async (orig) => {
   const actual = await orig<typeof import("@/config/site")>();
   return {
     ...actual,
-    site: Object.assign(Object.create(actual.site), {
-      get contactEmail() {
-        return state.email;
-      },
+    site: Object.defineProperty(Object.create(actual.site), "contactEmail", {
+      get: () => state.email,
     }),
   };
 });

@@ -1,5 +1,5 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import { site } from "@/config/site";
+import { seo } from "@/lib/seo";
 import { NotFoundComponent } from "@/components/layout/NotFound";
 
 /**
@@ -11,11 +11,13 @@ export const Route = createFileRoute("/$")({
   beforeLoad: () => {
     throw notFound();
   },
-  head: () => ({
-    meta: [
-      { title: `Page not found | ${site.name}` },
-      { name: "robots", content: "noindex, follow" },
-    ],
-  }),
+  head: () =>
+    seo({
+      title: "Page not found",
+      description:
+        "This page doesn't exist or has moved. Try the hobby quiz, the planner or the shop.",
+      path: "/404",
+      noindex: true,
+    }),
   notFoundComponent: NotFoundComponent,
 });
