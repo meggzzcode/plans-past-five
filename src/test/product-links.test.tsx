@@ -10,6 +10,7 @@ import { OUTBOUND_BUY_REL, resolveProductLink } from "@/config/affiliate";
 import { LINK_TYPES, validateCatalogProduct, type CatalogProduct } from "@/data/catalog-rules";
 import { linkableFor, verifiedCatalog } from "@/data/catalog";
 import { Inline } from "@/components/editorial/Inline";
+import { ProductVisual } from "@/components/commerce/ProductCard";
 import { exportLinkFor } from "@/lib/export-links";
 import { setAffiliateState, withAffiliateRestore } from "./affiliate-state";
 
@@ -163,5 +164,60 @@ describe("editorial picks link to the maker or retailer, unmonetised", () => {
         affiliateUrl: "https://www.amazon.com/dp/B012345678?tag=a-20",
       }).join(),
     ).toMatch(/affiliateUrl is not allowed/);
+  });
+});
+
+describe("optional Associates image embed", () => {
+  const base = verifiedCatalog[0]!;
+  const withEmbed = {
+    ...base,
+    imageEmbed: {
+      src: "https://example.test/provided-by-associates-tool.jpg",
+      alt: "The product as shown by the Associates tool",
+      approvedOn: "2026-11-19",
+    },
+  } as CatalogProduct;
+
+  it("no shipped product has an embed yet (null by default)", () => {
+    for (const p of verifiedCatalog) expect(p.imageEmbed ?? null).toBeNull();
+  });
+  it("inactive: the card keeps the editorial label tile, no image at all", () => {
+    setAffiliateState("inactive");
+    const r = render(<ProductVisual product={withEmbed} />);
+    expect(r.container.querySelector("[data-product-embed]")).toBeNull();
+    expect(r.container.querySelector("img")).toBeNull();
+    expect(r.container.querySelector("[data-product-tile]")).not.toBeNull();
+  });
+  it("active: the embed shows, links to the product's Amazon page with the central tag, and never prints", () => {
+    setAffiliateState("active", "embed-20");
+    const r = render(<ProductVisual product={withEmbed} />);
+    const a = r.container.querySelector("a[data-product-embed]")!;
+    expect(a.getAttribute("href")).toBe(`${base.amazonUrl}?tag=embed-20`);
+    expect(a.getAttribute("rel")).toBe("sponsored noopener noreferrer");
+    expect(a.className).toContain("no-print");
+    expect(r.container.querySelector("img")!.getAttribute("src")).toBe(withEmbed.imageEmbed!.src);
+    expect(r.container.querySelector("[data-product-tile]")).toBeNull();
+    cleanup();
+    // a product without an embed still shows the tile while active
+    const r2 = render(<ProductVisual product={base} />);
+    expect(r2.container.querySelector("[data-product-tile]")).not.toBeNull();
+  });
+  it("is validated: needs https, alt and a date, never a tag, only on Amazon products", () => {
+    expect(validateCatalogProduct(withEmbed)).toEqual([]);
+    const bad = (e: unknown) =>
+      validateCatalogProduct({ ...base, imageEmbed: e } as unknown as CatalogProduct).join();
+    expect(bad({ ...withEmbed.imageEmbed, src: "http://x.test/a.jpg" })).toMatch(/https address/);
+    expect(bad({ ...withEmbed.imageEmbed, src: "https://x.test/a.jpg?tag=me-20" })).toMatch(
+      /tracking tag/,
+    );
+    expect(bad({ ...withEmbed.imageEmbed, alt: "" })).toMatch(/alt is required/);
+    expect(bad({ ...withEmbed.imageEmbed, approvedOn: "yesterday" })).toMatch(/approvedOn/);
+  });
+  it("embeds never reach export, copy or print code", () => {
+    for (const f of ["export-links.ts", "shoplist.ts", "saved-share.ts", "saved-transfer.ts"]) {
+      expect(readFileSync(path.join(repo, "src/lib", f), "utf8"), f).not.toMatch(/imageEmbed/);
+    }
+    setAffiliateState("active", "embed-20");
+    expect(JSON.stringify(exportLinkFor(withEmbed))).not.toMatch(/example\.test|tag=/);
   });
 });

@@ -27,6 +27,7 @@ import {
   type CatalogProduct,
 } from "@/data/catalog";
 import {
+  PRODUCT_ROLES,
   productSetProblems,
   resolveProductId,
   toCatalogProduct,
@@ -373,5 +374,45 @@ describe("what ships is the live set", () => {
     expect(verifiedCatalog.length).toBe(catalog.length);
     expect(new Set(catalog.map((p) => p.id)).size).toBe(catalog.length);
     expect(new Set(catalog.map((p) => p.asin)).size).toBe(catalog.length);
+  });
+});
+
+describe("the Pages CMS products form matches the data rules", () => {
+  const yml = readFileSync(path.join(repo, ".pages.yml"), "utf8");
+  const section = yml.slice(
+    yml.indexOf("  - name: products\n"),
+    yml.indexOf("  - name: product-search-terms"),
+  );
+  it("has a products collection over content/products and a search-terms file", () => {
+    expect(section).toContain("path: content/products");
+    expect(yml).toContain("path: content/product-search-terms.json");
+  });
+  it("offers every status, link type, role, collection and kit the code accepts, and nothing else", () => {
+    const values = (after: string) => {
+      const start = section.indexOf(`name: ${after}\n`);
+      const end = section.indexOf("\n      - ", start + 1);
+      return [
+        ...section.slice(start, end < 0 ? undefined : end).matchAll(/value: ([a-z-]+),/g),
+      ].map((m) => m[1]);
+    };
+    expect(values("status")).toEqual(["candidate", "verified", "held", "discontinued"]);
+    expect(values("linkType")).toEqual(["amazon-affiliate-ready", "editorial-pick"]);
+    expect([...values("role")].sort()).toEqual([...PRODUCT_ROLES].sort());
+    expect([...values("collections")].sort()).toEqual(collections.map((c) => c.slug).sort());
+    const kitStart = section.indexOf("name: kitSlots");
+    const kitIds = [...section.slice(kitStart).matchAll(/value: ([a-z-]+),/g)].map((m) => m[1]);
+    expect([...kitIds].sort()).toEqual(kits.map((k) => k.id).sort());
+  });
+  it("every field a product file uses has a form field (so nothing is uneditable)", () => {
+    const names = new Set([...section.matchAll(/name: ([A-Za-z]+)/g)].map((m) => m[1]));
+    for (const f of readdirSync(path.join(repo, "content/products"))) {
+      const p = JSON.parse(readFileSync(path.join(repo, "content/products", f), "utf8"));
+      // image fields and affiliate bookkeeping are kept by the CMS merge setting, not shown
+      for (const k of Object.keys(p)) {
+        if (/^(image(Url|Credit|Source|Rights)|affiliateStatus|affiliateNetwork)$/.test(k))
+          continue;
+        expect(names.has(k), `${f}: ${k}`).toBe(true);
+      }
+    }
   });
 });

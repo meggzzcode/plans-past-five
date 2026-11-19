@@ -43,6 +43,21 @@ export type CatalogImageRights = "none" | "owned" | "licensed" | "retailer-permi
 export type LinkType = "amazon-affiliate-ready" | "editorial-pick";
 export const LINK_TYPES: LinkType[] = ["amazon-affiliate-ready", "editorial-pick"];
 
+/**
+ * An image the owner copied from Amazon's own Associates tooling (for example a SiteStripe image
+ * link). We NEVER download, copy, crop, cache or build these addresses: the fields hold exactly what
+ * the tool gave. It is shown only while Amazon links are live, and it links to the product's Amazon
+ * page through the central link builder. Absent (the default) means the card shows the label tile.
+ */
+export type ImageEmbed = {
+  /** The https address the Associates tool provided, pasted as given. */
+  src: string;
+  /** Plain description of the picture for people who cannot see it. */
+  alt: string;
+  /** YYYY-MM-DD the owner confirmed in the Associates account that this embed may be used. */
+  approvedOn: string;
+};
+
 export type KitSlotRef = { kit: string; slot: string };
 
 export type CatalogProduct = {
@@ -56,6 +71,8 @@ export type CatalogProduct = {
   asin: string;
   /** Ordinary link: exactly https://www.amazon.com/dp/<ASIN>. No tracking params, ever. */
   amazonUrl: string;
+  /** Optional Associates-provided image embed (see ImageEmbed). Null or absent by default. */
+  imageEmbed?: ImageEmbed | null;
   /** Defaults to amazon-affiliate-ready when absent. */
   linkType?: LinkType;
   /** Reserved. Must stay unset while affiliateStatus is "not-activated" (tags are added by src/config/affiliate.ts). */
@@ -201,6 +218,22 @@ export function validateCatalogProduct(input: unknown, now: Date = new Date()): 
         bad(`amazonUrl has tracking parameters (${params.join(", ")}); ordinary links only`);
       if (isValidAsin(r["asin"]) && r["amazonUrl"] !== amazonProductUrl(r["asin"]))
         bad(`amazonUrl must equal ${amazonProductUrl(r["asin"])}`);
+    }
+  }
+
+  if (r["imageEmbed"] !== undefined && r["imageEmbed"] !== null) {
+    const e = r["imageEmbed"] as Record<string, unknown>;
+    if (linkType !== "amazon-affiliate-ready")
+      bad("imageEmbed is only for amazon-affiliate-ready products");
+    if (!e || typeof e !== "object") bad("imageEmbed must be {src, alt, approvedOn} or empty");
+    else {
+      if (!isHttps(e["src"]))
+        bad("imageEmbed.src must be the https address the Associates tool gave");
+      else if (/[?&]tag=|\btag%3D/i.test(String(e["src"])))
+        bad("imageEmbed.src must not contain a tracking tag: tags are added centrally");
+      if (!str(e["alt"])) bad("imageEmbed.alt is required (describe the picture)");
+      if (typeof e["approvedOn"] !== "string" || !ISO_DATE.test(e["approvedOn"]))
+        bad("imageEmbed.approvedOn must be the date you confirmed it in Associates, YYYY-MM-DD");
     }
   }
 

@@ -63,6 +63,27 @@ export function ProductVisual({
   /** A small tag on the corner ("Our one pick"). */
   badge?: string;
 }) {
+  // An Associates-provided embed: ONLY while Amazon links are live (the link is then sponsored), and
+  // it always links to the product's Amazon page through the central builder. Never printed or exported.
+  const embedLink = resolveProductLink(linkableFor(p));
+  if (p.imageEmbed && embedLink.sponsored)
+    return (
+      <a
+        href={embedLink.href}
+        target="_blank"
+        rel={OUTBOUND_BUY_REL}
+        className={cn("no-print block", className)}
+        data-product-embed
+      >
+        <img
+          src={p.imageEmbed.src}
+          alt={p.imageEmbed.alt}
+          loading="lazy"
+          referrerPolicy="no-referrer"
+          className="aspect-[4/3] w-full object-contain"
+        />
+      </a>
+    );
   const photo = photoFor(p);
   if (photo)
     return (

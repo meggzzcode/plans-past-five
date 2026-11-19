@@ -354,5 +354,165 @@ content:
         type: string
         description: "Like 2026-11-19. Required when tracking is ON."
 
-  # Not offered in the CMS yet: Hobbies (still code in src/data/hobbies.ts) and products (importer CSV
-  # flow, see docs/buyer/PRODUCT-MANAGEMENT.md; Stage 2a is reworking that). See docs/buyer/EDITING-WITHOUT-CODE.md.
+  # ---------------------------------------------------------------- Products
+  # ONE file per product in content/products. Every article, hobby page, shop collection, starter kit
+  # and planner suggestion reads these files, so changing one here changes it everywhere. The build
+  # (scripts/build-content.mjs) checks the whole set; if a product that an article mentions is held,
+  # discontinued, missing or replaced in a circle, the build stops with a plain message and the live
+  # site stays as it was. Never type a tracking ID anywhere here: the site adds it to every Amazon link.
+  - name: products
+    label: Products
+    type: collection
+    path: content/products
+    format: json
+    filename: "{primary}.json"
+    exclude: [".gitkeep"]
+    view:
+      fields: [name, brand, status, linkType, category]
+      primary: id
+      sort: [order, id]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: id
+        label: Product id (never changes)
+        type: string
+        required: true
+        description: "A short, permanent name in lowercase words joined by hyphens, like junk-journal-glue. It must match the file name. Articles refer to the product by this id, so NEVER change it. To replace a product, change its Amazon number and name below (the id stays), or add a new product and set Replaced by on the old one."
+      - name: name
+        label: Exact name on the listing
+        type: string
+        required: true
+      - { name: brand, label: "Brand", type: string, required: true }
+      - { name: category, label: "What kind of product it is (e.g. Washi tape)", type: string, required: true }
+      - { name: shortName, label: "Short name for cards (optional, under 70 letters)", type: string }
+      - name: status
+        label: Status
+        type: select
+        required: true
+        description: "Candidate = researched, not shown. Verified = shown on the site. Held = approved but hidden for now (say why below). Discontinued = no longer sold or recommended (say why, and ideally pick the product that replaces it)."
+        options:
+          values:
+            - { value: candidate, label: "Candidate (not shown)" }
+            - { value: verified, label: "Verified (shown)" }
+            - { value: held, label: "Held (hidden for now)" }
+            - { value: discontinued, label: "Discontinued (no longer sold)" }
+      - { name: statusReason, label: "Why held or discontinued (one sentence; stays private)", type: string }
+      - { name: replacedBy, label: "Replaced by (the id of the product that takes over; only for held or discontinued)", type: string }
+      - name: linkType
+        label: Where the Buy button goes
+        type: select
+        required: true
+        options:
+          values:
+            - { value: amazon-affiliate-ready, label: "Amazon product page (needs the ASIN)" }
+            - { value: editorial-pick, label: "Maker or shop page that is not Amazon (needs a web address below)" }
+      - { name: asin, label: "Amazon number (ASIN): 10 letters and numbers from the product's Amazon page", type: string }
+      - { name: manufacturerUrl, label: "Maker's web address (https://...)", type: string }
+      - { name: altRetailerUrl, label: "Another shop's web address (https://...); used instead of the maker's if both are filled", type: string }
+      - name: availability
+        label: Availability
+        type: select
+        options:
+          values:
+            - { value: available, label: "Available" }
+            - { value: check-listing, label: "Check the listing (availability varies)" }
+            - { value: unavailable, label: "Unavailable" }
+      - { name: lastVerified, label: "Date you last checked the listing and facts (like 2026-11-19)", type: string, required: true }
+      - { name: order, label: "Order (lower numbers first; breaks ties for which product leads)", type: number }
+      - { name: description, label: "One neutral sentence about what it is", type: text, required: true }
+      - { name: whySelected, label: "Why we picked it (honest, specific)", type: text, required: true }
+      - { name: audience, label: "Who it suits", type: string, required: true }
+      - { name: benefit, label: "One practical line for the card (optional, under 140 letters)", type: string }
+      - { name: compare, label: "If it is an alternative: how it differs (optional)", type: string }
+      - { name: limitations, label: "Honest downsides (one per line, at least one)", type: string, list: true, required: true }
+      - name: role
+        label: Role
+        type: select
+        required: true
+        options:
+          values:
+            - { value: essential, label: "Essential" }
+            - { value: complete-kit, label: "Complete kit" }
+            - { value: researched-pick, label: "Researched pick" }
+            - { value: affordable, label: "Affordable" }
+            - { value: aesthetic-upgrade, label: "Aesthetic upgrade" }
+            - { value: nice-to-have, label: "Nice to have" }
+            - { value: later-upgrade, label: "Later upgrade" }
+      - { name: isEssential, label: "Needed to start?", type: boolean }
+      - { name: lead, label: "Preferred pick for its kit slot?", type: boolean }
+      - { name: onlyOne, label: "The 'if you only buy one thing' pick?", type: boolean }
+      - name: collections
+        label: Shop collections it appears in
+        type: select
+        list: true
+        options:
+          values:
+            - { value: pottery-era, label: "The Pottery Era" }
+            - { value: creative-girl, label: "The Creative Girl" }
+            - { value: sporty-girl, label: "Sporty Girl" }
+            - { value: girls-night-in, label: "Girls' Night In" }
+            - { value: bookish-girl, label: "Bookish Girl" }
+            - { value: little-adventures, label: "Little Adventures" }
+            - { value: journaling-era, label: "The Journaling Era" }
+            - { value: cozy-after-hours, label: "Cozy After Hours" }
+      - { name: hobbies, label: "Hobby pages it appears on (web-address names, one per line, e.g. junk-journaling)", type: string, list: true }
+      - { name: articles, label: "Articles that show it as a shop pick (web-address names, one per line)", type: string, list: true }
+      - name: kitSlots
+        label: Starter-kit slots it fills
+        type: object
+        list: true
+        fields:
+          - name: kit
+            label: Kit
+            type: select
+            options:
+              values:
+                - { value: junk-journaling, label: "Junk journaling" }
+                - { value: watercolor, label: "Watercolor" }
+                - { value: air-dry-clay, label: "Air-dry clay" }
+                - { value: mahjong-night, label: "Mahjong night" }
+                - { value: picnic, label: "Picnic" }
+                - { value: reading-book-club, label: "Reading and book club" }
+                - { value: pottery-paint-night, label: "Pottery and paint night" }
+                - { value: racquet-sports, label: "Pickleball and tennis" }
+          - { name: slot, label: "Slot name (as in the kit, e.g. washi-tape)", type: string }
+      - name: specs
+        label: Facts from the listing
+        type: object
+        list: true
+        fields:
+          - { name: label, label: "Label (e.g. Rolls)", type: string }
+          - { name: value, label: "Value (e.g. 21)", type: string }
+      - { name: researchSources, label: "Pages the facts were checked against (https, one per line)", type: string, list: true, required: true }
+      - name: imageEmbed
+        label: Amazon-provided image (optional)
+        type: object
+        description: "Leave empty unless Amazon's own Associates tool gave you an image link and you confirmed in your Associates account that it may be used. Paste exactly what the tool gave. Shown only while Amazon links are live. Never save an Amazon picture to this site."
+        fields:
+          - { name: src, label: "Image address exactly as the Associates tool gave it (https)", type: string }
+          - { name: alt, label: "Describe the picture", type: string }
+          - { name: approvedOn, label: "Date you confirmed it in Associates (like 2026-11-19)", type: string }
+
+  # ---------------------------------------------------------------- Search terms
+  # The short list behind every generic "Find ... on Amazon" link (a kind of product, not a pick).
+  - name: product-search-terms
+    label: Product search terms
+    type: file
+    path: content/product-search-terms.json
+    format: json
+    fields:
+      - name: terms
+        label: Search terms
+        type: object
+        list: true
+        fields:
+          - { name: id, label: "Short name (lowercase words with hyphens; articles and hobbies use it)", type: string, required: true }
+          - { name: label, label: "What the reader sees (e.g. Clay sculpting tools)", type: string, required: true }
+          - { name: query, label: "Amazon search words (lowercase letters, numbers and spaces)", type: string, required: true }
+          - { name: collection, label: "Shop collection (web-address name)", type: string, required: true }
+          - { name: hobbies, label: "Hobbies it serves (web-address names, one per line)", type: string, list: true }
+
+  # Not offered in the CMS yet: Hobbies (still code in src/data/hobbies.ts). The CSV importer
+  # (scripts/import-products.mjs) is a developer bulk-load tool only. See docs/buyer/PRODUCT-MANAGEMENT.md.

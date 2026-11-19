@@ -1,55 +1,67 @@
 # Product management
 
-> **Can a non-technical buyer manage products alone? No, not today.** The CSV importer (`bun run import:products file.csv`) needs a command line, Bun and git, and affiliate settings live in `src/config/affiliate.ts`. Pages CMS does not cover them (and should not: a wrong affiliate value breaks tracking). No new infrastructure was built. Lowest-effort options:
->
-> 1. **Lovable chat / an AI assistant** on the connected project. Prompts that fit: "In src/data/catalog.ts add a verified product with ASIN B0XXXXXXXX, name ..., role ..., for hobby ... following the existing records and rules in docs/buyer/PRODUCT-MANAGEMENT.md; do not add prices or ratings; run the tests." and "In src/config/affiliate.ts set the Amazon tag to YOURTAG-20 and nothing else; run the tests." Then check the diff Lovable shows, and publish in Netlify (Deploys > Trigger deploy > Deploy site). Verify afterwards that a product link opens the right Amazon page.
-> 2. **A developer for about 30 minutes** per batch of new products or for an affiliate switch: hand them the filled rows for `docs/commerce/product-research.csv` (the canonical file; import with `bun run import:products docs/commerce/product-research.csv`) and this file.
->
-> Researching the product (checking the listing) is still your job in either case. Publishing uses the same one-button workflow as articles (`docs/buyer/NETLIFY-CREDITS-AND-RELEASES.md`).
+**You can manage every product from your browser. No terminal, no spreadsheet import, no code.**
 
-Two product layers exist. Know which one you are editing.
+All products live in ONE place: Pages CMS, section **Products** (one small file per product in `content/products/`). Every article, hobby page, shop collection, starter kit, planner suggestion and quiz result reads from it. Change a product once and it changes everywhere. The ordinary Amazon web address is built from the product's Amazon number (ASIN), and your Amazon tracking ID (Settings in Pages CMS) is added to every Amazon link automatically. **Never type a tracking ID, an affiliate link or a price into a product or an article.**
 
-| Layer | File | What it is | Public behavior |
-|---|---|---|---|
-| Product TYPES | `src/data/products.ts` | "A beginner watercolor set": records grouped into the shop collections (counts: `docs/buyer/INVENTORY.md`) | Cards link to an ordinary Amazon search ("Browse options on Amazon") |
-| Verified catalog | `src/data/catalog.ts` + generated `src/data/catalog.generated.ts` | Specific, researched products with ASIN and ordinary URL | Counts of records, `verified` (shown or on editorial hold) and `candidate` (never shown): `docs/buyer/INVENTORY.md`. To re-check with the importer without writing, run `bun run import:products docs/commerce/product-research.csv --check`. Only `status: "verified"` records that pass validation ever render. Verified means the Amazon listing was checked, not that the product was tested; links are ordinary non-affiliate Amazon links. An empty catalog still falls back to rendering nothing |
-| Kits | `src/data/kits.ts` | Kits as slots filled by verified products | A kit renders only when a verified product fills a slot, and as a full kit only with 4 or more verified picks and every essential filled; how many kits are complete today: `docs/buyer/INVENTORY.md` |
+Publishing works exactly like articles: save in Pages CMS, then press Publish in Netlify (`docs/buyer/NETLIFY-CREDITS-AND-RELEASES.md`). Before the site rebuilds, a checker reads every product and every article. If anything would break (for example an article mentions a product you just hid) the build stops, the live site stays as it was, and the message says in plain English which file and which product to fix.
 
-The importer REPLACES the whole generated catalog with the CSV you give it. Always start from the full `docs/commerce/product-research.csv`, append your rows, and run with `--check` first. A guard refuses a write that shrinks the catalog by 30% or more unless `--force` is given.
+## The words you will see
+
+| Status | Meaning |
+|---|---|
+| Candidate | Researched, not approved. Never shown anywhere. |
+| Verified | Approved and shown on the site. |
+| Held | Approved but hidden for now. You write a one-sentence reason (private; it is never published). |
+| Discontinued | No longer sold or no longer recommended. You write the reason and, ideally, name the product that replaces it. |
+
+A product's **id** (for example `junk-journal-glue`) never changes. Articles refer to it by that id. The listing details (name, ASIN) are the part you change.
+
+## Replace a discontinued product (step by step)
+
+Pick whichever fits.
+
+**A. The same kind of product, new listing (simplest).** The id stays; only the listing changes.
+1. Pages CMS > Products > open the product.
+2. Replace the **exact name**, **brand**, **Amazon number (ASIN)** (10 letters and numbers from the new Amazon page), the facts, **why we picked it**, **honest downsides**, **pages the facts were checked against** and set **Date you last checked** to today.
+3. Save. Every article, hobby page, collection, kit and planner suggestion now shows the new product.
+4. Re-read the article sentences that mention it by name; if they describe the old product's facts, edit those sentences.
+
+**B. A genuinely different product, keep the old one on record.**
+1. Pages CMS > Products > **Add** a new product (give it a new id, fill in every field, Status: Verified, same collections, hobbies and kit slots as the old one).
+2. Open the old product: Status **Discontinued**, write the reason, and put the new product's id in **Replaced by**. Save.
+3. Every mention of the old id now shows the new product (readers' saved lists too).
+
+**If you do nothing about a product an article mentions.** Hiding (Held or Discontinued) a product that an article mentions, without a **Replaced by**, stops the build with a message like: `content/articles/some-article.json, block #7 (p), field "text": the product mention {{product:old-id|a glue stick}} cannot be shown: "old-id" is held and has no replacement`. Either set **Replaced by**, or edit that sentence in the article.
+
+## Add a new product
+
+1. Pages CMS > Products > Add. The **id** must be new, lowercase words joined by hyphens, and cannot change later. It must match the file name.
+2. Pick **Where the Buy button goes**:
+   - *Amazon product page*: fill in the **ASIN** from the product's Amazon page address (`amazon.com/dp/ASIN`).
+   - *Maker or shop page that is not Amazon*: fill in the web address. Use this when the best product is not on Amazon. It is shown as an ordinary, unmonetised link.
+3. Fill in the other required fields. Choose the **collections**, **hobbies** and **kit slots** it belongs to (names must exist: the checker tells you if one is misspelled).
+4. Status **Candidate** until you have checked the live listing; then **Verified**.
 
 ## Rules you must keep
 
-- No prices, ratings, review counts, discounts or stock claims anywhere (validators reject them).
-- No ASIN unless verified. No fabricated links. Ordinary Amazon links are exactly `https://www.amazon.com/dp/<ASIN>`.
-- Affiliate tags are added only by `src/config/affiliate.ts`, never typed into records.
-- Photo-less cards unless image rights are documented (`docs/IMAGE-LICENSES.md`).
-- Buttons say what the destination is. Do not add a cart button (`docs/commerce/AMAZON-CART-RESEARCH.md`).
-- Role labels describe function; internal scoring is never shown (`docs/commerce/PRODUCT-SELECTION-METHODOLOGY.md`).
+- No prices, ratings, review counts, discounts or stock claims anywhere (the checker rejects them).
+- Only enter an ASIN you copied from the live Amazon page. Never guess one.
+- Never save or copy an Amazon product photo to this site. The optional **Amazon-provided image** field is only for an image link that Amazon's own Associates tool gave you and that you confirmed in your Associates account; leave it empty otherwise. It is shown only while Amazon links are active.
+- Do not add a cart button. Buttons say what the destination is.
+- Product notes (**why held**, research notes) stay private: they are never sent to visitors' browsers. Only shown products are published.
 
-## Edit a product type
+## Generic "Find ... on Amazon" links
 
-Edit its record in `src/data/products.ts`. Keep six per collection unless you also update the test in `src/test/rules.test.ts`. Run `bunx vitest run`.
+Where the site names a kind of product rather than a pick (for example "Clay sculpting tools"), the list is Pages CMS > **Product search terms**. Each entry opens an ordinary Amazon search. Where a named product exists for the same need, the site shows the product instead. These links get your tracking ID automatically like every other Amazon link.
 
-## Add a verified product
+## What the checker verifies on every build
 
-Full process: `docs/commerce/PRODUCT-RESEARCH.md`. Short version: add a row to `docs/commerce/product-research.csv` from the live listing and manufacturer page (columns: `docs/commerce/PRODUCT-RESEARCH-TEMPLATE.md`), run `bun run import:products docs/commerce/product-research.csv`, run tests, then record it in `docs/commerce/AMAZON-PRODUCT-CATALOG.md`.
+Missing product ids in articles; held, discontinued or candidate products that articles mention (unless a replacement chain reaches a shown product); circular or dead-end replacements; duplicate ids; duplicate ASINs; kit slots, collections, hobbies or articles that do not exist; shop blocks naming an unknown search term; a stored tracking tag or affiliate link (never allowed); an invalid link type; a malformed `{{product:...}}` mention. Tests (`bunx vitest run`) repeat these checks and prove that replacing a product updates every page.
 
-## Remove or retire a product
+## For developers (optional, not part of the owner workflow)
 
-Set `availability: "unavailable"` (it then hides) or delete the CSV row and re-import, then update any article text that names it. Record the change in the human register.
-
-## Re-verify
-
-Keep `lastVerified` current. Recheck listings before updating an article and during the monthly routine (`docs/buyer/MONTHLY-MAINTENANCE.md`); check that links still go where their buttons say (`docs/SOP-affiliate-link-check.md`).
-
-## Starter kits
-
-`docs/commerce/STARTER-KITS.md`. Add a slot by editing `src/data/kits.ts`; map a product to it with `kitSlots` (`kit/slot`) in the CSV.
-
-## Switching affiliate programs
-
-`docs/buyer/AFFILIATE-ACTIVATION.md`. Products need no edits; links follow the registry.
-
-## Not included
-
-Prices, stock and ratings are never stored. If you want them shown, you must read the program's current terms first (re-read live) and change the validators knowingly. This is not recommended.
+- Data model and rules: `src/data/catalog-rules.ts`; build and gates: `scripts/content-lib.mjs`, `scripts/build-content.mjs`; generated for the site: `src/data/catalog.generated.ts` (shown products only) and `src/data/search-terms.generated.ts`. Never edit generated files by hand.
+- Bulk loading: `bun run import:products file.csv --check` then without `--check` writes NEW product files into `content/products/` from a CSV in the research template format (`docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv`). It never overwrites an existing product unless `--update` is given, and never deletes. `docs/commerce/product-research.csv` is the frozen snapshot the 66 products were migrated from; it is not maintained.
+- Kits (slots) and collections are still defined in code: `src/data/kits.ts`, `src/data/products.ts`.
+- Link type, image embed and affiliate building: `src/config/affiliate.ts` builds every Amazon link from the ASIN plus the one tracking ID in settings.
