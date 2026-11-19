@@ -42,7 +42,7 @@
 26. "Easy" in the meta title and Pinterest titles is editorial, not a claim, but is subjective.
 27. Words checked against E3's banned list; no "best", "perfect", "must-have", "tested" or "waterproof". One exclamation mark: none. A final read by someone else is advised.
 28. No prices, no price bands, no star ratings, no scores. Internal scores appear in PRODUCTS.md only.
-29. Length: body is about 1,900 words with the product blocks and FAQ, inside E3's 1,200 to 1,800 only if the FAQ and product blocks are excluded from the count.
+29. Length: the Body section is 2,867 words by script count including image briefs, tables, flags, product blocks and FAQ. E3's Starter Guide range is 1,200 to 1,800 body words; the reader-facing prose was not counted separately, so the fit is unconfirmed and may run long.
 30. Hero brief shows hands pressing clay; E3 says generated "result" images and safety-relevant demonstrations must not be presented as instruction. The brief limits it to mood, but clay-technique accuracy must be checked on any image.
 
 ## Pinterest, SEO, other

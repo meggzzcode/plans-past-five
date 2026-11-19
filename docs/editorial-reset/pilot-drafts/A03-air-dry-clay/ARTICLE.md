@@ -16,7 +16,7 @@ Status: pilot draft for independent review. Written fresh from the v2 product re
 | Collection / hobby | The Creative Edit / Air-Dry Clay |
 | Byline | none (byline-free) |
 | Dek | One clay, one paint set, one sealer and a few things from your kitchen drawer: a pinch-pot ring dish, a cutter-shaped trinket dish and a small tray, made across one evening and a few days of drying. |
-| Length | about 1,900 words of body copy plus product blocks and FAQ |
+| Length | 2,867 words by script count for everything under Body, including image briefs, tables, flags, product blocks and FAQ; reader-facing prose is shorter (not separately counted) |
 
 ### Hero image brief
 
