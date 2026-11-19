@@ -56,3 +56,14 @@ Contact sheets generated in Canva on 2026-11-19. Originals are in `docs/content/
 - We have not verified that either tool's terms let the output be transferred to a buyer. Save the terms in force at handover (see `docs/content/CANVA-LICENCE-TERMS.md` for what was read on 2026-11-19, snippets only) and let the buyer judge, ideally with a lawyer.
 - No image shows a real, identifiable person or a real brand by design; this was checked by eye, not by a tool.
 - No stock photos and no Amazon or brand images are used.
+
+## Ledger: derivative and archive image files outside `src/assets/` (added 2026-11-19 by the asset verification pass)
+These files are not in `src/assets/` so the ledger test does not require rows, but they are copies, crops or composites of the AI images above and inherit exactly the same terms and the same "what we do not claim" limits. Counts by command: `ls public/pins | wc -l` (88), `ls docs/content/incoming-images/sliced-tiles | wc -l` (24).
+
+| File or folder | What it is | Made from | Tool | Licence statement | Embedded AI metadata |
+|---|---|---|---|---|---|
+| public/lcp/hero-pottery-night-960.jpg | 960 px resized copy of the home hero used for fast first paint | hero-pottery-night.jpg | Lovable AI image tool (original); resized in-repo | Same as hero-pottery-night.jpg: AI-generated; no exclusivity or registrable copyright promised. Tool terms govern commercial use and transfer: not verified here. | Not checked on this derivative |
+| public/pins/*.jpg (25) and *.png (63) | 88 Pinterest pins (1000x1500). 25 composite a site image (14 distinct AI source images used, see design/pins/manifest.json field `image`); 63 are typographic with no photo | the 14 original Lovable-generated images in src/assets (none of the 4 Canva images) | Lovable AI image tool (photos); layouts built in-repo by design/pins/ scripts | Same as the source image. Typographic pins contain no third-party image. | None found on any of the 88 (checked with `strings`); pins are not self-labelled as AI-composited |
+| docs/content/incoming-images/ (7 files) | Full-size Canva exports and 3 contact sheets plus one hero export | Canva AI | Canva AI | AI-generated image, Canva AI Product Terms. Transfer to a buyer: not stated by Canva. | Not checked |
+| docs/content/incoming-images/sliced-tiles/ (24 files) | Tiles sliced from the Canva contact sheets, not on the site | the 4 Canva sheets listed above | Canva AI | Same as the sheets above. Not used on the site; archive only. | Not checked |
+| docs/marketplace/presentation/screenshots/ (46) and PRESENTATION.pdf/.html | Screenshots of the site and a buyer deck, which show the AI images | the site | n/a | Marketing material for the sale; same limits as the images shown. | n/a |

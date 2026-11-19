@@ -1,0 +1,129 @@
+# Marketplace positioning and pricing: Plans Past Five
+
+Status: RECOMMENDATION for owner review. Researched 2026-11-19. Nothing is listed, published or sent; nobody was contacted. Not legal, tax or financial advice. Prices below are opinions with stated uncertainty, not market facts and not guarantees. Established-revenue multiples are not used anywhere.
+
+## 1. Bottom line
+
+1. **Verified completed sales of comparable pre-revenue / starter content sites: NOT FOUND**, on any marketplace, again in this pass. Flippa's own pages returned HTTP 403 to every direct fetch, and final sale prices on Flippa sit behind a login. No price below is anchored on a verified sale.
+2. Every number that does exist for sites like this is an asking price, a seller's own claim, or a third-party author's reasoning. They cluster between about $350 and $3,500 and none is verified.
+3. Flippa is the only mainstream marketplace whose official rules admit a no-revenue site. Empire Flippers (official page, fetched today) needs $2,000/month net profit and 12 months of history. Motion Invest, Investors Club and (in practice) Acquire.com want earnings or SaaS.
+4. Recommended: **Flippa, classified (asking-price) listing, Websites > Content / Blogs (Starter-site filter), no auction reserve above floor**. Ask **$2,950**, quick-sale **$1,200**, expect to settle **$1,500-$2,500** if it sells, hard floor **$850 net**. Real chance of no sale at all.
+5. Biggest single lever on price is not another document: it is a live URL with a domain you own, a working mailbox and a few weeks of Search Console data. Listing before that costs real money in discount (section 6).
+
+## 2. Evidence: completed sales vs everything else
+
+Rule used: only a marketplace-confirmed final price counts as a sale. Everything else is labelled.
+
+### 2a. VERIFIED SOLD prices of comparable sites (pre-revenue / starter / new content-affiliate)
+**NOT FOUND** on Flippa, Empire Flippers, FE International, Motion Invest, Acquire.com, Fiverr, SideProjectors.
+- Flippa: direct fetches of flippa.com pages (pricing, /sell, support articles, blog, listing pages) all returned 403 on 2026-11-19. Search snippets show "Website Sold on Flippa" pages that still display an asking price; the final price is gated (example: https://flippa.com/11987593-profitable-content-site-94-margins-26k-annual-revenue-2k-avg-monthly-profit-570k-yearly-page-views-126k-social-followers-3-8k-email-subs, 14-year-old profitable site, not comparable).
+- Flippa's blog roundup of closed deals (https://flippa.com/blog/closed-deals-on-flippa-q1-2026/, could not be opened; read via search snippet only) reports a food content site sold for $760,000 with about $300,288 annual profit (Jan 2026). Verified by Flippa itself but NOT comparable (established, large profit).
+- Empire Flippers, FE International, Motion Invest, Acquire.com: no public sold-price pages for starter or pre-revenue sites found; their public material covers earning businesses.
+- SideProjectors (https://www.sideprojectors.com/, fetched): shows no sold prices; lists at least one "pre-launch" project.
+
+### 2b. Seller / forum claims (UNVERIFIABLE, self-reported)
+| Claim | Source (URL) | Date (approx.) | What the site had | Why not usable |
+|---|---|---|---|---|
+| Brand-new zero-traffic, zero-revenue e-commerce site "sold for $3,500" | https://medium.com/@celebmd/i-discovered-people-are-selling-zero-revenue-websites-for-2-000-5-000-on-flippa-6e065a9b8f6a | about late 2025 (age from earlier notes; not re-read) | store, no sales | promotional article, no proof, different site type |
+| Starter sites with no traffic "sell for $350"; one affiliate site with no earnings "$1,000" | https://www.blackhatworld.com/seo/flippa-case-study-experience.1252254/ | about 2020 | not described | forum posts, page 403 today, read via snippet |
+| "Highest bidder was $450" on a digital product store | https://www.blackhatworld.com/seo/selling-starter-sites-on-flippa.1445845/ | not shown | digital product store | a bid, not a sale; 403 |
+| Site sold in 2 days for $3,000 (seller paid 10% Flippa fee + $20 escrow) | https://www.linkedin.com/pulse/case-study-how-i-sold-site-flippa-just-2-days-3000-abdul-samad-essani-sb15f | not shown | earned some AdSense income | not zero-revenue |
+| One-year-old Amazon-affiliate site "about $1,400" | https://medium.com/@Lauracenna/my-website-sold-on-flippa-for-1400-here-is-what-i-learned-f089241e6d4f | about 2024 | one year old, affiliate | self-reported, earnings unknown |
+| Two-year-old 50-post affiliate site "$12,500" | https://my.wealthyaffiliate.com/blog/boston10111/12-500-website-sold-on-flippa | about 2017 | 2 years, 50 posts, earning | old, earning site |
+
+### 2c. Third-party reasoning (not sales data)
+- https://gauravtiwari.org/flippa-value-sell-a-website-with-no-revenue/ (fetched; updated 2026-08-31). Bands: under $500 (template pages), $500-$1,500 (15-25 articles, indexed, 3-6 months old, "most common"), $1,500-$3,000 (25+ articles, real design, brand files, 6-12 months old), above $3,000 only with traffic, revenue or a premium domain. The author states the bands are "reasoned from replacement cost" and that there is **no sold-price dataset**. Useful as a sanity band; not evidence.
+
+### 2d. Asking prices (never sales)
+- Flippa-style pre-revenue "turnkey" listings at $9,999 asking (prior note in P4-BUYER-READINESS.md; pages 403 now; whether any sold: NOT FOUND).
+- A small affiliate site, 2 years old, $224/month profit, asking $2,000 (https://flippa.com/10888367-..., from earlier notes).
+- Fiverr "turnkey / DFY niche site" gigs (service offers, not asset sales): from about $20 to $90 for 10-page template sites (e.g. https://www.fiverr.com/readymadesite/make-profit-niche-website-selling-business-autopilot-income, from $80); one affiliate-blog build at $450 with 30-day delivery, domain and hosting not included (https://www.fiverr.com/growthdoneright/build-custom-dfy-niche-website-ready-made-amazon-affiliate-marketing-blog). Read via search snippet. These matter because a price-sensitive buyer may compare against them; they are not sales of finished brands.
+
+### 2e. Unsold / auctions
+NOT FOUND (Flippa gates unsold history).
+
+## 3. Marketplace rules (current official pages where reachable)
+
+| Item | Finding | Source / status |
+|---|---|---|
+| Flippa pricing page, support articles | **403 unreachable** by direct fetch, 2026-11-19. Figures below are from search snippets and third parties; re-read live at listing time | https://flippa.com/pricing |
+| Pre-revenue price cap | New / starter / template / non-revenue assets: maximum asking or reserve **$9,999**. Search snippet of the same article: listings over $9,999 for non-profitable businesses need Support approval. A separate Flippa page mentions $99,999 for "Open to Offers" early-stage projects. Irrelevant to our recommended price; still unresolved. | https://support.flippa.com/hc/en-us/articles/12856932906767-Listing-sale-pricing (snippet) |
+| Flippa listing fee | from $29 (60 days); $49 boosted (3 months); $199 premium/NDA; non-refundable if unsold | Flippa snippets + https://gauravtiwari.org/... (checked 2026-08-31) + https://www.hackceleration.com/labs/flippa-pricing (checked June 2026) |
+| Flippa success fee | CONFLICT: Flippa's /sell page "10% of final transaction value" (self-service); pricing page "from 5%"; third parties: 10% under $50,000. **Plan on 10%.** | snippets, third parties |
+| Escrow | FlippaPay "from 1%", Escrow.com "from 1.2%" (Flippa snippet). Third-party: FlippaPay only on deals $10K+; buyer usually pays | unverified; confirm |
+| Escrow.com own schedule (official, fetched 2026-11-19) | $0-$5,000: **2.6%, $50 minimum** (standard); card/PayPal adds 3.05%; international wire +$25; disbursement: ACH $0, US wire $10, non-US wire $20. The page sets no default payer; the parties agree who pays. | https://www.escrow.com/fee-calculator |
+| Revenue-claim rule for sites without revenue | Claims need evidence; potential-revenue claims must be labelled potential with workings; specific potential revenue or traffic numbers are forbidden in titles. Site Rules: full disclosure. Prohibited Content bars unverified performance claims and guarantees | support.flippa.com articles (read 2026-11-18 per FLIPPA-RESEARCH.md; today 403) |
+| Verification | seller ID check; domain-ownership proof (TXT record or WHOIS email); proof of revenue/traffic only if claimed; transfers after funds secured in escrow; no "partial sale" | Flippa support snippets / prior notes; medium confidence |
+| Empire Flippers | at least $2,000/month net profit averaged over 12 months and 12 months of revenue | https://empireflippers.com/business-listing-requirements/ (fetched 2026-11-19, official). NOT AN OPTION |
+| FE International | page states no minimums or fees; pre-revenue not addressed ("Get a free valuation" only). Their model is brokered, earning tech businesses; NOT FOUND any starter route | https://www.feinternational.com/sell-your-website/ (fetched) |
+| Motion Invest | official seller page not reachable (404 on guessed URL); search snippets: "we don't sell sites that aren't making any money", about 3 months of earnings minimum; fees conflict (0% listing; 5-20% success). Treat as NOT AN OPTION until earning | https://motioninvest.com/?p=238874 (snippet) |
+| Acquire.com | official seller pricing (fetched): closing fee 8% under $250k asking + $25/month listing while live; Acquire covers escrow. Pre-revenue acceptance not stated; third parties say it is SaaS-heavy and discourage pre-revenue content sites | https://acquire.com/seller-pricing/ |
+| SideProjectors | free basic submission; projects reviewed; pre-launch projects appear; no sold prices; fee detail not read | https://www.sideprojectors.com/ |
+
+## 4. Recommendation
+
+### 4a. Marketplace and category
+**Flippa, classified listing, category Websites > Content / Blog (affiliate-intended), tagged Starter.** Reasons: only mainstream venue that officially accepts no-revenue assets; buyers there expect pre-revenue "starter" assets. Do not use the Projects & Concepts category unless Flippa support says it applies, because the page conflicts and the asset is a built publication, not a concept.
+Secondary, optional and low priority: Acquire.com framing the four interactive tools and codebase as a "tools-first consumer web product" (8% fee + $25/month; discouraged for pre-revenue; likely wasted effort) and SideProjectors (free to submit; audience of makers, low expected price). Do not run them in parallel with Flippa without checking Flippa's exclusivity terms.
+
+### 4b. Price points (USD, all UNCERTAIN)
+| Point | Price | Net to seller (assumes 10% success fee, $49 listing fee, seller pays no escrow) | Reasoning |
+|---|---|---|---|
+| Initial asking price | **$2,950** | $2,606 | Inside the $1,500-$3,000 band that a replacement-cost author gives for 25+ article sites with brand files, but our site is not live, has no domain and is brand new, so the top of that band is already generous; the room is deliberate negotiating space. Well under the $9,999 cap |
+| Quick-sale price (accept within days) | **$1,200** | $1,031 | Roughly the cost a buyer would otherwise pay to commission 27 articles' worth of drafting and editing at the low end, plus four tools and brand set (section 5), minus the discount for risk and for no domain/live site |
+| Negotiation range (where I expect a deal if one happens) | **$1,500-$2,500** | $1,301-$2,151 | Midpoint of anecdotal range $350-$3,500; pulled up by asset volume |
+| Walk-away floor | **$850 net** (about $1,055 sale price; formula: (850 + 49) / 0.9) | $850 | Owner may raise it to cash costs (UNCONFIRMED; owner to read from receipts). Set floor at no lower than cash spent if recovering cash matters |
+| Scenario B: list only after live + domain + mailbox + 4-6 weeks of Search Console data | ask **$3,495**, quick-sale $1,800 | $3,096 / $1,571 | Still not a revenue multiple. Higher only because the buyer inherits a working, indexed, owned-domain site. Not proven; the number is a judgment |
+
+Honest uncertainty: the plausible outcome spread is "no sale" through about $3,500. No verified sale supports the top. If no buyer bids within the 60-day entry term, the listing fee (about $29-$49) is lost; relisting without changes rarely changes the answer, so change something (live URL, price) first. At $1,000 sale price, net is $851 after the success fee and a $49 listing fee; if the buyer does not pay escrow and Escrow.com is used, a seller-paid 2.6% adds about $50 minimum.
+
+### 4c. Do not use the auction format with a high reserve
+Auctions with reserve at or near asking attract no bids for untraceable starter sites. If auction is used, reserve = floor price (about $1,055), start low; expect to accept the market's answer.
+
+### 4d. Ideal buyer profiles
+1. **First-time content-site operator** who wants to skip months of setup and is ready to write and verify their own articles; values the editorial standard (no invented experiences, source-check records) and the buyer docs.
+2. **Developer or AI-assisted builder** who wants a tested, working frontend (43 hobbies directory, 4 tools, planner logic, tests, CI) as a codebase and brand starter; the unusual asset is the tool logic, not the articles.
+3. **Pinterest-first creator or virtual-assistant/agency owner** who wants a ready brand, 88 pin images, CSV metadata and a 90-day schedule for a women's hobby niche.
+4. **Small portfolio buyer** adding a lifestyle niche who has own Amazon Associates account and a hosting setup.
+Not a fit: anyone who expects income, traffic or approval from the site as delivered; anyone unwilling to set up their own domain, host, analytics and affiliate accounts.
+
+## 5. Pricing logic: replacement cost, no revenue multiple
+
+The price is argued from what a buyer would otherwise have to spend, discounted for the fact that nothing is proven and nothing is live. Rates below are ILLUSTRATIVE ASSUMPTIONS the owner must replace with real quotes or invoices; they are not market data I verified, and the quantities are repo counts of 2026-11-19.
+
+| Component | Quantity (repo, 2026-11-19) | Illustrative low-high replacement cost (assumption) | Caveats |
+|---|---|---|---|
+| Articles, drafted, sourced and edited | 27 published (23 source-checked; 4 originals not yet), 7 drafts (5 checked, left not ready) | about $40-$120 each, i.e. roughly $1,100-$3,200 | AI-assisted; buyer must re-verify; a buyer will not pay human-written rates |
+| Interactive tools and site code | 4 tools, 43-hobby directory, planner, search, 8 shop collections, trust pages, 45 test files | about $1,000-$4,000 if commissioned | frontend-only, no CMS; not a WordPress site, so buyer needs developer or AI tool |
+| Research | 32 briefs, verification notes, 37 verified products (checked against Amazon listings, not tested), roadmap | about $300-$1,000 | verification can go stale |
+| Brand and pins | 12 logo files, 11 board covers, social images, 4 templates, 88 pin images, CSV, 90-day schedule | about $300-$1,200 | AI-generated images; no exclusivity or registrable copyright promised |
+| Docs and handover | about 235 Markdown files, 31 buyer guides, 20-step transfer checklist | about $100-$400 | quality high, but unread by many buyers |
+| Domain, host, mailbox | none included | $0 included | buyer pays; UNCONFIRMED costs |
+| Sum of illustrative range | | roughly $2,800-$9,800 | |
+
+Then discount: no traffic, no revenue, not live, no owned domain, AI-generated content and images, buyer's setup labour, no Amazon approval, resale risk. A buyer applying a 60%-90% discount to the low end of the illustrative range lands at about $300-$1,100 at the bottom and about $1,100-$2,900 at the middle of the range. That is why the quick-sale price ($1,200) and asking ($2,950) sit where they do. This is a reasoning aid, not a calculation anyone can check against sales. The owner's own cash and time (UNCONFIRMED) should be entered in PRICING-STRATEGY.md and kept separate from this table.
+
+## 6. What would move the price (honest)
+- Live URL, owned domain, working mailbox, named publisher: removes the biggest "turnkey" doubt.
+- Weeks of Search Console data showing indexing (dated screenshots). Indexed pages only if the Console lists them.
+- Resolve the open items a diligent buyer will find: 4 originals not source-checked; hobby count shown as 36 in some docs and 43 in code/tests (fix the docs); test counts differ between docs (250, 523, 641); legal pages starter text; image-tool transfer terms unverified.
+- Do NOT add: printables, projected earnings, traffic targets, "will earn" language.
+
+## 7. Top 10 buyer objections and honest responses
+
+1. **"No traffic, no revenue. Why pay anything?"** You should not pay for traffic or revenue; there is none. You pay for built assets and saved setup time. Price reflects that, and no earnings are claimed.
+2. **"Why isn't it live? Why no domain?"** The seller has not bought or connected one; that is disclosed as an outstanding action. Options: buyer registers its own domain (default), or the seller registers one and pushes it before closing, as agreed in writing. Until then it cannot be called live.
+3. **"AI-written. Google will not rank it."** We cannot promise rankings. Google has said it judges helpfulness, not production method (verify yourself). Articles are source-checked for 23 of 27; 4 are not yet; all need your own review. Expect to edit.
+4. **"Who owns the AI images?"** No exclusivity or registrable copyright is promised; the image tool's transfer terms are not verified; see the image ledger. Plan to replace key images with your own photography.
+5. **"Can I get the seller's Amazon Associates account?"** No. Associates accounts are non-transferable without Amazon's prior written approval, and the seller's personal and portfolio affiliate accounts are excluded. You apply in your own name; approval is not guaranteed (Amazon's page refers to qualifying sales within 180 days).
+6. **"What if I am not technical?"** The site is a code project with no CMS; articles can be edited through a browser editor only once connected and tested; hobbies, products and settings need a developer or AI coding tool. If that is a deal-breaker, this is not the right asset for you.
+7. **"What does it cost to run?"** All costs are UNCONFIRMED in the repo: domain, host, optional mailbox, optional tools. No figure is stated; promotional prices are not renewal prices. Frontend-only with no database or paid APIs.
+8. **"The legal pages and trademark?"** Starter text, not lawyer-reviewed; name knockout search only, not clearance. Budget your own review.
+9. **"Why should I trust 37 'verified' products?"** Verified means the Amazon listing was opened and reviewed; nobody tested the products; manufacturer pages mostly unchecked; 25 further records never display. Re-check before activating affiliate links.
+10. **"Will you help me after the sale and can you lower the price?"** Support: a limited 30-day written-questions scope (POST-SALE-SUPPORT-PROPOSAL.md). Price: negotiation is possible inside the range in 4b; the seller will not drop below the floor. Escrow and transfer happen through the marketplace.
+
+## 8. Open items and sources not read
+- Flippa official pages 403 on 2026-11-19: fees, caps and required listing fields unconfirmed from the source.
+- Motion Invest, FE International, Money Nomad official seller pages: NOT READ / NOT FOUND for starter sites.
+- Owner cash and hours: UNCONFIRMED; floor must be set by the owner.
+- Counts to re-run on listing day: tests (docs say 250, 523 and 641), hobby count (43 in code; 36 in HANDOFF and LISTING-DRAFT), product counts.
