@@ -6,7 +6,7 @@
   "category": "creative-corner",
   "status": "published",
   "publishedAt": "2026-11-19",
-  "verifiedAt": "2026-11-18",
+  "verifiedAt": "2026-11-19",
   "hero": "shopBookish",
   "searchIntent": "how to start a reading journal / reading journal ideas / what to write in a reading journal",
   "angle": "A low-pressure reading journal: a tiny entry template, three layouts to choose from, honest advice about what to buy and what to skip, and a way to abandon the habit gracefully and restart",
@@ -20,12 +20,20 @@
     "pocket-notebooks",
     "book-lights"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "title": "Los Angeles County Library: eBooks and audiobooks",
+      "url": "https://lacountylibrary.org/ebooks-audiobooks",
+      "note": "Read 2026-11-19. One example: cardholders can borrow e-books and audiobooks for free; loan periods and limits are set by each library, so the article says what is on offer varies"
+    }
+  ],
   "coworkChecks": [
     "RESOLVED 2026-11-19: starter spend ('under about $20') - removed; verification found no source for prices",
     "RESOLVED 2026-11-19: libraries lend books, e-books, audiobooks - reworded to 'check whether your library lends...; varies'; no library or app named",
     "RESOLVED 2026-11-19: five minutes per entry - already framed in text as a suggestion, not a rule",
-    "RESOLVED 2026-11-19: no real titles, authors or ratings; no memory/comprehension/wellbeing or eye-health claims; layouts are original - checked against article text"
+    "RESOLVED 2026-11-19: no real titles, authors or ratings; no memory/comprehension/wellbeing or eye-health claims; layouts are original - checked against article text",
+    "VERIFIED 2026-11-19: library holds list is conditional ('if your library lends books, e-books or audiobooks; what's on offer varies') - lacountylibrary.org example",
+    "NOTE 2026-11-19: entry template, layouts, five minutes and mood words are editorial suggestions; no factual, health or memory claims remain"
   ],
   "related": [
     "how-to-start-a-book-club",

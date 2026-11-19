@@ -6,7 +6,7 @@
   "category": "after-hours",
   "status": "published",
   "publishedAt": "2026-11-19",
-  "verifiedAt": "2026-11-18",
+  "verifiedAt": "2026-11-19",
   "hero": "cozyCorner",
   "searchIntent": "cozy hobbies after work / low energy hobbies / relaxing hobbies when tired in the evening",
   "angle": "Cozy hobbies sorted by how little they ask of you (hands only, eyes only, barely moving), with a stop-whenever rule built in",
@@ -26,14 +26,34 @@
     "book-lights",
     "embroidery-kits"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "title": "Los Angeles County Library: eBooks and audiobooks",
+      "url": "https://lacountylibrary.org/ebooks-audiobooks",
+      "note": "Read 2026-11-19. One example: cardholders can borrow e-books and audiobooks for free; loan periods and limits are set by each library, so the article says what is on offer varies"
+    },
+    {
+      "title": "UW-Madison Extension Horticulture: houseplant care",
+      "url": "https://hort.extension.wisc.edu/articles/houseplant-care/",
+      "note": "Read 2026-11-19. Check soil moisture with a finger about an inch down; rinsing removes dust; roots at the surface or out of drainage holes signal repotting"
+    },
+    {
+      "title": "NHS: tiredness and fatigue",
+      "url": "https://www.nhs.uk/symptoms/tiredness-and-fatigue/",
+      "note": "Read 2026-11-19. See a GP if tired for a few weeks with no clear reason, if it affects daily life, or with other symptoms"
+    }
+  ],
   "coworkChecks": [
     "RESOLVED 2026-11-19: all 'typically under $25', 'free to $15', 'free-$10' cost labels - replaced with 'Varies'; verification found no source for prices",
     "RESOLVED 2026-11-19: 'free with a library card' / library app - reworded to 'Often free from a library'; no library or app named",
     "RESOLVED 2026-11-19: air-dry clay drying 'overnight' - removed the time claim (the clay guide's checked figure is about 2-3 days, see label)",
     "RESOLVED 2026-11-19: knitting/crochet 'good for a rewatch', pothos/plant care, stretch item - editorial and hedged; stretch keeps 'stop if anything hurts'; no health or stress-relief claim (one wellbeing-sounding phrase softened to 'can feel settling')",
     "RESOLVED 2026-11-19: persistent-tiredness note - stays a gentle suggestion to mention it to a doctor, no diagnosis",
-    "NOTE 2026-11-19: verification-file items on nap length and gardening-as-moderate-activity do not apply; neither claim appears in this article"
+    "NOTE 2026-11-19: verification-file items on nap length and gardening-as-moderate-activity do not apply; neither claim appears in this article",
+    "VERIFIED 2026-11-19: plant care (finger test for soil, rinsing or dusting leaves, repotting when roots show at the surface or drainage holes) - hort.extension.wisc.edu; 'wipe the leaves' reworded to 'dust or rinse'",
+    "VERIFIED 2026-11-19: tiredness note now matches NHS wording (a few weeks, unsure why, affects daily life) - nhs.uk; no diagnosis made",
+    "VERIFIED 2026-11-19: audiobook lending is hedged ('what's on offer varies') - lacountylibrary.org example",
+    "NOTE 2026-11-19: 'stop if anything hurts', two-minute setup, ten-minute result and 'tends to survive' are editorial suggestions, not factual claims; no source needed"
   ],
   "related": [
     "things-to-do-after-work-instead-of-scrolling",
@@ -120,7 +140,7 @@
       "type": "item",
       "n": 7,
       "title": "Plant care, slowly",
-      "note": "Wipe the leaves, check the soil with a finger, repot the one that's outgrown its home. Plants work on a slow clock, which is rather the point.",
+      "note": "Dust or rinse the leaves, check the soil with a finger and repot the one whose roots are poking out of the pot. Plants work on a slow clock, which is rather the point.",
       "time": "10-20 min"
     },
     {
@@ -192,7 +212,7 @@
     },
     {
       "type": "p",
-      "text": "If you're tired all the time, not only after work, it's worth mentioning to a doctor. Hobbies are lovely, but they aren't a substitute for rest or care."
+      "text": "If you've been tired for a few weeks and aren't sure why, or it's getting in the way of daily life, it's worth mentioning to a doctor. Hobbies are lovely, but they aren't a substitute for rest or care."
     },
     {
       "type": "shopHobby",

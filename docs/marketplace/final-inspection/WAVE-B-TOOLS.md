@@ -1,0 +1,31 @@
+# Wave B: planner, tools, saved plans, reading, pins
+
+Status of the nine blind-review defects. Regression tests: `src/test/wave-b-tools.test.tsx`.
+
+## Fixed
+
+1. **Group plans returned solo or two-person ideas.** The "Two-person book club" was tagged `group`. It is now `friend` and `partner` only, and "Take yourself on a bookstore date" became "Go on a bookstore date" so it reads right for a friend or partner. Test: every stop of every plan across the full scenario matrix (all when, length, who, vibe, energy, three budgets) suits the chosen company, and no idea tagged `group` carries solo or two-person wording.
+2. **17.5 hour weekend.** The 17h 30m was the two days added together (each near 9 hours, one up to 11). Each day is now capped by its chosen length (full day 9h, half day 5h30, few hours 3h30) while stops are chosen, so stops are dropped rather than stretched; swaps respect the same cap. A two-day header now reads "Saturday: 8h 45m, Sunday: 8h · Free", never one marathon total. Test: no day runs past its cap or outside 7 AM to 10 PM across the matrix.
+3. **"Order a kit ahead" in a "nothing to book" plan.** Reworded every ahead-of-time start line (bracelets, slow breakfast, picnic, thermos walk, cook together). Book-ahead ideas (volunteer shift, pottery studio) remain whole-weekend only, and the "why" line now says so when one is present. The Tonight tool also drops any idea whose wording needs an ahead-of-time step. The planner hero copy no longer promises "nothing to book" for weekend plans. Test: no non-advance idea has ahead wording; non-weekend plans never hold an advance idea.
+4. **Free plans silently assumed gear.** Added `gear` to the idea data (paddle, rackets and balls, bike and helmet, frisbee or ball). The stop card says "Borrow or own: ... Not included in the cost." and the copied plan text says "borrow or own".
+5. **Silent default vibe.** Plans show a "Based on:" chip row (when, length, vibe, who, budget, plus setting, energy, at home when set). Choices the person never picked are tagged "(default)". The form says "Starting choice, not yours yet" under vibe, who and budget until touched. Survives the no-script form submit and an address reload through a `def` parameter.
+6. **Budget tool wording.** One sentence explains Keep it lean (about 20 to 30 percent below the typical range), Balanced, and Treat myself (about 30 to 40 percent above). "Optional extras (include in my total)" became "Optional extras" with "Not needed for a first session. Tick any you want and they are added to your total; unticked extras are left out." The result line now says "optional extras not added".
+7. **Saved plan cards.** Each saved item shows the date saved; plans also show length and the cost range (for example "8h 30m · about $8 (range $4 to $12) (rough estimate)"), computed from the exact stored itinerary.
+8. **Hidden content in reading mode.** Removed the phone-only auto-collapse. Every section is open on every viewport. Native `details` stays as an optional collapse; the sticky mini-TOC, "Skip to shopping" and hash-link opening are unchanged. Checked in Playwright at 320, 390 and 1280: all sections open, no horizontal overflow.
+9. **Pin audit.** Findings and fixes:
+   - Hobby pages borrowed the pin of any article that merely listed the hobby, so for example pottery-painting and craft-nights showed the "16-creative-weekend" pin and flower-arranging showed the "active hobbies" pin. A hobby page now borrows a pin only from a guide whose first hobby is that hobby and that covers four or fewer hobbies (not a roundup); otherwise it uses its own hero.
+   - Pin set 22 pointed at `/journal/how-to-plan-a-perfect-solo-saturday`, which is not a published route (the published article is `how-to-plan-a-solo-saturday`). Retargeted in `src/data/pins.ts`, `design/pins/manifest.json`, `design/pins/pins.mjs` and `docs/pinterest-pins.csv`.
+   - Pins marked `hold-until-published` whose pages are now live (affordable hobbies, air-dry clay, watercolor, embroidery, crochet, solo Saturday, budget tool, tonight tool) were flipped to published in the manifest, generator source and CSV. Note: re-running `scripts/build-pins.mjs` will now re-sequence the 90-day dates, so only regenerate on purpose.
+   - Tests: every pin destination is a published article, a real shop collection, or a real tool page; a pin number belongs to exactly one page; CSV and manifest destinations match; hobby pages never borrow a pin from a roundup or unrelated article.
+
+Honest "no suitable plan" states still work: an impossible set of choices returns "Nothing found" with a reason and one-tap relax buttons (tested).
+
+## Partly done
+
+- Two published articles have no pin (`how-to-host-a-paint-night-at-home`, `how-to-start-a-reading-journal`). They fall back to their own hero image, which is correct, but no Pinterest pin exists for them. Needs design work, not code.
+- Pin image text for set 22 was written for the old working title; the destination now matches the published article, but the "verify before posting" step (copy matches the live page) still applies.
+
+## Not done
+
+- Gear is not exclusion-filtered from free plans (the allowed alternative was chosen: state "borrow or own"). Ideas needing gear still appear in free plans.
+- Pre-existing, outside this scope: `tsc` previously reported importer test errors; they cleared during the session through other agents' work.

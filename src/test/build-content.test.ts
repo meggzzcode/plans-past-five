@@ -105,12 +105,6 @@ describe("content validator", () => {
       });
       expect(problems(root)).toEqual([]);
     });
-    it("keeps the source exemption list to the two known articles", () => {
-      expect([...lib.SOURCELESS_ALLOWED].sort()).toEqual([
-        "how-to-start-a-reading-journal",
-        "low-energy-hobbies",
-      ]);
-    });
   });
   it("rejects a bad status", () => {
     edit(root, SLUG, (a) => {

@@ -128,11 +128,6 @@ export const BLOCK_TYPES = Object.keys(blockSchemas);
  */
 const RESOLVED_CHECK =
   /^(RESOLVED|VERIFIED|SUPPORTED|REMOVED|CORRECT AS|NOTE|DONE|CLOSED)\b[^:]*\d{4}-\d{2}-\d{2}/;
-/**
- * Two published articles predate the source rule and make no sourced claims (cost figures and
- * health claims were removed). Remove a slug here as soon as it has a source. Do not add to this list.
- */
-export const SOURCELESS_ALLOWED = new Set(["low-energy-hobbies", "how-to-start-a-reading-journal"]);
 
 export const articleSchema = z
   .object({
@@ -395,7 +390,7 @@ export function validateContent(root, opts = {}) {
         `${file}, field "publishedAt": a published article needs a date written like 2026-11-19`,
       );
     if (art.status === "published") {
-      if (!(art.sources && art.sources.length) && !SOURCELESS_ALLOWED.has(art.slug))
+      if (!(art.sources && art.sources.length))
         problems.push(
           `${file}, field "sources": a published article needs at least one source (title and https link). Add one, or set the article back to draft.`,
         );

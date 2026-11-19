@@ -197,7 +197,7 @@ describe("defect 7: saved plan cards show cost range and date", () => {
     cleanup();
   });
   it("planSearch still round-trips (sanity)", () => {
-    expect(planSearch(base({}), 0, ["a"]).ids).toBe("a");
+    expect(planSearch(base({}), 0, ["a"])["ids"]).toBe("a");
   });
 });
 
@@ -233,7 +233,7 @@ describe("defect 8: reading sections are open on every screen size", () => {
 
 describe("defect 9: every pin maps to its own published page", () => {
   const slugs = new Set(articles.map((a) => a.slug));
-  const shop = new Set(collections.map((c) => c.slug));
+  const shop = new Set<string>(collections.map((c) => c.slug));
   it("every pin destination is a published article, a shop collection or a real tool/page", () => {
     for (const dest of Object.keys(pinFiles)) {
       const j = /^\/journal\/(.+)$/.exec(dest);
