@@ -72,7 +72,7 @@ function FooterCol({ title, links }: { title: string; links: { to: string; label
           <li key={l.to}>
             <Link
               to={l.to}
-              className="inline-flex min-h-11 items-center text-sm text-cream/90 hover:text-butter hover:underline"
+              className="inline-flex min-h-11 min-w-11 items-center text-sm text-cream/90 hover:text-butter hover:underline"
             >
               {l.label}
             </Link>

@@ -388,7 +388,11 @@ export type PlanSlot = {
   alternative: Activity | null;
   /** Visible explanation when nothing fits this day. */
   missing?: string;
+  /** One-tap changes that would give this day something. Each patch is applied to the choices. */
+  relax?: PlanRelax[];
 };
+
+export type PlanRelax = { key: keyof Relax; label: string; patch: Partial<PlanInput> };
 
 export type Plan = {
   title: string;
@@ -403,7 +407,11 @@ export type Plan = {
   targetMinutes: number | null;
   /** Set when the plan covers clearly less than the chosen length, and says why in plain words. */
   lengthNote: string | null;
-  totalCost: { min: number; max: number };
+  /**
+   * Whole-plan cost. `typical` is the sum of each stop's midpoint (what most people spend); `max` is
+   * the sum of the stop maximums, which is what the budget cap is checked against.
+   */
+  totalCost: { min: number; max: number; typical: number };
   /** Spending cap for the whole itinerary, null when the budget is flexible. */
   budgetCap: number | null;
   withinBudget: boolean;
@@ -464,6 +472,61 @@ function emptyDayReason(input: PlanInput, defs: SlotDef[], cap: number | null): 
   for (const [k, label] of RELAX_TRIES)
     if (!none({ [k]: true })) return `No ${vibeWord[input.vibe]} idea fits yet. Try ${label}.`;
   return "No idea in our collection fits yet. Try changing more than one choice.";
+}
+
+/**
+ * The single-answer changes that would give an empty day at least one stop, each as a ready patch.
+ * Checked against the real assembler so a button never leads to another dead end.
+ */
+function relaxOptions(input: PlanInput, day: string): PlanRelax[] {
+  const works = (patch: Partial<PlanInput>) => {
+    const next = { ...input, ...patch };
+    const d = slotsFor(next);
+    const stops = assemble(next, d, 0);
+    return stops.some((st) => (d[st.slot]!.day ?? "") === day);
+  };
+  const out: PlanRelax[] = [];
+  const add = (key: keyof Relax, label: string, patches: Partial<PlanInput>[]) => {
+    const hit = patches.find(works);
+    if (hit) out.push({ key, label, patch: hit });
+  };
+  const cap = budgetCap(input.budget);
+  if (cap !== null) {
+    const higher = BUDGETS.slice(BUDGETS.indexOf(input.budget) + 1);
+    add(
+      "budget",
+      "Raise the budget",
+      higher.map((budget) => ({ budget })),
+    );
+    const b = out.find((r) => r.key === "budget");
+    if (b && b.patch.budget)
+      b.label =
+        b.patch.budget === "flexible"
+          ? "Make the budget flexible"
+          : `Allow ${fmtMoney(budgetCap(b.patch.budget) ?? 0)}`;
+  }
+  if ((input.setting ?? "any") !== "any")
+    add("setting", "Allow indoors or outdoors", [{ setting: "any" }]);
+  if (input.atHome) add("home", "Allow going out", [{ atHome: false }]);
+  if (input.energy && input.energy !== "any")
+    add("energy", "Allow any energy level", [{ energy: "any" }]);
+  const whos = WHOS.filter((w) => w !== input.who);
+  add(
+    "who",
+    "Change who's coming",
+    whos.map((who) => ({ who })),
+  );
+  const w = out.find((r) => r.key === "who");
+  if (w && w.patch.who) w.label = `Plan it ${whoPhrase[w.patch.who]} instead`;
+  const vibes = VIBES.filter((v) => v !== input.vibe);
+  add(
+    "vibe",
+    "Try another vibe",
+    vibes.map((vibe) => ({ vibe })),
+  );
+  const v = out.find((r) => r.key === "vibe");
+  if (v && v.patch.vibe) v.label = `Try a ${vibeWord[v.patch.vibe]} vibe`;
+  return out;
 }
 
 /** Why the plan is shorter than asked, naming the one change most likely to help. */
@@ -542,6 +605,7 @@ function buildPlan(input: PlanInput, seed: number, stops: Stop[]): Plan {
         activity: null,
         alternative: null,
         missing: emptyDayReason(input, dayDefsOnly, cap),
+        relax: relaxOptions(input, day),
       });
       continue;
     }
@@ -565,6 +629,7 @@ function buildPlan(input: PlanInput, seed: number, stops: Stop[]): Plan {
       ? shortNote(input, defs, seed, span, aim)
       : null;
   const min = stops.reduce((t, s) => t + s.a.costMin, 0);
+  const typical = stops.reduce((t, s) => t + Math.round((s.a.costMin + s.a.costMax) / 2), 0);
   return {
     title: `Your little ${vibeWord[input.vibe]} ${dayWord[normWhen(input.when)]} ${whoPhrase[input.who]}`,
     slots,
@@ -574,7 +639,7 @@ function buildPlan(input: PlanInput, seed: number, stops: Stop[]): Plan {
     spanMinutes: span,
     targetMinutes: aim,
     lengthNote,
-    totalCost: { min, max: total },
+    totalCost: { min, max: total, typical },
     budgetCap: cap,
     withinBudget: cap === null || total <= cap,
     input,
@@ -799,10 +864,18 @@ export function inviteLine(input: PlanInput): string {
   }
 }
 
+/** "Free", "about $12", or "about $12 (range $0 to $25)": one typical figure, then the honest range. */
+export const fmtTotal = (c: { min: number; max: number; typical: number }) =>
+  c.max === 0
+    ? "Free"
+    : c.min === c.max
+      ? `about $${c.max}`
+      : `about $${c.typical} (range $${c.min} to $${c.max})`;
+
 /** Short "how long and how much" line used at the top of a plan and in shared text. */
 export function planSummary(plan: Plan): string {
   const time = plan.spanMinutes > 0 ? fmtDuration(plan.spanMinutes) : "";
-  const cost = fmtRange(plan.totalCost.min, plan.totalCost.max);
+  const cost = fmtTotal(plan.totalCost);
   return [time, cost].filter(Boolean).join(" · ");
 }
 

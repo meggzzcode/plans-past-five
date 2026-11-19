@@ -196,7 +196,7 @@ function Saved() {
                           <div className="min-w-0">
                             <a
                               href={hrefFor(i)}
-                              className="break-words font-display text-xl text-ink after:absolute after:inset-0 after:content-[''] hover:text-cherry focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cherry"
+                              className="inline-flex min-h-11 items-center break-words font-display text-xl text-ink after:absolute after:inset-0 after:content-[''] hover:text-cherry focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cherry"
                             >
                               {i.title}
                             </a>

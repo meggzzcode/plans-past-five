@@ -59,7 +59,7 @@ export const kits: Kit[] = [
       "Two things make this list work: a journal with thick pages, and a glue you like. Everything else is a bonus, and scraps from your recycling bin work as well as bought paper.",
     slots: [
       s("journal", "A journal that can take glue", E),
-      s("washi-tape", "Washi tape", E, "affordable"),
+      s("washi-tape", "Washi tape", O, "affordable"),
       s("adhesive", "Glue stick or tape runner", E),
       s("scissors", "Small scissors", P),
       s("paper", "Ephemera and patterned paper", O, "nice-to-have"),
@@ -203,7 +203,7 @@ export const kits: Kit[] = [
     dek: "A blanket, something to carry and something to sit on.",
     hobby: "picnicking",
     note:
-      "A blanket with a waterproof backing covers most parks.",
+      "A blanket with a waterproof backing keeps damp grass off.",
     slots: [
       s("blanket", "A picnic blanket", E),
       s("carrier", "Bag or basket", O),

@@ -15,7 +15,7 @@ export const articleHowToStartAReadingJournal: Article = {
   angle:
     "A low-pressure reading journal: a tiny entry template, three layouts to choose from, honest advice about what to buy and what to skip, and a way to abandon the habit gracefully and restart",
   hobbies: ["reading", "book-clubs", "creative-writing"],
-  productIds: ["reading-journals", "pocket-notebooks", "book-lights", "magnetic-bookmarks"],
+  productIds: ["reading-journals", "pocket-notebooks", "book-lights"],
   sources: [],
   coworkChecks: [
     "RESOLVED 2026-11-19: starter spend ('under about $20') - removed; verification found no source for prices",

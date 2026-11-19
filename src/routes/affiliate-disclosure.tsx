@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { seo } from "@/lib/seo";
 import { site } from "@/config/site";
 import {
-  AMAZON_ASSOCIATE_STATEMENT,
+  SHOP_LINK_FACTS,
   AMAZON_PROGRAM_STATEMENT,
   affiliateRegistry,
   isEntryLive,
@@ -31,8 +31,8 @@ export const Route = createFileRoute("/affiliate-disclosure")({
           <>
             {amazonLive && (
               <p>
-                {site.name} {AMAZON_PROGRAM_STATEMENT} {AMAZON_ASSOCIATE_STATEMENT} We earn at no
-                extra cost to you.
+                {site.name} {AMAZON_PROGRAM_STATEMENT} We earn at no extra cost to you. Next to each
+                Amazon link we show Amazon's required statement.
               </p>
             )}
             {liveEntries()
@@ -43,29 +43,37 @@ export const Route = createFileRoute("/affiliate-disclosure")({
                   buy through them we may earn a commission at no extra cost to you.
                 </p>
               ))}
+            <p>{SHOP_LINK_FACTS.neutral}</p>
           </>
         ) : (
           <p>
-            Our shopping links currently open ordinary Amazon search results so you can compare
-            options yourself. {site.name} does not currently earn a commission from these links. If
-            that changes, this page and the notes beside our links will be updated before any
-            commission links go live.
+            {SHOP_LINK_FACTS.notEarning} Our shopping links are ordinary Amazon links. If that
+            changes, this page and the note beside our links will be updated before any commission
+            links go live.
           </p>
         )}
+        <h2>What the buttons do</h2>
+        <ul>
+          <li>
+            <strong>"View on Amazon"</strong> opens the Amazon page of a named product we checked.
+            That is the kind of link in our starter kits and shopping lists.
+          </li>
+          <li>
+            <strong>"Browse options on Amazon"</strong> opens an Amazon search. We use it where we
+            only describe a type of product ("what to look for").
+          </li>
+          <li>
+            We show no prices, star ratings or review counts. Amazon or the seller sets price,
+            shipping and returns.
+          </li>
+        </ul>
         <h2>How we recommend things</h2>
         <ul>
           <li>
-            We recommend product <strong>types</strong> (like "a beginner watercolor set") and
-            explain what to look for, rather than pushing one brand.
+            We name a product only after checking its listing, and we say why it made the list. We
+            have not tested products ourselves unless a page says so.
           </li>
-          <li>
-            We don't list prices, star ratings or reviews, because those change and we haven't
-            independently tested the products.
-          </li>
-          <li>
-            Buttons say exactly where they go: "Browse options on Amazon" means a search page, not a
-            specific product.
-          </li>
+          <li>Whether we earn a commission never changes which products we pick.</li>
           <li>We always mention when you don't need to buy anything at all.</li>
         </ul>
         <p>Last updated {site.legal.lastUpdated}.</p>

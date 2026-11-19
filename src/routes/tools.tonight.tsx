@@ -1,7 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
-import { RefreshCw } from "lucide-react";
-import { formatMinutes, tonightIdeas, timeOptions, type TonightInput } from "@/lib/tonight";
+import { useEffect, useState } from "react";
+import { Check, Copy, RefreshCw, Share2 } from "lucide-react";
+import {
+  formatMinutes,
+  parseTonightSearch,
+  tonightEcho,
+  tonightHref,
+  tonightIdeas,
+  tonightText,
+  timeOptions,
+  type TonightInput,
+} from "@/lib/tonight";
 import { seo } from "@/lib/seo";
 import { Kicker } from "@/components/editorial/Section";
 import { Star } from "@/components/brand/Doodles";
@@ -15,6 +24,14 @@ export const Route = createFileRoute("/tools/tonight")({
         "Tell us your time, energy, budget and company, and get three realistic ideas for tonight. Shuffle for more.",
       path: "/tools/tonight",
     }),
+  validateSearch: (s: Record<string, unknown>) => {
+    const o: Record<string, string> = {};
+    for (const k of ["t", "e", "b", "c", "w", "s"]) {
+      const v = s[k];
+      if (typeof v === "string" || typeof v === "number") o[k] = String(v);
+    }
+    return o as { t?: string; e?: string; b?: string; c?: string; w?: string; s?: string };
+  },
   component: Tonight,
 });
 
@@ -65,19 +82,59 @@ const groups: Group[] = [
 ];
 
 function Tonight() {
-  const [input, setInput] = useState<TonightInput>({
-    minutes: 60,
-    energy: "low",
-    budget: "free",
-    company: "solo",
-    setting: "either",
-  });
-  const [seed, setSeed] = useState(0);
+  const search = Route.useSearch();
+  const [init] = useState(() => parseTonightSearch(search));
+  const [input, setInput] = useState<TonightInput>(init.input);
+  const [seed, setSeed] = useState(init.seed);
+  const [copied, setCopied] = useState<"idle" | "yes" | "no">("idle");
   const result = tonightIdeas(input, seed);
+  const canShare = typeof navigator !== "undefined" && typeof navigator.share === "function";
+
+  // Keep the address bar on the exact answers so refresh and a copied link restore them.
+  const href = tonightHref(input, seed);
+  useEffect(() => {
+    try {
+      window.history.replaceState(window.history.state, "", href);
+    } catch {
+      // Some embedded browsers block history changes: the Copy button still carries the link.
+    }
+  }, [href]);
 
   const set = (k: keyof TonightInput, v: string | number) => {
     setInput((i) => ({ ...i, [k]: v }) as TonightInput);
     setSeed(0);
+  };
+  const apply = (patch: Partial<TonightInput>) => {
+    setInput((i) => ({ ...i, ...patch }));
+    setSeed(0);
+  };
+  const text = () => tonightText(input, result.suggestions, `${window.location.origin}${href}`);
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(text());
+      setCopied("yes");
+    } catch {
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = text();
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        ta.remove();
+        setCopied(ok ? "yes" : "no");
+      } catch {
+        setCopied("no");
+      }
+    }
+  };
+  const share = async () => {
+    try {
+      await navigator.share({ title: "Ideas for tonight", text: text() });
+    } catch {
+      // Cancelled or blocked: nothing to do.
+    }
   };
 
   return (
@@ -121,6 +178,7 @@ function Tonight() {
       </section>
 
       <section className="mx-auto max-w-3xl px-5 py-14 md:px-8" aria-live="polite">
+        <p className="mb-6 text-sm font-medium text-espresso">For: {tonightEcho(input)}</p>
         {result.suggestions.length > 0 ? (
           <>
             <ol className="space-y-6">
@@ -170,7 +228,13 @@ function Tonight() {
                 {result.loosen.message}
               </p>
             )}
-            <div className="mt-8">
+            {result.relax.length > 0 && (
+              <div className="mt-4">
+                <p className="text-sm text-espresso">Change one answer:</p>
+                <RelaxButtons relax={result.relax} onApply={apply} />
+              </div>
+            )}
+            <div className="mt-8 flex flex-wrap gap-2">
               <button
                 type="button"
                 onClick={() => setSeed((x) => x + 1)}
@@ -180,15 +244,44 @@ function Tonight() {
                 <RefreshCw className="h-4 w-4" />
                 Shuffle ideas
               </button>
+              <button
+                type="button"
+                onClick={copy}
+                className="inline-flex min-h-11 items-center gap-2 border-2 border-ink/25 px-4 py-2 text-sm font-semibold text-ink hover:border-cherry"
+              >
+                {copied === "yes" ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                {copied === "yes" ? "Copied" : "Copy as text"}
+              </button>
+              {canShare && (
+                <button
+                  type="button"
+                  onClick={share}
+                  className="inline-flex min-h-11 items-center gap-2 border-2 border-ink/25 px-4 py-2 text-sm font-semibold text-ink hover:border-cherry"
+                >
+                  <Share2 className="h-4 w-4" />
+                  Share
+                </button>
+              )}
             </div>
+            <p
+              role="status"
+              aria-live="polite"
+              className="mt-3 min-h-5 text-sm font-medium text-garden"
+            >
+              {copied === "yes" && "Copied with a link to these ideas."}
+              {copied === "no" && "Couldn't copy. Your browser blocked it."}
+            </p>
           </>
         ) : (
           <div className="border-2 border-dashed border-cherry bg-cream p-8 text-center">
             <Star className="mx-auto h-6 w-6 text-cherry" />
             <p className="mt-3 font-display text-2xl">Nothing fits all of that.</p>
             <p className="mt-2 text-espresso">
-              {result.loosen?.message ?? "Try loosening one of the answers above."}
+              {result.relax.length > 0
+                ? "Nothing fits those answers together. Change one and we'll show what opens up:"
+                : "Nothing fits those answers together, even loosening one. Try changing two."}
             </p>
+            <RelaxButtons relax={result.relax} onApply={apply} center />
           </div>
         )}
         <p className="mt-8 text-xs text-muted-foreground">
@@ -197,5 +290,32 @@ function Tonight() {
         </p>
       </section>
     </>
+  );
+}
+
+function RelaxButtons({
+  relax,
+  onApply,
+  center,
+}: {
+  relax: ReturnType<typeof tonightIdeas>["relax"];
+  onApply: (patch: Partial<TonightInput>) => void;
+  center?: boolean;
+}) {
+  if (relax.length === 0) return null;
+  return (
+    <ul className={cn("mt-3 flex flex-wrap gap-2", center && "justify-center")}>
+      {relax.map((r) => (
+        <li key={r.constraint}>
+          <button
+            type="button"
+            onClick={() => onApply(r.patch)}
+            className="min-h-11 border-2 border-cherry px-4 py-2 text-left text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream"
+          >
+            {r.label} ({r.matched} {r.matched === 1 ? "idea" : "ideas"})
+          </button>
+        </li>
+      ))}
+    </ul>
   );
 }

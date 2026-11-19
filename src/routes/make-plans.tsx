@@ -290,6 +290,7 @@ function Planner() {
               const mine = plan.slots[index]?.activity;
               if (alt && mine) setRestored(plan.ids.map((id) => (id === mine.id ? alt.id : id)));
             }}
+            onRelax={(patch) => change(patch)}
             onToggleSave={() =>
               toggle({
                 key: `plan:${planUrl}`,

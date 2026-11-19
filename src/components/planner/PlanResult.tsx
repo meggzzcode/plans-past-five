@@ -19,6 +19,7 @@ import {
   planSummary,
   planText,
   type Plan,
+  type PlanInput,
   type PlanSlot,
 } from "@/lib/planner";
 import { cn } from "@/lib/utils";
@@ -121,10 +122,12 @@ type Props = {
   onShuffle: () => void;
   onToggleSave: () => void;
   onSwap: (index: number) => void;
+  /** Apply a one-tap change to the choices (used by the "nothing found" buttons). */
+  onRelax: (patch: Partial<PlanInput>) => void;
 };
 
 /** The generated plan as a visual timeline: one card per stop, a one-line summary, and the actions. */
-export function PlanResult({ plan, saved, onShuffle, onToggleSave, onSwap }: Props) {
+export function PlanResult({ plan, saved, onShuffle, onToggleSave, onSwap, onRelax }: Props) {
   const [copied, setCopied] = useState<"idle" | "yes" | "no">("idle");
   const imgs = pickImages(plan.slots.map((s) => s.activity));
   const canShare = typeof navigator !== "undefined" && typeof navigator.share === "function";
@@ -217,6 +220,24 @@ export function PlanResult({ plan, saved, onShuffle, onToggleSave, onSwap }: Pro
                     Nothing found{s.day ? ` for ${s.day}` : ""}
                   </p>
                   <p className="mt-1 text-sm text-espresso">{s.missing}</p>
+                  {s.relax && s.relax.length > 0 && (
+                    <ul className="mt-3 flex flex-wrap gap-2" aria-label="Change one thing">
+                      {s.relax.map((r) => (
+                        <li key={r.key}>
+                          <button
+                            type="button"
+                            onClick={() => onRelax(r.patch)}
+                            className={cn(
+                              "min-h-11 border-2 border-cherry px-4 py-2 text-left text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream",
+                              focusRing,
+                            )}
+                          >
+                            {r.label}
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               )}
             </li>

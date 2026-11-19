@@ -87,7 +87,7 @@ describe("trust pages", () => {
   it("methodology no longer says brands are never shown", () => {
     const s = read("src/routes/methodology.tsx");
     expect(s).not.toMatch(/prices, star ratings, brands/);
-    expect(s).toMatch(/checked against their Amazon\s+listing/);
+    expect(s).toMatch(/checked it against (their|its) Amazon\s+listing/);
   });
   it("corrections has an honest no-inbox statement", () => {
     const s = read("src/routes/corrections.tsx");

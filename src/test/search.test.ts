@@ -55,10 +55,14 @@ describe("search understands human phrases", () => {
     expect(titles).not.toContain("Tennis");
   });
 
-  it("'weekend' returns hobbies and a weekend article ranked by title first", () => {
+  // Updated deliberately: hobbies now always rank above guides, so the first hit is a hobby and the
+  // weekend article follows the hobbies.
+  it("'weekend' returns hobbies first, then a weekend article", () => {
     const hits = search("weekend");
-    expect(hits.length).toBeGreaterThan(0);
-    expect(hits[0]!.title.toLowerCase()).toContain("weekend");
+    expect(hits[0]!.kind).toBe("Hobby");
+    const firstJournal = hits.findIndex((h) => h.kind === "Journal");
+    expect(firstJournal).toBeGreaterThan(0);
+    expect(hits.slice(0, firstJournal).every((h) => h.kind === "Hobby")).toBe(true);
   });
 
   it("'kids' honestly returns nothing and gives an empty state", () => {

@@ -117,7 +117,7 @@ export function Transfer() {
         </label>
       </div>
       <div className="mt-5 max-w-2xl">
-        <label htmlFor="import-code" className="text-sm font-semibold">
+        <label htmlFor="import-code" className="flex min-h-11 items-center text-sm font-semibold">
           Or paste a backup code
         </label>
         <textarea

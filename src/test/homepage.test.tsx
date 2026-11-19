@@ -27,6 +27,17 @@ describe("navigation list", () => {
   });
 });
 
+describe("names are consistent", () => {
+  it("uses one name per primary journey in the nav", () => {
+    const byTo = Object.fromEntries(mobileNavItems.map((n) => [n.to, n.label]));
+    expect(byTo["/hobby-finder"]).toBe("Find Your Thing");
+    expect(byTo["/make-plans"]).toBe("Make Some Plans");
+    expect(byTo["/shop"]).toBe("Shop Your Hobby");
+    expect(byTo["/saved"]).toBe("My Plans");
+    expect(byTo["/tools/tonight"]).toBe("What Should I Do Tonight?");
+  });
+});
+
 describe("quiz question count", () => {
   it("matches the longest path through the quiz flow (it is adaptive, so most people see fewer)", () => {
     expect(QUIZ_ORDER.length).toBe(QUIZ_QUESTION_COUNT);

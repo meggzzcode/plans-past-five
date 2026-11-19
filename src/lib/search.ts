@@ -306,7 +306,7 @@ const KIND_ORDER = ["Hobby", "Journal", "Section", "Off Duty Essentials", "Shop 
 
 type Entry = SearchHit & { hay: string; hobby?: Hobby };
 
-export function searchDetailed(q: string, limit = 30): SearchOutcome {
+export function searchDetailed(q: string, limit = 60): SearchOutcome {
   let rest = normalize(q);
   const none = (): SearchOutcome => ({
     hits: [],
@@ -376,4 +376,4 @@ export function searchDetailed(q: string, limit = 30): SearchOutcome {
   };
 }
 
-export const search = (q: string, limit = 30): SearchHit[] => searchDetailed(q, limit).hits;
+export const search = (q: string, limit = 60): SearchHit[] => searchDetailed(q, limit).hits;

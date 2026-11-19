@@ -823,7 +823,8 @@ const seeds: Seed[] = [
     firstActivity: "Pack bread, fruit and cheese and claim a patch of grass on the next dry day.",
     image: "picnic",
     productIds: ["picnic-blankets", "market-totes"],
-  },  {
+  },
+  {
     name: "Running",
     category: "active",
     settings: ["outdoors"],
@@ -837,7 +838,10 @@ const seeds: Seed[] = [
       "Run-walk intervals around your own neighbourhood or a park, building up slowly. The goal is to finish feeling good, not to be fast.",
     whyYoullLoveIt:
       "It needs no booking and no partner, and twenty minutes of moving is often enough to clear a work-brain.",
-    supplies: ["Comfortable trainers you already own, or a first pair of running shoes", "Clothes you can move in"],
+    supplies: [
+      "Comfortable trainers you already own, or a first pair of running shoes",
+      "Clothes you can move in",
+    ],
     optional: ["A running buddy", "A free interval-timer app"],
     firstActivity:
       "Walk for five minutes, then alternate one minute of easy jogging with two minutes of walking for twenty minutes.",
@@ -1649,7 +1653,11 @@ const enrichment: Record<string, Enrichment> = {
     ],
     "A 20-minute run-walk loop around your neighbourhood, done three times in one week.",
     ["hiking", "yoga-for-beginners", "pickleball"],
-    ["A free beginner run-walk plan", "A friend to run at your pace", "A local community running group"],
+    [
+      "A free beginner run-walk plan",
+      "A friend to run at your pace",
+      "A local community running group",
+    ],
     [G_35, G_AFTER],
   ),
   climbing: e(

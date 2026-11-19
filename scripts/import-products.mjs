@@ -50,6 +50,14 @@ export const COLUMNS = [
   "audience",
   "whySelected",
   "limitations",
+  "shortName",
+  "benefit",
+  "compare",
+  "lead",
+  "onlyOne",
+  "hold",
+  "imageUrl",
+  "imageCredit",
   "imageSource",
   "imageRights",
   "researchSources",
@@ -70,6 +78,14 @@ const OPTIONAL = new Set([
   "availability",
   "affiliateStatus",
   "status",
+  "shortName",
+  "benefit",
+  "compare",
+  "lead",
+  "onlyOne",
+  "hold",
+  "imageUrl",
+  "imageCredit",
 ]);
 const OPTIONAL_STRINGS = [
   "manufacturerUrl",
@@ -77,7 +93,14 @@ const OPTIONAL_STRINGS = [
   "imageSource",
   "imageRights",
   "affiliateNetwork",
+  "shortName",
+  "benefit",
+  "compare",
+  "hold",
+  "imageUrl",
+  "imageCredit",
 ];
+const OPTIONAL_BOOLEANS = ["lead", "onlyOne"];
 
 /** Id prefixes that mark invented rows. They are refused here so a fixture can never ship by accident. */
 export const RESERVED_ID_PREFIXES = ["example-", "fixture-", "test-", "demo-", "sample-"];
@@ -257,6 +280,14 @@ export function rowToProduct(header, cells, issues = []) {
     status: g.status || "candidate",
   };
   for (const k of OPTIONAL_STRINGS) if (opt(g[k])) p[k] = opt(g[k]);
+  for (const k of OPTIONAL_BOOLEANS) {
+    const v = (g[k] ?? "").toLowerCase();
+    if (v === "true") p[k] = true;
+    else if (v === "false") p[k] = false;
+    else if (v !== "") {
+      issues.push(`${k} "${g[k]}" must be TRUE, FALSE or empty`);
+    }
+  }
   return p;
 }
 

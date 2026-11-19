@@ -17,7 +17,12 @@ import {
   type PlanInput,
   type When,
 } from "@/lib/planner";
-import { needsOthersWording, notTonightWording, tonightIdeas, type TonightInput } from "@/lib/tonight";
+import {
+  needsOthersWording,
+  notTonightWording,
+  tonightIdeas,
+  type TonightInput,
+} from "@/lib/tonight";
 import { search, searchDetailed } from "@/lib/search";
 import { equipmentByHobby } from "@/data/equipment";
 import { startupRange } from "@/data/equipment";
@@ -82,7 +87,8 @@ describe("quiz scenario matrix", () => {
         problems.push(`no blocker named ${tag}`);
       if (r.strength !== (r.tooFew ? "weak" : "strong")) problems.push(`strength ${tag}`);
       for (const { hobby: h } of r.results) {
-        if (a.company === "solo" && !h.company.includes("solo")) problems.push(`solo ${h.slug} ${tag}`);
+        if (a.company === "solo" && !h.company.includes("solo"))
+          problems.push(`solo ${h.slug} ${tag}`);
         if (a.company === "social" && !h.company.includes("social"))
           problems.push(`social ${h.slug} ${tag}`);
         if (a.budget === "free" && h.cost !== "free") problems.push(`free ${h.slug} ${tag}`);
@@ -90,7 +96,8 @@ describe("quiz scenario matrix", () => {
           problems.push(`budget ${h.slug} ${tag}`);
         if (a.where === "outdoors" && !h.settings.includes("outdoors"))
           problems.push(`outdoors ${h.slug} ${tag}`);
-        if (a.where === "home" && !h.settings.includes("home")) problems.push(`home ${h.slug} ${tag}`);
+        if (a.where === "home" && !h.settings.includes("home"))
+          problems.push(`home ${h.slug} ${tag}`);
         if (a.where === "out" && !h.settings.includes("out")) problems.push(`out ${h.slug} ${tag}`);
         if (a.where === "indoors" && h.settings.every((s) => s === "outdoors"))
           problems.push(`indoors ${h.slug} ${tag}`);
@@ -99,7 +106,9 @@ describe("quiz scenario matrix", () => {
         // a "fumes" answer never gets a high-energy hobby; a "challenge" answer never a pure low one
         if (a.energy === "low" && h.energy === "high") problems.push(`fumes-high ${h.slug} ${tag}`);
         // the reasons shown must not claim something false
-        const why = findHobbies(a).results.find((x) => x.hobby === h)!.why.join(" | ");
+        const why = findHobbies(a)
+          .results.find((x) => x.hobby === h)!
+          .why.join(" | ");
         if (/gets you outside/.test(why) && !h.settings.includes("outdoors"))
           problems.push(`why-outside ${h.slug} ${tag}`);
         if (/works at home/.test(why) && !h.settings.includes("home"))
@@ -198,7 +207,8 @@ const lengthsFor = (w: When) =>
     ? LENGTHS.filter((l) => l !== "evening")
     : LENGTHS.filter((l) => l === "evening" || l === "few-hours");
 
-const OTHER_DAY = /\b(mon|tues|wednes|thurs|fri|satur|sun)day\b|\bweekends?\b|\btomorrow\b|\bnext week\b/i;
+const OTHER_DAY =
+  /\b(mon|tues|wednes|thurs|fri|satur|sun)day\b|\bweekends?\b|\btomorrow\b|\bnext week\b/i;
 const clock = (m: number) => `${Math.floor(m / 60)}:${String(m % 60).padStart(2, "0")}`;
 
 const DAYPART_RULES: { re: RegExp; ok: (start: number) => boolean; why: string }[] = [
@@ -207,10 +217,22 @@ const DAYPART_RULES: { re: RegExp; ok: (start: number) => boolean; why: string }
   { re: /\bbreakfast\b/i, ok: (s) => s <= 11 * 60 + 30, why: "breakfast after 11:30" },
   { re: /\bbrunch\b/i, ok: (s) => s >= 9 * 60 && s <= 13 * 60, why: "brunch outside 9-13" },
   { re: /\bdinner\b/i, ok: (s) => s >= 17 * 60, why: "dinner before 5pm" },
-  { re: /stargaz|\bstars\b|after dark|moonlit|late[- ]night/i, ok: (s) => s >= 17 * 60 + 30, why: "night idea before 5:30" },
+  {
+    re: /stargaz|\bstars\b|after dark|moonlit|late[- ]night/i,
+    ok: (s) => s >= 17 * 60 + 30,
+    why: "night idea before 5:30",
+  },
   { re: /\bmorning\b/i, ok: (s) => s < 12 * 60, why: "'morning' idea after noon" },
-  { re: /\bafternoon\b/i, ok: (s) => s >= 12 * 60 && s < 18 * 60, why: "'afternoon' idea outside noon-6" },
-  { re: /\b(tonight|evening|nightcap|after dinner)\b/i, ok: (s) => s >= 16 * 60 + 30, why: "'evening' idea before 4:30" },
+  {
+    re: /\bafternoon\b/i,
+    ok: (s) => s >= 12 * 60 && s < 18 * 60,
+    why: "'afternoon' idea outside noon-6",
+  },
+  {
+    re: /\b(tonight|evening|nightcap|after dinner)\b/i,
+    ok: (s) => s >= 16 * 60 + 30,
+    why: "'evening' idea before 4:30",
+  },
 ];
 
 function* planInputs(): Generator<PlanInput> {
@@ -249,7 +271,8 @@ function checkPlan(input: PlanInput, problems: string[]) {
   const cap = budgetCap(input.budget);
   const acts = plan.slots.flatMap((s) => (s.activity ? [{ s, a: s.activity }] : []));
   // no empty / contradictory result
-  if (plan.filled === 0 && !plan.slots.every((s) => s.missing)) problems.push(`silent-empty ${tag}`);
+  if (plan.filled === 0 && !plan.slots.every((s) => s.missing))
+    problems.push(`silent-empty ${tag}`);
   for (const sl of plan.slots) if (!sl.activity && !sl.missing) problems.push(`no-reason ${tag}`);
   if (plan.filled !== acts.length) problems.push(`filled-count ${tag}`);
   // company
@@ -261,7 +284,11 @@ function checkPlan(input: PlanInput, problems: string[]) {
   const sumMax = acts.reduce((t, x) => t + x.a.costMax, 0);
   const sumMin = acts.reduce((t, x) => t + x.a.costMin, 0);
   if (plan.totalCost.max !== sumMax || plan.totalCost.min !== sumMin) problems.push(`total ${tag}`);
-  if (cap !== null && plan.totalCost.max > cap) problems.push(`cap ${plan.totalCost.max}>${cap} ${tag}`);
+  if (plan.totalCost.typical < plan.totalCost.min || plan.totalCost.typical > plan.totalCost.max)
+    problems.push(`typical-out-of-range ${tag}`);
+  if (cap !== null && plan.totalCost.typical > cap) problems.push(`typical>cap ${tag}`);
+  if (cap !== null && plan.totalCost.max > cap)
+    problems.push(`cap ${plan.totalCost.max}>${cap} ${tag}`);
   if (plan.withinBudget !== (cap === null || sumMax <= cap)) problems.push(`withinBudget ${tag}`);
   if (input.budget === "free")
     for (const { a } of acts)
@@ -295,7 +322,8 @@ function checkPlan(input: PlanInput, problems: string[]) {
     if (s.start < lo || s.end > hi) problems.push(`outside-slot ${a.id}@${clock(s.start)} ${tag}`);
     const words = `${a.name} ${a.text}`;
     for (const r of DAYPART_RULES)
-      if (r.re.test(words) && !r.ok(s.start)) problems.push(`${r.why}: ${a.id}@${clock(s.start)} ${tag}`);
+      if (r.re.test(words) && !r.ok(s.start))
+        problems.push(`${r.why}: ${a.id}@${clock(s.start)} ${tag}`);
     const w = input.when === "after-work" ? "weeknight" : input.when;
     if ((w === "weeknight" || w === "evening") && OTHER_DAY.test(a.name))
       problems.push(`other-day-wording ${a.id} ${tag}`);
@@ -309,10 +337,12 @@ function checkPlan(input: PlanInput, problems: string[]) {
   // length matches the window: covers >=75% of the chosen length, or says why it does not
   if (plan.targetMinutes !== null && plan.filled > 0) {
     const ok = plan.spanMinutes >= plan.targetMinutes * 0.75;
-    if (!ok && !plan.lengthNote) problems.push(`length-silent ${plan.spanMinutes}/${plan.targetMinutes} ${tag}`);
+    if (!ok && !plan.lengthNote)
+      problems.push(`length-silent ${plan.spanMinutes}/${plan.targetMinutes} ${tag}`);
     if (ok && plan.lengthNote) problems.push(`length-note-needless ${tag}`);
     // never longer than the chosen window
-    if (plan.spanMinutes > plan.targetMinutes * 1.6) problems.push(`too-long ${plan.spanMinutes} ${tag}`);
+    if (plan.spanMinutes > plan.targetMinutes * 1.6)
+      problems.push(`too-long ${plan.spanMinutes} ${tag}`);
   }
   if (input.length === "evening" && plan.slots.filter((s) => s.activity).length > 1)
     problems.push(`one-stop-has-many ${tag}`);
@@ -322,7 +352,8 @@ function checkPlan(input: PlanInput, problems: string[]) {
     if (!again || again.ids.join() !== plan.ids.join()) problems.push(`restore ${tag}`);
   }
   // titles
-  if (!plan.title.includes(input.who === "alone" ? "for one" : "with")) problems.push(`title-who ${tag}`);
+  if (!plan.title.includes(input.who === "alone" ? "for one" : "with"))
+    problems.push(`title-who ${tag}`);
   return plan;
 }
 
@@ -381,7 +412,8 @@ describe("planner scenario matrix", () => {
       if (a.cost === "free") expect(a.costMax, a.id).toBe(0);
       if (a.cost === "under25") expect(a.costMax, a.id).toBeLessThanOrEqual(25);
       if (a.cost === "under50") expect(a.costMax, a.id).toBeLessThanOrEqual(50);
-      if (a.vibes.includes("outdoorsy")) expect(a.setting, `${a.id} outdoorsy but indoor`).not.toBe("indoor");
+      if (a.vibes.includes("outdoorsy"))
+        expect(a.setting, `${a.id} outdoorsy but indoor`).not.toBe("indoor");
     }
     bump("activities in planner pool", activities.length);
   });
@@ -408,18 +440,13 @@ describe("tonight scenario matrix", () => {
               if (base.suggestions.length < 3) thin++;
               if (base.suggestions.length === 0 && !base.loosen && base.matched === 0)
                 problems.push(`empty-no-hint ${tag}`);
-              if (base.loosen) {
-                // the suggested loosening must really open something up
-                const key = base.loosen.constraint;
-                const val: Record<string, unknown> = {
-                  time: 180,
-                  energy: "high",
-                  budget: "flexible",
-                  company: input.company === "solo" ? "social" : "solo",
-                  setting: "either",
-                };
-                const after = tonightIdeas({ ...input, [key]: val[key] } as TonightInput, 0);
-                if (after.matched <= base.matched) problems.push(`loosen-useless ${tag}`);
+              if (base.matched < 3 && base.relax.length === 0 && base.matched === 0)
+                problems.push(`dead-end ${tag}`);
+              for (const r of base.relax) {
+                // every offered button must really open up more ideas, and say so truthfully
+                const after = tonightIdeas({ ...input, ...r.patch }, 0);
+                if (after.matched !== r.matched || after.matched <= base.matched)
+                  problems.push(`relax-useless ${r.label} ${tag}`);
               }
               for (const seed of [0, 1, 2]) {
                 const r = tonightIdeas(input, seed);
@@ -428,25 +455,39 @@ describe("tonight scenario matrix", () => {
                 for (const s of r.suggestions) {
                   const text = `${s.title} ${s.firstStep}`;
                   if (notTonightWording.test(text)) problems.push(`not-tonight ${s.id} ${tag}`);
-                  if (/\bgolden[- ]hour\b|\bsunrise\b|\bbreakfast\b|\bbrunch\b|\bfarmers market\b/i.test(text))
+                  if (
+                    /\bgolden[- ]hour\b|\bsunrise\b|\bbreakfast\b|\bbrunch\b|\bfarmers market\b/i.test(
+                      text,
+                    )
+                  )
                     problems.push(`daytime ${s.id} ${tag}`);
                   if (s.minutes > minutes) problems.push(`time ${s.id} ${tag}`);
                   if (company === "solo" && needsOthersWording.test(text))
                     problems.push(`solo-needs-others ${s.id} ${tag}`);
-                  if (budget === "free" && !/^Free/.test(s.costLabel)) problems.push(`free ${s.id} ${tag}`);
+                  if (budget === "free" && !/^Free/.test(s.costLabel))
+                    problems.push(`free ${s.id} ${tag}`);
                   const h = s.hobbySlug ? hobbies.find((x) => x.slug === s.hobbySlug) : undefined;
                   if (s.id.startsWith("hobby:") && h) {
-                    if (company === "solo" && !h.company.includes("solo")) problems.push(`solo ${s.id}`);
-                    if (company === "social" && !h.company.includes("social")) problems.push(`social ${s.id}`);
-                    if (setting === "outdoor" && !h.settings.includes("outdoors")) problems.push(`out ${s.id} ${tag}`);
+                    if (company === "solo" && !h.company.includes("solo"))
+                      problems.push(`solo ${s.id}`);
+                    if (company === "social" && !h.company.includes("social"))
+                      problems.push(`social ${s.id}`);
+                    if (setting === "outdoor" && !h.settings.includes("outdoors"))
+                      problems.push(`out ${s.id} ${tag}`);
                     if (setting === "indoor" && h.settings.every((x) => x === "outdoors"))
                       problems.push(`in ${s.id} ${tag}`);
                     if (rankE[h.energy] > rankE[energy]) problems.push(`energy ${s.id} ${tag}`);
-                    if (setting === "indoor" && h.settings.includes("outdoors") && !h.settings.includes("home") && !h.settings.includes("out"))
+                    if (
+                      setting === "indoor" &&
+                      h.settings.includes("outdoors") &&
+                      !h.settings.includes("home") &&
+                      !h.settings.includes("out")
+                    )
                       problems.push(`in2 ${s.id}`);
                   }
                   // a "whole evening" hobby must not be a 3h daylight trek
-                  if (minutes >= 120 && /\b(trail|hike|summit)\b/i.test(text)) problems.push(`trek ${s.id} ${tag}`);
+                  if (minutes >= 120 && /\b(trail|hike|summit)\b/i.test(text))
+                    problems.push(`trek ${s.id} ${tag}`);
                 }
               }
             }
@@ -494,7 +535,15 @@ describe("search scenario matrix", () => {
   });
 
   it("named hobbies are findable, including the ones people actually type", () => {
-    for (const q of ["yoga", "dance", "running", "cooking class", "board games", "language learning", "climbing"]) {
+    for (const q of [
+      "yoga",
+      "dance",
+      "running",
+      "cooking class",
+      "board games",
+      "language learning",
+      "climbing",
+    ]) {
       const hits = search(q).filter((h) => h.kind === "Hobby");
       expect(hits.length, q).toBeGreaterThan(0);
       bump("search findability scenarios", 1);

@@ -38,3 +38,19 @@ article and hobby cards (Cards.tsx, owned by the UI worker) are large; the page 
 - Section meta descriptions are now the short intros (about 70-90 chars): consider longer SEO descriptions.
 - Share buttons, email capture and social links (Review 1 items 4, 5) were out of scope.
 - Pre-existing lint/type errors remain in src/test/contrast.test.ts and src/data/hobbies.ts (other workers).
+
+## Update: three journeys, one set of names
+
+- Primary tiles are now Find Your Thing (quiz), Make Some Plans (planner) and Shop Your Hobby (shop). Shop replaced
+  "What tonight?"; the Tonight tool stays reachable from the mobile menu, the footer and Make Some Plans.
+- One name per thing, defined once in `src/components/layout/nav.ts` (`NAMES`) and used by header, footer, homepage,
+  /saved: Find Your Thing, Make Some Plans, Shop Your Hobby, My Plans, What Should I Do Tonight?, Hobbies, The Journal.
+  Footer "Hobby Directory" -> "Hobbies", "Off Duty Essentials" link -> "Shop Your Hobby", "Plan my weekend" tile retired.
+- Fewer competing calls to action: closing block now has a single quiet "New here? Start here" link (My Plans is in the
+  header); the header keeps one filled button (Find Your Thing).
+- New "This season" strip (month-derived hobby picks, see REPEAT-VISITS-AND-SHARING.md) sits under the tiles.
+- Mobile: footer links and saved-page controls are at least 44px; no horizontal overflow at 320, 390 or 1280 on /, /saved
+  and a hobby page; the logo stays on one line.
+- Not changed (other owners): the shop page itself still says "Off Duty Essentials" (kicker "The Shop") in
+  `src/routes/shop.index.tsx`, `shop.$category.tsx`, and commerce kickers; article copy still says "Hobby Finder quiz" in a
+  few places. Align these to "Shop Your Hobby" / "Find Your Thing" when those files are free.

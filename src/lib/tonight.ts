@@ -195,11 +195,23 @@ export function seeded(seed: number) {
   };
 }
 
+export type TonightRelax = {
+  constraint: Constraint;
+  /** Button text, naming the answer that would change. */
+  label: string;
+  /** The answers to apply if the button is tapped. */
+  patch: Partial<TonightInput>;
+  /** How many ideas fit once the patch is applied. */
+  matched: number;
+};
+
 export type TonightResult = {
   suggestions: Suggestion[];
   matched: number;
-  /** Set when fewer than 3 matched: the one constraint that would help most. */
+  /** Set when fewer than 3 matched: the one change that would help most (also first in `relax`). */
   loosen?: { constraint: Constraint; message: string };
+  /** Every single-answer change that would open up more ideas, best first. Empty when 3+ fit. */
+  relax: TonightRelax[];
 };
 
 const loosenCopy: Record<Constraint, string> = {
@@ -209,6 +221,50 @@ const loosenCopy: Record<Constraint, string> = {
   company: "Try switching between solo and social.",
   setting: "Try 'either' for indoor or outdoor.",
 };
+
+const timeLadder = timeOptions.map((t) => t.v);
+const energyLadder: Energy[] = ["low", "medium", "high"];
+const budgetLadder: Cost[] = ["free", "under25", "under50", "flexible"];
+
+/** The one-step change for a constraint, or null when it is already as loose as it gets. */
+export function relaxPatch(c: Constraint, i: TonightInput): TonightRelax | null {
+  const label = (t: string) => ({ constraint: c, label: t, matched: 0 });
+  switch (c) {
+    case "time": {
+      const next = timeLadder.find((t) => t > i.minutes);
+      const opt = timeOptions.find((t) => t.v === next);
+      return next && opt
+        ? { ...label(`Give it ${opt.label.toLowerCase()}`), patch: { minutes: next } }
+        : null;
+    }
+    case "energy": {
+      const next = energyLadder[energyLadder.indexOf(i.energy) + 1];
+      return next
+        ? {
+            ...label(next === "medium" ? "Say you're okay, not on fumes" : "Say you're bursting"),
+            patch: { energy: next },
+          }
+        : null;
+    }
+    case "budget": {
+      const next = budgetLadder[budgetLadder.indexOf(i.budget) + 1];
+      return next
+        ? { ...label(`Allow ${costRanges[next].label.toLowerCase()}`), patch: { budget: next } }
+        : null;
+    }
+    case "company": {
+      const next = i.company === "solo" ? "social" : "solo";
+      return {
+        ...label(next === "solo" ? "Do it on my own" : "Bring someone"),
+        patch: { company: next },
+      };
+    }
+    case "setting":
+      return i.setting === "either"
+        ? null
+        : { ...label("Indoors or outdoors, either is fine"), patch: { setting: "either" } };
+  }
+}
 
 const clean = ({
   cost: _c,
@@ -227,19 +283,20 @@ export function tonightIdeas(input: TonightInput, seed = 0): TonightResult {
   const matches = all
     .filter((c) => fits(c, input))
     .sort((a, b) => score(b, input) - score(a, input) || a.id.localeCompare(b.id));
+  let relax: TonightRelax[] = [];
   let loosen: TonightResult["loosen"];
   if (matches.length < 3) {
     const cons: Constraint[] = ["time", "energy", "budget", "company", "setting"];
-    let best: Constraint | undefined;
-    let bestN = matches.length;
-    for (const k of cons) {
-      const n = all.filter((c) => fits(c, input, k)).length;
-      if (n > bestN) {
-        bestN = n;
-        best = k;
-      }
-    }
-    if (best) loosen = { constraint: best, message: loosenCopy[best] };
+    relax = cons
+      .map((k) => {
+        const r = relaxPatch(k, input);
+        if (!r) return null;
+        return { ...r, matched: all.filter((c) => fits(c, { ...input, ...r.patch })).length };
+      })
+      .filter((r): r is TonightRelax => !!r && r.matched > matches.length)
+      .sort((a, b) => b.matched - a.matched);
+    const best = relax[0];
+    if (best) loosen = { constraint: best.constraint, message: loosenCopy[best.constraint] };
   }
   const top = matches.slice(0, Math.max(6, 3));
   let chosen: Candidate[];
@@ -253,5 +310,99 @@ export function tonightIdeas(input: TonightInput, seed = 0): TonightResult {
     }
     chosen = order.slice(0, 3);
   }
-  return { suggestions: chosen.map(clean), matched: matches.length, ...(loosen ? { loosen } : {}) };
+  return {
+    suggestions: chosen.map(clean),
+    matched: matches.length,
+    relax,
+    ...(loosen ? { loosen } : {}),
+  };
+}
+
+/* ---------- URL state and sharing ---------- */
+
+export type TonightSearch = Partial<{
+  t: string;
+  e: string;
+  b: string;
+  c: string;
+  w: string;
+  s: string;
+}>;
+
+export const DEFAULT_TONIGHT: TonightInput = {
+  minutes: 60,
+  energy: "low",
+  budget: "free",
+  company: "solo",
+  setting: "either",
+};
+
+const oneOf = <T extends string | number>(v: unknown, allowed: readonly T[]): T | undefined =>
+  allowed.find((a) => String(a) === String(v));
+
+/** Reads answers and shuffle seed from the URL. Unknown values fall back to the defaults. */
+export function parseTonightSearch(s: Record<string, unknown>): {
+  input: TonightInput;
+  seed: number;
+  fromUrl: boolean;
+} {
+  const minutes = oneOf(
+    s["t"],
+    timeOptions.map((t) => t.v),
+  );
+  const energy = oneOf(s["e"], energyLadder);
+  const budget = oneOf(s["b"], budgetLadder);
+  const company = oneOf(s["c"], ["solo", "social"] as const);
+  const setting = oneOf(s["w"], ["indoor", "outdoor", "either"] as const);
+  const n = Number(s["s"]);
+  return {
+    input: {
+      minutes: minutes ?? DEFAULT_TONIGHT.minutes,
+      energy: energy ?? DEFAULT_TONIGHT.energy,
+      budget: budget ?? DEFAULT_TONIGHT.budget,
+      company: company ?? DEFAULT_TONIGHT.company,
+      setting: setting ?? DEFAULT_TONIGHT.setting,
+    },
+    seed: Number.isInteger(n) && n >= 0 && n < 1000 ? n : 0,
+    fromUrl: !!(minutes || energy || budget || company || setting),
+  };
+}
+
+export const tonightSearch = (i: TonightInput, seed: number): Record<string, string> => ({
+  t: String(i.minutes),
+  e: i.energy,
+  b: i.budget,
+  c: i.company,
+  w: i.setting,
+  s: String(seed),
+});
+
+export const tonightHref = (i: TonightInput, seed: number) =>
+  `/tools/tonight?${new URLSearchParams(tonightSearch(i, seed)).toString()}`;
+
+const energyWords: Record<Energy, string> = {
+  low: "running on fumes",
+  medium: "okay",
+  high: "bursting",
+};
+
+/** One line that echoes the answers, so the result never looks like it ignored the questions. */
+export function tonightEcho(i: TonightInput): string {
+  const t = timeOptions.find((x) => x.v === i.minutes)?.label.toLowerCase() ?? `${i.minutes} min`;
+  const where =
+    i.setting === "either" ? "indoors or out" : i.setting === "indoor" ? "indoors" : "outdoors";
+  return `${t}, ${energyWords[i.energy]}, ${costRanges[i.budget].label.toLowerCase()}, ${i.company === "solo" ? "just me" : "with someone"}, ${where}`;
+}
+
+/** Plain-text version of the results with the restorable link. Only the answers: no personal data. */
+export function tonightText(i: TonightInput, ideas: Suggestion[], url: string): string {
+  const lines = ["Ideas for tonight", `(${tonightEcho(i)})`, ""];
+  ideas.forEach((s, n) =>
+    lines.push(
+      `${n + 1}. ${s.title} (about ${fmtMin(s.minutes)}, ${s.costLabel.toLowerCase()}, estimate)`,
+      `   First step: ${s.firstStep}`,
+    ),
+  );
+  lines.push("", `Open the same ideas: ${url}`);
+  return lines.join("\n");
 }

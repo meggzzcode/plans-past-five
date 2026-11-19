@@ -32,7 +32,7 @@ export function SaveButton({
       className={cn(
         "no-print inline-flex items-center gap-1.5 text-sm font-semibold transition",
         compact
-          ? "grid h-11 w-11 place-items-center rounded-full md:h-9 md:w-9 bg-cream/95 text-cherry shadow hover:scale-105"
+          ? "grid h-11 w-11 place-items-center rounded-full bg-cream/95 text-cherry shadow hover:scale-105"
           : "relative border-b-2 border-cherry pb-0.5 text-cherry after:absolute after:inset-x-0 after:-inset-y-2.5 after:content-[''] hover:border-transparent",
         className,
       )}

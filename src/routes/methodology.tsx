@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { seo, breadcrumbJsonLd } from "@/lib/seo";
 import { ProsePage } from "@/components/pages/ProsePage";
+import { SHOP_LINK_FACTS, isMonetized } from "@/config/affiliate";
 
 export const Route = createFileRoute("/methodology")({
   head: () =>
@@ -32,25 +33,46 @@ export const Route = createFileRoute("/methodology")({
       </p>
       <h2>Choosing products</h2>
       <p>
-        Product ideas are starter-kit suggestions grouped by hobby. We pick product types that a
-        beginner would plausibly need. Where a guide names a specific product and brand, we have
-        checked that product against its Amazon listing, and the product card says what the listing
-        shows and what to double-check. Links go to ordinary Amazon product pages. Where we only
-        describe a type of product, the button opens an Amazon search instead, and says so. Items
-        sold by third-party sellers are labelled as such.
+        There are two kinds of shopping help on the site, and the buttons say which is which.
+      </p>
+      <ul>
+        <li>
+          <strong>Named products.</strong> For a growing number of hobbies we name a specific
+          product and brand, and we have checked it against its Amazon listing: we compared the
+          listing with what we say about it and recorded the date. The button reads "View on Amazon" and opens that product's own
+          page. A product only appears once that check is done; anything still being researched
+          stays off the site.
+        </li>
+        <li>
+          <strong>Types of product.</strong> Elsewhere we describe what to look for ("a round brush,
+          a notebook that takes glue") and the button reads "Browse options on Amazon", which opens
+          a search so you can compare for yourself.
+        </li>
+      </ul>
+      <p>
+        In each starter kit we lead with the one thing to buy if you only buy one, mark what is
+        essential and what is an optional extra, and fold other options for the same need under the
+        pick with a line on how they differ. We aim for picks that look good and fit a modest
+        budget, and a kit can say you probably own something already.
       </p>
       <h2>Manufacturer claims versus independent testing</h2>
       <p>
-        Unless a page says otherwise, we have not independently tested products. Descriptions come
-        from general knowledge of the hobby and, where relevant, from the manufacturer or seller.
+        Unless a page says otherwise, we have not independently tested products. What we say about a
+        named product comes from its Amazon listing and, where we could read it, the maker's page.
         Those are claims, not our test results, and we do not present them as personal experience.
       </p>
       <h2>No prices, ratings or review counts</h2>
       <p>
-        We show product names and brands only for products we have checked against their Amazon
-        listing. We show no prices, discounts, star ratings or review counts, because they change
-        often and an out-of-date figure is worse than none. Check the price, reviews, shipping and
-        returns on the retailer's page before you buy.
+        We show a product's brand and name, and never a price, discount, star rating or review
+        count, because they change often and an out-of-date figure is worse than none. Amazon or the
+        seller sets the price, shipping and returns; check them on the product page before you buy.
+      </p>
+      <h2>Photos</h2>
+      <p>
+        The pictures on shopping cards are either a product photo we have the right to show, with a
+        credit, or a plain label with the brand and product type. We do not copy Amazon's images.
+        The illustrations on collection pages are styling, not specific products, and were made with
+        AI tools.
       </p>
       <h2>Last verified dates</h2>
       <p>
@@ -61,9 +83,10 @@ export const Route = createFileRoute("/methodology")({
       </p>
       <h2>Commercial relationships</h2>
       <p>
-        We do not currently earn a commission from our shopping links. If Amazon Associates links
-        are activated, the disclosure beside the links changes automatically and this page will be
-        updated. That would not change what we recommend. See the{" "}
+        {isMonetized()
+          ? "Some of our shopping links are affiliate links, and the note beside each one says so. "
+          : `${SHOP_LINK_FACTS.notEarning} If affiliate links are activated, the note beside the links changes automatically and this page will be updated. `}
+        Earning a commission would not change what we recommend. See the{" "}
         <Link to="/affiliate-disclosure">affiliate disclosure</Link> and our{" "}
         <Link to="/editorial-policy">editorial standards</Link>.
       </p>

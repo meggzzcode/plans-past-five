@@ -49,16 +49,7 @@ export const articleWatercolorPaintingForBeginners: Article = {
   body: [
     {
       type: "p",
-      text: "Imagine a rainy Sunday with a mug going cold and a small pad of paper. You have no plan, only a vague wish to make something that is not an email. Watercolor is a good answer, mostly because it forgives an unplanned afternoon.",
-    },
-    {
-      type: "p",
-      text: "It also has a reputation for being fussy, which puts people off. The truth is that most of the difficulty is water, not drawing. Learn how paint and water behave and the pictures follow, even if you cannot sketch a convincing teapot.",
-    },
-    { type: "h2", text: "Why it is worth trying", id: "why" },
-    {
-      type: "p",
-      text: "A small painting takes about as long as a long coffee. It suits beginners because the techniques are few and practicing them already looks pretty: a soft blue wash is a nice thing by itself. Start-up effort is modest, with a small set, one brush and decent paper. Some things are worth being a beginner at, and this is one of them.",
+      text: "Watercolor has a reputation for being fussy, and most of the difficulty is water, not drawing. Learn how paint and water behave and the pictures follow, even if you can't sketch a convincing teapot. A soft blue wash is a nice thing all by itself, so practice already looks pretty.",
     },
     { type: "h2", text: "What you need", id: "need" },
     {
@@ -83,17 +74,7 @@ export const articleWatercolorPaintingForBeginners: Article = {
     },
     {
       type: "p",
-      text: "**What you probably own.** A plate for mixing, a jar for water, a hairdryer for impatient moments, and a hard surface to work on. A mug that you do not drink from afterwards is handy for rinsing.",
-    },
-    {
-      type: "p",
-      text: "**What each type does for you.** A pan set is the least fuss, since you wet it and paint. A sketchbook of proper watercolor paper keeps all your practice in one place. A portable set makes painting something you can do on a park bench or at a café table, which suits a slow outdoor afternoon.",
-    },
-    {
-      type: "saveSplurge",
-      save: "A small student-grade set and a sketchbook of watercolor paper.",
-      splurge:
-        "Better paper first. It improves every painting more than expensive paint does. Artist-grade paints can wait.",
+      text: "You probably own a plate for mixing, a jar for water, a hard surface to work on and a hairdryer for impatient moments. A pan set is the least fuss, since you wet it and paint. A sketchbook of proper watercolor paper keeps all your practice in one place, and a portable set suits a park bench or a café table. If you're going to spend on one thing, make it better paper: it improves every painting more than expensive paint does, and artist-grade paints can wait.",
     },
     {
       type: "p",
@@ -142,38 +123,25 @@ export const articleWatercolorPaintingForBeginners: Article = {
     },
     { type: "h2", text: "Three small projects that look better than they should", id: "projects" },
     {
-      type: "item",
-      title: "A sunset gradient",
-      note: "A graded wash from warm yellow into pink and a dusty purple, with a dark strip of hills painted on top once it is dry.",
-      time: "About 30 minutes",
+      type: "list",
+      items: [
+        "**A sunset gradient** (about 30 minutes). A graded wash from warm yellow into pink and a dusty purple, with a dark strip of hills painted on top once it is dry.",
+        "**A wet-on-wet bouquet** (about 40 minutes). Dab blobs of color onto damp paper, then add a few green stems and leaves after it dries. The flowers are just soft shapes.",
+        "**A color-swatch card** (about 20 minutes). Paint a grid of small squares, mixing a new shade for each. It is practice, a reference chart and a handsome little card at once.",
+      ],
     },
     {
-      type: "item",
-      title: "A wet-on-wet bouquet",
-      note: "Dab blobs of color onto damp paper, then add a few green stems and leaves after it dries. The flowers are just soft shapes.",
-      time: "About 40 minutes",
-    },
-    {
-      type: "item",
-      title: "A color-swatch card",
-      note: "Paint a grid of small squares, mixing a new shade for each. It is practice, a reference chart and a handsome little card at once.",
-      time: "About 20 minutes",
+      type: "p",
+      text: "Once you're comfortable, pocket a small set on your next walk and paint the same view twice, once quickly and once slowly. Compare the two.",
     },
     { type: "h2", text: "Common mistakes and troubleshooting", id: "troubleshooting" },
     {
-      type: "item",
-      title: "The paper has buckled",
-      note: "Too much water on thin paper. Switch to heavier paper, tape it down, and let it dry flat under a book.",
-    },
-    {
-      type: "item",
-      title: "The colors turned muddy",
-      note: "Too many colors mixed, or layers painted over damp paint. Mix two colors at most and wait for each layer to dry.",
-    },
-    {
-      type: "item",
-      title: "It looks washed out",
-      note: "Watercolor dries lighter than it looks wet. Add more pigment and less water next time, and layer a second coat once it is dry.",
+      type: "list",
+      items: [
+        "**The paper has buckled.** Too much water on thin paper. Switch to heavier paper, tape it down, and let it dry flat under a book.",
+        "**The colors turned muddy.** Too many colors mixed, or layers painted over damp paint. Mix two colors at most and wait for each layer to dry.",
+        "**It looks washed out.** Watercolor dries lighter than it looks wet. Add more pigment and less water next time, and layer a second coat once it is dry.",
+      ],
     },
     {
       type: "shopHobby",
@@ -182,13 +150,8 @@ export const articleWatercolorPaintingForBeginners: Article = {
       productIds: ["watercolor-sets", "watercolor-sketchbooks", "portable-watercolor"],
     },
     {
-      type: "tryThisWeekend",
-      text: "Pocket a small set on your next walk and paint the same view twice, once quickly and once slowly. Compare the two.",
-    },
-    {
       type: "p",
       text: "If you would like a small ready-made box instead of loose pieces, [Creative Hobby Starter Kits That Are Actually Worth Considering](/journal/creative-hobby-starter-kits-worth-considering) explains what to look for.",
     },
-    { type: "ifYouLoved", hobbies: ["outdoor-sketching", "collage-art", "calligraphy"] },
   ],
 };

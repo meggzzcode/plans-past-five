@@ -14,7 +14,7 @@ export const articleHowToPlanAPerfectPicnic: Article = {
   angle:
     "A picnic as a tiny event: choose a spot, a food plan that survives travel, a packing checklist and two or three things to do on the blanket",
   hobbies: ["picnicking", "reading", "outdoor-sketching", "birdwatching", "film-photography"],
-  productIds: ["picnic-blankets", "market-totes", "water-bottles", "pocket-notebooks"],
+  productIds: ["picnic-blankets", "market-totes"],
   related: ["things-to-do-on-the-weekend", "cheap-weekend-adventures", "at-home-creative-weekend"],
   sources: [
     {

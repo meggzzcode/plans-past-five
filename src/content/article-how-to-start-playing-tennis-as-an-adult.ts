@@ -54,20 +54,12 @@ export const articleHowToStartPlayingTennisAsAnAdult: Article = {
   body: [
     {
       type: "p",
-      text: "On a bright Sunday, a friend texts a photo of a tennis court with the caption 'we should', and you reply with a thumbs-up and a small, private panic. You haven't held a racket since a school gym class. Everyone on those courts looks like they learned at nine.",
-    },
-    {
-      type: "p",
-      text: "Some of them probably did, which is exactly why you shouldn't compare yourself to them. And a gentle rally on a mild evening is one of the nicer ways to spend an hour.",
-    },
-    {
-      type: "p",
-      text: "What follows is a four-week plan for starting from nothing, with minimal gear and no club to join. The aim is modest: by the end you can keep a short rally going and keep score. Some things are worth being a beginner at, and this is one of them.",
+      text: "Four weeks is enough to go from 'haven't held a racket since school' to keeping a short rally going and keeping score. This plan assumes minimal gear, no club and no audience. The courts will have people who've played since they were nine; they're not your benchmark.",
     },
     { type: "h2", text: "Before you start: borrow first", id: "borrow" },
     {
       type: "p",
-      text: "Resist buying a racket on day one. Borrow one from a friend, a club or a rental scheme, and play a few times. If you keep wanting to go back, you'll also know what feels comfortable in your hand, which is more useful than any shop assistant's opinion.",
+      text: "Resist buying a racket on day one. Borrow one from a friend, a club or a rental scheme, and play a few times. If you keep wanting to go back, you'll also know what feels comfortable in your hand, which is more useful than any shop assistant's opinion. Free public courts, where your area has them, keep the first month cheap, and a few lessons later are the sensible place to spend.",
     },
     {
       type: "whatYoullNeed",
@@ -87,11 +79,7 @@ export const articleHowToStartPlayingTennisAsAnAdult: Article = {
     },
     {
       type: "p",
-      text: "Costs depend heavily on where you live, so check public court, club and lesson options nearby before you spend. Wear whatever lets you move, and arrive ten minutes early so the warm-up doesn't feel rushed.",
-    },
-    {
-      type: "p",
-      text: "A word on expectations. Nobody expects your first month to look like television tennis. What you're after is the small, satisfying moment when the ball lands roughly where you meant it to, followed by the slightly larger moment when it happens twice in a row. Those moments arrive sooner than you'd think, and they are the whole point of starting.",
+      text: "Costs depend heavily on where you live, so check public court, club and lesson options nearby before you spend. Arrive ten minutes early so the warm-up doesn't feel rushed. And expect small wins: the ball landing roughly where you meant it to, then doing it twice in a row. Those are the whole point of the first month.",
     },
     { type: "h2", text: "Week 1: meet the ball", id: "week1" },
     {
@@ -108,13 +96,8 @@ export const articleHowToStartPlayingTennisAsAnAdult: Article = {
       ],
     },
     {
-      type: "first30",
-      steps: [
-        "Walk for five minutes and loosen your shoulders.",
-        "Practice the ready position, then swing ten times with no ball.",
-        "Drop and hit forty balls toward a wall or across the net.",
-        "Stretch gently and stop if anything hurts.",
-      ],
+      type: "p",
+      text: "A session can be as simple as five minutes of walking and shoulder loosening, ten swings with no ball, forty drop-and-hits, then a gentle stretch. Stop if anything hurts.",
     },
     { type: "h2", text: "Week 2: rally small", id: "week2" },
     {
@@ -124,11 +107,11 @@ export const articleHowToStartPlayingTennisAsAnAdult: Article = {
     { type: "h2", text: "Week 3: serve, then count", id: "week3" },
     {
       type: "p",
-      text: "If an overhand serve feels like too much, start underhand while you find your feet, and check with whoever you're playing. Scoring runs 15, 30, 40, then game; at 40-all it's deuce, and you win by two points. A set goes to the first to six games, winning by two, with a tiebreak at six-all. If that sounds like a lot, ignore the score for another session or two. It will make sense faster in person than it does on paper.",
+      text: "If an overhand serve feels like too much, start underhand while you find your feet, and check with whoever you're playing. A lesson is a good place to learn the overhand serve, where a coach can help you build good habits early.",
     },
     {
       type: "p",
-      text: "A lesson is a good place to learn the overhand serve, where a coach can help you build good habits early.",
+      text: "Scoring runs 15, 30, 40, then game; at 40-all it's deuce, and you win by two points. A set goes to the first to six games, winning by two, with a tiebreak at six-all. If that sounds like a lot, ignore the score for another session or two. It makes more sense in person than on paper.",
     },
     { type: "h2", text: "Week 4: a real game, plus company", id: "week4" },
     {
@@ -137,21 +120,17 @@ export const articleHowToStartPlayingTennisAsAnAdult: Article = {
     },
     {
       type: "p",
-      text: "If once a week is all you have, that's fine. Hit a ball against a wall in between, or shadow a swing in the kitchen while the kettle boils. Short, frequent repetition can help more than one long session.",
+      text: "If once a week is all you have, that's fine. Hit a ball against a wall in between (check local rules on wall use), or shadow a swing in the kitchen while the kettle boils. Short, frequent repetition can help more than one long session.",
     },
     { type: "h2", text: "When it goes sideways", id: "troubleshooting" },
     {
-      type: "p",
-      text: "If the ball won't clear the net, try aiming a little higher than feels right and finishing your swing upward. If it goes everywhere, hit softer and think only about contact. Control comes before power. If your arm aches, stop, shorten the session and check your grip, and see a doctor or physiotherapist if it persists.",
-    },
-    {
-      type: "p",
-      text: "And if you feel silly, remember that every person on that court has sent a ball into the next one. It's practically a rite of passage.",
-    },
-    {
-      type: "saveSplurge",
-      save: "Borrow a racket and use free public courts for your first month.",
-      splurge: "A few group or private lessons. A coach's eye on your technique can be worth it.",
+      type: "list",
+      items: [
+        "**The ball won't clear the net.** Aim a little higher than feels right and finish your swing upward.",
+        "**It goes everywhere.** Hit softer and think only about contact. Control comes before power.",
+        "**Your arm aches.** Stop, shorten the session and check your grip. See a doctor or physiotherapist if it persists.",
+        "**You feel silly.** Everyone on that court has sent a ball into the next one.",
+      ],
     },
     {
       type: "shopHobby",
@@ -160,17 +139,8 @@ export const articleHowToStartPlayingTennisAsAnAdult: Article = {
       productIds: ["tennis-rackets", "tennis-balls", "water-bottles", "sports-totes"],
     },
     {
-      type: "tryThisWeekend",
-      text: "Find a public court or a practice wall (check local rules on booking and wall use), bring a friend and spend thirty minutes just hitting. No score, no audience.",
-    },
-    {
       type: "p",
       text: "Curious about the other racket sport? Read [pickleball for beginners](/journal/pickleball-for-beginners), or browse [active hobbies for women who don't love the gym](/journal/active-hobbies-for-women-who-dont-love-the-gym).",
     },
-    {
-      type: "makePlan",
-      text: "Make it a plan: pick a day, a friend and a court on Make Some Plans.",
-    },
-    { type: "ifYouLoved", hobbies: ["tennis", "pickleball", "hiking"] },
   ],
 };

@@ -14,7 +14,7 @@ export const articlePickleballForBeginners: Article = {
   angle:
     "A no-jargon starter guide: what you really need, the handful of rules that matter on day one, and how to join open play without feeling like the new kid",
   hobbies: ["pickleball", "tennis"],
-  productIds: ["pickleball-sets", "water-bottles", "sports-totes"],
+  productIds: ["pickleball-sets", "water-bottles"],
   related: [
     "how-to-start-playing-tennis-as-an-adult",
     "active-hobbies-for-women-who-dont-love-the-gym",
@@ -64,20 +64,31 @@ export const articlePickleballForBeginners: Article = {
   body: [
     {
       type: "p",
-      text: "Imagine a friend sends a message on a Thursday: 'Four of us are playing pickleball Saturday. You're coming.' It isn't a question. You've heard the name a hundred times and still couldn't say whether the ball is hit with a racket, a paddle or a very small tennis shoe.",
-    },
-    {
-      type: "p",
-      text: "Good news. This is one of the more forgiving things you can walk into as a beginner. The court is small and the pace is manageable. Here's what to bring, what to know, and how to turn up without feeling like the new kid.",
-    },
-    {
-      type: "p",
-      text: "There's also a social side that explains a lot of its popularity. Partners often rotate, and the court is close enough that you can talk to the people on the other side of the net. It's an easy sport to be bad at in good company, which is a fine place to start.",
+      text: "Racket, paddle or a very small tennis shoe? If you've heard 'pickleball' a hundred times and still couldn't say what you hit the ball with, here's the whole picture in a few minutes. It's one of the more forgiving sports to walk into as a beginner: the court is small and the pace is manageable.",
     },
     { type: "h2", text: "What it actually is", id: "what" },
     {
       type: "p",
-      text: "Pickleball is a paddle sport played over a low net on a small court, most often as doubles. It borrows from tennis, badminton and table tennis. You hit a light, perforated plastic ball with a solid paddle, not a stringed racket. Because the court is compact, there's less ground to cover.",
+      text: "Pickleball is a paddle sport played over a low net on a small court, most often as doubles. It borrows from tennis, badminton and table tennis. You hit a light, perforated plastic ball with a solid paddle, not a stringed racket. Because the court is compact, there's less ground to cover, and open play tends to rotate partners, so it's an easy sport to be bad at in good company.",
+    },
+    { type: "h2", text: "The court, in plain English", id: "court" },
+    {
+      type: "p",
+      text: "The court is 20 feet by 44 feet, with a low net: 36 inches at the sidelines and 34 inches in the middle. Close to the net on each side, 7 feet out, is a marked zone nicknamed 'the kitchen' (officially the non-volley zone). It's the part that trips up almost every beginner, because in general you aren't allowed to hit the ball out of the air while you're standing in it. You can step in to play a ball that has already bounced. Ask whoever you're playing with to point out the lines on your first day.",
+    },
+    { type: "h2", text: "Four rules worth knowing", id: "rules" },
+    {
+      type: "list",
+      items: [
+        "**Serve underhand,** diagonally across the court and past the kitchen. Ask a friendly player to show you the box.",
+        "**Let it bounce twice.** After the serve, the ball has to bounce once on each side before anyone can volley. It keeps rallies alive.",
+        "**Mind the kitchen** when volleying, as above.",
+        "**Say the score out loud.** Most games are played to eleven, winning by two, and in traditional scoring only the serving side scores. Calling the score before each serve keeps everyone on the same page.",
+      ],
+    },
+    {
+      type: "p",
+      text: "That's enough to play. If a rule confuses you, ask. People who love this game are usually delighted to explain it.",
     },
     { type: "h2", text: "What to bring, and what to skip", id: "gear" },
     {
@@ -97,30 +108,7 @@ export const articlePickleballForBeginners: Article = {
     },
     {
       type: "p",
-      text: "You probably own more of this than you think: the shoes, the water bottle and a bag to carry it all. Some clubs and beginner sessions lend paddles, so it is worth asking before you buy. Prices vary by shop and season, so check before you spend.",
-    },
-    {
-      type: "p",
-      text: "Official equipment lists exist, and organized tournaments follow them. For casual play nobody is checking your paddle, but if you ever plan to compete, look at your national governing body's guidance first.",
-    },
-    { type: "h2", text: "The court, in plain English", id: "court" },
-    {
-      type: "p",
-      text: "The court is small, 20 feet by 44 feet, with a low net: 36 inches at the sidelines and 34 inches in the middle. Close to the net on each side, 7 feet out, is a marked zone nicknamed 'the kitchen' (officially the non-volley zone). It's the part that trips up almost every beginner, because in general you aren't allowed to hit the ball out of the air while you're standing in it. You can step in to play a ball that has already bounced. Ask whoever you're playing with to point out the lines on your first day.",
-    },
-    { type: "h2", text: "Four rules worth knowing", id: "rules" },
-    {
-      type: "list",
-      items: [
-        "**Serve underhand,** diagonally across the court and past the kitchen. Ask a friendly player to show you the box.",
-        "**Let it bounce twice.** After the serve, the ball has to bounce once on each side before anyone can volley. It keeps rallies alive.",
-        "**Mind the kitchen** when volleying, as above.",
-        "**Say the score out loud.** Most games are played to eleven, winning by two, and in traditional scoring only the serving side scores. Calling the score before each serve keeps everyone on the same page.",
-      ],
-    },
-    {
-      type: "p",
-      text: "That's enough to play. If a rule confuses you, ask. People who love this game are usually delighted to explain it.",
+      text: "You probably own the shoes and a water bottle already. Some clubs and beginner sessions lend paddles, so ask before you buy, and prices vary by shop and season. For casual play nobody is checking your paddle; if you ever plan to compete, look at your national governing body's equipment guidance first. A better paddle is a later purchase, once you've played enough to know whether you like a lighter feel or something with more punch.",
     },
     { type: "h2", text: "A first session that doesn't ask much", id: "first-session" },
     {
@@ -144,29 +132,23 @@ export const articlePickleballForBeginners: Article = {
     },
     { type: "h2", text: "Beginner habits to retire early", id: "mistakes" },
     {
-      type: "p",
-      text: "Swinging too hard is a common beginner habit; placement and patience go a long way. Standing in the kitchen to volley is next. Forgetting the double bounce comes third, and a quiet reminder before each serve fixes it. If your shoulder or wrist aches, rest and see a doctor if it lingers.",
-    },
-    {
-      type: "saveSplurge",
-      save: "Borrow a paddle or buy a simple set, and check what public courts near you offer.",
-      splurge:
-        "A better paddle after ten or so games, once you know whether you like a lighter feel or something with more punch.",
+      type: "list",
+      items: [
+        "**Swinging too hard.** Placement and patience go a long way.",
+        "**Volleying from the kitchen.** See above.",
+        "**Forgetting the double bounce.** A quiet reminder before each serve fixes it.",
+        "**Playing through pain.** If your shoulder or wrist aches, rest, and see a doctor if it lingers.",
+      ],
     },
     {
       type: "shopHobby",
-      title: "Pickleball essentials",
+      title: "Pickleball gear",
       dek: "Optional. Play first, buy later.",
-      productIds: ["pickleball-sets", "water-bottles", "sports-totes"],
+      productIds: ["pickleball-sets", "water-bottles"],
     },
     {
       type: "p",
       text: "Curious about the game pickleball borrows from? Read [how to start playing tennis as an adult](/journal/how-to-start-playing-tennis-as-an-adult), or browse [active hobbies for women who don't love the gym](/journal/active-hobbies-for-women-who-dont-love-the-gym).",
     },
-    {
-      type: "makePlan",
-      text: "Sorry, I have plans past five. Pick a day, ask a friend and book your first game with Make Some Plans.",
-    },
-    { type: "ifYouLoved", hobbies: ["pickleball", "tennis", "roller-skating"] },
   ],
 };

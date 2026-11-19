@@ -14,7 +14,7 @@ export const articleHowToStartABookClub: Article = {
   angle:
     "Rules-lite, burnout-proof book club setup: size, schedule, book-selection systems, discussion questions and a 'nobody read it' plan",
   hobbies: ["book-clubs", "reading"],
-  productIds: ["conversation-cards", "book-lights", "reading-journals", "magnetic-bookmarks"],
+  productIds: ["conversation-cards", "book-lights", "reading-journals"],
   coworkChecks: [
     "VERIFIED 2026-11-18: ask guests about allergies; wash hands with soap and water - foodallergy.org",
     "RESOLVED 2026-11-19: book cost range ($10-$20) - removed, no source for prices",

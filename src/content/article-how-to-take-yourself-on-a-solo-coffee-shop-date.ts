@@ -37,11 +37,7 @@ export const articleHowToTakeYourselfOnASoloCoffeeShopDate: Article = {
   body: [
     {
       type: "p",
-      text: "Going to a coffee shop alone feels bigger than it is. It's a quiet weekday afternoon, you've got a paperback in your bag and an hour you didn't plan to fill. Somewhere nearby is a window seat with your name on it, and the only thing between you and it is the small, silly worry that people will wonder why you're alone.",
-    },
-    {
-      type: "p",
-      text: "They won't. A coffee shop is built for people on their own: laptops, paperbacks, one-person tables, nobody asking questions. It takes an hour and lets you leave whenever you like. Here's how to do it, from picking the place to the faint 'now what?' once you're seated.",
+      text: "A coffee shop may be the easiest place in town to sit by yourself. It's built for it: laptops, paperbacks, one-person tables, nobody asking questions. It takes an hour and lets you leave whenever you like. The only real hurdle is the small, silly worry that people will wonder why you're alone. They're mostly looking at their own phones.",
     },
     { type: "h2", text: "Step 1: Pick the right kind of place", id: "pick-place" },
     {
@@ -51,7 +47,7 @@ export const articleHowToTakeYourselfOnASoloCoffeeShopDate: Article = {
     {
       type: "list",
       items: [
-        "**Quiet and calm** if you want to read or write. Look for cafes with softer music, a few armchairs and people who are mostly alone.",
+        "**Quiet and calm** if you want to read or write. Look for softer music, a few armchairs and people who are mostly alone.",
         "**Lively and bright** if you want to people-watch and feel part of a scene. Larger windows and bar seating are your friends.",
         "**Close to home** if you're nervous. Familiar streets lower the stakes, and a walk home afterward feels like a bonus.",
       ],
@@ -60,7 +56,7 @@ export const articleHowToTakeYourselfOnASoloCoffeeShopDate: Article = {
       type: "p",
       text: "Go at a quieter time for your first outing. A mid-morning or mid-afternoon weekday visit often means easier seat choices, less pressure and staff with a little more time to chat.",
     },
-    { type: "h2", text: "Step 2: Decide your date, then pack it", id: "pack" },
+    { type: "h2", text: "Step 2: Pack for the date", id: "pack" },
     {
       type: "whatYoullNeed",
       essentials: [
@@ -78,20 +74,16 @@ export const articleHowToTakeYourselfOnASoloCoffeeShopDate: Article = {
     { type: "h2", text: "Step 3: Order like you mean it", id: "order" },
     {
       type: "p",
-      text: "Treat the order as part of the date. Choose something you wouldn't make at home, like a proper pot of tea or the pastry you keep eyeing. Many cafes offer decaf, herbal tea and milk alternatives, so you can match the drink to the time of day. If you have an allergy or dietary need, ask the staff directly about ingredients rather than guessing.",
-    },
-    {
-      type: "p",
-      text: "Prices vary a lot by cafe and city, so think of your order as your ticket to a seat for the hour.",
+      text: "Treat the order as part of the date. Choose something you wouldn't make at home, like a proper pot of tea or the pastry you keep eyeing. Many cafes offer decaf, herbal tea and milk alternatives, so you can match the drink to the time of day. If you have an allergy or dietary need, ask the staff directly about ingredients rather than guessing. Prices vary a lot by cafe and city, so think of your order as your ticket to a seat for the hour.",
     },
     { type: "h2", text: "Step 4: Choose a seat with an escape hatch", id: "seat" },
     {
       type: "p",
-      text: "Window seats and counter seats are the friendliest for one. You have something to look at, you're not facing a room, and you can see what's happening outside. If the cafe is busy, avoid taking a large table for yourself; a small one or a counter stool is considerate and also feels less exposed.",
+      text: "Window seats and counter seats are the friendliest for one. You have something to look at, you're not facing a room, and you can see what's happening outside. If the cafe is busy, a small table or a counter stool is considerate and also feels less exposed than a large one.",
     },
     {
       type: "p",
-      text: "Keep your bag with you and don't leave a laptop or phone unattended if you step away. It's a small habit that keeps the date relaxing.",
+      text: "Many cafes are happy for you to sit with a book or notebook, but busy ones may need tables back at peak times. A good rule: buy something, don't spread out over a big table at the lunch rush, and reorder if you're settling in for a while. If in doubt, ask or watch what other people do. Keep your bag with you, and don't leave a laptop or phone unattended if you step away.",
     },
     { type: "h2", text: "Step 5: The first ten minutes", id: "first-ten" },
     {
@@ -121,10 +113,6 @@ export const articleHowToTakeYourselfOnASoloCoffeeShopDate: Article = {
     },
     { type: "h2", text: "If it feels awkward anyway", id: "awkward" },
     {
-      type: "p",
-      text: "Sometimes it will, and that's allowed. A few ways out:",
-    },
-    {
       type: "list",
       items: [
         "**Shorten the date.** Thirty minutes counts. A good ending is better than a long slog.",
@@ -133,14 +121,9 @@ export const articleHowToTakeYourselfOnASoloCoffeeShopDate: Article = {
         "**Try again somewhere else.** If one cafe doesn't suit you, it's not a verdict on solo dates.",
       ],
     },
-    { type: "h2", text: "A little etiquette", id: "etiquette" },
     {
       type: "p",
-      text: "Many cafes are happy for you to sit with a book or notebook, but busy ones may need tables back at peak times. A good rule: buy something, don't spread out over a big table at the lunch rush, and reorder if you're settling in for a while. If in doubt, ask or watch what other people do.",
-    },
-    {
-      type: "tryThisWeekend",
-      text: "Pick a cafe near you, bring a book, order something you wouldn't normally, and stay for exactly one chapter. That's the whole assignment.",
+      text: "Once the first one goes well, repeat it. A regular slot, like Saturday at ten or Wednesday after work, and two or three cafes to rotate between, is easier to protect than a one-off. A line in a notebook after each visit (the chapter, the sketch, the idea that surfaced) gives you a small record of how it went.",
     },
     {
       type: "shopHobby",
@@ -150,17 +133,7 @@ export const articleHowToTakeYourselfOnASoloCoffeeShopDate: Article = {
     },
     {
       type: "p",
-      text: "When you're ready for something bigger, browse [50 solo date ideas](/journal/solo-date-ideas), or build a whole day with [how to plan a solo Saturday](/journal/how-to-plan-a-solo-saturday). If the page-and-pen part appeals, [junk journaling](/journal/how-to-start-junk-journaling) is a good next step, and so is [a reading journal](/journal/how-to-start-a-reading-journal) if you would rather keep notes on what you read.",
+      text: "When you're ready for something bigger, browse [30 solo date ideas](/journal/solo-date-ideas), or build a whole day with [how to plan a solo Saturday](/journal/how-to-plan-a-solo-saturday). If the page-and-pen part appeals, [junk journaling](/journal/how-to-start-junk-journaling) is a good next step, and so is [a reading journal](/journal/how-to-start-a-reading-journal) if you would rather keep notes on what you read.",
     },
-    { type: "h2", text: "Make it a habit" },
-    {
-      type: "p",
-      text: "Once the first one goes well, repeat it. Choose a regular slot, like Saturday at ten or Wednesday after work, and rotate between two or three cafes. A repeating date is easier to protect than a one-off, and familiarity turns nervous into comfortable.",
-    },
-    {
-      type: "p",
-      text: "Jot a line after each visit: the chapter, the sketch, the idea that surfaced. In a month you'll have a small record of time well spent, and it makes saying yes next time much easier. Some things are worth being a beginner at, and sitting alone with a good cup of tea is one of them.",
-    },
-    { type: "ifYouLoved", hobbies: ["reading", "creative-writing", "outdoor-sketching"] },
   ],
 };

@@ -178,8 +178,8 @@ export function ProductCard({
   /** The "If you only buy one thing" layout: picture beside the text on wide screens. */
   featured?: boolean;
   /** Other products for the same slot: shown as compact "also consider" lines. */
-  alternatives?: CatalogProduct[];
-  className?: string;
+  alternatives?: CatalogProduct[] | undefined;
+  className?: string | undefined;
 }) {
   const { link, onClick } = useProductLink(p, placement);
   const { state, ready } = useShopList();

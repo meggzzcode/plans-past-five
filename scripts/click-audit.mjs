@@ -499,6 +499,11 @@ for (const route of QUICK ? routes.slice(0, 6) : routes) {
       res.detail = "element gone after reset";
       continue;
     }
+    if (!(await loc.isVisible())) {
+      // collapsed <details>, folded sections and clipped content report a box but cannot be seen
+      res.outcome = "hidden";
+      continue;
+    }
     const before = await page.evaluate(snapshot).catch(() => null);
     if (!before) {
       await goto();

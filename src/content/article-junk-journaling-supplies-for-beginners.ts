@@ -49,26 +49,13 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
   body: [
     {
       type: "p",
-      text: "Forty minutes in a craft aisle can end with a full basket and no idea what any of it is for. Sticker sheets in every color, tape on a spinning rack, a wall of notebooks with covers prettier than anything you own.",
+      text: "Craft aisles are designed to make everything look necessary. For junk journaling, almost none of it is. The whole idea is a book made from paper that has already lived a bit (envelopes, tickets, tags, a torn map), so the shopping list is short and the free list is long.",
     },
     {
       type: "p",
-      text: "Junk journaling does not need that basket. It is the art of making a book out of paper that has already lived a bit (envelopes, tickets, tags, a torn map) and gluing it together until it looks like it meant to. This guide is the supplies list: what you need, what you probably have, and what can sit on the shelf a while longer. The how-to, with your first page step by step, is in [How to Start Junk Journaling](/journal/how-to-start-junk-journaling).",
+      text: "This is the buying guide: what you probably own, the four things worth paying for, and what can wait. The how-to, with your first page step by step, is in [How to Start Junk Journaling](/journal/how-to-start-junk-journaling).",
     },
-    { type: "h2", text: "Why it is worth trying", id: "why" },
-    {
-      type: "p",
-      text: "It suits beginners unusually well, because rough edges are the look. There is no drawing to get right and no technique to master before you start. A first page can take about the length of a long phone call, and you can stop halfway and pick it up on Thursday.",
-    },
-    {
-      type: "p",
-      text: "The outlay is small too. Many people already own most of it.",
-    },
-    { type: "h2", text: "What you probably already own", id: "free" },
-    {
-      type: "p",
-      text: "Before anything goes in a cart, take a lap of the house with an empty envelope.",
-    },
+    { type: "h2", text: "Start with a lap of the house", id: "free" },
     {
       type: "list",
       items: [
@@ -81,33 +68,22 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
       ],
     },
     {
-      type: "noSpend",
-      text: "Keep an envelope in your bag for a week and drop in anything flat and interesting. By the weekend you will have more material than a first page can use.",
+      type: "p",
+      text: "Keep an envelope in your bag for a week and drop in anything flat and interesting. By the weekend you'll have more material than a first page can use. Then make one page from only what you own, and note the one thing you truly wished you had. That is your first purchase.",
     },
-    { type: "h2", text: "The essentials worth buying", id: "essentials" },
+    { type: "h2", text: "The four things worth buying", id: "essentials" },
     {
       type: "p",
-      text: "These are product types, not specific products. Shop for the description and ignore the packaging. Each one earns its place by making a particular step easier.",
+      text: "These are product types, not specific products. Shop for the description and ignore the packaging.",
     },
-    { type: "h3", text: "A journal with thick pages" },
     {
-      type: "p",
-      text: "This is the one place a little quality matters. Glue and layers make thin pages buckle, so look for heavier paper, a binding that opens flat and a size you will carry around. A sketchbook, a plain notebook or a thrifted hardback all work. With a used book, you can glue a few pages together to thicken them and tear others out to make room.",
-    },
-    { type: "h3", text: "A mixed set of washi tape" },
-    {
-      type: "p",
-      text: "Tape is how scrappy paper starts to look like it belongs together. Look for a few plain colors alongside the patterns, so there is something quiet to balance the busy rolls. It is usually sold as removable, which is handy while you are still deciding, but test a scrap on your paper first.",
-    },
-    { type: "h3", text: "One sticker set in a single style" },
-    {
-      type: "p",
-      text: "Pick a lane, whether botanical, vintage labels or small icons. Many people prefer matte finishes to glossy ones, but it is a matter of taste. One set you reuse beats five you scatter.",
-    },
-    { type: "h3", text: "A fine pen or two" },
-    {
-      type: "p",
-      text: "A fine black pen handles captions and borders, and one accent color covers doodles. Test that the ink does not smear over dry glue before you commit a whole page to it.",
+      type: "list",
+      items: [
+        "**A journal with thick pages.** This is the one place a little quality matters. Glue and layers make thin pages buckle, so look for heavier paper, a binding that opens flat and a size you'll carry around. A sketchbook, a plain notebook or a thrifted hardback all work; with a used book, glue a few pages together to thicken them and tear others out to make room.",
+        "**A mixed set of washi tape.** Tape is how scrappy paper starts to look like it belongs together. Look for a few plain colors alongside the patterns, so there's something quiet to balance the busy rolls. It's usually sold as removable, but test a scrap on your paper first.",
+        "**A fine pen.** One black fine pen handles captions and borders, and an accent color covers doodles. Test that the ink doesn't smear over dry glue before committing a whole page to it.",
+        "**One sticker set in a single style.** Pick a lane, whether botanical, vintage labels or small icons. One set you reuse beats five you scatter.",
+      ],
     },
     {
       type: "whatYoullNeed",
@@ -127,11 +103,7 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
         "Double-sided tape for heavier items",
       ],
     },
-    { type: "h2", text: "Optional extras and later upgrades", id: "later" },
-    {
-      type: "p",
-      text: "None of these are bad. They just belong after your third page, not before your first.",
-    },
+    { type: "h2", text: "What can wait until after page three", id: "later" },
     {
       type: "list",
       items: [
@@ -142,17 +114,7 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
         "**A second journal.** Finish the first.",
       ],
     },
-    {
-      type: "saveSplurge",
-      save: "A basic thick-paged notebook, a glue stick and one multipack of washi tape.",
-      splurge:
-        "A lay-flat journal with mixed papers already built in, and one sticker collection you truly love the look of.",
-    },
-    { type: "h2", text: "A realistic shopping order", id: "budget" },
-    {
-      type: "p",
-      text: "A first page can cost nothing if you use what you own. Prices vary by shop, so compare before you buy, and if you have spent a lot before one page is finished, you are probably shopping rather than making.",
-    },
+    { type: "h2", text: "Three baskets", id: "budget" },
     {
       type: "list",
       items: [
@@ -160,6 +122,10 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
         "**A small basket:** a purpose-made journal, a tape set, a pen.",
         "**A bigger basket:** add stickers, a stamp and a few extra pens and papers.",
       ],
+    },
+    {
+      type: "p",
+      text: "Prices vary by shop, so compare before you buy. If you've spent a lot before one page is finished, you're probably shopping rather than making.",
     },
     { type: "h2", text: "Choosing without the overwhelm", id: "choosing" },
     {
@@ -171,38 +137,6 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
         "**Read acid-free and archival labels with care.** They are marketing terms with no single official standard, and acid-free alone does not make something safe for photographs. For photos you care about, use copies rather than originals, and look for adhesives that say they passed the Photographic Activity Test (ISO 18916).",
       ],
     },
-    { type: "h2", text: "Your first evening", id: "first-session" },
-    {
-      type: "first30",
-      steps: [
-        "Tip out the scrap envelope and sort it by color.",
-        "Choose a palette of two or three colors and set the rest aside.",
-        "Glue a background over most of a page. Tear the edges rather than cutting them.",
-        "Add one main piece, such as a ticket, photo or label, slightly off-center.",
-        "Press a strip of tape across a corner to anchor it.",
-        "Write one line. A date and a single word count.",
-      ],
-    },
-    { type: "h2", text: "Common mistakes and quick fixes", id: "troubleshooting" },
-    {
-      type: "item",
-      title: "The pages puff up and the book will not close",
-      note: "There are more layers than the spine can hold. Take a page or two out, keep the middle layers thin, and a common fix is to close the book under a stack of heavy books overnight.",
-    },
-    {
-      type: "item",
-      title: "Things keep falling off",
-      note: "A glue stick is gentle, not strong. Spread it right to the edges, press firmly, and use tape or a little pocket for chunky pieces like tags.",
-    },
-    {
-      type: "item",
-      title: "Everything looks chaotic",
-      note: "Give the page one background, one main piece and three small extras. Then echo a color already on the page with a strip of tape.",
-    },
-    {
-      type: "tryThisWeekend",
-      text: "Do a supplies audit on Saturday morning. Lay out everything you own, make one page from only that, and note the one thing you truly wished you had. That is your first purchase.",
-    },
     {
       type: "shopTheArticle",
       articleSlug: "junk-journaling-supplies-for-beginners",
@@ -210,13 +144,8 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
       dek: "Start with the essentials, and only if you do not already own them. The optional picks can wait until you have made a page and know what you reached for.",
     },
     {
-      type: "makePlan",
-      text: "Put a journal evening on the calendar. One hour and the scrap envelope is the whole brief.",
-    },
-    {
       type: "p",
-      text: "Weighing up bundles? See [Creative Hobby Starter Kits That Are Actually Worth Considering](/journal/creative-hobby-starter-kits-worth-considering).",
+      text: "Weighing up bundles? See [Creative Hobby Starter Kits That Are Actually Worth Considering](/journal/creative-hobby-starter-kits-worth-considering). Ready to make the first page? Head to [How to Start Junk Journaling](/journal/how-to-start-junk-journaling).",
     },
-    { type: "ifYouLoved", hobbies: ["scrapbooking", "collage-art", "watercolor-painting"] },
   ],
 };
