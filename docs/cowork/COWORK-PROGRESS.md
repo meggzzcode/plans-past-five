@@ -42,3 +42,37 @@ No code, main branch or claude/vibrant-dirac-amdf7r changed by Cowork work; data
 - E: Netlify terms, Search Console, Pinterest claim, Amazon agreement read; GA4 and Bing help pages gave no answers (NOT FOUND).
 - J: Flippa pricing page read: no dollar prices or success-fee rates published there; escrow fee pages conflict (cannot reconcile); no sold comps (NOT FOUND).
 - Trademark: USPTO database searched; no exact mark; HOOKED AFTER FIVE (class 41) to be opened by owner.
+
+---
+# Editorial tasks run, 2026-11-19 (branch cowork/editorial-tasks, from editorial-reset)
+| Task | Status | Files |
+|---|---|---|
+| 1 Amazon Associates account and policies | DONE (read from logged-in pages). Sign-up date and explicit approval status NOT FOUND in the console | AMAZON-POLICY-READ.md (new "Task 1 re-read" section) |
+| 2 SiteStripe | DONE: only Short Link / Full Link offered; image/embed links not available; no embed code to record | SITESTRIPE-IMAGE-FORMAT.md |
+| 3 Pilot product verification | DONE for 24 rows; IMAGE-EMBEDS.csv not produced (gate not met) | docs/commerce/buy-plan/PILOT-VERIFICATION.csv |
+| 4 Photography options | DONE (research only, nothing sent, nothing downloaded); many brands NOT FOUND | PRODUCT-PHOTOGRAPHY-OPTIONS.md |
+| 5 Pinterest | DONE: username planspastfive, business profile, website verified (claimed earlier this session); AI-label policy read from Pinterest newsroom via search; Instagram/TikTok NOT CHECKED | COWORK-READ-LIVE.md |
+
+**Things that surprised me / deviations from the read-only rules (owner-authorised in chat this session):** planspastfive-20 was created, planspastfive.com was added to the Associates website list (answered "No" to the under-13 traffic question), and the site's Amazon tag was switched on in code on main. The owner asked for each.
+
+**Key findings**
+- planspastfive.com was NOT in the Associates website list until the owner asked for it to be added (2026-11-19).
+- Pilot picks that fail the seller rule (third-party sellers): all mt washi listings (single rolls, not 3-roll sets), Pigma Micron 3-pack/8-pack listings, Mont Marte clay and sealer, Prang DAS 1.1 lb. Keep: DAS 2.2 lb (Amazon), Liquitex Basics 12 x 22 ml (B07VSZM41G, found by search), Galeria 20 x 12 ml, NMJL 2026 cards (sold by the League), YMI Mojave (sold by YMI), Tombow MONO products (seller to confirm).
+- The Mont Marte clay page's Customers-say block describes an eraser, so its sentiment line is unreliable.
+- Research mismatches: Strathmore 5.5x8.5 has no verified ASIN; mt Black research ASIN B0CKXPRJVP resolves to B0CS3G6YLT; sealer volume quoted as 2.02 fl oz in research vs 4.06 fl oz on Amazon (both 120 ml).
+
+**Owner actions still needed**
+1. Decide on a separate Store ID: it needs a separate Associates account (own sign-up, separate login if Amazon requires, tax and payment). Not created by me.
+2. Review the replace/reject list in PILOT-VERIFICATION.csv.
+3. Approve any photo-permission emails (drafts only, nothing sent).
+4. Check Instagram/TikTok handle availability (not done).
+
+## Later the same day (tasks 6 and 7, and v2 research)
+| Task | Status | Files |
+|---|---|---|
+| 6 Netlify facts | DONE (skipped-build cost NOT FOUND) | NETLIFY-ACCOUNT-FACTS.md |
+| 7 Outreach | BLOCKED: no verified email address for YMI (form only) or NMJL (mail/phone only); nothing sent | docs/cowork/OUTREACH-LOG.md |
+| 3 Pilot verification against v2 research | NOT DONE: Task 3 used the v1 research; v2 files landed on editorial-reset afterwards | see below |
+
+### Task 3 against v2 research (partial)
+18 new listings opened 2026-11-19: PILOT-VERIFICATION-V2.csv (the first file, PILOT-VERIFICATION.csv, is unchanged). Biggest result: the National Mah Jongg League 2026 four-pack listings (large print B0GRCBQ3Y2, standard B0GRCCTYJ5) ARE sold by The National Mah Jongg League, Inc., so that gate passes. NOT yet opened: the other washi colourways (B0CKW2X6BM, B0CKW38SF9, B0CKXPRJVP, B0GR14G2RT and three more), Tombow dots, Mildliner/Sarasa set parts, the clay-kit and cutter leads, Mojave/Heather alone, and all rows marked NOT SELECTED or REJECTED in v2. Task 3 status: PARTLY.
