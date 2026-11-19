@@ -26,7 +26,7 @@ Status 2026-11-19. Baseline: `b376648` (plus Cowork round-2 prompt `6111700`). T
 **Phase B: Pilot (4 articles, parallel agents, then my integration)**
 Air-Dry Clay (project tutorial), Junk Journaling Supplies (shopping guide), Mahjong Night (group experience), 35 Hobbies (traffic feature). Each gets: brief, independent research, outline, draft, product shortlist from the scoring DB, image plan, shop block design. Rendered at 1280/390, compared side by side with the old version, scored on the four perspectives. **STOP: you approve, adjust, or reject before Phase C.**
 
-**Phase C: 8 remaining flagships** (watercolor, starter kits, embroidery, craft night, paint night, picnic, at-home creative weekend, cozy solo dates, pickleball = 9, counted with pilot totals 12 after pilot's 2 flagships). Same pipeline; collections built alongside. Cowork verifies listings in parallel in rolling batches.
+**Phase C: the 9 remaining flagships** (watercolor, creative hobby starter kits, embroidery, craft night, paint night, picnic, at-home creative weekend, cozy solo dates, pickleball). The pilot already covers 3 of the 12 flagships (clay, junk journaling supplies, mahjong); the fourth pilot (35 Hobbies) is a discovery article. Same pipeline; the 8 shopping collections are built alongside. Cowork verifies listings in rolling batches.
 
 **Phase D: Library** 9 discovery + 7 supporting + validated consolidations + redirects + internal-link rewrite and checker.
 
