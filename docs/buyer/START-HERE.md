@@ -14,6 +14,7 @@ Plans Past Five is a frontend-only website for women who want hobbies, weekend p
 7. `docs/buyer/ANALYTICS-SETUP.md`, `docs/buyer/SEO-GUIDE.md`, `docs/buyer/MARKETING-ROADMAP.md`: getting found and measuring.
 8. `docs/buyer/OPERATING-COSTS.md`, `docs/buyer/SECURITY-AND-BACKUPS.md`, `docs/buyer/WEEKLY-MAINTENANCE.md`, `docs/buyer/MONTHLY-MAINTENANCE.md`, `docs/buyer/TROUBLESHOOTING.md`.
 9. `docs/buyer/BUYER-90-DAY-PLAN.md`: a suggested first 90 days.
+10. `docs/buyer/HANDS-ON-RECIPES.md`: tested step-by-step commands (local run, publish an article, add a product, affiliate switch, images, backups) and the gotchas found in a clean-room takeover.
 
 Other docs in the repo: `CLAUDE-HANDOFF.md` (developer handoff), `AGENTS.md` (project rules), `docs/BRAND-GUIDE.md`, `docs/content/*` (editorial system), `docs/commerce/*` (product and kit research), `docs/marketing/*` (Pinterest and distribution), `docs/IMAGE-LICENSES.md`, `docs/content/IMAGE-LICENCE-LEDGER.md`, `docs/SOP-*.md` (publish, corrections, link checks).
 
@@ -25,11 +26,11 @@ Other docs in the repo: `CLAUDE-HANDOFF.md` (developer handoff), `AGENTS.md` (pr
 - The site ships **unmonetized**: ordinary Amazon links, no tracking ids, and a disclosure that says links currently earn nothing. How that changes: `docs/buyer/AMAZON-ASSOCIATES-PATH.md`.
 - Articles: **27 published, 7 drafts** (`node scripts/build-content.mjs` prints the count). 23 were source-checked on 2026-11-18 and show a "facts last checked" date; the 4 originals have source-check notes in `docs/content/verification/` but no date shown on their pages yet. Published means set to published in the repo, not deployed: nothing is live. Drafts are never public.
 - Hobbies: **43** (`src/data/hobbies.ts`). Shop collections: **8**.
-- Product records: **62** in `src/data/catalog.generated.ts`: 37 verified (29 shown, 8 on editorial hold) and 25 candidates (never shown). Kits: **8** collection kits; a kit renders as a kit only with 4 or more named verified picks, otherwise as one "Where to start" card.
+- Product records: **64** in `src/data/catalog.generated.ts` (re-counted with the importer `--check`): 37 verified (29 shown, 8 on editorial hold) and 27 candidates (never shown). Kits: **8** collection kits; a kit renders as a kit only with 4 or more named verified picks, otherwise as one "Where to start" card.
 - Pinterest pins: **88** images in `public/pins` (`docs/pinterest-pins.csv`).
 - Images: **18** in `src/assets` (14 original plus 4 from Canva), each with a row in `docs/content/IMAGE-LICENCE-LEDGER.md`.
 - Tests: `bunx vitest run`: 641 tests in 44 files passing on 2026-11-19 (see `docs/buyer/FRESH-CLONE-LOG.md` for the clean-export run).
-- Buyer guides in `docs/buyer`: 31 files, this one included.
+- Buyer guides in `docs/buyer`: 33 files, this one included.
 
 ## First commands
 

@@ -1,11 +1,13 @@
 {
   "name": "tanstack_start_ts",
   "private": true,
+  "license": "UNLICENSED",
   "sideEffects": false,
   "type": "module",
   "scripts": {
     "dev": "vite dev",
     "content:build": "node scripts/build-content.mjs",
+    "content:format": "node scripts/format-article.mjs",
     "prebuild": "node scripts/build-content.mjs",
     "build": "vite build",
     "prebuild:dev": "node scripts/build-content.mjs",

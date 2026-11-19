@@ -13,7 +13,7 @@ integrations: {
 }
 ```
 
-Important finding: these four fields are **placeholders**. At the time of checking, no code renders `searchConsoleVerification` or `pinterestVerification` as a tag, and no code loads Google Analytics from `googleAnalyticsId`. `docs/buyer/SEO-GUIDE.md` says the verification meta tag renders when non-empty; the code search did not find it, so confirm in `src/routes/__root.tsx` and `src/lib/seo.ts` before relying on it. Safe verification routes that need no code: DNS TXT record verification for Search Console and Bing, and domain claiming through the platform's own supported methods (re-read live: current steps from official help pages).
+Verified in a clean-room takeover test (2026-11-19): `searchConsoleVerification` and `pinterestVerification` DO render as `<meta name="google-site-verification">` and `<meta name="p:domain_verify">` in every page head (via `src/lib/verification.ts`, called from `src/routes/__root.tsx`) as soon as they are non-empty. `googleAnalyticsId` does NOT load Google Analytics: no code in the repo injects the gtag script, so setting the id alone adds no tag to any page (it only enables the `track()` helper if you add the loader yourself). Adding the loader is a small code task (root route `head().scripts`, after consent logic) that a buyer must do or commission; and the two tests that assert the empty defaults (in `src/test/shop.test.tsx` and `src/test/wiring.test.ts`) must be updated when you set values. Safe verification routes that need no code: DNS TXT record verification for Search Console and Bing, and domain claiming through the platform's own supported methods (re-read live: current steps from official help pages).
 
 ## The tracking helper (`src/lib/track.ts`)
 

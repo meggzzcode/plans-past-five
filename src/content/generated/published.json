@@ -324,7 +324,7 @@
     "status": "published",
     "publishedAt": "2026-11-19",
     "verifiedAt": "2026-11-19",
-    "hero": "soloCafe",
+    "hero": "picnic",
     "searchIntent": "cheap hobbies / affordable hobbies for women / low-cost hobbies to start",
     "angle": "Free and low-cost framing: the cheapest sensible way into each hobby, borrow-first and secondhand habits, and a plain explanation of why costs vary, with no prices stated",
     "hobbies": [
@@ -468,7 +468,7 @@
         "n": 8,
         "title": "Reading",
         "hobby": "reading",
-        "note": "A library card is one of the best-value ways to read more. A cheap clip-on light makes it cozier still.",
+        "note": "A library card can make reading close to free. A cheap clip-on light makes it cozier still.",
         "cost": "Often free with a library card",
         "first": "Borrow three books and read the first twenty pages of each."
       },
@@ -5389,7 +5389,7 @@
       },
       {
         "type": "p",
-        "text": "Weave the ends in with the yarn needle. Check the yarn label before washing the finished piece, as care varies by fiber. A single row before dinner is a perfectly good first day, and if your hands ache, shake them out and stop. A relaxed grip also makes more even stitches."
+        "text": "Weave the ends in with the yarn needle. Check the yarn label before washing the finished piece, as care varies by fiber. A single row before dinner is a good first day, and if your hands ache, shake them out and stop. A relaxed grip also makes more even stitches."
       },
       {
         "type": "h2",
@@ -5442,7 +5442,7 @@
     "status": "published",
     "publishedAt": "2026-11-19",
     "verifiedAt": "2026-11-19",
-    "hero": "shopCreative",
+    "hero": "cozyCorner",
     "searchIntent": "how to start embroidery / embroidery for beginners / basic embroidery stitches",
     "angle": "A stitch-first beginner path: learn a handful of stitches on scrap fabric, then finish a single small hoop, with fixes for the most common frustrations",
     "hobbies": [
@@ -7899,7 +7899,7 @@
     "status": "published",
     "publishedAt": "2026-11-19",
     "verifiedAt": "2026-11-19",
-    "hero": "watercolor",
+    "hero": "flowerArranging",
     "searchIntent": "watercolor painting for beginners / watercolor supplies / easy watercolor projects",
     "angle": "A calm, practice-first guide: buy little, learn water control before drawing skill, and finish three small projects that look good without being good at drawing",
     "hobbies": [
@@ -8017,7 +8017,7 @@
         "type": "item",
         "n": 3,
         "title": "Wet-on-wet",
-        "note": "Touch color to paper that is already damp and watch it bloom. It is unpredictable and delightful, and perfect for clouds, petals and moody backgrounds."
+        "note": "Touch color to paper that is already damp and watch it bloom. It is unpredictable and delightful, and good for clouds, petals and moody backgrounds."
       },
       {
         "type": "item",

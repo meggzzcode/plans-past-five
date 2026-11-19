@@ -7,7 +7,7 @@
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-19",
-  "hero": "soloCafe",
+  "hero": "picnic",
   "searchIntent": "cheap hobbies / affordable hobbies for women / low-cost hobbies to start",
   "angle": "Free and low-cost framing: the cheapest sensible way into each hobby, borrow-first and secondhand habits, and a plain explanation of why costs vary, with no prices stated",
   "hobbies": [
@@ -159,7 +159,7 @@
       "n": 8,
       "title": "Reading",
       "hobby": "reading",
-      "note": "A library card is one of the best-value ways to read more. A cheap clip-on light makes it cozier still.",
+      "note": "A library card can make reading close to free. A cheap clip-on light makes it cozier still.",
       "cost": "Often free with a library card",
       "first": "Borrow three books and read the first twenty pages of each."
     },
