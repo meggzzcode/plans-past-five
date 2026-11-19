@@ -13,3 +13,6 @@ export function importCsv(
   known?: KnownRefs | null,
   now?: Date,
 ): { products: CatalogProduct[]; errors: string[]; warnings: string[] };
+export const MAX_SHRINK: number;
+export function countExistingProducts(file: string): number;
+export function shrinkProblem(current: number, next: number): string;

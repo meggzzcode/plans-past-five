@@ -21,7 +21,12 @@
       "thrifting",
       "flower-arranging"
     ],
-    "productIds": ["tennis-rackets", "pickleball-sets", "daypacks", "water-bottles"],
+    "productIds": [
+      "tennis-rackets",
+      "pickleball-sets",
+      "daypacks",
+      "water-bottles"
+    ],
     "sources": [
       {
         "title": "CDC: adult physical activity guidelines",
@@ -108,7 +113,7 @@
         "hobby": "pickleball",
         "note": "Simple rules, a small court and a lot of laughing. One of the friendliest ways to try a paddle sport. See [pickleball for beginners](/journal/pickleball-for-beginners).",
         "time": "60 min",
-        "cost": "Varies; check local courts",
+        "cost": "Often free on public courts",
         "company": "Social"
       },
       {
@@ -118,7 +123,7 @@
         "hobby": "tennis",
         "note": "Rallying is a workout disguised as a conversation. Start with a friend and a few lessons; [how to start playing tennis as an adult](/journal/how-to-start-playing-tennis-as-an-adult) covers the first session.",
         "time": "60 min",
-        "cost": "Varies",
+        "cost": "Public courts are often free; lessons extra",
         "company": "Social"
       },
       {
@@ -127,7 +132,6 @@
         "title": "Badminton or table tennis",
         "note": "Quick and social, and often on offer at community centers, so check locally. You'll move more than you expect.",
         "time": "45-60 min",
-        "cost": "Varies",
         "company": "Social"
       },
       {
@@ -145,7 +149,6 @@
         "title": "A group class you can hide in the back of",
         "note": "Dance, yoga, aqua aerobics, community fitness. Choose one that lists beginners and stand near the door.",
         "time": "45-60 min",
-        "cost": "Varies",
         "company": "Social"
       },
       {
@@ -160,7 +163,7 @@
         "hobby": "hiking",
         "note": "Start with an easy, marked trail and build up. Go with a friend, tell someone your route, check the weather and bring water.",
         "time": "1-3 hours",
-        "cost": "Varies",
+        "cost": "Often free",
         "company": "Social"
       },
       {
@@ -169,7 +172,6 @@
         "title": "Recreational cycling",
         "note": "Flat, scenic and easy to chat through. The [cycling guide](/journal/how-to-get-into-recreational-cycling-as-an-adult) covers the basics.",
         "time": "1 hour",
-        "cost": "Varies",
         "company": "Solo or social"
       },
       {
@@ -179,7 +181,7 @@
         "hobby": "birdwatching",
         "note": "Slow, but it adds up. A two-hour walk looking for birds covers more ground than you'd guess.",
         "time": "1-2 hours",
-        "cost": "Varies",
+        "cost": "Often free",
         "company": "Solo or social"
       },
       {
@@ -198,7 +200,6 @@
         "title": "Outdoor swimming or a local pool",
         "note": "If you like water, swimming is low-impact and a nice change of scene. Swim where a lifeguard is present, never swim alone, and follow local rules.",
         "time": "30-45 min",
-        "cost": "Varies",
         "company": "Social"
       },
       {
@@ -213,7 +214,6 @@
         "hobby": "roller-skating",
         "note": "A rink night with a disco ball beats a treadmill. While you learn, wear a helmet, wrist guards, and knee and elbow pads, and skate on a smooth paved surface or at a rink, not at night.",
         "time": "60 min",
-        "cost": "Varies",
         "company": "Social"
       },
       {
@@ -222,7 +222,6 @@
         "title": "Dance classes",
         "note": "Salsa, swing, line dancing, whatever sounds fun. Many beginner sessions don't expect a partner, but check with the class first.",
         "time": "60 min",
-        "cost": "Varies",
         "company": "Social"
       },
       {
@@ -246,7 +245,6 @@
         "hobby": "flower-arranging",
         "note": "Light gardening counts as gentle activity, and you end up with flowers or vegetables.",
         "time": "1-2 hours",
-        "cost": "Varies",
         "company": "Solo or social"
       },
       {
@@ -256,7 +254,6 @@
         "hobby": "thrifting",
         "note": "Make it a long walk between shops and carry a tote. Retail becomes cardio.",
         "time": "2-3 hours",
-        "cost": "Varies",
         "company": "Solo or social"
       },
       {
@@ -291,13 +288,22 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["pickleball-sets", "tennis-rackets", "water-bottles", "sports-totes"],
+        "productIds": [
+          "pickleball-sets",
+          "tennis-rackets",
+          "water-bottles",
+          "sports-totes"
+        ],
         "title": "Make the second session easier",
         "dek": "Borrow a racket for round one. When you're back for more, your own paddle, a water bottle you love and a tote packed by the door make showing up feel easy."
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["pickleball", "tennis", "hiking"]
+        "hobbies": [
+          "pickleball",
+          "tennis",
+          "hiking"
+        ]
       }
     ]
   },
@@ -330,7 +336,12 @@
       "creative-writing",
       "thrifting"
     ],
-    "productIds": ["watercolor-sets", "air-dry-clay", "embroidery-kits", "pocket-notebooks"],
+    "productIds": [
+      "watercolor-sets",
+      "air-dry-clay",
+      "embroidery-kits",
+      "pocket-notebooks"
+    ],
     "sources": [
       {
         "title": "ASPCA: toxic and non-toxic plants",
@@ -540,13 +551,22 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["watercolor-sets", "air-dry-clay", "embroidery-kits", "pocket-notebooks"],
+        "productIds": [
+          "watercolor-sets",
+          "air-dry-clay",
+          "embroidery-kits",
+          "pocket-notebooks"
+        ],
         "title": "A first small purchase, if you want one",
         "dek": "Start with this: a pocket notebook, a mini paint set, a block of clay or an embroidery kit each makes the first evening easier and gives you something to show for it."
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["watercolor-painting", "air-dry-clay", "birdwatching"]
+        "hobbies": [
+          "watercolor-painting",
+          "air-dry-clay",
+          "birdwatching"
+        ]
       }
     ]
   },
@@ -648,7 +668,11 @@
           "A notebook, glue stick, scissors and paper scraps for journaling",
           "Newspaper or a wipeable cloth, a jar of water, paper towels"
         ],
-        "optional": ["Washi tape and stickers", "A craft apron", "A sealer for finished clay"]
+        "optional": [
+          "Washi tape and stickers",
+          "A craft apron",
+          "A sealer for finished clay"
+        ]
       },
       {
         "type": "p",
@@ -784,7 +808,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["air-dry-clay", "watercolor-painting", "craft-nights"]
+        "hobbies": [
+          "air-dry-clay",
+          "watercolor-painting",
+          "craft-nights"
+        ]
       }
     ]
   },
@@ -810,7 +838,12 @@
       "volunteering",
       "outdoor-sketching"
     ],
-    "productIds": ["daypacks", "pocket-notebooks", "market-totes", "binoculars"],
+    "productIds": [
+      "daypacks",
+      "pocket-notebooks",
+      "market-totes",
+      "binoculars"
+    ],
     "sources": [
       {
         "title": "National Park Service: hiking safety",
@@ -836,7 +869,7 @@
     "body": [
       {
         "type": "p",
-        "text": "You don't need a booking, an upgrade or a paid sunset to have an adventure. Most towns have a trail, a park, a library branch and a market that can fill a Saturday for little more than a fare, a coffee and a snack. Think a river path with a bakery bag, a library branch you've never walked into, a flea market at nine a.m."
+        "text": "You don't need a booking, an upgrade or a paid sunset to have an adventure. Most towns have a trail, a park, a library branch and a market that can fill a Saturday for little more than a fare, a coffee and a snack. Think a river path with a thermos, a library branch you've never walked into, a flea market at nine a.m."
       },
       {
         "type": "p",
@@ -868,7 +901,7 @@
         "hobby": "hiking",
         "note": "Search your area for a short, marked trail under two hours, and wear comfortable shoes. Go with a friend, tell someone your route, check the weather and carry water.",
         "time": "2 hours",
-        "cost": "Varies",
+        "cost": "Often free",
         "company": "Social"
       },
       {
@@ -877,7 +910,7 @@
         "title": "A botanical or public garden",
         "note": "Many have free or low-cost days. Look for seasonal displays, shaded paths and benches.",
         "time": "2 hours",
-        "cost": "Varies",
+        "cost": "Free or low-cost days",
         "company": "Solo or social"
       },
       {
@@ -886,7 +919,7 @@
         "title": "The big park on the far side of town",
         "note": "Not your nearest one; the one you always mean to visit. Take a ball, a blanket and a book.",
         "time": "2-3 hours",
-        "cost": "Varies",
+        "cost": "Often free",
         "company": "Solo or social"
       },
       {
@@ -895,7 +928,7 @@
         "title": "A river or lakeside path",
         "note": "Water makes any walk feel like a small trip. Walk to the first bench, sit, then carry on.",
         "time": "1-2 hours",
-        "cost": "Varies",
+        "cost": "Often free",
         "company": "Solo or social"
       },
       {
@@ -904,7 +937,7 @@
         "title": "A sunrise or sunset spot",
         "note": "Find a high point or an open field. Check local times and bring a layer.",
         "time": "1 hour",
-        "cost": "Varies",
+        "cost": "Free",
         "company": "Solo or social"
       },
       {
@@ -912,9 +945,9 @@
         "n": 6,
         "title": "A morning of birdwatching",
         "hobby": "birdwatching",
-        "note": "A pond, wetland or quiet corner of a park. Bring a notebook and a free bird-ID app.",
+        "note": "A pond, wetland or quiet corner of a park. Bring a notebook and a bird-ID app or a field guide.",
         "time": "1-2 hours",
-        "cost": "Varies",
+        "cost": "Often free",
         "company": "Solo or social"
       },
       {
@@ -929,7 +962,7 @@
         "hobby": "museum-exploring",
         "note": "Many offer free hours, pay-what-you-can days or local discounts. Look up your nearest.",
         "time": "1-2 hours",
-        "cost": "Varies",
+        "cost": "Free or discounted days",
         "company": "Solo or social"
       },
       {
@@ -939,7 +972,7 @@
         "hobby": "reading",
         "note": "Branches differ. Some have gardens, exhibitions or beautiful reading rooms. Borrow something unexpected.",
         "time": "1 hour",
-        "cost": "Varies",
+        "cost": "Often free",
         "company": "Solo"
       },
       {
@@ -948,7 +981,7 @@
         "title": "A free gallery or art space",
         "note": "Small galleries and community spaces often show local work at no charge. Choose the piece you'd take home.",
         "time": "1 hour",
-        "cost": "Varies",
+        "cost": "Often free",
         "company": "Solo or social"
       },
       {
@@ -957,7 +990,7 @@
         "title": "A community event or open day",
         "note": "Check notice boards, library bulletins and neighborhood groups. Some events are free.",
         "time": "2 hours",
-        "cost": "Varies",
+        "cost": "Some events are free",
         "company": "Social"
       },
       {
@@ -967,7 +1000,7 @@
         "hobby": "nature-photography",
         "note": "Walk it like a visitor. Read the plaques, look above the shopfronts, take a few photographs.",
         "time": "1-2 hours",
-        "cost": "Varies",
+        "cost": "Free",
         "company": "Solo or social"
       },
       {
@@ -976,7 +1009,6 @@
         "title": "A quiet public building",
         "note": "Many places of worship and historic halls welcome visitors for a look around. Follow local etiquette and dress codes.",
         "time": "30-60 min",
-        "cost": "Varies",
         "company": "Solo"
       },
       {
@@ -991,7 +1023,7 @@
         "hobby": "thrifting",
         "note": "Visit three in an afternoon with a small budget. Look for one thing you'd never buy new.",
         "time": "2 hours",
-        "cost": "Varies",
+        "cost": "Your small budget",
         "company": "Solo or social"
       },
       {
@@ -1000,7 +1032,7 @@
         "title": "A farmers' or flea market",
         "note": "Go early. Bring a tote, a little cash and a plan to taste something new.",
         "time": "2 hours",
-        "cost": "Varies",
+        "cost": "A little cash",
         "company": "Solo or social"
       },
       {
@@ -1009,7 +1041,7 @@
         "title": "A secondhand bookshop",
         "note": "Head for a section you never visit and buy one book on instinct.",
         "time": "1 hour",
-        "cost": "Varies",
+        "cost": "The price of one book",
         "company": "Solo"
       },
       {
@@ -1018,7 +1050,7 @@
         "title": "A neighborhood you never go to",
         "note": "Pick one on the map, walk its main street and have a small snack somewhere that isn't on a tourist list.",
         "time": "2 hours",
-        "cost": "Varies",
+        "cost": "Price of a snack",
         "company": "Solo or social"
       },
       {
@@ -1042,7 +1074,7 @@
         "hobby": "volunteering",
         "note": "Community gardens, charity shops and clean-up days often welcome one-off helpers. Contact the organizers first.",
         "time": "2-3 hours",
-        "cost": "Varies",
+        "cost": "Free",
         "company": "Solo or social"
       },
       {
@@ -1051,7 +1083,7 @@
         "title": "A free or pay-what-you-can class",
         "note": "Community centers and libraries often run beginner sessions. Try something you've never done.",
         "time": "1-2 hours",
-        "cost": "Varies",
+        "cost": "Free or pay what you can",
         "company": "Solo or social"
       },
       {
@@ -1061,7 +1093,7 @@
         "hobby": "picnicking",
         "note": "Everyone brings one dish. A feast on a tiny budget, with logistics that mostly look after themselves.",
         "time": "2-3 hours",
-        "cost": "Varies",
+        "cost": "One dish each",
         "company": "Social"
       },
       {
@@ -1070,7 +1102,7 @@
         "title": "A group walk",
         "note": "Ask a few friends to meet at a trailhead or park. Finish with tea or a shared snack.",
         "time": "2 hours",
-        "cost": "Varies",
+        "cost": "Free, tea optional",
         "company": "Social"
       },
       {
@@ -1085,7 +1117,7 @@
         "hobby": "outdoor-sketching",
         "note": "Take a pencil and a small sketchbook somewhere with a view and draw what's in front of you for an hour. Fancy adding color? [Watercolor painting for beginners](/journal/watercolor-painting-for-beginners) shows how small the setup can be.",
         "time": "1-2 hours",
-        "cost": "Varies",
+        "cost": "A pencil and a sketchbook",
         "company": "Solo"
       },
       {
@@ -1094,7 +1126,7 @@
         "title": "A bike or bus ride to the end of the line",
         "note": "Choose a route, get off at the last stop and have a look around. Bring a map or a charged phone. If you would rather ride, [how to get into recreational cycling as an adult](/journal/how-to-get-into-recreational-cycling-as-an-adult) starts from a borrowed bike.",
         "time": "2-3 hours",
-        "cost": "Varies",
+        "cost": "Bus fare, or free by bike",
         "company": "Solo or social"
       },
       {
@@ -1103,7 +1135,7 @@
         "title": "A stargazing night",
         "note": "Find a dark spot away from streetlights, bring a blanket and a flask, and check the forecast for clear skies. Go with a friend or tell someone where you'll be.",
         "time": "1-2 hours",
-        "cost": "Varies",
+        "cost": "Free",
         "company": "Solo or social"
       },
       {
@@ -1112,7 +1144,6 @@
         "title": "A day as a tourist in your own city",
         "note": "Build a mini itinerary: morning walk, lunch, a gallery, an evening view. Do it with a visitor's curiosity.",
         "time": "Half to full day",
-        "cost": "Varies",
         "company": "Solo or social"
       },
       {
@@ -1142,13 +1173,22 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["binoculars", "daypacks", "pocket-notebooks", "market-totes"],
+        "productIds": [
+          "binoculars",
+          "daypacks",
+          "pocket-notebooks",
+          "market-totes"
+        ],
         "title": "Make your first adventure easier",
         "dek": "A daypack keeps snacks and layers off your hands, a pocket notebook catches the finds and binoculars bring the pond-side birds closer."
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["hiking", "birdwatching", "thrifting"]
+        "hobbies": [
+          "hiking",
+          "birdwatching",
+          "thrifting"
+        ]
       }
     ]
   },
@@ -1256,7 +1296,6 @@
         "title": "Home spa hour",
         "note": "A mask or foot soak if you like them, soft towels, a podcast. Follow the product labels and skip anything that irritates your skin.",
         "time": "45-60 min",
-        "cost": "Varies",
         "company": "Solo"
       },
       {
@@ -1275,7 +1314,6 @@
         "hobby": "jigsaw-puzzles",
         "note": "The pleasure is in the pairing: busy hands, a gently occupied mind and no decisions.",
         "time": "60-120 min",
-        "cost": "Varies",
         "company": "Solo"
       },
       {
@@ -1300,7 +1338,6 @@
         "hobby": "paint-by-numbers",
         "note": "Pick one color, fill its areas, then stop. A finished patch of color is the whole date.",
         "time": "45-60 min",
-        "cost": "Varies",
         "company": "Solo"
       },
       {
@@ -1310,7 +1347,6 @@
         "hobby": "air-dry-clay",
         "note": "Roll, press and smooth, then leave it to dry for a couple of days (check your clay's label). No kiln needed ([how to start air-dry clay](/journal/how-to-start-air-dry-clay) has more ideas), and it's decorative only, so keep food and drink off it, even if sealed.",
         "time": "45 min + drying",
-        "cost": "Varies",
         "company": "Solo"
       },
       {
@@ -1320,7 +1356,7 @@
         "hobby": "junk-journaling",
         "note": "Dig out receipts, tickets and ribbon. Glue three things into a notebook and give each a one-line caption.",
         "time": "30-45 min",
-        "cost": "Varies",
+        "cost": "Free to low cost",
         "company": "Solo"
       },
       {
@@ -1348,7 +1384,7 @@
         "hobby": "calligraphy",
         "note": "Print a free practice sheet, fill a page, then write a favorite song lyric in your neatest handwriting.",
         "time": "30-45 min",
-        "cost": "Varies",
+        "cost": "Often free",
         "company": "Solo"
       },
       {
@@ -1382,7 +1418,6 @@
         "title": "Cocktail or mocktail lab",
         "note": "Choose a classic and make it properly. Skip the alcohol entirely if you like; there's no pressure either way.",
         "time": "30-45 min",
-        "cost": "Varies",
         "company": "Solo"
       },
       {
@@ -1406,7 +1441,6 @@
         "hobby": "indoor-gardening",
         "note": "Wipe the leaves, repot one plant, move another to better light. If you have pets, check any plant against a pet-safety source first.",
         "time": "45 min",
-        "cost": "Varies",
         "company": "Solo"
       },
       {
@@ -1416,7 +1450,6 @@
         "hobby": "scrapbooking",
         "note": "Pick one trip or one year, choose twelve photos and arrange them in a scrapbook or on a shelf.",
         "time": "60 min",
-        "cost": "Varies",
         "company": "Solo"
       },
       {
@@ -1466,7 +1499,12 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["junk-journals", "washi-tape", "book-lights", "reading-journals"],
+        "productIds": [
+          "junk-journals",
+          "washi-tape",
+          "book-lights",
+          "reading-journals"
+        ],
         "title": "The night-in kit",
         "dek": "Small touches that turn a night in into a date: a book light for cozy reading, washi tape and a journal for keepsakes."
       },
@@ -1485,7 +1523,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["air-dry-clay", "paint-by-numbers", "jigsaw-puzzles"]
+        "hobbies": [
+          "air-dry-clay",
+          "paint-by-numbers",
+          "jigsaw-puzzles"
+        ]
       }
     ]
   },
@@ -1620,7 +1662,7 @@
         "title": "Painting thrifted frames and objects",
         "note": "Pick up a plain frame, vase or tray from a thrift store and give it stripes, checks or cherries with acrylics. Instant decor, very low risk.",
         "time": "1 hour",
-        "cost": "Varies",
+        "cost": "Thrift find plus paint",
         "company": "Solo or social",
         "first": "Paint a thrifted wooden frame with a simple checkerboard border."
       },
@@ -1646,7 +1688,7 @@
         "n": 10,
         "title": "At-home pottery painting",
         "hobby": "pottery-painting",
-        "note": "Get a ceramic painting kit and follow its instructions. Unless the kit says the finished piece is food safe, keep it for display rather than food or drink."
+        "note": "Get a ceramic painting kit and follow its instructions. Treat painted pottery as display-only unless the kit or studio says it is food safe for your use."
       },
       {
         "type": "item",
@@ -1664,7 +1706,12 @@
       },
       {
         "type": "starterKit",
-        "productIds": ["air-dry-clay", "clay-tools", "acrylic-paints", "clay-mats"],
+        "productIds": [
+          "air-dry-clay",
+          "clay-tools",
+          "acrylic-paints",
+          "clay-mats"
+        ],
         "title": "Clay, start here"
       },
       {
@@ -1689,7 +1736,6 @@
         "title": "Cross-stitch",
         "note": "Little x-shaped stitches on gridded fabric following a chart. Very beginner-friendly and very satisfying to watch fill in.",
         "time": "30–60 min",
-        "cost": "Varies",
         "company": "Solo",
         "first": "Stitch a small motif from a beginner kit, like a strawberry or a star."
       },
@@ -1699,7 +1745,6 @@
         "title": "Punch needle",
         "note": "A tool that pushes loops of yarn through fabric. Makes fluffy, textured pieces fast, great for cushion covers and wall hangings.",
         "time": "1 hour",
-        "cost": "Varies",
         "company": "Solo",
         "first": "Punch a small heart or flower on a 6-inch hoop."
       },
@@ -1723,7 +1768,7 @@
         "title": "Sewing a simple tote",
         "note": "A straight seam on a sewing machine (or by hand) gets you a tote bag in an afternoon. Look for a free beginner pattern.",
         "time": "2 hours",
-        "cost": "Varies",
+        "cost": "A free pattern to start",
         "company": "Solo",
         "first": "Sew a simple lined tote from a free beginner pattern."
       },
@@ -1785,7 +1830,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["watercolor-painting", "embroidery", "craft-nights"]
+        "hobbies": [
+          "watercolor-painting",
+          "embroidery",
+          "craft-nights"
+        ]
       }
     ]
   },
@@ -1903,40 +1952,35 @@
         "n": 1,
         "title": "Embroidery",
         "hobby": "embroidery",
-        "note": "A strong candidate for a kit: it puts everything in one box so you can start stitching straight away. [How to start embroidery](/journal/how-to-start-embroidery) covers the first stitches. Look for a small design, a printed pattern, a hoop and a clear stitch guide.",
-        "cost": "Varies"
+        "note": "A strong candidate for a kit: it puts everything in one box so you can start stitching straight away. [How to start embroidery](/journal/how-to-start-embroidery) covers the first stitches. Look for a small design, a printed pattern, a hoop and a clear stitch guide."
       },
       {
         "type": "item",
         "n": 2,
         "title": "Watercolor",
         "hobby": "watercolor-painting",
-        "note": "Often worth buying loose, since paper matters most. [Watercolor painting for beginners](/journal/watercolor-painting-for-beginners) covers a first session. Check what paper a kit includes, and if you buy a set, consider pairing it with a proper pad.",
-        "cost": "Varies"
+        "note": "Often worth buying loose, since paper matters most. [Watercolor painting for beginners](/journal/watercolor-painting-for-beginners) covers a first session. Check what paper a kit includes, and if you buy a set, consider pairing it with a proper pad."
       },
       {
         "type": "item",
         "n": 3,
         "title": "Air-dry clay",
         "hobby": "air-dry-clay",
-        "note": "[How to start air-dry clay](/journal/how-to-start-air-dry-clay) covers a first project. Fine as a kit if there is enough clay for several pieces, a few tools and paint. Read the label for age notes, and don't use finished pieces for food or drink, even if sealed.",
-        "cost": "Varies"
+        "note": "[How to start air-dry clay](/journal/how-to-start-air-dry-clay) covers a first project. Fine as a kit if there is enough clay for several pieces, a few tools and paint. Read the label for age notes, and don't use finished pieces for food or drink, even if sealed."
       },
       {
         "type": "item",
         "n": 4,
         "title": "Junk journaling",
         "hobby": "junk-journaling",
-        "note": "Usually better loose: a notebook, glue and scraps. The [junk journaling guide](/journal/how-to-start-junk-journaling) covers a first page, and the [supplies guide](/journal/junk-journaling-supplies-for-beginners) sorts what is worth buying.",
-        "cost": "Varies"
+        "note": "Usually better loose: a notebook, glue and scraps. The [junk journaling guide](/journal/how-to-start-junk-journaling) covers a first page, and the [supplies guide](/journal/junk-journaling-supplies-for-beginners) sorts what is worth buying."
       },
       {
         "type": "item",
         "n": 5,
         "title": "Ceramic and pottery painting",
         "hobby": "pottery-painting",
-        "note": "Kits can suit this well, but check whether pieces need firing or are decorative only, and what any glaze label says about use. Don't treat decorative-only pieces as food safe.",
-        "cost": "Varies"
+        "note": "Kits can suit this well, but check whether pieces need firing or are decorative only, and what any glaze label says about use. Treat painted pottery as display-only unless the kit or studio says it is food safe for your use."
       },
       {
         "type": "h2",
@@ -2001,7 +2045,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["embroidery", "watercolor-painting", "air-dry-clay"]
+        "hobbies": [
+          "embroidery",
+          "watercolor-painting",
+          "air-dry-clay"
+        ]
       }
     ]
   },
@@ -2017,7 +2065,11 @@
     "hero": "flowerArranging",
     "searchIntent": "flower arranging for beginners / how to arrange flowers at home / flower arranging hobby",
     "angle": "A low-commitment weekly ritual: a simple formula (focal, filler, greenery), a minimal toolkit, and flower care basics, using only grocery-store stems and what you already own",
-    "hobbies": ["flower-arranging", "indoor-gardening", "collage-art"],
+    "hobbies": [
+      "flower-arranging",
+      "indoor-gardening",
+      "collage-art"
+    ],
     "productIds": [],
     "sources": [
       {
@@ -2221,7 +2273,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["indoor-gardening", "collage-art", "watercolor-painting"]
+        "hobbies": [
+          "indoor-gardening",
+          "collage-art",
+          "watercolor-painting"
+        ]
       }
     ]
   },
@@ -2325,7 +2381,7 @@
         "hobby": "craft-nights",
         "note": "One simple craft, a big table, snacks. Everyone makes something a bit different and shows it off at the end. For a keepsake, [air-dry clay](/journal/how-to-start-air-dry-clay), [embroidery](/journal/how-to-start-embroidery) and [watercolor](/journal/watercolor-painting-for-beginners) all suit a table of friends.",
         "time": "2-3 hours",
-        "cost": "Varies",
+        "cost": "Depends on the craft",
         "company": "3-8 friends"
       },
       {
@@ -2335,7 +2391,7 @@
         "hobby": "baking",
         "note": "Bake or buy plain cookies, set out icing and sprinkles and hold a very friendly contest.",
         "time": "2 hours",
-        "cost": "Varies",
+        "cost": "Cookies and icing",
         "company": "3-8 friends"
       },
       {
@@ -2353,7 +2409,6 @@
         "title": "Spa night in",
         "note": "Face masks if you like them, foot soaks, nail polish, a playlist. Keep it low-key and follow product labels.",
         "time": "2 hours",
-        "cost": "Varies",
         "company": "2-6 friends"
       },
       {
@@ -2362,7 +2417,7 @@
         "title": "Mocktail or tea tasting",
         "note": "Everyone brings an ingredient. Rank the results, crown a winner and ask about dietary needs beforehand.",
         "time": "90 min",
-        "cost": "Varies",
+        "cost": "Everyone brings an ingredient",
         "company": "3-8 friends"
       },
       {
@@ -2381,7 +2436,6 @@
         "hobby": "friendship-bracelets",
         "note": "Matching bracelets are quick, forgiving for beginners and lovely to hand over at the end.",
         "time": "90 min",
-        "cost": "Varies",
         "company": "2-6 friends"
       },
       {
@@ -2391,7 +2445,6 @@
         "hobby": "mahjong",
         "note": "Ideal if one friend already plays. Sets and rules differ by version, so agree which you're playing first; the [mahjong night guide](/journal/how-to-host-a-mahjong-night) covers how to start.",
         "time": "2-3 hours",
-        "cost": "Varies",
         "company": "4 friends"
       },
       {
@@ -2400,7 +2453,6 @@
         "title": "Movie marathon with a theme",
         "note": "Choose three films around a theme, like underrated rom-coms, and give each a matching snack.",
         "time": "4-6 hours",
-        "cost": "Varies",
         "company": "3-8 friends"
       },
       {
@@ -2409,7 +2461,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["group-painting-kits", "board-games", "conversation-cards"],
+        "productIds": [
+          "group-painting-kits",
+          "board-games",
+          "conversation-cards"
+        ],
         "title": "Start with a night-in kit",
         "dek": "A painting kit, a board game or a deck of conversation cards means \"should we do something?\" already has an answer."
       },
@@ -2425,7 +2481,7 @@
         "hobby": "pottery-painting",
         "note": "Many studios let you paint a ready-made piece and then glaze and fire it for you. Group bookings and minimums vary, so check ahead. Prefer to stay in? See [how to host a paint night at home](/journal/how-to-host-a-paint-night-at-home).",
         "time": "2 hours",
-        "cost": "Varies",
+        "cost": "Studio fee",
         "company": "2-8 friends"
       },
       {
@@ -2434,7 +2490,7 @@
         "title": "Drop-in class",
         "note": "Dance, ceramics, life drawing, cooking. Many studios offer a single session with no commitment.",
         "time": "90 min",
-        "cost": "Varies",
+        "cost": "Class fee",
         "company": "2-6 friends"
       },
       {
@@ -2444,7 +2500,7 @@
         "hobby": "pickleball",
         "note": "Many public courts are free or low cost, and beginner doubles is chatty and forgiving. Borrow equipment if you can. Courts may have booking or time rules, so check locally.",
         "time": "90 min",
-        "cost": "Varies",
+        "cost": "Often free",
         "company": "2-4 friends"
       },
       {
@@ -2454,7 +2510,7 @@
         "hobby": "picnicking",
         "note": "Everyone buys one thing, then you assemble the lot on a blanket in a nearby park.",
         "time": "2-3 hours",
-        "cost": "Varies",
+        "cost": "What you buy",
         "company": "3-6 friends"
       },
       {
@@ -2474,7 +2530,6 @@
         "hobby": "museum-exploring",
         "note": "Choose one exhibit, then debrief over coffee. Good for friends who enjoy a post-mortem.",
         "time": "2-3 hours",
-        "cost": "Varies",
         "company": "2-5 friends"
       },
       {
@@ -2484,7 +2539,6 @@
         "hobby": "hiking",
         "note": "Pick a popular, well-marked trail in daylight, tell someone your route, check the weather and pack water. Stay together as a group.",
         "time": "2-3 hours",
-        "cost": "Varies",
         "company": "2-6 friends"
       },
       {
@@ -2494,7 +2548,7 @@
         "hobby": "reading",
         "note": "Each friend chooses a book for another within a budget cap, then everyone reads a first page aloud over a snack.",
         "time": "2 hours",
-        "cost": "Varies",
+        "cost": "Your budget cap",
         "company": "3-6 friends"
       },
       {
@@ -2504,7 +2558,6 @@
         "hobby": "roller-skating",
         "note": "Pure nostalgia. Everyone wobbles, which levels the field. Wear a helmet, wrist guards, and knee and elbow pads, and stay on the rink or a smooth paved surface in daylight.",
         "time": "2 hours",
-        "cost": "Varies",
         "company": "3-8 friends"
       },
       {
@@ -2519,7 +2572,6 @@
         "hobby": "book-clubs",
         "note": "Read a short story or essay instead of a novel and talk it over. If it goes well, make it regular with [how to start a book club](/journal/how-to-start-a-book-club).",
         "time": "2 hours",
-        "cost": "Varies",
         "company": "4-8 friends"
       },
       {
@@ -2528,7 +2580,6 @@
         "title": "Conversation-cards dinner",
         "note": "Draw a card between courses. Works well with friends you're sure you already know.",
         "time": "2-3 hours",
-        "cost": "Varies",
         "company": "3-6 friends"
       },
       {
@@ -2537,7 +2588,7 @@
         "title": "Vision-board and goals evening",
         "note": "Old magazines, scissors, glue sticks. Share one goal each and set a reminder to check in three months on.",
         "time": "2 hours",
-        "cost": "Varies",
+        "cost": "Low cost",
         "company": "3-6 friends"
       },
       {
@@ -2547,7 +2598,6 @@
         "hobby": "jigsaw-puzzles",
         "note": "Tip a puzzle onto the table and let people drift in and out. Good for friends who don't want to perform.",
         "time": "2-3 hours",
-        "cost": "Varies",
         "company": "2-5 friends"
       },
       {
@@ -2556,7 +2606,7 @@
         "title": "Walk-and-talk with a stop for treats",
         "note": "A loop around a park with ice cream or coffee halfway. Walking side by side makes talking easy.",
         "time": "90 min",
-        "cost": "Varies",
+        "cost": "Price of a treat",
         "company": "2-4 friends"
       },
       {
@@ -2575,7 +2625,7 @@
         "title": "Letter-writing night",
         "note": "Everyone writes postcards to people who aren't in the room. Bring stamps and good pens.",
         "time": "90 min",
-        "cost": "Varies",
+        "cost": "Stamps and pens",
         "company": "3-6 friends"
       },
       {
@@ -2611,7 +2661,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["craft-nights", "pottery-painting", "book-clubs"]
+        "hobbies": [
+          "craft-nights",
+          "pottery-painting",
+          "book-clubs"
+        ]
       }
     ]
   },
@@ -2847,7 +2901,12 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["watercolor-sets", "embroidery-kits", "junk-journals", "air-dry-clay"],
+        "productIds": [
+          "watercolor-sets",
+          "embroidery-kits",
+          "junk-journals",
+          "air-dry-clay"
+        ],
         "title": "A first pick for a creative evening",
         "dek": "A small paint set, an embroidery kit, a junk journal or a block of clay each make the first session easier. Choose the one you are most curious about."
       },
@@ -2865,7 +2924,7 @@
         "n": 19,
         "title": "Tennis",
         "hobby": "tennis",
-        "note": "Golden-hour rallies with a friend are a lovely way to move. You don't need to keep score for months. Many public courts are free to use, so start by rallying on one near you."
+        "note": "Evening rallies with a friend are a lovely way to move. You don't need to keep score for months. Many public courts are free to use, so start by rallying on one near you."
       },
       {
         "type": "item",
@@ -3024,8 +3083,8 @@
         ]
       },
       {
-        "type": "makePlan",
-        "text": "Still not sure? Take the two-minute quiz and get three to five hobbies matched to your time, budget and energy."
+        "type": "p",
+        "text": "Still not sure? Take the short [Hobby Finder quiz](/hobby-finder) and get three to five hobbies matched to your time, budget and energy."
       },
       {
         "type": "p",
@@ -3033,7 +3092,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["junk-journaling", "watercolor-painting", "tennis"]
+        "hobbies": [
+          "junk-journaling",
+          "watercolor-painting",
+          "tennis"
+        ]
       }
     ]
   },
@@ -3059,7 +3122,12 @@
       "book-clubs",
       "craft-nights"
     ],
-    "productIds": ["watercolor-sets", "air-dry-clay", "pocket-notebooks", "daypacks"],
+    "productIds": [
+      "watercolor-sets",
+      "air-dry-clay",
+      "pocket-notebooks",
+      "daypacks"
+    ],
     "sources": [
       {
         "title": "National Park Service: hiking safety",
@@ -3124,8 +3192,8 @@
         ]
       },
       {
-        "type": "makePlan",
-        "text": "Can't pick? Take the seven-question Hobby Finder quiz: your time, budget, energy and company in, a short list of hobbies out. No sign-up required. Prefer to browse? [Thirty-five hobbies to try](/journal/hobbies-to-try-when-life-feels-like-work-sleep-repeat) sorts them by how much energy you have."
+        "type": "p",
+        "text": "Can't pick? Take the [Hobby Finder quiz](/hobby-finder): up to six quick questions about your time, budget, energy and company, and a short list of hobbies out. No sign-up required. Prefer to browse? [Thirty-five hobbies to try](/journal/hobbies-to-try-when-life-feels-like-work-sleep-repeat) sorts them by how much energy you have."
       },
       {
         "type": "h2",
@@ -3153,7 +3221,10 @@
           "A free evening or weekend slot for each",
           "One approach: small starter versions"
         ],
-        "optional": ["A friend to join one of them", "A tiny set of supplies for one hobby"]
+        "optional": [
+          "A friend to join one of them",
+          "A tiny set of supplies for one hobby"
+        ]
       },
       {
         "type": "h2",
@@ -3237,7 +3308,12 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["watercolor-sets", "air-dry-clay", "pocket-notebooks", "daypacks"],
+        "productIds": [
+          "watercolor-sets",
+          "air-dry-clay",
+          "pocket-notebooks",
+          "daypacks"
+        ],
         "title": "Three easy first buys",
         "dek": "A pocket notebook, a mini paint set and a lump of clay cover three very different evenings, and each makes starting simple. Skip anything you can borrow."
       },
@@ -3247,7 +3323,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["watercolor-painting", "hiking", "craft-nights"]
+        "hobbies": [
+          "watercolor-painting",
+          "hiking",
+          "craft-nights"
+        ]
       }
     ]
   },
@@ -3263,8 +3343,16 @@
     "hero": "cyclingLane",
     "searchIntent": "how to start cycling as an adult / recreational cycling for beginners",
     "angle": "A confidence-first plan: borrow or hire a bike, learn to fit a helmet, practice in a quiet place, take a short first ride, then build routes",
-    "hobbies": ["hiking", "nature-photography", "birdwatching"],
-    "productIds": ["daypacks", "water-bottles", "market-totes"],
+    "hobbies": [
+      "hiking",
+      "nature-photography",
+      "birdwatching"
+    ],
+    "productIds": [
+      "daypacks",
+      "water-bottles",
+      "market-totes"
+    ],
     "sources": [
       {
         "title": "CDC Heads Up: bike helmet fact sheet",
@@ -3329,11 +3417,7 @@
       },
       {
         "type": "p",
-        "text": "Picture it: a flat canal path on a Saturday morning, a bakery bag in your basket."
-      },
-      {
-        "type": "p",
-        "text": "Recreational cycling is the unhurried kind: no special outfit, no speed targets, no clip-in shoes. Just you, a bike and somewhere pleasant to end up. This guide goes from a borrowed bike to a calm first ride, with safety built in from step one."
+        "text": "Recreational cycling is the unhurried kind: no special outfit, no speed targets, no clip-in shoes. Just you, a bike and somewhere pleasant to end up, like a flat canal path on a Saturday morning with a bakery stop at the far end. This guide goes from a borrowed bike to a calm first ride, with safety built in from step one."
       },
       {
         "type": "p",
@@ -3503,7 +3587,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["daypacks", "water-bottles", "market-totes"],
+        "productIds": [
+          "daypacks",
+          "water-bottles",
+          "market-totes"
+        ],
         "title": "Make the first ride more comfortable",
         "dek": "A daypack for water and a snack, a bottle within reach and a tote for the bakery stop make a ride feel easy."
       },
@@ -3517,7 +3605,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["hiking", "birdwatching", "nature-photography"]
+        "hobbies": [
+          "hiking",
+          "birdwatching",
+          "nature-photography"
+        ]
       }
     ]
   },
@@ -3533,7 +3625,12 @@
     "hero": "girlsNight",
     "searchIntent": "craft night ideas for adults / how to host a craft night",
     "angle": "A hosting checklist, five beginner-proof craft menus with timing, a cost-sharing plan and troubleshooting for mixed skill levels",
-    "hobbies": ["craft-nights", "friendship-bracelets", "air-dry-clay", "pottery-painting"],
+    "hobbies": [
+      "craft-nights",
+      "friendship-bracelets",
+      "air-dry-clay",
+      "pottery-painting"
+    ],
     "productIds": [
       "friendship-bracelet-kits",
       "group-painting-kits",
@@ -3597,7 +3694,7 @@
       },
       {
         "type": "p",
-        "text": "Buy ready-made ceramic pieces and acrylic paints or a ceramic painting kit, and everyone paints a mug, dish or trinket. Cost depends on the piece. Pieces from paint-only kits are for decoration, so check labels before using anything for food or drink. Read the paint labels too, look for the ACMI AP or CL seal, and avoid products containing lead, cadmium or other heavy metals. If your group would rather paint than craft, [how to host a paint night at home](/journal/how-to-host-a-paint-night-at-home) goes deeper on that one evening."
+        "text": "Buy ready-made ceramic pieces and acrylic paints or a ceramic painting kit, and everyone paints a mug, dish or trinket. Cost depends on the piece. Treat painted pottery as display-only unless the kit or studio says it is food safe for your use. Read the paint labels too, look for the ACMI AP or CL seal, and avoid products containing lead, cadmium or other heavy metals. If your group would rather paint than craft, [how to host a paint night at home](/journal/how-to-host-a-paint-night-at-home) goes deeper on that one evening."
       },
       {
         "type": "h3",
@@ -3719,11 +3816,15 @@
       },
       {
         "type": "p",
-        "text": "Found your craft? Send this to the group chat and pick a date before the thread goes quiet."
+        "text": "Settled on a project? Text the group the date and what to bring, and you're hosting."
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["craft-nights", "friendship-bracelets", "air-dry-clay"]
+        "hobbies": [
+          "craft-nights",
+          "friendship-bracelets",
+          "air-dry-clay"
+        ]
       }
     ]
   },
@@ -3739,8 +3840,16 @@
     "hero": "shopGirlsNight",
     "searchIntent": "how to start a mahjong night / mahjong for beginners / what you need to host mahjong",
     "angle": "An invitation to a recurring tradition: why a standing game night beats another crowded restaurant, how to organize the first night, how to learn, what to buy by kind with strict set-to-version compatibility, and cultural respect. Teaches no variant's rules and states no tile counts.",
-    "hobbies": ["mahjong", "craft-nights", "book-clubs"],
-    "productIds": ["mahjong-sets", "conversation-cards", "board-games"],
+    "hobbies": [
+      "mahjong",
+      "craft-nights",
+      "book-clubs"
+    ],
+    "productIds": [
+      "mahjong-sets",
+      "conversation-cards",
+      "board-games"
+    ],
     "sources": [
       {
         "title": "National Mah Jongg League",
@@ -3937,8 +4046,8 @@
       {
         "type": "shopTheArticle",
         "articleSlug": "how-to-host-a-mahjong-night",
-        "title": "Choosing the set that makes game night easy",
-        "dek": "Pick one set made for your version, check what it includes and match the reference card to it. The listing is the source for price and stock."
+        "title": "An American-style set, ready for game night",
+        "dek": "These picks are for American mahjong: 166-tile sets with racks, the 2026 hand card and a mat. Playing Chinese, Hong Kong or Riichi instead? Look for a set made for that version and match the reference to it. The listing is the source for price and stock."
       },
       {
         "type": "p",
@@ -3950,7 +4059,11 @@
       },
       {
         "type": "ifYouLoved",
-        "hobbies": ["mahjong", "book-clubs", "craft-nights"]
+        "hobbies": [
+          "mahjong",
+          "book-clubs",
+          "craft-nights"
+        ]
       }
     ]
   },
@@ -3966,8 +4079,17 @@
     "hero": "watercolor",
     "searchIntent": "how to host a paint night at home / paint and sip at home ideas / paint night supplies",
     "angle": "A host's plan for a paint night without a studio: a shared supply list, one easy follow-along painting, a setup that protects the table, and gentle ways to handle the friend who is convinced she can't paint",
-    "hobbies": ["craft-nights", "paint-by-numbers", "pottery-painting"],
-    "productIds": ["group-painting-kits", "acrylic-paints", "detail-brushes", "conversation-cards"],
+    "hobbies": [
+      "craft-nights",
+      "paint-by-numbers",
+      "pottery-painting"
+    ],
+    "productIds": [
+      "group-painting-kits",
+      "acrylic-paints",
+      "detail-brushes",
+      "conversation-cards"
+    ],
     "sources": [
       {
         "title": "CPSC: art materials safety",
@@ -3998,7 +4120,7 @@
     "body": [
       {
         "type": "p",
-        "text": "Picture it: six friends round one table, the same little sunset taking shape on six canvases, and every single one of them different. That's a paint night, and the host's job is simple: choose one easy painting, set the table and keep the evening moving. Skill doesn't come into it."
+        "text": "Six friends round one table, the same little sunset taking shape on six canvases and every one of them different: that's a paint night, and the host's job is simple: choose one easy painting, set the table and keep the evening moving. Skill doesn't come into it."
       },
       {
         "type": "p",
@@ -4057,8 +4179,8 @@
           "detail-brushes",
           "conversation-cards"
         ],
-        "title": "Paint night, boxed",
-        "dek": "Start with this: a group kit means one purchase instead of six sets of everything, and fine brushes let guests add details like stars and stripes."
+        "title": "Set the table for six painters",
+        "dek": "A multi-pack of small canvases and a set of brushes cover the table, and a fine brush lets guests add stars and stripes. Acrylic paint in the basic colors above is the one other thing to have ready."
       },
       {
         "type": "h2",
@@ -4089,6 +4211,10 @@
           "**Painting, about 90 minutes:** with a break for drying and conversation.",
           "**Gallery, 15 minutes:** prop the canvases up and admire them."
         ]
+      },
+      {
+        "type": "makePlan",
+        "text": "Want the night to actually happen? Pick the date and the painting, then pencil it into Make Some Plans."
       },
       {
         "type": "p",
@@ -4139,12 +4265,12 @@
         "text": "Send the invitation about a week ahead, and ask what guests like to eat and drink. Craft nights follow a similar shape, and [How to Host a Craft Night](/journal/how-to-host-a-craft-night) covers rotating themes. Want to keep painting afterwards? [Watercolor painting for beginners](/journal/watercolor-painting-for-beginners) is a gentle next step. For gatherings without alcohol at the center, see [Girls' Night Ideas That Aren't Drinks](/journal/girls-night-ideas-that-arent-drinks)."
       },
       {
-        "type": "makePlan",
-        "text": "Ready to put it on the calendar? Pick the night, choose your painting and let Make Some Plans help you fit it into the week."
-      },
-      {
         "type": "ifYouLoved",
-        "hobbies": ["craft-nights", "paint-by-numbers", "pottery-painting"]
+        "hobbies": [
+          "craft-nights",
+          "paint-by-numbers",
+          "pottery-painting"
+        ]
       }
     ]
   },
@@ -4160,8 +4286,17 @@
     "hero": "picnic",
     "searchIntent": "how to plan a picnic / aesthetic picnic ideas / what to bring on a picnic",
     "angle": "A picnic as a tiny event: choose a spot, a food plan that survives travel, a packing checklist and two or three things to do on the blanket",
-    "hobbies": ["picnicking", "reading", "outdoor-sketching", "birdwatching", "film-photography"],
-    "productIds": ["picnic-blankets", "market-totes"],
+    "hobbies": [
+      "picnicking",
+      "reading",
+      "outdoor-sketching",
+      "birdwatching",
+      "film-photography"
+    ],
+    "productIds": [
+      "picnic-blankets",
+      "market-totes"
+    ],
     "sources": [
       {
         "title": "FDA: handling food safely while eating outdoors",
@@ -4362,7 +4497,10 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["picnic-blankets", "market-totes"],
+        "productIds": [
+          "picnic-blankets",
+          "market-totes"
+        ],
         "title": "Picnic gear that makes it easy",
         "dek": "A waterproof-backed blanket keeps you dry and a good tote makes carrying everything easier, so setting up is simple and pretty."
       },
@@ -4388,8 +4526,19 @@
     "hero": "shopAdventures",
     "searchIntent": "how to spend a Saturday alone / solo Saturday ideas",
     "angle": "A simple framework (anchor, treat, wander, rest) with three sample Saturdays at different budgets and energy levels, and a fallback plan for when you flake",
-    "hobbies": ["picnicking", "thrifting", "museum-exploring", "reading", "outdoor-sketching"],
-    "productIds": ["picnic-blankets", "pocket-notebooks", "market-totes", "portable-watercolor"],
+    "hobbies": [
+      "picnicking",
+      "thrifting",
+      "museum-exploring",
+      "reading",
+      "outdoor-sketching"
+    ],
+    "productIds": [
+      "picnic-blankets",
+      "pocket-notebooks",
+      "market-totes",
+      "portable-watercolor"
+    ],
     "sources": [
       {
         "title": "Solo outings: well-lit areas and companions (US DOJ/OJP guide)",
@@ -4440,6 +4589,10 @@
           "Pack the bag Friday night: water, notebook, snack, a charged phone and something to read.",
           "Tell a friend or family member roughly where you'll be, especially somewhere new."
         ]
+      },
+      {
+        "type": "makePlan",
+        "text": "Thursday is a good day to book it. Pick your anchor and block the time, or tell us your energy, budget and free hours and get a Saturday plan matched to them."
       },
       {
         "type": "h2",
@@ -4502,7 +4655,7 @@
       },
       {
         "type": "p",
-        "text": "Short on budget? Keep the anchor free (a long walk, a library visit, a park day) and spend on one lovely lunch; [affordable hobbies](/journal/affordable-hobbies-under-25) has more ideas. Feeling flush? Book the class or the nice lunch as the anchor and leave everything else loose."
+        "text": "Short on budget? Keep the anchor free (a long walk, a library visit, a park day) and spend on one lovely lunch; [affordable hobbies](/journal/affordable-hobbies-under-25) have more ideas. Feeling flush? Book the class or the nice lunch as the anchor and leave everything else loose."
       },
       {
         "type": "h2",
@@ -4524,13 +4677,13 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["picnic-blankets", "market-totes", "pocket-notebooks"],
+        "productIds": [
+          "picnic-blankets",
+          "market-totes",
+          "pocket-notebooks"
+        ],
         "title": "Pack the bag for a better day out",
         "dek": "A roomy tote, a blanket for the park and a pocket notebook for the good bits turn a wander into an outing you'll want to repeat."
-      },
-      {
-        "type": "makePlan",
-        "text": "Ready? Pick your anchor and block the time. Tell us your energy, budget and free hours and get a plan matched to your Saturday."
       },
       {
         "type": "p",
@@ -4550,8 +4703,15 @@
     "hero": "shopGirlsNight",
     "searchIntent": "how to start a book club / book club ideas with friends",
     "angle": "Rules-lite, burnout-proof book club setup: size, schedule, book-selection systems, discussion questions and a 'nobody read it' plan",
-    "hobbies": ["book-clubs", "reading"],
-    "productIds": ["conversation-cards", "book-lights", "reading-journals"],
+    "hobbies": [
+      "book-clubs",
+      "reading"
+    ],
+    "productIds": [
+      "conversation-cards",
+      "book-lights",
+      "reading-journals"
+    ],
     "sources": [
       {
         "title": "Food Allergy Research & Education: tips for staying safe",
@@ -4690,13 +4850,17 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["conversation-cards", "book-lights", "reading-journals"],
+        "productIds": [
+          "conversation-cards",
+          "book-lights",
+          "reading-journals"
+        ],
         "title": "Make the night feel like a club",
         "dek": "Conversation cards for the quiet moments, a book light for late chapters and a journal for the thoughts you'll want to bring."
       },
       {
-        "type": "makePlan",
-        "text": "Got the invite drafted? Pick a date, send it to the group chat and let Make Some Plans help you hold the night."
+        "type": "p",
+        "text": "Got the invite drafted? Send it to the group chat with a date and see who's in."
       },
       {
         "type": "p",
@@ -4716,8 +4880,16 @@
     "hero": "shopBookish",
     "searchIntent": "how to start a reading journal / reading journal ideas / what to write in a reading journal",
     "angle": "A low-pressure reading journal: a tiny entry template, three layouts to choose from, honest advice about what to buy and what to skip, and a way to abandon the habit gracefully and restart",
-    "hobbies": ["reading", "book-clubs", "creative-writing"],
-    "productIds": ["reading-journals", "pocket-notebooks", "book-lights"],
+    "hobbies": [
+      "reading",
+      "book-clubs",
+      "creative-writing"
+    ],
+    "productIds": [
+      "reading-journals",
+      "pocket-notebooks",
+      "book-lights"
+    ],
     "sources": [],
     "related": [
       "how-to-start-a-book-club",
@@ -4801,7 +4973,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["reading-journals", "pocket-notebooks", "book-lights"],
+        "productIds": [
+          "reading-journals",
+          "pocket-notebooks",
+          "book-lights"
+        ],
         "title": "Make your reading journal easier and prettier",
         "dek": "A journal with prompts for the blank-page days, a pocket notebook for favorite lines and a light for late chapters. Start with whichever solves your biggest hurdle."
       },
@@ -4851,8 +5027,8 @@
         ]
       },
       {
-        "type": "makePlan",
-        "text": "Pick tonight's book, open a fresh page and save a reading evening in Make Some Plans."
+        "type": "p",
+        "text": "Which book are you on right now? Write its title at the top of a fresh page tonight, and the journal has begun."
       },
       {
         "type": "p",
@@ -4872,8 +5048,18 @@
     "hero": "shopPottery",
     "searchIntent": "how to start air dry clay / air dry clay for beginners / air dry clay projects",
     "angle": "A beginner walkthrough that sets honest expectations: what air-dry clay is good for, what it is not, and how to make a first trinket dish, then a jewelry holder, ornaments and figurines",
-    "hobbies": ["air-dry-clay", "pottery-painting", "craft-nights"],
-    "productIds": ["air-dry-clay", "clay-tools", "clay-mats", "acrylic-paints", "detail-brushes"],
+    "hobbies": [
+      "air-dry-clay",
+      "pottery-painting",
+      "craft-nights"
+    ],
+    "productIds": [
+      "air-dry-clay",
+      "clay-tools",
+      "clay-mats",
+      "acrylic-paints",
+      "detail-brushes"
+    ],
     "sources": [
       {
         "title": "Crayola: can air dry clay pieces be sealed? (FAQ)",
@@ -5060,7 +5246,11 @@
     "hero": "crochetHands",
     "searchIntent": "how to start crocheting / crochet for beginners / easy first crochet project",
     "angle": "A calm, practical start: choose forgiving supplies, learn the chain, single crochet and double crochet, and finish a flat dishcloth-style square before anything shaped",
-    "hobbies": ["crochet", "knitting", "embroidery"],
+    "hobbies": [
+      "crochet",
+      "knitting",
+      "embroidery"
+    ],
     "productIds": [],
     "sources": [
       {
@@ -5218,8 +5408,14 @@
     "hero": "cozyCorner",
     "searchIntent": "how to start embroidery / embroidery for beginners / basic embroidery stitches",
     "angle": "A stitch-first beginner path: learn a handful of stitches on scrap fabric, then finish a single small hoop, with fixes for the most common frustrations",
-    "hobbies": ["embroidery", "crochet", "craft-nights"],
-    "productIds": ["embroidery-kits"],
+    "hobbies": [
+      "embroidery",
+      "crochet",
+      "craft-nights"
+    ],
+    "productIds": [
+      "embroidery-kits"
+    ],
     "sources": [
       {
         "title": "DMC: step by step embroidery stitch guide",
@@ -5374,7 +5570,9 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["embroidery-kits"],
+        "productIds": [
+          "embroidery-kits"
+        ],
         "title": "A first hoop, all in one box",
         "dek": "A small kit makes the first evening easier: hoop, thread, fabric and pattern together, so you can start stitching right away."
       },
@@ -5396,8 +5594,18 @@
     "hero": "junkJournal",
     "searchIntent": "how to start junk journaling / junk journal supplies for beginners",
     "angle": "A no-pressure beginner walkthrough with a free-first supply list and a step-by-step first page",
-    "hobbies": ["junk-journaling", "scrapbooking", "collage-art", "creative-writing"],
-    "productIds": ["junk-journals", "washi-tape", "sticker-sets", "pocket-notebooks"],
+    "hobbies": [
+      "junk-journaling",
+      "scrapbooking",
+      "collage-art",
+      "creative-writing"
+    ],
+    "productIds": [
+      "junk-journals",
+      "washi-tape",
+      "sticker-sets",
+      "pocket-notebooks"
+    ],
     "sources": [
       {
         "title": "Liquid glue vs glue stick (LePage)",
@@ -5432,7 +5640,12 @@
           "Scissors",
           "Paper scraps you already have: receipts, tickets, envelopes, magazine pages, packaging"
         ],
-        "optional": ["A pen you like writing with", "Washi tape", "Stickers", "Fineliner pens"]
+        "optional": [
+          "A pen you like writing with",
+          "Washi tape",
+          "Stickers",
+          "Fineliner pens"
+        ]
       },
       {
         "type": "p",
@@ -5461,9 +5674,14 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["junk-journals", "washi-tape", "sticker-sets", "pocket-notebooks"],
-        "title": "The four things that make pages prettier",
-        "dek": "Start tonight with what's in the house. A thick-paged journal, washi tape, a sticker set and a pocket notebook make pages sturdier, prettier and easier to carry."
+        "productIds": [
+          "junk-journals",
+          "washi-tape",
+          "sticker-sets",
+          "pocket-notebooks"
+        ],
+        "title": "Tools that make pages prettier",
+        "dek": "Start tonight with what's in the house. When you want pages that are sturdier and prettier, these are the picks: a thick-paged journal, washi tape, a glue stick or tape runner and a fine pen."
       },
       {
         "type": "h2",
@@ -5513,10 +5731,6 @@
         ]
       },
       {
-        "type": "makePlan",
-        "text": "Saturday evening, a glue stick and an envelope of scraps: save it as a plan, or let Make Some Plans find you the time."
-      },
-      {
         "type": "p",
         "text": "Ready for page one? Pick tonight, glue down one scrap and notice what you'd love to have next; that's your first pick from the shop above. Want a notebook for what you read? Try [a reading journal](/journal/how-to-start-a-reading-journal). Like crafting with your hands? [Air-dry clay](/journal/how-to-start-air-dry-clay) and [watercolor](/journal/watercolor-painting-for-beginners) are fun next steps, [embroidery](/journal/how-to-start-embroidery) and [crochet](/journal/how-to-start-crocheting) suit quiet evenings, and you can explore more in [Creative Corner](/creative-corner)."
       }
@@ -5534,8 +5748,16 @@
     "hero": "tennis",
     "searchIntent": "how to start playing tennis as an adult / tennis for beginners",
     "angle": "A four-week plan: borrow before you buy, learn two shots, play in short sessions, then add a lesson or a social format",
-    "hobbies": ["tennis", "pickleball"],
-    "productIds": ["tennis-rackets", "tennis-balls", "water-bottles", "sports-totes"],
+    "hobbies": [
+      "tennis",
+      "pickleball"
+    ],
+    "productIds": [
+      "tennis-rackets",
+      "tennis-balls",
+      "water-bottles",
+      "sports-totes"
+    ],
     "sources": [
       {
         "title": "USTA: tennis scoring rules",
@@ -5566,7 +5788,7 @@
     "body": [
       {
         "type": "p",
-        "text": "Four weeks is enough to go from 'haven't held a racket since school' to keeping a short rally going and keeping score. Golden-hour courts, a can of fresh balls and a friend to rally with: here's the plan. It assumes minimal gear, no club and no audience. The courts will have people who've played since they were nine; they're not your benchmark."
+        "text": "Four weeks is enough to go from 'haven't held a racket since school' to keeping a short rally going and keeping score. Evening courts, a can of fresh balls and a friend to rally with: here's the plan. It assumes minimal gear, no club and no audience. The courts will have people who've played since they were nine; they're not your benchmark."
       },
       {
         "type": "h2",
@@ -5670,13 +5892,18 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["tennis-rackets", "tennis-balls", "water-bottles", "sports-totes"],
+        "productIds": [
+          "tennis-rackets",
+          "tennis-balls",
+          "water-bottles",
+          "sports-totes"
+        ],
         "title": "Your own gear, once you're hooked",
         "dek": "A racket that feels like yours, balls for rally practice, a water bottle and a tote to carry it all. After a few sessions, these are the basics to look for."
       },
       {
-        "type": "makePlan",
-        "text": "Pick your week-one court and a time, then let Make Some Plans fit it into your week."
+        "type": "p",
+        "text": "Week one only asks for a court and a friend to rally with. Which day this week could you spare for it?"
       },
       {
         "type": "p",
@@ -5696,8 +5923,18 @@
     "hero": "soloCafe",
     "searchIntent": "solo coffee shop date / how to go to a cafe alone",
     "angle": "A step-by-step first-timer's guide: choosing the place, ordering, what to bring, how to handle the awkward minutes, and six things to do once you're seated",
-    "hobbies": ["reading", "outdoor-sketching", "creative-writing", "junk-journaling"],
-    "productIds": ["pocket-notebooks", "book-sleeves", "reading-journals", "portable-watercolor"],
+    "hobbies": [
+      "reading",
+      "outdoor-sketching",
+      "creative-writing",
+      "junk-journaling"
+    ],
+    "productIds": [
+      "pocket-notebooks",
+      "book-sleeves",
+      "reading-journals",
+      "portable-watercolor"
+    ],
     "sources": [
       {
         "title": "Food Allergy Research & Education: tips for staying safe",
@@ -5758,7 +5995,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["pocket-notebooks", "reading-journals", "book-sleeves"],
+        "productIds": [
+          "pocket-notebooks",
+          "reading-journals",
+          "book-sleeves"
+        ],
         "title": "Pack the date",
         "dek": "A pocket notebook, a book sleeve and a journal make your bag feel date-ready and give your hands something lovely to do."
       },
@@ -5858,8 +6099,17 @@
     "hero": "junkJournal",
     "searchIntent": "junk journaling supplies for beginners / junk journal supply list / what do I need to start a junk journal",
     "angle": "A product-focused companion to the starter guide: sort supplies into essentials, things you already own, optional extras and later upgrades, so beginners spend only where it changes the result",
-    "hobbies": ["junk-journaling", "scrapbooking", "collage-art"],
-    "productIds": ["junk-journals", "washi-tape", "sticker-sets", "pocket-notebooks"],
+    "hobbies": [
+      "junk-journaling",
+      "scrapbooking",
+      "collage-art"
+    ],
+    "productIds": [
+      "junk-journals",
+      "washi-tape",
+      "sticker-sets",
+      "pocket-notebooks"
+    ],
     "sources": [
       {
         "title": "NEDCC: storage enclosures for photographic materials",
@@ -5997,11 +6247,7 @@
         "type": "shopTheArticle",
         "articleSlug": "junk-journaling-supplies-for-beginners",
         "title": "Your first junk journal basket",
-        "dek": "A thick-paged journal, a tape set and one sticker set make pages sturdier and prettier from page one. Already own one? Start with whichever you're missing."
-      },
-      {
-        "type": "makePlan",
-        "text": "Basket ready? Pick a weekend evening for page one and save it in Make Some Plans."
+        "dek": "A thick-paged journal, a washi tape set, a glue stick or tape runner and a fine pen cover pages that are sturdier and prettier from page one. Already own one? Start with whichever you're missing."
       },
       {
         "type": "p",
@@ -6033,7 +6279,10 @@
       "crossword-puzzles",
       "collage-art"
     ],
-    "productIds": ["book-lights", "embroidery-kits"],
+    "productIds": [
+      "book-lights",
+      "embroidery-kits"
+    ],
     "sources": [],
     "related": [
       "things-to-do-after-work-instead-of-scrolling",
@@ -6098,7 +6347,7 @@
         "title": "An audiobook and a gentle chore",
         "note": "Pair a story with something the hands can do: folding laundry, watering plants, sorting the drawer of mystery cables. Check whether your library lends audiobooks; what's on offer varies.",
         "time": "30 min",
-        "cost": "Varies"
+        "cost": "Often free with a library card"
       },
       {
         "type": "item",
@@ -6121,8 +6370,7 @@
         "n": 7,
         "title": "Plant care, slowly",
         "note": "Wipe the leaves, check the soil with a finger, repot the one that's outgrown its home. Plants work on a slow clock, which is rather the point.",
-        "time": "10-20 min",
-        "cost": "Varies"
+        "time": "10-20 min"
       },
       {
         "type": "h2",
@@ -6136,7 +6384,7 @@
         "hobby": "jigsaw-puzzles",
         "note": "Tip out the pieces, find the straight edges and let your mind drift. A puzzle on a tray can be carried off the table when guests come, and there's no penalty for leaving it half done.",
         "time": "20-60 min",
-        "cost": "Varies"
+        "cost": "Often cheaper secondhand"
       },
       {
         "type": "item",
@@ -6145,7 +6393,7 @@
         "hobby": "paint-by-numbers",
         "note": "Someone else has already made the decisions. Match the number to the color, fill the shape, move on. One corner is a full evening's work and nobody will check.",
         "time": "20-45 min",
-        "cost": "Varies"
+        "cost": "Low cost"
       },
       {
         "type": "item",
@@ -6153,8 +6401,7 @@
         "title": "Knitting",
         "hobby": "knitting",
         "note": "Once you've got the basic stitch, a plain scarf is mostly rhythm. It pairs well with a rewatch, since you don't need to follow every line of dialogue. [Crochet](/journal/how-to-start-crocheting) works the same way, and a first flat square is a gentle place to begin.",
-        "time": "20-60 min",
-        "cost": "Varies"
+        "time": "20-60 min"
       },
       {
         "type": "item",
@@ -6163,7 +6410,7 @@
         "hobby": "embroidery",
         "note": "A beginner kit arrives with the design already printed on the fabric. Three or four stitches will get you a tiny flower, and a tiny flower is plenty. The [embroidery](/journal/how-to-start-embroidery) guide shows the first stitches.",
         "time": "20-45 min",
-        "cost": "Varies"
+        "cost": "Low cost"
       },
       {
         "type": "item",
@@ -6172,7 +6419,7 @@
         "hobby": "friendship-bracelets",
         "note": "Pin a few threads to a cushion and knot a simple pattern on autopilot. Make the first one for yourself, since you're also the one who needs it.",
         "time": "20-40 min",
-        "cost": "Varies"
+        "cost": "Low cost"
       },
       {
         "type": "h2",
@@ -6181,7 +6428,7 @@
       },
       {
         "type": "p",
-        "text": "Most of these start with what's already in the house. A few small comforts make a tired evening feel like a treat: a clip-on reading light so you can read in your favorite corner, a blanket you love and an embroidery kit with the design already planned, so there's nothing to decide. A library book, a secondhand jigsaw or plain yarn from the basic range are happy starting points too, and [affordable hobbies](/journal/affordable-hobbies-under-25) has more."
+        "text": "Most of these start with what's already in the house. A few small comforts make a tired evening feel like a treat: a clip-on reading light so you can read in your favorite corner, a blanket you love and an embroidery kit with the design already planned, so there's nothing to decide. A library book, a secondhand jigsaw or plain yarn from the basic range are happy starting points too, and [affordable hobbies](/journal/affordable-hobbies-under-25) have more."
       },
       {
         "type": "h2",
@@ -6198,13 +6445,15 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["book-lights", "embroidery-kits"],
-        "title": "Make your cozy corner even cozier",
-        "dek": "A clip-on light for reading anywhere, and an embroidery kit with the pattern already planned for you."
+        "productIds": [
+          "embroidery-kits"
+        ],
+        "title": "Something gentle for your hands",
+        "dek": "A beginner embroidery kit arrives with the design already planned, with small scissors for the thread, so there is nothing to decide on a tired night."
       },
       {
-        "type": "makePlan",
-        "text": "Pick one for tonight and save it. Make Some Plans can match a low-energy evening to your week."
+        "type": "p",
+        "text": "Keep this list where you'll see it on the next flat evening, and pick whichever line made you exhale."
       },
       {
         "type": "p",
@@ -6224,8 +6473,14 @@
     "hero": "shopSporty",
     "searchIntent": "pickleball for beginners / how to start playing pickleball / pickleball equipment",
     "angle": "A no-jargon starter guide: what you really need, the handful of rules that matter on day one, and how to join open play without feeling like the new kid",
-    "hobbies": ["pickleball", "tennis"],
-    "productIds": ["pickleball-sets", "water-bottles"],
+    "hobbies": [
+      "pickleball",
+      "tennis"
+    ],
+    "productIds": [
+      "pickleball-sets",
+      "water-bottles"
+    ],
     "sources": [
       {
         "title": "USA Pickleball Official Rulebook",
@@ -6372,13 +6627,16 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["pickleball-sets", "water-bottles"],
+        "productIds": [
+          "pickleball-sets",
+          "water-bottles"
+        ],
         "title": "Your first pickleball kit",
         "dek": "A starter set bundles paddles and balls, so you and a friend can play whenever the mood strikes. Borrowing for your very first game works too."
       },
       {
-        "type": "makePlan",
-        "text": "Find a game, bring a friend and let Make Some Plans put your first session on the calendar."
+        "type": "p",
+        "text": "Who is your first rally partner? Two people are plenty for a first session, and four make a proper doubles game."
       },
       {
         "type": "p",
@@ -6468,7 +6726,7 @@
       },
       {
         "type": "p",
-        "text": "Below are thirty ideas for getting out of the house, grouped by what you want to spend and how you feel, and plenty are free or cost about a coffee ([affordable hobbies](/journal/affordable-hobbies-under-25) has more budget-friendly ideas). Staying in is a different list: [20 cozy solo date ideas you can do at home](/journal/cozy-solo-dates-at-home). Pick one, put it in the calendar and go."
+        "text": "Below are thirty ideas for getting out of the house, grouped by what you want to spend and how you feel, and plenty are free or cost about a coffee ([affordable hobbies](/journal/affordable-hobbies-under-25) have more budget-friendly ideas). Staying in is a different list: [20 cozy solo date ideas you can do at home](/journal/cozy-solo-dates-at-home). Pick one, put it in the calendar and go."
       },
       {
         "type": "h2",
@@ -6551,7 +6809,7 @@
         "hobby": "museum-exploring",
         "note": "Some museums have free or pay-what-you-can hours, and some small galleries are free, so check locally. Choose one room and stay with it.",
         "time": "60-90 min",
-        "cost": "Varies",
+        "cost": "Often free hours",
         "company": "Solo"
       },
       {
@@ -6584,7 +6842,7 @@
         "title": "Coffee shop and a chapter",
         "note": "Order something you wouldn't make at home, take the window seat and read one chapter before you touch your phone. The full walk-through is in [how to take yourself on a solo coffee shop date](/journal/how-to-take-yourself-on-a-solo-coffee-shop-date).",
         "time": "60 min",
-        "cost": "Varies",
+        "cost": "Price of a drink",
         "company": "Solo"
       },
       {
@@ -6593,7 +6851,7 @@
         "title": "Matinee movie",
         "note": "Some cinemas have cheaper daytime or weekday tickets, so check yours. Sit in the middle and bring the snack you actually want.",
         "time": "2-3 hours",
-        "cost": "Varies",
+        "cost": "A matinee ticket",
         "company": "Solo"
       },
       {
@@ -6602,7 +6860,7 @@
         "title": "Farmers' market breakfast",
         "note": "Wander the stalls first, then buy a pastry and something seasonal. Eat on a bench and plan what you'd cook with the rest.",
         "time": "60-90 min",
-        "cost": "Varies",
+        "cost": "Price of a pastry",
         "company": "Solo"
       },
       {
@@ -6612,7 +6870,7 @@
         "hobby": "picnicking",
         "note": "A sandwich, a piece of fruit, something sweet. A blanket makes it feel planned rather than improvised. [The picnic guide](/journal/how-to-plan-a-perfect-picnic) has the checklist.",
         "time": "60-90 min",
-        "cost": "Varies",
+        "cost": "Groceries",
         "company": "Solo"
       },
       {
@@ -6622,7 +6880,7 @@
         "hobby": "thrifting",
         "note": "Give yourself a small budget and a mission: a mug, a scarf, a frame. Leave when the money or the hour runs out.",
         "time": "60-90 min",
-        "cost": "Varies",
+        "cost": "Your small budget",
         "company": "Solo",
         "first": "Pick the mission before you walk in, and only pick up what you can picture on your own shelf."
       },
@@ -6632,7 +6890,6 @@
         "title": "Dessert-only dinner",
         "note": "Skip the main course and go straight to the good part. Take the counter seat if there is one.",
         "time": "45-60 min",
-        "cost": "Varies",
         "company": "Solo"
       },
       {
@@ -6642,7 +6899,7 @@
         "hobby": "flower-arranging",
         "note": "Buy a small bunch, plonk it in whatever vessel you have and put it where you'll see it first thing tomorrow.",
         "time": "30 min",
-        "cost": "Varies",
+        "cost": "A small bunch",
         "company": "Solo"
       },
       {
@@ -6652,7 +6909,7 @@
         "hobby": "pottery-painting",
         "note": "Studios where you paint a ready-made piece can suit solo visitors: no skill required, though walk-in policies and prices vary, so check first. Prefer to make your own at home? Try [air-dry clay](/journal/how-to-start-air-dry-clay).",
         "time": "90 min",
-        "cost": "Varies",
+        "cost": "Studio price; check first",
         "company": "Solo"
       },
       {
@@ -6667,7 +6924,6 @@
         "hobby": "watercolor-painting",
         "note": "A small travel set, a cup of water and a bench. Paint one view in three colors and call it finished. The [watercolor](/journal/watercolor-painting-for-beginners) guide has the first techniques.",
         "time": "45-60 min",
-        "cost": "Varies",
         "company": "Solo",
         "first": "Pick the view before you unpack, then paint it in three colors and stop."
       },
@@ -6689,7 +6945,6 @@
         "hobby": "film-photography",
         "note": "A film camera slows you down, because every frame counts. Plan a route and choose each shot.",
         "time": "60-90 min",
-        "cost": "Varies",
         "company": "Solo"
       },
       {
@@ -6699,7 +6954,7 @@
         "hobby": "junk-journaling",
         "note": "Collect a ticket, a receipt and a wrapper and glue them into a notebook with one sentence per day. [Here's how](/journal/how-to-start-junk-journaling).",
         "time": "30-45 min",
-        "cost": "Varies",
+        "cost": "Free to low cost",
         "company": "Solo"
       },
       {
@@ -6718,7 +6973,6 @@
         "title": "Museum visit, reader's-eye edition",
         "note": "Choose one artwork and write three sentences about what's happening in it. Then read the label and compare notes.",
         "time": "60-90 min",
-        "cost": "Varies",
         "company": "Solo",
         "first": "Pick a room near the entrance and sit with a single piece for ten minutes before you write anything."
       },
@@ -6753,7 +7007,6 @@
         "title": "Bike ride with a destination",
         "note": "Pick a path or park trail that ends somewhere nice: a lake, a lookout, a bakery.",
         "time": "1-2 hours",
-        "cost": "Varies",
         "company": "Solo"
       },
       {
@@ -6762,7 +7015,7 @@
         "title": "Paddle or boat rental",
         "note": "Some waterfronts rent kayaks, canoes or pedal boats by the hour. Check local rules and the weather first, and wear a life jacket.",
         "time": "1-2 hours",
-        "cost": "Varies",
+        "cost": "Rental by the hour",
         "company": "Solo"
       },
       {
@@ -6772,7 +7025,6 @@
         "hobby": "roller-skating",
         "note": "Rinks and smooth paved paths are a friendly place to start, and wobbling is part of it. Wear a helmet, wrist guards and knee and elbow pads, and skate in daylight.",
         "time": "60-90 min",
-        "cost": "Varies",
         "company": "Solo"
       },
       {
@@ -6841,10 +7093,6 @@
         ],
         "title": "Small things that make a solo date easier",
         "dek": "A pocket notebook, a picnic blanket, a tiny watercolor set, a book sleeve or a film camera: each one makes a date out easier and prettier. Pick the one that matches the date you're dreaming up."
-      },
-      {
-        "type": "makePlan",
-        "text": "Pick one, put it in the calendar and go. Make Some Plans can match an idea to your energy, budget and free hours."
       },
       {
         "type": "p",
@@ -6967,7 +7215,7 @@
       {
         "type": "item",
         "n": 4,
-        "title": "Take a slow golden-hour walk",
+        "title": "Take a slow evening walk",
         "note": "No step count, no destination. Walk until something catches your eye, then walk home. Bring a phone for safety, not for scrolling.",
         "time": "30 min",
         "cost": "Free",
@@ -7079,7 +7327,6 @@
         "title": "Take a drop-in class",
         "note": "Pottery, life drawing, dance, yoga. Many studios offer single drop-in sessions, so check their schedules and try without committing.",
         "time": "60–90 min",
-        "cost": "Varies",
         "company": "Solo, then social"
       },
       {
@@ -7133,7 +7380,6 @@
         "hobby": "mahjong",
         "note": "Mahjong, cards, a cooperative board game. Same night every week or every other week, so nobody has to plan. If it is mahjong, see [how to host a mahjong night](/journal/how-to-host-a-mahjong-night).",
         "time": "2 hours",
-        "cost": "Varies",
         "company": "Group"
       },
       {
@@ -7186,7 +7432,7 @@
         "hobby": "museum-exploring",
         "note": "Some museums stay open late one evening a week, sometimes with free or lower-priced entry. Check your local museum's calendar.",
         "time": "90 min",
-        "cost": "Varies",
+        "cost": "Sometimes free",
         "company": "Solo or with a friend"
       },
       {
@@ -7217,6 +7463,10 @@
         "text": "Willpower is the wrong tool. Change the friction instead. Leave the hobby out where you'll see it, since a puzzle on the table gets used and a kit in a closet doesn't. Charge your phone in the kitchen for the first hour after you get home. Decide your evening at lunchtime, when you're not tired. And lower the bar: twenty minutes counts, and so does one page. Many of these are [affordable hobbies](/journal/affordable-hobbies-under-25)."
       },
       {
+        "type": "makePlan",
+        "text": "Choosing is the hard part on a tired Tuesday. Make Some Plans can turn your energy and the hours you really have into one small plan you can save."
+      },
+      {
         "type": "shopHobby",
         "productIds": [
           "group-painting-kits",
@@ -7229,12 +7479,12 @@
         "dek": "A book light, a game, a block of clay, a junk journal or a painting kit, set out where you'll see them, so starting takes seconds."
       },
       {
-        "type": "makePlan",
-        "text": "Pick tonight's one thing and save it. Make Some Plans can fit a weeknight into your actual week."
-      },
-      {
         "type": "ifYouLoved",
-        "hobbies": ["air-dry-clay", "reading", "craft-nights"]
+        "hobbies": [
+          "air-dry-clay",
+          "reading",
+          "craft-nights"
+        ]
       }
     ]
   },
@@ -7262,7 +7512,11 @@
       "film-photography",
       "reading"
     ],
-    "productIds": ["picnic-blankets", "board-games", "daypacks"],
+    "productIds": [
+      "picnic-blankets",
+      "board-games",
+      "daypacks"
+    ],
     "sources": [
       {
         "title": "National Park Service: hiking safety (Mount Rainier)",
@@ -7343,7 +7597,7 @@
         "hobby": "picnicking",
         "note": "A blanket, something good to eat, somewhere green. The [picnic guide](/journal/how-to-plan-a-perfect-picnic) has the whole checklist.",
         "time": "2 hours",
-        "cost": "Varies",
+        "cost": "Groceries",
         "company": "Social"
       },
       {
@@ -7353,7 +7607,7 @@
         "hobby": "hiking",
         "note": "Pick an easy, well-marked trail, check the weather, carry water and tell someone where you're headed. Going with a friend is the safer choice when you can.",
         "time": "2-3 hours",
-        "cost": "Varies",
+        "cost": "Often free",
         "company": "Solo or social"
       },
       {
@@ -7372,7 +7626,7 @@
         "hobby": "thrifting",
         "note": "Go early with a tote and a small budget. Come home with one thing you really like.",
         "time": "2 hours",
-        "cost": "Varies",
+        "cost": "A small budget",
         "company": "Solo or social",
         "first": "Decide on a small budget and one thing to look for before you leave the house."
       },
@@ -7388,7 +7642,7 @@
         "hobby": "air-dry-clay",
         "note": "Air-dry clay, a rolling pin or a bottle, and an afternoon. Paint it once it has dried. [Here's the beginner guide](/journal/how-to-start-air-dry-clay).",
         "time": "1-2 hours",
-        "cost": "Varies",
+        "cost": "Low cost",
         "company": "Solo or social"
       },
       {
@@ -7398,7 +7652,7 @@
         "hobby": "baking",
         "note": "The recipe you've been avoiding: cinnamon rolls, a layer cake, a proper loaf. Weekends exist for projects with rising time.",
         "time": "2-4 hours",
-        "cost": "Varies",
+        "cost": "Groceries",
         "company": "Solo or social",
         "first": "Read the whole recipe on Friday and check you have the ingredients and the time."
       },
@@ -7409,7 +7663,7 @@
         "hobby": "junk-journaling",
         "note": "Gather the week's paper scraps and build a spread. [Here's how](/journal/how-to-start-junk-journaling).",
         "time": "1 hour",
-        "cost": "Varies",
+        "cost": "Free to low cost",
         "company": "Solo"
       },
       {
@@ -7418,7 +7672,7 @@
         "title": "Cook something slow and fancy",
         "note": "A recipe with several steps, music on, and the cooking as the evening's activity rather than the chore before it.",
         "time": "2-3 hours",
-        "cost": "Varies",
+        "cost": "Groceries",
         "company": "Solo or social"
       },
       {
@@ -7433,7 +7687,7 @@
         "hobby": "craft-nights",
         "note": "Snacks, supplies, everyone makes something, even a first [crochet](/journal/how-to-start-crocheting) square, an [embroidery](/journal/how-to-start-embroidery) hoop or a little [watercolor](/journal/watercolor-painting-for-beginners) painting. A craft night is among the lowest-effort ways to see friends properly. [Here's how to host one](/journal/how-to-host-a-craft-night).",
         "time": "2-3 hours",
-        "cost": "Varies",
+        "cost": "Low cost",
         "company": "Social"
       },
       {
@@ -7442,7 +7696,7 @@
         "title": "Hold a board-game afternoon",
         "note": "Bring out a game and a pot of something warm. Old-fashioned, and reliably better than expected.",
         "time": "2 hours",
-        "cost": "Varies",
+        "cost": "Free if you own one",
         "company": "Social"
       },
       {
@@ -7460,7 +7714,7 @@
         "title": "Invite someone on a walk and coffee",
         "note": "Easier to say yes to than dinner, and just as good for catching up.",
         "time": "1-2 hours",
-        "cost": "Varies",
+        "cost": "Price of a coffee",
         "company": "Social"
       },
       {
@@ -7469,7 +7723,7 @@
         "title": "Cook a big batch together",
         "note": "Make one large pot of something with a friend, then split it into containers for the week.",
         "time": "2-3 hours",
-        "cost": "Varies",
+        "cost": "Groceries",
         "company": "Social"
       },
       {
@@ -7484,7 +7738,7 @@
         "hobby": "museum-exploring",
         "note": "Some have free days or reduced entry, so check locally. Choose one room, stay an hour and leave before you're flagging.",
         "time": "1-2 hours",
-        "cost": "Varies",
+        "cost": "Some free days",
         "company": "Solo or social"
       },
       {
@@ -7493,7 +7747,7 @@
         "title": "Poke around a secondhand shop, bookstore or library",
         "note": "Set a small budget and one rule: buy or borrow only what you can picture in your home.",
         "time": "1-2 hours",
-        "cost": "Varies",
+        "cost": "A small budget",
         "company": "Solo or social"
       },
       {
@@ -7502,7 +7756,7 @@
         "title": "Be a tourist in your own town",
         "note": "Walk the main street as if you were visiting. Look up. Read the signs you've passed a hundred times.",
         "time": "2 hours",
-        "cost": "Varies",
+        "cost": "Free",
         "company": "Solo or social"
       },
       {
@@ -7516,7 +7770,6 @@
         "title": "Watch a film in broad daylight",
         "note": "Afternoon viewing feels delightfully illicit. Draw the curtains and make it an event.",
         "time": "2 hours",
-        "cost": "Varies",
         "company": "Solo or social"
       },
       {
@@ -7562,7 +7815,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["picnic-blankets", "daypacks", "board-games"],
+        "productIds": [
+          "picnic-blankets",
+          "daypacks",
+          "board-games"
+        ],
         "title": "Make your weekend plans easier",
         "dek": "A picnic blanket, a daypack and a board game make the park, the trail and the afternoon in more comfortable and more fun."
       },
@@ -7584,8 +7841,15 @@
     "hero": "flowerArranging",
     "searchIntent": "watercolor painting for beginners / watercolor supplies / easy watercolor projects",
     "angle": "A calm, practice-first guide: buy little, learn water control before drawing skill, and finish three small projects that look good without being good at drawing",
-    "hobbies": ["watercolor-painting", "outdoor-sketching"],
-    "productIds": ["watercolor-sets", "watercolor-sketchbooks", "portable-watercolor"],
+    "hobbies": [
+      "watercolor-painting",
+      "outdoor-sketching"
+    ],
+    "productIds": [
+      "watercolor-sets",
+      "watercolor-sketchbooks",
+      "portable-watercolor"
+    ],
     "sources": [
       {
         "title": "ACMI: materials safety",
@@ -7752,7 +8016,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": ["watercolor-sets", "watercolor-sketchbooks", "portable-watercolor"],
+        "productIds": [
+          "watercolor-sets",
+          "watercolor-sketchbooks",
+          "portable-watercolor"
+        ],
         "title": "Paint, paper and a pocket set",
         "dek": "A small pan set to start, watercolor paper that behaves and a travel set for painting on a park bench."
       },
