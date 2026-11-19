@@ -305,7 +305,7 @@
       "n": 22,
       "title": "A sketching afternoon in public",
       "hobby": "outdoor-sketching",
-      "note": "Take a pencil and a small sketchbook somewhere with a view and draw what's in front of you for an hour.",
+      "note": "Take a pencil and a small sketchbook somewhere with a view and draw what's in front of you for an hour. Fancy adding color? [Watercolor painting for beginners](/journal/watercolor-painting-for-beginners) shows how small the setup can be.",
       "time": "1-2 hours",
       "cost": "Varies",
       "company": "Solo"
@@ -348,7 +348,7 @@
     },
     {
       "type": "p",
-      "text": "For the kit, you need comfortable shoes, water and a charged phone. A tote, a notebook and a spare layer are probably already at home. A small daypack, a pocket notebook or binoculars for the birdwatching days are optional, and a sturdier daypack or proper walking shoes can wait until you've walked enough to know what bothers you."
+      "text": "For the kit, comfortable shoes, water and a charged phone cover most outings, and a tote, a notebook and a spare layer are probably already at home. A small daypack makes carrying everything easy, a pocket notebook is lovely for jotting down finds, and binoculars make birdwatching days feel a little magical. Sturdier walking shoes are worth a look once you've walked enough to know what bothers you."
     },
     {
       "type": "tryThisWeekend",
@@ -360,7 +360,7 @@
     },
     {
       "type": "p",
-      "text": "For a fuller list, see [things to do on the weekend](/journal/things-to-do-on-the-weekend), or stay in with an [at-home creative weekend](/journal/at-home-creative-weekend)."
+      "text": "For a fuller list, see [things to do on the weekend](/journal/things-to-do-on-the-weekend), or stay in with an [at-home creative weekend](/journal/at-home-creative-weekend). Curious about a new hobby on a small budget? See [15 affordable hobbies](/journal/affordable-hobbies-under-25)."
     },
     {
       "type": "shopHobby",
@@ -370,8 +370,8 @@
         "pocket-notebooks",
         "market-totes"
       ],
-      "title": "For your first adventure",
-      "dek": "A bag for the snacks, a notebook for the finds and binoculars if the pond calls. Nothing here is required."
+      "title": "Make your first adventure easier",
+      "dek": "A daypack keeps snacks and layers off your hands, a pocket notebook catches the finds and binoculars bring the pond-side birds closer."
     },
     {
       "type": "ifYouLoved",

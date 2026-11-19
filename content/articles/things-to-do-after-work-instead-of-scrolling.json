@@ -142,7 +142,7 @@
       "n": 6,
       "title": "Paint whatever is on your counter",
       "hobby": "watercolor-painting",
-      "note": "Grab a small watercolor set and paint your mug, a lemon or the flowers on the table. Twenty minutes, three colors, no erasing.",
+      "note": "Grab a small watercolor set and paint your mug, a lemon or the flowers on the table. Twenty minutes, three colors, no erasing. The [watercolor](/journal/watercolor-painting-for-beginners) guide shows you where to begin.",
       "time": "20–40 min",
       "cost": "Low cost to start",
       "company": "Solo"
@@ -152,7 +152,7 @@
       "n": 7,
       "title": "Make a clay ring dish",
       "hobby": "air-dry-clay",
-      "note": "Air-dry clay doesn't need a kiln. Roll a ball, press your thumb in, smooth the edges and let it dry (about a day to the touch for Crayola's, longer for thick pieces; check your clay's label), then paint it.",
+      "note": "Air-dry clay doesn't need a kiln. Roll a ball, press your thumb in, smooth the edges and let it dry (about a day to the touch for Crayola's, longer for thick pieces; check your clay's label), then paint it. [Here's how to start](/journal/how-to-start-air-dry-clay).",
       "time": "45 min + drying",
       "cost": "Low cost",
       "company": "Solo or social"
@@ -267,7 +267,7 @@
       "n": 17,
       "title": "Host a 90-minute craft hour",
       "hobby": "craft-nights",
-      "note": "Not a dinner party. Just a table, snacks and a bracelet kit. Text two friends 'craft hour Thursday?', which is easier to say yes to than a big plan. [How to host a craft night](/journal/how-to-host-a-craft-night) has the plan.",
+      "note": "Not a dinner party. Just a table, snacks and a bracelet kit, a first [crochet](/journal/how-to-start-crocheting) square or an [embroidery](/journal/how-to-start-embroidery) hoop. Text two friends 'craft hour Thursday?', which is easier to say yes to than a big plan. [How to host a craft night](/journal/how-to-host-a-craft-night) has the plan.",
       "time": "90 min",
       "cost": "Low cost",
       "company": "With friends"
@@ -360,7 +360,7 @@
     },
     {
       "type": "p",
-      "text": "Willpower is the wrong tool. Change the friction instead. Leave the hobby out where you'll see it, since a puzzle on the table gets used and a kit in a closet doesn't. Charge your phone in the kitchen for the first hour after you get home. Decide your evening at lunchtime, when you're not tired. And lower the bar: twenty minutes counts, and so does one page."
+      "text": "Willpower is the wrong tool. Change the friction instead. Leave the hobby out where you'll see it, since a puzzle on the table gets used and a kit in a closet doesn't. Charge your phone in the kitchen for the first hour after you get home. Decide your evening at lunchtime, when you're not tired. And lower the bar: twenty minutes counts, and so does one page. Many of these are [affordable hobbies](/journal/affordable-hobbies-under-25)."
     },
     {
       "type": "shopHobby",
@@ -371,8 +371,8 @@
         "air-dry-clay",
         "junk-journals"
       ],
-      "title": "Weeknight starter picks",
-      "dek": "Small things that make the fun option the easy one."
+      "title": "Keep the fun option within reach",
+      "dek": "A book light, a game, a block of clay, a junk journal or a painting kit, set out where you'll see them, so starting takes seconds."
     },
     {
       "type": "makePlan",

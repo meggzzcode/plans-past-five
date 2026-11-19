@@ -90,8 +90,8 @@
     {
       "type": "list",
       "items": [
-        "**Making something:** [watercolor](/hobbies/watercolor-painting) or [air-dry clay](/hobbies/air-dry-clay).",
-        "**Slowing down:** [reading](/hobbies/reading), puzzles, anything repetitive and gentle. For tired evenings, see [low-energy hobbies](/journal/low-energy-hobbies).",
+        "**Making something:** [watercolor](/hobbies/watercolor-painting) ([beginner's guide](/journal/watercolor-painting-for-beginners)), [air-dry clay](/hobbies/air-dry-clay) ([how to start](/journal/how-to-start-air-dry-clay)) or [embroidery](/journal/how-to-start-embroidery).",
+        "**Slowing down:** [reading](/hobbies/reading), puzzles, anything repetitive and gentle, like [crochet](/journal/how-to-start-crocheting). For tired evenings, see [low-energy hobbies](/journal/low-energy-hobbies).",
         "**Moving without a gym:** [hiking](/hobbies/hiking) or [pickleball](/hobbies/pickleball).",
         "**Company:** a [book club](/hobbies/book-clubs) or a [craft night](/hobbies/craft-nights).",
         "**A change of scenery:** [thrifting](/hobbies/thrifting) in a neighborhood you never visit."
@@ -108,13 +108,13 @@
     },
     {
       "type": "p",
-      "text": "Choose three things that sound even faintly interesting. Not the ideal three, just three. Then give each a cheap trial: no full kit, no class bundle, no pro gear."
+      "text": "Choose three things that sound even faintly interesting. Not the ideal three, just three. Then give each a small, low-pressure trial: a starter set, a borrowed racket or a single session is plenty."
     },
     {
       "type": "list",
       "items": [
         "**Borrow first.** Library books, a friend's racket, a community taster session.",
-        "**Buy the mini version.** One small paint set, not a studio.",
+        "**Buy the mini version.** One small paint set or a pocket notebook is a happy first purchase, because it makes starting easy.",
         "**Raid your own home.** A notebook, an old tote, a pen that works.",
         "**Drop in.** Many studios and courts sell single sessions, which can be a lighter commitment than a block. Check locally."
       ]
@@ -125,7 +125,7 @@
         "A notebook for jotting how each try felt",
         "Three hobbies you're curious about",
         "A free evening or weekend slot for each",
-        "One rule: starter versions only"
+        "One approach: small starter versions"
       ],
       "optional": [
         "A friend to join one of them",
@@ -210,7 +210,7 @@
     },
     {
       "type": "p",
-      "text": "Borrow, rent or book a single beginner session before buying anything. Once you've tried something three times and still want more, buy one good thing that makes it nicer."
+      "text": "Borrow, rent or book a single beginner session if you'd like to test the waters; a small starter set is a fine first buy too. Once you've tried something three times and still want more, treat yourself to one good thing that makes it nicer. [15 affordable hobbies](/journal/affordable-hobbies-under-25) lists the cheapest sensible way into fifteen of them."
     },
     {
       "type": "shopHobby",
@@ -220,8 +220,8 @@
         "pocket-notebooks",
         "daypacks"
       ],
-      "title": "Three small trials",
-      "dek": "A pocket notebook, a mini paint set and a lump of clay cover three very different evenings. Borrow or skip anything you can."
+      "title": "Three easy first buys",
+      "dek": "A pocket notebook, a mini paint set and a lump of clay cover three very different evenings, and each makes starting simple. Skip anything you can borrow."
     },
     {
       "type": "tryThisWeekend",

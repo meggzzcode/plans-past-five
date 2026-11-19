@@ -50,7 +50,7 @@
     },
     {
       "type": "p",
-      "text": "Consider this your reason. Every hobby below works in a small apartment, at a kitchen table, after work. Each one notes the mess level, what to buy first (often nothing) and one small project that shows whether you like it."
+      "text": "Consider this your reason. Every hobby below works in a small apartment, at a kitchen table, after work. They're sorted by mess level, and many come with an easy first project, so you can pick the one that fits your space and your mood."
     },
     {
       "type": "h2",
@@ -114,7 +114,7 @@
       "n": 6,
       "title": "Watercolor painting",
       "hobby": "watercolor-painting",
-      "note": "No studio and no free Sunday needed. A little paint set, a sketchbook and twenty minutes at your kitchen table are enough. Try painting the flowers on your counter, your favorite mug, or whatever happens to be in front of you."
+      "note": "No studio and no free Sunday needed. A little paint set, a sketchbook and twenty minutes at your kitchen table are enough, and the first time colors bleed into each other is a small thrill. [Watercolor painting for beginners](/journal/watercolor-painting-for-beginners) walks you through it. Try painting the flowers on your counter, your favorite mug, or whatever happens to be in front of you."
     },
     {
       "type": "item",
@@ -148,7 +148,7 @@
       "n": 9,
       "title": "Air-dry clay",
       "hobby": "air-dry-clay",
-      "note": "No wheel or kiln required. Ring dishes, trinket trays and small ornaments air-dry at home (about a day to the touch for Crayola's, longer for thick pieces; check the label), then you can paint them. Keep finished pieces for display, not for food, drink or water."
+      "note": "No wheel or kiln required, and [how to start air-dry clay](/journal/how-to-start-air-dry-clay) walks through a first project. Ring dishes, trinket trays and small ornaments air-dry at home (about a day to the touch for Crayola's, longer for thick pieces; check the label), then you can paint them. Keep finished pieces for display, not for food, drink or water."
     },
     {
       "type": "item",
@@ -179,7 +179,7 @@
         "acrylic-paints",
         "clay-mats"
       ],
-      "title": "The Pottery Era starter kit"
+      "title": "Clay, start here"
     },
     {
       "type": "h2",
@@ -195,7 +195,7 @@
       "n": 13,
       "title": "Embroidery",
       "hobby": "embroidery",
-      "note": "A kit gives you a pre-printed design, a hoop and the right thread. Learn three stitches and you're away."
+      "note": "A kit gives you a pre-printed design, a hoop and the right thread in one box, so the first evening is all stitching. Learn three stitches and you're away; [how to start embroidery](/journal/how-to-start-embroidery) shows you how."
     },
     {
       "type": "item",
@@ -222,7 +222,7 @@
       "n": 16,
       "title": "Crochet",
       "hobby": "crochet",
-      "note": "One hook, one ball of yarn. The first hour is fiddly; then it clicks. Granny squares first, bags and hats later."
+      "note": "One hook, one ball of yarn. The first hour is fiddly; then it clicks. Granny squares first, bags and hats later. [How to start crocheting](/journal/how-to-start-crocheting) covers the first hour."
     },
     {
       "type": "item",
@@ -273,16 +273,17 @@
     },
     {
       "type": "h2",
-      "text": "How to start without buying everything",
+      "text": "How to start small and enjoy it more",
       "id": "start-small"
     },
     {
       "type": "list",
       "items": [
-        "**Pick one material**, not one of everything. Paper, paint, clay or thread.",
-        "**Buy (or borrow) a single starter kit.** Kits remove decision fatigue, though [not every kit is worth it](/journal/creative-hobby-starter-kits-worth-considering).",
+        "**Pick one material**, not one of everything: paper, paint, clay or thread. If budget is on your mind, [15 affordable hobbies](/journal/affordable-hobbies-under-25) shows the cheapest sensible way into each.",
+        "**Buy (or borrow) a single starter kit.** A kit puts everything in one box and removes decision fatigue, though [not every kit is worth it](/journal/creative-hobby-starter-kits-worth-considering).",
         "**Give it three evenings** before you decide whether it's for you.",
-        "**Keep it visible.** A basket on the coffee table gets used; a box under the bed doesn't."
+        "**Keep it visible.** A basket on the coffee table gets used; a box under the bed doesn't.",
+        "**Upgrade the thing you reach for most.** Once a hobby has stuck, a better brush, nicer paper or a basket for your supplies makes it even more fun."
       ]
     },
     {
@@ -294,7 +295,7 @@
         "friendship-bracelet-kits"
       ],
       "title": "Pick one material, start tonight",
-      "dek": "A small set for each of the hobbies you were drawn to. Buy one, give it three evenings."
+      "dek": "A small set makes starting easy: paint, thread or a bracelet kit arrives in one box, so you can begin tonight. Choose the one you're most curious about."
     },
     {
       "type": "ifYouLoved",

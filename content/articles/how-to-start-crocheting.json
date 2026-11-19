@@ -49,7 +49,7 @@
   "body": [
     {
       "type": "p",
-      "text": "One hook, one strand of yarn and three stitches get you a surprising distance. Crochet looks harder than it is, partly because a written pattern reads like code. This guide starts with the stitches, then walks you through a flat square."
+      "text": "One hook, one strand of yarn and three stitches get you a surprising distance, and by Sunday you could be holding something you made. Crochet looks harder than it is, partly because a written pattern reads like code. This guide starts with the stitches, then walks you through a flat square."
     },
     {
       "type": "p",
@@ -77,7 +77,7 @@
     },
     {
       "type": "p",
-      "text": "You probably own scissors and a bag already, and a friend may have a spare hook and half a ball of yarn. Light, smooth yarn shows each stitch clearly and unpicks without fuss; dark or fuzzy yarn hides your stitches, so keep it for later. If your hand tires, a hook with a comfortable handle is worth the upgrade."
+      "text": "You probably own scissors and a bag already, and a friend may have a spare hook and half a ball of yarn. Light, smooth yarn shows each stitch clearly and unpicks without fuss, which makes it the friendliest yarn for a first square; dark or fuzzy yarn hides stitches, so keep it for later. A hook with a comfortable handle is a lovely upgrade if your hand tires, and a few stitch markers make counting rows easier."
     },
     {
       "type": "h2",
@@ -159,8 +159,8 @@
     {
       "type": "shopTheArticle",
       "articleSlug": "how-to-start-crocheting",
-      "title": "Shop your hobby",
-      "dek": "A hook and one plain ball of yarn are enough to start."
+      "title": "What to grab for your first square",
+      "dek": "A hook and one plain ball of smooth, light yarn are all a first square needs."
     },
     {
       "type": "p",

@@ -152,7 +152,7 @@
       "n": 10,
       "title": "Knitting",
       "hobby": "knitting",
-      "note": "Once you've got the basic stitch, a plain scarf is mostly rhythm. It pairs well with a rewatch, since you don't need to follow every line of dialogue. Crochet works the same way.",
+      "note": "Once you've got the basic stitch, a plain scarf is mostly rhythm. It pairs well with a rewatch, since you don't need to follow every line of dialogue. [Crochet](/journal/how-to-start-crocheting) works the same way, and a first flat square is a gentle place to begin.",
       "time": "20-60 min",
       "cost": "Varies"
     },
@@ -161,7 +161,7 @@
       "n": 11,
       "title": "Embroidery",
       "hobby": "embroidery",
-      "note": "A beginner kit arrives with the design already printed on the fabric. Three or four stitches will get you a tiny flower, and a tiny flower is plenty.",
+      "note": "A beginner kit arrives with the design already printed on the fabric. Three or four stitches will get you a tiny flower, and a tiny flower is plenty. The [embroidery](/journal/how-to-start-embroidery) guide shows the first stitches.",
       "time": "20-45 min",
       "cost": "Varies"
     },
@@ -181,7 +181,7 @@
     },
     {
       "type": "p",
-      "text": "Almost nothing here needs shopping. You probably own a pen, a notebook, a blanket, a lamp and a mug already. If you want something, buy the cheapest honest version and let the hobby earn the upgrade: a library book, a secondhand jigsaw, plain yarn from the basic range. A small reading light and a blanket you love turn your evening spot into somewhere you're glad to land."
+      "text": "Most of these start with what's already in the house. A few small comforts make a tired evening feel like a treat: a clip-on reading light so you can read in your favorite corner, a blanket you love and an embroidery kit with the design already planned, so there's nothing to decide. A library book, a secondhand jigsaw or plain yarn from the basic range are happy starting points too, and [affordable hobbies](/journal/affordable-hobbies-under-25) has more."
     },
     {
       "type": "h2",
@@ -202,8 +202,8 @@
         "book-lights",
         "embroidery-kits"
       ],
-      "title": "Cozy-evening extras",
-      "dek": "Not needed to begin. Nice once something sticks."
+      "title": "Make your cozy corner even cozier",
+      "dek": "A clip-on light for reading anywhere, and an embroidery kit with the pattern already planned for you."
     },
     {
       "type": "makePlan",

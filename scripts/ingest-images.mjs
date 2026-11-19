@@ -277,7 +277,9 @@ const extra = readExtra();
 const ingested = new Map(extra.map((e) => [e.key, e]));
 const articles = articleFiles();
 const knownSlugs = new Set(articles.keys());
-const hobbies = new Map(parseHobbySeeds(readFileSync(HOBBIES, "utf8")).map((h) => [h.slug, h.image]));
+const hobbies = new Map(
+  parseHobbySeeds(readFileSync(HOBBIES, "utf8")).map((h) => [h.slug, h.image]),
+);
 const seen = new Set();
 let problems = 0;
 const plan = [];

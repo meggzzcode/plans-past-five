@@ -300,8 +300,8 @@
         "Clothes you can move in without adjusting them every five minutes"
       ],
       "optional": [
-        "A borrowed racket or paddle for the racket sports, before you buy one",
-        "A daypack for hikes and walks that run past lunchtime",
+        "A racket or paddle for the racket sports: borrow one for your first go, then choose your own once you're hooked",
+        "A daypack for hikes and walks that run past lunchtime, so water, snacks and a layer ride on your back",
         "Helmet, wrist guards, and knee and elbow pads if skating appeals; a helmet if cycling does"
       ]
     },
@@ -313,8 +313,8 @@
         "water-bottles",
         "sports-totes"
       ],
-      "title": "Your first-session kit",
-      "dek": "Borrow a racket first. When you're back for a second go, these make the walk to the court nicer."
+      "title": "Make the second session easier",
+      "dek": "Borrow a racket for round one. When you're back for more, your own paddle, a water bottle you love and a tote packed by the door make showing up feel easy."
     },
     {
       "type": "ifYouLoved",

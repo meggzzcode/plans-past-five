@@ -66,7 +66,7 @@
     },
     {
       "type": "p",
-      "text": "Below are fifteen, each with the cheapest sensible way in, a note on cost and a first small step. Treat it as a menu. You only need to order one."
+      "text": "Below are fifteen, each with the cheapest sensible way in, a note on cost and a first small step. Treat it as a menu: pick the one that makes you curious and give it a go."
     },
     {
       "type": "h2",
@@ -75,7 +75,7 @@
     },
     {
       "type": "p",
-      "text": "We've left out dollar figures on purpose. Prices differ with where you live, new versus secondhand, and what's on offer this month, and they go stale fast, so check local prices before you buy. Online prices also often leave out shipping and tax."
+      "text": "We've left out dollar figures because prices shift with where you live, new versus secondhand and what's on offer, so check local prices before you buy. Online prices also often leave out shipping and tax."
     },
     {
       "type": "p",
@@ -91,7 +91,7 @@
       "n": 1,
       "title": "Watercolor painting",
       "hobby": "watercolor-painting",
-      "note": "A small pan set, one decent brush and a pad of paper will do. Hold off on fancy paper until you've filled a dozen pages with practice.",
+      "note": "A small pan set, one decent brush and a pad of paper will do, and colors blooming into each other is a joy from the very first page. Upgrade the paper once you've filled a dozen pages. [Watercolor painting for beginners](/journal/watercolor-painting-for-beginners) walks through a first session.",
       "cost": "Low cost; check local prices",
       "first": "Paint a wash in three colors and let them bleed into each other."
     },
@@ -109,7 +109,7 @@
       "n": 3,
       "title": "Air-dry clay",
       "hobby": "air-dry-clay",
-      "note": "One block of clay and a few acrylic paints will see you through several small projects. No kiln needed, and few special tools.",
+      "note": "One block of clay and a few acrylic paints will see you through several small projects. No kiln needed, and few special tools. [How to start air-dry clay](/journal/how-to-start-air-dry-clay) covers a first project.",
       "cost": "Low cost; check local prices",
       "first": "Pinch a small trinket dish and leave it to dry overnight."
     },
@@ -127,7 +127,7 @@
       "n": 5,
       "title": "Embroidery",
       "hobby": "embroidery",
-      "note": "Beginner kits often bundle a hoop, fabric, floss and a needle; check the listing. Learn three stitches (running, back, satin) and you can make plenty.",
+      "note": "A beginner kit often bundles a hoop, fabric, floss and a needle in one box, which makes starting easy (check the listing). [How to start embroidery](/journal/how-to-start-embroidery) covers the stitches. Learn three stitches (running, back, satin) and you can make plenty.",
       "cost": "Low cost; check local prices",
       "first": "Stitch the first outline of the pattern."
     },
@@ -200,7 +200,7 @@
       "n": 12,
       "title": "Birdwatching",
       "hobby": "birdwatching",
-      "note": "Your eyes, a window or a park bench, and a bird-ID app or a library field guide. Binoculars are a nice later upgrade, not a ticket in.",
+      "note": "Your eyes, a window or a park bench, and a bird-ID app or a library field guide. Binoculars are a lovely upgrade once you're hooked, bringing a bird across the pond right up close.",
       "cost": "Free to start",
       "first": "Sit for fifteen minutes and note every bird you see."
     },
@@ -233,12 +233,12 @@
     },
     {
       "type": "h2",
-      "text": "Before you buy anything",
+      "text": "Start small, then upgrade what you love",
       "id": "own"
     },
     {
       "type": "p",
-      "text": "Walk around your home first. Most starter lists are shorter than they look: a notebook, pens, scissors, a glue stick, a mixing bowl, a baking tray, old jars, comfortable shoes and a tote are probably already here. For the craft hobbies, if you buy anything, consider a small kit or set in the smallest size, so everything arrives in a box. Better paper, a nicer brush, binoculars and a trail-ready daypack can wait until you've done the hobby five times."
+      "text": "Walk around your home first. Most starter lists are shorter than they look: a notebook, pens, scissors, a glue stick, a mixing bowl, a baking tray, old jars, comfortable shoes and a tote are probably already here. For the craft hobbies, a small kit or set in the smallest size is a lovely first buy: everything arrives in one box and you can start the same evening. Better paper, a nicer brush, binoculars and a trail-ready daypack are the fun upgrades once you've done the hobby a few times and know what you'd enjoy more."
     },
     {
       "type": "p",
@@ -256,8 +256,8 @@
         "embroidery-kits",
         "pocket-notebooks"
       ],
-      "title": "If you want a starter kit",
-      "dek": "Optional. Start with what you have, then upgrade if a hobby sticks."
+      "title": "A first small purchase, if you want one",
+      "dek": "Start with this: a pocket notebook, a mini paint set, a block of clay or an embroidery kit each makes the first evening easier and gives you something to show for it."
     },
     {
       "type": "ifYouLoved",

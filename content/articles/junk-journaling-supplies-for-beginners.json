@@ -54,11 +54,11 @@
   "body": [
     {
       "type": "p",
-      "text": "Craft aisles are designed to make everything look necessary. For junk journaling, almost none of it is. The whole idea is a book made from paper that has already lived a bit (envelopes, tickets, tags, a torn map), so the shopping list is short and the free list is long."
+      "text": "The prettiest junk journals start with paper that has already lived a bit (envelopes, tickets, tags, a torn map), so the free list is long and the shopping list is short. A few well-chosen buys make pages sturdier, prettier and more fun to make."
     },
     {
       "type": "p",
-      "text": "This guide is what to buy: what you probably own, the four things worth paying for, and what can wait. For how to begin, with your first page step by step, see the how-to linked at the end."
+      "text": "This guide is what to buy: what you probably own, the four things that make the biggest difference and what can wait. For how to begin, with your first page step by step, see the how-to linked at the end."
     },
     {
       "type": "h2",
@@ -82,12 +82,12 @@
     },
     {
       "type": "h2",
-      "text": "The four things worth buying",
+      "text": "The four things that make the biggest difference",
       "id": "essentials"
     },
     {
       "type": "p",
-      "text": "These are product types, not specific products. Shop for the description and ignore the packaging."
+      "text": "Each one is described by what it does, so you can choose the ones you like in any shop."
     },
     {
       "type": "list",
@@ -118,7 +118,7 @@
     },
     {
       "type": "h2",
-      "text": "What can wait until after page three",
+      "text": "Fun extras for after page three",
       "id": "later"
     },
     {
@@ -146,7 +146,7 @@
     },
     {
       "type": "p",
-      "text": "Prices vary by shop, so compare before you buy. If you've spent a lot before one page is finished, you're probably shopping rather than making."
+      "text": "Prices vary by shop, so compare before you buy. For more starter ideas on a small budget, see [affordable hobbies](/journal/affordable-hobbies-under-25)."
     },
     {
       "type": "h2",
@@ -166,7 +166,7 @@
       "type": "shopTheArticle",
       "articleSlug": "junk-journaling-supplies-for-beginners",
       "title": "Your first junk journal basket",
-      "dek": "A thick-paged journal, a tape set and one sticker set. Skip it if you already own them. The rest can wait until page three."
+      "dek": "A thick-paged journal, a tape set and one sticker set make pages sturdier and prettier from page one. Already own one? Start with whichever you're missing."
     },
     {
       "type": "makePlan",

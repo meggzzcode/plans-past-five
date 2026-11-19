@@ -158,7 +158,7 @@
       "n": 6,
       "title": "Shape a ring dish from clay",
       "hobby": "air-dry-clay",
-      "note": "Air-dry clay, a rolling pin or a bottle, and an afternoon. Paint it once it has dried.",
+      "note": "Air-dry clay, a rolling pin or a bottle, and an afternoon. Paint it once it has dried. [Here's the beginner guide](/journal/how-to-start-air-dry-clay).",
       "time": "1-2 hours",
       "cost": "Varies",
       "company": "Solo or social"
@@ -203,7 +203,7 @@
       "n": 10,
       "title": "Host a craft night",
       "hobby": "craft-nights",
-      "note": "Snacks, supplies, everyone makes something. A craft night is among the lowest-effort ways to see friends properly. [Here's how to host one](/journal/how-to-host-a-craft-night).",
+      "note": "Snacks, supplies, everyone makes something, even a first [crochet](/journal/how-to-start-crocheting) square, an [embroidery](/journal/how-to-start-embroidery) hoop or a little [watercolor](/journal/watercolor-painting-for-beginners) painting. A craft night is among the lowest-effort ways to see friends properly. [Here's how to host one](/journal/how-to-host-a-craft-night).",
       "time": "2-3 hours",
       "cost": "Varies",
       "company": "Social"
@@ -330,7 +330,7 @@
     },
     {
       "type": "p",
-      "text": "It rains, a friend cancels, you wake up flat. Keep a short backup list: one outdoor option, one at-home option, one that takes under thirty minutes. Then you're choosing from a menu rather than starting from scratch, and a cancelled plan turns into a different plan instead of a lost day. Many of these cost little or nothing, and [cheap weekend adventures](/journal/cheap-weekend-adventures) keeps the spending low if you want more."
+      "text": "It rains, a friend cancels, you wake up flat. Keep a short backup list: one outdoor option, one at-home option, one that takes under thirty minutes. Then you're choosing from a menu rather than starting from scratch, and a cancelled plan turns into a different plan instead of a lost day. Many of these cost little or nothing, and [cheap weekend adventures](/journal/cheap-weekend-adventures) and [affordable hobbies](/journal/affordable-hobbies-under-25) have more if you want to keep the spending low."
     },
     {
       "type": "shopHobby",
@@ -339,8 +339,8 @@
         "daypacks",
         "board-games"
       ],
-      "title": "Weekend picks",
-      "dek": "A blanket, a daypack and a game for the afternoon you don't want to end."
+      "title": "Make your weekend plans easier",
+      "dek": "A picnic blanket, a daypack and a board game make the park, the trail and the afternoon in more comfortable and more fun."
     },
     {
       "type": "makePlan",

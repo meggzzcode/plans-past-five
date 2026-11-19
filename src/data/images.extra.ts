@@ -5,6 +5,27 @@ import crochetHandsSrc from "@/assets/crochet-hands.jpg";
 import flowerArrangingSrc from "@/assets/flower-arranging.jpg";
 import cyclingLaneSrc from "@/assets/cycling-lane.jpg";
 import cozyCornerSrc from "@/assets/cozy-corner.jpg";
+import hobbyScrapbookingSrc from "@/assets/hobby-scrapbooking.jpg";
+import hobbyEmbroiderySrc from "@/assets/hobby-embroidery.jpg";
+import hobbyCrochetSrc from "@/assets/hobby-crochet.jpg";
+import hobbyKnittingSrc from "@/assets/hobby-knitting.jpg";
+import hobbyJewelryMakingSrc from "@/assets/hobby-jewelry-making.jpg";
+import hobbyFriendshipBraceletsSrc from "@/assets/hobby-friendship-bracelets.jpg";
+import hobbyPaintByNumbersSrc from "@/assets/hobby-paint-by-numbers.jpg";
+import hobbyFlowerArrangingSrc from "@/assets/hobby-flower-arranging.jpg";
+import hobbyCollageArtSrc from "@/assets/hobby-collage-art.jpg";
+import hobbyReadingSrc from "@/assets/hobby-reading.jpg";
+import hobbyJigsawPuzzlesSrc from "@/assets/hobby-jigsaw-puzzles.jpg";
+import hobbyCrosswordPuzzlesSrc from "@/assets/hobby-crossword-puzzles.jpg";
+import hobbyBakingSrc from "@/assets/hobby-baking.jpg";
+import hobbyIndoorGardeningSrc from "@/assets/hobby-indoor-gardening.jpg";
+import hobbyCreativeWritingSrc from "@/assets/hobby-creative-writing.jpg";
+import hobbyPickleballSrc from "@/assets/hobby-pickleball.jpg";
+import hobbyRollerSkatingSrc from "@/assets/hobby-roller-skating.jpg";
+import hobbyBirdwatchingSrc from "@/assets/hobby-birdwatching.jpg";
+import hobbyNaturePhotographySrc from "@/assets/hobby-nature-photography.jpg";
+import hobbyVolunteeringSrc from "@/assets/hobby-volunteering.jpg";
+import hobbyThriftingSrc from "@/assets/hobby-thrifting.jpg";
 import type { Img } from "./images";
 
 export const extraImages = {
@@ -31,5 +52,131 @@ export const extraImages = {
     alt: "A cozy evening corner with hands holding a tea mug, socked feet on an armchair, a gingham side table with a jigsaw puzzle, lamp and plant",
     w: 1600,
     h: 1205,
+  },
+  hobbyScrapbooking: {
+    src: hobbyScrapbookingSrc,
+    alt: "An open scrapbook with pressed daisies and ferns, washi tape, paper tags and gold binder clips on a wooden table",
+    w: 642,
+    h: 642,
+  },
+  hobbyEmbroidery: {
+    src: hobbyEmbroiderySrc,
+    alt: "A wooden embroidery hoop with a bouquet of hand-stitched flowers, beside red and green thread skeins and gold scissors",
+    w: 642,
+    h: 642,
+  },
+  hobbyCrochet: {
+    src: hobbyCrochetSrc,
+    alt: "Two hands crocheting a butter-yellow blanket with a wooden hook and a ball of yellow yarn",
+    w: 642,
+    h: 642,
+  },
+  hobbyKnitting: {
+    src: hobbyKnittingSrc,
+    alt: "Cream chunky knitting on bamboo needles beside a steaming mug of tea on a wooden table",
+    w: 642,
+    h: 642,
+  },
+  hobbyJewelryMaking: {
+    src: hobbyJewelryMakingSrc,
+    alt: "A red beaded bracelet in progress on a stoneware plate with bowls of beads and pliers held in one hand",
+    w: 642,
+    h: 642,
+  },
+  hobbyFriendshipBracelets: {
+    src: hobbyFriendshipBraceletsSrc,
+    alt: "Four red and white beaded friendship bracelets with braided ties on a red gingham cloth",
+    w: 642,
+    h: 642,
+  },
+  hobbyPaintByNumbers: {
+    src: hobbyPaintByNumbersSrc,
+    alt: "A paint-by-numbers canvas of yellow flowers on a small easel with paint pots and a brush",
+    w: 642,
+    h: 642,
+  },
+  hobbyFlowerArranging: {
+    src: hobbyFlowerArrangingSrc,
+    alt: "Hands arranging poppies, a pink ranunculus and white blooms in a ribbed glass vase on a kitchen table",
+    w: 642,
+    h: 642,
+  },
+  hobbyCollageArt: {
+    src: hobbyCollageArtSrc,
+    alt: "A paper collage of pink, red, yellow and green flower shapes with a glue stick and scissors on kraft paper",
+    w: 642,
+    h: 642,
+  },
+  hobbyReading: {
+    src: hobbyReadingSrc,
+    alt: "A mustard armchair with a red throw, a stack of books and a cup of tea on a small wooden side table",
+    w: 642,
+    h: 642,
+  },
+  hobbyJigsawPuzzles: {
+    src: hobbyJigsawPuzzlesSrc,
+    alt: "A half-finished jigsaw puzzle of a countryside river scene with loose pieces on a warm wooden table",
+    w: 642,
+    h: 642,
+  },
+  hobbyCrosswordPuzzles: {
+    src: hobbyCrosswordPuzzlesSrc,
+    alt: "A newspaper crossword puzzle with a pencil beside a cup of coffee on a wooden table",
+    w: 642,
+    h: 642,
+  },
+  hobbyBaking: {
+    src: hobbyBakingSrc,
+    alt: "Twelve chocolate chip cookies cooling on a wire rack over a red gingham cloth, with a block of butter nearby",
+    w: 642,
+    h: 642,
+  },
+  hobbyIndoorGardening: {
+    src: hobbyIndoorGardeningSrc,
+    alt: "Three potted plants and a brass watering can on a sunny windowsill: a fern, string of pearls and a round-leaf plant",
+    w: 642,
+    h: 642,
+  },
+  hobbyCreativeWriting: {
+    src: hobbyCreativeWritingSrc,
+    alt: "An open handwritten notebook with a pink fountain pen on a sunlit desk, with a green mug of pens and a ruler",
+    w: 642,
+    h: 642,
+  },
+  hobbyPickleball: {
+    src: hobbyPickleballSrc,
+    alt: "A wooden pickleball paddle with a red edge and a yellow perforated ball on a teal and coral court",
+    w: 798,
+    h: 798,
+  },
+  hobbyRollerSkating: {
+    src: hobbyRollerSkatingSrc,
+    alt: "Close-up of cream roller skates with pink laces and wheels and frilly white socks on pale pavement scattered with petals",
+    w: 798,
+    h: 798,
+  },
+  hobbyBirdwatching: {
+    src: hobbyBirdwatchingSrc,
+    alt: "Black binoculars and a green field notebook with a pencil resting on a mossy log in dappled woodland light",
+    w: 798,
+    h: 798,
+  },
+  hobbyNaturePhotography: {
+    src: hobbyNaturePhotographySrc,
+    alt: "Hands holding a vintage film camera over a sunlit wildflower meadow of poppies and daisies",
+    w: 798,
+    h: 798,
+  },
+  hobbyVolunteering: {
+    src: hobbyVolunteeringSrc,
+    alt: "A person in a cream jumper placing books into a cardboard donation box beside a tote bag of folded knitwear",
+    w: 798,
+    h: 798,
+  },
+  hobbyThrifting: {
+    src: hobbyThriftingSrc,
+    alt: "A rack of vintage dresses on wooden hangers in a sunlit secondhand shop, with a pink gingham sundress in front",
+    w: 798,
+    h: 798,
   },
 } satisfies Record<string, Img>;

@@ -170,7 +170,9 @@ export function validateRow(row, ctx) {
 
   if (!file) errors.push("file is required");
   else if (/(^|[\\/])\.\.([\\/]|$)|^[\\/]|\\/.test(file))
-    errors.push(`file "${file}" must be a relative path inside docs/content/incoming-images/ (no .. or absolute paths)`);
+    errors.push(
+      `file "${file}" must be a relative path inside docs/content/incoming-images/ (no .. or absolute paths)`,
+    );
   else if (!IMAGE_EXTENSIONS.some((e) => file.toLowerCase().endsWith(e)))
     errors.push(`file "${file}" must be one of ${IMAGE_EXTENSIONS.join(", ")}`);
   else if (!ctx.fileExists)

@@ -143,6 +143,7 @@ const seeds: Seed[] = [
     optional: ["Patterned paper", "Stickers", "Corner punch"],
     firstActivity:
       "Print ten photos from one memorable trip or day out and fill a two-page spread.",
+    image: "hobbyScrapbooking",
     productIds: ["junk-journals", "sticker-sets", "washi-tape"],
   },
   {
@@ -188,6 +189,7 @@ const seeds: Seed[] = [
     supplies: ["Beginner embroidery kit (hoop, fabric, floss, needle)"],
     optional: ["Water-soluble pen", "Small sharp scissors"],
     firstActivity: "Learn the backstitch and French knot, then stitch your initial.",
+    image: "hobbyEmbroidery",
     productIds: ["embroidery-kits"],
   },
   {
@@ -208,6 +210,7 @@ const seeds: Seed[] = [
     optional: ["Stitch markers", "Beginner kit with video lessons"],
     firstActivity:
       "Follow a beginner video and crochet one granny square. It doesn't need to be square.",
+    image: "hobbyCrochet",
     productIds: [],
   },
   {
@@ -226,6 +229,7 @@ const seeds: Seed[] = [
     supplies: ["Medium needles (US 8)", "Chunky or medium yarn"],
     optional: ["Row counter", "Darning needle"],
     firstActivity: "Cast on twenty stitches and knit a coaster-sized square.",
+    image: "hobbyKnitting",
     productIds: [],
   },
   {
@@ -245,6 +249,7 @@ const seeds: Seed[] = [
     supplies: ["Beading kit with wire, clasps and beads", "Flat-nose pliers"],
     optional: ["Bead tray", "Charms"],
     firstActivity: "Make a simple beaded bracelet for yourself and one for a friend.",
+    image: "hobbyJewelryMaking",
     productIds: ["friendship-bracelet-kits"],
   },
   {
@@ -263,6 +268,7 @@ const seeds: Seed[] = [
     supplies: ["Bead kit with elastic cord"],
     optional: ["Embroidery floss for knotted styles", "Bead mat"],
     firstActivity: "Spell an inside joke on a bracelet and give it away.",
+    image: "hobbyFriendshipBracelets",
     productIds: ["friendship-bracelet-kits"],
   },
   {
@@ -321,6 +327,7 @@ const seeds: Seed[] = [
     supplies: ["Paint-by-number kit"],
     optional: ["Small detail brush", "Desk lamp"],
     firstActivity: "Paint every section numbered 1 tonight. Just that.",
+    image: "hobbyPaintByNumbers",
     productIds: ["group-painting-kits"],
   },
   {
@@ -339,6 +346,7 @@ const seeds: Seed[] = [
     supplies: ["A bunch of flowers", "Scissors", "Any vase or jar"],
     optional: ["Floral frog", "Flower snips"],
     firstActivity: "Buy one bunch of supermarket flowers and split it into three small jars.",
+    image: "hobbyFlowerArranging",
     productIds: [],
   },
   {
@@ -357,6 +365,7 @@ const seeds: Seed[] = [
     supplies: ["Old magazines", "Glue stick", "Scissors", "Card or paper"],
     optional: ["Washi tape", "Frame"],
     firstActivity: "Make a postcard-sized collage of everything you want more of this year.",
+    image: "hobbyCollageArt",
     productIds: ["washi-tape"],
   },
   {
@@ -412,6 +421,7 @@ const seeds: Seed[] = [
     supplies: ["A library book or one you already own"],
     optional: ["Book light", "Reading journal", "Book sleeve"],
     firstActivity: "Pick up a short novel and read before your phone gets a chance.",
+    image: "hobbyReading",
     productIds: ["book-lights", "reading-journals", "book-sleeves", "reading-stands"],
   },
   {
@@ -429,6 +439,7 @@ const seeds: Seed[] = [
     supplies: ["A 500 or 1000-piece puzzle"],
     optional: ["Puzzle mat", "Sorting trays"],
     firstActivity: "Do the edges first. Leave the sky for another evening.",
+    image: "hobbyJigsawPuzzles",
     productIds: ["board-games"],
   },
   {
@@ -447,6 +458,7 @@ const seeds: Seed[] = [
     supplies: ["A pencil and a printed crossword"],
     optional: ["A crossword book"],
     firstActivity: "Solve an easy early-week crossword with a pencil and a cup of coffee.",
+    image: "hobbyCrosswordPuzzles",
     productIds: [],
   },
   {
@@ -465,6 +477,7 @@ const seeds: Seed[] = [
     supplies: ["Basic pantry ingredients", "A baking sheet", "A mixing bowl"],
     optional: ["Kitchen scale", "Cookie decorating kit"],
     firstActivity: "Bake one batch of cookies and give half away.",
+    image: "hobbyBaking",
     productIds: ["cookie-decorating-kits"],
   },
   {
@@ -484,6 +497,7 @@ const seeds: Seed[] = [
     optional: ["Propagation jars", "Watering can"],
     firstActivity:
       "Root a pothos cutting, or a small shop-bought plant, in a glass of water on a windowsill.",
+    image: "hobbyIndoorGardening",
     productIds: [],
   },
   {
@@ -541,6 +555,7 @@ const seeds: Seed[] = [
     supplies: ["A notebook and pen"],
     optional: ["Writing prompt deck", "A café window seat"],
     firstActivity: "Write a 300-word story that starts with the last thing someone said to you.",
+    image: "hobbyCreativeWriting",
     productIds: ["pocket-notebooks"],
   },
   {
@@ -580,6 +595,7 @@ const seeds: Seed[] = [
     supplies: ["A paddle set (often comes with balls)", "Sneakers"],
     optional: ["Water bottle", "Tote bag"],
     firstActivity: "Find a public court with open play and show up with a friend.",
+    image: "hobbyPickleball",
     productIds: ["pickleball-sets", "water-bottles"],
   },
   {
@@ -656,6 +672,7 @@ const seeds: Seed[] = [
     supplies: ["Rental skates at a rink"],
     optional: ["Wrist guards and knee pads", "Your own skates"],
     firstActivity: "Go to a rink's adult skate night and rent skates.",
+    image: "hobbyRollerSkating",
     productIds: [],
   },
   {
@@ -674,6 +691,7 @@ const seeds: Seed[] = [
     supplies: ["A free bird ID app", "Your local park"],
     optional: ["Compact binoculars", "Pocket notebook"],
     firstActivity: "Sit on one park bench for 30 minutes and log every bird you hear.",
+    image: "hobbyBirdwatching",
     productIds: ["binoculars", "pocket-notebooks"],
   },
   {
@@ -692,6 +710,7 @@ const seeds: Seed[] = [
     supplies: ["Your phone camera"],
     optional: ["A film camera", "Clip-on macro lens"],
     firstActivity: "Take 20 photos of one color on one walk.",
+    image: "hobbyNaturePhotography",
     productIds: ["film-cameras"],
   },
   {
@@ -772,6 +791,7 @@ const seeds: Seed[] = [
     supplies: ["A local listing", "A few free hours"],
     optional: [],
     firstActivity: "Sign up for a single one-off shift before committing to anything.",
+    image: "hobbyVolunteering",
     productIds: [],
   },
   {
@@ -789,6 +809,7 @@ const seeds: Seed[] = [
     supplies: ["A tote bag", "A small budget"],
     optional: ["A wishlist on your phone"],
     firstActivity: "Give yourself $15 and one challenge: find a piece of tableware you love.",
+    image: "hobbyThrifting",
     productIds: ["market-totes"],
   },
   {
