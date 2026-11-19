@@ -29,3 +29,12 @@ Checked locally against the repo; nothing posted or scheduled.
 
 ## Verdict
 Files and destinations pass. Not postable until the domain is live, the SITE_URL placeholder is replaced, boards exist, and the owner decides about AI labelling on the 25 photo pins.
+
+## Round 2: pin rows for the two articles without a pin (not posted)
+
+Image files do not exist yet; build them with the existing pin builder (design/pins/) before posting. Posting is separate from this row spec.
+
+| Title | Description | Destination path | Image file | Board |
+|---|---|---|---|---|
+| How to Host a Paint Night at Home: Supplies, Setup and Easy Steps | Skip the studio. This guide covers canvases, paints, brushes and a simple setup so friends can paint together at home. Save it for your next girls' night. #paintnight #girlsnightideas #paintandsip | /journal/how-to-host-a-paint-night-at-home | public/pins/NN-paint-night-1-checklist.png (to build) | Girls' Night Ideas |
+| How to Start a Reading Journal: Simple Setup and What to Write | Reading more but remembering less? This beginner guide shows what to write after each book so your reading journal stays easy. Save it for your next book. #readingjournal #bookjournal #cozyhobbies | /journal/how-to-start-a-reading-journal | public/pins/NN-reading-journal-1-steps.png (to build) | Cozy Hobbies |
