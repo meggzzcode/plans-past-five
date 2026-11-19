@@ -470,6 +470,15 @@ export function validateContent(root, opts = {}) {
       );
       continue;
     }
+    if (
+      img.file.startsWith("/uploads/") &&
+      (!img.license?.trim() || !(img.source || img.credit)?.trim())
+    ) {
+      problems.push(
+        `${file}: this uploaded photo needs "Where it came from" (or the creator) and a "Licence" (for example "my own photo") so the site keeps a record of the right to use it. Fill both in the Images form.`,
+      );
+      continue;
+    }
     if (!img.w || !img.h) {
       const size = imageSize(readFileSync(diskPath));
       if (!size) {

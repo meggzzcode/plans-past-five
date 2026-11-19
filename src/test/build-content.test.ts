@@ -122,6 +122,18 @@ describe("content validator", () => {
     edit(root, SLUG, (a) => {
       a["hero"] = "cmsPhoto";
     });
+    // an upload with no source and licence is refused, so the rights record cannot drift
+    expect(problems(root).join("\n")).toMatch(/needs "Where it came from".*"Licence"/);
+    writeFileSync(
+      path.join(root, "content/images/cmsPhoto.json"),
+      JSON.stringify({
+        key: "cmsPhoto",
+        file: "/uploads/cms-photo.png",
+        alt: "A small test picture uploaded through the CMS",
+        source: "my own photo",
+        license: "my own photo",
+      }),
+    );
     expect(problems(root)).toEqual([]);
   });
   describe("integrity gate (nothing live may point at an unpublished article)", () => {

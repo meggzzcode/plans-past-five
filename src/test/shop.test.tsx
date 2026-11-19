@@ -630,7 +630,7 @@ describe("shopping list", () => {
       "2026-02-03",
       "Test list",
     );
-    expect(text).toContain("Test list (Plans Past Five)");
+    expect(text).toContain(`Test list (${site.name})`);
     expect(text).toContain("[ ] TEST FIXTURE washi tape set (Test Brand)");
     expect(text).toContain("Find each item and its details: ");
     expect(text).not.toContain("amazon.com");

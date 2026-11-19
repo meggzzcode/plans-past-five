@@ -61,7 +61,7 @@ describe("GA4 snippet behaviour", () => {
 
   it("trims whitespace and rejects non-strings safely", () => {
     expect(validGa4Id("  G-TEST123456 ")).toBe("G-TEST123456");
-    expect(validGa4Id(undefined as never)).toBe("");
+    expect(validGa4Id(123 as never)).toBe("");
     expect(validGa4Id(null as never)).toBe("");
     expect(validGa4Id("G-ABC123XYZ9\n<script>")).toBe("");
   });
