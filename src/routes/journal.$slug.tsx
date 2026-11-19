@@ -211,7 +211,11 @@ function ArticlePage() {
               </details>
             )}
             {a.verifiedAt && (
-              <p className={sources.length > 0 ? "mt-3 text-muted-foreground" : "text-muted-foreground"}>
+              <p
+                className={
+                  sources.length > 0 ? "mt-3 text-muted-foreground" : "text-muted-foreground"
+                }
+              >
                 Facts last checked <time dateTime={a.verifiedAt}>{longDate(a.verifiedAt)}</time>.
               </p>
             )}

@@ -553,7 +553,7 @@
           "**Clay cracks while drying:** cracks usually come from drying too fast or unevenly, so dry it slowly, away from heat.",
           "**Paint looks streaky:** add a second coat once the first is dry.",
           "**You're bored by Saturday afternoon:** swap the project. Bake, read, rearrange a shelf.",
-          "**You don't feel creative:** copy something. Trace, follow a tutorial, paint a photograph. Copying is a perfectly good way to start."
+          "**You don't feel creative:** copy something. Trace, follow a tutorial, paint a photograph. Copying is a time-honored way to start, and it builds real skill."
         ]
       },
       {
@@ -659,7 +659,7 @@
           "**Pack water and a snack.** Outing money has a way of disappearing on snacks.",
           "**Set a cap.** Decide your limit in advance and carry only that.",
           "**Check opening times and local rules.** A closed gate is the cheapest way to flatten an adventure.",
-          "**Go with someone when you can, and tell someone your plan,** especially somewhere remote or after dark. Stick to well-lit areas, check the weather and daylight, and trust your instincts; no plan is a guarantee."
+          "**Go with someone when you can, and tell someone your plan,** especially somewhere remote or after dark. Stick to well-lit areas, check the weather and daylight, and trust your instincts; no plan removes every risk."
         ]
       },
       {
@@ -1169,7 +1169,7 @@
         "n": 11,
         "title": "Calligraphy or hand-lettering practice",
         "hobby": "calligraphy",
-        "note": "Print a free practice sheet, fill a page, then write a favorite song lyric in your best hand.",
+        "note": "Print a free practice sheet, fill a page, then write a favorite song lyric in your neatest handwriting.",
         "time": "30-45 min",
         "cost": "Varies",
         "company": "Solo"
@@ -1474,7 +1474,7 @@
         "n": 12,
         "title": "Friendship bracelets",
         "hobby": "friendship-bracelets",
-        "note": "Quick, nostalgic and perfect for doing with friends. Letter beads make them yours."
+        "note": "Quick, nostalgic and a natural fit for doing with friends. Letter beads make them yours."
       },
       {
         "type": "starterKit",
@@ -1493,7 +1493,7 @@
       },
       {
         "type": "p",
-        "text": "Portable, quiet and perfect to do while watching something. If you like keeping your hands busy, start here."
+        "text": "Portable, quiet and easy to do while watching something. If you like keeping your hands busy, start here."
       },
       {
         "type": "item",
@@ -1534,7 +1534,7 @@
         "n": 17,
         "title": "Knitting",
         "hobby": "knitting",
-        "note": "Two needles and very soothing rhythm. A coaster-sized square is a perfect first evening."
+        "note": "Two needles and very soothing rhythm. A coaster-sized square makes a satisfying first evening."
       },
       {
         "type": "item",
@@ -1705,7 +1705,7 @@
         "items": [
           "**The one item that matters may be the one a kit skimps on.** Paper, yarn and paint quality set the ceiling, so check what the kit actually includes.",
           "**You already own half of it.** Scissors, glue, brushes and a table do not need buying twice.",
-          "**The hobby is open-ended,** like junk journaling, where the best materials are the ones you collect.",
+          "**The hobby is open-ended,** like junk journaling, where the most useful materials are the ones you collect.",
           "**You want your own colors,** not someone else's palette."
         ]
       },
@@ -1938,7 +1938,7 @@
     "body": [
       {
         "type": "p",
-        "text": "A grocery-store bunch shoved straight into a jar looks like a bunch of flowers shoved into a jar. A little structure is the only thing between that and something that looks arranged."
+        "text": "A grocery-store bunch shoved straight into a jar looks like a bunch of flowers shoved into a jar. A little structure is what separates that from something that looks arranged."
       },
       {
         "type": "p",
@@ -2399,7 +2399,7 @@
         "type": "item",
         "n": 20,
         "title": "Conversation-cards dinner",
-        "note": "Draw a card between courses. Works best on friends you're sure you already know.",
+        "note": "Draw a card between courses. Works well with friends you're sure you already know.",
         "time": "2-3 hours",
         "cost": "Varies",
         "company": "3-6 friends"
@@ -2530,7 +2530,7 @@
       },
       {
         "type": "p",
-        "text": "We've sorted these thirty-five by how much you've got left in the tank, with an honest time, cost and **one easy first session** for each. Don't try to pick the perfect one. Pick the one that made you think, 'oh, I'd actually do that.'"
+        "text": "We've sorted these thirty-five by how much you've got left in the tank, with an honest time, cost and **one easy first session** for each. Don't try to pick the right one. Pick the one that made you think, 'oh, I'd actually do that.'"
       },
       {
         "type": "quote",
@@ -2550,7 +2550,7 @@
         "n": 1,
         "title": "Paint by numbers",
         "hobby": "paint-by-numbers",
-        "note": "The ultimate no-decisions hobby. You paint the 1s, then the 2s, and an hour later there's a lake on your coffee table."
+        "note": "A no-decisions hobby, and a very soothing one. You paint the 1s, then the 2s, and an hour later there's a lake on your coffee table."
       },
       {
         "type": "item",
@@ -2585,7 +2585,7 @@
         "n": 6,
         "title": "Embroidery",
         "hobby": "embroidery",
-        "note": "Kits come with everything pre-printed, so all you're doing is following lines with thread. It's perfect for keeping your hands busy during a show."
+        "note": "Kits come with everything pre-printed, so all you're doing is following lines with thread. It keeps your hands busy during a show."
       },
       {
         "type": "item",
@@ -2647,7 +2647,7 @@
         "n": 13,
         "title": "Knitting",
         "hobby": "knitting",
-        "note": "Very repetitive in the best way. A coaster-sized square is a perfect first evening, and a knitting group can add company later if you want it."
+        "note": "Soothingly repetitive. A coaster-sized square makes a satisfying first evening, and a knitting group can add company later if you want it."
       },
       {
         "type": "item",
@@ -2668,7 +2668,7 @@
         "n": 16,
         "title": "Creative writing",
         "hobby": "creative-writing",
-        "note": "Not for publishing. For you. A 300-word story is a perfectly good evening's work."
+        "note": "Not for publishing. For you. A 300-word story is a good evening's work."
       },
       {
         "type": "item",
@@ -2995,7 +2995,7 @@
       },
       {
         "type": "p",
-        "text": "Choose three things that sound even faintly interesting. Not the best three, just three. Then give each a cheap trial: no full kit, no class bundle, no pro gear."
+        "text": "Choose three things that sound even faintly interesting. Not the ideal three, just three. Then give each a cheap trial: no full kit, no class bundle, no pro gear."
       },
       {
         "type": "list",
@@ -3336,7 +3336,7 @@
       },
       {
         "type": "p",
-        "text": "Choose a flat, traffic-free or very quiet route of about thirty minutes. A paved trail, a canal path or a park loop is perfect. Ride with a friend if you can. Go on a weekday morning or a quiet weekend time to avoid crowds."
+        "text": "Choose a flat, traffic-free or very quiet route of about thirty minutes. A paved trail, a canal path or a park loop is a good place to begin. Ride with a friend if you can. Go on a weekday morning or a quiet weekend time to avoid crowds."
       },
       {
         "type": "list",
@@ -3355,7 +3355,7 @@
       },
       {
         "type": "p",
-        "text": "Add a little at a time: ten more minutes, a slightly hillier route, a café at the far end. A ride with a destination tends to be more motivating than a loop, and a bakery is a perfectly respectable destination. If you'd like company, look for a local beginner or social ride; many areas have one."
+        "text": "Add a little at a time: ten more minutes, a slightly hillier route, a café at the far end. A ride with a destination tends to be more motivating than a loop, and a bakery is a respectable destination. If you'd like company, look for a local beginner or social ride; many areas have one."
       },
       {
         "type": "h2",
@@ -3384,7 +3384,7 @@
       },
       {
         "type": "p",
-        "text": "Take hills slowly. It's perfectly fine to get off and walk."
+        "text": "Take hills slowly. It's completely fine to get off and walk."
       },
       {
         "type": "h3",
@@ -3504,7 +3504,7 @@
       },
       {
         "type": "p",
-        "text": "The best projects are quick, forgiving and charming even when wonky. Aim for something finished in about two hours that needs little explaining and no special equipment. With a mix of confident crafters and total beginners, skip fiddly techniques like sewing or sculpting unless you can demonstrate them."
+        "text": "Projects that work well are quick, forgiving and charming even when wonky. Aim for something finished in about two hours that needs little explaining and no special equipment. With a mix of confident crafters and total beginners, skip fiddly techniques like sewing or sculpting unless you can demonstrate them."
       },
       {
         "type": "h3",
@@ -3614,7 +3614,7 @@
           "**Someone finishes early.** Keep extra supplies for a bonus project, like a card or ornament.",
           "**Mess.** Cover the table, keep wipes handy and set food apart from paints and clay.",
           "**Hot glue or scissors.** Keep tools in one place, choose a low-temperature glue gun if you use one, unplug it when you finish and take care with burns.",
-          "**The night goes quiet.** Put on a familiar album, or ask 'what's the best thing you've ever made?'"
+          "**The night goes quiet.** Put on a familiar album, or ask 'what's the thing you're proudest of making?'"
         ]
       },
       {
@@ -3724,7 +3724,7 @@
     "body": [
       {
         "type": "p",
-        "text": "Mahjong night has a reputation for needing an expert, but the only thing you must sort out before the first night is which version of the game you're playing. Everything else is hosting: a table, a pot of tea, good light and a standing date."
+        "text": "Mahjong night has a reputation for needing an expert, but the one thing you must sort out before the first night is which version of the game you're playing. Everything else is hosting: a table, a pot of tea, good light and a standing date."
       },
       {
         "type": "p",
@@ -3762,7 +3762,7 @@
       },
       {
         "type": "p",
-        "text": "If nobody in your group plays, take a lesson first and host after a couple of practice rounds. A table of beginners laughing at their own mistakes is a perfectly good first night."
+        "text": "If nobody in your group plays, take a lesson first and host after a couple of practice rounds. A table of beginners laughing at their own mistakes is a good first night."
       },
       {
         "type": "h2",
@@ -4071,7 +4071,7 @@
       {
         "type": "item",
         "title": "Everyone's painting is different",
-        "note": "That is the point. Resist the urge to compare, and name the differences out loud as the best part of the night."
+        "note": "That is the point. Resist the urge to compare, and name the differences out loud as part of the fun."
       },
       {
         "type": "item",
@@ -4118,7 +4118,7 @@
   },
   {
     "slug": "how-to-plan-a-perfect-picnic",
-    "title": "How to Plan the Perfect Aesthetic Picnic",
+    "title": "How to Plan a Dreamy Aesthetic Picnic",
     "titleItalic": "Aesthetic Picnic",
     "dek": "A picnic that looks as good as it tastes: a timeline, a spot, a menu that survives the trip and what to pack.",
     "category": "weekends",
@@ -4412,7 +4412,7 @@
     "body": [
       {
         "type": "p",
-        "text": "The best Saturdays have a shape: something to look forward to, something sweet, somewhere to wander and a proper rest. Four ingredients, no itinerary. Without them, the day disappears into laundry and cereal over the sink."
+        "text": "Saturdays that feel good tend to have a shape: something to look forward to, something sweet, somewhere to wander and a proper rest. Four ingredients, no itinerary. Without them, the day disappears into laundry and cereal over the sink."
       },
       {
         "type": "h2",
@@ -4430,7 +4430,7 @@
       },
       {
         "type": "p",
-        "text": "Choose each ahead of time, write them down, and let the rest of the day arrange itself around them. If four feels like a lot, an anchor and a treat on a sticky note is a perfectly good start."
+        "text": "Choose each ahead of time, write them down, and let the rest of the day arrange itself around them. If four feels like a lot, an anchor and a treat on a sticky note is a good start."
       },
       {
         "type": "h2",
@@ -4474,7 +4474,7 @@
       {
         "type": "list",
         "items": [
-          "**Anchor:** a long walk through a neighborhood you rarely visit, with ten photos as the only goal.",
+          "**Anchor:** a long walk through a neighborhood you rarely visit, with ten photos as your only goal.",
           "**Treat:** a coffee or pastry, eaten on a bench like you've nowhere to be.",
           "**Wander:** a library or small independent bookshop for half an hour of unplanned browsing.",
           "**Rest:** a park bench, a podcast and nothing else for twenty minutes."
@@ -4488,7 +4488,7 @@
         "type": "list",
         "items": [
           "**Anchor:** a museum or gallery. Choose one wing and see it properly instead of racing the whole building.",
-          "**Treat:** lunch from a deli or bakery, carried to a park ([how to plan a perfect picnic](/journal/how-to-plan-a-perfect-picnic) has the checklist).",
+          "**Treat:** lunch from a deli or bakery, carried to a park ([how to plan a picnic](/journal/how-to-plan-a-perfect-picnic) has the checklist).",
           "**Wander:** a used bookstore or thrift shop nearby. Set a budget and a mission.",
           "**Rest:** an hour of sketching in the park, or simply lying on a blanket."
         ]
@@ -4607,7 +4607,7 @@
       {
         "type": "list",
         "items": [
-          "**Everyone reads the same book.** The classic, and best for a proper shared conversation.",
+          "**Everyone reads the same book.** The classic, and a strong fit for a proper shared conversation.",
           "**Everyone reads something different around a theme.** Handy for busy groups: 'a book you've been meaning to read', 'something under 250 pages', 'a cozy mystery'.",
           "**Short reads only.** Stories, essays or novellas, so anyone can join at the last minute.",
           "**Silent book club.** Everyone brings their own book, reads together for an hour and chats at the end. No homework whatsoever."
@@ -4703,7 +4703,7 @@
           "**Nobody finished.** Switch to 'what did you read instead?' or share how far everyone got. It still counts.",
           "**One person dominates.** Try a round-robin start, or pass a talking token.",
           "**Spoilers.** Agree on a rule: finish the book first or step out for the ending.",
-          "**Disagreement.** It's a feature. 'I didn't like it' starts the best conversations.",
+          "**Disagreement.** It's a feature. 'I didn't like it' often starts the liveliest conversations.",
           "**Attendance drops.** Skip a month, lower the stakes or try short reads.",
           "**Hosting food.** Keep it simple and ask about allergies and dietary needs."
         ]
@@ -4893,7 +4893,7 @@
           "**You stopped for a month.** Lower the bar to one line a book and don't go back to fill the gaps. A journal with holes is still a journal.",
           "**Entries feel like homework.** Drop the summary and write only what you felt. This is a diary of your reading, not a report on it.",
           "**You want it prettier.** Fine, but later. Pretty pages are a second habit, not a requirement for the first.",
-          "**You abandoned a book.** Log it too, with the page where you stopped. That is data about your taste, and a perfectly honest way to read."
+          "**You abandoned a book.** Log it too, with the page where you stopped. That is data about your taste, and an honest way to read."
         ]
       },
       {
@@ -5281,7 +5281,7 @@
     "body": [
       {
         "type": "p",
-        "text": "A window seat, a good drink and an hour that is entirely yours. A coffee shop may be the easiest place in town to sit by yourself. It's built for it: laptops, paperbacks, one-person tables, nobody asking questions, and you can leave whenever you like. The only hurdle is a small, silly worry that people will wonder why you're alone. They're mostly looking at their own phones."
+        "text": "A window seat, a good drink and an hour that is entirely yours. A coffee shop may be the easiest place in town to sit by yourself. It's built for it: laptops, paperbacks, one-person tables, nobody asking questions, and you can leave whenever you like. The usual hurdle is a small, silly worry that people will wonder why you're alone. They're mostly looking at their own phones."
       },
       {
         "type": "h2",
@@ -6617,7 +6617,7 @@
         "n": 9,
         "title": "Bake something to give away",
         "hobby": "baking",
-        "note": "Cookies are a forty-minute project, and giving half to a neighbor or coworker is the best part.",
+        "note": "Cookies are a forty-minute project, and giving half to a neighbor or coworker is half the fun.",
         "time": "60 min",
         "cost": "Pantry staples",
         "company": "Solo or with a friend"
@@ -6732,7 +6732,7 @@
         "n": 19,
         "title": "Join a library book club",
         "hobby": "book-clubs",
-        "note": "Libraries and bookstores often host free monthly book clubs. Showing up once is a perfectly fine start.",
+        "note": "Libraries and bookstores often host free monthly book clubs. Showing up once is a fine start.",
         "time": "90 min",
         "cost": "Free",
         "company": "Group"

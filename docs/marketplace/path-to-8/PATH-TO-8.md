@@ -1,0 +1,250 @@
+# PATH-TO-8: consolidated, red-teamed plan
+
+Written 2026-11-19. Consolidates P1 (products), P2 (trust), P3 (return/share/useful), P4 (buyer readiness) and the reviews2/reviews3 rounds. Status: RECOMMENDED. Not legal or financial advice. Every score below is a simulated-reviewer estimate, never a measurement.
+
+Abbreviations. Dimensions: AE aesthetic, FI first impression, NV navigation, US usefulness, TR trust, AU editorial authenticity, PD product desirability, RT return, SH share, PU willingness to purchase, BC business credibility, BR buyer readiness. Owners: CC Claude Code, CW Cowork, OWN owner.
+
+---
+
+## 0. Executive summary (one page)
+
+**What is true.** The site is already good for a pre-revenue, unlaunched, AI-assisted publication. Its remaining weaknesses are mostly facts about the real world (no domain, no mailbox, no named publisher, no live URL, no history, no real product photos), not copy or layout. Writing cannot fix those; owner actions and elapsed time can.
+
+**What the scores are.** The twelve numbers come from five AI personas (R3 round; R2 before it) who tested a localhost build and were prompted to score. Two rounds, n=5, one model family, personas whose complaints we then fixed ("teaching to the test"). A simulated reviewer scoring 8 is not evidence of a real audience, real conversions or a real buyer's willingness to pay. Treat the numbers as a rough defect list, nothing more. Two specific measurement flaws:
+- "Willingness to purchase" mixes two constructs. For consumer personas it means "would I buy the hobby product"; for R3-5/R2-5 (a site buyer) it means "would I buy the site, at what price". Averaging them (4.8) is meaningless. P1 and P4 each plan against a different meaning.
+- "Buyer readiness 5.2" does not match the source rows: R2-5 and R3-5 gave 6 and 6, R3-4 gave 5, R3-2 gave 5. P4 itself notes the inconsistency and then uses both.
+
+**Honest outcome.** With everything done in sequence, a fresh blind-reviewer round would plausibly score 8 or close on AE, FI, NV, BR; about 7.5-8 on US, TR, SH; about 7-7.5 on AU, PD, RT; and no better than about 6.5-7 on BC and PU. The last two are capped by the absence of traffic, revenue and track record, and the owner's rules rightly forbid manufacturing substitutes. Do not chase them.
+
+**Five claims re-verified against official sources today (section 2):** Amazon image rules (no storing/caching images, API-only retrieval, proportional resize only) are confirmed. The Creators API gate is "10 qualifying sales in the past 30 days" (confirmed) and the Associates "3 qualified sales within 180 days" rule is on Amazon's own page (P1 said NOT FOUND). Flippa's $9,999 cap on starter/non-revenue assets is confirmed. Google says AI-use disclosure is recommended, not required; the IPTC AI-image label is a Merchant Center rule. **Netlify free is the surprise:** 300 credits/month, a hard limit that pauses every site when spent; a production deploy costs 15 credits (so 20 deploys uses everything) and bandwidth costs 20 credits per GB. The "about 20 deploys" rule is therefore a ceiling that assumes zero traffic; a safe budget is 6-10 deploys a month.
+
+**Biggest consequence of the owner rules.** Because the seller never holds an Associates account (master accounts excluded; buyer applies), the Creators API image route in P1 is unavailable to the seller and is a buyer-only upgrade after the buyer earns 10 sales in 30 days. For the seller, real product imagery means: own photography, or brand permission in writing. Nothing else is clean.
+
+**Sequence.** Phase 0 (this week, CC, $0): doc/handover cleanup, trust-page and byline consistency, planner/tool realism, .ics, Pinterest kit, kit restructure to 8. No deploys yet. Phase 1 (owner, weeks 1-2, about $300-700 incl. photography): domain, mailbox, Published-by line, photos, image-rights pack. Phase 2 (Cowork plus owner login): verify 32-40 products, ingest images, prove the CMS, one release to Netlify, Search Console. Phase 3 (3-6 weeks live): index, accumulate history, real changelog. Phase 4: re-review with blind reviewers and a human usability test; report both and keep the human result as the one that counts.
+
+**Owner decisions needed now:** (1) Published-by form (recommendation: sole proprietor trade name with owner city, LLC optional); (2) photography budget $250-500; (3) confirm .ics is allowed; (4) confirm a neutral "How we make this" link from bylines to Editorial Standards; (5) confirm the Netlify deploy budget and whether to disclose the credit cap to buyers.
+
+---
+
+## 1. Red team of the four reports
+
+Legend: [R] rule violation or tension with owner rules; [L] legal/Amazon-policy risk; [U] unverified or weakly sourced; [O] outdated or superseded; [M] measurement problem.
+
+### P1 Products
+
+| # | Finding | Type | Resolution |
+|---|---|---|---|
+| 1 | Step 6 (Creators API images) needs an Associates account with 10 sales/30 days. Under the owner rules the seller never has one. The step is a buyer upgrade, not a seller step; P1 headlines it as "the biggest lever". | [R] | Remove from the seller plan; list it in the buyer handover as optional. Never display API images on the listing as if included. |
+| 2 | Step 1 headline lift (+1.2 to +1.8 desirability) is a guess from reviewer complaints; no real purchase data. | [M] | Use half the stated lift as planning value. |
+| 3 | "Bought and photographed by us" implies purchase and a team. If items are returned after shooting, "bought" is misleading; "us" is false for a sole owner. | [R] | Caption "Photographed by [Published-by name]". Do not say "bought", "tested", "reviewed". Keep receipts. If returned, say nothing about ownership. |
+| 4 | Fair-use discussion rests on one secondary case summary (Minka Lighting). | [U] | Conclusion (do not reuse manufacturer photos without permission) is the safe call regardless. |
+| 5 | Brand press terms mostly NOT FOUND; Crayola terms are "non-commercial only". | [L] | Treat as bonus only. Written permission or nothing. |
+| 6 | Suggests labelling AI scenes "illustration" at image level while owner rule says AI disclosure only inside Editorial Standards. P1 flags it for the owner but still lists it. | [R] | Keep existing neutral caption "Illustrative styling, not specific products" (a styling statement, not an AI statement). Add no new AI wording outside Editorial Standards. |
+| 7 | "Kit of 5" target (about 40 products) is a judgment, not a source. Combined with 8 kits it is a lot of live Amazon verification for a low-maintenance site. | [U] | Target 4 picks per kit minimum (32), 5 only where genuinely distinct. |
+| 8 | Price-less value cues and banded "startup cost" conflict risk: existing hobby pages show "Under $25 to start", planner shows "$10 (range $5-15)". The owner rule is "no prices/ratings displayed". These are our own bands, not Amazon prices, and Amazon's timestamp rule applies only to Amazon price data, but this is an ambiguity. | [R] | Owner to confirm: Amazon prices and ratings never shown; our own research-based cost bands are permitted (recommended, as they are core to usefulness). If not permitted, remove from hobby pages and planner. |
+| 9 | Native Shopping Ads / SiteStripe image status "NOT FOUND". | [U] | Plan as text links only. Irrelevant for seller. |
+| 10 | Amazon policy on AI-generated images: P1 never says there is none. Verified: Policies contain no rule on AI images; only a ban on using Program Content to train models. | [U] | Closed. No Amazon rule blocks AI mood images; the problem is credibility, not policy. |
+
+### P2 Trust, authenticity, credibility
+
+| # | Finding | Type | Resolution |
+|---|---|---|---|
+| 1 | Says Google asks to "disclose substantial AI use" and flags a conflict with the owner rule. Verified on the Google page: disclosure "can help give your readers more context" (recommended, not required). The conflict is mild. | [O]/[R] | Owner rule stands. Neutral byline link to Editorial Standards is sufficient. |
+| 2 | IPTC DigitalSourceType "TrainedAlgorithmicMedia": a Google Merchant Center rule, not a general web rule. Embedding is invisible metadata, so it does not breach the owner rule. | [U] | Optional, low cost; do it for AI images in the export, not as a trust lever. |
+| 3 | Step 9 (owner does hobbies and publishes first-hand notes) and step 8.3 ("Photographed by the editors") are valid only if true. If the owner will not do this, it must not be faked. | [R] | Keep as conditional. If skipped, do not substitute AI "experience" text. |
+| 4 | Estimated outcomes table is explicitly "not measured"; effects are summed in prose beyond the evidence. | [M] | Use ranges in section 3, not P2's. |
+| 5 | Cloudflare Email Routing: forwards only; cannot send as the domain; DNS must be on Cloudflare (unconfirmed). Receiving-only is enough for Amazon/Flippa contact but replying from the domain is not solved. | [U] | Verify at setup; budget $0-8/mo. |
+| 6 | Unsplash/Pexels are called safe. Neither grants model or property releases or indemnity; Unsplash license text changed over time. | [L] | Archive licence text and page URL on download date; prefer no-people images; no trademarks prominent. |
+| 7 | "Published by [trade name]" costs "10-100 USD" and LLC cost: NOT verified. | [U] | Check state/country fees before choosing. |
+| 8 | Inconsistent with P4: P2 says no named person or bio; P4 step 11 says "About page shows named person". | [R] | Resolve: a real owner name is allowed only if the owner chooses to appear; the site must not fabricate or imply a staff. See owner question 3. |
+| 9 | "Last checked" dates: if refreshed mechanically they become misleading (Google publication-dates guidance). | [R] | Change only when the facts were really re-checked and logged. |
+
+### P3 Return, share, useful
+
+| # | Finding | Type | Resolution |
+|---|---|---|---|
+| 1 | Monthly challenge page and weekly Pinterest cadence add recurring owner time (30 min/month, 1 hr/week) against "low maintenance". | [R] | Make rotation deterministic (no owner time); Pinterest cadence is optional post-sale advice, not part of the asset. |
+| 2 | Pinterest stats and image sizes from vendor blogs; rich-pin spec fine, validator procedure unknown. | [U] | Do not cite; test with Pinterest's own validator after launch. |
+| 3 | Hidden 2:3 images for Pin button: policy NOT CONFIRMED. | [L] | Do not use hidden images. |
+| 4 | Eventbrite/Meetup URL patterns from third-party scraper docs. | [U] | Skip; use Google Maps search URL only (official). |
+| 5 | `.ics`: P3 asks the owner to confirm; recommendation below. | [R] | Yes, with limits. |
+| 6 | Google Calendar `render?action=TEMPLATE` link is unofficial/undocumented. | [U] | Keep `.ics` as primary; Google link as a convenience; test before each release. |
+| 7 | Rich-pin and share claims assume the 88 pins are acceptable on Pinterest. Pinterest labels AI-modified content and has AI-content policies; not checked by any report. | [U] | Add to Phase 2 check: read Pinterest's current AI-content label rule before the owner pins. |
+| 8 | Return ceiling 7.5-7.8 "without email" is optimistic: reviewers explicitly penalise no hooks. | [M] | Use 7.0-7.3 as planning value. |
+| 9 | Planner realism items are real defects found by R3-1/R3-3 (energy ignored, volunteer shift not feasible same-day). | OK | Highest-value Claude Code work. |
+
+### P4 Buyer readiness
+
+| # | Finding | Type | Resolution |
+|---|---|---|---|
+| 1 | Step 5 says "AI disclosure on About". Violates the reaffirmed rule (AI disclosure only inside Editorial Standards). | [R] | Strike. Image-rights pack is a handover document, not a site page. |
+| 2 | "Wait 3-4 weeks live before listing" conflicts with Netlify hard cap and with a seller who wants to sell soon; also sets a clock on an asset with no traffic. | [R]/[U] | Accept: it is the honest path to BR 8. Offer an earlier "as-is, not yet indexed" listing at a lower ask if the owner prefers speed. |
+| 3 | Lovable/Canva terms were summarised by a fetch tool and search snippets, never read in full; ownership/transfer conclusions are not verified. docs/commerce/image-rights-notes.md already records Canva terms. | [L]/[U] | Save the dated terms PDFs as the image-rights pack; state "no exclusivity or registrable copyright promised". Lawyer review optional. |
+| 4 | Flippa fees and verification rules from snippets/third parties. Cap ($9,999) verified. | [U] | Re-read at listing. |
+| 5 | Price range "low hundreds to $1,500" rests on one blog that says its numbers are hypothetical plus self-reported anecdotes. | [U] | Keep as planning range only; never state a comparable sale. |
+| 6 | Netlify free-plan limits "not re-verified". Now verified (section 2): hard credit cap, bandwidth costs, pausing. | [O] | New release rule below. |
+| 7 | Step 7 (CMS test) requires the owner's GitHub login; Cowork alone cannot do it. | [U] | Owner present for 20 minutes. |
+| 8 | Step 6 replacing "synthetic faces" images with owner photos: the existing hero images are AI. Fine, but disclosure remains in Editorial Standards only. | OK | Do not add captions elsewhere. |
+| 9 | Amazon rule for the buyer: Associates site content "generally within the last 60 days" at application review. A launch-batch site that stops publishing looks stale to Amazon's reviewer. | [U] | Changelog and a light monthly refresh note belong in the buyer docs (new, see 3.x). |
+
+### Cross-report issues
+- Review-round bias: five personas fixed by their own complaint lists; improving those complaints raises the next score without improving real conversion. One persona (R3-4) docked trust for "buried AI disclosure", which the owner rule deliberately keeps; accept that cost.
+- Deploy budget: P3 proposes four release batches, P4 one. With the credit cap, plan one first release (Phase 2) and one or two more at most before Phase 4.
+- Nothing in P1-P4 proposes a newsletter, accounts, ads, printables or fake people. P3 step 2 (postcode in localStorage) and P3 step 6 (home-screen install) comply.
+
+---
+
+## 2. Five consequential claims re-verified (official sources, read 2026-11-19)
+
+1. **Amazon image rules.** Associates Program Policies (affiliate-program.amazon.com/help/operating/policies). IP License 2(h): "You will not store or cache Product Advertising Content consisting of an image"; a link to an image may be stored up to 24 hours. 2(b): content is obtained through Creators API or PA API (data feed only with written approval). Participation Requirements 6(a): you "will not add to, delete from, or otherwise alter any Program Content", except proportional resize. Prices require API data plus a date/time stamp (2(i)). No rule on AI-generated images found. P1 CONFIRMED. Consequence: no downloading Amazon images, ever; our own photos are not Program Content.
+2. **Creators API gate and the Associates 3-sales rule.** Creators API introduction: must be enrolled, "have at least 10 qualifying sales within the past 30 days", register in Associates Central. The page does not say what happens when sales fall. P1 CONFIRMED. Separately, Amazon's Application Review Process page says the team checks once "you've driven qualified sales (we require at least three within the first 180 days)", personal orders do not qualify; the sites "must be publicly available" and content "generally within the last 60 days". P1's "NOT FOUND on Amazon" is now FOUND. The closure consequence is stated on Amazon's Account Dormancy page per search result but not on the review page; treat as likely. All of this is the buyer's problem; it belongs in the buyer docs, not in seller-side features.
+3. **Flippa constraints.** Flippa Listing sale pricing support page (search-confirmed): starter/new/template/non-revenue assets maximum asking or reserve $9,999; non-profitable businesses capped at 1x verified revenue; above the cap needs Support approval. Fees: third-party figure $29 listing (non-refundable), success fee varies; re-read live. P4 CONFIRMED. Empire Flippers (>= $2,000/month profit, 12 months history) correctly excluded.
+4. **Google on AI content.** developers.google.com/search/docs/fundamentals/using-gen-ai-content: generative AI is allowed; many pages "without adding value for users" may violate spam policy (scaled content abuse); describing how content was created "can help give your readers more context" (recommended); IPTC TrainedAlgorithmicMedia is mandatory for AI images in Google Merchant Center. P2/P4 OVERSTATED the disclosure expectation but the spam risk is real. Consequence: scaled templated content is the actual Google risk; the site's value test is distinct, sourced, useful pages, and publishing cadence over time rather than 30 pages in 48 hours with identical structure.
+5. **Netlify free plan (previously unverified).** docs.netlify.com "How credits work": Free = 300 credits/month, hard limit; "all of your web projects ... are paused" when credits are used up; auto-recharge not available on Free. Production deploy = 15 credits (failed deploys and rollbacks free; previews free). Bandwidth = 20 credits/GB. Web requests = 2 credits per 10,000. Function compute = 10 credits per GB-hour (this site's server rendering runs as a function). No commercial-use language on that page; read the Terms of Use. Consequence: 20 deploys uses the entire month with zero traffic. Budget: at most 8 production deploys (120 credits) leaves 180 credits for about 6-7 GB bandwidth plus requests and compute. A viral Pinterest day could pause the site. Recommendation: release rule of at most 8 deploys per month, a monthly credit check in the maintenance docs, optimise or move heavy images (88 pins) out of normal page weight, and disclose the hard cap to buyers (they can switch to a paid plan or another host). Cloudflare is the repo's default Nitro target; evaluating it is a Claude Code task but its free limits were not verified here.
+
+---
+
+## 3. Honest score table
+
+All values are simulated-blind-reviewer scores on the same 10-point scale as reviews2/3. They are estimates of what a fresh round of AI personas would say, not market outcomes. "Real audience" evidence does not exist for any column.
+
+Columns: Now (R3 average as given) / achievable with Claude Code work only / after owner actions (Phase 1) / after Cowork (Phase 2) / after weeks live (Phase 3) / hard ceiling for a pre-revenue site.
+
+| Dimension | Now | CC only | + Owner | + Cowork | + Weeks live | Hard ceiling (pre-revenue) | What decides the last point |
+|---|---|---|---|---|---|---|---|
+| Aesthetic | 8.0 | 8.0 | 8.3 | 8.3 | 8.3 | 8.5 | Real photography replacing AI imagery; repetition fixed |
+| First impression | 7.6 | 8.0 | 8.0 | 8.2 | 8.2 | 8.5 | Above-the-fold hub, unique heroes (C13), live URL |
+| Navigation | 7.4 | 7.9 | 7.9 | 8.0 | 8.0 | 8.3 | Reading mode, first-tap fix, tonight shortcut |
+| Usefulness | 7.2 | 7.8 | 7.8 | 8.0 | 8.0 | 8.2 | Planner realism and near-me links; can't have named venues |
+| Trust | 6.6 | 7.2 | 7.8 | 7.9 | 8.0 | 8.2 | Working mailbox, Published-by line, live site; pre-revenue and anonymous brand cap it |
+| Editorial authenticity | 6.2 | 6.8 | 7.4 | 7.5 | 7.8 | 8.0 | Own photos, real dates over time; AI-assisted provenance caps it |
+| Product desirability | 5.8 | 6.2 | 7.0 | 7.4 | 7.5 | 8.0 | Own photos on most cards plus 8 full kits; no price/rating anchor allowed |
+| Willingness to return | 6.4 | 7.0 | 7.0 | 7.0 | 7.3 | 7.5 | No email or accounts, by rule |
+| Willingness to share | 6.4 | 7.2 | 7.2 | 7.5 | 7.6 | 8.0 | Pinterest-native pins and cards; reviewers can see these |
+| Willingness to purchase | 4.8 | 5.2 | 6.0 | 6.4 | 6.8 | 7.0 | Pre-revenue replacement-cost value; or product-side photo/anchor limits. 8 needs traction |
+| Business credibility | 5.2 | 5.4 | 6.2 | 6.3 | 6.6 | 7.0 | Named publisher, live indexed history. 8 needs real traffic/revenue |
+| Buyer readiness | 5.2 | 6.2 | 7.4 | 8.0 | 8.3 | 8.5 | CMS proven, rights pack, live, 3+ weeks of Search Console data |
+
+How to read it.
+- Reaching 8 or above is honestly plausible on: Aesthetic, First impression (after Cowork), Navigation (borderline), Buyer readiness (after Cowork plus time), Trust (borderline with live time).
+- Not honestly reachable pre-revenue: Business credibility (about 6.5-7), Willingness to purchase (about 6.5-7), Return (about 7-7.5), and Product desirability beyond about 7.5-8 without real photos on most cards.
+- Per-step lifts in section 5 are lower bounds-to-upper bounds and do not add; the columns above already net overlaps.
+- A fresh blind round will also vary by plus or minus 0.5 per cell from persona noise alone. Differences under 0.5 between rounds are not signal.
+- Even a table of 8s would not show that real women return, share or buy. The only real-audience evidence is Phase 3/4 data: Search Console impressions, any Pinterest saves, and a human test.
+
+---
+
+## 4. The consolidated sequenced plan
+
+Release rule used throughout: no production deploy until Phase 2. After that, at most 8 deploys per month (Netlify credit cap, section 2.5), each with a `[deploy]` marker and a written release note.
+
+### Phase 0: this week, zero cost, Claude Code only (branch only, no deploy)
+
+| Step | Owner | Cost | Time | Lifts (honest range) | Depends on | Done when |
+|---|---|---|---|---|---|---|
+| 0.1 Single buyer index; fix stale counts (tests 523/524, drafts 5 vs 7); strip internal jargon ("Cowork C17", "PENDING COWORK") from buyer-facing docs; fresh-clone reproduction log (install frozen, vitest, tsc, eslint, build) on a clean export without node_modules/.output/.wrangler | CC | $0 | 0.5 day | BR +0.5 to +0.9 | none | A new person can follow START-HERE only; counts match `vitest` output on the day; dated log saved |
+| 0.2 Disclosure and identity consistency: Terms, Privacy, Editorial Standards, affiliate disclosure say the same thing; byline "How we make this" link (neutral label) to Editorial Standards; affiliate line next to first product link on every page (check, likely done by M5); single `site.contactEmail`/legal fields with a release guard that fails the build if placeholders remain | CC | $0 | 0.5 day | TR +0.3 to +0.5, AU +0.1 to +0.2, BR +0.1 | none | grep shows no page claims otherwise; build test fails with example/placeholder values |
+| 0.3 Sources and methodology visibility: expose "Sources and when we checked" (add where genuinely used; about 9 stories lack it); soften unsupported "best" to "good fit for" plus criteria; Methodology states research-not-testing | CC (owner spot-checks facts) | $0 | 1 day | AU +0.3 to +0.5, TR +0.2 to +0.4 | none | Every article either has sources or a stated reason; no "best" claim without evidence |
+| 0.4 Honest dates: "Launched Nov 2026" note; dated "What changed" page with real entries only; datePublished/dateModified match visible dates; no backdating | CC | $0 | 2 hrs | AU +0.2 to +0.3, BC +0.1 | none | Visible and structured dates agree; changelog lists only real changes |
+| 0.5 Kits: merge the 15 kits into 8 collection kits; render only kits with at least 4 named picks (else show one "start here" card, no search-card padding); keep existing photo fields (catalog.ts already validates imageUrl/credit/rights/source and blocks Amazon hosts); card order image-or-label, one-line job, one-line tradeoff, one button | CC | $0 | 1 day | PD +0.3 to +0.5, PU +0.2 to +0.4 (more only after photos) | 8 kits need picks from Phase 2 (C12) | No empty kit renders; picks with no verified ASIN are not shown |
+| 0.6 Tools: planner honours every energy setting (test per value), travel/settle buffer rows, "Why this plan" line, 3 evening templates per energy level, same-day feasibility (no advance-signup items in "this Saturday"), lighter-plan button; "tonight" shortcut on home; link-first primary actions so a tap before hydration works | CC | $0 | 2-3 days | US +0.4 to +0.7, NV +0.2 to +0.4, FI +0.1 to +0.2 | none | R3-3 scenarios re-run: each energy value yields a different valid plan; tap test with 4x CPU throttle passes |
+| 0.7 `.ics` download plus Google Calendar link on plans (floating local time, two presets) | CC | $0 | 1 day | RT +0.3 to +0.6, US +0.1 to +0.2 | owner confirms (4.4) | Opens in iPhone Calendar and Google Calendar with right time |
+| 0.8 Pinterest kit: one 2:3 pin per article/hobby mapped in data; `og:type=article` and per-page OG image set per route (not on root, per repo warning); Pin button using that image; plan/result card PNG reuse for tonight and weekend | CC (images exist: 88 pins) | $0 | 1-2 days | SH +0.4 to +0.7 | none | Every article and hobby page validates in Pinterest's own rich-pin validator after launch (re-check Phase 3) |
+| 0.9 Web manifest and icons (no service worker, no new Vite plugin); mobile reading mode (sticky mini-TOC with native details, collapsible long sections); LCP discipline on home | CC | $0 | 2 days | NV +0.3 to +0.5, FI +0.1 to +0.3, RT +0.1 to +0.2 | none | Lighthouse lab run saved, labelled "lab, not field" |
+| 0.10 Images in export: embed IPTC DigitalSourceType on AI images (invisible); licence ledger file listing each image, source, date, tool; no visible AI wording added | CC | $0 | 2 hrs | BR +0.1 to +0.2 | none | Ledger complete for all 14 images |
+| 0.11 Buyer-doc additions: Associates path (buyer applies; 3 sales/180 days; 10 sales/30 days for Creators API; content "generally within 60 days"; required disclosure statement "As an Amazon Associate I earn from qualifying purchases" replaces "we don't earn" lines once approved); Netlify credit cap and release budget; Search Console monthly check | CC | $0 | 3 hrs | BR +0.2 to +0.4 | none | Docs reference the official pages with read dates |
+
+Not done in Phase 0: feed (marginal), monthly challenge page (maintenance), service worker, near-me postcode (do after Phase 0 if time; US +0.2 to +0.4; localStorage only, Maps search URL only).
+
+### Phase 1: owner basics (weeks 1-2)
+
+| Step | Owner | Cost | Time | Lifts | Depends on | Done when |
+|---|---|---|---|---|---|---|
+| 1.1 Register domain in the owner's registrar account (not a platform's), lock on, privacy on, auto-renew; screenshot with personal data hidden | OWN | about $10-25/yr, verify at purchase | 30 min | BR +0.5 to +0.7, BC +0.2 | none | Registrar record in seller's name; transfer-code process written down |
+| 1.2 Mailbox: one address (e.g. hello@) receiving; for sending use a real mailbox ($0-8/mo) rather than forwarding alone; test send and receive | OWN then CC | $0-8/mo (verify) | 1 hr | TR +0.4 to +0.7, BC +0.3 to +0.5, BR +0.3 | 1.1 | Test message round-trip logged; Contact/Corrections no longer say "isn't open yet" |
+| 1.3 Published-by line (decision 4.3), same text in footer, About, Terms, Privacy | OWN decides, CC applies | $0 to about $50-500 if LLC (verify) | 1 hr plus filing | BC +0.6 to +1.0, TR +0.2 to +0.4, AU +0.1 | 1.1 | All four places match; no invented names |
+| 1.4 Own photography: 8 whole-look kit flat-lays first, then single shots of the 8-12 hero picks; white/kraft backdrop, window light; caption "Photographed by [Published-by name]"; keep receipts; sign a short assignment of copyright into the handover | OWN | $250-500 recommended cap (items $5-25 each plus backdrop); up to $600 for full coverage | 2-3 days | PD +0.6 to +1.0, AE +0.2 to +0.3, AU +0.4 to +0.7, FI +0.1 | picks from C12 | Photos on at least 8 kit heroes and half of named cards; files plus originals archived |
+| 1.5 Image-rights pack: dated PDFs of Lovable terms (version in force) and Canva AI terms; per-image row (tool, date, plan, prompt reference); stock licence texts with URLs and download dates if used; written statement "AI-generated; no exclusivity or registrable copyright promised" | OWN with CC | $0 (lawyer optional, cost unknown) | 2 hrs | BR +0.5 to +0.8 | none | Pack lists all images with evidence; the statement appears only in the handover docs and the Editorial Standards page |
+| 1.6 Accounts in the seller's name: GitHub org/repo, Netlify, registrar, Search Console; no personal logins shared | OWN | $0 | 1 hr | BR +0.2 | 1.1 | Access list in handover |
+| 1.7 Written permission emails to 6-10 small brands for credited product photos (optional) | OWN (CW drafts) | $0 | weeks | PD +0.1 to +0.4 per covered product | none | Permission email saved per use; else not used |
+
+### Phase 2: Cowork (weeks 2-4), with the owner present for logins
+
+| Step | Owner | Cost | Time | Lifts | Depends on | Done when |
+|---|---|---|---|---|---|---|
+| 2.1 **C12**: verify products for 8 kits of 4-5 picks (32-40): live Amazon page checked, brand, what it is, availability, why-picked line, tradeoff line, alternatives; record facts only. No saved Amazon images, no prices, no ratings; no screenshots of Amazon pages into the repo | CW | $0 | 1-2 days | PD +0.4 to +0.6, PU +0.3 to +0.5, US +0.1 | 0.5 | Each pick has a dated verification row; every kit has at least 4; picks that fail verification are cut, not replaced with filler |
+| 2.2 **C13**: download Canva originals and ingest (site's own AI images); add licence ledger rows; replace the repeated hero images with unique ones per category | CW | $0 | 0.5 day | FI +0.2 to +0.3, AE +0.1, AU +0.1 to +0.2 | 1.5 ledger | No image repeats on adjacent cards; each file has a ledger row. No Amazon or brand images downloaded under this task |
+| 2.3 **C17**: Pages CMS test with the owner's GitHub login: edit article text, upload an image, see build and deploy; record video; fix `public/uploads` vs `src/assets` mismatch; state plainly which parts remain code-only (hobbies, products, settings) | CW with OWN | $0 | 2-3 hrs | BR +0.6 to +0.9 | repo on GitHub, Netlify project | Screen recording and dated CMS-SETUP entry; rollback tested |
+| 2.4 First live release: single `[deploy]`, domain connected, HTTPS valid, run QA (C9) on live, Lighthouse/PSI lab report labelled lab, uptime monitor started, crawl for broken links | CC + OWN | $0 (Netlify free; read terms) | half day | BR +0.7 to +1.0, BC +0.3 to +0.6, TR +0.2, FI +0.1 | 0.1-0.11, 1.1-1.3 | Live URL; dated QA; Netlify credit balance noted |
+| 2.5 Search Console and Bing property in owner's name, sitemap submitted, indexing requested for key pages; verify rich pins on Pinterest's validator | CW with OWN | $0 | 1 hr | BR +0.3 to +0.5 | 2.4 | Console shows sitemap read |
+| 2.6 Trademark knockout (USPTO, state, domain, handles, search), saved dated; "knockout only, not clearance" | CW | $0 (pro clearance $300-1,500 optional) | 1 hr | BR +0.2 to +0.3 | none | Dated log saved |
+| 2.7 Read-live checks: Flippa pricing/verification pages, Pinterest AI-content label rule, Netlify terms | CW | $0 | 1 hr | BR +0.1 | none | Notes with read dates |
+| 2.8 Videos: 10-minute tour, 5-minute CMS edit, 5-minute deploy and rollback, 5-minute affiliate activation | OWN or CW | $0 | 3 hrs | BR +0.2 | 2.3, 2.4 | Links in handover |
+
+### Phase 3: weeks live (3-6 weeks, minimal work)
+
+| Step | Owner | Cost | Time | Lifts | Done when |
+|---|---|---|---|---|---|
+| 3.1 Let Search Console accumulate; log indexed count weekly, exactly as shown | OWN (5 min/week) | $0 | 3-4+ weeks | BR +0.2 to +0.4, BC +0.2 to +0.4 | Weekly screenshots with date range |
+| 3.2 Publish on a real cadence if the owner wishes (2-3 per week is optional); otherwise real changelog entries only when real edits happen | OWN/CC | $0 | ongoing | AU +0.2 to +0.4, BC +0.1 to +0.2 | Dates spread honestly |
+| 3.3 Real corrections log (only real published errors) | CC | $0 | as needed | TR +0.1 to +0.2 | Log accurate; "No corrections as of [date]" otherwise |
+| 3.4 Pin a small set of real pins from the owner's Pinterest account; record impressions only if they exist | OWN | $0 | 1 hr/week optional | BC +0.1 to +0.2 | Screenshots, no claims beyond what shows |
+| 3.5 Re-run Phase 2 QA at one more deploy only if fixes are needed (budget deploys) | CC | $0 | as needed | BR +0.1 | Credit balance recorded |
+
+### Phase 4: re-review (after 3.1 has data)
+
+| Step | Owner | Cost | Time | Done when |
+|---|---|---|---|---|
+| 4.1 Blind re-review: 5 fresh personas against the live URL (not localhost), each told only the task, not the defect list; report scores and say they are simulated; separate "buy the product" from "buy the site" into two columns | CW | $0 | 1 day | Report with both columns; no cell averaged across constructs |
+| 4.2 Human usability test using docs/marketplace/USABILITY-TEST-SCRIPT.md: 5 women in the target group on their own phones (friends/family acceptable if disclosed), 20 minutes each, task completion and unprompted comments; no payment-for-praise | OWN | $0-100 (thank-you gifts) | 1-2 weeks | Notes saved verbatim; defects fixed; this result outranks any simulated score |
+| 4.3 Decide listing: ask and reserve price set by owner; list with exact facts and the "what we do not claim" list | OWN | Flippa fee per live page | 1 day | Listing contains only verified statements |
+
+Do not release more than 8 times in any month; keep the first 6 weeks to 1 release plus at most 2-3 fixes.
+
+### 4.x Recommended answers to the owner's open questions
+
+1. **Link from byline to Editorial Standards ("How we make this") without repeating AI disclosure.** Yes. Use the neutral label "How we make this" on every byline and in the footer, pointing to Editorial Standards. The AI disclosure text lives only there. This follows Google's "how content was created" suggestion (recommended, not required) and respects the reaffirmed rule. Cost: R3-4-type reviewers will still call the disclosure "buried"; accept it.
+2. **`.ics` export under the no-printables rule.** Yes, with limits: generated in the browser from the visitor's own plan, free, not hosted, not offered as a standalone download, not themed as a "calendar pack". Print buttons on the user's own saved list are browser features and also fine; owner to confirm in writing once. Do not add downloadable PDFs, checklists or planner sheets.
+3. **Published-by line options.**
+   - Sole proprietor under the owner's own name: cheapest, truthful, trust gain moderate. Shows a real person; the owner decides whether to reveal. Downside: personal liability and personal name public.
+   - Sole proprietor with a registered trade name (DBA): "Published by Plans Past Five, a trade name of [legal name], [city, state/country]". Low cost (fees vary; verify), no new entity. Recommended default.
+   - LLC (or local equivalent): strongest BC signal (+0.2 over DBA), liability separation, cleaner sale story; costs filing plus annual fees and admin; the sale is still an asset sale and the Associates account is not assigned. Choose if the owner will run more than one site or wants a shield.
+   - Whichever is chosen: real city plus working mailbox; use a PO box or commercial mail address, never a fake address; make Terms/Privacy match; never invent a founder, staff or bio. Flippa will verify the seller's identity anyway, so the public line needs only the trade name and city. Not legal advice; check local filing rules.
+4. **Photography budget.** $250-500: eight kit flat-lays first, then single shots for the 8-12 hero picks. Caption "Photographed by [Published-by name]". Do not write "tested", "reviewed" or "bought and used". Keep receipts and originals; assign copyright to the buyer in the sale agreement.
+5. **Mailbox.** One role address, receiving is enough for Amazon and Flippa; use a real mailbox if replies must come from the domain. Do not use a form service (adds a data-collection duty).
+6. **Dates.** Keep the Nov 18-19 dates as true. Add a launch note, a real changelog and, if the owner wishes, real cadence.
+7. **Do the Creators API in the seller plan?** No. Buyer-only after 10 sales in 30 days; document it.
+8. **Netlify cap.** Accept and document; keep at most 8 deploys per month; tell buyers about the hard cap and pause behaviour; evaluate an alternative free host only with sources.
+9. **Hobby/planner cost bands.** Keep our own research-based bands; never show Amazon prices or ratings. Owner to confirm.
+10. **Pricing the sale.** Planning range only: low hundreds to about $1,500 at launch without data; low thousands only with indexed history, rights resolved and a live-proven CMS; the $9,999 Flippa cap is not a target. No comparable sale was found.
+
+---
+
+## 5. What we will NOT do to chase a number
+
+- No fictional authors, headshots, bios, "I tried this", testimonials, reader quotes or seeded reader questions.
+- No claims of testing, hands-on review or lab measurement; "researched" and "selected because" only. No "bought and tested" captions.
+- No backdating, staggered fake dates, fabricated "updated" entries or fake corrections; "last checked" changes only when a real check is logged.
+- No fake traffic, rankings, revenue, projections, subscribers, "monetized" or "income-ready" claims; no claim of indexed status before Search Console shows it; no uptime or Lighthouse figure without the log and "lab" label.
+- No downloading, caching, mirroring, cropping, overlaying or recolouring Amazon images; no Amazon prices, ratings, review counts or "bestseller"; no Amazon-sourced image linked to anything except its Amazon page.
+- No manufacturer photos without written permission; no stock photos without a saved licence text; no AI images on named-product cards.
+- No new AI disclosure outside Editorial Standards; no image-level "AI generated" captions; no AI disclosure on About.
+- No newsletter, email capture, waitlist, accounts, web push, comments, streaks, leaderboards or any backend.
+- No paid ads or boosted pins; no paid pin schedulers; no other affiliate networks to source images.
+- No printables, planners, PDFs or digital products; `.ics` stays generated on the fly.
+- No scores-for-scores work: do not tune copy to what the five personas complained about unless it also helps a real visitor; do not re-run personas until the answer improves.
+- No placeholder or example email or address at launch; no fake address; no borrowed company name or "as seen in" badges.
+- No claiming the Associates account, Flippa approval, "trademark-clear", "legally reviewed", "human-written", "no-code fully editable", "exclusive/copyrighted images" or comparable sales figures.
+- No service worker that caches HTML; no new Vite plugins; no extra deploys to "see if it passes".
+- No deploy to Netlify before the Phase 0-1 gates; no more than 8 production deploys a month.
+- No claiming a score of 8 means readiness: do not cite simulated scores in the listing.
+
+---
+
+## 6. Gates (summary)
+
+| Gate | Condition |
+|---|---|
+| G1 release | 0.1-0.11 done, 1.1-1.3 done (domain, mailbox, Published-by), at least 8 kits populated (2.1), CMS proven (2.3) |
+| G2 list | 3+ weeks of Search Console data; image-rights pack complete; Phase 4.1 and 4.2 done; listing claims limited to evidenced facts |
+| G3 stop | Stop adding features once RT and SH plateau; further lift now requires real traffic, which cannot be bought or claimed |
