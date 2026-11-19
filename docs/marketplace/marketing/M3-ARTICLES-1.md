@@ -1,0 +1,260 @@
+# M3: Articles (first half) + Journal index + article template: marketing review
+
+Reviewer scope: /journal index, the /journal/$slug template, and the first 14 published articles alphabetically (27 are published; 7 are still `draft` and were excluded: affordable-hobbies-under-25, cute-weekend-plans-that-arent-brunch, how-to-start-air-dry-clay, how-to-start-crocheting, how-to-start-embroidery, make-friends-as-an-adult-through-hobbies, watercolor-painting-for-beginners). Reviewed live at 127.0.0.1:5950 (desktop 1280x800, mobile 390x844) and in source (content/articles/*.json, src/routes/journal.*.tsx, ArticleBody, ShopMyHobby, ShopTheArticle, ShareButtons).
+
+Articles covered: active-hobbies-for-women-who-dont-love-the-gym, at-home-creative-weekend, cheap-weekend-adventures, cozy-solo-dates-at-home, creative-hobbies-you-can-start-at-home, creative-hobby-starter-kits-worth-considering, flower-arranging-as-a-hobby, girls-night-ideas-that-arent-drinks, hobbies-to-try-when-life-feels-like-work-sleep-repeat, how-to-find-a-hobby-as-an-adult, how-to-get-into-recreational-cycling-as-an-adult, how-to-host-a-craft-night, how-to-host-a-mahjong-night, how-to-host-a-paint-night-at-home.
+
+---
+
+## 1. Verdict and sell-appeal scores
+
+The writing is warm, clean and unusually trustworthy, and the best lines ("Same legs, better setting." "Your free time doesn't need a performance review." "A shelf of evidence.") are genuinely brand-defining. But as a selling machine the Journal is under-built. Three structural problems cost the most money: (1) the shopping block at the end of every article is a text-only list ("Outdoor activity daypack ... Browse options on Amazon") with no product image, no emotional framing and a faint link, so the reader who has just been inspired meets the least inspiring part of the page; (2) the shopping moment arrives only after a 5-7 minute read, while the desire peaks around the intro and the first "First try" items, and there is no mid-article "here is what this one needs" bridge; (3) the visual layer undersells the activities: hero images are re-used across articles (hiking photo for both the gym and cycling pieces, potteryNight for three, shopAdventures for flower arranging), the 15-item lists are text-only with chips ("Varies", "Social"), and several Journal cards on the index render as blank pink tiles. The copy often explains safety and caveats at the same volume as the pleasure, which is right for trust but flattens the hook. Fix the commerce block, add images and a stronger "what you'll need to start" nudge placed at the point of desire, and the same words will sell far more.
+
+| Page | Sell-appeal (1-10) | One-line reason |
+|---|---|---|
+| /journal index | 5 | Lovely hero line, but a flat undifferentiated grid, no "start here/popular" pick, blank-tile cards, no category chips |
+| Article template (hero/byline/dek/TOC/share/related) | 6 | Elegant and shareable; hero below the fold on desktop, byline/date/"min read" is editor-speak, shop block is the weak link |
+| active-hobbies...gym | 7 | Best hook in the set; ending shop block (daypack, bottle, tote) is generic and low-desire |
+| at-home-creative-weekend | 7 | Strong promise ("a shelf of evidence"), good structure; shopping sits at the very end, supplies list is buried at Friday |
+| cheap-weekend-adventures | 6 | Good utility; the product block (daypack, binoculars, totes) feels unrelated to the free-adventure premise |
+| cozy-solo-dates-at-home | 8 | Highest emotional fit ("Wear the good pajamas. You're the guest of honor."); shop block could be the "occasion kit" |
+| creative-hobbies-you-can-start-at-home | 7 | Excellent intro question; Pottery Era starter kit block mid-list is the best placement in the set |
+| creative-hobby-starter-kits-worth-considering | 5 | Honest and useful, but a "how to judge a kit" page with no kits is a buying-guide that does not guide to a purchase |
+| flower-arranging-as-a-hobby | 5 | Charming recipe, zero shop block (no products), hero image is a binoculars/adventures shot |
+| girls-night-ideas-that-arent-drinks | 8 | Shareable group-chat bait, great title; commerce is thin for the volume of traffic this will attract |
+| hobbies-to-try-when-life-feels-like-work-sleep-repeat | 8 | Strongest intro and quote in the site; 35 items with 3 shop blocks mid-way, one weak product set (rackets absent) |
+| how-to-find-a-hobby-as-an-adult | 6 | Gentle, honest; anti-shopping stance ("starter versions only") is on-brand but leaves money on the table with no clear next step beyond the quiz link |
+| how-to-get-into-recreational-cycling-as-an-adult | 4 | Safety manual tone; the least desirable article; hero is a hiking photo; products (daypack, bottle, tote) do not match the activity |
+| how-to-host-a-craft-night | 7 | Clear, hostable, kit-led; "Group-friendly craft supplies" is the right idea with the wrong presentation |
+| how-to-host-a-mahjong-night | 7 | Trending topic with a real need (the set), honest; the title is too long, the hero is a bar/tile mood shot that is great |
+| how-to-host-a-paint-night-at-home | 7 | "No Talent Required" is a strong promise; fits a kit purchase perfectly, shop block is again text-only |
+
+---
+
+## 2. Page-by-page findings, ranked by revenue/engagement impact
+
+### Template and index (affects every article)
+
+| # | Finding | Impact |
+|---|---|---|
+| T1 | **The Amazon shop block has no pictures.** ShopMyHobby/ShopTheArticle cards show only a title, a one-line benefit, "look for → ..." and an underlined "Browse options on Amazon". Nothing the eye can fall in love with. Mobile and desktop both. Button is a text link, not a button. | Highest. This is where every sale is made. |
+| T2 | **Shopping is introduced last.** On the gym article the block appears after ~15 items, "making it stick", "try this weekend" and a "what you'll need" callout. The reader has been selling herself for 5 minutes and nothing offers her the next step at the moment she says "I want to try that". | High |
+| T3 | **Block heading is the kicker "SHOP YOUR HOBBY" + a hobby-agnostic title** ("Gear for getting started", "Small things that help", "Shop your hobby" repeated on 3 articles). Generic. Per-article desire headline is missing. | High |
+| T4 | **Disclosure line under the block reads defensive for a persuasive moment**: "Buttons that say 'View on Amazon' open a named product's own page; 'Browse options' opens an Amazon search ... We don't currently earn from these links." Honest (keep), but it is four sentences at the point of the ask. Compress to one friendly line + the link. | Medium |
+| T5 | **"Add all essentials / Copy list / Print list" tools are powerful but buried.** The "Shop your hobby" copy tools are a real differentiator ("take the list to the shop") but the page does not announce them. | Medium |
+| T6 | **Hero is below the fold on desktop.** The 4-6-line stack (breadcrumb, kicker, 2-3-line H1, dek, byline, 3 buttons) uses the whole 800px viewport; the image starts at y=637 on a short title and y=759 on mahjong. On Pinterest-origin mobile traffic it is better (image just under the fold). | Medium |
+| T7 | **Byline "By The Plans Past Five Editors · November 19, 2026 · 4 min read"** is editor-speak with an unusual future-feeling date (dates are fine; "Editors" is institutional). Fine for honesty; shorten and move the read time to an inviting chip: "4-minute read, 15 ideas". | Low-Med |
+| T8 | **Share row is a plus** ("Send to the group chat" is brilliant for girls-night/mahjong/craft pieces) but it appears twice and the first instance competes with "Save to My Plans" at equal weight. Primary action per screen is unclear. | Medium |
+| T9 | **"The short version" box** (read time / do / need / free) exists in the template but did not render on any tested article; the left TOC ("In this story") is desktop-only, mobile gets "Jump to" chips only when >3 sections. Scannability is OK. | Low |
+| T10 | **"You might also love" cards are text-heavy 1:1 squares** with no CTA label, and the final block lists hobbies (Pickleball, Tennis, Hiking) with no verb ("Try pickleball"). | Medium |
+| T11 | **Meta/OG: article descriptions are the dek, titles are the H1.** Several are long (mahjong title is 93 characters in the title tag and truncates in search; the OG description is 190+ chars). og:image points at `/src/assets/...` paths (check this resolves in the built site; if it is a dev path, Pinterest/iMessage unfurls will be blank). | High for Pinterest/share, if the path is not deployed |
+| T12 | **Journal index:** grid of 27 equal cards, newest-first order produces "15 Active Hobbies for Women Who Don't Love the Gym" as the lead. Several lower cards render as plain pink tiles with no image (visible mid and bottom of the index), which looks unfinished. No categories/filters, no "start here" pick, no "most useful" picks. H1 "Stories for the hours after five." is good but the dek ("Hobby guides, honest beginner advice and plans worth putting on the calendar. New stories are added regularly.") is generic and "New stories are added regularly" is a claim nobody can verify and a maintenance promise. | High |
+| T13 | **Index meta**: "The Journal: Hobby Guides, Ideas & Weekend Plans" is fine; description is template-like ("Original, practical stories...") | Medium |
+
+### Article-level findings
+
+**active-hobbies-for-women-who-dont-love-the-gym** (hero hiking-wildflowers)
+- Hook is excellent. Dek has a clunky "sorted by what you like: friends, fresh air or a good playlist" that could end on a punch.
+- 15 items, only items 1 and 2 link out; item cost chips ("Varies" x12) are worthless as a persuader. Replace "Varies" with a sensory "first try" line where possible or drop the cost chip when it says Varies (it reads as hedging, repeated 12 times).
+- Shopping: daypack, bottle, tote. A wrongly weighted choice: the article's two commercial stars are pickleball and tennis (productIds include tennis-rackets, pickleball-sets) but the block shows hiking gear. Lead with "Try-it" paddle/racket set linking to pickleball and tennis articles.
+- Ending is "If you loved this, try..." with three bare hobby names. No closing CTA.
+
+**at-home-creative-weekend** (hero shopPottery)
+- Best structured selling page: weekend schedule at the top. Great dek. But the supplies list (the sales moment) is under "Friday: make a spot", the shop block is last.
+- Add a one-line "Everything you need is on one list: clay, paint, paper" bridge directly under "The shape of the weekend", linking to the shop block anchor.
+- "Check the cupboards before you shop" is trustworthy and good; keep it.
+
+**cheap-weekend-adventures** (hero shopAdventures)
+- 25 items is great Pinterest bait. Title "25 Affordable Weekend Adventures" is bland. See rewrites.
+- Products (daypack, notebook, totes, binoculars) arrive after "Keeping it cheap". Binoculars are the only romantic item; make them the lead.
+
+**cozy-solo-dates-at-home** (hero shopBookish)
+- Strongest tone-fit with the brand. The "Set the scene in ten minutes" list is where a product nudge belongs (book light, candle holder is out because of the safety copy, plated snack). Make the shop block read as "the occasion kit".
+
+**creative-hobbies-you-can-start-at-home** (hero potteryNight)
+- Intro is the best hook in the creative set. Mid-article Pottery Era starter kit block placement is correct (reader has just read clay, painted frames). Block title "Shop your hobby: Starter picks from The Creative Girl and The Pottery Era" is clunky and uses collection names the reader does not know yet.
+
+**creative-hobby-starter-kits-worth-considering** (hero shopCreative)
+- Honest and valuable, but titled for skeptics. "Actually Worth Considering" signals hesitation. Reads as a consumer-advice article that ends in a list of product types; it does not recommend anything. Selling honestly can still mean "start with this".
+- "This page doesn't rank named kits, and nothing here comes from hands-on testing" is honest, but position it in the footer/method note, not in paragraph two.
+
+**flower-arranging-as-a-hobby** (hero shopAdventures)
+- No product block at all and `productIds: []`. Hero shows binoculars/picnic gear, not flowers. The recipe is lovely and sensory, which is exactly the content that sells a vase, snips and jug. Add a small kit block (snips, a bud vase, flower food is not needed) and a flower hero.
+
+**girls-night-ideas-that-arent-drinks** (hero girlsNight)
+- Highest share potential. Title is long; the italic span "Aren't Just Going Out for Drinks" is the whole back half. The dek is great ("no hangover").
+- Commerce block (group painting kits, board games, conversation cards) is correct but it is placed after item 25 and "Getting the group chat to commit". Put a "Host kit" block after the "Cozy and at home" section where craft/cookie/spa items are.
+
+**hobbies-to-try-when-life-feels-like-work-sleep-repeat** (hero potteryNight)
+- Strongest emotional hook on the site; it should be the hero of the site's Pinterest strategy. The 35 items are too many for one scroll; scannability suffers because items 1-35 are plain text.
+- Mid-list shop block ("A few creative starter pieces") is placed after item 18; it is good. Quiz CTA ("Find Your Thing") at the end is the right primary CTA but is a plain paragraph.
+- Dek is 40 words; Pinterest and search truncate it.
+
+**how-to-find-a-hobby-as-an-adult** (hero soloCafe)
+- Gentle and persuasive. The "pick three, one-week experiment" is a great lead magnet-style structure, but there is no "print/save my experiment sheet" and no clear CTA above the quiz link in paragraph four. Shop block ("Starter kits for the experiment") is last and the copy says "A notebook and what's already at home is enough" which tells her not to buy.
+
+**how-to-get-into-recreational-cycling-as-an-adult** (hero hiking)
+- Reads like a safety leaflet: helmet fit, tyre pressure, chain lube. Six of seven steps begin with chores. No joy until "a bakery is a perfectly respectable destination" at step 7. Title and hero are not tempting. Hero is the same hiking image as the gym article. The products (daypack, water bottle, market totes) do not include a helmet or a bike light, the two things the article insists on, and for good reason: they may not have Associates-eligible verified listings, but the page cannot sell what it tells her to buy.
+
+**how-to-host-a-craft-night** (hero girlsNight)
+- Good, hostable. "Five craft menus" is a selling structure: each menu is a kit. Put a kit link inside each menu entry instead of one block at the end. Hero image is shared with the girls' night list.
+
+**how-to-host-a-mahjong-night** (hero shopGirlsNight)
+- A real buying moment ("which set?") and the page handles it honestly. The title is too long and a dek of 41 words. "Playing with respect" is thoughtful and brand-safe. The shop block ("Before you buy a set") is the best-framed block in the whole set because it names the decision. Pull that framing across the other pages.
+
+**how-to-host-a-paint-night-at-home** (hero potteryNight)
+- "No Talent Required" is a strong hook, the one-painting plan is concrete. Kit block (group painting kit, acrylic paints, detail brushes, conversation cards) is the best commercial fit in the set. Hero is shared with two other articles.
+
+---
+
+## 3. Concrete rewrites (current -> replacement)
+
+### 3.1 Template microcopy
+
+| Element | Current | Replace with |
+|---|---|---|
+| Byline | `By The Plans Past Five Editors · November 19, 2026 · 4 min read` | `Plans Past Five Editors · Updated November 19, 2026 · 4-minute read` (keep `Updated` only where `verifiedAt` exists; otherwise keep "Published") |
+| Shop block kicker | `SHOP YOUR HOBBY` | `START YOUR KIT` (or per-article, see below) |
+| Shop block disclosure | `Buttons that say "View on Amazon" open a named product's own page; "Browse options" opens an Amazon search for a type of product. We show no prices: Amazon or the seller sets price, shipping and returns. We don't currently earn from these links.` | `These are ordinary Amazon links. Amazon sets price, stock and returns. If we earn from them, we say so on our [disclosure page].` (Use the live-disclosure helper so it flips automatically, never hard-code the "don't currently earn" sentence.) |
+| Shop link label | `Browse options on Amazon` | `See options on Amazon` (and style as a bordered cherry button, min-height 44px) |
+| Related section | `You might also love` | `Next up for your calendar` |
+| Final hobby chips | `Pickleball / Tennis / Hiking` (bare) | Add a verb on each card: `Try pickleball`, `Try tennis`, `Try hiking` |
+| "If you loved this, try…" | `If you loved this, try…` | `Loved this? Try one of these next.` |
+
+### 3.2 Journal index
+
+- Title tag now: `The Journal: Hobby Guides, Ideas & Weekend Plans | Plans Past Five`
+  - Keep, but see meta.
+- Meta description now: `Original, practical stories about hobbies, after-work plans, solo dates and friendships for women building a life outside work.`
+  - Replace: `Hobby guides, solo date ideas, girls' night plans and weekend ideas for women who want something to look forward to after work. Pick one and put it on the calendar.`
+- Hero dek now: `Hobby guides, honest beginner advice and plans worth putting on the calendar. New stories are added regularly.`
+  - Replace: `Hobby guides, solo dates and girls' night plans, each with an easy first try and a short list of what you'll need. Pick one for Thursday.`
+- Add above the grid a single-line chooser (chips linking to the 6 categories, already in the sub-nav): `Looking for: [Something solo] [Something with friends] [Something creative] [Get moving] [A cheap weekend]`.
+- Lead (large) card: pin `35 Hobbies to Try When Your Life Feels Like Work, Sleep, Repeat` or the girls' night list, not whichever article is first in the file. Add a small `Start here` kicker.
+
+### 3.3 Titles, deks and meta per article (all within brand, no invented facts)
+
+| Slug | Current title | Replacement title | Current dek / meta | Replacement dek / meta (<=155 chars) |
+|---|---|---|---|---|
+| active-hobbies... | `15 Active Hobbies for Women Who Don't Love the Gym` | keep (strong, searchable). | `Fifteen ways to move that have more in common with a good Saturday than a treadmill, sorted by what you like: friends, fresh air or a good playlist.` | `Fifteen ways to move that feel more like a good Saturday than a workout: with friends, outdoors or to a playlist. Pick the one you're curious about.` |
+| at-home-creative-weekend | `A Complete Guide to Planning an At-Home Creative Weekend` | `Plan an At-Home Creative Weekend: Clay, Paint and a Journal Spread` | `A two-day plan with a supply list, a loose schedule and enough built-in rest that you finish Sunday feeling restored, not behind.` | `Two slow days at home: clay on Saturday, watercolor in the afternoon, a journal spread on Sunday. A schedule, a supply list and built-in rest.` |
+| cheap-weekend-adventures | `25 Affordable Weekend Adventures` | `25 Weekend Adventures That Cost Almost Nothing` | `Twenty-five small adventures built from the kinds of places most towns have, with a prompt for finding your own version of each.` | `Twenty-five small adventures built from places most towns already have: a trail, a library, a flea market. Pick one for Saturday.` |
+| cozy-solo-dates-at-home | `20 Cozy Solo Date Ideas You Can Do at Home` | keep. | `Rainy day, low battery or happily a homebody? Twenty at-home dates that feel planned, not defaulted into.` | Keep (this is the best dek in the set). |
+| creative-hobbies... | `21 Creative Hobbies You Can Start at Home` | `21 Creative Hobbies You Can Start at Your Kitchen Table` | `No studio, no car, no expensive equipment: twenty-one things to make with your hands at a kitchen table, grouped by material and mess level.` | `Twenty-one things to make with your hands at a kitchen table, from junk journals to air-dry clay. Sorted by mess level, with an easy first project for each.` |
+| creative-hobby-starter-kits... | `Creative Hobby Starter Kits That Are Actually Worth Considering` | `Are Craft Starter Kits Worth It? What to Look For Before You Buy` | `How to judge a starter kit by what is in the box, who it suits, and when buying loose supplies is the smarter move.` | `Is a craft kit worth the money, or just a pretty box? Seven questions to ask and which hobbies suit a kit and which are better bought loose.` |
+| flower-arranging... | `Flower Arranging as a Hobby: How to Start at Home` | `How to Arrange Grocery-Store Flowers So They Look Like a Florist Did It` | `A small weekly habit: a few stems, a simple recipe, and the tricks that make a grocery-store bunch look like it came from a florist.` | `One bunch, one jug and a three-layer recipe. A twenty-minute weekly habit that makes your table look arranged. No talent needed.` |
+| girls-night... | `25 Girls' Night Ideas That Aren't Just Going Out for Drinks` | `25 Girls' Night Ideas That Aren't Drinks` (keep a short H1; use long form as subtitle only if needed) | `Plans for the group chat that give everyone something to do, something to say and no hangover.` | Keep. Add: `Send it to the group chat.` as the final CTA line of the article. |
+| hobbies-to-try... | `35 Hobbies to Try When Your Life Feels Like Work, Sleep, Repeat` | keep. | `If your week is laptop, dinner, couch, bed, this is your way out. A wide menu of thirty-five hobbies, from couch-friendly to out-of-the-house, sorted by how much energy you've actually got left.` | `If your week is laptop, dinner, couch, bed: thirty-five hobbies sorted by how much energy you have left, each with an easy first session.` |
+| how-to-find-a-hobby... | `How to Find a Hobby as an Adult When You Don't Know Where to Start` | `How to Find a Hobby as an Adult (When You Say "I Don't Really Have Any Interests")` | `For the person who says 'I don't really have any interests': a small, low-stakes way to find out what you'd happily do again, with a one-week experiment at the end.` | `A nosy little audit, three cheap trials and a one-week experiment to find the thing you'd happily do again. No passion required.` |
+| how-to-get-into-recreational-cycling... | `How to Get Into Recreational Cycling as an Adult` | `How to Start Cycling Again as an Adult: A Gentle, No-Lycra Plan` | `A gentle plan for getting back on a bike: choosing one, staying safe and visible, planning an easy first ride and building up without feeling like an athlete.` | `Get back on a bike without feeling like an athlete: a borrowed bike, a well-fitted helmet, a quiet first ride and a bakery at the end.` |
+| how-to-host-a-craft-night | `How to Host a Craft Night With Friends` | `How to Host a Craft Night: Five Easy Projects and a Plan` | `Easier than a dinner party, and a lot more fun. A hosting checklist, five craft menus and a simple way to share the cost.` | Keep (it is good). |
+| how-to-host-a-mahjong-night | `How to Start a Mahjong Night With Your Girls: Everything You Need for Your New Favorite Tradition` | `How to Start a Mahjong Night With Your Girls` (new favorite tradition moves into the dek) | `A standing Friday night, a table, a pot of tea and a game that keeps everyone talking. How to organize the first night, what to buy by kind, and why the set has to match the version you play.` | `A standing Friday, a pot of tea and a game that keeps everyone talking. How to host a first night and pick a set that matches your version.` |
+| how-to-host-a-paint-night-at-home | `How to Host a Paint Night at Home (No Talent Required)` | keep. | `A simple setup, a one-painting plan everyone can follow and a few ways to keep the night relaxed, for friends who say they cannot draw.` | `One painting, everyone paints at once, nobody needs talent. A setup, a two-hour plan and what to have on the table.` |
+
+Note on titles/Pinterest: the italic span (`titleItalic`) must remain a literal substring of the title, so if a title changes, update `titleItalic` in the same edit or the cherry-italic styling silently falls back to plain text. Suggested italics: "Kitchen Table", "Almost Nothing", "Look Like a Florist Did It", "Mahjong Night", "Cost" etc.
+
+### 3.4 Intro hook rewrites (first paragraph)
+
+| Article | Current first line | Replacement |
+|---|---|---|
+| cheap-weekend-adventures | `You don't need a booking, an upgrade or a paid sunset to have an adventure.` | Keep the line; follow with a sensory sentence: `Think a river path with a bakery bag, a library branch you've never walked into, a flea market at nine a.m.` |
+| creative-hobby-starter-kits | `Is a craft kit worth it, or is it ordinary materials in a pretty box? Sometimes each.` | `You've seen the box: a pretty hoop, thread in a neat row, a finished stitched flower on the lid. Is it worth it? Sometimes. Here's how to tell.` |
+| cycling | `If the last time you rode a bike you were fourteen, riding for fun can feel nostalgic on a sunny day and slightly terrifying on every other one.` | Keep (it is good), then move the safety paragraph three below the first ride so joy comes first. Add after para 2: `Picture it: a flat canal path on a Saturday morning, a bakery bag in your basket.` |
+| flower-arranging | `A grocery-store bunch shoved straight into a jar looks like a bunch of flowers shoved into a jar.` | Keep (it is good). |
+| how-to-find-a-hobby | `What do you do for fun?` | Keep. |
+
+### 3.5 Product framing and shop block (headline + dek per article)
+
+Format: current block title / dek -> replacement. Use `title` and `dek` fields of the block.
+
+| Article | Current | Replacement |
+|---|---|---|
+| active-hobbies... | `Gear for getting started` / `Optional, and best bought after you've tried a thing twice.` | `Your first-session kit` / `Borrow a racket first. When you're back for a second go, these make the walk to the court nicer.` Lead with pickleball and tennis products. |
+| at-home-creative-weekend | `Stock your creative weekend` / `Optional. Start with what you have.` | `Everything for the weekend, one list` / `Clay, paint, paper and a journal. Check the cupboard first, then tap what's missing. Copy the list and take it to the shop.` |
+| cheap-weekend-adventures | `Small things that help` / `Optional. A bag, a notebook and comfortable shoes go a long way.` | `For your first adventure` / `A bag for the snacks, a notebook for the finds and binoculars if the pond calls. Nothing here is required.` |
+| cozy-solo-dates-at-home | `Small things for a better night in` / `Nothing here is required. They just make staying in feel a bit more like an occasion.` | Keep dek (excellent). Title -> `The night-in kit`. |
+| creative-hobbies... | `Shop your hobby` / `Starter picks from The Creative Girl and The Pottery Era.` | `Pick one material, start tonight` / `A small set for each of the hobbies you were drawn to. Buy one, give it three evenings.` |
+| creative-hobby-starter-kits | `Shop your hobby` / `Types of kits and supplies to compare. Check every listing's contents, labels and instructions first.` | `Kits worth comparing` / `Types of kit to look at, with what to check on each listing before you buy.` |
+| flower-arranging | (none) | Add: `Your first flower kit` / `A jug, a pair of snips and a roll of tape. That's all the recipe needs.` (verify catalog has matching verified products first; if not, ship the page without a block and add one when products exist.) |
+| girls-night | `Easy things to have on hand for hosting` / `A few kits and games that make a spontaneous night much easier.` | `Keep a night-in kit in the cupboard` / `A painting kit, a board game and a deck of conversation cards mean "should we do something?" has an answer.` |
+| hobbies-to-try... | `A few creative starter pieces` / `Only if you need them. Most creative hobbies start with what's already in your drawer.` | Keep dek. Title -> `If a creative one caught your eye`. |
+| how-to-find-a-hobby | `Starter kits for the experiment` / `Only if you want them. A notebook and what's already at home is enough.` | `Three small trials` / `A pocket notebook, a mini paint set and a lump of clay cover three very different evenings. Borrow or skip anything you can.` |
+| cycling | `Small things that help` / `Optional. Check what you have first.` | `For the first ride` / `A bag for water and a snack, a bottle and a tote for the café stop.` (+ add a helmet/light only when a verified listing exists.) |
+| craft-night | `Group-friendly craft supplies` / `Kits that come with enough for a few people.` | `The craft-night shelf` / `Kits with enough for a few people, so you can choose a project and skip the shopping around.` |
+| mahjong | `Before you buy a set` / `Pick one set, not all of them: ...` | Keep (best in set). |
+| paint-night | `Shop your hobby` / `Optional. Kits are handy when you do not want to shop around.` | `Paint night, boxed` / `A group kit means one purchase instead of six sets of everything. Add fine brushes for the stars and stripes.` |
+
+### 3.6 CTA and ending rewrites
+
+| Where | Current | Replacement |
+|---|---|---|
+| `tryThisWeekend` (all articles) | Plain paragraph block | Keep copy, add a button after it: `Add it to My Plans` (SaveButton) so the weekend action and the saved plan are one tap. |
+| hobbies-to-try `makePlan` | `Still not sure? Take our two-minute quiz, Find Your Thing, and get three to five hobbies matched to your time, budget and energy.` | `Still not sure? Take the two-minute quiz and get three to five hobbies matched to your time, budget and energy.` + button `Find Your Thing`. |
+| how-to-find-a-hobby paragraph | `Can't pick? The Hobby Finder quiz asks seven quick questions...` | Make this a button-style callout at the end of "Work out what you're hungry for", not an inline link. |
+| girls-night last line (new) | none | `Found one? Send this to the group chat and book the date before the thread goes quiet.` + share row. |
+| gym closing | `If you loved this, try…` | `Loved this? Try pickleball, tennis or a Saturday hike next.` |
+
+---
+
+## 4. Visual direction
+
+1. **Product photography in the shop block.** Add a thumbnail (square, 96-120px mobile, 160px desktop) to each product card. Use the product's own category image (generated catalog images already exist in images.generated.ts). Even a flat-lay of "clay + paint + brush" on gingham beats the current text-only card. Make "See options on Amazon" a filled cherry button.
+2. **Stop re-using hero photos.** Current clashes: `hiking` (gym AND cycling), `potteryNight` (creative-hobbies, hobbies-to-try, paint night), `girlsNight` (girls-night list AND craft night), `shopAdventures` (cheap weekend adventures AND flower arranging). Give flower arranging a jug-of-grocery-flowers hero; cycling a bike-and-basket-by-a-canal image (not hiking); paint night a table of canvases mid-painting.
+3. **Pinterest-first hero crops.** Pinterest favours 2:3 portrait. The template crops the hero to `aspect-[4/5]` on mobile and 16:10 on desktop. Add an optional `pinImage` (1000x1500) per article for the "Pin it" button, with the title overlaid in Fraunces on cream/cherry. This is the single biggest traffic lever for this audience.
+4. **Item list imagery.** The 15/21/25/35-item lists are text with chips. Add a small square photo (thumbnail) on the right of every item that has a `hobby` match, and replace "Varies" chips (used ~100 times across these articles) with something that adds desire: `First try: ...` already exists behind "More"; promote `first` to be visible, not hidden.
+5. **Index grid.** Several cards are blank pink tiles (no image); give every card a real hero or remove from the grid until it has one. Make the first row a 2-up (lead + secondary), then a 3-up. Add a category chip bar above.
+6. **Article layout.** Reduce the header stack so the hero image starts above the fold on 1280x800 (smaller H1 for titles over 60 characters, or move save/share into a sticky bar). Keep the breadcrumb.
+7. **Mid-article shop bridge.** A slim cream strip with a gingham edge: `Everything on this list, in one place: [See the shopping list]`, placed after the first section (gym article after "How to choose", weekend after "The shape of the weekend"). One per article.
+8. **Quote blocks** (`quote` type) work: use more pull-quotes in the cherry Fraunces italic (only hobbies-to-try uses one).
+
+---
+
+## 5. Quick wins (under 1 hour each) and bigger moves
+
+### Quick wins
+1. Shorten the mahjong title and reorder (keep the long form as the dek). Same for girls' night.
+2. Replace generic block titles/deks (section 3.5), editing `title`/`dek` in the JSON.
+3. Change "Browse options on Amazon" to "See options on Amazon" and restyle as a button (one component, ShopSections).
+4. Shorten the disclosure line under shop blocks to one sentence (keep the link).
+5. Drop the "Varies" cost chip when the value is exactly "Varies" (ArticleBody `item` case).
+6. Add a closing share line to girls-night, craft-night and mahjong ("Send this to the group chat").
+7. Add a verb to hobby cards in "Loved this?".
+8. Swap duplicate hero keys (hiking, potteryNight, girlsNight, shopAdventures) for existing distinct images where available.
+9. Fix `titleItalic` so each title has a cherry italic hook (check substrings after retitling).
+10. Remove "New stories are added regularly" from the index dek.
+11. Verify the og:image URL form (`/src/assets/...`) in a built/preview site.
+12. Add a short bridge sentence under "The shape of the weekend" linking to the shop block anchor.
+
+### Bigger moves
+1. Product thumbnails and richer cards in the shop block (needs image per catalog product).
+2. A mid-article "shop bridge" component and per-section "what you'll need" mini-lists for hobby items.
+3. Pinterest portrait pin images per article, with a `pinImage` field and title-overlay template.
+4. Journal index redesign: lead pick, category chips, "most useful" row, and no image-less cards.
+5. Replace the final text hobby list with a "Start your first one" card that carries the saved-plan action.
+6. Write one verified, positive-framing kit recommendation for the starter-kits article (named only if a verified catalog entry exists), so the buying guide ends in a pick.
+7. Add the missing products for cycling (helmet, lights) and flower arranging (snips, bud vase) to the verified catalog so the articles can sell what they tell the reader to buy.
+
+---
+
+## 6. Cross-page consistency issues
+
+- **Block title "Shop your hobby"** appears on 3 articles (creative-hobbies, starter-kits, paint night) with different meanings; the kicker above is also "SHOP YOUR HOBBY". Rename the kicker globally and give each block its own headline.
+- **Voice of "we":** some articles use "we/our" ("Our beginner's guide", "We've sorted these thirty-five") while the starter-kits piece says "nothing here comes from hands-on testing". Both are fine; keep "we" for editorial curation and never imply testing.
+- **Tense and person:** mostly imperative second-person (good). Cycling and mahjong drift into instruction-manual passive ("Replace after a crash...", "advice on age varies"). Trim.
+- **Numbers vs. words in titles:** digits in titles (15, 21, 25, 35) but words in deks ("Fifteen", "twenty-one"). Fine, but the dek says "twenty-one" while the creative-hobbies list has 21 and the cheap-adventures dek says "Twenty-five": consistent. Keep.
+- **Calls to action:** "Save to My Plans", "Copy link", "Pin it", "Send to the group chat", "Add all essentials", "Copy list", "Print list", "See all (N)", "Browse options on Amazon", "Find Your Thing". Too many verbs at once; the page needs one primary action per screen. Primary on the article: Save to My Plans (top) and See options (shop block). Make the rest quiet text.
+- **Names:** collection names (`The Creative Girl`, `The Pottery Era`, `Girls' Night In`) are used in body copy before they are explained. Either introduce them once ("our Pottery Era shop shelf") or drop them in the article body.
+- **Category label vs. nav:** article kicker shows "A Little Movement", "The Weekend Edit", "Table for One" (brand names); breadcrumbs, JSON-LD and meta use the same. Consistent, but the index cards show only the brand name, which does not tell a stranger what the category is. Add a small descriptor on the index category chips.
+- **"Optional" overuse:** nearly every shop dek says "Optional" or "Only if you need them". Honest, but five times per site tells the reader not to buy. Use it once per article at most and lead with the benefit.
+- **Related-article links inside bodies** are good and frequent. Two articles (gym, cycling) link to each other; flower arranging links to three; the starter-kits piece links to shop collections. Add the same pattern to cheap-weekend-adventures (it links to two already) and hobbies-to-try (add a link to girls-night and mahjong in the social section).
+- **Draft/published gap:** the gym article links only to published articles by design (pickleball/tennis links were restored after publication); recheck all internal links resolve once the 7 drafts are published or stay unpublished.
+
+---
+
+## Top 5 changes
+
+1. Put product images and a real button on the Amazon shop cards, and give each block a desire-led headline per article (T1, T3).
+2. Move the shopping moment earlier with a one-line bridge after the first section of every article, and lead each block with the product the article actually sells (paddles for the gym piece, kit for paint night, helmet/lights for cycling).
+3. Fix the visual layer: stop duplicate hero images, add Pinterest portrait pins, add item thumbnails, and remove image-less cards from the Journal index.
+4. Tighten titles, deks and meta (mahjong, girls' night, cycling, starter kits, flower arranging), and verify the og:image URLs.
+5. Redesign the Journal index with a pinned lead story, category chips and a stronger dek; make "Save to My Plans" and "See options" the only loud actions per article.

@@ -1,0 +1,24 @@
+# M2 implemented (hobbies, profiles, categories)
+
+## Done
+- Directory (/hobbies): new title, meta, kicker, subhead, quiz CTA, "What does your week have room for?" label, result count line, empty state with Clear filters button, filter label "Free or under $25" (tag is free or under25, so it stays accurate).
+- Hobby card: friendly category labels (categoryLabels in hobbies.ts), energy capitalised, "See what you need" affordance, doodle varied per hobby instead of per category (image-less tiles no longer identical).
+- Profile: title "How to Start X: What to Buy and Your First Session" (hobbyTitleName fixes "Yoga for Beginners for Beginners" without renaming the hobby, so search/tests/slugs are untouched); per-hobby meta from description, time and the equipment.ts budget range (no boilerplate).
+- Profile hierarchy: primary "See what you need" button in hero (anchors to the kit, or to the supplies list when a hobby has no products); Your first session moved to the top of the body; "Why you'll love it"; "Your first week"; "What you'll have made" only when it differs from the first session; "Good to know" removed; "Your starter kit" with "Shop the kit" link; "Read next".
+- Single shop module: the editorial product strip now shows only as a fallback when the verified kit (ShopMyHobby) has nothing, so the two no longer stack.
+- Stats strip is 2x2 on mobile, "Start for about", shorter footnote. Image-less hero card says "Tonight, <time>" and is capped on mobile.
+- Copy rewrites (paste-ready from report) for Junk Journaling, Watercolor, Crochet, Air-Dry Clay, Pottery Painting, Reading, Baking, Mahjong, Pickleball, Yoga, Running (also fixed "neighbourhood"). Invented/unsupported lines dropped (e.g. "women's social clubs" revival, "everyone is a beginner").
+- Category pages: benefit-led titles and meta (metaTitle/metaDescription in categories.ts, used by the six routes), hand-picked ordered hobbies per section (featured), so Table for One and Creative Corner no longer repeat and Movement no longer shows Watercolor/Film Photography; headings "Start with a read", "Pick one to try", "Shop the look"; filled "Build my plan" primary button plus "See all 43 hobbies"; Better Together intro.
+- Test updated: ui-cards kicker now expects the friendly label.
+
+## Skipped
+- Photos for 32 image-less hobbies, directory hero collage, still-life tiles, product thumbnails (grey boxes in kit panel are the commerce component, other agent): need new assets / owner.
+- Adding products to Yoga, Running, Pickleball, Baking, Crochet, un-noindexing Yoga/Running: need verified Amazon links (owner decision).
+- Renaming hobby names ("Yoga for Beginners" to "Yoga"): breaks search tests and slug; title bug handled via template instead.
+- Film Photography category recategorisation: data decision; handled by curated lists instead.
+- Grouped filter rows, sticky chips, "Start tonight" tag, card cost wording "Under $X", "Where to learn it free" (the resources are generic and not all free, so the claim is unsupported).
+- Guide cards with empty image blocks on profiles: article/hero content owned by another agent.
+- Kit-total line: would need new derived copy beyond the existing "Start for about" range; the range already shows.
+
+## Checks
+prettier, tsc, eslint clean. vitest: 522 pass; 1 failure in trust-format.test.tsx (about page text "no single named author"), caused by another agent's in-progress edit to src/routes/about.tsx, not this work. Playwright at 390 and 1280: no horizontal overflow on /hobbies, three profiles, /movement; titles verified.

@@ -1,0 +1,18 @@
+# Round 2 fixes
+
+Source: blind reviews in `docs/marketplace/reviews2/`. Checked 2026-11-19: `bunx eslint . --quiet`, `bunx tsc --noEmit` clean; `bunx vitest run` 523 tests in 34 files pass.
+
+| # | Item | Status | What changed |
+| --- | --- | --- | --- |
+| 1 | Tonight "Read the guide" mismatches | Fixed | `guideFor()` in `src/lib/tonight.ts` links a guide only when the suggestion's hobby is the article's first (main) hobby; otherwise no guide link. Collage Art no longer points at a flower-arranging article. Test in `src/test/tonight.test.ts`. |
+| 2 | Quiz results have no Save | Fixed | `SaveButton` (heart, compact) on every result card in `src/components/quiz/ResultsView.tsx`. Test: `src/test/quiz-results-save.test.tsx`. |
+| 3 | Mobile menu lacks fine print | Fixed | `finePrintNav` in `nav.ts`; a small text-link row under "Browse" in the mobile menu only (About, Contact, Editorial Standards, Affiliate Disclosure, Corrections). Desktop header untouched. Test in `homepage.test.tsx`. Note: those names are not in `NAMES`; they match the footer and `trust-links.ts`. |
+| 4 | Junk-journaling "only one" pick | Fixed | In `docs/commerce/product-research.csv`, the Stationery Island A5 120 gsm journal is now the essential, lead and `onlyOne` pick; the PAPERAGE blush 100 gsm journal is kept as an alternative (role aesthetic-upgrade) with a compare line saying its paper is thinner. Benefit line mentions 120 gsm, which the CSV specs state. Regenerated with `bun run import:products docs/commerce/product-research.csv`. Note: the importer needs the CSV path argument (its default is the template file). Test in `junk-journaling-consistency.test.ts`. |
+| 5 | Essentials counts 4 / 5 / 6 | Fixed | One list: the hobby page's four supplies (notebook, glue stick, scissors, paper scraps). Both articles' "what you'll need" blocks now have those four as essentials; pen, washi tape and the rest moved to nice-to-haves. The supplies guide's "four things worth buying" prose is a separate buy list and stays. Test compares counts. |
+| 6 | Overlapping junk-journaling articles | Fixed | Each dek and intro says its job (how to begin / what to buy) and each links to the other exactly once (how-to in its intro, supplies guide at its end). No content deleted. |
+| 7 | Planner budget and generic items | Fixed | New "Under $100" planner step (`PlanBudget` type in `planner.ts`, option in `make-plans.tsx`); shared `Cost` buckets used by quiz and tonight are unchanged. The generic "Drop-in class" idea is flagged `generic` and scored 2 below specific ideas, so a specific idea wins when one fits. Prep text is still generic (no invented venues). A tool-scenarios test was adjusted to keep tonight on its own four budgets. Tests in `planner-quiz.test.ts`. Not done: no $40 step (the steps are Free, $25, $50, $100, Flexible). |
+| 8 | README | Fixed | Rewritten for a buyer: what it is, stack, quick start, content workflow, folder map, docs index, deploy marker rule, what is not included. No traffic or revenue claims. |
+| 9 | First tap ignored before hydration | Not done | Note only. It is a framework hydration timing issue on slow phones; no trivial fix. |
+| 10 | Stale test counts | Fixed | "250 tests in 15 files" updated to 523 in 34 files in `docs/buyer/START-HERE.md`, `CLAUDE-HANDOFF.md`, `docs/marketplace/ASSET-INVENTORY.md`, `docs/marketplace/LISTING-DRAFT.md`. Older dated reports (QA-REPORT, TURNKEY-READINESS and similar) keep their historical counts on purpose. |
+
+Also: article JSON must stay in `JSON.stringify(_, null, 2)` form (do not run prettier on `content/articles/*.json`; a test checks it).

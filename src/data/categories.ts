@@ -12,6 +12,11 @@ export type Category = {
   image: ImageKey;
   tone: "butter" | "strawberry" | "matcha" | "sunday" | "cream";
   hobbyTags: string[];
+  /** Search title and description for the section page. */
+  metaTitle: string;
+  metaDescription: string;
+  /** Hand-picked hobby slugs shown first, in this order, so sections do not repeat each other. */
+  featured: string[];
 };
 
 export const categories: Category[] = [
@@ -24,6 +29,17 @@ export const categories: Category[] = [
     image: "watercolor",
     tone: "butter",
     hobbyTags: ["after-work", "low-energy"],
+    metaTitle: "After-Work Hobbies You Can Start Tonight",
+    metaDescription:
+      "Weeknight hobbies and plans for after you close the laptop. No car, no full Saturday, and you can be started within the hour.",
+    featured: [
+      "junk-journaling",
+      "watercolor-painting",
+      "reading",
+      "jigsaw-puzzles",
+      "baking",
+      "yoga-for-beginners",
+    ],
   },
   {
     slug: "weekends",
@@ -34,6 +50,16 @@ export const categories: Category[] = [
     image: "picnic",
     tone: "strawberry",
     hobbyTags: ["weekend"],
+    metaTitle: "Weekend Plans That Aren't Just Brunch",
+    metaDescription: "Markets, picnics, workshops and slow mornings. Give Saturday a storyline.",
+    featured: [
+      "picnicking",
+      "thrifting",
+      "hiking",
+      "museum-exploring",
+      "flower-arranging",
+      "pottery-painting",
+    ],
   },
   {
     slug: "solo-dates",
@@ -44,16 +70,37 @@ export const categories: Category[] = [
     image: "soloCafe",
     tone: "cream",
     hobbyTags: ["solo"],
+    metaTitle: "Solo Date Ideas You'll Actually Look Forward To",
+    metaDescription: "Cafe dates, creative nights and slow Saturdays for one. Solo, not lonely.",
+    featured: [
+      "reading",
+      "film-photography",
+      "museum-exploring",
+      "creative-writing",
+      "birdwatching",
+      "outdoor-sketching",
+    ],
   },
   {
     slug: "better-together",
     name: "Better Together",
     short: "Friendship & social plans",
     kicker: "Text the group chat",
-    intro: "Hobbies that come with people. Craft nights, book clubs and new friends.",
+    intro: "Hobbies that come with people built in. Pick one, text the group chat, set a date.",
     image: "girlsNight",
     tone: "strawberry",
     hobbyTags: ["social"],
+    metaTitle: "Hobbies to Do With Friends",
+    metaDescription:
+      "Craft nights, mahjong, book clubs and new friends. Text the group chat and pick a date.",
+    featured: [
+      "mahjong",
+      "craft-nights",
+      "book-clubs",
+      "pickleball",
+      "board-games",
+      "cooking-classes",
+    ],
   },
   {
     slug: "creative-corner",
@@ -64,6 +111,17 @@ export const categories: Category[] = [
     image: "junkJournal",
     tone: "butter",
     hobbyTags: ["creative"],
+    metaTitle: "Creative Hobbies for Beginners",
+    metaDescription:
+      "Paint, clay, paper and thread. End the night with something you made. Being good at it is optional.",
+    featured: [
+      "watercolor-painting",
+      "air-dry-clay",
+      "crochet",
+      "junk-journaling",
+      "embroidery",
+      "calligraphy",
+    ],
   },
   {
     slug: "movement",
@@ -74,6 +132,10 @@ export const categories: Category[] = [
     image: "tennis",
     tone: "matcha",
     hobbyTags: ["active", "outdoors"],
+    metaTitle: "Fun Ways to Move That Aren't the Gym",
+    metaDescription:
+      "Tennis, pickleball, hiking and slow wanders. Movement for fun, not for a tracker.",
+    featured: ["tennis", "pickleball", "hiking", "roller-skating", "yoga-for-beginners", "running"],
   },
 ];
 

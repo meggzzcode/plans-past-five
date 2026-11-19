@@ -116,9 +116,9 @@ const seeds: Seed[] = [
     beginner: 1,
     cravings: ["creativity", "relaxation"],
     description:
-      "A scrapbook-meets-diary hobby where you glue, tape and layer receipts, tickets, magazine clippings and notes into a notebook. There's no right way to do a page.",
+      "Turn this week's receipts, tickets and scraps into a page you'll want to keep. Glue, tape, layer. There's no wrong way to do it.",
     whyYoullLoveIt:
-      "It turns the small evidence of your week, a coffee sleeve, a train ticket, into something pretty. Perfect for screen-tired eyes.",
+      "The coffee sleeve, the train ticket, the note you almost threw away: by Sunday night they're a page you made. Perfect for screen-tired eyes.",
     supplies: ["A notebook or old book", "Glue stick", "Scissors", "Paper scraps you already have"],
     optional: ["Washi tape", "Stickers", "Fineliner pens"],
     firstActivity:
@@ -156,7 +156,7 @@ const seeds: Seed[] = [
     beginner: 1,
     cravings: ["creativity", "relaxation"],
     description:
-      "Translucent paint, a little water, and paper that does half the work for you. Loose florals and imperfect landscapes are the whole charm.",
+      "A little water, a little color, and the paper does half the work. Loose florals and wobbly skies look lovely on purpose.",
     whyYoullLoveIt:
       "Twenty minutes at the kitchen table is enough to make something you'd happily stick on the fridge.",
     supplies: [
@@ -203,7 +203,7 @@ const seeds: Seed[] = [
     description:
       "Making fabric with a single hook and yarn: granny squares, little bags, bucket hats. The first hour is fiddly; the tenth is meditative.",
     whyYoullLoveIt:
-      "Something to do with your hands during a show, and yes, you can wear what you make.",
+      "One hook, one ball of yarn, and a granny square you made yourself. Something to do with your hands during a show, and yes, you can wear what you make.",
     supplies: ["A 5mm hook", "One skein of medium-weight yarn", "Scissors"],
     optional: ["Stitch markers", "Beginner kit with video lessons"],
     firstActivity:
@@ -276,7 +276,7 @@ const seeds: Seed[] = [
     beginner: 1,
     cravings: ["creativity", "relaxation"],
     description:
-      "Clay that hardens on its own, no kiln needed. Trinket dishes, incense holders and wobbly little vases, painted once dry.",
+      "Pottery-class energy at your kitchen table. No kiln: shape a trinket dish tonight, paint it once it's dry.",
     whyYoullLoveIt: "Pottery-class energy at your kitchen table for the price of a sandwich.",
     supplies: ["Air-dry clay", "A rolling pin or glass", "Acrylic paint"],
     optional: ["Sculpting tools", "Clay work mat", "Gloss varnish"],
@@ -296,7 +296,7 @@ const seeds: Seed[] = [
     beginner: 1,
     cravings: ["creativity", "friendship"],
     description:
-      "Choosing a blank ceramic piece and painting it with glazes at a studio, or with a ceramic kit at home.",
+      "Pick a blank mug, paint it however you like, and collect it when it's fired. A no-skill plan with something to show for it.",
     whyYoullLoveIt: "A no-skill, very cute plan, and you get a mug out of it.",
     supplies: ["A studio visit, or a ceramic painting kit"],
     optional: ["Reference images saved on your phone"],
@@ -406,7 +406,7 @@ const seeds: Seed[] = [
     beginner: 1,
     cravings: ["relaxation"],
     description:
-      "Yes, it counts. Especially fiction, especially off a screen, especially with a library card from most libraries.",
+      "Yes, it counts. A good book, a warm lamp and a library card are a whole evening plan.",
     whyYoullLoveIt:
       "The easiest hobby to restart, and often the cheapest, since most libraries lend books free.",
     supplies: ["A library book or one you already own"],
@@ -460,7 +460,7 @@ const seeds: Seed[] = [
     beginner: 1,
     cravings: ["creativity", "relaxation"],
     description:
-      "Cookies, banana bread, galettes. A hobby where the reward is edible and easy to share.",
+      "Cookies, banana bread, a galette for Sunday. The result is warm, edible and easy to hand to someone you like.",
     whyYoullLoveIt: "Your kitchen smells amazing and you get to bring something to people.",
     supplies: ["Basic pantry ingredients", "A baking sheet", "A mixing bowl"],
     optional: ["Kitchen scale", "Cookie decorating kit"],
@@ -497,8 +497,9 @@ const seeds: Seed[] = [
     beginner: 2,
     cravings: ["friendship", "different"],
     description:
-      "A tile game for four with a long history and a big modern revival among women's social clubs.",
-    whyYoullLoveIt: "A reason to see the same friends every week, plus snacks.",
+      'A tile game for four, a card on the table and a standing weekly night. An easy way to turn "we should hang out" into a plan.',
+    whyYoullLoveIt:
+      "A reason to see the same friends every week, plus snacks. Learn together and nobody has to be the expert.",
     supplies: ["A mahjong set (or a borrowed one)", "Three friends", "A rules card"],
     optional: ["Scoring card", "Tile racks"],
     firstActivity:
@@ -572,8 +573,10 @@ const seeds: Seed[] = [
     energy: "medium",
     beginner: 1,
     cravings: ["movement", "friendship"],
-    description: "A smaller-court paddle sport that's very easy to pick up and very social.",
-    whyYoullLoveIt: "You'll be playing proper points within the first hour.",
+    description:
+      "Small court, light paddle, lots of laughing. Easy enough to play real points in your first hour.",
+    whyYoullLoveIt:
+      "You'll be playing real points in your first hour, and nobody expects you to be good yet.",
     supplies: ["A paddle set (often comes with balls)", "Sneakers"],
     optional: ["Water bottle", "Tote bag"],
     firstActivity: "Find a public court with open play and show up with a friend.",
@@ -609,9 +612,9 @@ const seeds: Seed[] = [
     beginner: 1,
     cravings: ["movement", "relaxation"],
     description:
-      "Slow stretching and breathing, done on a mat at home with a free video or in a beginner class. No flexibility needed; you go as far as feels okay.",
+      "Slow stretching and breathing on a mat at home with a free video. No flexibility needed; you go as far as feels okay.",
     whyYoullLoveIt:
-      "It is movement for a tired body: you finish loosened up, not wrecked, and it fits in a living-room corner.",
+      "A quiet stretch of time that's only for you, and a reason to put the phone in another room. You finish loosened up, not wrecked, and it fits in a living-room corner.",
     supplies: ["A mat, or a towel on carpet", "Comfortable clothes you can stretch in"],
     optional: ["Two blocks or a firm cushion", "A drop-in beginner class"],
     firstActivity:
@@ -837,7 +840,7 @@ const seeds: Seed[] = [
     beginner: 1,
     cravings: ["movement", "relaxation"],
     description:
-      "Run-walk intervals around your own neighbourhood or a park, building up slowly. The goal is to finish feeling good, not to be fast.",
+      "Walk, jog a little, walk again. Around your own block or a park, building up slowly, and you finish feeling good, not wrecked.",
     whyYoullLoveIt:
       "It needs no booking and no partner, and twenty minutes of moving is often enough to clear a work-brain.",
     supplies: [
@@ -1765,6 +1768,19 @@ export const hobbies: Hobby[] = seeds.map(make).map((h) => {
 });
 export const getHobby = (slug: string) => hobbies.find((h) => h.slug === slug);
 
+/** Friendly card and profile labels for the internal category word. */
+export const categoryLabels: Record<Hobby["category"], string> = {
+  creative: "Make something",
+  cozy: "Cozy at home",
+  social: "With friends",
+  active: "Get moving",
+  outdoors: "Fresh air",
+  bookish: "Bookish",
+};
+
+/** Display name for titles: drops a trailing "for Beginners" so templates do not double it. */
+export const hobbyTitleName = (name: string) => name.replace(/\s+for Beginners$/i, "");
+
 export const hobbyFilters = [
   { tag: "at-home", label: "At home" },
   { tag: "outdoors", label: "Outdoors" },
@@ -1775,7 +1791,7 @@ export const hobbyFilters = [
   { tag: "creative", label: "Creative" },
   { tag: "active", label: "Active" },
   { tag: "low-energy", label: "Low energy" },
-  { tag: "low-cost", label: "Free or low cost" },
+  { tag: "low-cost", label: "Free or under $25" },
 ] as const;
 
 /**

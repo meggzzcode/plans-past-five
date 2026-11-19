@@ -6,6 +6,6 @@ import { seo } from "@/lib/seo";
 const c = getCategory("movement")!;
 
 export const Route = createFileRoute("/movement")({
-  head: () => seo({ title: `${c.name}: ${c.short}`, description: c.intro, path: "/movement" }),
+  head: () => seo({ title: c.metaTitle, description: c.metaDescription, path: "/movement" }),
   component: () => <CategoryPage c={c} />,
 });

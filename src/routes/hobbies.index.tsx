@@ -9,8 +9,8 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/hobbies/")({
   head: () =>
     seo({
-      title: `Find a Hobby: ${hobbies.length} Hobbies to Try Outside Work`,
-      description: `A filterable directory of ${hobbies.length} beginner-friendly hobbies, sorted by time, cost, energy and whether you'd rather go solo or social.`,
+      title: `${hobbies.length} Hobbies to Try After Work and on Weekends`,
+      description: `Watercolor, mahjong, pickleball, crochet and ${hobbies.length - 4} more. Pick one for your evening, your budget and your mood, then see exactly what to buy and what to do first.`,
       path: "/hobbies",
     }),
   component: Directory,
@@ -27,21 +27,22 @@ function Directory() {
   return (
     <>
       <PageHero
-        kicker="The hobby directory"
+        kicker="Pick your next thing"
         title={`${hobbies.length} ways to be a beginner again.`}
         italic="beginner again."
-        dek="Filter by where, when, who with and how much energy you've got. Every hobby has a realistic first session, so you can start tonight."
+        dek="Tap what sounds like you tonight. Every hobby comes with a realistic first session and a short list of what to buy."
         tone="butter"
       >
         <Link
           to="/hobby-finder"
           className="mt-8 inline-block bg-cherry px-6 py-3 text-sm font-semibold text-cream hover:bg-ink"
         >
-          Or let the quiz choose →
+          Not sure? Let the quiz pick for you →
         </Link>
       </PageHero>
       <section className="mx-auto mt-10 max-w-7xl px-5 md:px-8">
         <div className="py-4">
+          <p className="mb-3 font-display text-xl italic">What does your week have room for?</p>
           <div className="flex flex-wrap gap-2" role="group" aria-label="Filter hobbies">
             {hobbyFilters.map((f) => (
               <button
@@ -68,7 +69,8 @@ function Directory() {
             )}
           </div>
           <p className="mt-2 text-sm text-muted-foreground" aria-live="polite">
-            {list.length} {list.length === 1 ? "hobby" : "hobbies"}
+            Showing {list.length} {list.length === 1 ? "hobby" : "hobbies"} you could start this
+            week
           </p>
         </div>
         <h2 className="sr-only">Hobbies</h2>
@@ -82,8 +84,14 @@ function Directory() {
           <div className="mt-12 bg-strawberry p-10 text-center">
             <p className="font-display text-3xl italic">Nothing matches all of those at once.</p>
             <p className="mt-2 text-espresso">
-              Try removing a filter or two. "Outdoors" and "at home" together is a tough ask.
+              Try dropping one filter. "Outdoors" and "at home" together is a tough ask.
             </p>
+            <button
+              onClick={() => setActive([])}
+              className="mt-5 inline-flex min-h-11 items-center bg-cherry px-6 py-2 text-sm font-semibold text-cream hover:bg-ink"
+            >
+              Clear filters
+            </button>
           </div>
         )}
       </section>

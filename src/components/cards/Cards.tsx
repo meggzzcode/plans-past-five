@@ -5,7 +5,7 @@ import type { Article } from "@/content";
 import { readingMinutes } from "@/content";
 import { getCategory } from "@/data/categories";
 import { images } from "@/data/images";
-import type { Hobby } from "@/data/hobbies";
+import { categoryLabels, type Hobby } from "@/data/hobbies";
 import type { Product, Collection } from "@/data/products";
 import { resolveProductLink, productLinkLabel } from "@/config/affiliate";
 import { SaveButton } from "@/components/editorial/SaveButton";
@@ -135,7 +135,7 @@ export function HobbyMeta({ h, className }: { h: Hobby; className?: string }) {
       </li>
       <li className="flex items-center gap-1">
         <Zap className="h-3.5 w-3.5 text-cherry" />
-        {h.energy} energy
+        <span className="first-letter:uppercase">{h.energy} energy</span>
       </li>
     </ul>
   );
@@ -158,6 +158,14 @@ const hobbyIcon: Record<Hobby["category"], ComponentType<{ className?: string }>
   outdoors: Flower,
   bookish: Sparkle,
 };
+
+const doodlePool = [Flower, Bow, Sparkle, Star];
+/** Varies the doodle per hobby (stable hash of the slug) so neighbours in a grid do not match. */
+function doodleFor(h: Hobby) {
+  let n = 0;
+  for (const ch of h.slug) n = (n * 31 + ch.charCodeAt(0)) % 9973;
+  return doodlePool[n % doodlePool.length] ?? hobbyIcon[h.category];
+}
 
 export function HobbyCard({ h, className }: { h: Hobby; className?: string }) {
   const img = h.image
@@ -187,14 +195,15 @@ export function HobbyCard({ h, className }: { h: Hobby; className?: string }) {
             />
           </div>
         ) : (
-          <FallbackTile title={h.name} tone={hobbyTone[h.category]} Icon={hobbyIcon[h.category]} />
+          <FallbackTile title={h.name} tone={hobbyTone[h.category]} Icon={doodleFor(h)} />
         )}
         <div className="flex flex-1 flex-col p-5">
-          <p className="kicker text-cherry">{h.category}</p>
+          <p className="kicker text-cherry">{categoryLabels[h.category]}</p>
           {/* Image-less cards show the name once, inside the tile above. */}
           {img && <h3 className="mt-1.5 text-2xl leading-tight">{h.name}</h3>}
           <p className="mt-2 line-clamp-3 flex-1 text-sm text-muted-foreground">{h.description}</p>
           <HobbyMeta h={h} className="mt-4" />
+          <p className="mt-4 text-sm font-semibold text-cherry">See what you need →</p>
         </div>
       </Link>
       <div className="absolute right-3 top-3">

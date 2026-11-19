@@ -23,7 +23,7 @@ Other docs in the repo: `CLAUDE-HANDOFF.md` (developer handoff), `AGENTS.md` (pr
 - Content is typed local data in `src/content` and `src/data`; brand copy lives in `src/config/site.ts`; Amazon and other retailer links are built only in `src/config/affiliate.ts`.
 - The site ships **unmonetized**: plain search links, no tracking ids, a disclosure that says links currently earn nothing.
 - 27 articles are marked published (23 source-checked by Cowork on 2026-11-18; the 4 originals are not source-checked yet); 5 remain drafts. Published means set to published on the branch, not deployed: nothing is live. Drafts are never public (`docs/content/ARTICLE-ROADMAP.md`).
-- Tests: `bunx vitest run` (250 tests in 15 files passing on 2026-11-19).
+- Tests: `bunx vitest run` (523 tests in 34 files passing on 2026-11-19).
 
 ## First commands
 

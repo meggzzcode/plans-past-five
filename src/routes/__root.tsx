@@ -30,18 +30,27 @@ function NotFoundComponent() {
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link
-            to="/"
-            className="bg-cherry px-5 py-2.5 text-sm font-semibold text-cream hover:bg-ink"
-          >
-            Back home
-          </Link>
-          <Link
             to="/hobby-finder"
-            className="border-2 border-cherry px-5 py-2 text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream"
+            className="bg-cherry px-5 py-2.5 text-sm font-semibold text-cream hover:bg-ink"
           >
             Find Your Thing
           </Link>
+          <Link
+            to="/"
+            className="border-2 border-cherry px-5 py-2 text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream"
+          >
+            Back home
+          </Link>
         </div>
+        <p className="mt-5 text-sm text-espresso">
+          <Link to="/make-plans" className="underline decoration-cherry underline-offset-4">
+            Make Some Plans
+          </Link>
+          {" · "}
+          <Link to="/shop" className="underline decoration-cherry underline-offset-4">
+            Shop Your Hobby
+          </Link>
+        </p>
       </div>
     </div>
   );

@@ -68,12 +68,15 @@ export const browseNav: NavItem[] = [
 
 /** Desktop top bar (sections sit in a second row beneath it). */
 export const topNav = [
-  { to: "/start-here", label: "Start Here" },
   { to: "/make-plans", label: NAMES.plans },
+  { to: "/shop", label: NAMES.shop },
   { to: "/hobbies", label: NAMES.hobbies },
   { to: "/journal", label: NAMES.journal },
-  { to: "/shop", label: NAMES.shop },
 ] as const;
+
+/** Mobile menu groups: the journeys first, the rest under "More". Same items as toolNav + browseNav. */
+export const menuStartNav: NavItem[] = toolNav.slice(0, 4);
+export const menuMoreNav: NavItem[] = [...toolNav.slice(4), ...browseNav];
 
 /** Everything the mobile menu lists, in order. */
 export const mobileNavItems: NavItem[] = [...toolNav, ...sectionNav, ...browseNav];

@@ -1,7 +1,14 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { getHobby, hobbies, isHobbyIndexable } from "@/data/hobbies";
+import {
+  categoryLabels,
+  getHobby,
+  hobbies,
+  hobbyTitleName,
+  isHobbyIndexable,
+} from "@/data/hobbies";
 import { articlesForHobby, getArticle } from "@/content";
 import { productsFor } from "@/data/products";
+import { selectProducts, verifiedCatalog } from "@/data/catalog";
 import { images } from "@/data/images";
 import { site } from "@/config/site";
 import { seo } from "@/lib/seo";
@@ -26,8 +33,12 @@ export const Route = createFileRoute("/hobbies/$slug")({
         meta: [{ title: `Hobby not found | ${site.name}` }, { name: "robots", content: "noindex" }],
       };
     return seo({
-      title: `${h.name} for Beginners: How to Start`,
-      description: `${h.description} Time, cost, supplies and an easy first session.`,
+      title: `How to Start ${hobbyTitleName(h.name)}: What to Buy and Your First Session`,
+      description: `${h.description} First session: ${h.timeLabel.toLowerCase()}${
+        h.startupBudget
+          ? `, startup roughly $${h.startupBudget.low} to $${h.startupBudget.high}`
+          : ""
+      }.`,
       path: `/hobbies/${h.slug}`,
       noindex: !isHobbyIndexable(h.slug),
     });
@@ -51,7 +62,12 @@ function HobbyPage() {
     (a, i, arr): a is NonNullable<typeof a> =>
       Boolean(a) && arr.findIndex((b) => b?.slug === a?.slug) === i,
   );
+  const hasKit = selectProducts({ hobby: h.slug }, verifiedCatalog).all.length > 0;
+  const kitHref = hasKit || ps.length > 0 ? "#kit" : "#supplies";
   const budget = h.startupBudget;
+  const firstLine = h.firstActivity.split(".")[0] ?? h.firstActivity;
+  const showFirstProject =
+    h.firstProject && h.firstProject.trim().toLowerCase() !== h.firstActivity.trim().toLowerCase();
   const money = (n: number) => `$${n}`;
   const where =
     h.indoorOutdoor === "indoor"
@@ -72,13 +88,19 @@ function HobbyPage() {
               </Link>{" "}
               / {h.name}
             </nav>
-            <Kicker className="mt-6">{h.category} hobby</Kicker>
+            <Kicker className="mt-6">{categoryLabels[h.category]}</Kicker>
             <h1 className="mt-3 text-5xl leading-[1] md:text-7xl">
               <em className="text-cherry">{h.name}</em>
             </h1>
             <p className="mt-5 max-w-lg text-lg text-ink">{h.description}</p>
             <HobbyMeta h={h} className="mt-6 text-sm" />
-            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-1">
+            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <a
+                href={kitHref}
+                className="inline-flex min-h-11 items-center bg-cherry px-6 py-3 text-sm font-semibold text-cream no-underline hover:bg-ink"
+              >
+                See what you need
+              </a>
               <SaveButton
                 item={{
                   key: `hobby:${h.slug}`,
@@ -107,10 +129,11 @@ function HobbyPage() {
               </div>
             </div>
           ) : (
-            <div className="paper grid aspect-[4/3] rotate-2 place-items-center p-10 text-center">
+            <div className="paper grid rotate-2 place-items-center p-6 text-center md:aspect-[4/3] md:p-10">
               <div>
                 <Star className="mx-auto h-8 w-8 text-cherry" />
-                <p className="hand mt-3 text-4xl text-cherry">{h.firstActivity.split(".")[0]}.</p>
+                <p className="kicker mt-3 text-cherry">Tonight, {h.timeLabel.toLowerCase()}</p>
+                <p className="hand mt-2 text-3xl text-cherry md:text-4xl">{firstLine}.</p>
               </div>
             </div>
           )}
@@ -118,17 +141,17 @@ function HobbyPage() {
       </section>
       {(h.difficulty || budget || h.timeCommitment || where) && (
         <section className="mx-auto max-w-6xl px-5 pt-12 md:px-8">
-          <dl className="grid gap-px bg-ink/15 sm:grid-cols-2 lg:grid-cols-4">
+          <dl className="grid grid-cols-2 gap-px bg-ink/15 lg:grid-cols-4">
             {h.difficulty && (
-              <div className="bg-warm-white p-5">
+              <div className="bg-warm-white p-4 md:p-5">
                 <dt className="kicker text-cherry">Difficulty</dt>
-                <dd className="mt-1 font-display text-xl">{h.difficulty}</dd>
+                <dd className="mt-1 font-display text-lg md:text-xl">{h.difficulty}</dd>
               </div>
             )}
             {budget && (
-              <div className="bg-warm-white p-5">
-                <dt className="kicker text-cherry">Rough startup budget</dt>
-                <dd className="mt-1 font-display text-xl">
+              <div className="bg-warm-white p-4 md:p-5">
+                <dt className="kicker text-cherry">Start for about</dt>
+                <dd className="mt-1 font-display text-lg md:text-xl">
                   {budget.low === budget.high
                     ? money(budget.low)
                     : `${money(budget.low)} to ${money(budget.high)}`}
@@ -136,21 +159,21 @@ function HobbyPage() {
               </div>
             )}
             {h.timeCommitment && (
-              <div className="bg-warm-white p-5">
+              <div className="bg-warm-white p-4 md:p-5">
                 <dt className="kicker text-cherry">Time commitment</dt>
-                <dd className="mt-1 font-display text-xl">{h.timeCommitment}</dd>
+                <dd className="mt-1 font-display text-lg md:text-xl">{h.timeCommitment}</dd>
               </div>
             )}
             {where && (
-              <div className="bg-warm-white p-5">
+              <div className="bg-warm-white p-4 md:p-5">
                 <dt className="kicker text-cherry">Where</dt>
-                <dd className="mt-1 font-display text-xl">{where}</dd>
+                <dd className="mt-1 font-display text-lg md:text-xl">{where}</dd>
               </div>
             )}
           </dl>
           {budget && (
             <p className="mt-3 text-xs text-muted-foreground">
-              Approximate range, not a price. {budget.assumptions} Costs vary by place and what you
+              Approximate, not a price. {budget.assumptions} Costs vary by place and what you
               already own.
             </p>
           )}
@@ -158,11 +181,13 @@ function HobbyPage() {
       )}
       <section className="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[1.3fr_1fr] md:px-8">
         <div className="prose-editorial">
-          <h2 className="!mt-0">Why you might love it</h2>
+          <h2 className="!mt-0">Your first session</h2>
+          <p className="font-display text-2xl italic text-cherry">{h.firstActivity}</p>
+          <h2>Why you'll love it</h2>
           <p>{h.whyYoullLoveIt}</p>
           {h.startSteps && h.startSteps.length > 0 && (
             <>
-              <h2>How to get started</h2>
+              <h2>Your first week</h2>
               <ol>
                 {h.startSteps.map((step) => (
                   <li key={step}>{step}</li>
@@ -170,35 +195,12 @@ function HobbyPage() {
               </ol>
             </>
           )}
-          <h2>Your first session</h2>
-          <p className="font-display text-2xl italic text-cherry">{h.firstActivity}</p>
-          {h.firstProject && (
+          {showFirstProject && (
             <>
-              <h2>A good first project</h2>
+              <h2>What you'll have made</h2>
               <p>{h.firstProject}</p>
             </>
           )}
-          <h2>Good to know</h2>
-          <ul>
-            <li>
-              <strong>Where:</strong>{" "}
-              {h.settings
-                .map((s) => (s === "home" ? "at home" : s === "out" ? "somewhere new" : "outdoors"))
-                .join(", ")}
-            </li>
-            <li>
-              <strong>Who with:</strong>{" "}
-              {h.company.map((c) => (c === "solo" ? "on your own" : "with others")).join(" or ")}
-            </li>
-            <li>
-              <strong>Beginner-friendliness:</strong>{" "}
-              {h.beginner === 1
-                ? "start tonight"
-                : h.beginner === 2
-                  ? "a short tutorial helps"
-                  : "a lesson or two helps"}
-            </li>
-          </ul>
           {h.learningResources && h.learningResources.length > 0 && (
             <>
               <h2>Where to learn</h2>
@@ -210,8 +212,11 @@ function HobbyPage() {
             </>
           )}
         </div>
-        <aside className="h-fit bg-warm-white p-7 shadow-[var(--shadow-paper)]">
-          <p className="kicker text-cherry">What you'll need</p>
+        <aside
+          id="supplies"
+          className="h-fit scroll-mt-24 bg-warm-white p-7 shadow-[var(--shadow-paper)]"
+        >
+          <p className="kicker text-cherry">Your starter kit</p>
           <ul className="mt-4 space-y-2">
             {h.supplies.map((s) => (
               <li key={s} className="flex gap-2 text-ink">
@@ -230,11 +235,19 @@ function HobbyPage() {
               </ul>
             </>
           )}
+          {kitHref === "#kit" && (
+            <a
+              href={kitHref}
+              className="mt-6 inline-flex min-h-11 items-center border-b-2 border-cherry text-sm font-semibold text-cherry no-underline"
+            >
+              Shop the kit ↓
+            </a>
+          )}
         </aside>
       </section>
-      {ps.length > 0 && (
-        <section className="mx-auto max-w-6xl px-5 md:px-8">
-          <Divider label="Shop your hobby" />
+      {!hasKit && ps.length > 0 && (
+        <section id="kit" className="mx-auto max-w-6xl scroll-mt-24 px-5 md:px-8">
+          <Divider label="Your starter kit" />
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {ps.map((p) => (
               <ProductCard key={p.id} p={p} />
@@ -243,12 +256,12 @@ function HobbyPage() {
           <AffiliateNote className="mt-6" />
         </section>
       )}
-      <div className="mx-auto max-w-6xl px-5 md:px-8">
+      <div id="kit" className="mx-auto max-w-6xl scroll-mt-24 px-5 md:px-8">
         <ShopMyHobby hobby={h.slug} />
       </div>
       {guides.length > 0 && (
         <section className="mx-auto mt-20 max-w-6xl px-5 md:px-8">
-          <Divider label="Guides that mention it" />
+          <Divider label="Read next" />
           <div className="mt-10 grid gap-10 md:grid-cols-3">
             {guides.slice(0, 3).map((a) => (
               <ArticleCard key={a.slug} a={a} />

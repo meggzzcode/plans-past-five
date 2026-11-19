@@ -6,11 +6,11 @@ import { Star } from "@/components/brand/Doodles";
 import { site } from "@/config/site";
 import { useSaved } from "@/lib/saved";
 import {
-  browseNav,
   finePrintNav,
+  menuMoreNav,
+  menuStartNav,
   NAMES,
   sectionNav,
-  toolNav,
   topNav,
   type NavItem,
 } from "@/components/layout/nav";
@@ -42,7 +42,7 @@ function MenuGroup({
   cols?: boolean;
 }) {
   return (
-    <div className="mt-4 first:mt-0">
+    <div className="mt-4">
       <p className="kicker px-2 text-cherry">{title}</p>
       <ul className={cols ? "mt-1 grid grid-cols-2 gap-x-1" : "mt-1"}>
         {items.map((n) => (
@@ -152,9 +152,16 @@ export function Header() {
           className="max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-border bg-cream px-3 pb-6 pt-4 lg:hidden"
         >
           <nav aria-label="Mobile">
-            <MenuGroup title="Start" items={toolNav} close={close} />
-            <MenuGroup title="Sections" items={sectionNav} close={close} cols />
-            <MenuGroup title="Browse" items={browseNav} close={close} />
+            <Link
+              to="/hobby-finder"
+              onClick={close}
+              className="flex min-h-12 items-center justify-center border-2 border-cherry bg-cherry px-4 text-base font-semibold text-cream"
+            >
+              {NAMES.quiz}
+            </Link>
+            <MenuGroup title="Start here" items={menuStartNav} close={close} />
+            <MenuGroup title="Browse by mood" items={sectionNav} close={close} cols />
+            <MenuGroup title="More" items={menuMoreNav} close={close} />
             <ul
               aria-label="Fine print"
               className="mt-5 flex flex-wrap gap-x-4 border-t border-border px-2 pt-3 text-sm text-espresso"

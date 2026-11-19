@@ -59,6 +59,9 @@ export function SeasonStrip({ now }: { now?: Date }) {
               <p className="mt-1 text-sm text-muted-foreground">
                 {h.timeLabel} · {h.costLabel}
               </p>
+              <p className="mt-2 text-sm font-semibold text-cherry underline decoration-2 underline-offset-4">
+                See what you need
+              </p>
             </Link>
             <div className="absolute right-1 top-1">
               <SaveButton

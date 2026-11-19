@@ -17,17 +17,21 @@ export function Footer() {
           </div>
           <p className="mt-5 font-display text-xl italic text-butter">{site.tagline}</p>
           <p className="mt-3 max-w-xs text-sm text-cream/80">{site.mission}</p>
+          <Link
+            to="/hobby-finder"
+            className="mt-5 inline-flex min-h-11 items-center bg-cream px-5 text-sm font-semibold text-garden transition hover:bg-butter"
+          >
+            Find your thing
+          </Link>
         </div>
         <FooterCol
-          title="Explore"
-          links={[
-            { to: "/start-here", label: "Start Here" },
-            ...categories.map((c) => ({ to: `/${c.slug}`, label: c.name })),
-          ]}
+          title="Plans"
+          links={[...categories.map((c) => ({ to: `/${c.slug}`, label: c.name }))]}
         />
         <FooterCol
-          title="Tools"
+          title="Try it"
           links={[
+            { to: "/start-here", label: "Start Here" },
             { to: "/hobby-finder", label: NAMES.quiz },
             { to: "/make-plans", label: NAMES.plans },
             { to: "/shop", label: NAMES.shop },
@@ -38,7 +42,7 @@ export function Footer() {
           ]}
         />
         <FooterCol
-          title="The fine print"
+          title="About the site"
           links={[
             { to: "/about", label: "About" },
             { to: "/contact", label: "Contact" },

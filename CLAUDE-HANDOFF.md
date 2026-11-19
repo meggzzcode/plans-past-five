@@ -37,7 +37,7 @@ src/test/rules.test.ts    quiz/planner/content rules
 - **Newsletter/analytics:** flags in `site.integrations` are placeholders; nothing is wired. Add Kit/MailerLite form and GA only with owner credentials, and update the privacy page + consent.
 
 ## Testing results (this build)
-- Original build: typecheck clean, 12 tests (historical). Current (2026-11-19): typecheck clean; `bunx vitest run` → 250 tests passing in 15 files.
+- Original build: typecheck clean, 12 tests (historical). Current (2026-11-19): typecheck clean; `bunx vitest run` → 523 tests passing in 34 files.
 - Playwright: home, article, shop, directory render at 1280px and 390px with no console errors; quiz → result → save, planner → save, My Plans lists 2 items, draft URL returns 404.
 
 ## Known issues / not done

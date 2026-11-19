@@ -8,7 +8,7 @@ import {
 } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { ArticleCard, CollectionCard, HobbyCard } from "@/components/cards/Cards";
-import { hobbies } from "@/data/hobbies";
+import { categoryLabels, hobbies } from "@/data/hobbies";
 import { collections } from "@/data/products";
 import { articles } from "@/content";
 
@@ -51,8 +51,8 @@ describe("HobbyCard fallback tile (no image)", () => {
       // The name must not be repeated anywhere else in the card's text (description may mention it).
       const link = container.querySelector("a")!;
       const kicker = link.querySelector(".kicker");
-      expect(kicker!.textContent).toBe(h.category);
-      expect(link.textContent!.startsWith(h.name + h.category)).toBe(true);
+      expect(kicker!.textContent).toBe(categoryLabels[h.category]);
+      expect(link.textContent!.startsWith(h.name + categoryLabels[h.category])).toBe(true);
     },
   );
 

@@ -18,7 +18,12 @@ const collectionFor: Record<string, string[]> = {
 };
 
 export function CategoryPage({ c }: { c: Category }) {
-  const hs = hobbies.filter((h) => c.hobbyTags.some((t) => h.tags.includes(t))).slice(0, 6);
+  const picked = c.featured
+    .map((slug) => hobbies.find((h) => h.slug === slug))
+    .filter((h): h is NonNullable<typeof h> => Boolean(h));
+  const hs = picked.length
+    ? picked.slice(0, 6)
+    : hobbies.filter((h) => c.hobbyTags.some((t) => h.tags.includes(t))).slice(0, 6);
   const own = articlesForCategory(c.slug);
   const related = own.length
     ? own
@@ -49,7 +54,7 @@ export function CategoryPage({ c }: { c: Category }) {
       {related.length > 0 && (
         <section className="mx-auto mt-10 max-w-7xl px-5 md:mt-14 md:px-8">
           <h2 className="text-3xl md:text-4xl">
-            Read this <em className="text-cherry">first</em>
+            Start with a <em className="text-cherry">read</em>
           </h2>
           <div className="mt-5 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
             {related.slice(0, 3).map((a) => (
@@ -60,31 +65,31 @@ export function CategoryPage({ c }: { c: Category }) {
       )}
       <section className="mx-auto mt-12 max-w-7xl px-5 md:mt-16 md:px-8">
         <h2 className="text-3xl md:text-4xl">
-          Hobbies to <em className="text-cherry">try</em>
+          Pick one to <em className="text-cherry">try</em>
         </h2>
         <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {hs.map((h) => (
             <HobbyCard key={h.slug} h={h} />
           ))}
         </div>
-        <div className="mt-4 flex flex-wrap gap-x-6">
-          <Link
-            to="/hobbies"
-            className="inline-flex min-h-11 items-center border-b-2 border-cherry text-sm font-semibold text-cherry"
-          >
-            See all hobbies
-          </Link>
+        <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2">
           <Link
             to="/make-plans"
+            className="inline-flex min-h-11 items-center bg-cherry px-6 py-3 text-sm font-semibold text-cream hover:bg-ink"
+          >
+            Build my plan →
+          </Link>
+          <Link
+            to="/hobbies"
             className="inline-flex min-h-11 items-center border-b-2 border-ink text-sm font-semibold text-ink"
           >
-            Make a plan from these →
+            See all {hobbies.length} hobbies
           </Link>
         </div>
       </section>
       <section className="mx-auto mt-12 max-w-7xl px-5 md:mt-16 md:px-8">
         <h2 className="text-3xl md:text-4xl">
-          Supplies for <em className="text-cherry">this</em>
+          Shop the <em className="text-cherry">look</em>
         </h2>
         <div className="mt-5 grid gap-5 sm:grid-cols-3">
           {cols.map((x) => (
