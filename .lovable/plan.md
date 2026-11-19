@@ -1,41 +1,42 @@
-# Plans Past Five — Initial Build Plan
+# Plans Past Five — Initial Build Plan (refined)
 
-A frontend-only editorial lifestyle site built from the master brief. No database, accounts or paid services; saving uses the browser only. Work follows the brief's priority order; anything not finished properly is documented for Claude Code instead of half-shipped.
+A frontend-only editorial lifestyle magazine for women building a life outside work. No database, accounts, AI or payments; saving is browser-only. Built in the refined priority order; anything not finished properly is hidden and documented in CLAUDE-HANDOFF.md.
 
-## Phase 1 — Brand and design system
-- Tokens in the stylesheet for the full palette (Cherry Girl, Vanilla Cream, Garden Green, Espresso, Butter, Strawberry Milk, Matcha, Sunday Blue, Warm White, Soft Border, Dark Ink), contrast-checked.
-- Fraunces (expressive italics) + DM Sans via Google Fonts link (both OFL).
-- Hand-built SVG wordmark "plans past / five." (stacked, horizontal, compact), monogram, SVG favicon, light/dark variants.
-- Decorative primitives used sparingly: gingham strip, star, hand-drawn arrow, scalloped edge, postcard frame, magazine label, paper note.
-- Single site config file: name, domain, taglines, socials, legal, feature flags (newsletter/analytics disabled).
-- Header with 5 nav items + mobile menu, footer, announcement strip.
+## Brand and naming
+- Tagline "For the life outside your 9–5.", slogan "Clock out. Make plans. Live a little.", plus the approved phrase bank used selectively.
+- Section names used everywhere: After Hours, The Weekend Edit, Creative Corner, Table for One, Better Together, A Little Movement, Off Duty Essentials, Find Your Thing, Make Some Plans, My Plans, The Out-of-Office Collection, The Out-of-Office Note, The Journal.
+- Lead colors: cherry red, vanilla cream, butter yellow, strawberry milk; matcha and Sunday blue for select sections. Fraunces (expressive italics) + DM Sans.
+- Original SVG wordmark "plans past / five." (stacked, horizontal, compact, monogram, favicon, light/dark).
+- Restrained decorative kit: gingham, scallops, stars, bows, flowers, hand-drawn arrows, handwritten notes, postcard frames, magazine dividers. Few rounded boxes and pill buttons; varied compositions.
 
-## Phase 2 — Homepage
-All sections A–O from the brief with varied magazine compositions: hero collage, intro, "Find your kind of fun" six categories, Hobby Finder teaser, 5:01 Edit, Weekend Edit, Solo not lonely, Better Together, Offline Shop, printable feature, Journal, newsletter-ready block (no fake confirmation), footer.
+## Priority 1–2: Design system and homepage
+Hero "Your 9 to 5 isn't your whole life." with collage and CTAs Find Your Thing / Make Some Plans. Then a consolidated journey: relatable intro, six categories, Hobby Finder teaser, After Hours (5:01 Edit), Weekend Edit, Table for One + Better Together, Journal, Off Duty Essentials, free printable, Out-of-Office Note (no fake signup), footer.
 
-## Phase 3 — Content and templates
-- Typed content models; 4 complete original articles (1, 2, 3, 6) plus 8 structured drafts hidden from nav, search and indexing.
-- Article template: breadcrumbs, label, byline, date, computed reading time, TOC, pull quotes, "What you'll need", "Shop the hobby", "Make it a plan", related, save/copy link/Pinterest share.
-- Category pages: After Hours, Weekends, Solo Dates, Better Together, Creative Corner, Movement; Journal index.
+## Priority 3–4: Content and articles
+- Typed article model with search intent, angle, hobby links, product links, related content.
+- Complete: (1) 35 Hobbies…Work, Sleep, Repeat, (2) 25 Things to Do After Work Instead of Scrolling, (3) 21 Creative Hobbies at Home, (6) How to Start Junk Journaling. Each activity covers what/why/time/cost/supplies/how to start/solo or social/first activity.
+- Eight unpublished drafts (excluded from nav, search, sitemap, indexing).
+- Reusable inserts: What You'll Need, The Starter Kit, Shop the Hobby, Save or Splurge, Try It This Weekend, Make It a Girls' Night, Your First 30 Minutes, No-Spend Alternative, Make It a Plan, If You Loved This, Try...
+- Contextual related content scored by shared hobbies/categories, never a fixed three.
 
-## Phase 4 — Shop
-6 collections, 36 product-type records, plain Amazon search links (no fake affiliate tag, no reviews or prices), central affiliate config, disclosure near links.
+## Priority 5: Off Duty Essentials
+Six collections x six product types exactly as specified (Pottery Era, Creative Girl, Sporty Girl, Girls' Night In, Bookish Girl, Little Adventures). Original descriptions, related activities, central Amazon search links labelled "Browse on Amazon", no prices/ratings/ASINs/brands, affiliate tag empty by default, disclosure beside links. Illustrative collection photography only.
 
-## Phase 5 — Hobbies and Hobby Finder
-36 hobby records with the full field set, directory with filters, hobby detail pages, rule-based "Find Your Thing" quiz with scored results.
+## Priority 6: Hobbies and Find Your Thing
+36 hobby records; directory with filters; detail pages (thin ones noindexed). Rule-based quiz with six playful result themes, 3–5 hobbies with reasons, cost, time, first step, articles, supplies, save. Hard constraints respected; if too few matches, explain and suggest loosening filters.
 
-## Phase 6 — Engagement
-My Plans page (local browser saves, device-specific notice, remove, friendly empty state), Make Some Plans generator (rules-based, save/regenerate/print), site search over local data, printables library with downloadable PDFs/printable pages.
-
-## Phase 7 — Pages, SEO and handoff
-Start Here, About, Contact (mailto, no fake form), Privacy, Terms, Affiliate Disclosure, Editorial Policy. Unique head metadata per route, sitemap, robots. Handoff docs: README, BRAND-GUIDE.md, IMAGE-LICENSES.md, CLAUDE-HANDOFF.md, content roadmap, list of unfinished items.
+## Priority 7–9: My Plans, Make Some Plans, printables
+- My Plans: local saves of hobbies, articles, plans, solo dates; remove; empty state "Nothing on the calendar yet? Let's fix that."; device-only notice.
+- Make Some Plans: after-work, Saturday, Sunday, solo, friend, at-home; deterministic matching on time, budget, energy, company; save, regenerate, print.
+- Three printables (Out-of-Office Bucket List with 50 activities, Weekend Edit Planner, My Hobby Era Tracker) as real downloadable/print-ready pages.
 
 ## Images
-About 20–25 original generated editorial images (film-photo feel, candid, colorful), documented in an image manifest. No scraped Amazon imagery.
+About 20–25 original generated images: hero collage, six categories, key article heroes, finder, six shop collections, brand lifestyle. Diverse, candid, film feel; manifest in IMAGE-LICENSES.md.
+
+## SEO, Pinterest, handoff
+SSR metadata per page, canonicals, sitemap, robots, JSON-LD, custom 404. 12–15 pin concepts documented (templates if time allows). Docs: CLAUDE-HANDOFF.md (all required sections), BRAND-GUIDE.md, IMAGE-LICENSES.md. Never mention resale publicly.
 
 ## Technical details
-- TanStack Start routes per brief section 10 (dynamic: hobbies.$slug, journal.$slug, shop.$category, printables.$slug).
-- Folders: src/config, src/content (articles), src/data (hobbies, products, plans, printables), src/components (brand, layout, editorial, cards, tools), src/lib (saved storage hook, search, reading time, finder scoring).
-- Saved items read in effects to avoid hydration mismatch.
-- Tests for finder scoring, planner matching rules, and that drafts are excluded.
-- Never mention the resale objective publicly.
+- TanStack Start; routes per brief (hobbies.$slug, journal.$slug, shop.$category, printables.$slug), category slugs matching new names.
+- src/config, src/content, src/data (hobbies, products, activities, printables), src/components (brand, layout, editorial, cards, tools), src/lib (saved storage, search, reading time, finder and planner scoring, related content).
+- Tests: finder respects budget/time/location, planner matching rules, drafts excluded from public lists.
