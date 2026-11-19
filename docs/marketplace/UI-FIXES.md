@@ -1,0 +1,72 @@
+# UI fixes: image-less cards, quiz Back, click audit
+
+Screenshots referenced below were taken at 320, 390 and 1280 px and reviewed by eye (kept outside the repo in the QA scratch folder `ui-fixes/`).
+
+## Defect 1: image-less hobby cards
+
+**Symptom.** About 25 of the 36 hobbies have no photo. Their cards showed a flat butter tile with the first word of the name in a huge italic (`Scrapbooki`, clipped), underlined text and kicker, and the name repeated under the tile.
+
+**Causes.**
+
+- The tile used `text-5xl` with no wrapping or size fitting, inside a fixed `aspect-[5/3]` box, and only showed `name.split(" ")[0]`.
+- The title was rendered again in the card body, so the name appeared twice.
+- Underline: card links had no opt-out from running-text link styling. `.prose-editorial a:not(.not-prose, .not-prose *)` (`src/styles.css`) underlines every link in article bodies, and a card dropped into any prose container (or any future inherited `text-decoration`) was underlined, kicker included. Cards now opt out themselves, so it no longer depends on where a card is placed.
+
+**Fix** (`src/components/cards/Cards.tsx`).
+
+- New `FallbackTile`: category colour (`hobbyTone`), a brand doodle per category (Flower, Bow, Sparkle, Star), the name set **once** as the card's `h3`, centred, `text-balance break-words`, size `clamp(1.4rem, 9cqw, 2.25rem)` where `cqw` is the tile's own width (container query), dark ink text for contrast. Verified no overflow, clipping or underline for all 25 tiles at 320, 390 and 1280.
+- Body no longer repeats the name for image-less cards; image cards are unchanged.
+- Every card (`ArticleCard`, `HobbyCard`, `ProductCard`, `CollectionCard`) carries `not-prose` and its link `no-underline`. Titles underline only on hover (ArticleCard), never at rest.
+- `ArticleCard` and `HobbyCard` guard against a missing image key with a tinted doodle tile instead of crashing.
+- Each card is one link; the save button sits outside the link, so no nested interactive elements.
+
+**Other places checked.** Directory, hobby profile ("if you like X, try"), article "If you loved this", article related reading, shop and shop collections, search results, saved page, quiz results. Product cards are text-only by design (numbered, ruled top, "look for" line, one outbound button) and read as intentional. Collection and article cards always have a typed image.
+
+## Defect 2: quiz Back
+
+**Findings.** Back could not be made to fail in Chromium at 390x844 and desktop, with mouse, `tap()` under touch emulation (iPhone 13, Pixel 7), Enter and Space, on steps 2 to 7. The real problems found:
+
+- The step was plain component state, so the browser/Android back gesture left the quiz, and refresh restarted it.
+- The results screen had no Back at all.
+- The Back control was a small underlined text link (about 50 px wide), easy to miss or mis-tap beside the option list.
+
+**Fix.**
+
+- `src/lib/quiz-steps.ts` (new, pure, unit-tested): step lives in the URL as `?q=N` (1-based), a request can never skip an unanswered question, results need every answer.
+- Back is a bordered button with a 44 px target on every step and on the results screen; browser Back and Forward walk the questions; refresh and deep links keep the step.
+- During this work the quiz route was redesigned by another worker (answers also carried in the URL as `&a=`, image option cards, optional skipped questions). It reuses `parseQuizStep`. Back, Forward, refresh and the planner handoff (`Turn this into a plan` goes to `/make-plans?...`, and browser Back returns to the results) were re-verified after that change.
+- Planner and tools are single-screen forms, not multi-step flows, so they have no step state to restore.
+
+## Defect 3: click audit
+
+`scripts/click-audit.mjs` (re-runnable). With a dev server or `node scripts/serve-built.mjs 3000` running:
+
+```
+node scripts/click-audit.mjs --base http://127.0.0.1:5901 --out report.json
+# options: --routes /a,/b  --quick  --verbose  --viewport 390x844  --max-same 5  --route-budget 240000
+```
+
+It loads every static route, 6 hobby profiles, 8 shop collections, 6 articles (sampled from the sitemap), search with results and saved with seeded items at 390x844 with touch emulation. It finds links, buttons, summaries, inputs, `role=button|tab|checkbox|switch`, `onclick` and anything with `cursor:pointer`, taps each (selects are changed, text inputs filled, forms submitted), and requires a URL change, DOM/state change, dialog, copy, print, download, new tab or storage change, with no console error or 4xx/5xx. Look-alike links (same tag and classes) beyond `--max-same` are checked by HTTP status instead of tapped. The header menu is opened and its links checked. It also flags: nested interactive elements, hover-styled cards whose link covers under 90%, underlined or hover-styled text with no action, links in running text with no affordance, and pill-like decorative text. Exit code 1 on any dead, obscured or erroring element.
+
+**Results (final run, 48 routes + header menu):** 1482 candidate elements, 820 tapped, the rest URL-checked or sampled. 0 dead, 0 obscured, 0 nested, 0 partial-card, 0 link-styled. The two console entries in the run were `500`s on two shop routes while the dev server restarted from other workers' edits; re-running those routes gave 0 problems.
+
+**Fixed along the way.**
+
+- Search results: only the title was a link; now the whole row is one stretched link (no nested links). Same for My Plans rows (the remove button stays separate and above the link).
+- Search box overflowed the viewport at 320 and 390 px (`min-w-0` missing on the input); fixed. Suggestion chips and directory filter chips raised to 44 px touch height. Search input now follows the URL on Back/Forward.
+- Inline links in article callouts (`not-prose`) and the "Sources" list had no underline or colour, so they looked like plain text. `Inline` links now carry their own style (`inlineLinkClass`), and source links are styled.
+- Audit false positives fixed in the script (already-selected option buttons, native selects, collapsed `<details>`, dev-server restarts).
+
+**Reviewed, left as is.**
+
+- Product cards: title and blurb are not links by design; the single "View on Amazon / Browse options" button is the affiliate action, which must describe the real destination.
+- Article table-of-contents links and jump chips are plain nav-style links in a labelled list ("In this story"); they have hover colour but no underline.
+- Info chips such as category names on cards are labels inside a linked card.
+- Homepage card links inside list items are flagged by the "link in running text" heuristic; they are full-card links.
+
+## Remaining issues
+
+- I could not reproduce the owner's dead Back button in an automated browser; the causes above are the ones evidenced. If it still fails on a physical phone, capture the URL after tapping and check for a service worker or in-app browser intercepting history.
+- The "option without image" tiles in the redesigned quiz (large flat yellow block, e.g. "Let's go") are owned by the quiz worker and look empty at 390 px; they would benefit from the same doodle treatment.
+- `ProductCard` in `src/components/commerce` wraps its "ESSENTIAL" label badly at 390 px (`01 ESSEN / TIAL`); not touched (commerce components are outside this task's files).
+- The production build was not click-audited separately; run the script against `scripts/serve-built.mjs` before release.
