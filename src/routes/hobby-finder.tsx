@@ -21,6 +21,8 @@ import { AffiliateNote } from "@/components/editorial/AffiliateNote";
 import { HobbyMeta } from "@/components/cards/Cards";
 import { Star, Bow, Sparkle } from "@/components/brand/Doodles";
 import { cn } from "@/lib/utils";
+import { track } from "@/lib/track";
+import { ShopMyHobby } from "@/components/commerce/ShopMyHobby";
 
 export const Route = createFileRoute("/hobby-finder")({
   head: () =>
@@ -201,6 +203,10 @@ function Results({ a, restart }: { a: FinderAnswers; restart: () => void }) {
   const { results, theme, tooFew, suggestions, beginnerPick } = findHobbies(a);
   const titleRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => titleRef.current?.focus(), []);
+  const personaKey = theme.key;
+  useEffect(() => {
+    track("quiz_complete", { persona: personaKey });
+  }, [personaKey]);
   return (
     <div>
       <div className="text-center">
@@ -304,6 +310,9 @@ function Results({ a, restart }: { a: FinderAnswers; restart: () => void }) {
           );
         })}
       </ol>
+      {results.slice(0, 2).map(({ hobby: h }) => (
+        <ShopMyHobby key={h.slug} hobby={h.slug} />
+      ))}
       <AffiliateNote className="mt-6 text-center" />
       <div className="mt-12 flex flex-wrap justify-center gap-4">
         <button

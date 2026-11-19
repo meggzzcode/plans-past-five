@@ -5,7 +5,7 @@ A frontend-only TanStack Start app: no database, accounts, payments or server se
 
 ## Security headers
 `public/_headers` sets `X-Content-Type-Options`, `Referrer-Policy` and `Permissions-Policy`. The host has not been chosen, so this file is written for hosts that read `_headers` (Netlify, Cloudflare Pages) and is ignored elsewhere.
-Important: the production build is a Cloudflare Worker with static assets. `_headers` applies to static files; server-rendered HTML pages need the same headers added in server code (`src/server.ts`, which wraps the SSR entry). Verify on the live host with `curl -I https://yourdomain/` and `curl -I https://yourdomain/favicon.svg`.
+Server-rendered HTML pages get the same three headers from server code: `src/server.ts` wraps the SSR entry and applies `src/lib/security-headers.ts` to every HTML response (including the error page). No CSP is enforced, and HSTS and `X-Frame-Options` are intentionally not set because the Lovable editor previews the site in an iframe; add HSTS at the host once the domain is final. Verify on the live host with `curl -I https://yourdomain/` and `curl -I https://yourdomain/favicon.svg`.
 Deliberately not set:
 - **Strict-Transport-Security**: add `Strict-Transport-Security: max-age=31536000` only after the host confirms HTTPS works for the final domain (do not add `preload` casually).
 - **X-Frame-Options / frame-ancestors**: the Lovable editor previews the site in an iframe.

@@ -188,7 +188,7 @@ export const articleAtHomeCreativeWeekend: Article = {
     },
     {
       type: "p",
-      text: "Prefer a printable to plan it on? Try the [Weekend Edit Planner](/printables/weekend-edit-planner).",
+      text: "Prefer a printable to plan it on? Try the [Weekend Adventure Planner](/printables/weekend-edit-planner).",
     },
     {
       type: "makePlan",

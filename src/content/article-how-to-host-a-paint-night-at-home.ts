@@ -180,7 +180,7 @@ export const articleHowToHostAPaintNightAtHome: Article = {
     },
     {
       type: "p",
-      text: "Craft nights follow a similar shape, and [How to Host a Craft Night](/journal/how-to-host-a-craft-night) covers rotating themes. For gatherings without alcohol at the center, see [Girls' Night Ideas That Aren't Drinks](/journal/girls-night-ideas-that-arent-drinks). The [Weekend Edit Planner](/printables/weekend-edit-planner) has room for the shopping list and the guest list.",
+      text: "Craft nights follow a similar shape, and [How to Host a Craft Night](/journal/how-to-host-a-craft-night) covers rotating themes. For gatherings without alcohol at the center, see [Girls' Night Ideas That Aren't Drinks](/journal/girls-night-ideas-that-arent-drinks). The [Weekend Adventure Planner](/printables/weekend-edit-planner) has room for the shopping list and the guest list.",
     },
     { type: "ifYouLoved", hobbies: ["craft-nights", "paint-by-numbers", "pottery-painting"] },
   ],

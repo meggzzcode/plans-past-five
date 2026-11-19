@@ -177,7 +177,7 @@ export const articleWatercolorPaintingForBeginners: Article = {
     },
     {
       type: "p",
-      text: "Keep a record of what you have tried in the free [Hobby Era Tracker](/printables/hobby-era-tracker). If you would like a small ready-made box instead of loose pieces, [Creative Hobby Starter Kits That Are Actually Worth Considering](/journal/creative-hobby-starter-kits-worth-considering) explains what to look for.",
+      text: "Keep a record of what you have tried in the free [Find Your Hobby Workbook](/printables/hobby-era-tracker). If you would like a small ready-made box instead of loose pieces, [Creative Hobby Starter Kits That Are Actually Worth Considering](/journal/creative-hobby-starter-kits-worth-considering) explains what to look for.",
     },
     { type: "ifYouLoved", hobbies: ["outdoor-sketching", "collage-art", "calligraphy"] },
   ],

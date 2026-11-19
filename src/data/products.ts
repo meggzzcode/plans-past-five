@@ -6,7 +6,9 @@ export type CollectionSlug =
   | "sporty-girl"
   | "girls-night-in"
   | "bookish-girl"
-  | "little-adventures";
+  | "little-adventures"
+  | "journaling-era"
+  | "cozy-after-hours";
 
 export type Collection = {
   slug: CollectionSlug;
@@ -15,6 +17,12 @@ export type Collection = {
   intro: string;
   image: ImageKey;
   tone: "butter" | "strawberry" | "matcha" | "sunday" | "cream";
+  /**
+   * Existing product types (by id) from OTHER collections that also belong here. Each product keeps
+   * exactly one home collection (`Product.collection`); this only cross-references, it never
+   * creates or duplicates a product.
+   */
+  extraProductIds?: string[];
 };
 
 /**
@@ -143,6 +151,38 @@ export const collections: Collection[] = [
     image: "shopAdventures",
     tone: "butter",
     intro: "Small, portable things that make it easier to say yes to a spontaneous afternoon out.",
+  },
+  {
+    slug: "journaling-era",
+    name: "The Journaling Era",
+    dek: "Pages, tape and a pen that makes you want to write",
+    image: "shopCreative",
+    tone: "sunday",
+    intro:
+      "Notebooks, tape and stickers for junk journals, reading logs and pocket notes. Start with one notebook and whatever scraps you already have.",
+    extraProductIds: [
+      "junk-journals",
+      "washi-tape",
+      "sticker-sets",
+      "reading-journals",
+      "pocket-notebooks",
+    ],
+  },
+  {
+    slug: "cozy-after-hours",
+    name: "Cozy After Hours",
+    dek: "Low-effort comforts for the evening you actually have",
+    image: "shopBookish",
+    tone: "cream",
+    intro:
+      "Small things that make a weeknight at home feel like a plan: better light for reading, a game on the table and something quiet to make.",
+    extraProductIds: [
+      "book-lights",
+      "reading-stands",
+      "book-nook-kits",
+      "board-games",
+      "conversation-cards",
+    ],
   },
 ];
 
@@ -500,6 +540,14 @@ export const products: Product[] = [
     ["birdwatching", "hiking"],
   ),
 ];
+
+/** Product types in a collection: its own, plus cross-referenced ones (`extraProductIds`). */
+export function collectionProducts(slug: string): Product[] {
+  const c = collections.find((x) => x.slug === slug);
+  const own = products.filter((x) => x.collection === slug);
+  const extra = productsFor(c?.extraProductIds ?? []).filter((x) => x.collection !== slug);
+  return [...own, ...extra];
+}
 
 export const getCollection = (slug: string) => collections.find((c) => c.slug === slug);
 export const getProduct = (id: string) => products.find((x) => x.id === id);

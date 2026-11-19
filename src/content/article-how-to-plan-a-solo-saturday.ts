@@ -135,7 +135,7 @@ export const articleHowToPlanASoloSaturday: Article = {
     },
     {
       type: "p",
-      text: "If it helps to see it on paper, the [Weekend Edit Planner](/printables/weekend-edit-planner) is a one-page printable with room for plans, people, a creative project and something new.",
+      text: "If it helps to see it on paper, the [Weekend Adventure Planner](/printables/weekend-edit-planner) is a one-page printable with room for plans, people, a creative project and something new.",
     },
     {
       type: "shopHobby",

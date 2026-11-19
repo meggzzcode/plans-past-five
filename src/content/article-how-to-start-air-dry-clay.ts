@@ -165,7 +165,7 @@ export const articleHowToStartAirDryClay: Article = {
     },
     {
       type: "p",
-      text: "The [Weekend Edit Planner](/printables/weekend-edit-planner) helps slot the drying days around everything else. Want company for it? [How to Host a Craft Night](/journal/how-to-host-a-craft-night) turns a block of clay into a good excuse for friends to come over.",
+      text: "The [Weekend Adventure Planner](/printables/weekend-edit-planner) helps slot the drying days around everything else. Want company for it? [How to Host a Craft Night](/journal/how-to-host-a-craft-night) turns a block of clay into a good excuse for friends to come over.",
     },
     { type: "ifYouLoved", hobbies: ["pottery-painting", "craft-nights", "paint-by-numbers"] },
   ],

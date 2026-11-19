@@ -18,7 +18,7 @@ Re-run any time: `bun run build`, then `node scripts/serve-built.mjs 3000` and `
 ## Before launch (owner)
 1. Confirm `site.url` in `src/config/site.ts` is the final domain (it feeds canonicals, sitemap, JSON-LD) and update the `Sitemap:` line in `public/robots.txt`.
 2. Add a 1200x630 share image (none exists yet) and pass it as `image` where wanted.
-3. Set `site.integrations.searchConsoleVerification` (rendered as a meta tag when non-empty), verify in Google Search Console, submit `/sitemap.xml`.
+3. Set `site.integrations.searchConsoleVerification` (rendered as `<meta name="google-site-verification">` in the root head when non-empty; `pinterestVerification` likewise renders `<meta name="p:domain_verify">`), verify in Google Search Console, submit `/sitemap.xml`.
 4. Fill social URLs in `site.social` only when the profiles exist.
 5. Expand hobby profile pages before indexing; today they index only when a published article covers the hobby (`src/routes/hobbies.$slug.tsx`).
 

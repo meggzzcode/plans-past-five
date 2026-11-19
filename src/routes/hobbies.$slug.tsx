@@ -10,6 +10,7 @@ import { SaveButton } from "@/components/editorial/SaveButton";
 import { AffiliateNote } from "@/components/editorial/AffiliateNote";
 import { Kicker } from "@/components/editorial/Section";
 import { Star, Divider } from "@/components/brand/Doodles";
+import { ShopMyHobby } from "@/components/commerce/ShopMyHobby";
 
 export const Route = createFileRoute("/hobbies/$slug")({
   loader: ({ params }) => {
@@ -236,6 +237,9 @@ function HobbyPage() {
           <AffiliateNote className="mt-6" />
         </section>
       )}
+      <div className="mx-auto max-w-6xl px-5 md:px-8">
+        <ShopMyHobby hobby={h.slug} />
+      </div>
       {guides.length > 0 && (
         <section className="mx-auto mt-20 max-w-6xl px-5 md:px-8">
           <Divider label="Guides that mention it" />

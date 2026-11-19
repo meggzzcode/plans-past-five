@@ -310,7 +310,7 @@ export const articleAfterWork: Article = {
     },
     {
       type: "p",
-      text: "Want fifty more ideas? Print [The Out-of-Office Bucket List](/printables/out-of-office-bucket-list) and stick it on the fridge. Tick one off this week.",
+      text: "Want fifty more ideas? Print the [30-Day Hobby Challenge](/printables/out-of-office-bucket-list) and stick it on the fridge. Tick one off this week.",
     },
     { type: "ifYouLoved", hobbies: ["air-dry-clay", "reading", "craft-nights"] },
   ],

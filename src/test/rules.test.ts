@@ -4,7 +4,7 @@ import { makePlan } from "@/lib/planner";
 import { articles, allArticlesIncludingDrafts, getArticle } from "@/content";
 import { search } from "@/lib/search";
 import { hobbies } from "@/data/hobbies";
-import { products, collections } from "@/data/products";
+import { products, collections, collectionProducts } from "@/data/products";
 import { amazonSearchUrl } from "@/config/affiliate";
 import { sanitizeSaved } from "@/lib/saved";
 
@@ -107,11 +107,27 @@ describe("Content rules", () => {
       expect(search(d.title).some((h) => h.to === `/journal/${d.slug}`)).toBe(false);
     }
   });
-  it("has 36 hobbies and 6 collections of 6 products", () => {
+  // Updated deliberately: the owner asked for eight collections. The original six own six product
+  // types each; "journaling-era" and "cozy-after-hours" own none and cross-reference at least four
+  // existing product types via extraProductIds (no new products were invented).
+  it("has 36 hobbies and 8 collections, each with at least 4 product types", () => {
     expect(hobbies).toHaveLength(36);
-    expect(collections).toHaveLength(6);
+    expect(collections).toHaveLength(8);
+    expect(products).toHaveLength(36);
     for (const c of collections)
-      expect(products.filter((p) => p.collection === c.slug)).toHaveLength(6);
+      expect(collectionProducts(c.slug).length).toBeGreaterThanOrEqual(4);
+    for (const slug of [
+      "pottery-era",
+      "creative-girl",
+      "sporty-girl",
+      "girls-night-in",
+      "bookish-girl",
+      "little-adventures",
+    ])
+      expect(products.filter((p) => p.collection === slug)).toHaveLength(6);
+    for (const c of collections)
+      for (const id of c.extraProductIds ?? [])
+        expect(products.some((p) => p.id === id)).toBe(true);
   });
   it("Amazon links carry no affiliate tag by default", () => {
     expect(amazonSearchUrl("air dry clay")).not.toContain("tag=");

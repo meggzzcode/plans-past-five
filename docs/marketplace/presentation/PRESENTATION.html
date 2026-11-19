@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Plans Past Five: Buyer Presentation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+@font-face { font-family: "Fraunces"; font-style: normal; font-weight: 100 900; src: url("../../../design/printables/fonts/fraunces-normal.woff2") format("woff2"); }
+@font-face { font-family: "Fraunces"; font-style: italic; font-weight: 100 900; src: url("../../../design/printables/fonts/fraunces-italic.woff2") format("woff2"); }
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 100 1000; src: url("../../../design/printables/fonts/dm-sans.woff2") format("woff2"); }
+@font-face { font-family: "Caveat"; font-weight: 400 700; src: url("../../../design/printables/fonts/caveat.woff2") format("woff2"); }
+
+:root{
+  --cherry:#B83F43; --cream:#FFF8EF; --butter:#F8E5A3; --strawberry:#F4D4D7;
+  --garden:#394D3C; --espresso:#48362E; --matcha:#B5C19C; --sunday:#C9DDEC;
+  --warm:#FFFCF8; --border:#E4D9CD; --ink:#292722;
+}
+@page { size: 11in 8.5in; margin: 0; }
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{ background:#d9d2c8; font-family:"DM Sans",system-ui,sans-serif; color:var(--espresso); font-size:13.5px; line-height:1.45; }
+.slide{ width:11in; height:8.5in; position:relative; overflow:hidden; background:var(--cream); margin:0 auto 24px; padding:.5in .6in .62in; page-break-after:always; break-after:page; display:flex; flex-direction:column; }
+@media print{ body{background:none} .slide{ margin:0; } .slide:last-child{ page-break-after:auto; break-after:auto; } }
+.bg-butter{background:var(--butter)} .bg-straw{background:var(--strawberry)} .bg-garden{background:var(--garden);color:var(--cream)}
+.bg-matcha{background:var(--matcha)} .bg-sunday{background:var(--sunday)} .bg-cherry{background:var(--cherry);color:var(--cream)}
+h1,h2,h3{ font-family:"Fraunces",Georgia,serif; color:var(--ink); font-weight:500; line-height:1.05; }
+.bg-garden h1,.bg-garden h2,.bg-garden h3,.bg-cherry h1,.bg-cherry h2,.bg-cherry h3{ color:var(--cream); }
+h2{ font-size:38px; letter-spacing:-.01em; }
+h2 em, h1 em{ color:var(--cherry); font-style:italic; }
+.bg-garden h2 em,.bg-cherry h2 em,.bg-garden h1 em,.bg-cherry h1 em{ color:var(--butter); }
+h3{ font-size:19px; margin-bottom:4px; }
+.kicker{ font-size:11px; letter-spacing:.16em; text-transform:uppercase; font-weight:700; color:var(--cherry); margin-bottom:8px; }
+.bg-garden .kicker,.bg-cherry .kicker{ color:var(--butter); }
+.hand{ font-family:"Caveat",cursive; font-size:24px; color:var(--cherry); line-height:1; }
+.bg-garden .hand,.bg-cherry .hand{ color:var(--butter); }
+p{ margin-bottom:8px; } .lead{ font-size:16px; max-width:6.3in; }
+ul{ list-style:none; } li{ padding-left:16px; position:relative; margin-bottom:5px; }
+li::before{ content:"✦"; position:absolute; left:0; color:var(--cherry); font-size:10px; top:3px; }
+.bg-garden li::before,.bg-cherry li::before{ color:var(--butter); }
+.body{ flex:1; display:flex; gap:.38in; min-height:0; margin-top:.2in; }
+.col{ flex:1; min-width:0; display:flex; flex-direction:column; }
+.col.w2{ flex:1.5; } .col.n{ flex:.8; }
+.foot{ position:absolute; left:.6in; right:.6in; bottom:.26in; display:flex; justify-content:space-between; font-size:9.5px; letter-spacing:.08em; text-transform:uppercase; opacity:.75; }
+.card{ background:var(--warm); border:1px solid var(--border); padding:12px 14px; }
+.bg-garden .card{ background:rgba(255,252,248,.1); border-color:rgba(255,248,239,.25); }
+.shot{ border:1px solid rgba(41,39,34,.25); background:var(--warm); overflow:hidden; box-shadow:4px 5px 0 rgba(41,39,34,.12); }
+.shot img{ display:block; width:100%; height:100%; object-fit:cover; object-position:top; }
+.phone{ border:5px solid var(--ink); border-radius:20px; overflow:hidden; background:var(--warm); box-shadow:4px 5px 0 rgba(41,39,34,.15); }
+.phone img{ display:block; width:100%; height:100%; object-fit:cover; object-position:top; }
+.row{ display:flex; gap:12px; } .row>*{ flex:1; min-width:0; }
+.grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.grid2{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+.cap{ font-size:10.5px; margin-top:5px; opacity:.8; }
+.stat{ font-family:"Fraunces",serif; font-size:44px; color:var(--cherry); line-height:1; }
+.bg-garden .stat{ color:var(--butter); }
+.sw{ display:flex; flex-direction:column; justify-content:flex-end; height:62px; padding:6px 8px; font-size:10px; font-weight:700; border:1px solid rgba(0,0,0,.12); }
+.tag{ display:inline-block; font-size:10px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; padding:2px 8px; background:var(--butter); color:var(--ink); }
+.tag.red{ background:var(--cherry); color:var(--cream); } .tag.grey{ background:var(--border); }
+table{ border-collapse:collapse; width:100%; font-size:12px; } th,td{ text-align:left; padding:5px 8px; border-bottom:1px solid var(--border); vertical-align:top; }
+th{ font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--cherry); }
+.gingham{ position:absolute; left:0; right:0; top:0; height:12px; background:repeating-linear-gradient(90deg,var(--cherry) 0 12px,var(--strawberry) 12px 24px); }
+.note{ font-size:11px; opacity:.85; font-style:italic; }
+code{ font-family:ui-monospace,Menlo,monospace; font-size:11px; background:rgba(41,39,34,.07); padding:0 4px; }
+.bg-garden code{ background:rgba(255,255,255,.15); }
+.pins{ display:grid; grid-template-columns:repeat(5,1fr); gap:10px; } .pins img{ width:100%; aspect-ratio:2/3; object-fit:cover; border:1px solid rgba(0,0,0,.2); display:block; box-shadow:3px 4px 0 rgba(41,39,34,.12); }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="slide bg-cherry" style="justify-content:center">
+  <div class="gingham" style="background:repeating-linear-gradient(90deg,var(--butter) 0 12px,var(--cherry) 12px 24px)"></div>
+  <div style="display:flex;gap:.5in;align-items:center">
+    <div style="flex:1.1">
+      <p class="kicker">Buyer presentation · prepared 2026-11-19</p>
+      <h1 style="font-size:92px;color:var(--cream)">plans past <em style="font-size:112px">five.</em></h1>
+      <p class="hand" style="font-size:34px;margin:10px 0 18px">Professionally off duty.</p>
+      <p class="lead" style="color:var(--cream)">A built, brand-ready lifestyle content site for women making a life outside of work. Offered as a transparent starter business: pre-revenue, not yet launched.</p>
+    </div>
+    <div class="phone" style="width:2.1in;height:4.2in"><img src="screenshots/home-mobile.jpg" alt="Home page on a phone"></div>
+    <div class="shot" style="width:3.1in;height:4.2in;transform:rotate(2deg)"><img src="screenshots/home-desktop.jpg" alt="Home page on desktop"></div>
+  </div>
+  <div class="foot"><span>planspastfive.com (placeholder domain, ownership unconfirmed)</span><span>Screenshots: local dev server</span></div>
+</section>
+
+<!-- STATUS -->
+<section class="slide bg-butter">
+  <div class="gingham"></div>
+  <p class="kicker">Read this first</p>
+  <h2>Where this business <em>actually</em> stands.</h2>
+  <div class="body" style="align-items:flex-start;margin-top:.3in">
+    <div class="col w2">
+      <div class="card" style="font-size:18px;line-height:1.5;padding:22px 26px">
+        <ul style="font-size:18px">
+          <li style="margin-bottom:12px"><b>Pre-revenue.</b> No income has ever been earned.</li>
+          <li style="margin-bottom:12px"><b>Not launched.</b> The site is not public. Domain, hosting and mailbox are unconfirmed.</li>
+          <li style="margin-bottom:12px"><b>No traffic history.</b> There is no analytics, no audience, no email list and no rankings.</li>
+          <li style="margin-bottom:12px"><b>No active affiliate account.</b> Affiliate approval is not guaranteed, and accounts are never transferred.</li>
+          <li><b>No earnings, traffic or growth figures</b> appear anywhere in this deck.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col n">
+      <p class="hand" style="font-size:30px">You are buying:</p>
+      <p style="font-size:15px">a built site, a brand system, content, tools, downloads and a plan, with every claim labeled for what it is.</p>
+      <p class="hand" style="font-size:30px;margin-top:10px">You are not buying:</p>
+      <p style="font-size:15px">an earning business, a store, an audience or any promise of results.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Source: docs/buyer/START-HERE.md, BUSINESS-OVERVIEW.md</span><span>Status as of 2026-11-19</span></div>
+</section>
+
+<!-- 1 BRAND -->
+<section class="slide">
+  <div class="gingham"></div>
+  <p class="kicker">01 · Brand identity</p>
+  <h2>Cherry red, butter yellow, <em>a little handwriting.</em></h2>
+  <div class="body">
+    <div class="col">
+      <p class="lead" style="font-size:14.5px">"Making a life, not just a living." Mission: helping women fall in love with the life they live outside of work. Voice: a creative, witty best friend, never hustle culture, no fake stats or testimonials.</p>
+      <div class="grid3" style="margin:6px 0 12px">
+        <div class="sw" style="background:#B83F43;color:#fff">Cherry Girl<br>#B83F43</div>
+        <div class="sw" style="background:#F8E5A3">Butter Yellow<br>#F8E5A3</div>
+        <div class="sw" style="background:#F4D4D7">Strawberry Milk<br>#F4D4D7</div>
+        <div class="sw" style="background:#394D3C;color:#fff">Garden Green<br>#394D3C</div>
+        <div class="sw" style="background:#FFF8EF">Vanilla Cream<br>#FFF8EF</div>
+        <div class="sw" style="background:#48362E;color:#fff">Espresso<br>#48362E</div>
+      </div>
+      <div class="card">
+        <p style="margin:0"><b>Type:</b> <span style="font-family:Fraunces;font-size:17px">Fraunces</span> (expressive serif headings), DM Sans (body), <span class="hand" style="font-size:20px">Caveat</span> (handwritten notes). All SIL Open Font License, free for commercial use.</p>
+      </div>
+      <p class="cap">Logo system: stacked wordmark, inline wordmark, monogram, favicon. Source files in design/brand and docs/BRAND-GUIDE.md.</p>
+    </div>
+    <div class="col">
+      <div class="shot" style="background:var(--cream);padding:26px;text-align:center;height:1.9in;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:4px 5px 0 rgba(41,39,34,.12)">
+        <div style="font-family:Fraunces;font-size:46px;color:var(--cherry);line-height:.95">plans past</div>
+        <div style="font-family:Fraunces;font-style:italic;font-size:78px;font-weight:700;color:var(--cherry);line-height:.9">five.</div>
+        <div class="hand" style="margin-top:4px">Making a life, not just a living.</div>
+      </div>
+      <div class="row" style="margin-top:12px;flex:1;min-height:0">
+        <div class="shot"><img src="../../../design/brand/exports/board-covers/junk-journaling.png" alt="Board cover" style="object-fit:contain;object-position:center;background:var(--cream)"></div>
+        <div class="shot"><img src="../../../design/brand/exports/board-covers/girls-night-ideas.png" alt="Board cover" style="object-fit:contain;object-position:center;background:var(--cream)"></div>
+      </div>
+      <p class="cap">Brand library includes logos, board covers, social and favicon exports.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Plans Past Five</span><span>Brand identity</span></div>
+</section>
+
+<!-- 2 AUDIENCE -->
+<section class="slide bg-straw">
+  <div class="gingham"></div>
+  <p class="kicker">02 · Target audience</p>
+  <h2>Women who want a <em>hobby, a plan, a friend.</em></h2>
+  <div class="body">
+    <div class="col w2">
+      <p class="lead">The intended reader is a working woman who is ready for more outside of work and wants help getting started: what to try, what it costs, what to do on Saturday, who to do it with.</p>
+      <div class="grid2" style="margin-top:8px">
+        <div class="card"><h3>After the office</h3><p style="margin:0">Weeknight hobbies that do not need a full Saturday or a second wind.</p></div>
+        <div class="card"><h3>Solo, not lonely</h3><p style="margin:0">Dates with yourself, from bookstore wanders to a café window seat.</p></div>
+        <div class="card"><h3>Meeting people</h3><p style="margin:0">Hobbies that come with friends: craft nights, book clubs, a standing tennis date.</p></div>
+        <div class="card"><h3>Beginners, on a budget</h3><p style="margin:0">"Being good at it is completely optional." Starter costs shown as estimates.</p></div>
+      </div>
+      <p class="note" style="margin-top:12px">This is an editorial positioning choice, not research. There is no audience data, survey or analytics behind it.</p>
+    </div>
+    <div class="col n"><div class="phone" style="flex:1"><img src="screenshots/home-mobile.jpg" alt="Mobile home page"></div><p class="cap">Mobile first: all pages were captured at 390 px as well as 1440 px.</p></div>
+  </div>
+  <div class="foot"><span>Source: src/config/site.ts, docs/content/EDITORIAL-STRATEGY.md</span><span>Audience</span></div>
+</section>
+
+<!-- 3 SITE OVERVIEW -->
+<section class="slide">
+  <div class="gingham"></div>
+  <p class="kicker">03 · Website overview</p>
+  <h2>A complete, <em>working</em> front end.</h2>
+  <div class="body">
+    <div class="col w2"><div class="shot" style="flex:1"><img src="screenshots/home-desktop.jpg" alt="Home page desktop"></div><p class="cap">Home page, captured from the running site at 1440 px.</p></div>
+    <div class="col">
+      <ul style="margin-top:4px">
+        <li><b>Six editorial sections</b> plus a Journal of articles</li>
+        <li><b>Hobby directory:</b> 36 hobbies with filters and profiles</li>
+        <li><b>Four interactive tools</b> and a saved-items page</li>
+        <li><b>Off Duty Essentials:</b> 6 shopping collections</li>
+        <li><b>Six free printables</b> as real PDFs</li>
+        <li><b>Trust pages:</b> editorial policy, methodology, corrections, affiliate disclosure, privacy, terms</li>
+      </ul>
+      <div class="card" style="margin-top:auto"><b>Stack:</b> TanStack Start (React 19, TypeScript, Tailwind v4), built with Vite and Bun. Frontend only: no database, accounts, payments or server secrets. Saved items live in the visitor's browser.</div>
+    </div>
+  </div>
+  <div class="foot"><span>Source: docs/buyer/START-HERE.md, WEBSITE-ARCHITECTURE.md</span><span>Website</span></div>
+</section>
+
+<!-- 4 CATEGORIES -->
+<section class="slide bg-butter">
+  <div class="gingham"></div>
+  <p class="kicker">04 · Editorial categories</p>
+  <h2>Six sections, <em>one point of view.</em></h2>
+  <div class="body" style="flex-direction:column;gap:10px">
+    <div class="grid3" style="flex:1;min-height:0;grid-template-rows:1fr 1fr">
+      <div style="display:flex;flex-direction:column;min-height:0"><div class="shot" style="flex:1"><img src="screenshots/category-after-hours-desktop.jpg" alt="After Hours"></div><p class="cap"><b>After Hours:</b> weeknight hobbies and plans</p></div>
+      <div style="display:flex;flex-direction:column;min-height:0"><div class="shot" style="flex:1"><img src="screenshots/category-weekend-edit-desktop.jpg" alt="Weekend Edit"></div><p class="cap"><b>The Weekend Edit:</b> Saturday and Sunday inspiration</p></div>
+      <div style="display:flex;flex-direction:column;min-height:0"><div class="shot" style="flex:1"><img src="screenshots/category-table-for-one-desktop.jpg" alt="Table for One"></div><p class="cap"><b>Table for One:</b> solo dates</p></div>
+      <div style="display:flex;flex-direction:column;min-height:0"><div class="shot" style="flex:1"><img src="screenshots/category-better-together-desktop.jpg" alt="Better Together"></div><p class="cap"><b>Better Together:</b> friendship and social plans</p></div>
+      <div style="display:flex;flex-direction:column;min-height:0"><div class="shot" style="flex:1"><img src="screenshots/category-creative-corner-desktop.jpg" alt="Creative Corner"></div><p class="cap"><b>Creative Corner:</b> making things</p></div>
+      <div style="display:flex;flex-direction:column;min-height:0"><div class="shot" style="flex:1"><img src="screenshots/category-a-little-movement-desktop.jpg" alt="A Little Movement"></div><p class="cap"><b>A Little Movement:</b> active hobbies, gym optional</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Source: src/data/categories.ts</span><span>Categories</span></div>
+</section>
+
+<!-- 5 CONTENT INVENTORY -->
+<section class="slide">
+  <div class="gingham"></div>
+  <p class="kicker">05 · Content inventory</p>
+  <h2>Four published. <em>Drafts are drafts.</em></h2>
+  <div class="body">
+    <div class="col">
+      <div class="grid2">
+        <div class="card"><div class="stat">4</div><b>published articles</b><p class="cap" style="margin:0">Live in the Journal and the sitemap.</p></div>
+        <div class="card"><div class="stat">28</div><b>drafts awaiting verification</b><p class="cap" style="margin:0">Written, status "draft", never shown publicly until sources are checked.</p></div>
+        <div class="card"><div class="stat">36</div><b>hobby profiles</b></div>
+        <div class="card"><div class="stat">2</div><b>outline-only topic stubs</b><p class="cap" style="margin:0">Planned, no body written.</p></div>
+      </div>
+      <p style="margin-top:10px">Drafts carry research briefs and a list of claims to verify (<code>coworkChecks</code>). The plan is to flip an article to "published" only after those checks against sources pass (SOP in <code>docs/SOP-publish-article.md</code>).</p>
+      <p class="note">Counts read from src/content on 2026-11-19. The target roadmap is 30 articles and a 50-topic list; that is a plan, not inventory.</p>
+    </div>
+    <div class="col"><div class="shot" style="flex:1"><img src="screenshots/journal-index-desktop.jpg" alt="Journal index"></div><p class="cap">The Journal index (published articles only).</p></div>
+    <div class="col"><div class="shot" style="flex:1"><img src="screenshots/article-junk-journaling-desktop.jpg" alt="Published article"></div><p class="cap">One published article: how to start junk journaling.</p></div>
+  </div>
+  <div class="foot"><span>Source: src/content/index.ts, drafts.ts, docs/content/ARTICLE-ROADMAP.md</span><span>Content</span></div>
+</section>
+
+<!-- 6 HOBBY DIRECTORY -->
+<section class="slide bg-matcha">
+  <div class="gingham"></div>
+  <p class="kicker">06 · Hobby directory</p>
+  <h2>36 hobbies, <em>each with a profile.</em></h2>
+  <div class="body">
+    <div class="col w2"><div class="shot" style="flex:1"><img src="screenshots/hobby-directory-desktop.jpg" alt="Hobby directory"></div><p class="cap">Directory with filters.</p></div>
+    <div class="col"><div class="shot" style="flex:1"><img src="screenshots/hobby-profile-desktop.jpg" alt="Hobby profile"></div><p class="cap">A hobby profile (pottery painting): why you'll love it, time and cost labels, related reads.</p>
+      <p class="note" style="margin-top:4px">Profiles are indexable only when a published guide covers the hobby; the rest are set to noindex.</p></div>
+  </div>
+  <div class="foot"><span>Source: src/data/hobbies.ts</span><span>Hobby directory</span></div>
+</section>
+
+<!-- 7 TOOLS -->
+<section class="slide bg-straw">
+  <div class="gingham"></div>
+  <p class="kicker">07 · Interactive tools</p>
+  <h2>Four tools. <em>No sign-up, nothing sent.</em></h2>
+  <div class="body" style="flex-direction:column;gap:10px">
+    <div class="row" style="flex:1;min-height:0">
+      <div style="display:flex;flex-direction:column;min-height:0"><div class="shot" style="flex:1"><img src="screenshots/quiz-result-desktop.jpg" alt="Find Your Thing result"></div><p class="cap"><b>Find Your Thing:</b> seven-question quiz, then hobby matches.</p></div>
+      <div style="display:flex;flex-direction:column;min-height:0"><div class="shot" style="flex:1"><img src="screenshots/planner-itinerary-desktop.jpg" alt="Make Some Plans"></div><p class="cap"><b>Make Some Plans:</b> itinerary built from curated ideas.</p></div>
+      <div style="display:flex;flex-direction:column;min-height:0"><div class="shot" style="flex:1"><img src="screenshots/tool-hobby-budget-desktop.jpg" alt="Hobby Budget"></div><p class="cap"><b>Hobby Starter Budget:</b> rough ranges, estimates only.</p></div>
+      <div style="display:flex;flex-direction:column;min-height:0"><div class="shot" style="flex:1"><img src="screenshots/tool-tonight-desktop.jpg" alt="Tonight tool"></div><p class="cap"><b>Tonight:</b> three ideas for after five.</p></div>
+    </div>
+    <p class="note">All logic runs in the browser (src/lib). Costs and times are approximate assumptions, not live prices. "My Plans" saves items to the visitor's own browser only.</p>
+  </div>
+  <div class="foot"><span>Source: src/lib/finder.ts, planner.ts, budget.ts, tonight.ts</span><span>Tools</span></div>
+</section>
+
+<!-- 8 SHOPPING -->
+<section class="slide bg-butter">
+  <div class="gingham"></div>
+  <p class="kicker">08 · Shopping collections</p>
+  <h2>Off Duty Essentials: <em>curated, not a store.</em></h2>
+  <div class="body">
+    <div class="col w2"><div class="shot" style="flex:1"><img src="screenshots/shop-index-desktop.jpg" alt="Shop index"></div></div>
+    <div class="col"><div class="shot" style="flex:1"><img src="screenshots/shop-collection-desktop.jpg" alt="Collection"></div><p class="cap">A collection page.</p></div>
+    <div class="col n">
+      <ul><li><b>6</b> collections</li><li><b>36</b> product-type records</li><li>Starter "kits" are editorial lists, not bundles</li><li>Shopping checklist the visitor can keep</li></ul>
+      <div class="card" style="margin-top:auto"><span class="tag red">Honest label</span><p style="margin:6px 0 0;font-size:11.5px">The site sells nothing. Records name product types; verified products and links are a pending step. Images are illustrative styling, no retailer images.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Source: src/data/products.ts, kits.ts, docs/IMAGE-LICENSES.md</span><span>Shopping</span></div>
+</section>
+
+<!-- 9 AFFILIATE -->
+<section class="slide bg-garden">
+  <p class="kicker">09 · Affiliate infrastructure</p>
+  <h2>Built to be switched on <em>with your accounts.</em></h2>
+  <div class="body">
+    <div class="col">
+      <div class="card" style="margin-bottom:10px"><span class="tag">Not activated</span>
+        <p style="margin:8px 0 0">Every entry ships empty: no tracking IDs, <code>active: false</code>, no approvals. Links are plain retailer searches and the disclosure says links currently earn nothing.</p></div>
+      <ul>
+        <li><b>One central registry:</b> <code>src/config/affiliate.ts</code> is the only place retailer links are built</li>
+        <li><b>Resolution order:</b> approved and active entry, else ordinary retailer URL, else plain search link</li>
+        <li><b>Candidate programs</b> are tracked in a research register (unverified until read from official pages)</li>
+        <li><b>Seller's master and portfolio accounts are excluded.</b> No IDs, links or sharing with any other site</li>
+        <li><b>Approval is not guaranteed</b> and is tied to the buyer's own account and site</li>
+      </ul>
+    </div>
+    <div class="col w2" style="gap:10px">
+      <div class="row"><div class="shot" style="height:2.9in"><img src="screenshots/affiliate-disclosure-desktop.jpg" alt="Affiliate disclosure"></div><div class="shot" style="height:2.9in"><img src="screenshots/shop-collection-desktop.jpg" alt="Collection"></div></div>
+      <p class="cap" style="color:var(--cream)">Left: the public disclosure page. Right: a collection page, where links would be tagged only after activation.</p>
+      <div class="card"><b>Activation guide:</b> <code>docs/buyer/AFFILIATE-ACTIVATION.md</code> (step by step) and <code>AFFILIATE-SETUP.md</code> (checklist). Edit the registry, run the tests, and the disclosure switches automatically to the monetized form.</div>
+    </div>
+  </div>
+  <div class="foot"><span>Source: src/config/affiliate.ts, src/data/affiliate-programs.ts</span><span>Affiliate</span></div>
+</section>
+
+<!-- 10 DOWNLOADS -->
+<section class="slide bg-straw">
+  <div class="gingham"></div>
+  <p class="kicker">10 · Downloadable resources</p>
+  <h2>Six free printables, <em>real PDFs.</em></h2>
+  <div class="body">
+    <div class="col w2" style="gap:8px">
+      <div class="grid3" style="grid-template-columns:repeat(3,1fr)">
+        <div><img class="shot" style="width:100%;aspect-ratio:8.5/11;object-fit:cover;object-position:top" src="../../../public/downloads/hobby-era-tracker-preview.png" alt=""><p class="cap">Find Your Hobby Workbook · 8 pp</p></div>
+        <div><img class="shot" style="width:100%;aspect-ratio:8.5/11;object-fit:cover;object-position:top" src="../../../public/downloads/weekend-edit-planner-preview.png" alt=""><p class="cap">Weekend Adventure Planner · 5 pp</p></div>
+        <div><img class="shot" style="width:100%;aspect-ratio:8.5/11;object-fit:cover;object-position:top" src="../../../public/downloads/girls-night-hosting-planner-preview.png" alt=""><p class="cap">Girls' Night Hosting Planner · 6 pp</p></div>
+      </div>
+      <p class="note">Also: 30-Day Hobby Challenge (6 pp), Solo Date Idea Cards (6 pp), Creative Hobby Starter Checklist (5 pp).</p>
+    </div>
+    <div class="col">
+      <div class="shot" style="flex:1"><img src="screenshots/printables-index-desktop.jpg" alt="Printables page"></div><p class="cap">The /printables page.</p>
+      <ul style="margin-top:6px"><li>US Letter, fonts embedded</li><li>No email gate, no data collected</li><li>Original artwork only; fonts under OFL</li></ul>
+    </div>
+  </div>
+  <div class="foot"><span>Source: public/downloads, src/data/printables.ts, docs/IMAGE-LICENSES.md</span><span>Downloads</span></div>
+</section>
+
+<!-- 11 PREMIUM -->
+<section class="slide bg-butter">
+  <div class="gingham"></div>
+  <p class="kicker">11 · Premium digital products</p>
+  <h2>Two kits, <em>prepared. Not on sale.</em></h2>
+  <div class="body">
+    <div class="col"><div class="shot" style="flex:1;background:var(--strawberry)"><img src="../../../design/kits/hobby-era-kit/previews/cover.png" alt="Hobby Era Kit cover" style="object-fit:contain;object-position:center"></div><p class="cap"><b>Hobby Era Kit:</b> 9 PDFs, 75 pages</p></div>
+    <div class="col"><div class="shot" style="flex:1;background:var(--strawberry)"><img src="../../../design/kits/weekend-edit-kit/previews/cover.png" alt="Weekend Edit kit cover" style="object-fit:contain;object-position:center"></div><p class="cap"><b>Weekend Edit and Girls' Night Kit:</b> 9 PDFs, 55 pages</p></div>
+    <div class="col">
+      <div class="card" style="margin-bottom:10px"><span class="tag red">Prepared, not for sale</span><p style="margin:8px 0 0">No checkout, no payment provider, no price set, and nothing links to the kits from the public site.</p></div>
+      <ul><li>Editable HTML sources, built PDFs and a zip per kit</li><li>Cover and sample-page previews for listings</li><li>Customer usage terms are a draft needing owner review</li><li>A buyer must choose a storefront and handle tax</li></ul>
+    </div>
+  </div>
+  <div class="foot"><span>Source: docs/buyer/DIGITAL-PRODUCTS.md, design/kits</span><span>Premium products</span></div>
+</section>
+
+<!-- 12 PINTEREST -->
+<section class="slide bg-garden">
+  <p class="kicker">12 · Pinterest marketing assets</p>
+  <h2>95 pin images, <em>ready to schedule.</em></h2>
+  <div class="body" style="flex-direction:column;gap:12px">
+    <div class="pins">
+      <img src="../../../public/pins/04-junk-journal-1-cover.jpg" alt="Pin">
+      <img src="../../../public/pins/02-after-work-25-1-checklist.png" alt="Pin">
+      <img src="../../../public/pins/19-solo-dates-1-cover.jpg" alt="Pin">
+      <img src="../../../public/pins/09-air-dry-clay-2-steps.png" alt="Pin">
+      <img src="../../../public/pins/23-girls-night-1-cover.jpg" alt="Pin">
+    </div>
+    <div class="row">
+      <div class="card"><b>What exists</b><p style="margin:4px 0 0">1000 x 1500 pins in brand templates, a 90-day schedule and a pins CSV with destinations and boards. Sources regenerate from design/pins.</p></div>
+      <div class="card"><b>What does not</b><p style="margin:4px 0 0">No Pinterest account, no posting history, no followers. Pins link to pages that are not yet public. Results are not predicted.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Source: public/pins, docs/pinterest-pins.csv, docs/PINTEREST-90-DAY-SCHEDULE.md</span><span>Pinterest</span></div>
+</section>
+
+<!-- 13 SEO -->
+<section class="slide">
+  <div class="gingham"></div>
+  <p class="kicker">13 · SEO infrastructure</p>
+  <h2>Technical groundwork, <em>no rankings claimed.</em></h2>
+  <div class="body">
+    <div class="col">
+      <ul>
+        <li><b>Per-page title, description, canonical, Open Graph</b>; a test fails on duplicates or gaps</li>
+        <li><b>JSON-LD:</b> Organization, Article, BreadcrumbList</li>
+        <li><b>Server-rendered HTML</b>, verified on a production build</li>
+        <li><b>sitemap.xml</b> from published pages only; robots.txt in place</li>
+        <li><b>Draft and thin pages are noindex</b> or excluded</li>
+        <li><b>Security headers file</b> and CI plus a weekly site-health workflow</li>
+      </ul>
+      <div class="card" style="margin-top:10px"><b>Owner still must:</b> connect the real domain, add a 1200x630 share image, verify Search Console and submit the sitemap. The site has no traffic or ranking history.</div>
+    </div>
+    <div class="col"><div class="shot" style="flex:1"><img src="screenshots/methodology-desktop.jpg" alt="Methodology"></div><p class="cap">Trust pages: methodology (also editorial policy and corrections).</p></div>
+    <div class="col n"><div class="phone" style="flex:1"><img src="screenshots/editorial-policy-mobile.jpg" alt="Editorial policy mobile"></div></div>
+  </div>
+  <div class="foot"><span>Source: docs/buyer/SEO-GUIDE.md, src/lib/seo.ts, sitemap.ts</span><span>SEO</span></div>
+</section>
+
+<!-- 14 COSTS -->
+<section class="slide bg-sunday">
+  <div class="gingham"></div>
+  <p class="kicker">14 · Operating costs</p>
+  <h2>What a buyer would price out. <em>Nothing is confirmed.</em></h2>
+  <div class="body" style="flex-direction:column;gap:8px">
+    <table>
+      <tr><th>Item</th><th>Needed?</th><th>Status</th></tr>
+      <tr><td>Domain</td><td>Yes, to go public</td><td><span class="tag grey">UNCONFIRMED</span> placeholder planspastfive.com; ownership unknown</td></tr>
+      <tr><td>Hosting</td><td>Yes</td><td><span class="tag grey">UNCONFIRMED</span> host not chosen; build targets a Worker-style server</td></tr>
+      <tr><td>Email mailbox</td><td>Recommended</td><td><span class="tag grey">UNCONFIRMED</span></td></tr>
+      <tr><td>Analytics, newsletter, Pinterest, affiliate accounts</td><td>Optional</td><td><span class="tag grey">UNCONFIRMED</span> typically free; verify promo vs renewal pricing</td></tr>
+      <tr><td>Legal review, entity, tax</td><td>Recommended / depends</td><td><span class="tag grey">UNCONFIRMED</span> not covered here</td></tr>
+      <tr><td>Payment processor (only if selling kits)</td><td>Optional</td><td><span class="tag grey">UNCONFIRMED</span></td></tr>
+      <tr><td>Dependencies</td><td>Yes</td><td><span class="tag">CONFIRMED</span> open-source packages, none paid found</td></tr>
+      <tr><td>Database, auth, AI APIs, payment backend</td><td>No</td><td><span class="tag">NOT NEEDED</span> frontend only by design</td></tr>
+    </table>
+    <p class="note">The repo holds no invoices or billing details, so no prices appear here. Your own time is the main cost: content verification and product research.</p>
+  </div>
+  <div class="foot"><span>Source: docs/buyer/OPERATING-COSTS.md</span><span>Costs</span></div>
+</section>
+
+<!-- 15 GROWTH -->
+<section class="slide bg-matcha">
+  <div class="gingham"></div>
+  <p class="kicker">15 · Growth opportunities</p>
+  <h2>Hypotheses to test, <em>not forecasts.</em></h2>
+  <div class="body">
+    <div class="col">
+      <div class="card" style="margin-bottom:10px"><span class="tag red">Hypothetical</span><p style="margin:6px 0 0">None of these has produced revenue. No earnings, traffic or conversion figures exist.</p></div>
+      <ul>
+        <li><b>Affiliate links</b> on buying guides and kit lists, once you hold approved accounts of your own</li>
+        <li><b>Digital products:</b> the two prepared kits, if you choose a storefront</li>
+        <li><b>Pinterest and search</b> as discovery channels, using the prepared pins and verified articles</li>
+        <li><b>Publishing the 28 drafts</b> after source verification</li>
+        <li><b>Later, possibly:</b> email list, display ads or sponsorships (not planned or researched)</li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="card"><h3>Risks, stated plainly</h3>
+        <ul style="margin-top:6px">
+          <li>Content-site growth is slow and uncertain</li>
+          <li>Program approval, terms and commissions are set by the programs</li>
+          <li>Drafts need verification before publishing</li>
+          <li>Thin or AI-assisted content may be treated skeptically by search engines</li>
+        </ul>
+      </div>
+      <p class="note" style="margin-top:10px">A suggested first 90 days is in docs/buyer/BUYER-90-DAY-PLAN.md.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Source: docs/buyer/BUSINESS-OVERVIEW.md, MARKETING-ROADMAP.md</span><span>Growth</span></div>
+</section>
+
+<!-- 16 TRANSFERABLE -->
+<section class="slide bg-butter">
+  <div class="gingham"></div>
+  <p class="kicker">16 · Transferable assets</p>
+  <h2>What changes hands, <em>and what doesn't.</em></h2>
+  <div class="body">
+    <div class="col">
+      <div class="card" style="flex:1"><h3>Included in the repo and design files</h3>
+        <ul style="margin-top:6px">
+          <li>Complete site source code and tests</li>
+          <li>Brand system, logos, brand library, fonts under OFL</li>
+          <li>4 published articles, 28 drafts and research briefs</li>
+          <li>36 hobby profiles, 8 collections, 4 tools</li>
+          <li>6 free printables, 2 prepared premium kits (sources and PDFs)</li>
+          <li>95 Pinterest pin images, CSV and a 90-day schedule</li>
+          <li>Buyer, content, commerce and marketing documentation</li>
+          <li>14 AI-generated images created for this project (see docs/IMAGE-LICENSES.md)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" style="flex:1;background:var(--strawberry)"><h3>Not included</h3>
+        <ul style="margin-top:6px">
+          <li>Any affiliate account, tracking ID or approval</li>
+          <li>Any traffic, analytics, email list or social account</li>
+          <li>Domain, hosting or mailbox (unconfirmed by the repo)</li>
+          <li>Revenue, financials or customers: none exist</li>
+          <li>Legal review of Privacy and Terms (starter text)</li>
+        </ul>
+        <p class="note" style="margin-top:8px">See docs/buyer/TRANSFER-CHECKLIST.md and ACCOUNT-DEPENDENCIES.md. Final terms are for buyer and seller to agree.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Source: docs/buyer/TRANSFER-CHECKLIST.md</span><span>Transferable assets</span></div>
+</section>
+
+<!-- CLOSING -->
+<section class="slide bg-cherry" style="justify-content:center;align-items:center;text-align:center">
+  <div class="gingham" style="background:repeating-linear-gradient(90deg,var(--butter) 0 12px,var(--cherry) 12px 24px)"></div>
+  <p class="hand" style="font-size:40px">Sorry, I have plans past five.</p>
+  <h1 style="font-size:64px;margin:10px 0 18px">A built starting point, <em>honestly described.</em></h1>
+  <p class="lead" style="margin:0 auto;color:var(--cream)">Pre-revenue. Not launched. No traffic history. Affiliate approval not guaranteed. Begin with docs/buyer/START-HERE.md.</p>
+  <div class="foot"><span>Screenshots captured from the local dev server, 2026-11-19</span><span>Plans Past Five</span></div>
+</section>
+
+</body>
+</html>

@@ -3,6 +3,7 @@ import { Download, Printer } from "lucide-react";
 import { getPrintable } from "@/data/printables";
 import { site } from "@/config/site";
 import { seo } from "@/lib/seo";
+import { track } from "@/lib/track";
 
 export const Route = createFileRoute("/printables/$slug")({
   loader: ({ params }) => {
@@ -47,6 +48,7 @@ function PrintablePage() {
           <a
             href={p.pdf}
             download
+            onClick={() => track("printable_download", { printable_id: p.slug })}
             className="inline-flex items-center gap-2 bg-cherry px-7 py-3.5 font-semibold text-cream shadow-[4px_4px_0_var(--ink)] hover:-translate-y-0.5"
           >
             <Download className="h-5 w-5" /> Download PDF

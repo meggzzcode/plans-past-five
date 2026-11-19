@@ -177,7 +177,7 @@ export const articleJunkJournaling: Article = {
     },
     {
       type: "p",
-      text: "Want somewhere to keep track of what you try next? Our free [My Hobby Era Tracker](/printables/hobby-era-tracker) is made to be glued straight into a journal. Or explore more ideas in [Creative Corner](/creative-corner).",
+      text: "Want somewhere to keep track of what you try next? Our free [Find Your Hobby Workbook](/printables/hobby-era-tracker) is made to be glued straight into a journal. Or explore more ideas in [Creative Corner](/creative-corner).",
     },
     { type: "ifYouLoved", hobbies: ["scrapbooking", "collage-art", "watercolor-painting"] },
   ],

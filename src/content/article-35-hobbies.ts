@@ -320,7 +320,7 @@ export const article35Hobbies: Article = {
     },
     {
       type: "p",
-      text: "And if you'd like somewhere to keep track, print our free [My Hobby Era Tracker](/printables/hobby-era-tracker). Try a hobby, rate it honestly, and slowly figure out what you genuinely love doing when nobody's paying you to do it.",
+      text: "And if you'd like somewhere to keep track, print our free [Find Your Hobby Workbook](/printables/hobby-era-tracker). Try a hobby, rate it honestly, and slowly figure out what you genuinely love doing when nobody's paying you to do it.",
     },
     { type: "ifYouLoved", hobbies: ["junk-journaling", "watercolor-painting", "tennis"] },
   ],

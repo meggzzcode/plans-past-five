@@ -504,7 +504,7 @@ export const articleSoloDateIdeas: Article = {
     },
     {
       type: "p",
-      text: "Want a whole day built around this? Try [how to plan a solo Saturday](/journal/how-to-plan-a-solo-saturday), or start with the cozier option, [20 solo dates you can do at home](/journal/cozy-solo-dates-at-home). The [Weekend Edit Planner](/printables/weekend-edit-planner) has room to write it all down.",
+      text: "Want a whole day built around this? Try [how to plan a solo Saturday](/journal/how-to-plan-a-solo-saturday), or start with the cozier option, [20 solo dates you can do at home](/journal/cozy-solo-dates-at-home). The [Weekend Adventure Planner](/printables/weekend-edit-planner) has room to write it all down.",
     },
     { type: "ifYouLoved", hobbies: ["reading", "museum-exploring", "outdoor-sketching"] },
   ],

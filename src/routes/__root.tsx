@@ -15,6 +15,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { site } from "@/config/site";
+import { verificationMeta } from "@/lib/verification";
 import { organizationJsonLd, jsonLdScript } from "@/lib/seo";
 
 function NotFoundComponent() {
@@ -99,6 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#B83F43" },
+      ...verificationMeta(),
     ],
     scripts: [jsonLdScript(organizationJsonLd())],
     links: [

@@ -176,7 +176,7 @@ export const articleHowToStartEmbroidery: Article = {
     },
     {
       type: "p",
-      text: "Like using your hands but fancy a different craft? [How to Start Crocheting](/journal/how-to-start-crocheting) is the natural next door. The free [Hobby Era Tracker](/printables/hobby-era-tracker) lists both.",
+      text: "Like using your hands but fancy a different craft? [How to Start Crocheting](/journal/how-to-start-crocheting) is the natural next door. The free [Find Your Hobby Workbook](/printables/hobby-era-tracker) lists both.",
     },
     { type: "ifYouLoved", hobbies: ["crochet", "knitting", "craft-nights"] },
   ],

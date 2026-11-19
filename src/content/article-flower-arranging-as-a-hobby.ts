@@ -162,7 +162,7 @@ export const articleFlowerArrangingAsAHobby: Article = {
     },
     {
       type: "p",
-      text: "The [Weekend Edit Planner](/printables/weekend-edit-planner) has space for a small ritual like this. For more low-effort ideas, try [Things to Do After Work Instead of Scrolling](/journal/things-to-do-after-work-instead-of-scrolling).",
+      text: "The [Weekend Adventure Planner](/printables/weekend-edit-planner) has space for a small ritual like this. For more low-effort ideas, try [Things to Do After Work Instead of Scrolling](/journal/things-to-do-after-work-instead-of-scrolling).",
     },
     { type: "ifYouLoved", hobbies: ["indoor-gardening", "collage-art", "watercolor-painting"] },
   ],

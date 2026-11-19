@@ -47,6 +47,9 @@ export const TRACK_PARAM_KEYS = [
   "count",
   "theme",
   "printable_id",
+  "persona",
+  "when",
+  "length",
 ] as const;
 
 export type TrackParams = Partial<

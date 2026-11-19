@@ -203,7 +203,7 @@ export const articleJunkJournalingSuppliesForBeginners: Article = {
     },
     {
       type: "p",
-      text: "To keep track of what you try next, the free [Hobby Era Tracker](/printables/hobby-era-tracker) is sized to glue into a journal. Weighing up bundles instead? See [Creative Hobby Starter Kits That Are Actually Worth Considering](/journal/creative-hobby-starter-kits-worth-considering).",
+      text: "To keep track of what you try next, the free [Find Your Hobby Workbook](/printables/hobby-era-tracker) is sized to glue into a journal. Weighing up bundles instead? See [Creative Hobby Starter Kits That Are Actually Worth Considering](/journal/creative-hobby-starter-kits-worth-considering).",
     },
     { type: "ifYouLoved", hobbies: ["scrapbooking", "collage-art", "watercolor-painting"] },
   ],

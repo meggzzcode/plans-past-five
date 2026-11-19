@@ -9,8 +9,7 @@ export const Route = createFileRoute("/shop/")({
   head: () =>
     seo({
       title: "Off Duty Essentials: Beginner Hobby Supplies",
-      description:
-        "Six curated collections of beginner hobby supplies for pottery, painting, tennis, reading, girls' nights in and little adventures.",
+      description: `${collections.length} curated collections of beginner hobby supply types for pottery, journaling, painting, tennis, reading, cozy nights in and little adventures.`,
       path: "/shop",
     }),
   component: Shop,
@@ -23,7 +22,7 @@ function Shop() {
         kicker="The Shop"
         title="Off Duty Essentials"
         italic="Essentials"
-        dek={`Thirty-six things that make starting a new hobby a little easier, across ${collections.length} collections. We describe what to look for rather than pushing one brand, and we'll always tell you when you don't need to buy anything at all.`}
+        dek={`${products.length} product types that make starting a new hobby a little easier, across ${collections.length} collections. We describe what to look for rather than pushing one brand, and we'll always tell you when you don't need to buy anything at all.`}
         tone="strawberry"
       >
         <AffiliateNote className="mt-6 max-w-xl" />
@@ -36,8 +35,8 @@ function Shop() {
           ))}
         </div>
         <p className="mt-10 text-sm text-muted-foreground">
-          {products.length} product types · no prices, ratings or brand claims, because those change
-          and we haven't tested them.
+          {products.length} product types, not specific listings. There are no prices, ratings or
+          brand claims, because those change and we haven't tested them.
         </p>
       </section>
     </>

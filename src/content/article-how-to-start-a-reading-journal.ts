@@ -179,7 +179,7 @@ export const articleHowToStartAReadingJournal: Article = {
     },
     {
       type: "p",
-      text: "Want company for the books themselves? [How to Start a Book Club](/journal/how-to-start-a-book-club) pairs well with a journal full of things to say. A reading record also fits in the free [Hobby Era Tracker](/printables/hobby-era-tracker). For a quiet setting, see [How to Take Yourself on a Solo Coffee Shop Date](/journal/how-to-take-yourself-on-a-solo-coffee-shop-date).",
+      text: "Want company for the books themselves? [How to Start a Book Club](/journal/how-to-start-a-book-club) pairs well with a journal full of things to say. A reading record also fits in the free [Find Your Hobby Workbook](/printables/hobby-era-tracker). For a quiet setting, see [How to Take Yourself on a Solo Coffee Shop Date](/journal/how-to-take-yourself-on-a-solo-coffee-shop-date).",
     },
     { type: "ifYouLoved", hobbies: ["book-clubs", "creative-writing", "junk-journaling"] },
   ],

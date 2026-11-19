@@ -19,6 +19,8 @@ import { Kicker } from "@/components/editorial/Section";
 import { Flower, Star } from "@/components/brand/Doodles";
 import { Printer, RefreshCw, Bookmark, BookmarkCheck, TriangleAlert } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { track } from "@/lib/track";
+import { ShopMyHobby } from "@/components/commerce/ShopMyHobby";
 
 const SEARCH_KEYS = [
   "when",
@@ -292,6 +294,7 @@ function Planner() {
               setShown(true);
               setSeed(0);
               setRestored(null);
+              track("planner_use", { when: input.when, length: input.length });
             }}
             className={cn(
               "mt-10 bg-cherry px-8 py-4 font-semibold text-cream shadow-[4px_4px_0_var(--ink)] transition hover:-translate-y-0.5",
@@ -462,6 +465,11 @@ function Planner() {
                 Print
               </button>
             </div>
+            {[...new Set(plan.slots.map((s) => s.activity?.hobby).filter((x): x is string => !!x))]
+              .slice(0, 2)
+              .map((slug) => (
+                <ShopMyHobby key={slug} hobby={slug} />
+              ))}
             <p className="mt-6 text-xs text-muted-foreground">
               Ideas are general and location-independent. Costs are rough ranges for planning, not
               quotes. Check local hours, prices and safety before you go.

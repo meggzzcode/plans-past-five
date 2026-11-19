@@ -161,7 +161,7 @@ export const articleHowToStartCrocheting: Article = {
     },
     {
       type: "p",
-      text: "Want a second thread craft to compare? [How to Start Embroidery](/journal/how-to-start-embroidery) uses just a hoop and floss. Log your finished square in the free [Hobby Era Tracker](/printables/hobby-era-tracker).",
+      text: "Want a second thread craft to compare? [How to Start Embroidery](/journal/how-to-start-embroidery) uses just a hoop and floss. Log your finished square in the free [Find Your Hobby Workbook](/printables/hobby-era-tracker).",
     },
     { type: "ifYouLoved", hobbies: ["knitting", "embroidery", "craft-nights"] },
   ],
