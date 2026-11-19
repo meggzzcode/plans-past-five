@@ -19,11 +19,19 @@ import {
   verifiedCatalog,
   type CatalogProduct,
 } from "@/data/catalog";
-import { fillKit, isFullKit, kitHobbies, kitSlotIndex, kits } from "@/data/kits";
-import { collections } from "@/data/products";
+import {
+  awaitingEssentials,
+  fillKit,
+  isFullKit,
+  kitHobbies,
+  kitSlotIndex,
+  kits,
+} from "@/data/kits";
+import { collections, collectionKitIds, kitHomeCollection } from "@/data/products";
 import { hobbies } from "@/data/hobbies";
 import {
   buildListText,
+  dedupeListGroups,
   nextState,
   readShopList,
   sanitizeShopList,
@@ -259,7 +267,7 @@ describe("card content", () => {
       />,
     );
     const text = document.body.textContent ?? "";
-    expect(text).toContain("Start with this");
+    expect(text).toContain("Starter pick");
     expect(text).toContain("Pastel rolls in three widths.");
     expect(screen.getAllByText(/See it on Amazon/)).toHaveLength(1);
     expect(text).not.toMatch(
@@ -478,6 +486,108 @@ describe("kits", () => {
     unmount();
     await show(<StarterKit kit="junk-journaling" catalog={filterVerified(fixtures)} />);
     expect(document.body.textContent).toMatch(/not a bundle we sell/);
+  });
+});
+
+describe("kit completeness and household items", () => {
+  const jj = kits.find((k) => k.id === "junk-journaling")!;
+  const four = (): CatalogProduct[] =>
+    ["journal", "adhesive", "washi-tape", "pens"].map((slot, i) => ({
+      ...base,
+      id: `test-fixture-k${i}`,
+      asin: `B0TESTFK${i}0`.slice(0, 10),
+      amazonUrl: `https://www.amazon.com/dp/${`B0TESTFK${i}0`.slice(0, 10)}`,
+      kitSlots: [{ kit: "junk-journaling", slot }],
+    }));
+  it("a kit with an unverified essential is never complete, even with 4+ picks", () => {
+    const filled = fillKit(
+      jj,
+      filterVerified(
+        four()
+          .filter((p) => p.kitSlots[0]!.slot !== "adhesive")
+          .concat({
+            ...four()[2]!,
+            id: "x",
+            asin: "B0TESTFKX0",
+            amazonUrl: "https://www.amazon.com/dp/B0TESTFKX0",
+            kitSlots: [{ kit: "junk-journaling", slot: "paper" }],
+          }),
+      ),
+    );
+    expect(filled.length).toBeGreaterThanOrEqual(4);
+    expect(awaitingEssentials(jj, filled).map((s) => s.id)).toEqual(["adhesive"]);
+    expect(isFullKit(filled, jj)).toBe(false);
+  });
+  it("every essential verified makes a complete kit; the household slot does not count against it", async () => {
+    const cat = filterVerified(four());
+    const filled = fillKit(jj, cat);
+    expect(awaitingEssentials(jj, filled)).toEqual([]);
+    expect(isFullKit(filled, jj)).toBe(true);
+    await show(<StarterKit kit="junk-journaling" catalog={cat} />);
+    const text = document.body.textContent ?? "";
+    expect(text).toContain("You probably have: small scissors.");
+    expect(text).not.toMatch(/Where to start/);
+  });
+  it("household items are plain text with no link and are never filled by a product", async () => {
+    const cat = filterVerified([
+      ...four(),
+      {
+        ...four()[0]!,
+        id: "test-fixture-sc",
+        asin: "B0TESTFSC0",
+        amazonUrl: "https://www.amazon.com/dp/B0TESTFSC0",
+        kitSlots: [{ kit: "junk-journaling", slot: "scissors" }],
+      },
+    ]);
+    expect(fillKit(jj, cat).some((f) => f.slot.id === "scissors")).toBe(false);
+    await show(<StarterKit kit="junk-journaling" catalog={cat} />);
+    const p = document.querySelector("[data-kit-household]")!;
+    expect(p.querySelector("a")).toBeNull();
+  });
+  it("an incomplete kit names what is still awaiting verification and never says complete", async () => {
+    await show(<StarterKit kit="junk-journaling" catalog={filterVerified(fixtures)} />);
+    expect(document.querySelector("[data-kit-awaiting]")!.textContent).toMatch(
+      /journal that can take glue/,
+    );
+    expect(document.querySelector("[data-kit-incomplete]")!.textContent).toMatch(
+      /not a complete kit/,
+    );
+  });
+  it("shipped kits: a kit renders as complete only with all essentials verified", () => {
+    for (const k of kits)
+      if (isFullKit(fillKit(k, verifiedCatalog), k))
+        expect(awaitingEssentials(k, fillKit(k, verifiedCatalog))).toEqual([]);
+  });
+  it("collections list only their own kits, with distinct images, and no kit appears under a foreign heading", () => {
+    expect(new Set(collections.map((c) => c.image)).size).toBe(collections.length);
+    expect(collectionKitIds("cozy-after-hours")).toEqual([]);
+    expect(collectionKitIds("girls-night-in")).not.toContain("reading-book-club");
+    expect(collectionKitIds("little-adventures")).toEqual(["picnic"]);
+    expect(kitHomeCollection("pottery-paint-night")?.slug).toBe("girls-night-in");
+  });
+  it("dedupes padded and near-duplicate list items", () => {
+    const [need, extra] = dedupeListGroups([
+      ["A beginner racket", "Water", "A book"],
+      ["Water bottle", "Sports tote", "Tote bag"],
+    ]);
+    expect(need).toEqual(["A beginner racket", "Water"]);
+    expect(extra).toEqual(["Sports tote"]);
+  });
+  it("labels tiers: Starter pick and Step up", async () => {
+    await show(
+      <>
+        <ProductCard
+          product={{ ...base, role: "later-upgrade", isEssential: false }}
+          placement="t"
+        />
+        <ProductCard
+          product={{ ...base, id: "t2", role: "aesthetic-upgrade", isEssential: false }}
+          placement="t"
+        />
+      </>,
+    );
+    expect(document.body.textContent).toContain("Step up: once you're hooked");
+    expect(document.body.textContent).toContain("Step up: a prettier version");
   });
 });
 

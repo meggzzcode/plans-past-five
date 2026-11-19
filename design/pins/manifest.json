@@ -1089,7 +1089,7 @@
     "destination": "/journal/affordable-hobbies-under-25",
     "day": 31,
     "date": "2027-02-03",
-    "publish_status": "hold-until-published",
+    "publish_status": "published-article",
     "kind": "article",
     "image": null,
     "minFitFontPx": null
@@ -1104,7 +1104,7 @@
     "destination": "/journal/how-to-start-air-dry-clay",
     "day": 34,
     "date": "2027-02-06",
-    "publish_status": "hold-until-published",
+    "publish_status": "published-article",
     "kind": "article",
     "image": "shop-pottery-era.jpg",
     "minFitFontPx": null
@@ -1119,7 +1119,7 @@
     "destination": "/journal/watercolor-painting-for-beginners",
     "day": 38,
     "date": "2027-02-10",
-    "publish_status": "hold-until-published",
+    "publish_status": "published-article",
     "kind": "article",
     "image": "watercolor-evening.jpg",
     "minFitFontPx": null
@@ -1134,7 +1134,7 @@
     "destination": "/journal/how-to-start-embroidery",
     "day": 42,
     "date": "2027-02-14",
-    "publish_status": "hold-until-published",
+    "publish_status": "published-article",
     "kind": "article",
     "image": null,
     "minFitFontPx": null
@@ -1149,7 +1149,7 @@
     "destination": "/journal/how-to-start-crocheting",
     "day": 46,
     "date": "2027-02-18",
-    "publish_status": "hold-until-published",
+    "publish_status": "published-article",
     "kind": "article",
     "image": null,
     "minFitFontPx": null
@@ -1164,7 +1164,7 @@
     "destination": "/tools/hobby-budget",
     "day": 49,
     "date": "2027-02-21",
-    "publish_status": "hold-until-published",
+    "publish_status": "published-article",
     "kind": "tool",
     "image": null,
     "minFitFontPx": null
@@ -1176,10 +1176,10 @@
     "variant": null,
     "theme": "butter",
     "board": "Solo Date Ideas",
-    "destination": "/journal/how-to-plan-a-perfect-solo-saturday",
+    "destination": "/journal/how-to-plan-a-solo-saturday",
     "day": 53,
     "date": "2027-02-25",
-    "publish_status": "hold-until-published",
+    "publish_status": "published-article",
     "kind": "article",
     "image": null,
     "minFitFontPx": null
@@ -1194,7 +1194,7 @@
     "destination": "/journal/affordable-hobbies-under-25",
     "day": 57,
     "date": "2027-03-01",
-    "publish_status": "hold-until-published",
+    "publish_status": "published-article",
     "kind": "article",
     "image": null,
     "minFitFontPx": null
@@ -1209,7 +1209,7 @@
     "destination": "/journal/how-to-start-air-dry-clay",
     "day": 61,
     "date": "2027-03-05",
-    "publish_status": "hold-until-published",
+    "publish_status": "published-article",
     "kind": "article",
     "image": null,
     "minFitFontPx": null
@@ -1224,7 +1224,7 @@
     "destination": "/journal/watercolor-painting-for-beginners",
     "day": 64,
     "date": "2027-03-08",
-    "publish_status": "hold-until-published",
+    "publish_status": "published-article",
     "kind": "article",
     "image": null,
     "minFitFontPx": null
@@ -1239,7 +1239,7 @@
     "destination": "/tools/tonight",
     "day": 68,
     "date": "2027-03-12",
-    "publish_status": "hold-until-published",
+    "publish_status": "published-article",
     "kind": "tool",
     "image": null,
     "minFitFontPx": null
@@ -1254,7 +1254,7 @@
     "destination": "/journal/how-to-start-embroidery",
     "day": 72,
     "date": "2027-03-16",
-    "publish_status": "hold-until-published",
+    "publish_status": "published-article",
     "kind": "article",
     "image": null,
     "minFitFontPx": null
@@ -1269,7 +1269,7 @@
     "destination": "/journal/how-to-start-crocheting",
     "day": 76,
     "date": "2027-03-20",
-    "publish_status": "hold-until-published",
+    "publish_status": "published-article",
     "kind": "article",
     "image": null,
     "minFitFontPx": null
@@ -1281,10 +1281,10 @@
     "variant": "center",
     "theme": "cherry",
     "board": "Solo Date Ideas",
-    "destination": "/journal/how-to-plan-a-perfect-solo-saturday",
+    "destination": "/journal/how-to-plan-a-solo-saturday",
     "day": 79,
     "date": "2027-03-23",
-    "publish_status": "hold-until-published",
+    "publish_status": "published-article",
     "kind": "article",
     "image": null,
     "minFitFontPx": null
@@ -1299,7 +1299,7 @@
     "destination": "/journal/affordable-hobbies-under-25",
     "day": 83,
     "date": "2027-03-27",
-    "publish_status": "hold-until-published",
+    "publish_status": "published-article",
     "kind": "article",
     "image": null,
     "minFitFontPx": null
@@ -1314,7 +1314,7 @@
     "destination": "/journal/watercolor-painting-for-beginners",
     "day": 87,
     "date": "2027-03-31",
-    "publish_status": "hold-until-published",
+    "publish_status": "published-article",
     "kind": "article",
     "image": null,
     "minFitFontPx": null

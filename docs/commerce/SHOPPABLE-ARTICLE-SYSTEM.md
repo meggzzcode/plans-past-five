@@ -24,8 +24,8 @@ Rules enforced in code: only `status: "verified"` records that pass `validateCat
 
 ## Add a verified product
 
-1. Research it (official page, Amazon listing). Fill one row of `docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv` (arrays use `|`, specs are `label:value`, kit slots are `kit/slot`, dates `YYYY-MM-DD`). Set `status` to `verified` only after checking; use `candidate` to keep it hidden.
-2. Dry-run first: `bun run import:products path/to/file.csv --check` validates and writes nothing. Then `bun run import:products path/to/file.csv` regenerates `src/data/catalog.generated.ts`. Every problem is printed with its line number and nothing is written if any row fails. Rows whose id starts `example-`, `fixture-`, `test-`, `demo-` or `sample-` are always rejected, so invented rows cannot ship. See `docs/commerce/IMPORT-DRY-RUN.md` for the full walkthrough, error messages and the review checklist.
+1. Research it (official page, Amazon listing) and add one row to `docs/commerce/product-research.csv`. Canonical product source: `docs/commerce/product-research.csv`. Validate with `bun run import:products docs/commerce/product-research.csv --check`; import with `bun run import:products docs/commerce/product-research.csv`. Column guide: `docs/commerce/PRODUCT-RESEARCH-TEMPLATE.md`. Set `status` to `verified` only after checking; `candidate` keeps it hidden.
+2. `--check` validates and writes nothing; every problem is printed with its line number and nothing is written if any row fails. A write that would shrink the catalog by more than 30% is refused unless `--force` is given.
 3. Commit the regenerated file. The build re-validates; invalid records are silently excluded from public pages and fail the tests' reference checks.
 
 ## Use it

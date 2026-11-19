@@ -2,29 +2,9 @@
 
 Kits are editorially curated shopping lists. They are NOT bundles sold by Plans Past Five and nothing is packaged, fulfilled or priced by the site. Each item points to its own listing. The code constant `KIT_DISCLAIMER` in `src/data/kits.ts` says so on the page: "An editorially curated shopping list, not a bundle sold by Plans Past Five. Each item links to its own listing."
 
-Source of truth: `src/data/kits.ts` (15 kits, checked 2026-11-19). A slot appears publicly only when a verified catalog product fills it (`kitSlots` on the product, `fillKit()` in `src/data/kits.ts`); a kit with no filled slots renders nothing. The catalog now holds 37 verified products (`docs/commerce/AMAZON-PRODUCT-CATALOG.md`), so **7 of the 15 kits render with at least one filled slot** (junk-journaling, watercolor, air-dry-clay, embroidery, crochet, mahjong-night, paint-night) once the site is deployed; the other 8 have no verified product and render nothing. "Verified" means the Amazon listing was opened by Cowork and reviewed, not that we tested the item; all links are ordinary non-affiliate Amazon links. Coverage comes from `docs/commerce/IMPORT-REVIEW.md` and was re-computed from `src/data/catalog.generated.ts`.
+Source of truth: `src/data/kits.ts`. A slot appears publicly only when a verified catalog product fills it (`kitSlots` on the product, `fillKit()` in `src/data/kits.ts`); a kit with no filled slots renders nothing. Which kits are filled is computed from the catalog, not listed here: the old status table in this file was stale and has been removed. Canonical product source: `docs/commerce/product-research.csv`. Validate with `bun run import:products docs/commerce/product-research.csv --check`; import with `bun run import:products docs/commerce/product-research.csv`. Column guide: `docs/commerce/PRODUCT-RESEARCH-TEMPLATE.md`.
 
 Slot needs: **essential** (without it the hobby does not start), **optional** (nice, not needed), **probably own** (most people already have it; do not push a purchase). The `wanted role` is a hint for researchers and maps to the role labels in `docs/commerce/PRODUCT-SELECTION-METHODOLOGY.md`.
-
-Status key: NOT STARTED, PARTIAL (some slots filled by verified products), VERIFIED (all essential slots filled), LIVE (renders on a deployed site; nothing is deployed, so none is LIVE).
-
-| # | Kit id | Kit name | Related article slug (roadmap) | Status |
-|---|---|---|---|---|
-| 1 | junk-journaling | Junk journaling starter kit | junk-journaling-supplies-for-beginners; how-to-start-junk-journaling | PARTIAL: 5 of 6 slots filled (scissors "probably own" on purpose); all essentials filled |
-| 2 | watercolor | Watercolor starter kit | watercolor-painting-for-beginners | PARTIAL: 3 of 6 (paints, brushes, paper filled; palette not researched) |
-| 3 | air-dry-clay | Air-dry clay starter kit | how-to-start-air-dry-clay | PARTIAL: 5 of 6 (work-surface "probably own"); all essentials filled |
-| 4 | embroidery | Embroidery starter kit | how-to-start-embroidery | PARTIAL: 3 of 6 (hoop, floss, scissors filled; needles, fabric, pattern missing) |
-| 5 | crochet | Crochet starter kit | how-to-start-crocheting | PARTIAL: 1 of 5 (yarn only; hooks missing, both hook sets are candidates with no brand stated) |
-| 6 | reading-journal | Reading journal kit | how-to-start-a-reading-journal | NOT STARTED |
-| 7 | girls-craft-night | Girls' craft night kit | how-to-host-a-craft-night | NOT STARTED |
-| 8 | mahjong-night | Mahjong night kit | how-to-host-a-mahjong-night | PARTIAL: 3 of 4 (set, mat, card filled; snack-bowls "probably own") |
-| 9 | book-club | Book club kit | how-to-start-a-book-club | NOT STARTED |
-| 10 | paint-night | Paint night kit | how-to-host-a-paint-night-at-home | PARTIAL: 2 of 6 (canvas, brushes filled; paint missing) |
-| 11 | picnic-adventure | Picnic kit | how-to-plan-a-perfect-picnic | NOT STARTED |
-| 12 | flower-arranging | Flower arranging kit | flower-arranging-as-a-hobby | NOT STARTED |
-| 13 | pickleball | Pickleball starter kit | pickleball-for-beginners | NOT STARTED |
-| 14 | tennis | Tennis starter kit | how-to-start-playing-tennis-as-an-adult | NOT STARTED |
-| 15 | cozy-night-in | Cozy night in kit | cozy-solo-dates-at-home (loosely) | NOT STARTED |
 
 ## Slots per kit
 

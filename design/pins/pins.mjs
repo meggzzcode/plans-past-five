@@ -393,7 +393,7 @@ export const articles = [
   {
     slug: "affordable-hobbies-under-25",
     short: "affordable-hobbies",
-    status: "draft",
+    status: "published",
     board: "Affordable Adventures",
     kw: [
       "cheap hobbies",
@@ -514,7 +514,7 @@ export const articles = [
   {
     slug: "how-to-start-air-dry-clay",
     short: "air-dry-clay",
-    status: "draft",
+    status: "published",
     board: "Creative Hobbies for Beginners",
     kw: [
       "air dry clay for beginners",
@@ -558,7 +558,7 @@ export const articles = [
   {
     slug: "watercolor-painting-for-beginners",
     short: "watercolor",
-    status: "draft",
+    status: "published",
     board: "Creative Hobbies for Beginners",
     kw: [
       "watercolor for beginners",
@@ -616,7 +616,7 @@ export const articles = [
   {
     slug: "how-to-start-embroidery",
     short: "embroidery",
-    status: "draft",
+    status: "published",
     board: "Cozy Hobbies",
     kw: [
       "embroidery for beginners",
@@ -664,7 +664,7 @@ export const articles = [
   {
     slug: "how-to-start-crocheting",
     short: "crochet",
-    status: "draft",
+    status: "published",
     board: "Cozy Hobbies",
     kw: [
       "crochet for beginners",
@@ -1141,9 +1141,9 @@ export const articles = [
     ],
   },
   {
-    slug: "how-to-plan-a-perfect-solo-saturday",
+    slug: "how-to-plan-a-solo-saturday",
     short: "solo-saturday",
-    status: "draft",
+    status: "published",
     board: "Solo Date Ideas",
     kw: [
       "solo saturday ideas",
@@ -1695,12 +1695,12 @@ export const extras = [
       }),
     ],
   },
-  // ---- budget tool and tonight tool (pages may not exist yet)
+  // ---- budget tool and tonight tool (both pages are published)
   {
     dest: "/tools/hobby-budget",
     campaign: "hobby-budget",
     kind: "tool",
-    status: "draft",
+    status: "published",
     board: "Affordable Adventures",
     short: "budget-tool",
     kw: [
@@ -1727,7 +1727,7 @@ export const extras = [
         ],
         title: "Hobby Budget Planner: What Will Your New Hobby Really Cost?",
         desc: "Map the must-haves, the nice-to-haves and a first-month cap before you buy. A free planning tool for hobby shopping.",
-        concept: "Process checklist for the budget tool (page pending)",
+        concept: "Process checklist for the budget tool ",
       }),
     ],
   },
@@ -1735,7 +1735,7 @@ export const extras = [
     dest: "/tools/tonight",
     campaign: "tonight",
     kind: "tool",
-    status: "draft",
+    status: "published",
     board: "After Work Activities",
     short: "tonight-tool",
     kw: [
@@ -1760,7 +1760,7 @@ export const extras = [
         ],
         title: "What Should I Do Tonight? A Quick Idea Generator",
         desc: "Tired, bored or somewhere in between? Five taps get you three ideas that fit your time, energy and budget tonight. No email, no account.",
-        concept: "Headline pin for the Tonight tool (page pending)",
+        concept: "Headline pin for the Tonight tool ",
       }),
     ],
   },

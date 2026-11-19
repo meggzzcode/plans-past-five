@@ -124,7 +124,7 @@
       "hobby": "pickleball",
       "note": "Simple rules, a small court and a lot of laughing. One of the friendliest ways to try a paddle sport. See [pickleball for beginners](/journal/pickleball-for-beginners).",
       "time": "60 min",
-      "cost": "Varies; check local courts",
+      "cost": "Often free on public courts",
       "company": "Social"
     },
     {
@@ -134,7 +134,7 @@
       "hobby": "tennis",
       "note": "Rallying is a workout disguised as a conversation. Start with a friend and a few lessons; [how to start playing tennis as an adult](/journal/how-to-start-playing-tennis-as-an-adult) covers the first session.",
       "time": "60 min",
-      "cost": "Varies",
+      "cost": "Public courts are often free; lessons extra",
       "company": "Social"
     },
     {
@@ -143,7 +143,6 @@
       "title": "Badminton or table tennis",
       "note": "Quick and social, and often on offer at community centers, so check locally. You'll move more than you expect.",
       "time": "45-60 min",
-      "cost": "Varies",
       "company": "Social"
     },
     {
@@ -161,7 +160,6 @@
       "title": "A group class you can hide in the back of",
       "note": "Dance, yoga, aqua aerobics, community fitness. Choose one that lists beginners and stand near the door.",
       "time": "45-60 min",
-      "cost": "Varies",
       "company": "Social"
     },
     {
@@ -176,7 +174,7 @@
       "hobby": "hiking",
       "note": "Start with an easy, marked trail and build up. Go with a friend, tell someone your route, check the weather and bring water.",
       "time": "1-3 hours",
-      "cost": "Varies",
+      "cost": "Often free",
       "company": "Social"
     },
     {
@@ -185,7 +183,6 @@
       "title": "Recreational cycling",
       "note": "Flat, scenic and easy to chat through. The [cycling guide](/journal/how-to-get-into-recreational-cycling-as-an-adult) covers the basics.",
       "time": "1 hour",
-      "cost": "Varies",
       "company": "Solo or social"
     },
     {
@@ -195,7 +192,7 @@
       "hobby": "birdwatching",
       "note": "Slow, but it adds up. A two-hour walk looking for birds covers more ground than you'd guess.",
       "time": "1-2 hours",
-      "cost": "Varies",
+      "cost": "Often free",
       "company": "Solo or social"
     },
     {
@@ -214,7 +211,6 @@
       "title": "Outdoor swimming or a local pool",
       "note": "If you like water, swimming is low-impact and a nice change of scene. Swim where a lifeguard is present, never swim alone, and follow local rules.",
       "time": "30-45 min",
-      "cost": "Varies",
       "company": "Social"
     },
     {
@@ -229,7 +225,6 @@
       "hobby": "roller-skating",
       "note": "A rink night with a disco ball beats a treadmill. While you learn, wear a helmet, wrist guards, and knee and elbow pads, and skate on a smooth paved surface or at a rink, not at night.",
       "time": "60 min",
-      "cost": "Varies",
       "company": "Social"
     },
     {
@@ -238,7 +233,6 @@
       "title": "Dance classes",
       "note": "Salsa, swing, line dancing, whatever sounds fun. Many beginner sessions don't expect a partner, but check with the class first.",
       "time": "60 min",
-      "cost": "Varies",
       "company": "Social"
     },
     {
@@ -262,7 +256,6 @@
       "hobby": "flower-arranging",
       "note": "Light gardening counts as gentle activity, and you end up with flowers or vegetables.",
       "time": "1-2 hours",
-      "cost": "Varies",
       "company": "Solo or social"
     },
     {
@@ -272,7 +265,6 @@
       "hobby": "thrifting",
       "note": "Make it a long walk between shops and carry a tote. Retail becomes cardio.",
       "time": "2-3 hours",
-      "cost": "Varies",
       "company": "Solo or social"
     },
     {

@@ -115,7 +115,7 @@
       "hobby": "picnicking",
       "note": "A blanket, something good to eat, somewhere green. The [picnic guide](/journal/how-to-plan-a-perfect-picnic) has the whole checklist.",
       "time": "2 hours",
-      "cost": "Varies",
+      "cost": "Groceries",
       "company": "Social"
     },
     {
@@ -125,7 +125,7 @@
       "hobby": "hiking",
       "note": "Pick an easy, well-marked trail, check the weather, carry water and tell someone where you're headed. Going with a friend is the safer choice when you can.",
       "time": "2-3 hours",
-      "cost": "Varies",
+      "cost": "Often free",
       "company": "Solo or social"
     },
     {
@@ -144,7 +144,7 @@
       "hobby": "thrifting",
       "note": "Go early with a tote and a small budget. Come home with one thing you really like.",
       "time": "2 hours",
-      "cost": "Varies",
+      "cost": "A small budget",
       "company": "Solo or social",
       "first": "Decide on a small budget and one thing to look for before you leave the house."
     },
@@ -160,7 +160,7 @@
       "hobby": "air-dry-clay",
       "note": "Air-dry clay, a rolling pin or a bottle, and an afternoon. Paint it once it has dried. [Here's the beginner guide](/journal/how-to-start-air-dry-clay).",
       "time": "1-2 hours",
-      "cost": "Varies",
+      "cost": "Low cost",
       "company": "Solo or social"
     },
     {
@@ -170,7 +170,7 @@
       "hobby": "baking",
       "note": "The recipe you've been avoiding: cinnamon rolls, a layer cake, a proper loaf. Weekends exist for projects with rising time.",
       "time": "2-4 hours",
-      "cost": "Varies",
+      "cost": "Groceries",
       "company": "Solo or social",
       "first": "Read the whole recipe on Friday and check you have the ingredients and the time."
     },
@@ -181,7 +181,7 @@
       "hobby": "junk-journaling",
       "note": "Gather the week's paper scraps and build a spread. [Here's how](/journal/how-to-start-junk-journaling).",
       "time": "1 hour",
-      "cost": "Varies",
+      "cost": "Free to low cost",
       "company": "Solo"
     },
     {
@@ -190,7 +190,7 @@
       "title": "Cook something slow and fancy",
       "note": "A recipe with several steps, music on, and the cooking as the evening's activity rather than the chore before it.",
       "time": "2-3 hours",
-      "cost": "Varies",
+      "cost": "Groceries",
       "company": "Solo or social"
     },
     {
@@ -205,7 +205,7 @@
       "hobby": "craft-nights",
       "note": "Snacks, supplies, everyone makes something, even a first [crochet](/journal/how-to-start-crocheting) square, an [embroidery](/journal/how-to-start-embroidery) hoop or a little [watercolor](/journal/watercolor-painting-for-beginners) painting. A craft night is among the lowest-effort ways to see friends properly. [Here's how to host one](/journal/how-to-host-a-craft-night).",
       "time": "2-3 hours",
-      "cost": "Varies",
+      "cost": "Low cost",
       "company": "Social"
     },
     {
@@ -214,7 +214,7 @@
       "title": "Hold a board-game afternoon",
       "note": "Bring out a game and a pot of something warm. Old-fashioned, and reliably better than expected.",
       "time": "2 hours",
-      "cost": "Varies",
+      "cost": "Free if you own one",
       "company": "Social"
     },
     {
@@ -232,7 +232,7 @@
       "title": "Invite someone on a walk and coffee",
       "note": "Easier to say yes to than dinner, and just as good for catching up.",
       "time": "1-2 hours",
-      "cost": "Varies",
+      "cost": "Price of a coffee",
       "company": "Social"
     },
     {
@@ -241,7 +241,7 @@
       "title": "Cook a big batch together",
       "note": "Make one large pot of something with a friend, then split it into containers for the week.",
       "time": "2-3 hours",
-      "cost": "Varies",
+      "cost": "Groceries",
       "company": "Social"
     },
     {
@@ -256,7 +256,7 @@
       "hobby": "museum-exploring",
       "note": "Some have free days or reduced entry, so check locally. Choose one room, stay an hour and leave before you're flagging.",
       "time": "1-2 hours",
-      "cost": "Varies",
+      "cost": "Some free days",
       "company": "Solo or social"
     },
     {
@@ -265,7 +265,7 @@
       "title": "Poke around a secondhand shop, bookstore or library",
       "note": "Set a small budget and one rule: buy or borrow only what you can picture in your home.",
       "time": "1-2 hours",
-      "cost": "Varies",
+      "cost": "A small budget",
       "company": "Solo or social"
     },
     {
@@ -274,7 +274,7 @@
       "title": "Be a tourist in your own town",
       "note": "Walk the main street as if you were visiting. Look up. Read the signs you've passed a hundred times.",
       "time": "2 hours",
-      "cost": "Varies",
+      "cost": "Free",
       "company": "Solo or social"
     },
     {
@@ -288,7 +288,6 @@
       "title": "Watch a film in broad daylight",
       "note": "Afternoon viewing feels delightfully illicit. Draw the curtains and make it an event.",
       "time": "2 hours",
-      "cost": "Varies",
       "company": "Solo or social"
     },
     {

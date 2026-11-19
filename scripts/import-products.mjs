@@ -49,7 +49,7 @@ export const MAX_SHRINK = 0.3;
 /** Number of products in an existing generated catalog file (0 when missing or unreadable). */
 export function countExistingProducts(file) {
   try {
-    return (readFileSync(file, "utf8").match(/^ {4}"id": /gm) ?? []).length;
+    return (readFileSync(file, "utf8").match(/^ {4}"?id"?: /gm) ?? []).length;
   } catch {
     return 0;
   }

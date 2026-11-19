@@ -59,7 +59,7 @@
   "body": [
     {
       "type": "p",
-      "text": "Picture it: six friends round one table, the same little sunset taking shape on six canvases, and every single one of them different. That's a paint night, and the host's job is simple: choose one easy painting, set the table and keep the evening moving. Skill doesn't come into it."
+      "text": "Six friends round one table, the same little sunset taking shape on six canvases and every one of them different: that's a paint night, and the host's job is simple: choose one easy painting, set the table and keep the evening moving. Skill doesn't come into it."
     },
     {
       "type": "p",
@@ -118,8 +118,8 @@
         "detail-brushes",
         "conversation-cards"
       ],
-      "title": "Paint night, boxed",
-      "dek": "Start with this: a group kit means one purchase instead of six sets of everything, and fine brushes let guests add details like stars and stripes."
+      "title": "Set the table for six painters",
+      "dek": "A multi-pack of small canvases and a set of brushes cover the table, and a fine brush lets guests add stars and stripes. Acrylic paint in the basic colors above is the one other thing to have ready."
     },
     {
       "type": "h2",
@@ -150,6 +150,10 @@
         "**Painting, about 90 minutes:** with a break for drying and conversation.",
         "**Gallery, 15 minutes:** prop the canvases up and admire them."
       ]
+    },
+    {
+      "type": "makePlan",
+      "text": "Want the night to actually happen? Pick the date and the painting, then pencil it into Make Some Plans."
     },
     {
       "type": "p",
@@ -198,10 +202,6 @@
     {
       "type": "p",
       "text": "Send the invitation about a week ahead, and ask what guests like to eat and drink. Craft nights follow a similar shape, and [How to Host a Craft Night](/journal/how-to-host-a-craft-night) covers rotating themes. Want to keep painting afterwards? [Watercolor painting for beginners](/journal/watercolor-painting-for-beginners) is a gentle next step. For gatherings without alcohol at the center, see [Girls' Night Ideas That Aren't Drinks](/journal/girls-night-ideas-that-arent-drinks)."
-    },
-    {
-      "type": "makePlan",
-      "text": "Ready to put it on the calendar? Pick the night, choose your painting and let Make Some Plans help you fit it into the week."
     },
     {
       "type": "ifYouLoved",

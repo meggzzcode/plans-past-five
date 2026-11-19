@@ -3,7 +3,7 @@
 > **Can a non-technical buyer manage products alone? No, not today.** The CSV importer (`bun run import:products file.csv`) needs a command line, Bun and git, and affiliate settings live in `src/config/affiliate.ts`. Pages CMS does not cover them (and should not: a wrong affiliate value breaks tracking). No new infrastructure was built. Lowest-effort options:
 >
 > 1. **Lovable chat / an AI assistant** on the connected project. Prompts that fit: "In src/data/catalog.ts add a verified product with ASIN B0XXXXXXXX, name ..., role ..., for hobby ... following the existing records and rules in docs/buyer/PRODUCT-MANAGEMENT.md; do not add prices or ratings; run the tests." and "In src/config/affiliate.ts set the Amazon tag to YOURTAG-20 and nothing else; run the tests." Then check the diff Lovable shows, and publish in Netlify (Deploys > Trigger deploy > Deploy site). Verify afterwards that a product link opens the right Amazon page.
-> 2. **A developer for about 30 minutes** per batch of new products or for an affiliate switch: hand them the filled CSV (`docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv`) and this file.
+> 2. **A developer for about 30 minutes** per batch of new products or for an affiliate switch: hand them the filled rows for `docs/commerce/product-research.csv` (the canonical file; import with `bun run import:products docs/commerce/product-research.csv`) and this file.
 >
 > Researching the product (checking the listing) is still your job in either case. Publishing uses the same one-button workflow as articles (`docs/buyer/NETLIFY-CREDITS-AND-RELEASES.md`).
 
@@ -32,7 +32,7 @@ Edit its record in `src/data/products.ts`. Keep six per collection unless you al
 
 ## Add a verified product
 
-Full process: `docs/commerce/PRODUCT-RESEARCH.md`. Short version: fill a row of `docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv` from the live listing and manufacturer page, run `bun run import:products path/to/your.csv`, run tests, then record it in `docs/commerce/AMAZON-PRODUCT-CATALOG.md`.
+Full process: `docs/commerce/PRODUCT-RESEARCH.md`. Short version: add a row to `docs/commerce/product-research.csv` from the live listing and manufacturer page (columns: `docs/commerce/PRODUCT-RESEARCH-TEMPLATE.md`), run `bun run import:products docs/commerce/product-research.csv`, run tests, then record it in `docs/commerce/AMAZON-PRODUCT-CATALOG.md`.
 
 ## Remove or retire a product
 

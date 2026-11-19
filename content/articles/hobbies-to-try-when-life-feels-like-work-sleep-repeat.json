@@ -253,7 +253,7 @@
       "n": 19,
       "title": "Tennis",
       "hobby": "tennis",
-      "note": "Golden-hour rallies with a friend are a lovely way to move. You don't need to keep score for months. Many public courts are free to use, so start by rallying on one near you."
+      "note": "Evening rallies with a friend are a lovely way to move. You don't need to keep score for months. Many public courts are free to use, so start by rallying on one near you."
     },
     {
       "type": "item",
@@ -412,8 +412,8 @@
       ]
     },
     {
-      "type": "makePlan",
-      "text": "Still not sure? Take the two-minute quiz and get three to five hobbies matched to your time, budget and energy."
+      "type": "p",
+      "text": "Still not sure? Take the short [Hobby Finder quiz](/hobby-finder) and get three to five hobbies matched to your time, budget and energy."
     },
     {
       "type": "p",

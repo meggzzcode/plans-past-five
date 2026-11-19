@@ -173,8 +173,8 @@
       "dek": "Conversation cards for the quiet moments, a book light for late chapters and a journal for the thoughts you'll want to bring."
     },
     {
-      "type": "makePlan",
-      "text": "Got the invite drafted? Pick a date, send it to the group chat and let Make Some Plans help you hold the night."
+      "type": "p",
+      "text": "Got the invite drafted? Send it to the group chat with a date and see who's in."
     },
     {
       "type": "p",

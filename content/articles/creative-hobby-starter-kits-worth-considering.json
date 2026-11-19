@@ -123,40 +123,35 @@
       "n": 1,
       "title": "Embroidery",
       "hobby": "embroidery",
-      "note": "A strong candidate for a kit: it puts everything in one box so you can start stitching straight away. [How to start embroidery](/journal/how-to-start-embroidery) covers the first stitches. Look for a small design, a printed pattern, a hoop and a clear stitch guide.",
-      "cost": "Varies"
+      "note": "A strong candidate for a kit: it puts everything in one box so you can start stitching straight away. [How to start embroidery](/journal/how-to-start-embroidery) covers the first stitches. Look for a small design, a printed pattern, a hoop and a clear stitch guide."
     },
     {
       "type": "item",
       "n": 2,
       "title": "Watercolor",
       "hobby": "watercolor-painting",
-      "note": "Often worth buying loose, since paper matters most. [Watercolor painting for beginners](/journal/watercolor-painting-for-beginners) covers a first session. Check what paper a kit includes, and if you buy a set, consider pairing it with a proper pad.",
-      "cost": "Varies"
+      "note": "Often worth buying loose, since paper matters most. [Watercolor painting for beginners](/journal/watercolor-painting-for-beginners) covers a first session. Check what paper a kit includes, and if you buy a set, consider pairing it with a proper pad."
     },
     {
       "type": "item",
       "n": 3,
       "title": "Air-dry clay",
       "hobby": "air-dry-clay",
-      "note": "[How to start air-dry clay](/journal/how-to-start-air-dry-clay) covers a first project. Fine as a kit if there is enough clay for several pieces, a few tools and paint. Read the label for age notes, and don't use finished pieces for food or drink, even if sealed.",
-      "cost": "Varies"
+      "note": "[How to start air-dry clay](/journal/how-to-start-air-dry-clay) covers a first project. Fine as a kit if there is enough clay for several pieces, a few tools and paint. Read the label for age notes, and don't use finished pieces for food or drink, even if sealed."
     },
     {
       "type": "item",
       "n": 4,
       "title": "Junk journaling",
       "hobby": "junk-journaling",
-      "note": "Usually better loose: a notebook, glue and scraps. The [junk journaling guide](/journal/how-to-start-junk-journaling) covers a first page, and the [supplies guide](/journal/junk-journaling-supplies-for-beginners) sorts what is worth buying.",
-      "cost": "Varies"
+      "note": "Usually better loose: a notebook, glue and scraps. The [junk journaling guide](/journal/how-to-start-junk-journaling) covers a first page, and the [supplies guide](/journal/junk-journaling-supplies-for-beginners) sorts what is worth buying."
     },
     {
       "type": "item",
       "n": 5,
       "title": "Ceramic and pottery painting",
       "hobby": "pottery-painting",
-      "note": "Kits can suit this well, but check whether pieces need firing or are decorative only, and what any glaze label says about use. Don't treat decorative-only pieces as food safe.",
-      "cost": "Varies"
+      "note": "Kits can suit this well, but check whether pieces need firing or are decorative only, and what any glaze label says about use. Treat painted pottery as display-only unless the kit or studio says it is food safe for your use."
     },
     {
       "type": "h2",

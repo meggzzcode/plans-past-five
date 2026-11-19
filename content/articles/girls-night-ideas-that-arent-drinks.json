@@ -109,7 +109,7 @@
       "hobby": "craft-nights",
       "note": "One simple craft, a big table, snacks. Everyone makes something a bit different and shows it off at the end. For a keepsake, [air-dry clay](/journal/how-to-start-air-dry-clay), [embroidery](/journal/how-to-start-embroidery) and [watercolor](/journal/watercolor-painting-for-beginners) all suit a table of friends.",
       "time": "2-3 hours",
-      "cost": "Varies",
+      "cost": "Depends on the craft",
       "company": "3-8 friends"
     },
     {
@@ -119,7 +119,7 @@
       "hobby": "baking",
       "note": "Bake or buy plain cookies, set out icing and sprinkles and hold a very friendly contest.",
       "time": "2 hours",
-      "cost": "Varies",
+      "cost": "Cookies and icing",
       "company": "3-8 friends"
     },
     {
@@ -137,7 +137,6 @@
       "title": "Spa night in",
       "note": "Face masks if you like them, foot soaks, nail polish, a playlist. Keep it low-key and follow product labels.",
       "time": "2 hours",
-      "cost": "Varies",
       "company": "2-6 friends"
     },
     {
@@ -146,7 +145,7 @@
       "title": "Mocktail or tea tasting",
       "note": "Everyone brings an ingredient. Rank the results, crown a winner and ask about dietary needs beforehand.",
       "time": "90 min",
-      "cost": "Varies",
+      "cost": "Everyone brings an ingredient",
       "company": "3-8 friends"
     },
     {
@@ -165,7 +164,6 @@
       "hobby": "friendship-bracelets",
       "note": "Matching bracelets are quick, forgiving for beginners and lovely to hand over at the end.",
       "time": "90 min",
-      "cost": "Varies",
       "company": "2-6 friends"
     },
     {
@@ -175,7 +173,6 @@
       "hobby": "mahjong",
       "note": "Ideal if one friend already plays. Sets and rules differ by version, so agree which you're playing first; the [mahjong night guide](/journal/how-to-host-a-mahjong-night) covers how to start.",
       "time": "2-3 hours",
-      "cost": "Varies",
       "company": "4 friends"
     },
     {
@@ -184,7 +181,6 @@
       "title": "Movie marathon with a theme",
       "note": "Choose three films around a theme, like underrated rom-coms, and give each a matching snack.",
       "time": "4-6 hours",
-      "cost": "Varies",
       "company": "3-8 friends"
     },
     {
@@ -213,7 +209,7 @@
       "hobby": "pottery-painting",
       "note": "Many studios let you paint a ready-made piece and then glaze and fire it for you. Group bookings and minimums vary, so check ahead. Prefer to stay in? See [how to host a paint night at home](/journal/how-to-host-a-paint-night-at-home).",
       "time": "2 hours",
-      "cost": "Varies",
+      "cost": "Studio fee",
       "company": "2-8 friends"
     },
     {
@@ -222,7 +218,7 @@
       "title": "Drop-in class",
       "note": "Dance, ceramics, life drawing, cooking. Many studios offer a single session with no commitment.",
       "time": "90 min",
-      "cost": "Varies",
+      "cost": "Class fee",
       "company": "2-6 friends"
     },
     {
@@ -232,7 +228,7 @@
       "hobby": "pickleball",
       "note": "Many public courts are free or low cost, and beginner doubles is chatty and forgiving. Borrow equipment if you can. Courts may have booking or time rules, so check locally.",
       "time": "90 min",
-      "cost": "Varies",
+      "cost": "Often free",
       "company": "2-4 friends"
     },
     {
@@ -242,7 +238,7 @@
       "hobby": "picnicking",
       "note": "Everyone buys one thing, then you assemble the lot on a blanket in a nearby park.",
       "time": "2-3 hours",
-      "cost": "Varies",
+      "cost": "What you buy",
       "company": "3-6 friends"
     },
     {
@@ -262,7 +258,6 @@
       "hobby": "museum-exploring",
       "note": "Choose one exhibit, then debrief over coffee. Good for friends who enjoy a post-mortem.",
       "time": "2-3 hours",
-      "cost": "Varies",
       "company": "2-5 friends"
     },
     {
@@ -272,7 +267,6 @@
       "hobby": "hiking",
       "note": "Pick a popular, well-marked trail in daylight, tell someone your route, check the weather and pack water. Stay together as a group.",
       "time": "2-3 hours",
-      "cost": "Varies",
       "company": "2-6 friends"
     },
     {
@@ -282,7 +276,7 @@
       "hobby": "reading",
       "note": "Each friend chooses a book for another within a budget cap, then everyone reads a first page aloud over a snack.",
       "time": "2 hours",
-      "cost": "Varies",
+      "cost": "Your budget cap",
       "company": "3-6 friends"
     },
     {
@@ -292,7 +286,6 @@
       "hobby": "roller-skating",
       "note": "Pure nostalgia. Everyone wobbles, which levels the field. Wear a helmet, wrist guards, and knee and elbow pads, and stay on the rink or a smooth paved surface in daylight.",
       "time": "2 hours",
-      "cost": "Varies",
       "company": "3-8 friends"
     },
     {
@@ -307,7 +300,6 @@
       "hobby": "book-clubs",
       "note": "Read a short story or essay instead of a novel and talk it over. If it goes well, make it regular with [how to start a book club](/journal/how-to-start-a-book-club).",
       "time": "2 hours",
-      "cost": "Varies",
       "company": "4-8 friends"
     },
     {
@@ -316,7 +308,6 @@
       "title": "Conversation-cards dinner",
       "note": "Draw a card between courses. Works well with friends you're sure you already know.",
       "time": "2-3 hours",
-      "cost": "Varies",
       "company": "3-6 friends"
     },
     {
@@ -325,7 +316,7 @@
       "title": "Vision-board and goals evening",
       "note": "Old magazines, scissors, glue sticks. Share one goal each and set a reminder to check in three months on.",
       "time": "2 hours",
-      "cost": "Varies",
+      "cost": "Low cost",
       "company": "3-6 friends"
     },
     {
@@ -335,7 +326,6 @@
       "hobby": "jigsaw-puzzles",
       "note": "Tip a puzzle onto the table and let people drift in and out. Good for friends who don't want to perform.",
       "time": "2-3 hours",
-      "cost": "Varies",
       "company": "2-5 friends"
     },
     {
@@ -344,7 +334,7 @@
       "title": "Walk-and-talk with a stop for treats",
       "note": "A loop around a park with ice cream or coffee halfway. Walking side by side makes talking easy.",
       "time": "90 min",
-      "cost": "Varies",
+      "cost": "Price of a treat",
       "company": "2-4 friends"
     },
     {
@@ -363,7 +353,7 @@
       "title": "Letter-writing night",
       "note": "Everyone writes postcards to people who aren't in the room. Bring stamps and good pens.",
       "time": "90 min",
-      "cost": "Varies",
+      "cost": "Stamps and pens",
       "company": "3-6 friends"
     },
     {

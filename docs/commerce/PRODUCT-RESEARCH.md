@@ -16,7 +16,7 @@ Who does what (from `docs/TURNKEY-PLAN.md`): Cowork (browser agent with the owne
 8. **Map it.** Which hobbies, collections (`/shop/<slug>` collection slugs), articles and kit slots does it fill?
 9. **Image rights.** Default `imageRights: "none"` (photo-less cards). Never copy retailer images without written permission; record any permission in `docs/IMAGE-LICENSES.md`.
 10. **Set status.** `candidate` until a second person or the lead has re-checked; `verified` only after.
-11. **Import and test.** Fill the CSV template (`docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv`), then `bun run import:products` (script `scripts/import-products.mjs`; wired in `package.json`). Then `bunx vitest run` and `bunx tsc --noEmit`.
+11. **Import and test.** Add the row to `docs/commerce/product-research.csv` (the one canonical file; blank template and column guide: `PRODUCT-RESEARCH-TEMPLATE.csv` / `.md`), then `bun run import:products docs/commerce/product-research.csv --check` and, if clean, the same command without `--check`. Then `bunx vitest run` and `bunx tsc --noEmit`.
 
 ## Fields (from `CatalogProduct` in `src/data/catalog.ts`)
 

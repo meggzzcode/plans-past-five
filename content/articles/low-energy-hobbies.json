@@ -98,7 +98,7 @@
       "title": "An audiobook and a gentle chore",
       "note": "Pair a story with something the hands can do: folding laundry, watering plants, sorting the drawer of mystery cables. Check whether your library lends audiobooks; what's on offer varies.",
       "time": "30 min",
-      "cost": "Varies"
+      "cost": "Often free with a library card"
     },
     {
       "type": "item",
@@ -121,8 +121,7 @@
       "n": 7,
       "title": "Plant care, slowly",
       "note": "Wipe the leaves, check the soil with a finger, repot the one that's outgrown its home. Plants work on a slow clock, which is rather the point.",
-      "time": "10-20 min",
-      "cost": "Varies"
+      "time": "10-20 min"
     },
     {
       "type": "h2",
@@ -136,7 +135,7 @@
       "hobby": "jigsaw-puzzles",
       "note": "Tip out the pieces, find the straight edges and let your mind drift. A puzzle on a tray can be carried off the table when guests come, and there's no penalty for leaving it half done.",
       "time": "20-60 min",
-      "cost": "Varies"
+      "cost": "Often cheaper secondhand"
     },
     {
       "type": "item",
@@ -145,7 +144,7 @@
       "hobby": "paint-by-numbers",
       "note": "Someone else has already made the decisions. Match the number to the color, fill the shape, move on. One corner is a full evening's work and nobody will check.",
       "time": "20-45 min",
-      "cost": "Varies"
+      "cost": "Low cost"
     },
     {
       "type": "item",
@@ -153,8 +152,7 @@
       "title": "Knitting",
       "hobby": "knitting",
       "note": "Once you've got the basic stitch, a plain scarf is mostly rhythm. It pairs well with a rewatch, since you don't need to follow every line of dialogue. [Crochet](/journal/how-to-start-crocheting) works the same way, and a first flat square is a gentle place to begin.",
-      "time": "20-60 min",
-      "cost": "Varies"
+      "time": "20-60 min"
     },
     {
       "type": "item",
@@ -163,7 +161,7 @@
       "hobby": "embroidery",
       "note": "A beginner kit arrives with the design already printed on the fabric. Three or four stitches will get you a tiny flower, and a tiny flower is plenty. The [embroidery](/journal/how-to-start-embroidery) guide shows the first stitches.",
       "time": "20-45 min",
-      "cost": "Varies"
+      "cost": "Low cost"
     },
     {
       "type": "item",
@@ -172,7 +170,7 @@
       "hobby": "friendship-bracelets",
       "note": "Pin a few threads to a cushion and knot a simple pattern on autopilot. Make the first one for yourself, since you're also the one who needs it.",
       "time": "20-40 min",
-      "cost": "Varies"
+      "cost": "Low cost"
     },
     {
       "type": "h2",
@@ -181,7 +179,7 @@
     },
     {
       "type": "p",
-      "text": "Most of these start with what's already in the house. A few small comforts make a tired evening feel like a treat: a clip-on reading light so you can read in your favorite corner, a blanket you love and an embroidery kit with the design already planned, so there's nothing to decide. A library book, a secondhand jigsaw or plain yarn from the basic range are happy starting points too, and [affordable hobbies](/journal/affordable-hobbies-under-25) has more."
+      "text": "Most of these start with what's already in the house. A few small comforts make a tired evening feel like a treat: a clip-on reading light so you can read in your favorite corner, a blanket you love and an embroidery kit with the design already planned, so there's nothing to decide. A library book, a secondhand jigsaw or plain yarn from the basic range are happy starting points too, and [affordable hobbies](/journal/affordable-hobbies-under-25) have more."
     },
     {
       "type": "h2",
@@ -199,15 +197,14 @@
     {
       "type": "shopHobby",
       "productIds": [
-        "book-lights",
         "embroidery-kits"
       ],
-      "title": "Make your cozy corner even cozier",
-      "dek": "A clip-on light for reading anywhere, and an embroidery kit with the pattern already planned for you."
+      "title": "Something gentle for your hands",
+      "dek": "A beginner embroidery kit arrives with the design already planned, with small scissors for the thread, so there is nothing to decide on a tired night."
     },
     {
-      "type": "makePlan",
-      "text": "Pick one for tonight and save it. Make Some Plans can match a low-energy evening to your week."
+      "type": "p",
+      "text": "Keep this list where you'll see it on the next flat evening, and pick whichever line made you exhale."
     },
     {
       "type": "p",

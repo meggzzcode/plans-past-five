@@ -163,8 +163,8 @@
       ]
     },
     {
-      "type": "makePlan",
-      "text": "Pick tonight's book, open a fresh page and save a reading evening in Make Some Plans."
+      "type": "p",
+      "text": "Which book are you on right now? Write its title at the top of a fresh page tonight, and the journal has begun."
     },
     {
       "type": "p",

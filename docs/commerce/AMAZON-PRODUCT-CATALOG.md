@@ -67,12 +67,7 @@ How the pieces fit together: `docs/commerce/SHOPPABLE-ARTICLE-SYSTEM.md`. Column
 
 ## CSV workflow
 
-1. Copy the header from `docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv` (ids beginning `example-` are template rows and are rejected on import).
-2. One row per product. Researchers (Cowork) fill rows from the live pages. Leave a cell empty rather than guess.
-3. Run `bun run import:products path/to/your.csv`. It validates and regenerates `src/data/catalog.generated.ts` (never hand-edit that file; its header says so).
-4. Fix any reported problems and re-run until clean.
-5. Update the register table above with id, name, brand, ASIN, ordinary URL and status for every row.
-6. Run tests and typecheck, then review the pages that now show the product.
+Canonical product source: `docs/commerce/product-research.csv`. Validate with `bun run import:products docs/commerce/product-research.csv --check`; import with `bun run import:products docs/commerce/product-research.csv`. Column guide: `docs/commerce/PRODUCT-RESEARCH-TEMPLATE.md`. Researchers (Cowork) work from `docs/cowork/PRODUCT-VERIFICATION-QUEUE.csv` (same columns) and their verified rows are merged into the canonical file. Never hand-edit `src/data/catalog.generated.ts`. Update the register table above after every import, then run tests and typecheck.
 
 ## Rules
 

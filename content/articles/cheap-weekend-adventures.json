@@ -58,7 +58,7 @@
   "body": [
     {
       "type": "p",
-      "text": "You don't need a booking, an upgrade or a paid sunset to have an adventure. Most towns have a trail, a park, a library branch and a market that can fill a Saturday for little more than a fare, a coffee and a snack. Think a river path with a bakery bag, a library branch you've never walked into, a flea market at nine a.m."
+      "text": "You don't need a booking, an upgrade or a paid sunset to have an adventure. Most towns have a trail, a park, a library branch and a market that can fill a Saturday for little more than a fare, a coffee and a snack. Think a river path with a thermos, a library branch you've never walked into, a flea market at nine a.m."
     },
     {
       "type": "p",
@@ -90,7 +90,7 @@
       "hobby": "hiking",
       "note": "Search your area for a short, marked trail under two hours, and wear comfortable shoes. Go with a friend, tell someone your route, check the weather and carry water.",
       "time": "2 hours",
-      "cost": "Varies",
+      "cost": "Often free",
       "company": "Social"
     },
     {
@@ -99,7 +99,7 @@
       "title": "A botanical or public garden",
       "note": "Many have free or low-cost days. Look for seasonal displays, shaded paths and benches.",
       "time": "2 hours",
-      "cost": "Varies",
+      "cost": "Free or low-cost days",
       "company": "Solo or social"
     },
     {
@@ -108,7 +108,7 @@
       "title": "The big park on the far side of town",
       "note": "Not your nearest one; the one you always mean to visit. Take a ball, a blanket and a book.",
       "time": "2-3 hours",
-      "cost": "Varies",
+      "cost": "Often free",
       "company": "Solo or social"
     },
     {
@@ -117,7 +117,7 @@
       "title": "A river or lakeside path",
       "note": "Water makes any walk feel like a small trip. Walk to the first bench, sit, then carry on.",
       "time": "1-2 hours",
-      "cost": "Varies",
+      "cost": "Often free",
       "company": "Solo or social"
     },
     {
@@ -126,7 +126,7 @@
       "title": "A sunrise or sunset spot",
       "note": "Find a high point or an open field. Check local times and bring a layer.",
       "time": "1 hour",
-      "cost": "Varies",
+      "cost": "Free",
       "company": "Solo or social"
     },
     {
@@ -134,9 +134,9 @@
       "n": 6,
       "title": "A morning of birdwatching",
       "hobby": "birdwatching",
-      "note": "A pond, wetland or quiet corner of a park. Bring a notebook and a free bird-ID app.",
+      "note": "A pond, wetland or quiet corner of a park. Bring a notebook and a bird-ID app or a field guide.",
       "time": "1-2 hours",
-      "cost": "Varies",
+      "cost": "Often free",
       "company": "Solo or social"
     },
     {
@@ -151,7 +151,7 @@
       "hobby": "museum-exploring",
       "note": "Many offer free hours, pay-what-you-can days or local discounts. Look up your nearest.",
       "time": "1-2 hours",
-      "cost": "Varies",
+      "cost": "Free or discounted days",
       "company": "Solo or social"
     },
     {
@@ -161,7 +161,7 @@
       "hobby": "reading",
       "note": "Branches differ. Some have gardens, exhibitions or beautiful reading rooms. Borrow something unexpected.",
       "time": "1 hour",
-      "cost": "Varies",
+      "cost": "Often free",
       "company": "Solo"
     },
     {
@@ -170,7 +170,7 @@
       "title": "A free gallery or art space",
       "note": "Small galleries and community spaces often show local work at no charge. Choose the piece you'd take home.",
       "time": "1 hour",
-      "cost": "Varies",
+      "cost": "Often free",
       "company": "Solo or social"
     },
     {
@@ -179,7 +179,7 @@
       "title": "A community event or open day",
       "note": "Check notice boards, library bulletins and neighborhood groups. Some events are free.",
       "time": "2 hours",
-      "cost": "Varies",
+      "cost": "Some events are free",
       "company": "Social"
     },
     {
@@ -189,7 +189,7 @@
       "hobby": "nature-photography",
       "note": "Walk it like a visitor. Read the plaques, look above the shopfronts, take a few photographs.",
       "time": "1-2 hours",
-      "cost": "Varies",
+      "cost": "Free",
       "company": "Solo or social"
     },
     {
@@ -198,7 +198,6 @@
       "title": "A quiet public building",
       "note": "Many places of worship and historic halls welcome visitors for a look around. Follow local etiquette and dress codes.",
       "time": "30-60 min",
-      "cost": "Varies",
       "company": "Solo"
     },
     {
@@ -213,7 +212,7 @@
       "hobby": "thrifting",
       "note": "Visit three in an afternoon with a small budget. Look for one thing you'd never buy new.",
       "time": "2 hours",
-      "cost": "Varies",
+      "cost": "Your small budget",
       "company": "Solo or social"
     },
     {
@@ -222,7 +221,7 @@
       "title": "A farmers' or flea market",
       "note": "Go early. Bring a tote, a little cash and a plan to taste something new.",
       "time": "2 hours",
-      "cost": "Varies",
+      "cost": "A little cash",
       "company": "Solo or social"
     },
     {
@@ -231,7 +230,7 @@
       "title": "A secondhand bookshop",
       "note": "Head for a section you never visit and buy one book on instinct.",
       "time": "1 hour",
-      "cost": "Varies",
+      "cost": "The price of one book",
       "company": "Solo"
     },
     {
@@ -240,7 +239,7 @@
       "title": "A neighborhood you never go to",
       "note": "Pick one on the map, walk its main street and have a small snack somewhere that isn't on a tourist list.",
       "time": "2 hours",
-      "cost": "Varies",
+      "cost": "Price of a snack",
       "company": "Solo or social"
     },
     {
@@ -264,7 +263,7 @@
       "hobby": "volunteering",
       "note": "Community gardens, charity shops and clean-up days often welcome one-off helpers. Contact the organizers first.",
       "time": "2-3 hours",
-      "cost": "Varies",
+      "cost": "Free",
       "company": "Solo or social"
     },
     {
@@ -273,7 +272,7 @@
       "title": "A free or pay-what-you-can class",
       "note": "Community centers and libraries often run beginner sessions. Try something you've never done.",
       "time": "1-2 hours",
-      "cost": "Varies",
+      "cost": "Free or pay what you can",
       "company": "Solo or social"
     },
     {
@@ -283,7 +282,7 @@
       "hobby": "picnicking",
       "note": "Everyone brings one dish. A feast on a tiny budget, with logistics that mostly look after themselves.",
       "time": "2-3 hours",
-      "cost": "Varies",
+      "cost": "One dish each",
       "company": "Social"
     },
     {
@@ -292,7 +291,7 @@
       "title": "A group walk",
       "note": "Ask a few friends to meet at a trailhead or park. Finish with tea or a shared snack.",
       "time": "2 hours",
-      "cost": "Varies",
+      "cost": "Free, tea optional",
       "company": "Social"
     },
     {
@@ -307,7 +306,7 @@
       "hobby": "outdoor-sketching",
       "note": "Take a pencil and a small sketchbook somewhere with a view and draw what's in front of you for an hour. Fancy adding color? [Watercolor painting for beginners](/journal/watercolor-painting-for-beginners) shows how small the setup can be.",
       "time": "1-2 hours",
-      "cost": "Varies",
+      "cost": "A pencil and a sketchbook",
       "company": "Solo"
     },
     {
@@ -316,7 +315,7 @@
       "title": "A bike or bus ride to the end of the line",
       "note": "Choose a route, get off at the last stop and have a look around. Bring a map or a charged phone. If you would rather ride, [how to get into recreational cycling as an adult](/journal/how-to-get-into-recreational-cycling-as-an-adult) starts from a borrowed bike.",
       "time": "2-3 hours",
-      "cost": "Varies",
+      "cost": "Bus fare, or free by bike",
       "company": "Solo or social"
     },
     {
@@ -325,7 +324,7 @@
       "title": "A stargazing night",
       "note": "Find a dark spot away from streetlights, bring a blanket and a flask, and check the forecast for clear skies. Go with a friend or tell someone where you'll be.",
       "time": "1-2 hours",
-      "cost": "Varies",
+      "cost": "Free",
       "company": "Solo or social"
     },
     {
@@ -334,7 +333,6 @@
       "title": "A day as a tourist in your own city",
       "note": "Build a mini itinerary: morning walk, lunch, a gallery, an evening view. Do it with a visitor's curiosity.",
       "time": "Half to full day",
-      "cost": "Varies",
       "company": "Solo or social"
     },
     {

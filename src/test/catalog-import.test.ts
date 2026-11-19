@@ -221,7 +221,10 @@ describe("spreadsheet export quirks", () => {
     expect(r.errors.join("\n")).toMatch(/never closed/);
   });
   it("flags a row with more cells than the header (an unquoted comma)", () => {
-    const text = csv([good]).replace("A set of washi tape rolls.", "A set, of washi tape rolls.");
+    const text = csv([{ ...good, notes: "n" }]).replace(
+      "A set of washi tape rolls.",
+      "A set, of washi tape rolls.",
+    );
     const r = importCsv(text, known, NOW);
     expect(r.errors.join("\n")).toMatch(/line 2: has \d+ cells but the header has \d+ columns/);
   });
@@ -452,7 +455,12 @@ describe("importer safety (CLI against temp copies)", () => {
     expect(current(dir)).toBe(before);
   });
   it("a missing file path is refused", () => {
-    refuses("", /file not found/, []);
+    const dir = workdir();
+    const before = current(dir);
+    const r = cli(dir, [path.join(dir, "nope.csv")]);
+    expect(r.code).toBe(1);
+    expect(r.out).toMatch(/file not found/);
+    expect(current(dir)).toBe(before);
   });
   it("--help prints usage, documents --check and --force, and writes nothing", () => {
     const dir = workdir();

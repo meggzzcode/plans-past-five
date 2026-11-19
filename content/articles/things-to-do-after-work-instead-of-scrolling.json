@@ -113,7 +113,7 @@
     {
       "type": "item",
       "n": 4,
-      "title": "Take a slow golden-hour walk",
+      "title": "Take a slow evening walk",
       "note": "No step count, no destination. Walk until something catches your eye, then walk home. Bring a phone for safety, not for scrolling.",
       "time": "30 min",
       "cost": "Free",
@@ -225,7 +225,6 @@
       "title": "Take a drop-in class",
       "note": "Pottery, life drawing, dance, yoga. Many studios offer single drop-in sessions, so check their schedules and try without committing.",
       "time": "60–90 min",
-      "cost": "Varies",
       "company": "Solo, then social"
     },
     {
@@ -279,7 +278,6 @@
       "hobby": "mahjong",
       "note": "Mahjong, cards, a cooperative board game. Same night every week or every other week, so nobody has to plan. If it is mahjong, see [how to host a mahjong night](/journal/how-to-host-a-mahjong-night).",
       "time": "2 hours",
-      "cost": "Varies",
       "company": "Group"
     },
     {
@@ -332,7 +330,7 @@
       "hobby": "museum-exploring",
       "note": "Some museums stay open late one evening a week, sometimes with free or lower-priced entry. Check your local museum's calendar.",
       "time": "90 min",
-      "cost": "Varies",
+      "cost": "Sometimes free",
       "company": "Solo or with a friend"
     },
     {
@@ -363,6 +361,10 @@
       "text": "Willpower is the wrong tool. Change the friction instead. Leave the hobby out where you'll see it, since a puzzle on the table gets used and a kit in a closet doesn't. Charge your phone in the kitchen for the first hour after you get home. Decide your evening at lunchtime, when you're not tired. And lower the bar: twenty minutes counts, and so does one page. Many of these are [affordable hobbies](/journal/affordable-hobbies-under-25)."
     },
     {
+      "type": "makePlan",
+      "text": "Choosing is the hard part on a tired Tuesday. Make Some Plans can turn your energy and the hours you really have into one small plan you can save."
+    },
+    {
       "type": "shopHobby",
       "productIds": [
         "group-painting-kits",
@@ -373,10 +375,6 @@
       ],
       "title": "Keep the fun option within reach",
       "dek": "A book light, a game, a block of clay, a junk journal or a painting kit, set out where you'll see them, so starting takes seconds."
-    },
-    {
-      "type": "makePlan",
-      "text": "Pick tonight's one thing and save it. Make Some Plans can fit a weeknight into your actual week."
     },
     {
       "type": "ifYouLoved",

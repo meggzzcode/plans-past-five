@@ -129,7 +129,7 @@
       "title": "Painting thrifted frames and objects",
       "note": "Pick up a plain frame, vase or tray from a thrift store and give it stripes, checks or cherries with acrylics. Instant decor, very low risk.",
       "time": "1 hour",
-      "cost": "Varies",
+      "cost": "Thrift find plus paint",
       "company": "Solo or social",
       "first": "Paint a thrifted wooden frame with a simple checkerboard border."
     },
@@ -155,7 +155,7 @@
       "n": 10,
       "title": "At-home pottery painting",
       "hobby": "pottery-painting",
-      "note": "Get a ceramic painting kit and follow its instructions. Unless the kit says the finished piece is food safe, keep it for display rather than food or drink."
+      "note": "Get a ceramic painting kit and follow its instructions. Treat painted pottery as display-only unless the kit or studio says it is food safe for your use."
     },
     {
       "type": "item",
@@ -203,7 +203,6 @@
       "title": "Cross-stitch",
       "note": "Little x-shaped stitches on gridded fabric following a chart. Very beginner-friendly and very satisfying to watch fill in.",
       "time": "30–60 min",
-      "cost": "Varies",
       "company": "Solo",
       "first": "Stitch a small motif from a beginner kit, like a strawberry or a star."
     },
@@ -213,7 +212,6 @@
       "title": "Punch needle",
       "note": "A tool that pushes loops of yarn through fabric. Makes fluffy, textured pieces fast, great for cushion covers and wall hangings.",
       "time": "1 hour",
-      "cost": "Varies",
       "company": "Solo",
       "first": "Punch a small heart or flower on a 6-inch hoop."
     },
@@ -237,7 +235,7 @@
       "title": "Sewing a simple tote",
       "note": "A straight seam on a sewing machine (or by hand) gets you a tote bag in an afternoon. Look for a free beginner pattern.",
       "time": "2 hours",
-      "cost": "Varies",
+      "cost": "A free pattern to start",
       "company": "Solo",
       "first": "Sew a simple lined tote from a free beginner pattern."
     },

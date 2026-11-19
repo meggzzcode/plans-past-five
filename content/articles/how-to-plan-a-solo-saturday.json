@@ -80,6 +80,10 @@
       ]
     },
     {
+      "type": "makePlan",
+      "text": "Thursday is a good day to book it. Pick your anchor and block the time, or tell us your energy, budget and free hours and get a Saturday plan matched to them."
+    },
+    {
       "type": "h2",
       "text": "Saturday, hour by hour",
       "id": "shape"
@@ -140,7 +144,7 @@
     },
     {
       "type": "p",
-      "text": "Short on budget? Keep the anchor free (a long walk, a library visit, a park day) and spend on one lovely lunch; [affordable hobbies](/journal/affordable-hobbies-under-25) has more ideas. Feeling flush? Book the class or the nice lunch as the anchor and leave everything else loose."
+      "text": "Short on budget? Keep the anchor free (a long walk, a library visit, a park day) and spend on one lovely lunch; [affordable hobbies](/journal/affordable-hobbies-under-25) have more ideas. Feeling flush? Book the class or the nice lunch as the anchor and leave everything else loose."
     },
     {
       "type": "h2",
@@ -169,10 +173,6 @@
       ],
       "title": "Pack the bag for a better day out",
       "dek": "A roomy tote, a blanket for the park and a pocket notebook for the good bits turn a wander into an outing you'll want to repeat."
-    },
-    {
-      "type": "makePlan",
-      "text": "Ready? Pick your anchor and block the time. Tell us your energy, budget and free hours and get a plan matched to your Saturday."
     },
     {
       "type": "p",

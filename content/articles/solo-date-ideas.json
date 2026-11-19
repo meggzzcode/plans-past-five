@@ -89,7 +89,7 @@
     },
     {
       "type": "p",
-      "text": "Below are thirty ideas for getting out of the house, grouped by what you want to spend and how you feel, and plenty are free or cost about a coffee ([affordable hobbies](/journal/affordable-hobbies-under-25) has more budget-friendly ideas). Staying in is a different list: [20 cozy solo date ideas you can do at home](/journal/cozy-solo-dates-at-home). Pick one, put it in the calendar and go."
+      "text": "Below are thirty ideas for getting out of the house, grouped by what you want to spend and how you feel, and plenty are free or cost about a coffee ([affordable hobbies](/journal/affordable-hobbies-under-25) have more budget-friendly ideas). Staying in is a different list: [20 cozy solo date ideas you can do at home](/journal/cozy-solo-dates-at-home). Pick one, put it in the calendar and go."
     },
     {
       "type": "h2",
@@ -172,7 +172,7 @@
       "hobby": "museum-exploring",
       "note": "Some museums have free or pay-what-you-can hours, and some small galleries are free, so check locally. Choose one room and stay with it.",
       "time": "60-90 min",
-      "cost": "Varies",
+      "cost": "Often free hours",
       "company": "Solo"
     },
     {
@@ -205,7 +205,7 @@
       "title": "Coffee shop and a chapter",
       "note": "Order something you wouldn't make at home, take the window seat and read one chapter before you touch your phone. The full walk-through is in [how to take yourself on a solo coffee shop date](/journal/how-to-take-yourself-on-a-solo-coffee-shop-date).",
       "time": "60 min",
-      "cost": "Varies",
+      "cost": "Price of a drink",
       "company": "Solo"
     },
     {
@@ -214,7 +214,7 @@
       "title": "Matinee movie",
       "note": "Some cinemas have cheaper daytime or weekday tickets, so check yours. Sit in the middle and bring the snack you actually want.",
       "time": "2-3 hours",
-      "cost": "Varies",
+      "cost": "A matinee ticket",
       "company": "Solo"
     },
     {
@@ -223,7 +223,7 @@
       "title": "Farmers' market breakfast",
       "note": "Wander the stalls first, then buy a pastry and something seasonal. Eat on a bench and plan what you'd cook with the rest.",
       "time": "60-90 min",
-      "cost": "Varies",
+      "cost": "Price of a pastry",
       "company": "Solo"
     },
     {
@@ -233,7 +233,7 @@
       "hobby": "picnicking",
       "note": "A sandwich, a piece of fruit, something sweet. A blanket makes it feel planned rather than improvised. [The picnic guide](/journal/how-to-plan-a-perfect-picnic) has the checklist.",
       "time": "60-90 min",
-      "cost": "Varies",
+      "cost": "Groceries",
       "company": "Solo"
     },
     {
@@ -243,7 +243,7 @@
       "hobby": "thrifting",
       "note": "Give yourself a small budget and a mission: a mug, a scarf, a frame. Leave when the money or the hour runs out.",
       "time": "60-90 min",
-      "cost": "Varies",
+      "cost": "Your small budget",
       "company": "Solo",
       "first": "Pick the mission before you walk in, and only pick up what you can picture on your own shelf."
     },
@@ -253,7 +253,6 @@
       "title": "Dessert-only dinner",
       "note": "Skip the main course and go straight to the good part. Take the counter seat if there is one.",
       "time": "45-60 min",
-      "cost": "Varies",
       "company": "Solo"
     },
     {
@@ -263,7 +262,7 @@
       "hobby": "flower-arranging",
       "note": "Buy a small bunch, plonk it in whatever vessel you have and put it where you'll see it first thing tomorrow.",
       "time": "30 min",
-      "cost": "Varies",
+      "cost": "A small bunch",
       "company": "Solo"
     },
     {
@@ -273,7 +272,7 @@
       "hobby": "pottery-painting",
       "note": "Studios where you paint a ready-made piece can suit solo visitors: no skill required, though walk-in policies and prices vary, so check first. Prefer to make your own at home? Try [air-dry clay](/journal/how-to-start-air-dry-clay).",
       "time": "90 min",
-      "cost": "Varies",
+      "cost": "Studio price; check first",
       "company": "Solo"
     },
     {
@@ -288,7 +287,6 @@
       "hobby": "watercolor-painting",
       "note": "A small travel set, a cup of water and a bench. Paint one view in three colors and call it finished. The [watercolor](/journal/watercolor-painting-for-beginners) guide has the first techniques.",
       "time": "45-60 min",
-      "cost": "Varies",
       "company": "Solo",
       "first": "Pick the view before you unpack, then paint it in three colors and stop."
     },
@@ -310,7 +308,6 @@
       "hobby": "film-photography",
       "note": "A film camera slows you down, because every frame counts. Plan a route and choose each shot.",
       "time": "60-90 min",
-      "cost": "Varies",
       "company": "Solo"
     },
     {
@@ -320,7 +317,7 @@
       "hobby": "junk-journaling",
       "note": "Collect a ticket, a receipt and a wrapper and glue them into a notebook with one sentence per day. [Here's how](/journal/how-to-start-junk-journaling).",
       "time": "30-45 min",
-      "cost": "Varies",
+      "cost": "Free to low cost",
       "company": "Solo"
     },
     {
@@ -339,7 +336,6 @@
       "title": "Museum visit, reader's-eye edition",
       "note": "Choose one artwork and write three sentences about what's happening in it. Then read the label and compare notes.",
       "time": "60-90 min",
-      "cost": "Varies",
       "company": "Solo",
       "first": "Pick a room near the entrance and sit with a single piece for ten minutes before you write anything."
     },
@@ -374,7 +370,6 @@
       "title": "Bike ride with a destination",
       "note": "Pick a path or park trail that ends somewhere nice: a lake, a lookout, a bakery.",
       "time": "1-2 hours",
-      "cost": "Varies",
       "company": "Solo"
     },
     {
@@ -383,7 +378,7 @@
       "title": "Paddle or boat rental",
       "note": "Some waterfronts rent kayaks, canoes or pedal boats by the hour. Check local rules and the weather first, and wear a life jacket.",
       "time": "1-2 hours",
-      "cost": "Varies",
+      "cost": "Rental by the hour",
       "company": "Solo"
     },
     {
@@ -393,7 +388,6 @@
       "hobby": "roller-skating",
       "note": "Rinks and smooth paved paths are a friendly place to start, and wobbling is part of it. Wear a helmet, wrist guards and knee and elbow pads, and skate in daylight.",
       "time": "60-90 min",
-      "cost": "Varies",
       "company": "Solo"
     },
     {
@@ -462,10 +456,6 @@
       ],
       "title": "Small things that make a solo date easier",
       "dek": "A pocket notebook, a picnic blanket, a tiny watercolor set, a book sleeve or a film camera: each one makes a date out easier and prettier. Pick the one that matches the date you're dreaming up."
-    },
-    {
-      "type": "makePlan",
-      "text": "Pick one, put it in the calendar and go. Make Some Plans can match an idea to your energy, budget and free hours."
     },
     {
       "type": "p",

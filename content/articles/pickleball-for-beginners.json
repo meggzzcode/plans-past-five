@@ -181,8 +181,8 @@
       "dek": "A starter set bundles paddles and balls, so you and a friend can play whenever the mood strikes. Borrowing for your very first game works too."
     },
     {
-      "type": "makePlan",
-      "text": "Find a game, bring a friend and let Make Some Plans put your first session on the calendar."
+      "type": "p",
+      "text": "Who is your first rally partner? Two people are plenty for a first session, and four make a proper doubles game."
     },
     {
       "type": "p",

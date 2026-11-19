@@ -59,7 +59,7 @@
   "body": [
     {
       "type": "p",
-      "text": "Four weeks is enough to go from 'haven't held a racket since school' to keeping a short rally going and keeping score. Golden-hour courts, a can of fresh balls and a friend to rally with: here's the plan. It assumes minimal gear, no club and no audience. The courts will have people who've played since they were nine; they're not your benchmark."
+      "text": "Four weeks is enough to go from 'haven't held a racket since school' to keeping a short rally going and keeping score. Evening courts, a can of fresh balls and a friend to rally with: here's the plan. It assumes minimal gear, no club and no audience. The courts will have people who've played since they were nine; they're not your benchmark."
     },
     {
       "type": "h2",
@@ -173,8 +173,8 @@
       "dek": "A racket that feels like yours, balls for rally practice, a water bottle and a tote to carry it all. After a few sessions, these are the basics to look for."
     },
     {
-      "type": "makePlan",
-      "text": "Pick your week-one court and a time, then let Make Some Plans fit it into your week."
+      "type": "p",
+      "text": "Week one only asks for a court and a friend to rally with. Which day this week could you spare for it?"
     },
     {
       "type": "p",

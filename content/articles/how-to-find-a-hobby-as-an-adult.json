@@ -98,8 +98,8 @@
       ]
     },
     {
-      "type": "makePlan",
-      "text": "Can't pick? Take the seven-question Hobby Finder quiz: your time, budget, energy and company in, a short list of hobbies out. No sign-up required. Prefer to browse? [Thirty-five hobbies to try](/journal/hobbies-to-try-when-life-feels-like-work-sleep-repeat) sorts them by how much energy you have."
+      "type": "p",
+      "text": "Can't pick? Take the [Hobby Finder quiz](/hobby-finder): up to six quick questions about your time, budget, energy and company, and a short list of hobbies out. No sign-up required. Prefer to browse? [Thirty-five hobbies to try](/journal/hobbies-to-try-when-life-feels-like-work-sleep-repeat) sorts them by how much energy you have."
     },
     {
       "type": "h2",

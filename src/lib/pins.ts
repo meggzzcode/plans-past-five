@@ -1,10 +1,13 @@
 /**
  * Which 2:3 pin image belongs to which page. Articles and tools use the pin built for that exact
- * page. Hobby pages borrow the pin of their first published guide that has one (the guide is about
- * the same hobby). Anything else falls back to the page's own hero image, never an invented path.
+ * page. Hobby pages borrow the pin of their first published guide that is mainly about that hobby (not a roundup).
+ * Anything else falls back to the page's own hero image, never an invented path.
  */
 import { articlesForHobby } from "@/content";
 import { pinFiles } from "@/data/pins";
+
+/** A guide that covers more hobbies than this is a roundup, not a guide to one hobby. */
+export const DEDICATED_GUIDE_HOBBIES = 4;
 
 export const PIN_DIR = "/pins/";
 
@@ -18,9 +21,14 @@ export function pinFor(path: string): string | undefined {
 export const pinsFor = (path: string): string[] =>
   (pinFiles[path] ?? []).map((f) => `${PIN_DIR}${f}`);
 
-/** Pin for a hobby page: the pin of its first published guide that has one. */
+/**
+ * Pin for a hobby page: the pin of the first published guide that is mainly about that hobby (the
+ * hobby is the guide's first listed hobby) and has a pin. A guide that only mentions the hobby never
+ * lends its pin, so a hobby page never shows a pin titled for a different article.
+ */
 export function pinForHobby(slug: string): string | undefined {
   for (const a of articlesForHobby(slug)) {
+    if (a.hobbies[0] !== slug || a.hobbies.length > DEDICATED_GUIDE_HOBBIES) continue;
     const p = pinFor(`/journal/${a.slug}`);
     if (p) return p;
   }

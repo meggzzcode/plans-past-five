@@ -137,7 +137,7 @@ export const pinFiles: Record<string, string[]> = {
   "/journal/how-to-start-embroidery": ["11-embroidery-1-headline.png", "11-embroidery-2-steps.png"],
   "/journal/how-to-start-crocheting": ["12-crochet-1-headline.png", "12-crochet-2-checklist.png"],
   "/tools/hobby-budget": ["33-budget-tool-1-checklist.png"],
-  "/journal/how-to-plan-a-perfect-solo-saturday": [
+  "/journal/how-to-plan-a-solo-saturday": [
     "22-solo-saturday-1-steps.png",
     "22-solo-saturday-2-headline.png",
   ],
