@@ -5,7 +5,6 @@
   "category": "Jigsaw puzzle",
   "order": 62,
   "status": "candidate",
-  "linkType": "amazon-affiliate-ready",
   "description": "A 1000-piece puzzle of a lake cabin scene, finished size 20 x 27 in, matte finish.",
   "asin": "B0DGZ7L567",
   "specs": [
@@ -52,6 +51,5 @@
   ],
   "lastVerified": "2026-11-19",
   "availability": "available",
-  "affiliateStatus": "not-activated",
-  "imageRights": "none"
+  "affiliateStatus": "not-activated"
 }

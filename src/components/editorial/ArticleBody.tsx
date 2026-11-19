@@ -3,7 +3,6 @@ import { Link } from "@tanstack/react-router";
 import { articles, type Block } from "@/content";
 import { heavyCallouts } from "./article-summary";
 import { getHobby } from "@/data/hobbies";
-import { searchTermsFor } from "@/data/search-terms";
 import { selectProducts, verifiedCatalog } from "@/data/catalog";
 import { fillKit, kitHobbies, kits } from "@/data/kits";
 import { ShopTheArticle } from "@/components/commerce/ShopTheArticle";
@@ -11,7 +10,7 @@ import { ShopMyHobby } from "@/components/commerce/ShopMyHobby";
 import { StarterKit } from "@/components/commerce/StarterKit";
 import { images } from "@/data/images";
 import { Inline } from "./Inline";
-import { SearchTermCard, HobbyCard } from "@/components/cards/Cards";
+import { HobbyCard } from "@/components/cards/Cards";
 import { Star, Arrow } from "@/components/brand/Doodles";
 import {
   CalendarHeart,
@@ -351,13 +350,7 @@ function verifiedFor(
       return claim(tagged.map((p) => p.id)) ? <ShopTheArticle article={slug} {...common} /> : null;
   }
 
-  const hobbies = [
-    ...new Set(
-      searchTermsFor(b.productIds)
-        .map((p) => p.hobbies[0])
-        .filter((x): x is string => !!x),
-    ),
-  ];
+  const hobbies = [...new Set(b.hobbies)];
   if (hobbies.length === 0) return null;
   if (b.type === "starterKit") {
     const kit = kits.find((k) => hobbies.some((h) => k.id === h || kitHobbies(k).includes(h)));
@@ -581,31 +574,9 @@ function BlockView({
       );
     case "starterKit":
     case "shopHobby": {
-      if (verified) return <ShopFold>{verified}</ShopFold>;
-      const ps = searchTermsFor(b.productIds);
-      return (
-        <ShopFold>
-          <aside className="not-prose my-12 border-y-2 border-ink py-8">
-            <p className="kicker text-cherry">Shop Your Hobby</p>
-            <h3 className="mt-2 font-display text-3xl italic">
-              {b.title ?? (b.type === "starterKit" ? "The Starter Kit" : "Shop your hobby")}
-            </h3>
-            {"dek" in b && b.dek && (
-              <p className="mt-2 text-muted-foreground">
-                <Inline text={b.dek} />
-              </p>
-            )}
-            <div className="mt-6 grid gap-8 sm:grid-cols-2">
-              {ps.map((p) => (
-                <div key={p.id} data-fold-card>
-                  <SearchTermCard p={p} />
-                </div>
-              ))}
-            </div>
-            <AffiliateNote className="mt-6" />
-          </aside>
-        </ShopFold>
-      );
+      // Only verified, Amazon-monetisable products are ever shown. With none, the block shows nothing
+      // (never a generic search substitute).
+      return verified ? <ShopFold>{verified}</ShopFold> : null;
     }
     case "shopTheArticle":
       return (

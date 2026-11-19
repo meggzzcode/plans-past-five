@@ -210,12 +210,11 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "group-painting-kits",
-        "board-games",
-        "conversation-cards",
-        "friendship-bracelet-kits",
-        "cookie-decorating-kits"
+      "hobbies": [
+        "craft-nights",
+        "jigsaw-puzzles",
+        "friendship-bracelets",
+        "baking"
       ],
       "title": "Start with a night-in kit",
       "dek": "A painting kit, a board game, a deck of conversation cards or a bracelet kit means \"should we do something?\" already has an answer."
@@ -284,12 +283,11 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "picnic-blankets",
-        "daypacks",
-        "pickleball-sets",
-        "skate-protective-gear",
-        "market-totes"
+      "hobbies": [
+        "picnicking",
+        "hiking",
+        "pickleball",
+        "roller-skating"
       ],
       "title": "For the outing nights",
       "dek": "A blanket, a daypack, a paddle set, skate pads and a tote each get a group out the door with everything in hand."

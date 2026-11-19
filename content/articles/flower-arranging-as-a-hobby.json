@@ -126,10 +126,8 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "flower-snips",
-        "vases",
-        "flower-frogs"
+      "hobbies": [
+        "flower-arranging"
       ],
       "title": "The small tools for a weekly bunch",
       "dek": "Floral snips for clean cuts, a vase with a shape you love and a flower frog to hold stems in place are the upgrades worth making once the habit sticks."
@@ -211,9 +209,9 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "market-totes",
-        "indoor-plant-basics"
+      "hobbies": [
+        "picnicking",
+        "indoor-gardening"
       ],
       "title": "For the weekly bunch",
       "dek": "A sturdy tote carries the bunch home, and a few small jars give the last stems a second life on the windowsill."

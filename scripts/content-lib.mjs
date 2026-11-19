@@ -88,12 +88,12 @@ export const blockSchemas = {
     })
     .strict(),
   starterKit: z
-    .object({ type: z.literal("starterKit"), productIds: strList, title: z.string().optional() })
+    .object({ type: z.literal("starterKit"), hobbies: strList, title: z.string().optional() })
     .strict(),
   shopHobby: z
     .object({
       type: z.literal("shopHobby"),
-      productIds: strList,
+      hobbies: strList,
       title: z.string().optional(),
       dek: z.string().optional(),
     })
@@ -478,63 +478,6 @@ export function knownRefsFromSource(root) {
   return out;
 }
 
-export const searchTermSchema = z
-  .object({
-    id: slugStr,
-    label: str,
-    query: z
-      .string()
-      .regex(
-        /^[a-z0-9]+( [a-z0-9]+)*$/,
-        "must be lowercase words and numbers separated by single spaces",
-      ),
-    collection: z.string(),
-    hobbies: z.array(z.string()),
-  })
-  .strict();
-
-/**
- * content/product-search-terms.json: the one short list behind every generic "Search Amazon for X"
- * link (a kind of product, not a named pick). Returns { terms, problems }.
- */
-export function readSearchTerms(root, known) {
-  const file = "content/product-search-terms.json";
-  const p = join(root, file);
-  if (!existsSync(p)) return { terms: [], problems: [] };
-  let data;
-  try {
-    data = JSON.parse(readFileSync(p, "utf8"));
-  } catch (e) {
-    return { terms: [], problems: [`${file}: this file is not valid JSON (${e.message}).`] };
-  }
-  const problems = [];
-  const terms = [];
-  const seen = new Set();
-  const list = Array.isArray(data?.terms) ? data.terms : [];
-  if (!Array.isArray(data?.terms)) problems.push(`${file}: expected a list called "terms"`);
-  list.forEach((raw, i) => {
-    const r = searchTermSchema.safeParse(dropBlanks(raw));
-    if (!r.success) {
-      problems.push(
-        ...zodProblems(file, r.error).map((m) =>
-          m.replace(", field", `, search term #${i + 1}, field`),
-        ),
-      );
-      return;
-    }
-    const t = r.data;
-    if (seen.has(t.id)) problems.push(`${file}: the search term id "${t.id}" is used twice`);
-    seen.add(t.id);
-    if (known.collections && !known.collections.includes(t.collection))
-      problems.push(`${file}, search term "${t.id}": "${t.collection}" is not a shop collection`);
-    for (const h of t.hobbies)
-      if (known.hobbies && !known.hobbies.includes(h))
-        problems.push(`${file}, search term "${t.id}": "${h}" is not a hobby`);
-    terms.push(t);
-  });
-  return { terms, problems };
-}
-
 /** Read and check content/products. Returns { sources, problems } (sources are the raw, valid product files). */
 export function readProducts(root, known, now = new Date()) {
   const { files, problems } = readJsonDir(root, "content/products");
@@ -542,6 +485,15 @@ export function readProducts(root, known, now = new Date()) {
   for (const { file, data } of files) {
     const raw = dropBlanks(data);
     const p = productFileProblems(file, raw, now);
+    // Picture gate: a cleared image must be a real file in public/uploads (never a web address).
+    if (
+      !p.length &&
+      raw.image?.rights === "cleared" &&
+      !existsSync(join(root, "public", raw.image.file))
+    )
+      p.push(
+        `${file}, field "image": the photo "${raw.image.file}" is not in the uploads folder. Upload it again (Pages CMS > Images or the photo button on the Image file field), or set the picture's rights back to pending.`,
+      );
     if (p.length) problems.push(...p);
     else sources.push(raw);
   }
@@ -608,13 +560,8 @@ export function articleReferenceProblems(art, byId, known, now = new Date()) {
       if (b.articleSlug) slugList("articleSlug", [b.articleSlug], known.articles);
     }
     if (b.type === "shopMyHobby") slugList("hobby", [b.hobby], known.hobbies);
-    if ((b.type === "shopHobby" || b.type === "starterKit") && known.searchTerms)
-      for (const id of b.productIds)
-        if (!known.searchTerms.includes(id))
-          out.push(
-            `${where}, field "productIds": "${id}" is not in the search terms list (content/product-search-terms.json) and is not a product. Pick one from the list, or add it there.`,
-          );
-    if (b.type === "ifYouLoved") slugList("hobbies", b.hobbies, known.hobbies);
+    if (b.type === "shopHobby" || b.type === "starterKit")
+      slugList("hobbies", b.hobbies, known.hobbies);
   });
   return out;
 }
@@ -783,9 +730,6 @@ export function validateContent(root, opts = {}) {
     }
   // products: the one source every shop block, kit, collection and inline mention reads
   const known = opts.known ?? knownRefsFromSource(root);
-  const st = readSearchTerms(root, known);
-  problems.push(...st.problems);
-  if (st.terms.length) known.searchTerms = st.terms.map((t) => t.id);
   const prod = readProducts(root, known, opts.now);
   problems.push(...prod.problems);
   const sourceMap = new Map(prod.sources.map((p) => [p.id, p]));
@@ -796,7 +740,6 @@ export function validateContent(root, opts = {}) {
     articles,
     images,
     products: prod.sources,
-    searchTerms: st.terms,
     problems,
     settings: settingsRead.settings,
     articleFiles: seen,
@@ -916,9 +859,17 @@ export function generatedCatalogModule(sources, now = new Date()) {
   const ordered = [...sources].sort(
     (a, b) => (a.order ?? 100000) - (b.order ?? 100000) || a.id.localeCompare(b.id),
   );
+  // A picture ships ONLY when its rights are "cleared"; the private replacement note never ships.
+  const withShippableImage = (p) => {
+    const { image, ...rest } = p;
+    if (!image || image.rights !== "cleared") return rest;
+    const { note, ...pub } = image;
+    void note;
+    return { ...rest, image: pub };
+  };
   const live = ordered
     .filter((s) => isLiveSource(s, now))
-    .map((s) => publicProduct(toCatalogProduct(s)));
+    .map((s) => withShippableImage(publicProduct(toCatalogProduct(s))));
   const redirects = productRedirectsFrom(ordered, now);
   return `// GENERATED by scripts/build-content.mjs from content/products/*.json. Do not edit by hand: change
 // products in Pages CMS (Products) and the next build regenerates this file. Only products that are
@@ -930,14 +881,6 @@ export const generatedCatalog: CatalogProduct[] = ${JSON.stringify(live, null, 2
 
 /** A retired product id -> the product id that replaces it. */
 export const productRedirects: Record<string, string> = ${JSON.stringify(redirects, null, 2)};
-`;
-}
-
-export function generatedSearchTermsModule(terms) {
-  return `// GENERATED by scripts/build-content.mjs from content/product-search-terms.json. Do not edit by hand.
-import type { SearchTerm } from "./search-terms";
-
-export const generatedSearchTerms: SearchTerm[] = ${JSON.stringify(terms, null, 2)};
 `;
 }
 
@@ -963,8 +906,10 @@ export function generatedImagesModule(images) {
  * With { write: false } returns the file texts without touching disk.
  */
 export function buildContent(root, opts = {}) {
-  const { articles, images, products, searchTerms, problems, settings, articleFiles } =
-    validateContent(root, opts);
+  const { articles, images, products, problems, settings, articleFiles } = validateContent(
+    root,
+    opts,
+  );
   if (problems.length) throw new ContentError(problems);
   // Internal verification notes (coworkChecks) stay in the content files and drafts bundle; they are
   // not shipped in the public client bundle.
@@ -978,7 +923,6 @@ export function buildContent(root, opts = {}) {
     "src/content/generated/drafts.json": json(drafts),
     "src/data/images.generated.ts": generatedImagesModule(images),
     "src/data/catalog.generated.ts": generatedCatalogModule(products, opts.now),
-    "src/data/search-terms.generated.ts": generatedSearchTermsModule(searchTerms),
     ...publicFileOutputs(root, settings),
   };
   const reformatted = [];

@@ -130,12 +130,9 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "pickleball-sets",
-          "tennis-rackets",
-          "tennis-balls",
-          "pickleball-shoes",
-          "tennis-shoes"
+        "hobbies": [
+          "pickleball",
+          "tennis"
         ],
         "title": "For your first rally",
         "dek": "A paddle or racket, balls and court shoes cover a first session. Your own gear is there for round two, when a friend texts \"court at six?\""
@@ -199,13 +196,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "walking-shoes",
-          "trekking-socks",
-          "daypacks",
-          "water-bottles",
-          "phone-armband",
-          "binoculars"
+        "hobbies": [
+          "hiking",
+          "tennis",
+          "running",
+          "birdwatching"
         ],
         "title": "For your first trail morning",
         "dek": "Comfortable shoes, socks made for walking, a daypack and a bottle make a morning outside feel easy to start, and a phone armband keeps a map or a playlist close."
@@ -317,11 +312,10 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "sports-totes",
-          "skate-protective-gear",
-          "bike-helmets",
-          "portable-speakers"
+        "hobbies": [
+          "tennis",
+          "roller-skating",
+          "craft-nights"
         ],
         "title": "By the door, ready to go",
         "dek": "A tote packed by the door, skate pads, a bike helmet and a small speaker mean the next outing starts with grabbing a bag, not hunting for gear."
@@ -462,13 +456,13 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "watercolor-sets",
+        "hobbies": [
+          "watercolor-painting",
           "air-dry-clay",
-          "embroidery-kits",
-          "paint-by-number-kits",
-          "friendship-bracelet-kits",
-          "sketch-pads"
+          "embroidery",
+          "paint-by-numbers",
+          "friendship-bracelets",
+          "outdoor-sketching"
         ],
         "title": "A first purchase for a making evening",
         "dek": "A small paint set, a block of clay, an embroidery kit or a bracelet kit each arrive ready to use, so the first evening is about making, not shopping. Start with the one you're most curious about."
@@ -529,11 +523,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
+        "hobbies": [
           "jigsaw-puzzles",
-          "indoor-plant-basics",
-          "pocket-notebooks",
-          "book-lights"
+          "indoor-gardening",
+          "creative-writing",
+          "reading"
         ],
         "title": "For a cozy evening in",
         "dek": "A puzzle for the coffee table, jars for a cutting, a pocket notebook and a clip-on light make a quiet night feel planned."
@@ -585,11 +579,10 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "binoculars",
-          "walking-shoes",
-          "daypacks",
-          "market-totes"
+        "hobbies": [
+          "birdwatching",
+          "hiking",
+          "picnicking"
         ],
         "title": "For your first walk-and-look outing",
         "dek": "Binoculars, walking shoes, a daypack and a tote turn a local walk into an outing worth repeating."
@@ -724,13 +717,9 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
+        "hobbies": [
           "air-dry-clay",
-          "clay-mats",
-          "acrylic-paints",
-          "detail-brushes",
-          "watercolor-sets",
-          "watercolor-sketchbooks"
+          "watercolor-painting"
         ],
         "title": "Start with this",
         "dek": "Clay, a mat, acrylic paint, a fine brush and watercolor paper cover Saturday and Sunday's painting, so Friday's setup is quick. Tick off what you already own."
@@ -861,10 +850,8 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "junk-journals",
-          "washi-tape",
-          "sticker-sets"
+        "hobbies": [
+          "junk-journaling"
         ],
         "title": "For Sunday's journal spread",
         "dek": "A blank journal, washi tape and stickers are all the spread needs, and they pack away in a tin until next time."
@@ -1007,12 +994,10 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "walking-shoes",
-          "trekking-socks",
-          "daypacks",
-          "water-bottles",
-          "phone-armband"
+        "hobbies": [
+          "hiking",
+          "tennis",
+          "running"
         ],
         "title": "For your first trail morning",
         "dek": "Walking shoes, socks made for walking, a daypack, a bottle and a phone armband turn \"let's go for a walk\" into a plan you can leave the house for."
@@ -1063,12 +1048,12 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "binoculars",
-          "pocket-notebooks",
-          "sketch-pads",
-          "portable-watercolor",
-          "film-cameras"
+        "hobbies": [
+          "birdwatching",
+          "creative-writing",
+          "outdoor-sketching",
+          "watercolor-painting",
+          "film-photography"
         ],
         "title": "For slower, closer looking",
         "dek": "Binoculars, a pocket notebook, a sketch pad, a travel watercolor set or a film camera give a quiet hour something to do and something to bring home."
@@ -1136,12 +1121,9 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "picnic-blankets",
-          "thermos-flasks",
-          "market-totes",
-          "cooler-bags",
-          "book-sleeves"
+        "hobbies": [
+          "picnicking",
+          "reading"
         ],
         "title": "For market and picnic days",
         "dek": "A blanket, a flask, a tote and an insulated bag carry the day, so the spread, the finds and the tea all arrive in one piece."
@@ -1266,9 +1248,8 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "cozy-night-in",
-          "book-lights",
+        "hobbies": [
+          "reading",
           "jigsaw-puzzles"
         ],
         "title": "The night-in kit",
@@ -1383,13 +1364,13 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "paint-by-number-kits",
+        "hobbies": [
+          "paint-by-numbers",
           "air-dry-clay",
-          "junk-journals",
-          "brush-pens",
-          "letter-writing-sets",
-          "photo-albums"
+          "junk-journaling",
+          "calligraphy",
+          "creative-writing",
+          "scrapbooking"
         ],
         "title": "For a gentle, creative evening",
         "dek": "A kit, a journal, a pen or an album arrives ready to use, so the date starts with making rather than shopping."
@@ -1443,10 +1424,10 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "indoor-plant-basics",
-          "tea-sets",
-          "portable-speakers"
+        "hobbies": [
+          "indoor-gardening",
+          "book-clubs",
+          "craft-nights"
         ],
         "title": "Little extras for the evening",
         "dek": "A watering can and a pot, a tea set and a small speaker make the kitchen and plant-corner dates feel like occasions."
@@ -1623,11 +1604,10 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "junk-journals",
-          "washi-tape",
-          "photo-albums",
-          "brush-pens"
+        "hobbies": [
+          "junk-journaling",
+          "scrapbooking",
+          "calligraphy"
         ],
         "title": "For a paper evening",
         "dek": "A journal, washi tape, an album or a brush pen is a small first buy that gets you to a finished page the same night."
@@ -1672,11 +1652,10 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "watercolor-sets",
-          "watercolor-sketchbooks",
-          "paint-by-number-kits",
-          "acrylic-paints"
+        "hobbies": [
+          "watercolor-painting",
+          "paint-by-numbers",
+          "air-dry-clay"
         ],
         "title": "For a painting evening",
         "dek": "A small paint set and a pad of paper, a paint-by-number kit or a few acrylics are enough for the first painting."
@@ -1716,11 +1695,8 @@
       },
       {
         "type": "starterKit",
-        "productIds": [
-          "air-dry-clay",
-          "clay-tools",
-          "acrylic-paints",
-          "clay-mats"
+        "hobbies": [
+          "air-dry-clay"
         ],
         "title": "Clay: where to start"
       },
@@ -1784,11 +1760,10 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "embroidery-kits",
-          "crochet-hooks",
-          "yarn",
-          "knitting-needles"
+        "hobbies": [
+          "embroidery",
+          "crochet",
+          "knitting"
         ],
         "title": "For a thread-and-yarn evening",
         "dek": "A starter kit, a set of hooks or needles and a ball of beginner yarn keep your hands busy through a whole episode."
@@ -1821,12 +1796,10 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "flower-snips",
-          "vases",
-          "flower-frogs",
-          "indoor-plant-basics",
-          "cookie-decorating-kits"
+        "hobbies": [
+          "flower-arranging",
+          "indoor-gardening",
+          "baking"
         ],
         "title": "For the living and edible hobbies",
         "dek": "Snips and a vase, a few jars, a decorating kit: small things that make a bunch of flowers, a cutting or a plate of cookies look arranged."
@@ -2068,12 +2041,12 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "embroidery-kits",
-          "ceramic-painting-kits",
+        "hobbies": [
+          "embroidery",
+          "pottery-painting",
           "air-dry-clay",
-          "watercolor-sets",
-          "group-painting-kits"
+          "watercolor-painting",
+          "craft-nights"
         ],
         "title": "A first-purchase pick for each craft",
         "dek": "Embroidery and ceramic painting kits put everything in one box; for watercolor and clay, look closely at what is included. Here are the types to compare, with what to check on each listing."
@@ -2215,10 +2188,8 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "flower-snips",
-          "vases",
-          "flower-frogs"
+        "hobbies": [
+          "flower-arranging"
         ],
         "title": "The small tools for a weekly bunch",
         "dek": "Floral snips for clean cuts, a vase with a shape you love and a flower frog to hold stems in place are the upgrades worth making once the habit sticks."
@@ -2300,9 +2271,9 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "market-totes",
-          "indoor-plant-basics"
+        "hobbies": [
+          "picnicking",
+          "indoor-gardening"
         ],
         "title": "For the weekly bunch",
         "dek": "A sturdy tote carries the bunch home, and a few small jars give the last stems a second life on the windowsill."
@@ -2545,12 +2516,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "group-painting-kits",
-          "board-games",
-          "conversation-cards",
-          "friendship-bracelet-kits",
-          "cookie-decorating-kits"
+        "hobbies": [
+          "craft-nights",
+          "jigsaw-puzzles",
+          "friendship-bracelets",
+          "baking"
         ],
         "title": "Start with a night-in kit",
         "dek": "A painting kit, a board game, a deck of conversation cards or a bracelet kit means \"should we do something?\" already has an answer."
@@ -2619,12 +2589,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "picnic-blankets",
-          "daypacks",
-          "pickleball-sets",
-          "skate-protective-gear",
-          "market-totes"
+        "hobbies": [
+          "picnicking",
+          "hiking",
+          "pickleball",
+          "roller-skating"
         ],
         "title": "For the outing nights",
         "dek": "A blanket, a daypack, a paddle set, skate pads and a tote each get a group out the door with everything in hand."
@@ -2882,12 +2851,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "paint-by-number-kits",
+        "hobbies": [
+          "paint-by-numbers",
           "jigsaw-puzzles",
-          "book-lights",
-          "reading-journals",
-          "indoor-plant-basics"
+          "reading",
+          "indoor-gardening"
         ],
         "title": "For a very tired evening",
         "dek": "A paint-by-number kit, a puzzle, a book light, a reading journal or a jar for a cutting: each makes the couch version of a hobby easier to start."
@@ -2973,13 +2941,13 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "watercolor-sets",
+        "hobbies": [
+          "watercolor-painting",
           "air-dry-clay",
-          "embroidery-kits",
-          "junk-journals",
-          "crochet-hooks",
-          "knitting-needles"
+          "embroidery",
+          "junk-journaling",
+          "crochet",
+          "knitting"
         ],
         "title": "A first pick for a creative evening",
         "dek": "A small paint set, a block of clay, a stitching kit, a journal or a set of hooks or needles each make the first session easier. Choose the one you are most curious about."
@@ -3062,13 +3030,12 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "tennis-rackets",
-          "pickleball-sets",
-          "walking-shoes",
-          "daypacks",
-          "binoculars",
-          "picnic-blankets"
+        "hobbies": [
+          "tennis",
+          "pickleball",
+          "hiking",
+          "birdwatching",
+          "picnicking"
         ],
         "title": "For a weekend outside",
         "dek": "A racket or paddle, walking shoes, a daypack, binoculars or a picnic blanket each turn a free Saturday morning into a plan."
@@ -3119,12 +3086,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "mahjong-sets",
-          "conversation-cards",
-          "group-painting-kits",
-          "friendship-bracelet-kits",
-          "ceramic-painting-kits"
+        "hobbies": [
+          "mahjong",
+          "craft-nights",
+          "friendship-bracelets",
+          "pottery-painting"
         ],
         "title": "For a table of friends",
         "dek": "A game set, a deck of conversation cards or a painting or bracelet kit gives a night in a shape and everyone something to do."
@@ -3332,11 +3298,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "pocket-notebooks",
-          "watercolor-sets",
+        "hobbies": [
+          "creative-writing",
+          "watercolor-painting",
           "air-dry-clay",
-          "daypacks"
+          "hiking"
         ],
         "title": "Three trial kits",
         "dek": "A pocket notebook, a mini paint set or a block of clay and a daypack for an outdoor trial cover three very different evenings, and each makes starting simple."
@@ -3579,16 +3545,6 @@
         "text": "**What makes it easier:** a white front light and a red rear light, so dusk doesn't change your plans, plus a small bell for shared paths. Rules on lights vary by place, so check your local rules."
       },
       {
-        "type": "shopHobby",
-        "productIds": [
-          "bike-helmets",
-          "bike-lights",
-          "bike-bells"
-        ],
-        "title": "Helmet, lights, bell",
-        "dek": "Three small things to sort before the first ride. Check each listing and its label for fit, lights and local requirements."
-      },
-      {
         "type": "h2",
         "text": "Step 4: Do a thirty-second safety check",
         "id": "check"
@@ -3666,11 +3622,10 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "bike-repair-kits",
-          "daypacks",
-          "water-bottles",
-          "market-totes"
+        "hobbies": [
+          "hiking",
+          "tennis",
+          "picnicking"
         ],
         "title": "For a longer first ride",
         "dek": "A repair kit for the unexpected, a daypack for the snack, a bottle within reach and a tote for the bakery stop make a ride feel easy."
@@ -3833,12 +3788,12 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "group-painting-kits",
-          "friendship-bracelet-kits",
-          "ceramic-painting-kits",
+        "hobbies": [
+          "craft-nights",
+          "friendship-bracelets",
+          "pottery-painting",
           "air-dry-clay",
-          "cookie-decorating-kits"
+          "baking"
         ],
         "title": "Start with a kit made for groups",
         "dek": "Choose a project and the kit arrives together, so hosting is more about the fun than the shopping."
@@ -3958,10 +3913,9 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "glue-guns",
-          "portable-speakers",
-          "acrylic-paints"
+        "hobbies": [
+          "craft-nights",
+          "air-dry-clay"
         ],
         "title": "For the table and the room",
         "dek": "A mini glue gun for quick bonds, a small speaker for the playlist and acrylic paints for the pottery pieces round out the evening."
@@ -4170,10 +4124,10 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "tea-sets",
-          "board-games",
-          "conversation-cards"
+        "hobbies": [
+          "book-clubs",
+          "jigsaw-puzzles",
+          "craft-nights"
         ],
         "title": "For the side table and the quiet moments",
         "dek": "A tea set for the side tray, a backup game for the night you're one player short and a deck of conversation cards for the pauses between rounds."
@@ -4371,9 +4325,8 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "portable-speakers",
-          "conversation-cards"
+        "hobbies": [
+          "craft-nights"
         ],
         "title": "For the slow moments",
         "dek": "A small speaker and a deck of conversation cards keep the evening moving between coats of paint."
@@ -4552,20 +4505,16 @@
       },
       {
         "type": "starterKit",
-        "productIds": [
-          "picnic-blankets",
-          "market-totes"
+        "hobbies": [
+          "picnicking"
         ],
         "title": "Picnic: where to start"
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "picnic-blankets",
-          "cooler-bags",
-          "thermos-flasks",
-          "market-totes",
-          "water-bottles"
+        "hobbies": [
+          "picnicking",
+          "tennis"
         ],
         "title": "For the packing list",
         "dek": "A blanket with a waterproof backing, an insulated bag, a flask and a tote make setting up simple and pretty."
@@ -4673,12 +4622,12 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "book-sleeves",
-          "sketch-pads",
-          "portable-watercolor",
-          "pocket-notebooks",
-          "conversation-cards"
+        "hobbies": [
+          "reading",
+          "outdoor-sketching",
+          "watercolor-painting",
+          "creative-writing",
+          "craft-nights"
         ],
         "title": "For once you're sitting down",
         "dek": "A book sleeve, a sketch pad, a small watercolor set or a deck of cards make the half hour on the blanket something to look forward to."
@@ -4795,13 +4744,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "walking-shoes",
-          "trekking-socks",
-          "daypacks",
-          "water-bottles",
-          "phone-armband",
-          "film-cameras"
+        "hobbies": [
+          "hiking",
+          "tennis",
+          "running",
+          "film-photography"
         ],
         "title": "For a long wander",
         "dek": "Walking shoes, trekking-style socks, a small daypack, a bottle, a phone armband and a pocket camera for the day you follow your nose."
@@ -4825,10 +4772,8 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "picnic-blankets",
-          "market-totes",
-          "thermos-flasks"
+        "hobbies": [
+          "picnicking"
         ],
         "title": "For a day in the park",
         "dek": "A blanket, a roomy tote and an insulated flask turn a bench lunch into an afternoon."
@@ -4852,10 +4797,10 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "portable-watercolor",
-          "sketch-pads",
-          "pocket-notebooks"
+        "hobbies": [
+          "watercolor-painting",
+          "outdoor-sketching",
+          "creative-writing"
         ],
         "title": "For a make-something afternoon",
         "dek": "A travel watercolor set, a sketch pad and a pocket notebook fit in a coat pocket and make any bench a studio."
@@ -5026,10 +4971,10 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "conversation-cards",
-          "tea-sets",
-          "cozy-night-in"
+        "hobbies": [
+          "craft-nights",
+          "book-clubs",
+          "reading"
         ],
         "title": "The table kit",
         "dek": "Conversation cards for the pauses, a tea set and a soft throw for the sofa. Small things that make a living room feel like a club."
@@ -5116,10 +5061,8 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "reading-journals",
-          "book-lights",
-          "magnetic-bookmarks"
+        "hobbies": [
+          "reading"
         ],
         "title": "For the readers: journal, light and bookmark",
         "dek": "A journal for the thoughts you'll want to bring, a light for late chapters and a magnetic bookmark for marking a line to read aloud."
@@ -5217,11 +5160,9 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "reading-journals",
-          "pocket-notebooks",
-          "book-lights",
-          "magnetic-bookmarks"
+        "hobbies": [
+          "reading",
+          "creative-writing"
         ],
         "title": "Make your reading journal easier and prettier",
         "dek": "A journal with prompts for the blank-page days, a pocket notebook for favorite lines, a light for late chapters and a magnetic bookmark for the lines you want to copy out. Start with whichever solves your biggest hurdle."
@@ -5650,8 +5591,8 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "crochet-hooks"
+        "hobbies": [
+          "crochet"
         ],
         "title": "A comfortable hook, for when you want to keep going",
         "dek": "Hooks come in sets with a range of sizes and handles. A set lets you try the size your yarn label suggests, and then the next size up when a row feels tight."
@@ -5954,11 +5895,9 @@
       },
       {
         "type": "starterKit",
-        "productIds": [
-          "junk-journals",
-          "washi-tape",
-          "sticker-sets",
-          "pocket-notebooks"
+        "hobbies": [
+          "junk-journaling",
+          "creative-writing"
         ],
         "title": "The small set that makes page one prettier"
       },
@@ -6132,11 +6071,8 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "tennis-rackets",
-          "tennis-balls",
-          "water-bottles",
-          "sports-totes"
+        "hobbies": [
+          "tennis"
         ],
         "title": "A racket, balls and a bottle for week one",
         "dek": "A beginner racket you feel comfortable holding, a can of balls for drop-and-hit practice, a water bottle and a tote to carry it all."
@@ -6230,10 +6166,8 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "tennis-shoes",
-          "water-bottles",
-          "sports-totes"
+        "hobbies": [
+          "tennis"
         ],
         "title": "Once you're playing every week",
         "dek": "Court shoes made for tennis, a bottle that keeps up with longer sessions and a tote that carries the lot."
@@ -6322,10 +6256,9 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "pocket-notebooks",
-          "reading-journals",
-          "book-sleeves"
+        "hobbies": [
+          "creative-writing",
+          "reading"
         ],
         "title": "Pack the date",
         "dek": "A pocket notebook, a book sleeve and a journal make your bag feel date-ready and give your hands something lovely to do."
@@ -6409,10 +6342,10 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "portable-watercolor",
-          "sketch-pads",
-          "letter-writing-sets"
+        "hobbies": [
+          "watercolor-painting",
+          "outdoor-sketching",
+          "creative-writing"
         ],
         "title": "For the sketch-and-letter hour",
         "dek": "A pocket watercolor set, a small sketch pad and a letter-writing set turn a spare hour at the table into something you can hold at the end."
@@ -6720,13 +6653,13 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
+        "hobbies": [
           "jigsaw-puzzles",
-          "paint-by-number-kits",
-          "knitting-needles",
-          "yarn",
-          "embroidery-kits",
-          "friendship-bracelet-kits"
+          "paint-by-numbers",
+          "knitting",
+          "crochet",
+          "embroidery",
+          "friendship-bracelets"
         ],
         "title": "Something gentle for your hands",
         "dek": "A puzzle, a paint-by-number kit, a first pair of needles, a beginner embroidery kit or a bracelet kit: each arrives with most of the decisions already made."
@@ -6746,10 +6679,9 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "book-lights",
-          "cozy-night-in",
-          "tea-sets"
+        "hobbies": [
+          "reading",
+          "book-clubs"
         ],
         "title": "For the cozy corner",
         "dek": "A clip-on light, a soft throw and a small tea set make the sofa corner a place you want to land on a flat evening."
@@ -6933,9 +6865,9 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "pickleball-sets",
-          "water-bottles"
+        "hobbies": [
+          "pickleball",
+          "tennis"
         ],
         "title": "Your first pickleball kit",
         "dek": "A starter set bundles paddles and balls, so you and a friend can play whenever the mood strikes. Add a water bottle and a tote for the court bag."
@@ -7002,9 +6934,9 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "pickleball-shoes",
-          "sports-totes"
+        "hobbies": [
+          "pickleball",
+          "tennis"
         ],
         "title": "For the second month",
         "dek": "Court shoes made for racquet sports and a tote that carries the lot, once you know you're hooked."
@@ -7192,13 +7124,13 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "pocket-notebooks",
-          "portable-watercolor",
-          "sketch-pads",
-          "film-cameras",
-          "junk-journals",
-          "book-sleeves"
+        "hobbies": [
+          "creative-writing",
+          "watercolor-painting",
+          "outdoor-sketching",
+          "film-photography",
+          "junk-journaling",
+          "reading"
         ],
         "title": "For a make-something date",
         "dek": "A pocket watercolor set, a sketch pad, a film camera, a thick-paged journal or a notebook that fits in a coat pocket: each makes a date out easier and prettier. Pick the one that matches the date you're dreaming up."
@@ -7278,13 +7210,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "walking-shoes",
-          "trekking-socks",
-          "daypacks",
-          "water-bottles",
-          "phone-armband",
-          "binoculars"
+        "hobbies": [
+          "hiking",
+          "tennis",
+          "running",
+          "birdwatching"
         ],
         "title": "For a date outdoors",
         "dek": "Walking shoes, trekking-style socks, a small daypack and a bottle, plus a phone armband for the map or the music and binoculars for the bench."
@@ -7323,13 +7253,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "picnic-blankets",
-          "thermos-flasks",
-          "skate-protective-gear",
-          "market-totes",
-          "letter-writing-sets",
-          "vases"
+        "hobbies": [
+          "picnicking",
+          "roller-skating",
+          "creative-writing",
+          "flower-arranging"
         ],
         "title": "For the picnic, the rink and the treat",
         "dek": "A blanket and a flask for the park, protective gear for the rink, a market tote and a small vase for the treats you carry home."
@@ -7613,11 +7541,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "portable-watercolor",
+        "hobbies": [
+          "watercolor-painting",
           "air-dry-clay",
-          "junk-journals",
-          "letter-writing-sets"
+          "junk-journaling",
+          "creative-writing"
         ],
         "title": "For a make-something evening",
         "dek": "A travel watercolor set, a block of clay, a thick-paged journal and a letter-writing set, kept in one drawer so starting takes seconds."
@@ -7668,11 +7596,10 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
+        "hobbies": [
           "jigsaw-puzzles",
-          "paint-by-number-kits",
-          "book-lights",
-          "cozy-night-in"
+          "paint-by-numbers",
+          "reading"
         ],
         "title": "For a nothing-left evening",
         "dek": "A puzzle, a paint-by-number kit, a clip-on light and a soft throw: the small things that make the sofa the easy option."
@@ -7725,13 +7652,13 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "group-painting-kits",
-          "board-games",
-          "friendship-bracelet-kits",
-          "pickleball-sets",
-          "water-bottles",
-          "phone-armband"
+        "hobbies": [
+          "craft-nights",
+          "jigsaw-puzzles",
+          "friendship-bracelets",
+          "pickleball",
+          "tennis",
+          "running"
         ],
         "title": "For evenings with friends or a little energy",
         "dek": "A painting kit, a board game, a bracelet kit, a paddle set and a bottle: one box for the group and one bag for the court."
@@ -7994,11 +7921,9 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
+        "hobbies": [
           "air-dry-clay",
-          "clay-tools",
-          "junk-journals",
-          "washi-tape"
+          "junk-journaling"
         ],
         "title": "For a make-something Saturday",
         "dek": "A block of clay, a small set of tools, a thick-paged journal and washi tape: kept in one drawer, they turn an open afternoon into a finished thing."
@@ -8062,13 +7987,11 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "walking-shoes",
-          "daypacks",
-          "water-bottles",
-          "picnic-blankets",
-          "thermos-flasks",
-          "phone-armband"
+        "hobbies": [
+          "hiking",
+          "tennis",
+          "picnicking",
+          "running"
         ],
         "title": "For the park and the trail",
         "dek": "Walking shoes, a small daypack, a bottle, a blanket, a flask and a phone armband: the bag that makes leaving the house the easy option."
@@ -8097,10 +8020,10 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "board-games",
-          "friendship-bracelet-kits",
-          "group-painting-kits"
+        "hobbies": [
+          "jigsaw-puzzles",
+          "friendship-bracelets",
+          "craft-nights"
         ],
         "title": "For an afternoon with friends",
         "dek": "A board game, a bracelet kit or a group painting kit gives everyone something to do with their hands while you catch up."
@@ -8416,10 +8339,8 @@
       },
       {
         "type": "shopHobby",
-        "productIds": [
-          "watercolor-sets",
-          "watercolor-sketchbooks",
-          "portable-watercolor"
+        "hobbies": [
+          "watercolor-painting"
         ],
         "title": "For the second set: a pocket kit and a sketchbook",
         "dek": "When you want to paint away from the kitchen table, a travel set and a sketchbook of proper watercolor paper keep everything in one small bag."

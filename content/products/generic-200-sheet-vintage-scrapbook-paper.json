@@ -5,7 +5,6 @@
   "category": "Scrapbook paper",
   "order": 23,
   "status": "candidate",
-  "linkType": "amazon-affiliate-ready",
   "description": "A 200-sheet vintage-style paper pack in six style themes.",
   "asin": "B0BXKS3HBR",
   "specs": [
@@ -55,6 +54,5 @@
   ],
   "lastVerified": "2026-11-18",
   "availability": "available",
-  "affiliateStatus": "not-activated",
-  "imageRights": "none"
+  "affiliateStatus": "not-activated"
 }

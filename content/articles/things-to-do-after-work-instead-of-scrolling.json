@@ -124,11 +124,11 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "portable-watercolor",
+      "hobbies": [
+        "watercolor-painting",
         "air-dry-clay",
-        "junk-journals",
-        "letter-writing-sets"
+        "junk-journaling",
+        "creative-writing"
       ],
       "title": "For a make-something evening",
       "dek": "A travel watercolor set, a block of clay, a thick-paged journal and a letter-writing set, kept in one drawer so starting takes seconds."
@@ -179,11 +179,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
+      "hobbies": [
         "jigsaw-puzzles",
-        "paint-by-number-kits",
-        "book-lights",
-        "cozy-night-in"
+        "paint-by-numbers",
+        "reading"
       ],
       "title": "For a nothing-left evening",
       "dek": "A puzzle, a paint-by-number kit, a clip-on light and a soft throw: the small things that make the sofa the easy option."
@@ -236,13 +235,13 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "group-painting-kits",
-        "board-games",
-        "friendship-bracelet-kits",
-        "pickleball-sets",
-        "water-bottles",
-        "phone-armband"
+      "hobbies": [
+        "craft-nights",
+        "jigsaw-puzzles",
+        "friendship-bracelets",
+        "pickleball",
+        "tennis",
+        "running"
       ],
       "title": "For evenings with friends or a little energy",
       "dek": "A painting kit, a board game, a bracelet kit, a paddle set and a bottle: one box for the group and one bag for the court."

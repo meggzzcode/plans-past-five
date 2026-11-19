@@ -91,11 +91,8 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "tennis-rackets",
-        "tennis-balls",
-        "water-bottles",
-        "sports-totes"
+      "hobbies": [
+        "tennis"
       ],
       "title": "A racket, balls and a bottle for week one",
       "dek": "A beginner racket you feel comfortable holding, a can of balls for drop-and-hit practice, a water bottle and a tote to carry it all."
@@ -189,10 +186,8 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "tennis-shoes",
-        "water-bottles",
-        "sports-totes"
+      "hobbies": [
+        "tennis"
       ],
       "title": "Once you're playing every week",
       "dek": "Court shoes made for tennis, a bottle that keeps up with longer sessions and a tote that carries the lot."

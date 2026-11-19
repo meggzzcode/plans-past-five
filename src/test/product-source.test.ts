@@ -331,40 +331,69 @@ describe("a dangling reference fails the content build, in plain English", () =>
   });
 });
 
-describe("generic search terms (the retired product types)", () => {
-  it("src/data/search-terms.generated.ts is exactly what the build generates", () => {
-    const r = lib.buildContent(repo, { write: false });
-    expect(readFileSync(path.join(repo, "src/data/search-terms.generated.ts"), "utf8")).toBe(
-      r.outputs["src/data/search-terms.generated.ts"],
-    );
-  });
-  it("a shop block naming an id that is neither a search term nor known fails the build", () => {
+describe("shop blocks and pictures are gated", () => {
+  it("a shop block naming a hobby that does not exist fails the build", () => {
     const root = scratch();
     const file = path.join(root, "content/articles/pickleball-for-beginners.json");
     const a = JSON.parse(readFileSync(file, "utf8"));
     const i = a.body.findIndex((b: { type: string }) => b.type === "shopHobby");
-    a.body[i].productIds = ["pickleball-paddles", "no-such-term"];
+    a.body[i].hobbies = ["pickleball", "no-such-hobby"];
     writeFileSync(file, JSON.stringify(a, null, 2));
     const text = problems(root).join("\n");
     expect(text).toContain("content/articles/pickleball-for-beginners.json");
-    expect(text).toContain(`block #${i + 1} (shopHobby), field "productIds": "no-such-term"`);
+    expect(text).toContain(`block #${i + 1} (shopHobby), field "hobbies": "no-such-hobby"`);
   });
-  it("a search term with a bad collection, bad hobby or odd search words fails", () => {
+  it("the article files carry no productIds anywhere and no product-type ids", () => {
+    for (const f of readdirSync(path.join(repo, "content/articles")))
+      expect(readFileSync(path.join(repo, "content/articles", f), "utf8"), f).not.toContain(
+        "productIds",
+      );
+  });
+  const withImage = (root: string, image: Record<string, unknown>) => {
+    const p = readProduct(root, SWAP_ID);
+    writeProduct(root, { ...p, image });
+  };
+  const good = {
+    file: "/uploads/products/glue.jpg",
+    alt: "A glue stick on a desk",
+    source: "Brand media kit",
+    license: "Written permission for commercial use",
+    attribution: "Photo: Brand media kit",
+    rights: "cleared",
+    note: "Ask the brand for a new kit if this lapses",
+  };
+  it("cleared rights with a missing file fails the build, naming the file and product", () => {
     const root = scratch();
-    const file = path.join(root, "content/product-search-terms.json");
-    const t = JSON.parse(readFileSync(file, "utf8"));
-    t.terms[0] = { ...t.terms[0], collection: "nope", hobbies: ["not-a-hobby"] };
-    t.terms[1] = { ...t.terms[1], query: "Air-Dry!" };
-    writeFileSync(file, JSON.stringify(t, null, 2));
+    withImage(root, good);
     const text = problems(root).join("\n");
-    expect(text).toMatch(/"nope" is not a shop collection/);
-    expect(text).toMatch(/"not-a-hobby" is not a hobby/);
-    expect(text).toMatch(/lowercase words and numbers/);
+    expect(text).toContain(`content/products/${SWAP_ID}.json, field "image"`);
+    expect(text).toContain("/uploads/products/glue.jpg");
   });
-  it("the article files no longer carry the dead top-level productIds field", () => {
-    for (const f of readdirSync(path.join(repo, "content/articles"))) {
-      const a = JSON.parse(readFileSync(path.join(repo, "content/articles", f), "utf8"));
-      expect(a, f).not.toHaveProperty("productIds");
+  it("cleared rights need every record field; a web address (hotlink) is refused", () => {
+    const root = scratch();
+    withImage(root, { ...good, license: "" });
+    expect(problems(root).join("\n")).toMatch(/image.license is required/);
+    withImage(root, { ...good, file: "https://m.media-amazon.com/images/I/x.jpg" });
+    expect(problems(root).join("\n")).toMatch(/never a web address/);
+  });
+  it("a cleared picture with its file ships (without the private note); pending or rejected never ship", () => {
+    const root = scratch();
+    mkdirSync(path.join(root, "public/uploads/products"), { recursive: true });
+    writeFileSync(path.join(root, "public/uploads/products/glue.jpg"), "x");
+    withImage(root, good);
+    expect(problems(root)).toEqual([]);
+    const out = lib.buildContent(root, { write: false }).outputs[
+      "src/data/catalog.generated.ts"
+    ] as string;
+    expect(out).toContain("/uploads/products/glue.jpg");
+    expect(out).toContain("Photo: Brand media kit");
+    expect(out).not.toContain("Ask the brand");
+    for (const rights of ["pending", "rejected"]) {
+      withImage(root, { ...good, rights });
+      const o = lib.buildContent(root, { write: false }).outputs[
+        "src/data/catalog.generated.ts"
+      ] as string;
+      expect(o, rights).not.toContain("/uploads/products/glue.jpg");
     }
   });
 });
@@ -383,9 +412,8 @@ describe("the Pages CMS products form matches the data rules", () => {
     yml.indexOf("  - name: products\n"),
     yml.indexOf("  - name: product-search-terms"),
   );
-  it("has a products collection over content/products and a search-terms file", () => {
+  it("has a products collection over content/products and no search-term list", () => {
     expect(section).toContain("path: content/products");
-    expect(yml).toContain("path: content/product-search-terms.json");
   });
   it("offers every status, link type, role, collection and kit the code accepts, and nothing else", () => {
     const values = (after: string) => {
@@ -396,11 +424,13 @@ describe("the Pages CMS products form matches the data rules", () => {
       ].map((m) => m[1]);
     };
     expect(values("status")).toEqual(["candidate", "verified", "held", "discontinued"]);
-    expect(values("linkType")).toEqual(["amazon-affiliate-ready", "editorial-pick"]);
+    expect(values("rights")).toEqual(["pending", "cleared", "rejected"]);
     expect([...values("role")].sort()).toEqual([...PRODUCT_ROLES].sort());
     expect([...values("collections")].sort()).toEqual(collections.map((c) => c.slug).sort());
     const kitStart = section.indexOf("name: kitSlots");
-    const kitIds = [...section.slice(kitStart).matchAll(/value: ([a-z-]+),/g)].map((m) => m[1]);
+    const kitIds = [
+      ...section.slice(kitStart, section.indexOf("name: specs")).matchAll(/value: ([a-z-]+),/g),
+    ].map((m) => m[1]);
     expect([...kitIds].sort()).toEqual(kits.map((k) => k.id).sort());
   });
   it("every field a product file uses has a form field (so nothing is uneditable)", () => {
@@ -409,8 +439,7 @@ describe("the Pages CMS products form matches the data rules", () => {
       const p = JSON.parse(readFileSync(path.join(repo, "content/products", f), "utf8"));
       // image fields and affiliate bookkeeping are kept by the CMS merge setting, not shown
       for (const k of Object.keys(p)) {
-        if (/^(image(Url|Credit|Source|Rights)|affiliateStatus|affiliateNetwork)$/.test(k))
-          continue;
+        if (/^(affiliateStatus|affiliateNetwork)$/.test(k)) continue;
         expect(names.has(k), `${f}: ${k}`).toBe(true);
       }
     }

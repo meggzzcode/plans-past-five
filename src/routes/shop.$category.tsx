@@ -5,7 +5,7 @@ import { collectionGuide } from "@/lib/collection-guide";
 import { images } from "@/data/images";
 import { site } from "@/config/site";
 import { seo } from "@/lib/seo";
-import { SearchTermCard, CollectionCard, ArticleCard } from "@/components/cards/Cards";
+import { CollectionCard, ArticleCard } from "@/components/cards/Cards";
 import { Kicker, toneBg } from "@/components/editorial/Section";
 import { StarterKit } from "@/components/commerce/StarterKit";
 import { ShopDisclosure } from "@/components/commerce/ProductCard";
@@ -78,7 +78,6 @@ function CollectionPage() {
     const kit = getKit(id);
     return !!kit && fillKit(kit, verifiedCatalog).length > 0;
   });
-  const ps = g.products;
   const [needNow = [], needLater = []] = dedupeListGroups([g.essentials, g.upgrades]).map((xs) =>
     xs.slice(0, 4),
   );
@@ -225,42 +224,12 @@ function CollectionPage() {
           </div>
           {!verified && (
             <p className="mt-8 border-l-4 border-cherry bg-butter/40 px-4 py-3 text-sm text-ink">
-              No named picks here yet: we only name a product once we've read its Amazon page. Until
-              then, here is exactly what to look for. Each button opens an Amazon search so you can
-              compare for yourself.
+              No named picks here yet: we only name a product once we have read its Amazon page.
+              Until then, here is what to start with.
             </p>
           )}
         </section>
       )}
-      <section className="mx-auto max-w-7xl px-5 pb-16 pt-14 md:px-8">
-        {/* With named picks on the page, the type-level search cards fold away so they do not compete. */}
-        {verified || hasKit ? (
-          <details className="group">
-            <summary className="min-h-11 cursor-pointer text-base font-semibold text-espresso">
-              More ideas, by product type
-            </summary>
-            <div className="mt-6 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-              {ps.map((p, i) => (
-                <SearchTermCard key={p.id} p={p} index={i} />
-              ))}
-            </div>
-            <ShopDisclosure kind="general" className="mt-6" />
-          </details>
-        ) : (
-          <>
-            <h2 className="mb-2 text-3xl italic">What to look for</h2>
-            <p className="mb-8 max-w-prose text-sm text-espresso">
-              These are types of product, not verified picks. Each button opens an Amazon search.
-            </p>
-            <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-              {ps.map((p, i) => (
-                <SearchTermCard key={p.id} p={p} index={i} />
-              ))}
-            </div>
-            <ShopDisclosure kind="general" className="mt-8" />
-          </>
-        )}
-      </section>
       <section className="mx-auto max-w-7xl px-5 pb-16 md:px-8">
         <p className="kicker text-cherry">Hobby guides this collection supports</p>
         <div className="mt-4 flex flex-wrap gap-2">

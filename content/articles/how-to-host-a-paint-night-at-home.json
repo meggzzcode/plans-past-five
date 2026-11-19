@@ -150,9 +150,8 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "portable-speakers",
-        "conversation-cards"
+      "hobbies": [
+        "craft-nights"
       ],
       "title": "For the slow moments",
       "dek": "A small speaker and a deck of conversation cards keep the evening moving between coats of paint."

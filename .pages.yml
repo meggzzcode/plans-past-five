@@ -230,12 +230,12 @@ content:
           - name: starterKit
             label: Starter kit (shop)
             fields:
-              - { name: productIds, label: "Search terms to show (ids from Product search terms, one per line)", type: string, list: true }
+              - { name: hobbies, label: "Hobbies whose products to show (web-address names, one per line)", type: string, list: true }
               - { name: title, label: "Heading (optional)", type: string }
           - name: shopHobby
             label: Shop for a hobby
             fields:
-              - { name: productIds, label: "Search terms to show (ids from Product search terms, one per line)", type: string, list: true }
+              - { name: hobbies, label: "Hobbies whose products to show (web-address names, one per line)", type: string, list: true }
               - { name: title, label: "Heading (optional)", type: string }
               - { name: dek, label: "Short intro (optional)", type: string }
           - name: shopTheArticle
@@ -400,17 +400,9 @@ content:
             - { value: discontinued, label: "Discontinued (no longer sold)" }
       - { name: statusReason, label: "Why held or discontinued (one sentence; stays private)", type: string }
       - { name: replacedBy, label: "Replaced by (the id of the product that takes over; only for held or discontinued)", type: string }
-      - name: linkType
-        label: Where the Buy button goes
-        type: select
-        required: true
-        options:
-          values:
-            - { value: amazon-affiliate-ready, label: "Amazon product page (needs the ASIN)" }
-            - { value: editorial-pick, label: "Maker or shop page that is not Amazon (needs a web address below)" }
-      - { name: asin, label: "Amazon number (ASIN): 10 letters and numbers from the product's Amazon page", type: string }
-      - { name: manufacturerUrl, label: "Maker's web address (https://...)", type: string }
-      - { name: altRetailerUrl, label: "Another shop's web address (https://...); used instead of the maker's if both are filled", type: string }
+      - { name: asin, label: "Amazon number (ASIN): 10 letters and numbers from the product's Amazon page (required: every shown product is an Amazon product)", type: string, required: true }
+      - { name: manufacturerUrl, label: "Maker's web address (research only; never used as a Buy link)", type: string }
+      - { name: altRetailerUrl, label: "Another shop's web address (research only; never used as a Buy link)", type: string }
       - name: availability
         label: Availability
         type: select
@@ -486,33 +478,25 @@ content:
           - { name: label, label: "Label (e.g. Rolls)", type: string }
           - { name: value, label: "Value (e.g. 21)", type: string }
       - { name: researchSources, label: "Pages the facts were checked against (https, one per line)", type: string, list: true, required: true }
-      - name: imageEmbed
-        label: Amazon-provided image (optional)
+      - name: image
+        label: Product picture (optional)
         type: object
-        description: "Leave empty unless Amazon's own Associates tool gave you an image link and you confirmed in your Associates account that it may be used. Paste exactly what the tool gave. Shown only while Amazon links are live. Never save an Amazon picture to this site."
+        description: "Shown on the product's cards whenever rights are Cleared, whether Amazon tracking is on or off. NEVER save or paste an Amazon listing picture. Use a picture the maker or a photographer has given you written commercial permission to use on this site, or your own photo. Leave empty to show the label tile."
         fields:
-          - { name: src, label: "Image address exactly as the Associates tool gave it (https)", type: string }
-          - { name: alt, label: "Describe the picture", type: string }
-          - { name: approvedOn, label: "Date you confirmed it in Associates (like 2026-11-19)", type: string }
-
-  # ---------------------------------------------------------------- Search terms
-  # The short list behind every generic "Find ... on Amazon" link (a kind of product, not a pick).
-  - name: product-search-terms
-    label: Product search terms
-    type: file
-    path: content/product-search-terms.json
-    format: json
-    fields:
-      - name: terms
-        label: Search terms
-        type: object
-        list: true
-        fields:
-          - { name: id, label: "Short name (lowercase words with hyphens; articles and hobbies use it)", type: string, required: true }
-          - { name: label, label: "What the reader sees (e.g. Clay sculpting tools)", type: string, required: true }
-          - { name: query, label: "Amazon search words (lowercase letters, numbers and spaces)", type: string, required: true }
-          - { name: collection, label: "Shop collection (web-address name)", type: string, required: true }
-          - { name: hobbies, label: "Hobbies it serves (web-address names, one per line)", type: string, list: true }
+          - { name: file, label: "Picture (upload; saved under /uploads)", type: image }
+          - { name: alt, label: "Describe the picture for people who cannot see it", type: string }
+          - { name: source, label: "Where it came from (maker's media kit, photographer, my own photo...)", type: string }
+          - { name: license, label: "The commercial permission that lets this site use it (what was agreed, and when)", type: string }
+          - { name: attribution, label: "Credit line shown with it (e.g. Photo: Brand media kit)", type: string }
+          - name: rights
+            label: Rights status
+            type: select
+            options:
+              values:
+                - { value: pending, label: "Pending (not shown)" }
+                - { value: cleared, label: "Cleared (shown)" }
+                - { value: rejected, label: "Rejected (not shown)" }
+          - { name: note, label: "How to replace it if the permission ends (private)", type: string }
 
   # Not offered in the CMS yet: Hobbies (still code in src/data/hobbies.ts). The CSV importer
   # (scripts/import-products.mjs) is a developer bulk-load tool only. See docs/buyer/PRODUCT-MANAGEMENT.md.

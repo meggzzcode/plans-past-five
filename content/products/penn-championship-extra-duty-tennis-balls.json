@@ -5,7 +5,6 @@
   "category": "Tennis balls",
   "order": 58,
   "status": "candidate",
-  "linkType": "amazon-affiliate-ready",
   "description": "Pressurized extra-duty felt tennis balls, packs of three cans.",
   "asin": "B0002JZEL4",
   "specs": [
@@ -48,6 +47,5 @@
   ],
   "lastVerified": "2026-11-19",
   "availability": "available",
-  "affiliateStatus": "not-activated",
-  "imageRights": "none"
+  "affiliateStatus": "not-activated"
 }

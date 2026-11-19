@@ -347,8 +347,8 @@ describe("converted data renders identically", () => {
         hobby: "h",
       },
       whatYoullNeed: { type: "whatYoullNeed", essentials: ["a"], optional: ["b"] },
-      starterKit: { type: "starterKit", productIds: ["a"], title: "t" },
-      shopHobby: { type: "shopHobby", productIds: ["a"], title: "t", dek: "d" },
+      starterKit: { type: "starterKit", hobbies: ["a"], title: "t" },
+      shopHobby: { type: "shopHobby", hobbies: ["a"], title: "t", dek: "d" },
       shopTheArticle: {
         type: "shopTheArticle",
         articleSlug: "a",

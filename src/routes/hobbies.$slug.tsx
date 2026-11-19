@@ -7,12 +7,11 @@ import {
   isHobbyIndexable,
 } from "@/data/hobbies";
 import { articlesForHobby, getArticle } from "@/content";
-import { searchTermsFor } from "@/data/search-terms";
 import { selectProducts, verifiedCatalog } from "@/data/catalog";
 import { images } from "@/data/images";
 import { site } from "@/config/site";
 import { seo, absoluteUrl } from "@/lib/seo";
-import { HobbyMeta, ArticleCard, SearchTermCard, HobbyCard } from "@/components/cards/Cards";
+import { HobbyMeta, ArticleCard, HobbyCard } from "@/components/cards/Cards";
 import { SaveButton } from "@/components/editorial/SaveButton";
 import { ShareButtons } from "@/components/editorial/ShareButtons";
 import { AffiliateNote } from "@/components/editorial/AffiliateNote";
@@ -53,7 +52,6 @@ function HobbyPage() {
   const h = getHobby(slug)!;
   const img = h.image ? images[h.image] : null;
   const reads = articlesForHobby(h.slug);
-  const ps = searchTermsFor(h.productIds);
   const related = (h.relatedHobbies ?? [])
     .map((slug) => getHobby(slug))
     .filter((x): x is NonNullable<typeof x> => Boolean(x));
@@ -65,7 +63,7 @@ function HobbyPage() {
       Boolean(a) && arr.findIndex((b) => b?.slug === a?.slug) === i,
   );
   const hasKit = selectProducts({ hobby: h.slug }, verifiedCatalog).all.length > 0;
-  const kitHref = hasKit || ps.length > 0 ? "#kit" : "#supplies";
+  const kitHref = hasKit ? "#kit" : "#supplies";
   const budget = h.startupBudget;
   const firstLine = h.firstActivity.split(".")[0] ?? h.firstActivity;
   const showFirstProject =
@@ -247,17 +245,6 @@ function HobbyPage() {
           )}
         </aside>
       </section>
-      {!hasKit && ps.length > 0 && (
-        <section id="kit" className="mx-auto max-w-6xl scroll-mt-24 px-5 md:px-8">
-          <Divider label="Your starter kit" />
-          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {ps.map((p) => (
-              <SearchTermCard key={p.id} p={p} />
-            ))}
-          </div>
-          <AffiliateNote className="mt-6" />
-        </section>
-      )}
       <div id="kit" className="mx-auto max-w-6xl scroll-mt-24 px-5 md:px-8">
         <ShopMyHobby hobby={h.slug} />
       </div>

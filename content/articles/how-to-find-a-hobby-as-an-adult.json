@@ -129,11 +129,11 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "pocket-notebooks",
-        "watercolor-sets",
+      "hobbies": [
+        "creative-writing",
+        "watercolor-painting",
         "air-dry-clay",
-        "daypacks"
+        "hiking"
       ],
       "title": "Three trial kits",
       "dek": "A pocket notebook, a mini paint set or a block of clay and a daypack for an outdoor trial cover three very different evenings, and each makes starting simple."

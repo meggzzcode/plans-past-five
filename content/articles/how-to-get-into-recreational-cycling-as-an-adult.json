@@ -155,16 +155,6 @@
       "text": "**What makes it easier:** a white front light and a red rear light, so dusk doesn't change your plans, plus a small bell for shared paths. Rules on lights vary by place, so check your local rules."
     },
     {
-      "type": "shopHobby",
-      "productIds": [
-        "bike-helmets",
-        "bike-lights",
-        "bike-bells"
-      ],
-      "title": "Helmet, lights, bell",
-      "dek": "Three small things to sort before the first ride. Check each listing and its label for fit, lights and local requirements."
-    },
-    {
       "type": "h2",
       "text": "Step 4: Do a thirty-second safety check",
       "id": "check"
@@ -242,11 +232,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "bike-repair-kits",
-        "daypacks",
-        "water-bottles",
-        "market-totes"
+      "hobbies": [
+        "hiking",
+        "tennis",
+        "picnicking"
       ],
       "title": "For a longer first ride",
       "dek": "A repair kit for the unexpected, a daypack for the snack, a bottle within reach and a tote for the bakery stop make a ride feel easy."

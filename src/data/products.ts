@@ -1,8 +1,8 @@
 import type { ImageKey } from "./images";
 
 /**
- * The shop collections. NAMED products live in content/products (src/data/catalog.ts); the generic
- * "Find ... on Amazon" search links live in content/product-search-terms.json (src/data/search-terms.ts).
+ * The shop collections. Products live in content/products (src/data/catalog.ts); only verified,
+ * Amazon-monetisable products are ever shown. There are no generic "search Amazon" substitutes.
  */
 
 export type CollectionSlug =
@@ -22,11 +22,8 @@ export type Collection = {
   intro: string;
   image: ImageKey;
   tone: "butter" | "strawberry" | "matcha" | "sunday" | "cream";
-  /**
-   * Search terms (content/product-search-terms.json, by id) from OTHER collections that also
-   * belong here. Each term keeps one home collection; this only cross-references.
-   */
-  extraSearchTermIds?: string[];
+  /** Hobby slugs this collection supports, main ones first. Drives the "hobby guides" and what-to-start lists. */
+  hobbies: string[];
   /**
    * Starter kits (src/data/kits.ts) that belong on this collection's page, hobby-appropriate only.
    * A collection never borrows another collection's kit under its own heading. A kit's "home"
@@ -38,6 +35,7 @@ export type Collection = {
 export const collections: Collection[] = [
   {
     slug: "pottery-era",
+    hobbies: ["air-dry-clay", "craft-nights", "paint-by-numbers", "pottery-painting"],
     name: "The Pottery Era",
     dek: "Clay, paint and very lovable lumpy bowls",
     image: "shopPottery",
@@ -48,6 +46,20 @@ export const collections: Collection[] = [
   },
   {
     slug: "creative-girl",
+    hobbies: [
+      "outdoor-sketching",
+      "junk-journaling",
+      "scrapbooking",
+      "flower-arranging",
+      "watercolor-painting",
+      "collage-art",
+      "crochet",
+      "knitting",
+      "craft-nights",
+      "embroidery",
+      "creative-writing",
+      "paint-by-numbers",
+    ],
     name: "The Creative Girl",
     dek: "Paper, paint and thread for quiet evenings",
     image: "watercolor",
@@ -58,6 +70,17 @@ export const collections: Collection[] = [
   },
   {
     slug: "sporty-girl",
+    hobbies: [
+      "tennis",
+      "hiking",
+      "pickleball",
+      "picnicking",
+      "birdwatching",
+      "nature-photography",
+      "running",
+      "roller-skating",
+      "yoga-for-beginners",
+    ],
     name: "The Sporty Girl",
     dek: "For golden-hour rallies and Saturday trails",
     image: "shopSporty",
@@ -68,6 +91,17 @@ export const collections: Collection[] = [
   },
   {
     slug: "girls-night-in",
+    hobbies: [
+      "craft-nights",
+      "mahjong",
+      "friendship-bracelets",
+      "jewelry-making",
+      "book-clubs",
+      "paint-by-numbers",
+      "baking",
+      "jigsaw-puzzles",
+      "picnicking",
+    ],
     name: "Girls' Night In",
     dek: "Host a night everyone talks about after",
     image: "shopGirlsNight",
@@ -78,6 +112,7 @@ export const collections: Collection[] = [
   },
   {
     slug: "bookish-girl",
+    hobbies: ["reading", "book-clubs"],
     name: "The Bookish Girl",
     dek: "For one-more-chapter people",
     image: "hobbyReading",
@@ -88,6 +123,18 @@ export const collections: Collection[] = [
   },
   {
     slug: "little-adventures",
+    hobbies: [
+      "picnicking",
+      "birdwatching",
+      "film-photography",
+      "outdoor-sketching",
+      "hiking",
+      "nature-photography",
+      "creative-writing",
+      "museum-exploring",
+      "thrifting",
+      "watercolor-painting",
+    ],
     name: "Little Adventures",
     dek: "Pack for a picnic, a market or a wander",
     image: "shopAdventures",
@@ -97,36 +144,43 @@ export const collections: Collection[] = [
   },
   {
     slug: "journaling-era",
+    hobbies: [
+      "junk-journaling",
+      "scrapbooking",
+      "calligraphy",
+      "film-photography",
+      "creative-writing",
+      "collage-art",
+      "reading",
+      "book-clubs",
+      "birdwatching",
+      "outdoor-sketching",
+      "museum-exploring",
+    ],
     name: "The Journaling Era",
     dek: "Pages, tape and a pen that makes you want to write",
     image: "junkJournal",
     tone: "sunday",
     intro:
       "A journal that can take glue, tape you'll love and the scraps already in your bag. Start with one notebook.",
-    extraSearchTermIds: [
-      "junk-journals",
-      "washi-tape",
-      "sticker-sets",
-      "reading-journals",
-      "pocket-notebooks",
-    ],
     kitIds: ["junk-journaling"],
   },
   {
     slug: "cozy-after-hours",
+    hobbies: [
+      "reading",
+      "jigsaw-puzzles",
+      "board-games",
+      "book-clubs",
+      "craft-nights",
+      "indoor-gardening",
+    ],
     name: "Cozy After Hours",
     dek: "Low-effort comforts for the evening you actually have",
     image: "cozyCorner",
     tone: "cream",
     intro:
       "Small things that turn a weeknight at home into a plan: better light, a game on the table, something quiet to make.",
-    extraSearchTermIds: [
-      "book-lights",
-      "reading-stands",
-      "book-nook-kits",
-      "board-games",
-      "conversation-cards",
-    ],
     kitIds: [],
   },
 ];

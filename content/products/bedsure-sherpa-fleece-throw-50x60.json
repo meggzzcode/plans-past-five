@@ -5,7 +5,6 @@
   "category": "Throw blanket",
   "order": 59,
   "status": "candidate",
-  "linkType": "amazon-affiliate-ready",
   "description": "A reversible sherpa fleece throw, 50 x 60 in.",
   "asin": "B0CPS62512",
   "specs": [
@@ -52,6 +51,5 @@
   ],
   "lastVerified": "2026-11-19",
   "availability": "available",
-  "affiliateStatus": "not-activated",
-  "imageRights": "none"
+  "affiliateStatus": "not-activated"
 }

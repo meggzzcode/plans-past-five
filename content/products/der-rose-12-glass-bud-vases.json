@@ -5,7 +5,6 @@
   "category": "Vase",
   "order": 53,
   "status": "candidate",
-  "linkType": "amazon-affiliate-ready",
   "description": "Twelve small clear glass bud vases with a vintage pattern.",
   "asin": "B0D46SKZMK",
   "specs": [
@@ -47,6 +46,5 @@
   ],
   "lastVerified": "2026-11-19",
   "availability": "available",
-  "affiliateStatus": "not-activated",
-  "imageRights": "none"
+  "affiliateStatus": "not-activated"
 }

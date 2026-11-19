@@ -95,10 +95,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "conversation-cards",
-        "tea-sets",
-        "cozy-night-in"
+      "hobbies": [
+        "craft-nights",
+        "book-clubs",
+        "reading"
       ],
       "title": "The table kit",
       "dek": "Conversation cards for the pauses, a tea set and a soft throw for the sofa. Small things that make a living room feel like a club."
@@ -185,10 +185,8 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "reading-journals",
-        "book-lights",
-        "magnetic-bookmarks"
+      "hobbies": [
+        "reading"
       ],
       "title": "For the readers: journal, light and bookmark",
       "dek": "A journal for the thoughts you'll want to bring, a light for late chapters and a magnetic bookmark for marking a line to read aloud."

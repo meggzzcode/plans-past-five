@@ -86,11 +86,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "junk-journals",
-        "washi-tape",
-        "photo-albums",
-        "brush-pens"
+      "hobbies": [
+        "junk-journaling",
+        "scrapbooking",
+        "calligraphy"
       ],
       "title": "For a paper evening",
       "dek": "A journal, washi tape, an album or a brush pen is a small first buy that gets you to a finished page the same night."
@@ -135,11 +134,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "watercolor-sets",
-        "watercolor-sketchbooks",
-        "paint-by-number-kits",
-        "acrylic-paints"
+      "hobbies": [
+        "watercolor-painting",
+        "paint-by-numbers",
+        "air-dry-clay"
       ],
       "title": "For a painting evening",
       "dek": "A small paint set and a pad of paper, a paint-by-number kit or a few acrylics are enough for the first painting."
@@ -179,11 +177,8 @@
     },
     {
       "type": "starterKit",
-      "productIds": [
-        "air-dry-clay",
-        "clay-tools",
-        "acrylic-paints",
-        "clay-mats"
+      "hobbies": [
+        "air-dry-clay"
       ],
       "title": "Clay: where to start"
     },
@@ -247,11 +242,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "embroidery-kits",
-        "crochet-hooks",
-        "yarn",
-        "knitting-needles"
+      "hobbies": [
+        "embroidery",
+        "crochet",
+        "knitting"
       ],
       "title": "For a thread-and-yarn evening",
       "dek": "A starter kit, a set of hooks or needles and a ball of beginner yarn keep your hands busy through a whole episode."
@@ -284,12 +278,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "flower-snips",
-        "vases",
-        "flower-frogs",
-        "indoor-plant-basics",
-        "cookie-decorating-kits"
+      "hobbies": [
+        "flower-arranging",
+        "indoor-gardening",
+        "baking"
       ],
       "title": "For the living and edible hobbies",
       "dek": "Snips and a vase, a few jars, a decorating kit: small things that make a bunch of flowers, a cutting or a plate of cookies look arranged."

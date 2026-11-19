@@ -115,13 +115,9 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
+      "hobbies": [
         "air-dry-clay",
-        "clay-mats",
-        "acrylic-paints",
-        "detail-brushes",
-        "watercolor-sets",
-        "watercolor-sketchbooks"
+        "watercolor-painting"
       ],
       "title": "Start with this",
       "dek": "Clay, a mat, acrylic paint, a fine brush and watercolor paper cover Saturday and Sunday's painting, so Friday's setup is quick. Tick off what you already own."
@@ -252,10 +248,8 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "junk-journals",
-        "washi-tape",
-        "sticker-sets"
+      "hobbies": [
+        "junk-journaling"
       ],
       "title": "For Sunday's journal spread",
       "dek": "A blank journal, washi tape and stickers are all the spread needs, and they pack away in a tin until next time."

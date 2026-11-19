@@ -5,7 +5,6 @@
   "category": "Crochet hooks",
   "order": 37,
   "status": "candidate",
-  "linkType": "amazon-affiliate-ready",
   "description": "A 51-piece crochet set: 12 aluminum hooks with silicone handles, markers, needles, row counter, scissors and case.",
   "asin": "B0C33QM3KR",
   "specs": [
@@ -51,6 +50,5 @@
   ],
   "lastVerified": "2026-11-18",
   "availability": "available",
-  "affiliateStatus": "not-activated",
-  "imageRights": "none"
+  "affiliateStatus": "not-activated"
 }

@@ -141,8 +141,8 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "crochet-hooks"
+      "hobbies": [
+        "crochet"
       ],
       "title": "A comfortable hook, for when you want to keep going",
       "dek": "Hooks come in sets with a range of sizes and handles. A set lets you try the size your yarn label suggests, and then the next size up when a row feels tight."

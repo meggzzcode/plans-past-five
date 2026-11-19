@@ -5,7 +5,6 @@
   "category": "Bowls",
   "order": 49,
   "status": "candidate",
-  "linkType": "amazon-affiliate-ready",
   "description": "Four small white ceramic bowls for snacks, dips and desserts; dishwasher and microwave safe per listing.",
   "asin": "B07T66BYHS",
   "specs": [
@@ -58,6 +57,5 @@
   ],
   "lastVerified": "2026-11-19",
   "availability": "available",
-  "affiliateStatus": "not-activated",
-  "imageRights": "none"
+  "affiliateStatus": "not-activated"
 }

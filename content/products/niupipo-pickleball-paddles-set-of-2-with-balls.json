@@ -5,7 +5,6 @@
   "category": "Pickleball paddles",
   "order": 55,
   "status": "candidate",
-  "linkType": "amazon-affiliate-ready",
   "description": "Two fiberglass honeycomb-core paddles with balls and a bag.",
   "asin": "B08C73KK4R",
   "specs": [
@@ -56,6 +55,5 @@
   ],
   "lastVerified": "2026-11-19",
   "availability": "available",
-  "affiliateStatus": "not-activated",
-  "imageRights": "none"
+  "affiliateStatus": "not-activated"
 }

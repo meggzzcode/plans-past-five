@@ -7,14 +7,7 @@ import tseslint from "typescript-eslint";
 
 export default tseslint.config(
   {
-    ignores: [
-      "dist",
-      ".output",
-      ".vinxi",
-      ".netlify",
-      "src/data/catalog.generated.ts",
-      "src/data/search-terms.generated.ts",
-    ],
+    ignores: ["dist", ".output", ".vinxi", ".netlify", "src/data/catalog.generated.ts"],
   },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],

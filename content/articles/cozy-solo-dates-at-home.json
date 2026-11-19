@@ -89,9 +89,8 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "cozy-night-in",
-        "book-lights",
+      "hobbies": [
+        "reading",
         "jigsaw-puzzles"
       ],
       "title": "The night-in kit",
@@ -206,13 +205,13 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "paint-by-number-kits",
+      "hobbies": [
+        "paint-by-numbers",
         "air-dry-clay",
-        "junk-journals",
-        "brush-pens",
-        "letter-writing-sets",
-        "photo-albums"
+        "junk-journaling",
+        "calligraphy",
+        "creative-writing",
+        "scrapbooking"
       ],
       "title": "For a gentle, creative evening",
       "dek": "A kit, a journal, a pen or an album arrives ready to use, so the date starts with making rather than shopping."
@@ -266,10 +265,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "indoor-plant-basics",
-        "tea-sets",
-        "portable-speakers"
+      "hobbies": [
+        "indoor-gardening",
+        "book-clubs",
+        "craft-nights"
       ],
       "title": "Little extras for the evening",
       "dek": "A watering can and a pot, a tea set and a small speaker make the kitchen and plant-corner dates feel like occasions."

@@ -62,7 +62,6 @@ const { hobbies } = await import(at("src/data/hobbies.ts"));
 const { verifiedCatalog } = await import(at("src/data/catalog.ts"));
 const { kits, fillKit, isFullKit } = await import(at("src/data/kits.ts"));
 const { collections } = await import(at("src/data/products.ts"));
-const { searchTerms } = await import(at("src/data/search-terms.ts"));
 const { sitemapPaths } = await import(at("src/lib/sitemap.ts"));
 const { pinFiles } = await import(at("src/data/pins.ts"));
 const { images } = await import(at("src/data/images.ts"));
@@ -146,7 +145,6 @@ Generated ${date} from commit \`${commit}\`${dirty} by \`node scripts/inventory.
     .map((k) => k.id)
     .join(", ") || "none"
 }); incomplete: ${kitRows.filter((k) => !k.full).length} |
-| Generic search terms (\`content/product-search-terms.json\`, "Find ... on Amazon" links) | ${searchTerms.length} |
 
 ## Products (the one source, \`content/products/*.json\`)
 

@@ -5,7 +5,6 @@
   "category": "Embroidery scissors",
   "order": 36,
   "status": "candidate",
-  "linkType": "amazon-affiliate-ready",
   "description": "Stork-style embroidery scissors with a black synthetic leather case.",
   "asin": "B0D1Y66RQZ",
   "specs": [
@@ -39,6 +38,5 @@
   ],
   "lastVerified": "2026-11-18",
   "availability": "available",
-  "affiliateStatus": "not-activated",
-  "imageRights": "none"
+  "affiliateStatus": "not-activated"
 }

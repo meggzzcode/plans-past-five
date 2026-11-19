@@ -5,7 +5,6 @@
   "category": "Cooler bag",
   "order": 51,
   "status": "candidate",
-  "linkType": "amazon-affiliate-ready",
   "description": "A leakproof, five-layer insulated soft cooler with an upper snack compartment.",
   "asin": "B0CSK46585",
   "specs": [
@@ -52,6 +51,5 @@
   ],
   "lastVerified": "2026-11-19",
   "availability": "available",
-  "affiliateStatus": "not-activated",
-  "imageRights": "none"
+  "affiliateStatus": "not-activated"
 }

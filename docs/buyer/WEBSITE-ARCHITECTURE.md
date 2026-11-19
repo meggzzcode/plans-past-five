@@ -41,7 +41,7 @@ docs/              handoff, buyer, content, commerce, marketing, SOPs
 ## Data flow
 
 - Articles: `src/content/index.ts` registers published articles only (count: `docs/buyer/INVENTORY.md`); `articles` is the only list public code may use. Drafts are registered in `src/content/draft-registry.ts`, which exports `allArticlesIncludingDrafts` for tooling and tests only (`docs/content/ARTICLE-ROADMAP.md`).
-- Products: one source, `content/products/*.json`, compiled by `scripts/build-content.mjs` into `src/data/catalog.generated.ts` (shown products only). Generic "Find ... on Amazon" links come from `content/product-search-terms.json`. Kits are slots in `src/data/kits.ts` filled by products tagged with that slot.
+- Products: one source, `content/products/*.json`, compiled by `scripts/build-content.mjs` into `src/data/catalog.generated.ts` (shown products only). The legacy product-type search cards were retired: only verified Amazon products are shown. Kits are slots in `src/data/kits.ts` filled by products tagged with that slot.
 - Links: `resolveProductLink()` in `src/config/affiliate.ts` picks an active approved affiliate entry, else an ordinary retailer URL, else an Amazon search link. Disclosure text follows automatically.
 - SEO: `src/lib/seo.ts` builds titles, descriptions, canonicals, Open Graph and JSON-LD. `src/lib/sitemap.ts` lists published pages for `/sitemap.xml`.
 - Analytics: one setting, `analytics.ga4MeasurementId` (empty by default, so nothing loads). A valid ID makes `src/lib/analytics.ts` add the async Google tag to the root head and switches on `src/lib/track.ts` events. See `docs/buyer/ANALYTICS-SETUP.md`.

@@ -5,7 +5,6 @@
   "category": "Pens",
   "order": 46,
   "status": "candidate",
-  "linkType": "amazon-affiliate-ready",
   "description": "Fourteen 0.5 mm gel pens in assorted colours with a comfort grip.",
   "asin": "B07BZ3L66Z",
   "specs": [
@@ -52,6 +51,5 @@
   ],
   "lastVerified": "2026-11-19",
   "availability": "available",
-  "affiliateStatus": "not-activated",
-  "imageRights": "none"
+  "affiliateStatus": "not-activated"
 }

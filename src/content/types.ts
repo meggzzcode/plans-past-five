@@ -22,8 +22,8 @@ export type Block =
       first?: string | undefined;
     }
   | { type: "whatYoullNeed"; essentials: string[]; optional?: string[] }
-  | { type: "starterKit"; productIds: string[]; title?: string }
-  | { type: "shopHobby"; productIds: string[]; title?: string; dek?: string }
+  | { type: "starterKit"; hobbies: string[]; title?: string }
+  | { type: "shopHobby"; hobbies: string[]; title?: string; dek?: string }
   /** Verified catalog products for this article/hobbies/collection. Renders nothing until the catalog has verified products. */
   | {
       type: "shopTheArticle";

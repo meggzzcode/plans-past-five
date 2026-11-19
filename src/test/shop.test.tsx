@@ -283,46 +283,49 @@ describe("card content", () => {
     expect(document.body.textContent).not.toMatch(/I need this|I already own|Save for later/);
     expect(screen.getAllByRole("button", { name: /Add to my shopping list/ })).toHaveLength(1);
   });
-  it("shows a photo only when rights and a credit are recorded", async () => {
-    const photo = {
-      imageUrl: "/images/products/test.jpg",
-      imageCredit: "Photo: Test Brand press kit",
-      imageSource: "https://example.com/press-terms",
+  it("shows a picture whenever its rights are cleared, whatever the affiliate state, and never otherwise", async () => {
+    const image = {
+      file: "/uploads/products/test.jpg",
+      alt: "A test product on a table",
+      source: "Test Brand media kit",
+      license: "Written permission for commercial use on this site",
+      attribution: "Photo: Test Brand press kit",
+      rights: "cleared" as const,
     };
-    const { unmount } = await show(
-      <ProductCard product={{ ...base, ...photo, imageRights: "licensed" }} placement="test" />,
-    );
-    expect(document.querySelector("img")?.getAttribute("src")).toBe("/images/products/test.jpg");
+    const { unmount } = await show(<ProductCard product={{ ...base, image }} placement="test" />);
+    expect(document.querySelector("img")?.getAttribute("src")).toBe("/uploads/products/test.jpg");
+    expect(document.querySelector("img")?.getAttribute("alt")).toBe("A test product on a table");
     expect(document.body.textContent).toContain("Photo: Test Brand press kit");
     unmount();
-    await show(
-      <ProductCard product={{ ...base, ...photo, imageRights: "none" }} placement="test" />,
-    );
-    expect(document.querySelector("img")).toBeNull();
-    expect(document.querySelector("[data-product-tile]")).not.toBeNull();
+    for (const rights of ["pending", "rejected"] as const) {
+      const r = await show(
+        <ProductCard product={{ ...base, image: { ...image, rights } }} placement="test" />,
+      );
+      expect(document.querySelector("img")).toBeNull();
+      expect(document.querySelector("[data-product-tile]")).not.toBeNull();
+      r.unmount();
+    }
   });
-  it("validates photo fields", () => {
+  it("validates picture fields", () => {
     const v = (o: object) => validateCatalogProduct({ ...base, ...o }).join("\n");
-    expect(v({ imageUrl: "/x.jpg" })).toMatch(/needs documented imageRights/);
-    expect(
-      v({ imageUrl: "/x.jpg", imageRights: "licensed", imageSource: "https://a.example/t" }),
-    ).toMatch(/needs an imageCredit/);
-    expect(
-      v({
-        imageUrl: "https://m.media-amazon.com/images/I/x.jpg",
-        imageRights: "licensed",
-        imageSource: "https://a.example/t",
-        imageCredit: "x",
-      }),
-    ).toMatch(/must not point at Amazon/);
-    expect(
-      v({
-        imageUrl: "/x.jpg",
-        imageRights: "owned",
-        imageSource: "own photo",
-        imageCredit: "Photo: us",
-      }),
-    ).toBe("");
+    const image = {
+      file: "/uploads/products/x.jpg",
+      alt: "x",
+      source: "own photo",
+      license: "own work",
+      attribution: "Photo: us",
+      rights: "cleared",
+    };
+    expect(v({ image })).toBe("");
+    expect(v({ image: { ...image, file: "https://m.media-amazon.com/images/I/x.jpg" } })).toMatch(
+      /never a web address/,
+    );
+    expect(v({ image: { ...image, file: "/elsewhere/x.jpg" } })).toMatch(/never a web address/);
+    expect(v({ image: { ...image, license: "" } })).toMatch(/image.license is required/);
+    expect(v({ image: { ...image, attribution: "" } })).toMatch(/image.attribution is required/);
+    expect(v({ image: { ...image, rights: "maybe" } })).toMatch(/image.rights must be one of/);
+    // not yet cleared: may be incomplete, but is never shipped
+    expect(v({ image: { file: "/uploads/products/x.jpg", rights: "pending" } })).toBe("");
     expect(v({ benefit: "Only $9 today" })).toMatch(/price/);
     expect(v({ hold: "" })).toMatch(/hold needs a reason/);
   });
@@ -691,20 +694,19 @@ describe("empty-catalog parity", () => {
   afterEach(() => {
     verifiedCatalog.splice(0, verifiedCatalog.length, ...saved);
   });
-  it("shop blocks render nothing and legacy blocks fall back to type cards", async () => {
+  it("with no verified products every shop block renders nothing: no search-card substitutes", async () => {
     const { container } = await show(
       <ArticleBody
         blocks={[
           { type: "shopTheArticle", articleSlug: "x", hobbies: ["junk-journaling"] },
           { type: "shopMyHobby", hobby: "junk-journaling" },
-          { type: "shopHobby", productIds: ["air-dry-clay"], title: "Legacy title" },
+          { type: "shopHobby", hobbies: ["air-dry-clay"], title: "Legacy title" },
         ]}
       />,
     );
-    expect(container.textContent).toContain("Legacy title");
-    expect(container.textContent).toContain("Air-dry clay");
+    expect(container.textContent).not.toContain("Legacy title");
     expect(container.textContent).not.toMatch(/Shopping checklist|Shop this guide/);
-    expect(container.querySelector("a[href*='amazon.com/s']")).not.toBeNull();
+    expect(container.querySelector("a[href*='amazon.com']")).toBeNull();
     expect(container.querySelectorAll("input[type=checkbox]").length).toBe(0);
   });
   it("inline product mentions stay plain text when unverified", async () => {
@@ -795,19 +797,19 @@ describe("legacy blocks use the catalog strictly", () => {
     const { container } = await show(
       <ArticleBody
         articleSlug="some-other-article"
-        blocks={[{ type: "shopHobby", productIds: ["washi-tape"], title: "Legacy title" }]}
+        blocks={[{ type: "shopHobby", hobbies: ["junk-journaling"], title: "Legacy title" }]}
       />,
     );
-    expect(container.textContent).toContain("Legacy title");
+    expect(container.textContent).not.toContain("Legacy title");
     expect(container.querySelectorAll("[data-product-id]").length).toBe(0);
-    expect(container.querySelector("a[href*='amazon.com/s']")).not.toBeNull();
+    expect(container.querySelector("a[href*='amazon.com/s']")).toBeNull();
     expect(legacy("x")).toHaveLength(1);
   });
   it("uses catalog products tagged to this article slug", async () => {
     const { container } = await show(
       <ArticleBody
         articleSlug="how-to-host-a-mahjong-night"
-        blocks={[{ type: "shopHobby", productIds: ["air-dry-clay"] }]}
+        blocks={[{ type: "shopHobby", hobbies: ["air-dry-clay"] }]}
       />,
     );
     expect(container.querySelectorAll("[data-product-id]").length).toBeGreaterThan(0);
@@ -818,7 +820,7 @@ describe("legacy blocks use the catalog strictly", () => {
         articleSlug="how-to-host-a-mahjong-night"
         blocks={[
           { type: "shopTheArticle", articleSlug: "how-to-host-a-mahjong-night" },
-          { type: "shopHobby", productIds: ["air-dry-clay"] },
+          { type: "shopHobby", hobbies: ["air-dry-clay"] },
         ]}
       />,
     );
@@ -826,6 +828,7 @@ describe("legacy blocks use the catalog strictly", () => {
       e.getAttribute("data-product-id"),
     );
     expect(new Set(ids).size).toBe(ids.length);
-    expect(container.querySelectorAll("aside").length).toBe(2);
+    // the second block would repeat products already shown, so it renders nothing (no substitute)
+    expect(container.querySelectorAll("aside").length).toBe(1);
   });
 });

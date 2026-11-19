@@ -30,32 +30,30 @@ export const PRODUCT_ROLES: ProductRole[] = [
 export type Availability = "available" | "check-listing" | "unavailable";
 export type AffiliateStatus = "not-activated" | "pending" | "active";
 export type CatalogStatus = "candidate" | "verified";
-export type CatalogImageRights = "none" | "owned" | "licensed" | "retailer-permission";
-
 /**
- * How a product reaches a reader.
- * - amazon-affiliate-ready: an exact Amazon listing. We store ONLY the ASIN and the ordinary
- *   https://www.amazon.com/dp/ASIN address. The tracking ID is added centrally at render time
- *   (src/config/affiliate.ts) and is never stored in a product or article file.
- * - editorial-pick: recommended on merit although it is not (or not best) on Amazon. Links to the
- *   maker's or retailer's own https page, unmonetised, with no Amazon fields needed.
+ * Picture rights. Only "cleared" images are ever shipped. Amazon listing images are NEVER stored,
+ * copied, cropped, cached or hotlinked: pictures here are owned, licensed or manufacturer-approved
+ * files kept in public/uploads, independent of whether affiliate tracking is on.
  */
-export type LinkType = "amazon-affiliate-ready" | "editorial-pick";
-export const LINK_TYPES: LinkType[] = ["amazon-affiliate-ready", "editorial-pick"];
+export type ImageRights = "cleared" | "pending" | "rejected";
+export const IMAGE_RIGHTS: ImageRights[] = ["cleared", "pending", "rejected"];
 
-/**
- * An image the owner copied from Amazon's own Associates tooling (for example a SiteStripe image
- * link). We NEVER download, copy, crop, cache or build these addresses: the fields hold exactly what
- * the tool gave. It is shown only while Amazon links are live, and it links to the product's Amazon
- * page through the central link builder. Absent (the default) means the card shows the label tile.
- */
-export type ImageEmbed = {
-  /** The https address the Associates tool provided, pasted as given. */
-  src: string;
-  /** Plain description of the picture for people who cannot see it. */
+/** The one central picture record for a product (articles never carry pictures of products). */
+export type ProductImage = {
+  /** A file under public/uploads, written like /uploads/products/clay-kit.jpg. Never a web address. */
+  file: string;
+  /** Plain description for people who cannot see it. */
   alt: string;
-  /** YYYY-MM-DD the owner confirmed in the Associates account that this embed may be used. */
-  approvedOn: string;
+  /** Where it came from (maker's media kit, photographer, own photo...). */
+  source: string;
+  /** The commercial licence or permission that allows use on this site. */
+  license: string;
+  /** Credit line shown with the picture ("Photo: Brand press kit"). */
+  attribution: string;
+  /** Shown only when "cleared". */
+  rights: ImageRights;
+  /** Private note: how to replace it if rights lapse. Never shipped. */
+  note?: string;
 };
 
 export type KitSlotRef = { kit: string; slot: string };
@@ -67,14 +65,10 @@ export type CatalogProduct = {
   category: string;
   /** One neutral factual sentence about what it is. */
   description: string;
-  /** Amazon product number. Empty for an editorial pick that is not sold on Amazon. */
+  /** Amazon product number (verified from the live listing). The ordinary address is derived from it. */
   asin: string;
   /** Ordinary link: exactly https://www.amazon.com/dp/<ASIN>. No tracking params, ever. */
   amazonUrl: string;
-  /** Optional Associates-provided image embed (see ImageEmbed). Null or absent by default. */
-  imageEmbed?: ImageEmbed | null;
-  /** Defaults to amazon-affiliate-ready when absent. */
-  linkType?: LinkType;
   /** Reserved. Must stay unset while affiliateStatus is "not-activated" (tags are added by src/config/affiliate.ts). */
   affiliateUrl?: string;
   manufacturerUrl?: string;
@@ -113,12 +107,8 @@ export type CatalogProduct = {
    * The text says why. Never a substitute for `status`.
    */
   hold?: string;
-  /** Photo. Shown ONLY when imageRights is owned, licensed or retailer-permission and imageCredit is set. */
-  imageUrl?: string;
-  /** Required with imageUrl: who to credit, e.g. "Photo: Brand press kit". */
-  imageCredit?: string;
-  imageSource?: string;
-  imageRights?: CatalogImageRights;
+  /** Optional picture record. Shown on cards when present and rights are "cleared". */
+  image?: ProductImage;
   /** https pages the facts were checked against. At least one. */
   researchSources: string[];
   /** YYYY-MM-DD the facts and the listing were last checked. */
@@ -188,53 +178,18 @@ export function validateCatalogProduct(input: unknown, now: Date = new Date()): 
   for (const k of ["name", "brand", "category", "description", "audience", "whySelected"])
     if (!str(r[k])) bad(`${k} is required`);
 
-  // How the reader is sent to the product (see LinkType)
-  const linkType = r["linkType"] ?? "amazon-affiliate-ready";
-  if (!LINK_TYPES.includes(linkType as LinkType))
-    bad(`linkType must be one of ${LINK_TYPES.join(", ")}`);
-  if (linkType === "editorial-pick") {
-    const dest = [r["altRetailerUrl"], r["manufacturerUrl"]].find((u) => str(u));
-    if (!dest)
-      bad(
-        "an editorial pick needs a maker or retailer web address (altRetailerUrl or manufacturerUrl)",
-      );
-    else if (
-      /(^|\.)(amazon\.[a-z.]+|amzn\.to|a\.co)(\/|$)/i.test(new URL(String(dest)).hostname + "/")
-    )
-      bad(
-        "an editorial pick must link to a non-Amazon page; use amazon-affiliate-ready for Amazon",
-      );
-    if (str(r["asin"]) && !isValidAsin(r["asin"])) bad(`invalid ASIN "${String(r["asin"])}"`);
-  } else {
-    // ASIN + ordinary Amazon URL
-    if (!isValidAsin(r["asin"]))
-      bad(
-        `invalid or placeholder ASIN "${String(r["asin"] ?? "")}" (need 10 uppercase letters/digits)`,
-      );
-    if (typeof r["amazonUrl"] !== "string" || !r["amazonUrl"]) bad("amazonUrl is required");
-    else {
-      const params = trackingParamsIn(r["amazonUrl"]);
-      if (params.length)
-        bad(`amazonUrl has tracking parameters (${params.join(", ")}); ordinary links only`);
-      if (isValidAsin(r["asin"]) && r["amazonUrl"] !== amazonProductUrl(r["asin"]))
-        bad(`amazonUrl must equal ${amazonProductUrl(r["asin"])}`);
-    }
-  }
-
-  if (r["imageEmbed"] !== undefined && r["imageEmbed"] !== null) {
-    const e = r["imageEmbed"] as Record<string, unknown>;
-    if (linkType !== "amazon-affiliate-ready")
-      bad("imageEmbed is only for amazon-affiliate-ready products");
-    if (!e || typeof e !== "object") bad("imageEmbed must be {src, alt, approvedOn} or empty");
-    else {
-      if (!isHttps(e["src"]))
-        bad("imageEmbed.src must be the https address the Associates tool gave");
-      else if (/[?&]tag=|\btag%3D/i.test(String(e["src"])))
-        bad("imageEmbed.src must not contain a tracking tag: tags are added centrally");
-      if (!str(e["alt"])) bad("imageEmbed.alt is required (describe the picture)");
-      if (typeof e["approvedOn"] !== "string" || !ISO_DATE.test(e["approvedOn"]))
-        bad("imageEmbed.approvedOn must be the date you confirmed it in Associates, YYYY-MM-DD");
-    }
+  // Every featured product is an Amazon product: a verified ASIN, and the ordinary address is derived from it.
+  if (!isValidAsin(r["asin"]))
+    bad(
+      `invalid or placeholder ASIN "${String(r["asin"] ?? "")}" (need 10 uppercase letters/digits)`,
+    );
+  if (typeof r["amazonUrl"] !== "string" || !r["amazonUrl"]) bad("amazonUrl is required");
+  else {
+    const params = trackingParamsIn(r["amazonUrl"]);
+    if (params.length)
+      bad(`amazonUrl has tracking parameters (${params.join(", ")}); ordinary links only`);
+    if (isValidAsin(r["asin"]) && r["amazonUrl"] !== amazonProductUrl(r["asin"]))
+      bad(`amazonUrl must equal ${amazonProductUrl(r["asin"])}`);
   }
 
   // The affiliate tag is never stored: links are built centrally from the ASIN plus the one site-wide tracking ID.
@@ -310,28 +265,25 @@ export function validateCatalogProduct(input: unknown, now: Date = new Date()): 
   )
     bad("kitSlots must be a list of {kit, slot}");
 
-  // Images stay photo-less unless rights are documented
-  if (
-    r["imageRights"] !== undefined &&
-    !["none", "owned", "licensed", "retailer-permission"].includes(r["imageRights"] as string)
-  )
-    bad("imageRights is not a recognised value");
-  if (r["imageRights"] && r["imageRights"] !== "none" && !str(r["imageSource"]))
-    bad("imageRights set without imageSource");
-  if (r["imageUrl"] !== undefined && r["imageUrl"] !== "") {
-    const u = r["imageUrl"];
-    if (typeof u !== "string" || (!(u.startsWith("/") && !u.startsWith("//")) && !isHttps(u)))
-      bad("imageUrl must be https or a site-relative path");
-    else if (/amazon\.com|media-amazon|ssl-images-amazon/i.test(u))
-      bad("imageUrl must not point at Amazon images (Associates terms restrict them)");
-    if (!r["imageRights"] || r["imageRights"] === "none")
-      bad("imageUrl needs documented imageRights (owned, licensed or retailer-permission)");
-    if (!str(r["imageCredit"])) bad("imageUrl needs an imageCredit");
-    if (!str(r["imageSource"]))
-      bad("imageUrl needs an imageSource (where the permission is recorded)");
-  } else if (str(r["imageCredit"]) && r["imageUrl"] === undefined) {
-    // credit with no photo is harmless, but flag it so it is not forgotten
-    bad("imageCredit set without imageUrl");
+  // The central picture record: shipped only when cleared, and cleared needs every field.
+  if (r["image"] !== undefined && r["image"] !== null) {
+    const im = r["image"] as Record<string, unknown>;
+    if (typeof im !== "object")
+      bad("image must be {file, alt, source, license, attribution, rights}");
+    else {
+      if (!IMAGE_RIGHTS.includes(im["rights"] as ImageRights))
+        bad(`image.rights must be one of ${IMAGE_RIGHTS.join(", ")}`);
+      if (
+        str(im["file"]) &&
+        !/^\/uploads\/[A-Za-z0-9._/-]+\.(jpe?g|png|webp)$/i.test(String(im["file"]))
+      )
+        bad(
+          "image.file must be a photo uploaded to this site, like /uploads/products/clay-kit.jpg, never a web address",
+        );
+      if (im["rights"] === "cleared")
+        for (const k of ["file", "alt", "source", "license", "attribution"])
+          if (!str(im[k])) bad(`image.${k} is required before rights can be "cleared"`);
+    }
   }
   for (const k of ["lead", "onlyOne"])
     if (r[k] !== undefined && typeof r[k] !== "boolean") bad(`${k} must be true or false`);

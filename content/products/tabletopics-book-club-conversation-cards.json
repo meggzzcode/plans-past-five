@@ -5,7 +5,6 @@
   "category": "Discussion cards",
   "order": 48,
   "status": "candidate",
-  "linkType": "amazon-affiliate-ready",
   "description": "A deck of book-club discussion questions usable for any book.",
   "asin": "B01M4NYEG9",
   "specs": [
@@ -48,6 +47,5 @@
   ],
   "lastVerified": "2026-11-19",
   "availability": "available",
-  "affiliateStatus": "not-activated",
-  "imageRights": "none"
+  "affiliateStatus": "not-activated"
 }

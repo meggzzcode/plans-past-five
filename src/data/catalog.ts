@@ -180,17 +180,16 @@ export function selectProducts(
   };
 }
 
-/** A photo is displayed only when rights are recorded, a credit is set and the record is valid. */
-export function photoFor(
-  p: Pick<CatalogProduct, "imageUrl" | "imageRights" | "imageCredit">,
-): { src: string; credit: string } | null {
-  if (!p.imageUrl || !p.imageCredit) return null;
-  if (!p.imageRights || p.imageRights === "none") return null;
-  return { src: p.imageUrl, credit: p.imageCredit };
+/** A picture is displayed only when its rights are "cleared" (and a credit line exists). Independent of affiliate state. */
+export function photoFor(p: Pick<CatalogProduct, "image">): {
+  src: string;
+  alt: string;
+  credit: string;
+} | null {
+  const im = p.image;
+  if (!im || im.rights !== "cleared" || !im.file || !im.attribution) return null;
+  return { src: im.file, alt: im.alt, credit: im.attribution };
 }
 
 /** The shape `resolveProductLink` expects. The exact URL is the ordinary ASIN page; the registry adds tags later. */
-export const linkableFor = (p: CatalogProduct) => ({
-  amazonQuery: p.name,
-  exactUrl: p.linkType === "editorial-pick" ? (p.altRetailerUrl ?? p.manufacturerUrl) : p.amazonUrl,
-});
+export const linkableFor = (p: CatalogProduct) => ({ amazonQuery: p.name, exactUrl: p.amazonUrl });

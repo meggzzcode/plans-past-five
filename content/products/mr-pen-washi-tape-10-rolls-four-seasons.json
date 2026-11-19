@@ -6,7 +6,6 @@
   "order": 20,
   "status": "held",
   "statusReason": "Smaller version of the 21-roll set. Held to keep the choice small.",
-  "linkType": "amazon-affiliate-ready",
   "description": "A 10-roll set of 0.6 in washi tape in a four-seasons colour mix.",
   "asin": "B0BXJT2NT8",
   "specs": [
@@ -55,6 +54,5 @@
   ],
   "lastVerified": "2026-11-18",
   "availability": "available",
-  "affiliateStatus": "not-activated",
-  "imageRights": "none"
+  "affiliateStatus": "not-activated"
 }

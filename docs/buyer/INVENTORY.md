@@ -1,6 +1,6 @@
 # Inventory (generated)
 
-Generated 2026-11-19 from commit `2563a9e` (working tree has uncommitted changes) by `node scripts/inventory.mjs`. **Do not edit by hand.** Re-run the script and every other document should point here instead of repeating these numbers. If this file is older than the last content change, re-run it.
+Generated 2026-11-19 from commit `cc034e8` (working tree has uncommitted changes) by `node scripts/inventory.mjs`. **Do not edit by hand.** Re-run the script and every other document should point here instead of repeating these numbers. If this file is older than the last content change, re-run it.
 
 ## Content
 
@@ -11,7 +11,6 @@ Generated 2026-11-19 from commit `2563a9e` (working tree has uncommitted changes
 | Hobbies | 43; 32 have an image; 34 are covered by a published guide |
 | Shop collections | 8 |
 | Collection kits | 8; complete (render as a kit): 2 (junk-journaling, air-dry-clay); incomplete: 6 |
-| Generic search terms (`content/product-search-terms.json`, "Find ... on Amazon" links) | 66 |
 
 ## Products (the one source, `content/products/*.json`)
 
@@ -42,8 +41,8 @@ Generated 2026-11-19 from commit `2563a9e` (working tree has uncommitted changes
 | --- | --- |
 | Route files in `src/routes` | 32 |
 | Pages in the sitemap (`/sitemap.xml`, built from `src/lib/sitemap.ts`) | 98 |
-| Test result (`bunx vitest run`, run in a temporary copy) | 780 passed, 0 failed, 780 total, in 57 files |
-| Test files | 57 |
+| Test result (`bunx vitest run`, run in a temporary copy) | 807 passed, 0 failed, 807 total, in 58 files |
+| Test files | 58 |
 | Docs in `docs/buyer` | 37 |
 
 ## Notes

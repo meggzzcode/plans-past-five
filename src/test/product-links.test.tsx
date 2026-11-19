@@ -2,12 +2,12 @@
  * Product links: the ASIN and the ordinary Amazon address are stored; the tracking ID never is.
  * Every Amazon link is built centrally, so changing the one site-wide tag changes all of them.
  */
-import { readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { cleanup, render } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import { OUTBOUND_BUY_REL, resolveProductLink } from "@/config/affiliate";
-import { LINK_TYPES, validateCatalogProduct, type CatalogProduct } from "@/data/catalog-rules";
+import { validateCatalogProduct, type CatalogProduct } from "@/data/catalog-rules";
 import { linkableFor, verifiedCatalog } from "@/data/catalog";
 import { Inline } from "@/components/editorial/Inline";
 import { ProductVisual } from "@/components/commerce/ProductCard";
@@ -77,26 +77,49 @@ describe("one site-wide tracking ID builds every Amazon link", () => {
   });
 });
 
-describe("product and article files hold no tracking ID and only declared link types", () => {
+describe("product files hold no tracking ID and every product is an Amazon product", () => {
   it("no content file stores a tracking tag, a short link or an affiliate URL", () => {
     const bad = /[?&]tag=|\blinkCode=|amzn\.to|\bassociatesTag\b|"affiliateUrl"/;
     for (const dir of ["content/products", "content/articles"])
       for (const { f, text } of filesIn(dir)) expect(text, `${dir}/${f}`).not.toMatch(bad);
   });
-  it("every product declares a known link type and only allowed hosts", () => {
+  it("every product stores only a verified-format ASIN; the address is derived, never typed", () => {
     for (const { f, text } of filesIn("content/products")) {
       const p = JSON.parse(text);
-      expect(LINK_TYPES, f).toContain(p.linkType);
-      if (p.linkType === "amazon-affiliate-ready") {
-        // only the ASIN is stored; the ordinary address is derived from it (never typed, never tagged)
-        expect(p, f).not.toHaveProperty("amazonUrl");
-        expect(p.asin, f).toMatch(/^[A-Z0-9]{10}$/);
-      } else {
-        const dest = new URL(p.altRetailerUrl ?? p.manufacturerUrl);
-        expect(dest.protocol, f).toBe("https:");
-        expect(dest.hostname, f).not.toMatch(/amazon|amzn/);
-      }
+      expect(p, f).not.toHaveProperty("amazonUrl");
+      expect(p, f).not.toHaveProperty("linkType");
+      expect(p.asin, f).toMatch(/^[A-Z0-9]{10}$/);
     }
+  });
+  it("every shipped product link is an ordinary amazon.com product page built from its ASIN", () => {
+    setAffiliateState("inactive");
+    for (const p of verifiedCatalog) {
+      const u = new URL(amazonHref(p));
+      expect(u.hostname, p.id).toBe("www.amazon.com");
+      expect(u.pathname, p.id).toBe(`/dp/${p.asin}`);
+    }
+    setAffiliateState("active", "hosts-20");
+    for (const p of verifiedCatalog) {
+      const u = new URL(amazonHref(p));
+      expect(u.hostname, p.id).toBe("www.amazon.com");
+      expect(u.pathname, p.id).toBe(`/dp/${p.asin}`);
+      expect(u.searchParams.get("tag")).toBe("hosts-20");
+    }
+  });
+  it("a record with no valid ASIN, or one that points at another shop, is refused", () => {
+    const base = verifiedCatalog[0]!;
+    expect(validateCatalogProduct({ ...base, asin: "" }).join()).toMatch(
+      /invalid or placeholder ASIN/,
+    );
+    expect(
+      validateCatalogProduct({ ...base, amazonUrl: "https://shop.example.com/p" }).join(),
+    ).toMatch(/amazonUrl must equal/);
+    expect(
+      validateCatalogProduct({
+        ...base,
+        affiliateUrl: "https://www.amazon.com/dp/B012345678?tag=a-20",
+      }).join(),
+    ).toMatch(/affiliateUrl is not allowed/);
   });
   it("outbound Amazon links in articles are ordinary, untagged addresses", () => {
     for (const { f, text } of filesIn("content/articles")) {
@@ -106,118 +129,57 @@ describe("product and article files hold no tracking ID and only declared link t
   });
 });
 
-describe("editorial picks link to the maker or retailer, unmonetised", () => {
-  const base = JSON.parse(
-    readFileSync(path.join(repo, "content/products/mr-pen-washi-tape-21-rolls.json"), "utf8"),
-  );
-  const {
-    status: _s,
-    order: _o,
-    asin: _a,
-    amazonUrl: _u,
-    ...rest
-  } = base as Record<string, unknown>;
-  void [_s, _o, _a, _u];
-  const pick = {
-    ...rest,
-    id: "maker-pick",
-    status: "verified",
-    asin: "",
-    amazonUrl: "",
-    linkType: "editorial-pick",
-    manufacturerUrl: "https://maker.example.com/product",
-  } as unknown as CatalogProduct;
-  it("is valid with a maker page and no ASIN, and links there even when Amazon is active", () => {
-    expect(validateCatalogProduct(pick)).toEqual([]);
-    setAffiliateState("active", "pick-20");
-    const l = resolveProductLink(linkableFor(pick));
-    expect(l.href).toBe("https://maker.example.com/product");
-    expect(l.href).not.toContain("tag=");
-    expect(l.sponsored).toBe(false);
-  });
-  it("needs a destination, and may not point at Amazon or carry tracking", () => {
-    const { manufacturerUrl: _m, ...none } = pick as unknown as Record<string, unknown>;
-    void _m;
-    expect(validateCatalogProduct(none as unknown as CatalogProduct).join()).toMatch(
-      /needs a maker or retailer web address/,
-    );
-    expect(
-      validateCatalogProduct({
-        ...pick,
-        manufacturerUrl: "https://www.amazon.com/dp/B012345678",
-      }).join(),
-    ).toMatch(/non-Amazon/);
-    expect(
-      validateCatalogProduct({
-        ...pick,
-        manufacturerUrl: "https://maker.example.com/p?tag=x-20",
-      }).join(),
-    ).toMatch(/tracking parameters/);
-  });
-  it("an unknown link type or a stored affiliate link is refused", () => {
-    expect(validateCatalogProduct({ ...pick, linkType: "sponsored" } as never).join()).toMatch(
-      /linkType must be one of/,
-    );
-    expect(
-      validateCatalogProduct({
-        ...pick,
-        affiliateUrl: "https://www.amazon.com/dp/B012345678?tag=a-20",
-      }).join(),
-    ).toMatch(/affiliateUrl is not allowed/);
-  });
-});
-
-describe("optional Associates image embed", () => {
+describe("product pictures are independent of affiliate state and need cleared rights", () => {
   const base = verifiedCatalog[0]!;
-  const withEmbed = {
-    ...base,
-    imageEmbed: {
-      src: "https://example.test/provided-by-associates-tool.jpg",
-      alt: "The product as shown by the Associates tool",
-      approvedOn: "2026-11-19",
-    },
-  } as CatalogProduct;
+  const withImage = (rights: "cleared" | "pending" | "rejected") =>
+    ({
+      ...base,
+      image: {
+        file: "/uploads/products/example.jpg",
+        alt: "Example product on a table",
+        source: "Brand media kit",
+        license: "Written permission for commercial use on this site",
+        attribution: "Photo: Brand media kit",
+        rights,
+      },
+    }) as CatalogProduct;
 
-  it("no shipped product has an embed yet (null by default)", () => {
-    for (const p of verifiedCatalog) expect(p.imageEmbed ?? null).toBeNull();
-  });
-  it("inactive: the card keeps the editorial label tile, no image at all", () => {
-    setAffiliateState("inactive");
-    const r = render(<ProductVisual product={withEmbed} />);
-    expect(r.container.querySelector("[data-product-embed]")).toBeNull();
-    expect(r.container.querySelector("img")).toBeNull();
-    expect(r.container.querySelector("[data-product-tile]")).not.toBeNull();
-  });
-  it("active: the embed shows, links to the product's Amazon page with the central tag, and never prints", () => {
-    setAffiliateState("active", "embed-20");
-    const r = render(<ProductVisual product={withEmbed} />);
-    const a = r.container.querySelector("a[data-product-embed]")!;
-    expect(a.getAttribute("href")).toBe(`${base.amazonUrl}?tag=embed-20`);
-    expect(a.getAttribute("rel")).toBe("sponsored noopener noreferrer");
-    expect(a.className).toContain("no-print");
-    expect(r.container.querySelector("img")!.getAttribute("src")).toBe(withEmbed.imageEmbed!.src);
-    expect(r.container.querySelector("[data-product-tile]")).toBeNull();
-    cleanup();
-    // a product without an embed still shows the tile while active
-    const r2 = render(<ProductVisual product={base} />);
-    expect(r2.container.querySelector("[data-product-tile]")).not.toBeNull();
-  });
-  it("is validated: needs https, alt and a date, never a tag, only on Amazon products", () => {
-    expect(validateCatalogProduct(withEmbed)).toEqual([]);
-    const bad = (e: unknown) =>
-      validateCatalogProduct({ ...base, imageEmbed: e } as unknown as CatalogProduct).join();
-    expect(bad({ ...withEmbed.imageEmbed, src: "http://x.test/a.jpg" })).toMatch(/https address/);
-    expect(bad({ ...withEmbed.imageEmbed, src: "https://x.test/a.jpg?tag=me-20" })).toMatch(
-      /tracking tag/,
-    );
-    expect(bad({ ...withEmbed.imageEmbed, alt: "" })).toMatch(/alt is required/);
-    expect(bad({ ...withEmbed.imageEmbed, approvedOn: "yesterday" })).toMatch(/approvedOn/);
-  });
-  it("embeds never reach export, copy or print code", () => {
-    for (const f of ["export-links.ts", "shoplist.ts", "saved-share.ts", "saved-transfer.ts"]) {
-      expect(readFileSync(path.join(repo, "src/lib", f), "utf8"), f).not.toMatch(/imageEmbed/);
+  it("cleared: shown with tracking OFF and with tracking ON", () => {
+    for (const state of ["inactive", "active"] as const) {
+      setAffiliateState(state, "pics-20");
+      const r = render(<ProductVisual product={withImage("cleared")} />);
+      expect(r.container.querySelector("img")?.getAttribute("src"), state).toBe(
+        "/uploads/products/example.jpg",
+      );
+      expect(r.container.querySelector("[data-product-tile]")).toBeNull();
+      cleanup();
     }
-    setAffiliateState("active", "embed-20");
-    expect(JSON.stringify(exportLinkFor(withEmbed))).not.toMatch(/example\.test|tag=/);
+  });
+  it("pending or rejected: the label tile, with tracking OFF and ON", () => {
+    for (const state of ["inactive", "active"] as const)
+      for (const rights of ["pending", "rejected"] as const) {
+        setAffiliateState(state, "pics-20");
+        const r = render(<ProductVisual product={withImage(rights)} />);
+        expect(r.container.querySelector("img")).toBeNull();
+        expect(r.container.querySelector("[data-product-tile]")).not.toBeNull();
+        cleanup();
+      }
+  });
+  it("no shipped product carries a picture unless cleared, and every cleared file exists", () => {
+    for (const p of verifiedCatalog) {
+      if (!p.image) continue;
+      expect(p.image.rights, p.id).toBe("cleared");
+      expect(p.image, p.id).not.toHaveProperty("note");
+      expect(existsSync(path.join(repo, "public", p.image.file)), p.id).toBe(true);
+      expect(p.image.file, p.id).not.toMatch(/^https?:/);
+    }
+  });
+  it("pictures never reach export, copy or print code, and never appear in article files", () => {
+    for (const f of ["export-links.ts", "shoplist.ts", "saved-share.ts", "saved-transfer.ts"])
+      expect(readFileSync(path.join(repo, "src/lib", f), "utf8"), f).not.toMatch(
+        /\.image\b|photoFor/,
+      );
+    for (const { f, text } of filesIn("content/articles"))
+      expect(text, f).not.toMatch(/amazon\.com\/images|media-amazon|ssl-images-amazon/);
   });
 });

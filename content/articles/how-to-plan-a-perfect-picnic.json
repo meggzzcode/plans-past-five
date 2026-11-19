@@ -121,20 +121,16 @@
     },
     {
       "type": "starterKit",
-      "productIds": [
-        "picnic-blankets",
-        "market-totes"
+      "hobbies": [
+        "picnicking"
       ],
       "title": "Picnic: where to start"
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "picnic-blankets",
-        "cooler-bags",
-        "thermos-flasks",
-        "market-totes",
-        "water-bottles"
+      "hobbies": [
+        "picnicking",
+        "tennis"
       ],
       "title": "For the packing list",
       "dek": "A blanket with a waterproof backing, an insulated bag, a flask and a tote make setting up simple and pretty."
@@ -242,12 +238,12 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "book-sleeves",
-        "sketch-pads",
-        "portable-watercolor",
-        "pocket-notebooks",
-        "conversation-cards"
+      "hobbies": [
+        "reading",
+        "outdoor-sketching",
+        "watercolor-painting",
+        "creative-writing",
+        "craft-nights"
       ],
       "title": "For once you're sitting down",
       "dek": "A book sleeve, a sketch pad, a small watercolor set or a deck of cards make the half hour on the blanket something to look forward to."

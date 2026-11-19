@@ -37,9 +37,7 @@ Pick whichever fits.
 ## Add a new product
 
 1. Pages CMS > Products > Add. The **id** must be new, lowercase words joined by hyphens, and cannot change later. It must match the file name.
-2. Pick **Where the Buy button goes**:
-   - *Amazon product page*: fill in the **ASIN** from the product's Amazon page address (`amazon.com/dp/ASIN`).
-   - *Maker or shop page that is not Amazon*: fill in the web address. Use this when the best product is not on Amazon. It is shown as an ordinary, unmonetised link.
+2. Fill in the **ASIN** from the product's live Amazon page address (`amazon.com/dp/ASIN`). **Every product shown on this site is an Amazon product with a verified ASIN**: there are no links to other shops and no generic "search Amazon" stand-ins. A product that is not verified is simply not shown.
 3. Fill in the other required fields. Choose the **collections**, **hobbies** and **kit slots** it belongs to (names must exist: the checker tells you if one is misspelled).
 4. Status **Candidate** until you have checked the live listing; then **Verified**.
 
@@ -47,21 +45,21 @@ Pick whichever fits.
 
 - No prices, ratings, review counts, discounts or stock claims anywhere (the checker rejects them).
 - Only enter an ASIN you copied from the live Amazon page. Never guess one.
-- Never save or copy an Amazon product photo to this site. The optional **Amazon-provided image** field is only for an image link that Amazon's own Associates tool gave you and that you confirmed in your Associates account; leave it empty otherwise. It is shown only while Amazon links are active.
+- Never save, copy, crop or link to an Amazon listing picture. See "Product pictures" below.
 - Do not add a cart button. Buttons say what the destination is.
 - Product notes (**why held**, research notes) stay private: they are never sent to visitors' browsers. Only shown products are published.
 
-## Generic "Find ... on Amazon" links
+## Product pictures
 
-Where the site names a kind of product rather than a pick (for example "Clay sculpting tools"), the list is Pages CMS > **Product search terms**. Each entry opens an ordinary Amazon search. Where a named product exists for the same need, the site shows the product instead. These links get your tracking ID automatically like every other Amazon link.
+Each product can have ONE picture record (Products > the product > **Product picture**). It shows on the product's cards whenever **Rights status = Cleared**, whether Amazon tracking is on or off. Fill in: the photo (uploaded to this site), what it shows (for people who cannot see it), where it came from, the commercial permission that allows this site to use it, the credit line shown with it, and a private note on how to replace it if the permission ends. Use pictures from a maker's media kit with written commercial permission, a photographer you have a licence from, or your own photos. **Never** an Amazon listing image. Leave the record empty, or set the status to Pending or Rejected, and the card shows the editorial label tile instead. The build refuses a Cleared picture whose file is not in the uploads folder or whose fields are incomplete, and a picture that is not Cleared is never published. Pictures are attached to the product, never to articles, and are never included in saved-list exports, copy lists or print views.
 
 ## What the checker verifies on every build
 
-Missing product ids in articles; held, discontinued or candidate products that articles mention (unless a replacement chain reaches a shown product); circular or dead-end replacements; duplicate ids; duplicate ASINs; kit slots, collections, hobbies or articles that do not exist; shop blocks naming an unknown search term; a stored tracking tag or affiliate link (never allowed); an invalid link type; a malformed `{{product:...}}` mention. Tests (`bunx vitest run`) repeat these checks and prove that replacing a product updates every page.
+Missing product ids in articles; held, discontinued or candidate products that articles mention (unless a replacement chain reaches a shown product); circular or dead-end replacements; duplicate ids; duplicate ASINs; kit slots, collections, hobbies or articles that do not exist; shop blocks naming an unknown hobby; a Cleared picture with no file or no licence record; a stored tracking tag or affiliate link (never allowed); a malformed `{{product:...}}` mention. Tests (`bunx vitest run`) repeat these checks and prove that replacing a product updates every page.
 
 ## For developers (optional, not part of the owner workflow)
 
-- Data model and rules: `src/data/catalog-rules.ts`; build and gates: `scripts/content-lib.mjs`, `scripts/build-content.mjs`; generated for the site: `src/data/catalog.generated.ts` (shown products only) and `src/data/search-terms.generated.ts`. Never edit generated files by hand.
+- Data model and rules: `src/data/catalog-rules.ts`; build and gates: `scripts/content-lib.mjs`, `scripts/build-content.mjs`; generated for the site: `src/data/catalog.generated.ts` (shown products only). Never edit generated files by hand.
 - Bulk loading: `bun run import:products file.csv --check` then without `--check` writes NEW product files into `content/products/` from a CSV in the research template format (`docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv`). It never overwrites an existing product unless `--update` is given, and never deletes. `docs/commerce/product-research.csv` is the frozen snapshot the 66 products were migrated from; it is not maintained.
 - Kits (slots) and collections are still defined in code: `src/data/kits.ts`, `src/data/products.ts`.
-- Link type, image embed and affiliate building: `src/config/affiliate.ts` builds every Amazon link from the ASIN plus the one tracking ID in settings.
+- Affiliate building: `src/config/affiliate.ts` builds every Amazon link from the ASIN plus the one tracking ID in `content/settings.json` (tracking ON/OFF is also there). Product files never hold a tag.

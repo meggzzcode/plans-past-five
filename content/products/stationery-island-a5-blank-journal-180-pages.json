@@ -5,7 +5,6 @@
   "category": "Journal",
   "order": 24,
   "status": "verified",
-  "linkType": "amazon-affiliate-ready",
   "description": "A hardcover A5 unlined notebook with 120 gsm paper and 180 pages.",
   "asin": "B081VK1CM1",
   "specs": [
@@ -59,7 +58,6 @@
   "lastVerified": "2026-11-19",
   "availability": "available",
   "affiliateStatus": "not-activated",
-  "imageRights": "none",
   "shortName": "A5 hardcover journal, 120 gsm",
   "benefit": "Thicker 120 gsm pages than a standard notebook, in a black hardcover with 180 pages to fill.",
   "lead": true,

@@ -349,6 +349,10 @@ export function importCsv(text, known, now = new Date()) {
         issues.push(`column ${i + 1} has data but no header name`);
     });
     const p = rowToProduct(header, cells, issues);
+    if (p.imageUrl || p.imageCredit || p.imageSource || (p.imageRights && p.imageRights !== "none"))
+      issues.push(
+        "picture columns must stay empty: pictures are recorded per product in Pages CMS with their rights, never imported",
+      );
     issues.forEach((m) => errors.push(`line ${line}: ${m}`));
     const id = String(p.id);
     const reserved = RESERVED_ID_PREFIXES.find((pre) => id.startsWith(pre));
@@ -439,22 +443,22 @@ function fail(errors, warnings = []) {
   process.exit(1);
 }
 
-const KEY_ORDER = [
-  "id",
-  "name",
-  "brand",
-  "category",
-  "status",
-  "statusReason",
-  "replacedBy",
-  "linkType",
-];
+const KEY_ORDER = ["id", "name", "brand", "category", "status", "statusReason", "replacedBy"];
 
 /** CSV product -> the source file shape (a held product becomes status "held" with its reason). */
 export function toSourceRecord(p) {
   // The Amazon address is derived from the ASIN, so it is not stored.
-  const { hold, amazonUrl: _derived, ...rest } = p;
-  void _derived;
+  // Pictures are managed per product in the CMS (rights recorded), never imported.
+  const {
+    hold,
+    amazonUrl: _derived,
+    imageUrl: _i,
+    imageCredit: _c,
+    imageSource: _s,
+    imageRights: _r,
+    ...rest
+  } = p;
+  void [_derived, _i, _c, _s, _r];
   const rec = {
     ...rest,
     status: hold ? "held" : p.status,

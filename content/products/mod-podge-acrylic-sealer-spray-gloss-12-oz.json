@@ -5,7 +5,6 @@
   "category": "Sealer",
   "order": 10,
   "status": "verified",
-  "linkType": "amazon-affiliate-ready",
   "description": "A 12 oz gloss clear acrylic spray sealer for finished craft projects.",
   "asin": "B003VYD9DM",
   "specs": [
@@ -57,7 +56,6 @@
   "availability": "available",
   "affiliateStatus": "not-activated",
   "manufacturerUrl": "https://plaidonline.com/mod-podge-clear-acrylic-sealer-gloss-12-oz-1470",
-  "imageRights": "none",
   "shortName": "Mod Podge gloss sealer spray",
   "benefit": "A gloss spray to finish painted pieces. Use it outdoors or with the windows open.",
   "lead": true

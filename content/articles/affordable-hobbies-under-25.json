@@ -133,13 +133,13 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "watercolor-sets",
+      "hobbies": [
+        "watercolor-painting",
         "air-dry-clay",
-        "embroidery-kits",
-        "paint-by-number-kits",
-        "friendship-bracelet-kits",
-        "sketch-pads"
+        "embroidery",
+        "paint-by-numbers",
+        "friendship-bracelets",
+        "outdoor-sketching"
       ],
       "title": "A first purchase for a making evening",
       "dek": "A small paint set, a block of clay, an embroidery kit or a bracelet kit each arrive ready to use, so the first evening is about making, not shopping. Start with the one you're most curious about."
@@ -200,11 +200,11 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
+      "hobbies": [
         "jigsaw-puzzles",
-        "indoor-plant-basics",
-        "pocket-notebooks",
-        "book-lights"
+        "indoor-gardening",
+        "creative-writing",
+        "reading"
       ],
       "title": "For a cozy evening in",
       "dek": "A puzzle for the coffee table, jars for a cutting, a pocket notebook and a clip-on light make a quiet night feel planned."
@@ -256,11 +256,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "binoculars",
-        "walking-shoes",
-        "daypacks",
-        "market-totes"
+      "hobbies": [
+        "birdwatching",
+        "hiking",
+        "picnicking"
       ],
       "title": "For your first walk-and-look outing",
       "dek": "Binoculars, walking shoes, a daypack and a tote turn a local walk into an outing worth repeating."

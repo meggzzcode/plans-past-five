@@ -124,11 +124,9 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
+      "hobbies": [
         "air-dry-clay",
-        "clay-tools",
-        "junk-journals",
-        "washi-tape"
+        "junk-journaling"
       ],
       "title": "For a make-something Saturday",
       "dek": "A block of clay, a small set of tools, a thick-paged journal and washi tape: kept in one drawer, they turn an open afternoon into a finished thing."
@@ -192,13 +190,11 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "walking-shoes",
-        "daypacks",
-        "water-bottles",
-        "picnic-blankets",
-        "thermos-flasks",
-        "phone-armband"
+      "hobbies": [
+        "hiking",
+        "tennis",
+        "picnicking",
+        "running"
       ],
       "title": "For the park and the trail",
       "dek": "Walking shoes, a small daypack, a bottle, a blanket, a flask and a phone armband: the bag that makes leaving the house the easy option."
@@ -227,10 +223,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "board-games",
-        "friendship-bracelet-kits",
-        "group-painting-kits"
+      "hobbies": [
+        "jigsaw-puzzles",
+        "friendship-bracelets",
+        "craft-nights"
       ],
       "title": "For an afternoon with friends",
       "dek": "A board game, a bracelet kit or a group painting kit gives everyone something to do with their hands while you catch up."

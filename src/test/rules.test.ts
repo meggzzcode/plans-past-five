@@ -6,7 +6,6 @@ import { allArticlesIncludingDrafts } from "@/content/draft-registry";
 import { search } from "@/lib/search";
 import { hobbies } from "@/data/hobbies";
 import { collections } from "@/data/products";
-import { collectionSearchTerms, searchTermIds, searchTerms } from "@/data/search-terms";
 import { amazonSearchUrl } from "@/config/affiliate";
 import { restoreAffiliate, setAffiliateState, snapshotAffiliate } from "./affiliate-state";
 import { sanitizeSaved } from "@/lib/saved";
@@ -111,29 +110,16 @@ describe("Content rules", () => {
     }
   });
   // Hobby count is not fixed (the directory may grow or shrink). Eight collections today.
-  it("has 8 collections, each with at least 4 search terms", () => {
+  it("has 8 collections, each supporting hobbies that exist", () => {
     expect(new Set(hobbies.map((h) => h.slug)).size).toBe(hobbies.length);
     expect(collections).toHaveLength(8);
-    for (const c of collections)
-      expect(
-        collectionSearchTerms(c.slug, c.extraSearchTermIds).length,
-        c.slug,
-      ).toBeGreaterThanOrEqual(4);
-    for (const c of collections)
-      for (const id of c.extraSearchTermIds ?? [])
-        expect(searchTermIds, `${c.slug} -> ${id}`).toContain(id);
-  });
-  // The retired "product types" survive as one small list of generic search terms.
-  it("search terms are unique, every one has a collection and plain search words", () => {
-    expect(new Set(searchTermIds).size).toBe(searchTerms.length);
-    expect(searchTerms).toHaveLength(66);
-    for (const t of searchTerms) {
-      expect(
-        collections.some((c) => c.slug === t.collection),
-        t.id,
-      ).toBe(true);
-      expect(t.query).toMatch(/^[a-z0-9 ]+$/);
-      expect(t.label.length).toBeGreaterThan(2);
+    for (const c of collections) {
+      expect(c.hobbies.length, c.slug).toBeGreaterThan(0);
+      for (const s of c.hobbies)
+        expect(
+          hobbies.some((x) => x.slug === s),
+          `${c.slug} -> ${s}`,
+        ).toBe(true);
     }
   });
   it("Amazon links carry no affiliate tag unless an entry is live", () => {
@@ -157,10 +143,9 @@ describe("Saved items", () => {
   });
 });
 
-// scripts/content-lib.mjs now fails the build when a shopHobby/starterKit block names an id that is
-// not a search term (see product-source.test.ts); this keeps the same guard at the data level.
-describe("article block ids resolve", () => {
-  it("every shopHobby and starterKit id is a search term", async () => {
+// scripts/content-lib.mjs fails the build when a shopHobby/starterKit block names a hobby that does not exist.
+describe("article shop block hobbies resolve", () => {
+  it("every shopHobby and starterKit names real hobbies", async () => {
     const { readdirSync, readFileSync } = await import("node:fs");
     const path = await import("node:path");
     const dir = path.resolve(__dirname, "../../content/articles");
@@ -169,13 +154,13 @@ describe("article block ids resolve", () => {
       const a = JSON.parse(readFileSync(path.join(dir, f), "utf8"));
       for (const b of flat(a))
         if (b.type === "shopHobby" || b.type === "starterKit")
-          for (const id of b.productIds ?? [])
-            if (!searchTermIds.includes(id)) bad.push(`${f}: ${id}`);
+          for (const id of b.hobbies ?? [])
+            if (!hobbies.some((x) => x.slug === id)) bad.push(`${f}: ${id}`);
     }
     expect(bad).toEqual([]);
   });
 });
-function flat(node: unknown): Array<{ type?: string; productIds?: string[] }> {
+function flat(node: unknown): Array<{ type?: string; hobbies?: string[] }> {
   if (Array.isArray(node)) return node.flatMap(flat);
   if (node && typeof node === "object")
     return [node as never, ...Object.values(node).flatMap(flat)];

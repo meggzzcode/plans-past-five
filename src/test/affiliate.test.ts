@@ -11,7 +11,7 @@ import {
   validateRegistry,
 } from "@/config/affiliate";
 import { affiliatePrograms, validatePrograms, UNVERIFIED } from "@/data/affiliate-programs";
-import { searchLinkable, searchTerms } from "@/data/search-terms";
+import { linkableFor, verifiedCatalog } from "@/data/catalog";
 
 import { setAffiliateState, withAffiliateRestore, withAffiliateState } from "./affiliate-state";
 
@@ -34,7 +34,7 @@ describe("inactive registry (shipped default state)", () => {
     expect(validateRegistry()).toEqual([]);
   });
   it("every product link is a plain link while inactive", () => {
-    for (const p of searchTerms) expect(productHref(searchLinkable(p))).not.toContain("tag=");
+    for (const p of verifiedCatalog) expect(productHref(linkableFor(p))).not.toContain("tag=");
   });
 });
 
@@ -44,8 +44,8 @@ describe("active registry (buyer state, fake id)", () => {
     expect(validateRegistry()).toEqual([]);
     expect(isMonetized()).toBe(true);
     expect(liveDisclosureSentences()).toContain(AMAZON_ASSOCIATE_STATEMENT);
-    for (const t of searchTerms) {
-      const p = searchLinkable(t);
+    for (const t of verifiedCatalog) {
+      const p = linkableFor(t);
       const l = resolveProductLink(p);
       expect(new URL(l.href).searchParams.getAll("tag")).toEqual(["testsite-20"]);
       expect(l.sponsored).toBe(true);
@@ -64,11 +64,11 @@ describe("disclosure wording", () => {
 describe("swap procedure", () => {
   it("changing one tracking id changes every link", () => {
     activate("first-20");
-    const all = () => searchTerms.map((p) => productHref(searchLinkable(p)));
+    const all = () => verifiedCatalog.map((p) => productHref(linkableFor(p)));
     expect(all().every((h) => h.includes("tag=first-20"))).toBe(true);
     amazon.websiteTrackingId = "second-20";
     expect(all().every((h) => h.includes("tag=second-20") && !h.includes("first-20"))).toBe(true);
-    expect(resolveProductLink(searchLinkable(searchTerms[0]!)).sponsored).toBe(true);
+    expect(resolveProductLink(linkableFor(verifiedCatalog[0]!)).sponsored).toBe(true);
     expect(liveDisclosureSentences()).toContain(AMAZON_ASSOCIATE_STATEMENT);
   });
   it("legacy associatesTag setter writes the registry entry", () => {

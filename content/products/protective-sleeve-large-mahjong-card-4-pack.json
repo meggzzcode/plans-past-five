@@ -5,7 +5,6 @@
   "category": "Card sleeve",
   "order": 26,
   "status": "candidate",
-  "linkType": "amazon-affiliate-ready",
   "description": "A four-pack of clear plastic sleeves sized for large 2026 mahjong cards. Does not include cards.",
   "asin": "B0FRSSG8FZ",
   "specs": [
@@ -47,6 +46,5 @@
   ],
   "lastVerified": "2026-11-18",
   "availability": "available",
-  "affiliateStatus": "not-activated",
-  "imageRights": "none"
+  "affiliateStatus": "not-activated"
 }

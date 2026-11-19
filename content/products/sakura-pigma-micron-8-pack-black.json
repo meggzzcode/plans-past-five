@@ -5,7 +5,6 @@
   "category": "Pens",
   "order": 7,
   "status": "verified",
-  "linkType": "amazon-affiliate-ready",
   "description": "Eight black archival fineliner pens in assorted tip sizes.",
   "asin": "B004QHI43S",
   "specs": [
@@ -55,7 +54,6 @@
   "availability": "available",
   "affiliateStatus": "not-activated",
   "manufacturerUrl": "https://www.sakuraofamerica.com/product/pigma-micron/",
-  "imageRights": "none",
   "shortName": "Pigma Micron pens, 8-pack",
   "benefit": "Fine black pens for handwriting and small details on your pages.",
   "lead": true

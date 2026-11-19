@@ -102,12 +102,12 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "group-painting-kits",
-        "friendship-bracelet-kits",
-        "ceramic-painting-kits",
+      "hobbies": [
+        "craft-nights",
+        "friendship-bracelets",
+        "pottery-painting",
         "air-dry-clay",
-        "cookie-decorating-kits"
+        "baking"
       ],
       "title": "Start with a kit made for groups",
       "dek": "Choose a project and the kit arrives together, so hosting is more about the fun than the shopping."
@@ -227,10 +227,9 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "glue-guns",
-        "portable-speakers",
-        "acrylic-paints"
+      "hobbies": [
+        "craft-nights",
+        "air-dry-clay"
       ],
       "title": "For the table and the room",
       "dek": "A mini glue gun for quick bonds, a small speaker for the playlist and acrylic paints for the pottery pieces round out the evening."
