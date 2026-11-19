@@ -2,7 +2,7 @@
   "slug": "how-to-take-yourself-on-a-solo-coffee-shop-date",
   "title": "How to Take Yourself on a Solo Coffee Shop Date",
   "titleItalic": "Solo Coffee Shop Date",
-  "dek": "The gentlest first solo date there is: a window seat, a good drink and a plan for what to do with your hands.",
+  "dek": "Take yourself on a solo coffee shop date: pick the place, pack the bag, order well and six things to do once you're settled.",
   "category": "solo-dates",
   "status": "published",
   "publishedAt": "2026-11-19",
@@ -44,7 +44,7 @@
   "body": [
     {
       "type": "p",
-      "text": "A coffee shop may be the easiest place in town to sit by yourself. It's built for it: laptops, paperbacks, one-person tables, nobody asking questions. It takes an hour and lets you leave whenever you like. The only real hurdle is the small, silly worry that people will wonder why you're alone. They're mostly looking at their own phones."
+      "text": "A window seat, a good drink and an hour that is entirely yours. A coffee shop may be the easiest place in town to sit by yourself. It's built for it: laptops, paperbacks, one-person tables, nobody asking questions, and you can leave whenever you like. The only hurdle is a small, silly worry that people will wonder why you're alone. They're mostly looking at their own phones."
     },
     {
       "type": "h2",
@@ -85,6 +85,16 @@
         "A phone charger, but only if you're staying more than an hour",
         "A small bookmark or sticky tabs for marking pages or passages"
       ]
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "pocket-notebooks",
+        "reading-journals",
+        "book-sleeves"
+      ],
+      "title": "Pack the date",
+      "dek": "A pocket notebook, a book sleeve and a journal to carry, so you always have something good to do with your hands."
     },
     {
       "type": "h2",
@@ -161,14 +171,8 @@
       "text": "Once the first one goes well, repeat it. A regular slot, like Saturday at ten or Wednesday after work, and two or three cafes to rotate between, is easier to protect than a one-off. A line in a notebook after each visit (the chapter, the sketch, the idea that surfaced) gives you a small record of how it went."
     },
     {
-      "type": "shopHobby",
-      "productIds": [
-        "pocket-notebooks",
-        "reading-journals",
-        "book-sleeves"
-      ],
-      "title": "Cafe-date essentials",
-      "dek": "Pocket-sized things that make it easy to look occupied and happy."
+      "type": "makePlan",
+      "text": "Pick the cafe, pick the hour and save the date. Make Some Plans can hold your Saturday at ten."
     },
     {
       "type": "p",

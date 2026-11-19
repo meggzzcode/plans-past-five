@@ -1,8 +1,8 @@
 {
   "slug": "cheap-weekend-adventures",
-  "title": "25 Affordable Weekend Adventures",
-  "titleItalic": "Affordable",
-  "dek": "Twenty-five small adventures built from the kinds of places most towns have, with a prompt for finding your own version of each.",
+  "title": "25 Weekend Adventures That Cost Almost Nothing",
+  "titleItalic": "Almost Nothing",
+  "dek": "Twenty-five small adventures built from places most towns already have: a trail, a library, a flea market. Pick one for Saturday.",
   "category": "weekends",
   "status": "published",
   "publishedAt": "2026-11-19",
@@ -58,7 +58,7 @@
   "body": [
     {
       "type": "p",
-      "text": "You don't need a booking, an upgrade or a paid sunset to have an adventure. Most towns have a trail, a park, a library branch and a market that can fill a Saturday for little more than a fare, a coffee and a snack."
+      "text": "You don't need a booking, an upgrade or a paid sunset to have an adventure. Most towns have a trail, a park, a library branch and a market that can fill a Saturday for little more than a fare, a coffee and a snack. Think a river path with a bakery bag, a library branch you've never walked into, a flea market at nine a.m."
     },
     {
       "type": "p",
@@ -365,13 +365,13 @@
     {
       "type": "shopHobby",
       "productIds": [
+        "binoculars",
         "daypacks",
         "pocket-notebooks",
-        "market-totes",
-        "binoculars"
+        "market-totes"
       ],
-      "title": "Small things that help",
-      "dek": "Optional. A bag, a notebook and comfortable shoes go a long way."
+      "title": "For your first adventure",
+      "dek": "A bag for the snacks, a notebook for the finds and binoculars if the pond calls. Nothing here is required."
     },
     {
       "type": "ifYouLoved",

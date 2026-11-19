@@ -2,12 +2,12 @@
   "slug": "how-to-host-a-paint-night-at-home",
   "title": "How to Host a Paint Night at Home (No Talent Required)",
   "titleItalic": "Paint Night at Home",
-  "dek": "A simple setup, a one-painting plan everyone can follow and a few ways to keep the night relaxed, for friends who say they cannot draw.",
+  "dek": "One easy painting, one table and a relaxed plan, so even the friend who says she can't draw leaves with a canvas she's proud of.",
   "category": "better-together",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-18",
-  "hero": "potteryNight",
+  "hero": "watercolor",
   "searchIntent": "how to host a paint night at home / paint and sip at home ideas / paint night supplies",
   "angle": "A host's plan for a paint night without a studio: a shared supply list, one easy follow-along painting, a setup that protects the table, and gentle ways to handle the friend who is convinced she can't paint",
   "hobbies": [
@@ -59,7 +59,7 @@
   "body": [
     {
       "type": "p",
-      "text": "A paint night runs on one painting that everyone paints at the same time, so the host's job is to choose the painting, stage the table and keep the evening moving. Skill doesn't come into it."
+      "text": "Picture it: six friends round one table, the same little sunset taking shape on six canvases, and every single one of them different. That's a paint night, and the host's job is simple: choose one easy painting, set the table and keep the evening moving. Skill doesn't come into it."
     },
     {
       "type": "p",
@@ -109,6 +109,17 @@
     {
       "type": "p",
       "text": "You probably own old towels, plates, jars for water, a speaker and a table, and aprons can be shirts worn backwards. A group kit saves shopping for six sets of everything, and fine brushes let guests add details like stars and stripes without smudging."
+    },
+    {
+      "type": "shopHobby",
+      "productIds": [
+        "group-painting-kits",
+        "acrylic-paints",
+        "detail-brushes",
+        "conversation-cards"
+      ],
+      "title": "Paint night supplies",
+      "dek": "Everything on the table for six painters, in one place. Use what you own first, and these fill the gaps."
     },
     {
       "type": "h2",
@@ -185,19 +196,12 @@
       "note": "Use wide-based jars, and set them at the edge of the table away from elbows. Keep a towel handy."
     },
     {
-      "type": "shopHobby",
-      "productIds": [
-        "group-painting-kits",
-        "acrylic-paints",
-        "detail-brushes",
-        "conversation-cards"
-      ],
-      "title": "Shop your hobby",
-      "dek": "Optional. Kits are handy when you do not want to shop around."
-    },
-    {
       "type": "p",
       "text": "Send the invitation about a week ahead, and ask what guests like to eat and drink. Craft nights follow a similar shape, and [How to Host a Craft Night](/journal/how-to-host-a-craft-night) covers rotating themes. For gatherings without alcohol at the center, see [Girls' Night Ideas That Aren't Drinks](/journal/girls-night-ideas-that-arent-drinks)."
+    },
+    {
+      "type": "makePlan",
+      "text": "Ready to put it on the calendar? Pick the night, choose your painting and let Make Some Plans help you fit it into the week."
     },
     {
       "type": "ifYouLoved",

@@ -1,8 +1,8 @@
 {
   "slug": "how-to-start-playing-tennis-as-an-adult",
-  "title": "How to Start Playing Tennis as an Adult Beginner",
-  "titleItalic": "Adult Beginner",
-  "dek": "A first-month plan with a gear list, a first-session script and what to do when the ball goes everywhere except over the net.",
+  "title": "How to Start Playing Tennis as an Adult: A Four-Week Plan",
+  "titleItalic": "A Four-Week Plan",
+  "dek": "Four weeks from 'I haven't held a racket since school' to a short rally and a real game, plus what to do when the ball goes everywhere but over the net.",
   "category": "movement",
   "status": "published",
   "publishedAt": "2026-11-19",
@@ -59,7 +59,7 @@
   "body": [
     {
       "type": "p",
-      "text": "Four weeks is enough to go from 'haven't held a racket since school' to keeping a short rally going and keeping score. This plan assumes minimal gear, no club and no audience. The courts will have people who've played since they were nine; they're not your benchmark."
+      "text": "Four weeks is enough to go from 'haven't held a racket since school' to keeping a short rally going and keeping score. Golden-hour courts, a can of fresh balls and a friend to rally with: here's the plan. It assumes minimal gear, no club and no audience. The courts will have people who've played since they were nine; they're not your benchmark."
     },
     {
       "type": "h2",
@@ -169,8 +169,12 @@
         "water-bottles",
         "sports-totes"
       ],
-      "title": "Starter gear",
-      "dek": "Optional. Play a few times first, then buy what you missed."
+      "title": "When you're ready for your own gear",
+      "dek": "Play a few times first. Then these are the basics to look for."
+    },
+    {
+      "type": "makePlan",
+      "text": "Pick your week-one court and a time, then let Make Some Plans fit it into your week."
     },
     {
       "type": "p",

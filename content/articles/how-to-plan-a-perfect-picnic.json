@@ -2,7 +2,7 @@
   "slug": "how-to-plan-a-perfect-picnic",
   "title": "How to Plan the Perfect Aesthetic Picnic",
   "titleItalic": "Aesthetic Picnic",
-  "dek": "A picnic that looks as good as it tastes: a simple timeline, a spot, a menu that survives the trip, what to pack, and a couple of things to do once you've sat down.",
+  "dek": "A picnic that looks as good as it tastes: a timeline, a spot, a menu that survives the trip and what to pack.",
   "category": "weekends",
   "status": "published",
   "publishedAt": "2026-11-19",
@@ -81,7 +81,7 @@
   "body": [
     {
       "type": "p",
-      "text": "Most picnics go wrong in small, dull ways: warm food, a blanket that's too small, a bottle with no opener. Sort those out and the pretty part mostly takes care of itself."
+      "text": "A great picnic is a blanket in the shade, food that stayed cold, a jar of flowers and nobody wishing they'd brought an opener. Most of the magic is dull prep, and the pretty part follows."
     },
     {
       "type": "p",
@@ -236,7 +236,11 @@
         "market-totes"
       ],
       "title": "Picnic gear",
-      "dek": "Optional. Start with what you have."
+      "dek": "A blanket that stays dry and a tote that looks good on the grass. Use what you own first."
+    },
+    {
+      "type": "makePlan",
+      "text": "Pick a sunny day, text one friend and let Make Some Plans turn the picnic into a real plan."
     },
     {
       "type": "p",

@@ -1,8 +1,8 @@
 {
   "slug": "solo-date-ideas",
-  "title": "30 Solo Date Ideas for Enjoying Your Own Company",
-  "titleItalic": "Your Own Company",
-  "dek": "Table for one, and a very good table at that. Thirty ideas for getting out of the house, sorted by budget and mood, plus a gentle guide to the first-time wobble.",
+  "title": "30 Solo Date Ideas You'll Actually Want to Take Yourself On",
+  "titleItalic": "Actually Want",
+  "dek": "Thirty solo date ideas, from free walks to a dessert-only dinner, sorted by budget and mood. Table for one, and a very good table at that.",
   "category": "solo-dates",
   "status": "published",
   "publishedAt": "2026-11-19",
@@ -456,10 +456,16 @@
       "productIds": [
         "pocket-notebooks",
         "picnic-blankets",
-        "portable-watercolor"
+        "portable-watercolor",
+        "book-sleeves",
+        "film-cameras"
       ],
       "title": "Small things that make a solo date easier",
       "dek": "Light, packable and useful once you're out the door."
+    },
+    {
+      "type": "makePlan",
+      "text": "Pick one, put it in the calendar and go. Make Some Plans can match an idea to your energy, budget and free hours."
     },
     {
       "type": "p",

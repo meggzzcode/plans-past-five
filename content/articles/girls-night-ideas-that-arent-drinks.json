@@ -1,7 +1,7 @@
 {
   "slug": "girls-night-ideas-that-arent-drinks",
-  "title": "25 Girls' Night Ideas That Aren't Just Going Out for Drinks",
-  "titleItalic": "Aren't Just Going Out for Drinks",
+  "title": "25 Girls' Night Ideas That Aren't Drinks",
+  "titleItalic": "Aren't Drinks",
   "dek": "Plans for the group chat that give everyone something to do, something to say and no hangover.",
   "category": "better-together",
   "status": "published",
@@ -192,6 +192,16 @@
       "text": "The easiest hosting rule is one activity, one snack table and one end time. People relax when they know how the evening ends."
     },
     {
+      "type": "shopHobby",
+      "productIds": [
+        "group-painting-kits",
+        "board-games",
+        "conversation-cards"
+      ],
+      "title": "Keep a night-in kit in the cupboard",
+      "dek": "A painting kit, a board game and a deck of conversation cards mean \"should we do something?\" has an answer."
+    },
+    {
       "type": "h2",
       "text": "Out and about, without the bar",
       "id": "out"
@@ -371,16 +381,6 @@
       ]
     },
     {
-      "type": "shopHobby",
-      "productIds": [
-        "group-painting-kits",
-        "board-games",
-        "conversation-cards"
-      ],
-      "title": "Easy things to have on hand for hosting",
-      "dek": "A few kits and games that make a spontaneous night much easier."
-    },
-    {
       "type": "p",
       "text": "If craft night sounds like your group, start with [how to host a craft night](/journal/how-to-host-a-craft-night). For more ideas, browse [things to do after work instead of scrolling](/journal/things-to-do-after-work-instead-of-scrolling)."
     },
@@ -392,6 +392,10 @@
     {
       "type": "p",
       "text": "Think about who might be quietly left out. Choose a time that works around early mornings and childcare, a price nobody has to do sums over, and a place reachable without a car. If someone doesn't drink, don't build the plan around alcohol and don't ask why. Give people a graceful way to opt out of anything physical or messy. Rotating who chooses helps too, so nobody carries the planning alone."
+    },
+    {
+      "type": "p",
+      "text": "Found one? Send this to the group chat and book the date before the thread goes quiet."
     },
     {
       "type": "ifYouLoved",

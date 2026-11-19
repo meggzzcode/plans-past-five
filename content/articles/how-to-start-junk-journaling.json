@@ -2,7 +2,7 @@
   "slug": "how-to-start-junk-journaling",
   "title": "How to Start Junk Journaling: A Beginner's Guide",
   "titleItalic": "Junk Journaling",
-  "dek": "How to begin: what junk journaling is, the no-rules mindset and a first page you can make tonight with what is already in the house.",
+  "dek": "Tickets, tags and receipts glued into a notebook, with no rules and no talent required. Here's a first page you can make tonight.",
   "category": "creative-corner",
   "status": "published",
   "publishedAt": "2026-11-18",
@@ -24,7 +24,7 @@
   "body": [
     {
       "type": "p",
-      "text": "A junk journal is what you get when you stop throwing away tickets, tags and receipts and start gluing them into a notebook instead. It sits somewhere between a diary, a scrapbook and a collage, with layers of paper, tape, handwriting and the occasional pressed flower. There's no wrong way to do it, and no reason for it to be neat."
+      "text": "Somewhere in your bag right now is the start of a very pretty page: a ticket stub, a coffee sleeve, a receipt from a day you liked. A junk journal is what you get when you stop throwing those away and start gluing them into a notebook instead. It sits somewhere between a diary, a scrapbook and a collage, with layers of paper, tape, handwriting and the occasional pressed flower. There's no wrong way to do it, and no reason for it to be neat."
     },
     {
       "type": "p",
@@ -76,6 +76,17 @@
       "caption": "Layer, overlap, let things hang off the edge. Tidy is optional."
     },
     {
+      "type": "shopHobby",
+      "productIds": [
+        "junk-journals",
+        "washi-tape",
+        "sticker-sets",
+        "pocket-notebooks"
+      ],
+      "title": "Junk journaling picks",
+      "dek": "You can start tonight with what's in the house. If you'd like the pretty stuff, these are the four things worth buying first."
+    },
+    {
       "type": "h2",
       "text": "Four techniques that make pages look intentional",
       "id": "techniques"
@@ -123,8 +134,12 @@
       ]
     },
     {
+      "type": "makePlan",
+      "text": "Saturday evening, a glue stick and an envelope of scraps: save it as a plan, or let Make Some Plans find you the time."
+    },
+    {
       "type": "p",
-      "text": "Keep notes on what you read in [a reading journal](/journal/how-to-start-a-reading-journal), or explore more in [Creative Corner](/creative-corner)."
+      "text": "Ready for page one? Pick tonight, glue down one scrap and see what you reached for, then browse the [supplies guide](/journal/junk-journaling-supplies-for-beginners) for the basket worth buying. Want a notebook for what you read? Try [a reading journal](/journal/how-to-start-a-reading-journal), or explore more in [Creative Corner](/creative-corner)."
     }
   ]
 }

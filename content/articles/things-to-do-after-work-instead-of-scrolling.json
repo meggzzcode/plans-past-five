@@ -2,7 +2,7 @@
   "slug": "things-to-do-after-work-instead-of-scrolling",
   "title": "25 Things to Do After Work Instead of Scrolling",
   "titleItalic": "Instead of Scrolling",
-  "dek": "Realistic weeknight ideas for when you've got two hours, some energy and absolutely no desire to look at another screen.",
+  "dek": "Twenty-five realistic weeknight ideas for after work, sorted by how you feel: exhausted, creative, restless or in need of people.",
   "category": "after-hours",
   "status": "published",
   "publishedAt": "2026-11-18",
@@ -330,10 +330,15 @@
         "group-painting-kits",
         "book-lights",
         "board-games",
-        "air-dry-clay"
+        "air-dry-clay",
+        "junk-journals"
       ],
       "title": "Weeknight starter picks",
-      "dek": "Small, affordable things that make the fun option the easy one."
+      "dek": "Small things that make the fun option the easy one."
+    },
+    {
+      "type": "makePlan",
+      "text": "Pick tonight's one thing and save it. Make Some Plans can fit a weeknight into your actual week."
     },
     {
       "type": "ifYouLoved",

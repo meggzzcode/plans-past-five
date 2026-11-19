@@ -3,7 +3,7 @@
     "slug": "active-hobbies-for-women-who-dont-love-the-gym",
     "title": "15 Active Hobbies for Women Who Don't Love the Gym",
     "titleItalic": "Don't Love the Gym",
-    "dek": "Fifteen ways to move that have more in common with a good Saturday than a treadmill, sorted by what you like: friends, fresh air or a good playlist.",
+    "dek": "Fifteen ways to move that feel more like a good Saturday than a workout: with friends, outdoors or to a playlist. Pick the one you're curious about.",
     "category": "movement",
     "status": "published",
     "publishedAt": "2026-11-19",
@@ -309,12 +309,13 @@
       {
         "type": "shopHobby",
         "productIds": [
-          "daypacks",
+          "pickleball-sets",
+          "tennis-rackets",
           "water-bottles",
           "sports-totes"
         ],
-        "title": "Gear for getting started",
-        "dek": "Optional, and best bought after you've tried a thing twice."
+        "title": "Your first-session kit",
+        "dek": "Borrow a racket first. When you're back for a second go, these make the walk to the court nicer."
       },
       {
         "type": "ifYouLoved",
@@ -328,9 +329,9 @@
   },
   {
     "slug": "at-home-creative-weekend",
-    "title": "A Complete Guide to Planning an At-Home Creative Weekend",
+    "title": "Plan an At-Home Creative Weekend: Clay, Paint and a Journal Spread",
     "titleItalic": "At-Home Creative Weekend",
-    "dek": "A two-day plan with a supply list, a loose schedule and enough built-in rest that you finish Sunday feeling restored, not behind.",
+    "dek": "Two slow days at home: clay on Saturday, watercolor in the afternoon, a journal spread on Sunday. A schedule, a supply list and built-in rest.",
     "category": "weekends",
     "status": "published",
     "publishedAt": "2026-11-19",
@@ -410,6 +411,10 @@
       {
         "type": "p",
         "text": "You don't have to do all of it. With one free day, do Saturday. With a friend visiting, scale up the supplies and call it a craft night."
+      },
+      {
+        "type": "p",
+        "text": "Everything you need is on one list under [Friday: make a spot](#friday): clay, paint, paper and a journal. Check the cupboard first, then tap what's missing in the shop list at the end."
       },
       {
         "type": "h2",
@@ -560,8 +565,8 @@
           "junk-journals",
           "washi-tape"
         ],
-        "title": "Stock your creative weekend",
-        "dek": "Optional. Start with what you have."
+        "title": "Everything for the weekend, one list",
+        "dek": "Clay, paint, paper and a journal. Check the cupboard first, then tap what's missing. Copy the list and take it to the shop."
       },
       {
         "type": "p",
@@ -579,9 +584,9 @@
   },
   {
     "slug": "cheap-weekend-adventures",
-    "title": "25 Affordable Weekend Adventures",
-    "titleItalic": "Affordable",
-    "dek": "Twenty-five small adventures built from the kinds of places most towns have, with a prompt for finding your own version of each.",
+    "title": "25 Weekend Adventures That Cost Almost Nothing",
+    "titleItalic": "Almost Nothing",
+    "dek": "Twenty-five small adventures built from places most towns already have: a trail, a library, a flea market. Pick one for Saturday.",
     "category": "weekends",
     "status": "published",
     "publishedAt": "2026-11-19",
@@ -637,7 +642,7 @@
     "body": [
       {
         "type": "p",
-        "text": "You don't need a booking, an upgrade or a paid sunset to have an adventure. Most towns have a trail, a park, a library branch and a market that can fill a Saturday for little more than a fare, a coffee and a snack."
+        "text": "You don't need a booking, an upgrade or a paid sunset to have an adventure. Most towns have a trail, a park, a library branch and a market that can fill a Saturday for little more than a fare, a coffee and a snack. Think a river path with a bakery bag, a library branch you've never walked into, a flea market at nine a.m."
       },
       {
         "type": "p",
@@ -944,13 +949,13 @@
       {
         "type": "shopHobby",
         "productIds": [
+          "binoculars",
           "daypacks",
           "pocket-notebooks",
-          "market-totes",
-          "binoculars"
+          "market-totes"
         ],
-        "title": "Small things that help",
-        "dek": "Optional. A bag, a notebook and comfortable shoes go a long way."
+        "title": "For your first adventure",
+        "dek": "A bag for the snacks, a notebook for the finds and binoculars if the pond calls. Nothing here is required."
       },
       {
         "type": "ifYouLoved",
@@ -1290,7 +1295,7 @@
           "book-lights",
           "reading-journals"
         ],
-        "title": "Small things for a better night in",
+        "title": "The night-in kit",
         "dek": "Nothing here is required. They just make staying in feel a bit more like an occasion."
       },
       {
@@ -1318,9 +1323,9 @@
   },
   {
     "slug": "creative-hobbies-you-can-start-at-home",
-    "title": "21 Creative Hobbies You Can Start at Home",
-    "titleItalic": "at Home",
-    "dek": "No studio, no car, no expensive equipment: twenty-one things to make with your hands at a kitchen table, grouped by material and mess level.",
+    "title": "21 Creative Hobbies You Can Start at Your Kitchen Table",
+    "titleItalic": "Your Kitchen Table",
+    "dek": "Twenty-one things to make with your hands at a kitchen table, from junk journals to air-dry clay. Sorted by mess level, with an easy first project for each.",
     "category": "creative-corner",
     "status": "published",
     "publishedAt": "2026-11-18",
@@ -1593,8 +1598,8 @@
           "washi-tape",
           "friendship-bracelet-kits"
         ],
-        "title": "Shop your hobby",
-        "dek": "Starter picks from The Creative Girl and The Pottery Era."
+        "title": "Pick one material, start tonight",
+        "dek": "A small set for each of the hobbies you were drawn to. Buy one, give it three evenings."
       },
       {
         "type": "ifYouLoved",
@@ -1608,9 +1613,9 @@
   },
   {
     "slug": "creative-hobby-starter-kits-worth-considering",
-    "title": "Creative Hobby Starter Kits That Are Actually Worth Considering",
-    "titleItalic": "Actually Worth Considering",
-    "dek": "How to judge a starter kit by what is in the box, who it suits, and when buying loose supplies is the smarter move.",
+    "title": "Are Craft Starter Kits Worth It? What to Look For Before You Buy",
+    "titleItalic": "Worth It",
+    "dek": "Is a craft kit worth the money, or just a pretty box? Seven questions to ask and which hobbies suit a kit and which are better bought loose.",
     "category": "creative-corner",
     "status": "published",
     "publishedAt": "2026-11-19",
@@ -1669,11 +1674,11 @@
     "body": [
       {
         "type": "p",
-        "text": "Is a craft kit worth it, or is it ordinary materials in a pretty box? Sometimes each. A kit promises a finished thing and no decisions, and some deliver exactly that."
+        "text": "You've seen the box: a pretty hoop, thread in a neat row, a finished stitched flower on the lid. Is it worth it? Sometimes. Here's how to tell. A kit promises a finished thing and no decisions, and some deliver exactly that."
       },
       {
         "type": "p",
-        "text": "This page doesn't rank named kits, and nothing here comes from hands-on testing. It gives you a way to size up any kit you meet, plus a read on which hobbies suit a box and which are better bought loose."
+        "text": "Below: when a kit makes sense, when loose supplies win, seven questions to ask of any box and a read on which hobbies suit a box."
       },
       {
         "type": "h2",
@@ -1808,6 +1813,10 @@
         "text": "The shop collections group product types by hobby so you can compare what to look for. Browse [The Creative Girl](/shop/creative-girl) for painting, journaling and stitching, [The Pottery Era](/shop/pottery-era) for clay and ceramic painting, and [Girls' Night In](/shop/girls-night-in) for group-friendly kits. They describe types of product, and the buttons open a general search so you can compare options yourself."
       },
       {
+        "type": "p",
+        "text": "A note on method: This page doesn't rank named kits, and nothing here comes from hands-on testing. It gives you a way to size up any kit you meet, plus a read on which hobbies suit a box and which are better bought loose."
+      },
+      {
         "type": "shopHobby",
         "productIds": [
           "embroidery-kits",
@@ -1816,8 +1825,8 @@
           "watercolor-sets",
           "group-painting-kits"
         ],
-        "title": "Shop your hobby",
-        "dek": "Types of kits and supplies to compare. Check every listing's contents, labels and instructions first."
+        "title": "Kits worth comparing",
+        "dek": "Types of kit to look at, with what to check on each listing before you buy."
       },
       {
         "type": "tryThisWeekend",
@@ -1835,14 +1844,14 @@
   },
   {
     "slug": "flower-arranging-as-a-hobby",
-    "title": "Flower Arranging as a Hobby: How to Start at Home",
-    "titleItalic": "Flower Arranging",
-    "dek": "A small weekly habit: a few stems, a simple recipe, and the tricks that make a grocery-store bunch look like it came from a florist.",
+    "title": "How to Arrange Grocery-Store Flowers So They Look Like a Florist Did It",
+    "titleItalic": "Look Like a Florist Did It",
+    "dek": "One bunch, one jug and a three-layer recipe. A twenty-minute weekly habit that makes your table look arranged. No talent needed.",
     "category": "creative-corner",
     "status": "published",
     "publishedAt": "2026-11-19",
     "verifiedAt": "2026-11-18",
-    "hero": "shopAdventures",
+    "hero": "picnic",
     "searchIntent": "flower arranging for beginners / how to arrange flowers at home / flower arranging hobby",
     "angle": "A low-commitment weekly ritual: a simple formula (focal, filler, greenery), a minimal toolkit, and flower care basics, using only grocery-store stems and what you already own",
     "hobbies": [
@@ -2076,8 +2085,8 @@
   },
   {
     "slug": "girls-night-ideas-that-arent-drinks",
-    "title": "25 Girls' Night Ideas That Aren't Just Going Out for Drinks",
-    "titleItalic": "Aren't Just Going Out for Drinks",
+    "title": "25 Girls' Night Ideas That Aren't Drinks",
+    "titleItalic": "Aren't Drinks",
     "dek": "Plans for the group chat that give everyone something to do, something to say and no hangover.",
     "category": "better-together",
     "status": "published",
@@ -2268,6 +2277,16 @@
         "text": "The easiest hosting rule is one activity, one snack table and one end time. People relax when they know how the evening ends."
       },
       {
+        "type": "shopHobby",
+        "productIds": [
+          "group-painting-kits",
+          "board-games",
+          "conversation-cards"
+        ],
+        "title": "Keep a night-in kit in the cupboard",
+        "dek": "A painting kit, a board game and a deck of conversation cards mean \"should we do something?\" has an answer."
+      },
+      {
         "type": "h2",
         "text": "Out and about, without the bar",
         "id": "out"
@@ -2447,16 +2466,6 @@
         ]
       },
       {
-        "type": "shopHobby",
-        "productIds": [
-          "group-painting-kits",
-          "board-games",
-          "conversation-cards"
-        ],
-        "title": "Easy things to have on hand for hosting",
-        "dek": "A few kits and games that make a spontaneous night much easier."
-      },
-      {
         "type": "p",
         "text": "If craft night sounds like your group, start with [how to host a craft night](/journal/how-to-host-a-craft-night). For more ideas, browse [things to do after work instead of scrolling](/journal/things-to-do-after-work-instead-of-scrolling)."
       },
@@ -2468,6 +2477,10 @@
       {
         "type": "p",
         "text": "Think about who might be quietly left out. Choose a time that works around early mornings and childcare, a price nobody has to do sums over, and a place reachable without a car. If someone doesn't drink, don't build the plan around alcohol and don't ask why. Give people a graceful way to opt out of anything physical or messy. Rotating who chooses helps too, so nobody carries the planning alone."
+      },
+      {
+        "type": "p",
+        "text": "Found one? Send this to the group chat and book the date before the thread goes quiet."
       },
       {
         "type": "ifYouLoved",
@@ -2483,7 +2496,7 @@
     "slug": "hobbies-to-try-when-life-feels-like-work-sleep-repeat",
     "title": "35 Hobbies to Try When Your Life Feels Like Work, Sleep, Repeat",
     "titleItalic": "Work, Sleep, Repeat",
-    "dek": "If your week is laptop, dinner, couch, bed, this is your way out. A wide menu of thirty-five hobbies, from couch-friendly to out-of-the-house, sorted by how much energy you've actually got left.",
+    "dek": "If your week is laptop, dinner, couch, bed: thirty-five hobbies sorted by how much energy you have left, each with an easy first session.",
     "category": "after-hours",
     "status": "published",
     "publishedAt": "2026-11-18",
@@ -2679,7 +2692,7 @@
           "junk-journals",
           "air-dry-clay"
         ],
-        "title": "A few creative starter pieces",
+        "title": "If a creative one caught your eye",
         "dek": "Only if you need them. Most creative hobbies start with what's already in your drawer."
       },
       {
@@ -2810,6 +2823,10 @@
         "note": "Meeting people who care about the same thing skips the awkward small talk. Try a single one-off shift first."
       },
       {
+        "type": "p",
+        "text": "Want a whole table of friends? Try [25 girls' night ideas that aren't drinks](/journal/girls-night-ideas-that-arent-drinks) or [start a mahjong night](/journal/how-to-host-a-mahjong-night)."
+      },
+      {
         "type": "girlsNight",
         "text": "Invite three friends, put out a bracelet kit or blank mugs and paints, add snacks. You've just hosted a craft night."
       },
@@ -2852,7 +2869,7 @@
       },
       {
         "type": "makePlan",
-        "text": "Still not sure? Take our two-minute quiz, Find Your Thing, and get three to five hobbies matched to your time, budget and energy."
+        "text": "Still not sure? Take the two-minute quiz and get three to five hobbies matched to your time, budget and energy."
       },
       {
         "type": "p",
@@ -2870,9 +2887,9 @@
   },
   {
     "slug": "how-to-find-a-hobby-as-an-adult",
-    "title": "How to Find a Hobby as an Adult When You Don't Know Where to Start",
-    "titleItalic": "Don't Know Where to Start",
-    "dek": "For the person who says 'I don't really have any interests': a small, low-stakes way to find out what you'd happily do again, with a one-week experiment at the end.",
+    "title": "How to Find a Hobby as an Adult (When You Say \"I Don't Really Have Any Interests\")",
+    "titleItalic": "I Don't Really Have Any Interests",
+    "dek": "A nosy little audit, three cheap trials and a one-week experiment to find the thing you'd happily do again. No passion required.",
     "category": "after-hours",
     "status": "published",
     "publishedAt": "2026-11-19",
@@ -2968,8 +2985,8 @@
         ]
       },
       {
-        "type": "p",
-        "text": "Can't pick? The [Hobby Finder quiz](/hobby-finder) asks seven quick questions about your time, budget, energy and company and hands back a short list. No sign-up required. Prefer to browse? [Thirty-five hobbies to try](/journal/hobbies-to-try-when-life-feels-like-work-sleep-repeat) sorts them by how much energy you have."
+        "type": "makePlan",
+        "text": "Can't pick? Take the seven-question Hobby Finder quiz: your time, budget, energy and company in, a short list of hobbies out. No sign-up required. Prefer to browse? [Thirty-five hobbies to try](/journal/hobbies-to-try-when-life-feels-like-work-sleep-repeat) sorts them by how much energy you have."
       },
       {
         "type": "h2",
@@ -3090,8 +3107,8 @@
           "pocket-notebooks",
           "daypacks"
         ],
-        "title": "Starter kits for the experiment",
-        "dek": "Only if you want them. A notebook and what's already at home is enough."
+        "title": "Three small trials",
+        "dek": "A pocket notebook, a mini paint set and a lump of clay cover three very different evenings. Borrow or skip anything you can."
       },
       {
         "type": "tryThisWeekend",
@@ -3109,14 +3126,14 @@
   },
   {
     "slug": "how-to-get-into-recreational-cycling-as-an-adult",
-    "title": "How to Get Into Recreational Cycling as an Adult",
-    "titleItalic": "Recreational Cycling",
-    "dek": "A gentle plan for getting back on a bike: choosing one, staying safe and visible, planning an easy first ride and building up without feeling like an athlete.",
+    "title": "How to Start Cycling Again as an Adult: A Gentle, No-Lycra Plan",
+    "titleItalic": "A Gentle, No-Lycra Plan",
+    "dek": "Get back on a bike without feeling like an athlete: a borrowed bike, a well-fitted helmet, a quiet first ride and a bakery at the end.",
     "category": "movement",
     "status": "published",
     "publishedAt": "2026-11-19",
     "verifiedAt": "2026-11-18",
-    "hero": "hiking",
+    "hero": "shopAdventures",
     "searchIntent": "how to start cycling as an adult / recreational cycling for beginners",
     "angle": "A confidence-first plan: borrow or hire a bike, learn to fit a helmet, practice in a quiet place, take a short first ride, then build routes",
     "hobbies": [
@@ -3202,6 +3219,10 @@
       {
         "type": "p",
         "text": "If the last time you rode a bike you were fourteen, riding for fun can feel nostalgic on a sunny day and slightly terrifying on every other one. Both reactions are normal, and neither means you've forgotten how."
+      },
+      {
+        "type": "p",
+        "text": "Picture it: a flat canal path on a Saturday morning, a bakery bag in your basket."
       },
       {
         "type": "p",
@@ -3329,7 +3350,7 @@
       },
       {
         "type": "h2",
-        "text": "Step 7: Build up",
+        "text": "Step 7: Build up to the bakery",
         "id": "build"
       },
       {
@@ -3380,8 +3401,8 @@
           "water-bottles",
           "market-totes"
         ],
-        "title": "Small things that help",
-        "dek": "Optional. Check what you have first."
+        "title": "For the first ride",
+        "dek": "A bag for water and a snack, a bottle and a tote for the café stop."
       },
       {
         "type": "tryThisWeekend",
@@ -3403,7 +3424,7 @@
   },
   {
     "slug": "how-to-host-a-craft-night",
-    "title": "How to Host a Craft Night With Friends",
+    "title": "How to Host a Craft Night: Five Easy Projects and a Plan",
     "titleItalic": "Craft Night",
     "dek": "Easier than a dinner party, and a lot more fun. A hosting checklist, five craft menus and a simple way to share the cost.",
     "category": "better-together",
@@ -3604,12 +3625,16 @@
           "air-dry-clay",
           "cookie-decorating-kits"
         ],
-        "title": "Group-friendly craft supplies",
-        "dek": "Kits that come with enough for a few people."
+        "title": "The craft-night shelf",
+        "dek": "Kits with enough for a few people, so you can choose a project and skip the shopping around."
       },
       {
         "type": "p",
         "text": "For more friend plans, see [25 girls' night ideas that aren't drinks](/journal/girls-night-ideas-that-arent-drinks), or build a standing tradition with a [mahjong night](/journal/how-to-host-a-mahjong-night) or a [book club](/journal/how-to-start-a-book-club). If someone wants to keep going solo, [junk journaling](/journal/how-to-start-junk-journaling) is a gentle next step."
+      },
+      {
+        "type": "p",
+        "text": "Found your craft? Send this to the group chat and pick a date before the thread goes quiet."
       },
       {
         "type": "ifYouLoved",
@@ -3623,9 +3648,9 @@
   },
   {
     "slug": "how-to-host-a-mahjong-night",
-    "title": "How to Start a Mahjong Night With Your Girls: Everything You Need for Your New Favorite Tradition",
-    "titleItalic": "New Favorite Tradition",
-    "dek": "A standing Friday night, a table, a pot of tea and a game that keeps everyone talking. How to organize the first night, what to buy by kind, and why the set has to match the version you play.",
+    "title": "How to Start a Mahjong Night With Your Girls",
+    "titleItalic": "Mahjong Night",
+    "dek": "A standing Friday, a pot of tea and a game that keeps everyone talking. How to host a first night and pick a set that matches your version.",
     "category": "better-together",
     "status": "published",
     "publishedAt": "2026-11-19",
@@ -3863,6 +3888,10 @@
         "text": "Once the tradition is humming, you might add a craft or book night to the rotation: [how to host a craft night](/journal/how-to-host-a-craft-night), [how to start a book club](/journal/how-to-start-a-book-club) or [25 girls' night ideas that aren't drinks](/journal/girls-night-ideas-that-arent-drinks). You can also read about the [mahjong hobby](/hobbies/mahjong)."
       },
       {
+        "type": "p",
+        "text": "Ready? Send this to the group chat and ask who's in for the first Friday."
+      },
+      {
         "type": "ifYouLoved",
         "hobbies": [
           "mahjong",
@@ -3876,12 +3905,12 @@
     "slug": "how-to-host-a-paint-night-at-home",
     "title": "How to Host a Paint Night at Home (No Talent Required)",
     "titleItalic": "Paint Night at Home",
-    "dek": "A simple setup, a one-painting plan everyone can follow and a few ways to keep the night relaxed, for friends who say they cannot draw.",
+    "dek": "One easy painting, one table and a relaxed plan, so even the friend who says she can't draw leaves with a canvas she's proud of.",
     "category": "better-together",
     "status": "published",
     "publishedAt": "2026-11-19",
     "verifiedAt": "2026-11-18",
-    "hero": "potteryNight",
+    "hero": "watercolor",
     "searchIntent": "how to host a paint night at home / paint and sip at home ideas / paint night supplies",
     "angle": "A host's plan for a paint night without a studio: a shared supply list, one easy follow-along painting, a setup that protects the table, and gentle ways to handle the friend who is convinced she can't paint",
     "hobbies": [
@@ -3933,7 +3962,7 @@
     "body": [
       {
         "type": "p",
-        "text": "A paint night runs on one painting that everyone paints at the same time, so the host's job is to choose the painting, stage the table and keep the evening moving. Skill doesn't come into it."
+        "text": "Picture it: six friends round one table, the same little sunset taking shape on six canvases, and every single one of them different. That's a paint night, and the host's job is simple: choose one easy painting, set the table and keep the evening moving. Skill doesn't come into it."
       },
       {
         "type": "p",
@@ -3983,6 +4012,17 @@
       {
         "type": "p",
         "text": "You probably own old towels, plates, jars for water, a speaker and a table, and aprons can be shirts worn backwards. A group kit saves shopping for six sets of everything, and fine brushes let guests add details like stars and stripes without smudging."
+      },
+      {
+        "type": "shopHobby",
+        "productIds": [
+          "group-painting-kits",
+          "acrylic-paints",
+          "detail-brushes",
+          "conversation-cards"
+        ],
+        "title": "Paint night supplies",
+        "dek": "Everything on the table for six painters, in one place. Use what you own first, and these fill the gaps."
       },
       {
         "type": "h2",
@@ -4059,19 +4099,12 @@
         "note": "Use wide-based jars, and set them at the edge of the table away from elbows. Keep a towel handy."
       },
       {
-        "type": "shopHobby",
-        "productIds": [
-          "group-painting-kits",
-          "acrylic-paints",
-          "detail-brushes",
-          "conversation-cards"
-        ],
-        "title": "Shop your hobby",
-        "dek": "Optional. Kits are handy when you do not want to shop around."
-      },
-      {
         "type": "p",
         "text": "Send the invitation about a week ahead, and ask what guests like to eat and drink. Craft nights follow a similar shape, and [How to Host a Craft Night](/journal/how-to-host-a-craft-night) covers rotating themes. For gatherings without alcohol at the center, see [Girls' Night Ideas That Aren't Drinks](/journal/girls-night-ideas-that-arent-drinks)."
+      },
+      {
+        "type": "makePlan",
+        "text": "Ready to put it on the calendar? Pick the night, choose your painting and let Make Some Plans help you fit it into the week."
       },
       {
         "type": "ifYouLoved",
@@ -4087,7 +4120,7 @@
     "slug": "how-to-plan-a-perfect-picnic",
     "title": "How to Plan the Perfect Aesthetic Picnic",
     "titleItalic": "Aesthetic Picnic",
-    "dek": "A picnic that looks as good as it tastes: a simple timeline, a spot, a menu that survives the trip, what to pack, and a couple of things to do once you've sat down.",
+    "dek": "A picnic that looks as good as it tastes: a timeline, a spot, a menu that survives the trip and what to pack.",
     "category": "weekends",
     "status": "published",
     "publishedAt": "2026-11-19",
@@ -4166,7 +4199,7 @@
     "body": [
       {
         "type": "p",
-        "text": "Most picnics go wrong in small, dull ways: warm food, a blanket that's too small, a bottle with no opener. Sort those out and the pretty part mostly takes care of itself."
+        "text": "A great picnic is a blanket in the shade, food that stayed cold, a jar of flowers and nobody wishing they'd brought an opener. Most of the magic is dull prep, and the pretty part follows."
       },
       {
         "type": "p",
@@ -4321,7 +4354,11 @@
           "market-totes"
         ],
         "title": "Picnic gear",
-        "dek": "Optional. Start with what you have."
+        "dek": "A blanket that stays dry and a tote that looks good on the grass. Use what you own first."
+      },
+      {
+        "type": "makePlan",
+        "text": "Pick a sunny day, text one friend and let Make Some Plans turn the picnic into a real plan."
       },
       {
         "type": "p",
@@ -4333,7 +4370,7 @@
     "slug": "how-to-plan-a-solo-saturday",
     "title": "How to Plan a Solo Saturday You'll Actually Look Forward To",
     "titleItalic": "Look Forward To",
-    "dek": "Give your Saturday a storyline: an anchor, a treat, a wander and a rest. Three sample days and a plan for when it all wobbles.",
+    "dek": "Give your Saturday a storyline: one anchor, one treat, a wander and a rest. Three sample days, plus what to do when plans wobble.",
     "category": "solo-dates",
     "status": "published",
     "publishedAt": "2026-11-19",
@@ -4375,7 +4412,7 @@
     "body": [
       {
         "type": "p",
-        "text": "A good solo Saturday needs four ingredients and no itinerary. Without them, the day tends to disappear into laundry, scrolling and cereal over the sink."
+        "text": "The best Saturdays have a shape: something to look forward to, something sweet, somewhere to wander and a proper rest. Four ingredients, no itinerary. Without them, the day disappears into laundry and cereal over the sink."
       },
       {
         "type": "h2",
@@ -4503,24 +4540,24 @@
       },
       {
         "type": "makePlan",
-        "text": "Not sure what your anchor should be? Tell us your energy, budget and free hours and get a plan matched to your Saturday."
+        "text": "Ready? Pick your anchor and block the time. Tell us your energy, budget and free hours and get a plan matched to your Saturday."
       },
       {
         "type": "p",
-        "text": "For more inspiration, see [30 solo date ideas](/journal/solo-date-ideas) and [how to take yourself on a solo coffee shop date](/journal/how-to-take-yourself-on-a-solo-coffee-shop-date). For more weekend plans, see [things to do on the weekend](/journal/things-to-do-on-the-weekend)."
+        "text": "For more to try, see [30 solo date ideas](/journal/solo-date-ideas). The lighter, three-part version of this plan is in [things to do on the weekend](/journal/things-to-do-on-the-weekend)."
       }
     ]
   },
   {
     "slug": "how-to-start-a-book-club",
-    "title": "How to Start a Book Club With Friends",
-    "titleItalic": "Book Club",
-    "dek": "A simple structure that survives busy months: who to ask, how to pick books, how to run the night and what to do when nobody finished.",
+    "title": "How to Start a Book Club Your Friends Will Actually Show Up To",
+    "titleItalic": "Actually Show Up To",
+    "dek": "A simple structure for a book club that survives busy months, with the invite text, the book-picking system and what to do when nobody finished.",
     "category": "better-together",
     "status": "published",
     "publishedAt": "2026-11-19",
     "verifiedAt": "2026-11-18",
-    "hero": "shopBookish",
+    "hero": "shopGirlsNight",
     "searchIntent": "how to start a book club / book club ideas with friends",
     "angle": "Rules-lite, burnout-proof book club setup: size, schedule, book-selection systems, discussion questions and a 'nobody read it' plan",
     "hobbies": [
@@ -4560,7 +4597,7 @@
     "body": [
       {
         "type": "p",
-        "text": "Book clubs rarely die of too little enthusiasm. They die of small admin gaps: nobody picks the next book, the date drifts, one cancelled night becomes three. A little structure fixes most of it, and this is a rules-lite version for busy people."
+        "text": "Wine, snacks, a few friends and a room full of opinions about the ending: that's the night you're building. The thing that keeps it going is a tiny bit of structure, so this is a rules-lite version for busy people."
       },
       {
         "type": "h2",
@@ -4578,7 +4615,11 @@
       },
       {
         "type": "p",
-        "text": "Not sure? Start with a one-off silent session or a short read. You can switch later. A text like 'Tiny book club? First meeting is a silent read at my place. Bring any book' is enough to get the first night on the calendar."
+        "text": "Not sure? Start with a one-off silent session or a short read. You can switch later. Here's a text that gets the first night on the calendar:"
+      },
+      {
+        "type": "quote",
+        "text": "Tiny book club? First meeting is a silent read at my place. Bring any book."
       },
       {
         "type": "h2",
@@ -4678,7 +4719,12 @@
           "book-lights",
           "reading-journals"
         ],
-        "dek": "Small extras that make the meeting, or the reading, a little nicer."
+        "title": "For your book club",
+        "dek": "Conversation cards for slow moments, a light for late chapters and a journal for the thoughts you'll want to bring."
+      },
+      {
+        "type": "makePlan",
+        "text": "Got the invite drafted? Pick a date, send it to the group chat and let Make Some Plans help you hold the night."
       },
       {
         "type": "p",
@@ -4690,7 +4736,7 @@
     "slug": "how-to-start-a-reading-journal",
     "title": "How to Start a Reading Journal You Will Actually Keep",
     "titleItalic": "Actually Keep",
-    "dek": "A notebook, a few prompts and a five-minute habit, for remembering what you read without turning books into homework.",
+    "dek": "Start a reading journal in five minutes: a notebook, five lines per book and three layouts, so you remember what you read without the homework.",
     "category": "creative-corner",
     "status": "published",
     "publishedAt": "2026-11-19",
@@ -4728,7 +4774,7 @@
       },
       {
         "type": "p",
-        "text": "A reading journal is a small net for those details. It doesn't have to be pretty, long or clever. It just has to live next to the book. Here's the smallest version that works, three ways to lay it out, and what to do when you fall off."
+        "text": "A reading journal is a small net for those details, and it takes about five minutes a book. Here's the smallest version that works, three ways to lay it out and what to do when you fall off."
       },
       {
         "type": "h2",
@@ -4796,6 +4842,16 @@
         "text": "A half-empty notebook and a pen are a complete setup. A purpose-made journal brings structure, which helps if a blank page makes you freeze. A pocket notebook catches a favorite line when the main journal is at home. If you want to start cheap, use a plain notebook for a month and move to the beautiful one once the habit has settled."
       },
       {
+        "type": "shopHobby",
+        "productIds": [
+          "reading-journals",
+          "pocket-notebooks",
+          "book-lights"
+        ],
+        "title": "Journal picks",
+        "dek": "A notebook and a pen are enough to begin. If you want the pretty version, these are the ones to look at."
+      },
+      {
         "type": "h2",
         "text": "Your first evening",
         "id": "first-session"
@@ -4841,13 +4897,8 @@
         ]
       },
       {
-        "type": "shopHobby",
-        "productIds": [
-          "reading-journals",
-          "pocket-notebooks",
-          "book-lights"
-        ],
-        "dek": "Optional. A notebook and a pen are enough to begin."
+        "type": "makePlan",
+        "text": "Pick tonight's book, open a fresh page and save a reading evening in Make Some Plans."
       },
       {
         "type": "p",
@@ -4859,7 +4910,7 @@
     "slug": "how-to-start-junk-journaling",
     "title": "How to Start Junk Journaling: A Beginner's Guide",
     "titleItalic": "Junk Journaling",
-    "dek": "How to begin: what junk journaling is, the no-rules mindset and a first page you can make tonight with what is already in the house.",
+    "dek": "Tickets, tags and receipts glued into a notebook, with no rules and no talent required. Here's a first page you can make tonight.",
     "category": "creative-corner",
     "status": "published",
     "publishedAt": "2026-11-18",
@@ -4881,7 +4932,7 @@
     "body": [
       {
         "type": "p",
-        "text": "A junk journal is what you get when you stop throwing away tickets, tags and receipts and start gluing them into a notebook instead. It sits somewhere between a diary, a scrapbook and a collage, with layers of paper, tape, handwriting and the occasional pressed flower. There's no wrong way to do it, and no reason for it to be neat."
+        "text": "Somewhere in your bag right now is the start of a very pretty page: a ticket stub, a coffee sleeve, a receipt from a day you liked. A junk journal is what you get when you stop throwing those away and start gluing them into a notebook instead. It sits somewhere between a diary, a scrapbook and a collage, with layers of paper, tape, handwriting and the occasional pressed flower. There's no wrong way to do it, and no reason for it to be neat."
       },
       {
         "type": "p",
@@ -4933,6 +4984,17 @@
         "caption": "Layer, overlap, let things hang off the edge. Tidy is optional."
       },
       {
+        "type": "shopHobby",
+        "productIds": [
+          "junk-journals",
+          "washi-tape",
+          "sticker-sets",
+          "pocket-notebooks"
+        ],
+        "title": "Junk journaling picks",
+        "dek": "You can start tonight with what's in the house. If you'd like the pretty stuff, these are the four things worth buying first."
+      },
+      {
         "type": "h2",
         "text": "Four techniques that make pages look intentional",
         "id": "techniques"
@@ -4980,16 +5042,20 @@
         ]
       },
       {
+        "type": "makePlan",
+        "text": "Saturday evening, a glue stick and an envelope of scraps: save it as a plan, or let Make Some Plans find you the time."
+      },
+      {
         "type": "p",
-        "text": "Keep notes on what you read in [a reading journal](/journal/how-to-start-a-reading-journal), or explore more in [Creative Corner](/creative-corner)."
+        "text": "Ready for page one? Pick tonight, glue down one scrap and see what you reached for, then browse the [supplies guide](/journal/junk-journaling-supplies-for-beginners) for the basket worth buying. Want a notebook for what you read? Try [a reading journal](/journal/how-to-start-a-reading-journal), or explore more in [Creative Corner](/creative-corner)."
       }
     ]
   },
   {
     "slug": "how-to-start-playing-tennis-as-an-adult",
-    "title": "How to Start Playing Tennis as an Adult Beginner",
-    "titleItalic": "Adult Beginner",
-    "dek": "A first-month plan with a gear list, a first-session script and what to do when the ball goes everywhere except over the net.",
+    "title": "How to Start Playing Tennis as an Adult: A Four-Week Plan",
+    "titleItalic": "A Four-Week Plan",
+    "dek": "Four weeks from 'I haven't held a racket since school' to a short rally and a real game, plus what to do when the ball goes everywhere but over the net.",
     "category": "movement",
     "status": "published",
     "publishedAt": "2026-11-19",
@@ -5046,7 +5112,7 @@
     "body": [
       {
         "type": "p",
-        "text": "Four weeks is enough to go from 'haven't held a racket since school' to keeping a short rally going and keeping score. This plan assumes minimal gear, no club and no audience. The courts will have people who've played since they were nine; they're not your benchmark."
+        "text": "Four weeks is enough to go from 'haven't held a racket since school' to keeping a short rally going and keeping score. Golden-hour courts, a can of fresh balls and a friend to rally with: here's the plan. It assumes minimal gear, no club and no audience. The courts will have people who've played since they were nine; they're not your benchmark."
       },
       {
         "type": "h2",
@@ -5156,8 +5222,12 @@
           "water-bottles",
           "sports-totes"
         ],
-        "title": "Starter gear",
-        "dek": "Optional. Play a few times first, then buy what you missed."
+        "title": "When you're ready for your own gear",
+        "dek": "Play a few times first. Then these are the basics to look for."
+      },
+      {
+        "type": "makePlan",
+        "text": "Pick your week-one court and a time, then let Make Some Plans fit it into your week."
       },
       {
         "type": "p",
@@ -5169,7 +5239,7 @@
     "slug": "how-to-take-yourself-on-a-solo-coffee-shop-date",
     "title": "How to Take Yourself on a Solo Coffee Shop Date",
     "titleItalic": "Solo Coffee Shop Date",
-    "dek": "The gentlest first solo date there is: a window seat, a good drink and a plan for what to do with your hands.",
+    "dek": "Take yourself on a solo coffee shop date: pick the place, pack the bag, order well and six things to do once you're settled.",
     "category": "solo-dates",
     "status": "published",
     "publishedAt": "2026-11-19",
@@ -5211,7 +5281,7 @@
     "body": [
       {
         "type": "p",
-        "text": "A coffee shop may be the easiest place in town to sit by yourself. It's built for it: laptops, paperbacks, one-person tables, nobody asking questions. It takes an hour and lets you leave whenever you like. The only real hurdle is the small, silly worry that people will wonder why you're alone. They're mostly looking at their own phones."
+        "text": "A window seat, a good drink and an hour that is entirely yours. A coffee shop may be the easiest place in town to sit by yourself. It's built for it: laptops, paperbacks, one-person tables, nobody asking questions, and you can leave whenever you like. The only hurdle is a small, silly worry that people will wonder why you're alone. They're mostly looking at their own phones."
       },
       {
         "type": "h2",
@@ -5252,6 +5322,16 @@
           "A phone charger, but only if you're staying more than an hour",
           "A small bookmark or sticky tabs for marking pages or passages"
         ]
+      },
+      {
+        "type": "shopHobby",
+        "productIds": [
+          "pocket-notebooks",
+          "reading-journals",
+          "book-sleeves"
+        ],
+        "title": "Pack the date",
+        "dek": "A pocket notebook, a book sleeve and a journal to carry, so you always have something good to do with your hands."
       },
       {
         "type": "h2",
@@ -5328,14 +5408,8 @@
         "text": "Once the first one goes well, repeat it. A regular slot, like Saturday at ten or Wednesday after work, and two or three cafes to rotate between, is easier to protect than a one-off. A line in a notebook after each visit (the chapter, the sketch, the idea that surfaced) gives you a small record of how it went."
       },
       {
-        "type": "shopHobby",
-        "productIds": [
-          "pocket-notebooks",
-          "reading-journals",
-          "book-sleeves"
-        ],
-        "title": "Cafe-date essentials",
-        "dek": "Pocket-sized things that make it easy to look occupied and happy."
+        "type": "makePlan",
+        "text": "Pick the cafe, pick the hour and save the date. Make Some Plans can hold your Saturday at ten."
       },
       {
         "type": "p",
@@ -5345,14 +5419,14 @@
   },
   {
     "slug": "junk-journaling-supplies-for-beginners",
-    "title": "So, You Want to Start Junk Journaling? Here's Everything You Actually Need",
-    "titleItalic": "Everything You Actually Need",
-    "dek": "What to buy: a free-first supply list, a sensible first basket and the pretty things that can wait. For how to begin, start with the beginner's guide.",
+    "title": "Junk Journaling Supplies: The Small Shopping List That Gets You Started",
+    "titleItalic": "The Small Shopping List",
+    "dek": "A short list of what's worth buying first, what you probably own already and the pretty extras that can wait until page three.",
     "category": "creative-corner",
     "status": "published",
     "publishedAt": "2026-11-19",
     "verifiedAt": "2026-11-18",
-    "hero": "junkJournal",
+    "hero": "shopCreative",
     "searchIntent": "junk journaling supplies for beginners / junk journal supply list / what do I need to start a junk journal",
     "angle": "A product-focused companion to the starter guide: sort supplies into essentials, things you already own, optional extras and later upgrades, so beginners spend only where it changes the result",
     "hobbies": [
@@ -5510,8 +5584,12 @@
       {
         "type": "shopTheArticle",
         "articleSlug": "junk-journaling-supplies-for-beginners",
-        "title": "Shop your hobby",
-        "dek": "Start with the essentials, and only if you do not already own them. The optional picks can wait until you have made a page and know what you reached for."
+        "title": "Your first junk journal basket",
+        "dek": "A thick-paged journal, a tape set and one sticker set. Skip it if you already own them. The rest can wait until page three."
+      },
+      {
+        "type": "makePlan",
+        "text": "Basket ready? Pick a weekend evening for page one and save it in Make Some Plans."
       },
       {
         "type": "p",
@@ -5523,12 +5601,12 @@
     "slug": "low-energy-hobbies",
     "title": "12 Low-Energy Hobbies for When You Have Nothing Left",
     "titleItalic": "Nothing Left",
-    "dek": "Twelve things for the evenings when your brain has clocked out, sorted by how much setup they ask for, from none at all to a tray on your lap.",
+    "dek": "Twelve low-energy hobbies for evenings when you have nothing left, from zero setup to a puzzle on a tray. Ten minutes counts.",
     "category": "after-hours",
     "status": "published",
     "publishedAt": "2026-11-19",
     "verifiedAt": "2026-11-18",
-    "hero": "junkJournal",
+    "hero": "shopPottery",
     "searchIntent": "cozy hobbies after work / low energy hobbies / relaxing hobbies when tired in the evening",
     "angle": "Cozy hobbies sorted by how little they ask of you (hands only, eyes only, barely moving), with a stop-whenever rule built in",
     "hobbies": [
@@ -5727,6 +5805,10 @@
         "dek": "Not needed to begin. Nice once something sticks."
       },
       {
+        "type": "makePlan",
+        "text": "Pick one for tonight and save it. Make Some Plans can match a low-energy evening to your week."
+      },
+      {
         "type": "p",
         "text": "Not sure any of these is quite you? [How to find a hobby as an adult](/journal/how-to-find-a-hobby-as-an-adult) starts from what you already like, and [things to do after work instead of scrolling](/journal/things-to-do-after-work-instead-of-scrolling) has more ideas for the evening."
       }
@@ -5736,7 +5818,7 @@
     "slug": "pickleball-for-beginners",
     "title": "Everything You Need for Your Pickleball Era",
     "titleItalic": "Pickleball Era",
-    "dek": "What to bring, the few rules worth knowing before your first game, and how to join in when you don't know a soul.",
+    "dek": "The court in plain English, four rules that get you playing and exactly what to say when you walk up to a game where you don't know a soul.",
     "category": "movement",
     "status": "published",
     "publishedAt": "2026-11-19",
@@ -5801,7 +5883,7 @@
     "body": [
       {
         "type": "p",
-        "text": "Racket, paddle or a very small tennis shoe? If you've heard 'pickleball' a hundred times and still couldn't say what you hit the ball with, here's the whole picture in a few minutes. It's one of the more forgiving sports to walk into as a beginner: the court is small and the pace is manageable."
+        "text": "Racket, paddle or a very small tennis shoe? If you've heard 'pickleball' a hundred times and still couldn't say what you hit the ball with, here's the whole picture in a few minutes, and by the end of your first session you could be playing. It's one of the more forgiving sports to walk into as a beginner: the court is small and the pace is manageable."
       },
       {
         "type": "h2",
@@ -5911,8 +5993,12 @@
           "pickleball-sets",
           "water-bottles"
         ],
-        "title": "Pickleball gear",
-        "dek": "Optional. Play first, buy later."
+        "title": "Your first pickleball kit",
+        "dek": "Borrow a paddle for your first game. When you're hooked, a starter set covers you and a friend."
+      },
+      {
+        "type": "makePlan",
+        "text": "Find a game, bring a friend and let Make Some Plans put your first session on the calendar."
       },
       {
         "type": "p",
@@ -5922,9 +6008,9 @@
   },
   {
     "slug": "solo-date-ideas",
-    "title": "30 Solo Date Ideas for Enjoying Your Own Company",
-    "titleItalic": "Your Own Company",
-    "dek": "Table for one, and a very good table at that. Thirty ideas for getting out of the house, sorted by budget and mood, plus a gentle guide to the first-time wobble.",
+    "title": "30 Solo Date Ideas You'll Actually Want to Take Yourself On",
+    "titleItalic": "Actually Want",
+    "dek": "Thirty solo date ideas, from free walks to a dessert-only dinner, sorted by budget and mood. Table for one, and a very good table at that.",
     "category": "solo-dates",
     "status": "published",
     "publishedAt": "2026-11-19",
@@ -6378,10 +6464,16 @@
         "productIds": [
           "pocket-notebooks",
           "picnic-blankets",
-          "portable-watercolor"
+          "portable-watercolor",
+          "book-sleeves",
+          "film-cameras"
         ],
         "title": "Small things that make a solo date easier",
         "dek": "Light, packable and useful once you're out the door."
+      },
+      {
+        "type": "makePlan",
+        "text": "Pick one, put it in the calendar and go. Make Some Plans can match an idea to your energy, budget and free hours."
       },
       {
         "type": "p",
@@ -6393,7 +6485,7 @@
     "slug": "things-to-do-after-work-instead-of-scrolling",
     "title": "25 Things to Do After Work Instead of Scrolling",
     "titleItalic": "Instead of Scrolling",
-    "dek": "Realistic weeknight ideas for when you've got two hours, some energy and absolutely no desire to look at another screen.",
+    "dek": "Twenty-five realistic weeknight ideas for after work, sorted by how you feel: exhausted, creative, restless or in need of people.",
     "category": "after-hours",
     "status": "published",
     "publishedAt": "2026-11-18",
@@ -6721,10 +6813,15 @@
           "group-painting-kits",
           "book-lights",
           "board-games",
-          "air-dry-clay"
+          "air-dry-clay",
+          "junk-journals"
         ],
         "title": "Weeknight starter picks",
-        "dek": "Small, affordable things that make the fun option the easy one."
+        "dek": "Small things that make the fun option the easy one."
+      },
+      {
+        "type": "makePlan",
+        "text": "Pick tonight's one thing and save it. Make Some Plans can fit a weeknight into your actual week."
       },
       {
         "type": "ifYouLoved",
@@ -6738,14 +6835,14 @@
   },
   {
     "slug": "things-to-do-on-the-weekend",
-    "title": "20 Things to Do on the Weekend, Sorted by Mood",
-    "titleItalic": "Sorted by Mood",
-    "dek": "A three-part way to shape a weekend so it doesn't dissolve into errands and the sofa, plus twenty ideas sorted by mood.",
+    "title": "20 Weekend Plans for Every Mood (Pick One, Skip the Drift)",
+    "titleItalic": "Every Mood",
+    "dek": "Twenty things to do this weekend, sorted by mood, plus a simple three-part plan so Saturday doesn't dissolve into errands and the sofa.",
     "category": "weekends",
     "status": "published",
     "publishedAt": "2026-11-19",
     "verifiedAt": "2026-11-18",
-    "hero": "picnic",
+    "hero": "hiking",
     "searchIntent": "things to do on the weekend / what to do this weekend / weekend ideas",
     "angle": "A weekend-shaping method (one anchor, one treat, one rest) followed by twenty ideas by mood, each with time, cost and company",
     "hobbies": [
@@ -7077,12 +7174,12 @@
           "daypacks",
           "board-games"
         ],
-        "title": "A few things that make weekends easier",
-        "dek": "Optional. Use what you have first: a tote, a blanket and comfortable shoes go a long way."
+        "title": "Weekend picks",
+        "dek": "A blanket, a daypack and a game for the afternoon you don't want to end."
       },
       {
         "type": "makePlan",
-        "text": "Want the shape without the thinking? Make Some Plans will build a weekend around your mood, time and budget."
+        "text": "Want the shape without the thinking? Plan my weekend: Make Some Plans will build one around your mood, time and budget. For a fuller, four-part day, see [how to plan a solo Saturday](/journal/how-to-plan-a-solo-saturday)."
       }
     ]
   }

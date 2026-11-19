@@ -2,7 +2,7 @@
   "slug": "hobbies-to-try-when-life-feels-like-work-sleep-repeat",
   "title": "35 Hobbies to Try When Your Life Feels Like Work, Sleep, Repeat",
   "titleItalic": "Work, Sleep, Repeat",
-  "dek": "If your week is laptop, dinner, couch, bed, this is your way out. A wide menu of thirty-five hobbies, from couch-friendly to out-of-the-house, sorted by how much energy you've actually got left.",
+  "dek": "If your week is laptop, dinner, couch, bed: thirty-five hobbies sorted by how much energy you have left, each with an easy first session.",
   "category": "after-hours",
   "status": "published",
   "publishedAt": "2026-11-18",
@@ -198,7 +198,7 @@
         "junk-journals",
         "air-dry-clay"
       ],
-      "title": "A few creative starter pieces",
+      "title": "If a creative one caught your eye",
       "dek": "Only if you need them. Most creative hobbies start with what's already in your drawer."
     },
     {
@@ -329,6 +329,10 @@
       "note": "Meeting people who care about the same thing skips the awkward small talk. Try a single one-off shift first."
     },
     {
+      "type": "p",
+      "text": "Want a whole table of friends? Try [25 girls' night ideas that aren't drinks](/journal/girls-night-ideas-that-arent-drinks) or [start a mahjong night](/journal/how-to-host-a-mahjong-night)."
+    },
+    {
       "type": "girlsNight",
       "text": "Invite three friends, put out a bracelet kit or blank mugs and paints, add snacks. You've just hosted a craft night."
     },
@@ -371,7 +375,7 @@
     },
     {
       "type": "makePlan",
-      "text": "Still not sure? Take our two-minute quiz, Find Your Thing, and get three to five hobbies matched to your time, budget and energy."
+      "text": "Still not sure? Take the two-minute quiz and get three to five hobbies matched to your time, budget and energy."
     },
     {
       "type": "p",

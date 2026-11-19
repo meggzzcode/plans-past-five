@@ -2,7 +2,7 @@
   "slug": "pickleball-for-beginners",
   "title": "Everything You Need for Your Pickleball Era",
   "titleItalic": "Pickleball Era",
-  "dek": "What to bring, the few rules worth knowing before your first game, and how to join in when you don't know a soul.",
+  "dek": "The court in plain English, four rules that get you playing and exactly what to say when you walk up to a game where you don't know a soul.",
   "category": "movement",
   "status": "published",
   "publishedAt": "2026-11-19",
@@ -67,7 +67,7 @@
   "body": [
     {
       "type": "p",
-      "text": "Racket, paddle or a very small tennis shoe? If you've heard 'pickleball' a hundred times and still couldn't say what you hit the ball with, here's the whole picture in a few minutes. It's one of the more forgiving sports to walk into as a beginner: the court is small and the pace is manageable."
+      "text": "Racket, paddle or a very small tennis shoe? If you've heard 'pickleball' a hundred times and still couldn't say what you hit the ball with, here's the whole picture in a few minutes, and by the end of your first session you could be playing. It's one of the more forgiving sports to walk into as a beginner: the court is small and the pace is manageable."
     },
     {
       "type": "h2",
@@ -177,8 +177,12 @@
         "pickleball-sets",
         "water-bottles"
       ],
-      "title": "Pickleball gear",
-      "dek": "Optional. Play first, buy later."
+      "title": "Your first pickleball kit",
+      "dek": "Borrow a paddle for your first game. When you're hooked, a starter set covers you and a friend."
+    },
+    {
+      "type": "makePlan",
+      "text": "Find a game, bring a friend and let Make Some Plans put your first session on the calendar."
     },
     {
       "type": "p",

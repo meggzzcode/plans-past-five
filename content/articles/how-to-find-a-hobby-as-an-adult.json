@@ -1,8 +1,8 @@
 {
   "slug": "how-to-find-a-hobby-as-an-adult",
-  "title": "How to Find a Hobby as an Adult When You Don't Know Where to Start",
-  "titleItalic": "Don't Know Where to Start",
-  "dek": "For the person who says 'I don't really have any interests': a small, low-stakes way to find out what you'd happily do again, with a one-week experiment at the end.",
+  "title": "How to Find a Hobby as an Adult (When You Say \"I Don't Really Have Any Interests\")",
+  "titleItalic": "I Don't Really Have Any Interests",
+  "dek": "A nosy little audit, three cheap trials and a one-week experiment to find the thing you'd happily do again. No passion required.",
   "category": "after-hours",
   "status": "published",
   "publishedAt": "2026-11-19",
@@ -98,8 +98,8 @@
       ]
     },
     {
-      "type": "p",
-      "text": "Can't pick? The [Hobby Finder quiz](/hobby-finder) asks seven quick questions about your time, budget, energy and company and hands back a short list. No sign-up required. Prefer to browse? [Thirty-five hobbies to try](/journal/hobbies-to-try-when-life-feels-like-work-sleep-repeat) sorts them by how much energy you have."
+      "type": "makePlan",
+      "text": "Can't pick? Take the seven-question Hobby Finder quiz: your time, budget, energy and company in, a short list of hobbies out. No sign-up required. Prefer to browse? [Thirty-five hobbies to try](/journal/hobbies-to-try-when-life-feels-like-work-sleep-repeat) sorts them by how much energy you have."
     },
     {
       "type": "h2",
@@ -220,8 +220,8 @@
         "pocket-notebooks",
         "daypacks"
       ],
-      "title": "Starter kits for the experiment",
-      "dek": "Only if you want them. A notebook and what's already at home is enough."
+      "title": "Three small trials",
+      "dek": "A pocket notebook, a mini paint set and a lump of clay cover three very different evenings. Borrow or skip anything you can."
     },
     {
       "type": "tryThisWeekend",

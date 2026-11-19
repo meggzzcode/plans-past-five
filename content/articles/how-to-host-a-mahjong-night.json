@@ -1,8 +1,8 @@
 {
   "slug": "how-to-host-a-mahjong-night",
-  "title": "How to Start a Mahjong Night With Your Girls: Everything You Need for Your New Favorite Tradition",
-  "titleItalic": "New Favorite Tradition",
-  "dek": "A standing Friday night, a table, a pot of tea and a game that keeps everyone talking. How to organize the first night, what to buy by kind, and why the set has to match the version you play.",
+  "title": "How to Start a Mahjong Night With Your Girls",
+  "titleItalic": "Mahjong Night",
+  "dek": "A standing Friday, a pot of tea and a game that keeps everyone talking. How to host a first night and pick a set that matches your version.",
   "category": "better-together",
   "status": "published",
   "publishedAt": "2026-11-19",
@@ -238,6 +238,10 @@
     {
       "type": "p",
       "text": "Once the tradition is humming, you might add a craft or book night to the rotation: [how to host a craft night](/journal/how-to-host-a-craft-night), [how to start a book club](/journal/how-to-start-a-book-club) or [25 girls' night ideas that aren't drinks](/journal/girls-night-ideas-that-arent-drinks). You can also read about the [mahjong hobby](/hobbies/mahjong)."
+    },
+    {
+      "type": "p",
+      "text": "Ready? Send this to the group chat and ask who's in for the first Friday."
     },
     {
       "type": "ifYouLoved",

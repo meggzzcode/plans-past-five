@@ -1,0 +1,188 @@
+# M6: Tools, Trust and SEO review (marketing lens)
+
+Scope: /hobby-finder (steps + results), /make-plans (form + result), /tools/tonight, /tools/hobby-budget, /saved, /search, trust/utility pages (editorial-policy, methodology, affiliate-disclosure, corrections, contact, privacy, terms, 404), head()/SEO across routes, docs/pinterest-pins.csv.
+Method: live pages (desktop 1280x800 and mobile 390x844, own dev server on :5962 because :5950 returned HTTP 500 on every route during the review; the 500 was a parse error in src/data/hobbies.ts near line 500 seen by vite's dependency scan, worth confirming before launch) plus source read. No site files edited.
+
+## 1. Verdict and sell-appeal scores
+
+The tools are the strongest brand moments on the site: the quiz is fun, the language ("hobby era", "you're giving...", "Running on fumes", "An empty calendar? We can work with that.") sounds like the reader, and the result persona ("The Creative Girl") is shareable. The commercial hand-off is where it falls down. Every tool ends in the wrong place for a site that exists to sell supplies: the quiz result's primary button is "Plan my weekend with this" and the shopping list is a collapsed `<details>` link at the very bottom; the planner result has no visible shopping step for many plans; Tonight ends on "Read the guide"; the Budget calculator ends with "Browse The Creative Girl" (an internal persona/collection name used as a link label) and a generic "Shop Your Hobby". Result cards are mostly flat butter tiles with no photography, which drains the "I want that life" feeling at the exact moment of peak intent. Trust pages are honest and clear but written as policy memos, and two of them (Contact, Corrections) are dead ends ("inbox is being set up"), which undercuts the trust they are meant to build. SEO titles are mostly decent; descriptions on tools are descriptive rather than click-earning, there is a lowercase-start bug in the quiz description, no og:image on tool pages, and result/step URLs share one title.
+
+| Page | Sell-appeal (1-10) | One-line reason |
+|---|---|---|
+| /hobby-finder (questions) | 8 | Great photo cards, warm copy, low friction; headline is cute but does not name the payoff |
+| /hobby-finder (results) | 6 | Persona reveal is lovely; photos missing on cards, shop hidden, primary CTA is planning not buying |
+| /make-plans (form) | 6 | Strong headline; seven stacked choice groups, no imagery, long scroll before the button |
+| /make-plans (result) | 5 | Useful but clinical; no photo hero, no shop step visible, result appears far below form |
+| /tools/tonight | 6 | Great voice, instant results; hand-off is "Hobby page / Read the guide", no buy path |
+| /tools/hobby-budget | 5 | Clear and useful, but cold; the money moment has no purchase CTA |
+| /saved | 5 | Honest and charming title ("Penciled in."); empty state does the job, but no shopping list pull-through |
+| /search | 5 | Functional; empty state is excellent, results are plain text rows |
+| Editorial policy / Methodology | 5 | Trustworthy, defensive-leaning, long; trust cue not placed near the ask |
+| Affiliate disclosure | 6 | Short and clear; fine as is, and the wording must change the day links go live |
+| Corrections / Contact | 3 | Dead ends: "being set up", no way to reach a human |
+| Privacy / Terms | 6 | Short and readable; appropriate |
+| 404 | 8 | On brand ("This page clocked out early.") |
+| SEO/meta overall | 6 | Titles solid; descriptions, OG imagery, structured data thin on tools |
+| Pinterest pins CSV | 6 | Titles specific and honest; 82 of 88 pins send to articles, few to the tools/shop that convert |
+
+## 2. Findings by revenue/engagement impact
+
+| # | Page | Finding | Impact |
+|---|---|---|---|
+| 1 | Quiz result | Shopping list sits inside collapsed `<details>` labelled "Shop your hobby" under "Take it again". The highest-intent moment of the whole site has the buy path hidden. Primary button is "Plan my weekend with this". | Very high |
+| 2 | Quiz result | Result cards for most hobbies render as a butter tile with the hobby name (data-fallback-tile) instead of a photo. "Collage Art / Creative Writing / Embroidery" feel like a spreadsheet. Image shown is for the persona only. | Very high |
+| 3 | Quiz result | Cards link to /hobbies/slug only; no per-card "See what you need" / shop link. Ask is one level too deep. | High |
+| 4 | Quiz result | Persona line is truncated to the first sentence ("You want to end the day with something you made.") and loses the best part ("Paint on your fingers, glue on the table, a little pride on the fridge."). | Medium |
+| 5 | Quiz result | `First step:` text is clamped to 2 lines and cuts mid-sentence on desktop ("everything you want more... of this year" visibly clipped). The first step is the strongest sales line on the card. | Medium |
+| 6 | Planner result | Result renders far below the form, no scroll-into-view, title in all-caps italic ("YOUR LITTLE CREATIVE WEEKNIGHT FOR ONE") reads shouty; no image hero; shop block shows only if verified products exist (none appeared in the tested plan). | High |
+| 7 | Planner form | Seven fieldsets plus a checkbox before the CTA. "Make my plan" is far below the fold on mobile; no defaults explained. | Medium |
+| 8 | Tonight | Dead-end hand-off: "Hobby page" and "Read the guide". No "What to grab" step. Strong voice wasted. | High |
+| 9 | Budget | Money moment ("ABOUT $10-$35") has no "Shop this kit" button. Link label "Browse The Creative Girl" uses an internal collection name and means nothing to a visitor. | High |
+| 10 | Contact | "Our contact inbox is being set up. Please check back soon." A trust page with no way to contact reads as unfinished. Corrections says the same. | High (trust) |
+| 11 | SEO | Quiz meta description starts lowercase: "up to six taps about your energy..." (quizUpToWord() not capitalised in head()). | Medium, easy |
+| 12 | SEO | /make-plans, /tools/tonight, /tools/hobby-budget, /hobby-finder, /search have no og:image; shared links on Pinterest/iMessage show a text card only. Only home, about, start-here, journal and hobby pages set one. | High for shareability |
+| 13 | SEO | Tool and quiz pages carry only the Organization JSON-LD from the root; no WebApplication/HowTo/FAQ where honest. Hobby index could add ItemList. | Medium |
+| 14 | SEO | /editorial-standards (301 to /editorial-policy) while footer says "Editorial Standards" and page H1 says "Editorial standards" but URL and canonical say "policy". Naming drift (Standards / Policy / How we choose / Methodology). | Low-medium |
+| 15 | Trust copy | Editorial policy leads with what we won't do. First screen is defensive. "Commercial independence" paragraph says "We do not currently earn a commission" which is honest but invites "so why trust the links?" without a positive framing. | Medium |
+| 16 | Saved | Title and H1 consistent and charming, but no shopping-list tab surfaced even though the intro promises "shopping list". Empty state fine. | Medium |
+| 17 | Search | Result rows are all text; hobbies and shop picks show no thumbnails. No "popular" starters before typing beyond chips. | Medium |
+| 18 | Pins | 73 pins go to articles, 8 to quiz/planner, 6 to shop. Pinterest is the main traffic source; most pins do not lead into the selling tools. 16 pins are `hold-until-published`. | High |
+| 19 | Share | Share card/links exist for quiz; planner and Tonight have copy only, no "Pin it" or image. Budget result cannot be shared at all. | Medium |
+| 20 | 404 | Good. Add the quiz as primary; already present. | Low |
+
+## 3. Concrete rewrites (current to replacement)
+
+### Quiz (/hobby-finder)
+
+- Meta title. Current: "Find Your Thing: The Hobby Quiz | Plans Past Five". New: "Hobby Quiz: Find a Hobby You'll Actually Do | Plans Past Five"
+- Meta description. Current: "up to six taps about your energy, company, time and budget. Get three hobbies that genuinely fit your life outside work." New: "Six quick taps, no email. Tell us your energy, company, time and budget and get three hobbies that fit your after-work life, plus a first step for each."
+  (Code note: capitalise `quizUpToWord()` in head() or rewrite to a fixed string.)
+- H1. Current: "Let's find your hobby era." Keep. Subhead current: "Up to six taps. No email." New: "Six taps, three hobbies that fit your evenings. No email, no account."
+- Question 1 current: "What do you want more of?" Keep.
+- Energy question current: "How much energy is left after work?" Keep (best line on the site).
+- Result kicker current: "you're giving..." keep; persona line: show the full line, not just the first sentence. Creative: "You want to end the day with something you made. Paint on your fingers, glue on the table, a little pride on the fridge."
+- Primary CTA. Current: "Plan my weekend with this". New primary: "Get my starter list" (scrolls to/opens the shop block, no collapsed details). Secondary: "Plan my weekend with this".
+- Card first-step label. Current: "First step:". New: "Tonight, try:" (keeps honesty, adds momentum).
+- Per-card link. Add under each card: "What you'll need" (links to /hobbies/slug#kit or opens ShopMyHobby for that hobby).
+- Collapsed summary. Current: "Shop your hobby". New heading (always open): "Your starter list for [Collage Art]" with dek: "Everything you need for the first session, nothing you don't. Tap the list icon on anything you want, then copy or print it."
+- Footnote. Current: "Made on your device. The link holds only your quiz choices." New: "Made on your device, no email asked. The link holds only your answers, so you can send it to a friend."
+- Weak-match header. Current: "Only 2 fits every answer". New: "Two hobbies fit every answer. Three more come close." Button: "Change my budget" is good.
+- Share button. Current: "Share my result". New: "Send this to the group chat".
+
+### Planner (/make-plans)
+
+- Meta title. Current: "Make Some Plans: After-Work & Weekend Plan Generator | Plans Past Five". New: "Plan Your Evening or Weekend in 30 Seconds | Plans Past Five"
+- Meta description. Current: "An empty calendar? We can work with that. Build a realistic after-work, Saturday, Sunday or full-weekend itinerary around your time, budget, energy and company." New: "An empty calendar? We can work with that. Pick your time, budget and mood and get a realistic after-work or weekend plan, with the supplies to make it happen."
+- H1 keep. Subhead current: "Pick a few things and we'll build a realistic itinerary from our curated ideas. No invented events, no fake opening hours: just good ideas that work wherever you live." New: "Pick a few things and get a plan you can start tonight. Every idea works wherever you live, so there's nothing to book and nothing to cancel."
+- CTA. Current: "Make my plan". New: "Plan my evening" when When = weeknight/evening, "Plan my weekend" otherwise (or "Build my plan"). Keep a single primary.
+- Result title: sentence-case it ("Your little creative weeknight for one"); add a one-line sensory subhead from the activity (e.g. "Old magazines, a glue stick and 45 minutes that are entirely yours.").
+- Add under the plan: heading "Grab what you need" with ShopMyHobby for the first activity; button label "See the starter list".
+- Disclaimer current: "Ideas are general and location-independent. Costs are rough ranges for planning, not quotes. Check local hours, prices and safety before you go." Keep, but shorter: "Ideas are general, and costs are rough ranges, not quotes. Check local hours, prices and safety before you go."
+
+### Tonight (/tools/tonight)
+
+- Meta title. Current: "What Should I Do Tonight?" New: "What Should I Do Tonight? 3 Ideas for After Work | Plans Past Five"
+- Meta description. Current: "Tell us your time, energy, budget and company, and get three realistic ideas for tonight. Shuffle for more." New: "Tired, bored or somewhere in between? Answer five taps and get three ideas that fit your time, energy and budget tonight. No email, no account."
+- Intro current: "It's after five and the sofa is calling. Answer five quick questions for three ideas that fit. Nothing is saved or sent anywhere." Keep; it is on-brand. Optional trim: "Five taps. Three ideas. Nothing is saved or sent anywhere."
+- Idea card links. Current: "Hobby page". New: "What you'll need" (to the hobby kit).
+- Footer button current: "Read the guide". New: "Make it a whole plan" (to /make-plans with matched params) as primary; guide secondary.
+
+### Budget (/tools/hobby-budget)
+
+- Meta title. Current: "Hobby Starter Budget Calculator" New: "How Much Does a New Hobby Cost? Starter Budget Calculator | Plans Past Five"
+- Meta description. Current: "Pick a hobby and see an approximate startup cost range plus an equipment checklist. Mark what you already own and keep it as lean as you like." New: "How much does it really cost to start? Pick a hobby, tick what you already own, and see a realistic starting range plus a checklist. Estimates, not live prices."
+- H1 keep ("What will it actually cost?"), strong.
+- Link label. Current: "Browse The Creative Girl" (and similar collection names). New: "See options" (or "Find on Amazon" if the row maps to an ordinary Amazon link). Never use an internal collection/persona name as a link.
+- Add primary CTA under the estimate: "Shop the lean version of this kit" (to /shop/slug or the hobby's ShopMyHobby) and secondary "Save to My Plans".
+
+### Saved (/saved)
+
+- Meta description current: "Your saved hobbies, stories, plans and shop picks, stored privately on this device." Fine (noindex).
+- Empty-state heading current: "Nothing on the calendar yet? Let's fix that." Keep. Body current: "Tap the heart on a hobby, or the bookmark on a story, plan or shop pick, to keep it here." Keep. Add a third button: "What should I do tonight?"
+- When items exist, put "Your shopping list" as the first section with "Copy list" and "Print list" as primary actions.
+
+### Search
+
+- Title current: "Search". New: "Search Hobbies, Plans and Starter Picks".
+- Description current: "Search hobbies, stories and shop collections." New: "Looking for something to do? Search hobby ideas, weekend plans and starter picks by mood, budget or time."
+- Placeholder/lead keep. Add thumbnails to hobby results.
+
+### Trust pages
+
+- Editorial policy dek. Current: "How we write, what we won't do, and how we keep things honest." New: "How we pick hobbies and products, what we'll never make up, and how we fix mistakes."
+- Order: lead with "Original and useful" then a new short "Why you can trust the picks" box (3 bullets: we name products only after checking the Amazon listing; no invented reviews, prices or ratings; if it changes we tell you). Move "What we won't do" after.
+- Commercial independence. Current: "We do not currently earn a commission from our links; if that changes, the disclosure beside the links changes with it." New (keep truthful, only until live): "Our shopping links are ordinary Amazon links. Picks are chosen because they help you start, and that stays true if we ever earn a commission, which we would tell you beside every link."
+- Methodology H1 current: "How we choose". Keep; add a one-sentence promise above the fold: "Short version: we pick things a beginner can start this week, on a modest budget, and we say plainly what we have and haven't checked."
+- Affiliate disclosure current: "We don't currently earn from these links." Keep until live; pre-write the live version: "Some links are Amazon affiliate links. If you buy through them we may earn a small commission at no extra cost to you. It never changes what we recommend." (Amazon requires the Associates statement; use their required wording when live.)
+- Contact current: "Our contact inbox is being set up. Please check back soon." New (until an address exists): "Questions, corrections or a hobby we should cover? Use the corrections form linked below" is not possible (no backend); instead publish a real mailbox in site.ts (`contactEmail`) before launch. Until then replace the sentence with: "We read every note. Email ______ with the page link and what needs fixing." Do not ship the "being set up" version.
+- Corrections "Report an error" current: "We do not have a public corrections inbox yet." Same fix: needs the same mailbox.
+
+### 404
+Keep as is. It is the best-sold utility page.
+
+### Head/OG across routes
+- Add `image: absoluteUrl(images.<x>.src)` to hobby-finder (potteryNight or the persona image), make-plans (a weekend/picnic image), tonight (soloCafe), hobby-budget (junkJournal), search not needed (noindex).
+- Quiz result URLs: head() should vary by persona once the answers are in the URL so shares get "I'm The Cozy Girl. What's your hobby era?" as og:title. Static head cannot read answers cleanly; at minimum set a static OG image that shows "Find your hobby era".
+- JSON-LD to add where honest: WebApplication (name, applicationCategory "LifestyleApplication", offers free) on the quiz, planner, Tonight and Budget; ItemList on /hobbies; BreadcrumbList on tool pages. Do not add AggregateRating, Review or Offer prices.
+- Consider one canonical name: "Editorial Standards" everywhere. The URL is /editorial-policy; the redirect alias handles the other. Footer, page H1, and nav can all say "Editorial Standards".
+
+### Pinterest pins (docs/pinterest-pins.csv)
+Current approach: specific, benefit-led titles ("25 Things to Do After Work Instead of Scrolling"), descriptions that explain the payoff, UTM-tagged links, honest. Good. Improvements:
+- Move 8 to ~20 of 88 pins to the tools (quiz, planner, Tonight, budget) and shop collections, because those pages hold the buy path. Suggested pin titles: "What's Your Hobby Era? A 6-Tap Quiz", "Plan Your Whole Saturday in 30 Seconds", "What Should I Do Tonight? Three Ideas for When You're Tired", "How Much Does a New Hobby Cost? Check Before You Buy".
+- Quiz pin description: "Six taps, no email: tell us your energy, company and budget and get three hobbies that fit your after-work life, plus what to buy for the first session."
+- Remove "(Some links may be affiliate links.)" from descriptions until links are live; once live keep a short version, but it takes characters from the pitch.
+- Keywords: titles currently lead with the idea; put the searched phrase first (e.g. "Hobbies for Adults: 35 Ideas..." not "35 Hobbies to Try...") for roughly a third of pins. Keep the best curiosity titles for cover templates.
+- `alt_text` is the generic "Pinterest pin: <title>. Plans Past Five." on every row; replace with a literal description of the image ("Flat lay of a junk journal, glue stick and red gingham tape on a butter-yellow table").
+- 16 rows are `hold-until-published`: confirm articles exist before pinning (verify_before_posting column already says so).
+
+## 4. Visual direction
+
+1. Quiz results: give every hobby a real photo on its card (reuse images.ts keys; add per-hobby crops where only a tile exists). Aspect 5:3 is fine. The tile fallback should be the exception, not the norm.
+2. Quiz results: show the three cards, then a "Your starter list" band in butter with product cards visible by default (no `<details>`).
+3. Planner result: add a hero image for the first activity at the top of the result card, and a thin cherry rule between slots. Remove all-caps italic for the title.
+4. Tonight: show a small photo on each of the three idea cards (same image library as hobbies).
+5. Budget: replace the large empty cream area under the estimate with the hobby photo and a "Shop this kit" panel.
+6. Planner form: group choices into two cards (When/How long; Vibe/Who/Budget) with a sticky "Make my plan" on mobile so the CTA is always reachable.
+7. Trust pages: add one gingham-edged callout at the top of Editorial policy, Methodology and Affiliate Disclosure ("The short version") and a small cherry icon per section; reduces the wall-of-text feel.
+8. Mobile: quiz cards have good tap size; planner chips are 44px tall, good; result CTA stack fine. Result cards on mobile are full-width butter tiles with large dead space; once photos are in this is solved.
+9. OG images: a single branded "Find your hobby era" card (cream, cherry serif, gingham edge, strawberry-pink background) for the quiz; matching ones for planner and Tonight.
+
+## 5. Quick wins (under 1 hour each)
+- Capitalise the quiz meta description (lowercase "up to six taps").
+- Rename the quiz primary CTA and open the shop block by default (remove `<details>` collapse, keep the same ShopMyHobby component).
+- Replace "Hobby page" / "Read the guide" on Tonight with "What you'll need" / "Make it a whole plan".
+- Replace "Browse The Creative Girl" style link labels on Budget with "See options".
+- Set tool-page descriptions and titles from section 3.
+- Add og:image to quiz, planner, Tonight, Budget routes.
+- Show the full persona line on the result page.
+- Remove the line clamp on "First step" or raise it to 3 lines.
+- Scroll the planner result into view after "Make my plan" and sentence-case the result title.
+- Replace the Contact and Corrections "being set up" copy as soon as `site.contactEmail` is set.
+- Replace generic pin alt_text with real descriptions for the first 20 pins.
+
+## 6. Bigger moves
+- Per-hobby photography for all 44 hobbies so results, search and Tonight stop falling back to tiles.
+- Persona-specific OG images and persona-aware share titles so a shared result sells the quiz itself.
+- Dynamic result head() (persona name in title) via a route loader or prerendered persona routes.
+- A single "starter list" component used across quiz, planner, Tonight, Budget and Saved with one consistent label and one consistent action (Add to list, Copy, Print, Open on Amazon).
+- WebApplication/ItemList structured data and a sitemap review once routes settle.
+- Rebalance Pinterest pins toward tools and shop (target about 25 percent) once the tool pages are conversion-ready.
+- Rewrite trust pages in a "short version first, detail after" structure with a human contact route.
+
+## 7. Cross-page consistency
+- Names: "Find Your Thing" (nav/button) vs "Hobby Quiz" (meta title) vs "Let's find your hobby era." Use "Find Your Thing" as the product name and "hobby era" as the playful line; meta titles can carry "Hobby Quiz" for search.
+- "Shop Your Hobby" is used as nav label, kicker, accordion summary and link label for different things. Use it for the destination (/shop) and "Your starter list" for the per-hobby list.
+- "Editorial Standards" (footer, H1) vs "Editorial policy" (URL, routes, copy "see our editorial policy" on Contact) vs "How we choose". Pick one.
+- "My Plans" (nav, saved) vs "Saved" (route, headings). Fine, but button copy should say "Save to My Plans".
+- Tense and voice: tools use second person and contractions (good); trust pages mix "we do not", "we won't". Pick contractions for warmth.
+- Energy labels differ by tool: "Running on fumes / Some left in the tank / Let's go" (quiz), "Running on fumes / Okay / Bursting" (Tonight), "Low-key / Medium / High energy" (planner). Align the middle and top labels across tools.
+- Budget wording differs: "Nothing / Under $25 / Under $50 / Flexible" (quiz), "Free / ... / Under $100" (planner). Use "Free" everywhere.
+- Calls to action: quiz result leads to planner, Tonight to guide, Budget to collection. All should lead to the same next step: the starter list, with planning as secondary.
+- Disclosure language must change in exactly one place when Associates links go live (affiliate-disclosure, methodology, editorial policy, privacy, terms, pins). Add a checklist to docs/SOP-affiliate-link-check.md.
+
+## Top 5 changes
+1. Open the shopping list by default on quiz results and make "Get my starter list" the primary button.
+2. Put real photos on result, Tonight and planner cards instead of butter tiles.
+3. Fix tool hand-offs: Tonight, Budget and Planner each end on a starter-list CTA; stop using internal collection names as link text.
+4. Publish a real contact/corrections mailbox and rewrite trust pages "short version first".
+5. Add og:image and click-earning titles/descriptions to all tool routes (fix the lowercase quiz description) and rebalance Pinterest pins toward the quiz, planner and shop.

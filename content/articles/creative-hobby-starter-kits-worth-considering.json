@@ -1,8 +1,8 @@
 {
   "slug": "creative-hobby-starter-kits-worth-considering",
-  "title": "Creative Hobby Starter Kits That Are Actually Worth Considering",
-  "titleItalic": "Actually Worth Considering",
-  "dek": "How to judge a starter kit by what is in the box, who it suits, and when buying loose supplies is the smarter move.",
+  "title": "Are Craft Starter Kits Worth It? What to Look For Before You Buy",
+  "titleItalic": "Worth It",
+  "dek": "Is a craft kit worth the money, or just a pretty box? Seven questions to ask and which hobbies suit a kit and which are better bought loose.",
   "category": "creative-corner",
   "status": "published",
   "publishedAt": "2026-11-19",
@@ -61,11 +61,11 @@
   "body": [
     {
       "type": "p",
-      "text": "Is a craft kit worth it, or is it ordinary materials in a pretty box? Sometimes each. A kit promises a finished thing and no decisions, and some deliver exactly that."
+      "text": "You've seen the box: a pretty hoop, thread in a neat row, a finished stitched flower on the lid. Is it worth it? Sometimes. Here's how to tell. A kit promises a finished thing and no decisions, and some deliver exactly that."
     },
     {
       "type": "p",
-      "text": "This page doesn't rank named kits, and nothing here comes from hands-on testing. It gives you a way to size up any kit you meet, plus a read on which hobbies suit a box and which are better bought loose."
+      "text": "Below: when a kit makes sense, when loose supplies win, seven questions to ask of any box and a read on which hobbies suit a box."
     },
     {
       "type": "h2",
@@ -200,6 +200,10 @@
       "text": "The shop collections group product types by hobby so you can compare what to look for. Browse [The Creative Girl](/shop/creative-girl) for painting, journaling and stitching, [The Pottery Era](/shop/pottery-era) for clay and ceramic painting, and [Girls' Night In](/shop/girls-night-in) for group-friendly kits. They describe types of product, and the buttons open a general search so you can compare options yourself."
     },
     {
+      "type": "p",
+      "text": "A note on method: This page doesn't rank named kits, and nothing here comes from hands-on testing. It gives you a way to size up any kit you meet, plus a read on which hobbies suit a box and which are better bought loose."
+    },
+    {
       "type": "shopHobby",
       "productIds": [
         "embroidery-kits",
@@ -208,8 +212,8 @@
         "watercolor-sets",
         "group-painting-kits"
       ],
-      "title": "Shop your hobby",
-      "dek": "Types of kits and supplies to compare. Check every listing's contents, labels and instructions first."
+      "title": "Kits worth comparing",
+      "dek": "Types of kit to look at, with what to check on each listing before you buy."
     },
     {
       "type": "tryThisWeekend",

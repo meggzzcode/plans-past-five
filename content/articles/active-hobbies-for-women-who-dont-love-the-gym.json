@@ -2,7 +2,7 @@
   "slug": "active-hobbies-for-women-who-dont-love-the-gym",
   "title": "15 Active Hobbies for Women Who Don't Love the Gym",
   "titleItalic": "Don't Love the Gym",
-  "dek": "Fifteen ways to move that have more in common with a good Saturday than a treadmill, sorted by what you like: friends, fresh air or a good playlist.",
+  "dek": "Fifteen ways to move that feel more like a good Saturday than a workout: with friends, outdoors or to a playlist. Pick the one you're curious about.",
   "category": "movement",
   "status": "published",
   "publishedAt": "2026-11-19",
@@ -308,12 +308,13 @@
     {
       "type": "shopHobby",
       "productIds": [
-        "daypacks",
+        "pickleball-sets",
+        "tennis-rackets",
         "water-bottles",
         "sports-totes"
       ],
-      "title": "Gear for getting started",
-      "dek": "Optional, and best bought after you've tried a thing twice."
+      "title": "Your first-session kit",
+      "dek": "Borrow a racket first. When you're back for a second go, these make the walk to the court nicer."
     },
     {
       "type": "ifYouLoved",

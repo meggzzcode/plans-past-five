@@ -1,13 +1,13 @@
 {
   "slug": "junk-journaling-supplies-for-beginners",
-  "title": "So, You Want to Start Junk Journaling? Here's Everything You Actually Need",
-  "titleItalic": "Everything You Actually Need",
-  "dek": "What to buy: a free-first supply list, a sensible first basket and the pretty things that can wait. For how to begin, start with the beginner's guide.",
+  "title": "Junk Journaling Supplies: The Small Shopping List That Gets You Started",
+  "titleItalic": "The Small Shopping List",
+  "dek": "A short list of what's worth buying first, what you probably own already and the pretty extras that can wait until page three.",
   "category": "creative-corner",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-18",
-  "hero": "junkJournal",
+  "hero": "shopCreative",
   "searchIntent": "junk journaling supplies for beginners / junk journal supply list / what do I need to start a junk journal",
   "angle": "A product-focused companion to the starter guide: sort supplies into essentials, things you already own, optional extras and later upgrades, so beginners spend only where it changes the result",
   "hobbies": [
@@ -165,8 +165,12 @@
     {
       "type": "shopTheArticle",
       "articleSlug": "junk-journaling-supplies-for-beginners",
-      "title": "Shop your hobby",
-      "dek": "Start with the essentials, and only if you do not already own them. The optional picks can wait until you have made a page and know what you reached for."
+      "title": "Your first junk journal basket",
+      "dek": "A thick-paged journal, a tape set and one sticker set. Skip it if you already own them. The rest can wait until page three."
+    },
+    {
+      "type": "makePlan",
+      "text": "Basket ready? Pick a weekend evening for page one and save it in Make Some Plans."
     },
     {
       "type": "p",

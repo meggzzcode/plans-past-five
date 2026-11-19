@@ -1,13 +1,13 @@
 {
   "slug": "how-to-get-into-recreational-cycling-as-an-adult",
-  "title": "How to Get Into Recreational Cycling as an Adult",
-  "titleItalic": "Recreational Cycling",
-  "dek": "A gentle plan for getting back on a bike: choosing one, staying safe and visible, planning an easy first ride and building up without feeling like an athlete.",
+  "title": "How to Start Cycling Again as an Adult: A Gentle, No-Lycra Plan",
+  "titleItalic": "A Gentle, No-Lycra Plan",
+  "dek": "Get back on a bike without feeling like an athlete: a borrowed bike, a well-fitted helmet, a quiet first ride and a bakery at the end.",
   "category": "movement",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-18",
-  "hero": "hiking",
+  "hero": "shopAdventures",
   "searchIntent": "how to start cycling as an adult / recreational cycling for beginners",
   "angle": "A confidence-first plan: borrow or hire a bike, learn to fit a helmet, practice in a quiet place, take a short first ride, then build routes",
   "hobbies": [
@@ -93,6 +93,10 @@
     {
       "type": "p",
       "text": "If the last time you rode a bike you were fourteen, riding for fun can feel nostalgic on a sunny day and slightly terrifying on every other one. Both reactions are normal, and neither means you've forgotten how."
+    },
+    {
+      "type": "p",
+      "text": "Picture it: a flat canal path on a Saturday morning, a bakery bag in your basket."
     },
     {
       "type": "p",
@@ -220,7 +224,7 @@
     },
     {
       "type": "h2",
-      "text": "Step 7: Build up",
+      "text": "Step 7: Build up to the bakery",
       "id": "build"
     },
     {
@@ -271,8 +275,8 @@
         "water-bottles",
         "market-totes"
       ],
-      "title": "Small things that help",
-      "dek": "Optional. Check what you have first."
+      "title": "For the first ride",
+      "dek": "A bag for water and a snack, a bottle and a tote for the café stop."
     },
     {
       "type": "tryThisWeekend",

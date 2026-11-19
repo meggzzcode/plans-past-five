@@ -1,13 +1,13 @@
 {
   "slug": "how-to-start-a-book-club",
-  "title": "How to Start a Book Club With Friends",
-  "titleItalic": "Book Club",
-  "dek": "A simple structure that survives busy months: who to ask, how to pick books, how to run the night and what to do when nobody finished.",
+  "title": "How to Start a Book Club Your Friends Will Actually Show Up To",
+  "titleItalic": "Actually Show Up To",
+  "dek": "A simple structure for a book club that survives busy months, with the invite text, the book-picking system and what to do when nobody finished.",
   "category": "better-together",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-18",
-  "hero": "shopBookish",
+  "hero": "shopGirlsNight",
   "searchIntent": "how to start a book club / book club ideas with friends",
   "angle": "Rules-lite, burnout-proof book club setup: size, schedule, book-selection systems, discussion questions and a 'nobody read it' plan",
   "hobbies": [
@@ -47,7 +47,7 @@
   "body": [
     {
       "type": "p",
-      "text": "Book clubs rarely die of too little enthusiasm. They die of small admin gaps: nobody picks the next book, the date drifts, one cancelled night becomes three. A little structure fixes most of it, and this is a rules-lite version for busy people."
+      "text": "Wine, snacks, a few friends and a room full of opinions about the ending: that's the night you're building. The thing that keeps it going is a tiny bit of structure, so this is a rules-lite version for busy people."
     },
     {
       "type": "h2",
@@ -65,7 +65,11 @@
     },
     {
       "type": "p",
-      "text": "Not sure? Start with a one-off silent session or a short read. You can switch later. A text like 'Tiny book club? First meeting is a silent read at my place. Bring any book' is enough to get the first night on the calendar."
+      "text": "Not sure? Start with a one-off silent session or a short read. You can switch later. Here's a text that gets the first night on the calendar:"
+    },
+    {
+      "type": "quote",
+      "text": "Tiny book club? First meeting is a silent read at my place. Bring any book."
     },
     {
       "type": "h2",
@@ -165,7 +169,12 @@
         "book-lights",
         "reading-journals"
       ],
-      "dek": "Small extras that make the meeting, or the reading, a little nicer."
+      "dek": "Conversation cards for slow moments, a light for late chapters and a journal for the thoughts you'll want to bring.",
+      "title": "For your book club"
+    },
+    {
+      "type": "makePlan",
+      "text": "Got the invite drafted? Pick a date, send it to the group chat and let Make Some Plans help you hold the night."
     },
     {
       "type": "p",

@@ -1,13 +1,13 @@
 {
   "slug": "things-to-do-on-the-weekend",
-  "title": "20 Things to Do on the Weekend, Sorted by Mood",
-  "titleItalic": "Sorted by Mood",
-  "dek": "A three-part way to shape a weekend so it doesn't dissolve into errands and the sofa, plus twenty ideas sorted by mood.",
+  "title": "20 Weekend Plans for Every Mood (Pick One, Skip the Drift)",
+  "titleItalic": "Every Mood",
+  "dek": "Twenty things to do this weekend, sorted by mood, plus a simple three-part plan so Saturday doesn't dissolve into errands and the sofa.",
   "category": "weekends",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-18",
-  "hero": "picnic",
+  "hero": "hiking",
   "searchIntent": "things to do on the weekend / what to do this weekend / weekend ideas",
   "angle": "A weekend-shaping method (one anchor, one treat, one rest) followed by twenty ideas by mood, each with time, cost and company",
   "hobbies": [
@@ -339,12 +339,12 @@
         "daypacks",
         "board-games"
       ],
-      "title": "A few things that make weekends easier",
-      "dek": "Optional. Use what you have first: a tote, a blanket and comfortable shoes go a long way."
+      "title": "Weekend picks",
+      "dek": "A blanket, a daypack and a game for the afternoon you don't want to end."
     },
     {
       "type": "makePlan",
-      "text": "Want the shape without the thinking? Make Some Plans will build a weekend around your mood, time and budget."
+      "text": "Want the shape without the thinking? Plan my weekend: Make Some Plans will build one around your mood, time and budget. For a fuller, four-part day, see [how to plan a solo Saturday](/journal/how-to-plan-a-solo-saturday)."
     }
   ]
 }

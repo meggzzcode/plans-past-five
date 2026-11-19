@@ -2,12 +2,12 @@
   "slug": "low-energy-hobbies",
   "title": "12 Low-Energy Hobbies for When You Have Nothing Left",
   "titleItalic": "Nothing Left",
-  "dek": "Twelve things for the evenings when your brain has clocked out, sorted by how much setup they ask for, from none at all to a tray on your lap.",
+  "dek": "Twelve low-energy hobbies for evenings when you have nothing left, from zero setup to a puzzle on a tray. Ten minutes counts.",
   "category": "after-hours",
   "status": "published",
   "publishedAt": "2026-11-19",
   "verifiedAt": "2026-11-18",
-  "hero": "junkJournal",
+  "hero": "shopPottery",
   "searchIntent": "cozy hobbies after work / low energy hobbies / relaxing hobbies when tired in the evening",
   "angle": "Cozy hobbies sorted by how little they ask of you (hands only, eyes only, barely moving), with a stop-whenever rule built in",
   "hobbies": [
@@ -204,6 +204,10 @@
       ],
       "title": "Cozy-evening extras",
       "dek": "Not needed to begin. Nice once something sticks."
+    },
+    {
+      "type": "makePlan",
+      "text": "Pick one for tonight and save it. Make Some Plans can match a low-energy evening to your week."
     },
     {
       "type": "p",
