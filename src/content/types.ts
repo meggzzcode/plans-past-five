@@ -47,5 +47,13 @@ export type Article = {
   hobbies: string[];
   productIds: string[];
   printable?: string;
+  /** Sources a reader or editor can check. Filled when claims are verified. */
+  sources?: { title: string; url: string; note?: string }[];
+  /** Date (YYYY-MM-DD) all coworkChecks were verified against sources. Publish only after this is set. */
+  verifiedAt?: string;
+  /** Specific factual claims that still need a source check (costs, rules, safety, availability). */
+  coworkChecks?: string[];
+  /** Related articles by slug, in addition to computed related reading. */
+  related?: string[];
   body: Block[];
 };

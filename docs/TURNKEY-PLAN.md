@@ -1,0 +1,28 @@
+# Plans Past Five: turnkey execution plan (V1, 2026-11-19)
+
+Goal: a transparent, pre-revenue, sellable starter business. Not an established-earnings claim.
+Branch: claude/vibrant-dirac-amdf7r (never rewrite pushed history; Lovable syncs this repo).
+Resume file: docs/RESUME.md. Evidence labels: VERIFIED, COMPLETED, RECOMMENDED, IN PROGRESS, BLOCKED, NEEDS OWNER, READY TO DEPLOY.
+
+## Who does what
+
+| Lane | Can do | Cannot do |
+|---|---|---|
+| **Claude Code (this session)** | Repo code, tests, builds, local browser QA (Playwright), articles written as drafts, data models, tools, PDFs and pin images rendered locally, docs, tracker edits | Log in to anything, fetch pages that block bots, enter payment/tax details, apply to programs, buy, publish listings |
+| **Cowork (browser agent, owner's logins)** | Live web research (autocomplete, Trends, Pinterest suggestions, SERPs), reading official program pages, verifying products and sources on retailer sites, Search Console / GA4 / Bing / Pinterest setup in owner accounts, production checks and screenshots | Purchases, applications, tax or payment entry, accepting agreements (owner only) |
+| **Owner** | Domain, mailbox, hosting choice, affiliate applications, tax/payment, legal review, marketplace listing approval | |
+
+## Work waves
+
+Wave 1 (parallel, non-overlapping files): planner+quiz fixes; two new tools; affiliate registry+product schema; trust pages, SEO, security headers, CI; four article-writing lanes (drafts, not published); hobby directory enrichment.
+Wave 2: six printables as real PDFs; two premium kits; brand asset library; 90 pins + CSV; buyer docs; listing package; presentation; readiness score.
+Wave 3 (needs Cowork results): verify claims, flip articles to published, load ~60 verified products, affiliate register, comps, production QA.
+
+## Rules for content (all lanes)
+- Articles are written with status "draft" until their coworkChecks are verified against sources. Public site only shows verified work.
+- No invented experiences, experts, testing, prices, ratings, ASINs, volumes or traffic.
+- Product records hold names and sources only once verified. No fake affiliate URLs.
+- Never copy Paws & Passage branding, articles, analytics IDs or tracking IDs.
+
+## Scope freeze
+Targets: 30 articles, 36 hobbies, 6 categories, 6 to 8 collections, about 60 products, 4 to 5 tools, 6 printables, 2 premium kits, 90 pins, 50-topic roadmap. Nothing beyond that without a stated buyer benefit.
