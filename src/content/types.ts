@@ -10,7 +10,7 @@ export type Block =
   | { type: "quote"; text: string }
   | { type: "image"; image: ImageKey; caption?: string }
   /** A hobby/activity entry. hobby links to data for time/cost/supplies; note is article-specific copy. */
-  | { type: "item"; n?: number; title: string; hobby?: string; note: string; time?: string; cost?: string; company?: string; first?: string }
+  | { type: "item"; n?: number; title: string; hobby?: string | undefined; note: string; time?: string | undefined; cost?: string | undefined; company?: string | undefined; first?: string | undefined }
   | { type: "whatYoullNeed"; essentials: string[]; optional?: string[] }
   | { type: "starterKit"; productIds: string[]; title?: string }
   | { type: "shopHobby"; productIds: string[]; title?: string; dek?: string }

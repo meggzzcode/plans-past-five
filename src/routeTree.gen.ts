@@ -10,33 +10,375 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AffiliateDisclosureRouteImport } from './routes/affiliate-disclosure'
+import { Route as AfterHoursRouteImport } from './routes/after-hours'
+import { Route as BetterTogetherRouteImport } from './routes/better-together'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CreativeCornerRouteImport } from './routes/creative-corner'
+import { Route as EditorialPolicyRouteImport } from './routes/editorial-policy'
+import { Route as HobbyFinderRouteImport } from './routes/hobby-finder'
+import { Route as MakePlansRouteImport } from './routes/make-plans'
+import { Route as MovementRouteImport } from './routes/movement'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as SavedRouteImport } from './routes/saved'
+import { Route as SearchRouteImport } from './routes/search'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SoloDatesRouteImport } from './routes/solo-dates'
+import { Route as StartHereRouteImport } from './routes/start-here'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as WeekendsRouteImport } from './routes/weekends'
+import { Route as HobbiesIndexRouteImport } from './routes/hobbies.index'
+import { Route as HobbiesSlugRouteImport } from './routes/hobbies.$slug'
+import { Route as JournalIndexRouteImport } from './routes/journal.index'
+import { Route as JournalSlugRouteImport } from './routes/journal.$slug'
+import { Route as PrintablesIndexRouteImport } from './routes/printables.index'
+import { Route as PrintablesSlugRouteImport } from './routes/printables.$slug'
+import { Route as ShopIndexRouteImport } from './routes/shop.index'
+import { Route as ShopCategoryRouteImport } from './routes/shop.$category'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AffiliateDisclosureRoute = AffiliateDisclosureRouteImport.update({
+  id: '/affiliate-disclosure',
+  path: '/affiliate-disclosure',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AfterHoursRoute = AfterHoursRouteImport.update({
+  id: '/after-hours',
+  path: '/after-hours',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BetterTogetherRoute = BetterTogetherRouteImport.update({
+  id: '/better-together',
+  path: '/better-together',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreativeCornerRoute = CreativeCornerRouteImport.update({
+  id: '/creative-corner',
+  path: '/creative-corner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EditorialPolicyRoute = EditorialPolicyRouteImport.update({
+  id: '/editorial-policy',
+  path: '/editorial-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HobbyFinderRoute = HobbyFinderRouteImport.update({
+  id: '/hobby-finder',
+  path: '/hobby-finder',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MakePlansRoute = MakePlansRouteImport.update({
+  id: '/make-plans',
+  path: '/make-plans',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MovementRoute = MovementRouteImport.update({
+  id: '/movement',
+  path: '/movement',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SavedRoute = SavedRouteImport.update({
+  id: '/saved',
+  path: '/saved',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SoloDatesRoute = SoloDatesRouteImport.update({
+  id: '/solo-dates',
+  path: '/solo-dates',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StartHereRoute = StartHereRouteImport.update({
+  id: '/start-here',
+  path: '/start-here',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WeekendsRoute = WeekendsRouteImport.update({
+  id: '/weekends',
+  path: '/weekends',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HobbiesIndexRoute = HobbiesIndexRouteImport.update({
+  id: '/hobbies/',
+  path: '/hobbies/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HobbiesSlugRoute = HobbiesSlugRouteImport.update({
+  id: '/hobbies/$slug',
+  path: '/hobbies/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JournalIndexRoute = JournalIndexRouteImport.update({
+  id: '/journal/',
+  path: '/journal/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JournalSlugRoute = JournalSlugRouteImport.update({
+  id: '/journal/$slug',
+  path: '/journal/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrintablesIndexRoute = PrintablesIndexRouteImport.update({
+  id: '/printables/',
+  path: '/printables/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrintablesSlugRoute = PrintablesSlugRouteImport.update({
+  id: '/printables/$slug',
+  path: '/printables/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopIndexRoute = ShopIndexRouteImport.update({
+  id: '/shop/',
+  path: '/shop/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopCategoryRoute = ShopCategoryRouteImport.update({
+  id: '/shop/$category',
+  path: '/shop/$category',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/affiliate-disclosure': typeof AffiliateDisclosureRoute
+  '/after-hours': typeof AfterHoursRoute
+  '/better-together': typeof BetterTogetherRoute
+  '/contact': typeof ContactRoute
+  '/creative-corner': typeof CreativeCornerRoute
+  '/editorial-policy': typeof EditorialPolicyRoute
+  '/hobby-finder': typeof HobbyFinderRoute
+  '/make-plans': typeof MakePlansRoute
+  '/movement': typeof MovementRoute
+  '/privacy': typeof PrivacyRoute
+  '/saved': typeof SavedRoute
+  '/search': typeof SearchRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/solo-dates': typeof SoloDatesRoute
+  '/start-here': typeof StartHereRoute
+  '/terms': typeof TermsRoute
+  '/weekends': typeof WeekendsRoute
+  '/hobbies/$slug': typeof HobbiesSlugRoute
+  '/journal/$slug': typeof JournalSlugRoute
+  '/printables/$slug': typeof PrintablesSlugRoute
+  '/shop/$category': typeof ShopCategoryRoute
+  '/hobbies/': typeof HobbiesIndexRoute
+  '/journal/': typeof JournalIndexRoute
+  '/printables/': typeof PrintablesIndexRoute
+  '/shop/': typeof ShopIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/affiliate-disclosure': typeof AffiliateDisclosureRoute
+  '/after-hours': typeof AfterHoursRoute
+  '/better-together': typeof BetterTogetherRoute
+  '/contact': typeof ContactRoute
+  '/creative-corner': typeof CreativeCornerRoute
+  '/editorial-policy': typeof EditorialPolicyRoute
+  '/hobby-finder': typeof HobbyFinderRoute
+  '/make-plans': typeof MakePlansRoute
+  '/movement': typeof MovementRoute
+  '/privacy': typeof PrivacyRoute
+  '/saved': typeof SavedRoute
+  '/search': typeof SearchRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/solo-dates': typeof SoloDatesRoute
+  '/start-here': typeof StartHereRoute
+  '/terms': typeof TermsRoute
+  '/weekends': typeof WeekendsRoute
+  '/hobbies/$slug': typeof HobbiesSlugRoute
+  '/journal/$slug': typeof JournalSlugRoute
+  '/printables/$slug': typeof PrintablesSlugRoute
+  '/shop/$category': typeof ShopCategoryRoute
+  '/hobbies': typeof HobbiesIndexRoute
+  '/journal': typeof JournalIndexRoute
+  '/printables': typeof PrintablesIndexRoute
+  '/shop': typeof ShopIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/affiliate-disclosure': typeof AffiliateDisclosureRoute
+  '/after-hours': typeof AfterHoursRoute
+  '/better-together': typeof BetterTogetherRoute
+  '/contact': typeof ContactRoute
+  '/creative-corner': typeof CreativeCornerRoute
+  '/editorial-policy': typeof EditorialPolicyRoute
+  '/hobby-finder': typeof HobbyFinderRoute
+  '/make-plans': typeof MakePlansRoute
+  '/movement': typeof MovementRoute
+  '/privacy': typeof PrivacyRoute
+  '/saved': typeof SavedRoute
+  '/search': typeof SearchRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/solo-dates': typeof SoloDatesRoute
+  '/start-here': typeof StartHereRoute
+  '/terms': typeof TermsRoute
+  '/weekends': typeof WeekendsRoute
+  '/hobbies/$slug': typeof HobbiesSlugRoute
+  '/journal/$slug': typeof JournalSlugRoute
+  '/printables/$slug': typeof PrintablesSlugRoute
+  '/shop/$category': typeof ShopCategoryRoute
+  '/hobbies/': typeof HobbiesIndexRoute
+  '/journal/': typeof JournalIndexRoute
+  '/printables/': typeof PrintablesIndexRoute
+  '/shop/': typeof ShopIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/affiliate-disclosure'
+    | '/after-hours'
+    | '/better-together'
+    | '/contact'
+    | '/creative-corner'
+    | '/editorial-policy'
+    | '/hobby-finder'
+    | '/make-plans'
+    | '/movement'
+    | '/privacy'
+    | '/saved'
+    | '/search'
+    | '/sitemap.xml'
+    | '/solo-dates'
+    | '/start-here'
+    | '/terms'
+    | '/weekends'
+    | '/hobbies/$slug'
+    | '/journal/$slug'
+    | '/printables/$slug'
+    | '/shop/$category'
+    | '/hobbies/'
+    | '/journal/'
+    | '/printables/'
+    | '/shop/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/affiliate-disclosure'
+    | '/after-hours'
+    | '/better-together'
+    | '/contact'
+    | '/creative-corner'
+    | '/editorial-policy'
+    | '/hobby-finder'
+    | '/make-plans'
+    | '/movement'
+    | '/privacy'
+    | '/saved'
+    | '/search'
+    | '/sitemap.xml'
+    | '/solo-dates'
+    | '/start-here'
+    | '/terms'
+    | '/weekends'
+    | '/hobbies/$slug'
+    | '/journal/$slug'
+    | '/printables/$slug'
+    | '/shop/$category'
+    | '/hobbies'
+    | '/journal'
+    | '/printables'
+    | '/shop'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/affiliate-disclosure'
+    | '/after-hours'
+    | '/better-together'
+    | '/contact'
+    | '/creative-corner'
+    | '/editorial-policy'
+    | '/hobby-finder'
+    | '/make-plans'
+    | '/movement'
+    | '/privacy'
+    | '/saved'
+    | '/search'
+    | '/sitemap.xml'
+    | '/solo-dates'
+    | '/start-here'
+    | '/terms'
+    | '/weekends'
+    | '/hobbies/$slug'
+    | '/journal/$slug'
+    | '/printables/$slug'
+    | '/shop/$category'
+    | '/hobbies/'
+    | '/journal/'
+    | '/printables/'
+    | '/shop/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AffiliateDisclosureRoute: typeof AffiliateDisclosureRoute
+  AfterHoursRoute: typeof AfterHoursRoute
+  BetterTogetherRoute: typeof BetterTogetherRoute
+  ContactRoute: typeof ContactRoute
+  CreativeCornerRoute: typeof CreativeCornerRoute
+  EditorialPolicyRoute: typeof EditorialPolicyRoute
+  HobbyFinderRoute: typeof HobbyFinderRoute
+  MakePlansRoute: typeof MakePlansRoute
+  MovementRoute: typeof MovementRoute
+  PrivacyRoute: typeof PrivacyRoute
+  SavedRoute: typeof SavedRoute
+  SearchRoute: typeof SearchRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SoloDatesRoute: typeof SoloDatesRoute
+  StartHereRoute: typeof StartHereRoute
+  TermsRoute: typeof TermsRoute
+  WeekendsRoute: typeof WeekendsRoute
+  HobbiesSlugRoute: typeof HobbiesSlugRoute
+  JournalSlugRoute: typeof JournalSlugRoute
+  PrintablesSlugRoute: typeof PrintablesSlugRoute
+  ShopCategoryRoute: typeof ShopCategoryRoute
+  HobbiesIndexRoute: typeof HobbiesIndexRoute
+  JournalIndexRoute: typeof JournalIndexRoute
+  PrintablesIndexRoute: typeof PrintablesIndexRoute
+  ShopIndexRoute: typeof ShopIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +390,219 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/affiliate-disclosure': {
+      id: '/affiliate-disclosure'
+      path: '/affiliate-disclosure'
+      fullPath: '/affiliate-disclosure'
+      preLoaderRoute: typeof AffiliateDisclosureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/after-hours': {
+      id: '/after-hours'
+      path: '/after-hours'
+      fullPath: '/after-hours'
+      preLoaderRoute: typeof AfterHoursRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/better-together': {
+      id: '/better-together'
+      path: '/better-together'
+      fullPath: '/better-together'
+      preLoaderRoute: typeof BetterTogetherRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/creative-corner': {
+      id: '/creative-corner'
+      path: '/creative-corner'
+      fullPath: '/creative-corner'
+      preLoaderRoute: typeof CreativeCornerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/editorial-policy': {
+      id: '/editorial-policy'
+      path: '/editorial-policy'
+      fullPath: '/editorial-policy'
+      preLoaderRoute: typeof EditorialPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hobby-finder': {
+      id: '/hobby-finder'
+      path: '/hobby-finder'
+      fullPath: '/hobby-finder'
+      preLoaderRoute: typeof HobbyFinderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/make-plans': {
+      id: '/make-plans'
+      path: '/make-plans'
+      fullPath: '/make-plans'
+      preLoaderRoute: typeof MakePlansRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/movement': {
+      id: '/movement'
+      path: '/movement'
+      fullPath: '/movement'
+      preLoaderRoute: typeof MovementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/saved': {
+      id: '/saved'
+      path: '/saved'
+      fullPath: '/saved'
+      preLoaderRoute: typeof SavedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solo-dates': {
+      id: '/solo-dates'
+      path: '/solo-dates'
+      fullPath: '/solo-dates'
+      preLoaderRoute: typeof SoloDatesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/start-here': {
+      id: '/start-here'
+      path: '/start-here'
+      fullPath: '/start-here'
+      preLoaderRoute: typeof StartHereRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/weekends': {
+      id: '/weekends'
+      path: '/weekends'
+      fullPath: '/weekends'
+      preLoaderRoute: typeof WeekendsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hobbies/': {
+      id: '/hobbies/'
+      path: '/hobbies'
+      fullPath: '/hobbies/'
+      preLoaderRoute: typeof HobbiesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hobbies/$slug': {
+      id: '/hobbies/$slug'
+      path: '/hobbies/$slug'
+      fullPath: '/hobbies/$slug'
+      preLoaderRoute: typeof HobbiesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journal/': {
+      id: '/journal/'
+      path: '/journal'
+      fullPath: '/journal/'
+      preLoaderRoute: typeof JournalIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journal/$slug': {
+      id: '/journal/$slug'
+      path: '/journal/$slug'
+      fullPath: '/journal/$slug'
+      preLoaderRoute: typeof JournalSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/printables/': {
+      id: '/printables/'
+      path: '/printables'
+      fullPath: '/printables/'
+      preLoaderRoute: typeof PrintablesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/printables/$slug': {
+      id: '/printables/$slug'
+      path: '/printables/$slug'
+      fullPath: '/printables/$slug'
+      preLoaderRoute: typeof PrintablesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shop/': {
+      id: '/shop/'
+      path: '/shop'
+      fullPath: '/shop/'
+      preLoaderRoute: typeof ShopIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shop/$category': {
+      id: '/shop/$category'
+      path: '/shop/$category'
+      fullPath: '/shop/$category'
+      preLoaderRoute: typeof ShopCategoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AffiliateDisclosureRoute: AffiliateDisclosureRoute,
+  AfterHoursRoute: AfterHoursRoute,
+  BetterTogetherRoute: BetterTogetherRoute,
+  ContactRoute: ContactRoute,
+  CreativeCornerRoute: CreativeCornerRoute,
+  EditorialPolicyRoute: EditorialPolicyRoute,
+  HobbyFinderRoute: HobbyFinderRoute,
+  MakePlansRoute: MakePlansRoute,
+  MovementRoute: MovementRoute,
+  PrivacyRoute: PrivacyRoute,
+  SavedRoute: SavedRoute,
+  SearchRoute: SearchRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SoloDatesRoute: SoloDatesRoute,
+  StartHereRoute: StartHereRoute,
+  TermsRoute: TermsRoute,
+  WeekendsRoute: WeekendsRoute,
+  HobbiesSlugRoute: HobbiesSlugRoute,
+  JournalSlugRoute: JournalSlugRoute,
+  PrintablesSlugRoute: PrintablesSlugRoute,
+  ShopCategoryRoute: ShopCategoryRoute,
+  HobbiesIndexRoute: HobbiesIndexRoute,
+  JournalIndexRoute: JournalIndexRoute,
+  PrintablesIndexRoute: PrintablesIndexRoute,
+  ShopIndexRoute: ShopIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

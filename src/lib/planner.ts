@@ -54,7 +54,7 @@ export function makePlan(input: PlanInput, seed = 0): Plan | null {
     const c = candidates(input, s.part, s.maxMinutes, used);
     if (!c.length) return;
     const pool = c.slice(0, Math.min(4, c.length));
-    const pick = pool[(seed + i) % pool.length].a;
+    const pick = pool[(seed + i) % pool.length]!.a;
     used.add(pick.id);
     slots.push({ label: s.label, activity: pick });
   });

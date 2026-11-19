@@ -1,0 +1,61 @@
+import { describe, expect, it } from "vitest";
+import { findHobbies } from "@/lib/finder";
+import { makePlan } from "@/lib/planner";
+import { articles, allArticlesIncludingDrafts, getArticle } from "@/content";
+import { search } from "@/lib/search";
+import { hobbies } from "@/data/hobbies";
+import { products, collections } from "@/data/products";
+import { amazonSearchUrl } from "@/config/affiliate";
+
+describe("Find Your Thing", () => {
+  it("never returns a hobby above a free budget", () => {
+    const { results } = findHobbies({ craving: "creativity", where: "anywhere", time: "any", budget: "free", company: "either", energy: "medium" });
+    expect(results.length).toBeGreaterThan(0);
+    expect(results.every((r) => r.hobby.cost === "free")).toBe(true);
+  });
+  it("respects at-home and under-45-minute limits", () => {
+    const { results } = findHobbies({ craving: "relaxation", where: "home", time: "short", budget: "flexible", company: "either", energy: "low" });
+    expect(results.every((r) => r.hobby.settings.includes("home") && r.hobby.minutes <= 45)).toBe(true);
+  });
+  it("flags too few matches instead of ignoring constraints", () => {
+    const r = findHobbies({ craving: "movement", where: "home", time: "short", budget: "free", company: "social", energy: "high" });
+    expect(r.tooFew).toBe(true);
+  });
+  it("returns between 3 and 5 hobbies for an open quiz", () => {
+    const r = findHobbies({ craving: "creativity", where: "anywhere", time: "any", budget: "flexible", company: "either", energy: "medium" });
+    expect(r.results.length).toBeGreaterThanOrEqual(3);
+    expect(r.results.length).toBeLessThanOrEqual(5);
+  });
+});
+
+describe("Make Some Plans", () => {
+  it("full-day Saturday gives morning, afternoon and evening", () => {
+    const p = makePlan({ when: "saturday", length: "full-day", vibe: "creative", who: "alone", budget: "under25", atHome: false });
+    expect(p?.slots.map((s) => s.label)).toEqual(["Morning", "Afternoon", "Evening"]);
+  });
+  it("free budget only picks free activities", () => {
+    const p = makePlan({ when: "sunday", length: "full-day", vibe: "cozy", who: "friend", budget: "free", atHome: false });
+    expect(p?.slots.every((s) => s.activity.cost === "free")).toBe(true);
+  });
+  it("is deterministic for the same seed", () => {
+    const i = { when: "saturday", length: "half-day", vibe: "outdoorsy", who: "group", budget: "flexible", atHome: false } as const;
+    expect(makePlan(i, 2)?.slots.map((s) => s.activity.id)).toEqual(makePlan(i, 2)?.slots.map((s) => s.activity.id));
+  });
+});
+
+describe("Content rules", () => {
+  it("publishes exactly four articles and keeps eight drafts hidden", () => {
+    expect(articles).toHaveLength(4);
+    expect(allArticlesIncludingDrafts.filter((a) => a.status === "draft")).toHaveLength(8);
+    expect(getArticle("solo-date-ideas")).toBeUndefined();
+    expect(search("solo date ideas you'll actually").some((h) => h.to.includes("solo-date-ideas"))).toBe(false);
+  });
+  it("has 36 hobbies and 6 collections of 6 products", () => {
+    expect(hobbies).toHaveLength(36);
+    expect(collections).toHaveLength(6);
+    for (const c of collections) expect(products.filter((p) => p.collection === c.slug)).toHaveLength(6);
+  });
+  it("Amazon links carry no affiliate tag by default", () => {
+    expect(amazonSearchUrl("air dry clay")).not.toContain("tag=");
+  });
+});

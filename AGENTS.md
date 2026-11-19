@@ -28,3 +28,11 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Frontend-only: no database, auth, AI or paid backend; saved items use localStorage (`src/lib/saved.ts`) — the site is sold as a portable turnkey starter.
+- All brand copy and settings come from `src/config/site.ts`; Amazon links only via `src/config/affiliate.ts` so a buyer can monetize in one place.
+- Content is typed local data (`src/content`, `src/data`); drafts use `status: "draft"` and must never be exposed by public helpers.
+- Product records store no prices, ratings, brands or ASINs unless verified; buttons must describe the real destination (search vs listing).
+- Quiz and planner use deterministic rules in `src/lib/finder.ts` / `planner.ts`, covered by `src/test/rules.test.ts`.
+- Docs for the next developer live in `CLAUDE-HANDOFF.md` and `docs/`; update them when architecture changes.

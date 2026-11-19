@@ -23,7 +23,7 @@ export type Product = {
   collection: CollectionSlug;
   blurb: string;
   lookFor: string;
-  noSpend?: string;
+  noSpend?: string | undefined;
   amazonQuery: string;
   exactUrl?: string;
   hobbySlugs: string[];
