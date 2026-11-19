@@ -8,7 +8,6 @@ import { seo } from "@/lib/seo";
 import { CollectionCard, ArticleCard } from "@/components/cards/Cards";
 import { Kicker, toneBg } from "@/components/editorial/Section";
 import { StarterKit } from "@/components/commerce/StarterKit";
-import { ShopDisclosure } from "@/components/commerce/ProductCard";
 import { getKit, fillKit } from "@/data/kits";
 import { dedupeListGroups } from "@/lib/shoplist";
 import { ShopMyHobby } from "@/components/commerce/ShopMyHobby";

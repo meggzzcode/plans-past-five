@@ -15,11 +15,12 @@ describe("one concise shopping-links line per shopping page (Stage 3a)", () => {
     );
   });
 
-  it("a shop collection page has no hero-level disclosure on top of the kit's own and the type-level one", () => {
+  it("a shop collection page has no hero-level disclosure of its own: the kit and hobby shopping components carry it", () => {
     const s = read("src/routes/shop.$category.tsx");
-    expect(s).not.toMatch(/kind="short"/);
-    // The two remaining ones are in mutually exclusive branches: one per page.
-    expect(count(s, /<ShopDisclosure kind="general"/g)).toBe(2);
+    expect(s).not.toMatch(/<ShopDisclosure/);
+    // Disclosure stays next to the recommendations, inside the components that render them.
+    expect(read("src/components/commerce/StarterKit.tsx")).toMatch(/<ShopDisclosure/);
+    expect(read("src/components/commerce/ShopMyHobby.tsx")).toMatch(/<ShopDisclosure/);
   });
 
   it("the home page carries no commercial explanation (it has no product blocks)", () => {
