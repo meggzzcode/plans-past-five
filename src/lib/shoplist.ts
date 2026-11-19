@@ -145,7 +145,8 @@ export async function copyText(text: string): Promise<boolean> {
 }
 
 /** Replace the whole stored list (used by import after merging). */
-export const replaceShopList = (state: ShopListState) => writeShopList(sanitizeShopList({ items: state }));
+export const replaceShopList = (state: ShopListState) =>
+  writeShopList(sanitizeShopList({ items: state }));
 
 /** Products on the list for one status, in catalog order. */
 export const productsWithStatus = (

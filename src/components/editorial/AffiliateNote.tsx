@@ -1,14 +1,22 @@
 import { Link } from "@tanstack/react-router";
-import { isMonetized, liveDisclosureSentences } from "@/config/affiliate";
+import { shopDisclosureSentences } from "@/config/affiliate";
 import { cn } from "@/lib/utils";
 
-/** Honest disclosure beside product links; wording changes once an affiliate entry is live. */
-export function AffiliateNote({ className }: { className?: string }) {
+/**
+ * Honest disclosure beside shopping links. The wording comes from one place (src/config/affiliate.ts)
+ * and changes by itself when an affiliate entry goes live. Render it only where links appear.
+ * `kind="product"` is for blocks of named products; the default covers mixed pages.
+ */
+export function AffiliateNote({
+  className,
+  kind = "general",
+}: {
+  className?: string;
+  kind?: "product" | "general";
+}) {
   return (
     <p className={cn("text-xs text-muted-foreground", className)}>
-      {isMonetized()
-        ? `${liveDisclosureSentences().join(" ")} It never changes what we recommend. `
-        : "Links open an Amazon search so you can compare options. We don't currently earn from these links. "}
+      {shopDisclosureSentences(kind).join(" ")}{" "}
       <Link to="/affiliate-disclosure" className="underline">
         Disclosure
       </Link>

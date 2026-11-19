@@ -40,7 +40,11 @@ export async function sendToGroupChat(
 ): Promise<ShareOutcome> {
   if (nav && typeof nav.share === "function") {
     try {
-      await nav.share({ title: data.title, text: data.text, ...(data.url ? { url: data.url } : {}) });
+      await nav.share({
+        title: data.title,
+        text: data.text,
+        ...(data.url ? { url: data.url } : {}),
+      });
       return "shared";
     } catch (e) {
       if (e instanceof Error && e.name === "AbortError") return "cancelled";

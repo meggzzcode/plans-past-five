@@ -71,11 +71,11 @@ export const articleHowToPlanAPerfectPicnic: Article = {
   body: [
     {
       type: "p",
-      text: "Imagine the picture you have in your head: a big soft blanket, a wicker-ish basket, a little spread of things in pretty containers, golden-hour light. Now imagine the real version: a damp sandwich, a blanket that's too small, no way to open the bottle, and a patch of grass picked in a panic.",
+      text: "Most picnics go wrong in small, dull ways: warm food, a blanket that's too small, a bottle with no opener. Sort those out and the pretty part mostly takes care of itself.",
     },
     {
       type: "p",
-      text: "The gap between the two is mostly planning, and not very much of it. Here's a timeline, how to choose a spot, a menu that holds up in a bag, a packing list, and ways to make it look as good as you hoped.",
+      text: "This guide runs in the order you'll need it: a timeline, a spot, a menu that survives the trip, a packing list, and a few ways to make the whole thing look as good as you hoped.",
     },
     { type: "h2", text: "A timeline that fits real life", id: "timeline" },
     {
@@ -101,7 +101,7 @@ export const articleHowToPlanAPerfectPicnic: Article = {
     { type: "h2", text: "A menu that travels well", id: "food" },
     {
       type: "p",
-      text: "Aim for things that are cold or room temperature, easy to hold, and unbothered by a bumpy walk. One main, two sides, something fresh and something sweet is plenty.",
+      text: "Aim for food that's cold or room temperature, easy to hold and unbothered by a bumpy walk. One main, two sides, something fresh and something sweet is plenty.",
     },
     {
       type: "list",
@@ -129,7 +129,7 @@ export const articleHowToPlanAPerfectPicnic: Article = {
     },
     {
       type: "p",
-      text: "Add one thing with height or softness: a small bunch of flowers in a jar (our [flower arranging guide](/journal/flower-arranging-as-a-hobby) shows how), a cushion, a tall bottle. Then put your phone away after the first photo. The point of a pretty picnic is that you're actually in it.",
+      text: "Add one thing with height or softness: a small bunch of flowers in a jar (the [flower arranging guide](/journal/flower-arranging-as-a-hobby) shows how), a cushion, a tall bottle. Then put your phone away after the first photo. The point of a pretty picnic is that you're actually in it.",
     },
     { type: "h2", text: "The packing list", id: "packing" },
     {
@@ -150,17 +150,13 @@ export const articleHowToPlanAPerfectPicnic: Article = {
       ],
     },
     {
-      type: "list",
-      items: [
-        "**Probably already own:** a blanket or large throw, a tote, plates and cutlery, jars and lidded containers, napkins, a bottle opener.",
-        "**Worth buying if you picnic more than once:** a waterproof-backed blanket and an insulated bag, since they make the practical bits easier.",
-        "**Later upgrade:** a proper picnic basket with fitted tableware, if the habit sticks.",
-      ],
+      type: "p",
+      text: "You probably own most of this already: a blanket or large throw, a tote, plates, jars, napkins, an opener. If you picnic more than once, a waterproof-backed blanket and an insulated bag are the two things that make the practical bits easier. A proper basket with fitted tableware can wait to see if the habit sticks.",
     },
-    { type: "h2", text: "What to do once you're sitting down", id: "activities" },
+    { type: "h2", text: "Once you're sitting down", id: "activities" },
     {
       type: "p",
-      text: "A loose agenda keeps you off your phone. Pick two.",
+      text: "Set up in this order: weigh down the blanket corners, open the drinks first (everyone settles faster with one in hand), then put the food out in small containers so people can graze. After that, a loose agenda keeps you off your phone. Pick two.",
     },
     {
       type: "list",
@@ -171,15 +167,6 @@ export const articleHowToPlanAPerfectPicnic: Article = {
         "**Take a photo walk** after eating, with a theme.",
         "**Watch for birds** from the blanket. [Birdwatching](/hobbies/birdwatching) works even on a small lawn.",
         "**Pass round conversation prompts** written on little cards.",
-      ],
-    },
-    {
-      type: "first30",
-      steps: [
-        "Lay the blanket and weigh each corner with something heavy.",
-        "Open the drinks first. Everyone settles faster with one in hand.",
-        "Set the food out in small containers so people can graze.",
-        "Take ten quiet minutes before anyone suggests the next thing.",
       ],
     },
     {
@@ -198,29 +185,18 @@ export const articleHowToPlanAPerfectPicnic: Article = {
       ],
     },
     {
-      type: "saveSplurge",
-      save: "A blanket you already own, containers from the cupboard and food you made yourself.",
-      splurge:
-        "A properly insulated bag and a roomy waterproof-backed blanket. They'll last for years of picnics.",
+      type: "p",
+      text: "If you're nervous about the grand version, start tiny: one friend, two sandwiches and a thermos, ninety minutes.",
     },
     {
       type: "shopHobby",
-      title: "Picnic essentials",
-      dek: "Optional extras. Start with what you have.",
-      productIds: ["picnic-blankets", "market-totes", "water-bottles", "pocket-notebooks"],
+      title: "Picnic gear",
+      dek: "Optional. Start with what you have.",
+      productIds: ["picnic-blankets", "market-totes"],
     },
     {
       type: "p",
       text: "Looking for more to do with the rest of the weekend? See [things to do on the weekend](/journal/things-to-do-on-the-weekend), or [cheap weekend adventures](/journal/cheap-weekend-adventures) for plans that cost little.",
     },
-    {
-      type: "tryThisWeekend",
-      text: "Keep it tiny: one friend, two sandwiches and a thermos, ninety minutes. See how it feels before you plan the grand version.",
-    },
-    {
-      type: "makePlan",
-      text: "Ready to make it real? Use Make Some Plans to pick the day, the mood and the company.",
-    },
-    { type: "ifYouLoved", hobbies: ["picnicking", "outdoor-sketching", "birdwatching"] },
   ],
 };

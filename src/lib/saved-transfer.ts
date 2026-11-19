@@ -76,7 +76,7 @@ export const bundleToCode = (b: Bundle) => CODE_PREFIX + toBase64Url(JSON.string
 /* ---------- Field cleaning ---------- */
 
 // eslint-disable-next-line no-control-regex
-const CONTROL = /[\u0000-\u0009\u000b-\u001f\u007f-\u009f  ]/g;
+const CONTROL = /[\u0000-\u0009\u000b-\u001f\u007f-\u009f\u2028\u2029]/g;
 
 function cleanText(v: unknown, max: number, keepNewlines = false): string | null {
   if (typeof v !== "string") return null;
@@ -161,8 +161,7 @@ export function cleanShopList(raw: unknown): { items: ShopListState; skipped: nu
 /* ---------- Parsing ---------- */
 
 export type ImportResult =
-  | { ok: true; bundle: Bundle; skipped: number }
-  | { ok: false; error: string };
+  { ok: true; bundle: Bundle; skipped: number } | { ok: false; error: string };
 
 const NOT_OURS = "That doesn't look like a Plans Past Five backup.";
 
@@ -171,7 +170,8 @@ export function parseImport(input: unknown): ImportResult {
   if (typeof input !== "string") return { ok: false, error: NOT_OURS };
   const text = input.trim();
   if (text.length === 0) return { ok: false, error: "Nothing to import yet." };
-  if (text.length > MAX_FILE_CHARS) return { ok: false, error: "That backup is too large to import." };
+  if (text.length > MAX_FILE_CHARS)
+    return { ok: false, error: "That backup is too large to import." };
 
   let json = text;
   if (text.startsWith(CODE_PREFIX)) {
@@ -179,7 +179,8 @@ export function parseImport(input: unknown): ImportResult {
     if (decoded === null) return { ok: false, error: "That code is damaged or incomplete." };
     json = decoded;
   }
-  if (json.length > MAX_FILE_CHARS) return { ok: false, error: "That backup is too large to import." };
+  if (json.length > MAX_FILE_CHARS)
+    return { ok: false, error: "That backup is too large to import." };
 
   let data: unknown;
   try {
@@ -187,14 +188,19 @@ export function parseImport(input: unknown): ImportResult {
   } catch {
     return { ok: false, error: NOT_OURS };
   }
-  if (!data || typeof data !== "object" || Array.isArray(data)) return { ok: false, error: NOT_OURS };
+  if (!data || typeof data !== "object" || Array.isArray(data))
+    return { ok: false, error: NOT_OURS };
   const d = data as Record<string, unknown>;
   if (d["app"] !== BUNDLE_APP) return { ok: false, error: NOT_OURS };
   if (d["v"] !== BUNDLE_VERSION)
     return { ok: false, error: "That backup is from a different version of the site." };
 
   const rawSaved = d["saved"] === undefined ? [] : d["saved"];
-  if (!Array.isArray(rawSaved) || (d["shop"] !== undefined && (typeof d["shop"] !== "object" || d["shop"] === null || Array.isArray(d["shop"]))))
+  if (
+    !Array.isArray(rawSaved) ||
+    (d["shop"] !== undefined &&
+      (typeof d["shop"] !== "object" || d["shop"] === null || Array.isArray(d["shop"])))
+  )
     return { ok: false, error: NOT_OURS };
 
   let skipped = 0;
@@ -222,7 +228,9 @@ export function parseImport(input: unknown): ImportResult {
     bundle: {
       app: BUNDLE_APP,
       v: BUNDLE_VERSION,
-      exportedAt: Number.isFinite(exported) ? new Date(exported).toISOString() : new Date(0).toISOString(),
+      exportedAt: Number.isFinite(exported)
+        ? new Date(exported).toISOString()
+        : new Date(0).toISOString(),
       saved,
       shop: shop.items,
     },

@@ -40,7 +40,10 @@ export const SEASON_COPY: Record<Season, { label: string; line: string }> = {
 };
 
 /** Points per matching tag or category. Only tags and categories that exist in src/data/hobbies.ts. */
-const WEIGHTS: Record<Season, { tags: Record<string, number>; categories: Record<string, number> }> = {
+const WEIGHTS: Record<
+  Season,
+  { tags: Record<string, number>; categories: Record<string, number> }
+> = {
   winter: {
     tags: { "at-home": 3, "low-energy": 2, creative: 2, "low-cost": 0.5 },
     categories: { cozy: 3, bookish: 2, creative: 1 },
@@ -80,11 +83,7 @@ export function seasonScore(h: Pick<Hobby, "tags" | "category">, season: Season)
  * Up to `count` hobbies for the date's season. Scores by tag and category, adds a small monthly
  * rotation, and avoids three of the same category in a row so the strip stays varied.
  */
-export function seasonalHobbies(
-  date: Date,
-  list: Hobby[] = allHobbies,
-  count = 4,
-): Hobby[] {
+export function seasonalHobbies(date: Date, list: Hobby[] = allHobbies, count = 4): Hobby[] {
   const season = seasonOf(date);
   const monthKey = `${date.getFullYear()}-${date.getMonth()}`;
   const scored = list

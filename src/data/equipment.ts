@@ -228,6 +228,33 @@ export const equipmentByHobby: Record<string, EquipmentItem[]> = {
     e("shoes", "Dance-friendly shoes (you may own a pair)", opt, "gear", 0, 40),
     e("water", "Water bottle", opt, "extras", 0, 15),
   ],
+  running: [
+    e("shoes", "Trainers you can run in (you may already own a pair)", ess, "gear", 0, 50),
+    e("clothes", "Clothes you can move in", opt, "gear", 0, 40),
+    e("watch", "A watch or free timer app", opt, "extras", 0, 30),
+  ],
+  climbing: [
+    e("pass", "A gym day pass", ess, "learning", 15, 30),
+    e("rental", "Rental climbing shoes", ess, "gear", 3, 8),
+    e("chalk", "Chalk", opt, "extras", 5, 12),
+    e("ownshoes", "Your own climbing shoes", opt, "gear", 60, 120),
+  ],
+  "board-games": [
+    e("game", "One easy game (borrowed, library or secondhand)", ess, "materials", 0, 25),
+    e("snacks", "Snacks for the table", opt, "extras", 5, 15),
+    e("cafe", "A café that lends games", opt, "extras", 0, 12),
+  ],
+  "cooking-classes": [
+    e("class", "A single drop-in beginner class", ess, "learning", 20, 50),
+    e("apron", "An apron, if one is not provided", opt, "gear", 0, 20),
+    e("container", "A container for leftovers", opt, "extras", 0, 8),
+  ],
+  "language-learning": [
+    e("app", "A free app, library course or podcast", ess, "learning", 0, 0),
+    e("notebook", "A notebook", ess, "materials", 0, 8),
+    e("workbook", "A beginner workbook", opt, "extras", 8, 20),
+    e("group", "A conversation group or language partner", opt, "learning", 0, 15),
+  ],
   tennis: [
     e("racket", "A beginner racket (borrowed or secondhand)", ess, "gear", 15, 40, "sporty-girl"),
     e("balls", "A can of balls", ess, "gear", 3, 7, "sporty-girl"),

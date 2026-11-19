@@ -7,10 +7,10 @@ const publishedSlugs = new Set(articles.map((a) => a.slug));
 const currency = /[$€£]\s?\d|\d\s?(usd|dollars?|eur|gbp)\b/i;
 
 describe("hobby directory", () => {
-  // Updated deliberately from 36 to 38: added Yoga for Beginners and Dance Classes (active hobbies).
-  it("keeps 38 unique hobbies", () => {
-    expect(hobbies).toHaveLength(38);
-    expect(new Set(hobbies.map((h) => h.slug)).size).toBe(38);
+  // Updated deliberately from 36 to 43: added Yoga for Beginners and Dance Classes (active hobbies).
+  it("keeps 43 unique hobbies", () => {
+    expect(hobbies).toHaveLength(43);
+    expect(new Set(hobbies.map((h) => h.slug)).size).toBe(43);
   });
 
   it.each(hobbies.map((h) => [h.slug, h] as const))("%s has all enrichment fields", (_s, h) => {

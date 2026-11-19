@@ -29,6 +29,15 @@ import { startupRange } from "@/data/equipment";
  */
 
 const counts: Record<string, number> = {};
+/** Groups problems by their first word so a failure shows every kind of violation, not just 15 lines. */
+const summarize = (problems: string[]) => {
+  const g = new Map<string, string[]>();
+  for (const p of problems) {
+    const k = p.split(" ")[0]!;
+    g.set(k, [...(g.get(k) ?? []), p]);
+  }
+  return [...g].map(([k, v]) => `${k} x${v.length}: ${v[0]!.slice(0, 220)}`);
+};
 const bump = (k: string, n = 1) => (counts[k] = (counts[k] ?? 0) + n);
 
 /* ------------------------------------------------------------------ quiz */
@@ -105,7 +114,7 @@ describe("quiz scenario matrix", () => {
     }
     bump("quiz combinations", n);
     bump("quiz combinations needing the honest 'nothing fits' state", weak);
-    expect(problems.slice(0, 15)).toEqual([]);
+    expect(summarize(problems)).toEqual([]);
   });
 
   it("level filter is honoured", () => {
@@ -333,7 +342,7 @@ describe("planner scenario matrix", () => {
     bump("planner combinations (when x length x vibe x who x budget x energy)", n);
     bump("planner combinations with an honest 'nothing found' day", empty);
     bump("planner combinations that note a shorter plan than asked", short);
-    expect(problems.slice(0, 15)).toEqual([]);
+    expect(summarize(problems)).toEqual([]);
   }, 600_000);
 
   it("setting x home x company x budget x vibe: indoor/outdoor and at-home are honoured", () => {
@@ -344,7 +353,7 @@ describe("planner scenario matrix", () => {
       checkPlan(input, problems);
     }
     bump("planner combinations (setting x at-home x who x budget x vibe)", n);
-    expect(problems.slice(0, 15)).toEqual([]);
+    expect(summarize(problems)).toEqual([]);
   }, 600_000);
 
   it("every empty day explains what blocks it with a named relax option", () => {
@@ -444,7 +453,7 @@ describe("tonight scenario matrix", () => {
             }
     bump("tonight combinations (time x energy x company x budget x setting)", n);
     bump("tonight combinations with fewer than 3 ideas (honest hint shown)", thin);
-    expect(problems.slice(0, 15)).toEqual([]);
+    expect(summarize(problems)).toEqual([]);
   });
 });
 

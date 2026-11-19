@@ -5,7 +5,14 @@ import { WordmarkInline } from "@/components/brand/Wordmark";
 import { Star } from "@/components/brand/Doodles";
 import { site } from "@/config/site";
 import { useSaved } from "@/lib/saved";
-import { browseNav, NAMES, sectionNav, toolNav, topNav, type NavItem } from "@/components/layout/nav";
+import {
+  browseNav,
+  NAMES,
+  sectionNav,
+  toolNav,
+  topNav,
+  type NavItem,
+} from "@/components/layout/nav";
 
 const ACTIVE = "data-[status=active]:text-cherry";
 

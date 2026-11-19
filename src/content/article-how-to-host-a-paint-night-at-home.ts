@@ -54,16 +54,26 @@ export const articleHowToHostAPaintNightAtHome: Article = {
   body: [
     {
       type: "p",
-      text: "A long table in your living room, a row of small canvases and four friends in aprons that used to be shirts. Nobody has a plan beyond 'something with a sunset.' The speaker is playing something low, and someone has already asked whether blue and yellow make green.",
+      text: "A paint night runs on one painting that everyone paints at the same time, so the host's job is to choose the painting, stage the table and keep the evening moving. Skill doesn't come into it.",
     },
     {
       type: "p",
-      text: "A paint night at home is the studio version without the studio fee, the schedule or the stranger at the next easel. It is also easier to host than most people think, because the whole evening runs on one simple painting.",
+      text: "It's the studio version without the studio fee or the stranger at the next easel, and it takes about two to three hours. The cost depends mostly on how fancy the snacks get.",
     },
-    { type: "h2", text: "Why it is worth hosting", id: "why" },
+    { type: "h2", text: "Choose one easy painting", id: "painting" },
     {
       type: "p",
-      text: "It takes about two to three hours, suits any skill level and gives a group something to do with its hands, which makes conversation easier. Everyone leaves with something made. You need a table, some paint and a plan, and the cost depends mostly on how fancy the snacks get.",
+      text: "Pick something built from flat shapes and blends rather than drawing skill. A simple sunset over water, a moon behind a hill or a row of tulips all work. Then do it yourself first, on a scrap, so you know where people will slow down.",
+    },
+    {
+      type: "list",
+      items: [
+        "Paint the whole background in a gradient while you chat: darker at the top, lighter at the horizon.",
+        "Take a short break to let it dry a little. Snacks go to the other table.",
+        "Add the big shape, such as the hill, the water or the moon.",
+        "Let layers dry, then add one smaller detail, like a bird or a star.",
+        "Sign the corner with the fine brush, then prop all the canvases along a shelf for a mini gallery.",
+      ],
     },
     { type: "h2", text: "What you need", id: "need" },
     {
@@ -80,23 +90,12 @@ export const articleHowToHostAPaintNightAtHome: Article = {
         "A group painting kit, if you want canvases, paints and brushes in one box (check what is included)",
         "A small easel or a stack of books to prop canvases",
         "Conversation cards for slow moments",
-        "A shared playlist",
         "Snacks and drinks, kept away from the paint table",
       ],
     },
     {
       type: "p",
-      text: "**What you probably own.** Old towels, plates, jars for water, a speaker and a table. Aprons can be shirts worn backwards.",
-    },
-    {
-      type: "p",
-      text: "**What the optional pieces do.** A group kit saves you shopping for six sets of everything. Conversation cards are useful when the room goes quiet halfway through. Fine brushes let guests add details like stars and stripes without smudging.",
-    },
-    {
-      type: "saveSplurge",
-      save: "Canvas panels, a starter acrylic set shared by the table and brushes from a multipack.",
-      splurge:
-        "Individual canvases with enough paint for everyone to take their painting home without sharing colors.",
+      text: "You probably own old towels, plates, jars for water, a speaker and a table, and aprons can be shirts worn backwards. A group kit saves shopping for six sets of everything, and fine brushes let guests add details like stars and stripes without smudging.",
     },
     { type: "h2", text: "Set up the room", id: "setup" },
     {
@@ -110,26 +109,19 @@ export const articleHowToHostAPaintNightAtHome: Article = {
         "**Set out a paper plate per person** with small dabs of each color.",
       ],
     },
-    { type: "h2", text: "Choose one easy painting", id: "painting" },
-    {
-      type: "p",
-      text: "Pick a painting everyone can follow together. A simple sunset over water, a moon behind a hill or a row of tulips all work, because they are built from flat shapes and blends rather than drawing skill.",
-    },
-    { type: "h3", text: "The evening, step by step" },
+    { type: "h2", text: "The evening, start to finish", id: "timeline" },
     {
       type: "list",
       items: [
-        "Paint the whole background in a gradient while you chat: darker at the top, lighter at the horizon.",
-        "Take a short break to let it dry a little. Snacks go to the other table.",
-        "Add the big shape, such as the hill, the water or the moon.",
-        "Let layers dry, then add one smaller detail, like a bird or a star.",
-        "Add a signature in the corner with the fine brush.",
-        "Prop all the canvases along a shelf for a mini gallery and let them dry.",
+        "**Arrival, 20 minutes:** snacks, a drink, a look at the canvases.",
+        "**Demonstration, 15 minutes:** show the first stage and let people begin.",
+        "**Painting, about 90 minutes:** with a break for drying and conversation.",
+        "**Gallery, 15 minutes:** prop the canvases up and admire them.",
       ],
     },
     {
       type: "p",
-      text: "Do the steps yourself first, on a scrap, so you know where people tend to slow down. Then demonstrate each stage and let guests wander off the script.",
+      text: "Demonstrate each stage, then let guests wander off the script. If alcohol is part of your evening, make it one option among several and include something non-alcoholic so nobody has to explain. Afterwards, wash brushes with water and a little soap, and follow local guidance for disposing of paint water instead of pouring it anywhere you like.",
     },
     { type: "h2", text: "Keeping the mood easy", id: "mood" },
     {
@@ -146,24 +138,6 @@ export const articleHowToHostAPaintNightAtHome: Article = {
       type: "item",
       title: "Someone is done early",
       note: "Hand them a second canvas to experiment on, or put them on playlist duty.",
-    },
-    { type: "h2", text: "A simple timeline", id: "timeline" },
-    {
-      type: "list",
-      items: [
-        "**Arrival, 20 minutes:** snacks, a drink, a look at the canvases.",
-        "**Demonstration, 15 minutes:** show the first stage and let people begin.",
-        "**Painting, about 90 minutes:** with a break for drying and conversation.",
-        "**Gallery, 15 minutes:** prop the canvases up and admire them.",
-      ],
-    },
-    {
-      type: "p",
-      text: "If alcohol is part of your evening, make it one option among several, and include something non-alcoholic so nobody has to explain. Paint, brushes and water stay on the painting table, and food and drink stay on another.",
-    },
-    {
-      type: "p",
-      text: "Afterwards, wash brushes with water and a little soap, and follow local guidance for disposing of paint water instead of pouring it anywhere you like.",
     },
     { type: "h2", text: "Common mistakes and fixes", id: "troubleshooting" },
     {
@@ -188,16 +162,8 @@ export const articleHowToHostAPaintNightAtHome: Article = {
       productIds: ["group-painting-kits", "acrylic-paints", "detail-brushes", "conversation-cards"],
     },
     {
-      type: "girlsNight",
-      text: "Pick a date with a few guests, ask what they like to eat and drink, and send the invitation a week ahead so people do not double-book.",
-    },
-    {
-      type: "makePlan",
-      text: "Book the evening and mark a shopping slot two days ahead, so nobody is buying paint at the last moment.",
-    },
-    {
       type: "p",
-      text: "Craft nights follow a similar shape, and [How to Host a Craft Night](/journal/how-to-host-a-craft-night) covers rotating themes. For gatherings without alcohol at the center, see [Girls' Night Ideas That Aren't Drinks](/journal/girls-night-ideas-that-arent-drinks).",
+      text: "Send the invitation about a week ahead, and ask what guests like to eat and drink. Craft nights follow a similar shape, and [How to Host a Craft Night](/journal/how-to-host-a-craft-night) covers rotating themes. For gatherings without alcohol at the center, see [Girls' Night Ideas That Aren't Drinks](/journal/girls-night-ideas-that-arent-drinks).",
     },
     { type: "ifYouLoved", hobbies: ["craft-nights", "paint-by-numbers", "pottery-painting"] },
   ],

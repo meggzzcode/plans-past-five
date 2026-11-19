@@ -58,7 +58,11 @@ export function ShareButtons({
         <Send className="h-4 w-4" aria-hidden />
         Send to the group chat
       </button>
-      <span role="status" aria-live="polite" className="w-full text-xs text-muted-foreground empty:hidden">
+      <span
+        role="status"
+        aria-live="polite"
+        className="w-full text-xs text-muted-foreground empty:hidden"
+      >
         {note}
       </span>
     </div>

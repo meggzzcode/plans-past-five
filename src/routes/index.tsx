@@ -245,7 +245,7 @@ function Home() {
               to="/shop"
               className="inline-flex min-h-11 items-center border-b-2 border-cherry text-sm font-semibold text-cherry"
             >
-              All of it <ArrowRight className="ml-1 h-4 w-4" />
+              {NAMES.shop} <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </div>
           <ul className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-6">
