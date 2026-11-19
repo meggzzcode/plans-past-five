@@ -3133,7 +3133,7 @@
     "status": "published",
     "publishedAt": "2026-11-19",
     "verifiedAt": "2026-11-18",
-    "hero": "shopAdventures",
+    "hero": "shopSporty",
     "searchIntent": "how to start cycling as an adult / recreational cycling for beginners",
     "angle": "A confidence-first plan: borrow or hire a bike, learn to fit a helmet, practice in a quiet place, take a short first ride, then build routes",
     "hobbies": [
@@ -5426,7 +5426,7 @@
     "status": "published",
     "publishedAt": "2026-11-19",
     "verifiedAt": "2026-11-18",
-    "hero": "shopCreative",
+    "hero": "junkJournal",
     "searchIntent": "junk journaling supplies for beginners / junk journal supply list / what do I need to start a junk journal",
     "angle": "A product-focused companion to the starter guide: sort supplies into essentials, things you already own, optional extras and later upgrades, so beginners spend only where it changes the result",
     "hobbies": [
@@ -5810,7 +5810,7 @@
       },
       {
         "type": "p",
-        "text": "Not sure any of these is quite you? [How to find a hobby as an adult](/journal/how-to-find-a-hobby-as-an-adult) starts from what you already like, and [things to do after work instead of scrolling](/journal/things-to-do-after-work-instead-of-scrolling) has more ideas for the evening."
+        "text": "Not sure any of these is quite you? [How to find a hobby as an adult](/journal/how-to-find-a-hobby-as-an-adult) starts from what you already like, and our list of [things to do after work instead of scrolling](/journal/things-to-do-after-work-instead-of-scrolling) has more ideas for the evening."
       }
     ]
   },
@@ -6015,7 +6015,7 @@
     "status": "published",
     "publishedAt": "2026-11-19",
     "verifiedAt": "2026-11-18",
-    "hero": "soloCafe",
+    "hero": "watercolor",
     "searchIntent": "solo date ideas / things to do by yourself",
     "angle": "Grouped by budget and how outgoing you feel, with a plan for the awkward first ten minutes and for eating alone comfortably",
     "hobbies": [
@@ -6489,7 +6489,7 @@
     "category": "after-hours",
     "status": "published",
     "publishedAt": "2026-11-18",
-    "hero": "watercolor",
+    "hero": "shopCreative",
     "searchIntent": "things to do after work / what to do in the evening instead of phone",
     "angle": "Weeknight-sized, budget-aware ideas grouped by mood, with time and cost for each",
     "hobbies": [
@@ -6523,7 +6523,7 @@
       },
       {
         "type": "p",
-        "text": "If most evenings feel like this, [low-energy hobbies](/journal/low-energy-hobbies) has more gentle ideas."
+        "text": "If most evenings feel like this, our guide to our guide to [low-energy hobbies](/journal/low-energy-hobbies) has more gentle ideas."
       },
       {
         "type": "item",

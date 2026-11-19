@@ -311,7 +311,6 @@ function assemble(
   let nodes = 0;
   const cur: Stop[] = [];
   const used = new Set<string>();
-  const families = new Set<string>();
   const good = (stops: Stop[]) =>
     aim === null ? stops.length === n : covered(stops, defs, input) >= aim * 0.9;
 
@@ -331,16 +330,17 @@ function assemble(
     const pe = newDay ? null : prevEnd;
     const sk = newDay ? [] : skipped;
     for (const a of lists[i]!) {
-      if (used.has(a.id) || families.has(a.family)) continue; // never the same kind of thing twice
+      if (used.has(a.id)) continue;
+      // Never the same kind of thing twice in one day (no baking then cooking).
+      if (cur.some((c) => c.a.family === a.family && (defs[c.slot]!.day ?? "") === (def.day ?? "")))
+        continue;
       if (cap !== null && spent + a.costMax > cap) continue;
       const at = place(a, def, pe);
       if (!at) continue;
       if (sk.some((d) => place(a, d, pe))) continue; // it belongs in an earlier stop
       cur.push({ slot: i, a, ...at });
       used.add(a.id);
-      families.add(a.family);
       dfs(i + 1, at.end, spent + a.costMax, []);
-      families.delete(a.family);
       used.delete(a.id);
       cur.pop();
       if (bestValue >= 0 && good(best)) return;
@@ -433,8 +433,6 @@ export type Plan = {
   targetMinutes: number | null;
   /** Set when the plan covers clearly less than the chosen length, and says why in plain words. */
   lengthNote: string | null;
-  /** True when some stops do not match the chosen vibe, added only to fill the chosen length. */
-  widenedVibe?: boolean;
   /**
    * Whole-plan cost. `typical` is the sum of each stop's midpoint (what most people spend); `max` is
    * the sum of the stop maximums, which is what the budget cap is checked against.
@@ -596,7 +594,12 @@ function swapFor(
   const rest = total - stops[index]!.a.costMax;
   const ids = idsOf(stops, defs);
   const mine = stops[index]!.a.id;
-  const others = new Set(stops.filter((_, i) => i !== index).map((s) => s.a.family));
+  const myDay = defs[stops[index]!.slot]!.day ?? "";
+  const others = new Set(
+    stops
+      .filter((s, i) => i !== index && (defs[s.slot]!.day ?? "") === myDay)
+      .map((s) => s.a.family),
+  );
   const list = activities
     .filter(
       (a) =>
@@ -714,8 +717,8 @@ export function makePlan(input: PlanInput, seed = 0, pin?: string | null): Plan 
   let result = bestStops(input, defs, seed, pinned);
   if (pinned && !result.stops.some((s) => s.a.id === pinned.id))
     result = bestStops(input, defs, seed);
-  const { stops, widened } = result;
-  return { ...buildPlan(input, seed, stops), widenedVibe: widened };
+  const { stops } = result;
+  return buildPlan(input, seed, stops);
 }
 
 /** Rebuilds a saved or shared plan exactly from its activity ids. Null if they do not fit the input. */

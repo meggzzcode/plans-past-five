@@ -612,7 +612,7 @@ describe("links and affiliate swap", () => {
     );
     const a = screen.getByText(/See it on Amazon/).closest("a")!;
     expect(a.getAttribute("href")).toBe("https://www.amazon.com/dp/B0TESTFIX1");
-    expect(a.getAttribute("rel")).toBe("noopener");
+    expect(a.getAttribute("rel")).toBe("sponsored noopener noreferrer");
     expect(document.body.textContent).not.toMatch(/Sold by Amazon/);
     expect(document.body.textContent).toMatch(/don't currently earn/);
     expect(document.body.textContent).toMatch(/own Amazon page/);
@@ -629,7 +629,7 @@ describe("links and affiliate swap", () => {
     await show(<ProductCard product={base} placement="test" />);
     const a = screen.getByText(/See it on Amazon/).closest("a")!;
     expect(a.getAttribute("href")).toBe("https://www.amazon.com/dp/B0TESTFIX1?tag=demo-20");
-    expect(a.getAttribute("rel")).toBe("sponsored noopener");
+    expect(a.getAttribute("rel")).toBe("sponsored noopener noreferrer");
     expect(buildListText([base], { [base.id]: "need" }, "2026-02-03")).toMatch(/Associate/);
   });
 });
