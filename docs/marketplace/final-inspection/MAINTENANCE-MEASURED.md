@@ -12,7 +12,7 @@ Rule: only machine time I actually measured, in a scratch copy of the repo (rsyn
 | Default build | `bun run build` (runs `scripts/build-content.mjs` first) | 4.1 s to 8.7 s over runs | OK |
 | Netlify build | `NITRO_PRESET=netlify bun run build` | 5.1 s to 5.8 s | OK, `dist/` 23 MB plus function |
 | Vercel build | `NITRO_PRESET=vercel bun run build` | 5.9 s | OK (not deployed) |
-| Content validation | `bun run content:build` | 0.1 to 0.5 s | "Content OK: 27 published and 7 draft articles" |
+| Content validation | `bun run content:build` | 0.1 to 0.5 s | "Content OK: 27 published and 7 draft articles" (snapshot; today: 32 published and 2 draft) |
 | Tests | `bunx vitest run` | 16.5 to 28.7 s | 644 passed |
 | Typecheck | `bunx tsc --noEmit` | 6.9 to 16.5 s | OK |
 | CI equivalent (content, tests, tsc, build) | sum of the above | about 35 to 60 s | OK. GitHub's runners may be slower or faster: NOT measured there. |
@@ -23,7 +23,7 @@ Rule: only machine time I actually measured, in a scratch copy of the repo (rsyn
 | Netlify build after update | `NITRO_PRESET=netlify bun run build` | 5.1 s | OK |
 
 ### 1a. Publish an article (JSON content route)
-Machine loop measured: edited `content/articles/how-to-start-crocheting.json` in the scratch copy to `status: published` with dates, then `content:build` (0.1 s, "28 published and 6 draft"), `vitest` (18.0 s), `tsc` (10.4 s), `vite build` (4.5 s): about 33 s total.
+Machine loop measured: edited `content/articles/how-to-start-crocheting.json` in the scratch copy to `status: published` with dates, then `content:build` (0.1 s, "28 published and 6 draft" in that snapshot; today the count is 32 published and 2 draft), `vitest` (18.0 s), `tsc` (10.4 s), `vite build` (4.5 s): about 33 s total.
 Finding: flipping the status alone is NOT enough. Vitest failed 4 tests: an unsupported-superlative check ("perfect" in the body), two internal-link checks (a `related` slug and an inline link did not resolve) and a byte-stable formatting check (my Python rewrite reformatted the JSON). The five `coworkChecks` on that draft are still marked OPEN or unresolved in the file. So the gates work as advertised, and publishing a draft means real editing and source verification; the time for that is NOT measurable here.
 
 ### 1b. Update products with the CSV importer

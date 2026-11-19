@@ -62,7 +62,7 @@ Evidence used: commits (`git log --oneline`): 062f8a7 (brand asset library, 88 p
 | Criterion | Score |
 |---|---|
 | Roadmap and 28 research briefs exist (docs/content) | 1 |
-| Published articles versus the 30 target (27 of 30; published on the branch, not deployed) | 0.9 |
+| Published articles versus the 30 target (32 published, so the original 30-article target is passed; published on the branch, not deployed) | 0.9 |
 | Drafts verified against sources (23 of 28 applied after a pending follow-up task, 2026-11-18; 5 open) | 0.82 |
 | Editorial process docs (quality checklist, SOPs, corrections policy) | 1 |
 | Trust pages built (editorial policy, methodology, corrections) | 1 |

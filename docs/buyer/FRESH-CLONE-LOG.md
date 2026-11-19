@@ -15,7 +15,7 @@ Date: 2026-11-19. Purpose: show that the repository, exported without `node_modu
 | Tests | `bunx vitest run` | OK: 44 test files, 641 tests passed, about 22 s |
 | Types | `bunx tsc --noEmit` | OK: no errors |
 | Lint | `bunx eslint . --quiet` | 3 formatting errors, all in `src/test/_scratch/s.test.ts` (a throwaway scratch test left by another job that day). No other file reported. Delete that folder and the lint is clean |
-| Build | `bun run build` (runs `node scripts/build-content.mjs` first) | OK: "Content OK: 27 published and 7 draft articles, 14 images from content/"; client, server and Netlify-preset bundles built; output in `.output` |
+| Build | `bun run build` (runs `node scripts/build-content.mjs` first) | OK: "Content OK: 27 published and 7 draft articles, 14 images from content/" at the time of this log (today the same command reports 32 published and 2 draft); client, server and Netlify-preset bundles built; output in `.output` |
 
 ## What this does not show
 - It does not show the site is live: nothing is deployed.
