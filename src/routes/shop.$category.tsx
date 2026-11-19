@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { getCollection, collections } from "@/data/products";
+import { getCollection, collections, collectionKitIds } from "@/data/products";
 import { verifiedCatalog, selectProducts } from "@/data/catalog";
 import { collectionGuide } from "@/lib/collection-guide";
 import { images } from "@/data/images";
@@ -10,6 +10,7 @@ import { Kicker, toneBg } from "@/components/editorial/Section";
 import { StarterKit } from "@/components/commerce/StarterKit";
 import { ShopDisclosure } from "@/components/commerce/ProductCard";
 import { getKit, fillKit } from "@/data/kits";
+import { dedupeListGroups } from "@/lib/shoplist";
 import { ShopMyHobby } from "@/components/commerce/ShopMyHobby";
 import { cn } from "@/lib/utils";
 
@@ -43,8 +44,6 @@ const KICKER: Record<string, string> = {
   "cozy-after-hours": "Your cozy weeknight",
 };
 
-const uniqueCap = (xs: string[], n = 4) => [...new Set(xs.map((x) => x.trim()))].slice(0, n);
-
 export const Route = createFileRoute("/shop/$category")({
   loader: ({ params }) => {
     const c = getCollection(params.category);
@@ -74,11 +73,15 @@ function CollectionPage() {
   const c = getCollection(slug)!;
   const img = images[c.image];
   const g = collectionGuide(c.slug);
-  const hasKit = g.kitIds.some((id) => {
+  const kitIds = collectionKitIds(c.slug);
+  const hasKit = kitIds.some((id) => {
     const kit = getKit(id);
     return !!kit && fillKit(kit, verifiedCatalog).length > 0;
   });
   const ps = g.products;
+  const [needNow = [], needLater = []] = dedupeListGroups([g.essentials, g.upgrades]).map((xs) =>
+    xs.slice(0, 4),
+  );
   const verified = selectProducts({ collection: c.slug }, verifiedCatalog).all.length > 0;
   return (
     <>
@@ -116,10 +119,52 @@ function CollectionPage() {
       {(hasKit || verified) && (
         <section className="mx-auto max-w-7xl px-5 md:px-8" aria-label="The picks">
           {hasKit ? (
-            g.kitIds.map((id) => <StarterKit key={id} kit={id} currentCollection={c.slug} />)
+            kitIds.map((id) => <StarterKit key={id} kit={id} currentCollection={c.slug} />)
           ) : (
             <ShopMyHobby collection={c.slug} title={`Start here: ${c.name}`} />
           )}
+        </section>
+      )}
+      {/* No named, verified product yet: say so, and point to the finished guides instead. */}
+      {!hasKit && !verified && (
+        <section
+          className="mx-auto mt-12 max-w-7xl px-5 md:px-8"
+          aria-label="Where to start: guides and what to look for"
+          data-where-to-start
+        >
+          <div className="border-y-2 border-ink py-8">
+            <p className="kicker text-cherry">Where to start</p>
+            <h2 className="mt-2 text-3xl italic">Where to start: guides and what to look for</h2>
+            <p className="mt-2 max-w-prose text-espresso">
+              We have not named verified products for this collection yet, because we only name a
+              product once we have read its Amazon page. Until then, start with the guides below,
+              then use the lists on this page to know what to look for.
+            </p>
+            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+              {g.hobbies.slice(0, 4).map((h) => (
+                <li key={h.slug}>
+                  <Link
+                    to="/hobbies/$slug"
+                    params={{ slug: h.slug }}
+                    className="font-semibold text-cherry underline underline-offset-4"
+                  >
+                    How your first {h.name.toLowerCase()} session goes
+                  </Link>
+                </li>
+              ))}
+              {g.articles.map((a) => (
+                <li key={a.slug}>
+                  <Link
+                    to="/journal/$slug"
+                    params={{ slug: a.slug }}
+                    className="font-semibold text-cherry underline underline-offset-4"
+                  >
+                    {a.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
       )}
       <section className="mx-auto grid max-w-7xl gap-10 px-5 pt-12 md:grid-cols-2 md:px-8">
@@ -154,7 +199,7 @@ function CollectionPage() {
             <div>
               <h3 className="font-display text-xl">Start with</h3>
               <ul className="mt-3 space-y-1.5 text-ink">
-                {uniqueCap(g.essentials).map((x) => (
+                {needNow.map((x) => (
                   <li key={x}>
                     <span className="text-cherry">✶</span> {x}
                   </li>
@@ -164,7 +209,7 @@ function CollectionPage() {
             <div>
               <h3 className="font-display text-xl italic">Pretty extras for later</h3>
               <ul className="mt-3 space-y-1.5 text-sm text-espresso">
-                {uniqueCap(g.upgrades).map((x) => (
+                {needLater.map((x) => (
                   <li key={x}>○ {x}</li>
                 ))}
               </ul>
@@ -211,7 +256,10 @@ function CollectionPage() {
           </details>
         ) : (
           <>
-            <h2 className="mb-8 text-3xl italic">What to look for</h2>
+            <h2 className="mb-2 text-3xl italic">What to look for</h2>
+            <p className="mb-8 max-w-prose text-sm text-espresso">
+              These are types of product, not verified picks. Each button opens an Amazon search.
+            </p>
             <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
               {ps.map((p, i) => (
                 <ProductCard key={p.id} p={p} index={i} />

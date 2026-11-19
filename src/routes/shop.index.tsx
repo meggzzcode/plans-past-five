@@ -1,8 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { collections } from "@/data/products";
+import { collections, collectionKitIds } from "@/data/products";
 import { verifiedCatalog, type CatalogProduct } from "@/data/catalog";
 import { fillKit, getKit, isFullKit } from "@/data/kits";
-import { collectionGuide } from "@/lib/collection-guide";
 import { seo } from "@/lib/seo";
 import { PageHero, SectionHead } from "@/components/editorial/Section";
 import { CollectionCard } from "@/components/cards/Cards";
@@ -22,12 +21,20 @@ export const Route = createFileRoute("/shop/")({
 
 /** Honest, data-driven label for a collection tile: how many starter kits actually have picks. */
 function tagFor(slug: string) {
-  const kitCount = collectionGuide(slug).kitIds.filter((id) => {
+  const ids = collectionKitIds(slug);
+  const kitCount = ids.filter((id) => {
     const kit = getKit(id);
-    return !!kit && isFullKit(fillKit(kit, verifiedCatalog));
+    return !!kit && isFullKit(fillKit(kit, verifiedCatalog), kit);
   }).length;
-  if (kitCount === 0) return "What to look for";
-  return kitCount === 1 ? "Starter kit inside" : `${kitCount} starter kits`;
+  if (kitCount > 0) return kitCount === 1 ? "Starter kit inside" : `${kitCount} starter kits`;
+  const named =
+    ids.some((id) => {
+      const kit = getKit(id);
+      return !!kit && fillKit(kit, verifiedCatalog).length > 0;
+    }) || verifiedCatalog.some((p) => p.collections.includes(slug));
+  return named
+    ? "Where to start: a few named picks"
+    : "Where to start: guides and what to look for";
 }
 
 /** The "start here" picks: the one-pick of three different kits, in catalog order. */

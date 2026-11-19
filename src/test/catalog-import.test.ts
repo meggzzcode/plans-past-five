@@ -1,14 +1,24 @@
-import { describe, expect, it } from "vitest";
-import { readFileSync } from "node:fs";
+import { afterAll, describe, expect, it } from "vitest";
+import { cpSync, existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { spawnSync } from "node:child_process";
+import { tmpdir } from "node:os";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import {
   COLUMNS,
   checkHeader,
+  MAX_SHRINK,
   decodeCsvBuffer,
   importCsv,
   parseCsv,
+  shrinkProblem,
 } from "../../scripts/import-products.mjs";
-import { validateCatalogProduct, verifiedCatalog, type KnownRefs } from "@/data/catalog";
+import {
+  filterVerified,
+  validateCatalogProduct,
+  verifiedCatalog,
+  type KnownRefs,
+} from "@/data/catalog";
 import { generatedCatalog } from "@/data/catalog.generated";
 import { hobbies } from "@/data/hobbies";
 import { collections } from "@/data/products";
@@ -86,7 +96,7 @@ describe("shipped data", () => {
     const src = readFileSync(path.resolve(__dirname, "../data/catalog.generated.ts"), "utf8");
     expect(src).not.toMatch(/fixture|B0IMAGINA/i);
   });
-  it("the template header matches the importer's columns and has no example rows enabled", () => {
+  it("the template header is the importer's columns, has no enabled rows, and its example row parses", () => {
     const text = readFileSync(
       path.resolve(__dirname, "../../docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv"),
       "utf8",
@@ -95,6 +105,32 @@ describe("shipped data", () => {
     expect(r.errors).toEqual([]);
     expect(r.products).toEqual([]);
     expect(parseCsv(text)[0]).toEqual(COLUMNS);
+    // The commented example row has one value per column and is refused only for its example- id.
+    const example = text.split("\n").find((l) => l.startsWith("# FAKE EXAMPLE ROW"))!;
+    const row = example.replace(/^# FAKE EXAMPLE ROW[^:]*: /, "");
+    const e = importCsv(COLUMNS.join(",") + "\n" + row, known, NOW);
+    expect(parseCsv(row)[0]).toHaveLength(COLUMNS.length);
+    expect(e.errors.join("\n")).toMatch(/marks an example or test row/);
+    expect(e.errors).toHaveLength(1);
+  });
+  it("the Cowork verification queue uses the same schema; only intentionally blank fields fail", () => {
+    const text = readFileSync(
+      path.resolve(__dirname, "../../docs/cowork/PRODUCT-VERIFICATION-QUEUE.csv"),
+      "utf8",
+    );
+    expect(parseCsv(text)[0]).toEqual(COLUMNS);
+    const rows = parseCsv(text).slice(1);
+    const live = rows.filter((r) => r[COLUMNS.indexOf("status")] === "verified");
+    expect(live.length).toBe(verifiedCatalog.length);
+    const r = importCsv(text, known, new Date("2026-11-19T12:00:00Z"));
+    // Every error is a blank asin, lastVerified or researchSources on a status-candidate kit row.
+    for (const m of r.errors)
+      expect(m, m).toMatch(
+        /invalid or placeholder ASIN ""|lastVerified is required|researchSources needs at least one/,
+      );
+    const verifiedIds = new Set(live.map((x) => x[0]));
+    for (const m of r.errors)
+      expect(verifiedIds.has(m.replace(/^line \d+: ([^:]+):.*/, "$1")), m).toBe(false);
   });
 });
 
@@ -248,11 +284,11 @@ describe("rejections carry the line number and a fixable message", () => {
   it("unknown columns, missing required columns and duplicate columns", () => {
     expect(
       importCsv(
-        csv([good]).replace("\n", ",notes\n").replace(/\n$/, ",hi\n"),
+        csv([good]).replace("\n", ",memo\n").replace(/\n$/, ",hi\n"),
         known,
         NOW,
       ).errors.join("\n"),
-    ).toMatch(/unknown column "notes"/);
+    ).toMatch(/unknown column "memo"/);
     const cols = COLUMNS.filter((c) => c !== "whySelected" && c !== "asin");
     expect(run([good], { cols }).errors.join("\n")).toMatch(
       /missing required column\(s\): asin, whySelected/,
@@ -357,5 +393,180 @@ describe("rejections carry the line number and a fixable message", () => {
       second({ researchSources: "" }),
     ]);
     expect(r.errors.length).toBeGreaterThanOrEqual(3);
+  });
+});
+
+describe("importer safety (CLI against temp copies)", () => {
+  const repo = path.resolve(__dirname, "../..");
+  const script = path.join(repo, "scripts/import-products.mjs");
+  const realCatalog = path.join(repo, "src/data/catalog.generated.ts");
+  const hash = (f: string) => createHash("sha256").update(readFileSync(f)).digest("hex");
+  const realBefore = hash(realCatalog);
+  const dirs: string[] = [];
+  const workdir = () => {
+    const d = mkdtempSync(path.join(tmpdir(), "import-"));
+    dirs.push(d);
+    // The "current catalog": a copy of the real one, so shrink and no-overwrite behaviour is realistic.
+    cpSync(realCatalog, path.join(d, "catalog.generated.ts"));
+    return d;
+  };
+  afterAll(() => {
+    dirs.forEach((d) => rmSync(d, { recursive: true, force: true }));
+    // Nothing in this block may ever touch the shipped catalog.
+    expect(hash(realCatalog)).toBe(realBefore);
+  });
+  const cli = (dir: string, args: string[]) => {
+    const r = spawnSync("bun", [script, ...args, "--out", path.join(dir, "catalog.generated.ts")], {
+      cwd: dir,
+      encoding: "utf8",
+    });
+    return { code: r.status, out: `${r.stdout}${r.stderr}` };
+  };
+  const put = (dir: string, text: string, name = "in.csv") => {
+    const f = path.join(dir, name);
+    writeFileSync(f, text);
+    return f;
+  };
+  const current = (dir: string) => readFileSync(path.join(dir, "catalog.generated.ts"), "utf8");
+  /** A run that must fail and leave the current catalog byte-for-byte unchanged. */
+  const refuses = (rows: Row[] | string, pattern: RegExp, extra: string[] = []) => {
+    const dir = workdir();
+    const before = current(dir);
+    const f = put(dir, typeof rows === "string" ? rows : csv(rows));
+    const r = cli(dir, [f, ...extra]);
+    expect(r.code).toBe(1);
+    expect(r.out).toMatch(pattern);
+    expect(r.out).toMatch(/Nothing was written|NOT overwritten|catalog was NOT/);
+    expect(current(dir)).toBe(before);
+    expect(existsSync(path.join(dir, "catalog.generated.ts.tmp"))).toBe(false);
+    return r.out;
+  };
+  const NEW = (o: Row = {}): Row => withRow({ lastVerified: "2026-01-02", ...o });
+
+  it("no file: refuses to write and says what to run", () => {
+    const dir = workdir();
+    const before = current(dir);
+    const r = cli(dir, []);
+    expect(r.code).toBe(1);
+    expect(r.out).toMatch(/no CSV file given/);
+    expect(current(dir)).toBe(before);
+  });
+  it("a missing file path is refused", () => {
+    refuses("", /file not found/, []);
+  });
+  it("--help prints usage, documents --check and --force, and writes nothing", () => {
+    const dir = workdir();
+    const before = current(dir);
+    const r = cli(dir, ["--help"]);
+    expect(r.code).toBe(0);
+    expect(r.out).toMatch(/Usage: bun run import:products/);
+    expect(r.out).toMatch(/--check/);
+    expect(r.out).toMatch(/--force/);
+    expect(current(dir)).toBe(before);
+  });
+  it("empty input and header-only input never overwrite the catalog", () => {
+    refuses("", /no header row/);
+    refuses("   \n\n", /no header row/);
+    refuses(csv([]), /no product rows/);
+  });
+  it("invalid input: garbage, semicolons and .xlsx are refused", () => {
+    refuses("this is not a csv at all", /single column|not comma-separated/);
+    refuses(COLUMNS.join(";") + "\n" + COLUMNS.map(() => "x").join(";"), /not comma-separated/);
+    const dir = workdir();
+    const before = current(dir);
+    const f = path.join(dir, "book.csv");
+    writeFileSync(f, Buffer.from([0x50, 0x4b, 3, 4, 0, 0]));
+    const r = cli(dir, [f]);
+    expect(r.code).toBe(1);
+    expect(r.out).toMatch(/\.xlsx/);
+    expect(current(dir)).toBe(before);
+  });
+  it("duplicate ASIN and duplicate id", () => {
+    refuses([NEW(), NEW({ id: "second-item" })], /ASIN B0IMAGINA1 is already used on line 2/);
+    refuses([NEW(), NEW({ asin: "B0IMAGINA2" })], /id "wash-tape-set" is already used/);
+  });
+  it("missing required fields", () => {
+    refuses([NEW({ name: "", whySelected: "", limitations: "" })], /name is required|whySelected/);
+    const cols = COLUMNS.filter((c) => c !== "asin");
+    refuses(csv([NEW()], { cols }), /missing required column\(s\): asin/);
+  });
+  it("incorrect verification status", () => {
+    refuses([NEW({ status: "approved" })], /status must be candidate or verified/);
+  });
+  it("malformed URLs", () => {
+    refuses([NEW({ researchSources: "not a url" })], /must be https/);
+    refuses([NEW({ manufacturerUrl: "ftp://x.example/p" })], /manufacturerUrl/);
+    refuses([NEW({ amazonUrl: "https://amzn.to/abc" })], /amazonUrl must equal/);
+  });
+  it("invalid product role", () => {
+    refuses([NEW({ role: "bestseller" })], /role must be one of/);
+  });
+  it("an unverified product cannot be marked verified: no check date or sources is refused", () => {
+    refuses([NEW({ status: "verified", lastVerified: "" })], /lastVerified is required/);
+    refuses(
+      [NEW({ status: "verified", researchSources: "" })],
+      /researchSources needs at least one/,
+    );
+    // A candidate imports fine but is never shown publicly.
+    const r = run([NEW({ status: "candidate" })]);
+    expect(r.errors).toEqual([]);
+    expect(filterVerified(r.products, NOW)).toEqual([]);
+    // Held products are not shown either, even when verified.
+    const held = run([NEW({ hold: "audience fit" })]);
+    expect(filterVerified(held.products, NOW)).toEqual([]);
+  });
+  it("an incomplete import (good row then a truncated row) writes nothing, not even the good row", () => {
+    const dir = workdir();
+    const before = current(dir);
+    const full = csv([NEW(), NEW({ id: "second-item", asin: "B0IMAGINA2" })]);
+    const truncated = full.slice(0, full.length - 120);
+    const r = cli(dir, [put(dir, truncated), "--force"]);
+    expect(r.code).toBe(1);
+    expect(r.out).toMatch(/Nothing was written/);
+    expect(current(dir)).toBe(before);
+    expect(current(dir)).not.toMatch(/wash-tape-set/);
+  });
+  it("--check validates and writes nothing, even for a good file", () => {
+    const dir = workdir();
+    const before = current(dir);
+    const r = cli(dir, [put(dir, csv([NEW()])), "--check"]);
+    expect(r.code).toBe(0);
+    expect(r.out).toMatch(/OK: 1 products .* Nothing was written/);
+    expect(current(dir)).toBe(before);
+  });
+  it("a valid import writes the catalog atomically, with no temp file left", () => {
+    const dir = workdir();
+    const out = path.join(dir, "fresh.generated.ts");
+    const f = put(dir, csv([NEW(), NEW({ id: "second-item", asin: "B0IMAGINA2" })]));
+    const r = spawnSync("bun", [script, f, "--out", out], { cwd: dir, encoding: "utf8" });
+    expect(r.status, r.stderr).toBe(0);
+    const body = readFileSync(out, "utf8");
+    expect(body).toMatch(/GENERATED by `bun run import:products`/);
+    expect(body).toMatch(/"id": "wash-tape-set"/);
+    expect(body).toMatch(/"id": "second-item"/);
+    expect(existsSync(`${out}.tmp-${r.pid}`)).toBe(false);
+  });
+  it("refuses a write that shrinks the catalog by more than 30%, unless --force", () => {
+    const dir = workdir();
+    const before = current(dir);
+    const f = put(dir, csv([NEW()]));
+    const r = cli(dir, [f]);
+    expect(r.code).toBe(1);
+    expect(r.out).toMatch(/fewer, more than 30%.*--force/);
+    expect(current(dir)).toBe(before);
+    const forced = cli(dir, [f, "--force"]);
+    expect(forced.code).toBe(0);
+    expect(current(dir)).toMatch(/"id": "wash-tape-set"/);
+    expect(current(dir)).not.toBe(before);
+  });
+  it("shrinkProblem allows up to a 30% reduction and growth, and ignores an empty current catalog", () => {
+    expect(MAX_SHRINK).toBe(0.3);
+    expect(shrinkProblem(100, 70)).toBe("");
+    expect(shrinkProblem(100, 69)).toMatch(/31% fewer/);
+    expect(shrinkProblem(100, 150)).toBe("");
+    expect(shrinkProblem(0, 1)).toBe("");
+  });
+  it("the real catalog file was not touched by these tests", () => {
+    expect(hash(realCatalog)).toBe(realBefore);
   });
 });

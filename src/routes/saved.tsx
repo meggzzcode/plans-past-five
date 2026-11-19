@@ -14,6 +14,7 @@ import { seo } from "@/lib/seo";
 import { NAMES } from "@/components/layout/nav";
 import { PageHero } from "@/components/editorial/Section";
 import { Transfer } from "@/components/saved/Transfer";
+import { SavedMeta } from "@/components/saved/SavedMeta";
 import { SavedExtras } from "@/components/share/SavedExtras";
 import { NearBox } from "@/components/share/Near";
 import { Star, Bow } from "@/components/brand/Doodles";
@@ -259,6 +260,7 @@ function Saved() {
                             >
                               {i.title}
                             </a>
+                            <SavedMeta item={i} />
                             {i.kind === "plan" && i.plan && (
                               <p className="text-xs text-muted-foreground">
                                 Opens this exact itinerary again.

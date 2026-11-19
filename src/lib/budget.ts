@@ -27,9 +27,17 @@ export const levelOptions: { v: Level; label: string; hint: string }[] = [
 ];
 
 export const budgetOptions: { v: BudgetPref; label: string; hint: string }[] = [
-  { v: "lean", label: "Keep it lean", hint: "Cheapest sensible versions, about 20 to 30 percent below typical" },
+  {
+    v: "lean",
+    label: "Keep it lean",
+    hint: "Cheapest sensible versions, about 20 to 30 percent below typical",
+  },
   { v: "balanced", label: "Balanced", hint: "A fair middle" },
-  { v: "treat", label: "Treat myself", hint: "Nicer versions, about 30 to 40 percent above typical" },
+  {
+    v: "treat",
+    label: "Treat myself",
+    hint: "Nicer versions, about 30 to 40 percent above typical",
+  },
 ];
 
 /**

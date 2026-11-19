@@ -107,7 +107,7 @@ const isShopBlock = (b: Block) =>
 /** True when the article has a shopping block, so a page can offer a "Skip to shopping" link. */
 export const hasShopBlock = (blocks: Block[]) => blocks.some(isShopBlock);
 
-/** Sections with at least this many words, or this many blocks, are long enough to fold on a phone. */
+/** Sections with at least this many words, or this many blocks, are long enough to offer an optional collapse. */
 const LONG_WORDS = 160;
 const LONG_BLOCKS = 6;
 /** An article needs at least this many long sections before any are folded. */
@@ -132,8 +132,8 @@ export type ReadingSection = { start: number; end: number; fold: boolean };
 
 /**
  * Splits an article into the text before its first heading and one section per h2. A section is
- * "long" (and can fold on a phone) when it has many words or blocks. Nothing is removed: folded
- * sections stay in the page, only collapsed by a native details element.
+ * "long" (and can be collapsed by the reader) when it has many words or blocks. Nothing is removed
+ * and nothing starts collapsed.
  */
 export function readingSections(blocks: Block[]): ReadingSection[] {
   const out: ReadingSection[] = [];
@@ -155,15 +155,14 @@ export function readingSections(blocks: Block[]): ReadingSection[] {
 }
 
 /**
- * Phone reading mode, after hydration: the first long section stays open and the rest fold, unless
- * the address points inside one. Everything stays in the page (and open without scripts, on desktop
- * and for search engines). Links to #section or the shop block open the section they point into.
+ * Every section is open on every screen size, so no step is ever hidden by default. The native
+ * details element stays only as an optional collapse the reader can use themselves. Links to
+ * #section or the shop block open (and scroll to) the section they point into.
  */
 function SectionReader() {
   useEffect(() => {
     const root = document.querySelector<HTMLElement>("[data-reading-root]");
     if (!root) return;
-    const all = [...root.querySelectorAll<HTMLDetailsElement>("details[data-collapsible]")];
     const openFor = (hash: string) => {
       if (hash.length < 2) return;
       try {
@@ -172,8 +171,6 @@ function SectionReader() {
         // A malformed address hash: nothing to open.
       }
     };
-    const phone = window.matchMedia?.("(max-width: 767px)").matches;
-    if (phone) all.slice(1).forEach((d) => (d.open = false));
     openFor(window.location.hash);
     const onHash = () => openFor(window.location.hash);
     window.addEventListener("hashchange", onHash);

@@ -286,7 +286,10 @@ function Planner() {
     const i = plan.input;
     const keys: (keyof PlanInput)[] = ["when", "length", "vibe", "who", "budget"];
     const out = keys.map((k) => ({
-      label: labelOf(k, k === "when" ? (i.when === "after-work" ? "weeknight" : i.when) : String(i[k])),
+      label: labelOf(
+        k,
+        k === "when" ? (i.when === "after-work" ? "weeknight" : i.when) : String(i[k]),
+      ),
       isDefault: !touched.has(k),
     }));
     if (i.setting && i.setting !== "any")

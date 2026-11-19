@@ -75,7 +75,9 @@ describe("content validator", () => {
       edit(root, OTHER, (a) => {
         a["sources"] = [];
       });
-      expect(problems(root).join("\n")).toMatch(/field "sources": a published article needs at least one/);
+      expect(problems(root).join("\n")).toMatch(
+        /field "sources": a published article needs at least one/,
+      );
     });
     it("fails a published article with no verifiedAt date", () => {
       edit(root, OTHER, (a) => {

@@ -178,7 +178,12 @@ export const kits: Kit[] = [
       s("palette", "Palettes", O),
       s("aprons", "Aprons or old shirts", H),
       s("easel", "Tabletop easel", O, "nice-to-have"),
-      s("main-project", "A boxed paint-and-sip set, if you'd rather not buy pieces separately", O, "complete-kit"),
+      s(
+        "main-project",
+        "A boxed paint-and-sip set, if you'd rather not buy pieces separately",
+        O,
+        "complete-kit",
+      ),
       s("shared-tools", "Scissors and glue to share", H),
       s("table-cover", "An old cloth or newspaper to protect the table", H),
     ],
@@ -253,7 +258,8 @@ export const awaitingEssentials = (kit: Kit, filled: FilledSlot[]): KitSlot[] =>
   kit.slots.filter((x) => x.need === "essential" && !filled.some((f) => f.slot.id === x.id));
 
 /** Household items ("You probably have: ..."). They never count against the complete-kit rule. */
-export const householdItems = (kit: Kit): KitSlot[] => kit.slots.filter((x) => x.need === "household");
+export const householdItems = (kit: Kit): KitSlot[] =>
+  kit.slots.filter((x) => x.need === "household");
 
 /**
  * The render rule: a complete kit has at least MIN_KIT_PICKS named verified picks AND a verified

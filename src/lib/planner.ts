@@ -669,9 +669,15 @@ const daySpansOf = (stops: Stop[], defs: SlotDef[]): { day: Day | null; minutes:
   for (const s of stops) {
     const k = defs[s.slot]!.day ?? "";
     const cur = spans.get(k);
-    spans.set(k, [cur ? Math.min(cur[0], s.start) : s.start, cur ? Math.max(cur[1], s.end) : s.end]);
+    spans.set(k, [
+      cur ? Math.min(cur[0], s.start) : s.start,
+      cur ? Math.max(cur[1], s.end) : s.end,
+    ]);
   }
-  return [...spans].map(([k, [from, to]]) => ({ day: (k || null) as Day | null, minutes: to - from }));
+  return [...spans].map(([k, [from, to]]) => ({
+    day: (k || null) as Day | null,
+    minutes: to - from,
+  }));
 };
 
 const withinDayCap = (stops: Stop[], defs: SlotDef[], input: PlanInput) => {
@@ -772,7 +778,8 @@ function whyLine(input: PlanInput, stops: Stop[], cap: number | null, template?:
   parts.push(
     cap === null ? "a flexible budget" : cap === 0 ? "free" : `${fmtMoney(cap)} or less in total`,
   );
-  if (stops.some((x) => x.a.advance)) parts.push("one idea that needs booking or signing up ahead is marked");
+  if (stops.some((x) => x.a.advance))
+    parts.push("one idea that needs booking or signing up ahead is marked");
   else parts.push("nothing that needs booking ahead");
   const who = whoPhrase[input.who];
   const lead = `Chosen for a ${vibeWord[input.vibe]} ${dayWord[normWhen(input.when)]} ${who}`;

@@ -245,7 +245,9 @@ export function PlanResult({
           {basedOn.map((c) => (
             <Chip key={c.label} tone={c.isDefault ? "bg-cream" : "bg-butter/60"}>
               {c.label}
-              {c.isDefault && <span className="ml-1 font-medium text-muted-foreground">(default)</span>}
+              {c.isDefault && (
+                <span className="ml-1 font-medium text-muted-foreground">(default)</span>
+              )}
             </Chip>
           ))}
         </div>
