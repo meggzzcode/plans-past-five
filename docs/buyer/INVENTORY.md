@@ -1,6 +1,6 @@
 # Inventory (generated)
 
-Generated 2026-11-19 from commit `bfc4fa0` (working tree has uncommitted changes) by `node scripts/inventory.mjs`. **Do not edit by hand.** Re-run the script and every other document should point here instead of repeating these numbers. If this file is older than the last content change, re-run it.
+Generated 2026-11-19 from commit `61c8e8a` (working tree has uncommitted changes) by `node scripts/inventory.mjs`. **Do not edit by hand.** Re-run the script and every other document should point here instead of repeating these numbers. If this file is older than the last content change, re-run it.
 
 ## Content
 
@@ -41,8 +41,8 @@ Generated 2026-11-19 from commit `bfc4fa0` (working tree has uncommitted changes
 | --- | --- |
 | Route files in `src/routes` | 31 |
 | Pages in the sitemap (`/sitemap.xml`, built from `src/lib/sitemap.ts`) | 98 |
-| Test result (`bunx vitest run`, run in a temporary copy) | not run (use `node scripts/inventory.mjs` without --no-tests) |
-| Test files | 50 |
+| Test result (`bunx vitest run`, run in a temporary copy) | 737 passed, 0 failed, 737 total, in 51 files |
+| Test files | 51 |
 | Docs in `docs/buyer` | 37 |
 
 ## Notes

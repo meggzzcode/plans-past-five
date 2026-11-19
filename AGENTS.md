@@ -30,7 +30,7 @@ use the editor.
 <!-- LOVABLE:END -->
 
 ## Project rules
-- Frontend-only: no database, auth, AI or paid backend; saved items use localStorage (`src/lib/saved.ts`) — the site is sold as a portable turnkey starter.
+- No database, accounts, AI service or paid backend: pages are server-rendered by one function and nothing is stored server-side; saved items use localStorage (`src/lib/saved.ts`) — the site is sold as a portable turnkey starter.
 - All brand copy and settings come from `src/config/site.ts`; Amazon links only via `src/config/affiliate.ts` so a buyer can monetize in one place.
 - Content is typed local data (`src/content`, `src/data`); drafts use `status: "draft"` and must never be exposed by public helpers.
 - Product records store no prices, ratings, brands or ASINs unless verified; buttons must describe the real destination (search vs listing).
