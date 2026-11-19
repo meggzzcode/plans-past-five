@@ -55,8 +55,7 @@ export const kits: Kit[] = [
     name: "Junk journaling starter kit",
     dek: "A journal, something sticky and a pile of paper scraps.",
     hobby: "junk-journaling",
-    note:
-      "Two things make this list work: a journal with thick pages, and a glue you like. Everything else is a bonus, and scraps from your recycling bin work as well as bought paper.",
+    note: "Two things make this list work: a journal with thick pages, and a glue you like. Everything else is a bonus, and scraps from your recycling bin work as well as bought paper.",
     slots: [
       s("journal", "A journal that can take glue", E),
       s("washi-tape", "Washi tape", O, "affordable"),
@@ -71,8 +70,7 @@ export const kits: Kit[] = [
     name: "Watercolor starter kit",
     dek: "Paint, a brush or two and paper that won't buckle.",
     hobby: "watercolor-painting",
-    note:
-      "Start with the paint, a round brush and heavy paper. The rest can wait.",
+    note: "Start with the paint, a round brush and heavy paper. The rest can wait.",
     slots: [
       s("paints", "A small pan or tube set", E),
       s("brushes", "Round brushes", E),
@@ -87,8 +85,7 @@ export const kits: Kit[] = [
     name: "Air-dry clay starter kit",
     dek: "No kiln needed: clay, a few tools and paint.",
     hobby: "air-dry-clay",
-    note:
-      "Air-dry clay is for decor and trinket dishes. Painted pieces are not food-safe, so skip mugs and bowls you'd eat from.",
+    note: "Air-dry clay is for decor and trinket dishes. Painted pieces are not food-safe, so skip mugs and bowls you'd eat from.",
     slots: [
       s("clay", "Air-dry clay", E),
       s("tools", "Sculpting tools", O, "affordable"),
@@ -103,11 +100,10 @@ export const kits: Kit[] = [
     name: "Embroidery starter kit",
     dek: "Hoop, floss, needles and fabric to practice on.",
     hobby: "embroidery",
-    note:
-      "A beginner kit with a guide is the quickest way in. Buy extra floss once you know which colors you reach for.",
+    note: "A beginner kit with a guide is the quickest way in. Buy extra floss once you know which colors you reach for.",
     slots: [
       s("hoop", "Embroidery hoop", E),
-      s("floss", "Embroidery floss", E, "affordable"),
+      s("floss", "Embroidery floss", O, "affordable"),
       s("needles", "Embroidery needles", E),
       s("fabric", "Cotton or linen fabric", E),
       s("scissors", "Small sharp scissors", O),
@@ -119,8 +115,7 @@ export const kits: Kit[] = [
     name: "Crochet starter kit",
     dek: "A hook, easy yarn and something to finish.",
     hobby: "crochet",
-    note:
-      "Pick a smooth, light yarn and a mid-size hook (5 to 6 mm) so you can see every stitch.",
+    note: "Pick a smooth, light yarn and a mid-size hook (5 to 6 mm) so you can see every stitch.",
     slots: [
       s("hooks", "Crochet hooks", E),
       s("yarn", "Smooth, light-colored beginner yarn", E),
@@ -134,8 +129,7 @@ export const kits: Kit[] = [
     name: "Reading journal kit",
     dek: "A notebook and pens for the books that stuck with you.",
     hobby: "reading",
-    note:
-      "Choose a layout you would actually fill in: look at the sections before you buy.",
+    note: "Choose a layout you would actually fill in: look at the sections before you buy.",
     slots: [
       s("journal", "A reading journal or notebook", E),
       s("pens", "A pen you like", E),
@@ -161,8 +155,7 @@ export const kits: Kit[] = [
     name: "Mahjong night kit",
     dek: "A set you can play on and something to play on top of.",
     hobby: "mahjong",
-    note:
-      "These sets are for American mahjong (166 tiles with jokers). Playing another version? The tile count differs, so check before you buy. The league card changes every year, and the 2026 card is the current one.",
+    note: "These sets are for American mahjong (166 tiles with jokers). Playing another version? The tile count differs, so check before you buy. The league card changes every year, and the 2026 card is the current one.",
     slots: [
       s("set", "A mahjong set", E),
       s("mat", "Playing mat", O),
@@ -186,8 +179,7 @@ export const kits: Kit[] = [
     id: "paint-night",
     name: "Paint night kit",
     dek: "Canvas, paint and brushes for a table of beginners.",
-    note:
-      "Plan one canvas per guest, plus a spare or two.",
+    note: "Plan one canvas per guest, plus a spare or two.",
     slots: [
       s("canvas", "Canvases or panels", E),
       s("paint", "Acrylic paint", E),
@@ -202,8 +194,7 @@ export const kits: Kit[] = [
     name: "Picnic kit",
     dek: "A blanket, something to carry and something to sit on.",
     hobby: "picnicking",
-    note:
-      "A blanket with a waterproof backing keeps damp grass off.",
+    note: "A blanket with a waterproof backing keeps damp grass off.",
     slots: [
       s("blanket", "A picnic blanket", E),
       s("carrier", "Bag or basket", O),
@@ -228,8 +219,7 @@ export const kits: Kit[] = [
     name: "Pickleball starter kit",
     dek: "Paddles and balls. Rent or borrow first if you'd like to try it.",
     hobby: "pickleball",
-    note:
-      "Paddles and balls are all you need to start. A racket from another sport will not work here, and many courts and clubs lend paddles.",
+    note: "Paddles and balls are all you need to start. A racket from another sport will not work here, and many courts and clubs lend paddles.",
     slots: [
       s("paddles", "Pickleball paddles", E),
       s("balls", "Pickleballs", E),
@@ -242,8 +232,7 @@ export const kits: Kit[] = [
     name: "Tennis starter kit",
     dek: "A racquet and balls. Many courts and clubs rent racquets.",
     hobby: "tennis",
-    note:
-      "Many courts and clubs rent rackets, so try one first if you are not sure you will keep playing.",
+    note: "Many courts and clubs rent rackets, so try one first if you are not sure you will keep playing.",
     slots: [
       s("racquet", "Beginner racquet", E),
       s("balls", "Tennis balls", E),

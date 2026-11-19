@@ -134,11 +134,16 @@ export function AlternativeRow({
     track("product_impression", { product_id: p.id, placement, role: p.role });
   }, [p.id, p.role, placement]);
   return (
-    <li className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1" data-product-id={p.id}>
+    <li
+      className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"
+      data-product-id={p.id}
+    >
       <span className="min-w-0 text-sm">
         <strong className="font-semibold">{p.shortName ?? p.name}</strong>
         {brandKnown(p.brand) && <span className="text-muted-foreground"> by {p.brand}</span>}
-        <span className="block text-muted-foreground">{p.compare ?? p.benefit ?? p.description}</span>
+        <span className="block text-muted-foreground">
+          {p.compare ?? p.benefit ?? p.description}
+        </span>
       </span>
       <a
         href={link.href}

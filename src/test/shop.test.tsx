@@ -262,7 +262,9 @@ describe("card content", () => {
     expect(text).toContain("Essential");
     expect(text).toContain("Pastel rolls in three widths.");
     expect(screen.getAllByText(/View on Amazon/)).toHaveLength(1);
-    expect(text).not.toMatch(/Worth knowing|third-party|Sold by|Available on Amazon|confirm|Details checked/i);
+    expect(text).not.toMatch(
+      /Worth knowing|third-party|Sold by|Available on Amazon|confirm|Details checked/i,
+    );
     expect(text).not.toMatch(/\$|price|rating|review/i);
   });
   it("labels extras as optional and offers a single list icon, no checkboxes", async () => {
@@ -284,16 +286,18 @@ describe("card content", () => {
     expect(document.querySelector("img")?.getAttribute("src")).toBe("/images/products/test.jpg");
     expect(document.body.textContent).toContain("Photo: Test Brand press kit");
     unmount();
-    await show(<ProductCard product={{ ...base, ...photo, imageRights: "none" }} placement="test" />);
+    await show(
+      <ProductCard product={{ ...base, ...photo, imageRights: "none" }} placement="test" />,
+    );
     expect(document.querySelector("img")).toBeNull();
     expect(document.querySelector("[data-product-tile]")).not.toBeNull();
   });
   it("validates photo fields", () => {
     const v = (o: object) => validateCatalogProduct({ ...base, ...o }).join("\n");
     expect(v({ imageUrl: "/x.jpg" })).toMatch(/needs documented imageRights/);
-    expect(v({ imageUrl: "/x.jpg", imageRights: "licensed", imageSource: "https://a.example/t" })).toMatch(
-      /needs an imageCredit/,
-    );
+    expect(
+      v({ imageUrl: "/x.jpg", imageRights: "licensed", imageSource: "https://a.example/t" }),
+    ).toMatch(/needs an imageCredit/);
     expect(
       v({
         imageUrl: "https://m.media-amazon.com/images/I/x.jpg",
@@ -383,7 +387,10 @@ describe("alternatives for one kit slot", () => {
     const cards = [...document.querySelectorAll("article[data-product-id]")];
     expect(cards.map((c) => c.getAttribute("data-product-id"))).toEqual(["alt-two"]);
     const rows = [...document.querySelectorAll("li[data-product-id]")];
-    expect(rows.map((c) => c.getAttribute("data-product-id")).sort()).toEqual(["alt-one", "alt-three"]);
+    expect(rows.map((c) => c.getAttribute("data-product-id")).sort()).toEqual([
+      "alt-one",
+      "alt-three",
+    ]);
     expect(document.body.textContent).toContain("Also consider");
     expect(document.body.textContent).toContain("Bigger tiles.");
     expect(document.body.textContent).not.toMatch(/Another option for this slot/);

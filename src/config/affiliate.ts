@@ -253,7 +253,7 @@ export const SHOP_LINK_FACTS = {
     "Each button opens that product's own Amazon page. We show no prices: Amazon or the seller sets price, shipping and returns.",
   /** Beside anything that may mix named products and type-level search links. */
   general:
-    "Buttons that say \"View on Amazon\" open a named product's own page; \"Browse options\" opens an Amazon search for a type of product. We show no prices: Amazon or the seller sets price, shipping and returns.",
+    'Buttons that say "View on Amazon" open a named product\'s own page; "Browse options" opens an Amazon search for a type of product. We show no prices: Amazon or the seller sets price, shipping and returns.',
   /** When no affiliate entry is live. */
   notEarning: "We don't currently earn from these links.",
   /** When an entry is live (appended after the Associates statement). */

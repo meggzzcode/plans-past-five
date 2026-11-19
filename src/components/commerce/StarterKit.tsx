@@ -8,7 +8,12 @@ import { ShopSections, type ShopGroup, type ShopItem } from "./ShopSections";
 const GROUPS = [
   { need: "essential", heading: "Start with these", quiet: false, label: "Essential" },
   { need: "optional", heading: "Optional extras", quiet: true, label: "Optional extra" },
-  { need: "probably-own", heading: "You may already own these", quiet: true, label: "You may own it" },
+  {
+    need: "probably-own",
+    heading: "You may already own these",
+    quiet: true,
+    label: "You may own it",
+  },
 ] as const;
 
 const itemOf = (f: FilledSlot, label?: string): ShopItem => ({
@@ -51,9 +56,7 @@ export function StarterKit({
   const groups: ShopGroup[] = GROUPS.map(({ need, heading, quiet, label }) => ({
     heading,
     quiet,
-    items: filled
-      .filter((f) => f.slot.need === need && f !== pick)
-      .map((f) => itemOf(f, label)),
+    items: filled.filter((f) => f.slot.need === need && f !== pick).map((f) => itemOf(f, label)),
   }));
 
   return (

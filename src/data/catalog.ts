@@ -259,14 +259,15 @@ export function validateCatalogProduct(input: unknown, now: Date = new Date()): 
     bad("imageRights set without imageSource");
   if (r["imageUrl"] !== undefined && r["imageUrl"] !== "") {
     const u = r["imageUrl"];
-    if (typeof u !== "string" || !(u.startsWith("/") && !u.startsWith("//")) && !isHttps(u))
+    if (typeof u !== "string" || (!(u.startsWith("/") && !u.startsWith("//")) && !isHttps(u)))
       bad("imageUrl must be https or a site-relative path");
     else if (/amazon\.com|media-amazon|ssl-images-amazon/i.test(u))
       bad("imageUrl must not point at Amazon images (Associates terms restrict them)");
     if (!r["imageRights"] || r["imageRights"] === "none")
       bad("imageUrl needs documented imageRights (owned, licensed or retailer-permission)");
     if (!str(r["imageCredit"])) bad("imageUrl needs an imageCredit");
-    if (!str(r["imageSource"])) bad("imageUrl needs an imageSource (where the permission is recorded)");
+    if (!str(r["imageSource"]))
+      bad("imageUrl needs an imageSource (where the permission is recorded)");
   } else if (str(r["imageCredit"]) && r["imageUrl"] === undefined) {
     // credit with no photo is harmless, but flag it so it is not forgotten
     bad("imageCredit set without imageUrl");
@@ -283,7 +284,8 @@ export function validateCatalogProduct(input: unknown, now: Date = new Date()): 
     if (!str(v)) bad(`${k} cannot be empty (omit it instead)`);
     else if ((v as string).length > max) bad(`${k} is longer than ${max} characters`);
   }
-  if (r["hold"] !== undefined && !str(r["hold"])) bad("hold needs a reason (omit it to show the product)");
+  if (r["hold"] !== undefined && !str(r["hold"]))
+    bad("hold needs a reason (omit it to show the product)");
 
   // No unsupported commerce claims
   for (const k of Object.keys(r))
@@ -402,9 +404,7 @@ export function choosePrimary(ps: CatalogProduct[], list: CatalogProduct[]): Cat
   const order = (p: CatalogProduct) => list.findIndex((x) => x.id === p.id);
   const sorted = [...ps].sort((a, b) => order(a) - order(b));
   const pool = sorted.some((p) => p.isEssential) ? sorted.filter((p) => p.isEssential) : sorted;
-  return (
-    pool.find((p) => p.lead) ?? pool.find((p) => p.role === "researched-pick") ?? pool[0]!
-  );
+  return pool.find((p) => p.lead) ?? pool.find((p) => p.role === "researched-pick") ?? pool[0]!;
 }
 
 /**

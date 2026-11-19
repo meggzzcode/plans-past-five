@@ -9,9 +9,9 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/hobbies/")({
   head: () =>
     seo({
-      title: "Find a Hobby: 36 Hobbies to Try Outside Work",
+      title: `Find a Hobby: ${hobbies.length} Hobbies to Try Outside Work`,
       description:
-        "A filterable directory of 36 beginner-friendly hobbies, sorted by time, cost, energy and whether you'd rather go solo or social.",
+        `A filterable directory of ${hobbies.length} beginner-friendly hobbies, sorted by time, cost, energy and whether you'd rather go solo or social.`,
       path: "/hobbies",
     }),
   component: Directory,
@@ -42,9 +42,9 @@ function Directory() {
         </Link>
       </PageHero>
       <section className="mx-auto mt-10 max-w-7xl px-5 md:px-8">
-        <div className="sticky top-[104px] z-20 -mx-5 border-b border-border bg-background/95 px-5 py-4 backdrop-blur md:static md:mx-0 md:border-0 md:bg-transparent md:px-0">
+        <div className="py-4">
           <div
-            className="flex gap-2 overflow-x-auto pb-1 md:flex-wrap"
+            className="flex flex-wrap gap-2"
             role="group"
             aria-label="Filter hobbies"
           >

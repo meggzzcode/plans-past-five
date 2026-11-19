@@ -32,16 +32,14 @@ export const Route = createFileRoute("/methodology")({
         active and quiet options so there is something for different energy levels.
       </p>
       <h2>Choosing products</h2>
-      <p>
-        There are two kinds of shopping help on the site, and the buttons say which is which.
-      </p>
+      <p>There are two kinds of shopping help on the site, and the buttons say which is which.</p>
       <ul>
         <li>
           <strong>Named products.</strong> For a growing number of hobbies we name a specific
           product and brand, and we have checked it against its Amazon listing: we compared the
-          listing with what we say about it and recorded the date. The button reads "View on Amazon" and opens that product's own
-          page. A product only appears once that check is done; anything still being researched
-          stays off the site.
+          listing with what we say about it and recorded the date. The button reads "View on Amazon"
+          and opens that product's own page. A product only appears once that check is done;
+          anything still being researched stays off the site.
         </li>
         <li>
           <strong>Types of product.</strong> Elsewhere we describe what to look for ("a round brush,
