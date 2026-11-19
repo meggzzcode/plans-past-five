@@ -184,6 +184,17 @@ Steps, in dependency order (each one needs the owner's yes first):
 7. **Update the marketplace package** with verified performance only, dated and with the screenshot of the source dashboard; if there is no data, say so. Do not extrapolate or promise future earnings.
 **Output:** `docs/launch/GROWTH-EXPERIMENT-LOG.md` (weekly entries) and an updated `docs/marketplace/final-inspection/LISTING-DRAFT-FINAL.md` data section only after the owner approves the numbers.
 
+### P. Amazon images and affiliate activation check (read-only; owner logged in; do not create or enter anything)
+
+Owner question: can we show the Amazon product image with the affiliate link, and start putting the tracking ID on the Amazon links we have? Background and options: `docs/launch/AMAZON-IMAGES-AND-ACTIVATION.md`.
+In the owner's logged-in Amazon Associates account (read only, change nothing, accept nothing) report, with screenshots that hide personal data and with dates:
+1. Account status: approved or in review, the review window end date, qualifying sales so far, and whether a new tracking ID can be created for a new website, and whether this website must first be added to the account's website list.
+2. Does the Associates toolbar (SiteStripe) on a product page still offer "Image" and "Text + Image" links? If yes: what exact code or URL pattern does it generate, who hosts the image, and does it include the tracking ID? If no: say NOT AVAILABLE. Do not copy or save any product image.
+3. Read the current official Program Policies and Operating Agreement sections on product images (storing, caching, linking), on prices, on private or unpublished sites, on offline use, and on using one account for a site that is later sold or assigned. Quote the sentence, URL and date.
+4. Report the exact disclosure wording Amazon requires beside links.
+5. Do NOT create a tracking ID or add the website unless the owner says yes in chat for that exact step.
+**Output:** `docs/commerce/AMAZON-IMAGES-AND-ACTIVATION-CHECK.md`. Claude Code decides, from your result, whether to add the optional central image widget and whether to flip the affiliate entry.
+
 ## 5. Hand-back files (so Claude Code can integrate without guessing)
 
 | Workstream | Deliverable file | Who applies it |

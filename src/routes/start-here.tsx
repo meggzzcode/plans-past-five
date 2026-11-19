@@ -10,7 +10,7 @@ import { PageHero } from "@/components/editorial/Section";
 export const Route = createFileRoute("/start-here")({
   head: () =>
     seo({
-      title: "Start Here: Find a Hobby, Plan Tonight, Shop the Basics",
+      title: "Start Here: Hobby, Plan, Shop the Basics",
       description:
         "Not sure what to do after work? Take the hobby quiz, build a plan for tonight or this weekend, or shop simple starter supplies.",
       path: "/start-here",

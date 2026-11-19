@@ -51,7 +51,7 @@ const cardSrcSet = (k: ImageKey) =>
 export const Route = createFileRoute("/")({
   head: () => {
     const page = seo({
-      title: `${site.name}: Hobbies, Weekend Plans & Starter Supplies for After Work`,
+      title: `${site.name}: Hobbies, Weekend Plans & Starter Supplies`,
       description:
         "Find a hobby you'll actually look forward to, plan a weekend with a storyline, and shop simple starter supplies. For women with plans past five.",
       path: "/",

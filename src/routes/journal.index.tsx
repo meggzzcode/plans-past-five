@@ -7,7 +7,7 @@ import { ArticleCard } from "@/components/cards/Cards";
 export const Route = createFileRoute("/journal/")({
   head: () =>
     seo({
-      title: "The Journal: Hobby Guides, Ideas & Weekend Plans",
+      title: "The Journal: Hobby Guides and Weekend Plans",
       description:
         "Original, practical stories about hobbies, after-work plans, solo dates and friendships for women building a life outside work.",
       path: "/journal",

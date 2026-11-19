@@ -11,7 +11,7 @@ import { NAMES } from "@/components/layout/nav";
 export const Route = createFileRoute("/shop/")({
   head: () =>
     seo({
-      title: "Shop Your Hobby: Starter Picks for Your Next Evening Plan",
+      title: "Shop Your Hobby: Starter Picks for Evenings",
       description:
         "Starter picks for pottery, journaling, painting, tennis, mahjong and more. One good thing to buy first, why it made the list, and an honest note when you can skip it. Ordinary Amazon links, no prices shown.",
       path: "/shop",

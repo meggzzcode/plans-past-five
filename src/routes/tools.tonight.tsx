@@ -29,7 +29,7 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/tools/tonight")({
   head: () =>
     seo({
-      title: "What Should I Do Tonight? 3 Ideas for After Work",
+      title: "What Should I Do Tonight? 3 Ideas",
       description:
         "Tired, bored or somewhere in between? Answer five taps and get three ideas that fit your time, energy and budget tonight. No email, no account.",
       path: "/tools/tonight",

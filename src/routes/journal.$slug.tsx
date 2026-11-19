@@ -5,7 +5,14 @@ import { images } from "@/data/images";
 import { getHobby } from "@/data/hobbies";
 import { site } from "@/config/site";
 import { NAMES } from "@/components/layout/nav";
-import { seo, absoluteUrl, articleJsonLd, breadcrumbJsonLd, modifiedAfterPublish } from "@/lib/seo";
+import {
+  seo,
+  absoluteUrl,
+  articleJsonLd,
+  articleMetaTitle,
+  breadcrumbJsonLd,
+  modifiedAfterPublish,
+} from "@/lib/seo";
 import { ArticleBody, hasShopBlock, SHOP_ANCHOR } from "@/components/editorial/ArticleBody";
 import { MiniToc } from "@/components/editorial/MiniToc";
 import { shortVersion } from "@/components/editorial/article-summary";

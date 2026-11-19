@@ -20,7 +20,7 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/tools/hobby-budget")({
   head: () =>
     seo({
-      title: "How Much Does a New Hobby Cost? Starter Budget Calculator",
+      title: "How Much Does a New Hobby Cost? Budget Tool",
       description:
         "How much does it really cost to start? Pick a hobby, tick what you already own, and see a realistic starting range plus a checklist. Estimates, not live prices.",
       path: "/tools/hobby-budget",
