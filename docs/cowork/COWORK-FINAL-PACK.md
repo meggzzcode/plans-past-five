@@ -26,7 +26,7 @@ Replaces the earlier pieces (COWORK-MASTER-PROMPT-PATH-TO-8.md, the F1-F19 adden
 - Amazon links are ordinary `https://www.amazon.com/dp/<ASIN>` links. Affiliate tracking is OFF and must stay off. Copied, printed and exported shopping lists contain no Amazon URLs by design.
 - Hosting: Netlify project `plans-past-five` (created earlier by Cowork; see `docs/cowork/NETLIFY-FIRST-DEPLOY-LOG.md`). The site is private. `netlify.toml` builds only when the latest commit message carries the release marker (the word deploy in square brackets); otherwise builds are skipped to save credits (free plan: 300 credits a month, about 15 per production deploy).
 - Content editing: articles and images are data files edited by Pages CMS (`.pages.yml`, `content/`). A CMS save is "Saved" only; publishing is a separate, deliberate step (see workstream G). Not yet tested with a real login.
-- Domain and email: **outstanding owner actions**. The plan is in `docs/launch/DOMAIN-EMAIL-SETUP.md` (planspastfive.com, hello@ mailbox). Nothing is bought.
+- Domain and email: **the domain planspastfive.com is now registered** (Namecheap order 220011258 on 2026-11-19, $12.28, 1 year, auto-renew OFF; Private Email Launch also purchased, $14.88, auto-renew OFF; total $27.16, recorded in the tracker's Expenses tab). It is NOT yet connected to hosting, and the hello@ mailbox and alias have not been created or tested. Plan: `docs/launch/DOMAIN-EMAIL-SETUP.md`. The contact address must stay unpublished until a send/receive test passes.
 - No named publisher details will be supplied. The "Published by" line stays empty by design and the buyer sets their own.
 - The release commit, branch and test results are recorded in `docs/marketplace/final-inspection/RELEASE-HANDOVER.md` (Claude Code fills this at freeze). Re-verify nothing there; just use that commit.
 
@@ -61,7 +61,7 @@ Do not do a production deploy until Wave 3 changes are integrated. Do not do mul
 
 ## 3. What the owner has to do (everything else is yours or Claude Code's)
 
-1. Buy the domain (about $12) and the mailbox plan following `docs/launch/DOMAIN-EMAIL-SETUP.md`, or tell Cowork to stop at that step.
+1. ~~Buy the domain and mailbox~~ (done 2026-11-19). Remaining: be present at the Namecheap login so Cowork can create hello@ and the alias and add the DNS records Netlify asks for.
 2. Be present for logins and two-factor prompts when Cowork sets up Netlify, Pages CMS (GitHub), Search Console and Pinterest.
 3. Approve, in chat, each action in the "Do NOT" list above before Cowork performs it (for example making the repo private).
 4. Decide whether to text the usability script to 3 to 5 friends (workstream K2).
@@ -122,8 +122,8 @@ Mark each fact: VERIFIED / INACCESSIBLE / ASSUMPTION.
 
 **Input:** `docs/launch/DOMAIN-EMAIL-SETUP.md`.
 1. **Now (no purchase):** confirm current domain and mailbox prices and renewal prices, what the mailbox plan allows (receiving and sending, aliases), the DNS records Netlify will ask for, and whether a lower-cost setup supports both receiving and sending.
-2. **Trademark and name screening** for "Plans Past Five": USPTO search, state searches, domain and social handle availability. Save as `docs/marketplace/TRADEMARK-KNOCKOUT.md` labelled "screening only, not legal clearance".
-3. **After the owner buys:** add the domain in Netlify, list the exact DNS records for the owner (enter them only if the owner is logged in at the registrar and says so), confirm HTTPS and the www/apex redirect. Create `hello@planspastfive.com`. Send and receive a test message both ways and run the corrections-contact workflow (a message to hello@ arrives and a reply goes out). Only then tell Claude Code to set the contact address (`site.contactEmail`); the address must not be published before it works.
+2. **Trademark and name screening** (the domain is already registered, so this is now a risk check, not a purchase decision) for "Plans Past Five": USPTO search, state searches, domain and social handle availability. Save as `docs/marketplace/TRADEMARK-KNOCKOUT.md` labelled "screening only, not legal clearance".
+3. **Now that the domain exists (owner present for the Namecheap and Netlify logins):** add the domain in Netlify, list the exact DNS records for the owner (enter them only if the owner is logged in at the registrar and says so), confirm HTTPS and the www/apex redirect. Create `hello@planspastfive.com`. Send and receive a test message both ways and run the corrections-contact workflow (a message to hello@ arrives and a reply goes out). Only then tell Claude Code to set the contact address (`site.contactEmail`); the address must not be published before it works.
 
 ### G. Hosting and the real CMS test
 

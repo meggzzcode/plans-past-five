@@ -18,3 +18,7 @@ Goal: CODE COMPLETE, READY FOR COWORK. Scope frozen (no newsletter, calendar, pr
 
 ## Remaining blockers (not code)
 Domain, mailbox, live deploy, Amazon listing verification, product photo permission, licence terms read-live, real CMS login test, repo privacy decision, marketplace fee/comps check.
+
+## Update 2026-11-19 (late)
+- Domain planspastfive.com REGISTERED (Namecheap order 220011258) and Private Email purchased; tracker updated (site tab, Overview, Buyer Handoff, Checklist, Accounts, Log). Not connected to hosting; mailbox untested.
+- Final progress amendment: integrate all agent changes on one release commit; reconcile counts; verify the five new articles' research; verify GA4 loader and fix contradictory analytics docs; ensure enabling a legitimate affiliate config does not break tests; keep publish safeguards; resolve security/performance; consolidate review reports; finish takeover docs; release handover; optional 30-day activation plan (owner authorisation required); Cowork candidate rows are NOT all mandatory.
