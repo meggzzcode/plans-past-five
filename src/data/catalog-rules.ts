@@ -332,6 +332,32 @@ export type KnownRefs = {
   articles?: string[];
 };
 
+/**
+ * The eight shop collection slugs used before Stage 3b, and where each went. A research sheet that
+ * was filled in before the change still imports: the importer maps the old name and says so.
+ * "journaling-era" wins over "creative-girl" on one row (junk-journal supplies are Paper).
+ */
+export const LEGACY_COLLECTION_SLUGS: Record<string, string> = {
+  "pottery-era": "creative",
+  "creative-girl": "creative",
+  "journaling-era": "paper",
+  "girls-night-in": "hosting",
+  "bookish-girl": "cozy",
+  "cozy-after-hours": "cozy",
+  "sporty-girl": "sporty",
+};
+
+/** Collections with any retired slug replaced by its current one (deduplicated, order kept). */
+export function mapLegacyCollections(list: string[]): string[] {
+  const out: string[] = [];
+  for (const c of list) {
+    if (c === "creative-girl" && list.includes("journaling-era")) continue;
+    const next = LEGACY_COLLECTION_SLUGS[c] ?? c;
+    if (!out.includes(next)) out.push(next);
+  }
+  return out;
+}
+
 /** Cross-reference checks (slugs and kit slots exist). Kept separate so this file stays import-free. */
 export function catalogReferenceProblems(list: CatalogProduct[], known: KnownRefs): string[] {
   const out: string[] = [];

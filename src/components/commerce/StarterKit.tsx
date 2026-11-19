@@ -12,6 +12,7 @@ import {
 } from "@/data/kits";
 import { onlyOnePick, verifiedCatalog, type CatalogProduct } from "@/data/catalog";
 import { kitHomeCollection } from "@/data/products";
+import { isCollectionLive } from "@/data/collection-status";
 import { getHobby } from "@/data/hobbies";
 import { track } from "@/lib/track";
 import { ShopDisclosure } from "./ProductCard";
@@ -87,7 +88,10 @@ export function StarterKit({
   const hobby = kit.hobby ? getHobby(kit.hobby) : undefined;
   // The "More in ..." link goes to the kit's own collection, never to one that merely sells a product.
   const home = kitHomeCollection(kit.id);
-  const coll = home && home.slug !== currentCollection ? home : undefined;
+  const coll =
+    home && home.slug !== currentCollection && isCollectionLive(home.slug, catalog)
+      ? home
+      : undefined;
   const awaiting = isKit ? [] : awaitingEssentials(kit, filled);
   const household = householdItems(kit);
   const startTitle = title ?? kit.name;

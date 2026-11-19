@@ -41,7 +41,7 @@
     "VERIFIED 2026-11-18: per-hobby cost ranges ($10-$30, $20-$50, $15-$40, free to $25, $20-$50) removed and replaced with 'Varies'; no price range stated anywhere - reworded, no claim remains",
     "VERIFIED 2026-11-18: general observations about kit quantity, convenience premium and kit paper quality reworded as questions to ask or 'may'/'check' wording rather than market claims - reworded, no claim remains",
     "VERIFIED 2026-11-18: hoop-size detail removed; embroidery-kit contents described generally - reworded, no claim remains",
-    "VERIFIED 2026-11-18: shop collection links (creative-girl, pottery-era, girls-night-in) resolve and contain the product types named - checked in src/data/products.ts",
+    "VERIFIED 2026-11-18: shop collection links (creative-girl, pottery-era, girls-night-in) resolved when checked; in Stage 3b they became creative, paper and hosting (the old paths redirect)",
     "VERIFIED 2026-11-18: no return, shipping or availability claims; no claim that any kit was tested; kit-or-loose guidance framed as editorial advice - reworded, no claim remains",
     "VERIFIED 2026-11-18: cross-links to embroidery, watercolor, air-dry clay and junk-journaling-supplies articles removed until those are live; related list trimmed to published articles - reworded",
     "NOTE 2026-11-19: monetisation rewrite: verified examples linked inline per hobby and a shopTheArticle block added after 'Kit or loose, hobby by hobby'; the 'doesn't rank named kits' paragraph now says verified examples are linked where available; test-the-waters advice moved to one short closing section; no kit called complete; no new safety claims"
@@ -194,7 +194,7 @@
     },
     {
       "type": "p",
-      "text": "The shop collections group product types by hobby so you can compare what to look for. Browse [The Creative Girl](/shop/creative-girl) for painting, journaling and stitching, [The Pottery Era](/shop/pottery-era) for clay and ceramic painting, and [Girls' Night In](/shop/girls-night-in) for group-friendly kits. They describe types of product, and the buttons open a general search so you can compare options yourself."
+      "text": "The shop collections group the starter picks we have checked by hobby. Browse [The Creative Edit](/shop/creative) for painting, clay and stitching, [The Paper Edit](/shop/paper) for journaling, and [The Hosting Edit](/shop/hosting) for group-friendly kits. A collection appears once it has a product we have read on Amazon."
     },
     {
       "type": "p",

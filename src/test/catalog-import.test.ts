@@ -57,7 +57,7 @@ const good: Row = {
   specs: "Width:15 mm|Rolls:10",
   hobbies: "junk-journaling",
   articles: "how-to-start-junk-journaling",
-  collections: "creative-girl",
+  collections: "creative",
   kitSlots: "junk-journaling/washi-tape",
   role: "affordable",
   isEssential: "TRUE",
@@ -87,6 +87,28 @@ const run = (rows: Row[], opts?: Parameters<typeof csv>[1]) =>
   importCsv(csv(rows, opts), known, NOW);
 const withRow = (o: Row): Row => ({ ...good, ...o });
 const second = (o: Row = {}): Row => withRow({ id: "second-item", asin: "B0IMAGINA2", ...o });
+
+describe("rows filled in before the six-collection change", () => {
+  it("import with the old collection names mapped to the new ones, and a warning saying so", () => {
+    const r = run([withRow({ collections: "journaling-era|creative-girl" })]);
+    expect(r.errors).toEqual([]);
+    expect(r.products[0]!.collections).toEqual(["paper"]);
+    expect(r.warnings.join("\n")).toMatch(/retired names; imported as "paper"/);
+    const g = run([
+      withRow({ id: "second-item", asin: "B0IMAGINA2", collections: "girls-night-in|pottery-era" }),
+    ]);
+    expect(g.errors).toEqual([]);
+    expect(g.products[0]!.collections).toEqual(["hosting", "creative"]);
+  });
+  it("a current collection name gives no warning, and an unknown name is still an error", () => {
+    const ok = run([withRow({ collections: "creative" })]);
+    expect(ok.errors).toEqual([]);
+    expect(ok.warnings.join("\n")).not.toMatch(/retired/);
+    expect(run([withRow({ collections: "creative-gal" })]).errors.join("\n")).toMatch(
+      /unknown collection "creative-gal"/,
+    );
+  });
+});
 
 describe("shipped data", () => {
   it("every product in the committed generated file is verified and the file has no fixture rows", () => {

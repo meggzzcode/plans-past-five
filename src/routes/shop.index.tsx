@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { collections, collectionKitIds } from "@/data/products";
+import { collectionKitIds } from "@/data/products";
+import { collectionProducts, liveCollections } from "@/data/collection-status";
 import { verifiedCatalog, type CatalogProduct } from "@/data/catalog";
 import { fillKit, getKit, isFullKit } from "@/data/kits";
 import { seo } from "@/lib/seo";
@@ -13,13 +14,13 @@ export const Route = createFileRoute("/shop/")({
     seo({
       title: "Shop Your Hobby: Starter Picks for Evenings",
       description:
-        "Starter picks for pottery, journaling, painting, tennis, mahjong and more. One good thing to buy first, why it made the list, and an honest note when you can skip it. Ordinary Amazon links, no prices shown.",
+        "Starter picks for journaling, painting, clay, embroidery, mahjong and more. One good thing to buy first, why it made the list, and an honest note when you can skip it. Ordinary Amazon links, no prices shown.",
       path: "/shop",
     }),
   component: Shop,
 });
 
-/** Honest, data-driven label for a collection tile: how many starter kits actually have picks. */
+/** Honest, data-driven label for a collection tile: how many starter kits or named picks it really has. */
 function tagFor(slug: string) {
   const ids = collectionKitIds(slug);
   const kitCount = ids.filter((id) => {
@@ -27,14 +28,8 @@ function tagFor(slug: string) {
     return !!kit && isFullKit(fillKit(kit, verifiedCatalog), kit);
   }).length;
   if (kitCount > 0) return kitCount === 1 ? "Starter kit inside" : `${kitCount} starter kits`;
-  const named =
-    ids.some((id) => {
-      const kit = getKit(id);
-      return !!kit && fillKit(kit, verifiedCatalog).length > 0;
-    }) || verifiedCatalog.some((p) => p.collections.includes(slug));
-  return named
-    ? "Where to start: a few named picks"
-    : "Where to start: guides and what to look for";
+  const n = collectionProducts(slug).length;
+  return n === 1 ? "One named pick" : `${n} named picks`;
 }
 
 /** The "start here" picks: the one-pick of three different kits, in catalog order. */
@@ -68,6 +63,8 @@ function giftSets(exclude: CatalogProduct[]): CatalogProduct[] {
 function Shop() {
   const picks = startHere();
   const gifts = giftSets(picks);
+  // Only collections with something real to show are listed (src/data/collection-status.ts).
+  const shown = liveCollections();
   return (
     <>
       <PageHero
@@ -87,7 +84,7 @@ function Shop() {
         <ShopDisclosure kind="short" className="mt-3 text-ink" />
       </PageHero>
       <section className="mx-auto mt-16 max-w-7xl px-5 md:px-8">
-        <SectionHead kicker="Pick your evening" title="Which era are you in?" italic="era" />
+        <SectionHead kicker="Pick your evening" title="Which edit is yours?" italic="edit" />
         <p className="mt-3 text-espresso">
           Not sure?{" "}
           <Link to="/hobby-finder" className="font-semibold text-cherry underline">
@@ -95,11 +92,18 @@ function Shop() {
           </Link>{" "}
           and we'll point you to one.
         </p>
-        <div className="mt-8 grid grid-cols-2 gap-x-3 gap-y-8 lg:grid-cols-3 lg:gap-x-6 lg:gap-y-10">
-          {collections.map((c) => (
-            <CollectionCard key={c.slug} c={c} tag={tagFor(c.slug)} />
-          ))}
-        </div>
+        {shown.length > 0 ? (
+          <div className="mt-8 grid grid-cols-2 gap-x-3 gap-y-8 lg:grid-cols-3 lg:gap-x-6 lg:gap-y-10">
+            {shown.map((c) => (
+              <CollectionCard key={c.slug} c={c} tag={tagFor(c.slug)} />
+            ))}
+          </div>
+        ) : (
+          <p className="mt-8 max-w-prose text-espresso" data-no-collections>
+            Our first shop collections are still being checked, product by product. They appear here
+            as soon as there is something worth showing.
+          </p>
+        )}
       </section>
       {picks.length > 0 && (
         <section className="mx-auto mt-20 max-w-7xl px-5 md:px-8" aria-label="Start here">

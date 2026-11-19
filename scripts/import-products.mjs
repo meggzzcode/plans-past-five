@@ -41,6 +41,7 @@ import {
   amazonProductUrl,
   catalogReferenceProblems,
   isForbiddenField,
+  mapLegacyCollections,
   validateCatalogProduct,
 } from "../src/data/catalog-rules.ts";
 
@@ -349,6 +350,14 @@ export function importCsv(text, known, now = new Date()) {
         issues.push(`column ${i + 1} has data but no header name`);
     });
     const p = rowToProduct(header, cells, issues);
+    // A sheet filled in before the six-collection change still imports (old names are mapped).
+    const mapped = mapLegacyCollections(p.collections);
+    if (mapped.join("|") !== p.collections.join("|")) {
+      warnings.push(
+        `line ${line}: ${p.id}: collections "${p.collections.join(", ")}" use retired names; imported as "${mapped.join(", ")}"`,
+      );
+      p.collections = mapped;
+    }
     if (p.imageUrl || p.imageCredit || p.imageSource || (p.imageRights && p.imageRights !== "none"))
       issues.push(
         "picture columns must stay empty: pictures are recorded per product in Pages CMS with their rights, never imported",

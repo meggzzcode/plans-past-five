@@ -57,7 +57,7 @@ const base: CatalogProduct = {
   specs: [{ label: "Width", value: "15 mm" }],
   hobbies: ["junk-journaling"],
   articles: ["test-article"],
-  collections: ["creative-girl"],
+  collections: ["creative"],
   kitSlots: [{ kit: "junk-journaling", slot: "washi-tape" }],
   role: "affordable",
   isEssential: true,
@@ -235,7 +235,7 @@ describe("selection", () => {
   it("separates essentials from optional and never duplicates", () => {
     const dupAsin = { ...second, id: "test-fixture-dup", articles: ["test-article"] }; // same ASIN as `second`
     const sel = selectProducts(
-      { article: "test-article", hobby: "junk-journaling", collection: "creative-girl" },
+      { article: "test-article", hobby: "junk-journaling", collection: "creative" },
       [base, second, dupAsin, base],
     );
     expect(sel.essentials.map((p) => p.id)).toEqual(["test-fixture-washi"]);
@@ -564,10 +564,11 @@ describe("kit completeness and household items", () => {
   });
   it("collections list only their own kits, with distinct images, and no kit appears under a foreign heading", () => {
     expect(new Set(collections.map((c) => c.image)).size).toBe(collections.length);
-    expect(collectionKitIds("cozy-after-hours")).toEqual([]);
-    expect(collectionKitIds("girls-night-in")).not.toContain("reading-book-club");
+    expect(collectionKitIds("cozy")).toEqual(["reading-book-club"]);
+    expect(collectionKitIds("hosting")).not.toContain("reading-book-club");
     expect(collectionKitIds("little-adventures")).toEqual(["picnic"]);
-    expect(kitHomeCollection("pottery-paint-night")?.slug).toBe("girls-night-in");
+    expect(kitHomeCollection("pottery-paint-night")?.slug).toBe("hosting");
+    expect(kitHomeCollection("reading-book-club")?.slug).toBe("cozy");
   });
   it("dedupes padded and near-duplicate list items", () => {
     const [need, extra] = dedupeListGroups([

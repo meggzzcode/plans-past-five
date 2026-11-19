@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { createMemoryHistory, createRouter, isRedirect } from "@tanstack/react-router";
 import { describe, expect, it } from "vitest";
 import { redirects, redirectedPaths } from "@/config/redirects";
+import { collections } from "@/data/products";
 import { sitemapPaths } from "@/lib/sitemap";
 import { routeTree } from "@/routeTree.gen";
 
@@ -13,6 +14,15 @@ const EXPECTED: Record<string, string> = {
   "/start-here": "/",
   "/tools/tonight": "/make-plans?mode=tonight",
   "/editorial-standards": "/editorial-policy",
+  // The eight earlier shop collection slugs, each to its one genuinely relevant new collection.
+  "/shop/pottery-era": "/shop/creative",
+  "/shop/creative-girl": "/shop/creative",
+  "/shop/journaling-era": "/shop/paper",
+  "/shop/girls-night-in": "/shop/hosting",
+  "/shop/bookish-girl": "/shop/cozy",
+  "/shop/cozy-after-hours": "/shop/cozy",
+  "/shop/sporty-girl": "/shop/sporty",
+  // (/shop/little-adventures keeps its address; only its name changed.)
 };
 
 const parse = (u: string) => {
@@ -58,18 +68,29 @@ describe("route layer (dev server, tests and the built Nitro server)", () => {
       // The status code travels on the thrown redirect: run the route's own guard.
       const match = router.matchRoutes(r.from).at(-1)!;
       const route = router.routesById[match.routeId as keyof typeof router.routesById] as {
-        options: { beforeLoad?: (a: { search: Record<string, string> }) => unknown };
+        options: {
+          beforeLoad?: (a: {
+            search: Record<string, string>;
+            params: Record<string, string>;
+          }) => unknown;
+        };
       };
       let thrown: unknown;
       try {
-        route.options.beforeLoad?.({ search: {} });
+        route.options.beforeLoad?.({ search: {}, params: match.params as Record<string, string> });
       } catch (e) {
         thrown = e;
       }
       expect(isRedirect(thrown), `${r.from} must throw a redirect`).toBe(true);
-      const opts = (thrown as { options: { statusCode?: number; to?: string } }).options;
+      const opts = (
+        thrown as {
+          options: { statusCode?: number; to?: string; params?: Record<string, string> };
+        }
+      ).options;
       expect(opts.statusCode).toBe(301);
-      expect(opts.to).toBe(parse(r.to).path);
+      // A dynamic target ("/shop/$category" + params) is resolved before comparing.
+      const target = (opts.to ?? "").replace("$category", opts.params?.["category"] ?? "");
+      expect(target).toBe(parse(r.to).path);
 
       // And the whole router lands on the destination (no further redirect).
       await router.load();
@@ -117,6 +138,60 @@ describe("Netlify _redirects", () => {
 
   it("forces each rule so a static file at the old path cannot shadow it", () => {
     for (const [from, , status] of lines) expect(status, from).toBe("301!");
+  });
+});
+
+describe("retired shop collections: each redirect validated on its own", () => {
+  const retired = redirects.filter((r) => r.from.startsWith("/shop/"));
+
+  it("covers all eight earlier collection slugs except the one that kept its address", () => {
+    expect(retired.map((r) => r.from.slice(6)).sort()).toEqual(
+      [
+        "bookish-girl",
+        "cozy-after-hours",
+        "creative-girl",
+        "girls-night-in",
+        "journaling-era",
+        "pottery-era",
+        "sporty-girl",
+      ].sort(),
+    );
+  });
+
+  it("each lands on a real, current collection (never a retired slug, never a chain)", () => {
+    for (const r of retired) {
+      const slug = r.to.slice(6);
+      expect(
+        collections.some((c) => c.slug === slug),
+        `${r.from} -> ${r.to} is a current collection`,
+      ).toBe(true);
+      expect(redirectedPaths, `${r.from} -> ${r.to}`).not.toContain(r.to);
+    }
+  });
+
+  it("a current collection address is never itself redirected", () => {
+    for (const c of collections) expect(redirectedPaths).not.toContain(`/shop/${c.slug}`);
+  });
+
+  it("the destination is topically right for the old page", () => {
+    // The old collection's own main hobby is served by the new one (what the visitor came for).
+    const OLD_HOBBY: Record<string, string> = {
+      "pottery-era": "air-dry-clay",
+      "creative-girl": "watercolor-painting",
+      "journaling-era": "junk-journaling",
+      "girls-night-in": "mahjong",
+      "bookish-girl": "reading",
+      "cozy-after-hours": "jigsaw-puzzles",
+      "sporty-girl": "pickleball",
+    };
+    for (const r of retired) {
+      const dest = collections.find((c) => c.slug === r.to.slice(6))!;
+      expect(dest.hobbies, `${r.from} -> ${dest.slug}`).toContain(OLD_HOBBY[r.from.slice(6)]);
+    }
+  });
+
+  it("the sitemap lists none of the retired paths", () => {
+    for (const r of retired) expect(sitemapPaths()).not.toContain(r.from);
   });
 });
 

@@ -1,7 +1,7 @@
 import { site } from "@/config/site";
 import { articles, articlesForHobby } from "@/content";
 import { categories } from "@/data/categories";
-import { collections } from "@/data/products";
+import { liveCollections } from "@/data/collection-status";
 import { hobbies } from "@/data/hobbies";
 import { redirectedPaths } from "@/config/redirects";
 
@@ -29,7 +29,7 @@ export function sitemapPaths(): string[] {
     "/changelog",
     ...categories.map((c) => `/${c.slug}`),
     ...articles.map((a) => `/journal/${a.slug}`),
-    ...collections.map((c) => `/shop/${c.slug}`),
+    ...liveCollections().map((c) => `/shop/${c.slug}`),
     ...hobbies.filter((h) => articlesForHobby(h.slug).length > 0).map((h) => `/hobbies/${h.slug}`),
   ];
   return paths.filter((p) => !redirectedPaths.includes(p));
