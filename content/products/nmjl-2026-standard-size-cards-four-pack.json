@@ -1,0 +1,63 @@
+{
+  "id": "nmjl-2026-standard-size-cards-four-pack",
+  "name": "2026 Mahjong Standard Size Cards, Four-Pack Bundle",
+  "brand": "National Mah Jongg League",
+  "category": "Mahjong card",
+  "order": 27,
+  "status": "verified",
+  "description": "Four standard-size (5 1/8 x 4 in) 2026 National Mah Jongg League cards.",
+  "asin": "B0GRCCTYJ5",
+  "amazonUrl": "https://www.amazon.com/dp/B0GRCCTYJ5",
+  "specs": [
+    {
+      "label": "Pack",
+      "value": "4"
+    },
+    {
+      "label": "Size",
+      "value": "5 1/8 x 4 in"
+    },
+    {
+      "label": "Edition",
+      "value": "2026"
+    }
+  ],
+  "hobbies": [
+    "mahjong"
+  ],
+  "articles": [
+    "how-to-host-a-mahjong-night"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "mahjong-night",
+      "slot": "card"
+    }
+  ],
+  "role": "essential",
+  "isEssential": true,
+  "audience": "Players who prefer a smaller card",
+  "whySelected": "Official card from the league; listing says proceeds go to charities.",
+  "limitations": [
+    "Card is for 2026: a new card is issued each year",
+    "Standard vs large size is a preference",
+    "Seller on listing: The National Mah Jongg League, Inc.",
+    "2026-11-19: League store lists STANDARD card 5 1/8 x 4 in: size confirmed; pack size not on maker page",
+    "Sold by the National Mah Jongg League itself (listing checked 2026-11-19); the card is year-specific, so a new card is needed each year",
+    "American mahjong only"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0GRCCTYJ5"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "manufacturerUrl": "https://www.nationalmahjonggleague.org/store.aspx",
+  "imageRights": "none",
+  "shortName": "2026 mahjong card, standard size",
+  "benefit": "The same official card in the smaller standard size, 2026 edition.",
+  "compare": "Smaller than the large-print card, with the same year's hands."
+}

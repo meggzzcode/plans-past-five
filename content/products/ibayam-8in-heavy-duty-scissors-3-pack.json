@@ -1,0 +1,61 @@
+{
+  "id": "ibayam-8in-heavy-duty-scissors-3-pack",
+  "name": "8\" Heavy Duty Scissors All Purpose, 3-Pack",
+  "brand": "iBayam",
+  "category": "Scissors",
+  "order": 64,
+  "status": "candidate",
+  "description": "Three pairs of 8 inch stainless steel all-purpose scissors with rubber-cushioned handles, for left or right hand.",
+  "asin": "B07H3QKN2Z",
+  "amazonUrl": "https://www.amazon.com/dp/B07H3QKN2Z",
+  "specs": [
+    {
+      "label": "Pack",
+      "value": "3"
+    },
+    {
+      "label": "Length",
+      "value": "8 in"
+    },
+    {
+      "label": "Blades",
+      "value": "2.5 mm stainless steel per listing"
+    },
+    {
+      "label": "Handles",
+      "value": "ergonomic non-slip"
+    }
+  ],
+  "hobbies": [
+    "craft-nights"
+  ],
+  "articles": [
+    "how-to-host-a-craft-night"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "pottery-paint-night",
+      "slot": "shared-tools"
+    }
+  ],
+  "role": "affordable",
+  "isEssential": true,
+  "audience": "Hosts who need a few pairs of scissors for the table",
+  "whySelected": "Three pairs means guests are not waiting for one; listing says they cut fabric, paper, tape and photos.",
+  "limitations": [
+    "8 inch scissors are bulky for trimming thread (the bracelet kit includes small scissors)",
+    "Cutting-life claims (100,000 cuts) are the listing's",
+    "Sharp: keep away from young children",
+    "Seller on listing: Qi US"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B07H3QKN2Z (read in browser 2026-11-19: In Stock)"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none"
+}

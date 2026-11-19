@@ -1,0 +1,64 @@
+{
+  "id": "benicci-12-piece-artist-paint-brush-set",
+  "name": "Professional Artist Paint Brush Set of 12, Acrylic and Watercolor",
+  "brand": "Benicci",
+  "category": "Brushes",
+  "order": 41,
+  "status": "verified",
+  "description": "A 12-brush set: rounds, flats, liners, an angle, a filbert and a fan.",
+  "asin": "B0868QQ1X6",
+  "amazonUrl": "https://www.amazon.com/dp/B0868QQ1X6",
+  "specs": [
+    {
+      "label": "Count",
+      "value": "12"
+    },
+    {
+      "label": "Shapes",
+      "value": "4 round, 3 flat, 2 liner, 1 angle, 1 filbert, 1 fan"
+    }
+  ],
+  "hobbies": [
+    "air-dry-clay",
+    "paint-by-numbers"
+  ],
+  "articles": [
+    "how-to-start-air-dry-clay",
+    "how-to-host-a-paint-night-at-home"
+  ],
+  "collections": [
+    "pottery-era",
+    "creative-girl",
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "air-dry-clay",
+      "slot": "brushes"
+    },
+    {
+      "kit": "pottery-paint-night",
+      "slot": "brushes"
+    }
+  ],
+  "role": "essential",
+  "isEssential": true,
+  "audience": "Beginners painting clay or canvases",
+  "whySelected": "A spread of shapes covers base coats and fine lines.",
+  "limitations": [
+    "\"Studio results\" and \"crisp point\" are the listing's claims",
+    "Listing mentions oil use: not tested",
+    "Manufacturer page not yet checked",
+    "Seller on listing: Benicci"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0868QQ1X6"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none",
+  "shortName": "Benicci artist brush set, 12 pieces",
+  "benefit": "A mix of brush shapes for base coats and fine lines on clay or canvas.",
+  "lead": true
+}

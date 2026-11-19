@@ -1,0 +1,60 @@
+{
+  "id": "transon-8-round-watercolor-brushes",
+  "name": "8pc Round Watercolor Brush Set, Goat Hair",
+  "brand": "Transon",
+  "category": "Brushes",
+  "order": 29,
+  "status": "verified",
+  "description": "Eight round brushes in a natural-hair and nylon blend for watercolor and other media.",
+  "asin": "B06XTMNKVF",
+  "amazonUrl": "https://www.amazon.com/dp/B06XTMNKVF",
+  "specs": [
+    {
+      "label": "Count",
+      "value": "8"
+    },
+    {
+      "label": "Shape",
+      "value": "round"
+    },
+    {
+      "label": "Hair",
+      "value": "natural and nylon blend per listing"
+    }
+  ],
+  "hobbies": [
+    "watercolor-painting"
+  ],
+  "articles": [
+    "watercolor-painting-for-beginners"
+  ],
+  "collections": [
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "watercolor",
+      "slot": "brushes"
+    }
+  ],
+  "role": "nice-to-have",
+  "isEssential": false,
+  "audience": "Beginners who want a few real round brushes",
+  "whySelected": "Round brushes cover washes and fine lines; listing says they hold water well.",
+  "limitations": [
+    "\"Mimic sable\" and spring-back are the listing's claims",
+    "Round only: no flat brush",
+    "Manufacturer page not yet checked",
+    "Seller on listing: not captured"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B06XTMNKVF"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "check-listing",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none",
+  "shortName": "Transon round brush set, 8 pieces",
+  "benefit": "Eight round brushes in graduated sizes for washes and fine lines.",
+  "lead": true
+}

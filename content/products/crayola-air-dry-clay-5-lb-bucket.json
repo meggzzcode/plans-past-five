@@ -1,0 +1,63 @@
+{
+  "id": "crayola-air-dry-clay-5-lb-bucket",
+  "name": "Air Dry Clay, 5 lb",
+  "brand": "Crayola",
+  "category": "Air-dry clay",
+  "order": 8,
+  "status": "held",
+  "statusReason": "Kid-marketed bucket (ages 4+) and 5 lb is a lot for a first project. Held for audience fit; swap for an adult-oriented clay once Cowork C12 confirms one.",
+  "description": "A 5 lb resealable bucket of white air-dry clay for coil, slab, pinch and score-and-weld techniques.",
+  "asin": "B089T7PX27",
+  "amazonUrl": "https://www.amazon.com/dp/B089T7PX27",
+  "specs": [
+    {
+      "label": "Weight",
+      "value": "5 lb"
+    },
+    {
+      "label": "Container",
+      "value": "resealable bucket"
+    },
+    {
+      "label": "Listing",
+      "value": "works with Crayola Project Paints and acrylic paints"
+    }
+  ],
+  "hobbies": [
+    "air-dry-clay"
+  ],
+  "articles": [
+    "how-to-start-air-dry-clay"
+  ],
+  "collections": [
+    "pottery-era",
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "air-dry-clay",
+      "slot": "clay"
+    }
+  ],
+  "role": "essential",
+  "isEssential": true,
+  "audience": "Beginners who want a forgiving clay for a first few projects",
+  "whySelected": "The listing describes it as an air-dry clay that softens with water, in a resealable bucket.",
+  "limitations": [
+    "Marketed for kids and classrooms, not specifically for adult makers",
+    "5 lb is a lot for a single small project",
+    "Drying and cracking guidance has to come from the manufacturer, not this listing",
+    "Do not call finished pieces food-safe",
+    "Crayola page (read 2026-11-18, as a search snippet) says: 5 lb resealable bucket, natural white earth clay that dries to a hard solid with no kiln or oven, designed for ages 4 and older; it is marketed to children, not as a fine-art clay",
+    "The page text read did not mention food safety or a safety certification: say neither (ACMI/ASTM wording is not confirmed on crayola.com)"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B089T7PX27",
+    "https://www.crayola.com/products/clay-and-modeling-compounds/5-lb-air-dry-clay-resealable-bucket-white-575055"
+  ],
+  "lastVerified": "2026-11-18",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "manufacturerUrl": "https://www.crayola.com/products/clay-and-modeling-compounds/5-lb-air-dry-clay-resealable-bucket-white-575055",
+  "imageRights": "none"
+}

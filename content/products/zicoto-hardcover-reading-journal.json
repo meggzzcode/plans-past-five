@@ -1,0 +1,61 @@
+{
+  "id": "zicoto-hardcover-reading-journal",
+  "name": "Beautiful Reading Journal for Book Lovers, Hard Cover Tracker",
+  "brand": "Zicoto",
+  "category": "Reading journal",
+  "order": 45,
+  "status": "candidate",
+  "description": "Casebound hardcover reading log with wish list, completed books, tracker and review sections.",
+  "asin": "B0FHVQKZ1G",
+  "amazonUrl": "https://www.amazon.com/dp/B0FHVQKZ1G",
+  "specs": [
+    {
+      "label": "Pages",
+      "value": "172"
+    },
+    {
+      "label": "Binding",
+      "value": "casebound hardcover"
+    },
+    {
+      "label": "Ribbons",
+      "value": "2"
+    },
+    {
+      "label": "Index",
+      "value": "yes"
+    }
+  ],
+  "hobbies": [
+    "reading"
+  ],
+  "articles": [
+    "how-to-start-a-reading-journal"
+  ],
+  "collections": [
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "reading-book-club",
+      "slot": "journal"
+    }
+  ],
+  "role": "essential",
+  "isEssential": true,
+  "audience": "Readers starting a book log",
+  "whySelected": "Listing describes dedicated sections and two ribbons.",
+  "limitations": [
+    "Layout fit is personal: look at the sections first",
+    "Page count is the listing's claim",
+    "Manufacturer page not yet checked",
+    "Seller on listing: Zicoto US"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0FHVQKZ1G"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none"
+}

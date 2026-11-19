@@ -1,0 +1,61 @@
+{
+  "id": "cyclotron-6-pack-pickleball-balls",
+  "name": "6-Pack Pickleball Balls, USAPA Approved, 40-Hole Outdoor/Indoor",
+  "brand": "cyclotron",
+  "category": "Pickleballs",
+  "order": 56,
+  "status": "candidate",
+  "description": "Six 40-hole TPE pickleballs in bright green with a mesh bag.",
+  "asin": "B0DM8YV5XQ",
+  "amazonUrl": "https://www.amazon.com/dp/B0DM8YV5XQ",
+  "specs": [
+    {
+      "label": "Count",
+      "value": "6"
+    },
+    {
+      "label": "Holes",
+      "value": "40"
+    },
+    {
+      "label": "Material",
+      "value": "TPE"
+    },
+    {
+      "label": "Colour",
+      "value": "green"
+    }
+  ],
+  "hobbies": [
+    "pickleball"
+  ],
+  "articles": [
+    "pickleball-for-beginners"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "racquet-sports",
+      "slot": "pickleballs"
+    }
+  ],
+  "role": "essential",
+  "isEssential": true,
+  "audience": "Players who need spare balls",
+  "whySelected": "Mesh bag included.",
+  "limitations": [
+    "USAPA approval is the listing's claim",
+    "Durability claims are the listing's",
+    "Manufacturer page not yet checked",
+    "Seller on listing: CYCLOTRON SPORTS"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0DM8YV5XQ"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none"
+}

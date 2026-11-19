@@ -1,0 +1,62 @@
+{
+  "id": "knaid-200-piece-vintage-ephemera-cottagecore",
+  "name": "200 Piece Vintage Ephemera Bundle, Cottagecore (Pastel/Earthy Tones)",
+  "brand": "Knaid",
+  "category": "Ephemera and paper",
+  "order": 6,
+  "status": "held",
+  "statusReason": "Volume-pitch pack of fixed-theme stickers and paper; contradicts the paper-with-a-past advice and the free-ephemera tip. Held as filler.",
+  "description": "About 200 pieces of ephemera: matte decoupage paper, washi stickers and PET stickers in a cottagecore theme.",
+  "asin": "B09TB69V48",
+  "amazonUrl": "https://www.amazon.com/dp/B09TB69V48",
+  "specs": [
+    {
+      "label": "Pieces",
+      "value": "about 200"
+    },
+    {
+      "label": "Contents",
+      "value": "80 matte decoupage paper, 80 washi stickers, 40 PET stickers"
+    },
+    {
+      "label": "Theme",
+      "value": "cottagecore"
+    }
+  ],
+  "hobbies": [
+    "junk-journaling"
+  ],
+  "articles": [
+    "junk-journaling-supplies-for-beginners",
+    "how-to-start-junk-journaling"
+  ],
+  "collections": [
+    "journaling-era",
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "junk-journaling",
+      "slot": "paper"
+    }
+  ],
+  "role": "nice-to-have",
+  "isEssential": false,
+  "audience": "People who want ready-made pretty paper",
+  "whySelected": "Ready-made, coordinated paper and stickers for people with no scraps yet.",
+  "limitations": [
+    "Optional: free ephemera (envelopes, tickets, wrapping paper) does the same job",
+    "One fixed theme",
+    "Manufacturer page not yet checked"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B09TB69V48"
+  ],
+  "lastVerified": "2026-11-18",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none",
+  "shortName": "Cottagecore ephemera pack, 200 pieces",
+  "benefit": "Ready-made pastel and earthy papers and stickers for pages before you have any scraps.",
+  "lead": true
+}

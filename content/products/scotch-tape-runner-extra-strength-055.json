@@ -1,0 +1,67 @@
+{
+  "id": "scotch-tape-runner-extra-strength-055",
+  "name": "Scotch Tape Runner Extra Strength, 0.31 in x 11 yd",
+  "brand": "Scotch",
+  "category": "Adhesive",
+  "order": 65,
+  "status": "candidate",
+  "description": "A refillable Scotch double-sided tape runner with extra-strength permanent adhesive.",
+  "asin": "B00O59Z4RG",
+  "amazonUrl": "https://www.amazon.com/dp/B00O59Z4RG",
+  "specs": [
+    {
+      "label": "Width",
+      "value": "0.31 in"
+    },
+    {
+      "label": "Length",
+      "value": "11 yd"
+    },
+    {
+      "label": "Adhesive",
+      "value": "extra strength, permanent"
+    },
+    {
+      "label": "Refillable",
+      "value": "yes"
+    }
+  ],
+  "hobbies": [
+    "junk-journaling"
+  ],
+  "articles": [
+    "junk-journaling-supplies-for-beginners",
+    "how-to-start-junk-journaling"
+  ],
+  "collections": [
+    "journaling-era",
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "junk-journaling",
+      "slot": "adhesive"
+    }
+  ],
+  "role": "affordable",
+  "isEssential": false,
+  "audience": "Beginners who dislike wrinkly glue",
+  "whySelected": "Replacement for the 6061 runner: the Amazon listing bullets say photo safe, refillable, permanent, and a tape reseller says all three Scotch 055 adhesives are photo safe.",
+  "limitations": [
+    "Photo-safe comes from the Amazon bullets plus one reseller (https://findtape.com/Scotch-Tape-Runner/p1749): 3M's own 055 page was not read for it, so keep attributed to the listing",
+    "Seller not captured",
+    "Do not claim photo-safe for any other Scotch runner"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B00O59Z4RG (read 2026-11-19)",
+    "https://findtape.com/Scotch-Tape-Runner/p1749",
+    "https://3m.com/3M/en_US/p/d/cbgnhw011129"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none",
+  "shortName": "Scotch tape runners, 3-pack",
+  "benefit": "Rolls on dry tape instead of wet glue, so there is nothing to wait for.",
+  "compare": "Tidier than a glue stick, but permanent: you can't lift it once placed."
+}

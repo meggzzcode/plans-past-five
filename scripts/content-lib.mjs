@@ -9,6 +9,14 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
+import {
+  isLiveSource,
+  productFileProblems,
+  productSetProblems,
+  publicProduct,
+  resolveProductId,
+  toCatalogProduct,
+} from "../src/data/catalog-rules.ts";
 
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
 const KEBAB = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
@@ -275,6 +283,130 @@ function readJsonDir(root, rel) {
   return { files, problems };
 }
 
+/**
+ * Slugs the content may refer to, read from the TypeScript data files with plain pattern matching
+ * (this script runs under plain node). A test compares them with the real exports, so they cannot
+ * drift. Anything whose source file is missing is left out and its checks are skipped.
+ */
+export function knownRefsFromSource(root) {
+  const read = (f) => {
+    const p = join(root, f);
+    return existsSync(p) ? readFileSync(p, "utf8") : null;
+  };
+  const out = {};
+  const hobbies = read("src/data/hobbies.ts");
+  if (hobbies)
+    out.hobbies = [...hobbies.matchAll(/^ {4}name: "([^"]+)",/gm)].map((m) =>
+      m[1]
+        .toLowerCase()
+        .replace(/&/g, "and")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, ""),
+    );
+  const prods = read("src/data/products.ts");
+  if (prods) {
+    const start = prods.indexOf("export const collections");
+    const end = prods.indexOf("\nconst p = (");
+    out.collections = [
+      ...prods.slice(start, end > start ? end : undefined).matchAll(/^ {4}slug: "([^"]+)"/gm),
+    ].map((m) => m[1]);
+  }
+  const kits = read("src/data/kits.ts");
+  if (kits) {
+    const idx = {};
+    const heads = [...kits.matchAll(/^ {4}id: "([^"]+)",/gm)];
+    heads.forEach((h, i) => {
+      const seg = kits.slice(h.index, heads[i + 1]?.index ?? kits.length);
+      idx[h[1]] = [...seg.matchAll(/\bs\(\s*"([^"]+)"/g)].map((m) => m[1]);
+    });
+    out.kits = idx;
+  }
+  const dir = join(root, "content/articles");
+  if (existsSync(dir))
+    out.articles = readdirSync(dir)
+      .filter((n) => n.endsWith(".json"))
+      .map((n) => n.slice(0, -5));
+  return out;
+}
+
+/** Read and check content/products. Returns { sources, problems } (sources are the raw, valid product files). */
+export function readProducts(root, known, now = new Date()) {
+  const { files, problems } = readJsonDir(root, "content/products");
+  const sources = [];
+  for (const { file, data } of files) {
+    const raw = dropBlanks(data);
+    const p = productFileProblems(file, raw, now);
+    if (p.length) problems.push(...p);
+    else sources.push(raw);
+  }
+  const refs =
+    known.hobbies && known.collections && known.kits
+      ? {
+          hobbies: known.hobbies,
+          collections: known.collections,
+          kits: known.kits,
+          ...(known.articles ? { articles: known.articles } : {}),
+        }
+      : undefined;
+  problems.push(...productSetProblems(sources, refs, now));
+  return { sources, problems };
+}
+
+const PRODUCT_MENTION = /\{\{product:([a-z0-9-]+)\|([^}]+)\}\}/g;
+
+/** Every string in a value, with the block field it came from. */
+function* strings(v, path = []) {
+  if (typeof v === "string") yield [path.join(" > "), v];
+  else if (Array.isArray(v)) for (const [i, x] of v.entries()) yield* strings(x, [...path, i + 1]);
+  else if (v && typeof v === "object")
+    for (const [k, x] of Object.entries(v)) yield* strings(x, [...path, k]);
+}
+
+/**
+ * Product and slug references inside one article. Every {{product:id|label}} must resolve to a live
+ * product (following "Replaced by"); nothing is ever quietly turned into plain text.
+ */
+export function articleReferenceProblems(art, byId, known, now = new Date()) {
+  const out = [];
+  const file = `content/articles/${art.slug}.json`;
+  const sourceMap = byId;
+  art.body.forEach((b, i) => {
+    const where = `${file}, block #${i + 1} (${b.type})`;
+    for (const [field, text] of strings(b)) {
+      const mentions = [...text.matchAll(PRODUCT_MENTION)];
+      const opened = (text.match(/\{\{product:/g) ?? []).length;
+      if (opened !== mentions.length)
+        out.push(
+          `${where}, field "${field}": a product mention is not written correctly. Use {{product:some-id|words to show}} with the id in lowercase letters and hyphens.`,
+        );
+      for (const m of mentions) {
+        if (!sourceMap) continue;
+        const r = resolveProductId(m[1], sourceMap, now);
+        if (!r.ok)
+          out.push(
+            `${where}, field "${field}": the product mention {{product:${m[1]}|${m[2]}}} cannot be shown: ${r.problem}. Fix it in Products (for example set "Replaced by" on the old product), or change this sentence.`,
+          );
+      }
+    }
+    const slugList = (label, vals, allowed) => {
+      if (!allowed) return;
+      for (const v of vals)
+        if (!allowed.includes(v))
+          out.push(
+            `${where}, field "${label}": "${v}" is not a known ${label === "collection" ? "shop collection" : label === "articleSlug" ? "article" : "hobby"}`,
+          );
+    };
+    if (b.type === "shopTheArticle") {
+      slugList("hobbies", b.hobbies ?? [], known.hobbies);
+      if (b.collection) slugList("collection", [b.collection], known.collections);
+      if (b.articleSlug) slugList("articleSlug", [b.articleSlug], known.articles);
+    }
+    if (b.type === "shopMyHobby") slugList("hobby", [b.hobby], known.hobbies);
+    if (b.type === "ifYouLoved") slugList("hobbies", b.hobbies, known.hobbies);
+  });
+  return out;
+}
+
 // ------------------------------------------------------------------ validation
 
 /**
@@ -424,7 +556,14 @@ export function validateContent(root, opts = {}) {
           `content/articles/${a.slug}.json, field "related": there is no article "${s}"`,
         );
     }
-  return { articles, images, problems };
+  // products: the one source every shop block, kit, collection and inline mention reads
+  const known = opts.known ?? knownRefsFromSource(root);
+  const prod = readProducts(root, known, opts.now);
+  problems.push(...prod.problems);
+  const sourceMap = new Map(prod.sources.map((p) => [p.id, p]));
+  for (const a of articles)
+    problems.push(...articleReferenceProblems(a, sourceMap, known, opts.now));
+  return { articles, images, products: prod.sources, problems };
 }
 
 // ------------------------------------------------------------------ outputs
@@ -437,6 +576,36 @@ export function articleToData(article) {
   return { ...base, body: base.body.map((b) => blockSchemas[b.type].parse(b)) };
 }
 export const articleToJson = (article) => json(articleToData(article));
+
+/** Retired (not shown) product id -> the id that replaces it. */
+export function productRedirectsFrom(sources, now = new Date()) {
+  const redirects = {};
+  for (const s of sources)
+    if (!isLiveSource(s, now) && s.replacedBy) redirects[s.id] = s.replacedBy;
+  return redirects;
+}
+
+/** The module the site imports: ONLY products that are shown, plus retired id -> replacement. */
+export function generatedCatalogModule(sources, now = new Date()) {
+  const ordered = [...sources].sort(
+    (a, b) => (a.order ?? 100000) - (b.order ?? 100000) || a.id.localeCompare(b.id),
+  );
+  const live = ordered
+    .filter((s) => isLiveSource(s, now))
+    .map((s) => publicProduct(toCatalogProduct(s)));
+  const redirects = productRedirectsFrom(ordered, now);
+  return `// GENERATED by scripts/build-content.mjs from content/products/*.json. Do not edit by hand: change
+// products in Pages CMS (Products) and the next build regenerates this file. Only products that are
+// shown are included: candidates, held and discontinued products, hold reasons and internal notes
+// never reach the browser.
+import type { CatalogProduct } from "./catalog-rules";
+
+export const generatedCatalog: CatalogProduct[] = ${JSON.stringify(live, null, 2)};
+
+/** A retired product id -> the product id that replaces it. */
+export const productRedirects: Record<string, string> = ${JSON.stringify(redirects, null, 2)};
+`;
+}
 
 export function generatedImagesModule(images) {
   const imports = [];
@@ -460,7 +629,7 @@ export function generatedImagesModule(images) {
  * With { write: false } returns the file texts without touching disk.
  */
 export function buildContent(root, opts = {}) {
-  const { articles, images, problems } = validateContent(root, opts);
+  const { articles, images, products, problems } = validateContent(root, opts);
   if (problems.length) throw new ContentError(problems);
   // Internal verification notes (coworkChecks) stay in the content files and drafts bundle; they are
   // not shipped in the public client bundle.
@@ -473,6 +642,7 @@ export function buildContent(root, opts = {}) {
     "src/content/generated/published.json": json(published),
     "src/content/generated/drafts.json": json(drafts),
     "src/data/images.generated.ts": generatedImagesModule(images),
+    "src/data/catalog.generated.ts": generatedCatalogModule(products, opts.now),
   };
   if (opts.write !== false) {
     for (const [rel, text] of Object.entries(outputs)) {
@@ -481,5 +651,5 @@ export function buildContent(root, opts = {}) {
       if (!existsSync(p) || readFileSync(p, "utf8") !== text) writeFileSync(p, text);
     }
   }
-  return { articles, published, drafts, images, outputs };
+  return { articles, published, drafts, images, products, outputs };
 }

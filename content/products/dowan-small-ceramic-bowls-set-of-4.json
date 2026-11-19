@@ -1,0 +1,63 @@
+{
+  "id": "dowan-small-ceramic-bowls-set-of-4",
+  "name": "Small Ceramic Bowls Set of 4, White",
+  "brand": "DOWAN",
+  "category": "Bowls",
+  "order": 49,
+  "status": "candidate",
+  "description": "Four small white ceramic bowls for snacks, dips and desserts; dishwasher and microwave safe per listing.",
+  "asin": "B07T66BYHS",
+  "amazonUrl": "https://www.amazon.com/dp/B07T66BYHS",
+  "specs": [
+    {
+      "label": "Count",
+      "value": "4"
+    },
+    {
+      "label": "Material",
+      "value": "ceramic"
+    },
+    {
+      "label": "Colour",
+      "value": "white"
+    }
+  ],
+  "hobbies": [
+    "book-clubs",
+    "mahjong"
+  ],
+  "articles": [
+    "how-to-start-a-book-club",
+    "how-to-host-a-mahjong-night"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "reading-book-club",
+      "slot": "snack-bowls"
+    },
+    {
+      "kit": "mahjong-night",
+      "slot": "snack-bowls"
+    }
+  ],
+  "role": "affordable",
+  "isEssential": false,
+  "audience": "Hosts serving snacks",
+  "whySelected": "Small bowls for nuts and dips.",
+  "limitations": [
+    "Listing is inconsistent on size: title says 8.5 oz, bullets say 10 oz maximum capacity",
+    "Dishwasher/microwave safety is the listing's claim",
+    "Manufacturer page not yet checked",
+    "Seller on listing: Dowan life"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B07T66BYHS"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none"
+}

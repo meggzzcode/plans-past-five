@@ -1,0 +1,64 @@
+{
+  "id": "mod-podge-acrylic-sealer-spray-gloss-12-oz",
+  "name": "Spray Acrylic Sealer, 12 oz, Gloss",
+  "brand": "Mod Podge",
+  "category": "Sealer",
+  "order": 10,
+  "status": "verified",
+  "description": "A 12 oz gloss clear acrylic spray sealer for finished craft projects.",
+  "asin": "B003VYD9DM",
+  "amazonUrl": "https://www.amazon.com/dp/B003VYD9DM",
+  "specs": [
+    {
+      "label": "Size",
+      "value": "12 oz"
+    },
+    {
+      "label": "Finish",
+      "value": "gloss"
+    },
+    {
+      "label": "Listing advice",
+      "value": "wear a fitted respirator and safety eyewear"
+    }
+  ],
+  "hobbies": [
+    "air-dry-clay"
+  ],
+  "articles": [
+    "how-to-start-air-dry-clay"
+  ],
+  "collections": [
+    "pottery-era",
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "air-dry-clay",
+      "slot": "sealer"
+    }
+  ],
+  "role": "nice-to-have",
+  "isEssential": false,
+  "audience": "People who want a protective gloss finish",
+  "whySelected": "A sealer for finished craft projects; the listing's own safety advice (respirator, eyewear) is repeated here.",
+  "limitations": [
+    "Spray sealer needs ventilation; the listing advises a respirator and eyewear",
+    "Gloss only in this listing",
+    "Do not treat as food-safe",
+    "Plaid (maker) page read 2026-11-18, as a search snippet: 12 oz gloss clear acrylic sealer for wood, metal, canvas, terra cotta; the maker says it is quick-drying and will not run, drip or yellow (maker claims, not tested by us)",
+    "Ventilation, respirator and eyewear advice comes from the Amazon listing, not the maker snippet"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B003VYD9DM",
+    "https://plaidonline.com/mod-podge-clear-acrylic-sealer-gloss-12-oz-1470"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "manufacturerUrl": "https://plaidonline.com/mod-podge-clear-acrylic-sealer-gloss-12-oz-1470",
+  "imageRights": "none",
+  "shortName": "Mod Podge gloss sealer spray",
+  "benefit": "A gloss spray to finish painted pieces. Use it outdoors or with the windows open.",
+  "lead": true
+}

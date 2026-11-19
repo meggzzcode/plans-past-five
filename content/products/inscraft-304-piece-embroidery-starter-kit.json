@@ -1,0 +1,67 @@
+{
+  "id": "inscraft-304-piece-embroidery-starter-kit",
+  "name": "304 Pack Embroidery Kit, 200 Colors, 5 Bamboo Hoops, 2 Aida Cloth",
+  "brand": "INSCRAFT",
+  "category": "Embroidery kit",
+  "order": 34,
+  "status": "verified",
+  "description": "A large embroidery starter kit: 200 floss colours, 5 bamboo hoops, 2 Aida cloth, needles, pins and tools.",
+  "asin": "B087RB2K2B",
+  "amazonUrl": "https://www.amazon.com/dp/B087RB2K2B",
+  "specs": [
+    {
+      "label": "Floss",
+      "value": "200 colours"
+    },
+    {
+      "label": "Hoops",
+      "value": "5 bamboo"
+    },
+    {
+      "label": "Cloth",
+      "value": "2 Aida"
+    },
+    {
+      "label": "Needles",
+      "value": "30"
+    },
+    {
+      "label": "Pins",
+      "value": "40"
+    },
+    {
+      "label": "Extras",
+      "value": "thimble, 1 scissor, pincushion, bag"
+    }
+  ],
+  "hobbies": [
+    "embroidery"
+  ],
+  "articles": [
+    "how-to-start-embroidery"
+  ],
+  "collections": [
+    "creative-girl"
+  ],
+  "kitSlots": [],
+  "role": "affordable",
+  "isEssential": false,
+  "audience": "People who want lots of floss to experiment",
+  "whySelected": "A lot of colours and tools in one listing.",
+  "limitations": [
+    "Aida cloth is for cross stitch: check it suits your pattern",
+    "Much of the 304 count is small accessories",
+    "Manufacturer page not yet checked",
+    "Seller on listing: not captured"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B087RB2K2B"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "check-listing",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none",
+  "shortName": "INSCRAFT embroidery set, 200 floss colors",
+  "benefit": "A big palette of floss plus five bamboo hoops for trying things out.",
+  "lead": true
+}

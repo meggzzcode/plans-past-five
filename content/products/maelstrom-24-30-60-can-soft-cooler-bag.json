@@ -1,0 +1,57 @@
+{
+  "id": "maelstrom-24-30-60-can-soft-cooler-bag",
+  "name": "24/30/60 Can Soft Cooler Bag, Double Deck",
+  "brand": "Maelstrom",
+  "category": "Cooler bag",
+  "order": 51,
+  "status": "candidate",
+  "description": "A leakproof, five-layer insulated soft cooler with an upper snack compartment.",
+  "asin": "B0CSK46585",
+  "amazonUrl": "https://www.amazon.com/dp/B0CSK46585",
+  "specs": [
+    {
+      "label": "Insulation",
+      "value": "5 layer"
+    },
+    {
+      "label": "Compartments",
+      "value": "2 (double deck)"
+    },
+    {
+      "label": "Cold hold",
+      "value": "up to 12 hours per listing"
+    }
+  ],
+  "hobbies": [
+    "picnicking"
+  ],
+  "articles": [
+    "how-to-plan-a-perfect-picnic"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "picnic",
+      "slot": "cooler"
+    }
+  ],
+  "role": "nice-to-have",
+  "isEssential": false,
+  "audience": "Picnickers carrying drinks and food",
+  "whySelected": "Second compartment keeps snacks separate.",
+  "limitations": [
+    "12-hour claim is the maker's",
+    "Listing title shows three capacities: check which size you choose",
+    "Manufacturer page not yet checked",
+    "Seller on listing: not captured"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0CSK46585"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none"
+}

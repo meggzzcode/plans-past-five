@@ -1,0 +1,62 @@
+{
+  "id": "artecho-48-color-watercolor-set-3-brushes",
+  "name": "48 Colors Watercolor Paint Set, 3 Brushes",
+  "brand": "Artecho",
+  "category": "Watercolor paints",
+  "order": 28,
+  "status": "verified",
+  "description": "A 48-pan watercolor set with three brushes in a portable case.",
+  "asin": "B0BWRCKFDH",
+  "amazonUrl": "https://www.amazon.com/dp/B0BWRCKFDH",
+  "specs": [
+    {
+      "label": "Pans",
+      "value": "48"
+    },
+    {
+      "label": "Brushes",
+      "value": "3"
+    },
+    {
+      "label": "Case",
+      "value": "portable"
+    }
+  ],
+  "hobbies": [
+    "watercolor-painting"
+  ],
+  "articles": [
+    "watercolor-painting-for-beginners"
+  ],
+  "collections": [
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "watercolor",
+      "slot": "paints"
+    }
+  ],
+  "role": "essential",
+  "isEssential": true,
+  "audience": "Beginners who want a colour-rich first palette",
+  "whySelected": "Pans, brushes and case in one box.",
+  "limitations": [
+    "48 colours is more than a beginner needs",
+    "Pigment quality and lightfastness not stated in the text read",
+    "Non-toxic status not stated: check the label",
+    "Manufacturer page not yet checked",
+    "Seller on listing: not captured"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0BWRCKFDH"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "check-listing",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none",
+  "shortName": "48-color watercolor set",
+  "benefit": "Pick one small set: this box has 48 pan colors, three brushes and a case. Use three colors at first and ignore the rest.",
+  "lead": true,
+  "onlyOne": true
+}

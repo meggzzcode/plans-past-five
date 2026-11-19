@@ -1,0 +1,61 @@
+{
+  "id": "nimiko-flameless-led-candles-with-remote",
+  "name": "Flameless Candles with Remote, Battery Operated, Timer 2/4/6/8H",
+  "brand": "Nimiko",
+  "category": "Flameless candles",
+  "order": 60,
+  "status": "candidate",
+  "description": "Battery-operated flickering LED candles with remote and timer; plastic, not waterproof.",
+  "asin": "B0BW33BV1T",
+  "amazonUrl": "https://www.amazon.com/dp/B0BW33BV1T",
+  "specs": [
+    {
+      "label": "Type",
+      "value": "LED, battery operated"
+    },
+    {
+      "label": "Timer",
+      "value": "2/4/6/8 h"
+    },
+    {
+      "label": "Remote",
+      "value": "yes"
+    },
+    {
+      "label": "Material",
+      "value": "plastic"
+    }
+  ],
+  "hobbies": [
+    "reading"
+  ],
+  "articles": [
+    "cozy-solo-dates-at-home"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "reading-book-club",
+      "slot": "candle"
+    }
+  ],
+  "role": "nice-to-have",
+  "isEssential": false,
+  "audience": "People who want candle light without flame",
+  "whySelected": "No open flame; listing says plastic and not waterproof.",
+  "limitations": [
+    "Batteries not confirmed as included",
+    "Candle count not captured",
+    "Manufacturer page not yet checked",
+    "Seller on listing: Nimiko"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0BW33BV1T"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none"
+}

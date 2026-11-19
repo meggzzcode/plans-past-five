@@ -1,0 +1,52 @@
+{
+  "id": "bradove-classic-embroidery-kit",
+  "name": "Classic Embroidery Learning Kit for Adults and Kids",
+  "brand": "Bradove",
+  "category": "Embroidery kit",
+  "order": 33,
+  "status": "verified",
+  "description": "A beginner embroidery kit with patterned fabric, thread, hoops, needles, a seam ripper and video tutorials.",
+  "asin": "B0B762JW55",
+  "amazonUrl": "https://www.amazon.com/dp/B0B762JW55",
+  "specs": [
+    {
+      "label": "Includes",
+      "value": "patterned fabrics, threads, hoops, needles, seam ripper, instructions"
+    },
+    {
+      "label": "Tutorials",
+      "value": "QR-code videos"
+    }
+  ],
+  "hobbies": [
+    "embroidery"
+  ],
+  "articles": [
+    "how-to-start-embroidery"
+  ],
+  "collections": [
+    "creative-girl"
+  ],
+  "kitSlots": [],
+  "role": "complete-kit",
+  "isEssential": true,
+  "audience": "Beginners who want one box with a guide",
+  "whySelected": "Listing says tutorials cover hoop use, separating thread, threading and basic stitches.",
+  "limitations": [
+    "Contents counts not shown in the text read",
+    "Tutorial quality not tested by us",
+    "Manufacturer page not yet checked",
+    "Seller on listing: not captured"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0B762JW55"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "check-listing",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none",
+  "shortName": "Bradove embroidery learning kit",
+  "benefit": "A boxed kit with a tutorial covering the hoop, threading and basic stitches.",
+  "lead": true,
+  "onlyOne": true
+}

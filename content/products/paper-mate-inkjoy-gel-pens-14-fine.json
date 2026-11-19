@@ -1,0 +1,57 @@
+{
+  "id": "paper-mate-inkjoy-gel-pens-14-fine",
+  "name": "InkJoy Gel Pens, Fine Point 0.5 mm, Assorted Colors, 14 Count",
+  "brand": "Paper Mate",
+  "category": "Pens",
+  "order": 46,
+  "status": "candidate",
+  "description": "Fourteen 0.5 mm gel pens in assorted colours with a comfort grip.",
+  "asin": "B07BZ3L66Z",
+  "amazonUrl": "https://www.amazon.com/dp/B07BZ3L66Z",
+  "specs": [
+    {
+      "label": "Count",
+      "value": "14"
+    },
+    {
+      "label": "Point",
+      "value": "0.5 mm"
+    },
+    {
+      "label": "Ink",
+      "value": "gel"
+    }
+  ],
+  "hobbies": [
+    "reading"
+  ],
+  "articles": [
+    "how-to-start-a-reading-journal"
+  ],
+  "collections": [
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "reading-book-club",
+      "slot": "pens"
+    }
+  ],
+  "role": "affordable",
+  "isEssential": false,
+  "audience": "Journalers who want colour options",
+  "whySelected": "Brand-name fine-point set; listing claims faster drying.",
+  "limitations": [
+    "\"Dries 3X faster\" is the maker's claim on the listing",
+    "Gel ink can show through thin pages",
+    "Manufacturer page not yet checked",
+    "Seller on listing: not captured"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B07BZ3L66Z"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none"
+}

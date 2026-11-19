@@ -1,0 +1,61 @@
+{
+  "id": "niupipo-pickleball-paddles-set-of-2-with-balls",
+  "name": "Pickleball Paddles Set of 2, USAPA Approved Fiberglass, Balls and Bag",
+  "brand": "niupipo",
+  "category": "Pickleball paddles",
+  "order": 55,
+  "status": "candidate",
+  "description": "Two fiberglass honeycomb-core paddles with balls and a bag.",
+  "asin": "B08C73KK4R",
+  "amazonUrl": "https://www.amazon.com/dp/B08C73KK4R",
+  "specs": [
+    {
+      "label": "Paddles",
+      "value": "2"
+    },
+    {
+      "label": "Face",
+      "value": "fiberglass, polypropylene honeycomb core"
+    },
+    {
+      "label": "Weight",
+      "value": "7.62-8 oz"
+    },
+    {
+      "label": "Grip",
+      "value": "4.72 in length"
+    }
+  ],
+  "hobbies": [
+    "pickleball"
+  ],
+  "articles": [
+    "pickleball-for-beginners"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "racquet-sports",
+      "slot": "paddles"
+    }
+  ],
+  "role": "complete-kit",
+  "isEssential": true,
+  "audience": "Beginner pairs",
+  "whySelected": "Includes balls and bag; listing says USAPA approved.",
+  "limitations": [
+    "USAPA approval is the listing's claim: we did not check the approved list",
+    "Lists \"set of 2 or 4\": confirm the option chosen",
+    "Manufacturer page not yet checked",
+    "Seller on listing: niupipo US"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B08C73KK4R"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none"
+}

@@ -1,0 +1,62 @@
+{
+  "id": "hiraliy-27-inch-tennis-racket-with-ball-bag",
+  "name": "27-Inch Tennis Racket for Adults with Ball and Carry Bag",
+  "brand": "HIRALIY",
+  "category": "Tennis racquet",
+  "order": 57,
+  "status": "candidate",
+  "description": "A 27 in aluminum adult racquet with pressureless ball, spare overgrips and carry bag.",
+  "asin": "B09731Z6R8",
+  "amazonUrl": "https://www.amazon.com/dp/B09731Z6R8",
+  "specs": [
+    {
+      "label": "Length",
+      "value": "27 in"
+    },
+    {
+      "label": "Material",
+      "value": "aluminum"
+    },
+    {
+      "label": "Weight",
+      "value": "about 260 g"
+    },
+    {
+      "label": "Includes",
+      "value": "ball, overgrips, bag"
+    }
+  ],
+  "hobbies": [
+    "tennis"
+  ],
+  "articles": [
+    "how-to-start-playing-tennis-as-an-adult"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "racquet-sports",
+      "slot": "racquet"
+    }
+  ],
+  "role": "complete-kit",
+  "isEssential": true,
+  "audience": "Casual beginners",
+  "whySelected": "Everything for a first hit in one listing.",
+  "limitations": [
+    "Aluminum frames are for casual play, not serious improvement",
+    "Many courts rent racquets: try one first",
+    "Listing says \"rackets\": check quantity",
+    "Manufacturer page not yet checked",
+    "Seller on listing: 11HOME"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B09731Z6R8"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none"
+}

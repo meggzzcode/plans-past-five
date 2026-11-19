@@ -1,0 +1,69 @@
+{
+  "id": "mutex-american-mahjong-set-166-walnut-racks",
+  "name": "American Mahjong Set, 166 Tiles, 4 Walnut Wooden Racks, Blue Bag",
+  "brand": "MUTEX",
+  "category": "Mahjong set",
+  "order": 18,
+  "status": "verified",
+  "description": "A 166-tile American mahjong set in a blue carrying bag with four racks, dice, chips and a wind indicator.",
+  "asin": "B0FM7P49H7",
+  "amazonUrl": "https://www.amazon.com/dp/B0FM7P49H7",
+  "specs": [
+    {
+      "label": "Tiles",
+      "value": "166 melamine"
+    },
+    {
+      "label": "Racks",
+      "value": "4 with wooden internals"
+    },
+    {
+      "label": "Dice",
+      "value": "3"
+    },
+    {
+      "label": "Chips",
+      "value": "100"
+    },
+    {
+      "label": "Bag",
+      "value": "blue carrying bag"
+    }
+  ],
+  "hobbies": [
+    "mahjong"
+  ],
+  "articles": [
+    "how-to-host-a-mahjong-night"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "mahjong-night",
+      "slot": "set"
+    }
+  ],
+  "role": "complete-kit",
+  "isEssential": true,
+  "audience": "Hosts who want a set with racks included",
+  "whySelected": "Complete American set with an included instruction booklet; listing describes racks with wooden internals.",
+  "limitations": [
+    "Melamine tile quality is the listing's description only",
+    "Card is not included",
+    "Size per listing is \"traveler\"",
+    "Manufacturer page not yet checked",
+    "Seller on listing: SGV Top Shelf"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0FM7P49H7"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "check-listing",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none",
+  "shortName": "MUTEX American mahjong set, walnut racks",
+  "benefit": "166 tiles, four walnut-finish racks and an instruction booklet for newcomers.",
+  "compare": "Warm walnut racks and a rules booklet; the card is separate."
+}

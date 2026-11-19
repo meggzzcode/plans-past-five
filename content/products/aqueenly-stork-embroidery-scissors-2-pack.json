@@ -1,0 +1,55 @@
+{
+  "id": "aqueenly-stork-embroidery-scissors-2-pack",
+  "name": "Embroidery Scissors, Stork, 2 Pcs, 3.6 in, Gold",
+  "brand": "AQUEENLY",
+  "category": "Embroidery scissors",
+  "order": 35,
+  "status": "verified",
+  "description": "Two small stainless steel stork-style scissors with a gold finish.",
+  "asin": "B07KZPRBQT",
+  "amazonUrl": "https://www.amazon.com/dp/B07KZPRBQT",
+  "specs": [
+    {
+      "label": "Pack",
+      "value": "2"
+    },
+    {
+      "label": "Length",
+      "value": "3.6 in"
+    },
+    {
+      "label": "Material",
+      "value": "stainless steel"
+    }
+  ],
+  "hobbies": [
+    "embroidery"
+  ],
+  "articles": [
+    "how-to-start-embroidery"
+  ],
+  "collections": [
+    "creative-girl"
+  ],
+  "kitSlots": [],
+  "role": "affordable",
+  "isEssential": false,
+  "audience": "Stitchers who want small thread snips",
+  "whySelected": "Small pointed blades for trimming thread.",
+  "limitations": [
+    "Sharpness and rust resistance are the listing's claims",
+    "Sharp points: keep away from children",
+    "Manufacturer page not yet checked",
+    "Seller on listing: not captured"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B07KZPRBQT"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "check-listing",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none",
+  "shortName": "Gold stork embroidery scissors, 2-pack",
+  "benefit": "Small gold scissors for snipping thread, a pair for each project bag.",
+  "lead": true
+}

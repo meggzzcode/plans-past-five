@@ -1,0 +1,67 @@
+{
+  "id": "scotch-6061-tape-runner-3-pack",
+  "name": "6061 Double Sided Adhesive Roller Tape Runner, 0.27 in x 26 ft, Pack of 3",
+  "brand": "Scotch",
+  "category": "Adhesive",
+  "order": 5,
+  "status": "verified",
+  "description": "A three-pack of double-sided tape runners that the listing describes as permanent, acid-free and photo-safe.",
+  "asin": "B0FP6NW64R",
+  "amazonUrl": "https://www.amazon.com/dp/B0FP6NW64R",
+  "specs": [
+    {
+      "label": "Pack",
+      "value": "3"
+    },
+    {
+      "label": "Tape",
+      "value": "0.27 in x 26 ft per roller"
+    },
+    {
+      "label": "Claims on listing",
+      "value": "permanent, acid-free, photo-safe"
+    }
+  ],
+  "hobbies": [
+    "junk-journaling"
+  ],
+  "articles": [
+    "junk-journaling-supplies-for-beginners",
+    "how-to-start-junk-journaling"
+  ],
+  "collections": [
+    "journaling-era",
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "junk-journaling",
+      "slot": "adhesive"
+    }
+  ],
+  "role": "researched-pick",
+  "isEssential": false,
+  "audience": "Beginners who dislike wrinkly glue",
+  "whySelected": "A no-dry-time, no-wrinkle alternative to glue; the listing says acid-free and photo-safe.",
+  "limitations": [
+    "Permanent adhesive: hard to reposition",
+    "Runner can run out mid-page",
+    "Manufacturer page not yet checked",
+    "Scotch 6061 page was not found on the maker site (2026-11-18): the claims stay attributed to the listing",
+    "2026-11-19: scotchbrand.com blocked fetch; search snippets showed other Scotch double-sided runners but no 6061 page: still not confirmed",
+    "2026-11-19 retry: 3M's own roller & runner page lists \"Scotch Double Sided Adhesive Roller 6061, .27 in x 26 ft (7 mm x 8 m)\" (https://www.3m.com/3M/en_US/p/c/tapes/office/roller-runner), so the product exists as sold by the maker. Acid-free / photo-safe is NOT confirmed: one retailer lists it acid-free and photo-safe (Newegg, 6-pack), another lists \"Non Acid Free\" (Staples, 6061). Do not say photo-safe. Pack of 3 not on the maker page. Use the confirmed Scotch glue stick for photos",
+    "2026-11-19: REPLACE with scotch-tape-runner-extra-strength-055 if photo-safe matters",
+    "Sold by a third-party seller, and retailers differ on the permanent and photo-safe wording: check the package before using it on photos"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0FP6NW64R",
+    "https://www.3m.com/3M/en_US/p/c/tapes/office/roller-runner"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none",
+  "shortName": "Scotch tape runners, 3-pack",
+  "benefit": "Rolls on dry tape instead of wet glue, so there is nothing to wait for.",
+  "compare": "Tidier than a glue stick, but permanent: you can't lift it once placed."
+}

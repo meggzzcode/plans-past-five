@@ -1,5 +1,14 @@
 import { afterAll, describe, expect, it } from "vitest";
-import { cpSync, existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import {
+  cpSync,
+  existsSync,
+  mkdirSync,
+  mkdtempSync,
+  readdirSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { spawnSync } from "node:child_process";
 import { tmpdir } from "node:os";
 import { createHash } from "node:crypto";
@@ -7,11 +16,9 @@ import path from "node:path";
 import {
   COLUMNS,
   checkHeader,
-  MAX_SHRINK,
   decodeCsvBuffer,
   importCsv,
   parseCsv,
-  shrinkProblem,
 } from "../../scripts/import-products.mjs";
 import {
   filterVerified,
@@ -402,24 +409,29 @@ describe("rejections carry the line number and a fixable message", () => {
 describe("importer safety (CLI against temp copies)", () => {
   const repo = path.resolve(__dirname, "../..");
   const script = path.join(repo, "scripts/import-products.mjs");
-  const realCatalog = path.join(repo, "src/data/catalog.generated.ts");
-  const hash = (f: string) => createHash("sha256").update(readFileSync(f)).digest("hex");
-  const realBefore = hash(realCatalog);
+  const realProducts = path.join(repo, "content/products");
+  const snapshot = (d: string) =>
+    readdirSync(d)
+      .sort()
+      .map((f) => `${f}\n${readFileSync(path.join(d, f), "utf8")}`)
+      .join("\n");
+  const hash = (d: string) => createHash("sha256").update(snapshot(d)).digest("hex");
+  const realBefore = hash(realProducts);
   const dirs: string[] = [];
   const workdir = () => {
     const d = mkdtempSync(path.join(tmpdir(), "import-"));
     dirs.push(d);
-    // The "current catalog": a copy of the real one, so shrink and no-overwrite behaviour is realistic.
-    cpSync(realCatalog, path.join(d, "catalog.generated.ts"));
+    // The "current products": a copy of the real folder, so no-overwrite behaviour is realistic.
+    cpSync(realProducts, path.join(d, "products"), { recursive: true });
     return d;
   };
   afterAll(() => {
     dirs.forEach((d) => rmSync(d, { recursive: true, force: true }));
-    // Nothing in this block may ever touch the shipped catalog.
-    expect(hash(realCatalog)).toBe(realBefore);
+    // Nothing in this block may ever touch the real product files.
+    expect(hash(realProducts)).toBe(realBefore);
   });
   const cli = (dir: string, args: string[]) => {
-    const r = spawnSync("bun", [script, ...args, "--out", path.join(dir, "catalog.generated.ts")], {
+    const r = spawnSync("bun", [script, ...args, "--out", path.join(dir, "products")], {
       cwd: dir,
       encoding: "utf8",
     });
@@ -430,7 +442,7 @@ describe("importer safety (CLI against temp copies)", () => {
     writeFileSync(f, text);
     return f;
   };
-  const current = (dir: string) => readFileSync(path.join(dir, "catalog.generated.ts"), "utf8");
+  const current = (dir: string) => snapshot(path.join(dir, "products"));
   /** A run that must fail and leave the current catalog byte-for-byte unchanged. */
   const refuses = (rows: Row[] | string, pattern: RegExp, extra: string[] = []) => {
     const dir = workdir();
@@ -441,7 +453,7 @@ describe("importer safety (CLI against temp copies)", () => {
     expect(r.out).toMatch(pattern);
     expect(r.out).toMatch(/Nothing was written|NOT overwritten|catalog was NOT/);
     expect(current(dir)).toBe(before);
-    expect(existsSync(path.join(dir, "catalog.generated.ts.tmp"))).toBe(false);
+    expect(readdirSync(path.join(dir, "products")).some((n) => n.includes(".tmp"))).toBe(false);
     return r.out;
   };
   const NEW = (o: Row = {}): Row => withRow({ lastVerified: "2026-01-02", ...o });
@@ -462,14 +474,14 @@ describe("importer safety (CLI against temp copies)", () => {
     expect(r.out).toMatch(/file not found/);
     expect(current(dir)).toBe(before);
   });
-  it("--help prints usage, documents --check and --force, and writes nothing", () => {
+  it("--help prints usage, documents --check and --update, and writes nothing", () => {
     const dir = workdir();
     const before = current(dir);
     const r = cli(dir, ["--help"]);
     expect(r.code).toBe(0);
     expect(r.out).toMatch(/Usage: bun run import:products/);
     expect(r.out).toMatch(/--check/);
-    expect(r.out).toMatch(/--force/);
+    expect(r.out).toMatch(/--update/);
     expect(current(dir)).toBe(before);
   });
   it("empty input and header-only input never overwrite the catalog", () => {
@@ -542,39 +554,44 @@ describe("importer safety (CLI against temp copies)", () => {
     expect(r.out).toMatch(/OK: 1 products .* Nothing was written/);
     expect(current(dir)).toBe(before);
   });
-  it("a valid import writes the catalog atomically, with no temp file left", () => {
+  it("a valid import writes one file per new product, atomically, with no temp file left", () => {
     const dir = workdir();
-    const out = path.join(dir, "fresh.generated.ts");
     const f = put(dir, csv([NEW(), NEW({ id: "second-item", asin: "B0IMAGINA2" })]));
-    const r = spawnSync("bun", [script, f, "--out", out], { cwd: dir, encoding: "utf8" });
-    expect(r.status, r.stderr).toBe(0);
-    const body = readFileSync(out, "utf8");
-    expect(body).toMatch(/GENERATED by `bun run import:products`/);
-    expect(body).toMatch(/"id": "wash-tape-set"/);
-    expect(body).toMatch(/"id": "second-item"/);
-    expect(existsSync(`${out}.tmp-${r.pid}`)).toBe(false);
-  });
-  it("refuses a write that shrinks the catalog by more than 30%, unless --force", () => {
-    const dir = workdir();
-    const before = current(dir);
-    const f = put(dir, csv([NEW()]));
     const r = cli(dir, [f]);
-    expect(r.code).toBe(1);
-    expect(r.out).toMatch(/fewer, more than 30%.*--force/);
+    expect(r.code, r.out).toBe(0);
+    const one = JSON.parse(readFileSync(path.join(dir, "products/wash-tape-set.json"), "utf8"));
+    expect(one.id).toBe("wash-tape-set");
+    expect(existsSync(path.join(dir, "products/second-item.json"))).toBe(true);
+    expect(readdirSync(path.join(dir, "products")).some((n) => n.includes(".tmp"))).toBe(false);
+  });
+  it("never overwrites an existing product file unless --update is given, and never deletes", () => {
+    const dir = workdir();
+    const f = put(dir, csv([NEW()]));
+    expect(cli(dir, [f]).code).toBe(0);
+    const before = current(dir);
+    const again = cli(dir, [put(dir, csv([NEW({ name: "A different name" })]), "b.csv")]);
+    expect(again.code).toBe(0);
+    expect(again.out).toMatch(/skipped 1 that already exist/);
     expect(current(dir)).toBe(before);
-    const forced = cli(dir, [f, "--force"]);
+    const forced = cli(dir, [
+      put(dir, csv([NEW({ name: "A different name" })]), "c.csv"),
+      "--update",
+    ]);
     expect(forced.code).toBe(0);
-    expect(current(dir)).toMatch(/"id": "wash-tape-set"/);
-    expect(current(dir)).not.toBe(before);
+    expect(current(dir)).toMatch(/A different name/);
+    // a small CSV never removes the other products
+    expect(readdirSync(path.join(dir, "products")).length).toBeGreaterThanOrEqual(67);
   });
-  it("shrinkProblem allows up to a 30% reduction and growth, and ignores an empty current catalog", () => {
-    expect(MAX_SHRINK).toBe(0.3);
-    expect(shrinkProblem(100, 70)).toBe("");
-    expect(shrinkProblem(100, 69)).toMatch(/31% fewer/);
-    expect(shrinkProblem(100, 150)).toBe("");
-    expect(shrinkProblem(0, 1)).toBe("");
+  it("a held row becomes status held with its reason", () => {
+    const dir = workdir();
+    const r = cli(dir, [put(dir, csv([NEW({ hold: "audience fit" })]))]);
+    expect(r.code, r.out).toBe(0);
+    const one = JSON.parse(readFileSync(path.join(dir, "products/wash-tape-set.json"), "utf8"));
+    expect(one.status).toBe("held");
+    expect(one.statusReason).toBe("audience fit");
+    expect(one.hold).toBeUndefined();
   });
-  it("the real catalog file was not touched by these tests", () => {
-    expect(hash(realCatalog)).toBe(realBefore);
+  it("the real product files were not touched by these tests", () => {
+    expect(hash(realProducts)).toBe(realBefore);
   });
 });

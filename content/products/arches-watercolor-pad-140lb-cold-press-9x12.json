@@ -1,0 +1,65 @@
+{
+  "id": "arches-watercolor-pad-140lb-cold-press-9x12",
+  "name": "Watercolor Paper Pad, 140 lb, Cold Press, 9 x 12 in",
+  "brand": "Arches",
+  "category": "Watercolor paper",
+  "order": 31,
+  "status": "verified",
+  "description": "A 9 x 12 in cold-press pad of cotton watercolor paper.",
+  "asin": "B01EQHJH10",
+  "amazonUrl": "https://www.amazon.com/dp/B01EQHJH10",
+  "specs": [
+    {
+      "label": "Weight",
+      "value": "140 lb"
+    },
+    {
+      "label": "Surface",
+      "value": "cold press"
+    },
+    {
+      "label": "Size",
+      "value": "9 x 12 in"
+    },
+    {
+      "label": "Fibre",
+      "value": "100% cotton per listing"
+    }
+  ],
+  "hobbies": [
+    "watercolor-painting"
+  ],
+  "articles": [
+    "watercolor-painting-for-beginners"
+  ],
+  "collections": [
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "watercolor",
+      "slot": "paper"
+    }
+  ],
+  "role": "nice-to-have",
+  "isEssential": false,
+  "audience": "People who want paper that handles water well",
+  "whySelected": "Listing describes long-fibre cotton paper.",
+  "limitations": [
+    "Sheet count not stated in the text read",
+    "Premium paper is more than a first practice needs",
+    "Manufacturer page not yet checked",
+    "Seller on listing: not captured",
+    "Sold by a third-party seller, not by Arches: check the seller"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B01EQHJH10"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "check-listing",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none",
+  "shortName": "Arches cold-press pad, 9 x 12 in",
+  "benefit": "Cotton watercolor paper in a 140 lb cold-press pad.",
+  "compare": "A step up in paper quality once you are hooked."
+}

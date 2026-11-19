@@ -1,0 +1,63 @@
+{
+  "id": "esrich-8x10-stretched-canvas-10-pack",
+  "name": "Stretched Canvases for Painting, 8 x 10 in, 10 Pack",
+  "brand": "ESRICH",
+  "category": "Canvas",
+  "order": 43,
+  "status": "verified",
+  "description": "Ten primed, cotton 8 x 10 in canvases on 5/8 in pine frames; the listing describes them as primed and acid-free.",
+  "asin": "B0CH3K5F62",
+  "amazonUrl": "https://www.amazon.com/dp/B0CH3K5F62",
+  "specs": [
+    {
+      "label": "Count",
+      "value": "10"
+    },
+    {
+      "label": "Size",
+      "value": "8 x 10 in"
+    },
+    {
+      "label": "Frame",
+      "value": "5/8 in pine"
+    },
+    {
+      "label": "Primed weight",
+      "value": "8 oz per listing"
+    }
+  ],
+  "hobbies": [
+    "paint-by-numbers"
+  ],
+  "articles": [
+    "how-to-host-a-paint-night-at-home"
+  ],
+  "collections": [],
+  "kitSlots": [
+    {
+      "kit": "pottery-paint-night",
+      "slot": "canvas"
+    }
+  ],
+  "role": "essential",
+  "isEssential": true,
+  "audience": "Hosts who need one canvas per guest",
+  "whySelected": "Ten canvases cover a group; listing says pre-coated with gesso.",
+  "limitations": [
+    "Primed and acid-free wording is the listing's claim",
+    "Ten may exceed a small group",
+    "Manufacturer page not yet checked",
+    "Seller on listing: CLOYAN"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0CH3K5F62"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "check-listing",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none",
+  "shortName": "8 x 10 canvases, 10-pack",
+  "benefit": "Ten primed canvases: one for every guest, plus spares for the \"let me try again\".",
+  "lead": true,
+  "onlyOne": true
+}

@@ -1,0 +1,65 @@
+{
+  "id": "jongyance-american-mahjong-set-white-tiles",
+  "name": "American Mahjong Set with Blue Carrying Bag, 166 White Tiles, 4 All-in-One Racks/Pushers",
+  "brand": "Jongyance",
+  "category": "Mahjong sets",
+  "order": 11,
+  "status": "held",
+  "statusReason": "Near-duplicate of the other 166-tile American sets (white tiles instead of blue); adds a decision, not a new option. Held to keep the choice small.",
+  "description": "A 166-tile American mahjong set with four rack-and-pusher units and a zip carrying bag.",
+  "asin": "B0D2TVXS2W",
+  "amazonUrl": "https://www.amazon.com/dp/B0D2TVXS2W",
+  "specs": [
+    {
+      "label": "Tiles",
+      "value": "166 melamine"
+    },
+    {
+      "label": "Tile size",
+      "value": "1.2 x 0.9 x 0.5 in"
+    },
+    {
+      "label": "Includes",
+      "value": "36 dots, 36 bams, 36 craks, 12 dragons, 16 winds, 16 flowers, 10 jokers, 4 blanks"
+    },
+    {
+      "label": "Racks",
+      "value": "4 all-in-one rack/pushers"
+    }
+  ],
+  "hobbies": [
+    "mahjong"
+  ],
+  "articles": [
+    "how-to-host-a-mahjong-night"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "mahjong-night",
+      "slot": "set"
+    }
+  ],
+  "role": "complete-kit",
+  "isEssential": true,
+  "audience": "Beginners hosting an American-style game",
+  "whySelected": "A complete American-style set: 166 tiles including jokers, racks and a bag, so the tile count matches the American card.",
+  "limitations": [
+    "Sold by a third-party seller; check the seller and stock",
+    "Private-label brand with no manufacturer page found yet",
+    "The listing's included extras and manual should be checked at purchase",
+    "Only for the American 166-tile variant, not Chinese or Riichi"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0D2TVXS2W"
+  ],
+  "lastVerified": "2026-11-18",
+  "availability": "check-listing",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none",
+  "shortName": "Jongyance American mahjong set, white tiles",
+  "benefit": "A complete 166-tile American set with racks and a carry bag.",
+  "compare": "White tiles instead of blue; racks and bag included."
+}

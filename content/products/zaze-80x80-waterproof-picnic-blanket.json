@@ -1,0 +1,61 @@
+{
+  "id": "zaze-80x80-waterproof-picnic-blanket",
+  "name": "Extra Large Picnic Blanket, 80 x 80 in, Waterproof, Gingham",
+  "brand": "ZAZE",
+  "category": "Picnic blanket",
+  "order": 50,
+  "status": "candidate",
+  "description": "Oversized foldable five-layer picnic blanket with waterproof backing.",
+  "asin": "B08HGY1Q4K",
+  "amazonUrl": "https://www.amazon.com/dp/B08HGY1Q4K",
+  "specs": [
+    {
+      "label": "Size",
+      "value": "80 x 80 in"
+    },
+    {
+      "label": "Layers",
+      "value": "5"
+    },
+    {
+      "label": "Backing",
+      "value": "waterproof per listing"
+    },
+    {
+      "label": "Washable",
+      "value": "machine per listing"
+    }
+  ],
+  "hobbies": [
+    "picnicking"
+  ],
+  "articles": [
+    "how-to-plan-a-perfect-picnic"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "picnic",
+      "slot": "blanket"
+    }
+  ],
+  "role": "essential",
+  "isEssential": true,
+  "audience": "Picnickers who want room for a group",
+  "whySelected": "Size is stated for 4-8 adults sitting.",
+  "limitations": [
+    "\"Waterproof\" and washability are the listing's claims",
+    "Folded size not captured",
+    "Manufacturer page not yet checked",
+    "Seller on listing: WD-2020"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B08HGY1Q4K"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none"
+}

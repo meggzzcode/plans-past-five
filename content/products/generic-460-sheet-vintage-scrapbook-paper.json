@@ -1,0 +1,56 @@
+{
+  "id": "generic-460-sheet-vintage-scrapbook-paper",
+  "name": "460 Sheets Vintage Scrapbook Paper Kit",
+  "brand": "not stated on listing",
+  "category": "Scrapbook paper",
+  "order": 22,
+  "status": "candidate",
+  "description": "A 460-sheet assortment of small vintage-style papers in seven sizes.",
+  "asin": "B0DJBKT452",
+  "amazonUrl": "https://www.amazon.com/dp/B0DJBKT452",
+  "specs": [
+    {
+      "label": "Sheets",
+      "value": "460 (230 patterns x 2)"
+    },
+    {
+      "label": "Sizes",
+      "value": "seven small sizes"
+    }
+  ],
+  "hobbies": [
+    "junk-journaling"
+  ],
+  "articles": [
+    "junk-journaling-supplies-for-beginners",
+    "how-to-start-junk-journaling"
+  ],
+  "collections": [
+    "journaling-era",
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "junk-journaling",
+      "slot": "paper"
+    }
+  ],
+  "role": "nice-to-have",
+  "isEssential": false,
+  "audience": "People who want a lot of small pieces cheaply",
+  "whySelected": "Pre-cut small sizes need little cutting.",
+  "limitations": [
+    "Brand not stated",
+    "Paper weight and print quality not stated",
+    "Vintage prints may include reproduced imagery: check rights before selling anything made from it",
+    "Manufacturer page not yet checked",
+    "Seller on listing: BetterLifeforAll"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0DJBKT452"
+  ],
+  "lastVerified": "2026-11-18",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none"
+}

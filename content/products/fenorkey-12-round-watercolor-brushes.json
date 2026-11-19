@@ -1,0 +1,60 @@
+{
+  "id": "fenorkey-12-round-watercolor-brushes",
+  "name": "12pc Round Watercolor Brushes (Nylon)",
+  "brand": "FENORKEY",
+  "category": "Brushes",
+  "order": 30,
+  "status": "verified",
+  "description": "Twelve nylon round brushes for watercolor, acrylic and gouache.",
+  "asin": "B07WH8T6LH",
+  "amazonUrl": "https://www.amazon.com/dp/B07WH8T6LH",
+  "specs": [
+    {
+      "label": "Count",
+      "value": "12"
+    },
+    {
+      "label": "Hair",
+      "value": "nylon"
+    },
+    {
+      "label": "Shape",
+      "value": "round"
+    }
+  ],
+  "hobbies": [
+    "watercolor-painting"
+  ],
+  "articles": [
+    "watercolor-painting-for-beginners"
+  ],
+  "collections": [
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "watercolor",
+      "slot": "brushes"
+    }
+  ],
+  "role": "affordable",
+  "isEssential": false,
+  "audience": "Budget-minded beginners",
+  "whySelected": "Larger count at low commitment; nylon is easy to rinse.",
+  "limitations": [
+    "Shedding resistance is the listing's claim",
+    "All round shapes",
+    "Manufacturer page not yet checked",
+    "Seller on listing: not captured"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B07WH8T6LH"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "check-listing",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none",
+  "shortName": "Fenorkey nylon round brushes, 12 pieces",
+  "benefit": "Twelve nylon round brushes that rinse clean.",
+  "compare": "More brushes, in nylon rather than goat hair; all round shapes."
+}

@@ -15,3 +15,5 @@
 
 [build.environment]
   NITRO_PRESET = "netlify"
+  # The content build loads a TypeScript rules file with plain node (needs Node 22.18 or newer).
+  NODE_VERSION = "22"

@@ -1,0 +1,57 @@
+{
+  "id": "auhoahsil-12-round-acrylic-paint-brushes",
+  "name": "Acrylic Paint Brushes Set, 12pcs Round-Pointed Tip",
+  "brand": "not stated on listing",
+  "category": "Brushes",
+  "order": 42,
+  "status": "candidate",
+  "description": "Twelve round-tip brushes in sizes 0-12 for acrylic, watercolor and craft painting.",
+  "asin": "B087W3PT95",
+  "amazonUrl": "https://www.amazon.com/dp/B087W3PT95",
+  "specs": [
+    {
+      "label": "Count",
+      "value": "12"
+    },
+    {
+      "label": "Shape",
+      "value": "round-pointed"
+    },
+    {
+      "label": "Lengths",
+      "value": "17.7-21.7 cm"
+    }
+  ],
+  "hobbies": [
+    "craft-nights",
+    "paint-by-numbers"
+  ],
+  "articles": [
+    "how-to-host-a-paint-night-at-home"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "pottery-paint-night",
+      "slot": "brushes"
+    }
+  ],
+  "role": "affordable",
+  "isEssential": false,
+  "audience": "Budget painters, detail work",
+  "whySelected": "Many sizes for detail work.",
+  "limitations": [
+    "Round only: no flat brush for base coats",
+    "Manufacturer page not yet checked",
+    "Seller on listing: Auhoahsil Direct"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B087W3PT95"
+  ],
+  "lastVerified": "2026-11-18",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "imageRights": "none"
+}
