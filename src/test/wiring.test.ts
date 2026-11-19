@@ -54,12 +54,23 @@ describe("HTML security headers", () => {
 });
 
 describe("verification meta tags", () => {
-  it("renders nothing by default", () => {
-    expect(site.integrations.searchConsoleVerification).toBe("");
-    expect(site.integrations.pinterestVerification).toBe("");
-    expect(verificationMeta()).toEqual([]);
+  it("renders exactly the tags whose settings are filled in (none when all are empty)", () => {
+    const i = site.integrations;
+    const filled = [
+      i.searchConsoleVerification,
+      i.bingVerification,
+      i.pinterestVerification,
+    ].filter((v) => v.trim() !== "");
+    expect(verificationMeta()).toHaveLength(filled.length);
   });
   it("renders each tag only when its field is non-empty", () => {
+    expect(
+      verificationMeta({
+        searchConsoleVerification: "",
+        bingVerification: "bing1",
+        pinterestVerification: "",
+      }),
+    ).toEqual([{ name: "msvalidate.01", content: "bing1" }]);
     expect(
       verificationMeta({ searchConsoleVerification: "abc", pinterestVerification: "" }),
     ).toEqual([{ name: "google-site-verification", content: "abc" }]);

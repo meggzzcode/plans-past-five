@@ -8,6 +8,7 @@
 import type { SavedItem, SavedKind } from "@/lib/saved";
 import { sanitizePlanData, type SavedPlanData } from "@/lib/planner";
 import type { ShopListState, ShopStatus } from "@/lib/shoplist";
+import { site } from "@/config/site";
 
 export const BUNDLE_APP = "plans-past-five";
 export const BUNDLE_VERSION = 1;
@@ -163,7 +164,7 @@ export function cleanShopList(raw: unknown): { items: ShopListState; skipped: nu
 export type ImportResult =
   { ok: true; bundle: Bundle; skipped: number } | { ok: false; error: string };
 
-const NOT_OURS = "That doesn't look like a Plans Past Five backup.";
+const NOT_OURS = `That doesn't look like a ${site.name} backup.`;
 
 /** Accepts the text of a .json backup or a pasted code (PPF1.…). Never throws. */
 export function parseImport(input: unknown): ImportResult {

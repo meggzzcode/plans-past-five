@@ -40,7 +40,8 @@ export const Route = createFileRoute("/hobbies/$slug")({
           : ""
       }.`,
       path: `/hobbies/${h.slug}`,
-      ...(h.image ? { image: absoluteUrl(images[h.image].src) } : {}),
+      // A noindex page carries no preview image (seo.ts would otherwise add one for any hobby with a picture).
+      ...(h.image && isHobbyIndexable(h.slug) ? { image: absoluteUrl(images[h.image].src) } : {}),
       noindex: !isHobbyIndexable(h.slug),
     });
   },

@@ -103,8 +103,9 @@ describe("pre-publish placeholder check", () => {
         `[pre-publish] Owner-supplied fields still empty, so these lines will not appear on the live site: ${empties.join(", ")}. See docs/buyer/PUBLISHER-SETUP.md.`,
       );
     // Values that ARE set must be real: no example/placeholder text, https-only URL.
+    // (site.contactEmail is checked, with plain-English messages, by the content build instead.)
     for (const [k, v] of Object.entries(fields)) {
-      if (!v.trim()) continue;
+      if (!v.trim() || k === "site.contactEmail") continue;
       expect(v, k).not.toMatch(
         /example\.(com|org)|lorem|tbd|todo|your[- ]name|placeholder|\[.*\]/i,
       );

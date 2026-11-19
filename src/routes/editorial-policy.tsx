@@ -9,8 +9,7 @@ export const Route = createFileRoute("/editorial-policy")({
   head: () =>
     seo({
       title: "Editorial Standards",
-      description:
-        "How Plans Past Five picks hobbies and products, how we use AI tools and images, what we'll never make up, and how we fix mistakes.",
+      description: `How ${site.name} picks hobbies and products, how we use AI tools and images, what we'll never make up, and how we fix mistakes.`,
       path: "/editorial-policy",
       jsonLd: [
         breadcrumbJsonLd([

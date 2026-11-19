@@ -82,7 +82,7 @@ describe("route metadata", () => {
       const og = (head.meta as { property?: string; content?: string }[]).find(
         (m) => m.property === "og:image",
       );
-      expect(og?.content, `${file} og:image`).toMatch(/^https:\/\/planspastfive\.com\//);
+      expect(og?.content?.startsWith(`${site.url}/`), `${file} og:image`).toBe(true);
     }
   });
 

@@ -1,8 +1,10 @@
-# CMS real-login test plan (for Cowork)
+# CMS real-login test plan (for Cowork and the owner)
 
 > **NOT YET TESTED WITH A REAL LOGIN.** The CMS is configured (`.pages.yml`) and the content checks are tested, but nobody has yet signed in to Pages CMS with the owner's GitHub login, edited a real article, or pressed Netlify's Trigger deploy on this site. Do not treat it as fully operational until `docs/buyer/CMS-TEST-PLAN.md` has been run and recorded as passed.
 
-Goal: prove the real workflow with the owner's GitHub login and a real Netlify project, then record the result. Use a throwaway article and image. Budget: 2 publishes (30 credits).
+**MANDATORY, NOT YET DONE.** Do it on a throwaway repository and a throwaway Netlify site, never on production: the exact accounts, permissions, safe-environment setup and step list are in `docs/editorial-reset/CMS-ACCEPTANCE-TEST-OWNER-ACTIONS.md`. This table is the short checklist.
+
+Goal: prove the real workflow with the owner's GitHub login and a real Netlify project, then record the result. Use a throwaway article and image. Budget: about 6 publishes (90 of the 300 free credits; previews cost 0).
 
 Before you start: `.pages.yml` and `netlify.toml` are on `main`, the Netlify site builds from `main`, and you have noted the live site's article count and `/sitemap.xml`. Save a copy of `content/articles/how-to-start-crocheting.json` (raw GitHub view) to diff against later.
 
@@ -24,6 +26,14 @@ Before you start: `.pages.yml` and `netlify.toml` are on `main`, the Netlify sit
 | 14 | Delete `cms-test-article` and `cmsTest` entries and the uploaded photo in the CMS (or GitHub). Publish once more only if you want the live site byte-identical; otherwise leave for the next normal publish | Repo clean | |
 | 15 | Rollback test: Netlify Deploys, pick the deploy from before step 10, Publish deploy; then turn Auto publish back on | Live site back to the earlier state | |
 | 16 | Netlify Usage | Count credits spent; compare with 15 per publish. Note whether skipped builds cost anything | |
+| 17 | Site settings: change the site name, Save. Check `content/settings.json` on GitHub | Valid JSON, 2-space indent, no final newline, booleans are true/false | |
+| 18 | Site settings: type `UA-1234` in the Google Analytics field, Save, build | Build **fails** with "is not a Google Analytics 4 measurement ID"; live site unchanged. Fix and Save | |
+| 19 | Images: Save an upload with empty "Where it came from" or Licence | Build fails naming the file and the two fields | |
+| 20 | Articles: set a linked article to Draft, Save, build | Build fails listing every link, pin or override that still points at it | |
+| 21 | Record the file name Pages CMS gives a new article (title or slug) | Noted; the build does not depend on it | |
+| 22 | Invite an email address with no GitHub account as a collaborator; they edit and Save | Works, or the docs are corrected | |
+| 23 | Branch route (test repository only): edit on `content-edits`, open the free branch preview, press Publish site | Preview builds at 0 credits; Publish validates, merges, one production deploy of 15 credits | |
+| 24 | Affiliate: in the throwaway repository only, switch tracking ON with the fake ID `testsite-20` | A product link ends `?tag=testsite-20` and the disclosure appears; switch OFF again and delete the site. Never on production, never a real ID | |
 
 ## Record
-Write the outcome (date, tester, each row's result, screenshots of the Failed message and the Trigger deploy outcome, credits used) in `docs/cowork/CMS-LIVE-TEST-LOG.md`. Only if every row passes may the NOT YET TESTED banner be removed from the docs. If step 8 shows Trigger deploy is skipped, change the docs to make the `RELEASES.md` method primary. If step 6 shows lost fields, stop and report before anyone edits real articles.
+Write the outcome (date, tester, each row's result, screenshots of the Failed message and the Trigger deploy outcome, credits used) in `docs/cowork/CMS-LIVE-TEST-LOG.md`. Only if every row passes may the NOT YET TESTED banner be removed from the docs. If step 8 shows Trigger deploy is skipped, change the docs to make the `RELEASES.md` method primary. If step 6 shows lost fields, stop and report before anyone edits real articles. If steps 17 to 24 show a different format from the one recorded in `docs/editorial-reset/changes/stage2b.md`, update that note and the build tidy-up test.

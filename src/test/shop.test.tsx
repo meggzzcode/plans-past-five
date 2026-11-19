@@ -630,7 +630,7 @@ describe("shopping list", () => {
       "2026-02-03",
       "Test list",
     );
-    expect(text).toContain("Test list (Plans Past Five)");
+    expect(text).toContain(`Test list (${site.name})`);
     expect(text).toContain("[ ] TEST FIXTURE washi tape set (Test Brand)");
     expect(text).toContain("Find each item and its details: ");
     expect(text).not.toContain("amazon.com");
@@ -761,7 +761,8 @@ describe("tracking", () => {
     (site.integrations as { googleAnalyticsId: string }).googleAnalyticsId = original;
     delete (window as unknown as { gtag?: unknown }).gtag;
   });
-  it("is a no-op by default", () => {
+  it("is a no-op when no analytics id is set", () => {
+    (site.integrations as { googleAnalyticsId: string }).googleAnalyticsId = "";
     const g = vi.fn();
     (window as unknown as { gtag: unknown }).gtag = g;
     track("product_click", { product_id: "x" });
