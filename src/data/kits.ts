@@ -180,7 +180,7 @@ export const kits: Kit[] = [
       s("easel", "Tabletop easel", O, "nice-to-have"),
       s(
         "main-project",
-        "A boxed paint-and-sip set, if you'd rather not buy pieces separately",
+        "A boxed paint night set, if you'd rather not buy pieces separately",
         O,
         "complete-kit",
       ),

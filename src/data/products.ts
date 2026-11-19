@@ -143,7 +143,7 @@ export const collections: Collection[] = [
     image: "shopGirlsNight",
     tone: "strawberry",
     intro:
-      "Turn 'we should hang out' into a date in the group chat: a mahjong night or a paint-and-sip table, with exactly what to buy.",
+      "Turn 'we should hang out' into a date in the group chat: a mahjong night or a paint night at home, with what to grab to make it easy.",
     kitIds: ["mahjong-night", "pottery-paint-night"],
   },
   {
@@ -256,7 +256,7 @@ export const products: Product[] = [
     "pottery-era",
     "Ceramic painting kit",
     "Blank mugs or plates with paints, so you can recreate a pottery-painting studio at home.",
-    "Kits that say food-safe once baked, and include clear curing instructions.",
+    "Kits with clear instructions and a stated glaze or paint type. Treat painted pieces as display-only unless the kit says they are food safe.",
     "paint your own ceramic mug kit",
     ["pottery-painting", "craft-nights"],
   ),
