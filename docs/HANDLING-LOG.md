@@ -76,3 +76,7 @@ Reviewer scores moved only a little between rounds on trust, product desirabilit
 
 - 2026-11-19: Domain registered; tracker updated (site tab, Overview, Buyer Handoff, Checklist, Accounts, Log).
 - 2026-11-19: Cowork consolidated pack and run-now prompt written; optional 30-day activation planning started (nothing activated).
+
+## 2026-11-19 owner decisions
+- Hosting is Netlify; editor is Pages CMS (separate, free, GitHub sign-in). Cowork workstream G may proceed on that basis once the owner says go.
+- Photo-permission emails (docs/commerce/photo-permission-emails.md): owner decided NOT to send. Do not send; photos stay on the existing licence record in docs/IMAGE-LICENSES.md.

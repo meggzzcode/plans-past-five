@@ -1,3 +1,5 @@
+> **Owner decision 2026-11-19: do not send these emails.**
+
 # Photo permission emails (DRAFTS, NOT SENT) 2026-11-19
 
 Nothing has been sent. Send only after the hello@ mailbox is confirmed working. Replace [brackets]. Save any reply in the repo and set `imageRights` to the exact terms stated. A permission is only useful if it survives sale of the site; ask for that explicitly.
