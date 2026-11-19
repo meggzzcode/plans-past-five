@@ -13,7 +13,7 @@ Checked against the repo on 2026-11-19. Developer-oriented notes also in `CLAUDE
 
 ## Stack
 
-TanStack Start (SSR) on React 19, TypeScript, Tailwind CSS v4, shadcn-style UI components (`src/components/ui`), Vite via `@lovable.dev/vite-tanstack-config` (`vite.config.ts`). Tests: Vitest. Package manager: Bun.
+TanStack Start (SSR) on React 19, TypeScript, Tailwind CSS v4, Vite via `@lovable.dev/vite-tanstack-config` (`vite.config.ts`). Tests: Vitest. Package manager: Bun.
 
 ## Directory map
 
