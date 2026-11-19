@@ -145,7 +145,8 @@ export const ARTICLE_META_TITLES: Record<string, string> = {
   "watercolor-painting-for-beginners": "Watercolor for Beginners: 3 Little Paintings",
   "at-home-creative-weekend": "At-Home Creative Weekend: Clay, Paint, Journal",
   "creative-hobby-starter-kits-worth-considering": "Are Craft Starter Kits Worth It?",
-  "hobbies-to-try-when-life-feels-like-work-sleep-repeat": "35 Hobbies When Life Is Work, Sleep, Repeat",
+  "hobbies-to-try-when-life-feels-like-work-sleep-repeat":
+    "35 Hobbies When Life Is Work, Sleep, Repeat",
   "how-to-get-into-recreational-cycling-as-an-adult": "How to Start Cycling Again as an Adult",
   "how-to-start-a-book-club": "How to Start a Book Club People Show Up To",
   "how-to-plan-a-solo-saturday": "How to Plan a Solo Saturday You'll Enjoy",

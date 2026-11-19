@@ -67,7 +67,7 @@ describe("publisher line (A)", () => {
     const files = [
       "src/components/layout/Footer.tsx",
       "src/routes/about.tsx",
-      "src/routes/contact.tsx",
+      "src/components/pages/ContactPage.tsx",
       "src/routes/terms.tsx",
       "src/routes/privacy.tsx",
     ];

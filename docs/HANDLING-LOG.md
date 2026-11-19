@@ -23,6 +23,7 @@ Working method: independent tasks ran in parallel with one owner per file area (
 - 2026-11-19 Removed by decision: printables, premium digital products, calendar export (.ics).
 - 2026-11-19 AI-use disclosure lives only on the Editorial Standards page (a neutral "How we make this" link points there).
 - 2026-11-19 No named publisher details will be supplied; the "Published by" line is config-driven and blank for the buyer to set.
+- 2026-11-19 Only Amazon is promoted: every recommended buy must be monetisable through Amazon Associates; no links to other retailers or networks (enforced by `src/test/amazon-only-promotion.test.ts`).
 - 2026-11-19 Scope frozen: no new tools, major redesign, extra articles or unsupported Amazon cart features.
 - 2026-11-19 Domain planspastfive.com registered (Namecheap order 220011258, $12.28) and Private Email purchased ($14.88); both auto-renew OFF; total $27.16. Not yet connected to hosting; mailbox untested.
 - Deploy budget: Netlify free plan (300 credits a month, about 15 per production deploy). A build runs only when the latest commit message carries the release marker.

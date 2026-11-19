@@ -15,9 +15,10 @@ Replaces the earlier pieces (COWORK-MASTER-PROMPT-PATH-TO-8.md, the F1-F19 adden
 5. **Do not scrape** Amazon or any site that forbids it. Read pages the way a person would in the owner's browser. Do not save, screenshot into the repo, or hotlink Amazon product images. Do not use manufacturer photos without written permission.
 6. **No shared-code edits.** Do not edit site source code. If you find a defect, send Claude Code a defect packet (section 6) instead. Data-only hand-backs go in the files listed in section 5.
 7. **Branches:** work on branches named `cowork/<task>` (for example `cowork/product-verification`). Never push to `main` or to `claude/vibrant-dirac-amdf7r`. Tell the owner which branch you pushed.
-8. **Scope is frozen.** No newsletter, no calendar integration, no printables, no premium digital products, no customer accounts, no databases, no paid advertising, no new tools, no redesign, no Amazon cart integration, no real affiliate tracking. Do not treat these as missing deliverables. The master affiliate accounts are NOT part of the sale.
-9. **Do not reveal** earlier reviewer scores to new reviewers (workstream K).
-10. **Report per workstream:** done / partly done / not done / blocked, files written, branch name, and anything the owner must decide.
+8. **Only Amazon is promoted (owner decision 2026-11-19).** Every product or purchase we recommend must be something we can monetise through Amazon Associates. Do not propose or link to other retailers, networks or marketplaces, and drop any candidate that has no legitimate Amazon.com listing. A source or manufacturer page may be cited as a citation only. A test (`src/test/amazon-only-promotion.test.ts`) enforces this in the repo.
+9. **Scope is frozen.** No newsletter, no calendar integration, no printables, no premium digital products, no customer accounts, no databases, no paid advertising, no new tools, no redesign, no Amazon cart integration, no real affiliate tracking. Do not treat these as missing deliverables. The master affiliate accounts are NOT part of the sale.
+10. **Do not reveal** earlier reviewer scores to new reviewers (workstream K).
+11. **Report per workstream:** done / partly done / not done / blocked, files written, branch name, and anything the owner must decide.
 
 ## 1. Facts you can rely on (check them against the repo before trusting)
 

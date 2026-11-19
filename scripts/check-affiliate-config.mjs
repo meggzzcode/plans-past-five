@@ -11,6 +11,9 @@
  *   node scripts/check-affiliate-config.mjs --expect-inactive
  *       also fail if src/config/affiliate.ts is not in the shipped inactive state (use on the
  *       seller's release branch only; a buyer who activates their own id must NOT pass this flag).
+ *   node scripts/check-affiliate-config.mjs --expect-contact
+ *       also fail if src/config/site.ts has an empty contactEmail (release only: tests never fail
+ *       on it, they only warn, so a buyer can still run the suite before setting an address).
  */
 import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
@@ -62,6 +65,17 @@ if (args.has("--expect-inactive") && !cfg.inactive) {
     "FAIL: --expect-inactive but src/config/affiliate.ts has an activated Amazon entry.",
   );
   process.exit(1);
+}
+if (args.has("--expect-contact")) {
+  const site = readFileSync(path.join(root, "src/config/site.ts"), "utf8");
+  const email = /contactEmail:\s*"([^"]*)"/.exec(site)?.[1]?.trim() ?? "";
+  if (!email) {
+    console.error(
+      "FAIL: --expect-contact but site.contactEmail in src/config/site.ts is empty. The contact page would say the inbox is not open.",
+    );
+    process.exit(1);
+  }
+  console.log(`Contact address set: ${email}`);
 }
 const files = args.has("--quick") ? SENSITIVE_FILES : [];
 const results = ["inactive", "active"].map((s) => [s, run(s, files)]);
