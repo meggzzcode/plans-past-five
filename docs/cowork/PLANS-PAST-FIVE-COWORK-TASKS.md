@@ -72,3 +72,24 @@ Source the images listed in docs/content/IMAGE-SOURCING-BRIEF.md (the 7 weak mat
 For every image: read the site's licence page yourself and record the licence name, the licence URL, the image page URL as sourceUrl, the creator's name and the date you sourced it. Never invent a licence. Label AI-generated images as such (source "Canva AI" or "Lovable AI" and licenseName that says "AI-generated"). Do not claim the licence is transferable to a buyer; record the licence terms only.
 Skip anything with visible brands, logos, text or watermarks, copyrighted product photos, or identifiable minors. Match the topic exactly. Prefer images that visually match our existing 14 (warm, film-like, gingham, cherry red, butter yellow, strawberry pink, garden green). Each image is the hero of at most one article; a photo may appear on at most two pins.
 Do not edit code or articles and do not run the ingest script. Report what you could not find (slug and reason) so Claude Code can run `node scripts/ingest-images.mjs --check` and then ingest.
+
+---
+
+# Refinement phase (added 2026-11-19): customer experience and commercial desirability
+
+Same ground rules as above. Never purchase, apply, enter payment or tax details, accept agreements or publish listings.
+
+## C12 Product desirability and authorised photography
+For every product in docs/commerce/product-research.csv and src/data/catalog.ts: (1) re-open the Amazon.com page and manufacturer page and confirm the listing still matches; (2) say in one line whether our audience (women 22-40, after-work hobbies, aesthetic-minded, budget-aware) would actually want it, and suggest a better, prettier or better-value alternative when one exists (give ASIN, clean URL, manufacturer URL, why); (3) find the manufacturer's official press/media kit or brand-asset page and record whether product photos may be used by a publisher, with the exact terms and URL. Do NOT download or hotlink Amazon product images (Associates terms restrict them) and do not use AI images in place of a real product. Output docs/commerce/PRODUCT-DESIRABILITY-REVIEW.csv (columns: productId, asin, keep_replace_drop, audience_fit_note, alternative_asin, alternative_url, manufacturerImageTerms, manufacturerImageTermsUrl, dateChecked) and docs/commerce/product-photo-permissions.md.
+
+## C13 Download Canva originals and ingest list
+Open each link in docs/content/CANVA-ASSETS.md, download the largest original, save into docs/content/incoming-images/ with the slug names the log gives, and fill docs/content/new-images.csv (source "Canva AI", licenseName "AI-generated"). Read Canva's current content licence terms and record whether AI-generated images may be used commercially and transferred with a sold site (exact wording, URL, date; no legal conclusions).
+
+## C14 Real-human usability test
+Prepare (do not run on real people without the owner): use docs/marketplace/USABILITY-TEST-SCRIPT.md. If the owner approves, run it with 3-5 real women and record results without names.
+
+## C15 Contact email and corrections inbox (owner action, Cowork helps)
+The owner creates hello@ on the chosen domain; Cowork sends and receives a test message both ways in the owner's mailbox and reports. Claude Code publishes the address only after that passes.
+
+## C16 Source check of the 4 original published articles and the 5 drafts
+Finish C4 for hobbies-to-try-when-life-feels-like-work-sleep-repeat, things-to-do-after-work-instead-of-scrolling, creative-hobbies-you-can-start-at-home, how-to-start-junk-journaling, and the 5 drafts. Output docs/content/verification/<slug>.md as before.
