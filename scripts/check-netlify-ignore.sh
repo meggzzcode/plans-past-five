@@ -25,6 +25,8 @@ check "CMS save, new image"             "content(create): public/uploads/a.jpg" 
 check "Docs-only commit"                "docs: reword CMS-SETUP" SKIP production
 check "Release commit with marker"      "Release: new article [deploy]" BUILD production
 check "Marker in the last line only"    $'content(update): x\n\nRelease [deploy]' BUILD production
+check "Publish workflow merge commit"    "Publish: content edits [deploy]" BUILD production
+check "Undo-last-publish commit (no marker)" "Undo the last publish of content edits (no live build requested)" SKIP production
 check "Marker misspelled"               "Release: new article [deplo]" SKIP production
 check "Context unset behaves like production (no marker)" "content(update): y" SKIP ""
 check "Deploy Preview builds without a marker (0 credits)" "content(update): z" BUILD deploy-preview

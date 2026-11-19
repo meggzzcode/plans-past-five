@@ -19,7 +19,7 @@ Not needed and not to be used: the production repository, the real domain, any D
 1. On GitHub create a new **private** repository `ppf-cms-test` by copying the project (download the release or push a clone; do not fork into the production repo's network). Confirm Actions is enabled.
 2. Netlify: Add new project from `ppf-cms-test`. Leave the build settings as `netlify.toml` provides. Use the generated `*.netlify.app` address. Turn on password protection or delete the site after the test so fake content is not public. Do not add a custom domain.
 3. Settings in the test copy use fake values only: contact email `test@example.invalid`, tracking ID `testsite-20` (fake, never submitted to Amazon), GA4 empty.
-4. For the publish-button part only: copy `docs/editorial-reset/proposed/publish-content.yml` to `.github/workflows/` **in the test repository**, create branch `content-edits` from `main`, add the `actions:` block from `docs/editorial-reset/proposed/pages-yml-publish-action.md` to the test repository's `.pages.yml`.
+4. For the publish-button part: the workflows (`.github/workflows/publish-content.yml`, `undo-last-publish.yml`) and the `actions:` block in `.pages.yml` are ALREADY in the project (Stage 2c), so your copy has them; nothing to paste. Create branch `content-edits` from `main` (GitHub branch button, type the name, Create branch). Follow the one-time setup in `docs/buyer/PUBLISH-AND-ROLLBACK.md`.
 5. When finished, delete the Netlify site and the test repository. Revoke the Pages CMS app on it.
 
 ## 4. Test steps (record PASS or FAIL for each in `docs/cowork/CMS-LIVE-TEST-LOG.md`, with screenshots)
@@ -38,11 +38,11 @@ Part B: publishing (maps to rows 7 to 11, 15, 16, plus the new options)
 10. Recommended method, on the test repository only: open the CMS on branch `content-edits`; save an article edit; open `https://content-edits--<site>.netlify.app`. Expect a preview build with 0 credits and the edit visible.
 11. Press **Publish site** in the CMS. Expect the GitHub Actions run to merge, validate and push; Netlify then makes one production deploy; the edit is live. Record the time from press to live, and credits used (expect 15).
 12. Make the validation fail on the branch (broken source URL) and press **Publish site**: expect the run to fail with the plain-English message and `main` to stay unchanged.
-13. Rollback: Netlify Deploys, an earlier deploy, Publish deploy; confirm the site reverts and the credit meter does not move. Then on GitHub revert the publish merge commit; delete and re-create `content-edits` from `main`.
+13. Rollback: Netlify Deploys, an earlier deploy, Publish deploy; confirm the site reverts and the credit meter does not move. Then GitHub Actions > Undo last publish > Run workflow (box unticked; GitHub has no Revert button for a merge that was not a pull request); then delete and re-create `content-edits` from `main` and press Start auto publishing in Netlify. All exact clicks: `docs/buyer/PUBLISH-AND-ROLLBACK.md` section 5.
 14. Record the file-name question (step 5), whether the branch picker and the Publish button worked, and whether a non-default branch is editable.
 
 ## 5. Pass rule and what happens next
 - Part A rows all PASS: the "edit in a browser" claim can be made for articles, images and settings.
-- Part B step 8 decides the fallback; steps 10 to 13 decide whether the Publish-button workflow becomes the documented publish path (then move the proposed files into the real repository with the owner's approval). If any of 10 to 13 fails, keep the documented marker/Trigger-deploy method and record the failure, or move to Option A on a paid plan (see `PUBLISHING-WORKFLOW-RECOMMENDATION.md`).
-- Only then update the four banners in `docs/buyer/` (CMS-SETUP, CMS-TEST-PLAN, EDITING-WITHOUT-CODE, NETLIFY-CREDITS-AND-RELEASES).
+- Part B step 8 decides the fallback; steps 10 to 13 decide whether the Publish-button workflow becomes the documented publish path (the files are already installed in the real repository; the owner approved this route 2026-11-19). If any of 10 to 13 fails, switch the docs back to the marker/Trigger-deploy method and record the failure, or move to Option A on a paid plan (see `PUBLISHING-WORKFLOW-RECOMMENDATION.md`).
+- Only then update the banners in `docs/buyer/` (including PUBLISH-AND-ROLLBACK) (CMS-SETUP, CMS-TEST-PLAN, EDITING-WITHOUT-CODE, NETLIFY-CREDITS-AND-RELEASES).
 - Time estimate (UNKNOWN until done): 2 to 3 hours with the owner present.

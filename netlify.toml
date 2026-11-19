@@ -7,10 +7,14 @@
   # CREDITS (Netlify docs, read 2026-11-19, see docs/editorial-reset/PUBLISHING-WORKFLOW-RECOMMENDATION.md):
   # the Free plan has 300 credits a month as a hard limit (the site pauses at the cap); each successful
   # PRODUCTION deploy costs 15; failed deploys, rollbacks, Deploy Previews and branch deploys cost 0.
-  # PUBLISH MODEL (current, until the owner approves the Publish-button workflow): a PRODUCTION build runs
-  # only when the latest commit message contains the marker [deploy], or when the owner presses Netlify's
-  # Deploys > Trigger deploy (whether Trigger deploy honours this rule is UNKNOWN until the CMS acceptance
-  # test; if it shows "Skipped", edit RELEASES.md on GitHub with a commit message ending in [deploy]).
+  # PUBLISH MODEL (approved 2026-11-19, installed in Stage 2c, not yet tested with real accounts): CMS saves go
+  # to the content-edits branch; the Pages CMS "Publish site" button runs .github/workflows/publish-content.yml,
+  # which merges that branch into main with the marker [deploy] in the merge commit message. A PRODUCTION
+  # build runs only when the latest commit message contains the marker, so exactly one production deploy
+  # happens per publish (docs/buyer/PUBLISH-AND-ROLLBACK.md). Fallback: Netlify's Deploys > Trigger deploy
+  # (whether it honours this rule is UNKNOWN until the CMS acceptance test; if it shows "Skipped", edit
+  # RELEASES.md on GitHub with a commit message ending in [deploy]). Keep the marker equal to the one in
+  # publish-content.yml (src/test/publish-workflow.test.ts checks it).
   # PREVIEWS: Deploy Previews and branch deploys always build (0 credits) so edits can be checked before
   # they are published. If CONTEXT is unset the rule falls back to the production behaviour above.
   # Exit 0 = skip, exit 1 = build. Test the rule: bash scripts/check-netlify-ignore.sh

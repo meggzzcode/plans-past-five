@@ -2,7 +2,7 @@
 
 > **NOT YET TESTED WITH A REAL LOGIN.** The browser editor (Pages CMS) is configured but no real login test has been run: `docs/buyer/CMS-TEST-PLAN.md`.
 
-**Saved is not Published.** A CMS save (a commit to main) does not change the website. Publish with Netlify **Deploys > Trigger deploy > Deploy site** (or a commit message ending in `[deploy]`). Unpublish: set Status to Draft, save, publish. Rollback: Netlify Deploys > earlier deploy > Publish deploy, or git revert. About 15 credits per publish, at most 8 a month: `docs/buyer/NETLIFY-CREDITS-AND-RELEASES.md`.
+**Saved is not Published.** A CMS save (a commit to the `content-edits` branch) does not change the website; Netlify builds a free preview of it. Publish with the CMS **Publish site** button (a GitHub workflow checks the content, merges to `main` with the release marker `[deploy]`). Unpublish: set Status to Draft, save, Publish site. Rollback: Netlify Deploys > earlier deploy > Publish deploy, then GitHub Actions > Undo last publish. Guide: `docs/buyer/PUBLISH-AND-ROLLBACK.md`. About 15 credits per publish, at most 8 a month: `docs/buyer/NETLIFY-CREDITS-AND-RELEASES.md`.
 
 Articles and images are data files (`content/articles/*.json`, `content/images/*.json`) that a developer edits directly or a non-coder edits in Pages CMS (`docs/buyer/CMS-SETUP.md`, `docs/buyer/EDITING-WITHOUT-CODE.md`; first live login test is a pending follow-up task listed in `docs/cowork`). `bun run content:build` validates them and writes the generated files; it runs automatically before every build. Hobbies, products and settings remain code. After any change run:
 
@@ -69,4 +69,4 @@ Drafts must keep `status: "draft"`. Never import `allArticlesIncludingDrafts` in
 
 ## PENDING
 
-Real-login test of Pages CMS and Trigger deploy: `docs/buyer/CMS-TEST-PLAN.md`.
+Real-login test of Pages CMS, the branch preview and Publish site: `docs/buyer/CMS-TEST-PLAN.md`.
