@@ -1,0 +1,114 @@
+articleSlug,activityOrSection,gearAngle,existingProductTypeId,existingProductId,needsVerifiedProduct,candidateRef,notes
+active-hobbies-for-women-who-dont-love-the-gym,Hiking and walking,Walking or trail shoes for a longer walk,NEW:walking-shoes,,yes,NONE,"New type then verified product; describe convenience only, no injury or blister claims"
+active-hobbies-for-women-who-dont-love-the-gym,Hiking and walking,Trekking-style socks,NEW:trekking-socks,,yes,NONE,Fabric claims only from the listing
+active-hobbies-for-women-who-dont-love-the-gym,Hiking and walking,Phone armband for music or a map,NEW:phone-armband,,yes,NONE,
+active-hobbies-for-women-who-dont-love-the-gym,Hiking,Daypack,daypacks,,yes,cand-1:daypack-hiking-walks,Daylite Plus; not in catalog yet
+active-hobbies-for-women-who-dont-love-the-gym,Pickleball,Starter paddle set,pickleball-sets,niupipo-pickleball-paddles-set-of-2-with-balls,yes,cand-1:pickleball-paddles,"Candidate status in catalog; approval claim unchecked, do not repeat it"
+active-hobbies-for-women-who-dont-love-the-gym,Tennis,Beginner racquet and balls,tennis-rackets,hiraliy-27-inch-tennis-racket-with-ball-bag,yes,cand-1:tennis-racquet,Candidate status in catalog; HEAD Ti.S6 also queued; no independent quality source for hiraliy
+active-hobbies-for-women-who-dont-love-the-gym,Roller skating,"Knee, elbow and wrist pads (optional)",NEW:skate-protective-gear,,yes,cand-1:roller-skating-protective-gear,Describe as optional; no protection claims beyond a source
+active-hobbies-for-women-who-dont-love-the-gym,Birdwatching walks,Compact binoculars,binoculars,,yes,cand-1:birdwatching-walks,Nature DX 8x42; confirm variant
+affordable-hobbies-under-25,Watercolor,Pocket set and paper,watercolor-sets,hapikalor-watercolor-pad-140lb-9x12,no,cand-1:watercolor,Verified paper; pocket set (Cotman) still to verify
+affordable-hobbies-under-25,Jigsaw puzzles,One jigsaw puzzle,NEW:jigsaw-puzzles,prime-time-puzzles-1000-piece-mountain-cabin,yes,cand-1:hobbies-to-try-jigsaw-puzzles,Candidate status; board-games type is the nearest existing card
+affordable-hobbies-under-25,Paint by numbers,Small paint-by-number kit,NEW:paint-by-number-kits,,yes,cand-1:paint-by-numbers,"11x14 small canvas; also needed in cozy, low-energy, hobbies-35"
+affordable-hobbies-under-25,Outdoor sketching,Sketch pad plus fineliner,NEW:sketch-pads,sakura-pigma-micron-8-pack-black,yes,cand-1:outdoor-sketching,Pen verified; pad (400 Series) not yet
+affordable-hobbies-under-25,Indoor gardening and baking,"Pots, watering can, propagation jars; basic baking tools",NEW:indoor-plant-basics,,yes,NONE,Low priority; two new types; no growth or food-safety claims
+cheap-weekend-adventures,Trail morning,Daypack and water bottle,daypacks,,yes,cand-1:trail-and-walks,
+cheap-weekend-adventures,Trail morning,"Walking shoes, socks, armband",NEW:walking-shoes,,yes,NONE,Same new types as above; one verification pass serves all articles
+cheap-weekend-adventures,Park potluck or picnic,Waterproof-backed picnic blanket and soft cooler,picnic-blankets,zaze-80x80-waterproof-picnic-blanket,yes,cand-1:potluck-in-the-park,Candidate status; cooler is maelstrom-24-30-60-can-soft-cooler-bag (candidate)
+cheap-weekend-adventures,Market and thrift crawl,Reusable tote,market-totes,,yes,cand-1:market-and-thrift,Baggu Standard / ripstop bag
+cheap-weekend-adventures,Sketching afternoon,Sketch pad and fineliners,NEW:sketch-pads,sakura-pigma-micron-8-pack-black,yes,cand-1:sketching-afternoon,
+cheap-weekend-adventures,Birdwatching morning,Compact binoculars and pocket notebook,binoculars,,yes,cand-1:birdwatching-morning,
+cheap-weekend-adventures,Sunrise or sunset spot,Insulated flask for a hot drink,NEW:thermos-flasks,,yes,cand-2:how-to-plan-a-perfect-picnic:thermos,Stanley 1 qt in picnic queue; reuse
+cozy-solo-dates-at-home,"Night in (blanket, candles, tea)","Throw blanket, flameless candles, tea sampler",NEW:cozy-night-in,bedsure-sherpa-fleece-throw-50x60,yes,cand-1:set-the-scene,Candidate status; nimiko flameless candles and celestial herbal tea sampler also candidates; no health claims; no real-flame products
+cozy-solo-dates-at-home,Bath and a book / re-read,Rechargeable book light,book-lights,gritin-19-led-rechargeable-book-light,yes,cand-1:book-and-bath,Candidate status
+cozy-solo-dates-at-home,Audiobook and a puzzle,Jigsaw puzzle,NEW:jigsaw-puzzles,prime-time-puzzles-1000-piece-mountain-cabin,yes,cand-1:audiobook-and-a-puzzle,
+cozy-solo-dates-at-home,Calligraphy and hand-lettering,Brush pens,NEW:brush-pens,,yes,cand-1:creative-hobbies-brush-lettering,Fudenosuke 2-pack
+cozy-solo-dates-at-home,Write a letter you'll send,Stationery and pen,NEW:letter-writing-sets,paper-mate-inkjoy-gel-pens-14-fine,yes,NONE,Low priority; pen candidate exists
+cozy-solo-dates-at-home,Photo-album night,Photo album,NEW:photo-albums,,yes,NONE,Low priority; also low-energy and after-work
+cozy-solo-dates-at-home,Cocktail or mocktail lab,None. Rename to Mocktail and tea lab; no barware or alcohol gear line,,,no,NONE,Alcohol is out of scope; tea sampler only
+creative-hobbies-you-can-start-at-home,Crochet,Hook and yarn,NEW:crochet-hooks,red-heart-super-saver-white-worsted,yes,cand-1:crochet,Yarn verified; hook candidates crochet-hooks-12-sizes-44-pcs-ergonomic-rp-tech and Clover Amour 5.0 mm
+creative-hobbies-you-can-start-at-home,Knitting,Needles,NEW:knitting-needles,,yes,NONE,"Needed here, low-energy and hobbies-35; yarn already verified"
+creative-hobbies-you-can-start-at-home,"Cross-stitch, punch needle, sewing a tote",Starter kit or hoop,embroidery-kits,bradove-classic-embroidery-kit,yes,NONE,"Embroidery kit verified; cross-stitch, punch needle and sewing kits have no candidates"
+creative-hobbies-you-can-start-at-home,Flower arranging,Snips and vases,NEW:flower-snips,leize-floral-shears-flower-scissors,yes,cand-1:flower-arranging-snips,Candidate status; see flower rows
+creative-hobbies-you-can-start-at-home,Jewelry making,Bead kit with pliers,friendship-bracelet-kits,paxcoo-488pc-friendship-bracelet-kit,yes,NONE,"Candidate status; jewelry-specific kit (pliers, clasps) not queued"
+creative-hobbies-you-can-start-at-home,Baking and decorating,Baking basics and cookie decorating kit,cookie-decorating-kits,,yes,NONE,Type exists; no candidate for baking basics
+creative-hobby-starter-kits-worth-considering,"Kit or loose, hobby by hobby",Inline verified links per hobby,embroidery-kits,bradove-classic-embroidery-kit,no,cand-1:embroidery-kit,"Also uhapeer-air-dry-clay-kit-3-lb, artecho-48-color-watercolor-set-3-brushes, esrich canvases, benicci brushes: all verified"
+creative-hobby-starter-kits-worth-considering,Ceramic and pottery painting,Ceramic painting kit,ceramic-painting-kits,,yes,NONE,No candidate and no verified product; keep type-level card
+flower-arranging-as-a-hobby,What you need: snips,Floral snips,NEW:flower-snips,leize-floral-shears-flower-scissors,yes,cand-1:flower-arranging-snips,Candidate status; add productIds and shop block
+flower-arranging-as-a-hobby,A recipe you can reuse: vases,Bud vases,NEW:vases,der-rose-12-glass-bud-vases,yes,cand-1:flower-arranging-vases,Candidate status
+flower-arranging-as-a-hobby,Flopping stems,Flower frog (pin holder),NEW:flower-frogs,sprina-4-piece-flower-frog-kenzan-set,yes,cand-1:flower-arranging-stem-holder,Candidate status; step-up
+flower-arranging-as-a-hobby,Keeping them fresh,Flower food packets,NEW:flower-food,,yes,cand-1:flower-arranging-flower-food,No health or bacteria claims; cite extension sources already in article
+girls-night-ideas-that-arent-drinks,Craft night,Bracelet kit and scissors,friendship-bracelet-kits,paxcoo-488pc-friendship-bracelet-kit,yes,cand-1:craft-night,Candidate status; ibayam scissors also candidate
+girls-night-ideas-that-arent-drinks,Board game night,Cooperative party game,board-games,,yes,cand-1:board-game-night,Just One; no ASIN yet
+girls-night-ideas-that-arent-drinks,Conversation-cards dinner,Conversation cards,conversation-cards,,yes,cand-1:conversation-cards-dinner,TableTopics; exact deck to confirm
+girls-night-ideas-that-arent-drinks,Pottery painting (out and about),At-home paint night as the monetised alternative,group-painting-kits,esrich-8x10-stretched-canvas-5-pack,no,cand-1:paint-night-in,"Verified canvases, apple-barrel paints and benicci brushes complete the pottery-paint-night kit"
+girls-night-ideas-that-arent-drinks,Mahjong night,"Set, cards and mat",mahjong-sets,tiasusan-american-mahjong-set-blue-tiles,no,cand-1:mahjong-night,"Verified set, nmjl-2026-standard-size-cards-four-pack, gustaria-large-mahjong-mat-blue-31-5"
+girls-night-ideas-that-arent-drinks,Roller-skating night; pickleball on a public court,Pads; paddle set,pickleball-sets,,yes,cand-1:roller-skating-protective-gear,Short gear lines in the Out and about section only
+hobbies-to-try-when-life-feels-like-work-sleep-repeat,Paint by numbers and jigsaw (low-energy),PBN kit and puzzle,NEW:paint-by-number-kits,,yes,cand-1:paint-by-numbers,
+hobbies-to-try-when-life-feels-like-work-sleep-repeat,Knitting and crochet,"Needles, hook, yarn",NEW:crochet-hooks,red-heart-super-saver-white-worsted,yes,cand-1:crochet,
+hobbies-to-try-when-life-feels-like-work-sleep-repeat,Calligraphy,Brush pens,NEW:brush-pens,,yes,cand-1:calligraphy,Fudenosuke 2-pack
+hobbies-to-try-when-life-feels-like-work-sleep-repeat,Roller skating,Pads (optional),NEW:skate-protective-gear,,yes,cand-1:roller-skating-protective-gear,
+hobbies-to-try-when-life-feels-like-work-sleep-repeat,Birdwatching,Compact binoculars,binoculars,,yes,cand-1:birdwatching,
+hobbies-to-try-when-life-feels-like-work-sleep-repeat,Picnicking,Waterproof-backed blanket,picnic-blankets,zaze-80x80-waterproof-picnic-blanket,yes,cand-1:picnicking,Candidate status
+how-to-find-a-hobby-as-an-adult,Trial notebook,Pocket notebooks,pocket-notebooks,,yes,cand-2:how-to-find-a-hobby-trial-notebook,Field Notes or Original Kraft; one pass serves several articles
+how-to-find-a-hobby-as-an-adult,Watercolor trial,Pocket watercolor set,portable-watercolor,,yes,cand-2:trial-watercolor,Koi pocket field sketch box
+how-to-find-a-hobby-as-an-adult,Clay trial,Small block of air-dry clay,air-dry-clay,crayola-air-dry-clay-5-lb-bucket,no,cand-2:trial-clay,DAS air-hardening clay also queued; Crayola verified
+how-to-find-a-hobby-as-an-adult,Outdoor trial,Daypack,daypacks,,yes,cand-1:outdoor-trial,
+how-to-get-into-recreational-cycling-as-an-adult,Step 2: helmet,Adult helmet,NEW:bike-helmets,,yes,cand-2:how-to-get-into-recreational-cycling:helmet,Giro Fixture MIPS II; safety product: no protection claims beyond the existing CDC/CPSC/BHSI sources
+how-to-get-into-recreational-cycling-as-an-adult,Step 3: be seen,Front and rear light set,NEW:bike-lights,,yes,cand-2:how-to-get-into-recreational-cycling:lights,Lezyne KTV Drive Pro; lighting rules vary by place
+how-to-get-into-recreational-cycling-as-an-adult,Step 3: be seen,Bell,NEW:bike-bells,,yes,NONE,No candidate; new research needed
+how-to-get-into-recreational-cycling-as-an-adult,Step 4: safety check and flat tire,Mini pump and multi-tool kit,NEW:bike-repair-kits,,yes,cand-2:how-to-get-into-recreational-cycling:repair-kit,Topeak Deluxe Accessory Kit; step-up
+how-to-get-into-recreational-cycling-as-an-adult,Step 6: first ride,"Daypack, bottle and tote",daypacks,,yes,NONE,Existing types; daypack candidate shared with hiking articles
+how-to-host-a-craft-night,The evening,Portable Bluetooth speaker for a shared playlist,NEW:portable-speakers,,yes,cand-2:how-to-host-a-craft-night:playlist-speaker,Soundcore Select 4 Go; also used by paint-night article
+how-to-host-a-craft-night,Collage and bracelet projects,Glue gun and scissors,NEW:glue-guns,ibayam-8in-heavy-duty-scissors-3-pack,yes,cand-2:how-to-host-a-craft-night:glue-gun,"AdTech mini low-temp glue gun; scissors candidate; heat tool, no safety promise beyond listing"
+how-to-host-a-mahjong-night,Tea and snacks,Teapot and snack bowls,NEW:tea-sets,dowan-small-ceramic-bowls-set-of-4,yes,cand-2:how-to-host-a-mahjong-night:tea-service,Hario Cha Cha Kyusu Maru; bowls candidate; celestial tea sampler candidate
+how-to-host-a-mahjong-night,Protecting the card,Card sleeve,NEW:card-sleeves,protective-sleeve-large-mahjong-card-4-pack,yes,kit:Large mahjong card protective sleeve,Candidate status; low priority
+how-to-host-a-paint-night-at-home,Playlist,Portable speaker,NEW:portable-speakers,,yes,cand-2:how-to-host-a-paint-night-at-home:playlist-speaker,Shared with craft night
+how-to-host-a-paint-night-at-home,Brighter paints,Step-up acrylic set,acrylic-paints,,yes,cand-2:how-to-host-a-paint-night-at-home:paints,Liquitex BASICS; apple-barrel verified is the starter
+how-to-plan-a-perfect-picnic,The packing list,Waterproof blanket,picnic-blankets,zaze-80x80-waterproof-picnic-blanket,yes,cand-2:how-to-plan-a-perfect-picnic:blanket,Candidate status
+how-to-plan-a-perfect-picnic,The packing list,Soft cooler bag,NEW:cooler-bags,maelstrom-24-30-60-can-soft-cooler-bag,yes,cand-2:how-to-plan-a-perfect-picnic:cooler,Candidate status; food-safety wording needs a source
+how-to-plan-a-perfect-picnic,The packing list,Insulated flask,NEW:thermos-flasks,,yes,cand-2:how-to-plan-a-perfect-picnic:thermos,Stanley Classic 1 qt
+how-to-plan-a-perfect-picnic,Making it look the part,Reusable plates and cups; market tote,market-totes,,yes,cand-2:how-to-plan-a-perfect-picnic:tote,Tableware has no candidate (NEW:picnic-tableware)
+how-to-plan-a-solo-saturday,Wander kit,"Walking shoes, socks, daypack, armband",NEW:walking-shoes,,yes,NONE,Same new types as other walking articles
+how-to-plan-a-solo-saturday,Make-something kit,Pocket sketch set and notebook,portable-watercolor,,yes,cand-2:how-to-plan-a-solo-saturday:sketch-rest,Koi (start) and Cotman (step-up); Field Notes notebook
+how-to-plan-a-solo-saturday,Park kit,Tote and blanket,market-totes,,yes,cand-2:how-to-plan-a-solo-saturday:carry-tote,Baggu; blanket candidate zaze
+how-to-start-a-book-club,Run the night,Conversation cards,conversation-cards,tabletopics-book-club-conversation-cards,yes,cand-2:how-to-start-a-book-club:conversation-cards,Candidate status
+how-to-start-a-book-club,Table kit,"Teapot, snack bowls, flameless candles",NEW:tea-sets,dowan-small-ceramic-bowls-set-of-4,yes,cand-2:how-to-start-a-book-club:tea-service,Candidates nimiko candles and dowan bowls also in catalog
+how-to-start-a-book-club,Reading between meetings,Book light,book-lights,gritin-19-led-rechargeable-book-light,yes,cand-2:how-to-start-a-book-club:book-light,Vekkia also queued
+how-to-start-a-book-club,Book picks,Paperback book search card,NEW:books,,yes,NONE,"OWNER DECISION: needs policy before any card; no titles invented, no ratings"
+how-to-start-a-reading-journal,Journal,Reading journal,reading-journals,zicoto-hardcover-reading-journal,yes,cand-2:how-to-start-a-reading-journal:journal,Candidate status; Leuchtturm1917 step-up
+how-to-start-a-reading-journal,Pens,Fineliner or gel pens,NEW:brush-pens,sakura-pigma-micron-8-pack-black,no,cand-2:how-to-start-a-reading-journal:pen,Micron verified; inkjoy gel pens candidate
+how-to-start-crocheting,Hook,"Crochet hook, 5 mm",NEW:crochet-hooks,crochet-hooks-12-sizes-44-pcs-ergonomic-rp-tech,yes,cand-2:how-to-start-crocheting:hook,Candidate status; Clover Amour step-up; new type needed in products.ts
+how-to-start-crocheting,Yarn,Smooth worsted yarn,NEW:yarn,red-heart-super-saver-white-worsted,no,cand-2:how-to-start-crocheting:yarn,Verified; Pound of Love step-up; new type needed in products.ts
+how-to-start-crocheting,Finishing,Embroidery snips,embroidery-kits,aqueenly-stork-embroidery-scissors-2-pack,no,cand-2:how-to-start-crocheting:snips,Verified; add a crochet-starter kit slot in kits.ts
+how-to-start-embroidery,Kit or loose,Embroidery starter kit,embroidery-kits,bradove-classic-embroidery-kit,no,NONE,Verified; inscraft-304-piece-embroidery-starter-kit also verified
+how-to-start-playing-tennis-as-an-adult,Choose your first racket,Beginner racquet,tennis-rackets,hiraliy-27-inch-tennis-racket-with-ball-bag,yes,cand-3:how-to-start-playing-tennis-as-an-adult:racquet,Candidate status; Ti.S6 queued; no independent quality source for hiraliy
+how-to-start-playing-tennis-as-an-adult,Rallies,Tennis balls,tennis-balls,penn-championship-extra-duty-tennis-balls,yes,cand-3:how-to-start-playing-tennis-as-an-adult:balls,Candidate status
+how-to-start-playing-tennis-as-an-adult,Week 1 onward,Water bottle,water-bottles,,yes,cand-3:how-to-start-playing-tennis-as-an-adult:water-bottle,FreeSip 24 oz; no sunscreen or health products
+how-to-start-playing-tennis-as-an-adult,Later upgrade,Court shoes,NEW:tennis-shoes,,yes,NONE,Later purchase; no claims on grip or injury
+how-to-take-yourself-on-a-solo-coffee-shop-date,Pack for the date,"Pocket notebook, book sleeve",pocket-notebooks,,yes,cand-3:how-to-take-yourself-on-a-solo-coffee-shop:pocket-notebook,Original Kraft; padded canvas book sleeve (book-sleeves)
+how-to-take-yourself-on-a-solo-coffee-shop-date,Pack for the date,Headphones (optional),NEW:headphones,,yes,NONE,Optional; low priority
+how-to-take-yourself-on-a-solo-coffee-shop-date,Six things to do,Pocket sketch set,portable-watercolor,,yes,cand-3:how-to-take-yourself-on-a-solo-coffee-shop:portable-watercolor,Koi 12 colors
+low-energy-hobbies,"Hands busy, brain quiet",Jigsaw puzzle,NEW:jigsaw-puzzles,,yes,cand-3:low-energy-hobbies:jigsaw,500 pieces; design chosen by Cowork
+low-energy-hobbies,"Hands busy, brain quiet",Embroidery kit and small scissors,embroidery-kits,bradove-classic-embroidery-kit,no,cand-3:low-energy-hobbies:embroidery-kit,Verified kit and aqueenly scissors
+low-energy-hobbies,"Hands busy, brain quiet",Knitting needles,NEW:knitting-needles,,yes,NONE,
+low-energy-hobbies,No setup at all: reading,Book light and throw,book-lights,bedsure-sherpa-fleece-throw-50x60,yes,cand-3:low-energy-hobbies:book-light,Candidate status; gritin as fallback
+low-energy-hobbies,No setup at all: slow stretch,Yoga mat,NEW:yoga-mats,,yes,NONE,Careful wording: no health claims; low priority
+pickleball-for-beginners,What to bring,Paddle set,pickleball-sets,niupipo-pickleball-paddles-set-of-2-with-balls,yes,cand-3:pickleball-for-beginners:paddle-set,SLK NEO 2.0 queued as the main pick; niupipo approval claim unchecked
+pickleball-for-beginners,What to bring,Outdoor balls,NEW:pickleballs,cyclotron-6-pack-pickleball-balls,yes,cand-3:pickleball-for-beginners:balls,X-40 queued; candidate status for cyclotron
+pickleball-for-beginners,Later upgrade,Graphite paddle; court shoes,NEW:pickleball-shoes,,yes,cand-3:pickleball-for-beginners:paddle-step-up,Shoes have no candidate
+solo-date-ideas,Pocket-sized watercolor outing,Pocket field sketch box,portable-watercolor,,yes,cand-3:solo-date-ideas:portable-watercolor,Koi 12 colors
+solo-date-ideas,Single-roll film walk,Reusable 35mm film camera,film-cameras,,yes,cand-3:solo-date-ideas:film-camera,M35
+solo-date-ideas,Picnic for one,Waterproof-backed blanket,picnic-blankets,zaze-80x80-waterproof-picnic-blanket,yes,cand-3:solo-date-ideas:picnic-blanket,Candidate status
+solo-date-ideas,Coffee shop and a chapter,Padded book sleeve,book-sleeves,,yes,cand-3:solo-date-ideas:book-sleeve,
+solo-date-ideas,Short beginner hike,"Walking shoes, socks, daypack",NEW:walking-shoes,,yes,NONE,Reuse the walking-shoes research pass
+things-to-do-after-work-instead-of-scrolling,Do a puzzle with a podcast,Jigsaw puzzle,NEW:jigsaw-puzzles,,yes,cand-3:things-to-do-after-work:jigsaw,500 pieces
+things-to-do-after-work-instead-of-scrolling,Standing game night,Light card game and step-up board game,board-games,,yes,cand-3:things-to-do-after-work:board-game,Sushi Go! and Ticket to Ride; no ASIN yet
+things-to-do-after-work-instead-of-scrolling,Read in a different room,Book light,book-lights,,yes,cand-3:things-to-do-after-work:book-light,Amber clip-on; exact title to confirm
+things-to-do-on-the-weekend,Have a proper picnic,Blanket and soft cooler,picnic-blankets,zaze-80x80-waterproof-picnic-blanket,yes,cand-3:things-to-do-on-the-weekend:picnic-blanket,Candidate status; maelstrom cooler step-up
+things-to-do-on-the-weekend,Take a short hike,Daypack,daypacks,,yes,cand-3:things-to-do-on-the-weekend:daypack,Daylite Plus 20 L
+things-to-do-on-the-weekend,Hold a board-game afternoon,Card game and step-up board game,board-games,,yes,cand-3:things-to-do-on-the-weekend:board-game,
+things-to-do-on-the-weekend,Shape a ring dish from clay,Air-dry clay,air-dry-clay,crayola-air-dry-clay-5-lb-bucket,no,cand-3:things-to-do-on-the-weekend:clay,Verified
+watercolor-painting-for-beginners,What you need,"Paints, brushes, paper",watercolor-sets,artecho-48-color-watercolor-set-3-brushes,no,cand-3:watercolor-painting-for-beginners:paints,"Verified paints, brushes (transon, fenorkey) and paper (hapikalor, arches); Cotman pocket box and Heritage 4050 brush queued as step-ups"
+cute-weekend-plans-that-arent-brunch,"(draft) picnic, thrift and sketch plans","Blanket, tote, film camera",picnic-blankets,,yes,NONE,"Draft has no body; reuse picnic, tote and film camera research"
+make-friends-as-an-adult-through-hobbies,(draft) starting your own group,"Conversation cards, mahjong set",conversation-cards,tiasusan-american-mahjong-set-blue-tiles,no,NONE,"Draft has no body; mahjong verified, cards are candidates"
