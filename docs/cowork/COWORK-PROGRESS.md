@@ -66,3 +66,10 @@ No code, main branch or claude/vibrant-dirac-amdf7r changed by Cowork work; data
 2. Review the replace/reject list in PILOT-VERIFICATION.csv.
 3. Approve any photo-permission emails (drafts only, nothing sent).
 4. Check Instagram/TikTok handle availability (not done).
+
+## Later the same day (tasks 6 and 7, and v2 research)
+| Task | Status | Files |
+|---|---|---|
+| 6 Netlify facts | DONE (skipped-build cost NOT FOUND) | NETLIFY-ACCOUNT-FACTS.md |
+| 7 Outreach | BLOCKED: no verified email address for YMI (form only) or NMJL (mail/phone only); nothing sent | docs/cowork/OUTREACH-LOG.md |
+| 3 Pilot verification against v2 research | NOT DONE: Task 3 used the v1 research; v2 files landed on editorial-reset afterwards | see below |
