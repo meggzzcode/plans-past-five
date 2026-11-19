@@ -63,3 +63,15 @@ describe("tonight: no contradictions", () => {
     for (const h of hobbies) expect(h.firstActivity, h.slug).not.toMatch(notTonightWording);
   });
 });
+
+describe("tonight: guide links match the idea", () => {
+  it("only links a guide whose primary hobby is the suggestion's hobby", async () => {
+    const { getArticle } = await import("@/content");
+    for (const company of ["solo", "social"] as const)
+      for (const i of inputs(company))
+        for (const s of tonightIdeas(i, 0).suggestions)
+          if (s.guideSlug) {
+            expect(getArticle(s.guideSlug)!.hobbies[0], s.id).toBe(s.hobbySlug);
+          }
+  });
+});

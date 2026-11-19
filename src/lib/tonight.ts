@@ -2,6 +2,14 @@ import { hobbies, type Cost, type Energy, type Hobby } from "@/data/hobbies";
 import { activities, type Activity } from "@/data/activities";
 import { articlesForHobby } from "@/content";
 
+/**
+ * A guide link only when the guide is mainly about that hobby (the hobby is the article's first
+ * listed hobby). Otherwise no link, so "Read the guide" never points at an unrelated article.
+ */
+export function guideFor(hobbySlug: string): string | undefined {
+  return articlesForHobby(hobbySlug).find((a) => a.hobbies[0] === hobbySlug)?.slug;
+}
+
 /** What Should I Do Tonight? Pure, deterministic logic. No network, no personal data. */
 
 export type TonightInput = {
@@ -111,7 +119,7 @@ function fromHobby(h: Hobby): Candidate {
     costLabel: costRanges[h.cost].label,
     firstStep: h.firstActivity,
     hobbySlug: h.slug,
-    guideSlug: articlesForHobby(h.slug)[0]?.slug,
+    guideSlug: guideFor(h.slug),
     cost: h.cost,
     energy: h.energy,
     outdoor: h.settings.includes("outdoors"),
@@ -137,7 +145,7 @@ function fromActivity(a: Activity): Candidate {
     minutes: a.minutes,
     costLabel: costRanges[a.cost].label,
     firstStep,
-    ...(h ? { hobbySlug: h.slug, guideSlug: articlesForHobby(h.slug)[0]?.slug } : {}),
+    ...(h ? { hobbySlug: h.slug, guideSlug: guideFor(h.slug) } : {}),
     cost: a.cost,
     energy,
     outdoor,
