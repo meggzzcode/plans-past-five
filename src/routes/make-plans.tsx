@@ -30,6 +30,7 @@ const SEARCH_KEYS = [
   "seed",
   "ids",
   "from",
+  "with",
 ] as const;
 
 export const Route = createFileRoute("/make-plans")({
@@ -156,7 +157,8 @@ function Planner() {
   const fromQuiz = init.from !== null && init.prefilled && init.ids === null;
 
   const restoredPlan = restored ? planFromIds(input, seed, restored) : null;
-  const plan = shown ? (restoredPlan ?? makePlan(input, seed)) : null;
+  const [pin, setPin] = useState<string | null>(init.pin);
+  const plan = shown ? (restoredPlan ?? makePlan(input, seed, pin)) : null;
   const { isSaved, toggle, ready } = useSaved();
 
   const change = (patch: Partial<PlanInput>) => {
@@ -172,6 +174,7 @@ function Planner() {
     });
     setSeed(0);
     setRestored(null);
+    setPin(null);
   };
   const set = (k: keyof PlanInput, v: string) => change({ [k]: v } as Partial<PlanInput>);
 

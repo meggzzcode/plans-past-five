@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Fragment } from "react";
-import { resolveProductLink } from "@/config/affiliate";
+import { OUTBOUND_BUY_REL, resolveProductLink } from "@/config/affiliate";
 import { getCatalogProduct, linkableFor } from "@/data/catalog";
 import { track } from "@/lib/track";
 
@@ -32,7 +32,7 @@ export function Inline({ text }: { text: string }) {
               href={link.href}
               className={inlineLinkClass}
               target="_blank"
-              rel={link.sponsored ? "sponsored noopener" : "noopener"}
+              rel={OUTBOUND_BUY_REL}
               onClick={() =>
                 track(
                   link.kind === "affiliate"
@@ -59,7 +59,12 @@ export function Inline({ text }: { text: string }) {
               {l[1]}
             </Link>
           ) : (
-            <a key={i} href={href} rel="noopener" className={inlineLinkClass}>
+            <a
+              key={i}
+              href={href}
+              rel={/(^|\.)amazon\.com(\/|$)/i.test(href.replace(/^https?:\/\//, "")) ? OUTBOUND_BUY_REL : "noopener noreferrer"}
+              className={inlineLinkClass}
+            >
               {l[1]}
             </a>
           );

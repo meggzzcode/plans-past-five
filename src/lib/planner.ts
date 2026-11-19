@@ -200,7 +200,15 @@ function fits(a: Activity, input: PlanInput, relax: Relax = {}) {
   const s = input.setting ?? "any";
   if (!relax.setting && s !== "any" && a.setting !== "either" && a.setting !== s) return false;
   const e = input.energy ?? "any";
-  if (!relax.energy && e !== "any" && rank[a.energy] > rank[e]) return false;
+  // Low and Medium are ceilings ("nothing more tiring than this"); High is a floor, so an Active/High
+  // request never comes back with a yoga-on-a-mat idea.
+  if (!relax.energy && e !== "any") {
+    if (rank[a.energy] > rank[e]) return false;
+    if (e === "high" && rank[a.energy] < rank.medium) return false;
+  }
+  // Ideas that need signing up ahead are not something you can do on the fly. They only appear in a
+  // whole-weekend plan, where there is time to book.
+  if (a.advance && normWhen(input.when) !== "weekend") return false;
   if (!relax.vibe && !a.vibes.some((v) => vibeSet(input.vibe).includes(v))) return false;
   return true;
 }
@@ -229,7 +237,7 @@ function score(a: Activity, input: PlanInput) {
   let s = 0;
   if (a.vibes.some((v) => set.includes(v))) s += 3;
   if (set.includes(a.vibes[0]!)) s += 1;
-  if (input.energy && input.energy !== "any" && a.energy === input.energy) s += 1;
+  if (input.energy && input.energy !== "any" && a.energy === input.energy) s += 2;
   // A catch-all idea ("Drop-in class") ranks below a specific one that fits equally well.
   if (a.generic) s -= 2;
   return s;
@@ -283,9 +291,19 @@ const covered = (stops: Stop[], defs: SlotDef[], input: PlanInput) => {
  * only canonically (an idea goes in the earliest stop that could hold it) so that a plan can be
  * rebuilt exactly from its activity ids.
  */
-function assemble(input: PlanInput, defs: SlotDef[], seed: number, relax: Relax = {}): Stop[] {
+function assemble(
+  input: PlanInput,
+  defs: SlotDef[],
+  seed: number,
+  relax: Relax = {},
+  must?: Activity,
+): Stop[] {
   const cap = budgetCap(input.budget);
-  const lists = defs.map((d, i) => ordered(input, d, seed, i, relax));
+  const lists = defs.map((d, i) => {
+    const l = ordered(input, d, seed, i, relax);
+    // A pinned idea (carried over from the Tonight tool) is tried first in every stop.
+    return must ? [must, ...l.filter((a) => a.id !== must.id)] : l;
+  });
   const n = defs.length;
   const aim = targetMinutes(input);
   let best: Stop[] = [];
@@ -293,12 +311,14 @@ function assemble(input: PlanInput, defs: SlotDef[], seed: number, relax: Relax 
   let nodes = 0;
   const cur: Stop[] = [];
   const used = new Set<string>();
+  const families = new Set<string>();
   const good = (stops: Stop[]) =>
     aim === null ? stops.length === n : covered(stops, defs, input) >= aim * 0.9;
 
   const dfs = (i: number, prevEnd: number | null, spent: number, skipped: SlotDef[]) => {
     if (nodes++ > NODE_LIMIT) return;
     if (i === n) {
+      if (must && !used.has(must.id)) return;
       const value = covered(cur, defs, input) * 100 + cur.length;
       if (value > bestValue) {
         bestValue = value;
@@ -311,14 +331,16 @@ function assemble(input: PlanInput, defs: SlotDef[], seed: number, relax: Relax 
     const pe = newDay ? null : prevEnd;
     const sk = newDay ? [] : skipped;
     for (const a of lists[i]!) {
-      if (used.has(a.id)) continue;
+      if (used.has(a.id) || families.has(a.family)) continue; // never the same kind of thing twice
       if (cap !== null && spent + a.costMax > cap) continue;
       const at = place(a, def, pe);
       if (!at) continue;
       if (sk.some((d) => place(a, d, pe))) continue; // it belongs in an earlier stop
       cur.push({ slot: i, a, ...at });
       used.add(a.id);
+      families.add(a.family);
       dfs(i + 1, at.end, spent + a.costMax, []);
+      families.delete(a.family);
       used.delete(a.id);
       cur.pop();
       if (bestValue >= 0 && good(best)) return;
@@ -411,6 +433,8 @@ export type Plan = {
   targetMinutes: number | null;
   /** Set when the plan covers clearly less than the chosen length, and says why in plain words. */
   lengthNote: string | null;
+  /** True when some stops do not match the chosen vibe, added only to fill the chosen length. */
+  widenedVibe?: boolean;
   /**
    * Whole-plan cost. `typical` is the sum of each stop's midpoint (what most people spend); `max` is
    * the sum of the stop maximums, which is what the budget cap is checked against.
@@ -572,8 +596,15 @@ function swapFor(
   const rest = total - stops[index]!.a.costMax;
   const ids = idsOf(stops, defs);
   const mine = stops[index]!.a.id;
+  const others = new Set(stops.filter((_, i) => i !== index).map((s) => s.a.family));
   const list = activities
-    .filter((a) => !used.has(a.id) && fits(a, input) && (cap === null || rest + a.costMax <= cap))
+    .filter(
+      (a) =>
+        !used.has(a.id) &&
+        !others.has(a.family) &&
+        fits(a, input) &&
+        (cap === null || rest + a.costMax <= cap),
+    )
     .sort((x, y) => score(y, input) - score(x, input) || x.id.localeCompare(y.id));
   return (
     list.find((a) => {
@@ -652,8 +683,30 @@ function buildPlan(input: PlanInput, seed: number, stops: Stop[]): Plan {
   };
 }
 
+/**
+ * Strict first: every idea matches the chosen vibe. When that leaves the plan clearly shorter than the
+ * chosen length, vibe becomes a preference instead of a rule (matching ideas still rank first), so a
+ * half day is not one 30-minute stop. Who, budget, setting and energy always stay hard.
+ */
+function bestStops(
+  input: PlanInput,
+  defs: SlotDef[],
+  seed: number,
+): { stops: Stop[]; widened: boolean } {
+  const strict = assemble(input, defs, seed);
+  const aim = targetMinutes(input);
+  if (aim === null || spanOf(strict, defs) >= aim * LENGTH_TOLERANCE)
+    return { stops: strict, widened: false };
+  const wide = assemble(input, defs, seed, { vibe: true });
+  return spanOf(wide, defs) > spanOf(strict, defs)
+    ? { stops: wide, widened: true }
+    : { stops: strict, widened: false };
+}
+
 export function makePlan(input: PlanInput, seed = 0): Plan {
-  return buildPlan(input, seed, assemble(input, slotsFor(input), seed));
+  const defs = slotsFor(input);
+  const { stops, widened } = bestStops(input, defs, seed);
+  return { ...buildPlan(input, seed, stops), widenedVibe: widened };
 }
 
 /** Rebuilds a saved or shared plan exactly from its activity ids. Null if they do not fit the input. */

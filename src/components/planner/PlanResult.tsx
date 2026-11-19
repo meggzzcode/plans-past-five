@@ -22,6 +22,7 @@ import {
   type PlanInput,
   type PlanSlot,
 } from "@/lib/planner";
+import { canonicalUrl } from "@/lib/share";
 import { cn } from "@/lib/utils";
 import { imageSrc, pickImages, tintFor } from "./planImage";
 
@@ -132,7 +133,7 @@ export function PlanResult({ plan, saved, onShuffle, onToggleSave, onSwap, onRel
   const imgs = pickImages(plan.slots.map((s) => s.activity));
   const canShare = typeof navigator !== "undefined" && typeof navigator.share === "function";
 
-  const link = () => `${window.location.origin}${planHref(plan.input, plan.seed, plan.ids)}`;
+  const link = () => canonicalUrl(planHref(plan.input, plan.seed, plan.ids));
 
   const copy = async () => {
     const text = planText(plan, link());

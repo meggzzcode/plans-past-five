@@ -6,7 +6,7 @@
   "category": "after-hours",
   "status": "published",
   "publishedAt": "2026-11-18",
-  "hero": "watercolor",
+  "hero": "shopBookish",
   "searchIntent": "things to do after work / what to do in the evening instead of phone",
   "angle": "Weeknight-sized, budget-aware ideas grouped by mood, with time and cost for each",
   "hobbies": [
@@ -40,7 +40,7 @@
     },
     {
       "type": "p",
-      "text": "If most evenings feel like this, [low-energy hobbies](/journal/low-energy-hobbies) has more gentle ideas."
+      "text": "If most evenings feel like this, our guide to our guide to [low-energy hobbies](/journal/low-energy-hobbies) has more gentle ideas."
     },
     {
       "type": "item",

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, ListChecks, ListPlus } from "lucide-react";
-import { resolveProductLink, shopDisclosureSentences } from "@/config/affiliate";
+import { OUTBOUND_BUY_REL, resolveProductLink, shopDisclosureSentences } from "@/config/affiliate";
 import { linkableFor, photoFor, type CatalogProduct } from "@/data/catalog";
 import { useShopList } from "@/lib/shoplist";
 import { track } from "@/lib/track";
@@ -177,7 +177,7 @@ export function AlternativeRow({
       <a
         href={link.href}
         target="_blank"
-        rel={link.sponsored ? "sponsored noopener" : "noopener"}
+        rel={OUTBOUND_BUY_REL}
         onClick={onClick}
         className="inline-flex min-h-11 items-center gap-1 border-b-2 border-cherry py-2 text-sm font-semibold text-cherry hover:border-transparent"
         aria-label={`${linkLabel(link)}: ${p.shortName ?? p.name}`}
@@ -284,7 +284,7 @@ export function ProductCard({
         <a
           href={link.href}
           target="_blank"
-          rel={link.sponsored ? "sponsored noopener" : "noopener"}
+          rel={OUTBOUND_BUY_REL}
           onClick={onClick}
           className={cn(primaryButtonCls, "mt-4")}
           aria-label={`${linkLabel(link)}: ${p.shortName ?? p.name}`}

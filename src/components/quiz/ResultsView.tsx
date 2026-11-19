@@ -12,6 +12,7 @@ import { Bow, Flower, Sparkle, Star } from "@/components/brand/Doodles";
 import { SaveButton } from "@/components/editorial/SaveButton";
 import { ShopMyHobby } from "@/components/commerce/ShopMyHobby";
 import { cn } from "@/lib/utils";
+import { canonicalUrl } from "@/lib/share";
 import { track } from "@/lib/track";
 import { answerLabel } from "./questions";
 import { backBtn } from "./QuizStep";
@@ -165,7 +166,7 @@ export function ResultsView({
       ? (loosen.constraint as QuizKey)
       : null;
   const img = images[personaImage[persona.key]];
-  const url = () => window.location.href;
+  const url = () => canonicalUrl(`${window.location.pathname}${window.location.search}`);
   const share = async () => {
     setBusy(true);
     setNote(await shareResult(persona, picks, url()));

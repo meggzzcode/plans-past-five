@@ -131,10 +131,10 @@ function fromHobby(h: Hobby): Candidate {
   };
 }
 
-/** Activities have no energy/setting fields, so infer them from vibes (documented, deterministic). */
+/** Activities carry their own energy level; the outdoor flag still comes from the vibes. */
 function fromActivity(a: Activity): Candidate {
   const outdoor = a.vibes.includes("outdoorsy");
-  const energy: Energy = a.vibes.includes("adventurous") ? "medium" : outdoor ? "medium" : "low";
+  const energy: Energy = a.energy;
   const h = a.hobby ? hobbies.find((x) => x.slug === a.hobby) : undefined;
   // The idea's own "how to start" line (always present), so the card never says "start small".
   const firstStep = a.prep;
@@ -151,7 +151,7 @@ function fromActivity(a: Activity): Candidate {
     outdoor,
     social: a.who.some((w) => w !== "alone"),
     solo: a.who.includes("alone"),
-    tonight: tonightOk({ kind: "idea", parts: a.parts, title: a.text, firstStep }),
+    tonight: !a.advance && tonightOk({ kind: "idea", parts: a.parts, title: a.text, firstStep }),
     needsOthers: needsOthersWording.test(`${a.text} ${firstStep}`),
   };
 }

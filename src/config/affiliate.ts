@@ -219,6 +219,12 @@ export function resolveProductLink(p: LinkableProduct): ResolvedLink {
   };
 }
 
+/**
+ * rel attribute for every outbound shopping/buy link (Amazon or any retailer): always
+ * "sponsored noopener noreferrer", so the markup is correct the moment an entry goes live.
+ */
+export const OUTBOUND_BUY_REL = "sponsored noopener noreferrer";
+
 export function productHref(p: LinkableProduct) {
   return resolveProductLink(p).href;
 }
@@ -261,6 +267,26 @@ export const SHOP_LINK_FACTS = {
   /** When an entry is live (appended after the Associates statement). */
   neutral: "It never changes what we recommend.",
 } as const;
+
+/**
+ * ONE commission statement for Terms, Privacy and Affiliate Disclosure. Until an Amazon (or other)
+ * entry is live we do not earn anything from the links; once live, we "may earn a commission".
+ * `short` is the clause for running text, `long` adds the no-extra-cost line.
+ */
+export function commissionStatement() {
+  if (isMonetized()) {
+    return {
+      live: true,
+      short: "may earn a commission on qualifying purchases",
+      long: "We may earn a commission on qualifying purchases at no extra cost to you.",
+    } as const;
+  }
+  return {
+    live: false,
+    short: "do not currently earn anything from them",
+    long: "We don't currently earn from these links. If that changes, we may earn a commission, and this page and the note beside the links will be updated first.",
+  } as const;
+}
 
 /**
  * The sentences shown beside shopping links, in order. Includes the Associates identification

@@ -7,7 +7,7 @@ import { getCategory } from "@/data/categories";
 import { images } from "@/data/images";
 import { categoryLabels, type Hobby } from "@/data/hobbies";
 import type { Product, Collection } from "@/data/products";
-import { resolveProductLink } from "@/config/affiliate";
+import { OUTBOUND_BUY_REL, resolveProductLink } from "@/config/affiliate";
 import { linkLabel } from "@/components/commerce/labels";
 import { SaveButton } from "@/components/editorial/SaveButton";
 import { cn } from "@/lib/utils";
@@ -266,7 +266,7 @@ export function ProductCard({
       <a
         href={link.href}
         target="_blank"
-        rel={link.sponsored ? "sponsored noopener" : "noopener"}
+        rel={OUTBOUND_BUY_REL}
         className="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-1.5 border-2 border-cherry px-4 py-2 text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream sm:w-fit"
       >
         {linkLabel(link, p.name)} <ArrowUpRight className="h-4 w-4" />

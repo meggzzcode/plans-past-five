@@ -4,12 +4,12 @@ import { ArrowUpRight, Copy, Send, X } from "lucide-react";
 import { useSaved, type SavedItem, type SavedKind } from "@/lib/saved";
 import { buildListText, copyText, productsWithStatus, useShopList } from "@/lib/shoplist";
 import { linkableFor, verifiedCatalog } from "@/data/catalog";
-import { resolveProductLink } from "@/config/affiliate";
+import { OUTBOUND_BUY_REL, resolveProductLink } from "@/config/affiliate";
 import { linkLabel } from "@/components/commerce/labels";
 import { ShopDisclosure } from "@/components/commerce/ProductCard";
 import { track } from "@/lib/track";
 import { outcomeMessage, sendToGroupChat } from "@/lib/share";
-import { planHref, sanitizePlanData } from "@/lib/planner";
+import { hrefFor, savedShareText } from "@/lib/saved-share";
 import { seo } from "@/lib/seo";
 import { NAMES } from "@/components/layout/nav";
 import { PageHero } from "@/components/editorial/Section";
@@ -35,15 +35,6 @@ const labels: Record<SavedKind, string> = {
   "solo-date": "Solo dates",
   product: "Shop picks",
 };
-
-/** Saved plans restore their exact itinerary from the stored input, seed and activity ids. */
-function hrefFor(i: SavedItem) {
-  if (i.kind === "plan" && i.plan) {
-    const p = sanitizePlanData(i.plan);
-    if (p) return planHref(p.input, p.seed, p.ids);
-  }
-  return i.href;
-}
 
 const ACTION =
   "inline-flex min-h-11 items-center gap-1.5 px-1 text-sm font-semibold text-espresso hover:text-cherry focus-visible:outline focus-visible:outline-2 focus-visible:outline-cherry";
@@ -119,7 +110,7 @@ function ShoppingList() {
                   <a
                     href={link.href}
                     target="_blank"
-                    rel={link.sponsored ? "sponsored noopener" : "noopener"}
+                    rel={OUTBOUND_BUY_REL}
                     onClick={() => {
                       const base = {
                         product_id: p.id,
@@ -187,7 +178,6 @@ function Saved() {
   const shop = useShopList();
   const hasShop = shop.ready && Object.keys(shop.state).length > 0;
   const kinds = (Object.keys(labels) as SavedKind[]).filter((k) => items.some((i) => i.kind === k));
-  const origin = typeof window !== "undefined" ? window.location.origin : undefined;
   return (
     <>
       <PageHero
@@ -287,11 +277,7 @@ function Saved() {
                           </button>
                         </div>
                         {(i.kind === "plan" || i.kind === "hobby") && (
-                          <ShareRow
-                            title={i.title}
-                            text={i.note ? `${i.title}\n${i.note}` : i.title}
-                            url={(origin ?? "") + hrefFor(i)}
-                          />
+                          <ShareRow title={i.title} {...savedShareText(i)} />
                         )}
                       </li>
                     ))}

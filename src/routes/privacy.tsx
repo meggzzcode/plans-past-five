@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seo, breadcrumbJsonLd } from "@/lib/seo";
+import { commissionStatement } from "@/config/affiliate";
 import { site } from "@/config/site";
 import { Link } from "@tanstack/react-router";
 import { ProsePage } from "@/components/pages/ProsePage";
@@ -46,9 +47,10 @@ export const Route = createFileRoute("/privacy")({
       </p>
       <h2>Affiliate links and cookies</h2>
       <p>
-        Some links to retailers such as Amazon may become affiliate links. When you click one, the
-        retailer may set its own cookies to record that you came from us, so we can earn a small
-        commission at no extra cost to you. Those cookies are set by the retailer, under its own
+        {commissionStatement().live
+          ? "Some links to retailers such as Amazon are affiliate links. When you click one, the retailer may set its own cookies to record that you came from us. "
+          : "Our links to retailers such as Amazon are ordinary links today. If they become affiliate links, the retailer may set its own cookies when you click one, to record that you came from us. "}
+        {commissionStatement().long} Those cookies are set by the retailer, under its own
         privacy policy, not by us. See the{" "}
         <Link to="/affiliate-disclosure">affiliate disclosure</Link>.
       </p>

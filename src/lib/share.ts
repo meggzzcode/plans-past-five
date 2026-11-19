@@ -11,6 +11,12 @@ export function absoluteUrl(pathOrUrl: string, origin: string = site.url): strin
   return `${origin.replace(/\/$/, "")}${pathOrUrl.startsWith("/") ? "" : "/"}${pathOrUrl}`;
 }
 
+/**
+ * The one canonical address every share, copy and group-chat action uses (site.url), never the
+ * address the page happens to be open on (localhost, a preview host). Pass a path plus any query.
+ */
+export const canonicalUrl = (pathAndQuery: string): string => absoluteUrl(pathAndQuery);
+
 /** Standard Pinterest pin-creation URL for one of our own pages and one of our own images. */
 export function pinterestCreateUrl(opts: {
   path: string;

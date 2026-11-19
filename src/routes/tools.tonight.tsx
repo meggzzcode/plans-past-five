@@ -12,6 +12,7 @@ import {
   type TonightInput,
 } from "@/lib/tonight";
 import { seo, absoluteUrl } from "@/lib/seo";
+import { canonicalUrl } from "@/lib/share";
 import { images } from "@/data/images";
 import { Kicker } from "@/components/editorial/Section";
 import { Star } from "@/components/brand/Doodles";
@@ -110,7 +111,7 @@ function Tonight() {
     setInput((i) => ({ ...i, ...patch }));
     setSeed(0);
   };
-  const text = () => tonightText(input, result.suggestions, `${window.location.origin}${href}`);
+  const text = () => tonightText(input, result.suggestions, canonicalUrl(href));
   const copy = async () => {
     try {
       await navigator.clipboard.writeText(text());

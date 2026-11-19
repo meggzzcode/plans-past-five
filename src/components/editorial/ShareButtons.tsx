@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link2, Check, Send } from "lucide-react";
-import { site } from "@/config/site";
-import { outcomeMessage, pinterestCreateUrl, sendToGroupChat } from "@/lib/share";
+import { canonicalUrl, outcomeMessage, pinterestCreateUrl, sendToGroupChat } from "@/lib/share";
 import { copyText } from "@/lib/shoplist";
 
 const BTN =
@@ -20,8 +19,7 @@ export function ShareButtons({
   const [copied, setCopied] = useState(false);
   const [note, setNote] = useState("");
   const copy = async () => {
-    const live = typeof window !== "undefined" ? window.location.origin + path : site.url + path;
-    if (await copyText(live)) {
+    if (await copyText(canonicalUrl(path))) {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     }
@@ -37,7 +35,7 @@ export function ShareButtons({
     const out = await sendToGroupChat({
       title,
       text: `${title} (Plans Past Five)`,
-      url: site.url + path,
+      url: canonicalUrl(path),
     });
     setNote(outcomeMessage[out]);
     setTimeout(() => setNote(""), 2500);

@@ -74,10 +74,10 @@ export const kits: Kit[] = [
     headline: "Paint something tonight",
     dek: "Paint, a brush or two and paper that won't buckle.",
     hobby: "watercolor-painting",
-    note: "Start with the paint, a round brush and heavy paper. The rest can wait.",
+    note: "Pick one small set of paints and heavy paper. A boxed set may come with far more colors than you need: start with three, and use the brushes in the box until you want better ones.",
     slots: [
-      s("paints", "A small pan or tube set", E),
-      s("brushes", "Round brushes", E),
+      s("paints", "One small pan or tube set (pick one)", E),
+      s("brushes", "A better round brush, once the box brushes feel limiting", O),
       s("paper", "Watercolor paper or pad", E),
       s("palette", "Palette or mixing tray", O, "affordable"),
       s("masking-tape", "Masking tape", P),

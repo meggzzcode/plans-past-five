@@ -69,7 +69,7 @@ export const Route = createFileRoute("/about")({
       <p>
         Everything here is written by {site.editorialByline}, with no single named author on
         purpose. We don't invent personal experiences, product tests, reviews or community numbers.
-        How we use AI tools is explained on the{" "}
+        How we write and check our stories is explained on the{" "}
         <Link to="/editorial-policy">editorial standards page</Link>, and our{" "}
         <Link to="/affiliate-disclosure">affiliate disclosure</Link> says how shopping links work.
       </p>

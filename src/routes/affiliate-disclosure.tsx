@@ -4,6 +4,7 @@ import { site } from "@/config/site";
 import {
   SHOP_LINK_FACTS,
   AMAZON_PROGRAM_STATEMENT,
+  commissionStatement,
   affiliateRegistry,
   isEntryLive,
   isMonetized,
@@ -32,7 +33,7 @@ export const Route = createFileRoute("/affiliate-disclosure")({
           <>
             {amazonLive && (
               <p>
-                {site.name} {AMAZON_PROGRAM_STATEMENT} We earn at no extra cost to you. Next to each
+                {site.name} {AMAZON_PROGRAM_STATEMENT} {commissionStatement().long} Next to each
                 Amazon link we show Amazon's required statement.
               </p>
             )}
@@ -40,17 +41,14 @@ export const Route = createFileRoute("/affiliate-disclosure")({
               .filter((e) => e.id !== "amazon")
               .map((e) => (
                 <p key={e.id}>
-                  Some links go to {e.retailer} through the {e.network} affiliate program. If you
-                  buy through them we may earn a commission at no extra cost to you.
+                  Some links go to {e.retailer} through the {e.network} affiliate program. {commissionStatement().long}
                 </p>
               ))}
             <p>{SHOP_LINK_FACTS.neutral}</p>
           </>
         ) : (
           <p>
-            {SHOP_LINK_FACTS.notEarning} Our shopping links are ordinary Amazon links. If that
-            changes, this page and the note beside our links will be updated before any commission
-            links go live.
+            Our shopping links are ordinary Amazon links. {commissionStatement().long}
           </p>
         )}
         <h2>What the buttons do</h2>

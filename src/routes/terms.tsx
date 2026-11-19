@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seo, breadcrumbJsonLd } from "@/lib/seo";
+import { commissionStatement } from "@/config/affiliate";
 import { site } from "@/config/site";
 import { ProsePage } from "@/components/pages/ProsePage";
 
@@ -37,7 +38,7 @@ export const Route = createFileRoute("/terms")({
       </p>
       <h2>Links and affiliate relationships</h2>
       <p>
-        We link to third-party sites and may earn a commission on some purchases. We do not control
+        We link to third-party sites. {commissionStatement().long} We do not control
         those sites and are not responsible for their content, prices, products or policies.
       </p>
       <h2>No warranty</h2>

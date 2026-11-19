@@ -76,8 +76,7 @@ export const Route = createFileRoute("/methodology")({
       <p>
         The pictures on shopping cards are either a product photo we have the right to show, with a
         credit, or a plain label with the brand and product type. We do not copy Amazon's images.
-        The illustrations on collection pages are styling, not specific products, and were made with
-        AI tools.
+        The illustrations on collection pages are styling, not specific products.
       </p>
       <h2>Last verified dates</h2>
       <p>

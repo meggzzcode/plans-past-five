@@ -26,6 +26,16 @@ export type Activity = {
   setting: ActivitySetting;
   /** True when it can be done without leaving the house. */
   home: boolean;
+  /**
+   * True when it needs signing up or booking ahead (a volunteer shift). Same-day, tonight and
+   * single-day plans leave these out, because nobody can do them on the fly.
+   */
+  advance?: boolean;
+  /**
+   * Activity family (cooking, walking, painting ...). The planner never puts two ideas of the same
+   * family in one itinerary, so a plan does not bake and then cook.
+   */
+  family: string;
   /** Approximate cost range in whole dollars. Always labeled approximate in the UI. */
   costMin: number;
   costMax: number;
@@ -41,7 +51,17 @@ export type Activity = {
 
 type Base = Omit<
   Activity,
-  "name" | "energy" | "setting" | "home" | "costMin" | "costMax" | "prep" | "supplies" | "at"
+  | "name"
+  | "energy"
+  | "setting"
+  | "home"
+  | "advance"
+  | "family"
+  | "costMin"
+  | "costMax"
+  | "prep"
+  | "supplies"
+  | "at"
 >;
 
 const A = (
@@ -1098,6 +1118,32 @@ const startWindows: Record<string, [number, number]> = {
   "call-walk": [hm(17), hm(20)],
 };
 
+/** Ideas that need signing up or booking ahead. Edit here. */
+const ADVANCE_IDS: readonly string[] = ["volunteer"];
+
+/** Ideas that are the same kind of thing. Anything not listed is its own family. Edit here. */
+const FAMILIES: Record<string, string[]> = {
+  cooking: ["bake", "cook-together", "meal-prep", "dinner-for-one", "slow-breakfast"],
+  walking: [
+    "park-walk",
+    "thermos-walk",
+    "call-walk",
+    "photo-walk",
+    "film-roll",
+    "new-neighborhood",
+    "trail",
+    "sunset",
+  ],
+  painting: ["watercolor", "paint-night", "pottery-studio", "cafe-sketch"],
+  "paper-craft": ["collage", "journal", "zine", "letter"],
+  reading: ["read-bath", "book-club", "bookstore", "crossword-cafe", "puzzle"],
+  "ball-sports": ["tennis", "pickleball", "frisbee"],
+  wheels: ["skate", "bike-ride"],
+  "self-care": ["face-mask", "reset-morning", "vinyl", "movie-night"],
+};
+const familyOf = (id: string) =>
+  Object.entries(FAMILIES).find(([, ids]) => ids.includes(id))?.[0] ?? id;
+
 export const activities: Activity[] = base.map((b) => {
   const e = extras[b.id];
   if (!e) throw new Error(`Activity "${b.id}" is missing details`);
@@ -1108,6 +1154,8 @@ export const activities: Activity[] = base.map((b) => {
     energy: e.energy,
     setting: e.setting,
     home: e.home === true,
+    ...(ADVANCE_IDS.includes(b.id) ? { advance: true } : {}),
+    family: familyOf(b.id),
     costMin: e.cost[0],
     costMax: e.cost[1],
     prep: e.prep,

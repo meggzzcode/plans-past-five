@@ -6,3238 +6,3712 @@ import type { CatalogProduct } from "./catalog";
 
 export const generatedCatalog: CatalogProduct[] = [
   {
-    id: "mr-pen-washi-tape-21-rolls",
-    name: "Washi Tape Set, 21 Rolls, Assorted Sizes, Floral",
-    brand: "Mr. Pen",
-    category: "Washi tape",
-    description:
-      "A 21-roll washi tape set in three widths with floral, pastel and seasonal designs.",
-    asin: "B08L5PB8N6",
-    amazonUrl: "https://www.amazon.com/dp/B08L5PB8N6",
-    specs: [
+    "id": "mr-pen-washi-tape-21-rolls",
+    "name": "Washi Tape Set, 21 Rolls, Assorted Sizes, Floral",
+    "brand": "Mr. Pen",
+    "category": "Washi tape",
+    "description": "A 21-roll washi tape set in three widths with floral, pastel and seasonal designs.",
+    "asin": "B08L5PB8N6",
+    "amazonUrl": "https://www.amazon.com/dp/B08L5PB8N6",
+    "specs": [
       {
-        label: "Rolls",
-        value: "21",
+        "label": "Rolls",
+        "value": "21"
       },
       {
-        label: "Widths",
-        value: "0.6 in x 7, 0.3 in x 7, 0.12 in x 7",
-      },
+        "label": "Widths",
+        "value": "0.6 in x 7, 0.3 in x 7, 0.12 in x 7"
+      }
     ],
-    hobbies: ["junk-journaling"],
-    articles: ["junk-journaling-supplies-for-beginners", "how-to-start-junk-journaling"],
-    collections: ["journaling-era", "creative-girl"],
-    kitSlots: [
-      {
-        kit: "junk-journaling",
-        slot: "washi-tape",
-      },
+    "hobbies": [
+      "junk-journaling"
     ],
-    role: "affordable",
-    isEssential: false,
-    audience: "Beginners who want variety in a few widths",
-    whySelected:
-      "A varied, low-commitment starter set; the listing says it tears by hand and repositions without residue.",
-    limitations: [
+    "articles": [
+      "junk-journaling-supplies-for-beginners",
+      "how-to-start-junk-journaling"
+    ],
+    "collections": [
+      "journaling-era",
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "junk-journaling",
+        "slot": "washi-tape"
+      }
+    ],
+    "role": "affordable",
+    "isEssential": false,
+    "audience": "Beginners who want variety in a few widths",
+    "whySelected": "A varied, low-commitment starter set; the listing says it tears by hand and repositions without residue.",
+    "limitations": [
       "Designs are a mixed assortment and include seasonal prints",
       "Residue and repositioning claims are the listing's, not tested by us",
-      "Manufacturer page not yet checked",
+      "Manufacturer page not yet checked"
     ],
-    researchSources: ["https://www.amazon.com/dp/B08L5PB8N6"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "Floral washi tape, 21 rolls",
-    benefit: "Pastel floral rolls in three widths: enough to dress every page of a first journal.",
-    lead: true,
+    "researchSources": [
+      "https://www.amazon.com/dp/B08L5PB8N6"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "Floral washi tape, 21 rolls",
+    "benefit": "Pastel floral rolls in three widths: enough to dress every page of a first journal.",
+    "lead": true
   },
   {
-    id: "knaid-slim-washi-tape-40-rolls-minimalist",
-    name: "Slim Washi Tape Gift Box Set, 40 Rolls, 10 mm (Minimalist)",
-    brand: "Knaid",
-    category: "Washi tape",
-    description:
-      "A 40-roll set of 10 mm washi tape in neutral, geometric and solid designs, in a gift box.",
-    asin: "B0881M69D4",
-    amazonUrl: "https://www.amazon.com/dp/B0881M69D4",
-    specs: [
+    "id": "knaid-slim-washi-tape-40-rolls-minimalist",
+    "name": "Slim Washi Tape Gift Box Set, 40 Rolls, 10 mm (Minimalist)",
+    "brand": "Knaid",
+    "category": "Washi tape",
+    "description": "A 40-roll set of 10 mm washi tape in neutral, geometric and solid designs, in a gift box.",
+    "asin": "B0881M69D4",
+    "amazonUrl": "https://www.amazon.com/dp/B0881M69D4",
+    "specs": [
       {
-        label: "Rolls",
-        value: "40",
+        "label": "Rolls",
+        "value": "40"
       },
       {
-        label: "Width",
-        value: "10 mm",
+        "label": "Width",
+        "value": "10 mm"
       },
       {
-        label: "Length",
-        value: "5 m x 10 rolls, 3 m x 30 rolls",
+        "label": "Length",
+        "value": "5 m x 10 rolls, 3 m x 30 rolls"
       },
       {
-        label: "Variant",
-        value: "Minimalist",
-      },
+        "label": "Variant",
+        "value": "Minimalist"
+      }
     ],
-    hobbies: ["junk-journaling"],
-    articles: ["junk-journaling-supplies-for-beginners", "how-to-start-junk-journaling"],
-    collections: ["journaling-era", "creative-girl"],
-    kitSlots: [
-      {
-        kit: "junk-journaling",
-        slot: "washi-tape",
-      },
+    "hobbies": [
+      "junk-journaling"
     ],
-    role: "aesthetic-upgrade",
-    isEssential: false,
-    audience: "People who want a calmer, neutral palette",
-    whySelected:
-      "Cohesive neutral look and a lot of tape per set; the listing describes it as tearable and repositionable.",
-    limitations: [
+    "articles": [
+      "junk-journaling-supplies-for-beginners",
+      "how-to-start-junk-journaling"
+    ],
+    "collections": [
+      "journaling-era",
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "junk-journaling",
+        "slot": "washi-tape"
+      }
+    ],
+    "role": "aesthetic-upgrade",
+    "isEssential": false,
+    "audience": "People who want a calmer, neutral palette",
+    "whySelected": "Cohesive neutral look and a lot of tape per set; the listing describes it as tearable and repositionable.",
+    "limitations": [
       "One width only (10 mm)",
       "Variant colour range matters: confirm the Minimalist variant is selected",
-      "Manufacturer page not yet checked",
+      "Manufacturer page not yet checked"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0881M69D4"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "Neutral slim washi tape, 40 rolls",
-    benefit: "Calm neutral and geometric prints in a gift box, 10 mm wide.",
-    compare: "Quieter, more neutral palette than the floral set; one width only.",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0881M69D4"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "Neutral slim washi tape, 40 rolls",
+    "benefit": "Calm neutral and geometric prints in a gift box, 10 mm wide.",
+    "compare": "Quieter, more neutral palette than the floral set; one width only."
   },
   {
-    id: "paperage-blank-journal-160-pages",
-    name: "Blank Journal Notebook, 160 Pages, Medium 5.6 x 8 in (Blush)",
-    brand: "PAPERAGE",
-    category: "Journals",
-    description:
-      "A hardcover thread-bound blank journal with 100 gsm acid-free ivory paper, inner pocket, ribbon and elastic closure.",
-    asin: "B08FC38BJ4",
-    amazonUrl: "https://www.amazon.com/dp/B08FC38BJ4",
-    specs: [
+    "id": "paperage-blank-journal-160-pages",
+    "name": "Blank Journal Notebook, 160 Pages, Medium 5.6 x 8 in (Blush)",
+    "brand": "PAPERAGE",
+    "category": "Journals",
+    "description": "A hardcover thread-bound blank journal with 100 gsm acid-free ivory paper, inner pocket, ribbon and elastic closure.",
+    "asin": "B08FC38BJ4",
+    "amazonUrl": "https://www.amazon.com/dp/B08FC38BJ4",
+    "specs": [
       {
-        label: "Pages",
-        value: "160",
+        "label": "Pages",
+        "value": "160"
       },
       {
-        label: "Size",
-        value: "5.6 x 8 in",
+        "label": "Size",
+        "value": "5.6 x 8 in"
       },
       {
-        label: "Paper",
-        value: "100 gsm acid-free ivory",
+        "label": "Paper",
+        "value": "100 gsm acid-free ivory"
       },
       {
-        label: "Binding",
-        value: "thread-bound, lay-flat",
-      },
+        "label": "Binding",
+        "value": "thread-bound, lay-flat"
+      }
     ],
-    hobbies: ["junk-journaling"],
-    articles: ["junk-journaling-supplies-for-beginners", "how-to-start-junk-journaling"],
-    collections: ["journaling-era", "creative-girl"],
-    kitSlots: [
-      {
-        kit: "junk-journaling",
-        slot: "journal",
-      },
+    "hobbies": [
+      "junk-journaling"
     ],
-    role: "aesthetic-upgrade",
-    isEssential: false,
-    audience: "People who want a smaller, bag-size journal in blush",
-    whySelected:
-      "The listing names junk journaling as a use and describes thicker acid-free paper than ordinary notebooks.",
-    limitations: [
+    "articles": [
+      "junk-journaling-supplies-for-beginners",
+      "how-to-start-junk-journaling"
+    ],
+    "collections": [
+      "journaling-era",
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "junk-journaling",
+        "slot": "journal"
+      }
+    ],
+    "role": "aesthetic-upgrade",
+    "isEssential": false,
+    "audience": "People who want a smaller, bag-size journal in blush",
+    "whySelected": "The listing names junk journaling as a use and describes thicker acid-free paper than ordinary notebooks.",
+    "limitations": [
       "100 gsm paper will warp if the pages get glue-heavy; the listing does not promise it handles wet glue",
       "Thread-bound journals thicken at the spine as pages fill",
       "Colour is a variant (Blush)",
-      "Manufacturer page not yet checked",
+      "Manufacturer page not yet checked"
     ],
-    researchSources: ["https://www.amazon.com/dp/B08FC38BJ4"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "Blush blank journal, 160 pages",
-    benefit:
-      "A blush-pink journal that slips into a bag, with 160 pages for tickets, notes and half-finished ideas.",
-    compare:
-      "Smaller bag-size blush journal; thinner 100 gsm paper, so glue-heavy pages warp sooner.",
+    "researchSources": [
+      "https://www.amazon.com/dp/B08FC38BJ4"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "Blush blank journal, 160 pages",
+    "benefit": "A blush-pink journal that slips into a bag, with 160 pages for tickets, notes and half-finished ideas.",
+    "compare": "Smaller bag-size blush journal; thinner 100 gsm paper, so glue-heavy pages warp sooner."
   },
   {
-    id: "scotch-glue-stick-photo-safe-4-pack",
-    name: "Glue Stick, Photo-Safe Adhesive, 1.41 oz, 4-Pack",
-    brand: "Scotch",
-    category: "Adhesive",
-    description:
-      "A four-pack of glue sticks that the listing describes as acid-free and photo-safe.",
-    asin: "B07BVQFKM8",
-    amazonUrl: "https://www.amazon.com/dp/B07BVQFKM8",
-    specs: [
+    "id": "scotch-glue-stick-photo-safe-4-pack",
+    "name": "Glue Stick, Photo-Safe Adhesive, 1.41 oz, 4-Pack",
+    "brand": "Scotch",
+    "category": "Adhesive",
+    "description": "A four-pack of glue sticks that the listing describes as acid-free and photo-safe.",
+    "asin": "B07BVQFKM8",
+    "amazonUrl": "https://www.amazon.com/dp/B07BVQFKM8",
+    "specs": [
       {
-        label: "Pack",
-        value: "4",
+        "label": "Pack",
+        "value": "4"
       },
       {
-        label: "Total weight",
-        value: "1.41 oz",
+        "label": "Total weight",
+        "value": "1.41 oz"
       },
       {
-        label: "Claims on listing",
-        value: "acid free, photo safe",
-      },
+        "label": "Claims on listing",
+        "value": "acid free, photo safe"
+      }
     ],
-    hobbies: ["junk-journaling"],
-    articles: ["junk-journaling-supplies-for-beginners", "how-to-start-junk-journaling"],
-    collections: ["journaling-era", "creative-girl"],
-    kitSlots: [
-      {
-        kit: "junk-journaling",
-        slot: "adhesive",
-      },
+    "hobbies": [
+      "junk-journaling"
     ],
-    role: "essential",
-    isEssential: true,
-    audience: "Beginners who need a cheap, reliable paper adhesive",
-    whySelected:
-      "A cheap paper adhesive from a familiar stationery brand; the listing says acid-free and photo-safe.",
-    limitations: [
+    "articles": [
+      "junk-journaling-supplies-for-beginners",
+      "how-to-start-junk-journaling"
+    ],
+    "collections": [
+      "journaling-era",
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "junk-journaling",
+        "slot": "adhesive"
+      }
+    ],
+    "role": "essential",
+    "isEssential": true,
+    "audience": "Beginners who need a cheap, reliable paper adhesive",
+    "whySelected": "A cheap paper adhesive from a familiar stationery brand; the listing says acid-free and photo-safe.",
+    "limitations": [
       "Glue sticks can wrinkle thin paper",
       "Not for bulky 3D items",
       "Manufacturer page not yet checked",
-      "Scotch maker page (1.41 oz craft glue stick, read 2026-11-18) says acid free and photo safe in its text but its attribute table says Photo Safe: No, so photo-safe is not confirmed: keep it attributed to the listing",
+      "Scotch maker page (1.41 oz craft glue stick, read 2026-11-18) says acid free and photo safe in its text but its attribute table says Photo Safe: No, so photo-safe is not confirmed: keep it attributed to the listing"
     ],
-    researchSources: ["https://www.amazon.com/dp/B07BVQFKM8"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "Scotch glue sticks, 4-pack",
-    benefit: "A glue stick you'll recognise, four to a pack, so there's always a spare mid-page.",
-    lead: true,
+    "researchSources": [
+      "https://www.amazon.com/dp/B07BVQFKM8"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "Scotch glue sticks, 4-pack",
+    "benefit": "A glue stick you'll recognise, four to a pack, so there's always a spare mid-page.",
+    "lead": true
   },
   {
-    id: "scotch-6061-tape-runner-3-pack",
-    name: "6061 Double Sided Adhesive Roller Tape Runner, 0.27 in x 26 ft, Pack of 3",
-    brand: "Scotch",
-    category: "Adhesive",
-    description:
-      "A three-pack of double-sided tape runners that the listing describes as permanent, acid-free and photo-safe.",
-    asin: "B0FP6NW64R",
-    amazonUrl: "https://www.amazon.com/dp/B0FP6NW64R",
-    specs: [
+    "id": "scotch-6061-tape-runner-3-pack",
+    "name": "6061 Double Sided Adhesive Roller Tape Runner, 0.27 in x 26 ft, Pack of 3",
+    "brand": "Scotch",
+    "category": "Adhesive",
+    "description": "A three-pack of double-sided tape runners that the listing describes as permanent, acid-free and photo-safe.",
+    "asin": "B0FP6NW64R",
+    "amazonUrl": "https://www.amazon.com/dp/B0FP6NW64R",
+    "specs": [
       {
-        label: "Pack",
-        value: "3",
+        "label": "Pack",
+        "value": "3"
       },
       {
-        label: "Tape",
-        value: "0.27 in x 26 ft per roller",
+        "label": "Tape",
+        "value": "0.27 in x 26 ft per roller"
       },
       {
-        label: "Claims on listing",
-        value: "permanent, acid-free, photo-safe",
-      },
+        "label": "Claims on listing",
+        "value": "permanent, acid-free, photo-safe"
+      }
     ],
-    hobbies: ["junk-journaling"],
-    articles: ["junk-journaling-supplies-for-beginners", "how-to-start-junk-journaling"],
-    collections: ["journaling-era", "creative-girl"],
-    kitSlots: [
-      {
-        kit: "junk-journaling",
-        slot: "adhesive",
-      },
+    "hobbies": [
+      "junk-journaling"
     ],
-    role: "researched-pick",
-    isEssential: false,
-    audience: "Beginners who dislike wrinkly glue",
-    whySelected:
-      "A no-dry-time, no-wrinkle alternative to glue; the listing says acid-free and photo-safe.",
-    limitations: [
+    "articles": [
+      "junk-journaling-supplies-for-beginners",
+      "how-to-start-junk-journaling"
+    ],
+    "collections": [
+      "journaling-era",
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "junk-journaling",
+        "slot": "adhesive"
+      }
+    ],
+    "role": "researched-pick",
+    "isEssential": false,
+    "audience": "Beginners who dislike wrinkly glue",
+    "whySelected": "A no-dry-time, no-wrinkle alternative to glue; the listing says acid-free and photo-safe.",
+    "limitations": [
       "Permanent adhesive: hard to reposition",
       "Runner can run out mid-page",
       "Manufacturer page not yet checked",
       "Scotch 6061 page was not found on the maker site (2026-11-18): the claims stay attributed to the listing",
-      "2026-11-19: scotchbrand.com blocked fetch; search snippets showed other Scotch double-sided runners but no 6061 page: still not confirmed",
+      "2026-11-19: scotchbrand.com blocked fetch; search snippets showed other Scotch double-sided runners but no 6061 page: still not confirmed"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0FP6NW64R"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "Scotch tape runners, 3-pack",
-    benefit: "Rolls on dry tape instead of wet glue, so there is nothing to wait for.",
-    compare: "Tidier than a glue stick, but permanent: you can't lift it once placed.",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0FP6NW64R"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "Scotch tape runners, 3-pack",
+    "benefit": "Rolls on dry tape instead of wet glue, so there is nothing to wait for.",
+    "compare": "Tidier than a glue stick, but permanent: you can't lift it once placed."
   },
   {
-    id: "knaid-200-piece-vintage-ephemera-cottagecore",
-    name: "200 Piece Vintage Ephemera Bundle, Cottagecore (Pastel/Earthy Tones)",
-    brand: "Knaid",
-    category: "Ephemera and paper",
-    description:
-      "About 200 pieces of ephemera: matte decoupage paper, washi stickers and PET stickers in a cottagecore theme.",
-    asin: "B09TB69V48",
-    amazonUrl: "https://www.amazon.com/dp/B09TB69V48",
-    specs: [
+    "id": "knaid-200-piece-vintage-ephemera-cottagecore",
+    "name": "200 Piece Vintage Ephemera Bundle, Cottagecore (Pastel/Earthy Tones)",
+    "brand": "Knaid",
+    "category": "Ephemera and paper",
+    "description": "About 200 pieces of ephemera: matte decoupage paper, washi stickers and PET stickers in a cottagecore theme.",
+    "asin": "B09TB69V48",
+    "amazonUrl": "https://www.amazon.com/dp/B09TB69V48",
+    "specs": [
       {
-        label: "Pieces",
-        value: "about 200",
+        "label": "Pieces",
+        "value": "about 200"
       },
       {
-        label: "Contents",
-        value: "80 matte decoupage paper, 80 washi stickers, 40 PET stickers",
+        "label": "Contents",
+        "value": "80 matte decoupage paper, 80 washi stickers, 40 PET stickers"
       },
       {
-        label: "Theme",
-        value: "cottagecore",
-      },
+        "label": "Theme",
+        "value": "cottagecore"
+      }
     ],
-    hobbies: ["junk-journaling"],
-    articles: ["junk-journaling-supplies-for-beginners", "how-to-start-junk-journaling"],
-    collections: ["journaling-era", "creative-girl"],
-    kitSlots: [
-      {
-        kit: "junk-journaling",
-        slot: "paper",
-      },
+    "hobbies": [
+      "junk-journaling"
     ],
-    role: "nice-to-have",
-    isEssential: false,
-    audience: "People who want ready-made pretty paper",
-    whySelected: "Ready-made, coordinated paper and stickers for people with no scraps yet.",
-    limitations: [
+    "articles": [
+      "junk-journaling-supplies-for-beginners",
+      "how-to-start-junk-journaling"
+    ],
+    "collections": [
+      "journaling-era",
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "junk-journaling",
+        "slot": "paper"
+      }
+    ],
+    "role": "nice-to-have",
+    "isEssential": false,
+    "audience": "People who want ready-made pretty paper",
+    "whySelected": "Ready-made, coordinated paper and stickers for people with no scraps yet.",
+    "limitations": [
       "Optional: free ephemera (envelopes, tickets, wrapping paper) does the same job",
       "One fixed theme",
-      "Manufacturer page not yet checked",
+      "Manufacturer page not yet checked"
     ],
-    researchSources: ["https://www.amazon.com/dp/B09TB69V48"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "Cottagecore ephemera pack, 200 pieces",
-    benefit:
-      "Ready-made pastel and earthy papers and stickers for pages before you have any scraps.",
-    lead: true,
+    "researchSources": [
+      "https://www.amazon.com/dp/B09TB69V48"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "Cottagecore ephemera pack, 200 pieces",
+    "benefit": "Ready-made pastel and earthy papers and stickers for pages before you have any scraps.",
+    "hold": "Volume-pitch pack of fixed-theme stickers and paper; contradicts the paper-with-a-past advice and the free-ephemera tip. Held as filler.",
+    "lead": true
   },
   {
-    id: "sakura-pigma-micron-8-pack-black",
-    name: "Pigma Micron Fineliner Pens, Black, Assorted Points, 8 Pack",
-    brand: "Sakura",
-    category: "Pens",
-    description: "Eight black archival fineliner pens in assorted tip sizes.",
-    asin: "B004QHI43S",
-    amazonUrl: "https://www.amazon.com/dp/B004QHI43S",
-    specs: [
+    "id": "sakura-pigma-micron-8-pack-black",
+    "name": "Pigma Micron Fineliner Pens, Black, Assorted Points, 8 Pack",
+    "brand": "Sakura",
+    "category": "Pens",
+    "description": "Eight black archival fineliner pens in assorted tip sizes.",
+    "asin": "B004QHI43S",
+    "amazonUrl": "https://www.amazon.com/dp/B004QHI43S",
+    "specs": [
       {
-        label: "Pack",
-        value: "8 pens",
+        "label": "Pack",
+        "value": "8 pens"
       },
       {
-        label: "Ink",
-        value: "pigment-based, listing says waterproof, fade-resistant, pH neutral",
-      },
+        "label": "Ink",
+        "value": "pigment-based, listing says waterproof, fade-resistant, pH neutral"
+      }
     ],
-    hobbies: ["junk-journaling"],
-    articles: ["junk-journaling-supplies-for-beginners", "how-to-start-junk-journaling"],
-    collections: ["journaling-era", "creative-girl"],
-    kitSlots: [
-      {
-        kit: "junk-journaling",
-        slot: "pens",
-      },
+    "hobbies": [
+      "junk-journaling"
     ],
-    role: "nice-to-have",
-    isEssential: false,
-    audience: "People who want to add handwriting or fine details",
-    whySelected:
-      "Archival-style fineliners; the listing and the manufacturer page describe waterproof pigment ink.",
-    limitations: [
+    "articles": [
+      "junk-journaling-supplies-for-beginners",
+      "how-to-start-junk-journaling"
+    ],
+    "collections": [
+      "journaling-era",
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "junk-journaling",
+        "slot": "pens"
+      }
+    ],
+    "role": "nice-to-have",
+    "isEssential": false,
+    "audience": "People who want to add handwriting or fine details",
+    "whySelected": "Archival-style fineliners; the listing and the manufacturer page describe waterproof pigment ink.",
+    "limitations": [
       "Black only",
       "Pen set contents come from the Amazon listing: the manufacturer page does not list the 8-pack set",
-      "2026-11-19: Sakura page lists archival ink, waterproof, ACMI non-toxic, fade/chemical resistant, but no sets or point sizes: 8-pack contents not confirmed",
+      "2026-11-19: Sakura page lists archival ink, waterproof, ACMI non-toxic, fade/chemical resistant, but no sets or point sizes: 8-pack contents not confirmed"
     ],
-    researchSources: [
+    "researchSources": [
       "https://www.amazon.com/dp/B004QHI43S",
-      "https://www.sakuraofamerica.com/product/pigma-micron/",
+      "https://www.sakuraofamerica.com/product/pigma-micron/"
     ],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    manufacturerUrl: "https://www.sakuraofamerica.com/product/pigma-micron/",
-    imageRights: "none",
-    shortName: "Pigma Micron pens, 8-pack",
-    benefit: "Fine black pens for handwriting and small details on your pages.",
-    lead: true,
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "manufacturerUrl": "https://www.sakuraofamerica.com/product/pigma-micron/",
+    "imageRights": "none",
+    "shortName": "Pigma Micron pens, 8-pack",
+    "benefit": "Fine black pens for handwriting and small details on your pages.",
+    "lead": true
   },
   {
-    id: "crayola-air-dry-clay-5-lb-bucket",
-    name: "Air Dry Clay, 5 lb",
-    brand: "Crayola",
-    category: "Air-dry clay",
-    description:
-      "A 5 lb resealable bucket of white air-dry clay for coil, slab, pinch and score-and-weld techniques.",
-    asin: "B089T7PX27",
-    amazonUrl: "https://www.amazon.com/dp/B089T7PX27",
-    specs: [
+    "id": "crayola-air-dry-clay-5-lb-bucket",
+    "name": "Air Dry Clay, 5 lb",
+    "brand": "Crayola",
+    "category": "Air-dry clay",
+    "description": "A 5 lb resealable bucket of white air-dry clay for coil, slab, pinch and score-and-weld techniques.",
+    "asin": "B089T7PX27",
+    "amazonUrl": "https://www.amazon.com/dp/B089T7PX27",
+    "specs": [
       {
-        label: "Weight",
-        value: "5 lb",
+        "label": "Weight",
+        "value": "5 lb"
       },
       {
-        label: "Container",
-        value: "resealable bucket",
+        "label": "Container",
+        "value": "resealable bucket"
       },
       {
-        label: "Listing",
-        value: "works with Crayola Project Paints and acrylic paints",
-      },
+        "label": "Listing",
+        "value": "works with Crayola Project Paints and acrylic paints"
+      }
     ],
-    hobbies: ["air-dry-clay"],
-    articles: ["how-to-start-air-dry-clay"],
-    collections: ["pottery-era", "creative-girl"],
-    kitSlots: [
-      {
-        kit: "air-dry-clay",
-        slot: "clay",
-      },
+    "hobbies": [
+      "air-dry-clay"
     ],
-    role: "essential",
-    isEssential: true,
-    audience: "Beginners who want a forgiving clay for a first few projects",
-    whySelected:
-      "The listing describes it as an air-dry clay that softens with water, in a resealable bucket.",
-    limitations: [
+    "articles": [
+      "how-to-start-air-dry-clay"
+    ],
+    "collections": [
+      "pottery-era",
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "air-dry-clay",
+        "slot": "clay"
+      }
+    ],
+    "role": "essential",
+    "isEssential": true,
+    "audience": "Beginners who want a forgiving clay for a first few projects",
+    "whySelected": "The listing describes it as an air-dry clay that softens with water, in a resealable bucket.",
+    "limitations": [
       "Marketed for kids and classrooms, not specifically for adult makers",
       "5 lb is a lot for a single small project",
       "Drying and cracking guidance has to come from the manufacturer, not this listing",
       "Do not call finished pieces food-safe",
       "Crayola page (read 2026-11-18, as a search snippet) says: 5 lb resealable bucket, natural white earth clay that dries to a hard solid with no kiln or oven, designed for ages 4 and older; it is marketed to children, not as a fine-art clay",
-      "The page text read did not mention food safety or a safety certification: say neither (ACMI/ASTM wording is not confirmed on crayola.com)",
+      "The page text read did not mention food safety or a safety certification: say neither (ACMI/ASTM wording is not confirmed on crayola.com)"
     ],
-    researchSources: [
+    "researchSources": [
       "https://www.amazon.com/dp/B089T7PX27",
-      "https://www.crayola.com/products/clay-and-modeling-compounds/5-lb-air-dry-clay-resealable-bucket-white-575055",
+      "https://www.crayola.com/products/clay-and-modeling-compounds/5-lb-air-dry-clay-resealable-bucket-white-575055"
     ],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    manufacturerUrl:
-      "https://www.crayola.com/products/clay-and-modeling-compounds/5-lb-air-dry-clay-resealable-bucket-white-575055",
-    imageRights: "none",
-    hold: "Kid-marketed bucket (ages 4+) and 5 lb is a lot for a first project. Held for audience fit; swap for an adult-oriented clay once Cowork C12 confirms one.",
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "manufacturerUrl": "https://www.crayola.com/products/clay-and-modeling-compounds/5-lb-air-dry-clay-resealable-bucket-white-575055",
+    "imageRights": "none",
+    "hold": "Kid-marketed bucket (ages 4+) and 5 lb is a lot for a first project. Held for audience fit; swap for an adult-oriented clay once Cowork C12 confirms one."
   },
   {
-    id: "shuttle-art-acrylic-paint-15-tubes",
-    name: "Acrylic Paint Set, 15 x 12 ml Tubes",
-    brand: "Shuttle Art",
-    category: "Acrylic paint",
-    description:
-      "A 15-colour set of 12 ml acrylic paint tubes with three brushes, described as suitable for clay among other surfaces.",
-    asin: "B083X67QFX",
-    amazonUrl: "https://www.amazon.com/dp/B083X67QFX",
-    specs: [
+    "id": "shuttle-art-acrylic-paint-15-tubes",
+    "name": "Acrylic Paint Set, 15 x 12 ml Tubes",
+    "brand": "Shuttle Art",
+    "category": "Acrylic paint",
+    "description": "A 15-colour set of 12 ml acrylic paint tubes with three brushes, described as suitable for clay among other surfaces.",
+    "asin": "B083X67QFX",
+    "amazonUrl": "https://www.amazon.com/dp/B083X67QFX",
+    "specs": [
       {
-        label: "Tubes",
-        value: "15 x 12 ml",
+        "label": "Tubes",
+        "value": "15 x 12 ml"
       },
       {
-        label: "Brushes",
-        value: "3 included",
+        "label": "Brushes",
+        "value": "3 included"
       },
       {
-        label: "Listing surfaces",
-        value: "canvas, wood, clay, fabric, ceramic",
-      },
+        "label": "Listing surfaces",
+        "value": "canvas, wood, clay, fabric, ceramic"
+      }
     ],
-    hobbies: ["air-dry-clay", "paint-by-numbers"],
-    articles: ["how-to-start-air-dry-clay"],
-    collections: ["pottery-era", "creative-girl"],
-    kitSlots: [
-      {
-        kit: "air-dry-clay",
-        slot: "paint",
-      },
+    "hobbies": [
+      "air-dry-clay",
+      "paint-by-numbers"
     ],
-    role: "affordable",
-    isEssential: true,
-    audience: "Beginners who need a first set of paints for dry clay",
-    whySelected:
-      "The listing names clay among suitable surfaces and includes brushes, so one purchase covers paint and brushes.",
-    limitations: [
+    "articles": [
+      "how-to-start-air-dry-clay"
+    ],
+    "collections": [
+      "pottery-era",
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "air-dry-clay",
+        "slot": "paint"
+      }
+    ],
+    "role": "affordable",
+    "isEssential": true,
+    "audience": "Beginners who need a first set of paints for dry clay",
+    "whySelected": "The listing names clay among suitable surfaces and includes brushes, so one purchase covers paint and brushes.",
+    "limitations": [
       "No safety certification was checked",
       "Small tubes run out quickly with large pieces",
-      "Manufacturer page not yet checked",
+      "Manufacturer page not yet checked"
     ],
-    researchSources: ["https://www.amazon.com/dp/B083X67QFX"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "Shuttle Art acrylic paints, 15 tubes",
-    benefit: "Fifteen 12 ml tubes in a spread of colors: enough to paint a first piece.",
-    lead: true,
+    "researchSources": [
+      "https://www.amazon.com/dp/B083X67QFX"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "Shuttle Art acrylic paints, 15 tubes",
+    "benefit": "Fifteen 12 ml tubes in a spread of colors: enough to paint a first piece.",
+    "lead": true
   },
   {
-    id: "mod-podge-acrylic-sealer-spray-gloss-12-oz",
-    name: "Spray Acrylic Sealer, 12 oz, Gloss",
-    brand: "Mod Podge",
-    category: "Sealer",
-    description: "A 12 oz gloss clear acrylic spray sealer for finished craft projects.",
-    asin: "B003VYD9DM",
-    amazonUrl: "https://www.amazon.com/dp/B003VYD9DM",
-    specs: [
+    "id": "mod-podge-acrylic-sealer-spray-gloss-12-oz",
+    "name": "Spray Acrylic Sealer, 12 oz, Gloss",
+    "brand": "Mod Podge",
+    "category": "Sealer",
+    "description": "A 12 oz gloss clear acrylic spray sealer for finished craft projects.",
+    "asin": "B003VYD9DM",
+    "amazonUrl": "https://www.amazon.com/dp/B003VYD9DM",
+    "specs": [
       {
-        label: "Size",
-        value: "12 oz",
+        "label": "Size",
+        "value": "12 oz"
       },
       {
-        label: "Finish",
-        value: "gloss",
+        "label": "Finish",
+        "value": "gloss"
       },
       {
-        label: "Listing advice",
-        value: "wear a fitted respirator and safety eyewear",
-      },
+        "label": "Listing advice",
+        "value": "wear a fitted respirator and safety eyewear"
+      }
     ],
-    hobbies: ["air-dry-clay"],
-    articles: ["how-to-start-air-dry-clay"],
-    collections: ["pottery-era", "creative-girl"],
-    kitSlots: [
-      {
-        kit: "air-dry-clay",
-        slot: "sealer",
-      },
+    "hobbies": [
+      "air-dry-clay"
     ],
-    role: "nice-to-have",
-    isEssential: false,
-    audience: "People who want a protective gloss finish",
-    whySelected:
-      "A sealer for finished craft projects; the listing's own safety advice (respirator, eyewear) is repeated here.",
-    limitations: [
+    "articles": [
+      "how-to-start-air-dry-clay"
+    ],
+    "collections": [
+      "pottery-era",
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "air-dry-clay",
+        "slot": "sealer"
+      }
+    ],
+    "role": "nice-to-have",
+    "isEssential": false,
+    "audience": "People who want a protective gloss finish",
+    "whySelected": "A sealer for finished craft projects; the listing's own safety advice (respirator, eyewear) is repeated here.",
+    "limitations": [
       "Spray sealer needs ventilation; the listing advises a respirator and eyewear",
       "Gloss only in this listing",
       "Do not treat as food-safe",
       "Plaid (maker) page read 2026-11-18, as a search snippet: 12 oz gloss clear acrylic sealer for wood, metal, canvas, terra cotta; the maker says it is quick-drying and will not run, drip or yellow (maker claims, not tested by us)",
-      "Ventilation, respirator and eyewear advice comes from the Amazon listing, not the maker snippet",
+      "Ventilation, respirator and eyewear advice comes from the Amazon listing, not the maker snippet"
     ],
-    researchSources: [
+    "researchSources": [
       "https://www.amazon.com/dp/B003VYD9DM",
-      "https://plaidonline.com/mod-podge-clear-acrylic-sealer-gloss-12-oz-1470",
+      "https://plaidonline.com/mod-podge-clear-acrylic-sealer-gloss-12-oz-1470"
     ],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    manufacturerUrl: "https://plaidonline.com/mod-podge-clear-acrylic-sealer-gloss-12-oz-1470",
-    imageRights: "none",
-    shortName: "Mod Podge gloss sealer spray",
-    benefit: "A gloss spray to finish painted pieces. Use it outdoors or with the windows open.",
-    lead: true,
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "manufacturerUrl": "https://plaidonline.com/mod-podge-clear-acrylic-sealer-gloss-12-oz-1470",
+    "imageRights": "none",
+    "shortName": "Mod Podge gloss sealer spray",
+    "benefit": "A gloss spray to finish painted pieces. Use it outdoors or with the windows open.",
+    "lead": true
   },
   {
-    id: "jongyance-american-mahjong-set-white-tiles",
-    name: "American Mahjong Set with Blue Carrying Bag, 166 White Tiles, 4 All-in-One Racks/Pushers",
-    brand: "Jongyance",
-    category: "Mahjong sets",
-    description:
-      "A 166-tile American mahjong set with four rack-and-pusher units and a zip carrying bag.",
-    asin: "B0D2TVXS2W",
-    amazonUrl: "https://www.amazon.com/dp/B0D2TVXS2W",
-    specs: [
+    "id": "jongyance-american-mahjong-set-white-tiles",
+    "name": "American Mahjong Set with Blue Carrying Bag, 166 White Tiles, 4 All-in-One Racks/Pushers",
+    "brand": "Jongyance",
+    "category": "Mahjong sets",
+    "description": "A 166-tile American mahjong set with four rack-and-pusher units and a zip carrying bag.",
+    "asin": "B0D2TVXS2W",
+    "amazonUrl": "https://www.amazon.com/dp/B0D2TVXS2W",
+    "specs": [
       {
-        label: "Tiles",
-        value: "166 melamine",
+        "label": "Tiles",
+        "value": "166 melamine"
       },
       {
-        label: "Tile size",
-        value: "1.2 x 0.9 x 0.5 in",
+        "label": "Tile size",
+        "value": "1.2 x 0.9 x 0.5 in"
       },
       {
-        label: "Includes",
-        value: "36 dots, 36 bams, 36 craks, 12 dragons, 16 winds, 16 flowers, 10 jokers, 4 blanks",
+        "label": "Includes",
+        "value": "36 dots, 36 bams, 36 craks, 12 dragons, 16 winds, 16 flowers, 10 jokers, 4 blanks"
       },
       {
-        label: "Racks",
-        value: "4 all-in-one rack/pushers",
-      },
+        "label": "Racks",
+        "value": "4 all-in-one rack/pushers"
+      }
     ],
-    hobbies: ["mahjong"],
-    articles: ["how-to-host-a-mahjong-night"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "mahjong-night",
-        slot: "set",
-      },
+    "hobbies": [
+      "mahjong"
     ],
-    role: "complete-kit",
-    isEssential: true,
-    audience: "Beginners hosting an American-style game",
-    whySelected:
-      "A complete American-style set: 166 tiles including jokers, racks and a bag, so the tile count matches the American card.",
-    limitations: [
+    "articles": [
+      "how-to-host-a-mahjong-night"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "mahjong-night",
+        "slot": "set"
+      }
+    ],
+    "role": "complete-kit",
+    "isEssential": true,
+    "audience": "Beginners hosting an American-style game",
+    "whySelected": "A complete American-style set: 166 tiles including jokers, racks and a bag, so the tile count matches the American card.",
+    "limitations": [
       "Sold by a third-party seller; check the seller and stock",
       "Private-label brand with no manufacturer page found yet",
       "The listing's included extras and manual should be checked at purchase",
-      "Only for the American 166-tile variant, not Chinese or Riichi",
+      "Only for the American 166-tile variant, not Chinese or Riichi"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0D2TVXS2W"],
-    lastVerified: "2026-11-18",
-    availability: "check-listing",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "Jongyance American mahjong set, white tiles",
-    benefit: "A complete 166-tile American set with racks and a carry bag.",
-    compare: "White tiles instead of blue; racks and bag included.",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0D2TVXS2W"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "check-listing",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "Jongyance American mahjong set, white tiles",
+    "benefit": "A complete 166-tile American set with racks and a carry bag.",
+    "compare": "White tiles instead of blue; racks and bag included.",
+    "hold": "Near-duplicate of the other 166-tile American sets (white tiles instead of blue); adds a decision, not a new option. Held to keep the choice small."
   },
   {
-    id: "tiasusan-american-mahjong-set-blue-tiles",
-    name: "American Mahjong Tile Set, 166 Blue Tiles, Bag and Accessories, 4 All-in-One Racks/Pushers",
-    brand: "TIASUSAN",
-    category: "Mahjong sets",
-    description:
-      "A 166-tile American mahjong set with racks and pushers, dice, chips, a wind indicator, a manual, protective sleeves and a bag.",
-    asin: "B0F6SDSQGF",
-    amazonUrl: "https://www.amazon.com/dp/B0F6SDSQGF",
-    specs: [
+    "id": "tiasusan-american-mahjong-set-blue-tiles",
+    "name": "American Mahjong Tile Set, 166 Blue Tiles, Bag and Accessories, 4 All-in-One Racks/Pushers",
+    "brand": "TIASUSAN",
+    "category": "Mahjong sets",
+    "description": "A 166-tile American mahjong set with racks and pushers, dice, chips, a wind indicator, a manual, protective sleeves and a bag.",
+    "asin": "B0F6SDSQGF",
+    "amazonUrl": "https://www.amazon.com/dp/B0F6SDSQGF",
+    "specs": [
       {
-        label: "Tiles",
-        value: "166 melamine",
+        "label": "Tiles",
+        "value": "166 melamine"
       },
       {
-        label: "Tile size",
-        value: "1.2 x 0.9 x 0.5 in",
+        "label": "Tile size",
+        "value": "1.2 x 0.9 x 0.5 in"
       },
       {
-        label: "Includes",
-        value: "3 dice, chips, wind indicator, manual, sleeves, bag",
+        "label": "Includes",
+        "value": "3 dice, chips, wind indicator, manual, sleeves, bag"
       },
       {
-        label: "Racks",
-        value: "4 all-in-one rack/pushers",
-      },
+        "label": "Racks",
+        "value": "4 all-in-one rack/pushers"
+      }
     ],
-    hobbies: ["mahjong"],
-    articles: ["how-to-host-a-mahjong-night"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "mahjong-night",
-        slot: "set",
-      },
+    "hobbies": [
+      "mahjong"
     ],
-    role: "researched-pick",
-    isEssential: true,
-    audience: "Beginners who want accessories included",
-    whySelected:
-      "Lists dice, chips, a wind indicator and a manual as included, which a new group would otherwise have to find.",
-    limitations: [
+    "articles": [
+      "how-to-host-a-mahjong-night"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "mahjong-night",
+        "slot": "set"
+      }
+    ],
+    "role": "researched-pick",
+    "isEssential": true,
+    "audience": "Beginners who want accessories included",
+    "whySelected": "Lists dice, chips, a wind indicator and a manual as included, which a new group would otherwise have to find.",
+    "limitations": [
       "Sold by a third-party seller; confirm seller and stock",
       "Private-label brand with no manufacturer page found yet",
-      "Only for the American 166-tile variant",
+      "Only for the American 166-tile variant"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0F6SDSQGF"],
-    lastVerified: "2026-11-18",
-    availability: "check-listing",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "American mahjong set, blue tiles",
-    benefit:
-      "Built for game one: 166 blue tiles, racks, a carry bag and extras like dice and a wind indicator.",
-    lead: true,
-    onlyOne: true,
+    "researchSources": [
+      "https://www.amazon.com/dp/B0F6SDSQGF"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "check-listing",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "American mahjong set, blue tiles",
+    "benefit": "Built for game one: 166 blue tiles, racks, a carry bag and extras like dice and a wind indicator.",
+    "lead": true,
+    "onlyOne": true
   },
   {
-    id: "nmjl-2026-large-size-cards-four-pack",
-    name: "2026 Mahjong Large Size Cards, Four-Pack Bundle",
-    brand: "National Mah Jongg League",
-    category: "Mahjong cards",
-    description:
-      "Four large-size official National Mah Jongg League cards with the 2026 hands and rules.",
-    asin: "B0GRCBQ3Y2",
-    amazonUrl: "https://www.amazon.com/dp/B0GRCBQ3Y2",
-    specs: [
+    "id": "nmjl-2026-large-size-cards-four-pack",
+    "name": "2026 Mahjong Large Size Cards, Four-Pack Bundle",
+    "brand": "National Mah Jongg League",
+    "category": "Mahjong cards",
+    "description": "Four large-size official National Mah Jongg League cards with the 2026 hands and rules.",
+    "asin": "B0GRCBQ3Y2",
+    "amazonUrl": "https://www.amazon.com/dp/B0GRCBQ3Y2",
+    "specs": [
       {
-        label: "Cards",
-        value: "4 large-size",
+        "label": "Cards",
+        "value": "4 large-size"
       },
       {
-        label: "Size",
-        value: "6 1/8 x 4 3/4 in",
+        "label": "Size",
+        "value": "6 1/8 x 4 3/4 in"
       },
       {
-        label: "Edition",
-        value: "2026",
+        "label": "Edition",
+        "value": "2026"
       },
       {
-        label: "Seller on listing",
-        value: "The National Mah Jongg League, Inc.",
-      },
+        "label": "Seller on listing",
+        "value": "The National Mah Jongg League, Inc."
+      }
     ],
-    hobbies: ["mahjong"],
-    articles: ["how-to-host-a-mahjong-night"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "mahjong-night",
-        slot: "card",
-      },
+    "hobbies": [
+      "mahjong"
     ],
-    role: "essential",
-    isEssential: true,
-    audience: "Anyone playing American mahjong who wants the official card",
-    whySelected:
-      "Sold by the League itself per the listing, and the card is the official source for the annual hands.",
-    limitations: [
+    "articles": [
+      "how-to-host-a-mahjong-night"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "mahjong-night",
+        "slot": "card"
+      }
+    ],
+    "role": "essential",
+    "isEssential": true,
+    "audience": "Anyone playing American mahjong who wants the official card",
+    "whySelected": "Sold by the League itself per the listing, and the card is the official source for the annual hands.",
+    "limitations": [
       "The 2026 card is the current edition; the League issues a new card each year",
       "American mahjong only",
       "Manufacturer page not yet checked",
       "No NMJL card page was found (2026-11-18); card details rely on the Amazon listing, sold by the League",
-      "2026-11-19: the League store (nationalmahjonggleague.org) lists the 2026 card in LARGE size (6 1/8 x 4 3/4 in) and STANDARD size (5 1/8 x 4 in); size confirmed on the maker store, the four-pack bundle is not on that page",
+      "2026-11-19: the League store (nationalmahjonggleague.org) lists the 2026 card in LARGE size (6 1/8 x 4 3/4 in) and STANDARD size (5 1/8 x 4 in); size confirmed on the maker store, the four-pack bundle is not on that page"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0GRCBQ3Y2"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    manufacturerUrl: "https://www.nationalmahjonggleague.org/store.aspx",
-    imageRights: "none",
-    shortName: "2026 mahjong card, large size",
-    benefit:
-      "The official card of hands your table plays from: four large-size cards, so everyone has one. This is the 2026 edition.",
-    lead: true,
+    "researchSources": [
+      "https://www.amazon.com/dp/B0GRCBQ3Y2"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "manufacturerUrl": "https://www.nationalmahjonggleague.org/store.aspx",
+    "imageRights": "none",
+    "shortName": "2026 mahjong card, large size",
+    "benefit": "The official card of hands your table plays from: four large-size cards, so everyone has one. This is the 2026 edition.",
+    "lead": true
   },
   {
-    id: "gustaria-large-mahjong-mat-blue-31-5",
-    name: "Large Mahjong Mat with Black Carrying Bag (Blue, 31.5 in)",
-    brand: "GUSTARIA",
-    category: "Mahjong accessories",
-    description: "A 31.5 inch square non-slip, noise-reducing table mat with a carrying bag.",
-    asin: "B0CXJ4PLBY",
-    amazonUrl: "https://www.amazon.com/dp/B0CXJ4PLBY",
-    specs: [
+    "id": "gustaria-large-mahjong-mat-blue-31-5",
+    "name": "Large Mahjong Mat with Black Carrying Bag (Blue, 31.5 in)",
+    "brand": "GUSTARIA",
+    "category": "Mahjong accessories",
+    "description": "A 31.5 inch square non-slip, noise-reducing table mat with a carrying bag.",
+    "asin": "B0CXJ4PLBY",
+    "amazonUrl": "https://www.amazon.com/dp/B0CXJ4PLBY",
+    "specs": [
       {
-        label: "Size",
-        value: "31.5 x 31.5 in",
+        "label": "Size",
+        "value": "31.5 x 31.5 in"
       },
       {
-        label: "Backing",
-        value: "non-slip rubber",
+        "label": "Backing",
+        "value": "non-slip rubber"
       },
       {
-        label: "Includes",
-        value: "carrying bag",
+        "label": "Includes",
+        "value": "carrying bag"
       },
       {
-        label: "Note",
-        value: "ships folded, creases usually flatten with use",
-      },
+        "label": "Note",
+        "value": "ships folded, creases usually flatten with use"
+      }
     ],
-    hobbies: ["mahjong"],
-    articles: ["how-to-host-a-mahjong-night"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "mahjong-night",
-        slot: "mat",
-      },
+    "hobbies": [
+      "mahjong"
     ],
-    role: "nice-to-have",
-    isEssential: false,
-    audience: "Hosts playing on a hard or good table",
-    whySelected: "Protects the table, cuts tile noise and rolls up for storage, per the listing.",
-    limitations: [
+    "articles": [
+      "how-to-host-a-mahjong-night"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "mahjong-night",
+        "slot": "mat"
+      }
+    ],
+    "role": "nice-to-have",
+    "isEssential": false,
+    "audience": "Hosts playing on a hard or good table",
+    "whySelected": "Protects the table, cuts tile noise and rolls up for storage, per the listing.",
+    "limitations": [
       "Ships folded and may arrive creased",
       "31.5 in suits a small square table only",
       "Sold by a third-party seller",
-      "Manufacturer page not yet checked",
+      "Manufacturer page not yet checked"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0CXJ4PLBY"],
-    lastVerified: "2026-11-18",
-    availability: "check-listing",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "Mahjong mat with carry bag, 31.5 in",
-    benefit: "Softens tile clatter and protects the table, then rolls up into its own carry bag.",
-    lead: true,
+    "researchSources": [
+      "https://www.amazon.com/dp/B0CXJ4PLBY"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "check-listing",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "Mahjong mat with carry bag, 31.5 in",
+    "benefit": "Softens tile clatter and protects the table, then rolls up into its own carry bag.",
+    "lead": true
   },
   {
-    id: "uhapeer-air-dry-clay-kit-3-lb",
-    name: "Air Dry Clay Kit for Adults, Pottery Set for Beginners",
-    brand: "UHAPEER",
-    category: "Clay kit",
-    description:
-      "An all-in-one air dry clay starter kit with clay, sculpting tools, paints, varnish and a guide.",
-    asin: "B0DFH9Z3BC",
-    amazonUrl: "https://www.amazon.com/dp/B0DFH9Z3BC",
-    specs: [
+    "id": "uhapeer-air-dry-clay-kit-3-lb",
+    "name": "Air Dry Clay Kit for Adults, Pottery Set for Beginners",
+    "brand": "UHAPEER",
+    "category": "Clay kit",
+    "description": "An all-in-one air dry clay starter kit with clay, sculpting tools, paints, varnish and a guide.",
+    "asin": "B0DFH9Z3BC",
+    "amazonUrl": "https://www.amazon.com/dp/B0DFH9Z3BC",
+    "specs": [
       {
-        label: "Clay",
-        value: "3 x 1 lb",
+        "label": "Clay",
+        "value": "3 x 1 lb"
       },
       {
-        label: "Paints",
-        value: "6 acrylic",
+        "label": "Paints",
+        "value": "6 acrylic"
       },
       {
-        label: "Tools",
-        value: "8 sculpting tools",
+        "label": "Tools",
+        "value": "8 sculpting tools"
       },
       {
-        label: "Includes",
-        value:
-          "gloss varnish, sponge, palette, brushes, mat, spray bottle, rolling pin, guide and video",
-      },
+        "label": "Includes",
+        "value": "gloss varnish, sponge, palette, brushes, mat, spray bottle, rolling pin, guide and video"
+      }
     ],
-    hobbies: ["air-dry-clay"],
-    articles: ["how-to-start-air-dry-clay"],
-    collections: ["pottery-era", "creative-girl"],
-    kitSlots: [
-      {
-        kit: "air-dry-clay",
-        slot: "clay",
-      },
+    "hobbies": [
+      "air-dry-clay"
     ],
-    role: "complete-kit",
-    isEssential: true,
-    audience: "Beginners who want everything in one box",
-    whySelected:
-      "Covers clay, tools, paint and sealer in a single listing; the listing says it dries in 24-48 hours without a kiln.",
-    limitations: [
-      'Drying time and "6-8 average creations" are the listing\'s claims, not tested by us',
+    "articles": [
+      "how-to-start-air-dry-clay"
+    ],
+    "collections": [
+      "pottery-era",
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "air-dry-clay",
+        "slot": "clay"
+      }
+    ],
+    "role": "complete-kit",
+    "isEssential": true,
+    "audience": "Beginners who want everything in one box",
+    "whySelected": "Covers clay, tools, paint and sealer in a single listing; the listing says it dries in 24-48 hours without a kiln.",
+    "limitations": [
+      "Drying time and \"6-8 average creations\" are the listing's claims, not tested by us",
       "Third-party seller; no safety certification seen on the listing page",
       "Do not call finished pieces food-safe",
       "Manufacturer page not yet checked",
-      "Seller on listing: Ystep",
+      "Seller on listing: Ystep"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0DFH9Z3BC"],
-    lastVerified: "2026-11-18",
-    availability: "check-listing",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "Air-dry clay kit for adults, 3 lb",
-    benefit:
-      "Clay, tools, paint and sealer in one box: shape a trinket dish tonight, paint it once it dries.",
-    lead: true,
-    onlyOne: true,
+    "researchSources": [
+      "https://www.amazon.com/dp/B0DFH9Z3BC"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "check-listing",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "Air-dry clay kit for adults, 3 lb",
+    "benefit": "Clay, tools, paint and sealer in one box: shape a trinket dish tonight, paint it once it dries.",
+    "lead": true,
+    "onlyOne": true
   },
   {
-    id: "linphcey-clay-tools-kids-8-plus",
-    name: "Air Dry Clay Tools, Pottery Clay Tool Kit (Ages 8+)",
-    brand: "LINPHCEY",
-    category: "Clay tools",
-    description:
-      "A plastic clay sculpting tool set marketed for children aged 8 and up and adults.",
-    asin: "B0B45TMWTX",
-    amazonUrl: "https://www.amazon.com/dp/B0B45TMWTX",
-    specs: [
+    "id": "linphcey-clay-tools-kids-8-plus",
+    "name": "Air Dry Clay Tools, Pottery Clay Tool Kit (Ages 8+)",
+    "brand": "LINPHCEY",
+    "category": "Clay tools",
+    "description": "A plastic clay sculpting tool set marketed for children aged 8 and up and adults.",
+    "asin": "B0B45TMWTX",
+    "amazonUrl": "https://www.amazon.com/dp/B0B45TMWTX",
+    "specs": [
       {
-        label: "Material",
-        value: "plastic",
+        "label": "Material",
+        "value": "plastic"
       },
       {
-        label: "Age",
-        value: "8+ per listing",
-      },
+        "label": "Age",
+        "value": "8+ per listing"
+      }
     ],
-    hobbies: ["air-dry-clay"],
-    articles: ["how-to-start-air-dry-clay"],
-    collections: ["pottery-era", "creative-girl"],
-    kitSlots: [
-      {
-        kit: "air-dry-clay",
-        slot: "tools",
-      },
+    "hobbies": [
+      "air-dry-clay"
     ],
-    role: "affordable",
-    isEssential: false,
-    audience: "Beginners who want cheap shaping tools",
-    whySelected: "Low-commitment tools for shaping, carving and texture.",
-    limitations: [
+    "articles": [
+      "how-to-start-air-dry-clay"
+    ],
+    "collections": [
+      "pottery-era",
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "air-dry-clay",
+        "slot": "tools"
+      }
+    ],
+    "role": "affordable",
+    "isEssential": false,
+    "audience": "Beginners who want cheap shaping tools",
+    "whySelected": "Low-commitment tools for shaping, carving and texture.",
+    "limitations": [
       "Marketed to kids",
-      '"Child-safe materials" is the listing\'s claim only',
+      "\"Child-safe materials\" is the listing's claim only",
       "Manufacturer page not yet checked",
-      "Seller on listing: Shan1Gy",
+      "Seller on listing: Shan1Gy"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0B45TMWTX"],
-    lastVerified: "2026-11-18",
-    availability: "check-listing",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    hold: "Marketed for kids (ages 8+); the clay kit already includes tools. Held for audience fit.",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0B45TMWTX"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "check-listing",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "hold": "Marketed for kids (ages 8+); the clay kit already includes tools. Held for audience fit."
   },
   {
-    id: "apple-barrel-16-acrylic-craft-paints-2oz",
-    name: "Vibrant Spectrum Acrylic Craft Paint, 16 Assorted Matte Colors, 2 fl oz",
-    brand: "Apple Barrel",
-    category: "Acrylic paint",
-    description: "A 16-bottle set of matte acrylic craft paint in 2 fl oz bottles.",
-    asin: "B076CP6F36",
-    amazonUrl: "https://www.amazon.com/dp/B076CP6F36",
-    specs: [
+    "id": "apple-barrel-16-acrylic-craft-paints-2oz",
+    "name": "Vibrant Spectrum Acrylic Craft Paint, 16 Assorted Matte Colors, 2 fl oz",
+    "brand": "Apple Barrel",
+    "category": "Acrylic paint",
+    "description": "A 16-bottle set of matte acrylic craft paint in 2 fl oz bottles.",
+    "asin": "B076CP6F36",
+    "amazonUrl": "https://www.amazon.com/dp/B076CP6F36",
+    "specs": [
       {
-        label: "Count",
-        value: "16",
+        "label": "Count",
+        "value": "16"
       },
       {
-        label: "Size",
-        value: "2 fl oz each",
+        "label": "Size",
+        "value": "2 fl oz each"
       },
       {
-        label: "Finish",
-        value: "matte",
+        "label": "Finish",
+        "value": "matte"
       },
       {
-        label: "Origin per listing",
-        value: "made in USA",
-      },
+        "label": "Origin per listing",
+        "value": "made in USA"
+      }
     ],
-    hobbies: ["air-dry-clay", "paint-by-numbers"],
-    articles: ["how-to-start-air-dry-clay"],
-    collections: ["pottery-era", "creative-girl"],
-    kitSlots: [
-      {
-        kit: "air-dry-clay",
-        slot: "paint",
-      },
+    "hobbies": [
+      "air-dry-clay",
+      "paint-by-numbers"
     ],
-    role: "affordable",
-    isEssential: false,
-    audience: "Beginners who want a bigger colour range for dry clay",
-    whySelected:
-      "Larger colour range than a 12 ml tube set; listing says it cleans up with soap and water while wet.",
-    limitations: [
+    "articles": [
+      "how-to-start-air-dry-clay"
+    ],
+    "collections": [
+      "pottery-era",
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "air-dry-clay",
+        "slot": "paint"
+      }
+    ],
+    "role": "affordable",
+    "isEssential": false,
+    "audience": "Beginners who want a bigger colour range for dry clay",
+    "whySelected": "Larger colour range than a 12 ml tube set; listing says it cleans up with soap and water while wet.",
+    "limitations": [
       "No safety certification was checked: read the bottle label",
       "Matte finish only",
       "Manufacturer page not yet checked",
       "Seller on listing: not shown on page",
       "Plaid brand page (read 2026-11-18) covers Apple Barrel matte paint but this exact 16-colour set was not found on the maker site, so no maker claim is repeated here; Plaid says matte dries porous and should be sealed with varnish or acrylic spray",
-      "2026-11-19: Plaid sells a 16 x 2 oz matte Apple Barrel set (PROMOABIII) but the colour list differs from the Amazon Vibrant Spectrum set: same family, not confirmed identical",
+      "2026-11-19: Plaid sells a 16 x 2 oz matte Apple Barrel set (PROMOABIII) but the colour list differs from the Amazon Vibrant Spectrum set: same family, not confirmed identical"
     ],
-    researchSources: [
+    "researchSources": [
       "https://www.amazon.com/dp/B076CP6F36",
-      "https://plaidonline.com/brands/apple-barrel/matte-acrylic-paint",
+      "https://plaidonline.com/brands/apple-barrel/matte-acrylic-paint"
     ],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    manufacturerUrl: "https://plaidonline.com/apple-barrel-colors-acrylic-paint-16-color-set-pro",
-    imageRights: "none",
-    hold: "Plain craft-store paint that duplicates the lead paint set. Held to keep the choice small.",
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "manufacturerUrl": "https://plaidonline.com/apple-barrel-colors-acrylic-paint-16-color-set-pro",
+    "imageRights": "none",
+    "hold": "Plain craft-store paint that duplicates the lead paint set. Held to keep the choice small."
   },
   {
-    id: "mutex-american-mahjong-set-166-walnut-racks",
-    name: "American Mahjong Set, 166 Tiles, 4 Walnut Wooden Racks, Blue Bag",
-    brand: "MUTEX",
-    category: "Mahjong set",
-    description:
-      "A 166-tile American mahjong set in a blue carrying bag with four racks, dice, chips and a wind indicator.",
-    asin: "B0FM7P49H7",
-    amazonUrl: "https://www.amazon.com/dp/B0FM7P49H7",
-    specs: [
+    "id": "mutex-american-mahjong-set-166-walnut-racks",
+    "name": "American Mahjong Set, 166 Tiles, 4 Walnut Wooden Racks, Blue Bag",
+    "brand": "MUTEX",
+    "category": "Mahjong set",
+    "description": "A 166-tile American mahjong set in a blue carrying bag with four racks, dice, chips and a wind indicator.",
+    "asin": "B0FM7P49H7",
+    "amazonUrl": "https://www.amazon.com/dp/B0FM7P49H7",
+    "specs": [
       {
-        label: "Tiles",
-        value: "166 melamine",
+        "label": "Tiles",
+        "value": "166 melamine"
       },
       {
-        label: "Racks",
-        value: "4 with wooden internals",
+        "label": "Racks",
+        "value": "4 with wooden internals"
       },
       {
-        label: "Dice",
-        value: "3",
+        "label": "Dice",
+        "value": "3"
       },
       {
-        label: "Chips",
-        value: "100",
+        "label": "Chips",
+        "value": "100"
       },
       {
-        label: "Bag",
-        value: "blue carrying bag",
-      },
+        "label": "Bag",
+        "value": "blue carrying bag"
+      }
     ],
-    hobbies: ["mahjong"],
-    articles: ["how-to-host-a-mahjong-night"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "mahjong-night",
-        slot: "set",
-      },
+    "hobbies": [
+      "mahjong"
     ],
-    role: "complete-kit",
-    isEssential: true,
-    audience: "Hosts who want a set with racks included",
-    whySelected:
-      "Complete American set with an included instruction booklet; listing describes racks with wooden internals.",
-    limitations: [
+    "articles": [
+      "how-to-host-a-mahjong-night"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "mahjong-night",
+        "slot": "set"
+      }
+    ],
+    "role": "complete-kit",
+    "isEssential": true,
+    "audience": "Hosts who want a set with racks included",
+    "whySelected": "Complete American set with an included instruction booklet; listing describes racks with wooden internals.",
+    "limitations": [
       "Melamine tile quality is the listing's description only",
       "Card is not included",
-      'Size per listing is "traveler"',
+      "Size per listing is \"traveler\"",
       "Manufacturer page not yet checked",
-      "Seller on listing: SGV Top Shelf",
+      "Seller on listing: SGV Top Shelf"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0FM7P49H7"],
-    lastVerified: "2026-11-18",
-    availability: "check-listing",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "MUTEX American mahjong set, walnut racks",
-    benefit: "166 tiles, four walnut-finish racks and an instruction booklet for newcomers.",
-    compare: "Warm walnut racks and a rules booklet; the card is separate.",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0FM7P49H7"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "check-listing",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "MUTEX American mahjong set, walnut racks",
+    "benefit": "166 tiles, four walnut-finish racks and an instruction booklet for newcomers.",
+    "compare": "Warm walnut racks and a rules booklet; the card is separate."
   },
   {
-    id: "knaid-grid-washi-tape-14-rolls-15mm",
-    name: "Grid Washi Tape Set, 14 Rolls, 15 mm",
-    brand: "Knaid",
-    category: "Washi tape",
-    description: "A 14-roll set of 15 mm grid-pattern washi tape.",
-    asin: "B08FXQ315R",
-    amazonUrl: "https://www.amazon.com/dp/B08FXQ315R",
-    specs: [
+    "id": "knaid-grid-washi-tape-14-rolls-15mm",
+    "name": "Grid Washi Tape Set, 14 Rolls, 15 mm",
+    "brand": "Knaid",
+    "category": "Washi tape",
+    "description": "A 14-roll set of 15 mm grid-pattern washi tape.",
+    "asin": "B08FXQ315R",
+    "amazonUrl": "https://www.amazon.com/dp/B08FXQ315R",
+    "specs": [
       {
-        label: "Rolls",
-        value: "14",
+        "label": "Rolls",
+        "value": "14"
       },
       {
-        label: "Width",
-        value: "15 mm",
+        "label": "Width",
+        "value": "15 mm"
       },
       {
-        label: "Length per roll",
-        value: "8 m (26.3 ft)",
-      },
+        "label": "Length per roll",
+        "value": "8 m (26.3 ft)"
+      }
     ],
-    hobbies: ["junk-journaling"],
-    articles: ["junk-journaling-supplies-for-beginners", "how-to-start-junk-journaling"],
-    collections: ["journaling-era", "creative-girl"],
-    kitSlots: [
-      {
-        kit: "junk-journaling",
-        slot: "washi-tape",
-      },
+    "hobbies": [
+      "junk-journaling"
     ],
-    role: "nice-to-have",
-    isEssential: false,
-    audience: "People who want a neat, grid look for notes and journals",
-    whySelected:
-      "The listing says it tears by hand and repositions; one pattern family keeps pages cohesive.",
-    limitations: [
+    "articles": [
+      "junk-journaling-supplies-for-beginners",
+      "how-to-start-junk-journaling"
+    ],
+    "collections": [
+      "journaling-era",
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "junk-journaling",
+        "slot": "washi-tape"
+      }
+    ],
+    "role": "nice-to-have",
+    "isEssential": false,
+    "audience": "People who want a neat, grid look for notes and journals",
+    "whySelected": "The listing says it tears by hand and repositions; one pattern family keeps pages cohesive.",
+    "limitations": [
       "Listing itself says washi does not stick well to all surfaces (for example walls)",
       "Single pattern style",
       "Manufacturer page not yet checked",
-      "Seller on listing: Knaid Co., Ltd",
+      "Seller on listing: Knaid Co., Ltd"
     ],
-    researchSources: ["https://www.amazon.com/dp/B08FXQ315R"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    hold: "Third washi option with a single pattern style; adds a decision, not a new look. Held.",
+    "researchSources": [
+      "https://www.amazon.com/dp/B08FXQ315R"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "hold": "Third washi option with a single pattern style; adds a decision, not a new look. Held."
   },
   {
-    id: "mr-pen-washi-tape-10-rolls-four-seasons",
-    name: "Washi Tape Set, 10 Rolls, 5.5 Yards/Roll, Four Seasons",
-    brand: "Mr. Pen",
-    category: "Washi tape",
-    description: "A 10-roll set of 0.6 in washi tape in a four-seasons colour mix.",
-    asin: "B0BXJT2NT8",
-    amazonUrl: "https://www.amazon.com/dp/B0BXJT2NT8",
-    specs: [
+    "id": "mr-pen-washi-tape-10-rolls-four-seasons",
+    "name": "Washi Tape Set, 10 Rolls, 5.5 Yards/Roll, Four Seasons",
+    "brand": "Mr. Pen",
+    "category": "Washi tape",
+    "description": "A 10-roll set of 0.6 in washi tape in a four-seasons colour mix.",
+    "asin": "B0BXJT2NT8",
+    "amazonUrl": "https://www.amazon.com/dp/B0BXJT2NT8",
+    "specs": [
       {
-        label: "Rolls",
-        value: "10",
+        "label": "Rolls",
+        "value": "10"
       },
       {
-        label: "Width",
-        value: "0.6 in",
+        "label": "Width",
+        "value": "0.6 in"
       },
       {
-        label: "Length per roll",
-        value: "5.5 yd",
-      },
+        "label": "Length per roll",
+        "value": "5.5 yd"
+      }
     ],
-    hobbies: ["junk-journaling"],
-    articles: ["junk-journaling-supplies-for-beginners", "how-to-start-junk-journaling"],
-    collections: ["journaling-era", "creative-girl"],
-    kitSlots: [
-      {
-        kit: "junk-journaling",
-        slot: "washi-tape",
-      },
+    "hobbies": [
+      "junk-journaling"
     ],
-    role: "affordable",
-    isEssential: false,
-    audience: "Beginners who want a small first set",
-    whySelected: "Smaller than the 21-roll set, so fewer rolls to store.",
-    limitations: [
+    "articles": [
+      "junk-journaling-supplies-for-beginners",
+      "how-to-start-junk-journaling"
+    ],
+    "collections": [
+      "journaling-era",
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "junk-journaling",
+        "slot": "washi-tape"
+      }
+    ],
+    "role": "affordable",
+    "isEssential": false,
+    "audience": "Beginners who want a small first set",
+    "whySelected": "Smaller than the 21-roll set, so fewer rolls to store.",
+    "limitations": [
       "Single width",
       "Residue-free repositioning is the listing's claim",
       "Manufacturer page not yet checked",
-      "Seller on listing: Mr. Pen",
+      "Seller on listing: Mr. Pen"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0BXJT2NT8"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    hold: "Smaller version of the 21-roll set. Held to keep the choice small.",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0BXJT2NT8"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "hold": "Smaller version of the 21-roll set. Held to keep the choice small."
   },
   {
-    id: "secopad-glue-tape-runner-4-pack",
-    name: "Scrapbook Tape, Glue Tape for Crafts, 4 Pack, 0.3 in x 26 ft",
-    brand: "Secopad",
-    category: "Tape runner",
-    description: "A four-pack of double-sided tape runners for scrapbooking and crafts.",
-    asin: "B0CHTZD63Q",
-    amazonUrl: "https://www.amazon.com/dp/B0CHTZD63Q",
-    specs: [
+    "id": "secopad-glue-tape-runner-4-pack",
+    "name": "Scrapbook Tape, Glue Tape for Crafts, 4 Pack, 0.3 in x 26 ft",
+    "brand": "Secopad",
+    "category": "Tape runner",
+    "description": "A four-pack of double-sided tape runners for scrapbooking and crafts.",
+    "asin": "B0CHTZD63Q",
+    "amazonUrl": "https://www.amazon.com/dp/B0CHTZD63Q",
+    "specs": [
       {
-        label: "Pack",
-        value: "4",
+        "label": "Pack",
+        "value": "4"
       },
       {
-        label: "Width",
-        value: "0.3 in",
+        "label": "Width",
+        "value": "0.3 in"
       },
       {
-        label: "Length",
-        value: "26 ft each",
-      },
+        "label": "Length",
+        "value": "26 ft each"
+      }
     ],
-    hobbies: ["junk-journaling"],
-    articles: ["junk-journaling-supplies-for-beginners", "how-to-start-junk-journaling"],
-    collections: ["journaling-era", "creative-girl"],
-    kitSlots: [
-      {
-        kit: "junk-journaling",
-        slot: "adhesive",
-      },
+    "hobbies": [
+      "junk-journaling"
     ],
-    role: "affordable",
-    isEssential: false,
-    audience: "Budget alternative to a name-brand tape runner",
-    whySelected:
-      "Four runners per pack; the listing says tape can be re-applied if you make a mistake soon after.",
-    limitations: [
+    "articles": [
+      "junk-journaling-supplies-for-beginners",
+      "how-to-start-junk-journaling"
+    ],
+    "collections": [
+      "journaling-era",
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "junk-journaling",
+        "slot": "adhesive"
+      }
+    ],
+    "role": "affordable",
+    "isEssential": false,
+    "audience": "Budget alternative to a name-brand tape runner",
+    "whySelected": "Four runners per pack; the listing says tape can be re-applied if you make a mistake soon after.",
+    "limitations": [
       "Listing warns low temperature may affect stickiness",
       "Manufacturer page not yet checked",
-      "Seller on listing: Secopad",
+      "Seller on listing: Secopad"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0CHTZD63Q"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    hold: "Third adhesive option and a budget duplicate of the tape runner. Held.",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0CHTZD63Q"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "hold": "Third adhesive option and a budget duplicate of the tape runner. Held."
   },
   {
-    id: "generic-460-sheet-vintage-scrapbook-paper",
-    name: "460 Sheets Vintage Scrapbook Paper Kit",
-    brand: "not stated on listing",
-    category: "Scrapbook paper",
-    description: "A 460-sheet assortment of small vintage-style papers in seven sizes.",
-    asin: "B0DJBKT452",
-    amazonUrl: "https://www.amazon.com/dp/B0DJBKT452",
-    specs: [
+    "id": "generic-460-sheet-vintage-scrapbook-paper",
+    "name": "460 Sheets Vintage Scrapbook Paper Kit",
+    "brand": "not stated on listing",
+    "category": "Scrapbook paper",
+    "description": "A 460-sheet assortment of small vintage-style papers in seven sizes.",
+    "asin": "B0DJBKT452",
+    "amazonUrl": "https://www.amazon.com/dp/B0DJBKT452",
+    "specs": [
       {
-        label: "Sheets",
-        value: "460 (230 patterns x 2)",
+        "label": "Sheets",
+        "value": "460 (230 patterns x 2)"
       },
       {
-        label: "Sizes",
-        value: "seven small sizes",
-      },
+        "label": "Sizes",
+        "value": "seven small sizes"
+      }
     ],
-    hobbies: ["junk-journaling"],
-    articles: ["junk-journaling-supplies-for-beginners", "how-to-start-junk-journaling"],
-    collections: ["journaling-era", "creative-girl"],
-    kitSlots: [
-      {
-        kit: "junk-journaling",
-        slot: "paper",
-      },
+    "hobbies": [
+      "junk-journaling"
     ],
-    role: "nice-to-have",
-    isEssential: false,
-    audience: "People who want a lot of small pieces cheaply",
-    whySelected: "Pre-cut small sizes need little cutting.",
-    limitations: [
+    "articles": [
+      "junk-journaling-supplies-for-beginners",
+      "how-to-start-junk-journaling"
+    ],
+    "collections": [
+      "journaling-era",
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "junk-journaling",
+        "slot": "paper"
+      }
+    ],
+    "role": "nice-to-have",
+    "isEssential": false,
+    "audience": "People who want a lot of small pieces cheaply",
+    "whySelected": "Pre-cut small sizes need little cutting.",
+    "limitations": [
       "Brand not stated",
       "Paper weight and print quality not stated",
       "Vintage prints may include reproduced imagery: check rights before selling anything made from it",
       "Manufacturer page not yet checked",
-      "Seller on listing: BetterLifeforAll",
+      "Seller on listing: BetterLifeforAll"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0DJBKT452"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0DJBKT452"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "generic-200-sheet-vintage-scrapbook-paper",
-    name: "200 Sheets Vintage Scrapbook Paper, Journaling Supplies",
-    brand: "not stated on listing",
-    category: "Scrapbook paper",
-    description: "A 200-sheet vintage-style paper pack in six style themes.",
-    asin: "B0BXKS3HBR",
-    amazonUrl: "https://www.amazon.com/dp/B0BXKS3HBR",
-    specs: [
+    "id": "generic-200-sheet-vintage-scrapbook-paper",
+    "name": "200 Sheets Vintage Scrapbook Paper, Journaling Supplies",
+    "brand": "not stated on listing",
+    "category": "Scrapbook paper",
+    "description": "A 200-sheet vintage-style paper pack in six style themes.",
+    "asin": "B0BXKS3HBR",
+    "amazonUrl": "https://www.amazon.com/dp/B0BXKS3HBR",
+    "specs": [
       {
-        label: "Sheets",
-        value: "200",
+        "label": "Sheets",
+        "value": "200"
       },
       {
-        label: "Sizes",
-        value: "mostly 6.8 x 4.8 in",
+        "label": "Sizes",
+        "value": "mostly 6.8 x 4.8 in"
       },
       {
-        label: "Material per listing",
-        value: "washi-type paper",
-      },
+        "label": "Material per listing",
+        "value": "washi-type paper"
+      }
     ],
-    hobbies: ["junk-journaling"],
-    articles: ["junk-journaling-supplies-for-beginners", "how-to-start-junk-journaling"],
-    collections: ["journaling-era", "creative-girl"],
-    kitSlots: [
-      {
-        kit: "junk-journaling",
-        slot: "paper",
-      },
+    "hobbies": [
+      "junk-journaling"
     ],
-    role: "nice-to-have",
-    isEssential: false,
-    audience: "People who want themed ephemera",
-    whySelected: "Six themes in one pack.",
-    limitations: [
+    "articles": [
+      "junk-journaling-supplies-for-beginners",
+      "how-to-start-junk-journaling"
+    ],
+    "collections": [
+      "journaling-era",
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "junk-journaling",
+        "slot": "paper"
+      }
+    ],
+    "role": "nice-to-have",
+    "isEssential": false,
+    "audience": "People who want themed ephemera",
+    "whySelected": "Six themes in one pack.",
+    "limitations": [
       "Brand not stated",
       "Material claims are the listing's",
       "Check rights before selling anything made from the imagery",
       "Manufacturer page not yet checked",
-      "Seller on listing: emmoolife",
+      "Seller on listing: emmoolife"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0BXKS3HBR"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0BXKS3HBR"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "stationery-island-a5-blank-journal-180-pages",
-    name: "A5 Hardcover Blank Notebook, 120gsm, 180 Pages, Black",
-    brand: "Stationery Island",
-    category: "Journal",
-    description: "A hardcover A5 unlined notebook with 120 gsm paper and 180 pages.",
-    asin: "B081VK1CM1",
-    amazonUrl: "https://www.amazon.com/dp/B081VK1CM1",
-    specs: [
+    "id": "stationery-island-a5-blank-journal-180-pages",
+    "name": "A5 Hardcover Blank Notebook, 120gsm, 180 Pages, Black",
+    "brand": "Stationery Island",
+    "category": "Journal",
+    "description": "A hardcover A5 unlined notebook with 120 gsm paper and 180 pages.",
+    "asin": "B081VK1CM1",
+    "amazonUrl": "https://www.amazon.com/dp/B081VK1CM1",
+    "specs": [
       {
-        label: "Size",
-        value: "A5",
+        "label": "Size",
+        "value": "A5"
       },
       {
-        label: "Paper",
-        value: "120 gsm",
+        "label": "Paper",
+        "value": "120 gsm"
       },
       {
-        label: "Pages",
-        value: "180",
+        "label": "Pages",
+        "value": "180"
       },
       {
-        label: "Extras",
-        value: "2 ribbon bookmarks, pocket",
-      },
+        "label": "Extras",
+        "value": "2 ribbon bookmarks, pocket"
+      }
     ],
-    hobbies: ["junk-journaling"],
-    articles: ["junk-journaling-supplies-for-beginners", "how-to-start-junk-journaling"],
-    collections: ["journaling-era", "creative-girl"],
-    kitSlots: [
-      {
-        kit: "junk-journaling",
-        slot: "journal",
-      },
+    "hobbies": [
+      "junk-journaling"
     ],
-    role: "essential",
-    isEssential: true,
-    audience: "Beginners who want paper thick enough for glue and tape",
-    whySelected: "Thicker paper than a standard notebook, per the listing.",
-    limitations: [
+    "articles": [
+      "junk-journaling-supplies-for-beginners",
+      "how-to-start-junk-journaling"
+    ],
+    "collections": [
+      "journaling-era",
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "junk-journaling",
+        "slot": "journal"
+      }
+    ],
+    "role": "essential",
+    "isEssential": true,
+    "audience": "Beginners who want paper thick enough for glue and tape",
+    "whySelected": "Thicker paper than a standard notebook, per the listing.",
+    "limitations": [
       "Heavy glue and wet media may still warp pages (untested)",
       "Listing says it reduces ghosting and bleed-through: the listing's claim",
       "Manufacturer page not yet checked",
-      "Seller on listing: Stationery Island North America",
+      "Seller on listing: Stationery Island North America"
     ],
-    researchSources: ["https://www.amazon.com/dp/B081VK1CM1"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "A5 hardcover journal, 120 gsm",
-    benefit:
-      "Thicker 120 gsm pages than a standard notebook, in a black hardcover with 180 pages to fill.",
-    lead: true,
-    onlyOne: true,
+    "researchSources": [
+      "https://www.amazon.com/dp/B081VK1CM1"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "A5 hardcover journal, 120 gsm",
+    "benefit": "Thicker 120 gsm pages than a standard notebook, in a black hardcover with 180 pages to fill.",
+    "lead": true,
+    "onlyOne": true
   },
   {
-    id: "plusvivo-felt-game-table-cover-36-blue",
-    name: "Felt Game Table Cover, 36 x 36 in, Blue",
-    brand: "Plusvivo",
-    category: "Table cover",
-    description:
-      "A fitted square felt cover for card tables, listed for poker, mahjong and bridge.",
-    asin: "B09CTRNP73",
-    amazonUrl: "https://www.amazon.com/dp/B09CTRNP73",
-    specs: [
+    "id": "plusvivo-felt-game-table-cover-36-blue",
+    "name": "Felt Game Table Cover, 36 x 36 in, Blue",
+    "brand": "Plusvivo",
+    "category": "Table cover",
+    "description": "A fitted square felt cover for card tables, listed for poker, mahjong and bridge.",
+    "asin": "B09CTRNP73",
+    "amazonUrl": "https://www.amazon.com/dp/B09CTRNP73",
+    "specs": [
       {
-        label: "Size",
-        value: "36 x 36 in",
+        "label": "Size",
+        "value": "36 x 36 in"
       },
       {
-        label: "Material",
-        value: "synthetic wool felt",
+        "label": "Material",
+        "value": "synthetic wool felt"
       },
       {
-        label: "Washable",
-        value: "per listing",
-      },
+        "label": "Washable",
+        "value": "per listing"
+      }
     ],
-    hobbies: ["mahjong"],
-    articles: ["how-to-host-a-mahjong-night"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "mahjong-night",
-        slot: "mat",
-      },
+    "hobbies": [
+      "mahjong"
     ],
-    role: "affordable",
-    isEssential: false,
-    audience: "Hosts with a standard card table",
-    whySelected: "Fitted cover that the listing says reduces tile noise.",
-    limitations: [
+    "articles": [
+      "how-to-host-a-mahjong-night"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "mahjong-night",
+        "slot": "mat"
+      }
+    ],
+    "role": "affordable",
+    "isEssential": false,
+    "audience": "Hosts with a standard card table",
+    "whySelected": "Fitted cover that the listing says reduces tile noise.",
+    "limitations": [
       "Size must match your table",
       "Machine-washable claim is the listing's",
       "Manufacturer page not yet checked",
-      "Seller on listing: YuChii",
+      "Seller on listing: YuChii"
     ],
-    researchSources: ["https://www.amazon.com/dp/B09CTRNP73"],
-    lastVerified: "2026-11-18",
-    availability: "check-listing",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "Felt card-table cover, 36 in",
-    benefit: "A fitted felt cover for a standard card table that softens tile noise.",
-    compare: "Fits a 36 in card table instead of rolling up like a mat.",
+    "researchSources": [
+      "https://www.amazon.com/dp/B09CTRNP73"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "check-listing",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "Felt card-table cover, 36 in",
+    "benefit": "A fitted felt cover for a standard card table that softens tile noise.",
+    "compare": "Fits a 36 in card table instead of rolling up like a mat."
   },
   {
-    id: "protective-sleeve-large-mahjong-card-4-pack",
-    name: "Protective Sleeve for 2025-2026 Mahjong Cards, Large Size, 4 Pack",
-    brand: "not stated (listing says not affiliated with any brand)",
-    category: "Card sleeve",
-    description:
-      "A four-pack of clear plastic sleeves sized for large 2026 mahjong cards. Does not include cards.",
-    asin: "B0FRSSG8FZ",
-    amazonUrl: "https://www.amazon.com/dp/B0FRSSG8FZ",
-    specs: [
+    "id": "protective-sleeve-large-mahjong-card-4-pack",
+    "name": "Protective Sleeve for 2025-2026 Mahjong Cards, Large Size, 4 Pack",
+    "brand": "not stated (listing says not affiliated with any brand)",
+    "category": "Card sleeve",
+    "description": "A four-pack of clear plastic sleeves sized for large 2026 mahjong cards. Does not include cards.",
+    "asin": "B0FRSSG8FZ",
+    "amazonUrl": "https://www.amazon.com/dp/B0FRSSG8FZ",
+    "specs": [
       {
-        label: "Pack",
-        value: "4",
+        "label": "Pack",
+        "value": "4"
       },
       {
-        label: "Fits",
-        value: "large card 6.12 x 4.75 in",
+        "label": "Fits",
+        "value": "large card 6.12 x 4.75 in"
       },
       {
-        label: "Material",
-        value: "plastic",
-      },
+        "label": "Material",
+        "value": "plastic"
+      }
     ],
-    hobbies: ["mahjong"],
-    articles: ["how-to-host-a-mahjong-night"],
-    collections: ["girls-night-in"],
-    kitSlots: [],
-    role: "nice-to-have",
-    isEssential: false,
-    audience: "Hosts who spill drinks near the table",
-    whySelected: "Keeps a paper card clean.",
-    limitations: [
+    "hobbies": [
+      "mahjong"
+    ],
+    "articles": [
+      "how-to-host-a-mahjong-night"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [],
+    "role": "nice-to-have",
+    "isEssential": false,
+    "audience": "Hosts who spill drinks near the table",
+    "whySelected": "Keeps a paper card clean.",
+    "limitations": [
       "Final sale / no returns per listing",
       "Fits the card for the stated year; a new card is released yearly",
       "Manufacturer page not yet checked",
-      "Seller on listing: Lseac",
+      "Seller on listing: Lseac"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0FRSSG8FZ"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0FRSSG8FZ"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "nmjl-2026-standard-size-cards-four-pack",
-    name: "2026 Mahjong Standard Size Cards, Four-Pack Bundle",
-    brand: "National Mah Jongg League",
-    category: "Mahjong card",
-    description: "Four standard-size (5 1/8 x 4 in) 2026 National Mah Jongg League cards.",
-    asin: "B0GRCCTYJ5",
-    amazonUrl: "https://www.amazon.com/dp/B0GRCCTYJ5",
-    specs: [
+    "id": "nmjl-2026-standard-size-cards-four-pack",
+    "name": "2026 Mahjong Standard Size Cards, Four-Pack Bundle",
+    "brand": "National Mah Jongg League",
+    "category": "Mahjong card",
+    "description": "Four standard-size (5 1/8 x 4 in) 2026 National Mah Jongg League cards.",
+    "asin": "B0GRCCTYJ5",
+    "amazonUrl": "https://www.amazon.com/dp/B0GRCCTYJ5",
+    "specs": [
       {
-        label: "Pack",
-        value: "4",
+        "label": "Pack",
+        "value": "4"
       },
       {
-        label: "Size",
-        value: "5 1/8 x 4 in",
+        "label": "Size",
+        "value": "5 1/8 x 4 in"
       },
       {
-        label: "Edition",
-        value: "2026",
-      },
+        "label": "Edition",
+        "value": "2026"
+      }
     ],
-    hobbies: ["mahjong"],
-    articles: ["how-to-host-a-mahjong-night"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "mahjong-night",
-        slot: "card",
-      },
+    "hobbies": [
+      "mahjong"
     ],
-    role: "essential",
-    isEssential: true,
-    audience: "Players who prefer a smaller card",
-    whySelected: "Official card from the league; listing says proceeds go to charities.",
-    limitations: [
+    "articles": [
+      "how-to-host-a-mahjong-night"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "mahjong-night",
+        "slot": "card"
+      }
+    ],
+    "role": "essential",
+    "isEssential": true,
+    "audience": "Players who prefer a smaller card",
+    "whySelected": "Official card from the league; listing says proceeds go to charities.",
+    "limitations": [
       "Card is for 2026: a new card is issued each year",
       "Standard vs large size is a preference",
       "Manufacturer page not yet checked",
       "Seller on listing: The National Mah Jongg League, Inc.",
       "No NMJL card page was found (2026-11-18); card details rely on the Amazon listing, sold by the League",
-      "2026-11-19: League store lists STANDARD card 5 1/8 x 4 in: size confirmed; pack size not on maker page",
+      "2026-11-19: League store lists STANDARD card 5 1/8 x 4 in: size confirmed; pack size not on maker page"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0GRCCTYJ5"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    manufacturerUrl: "https://www.nationalmahjonggleague.org/store.aspx",
-    imageRights: "none",
-    shortName: "2026 NMJL card, standard size",
-    benefit: "The same official card in the smaller standard size, 2026 edition.",
-    compare: "Smaller than the large-print card, with the same year's hands.",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0GRCCTYJ5"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "manufacturerUrl": "https://www.nationalmahjonggleague.org/store.aspx",
+    "imageRights": "none",
+    "shortName": "2026 mahjong card, standard size",
+    "benefit": "The same official card in the smaller standard size, 2026 edition.",
+    "compare": "Smaller than the large-print card, with the same year's hands."
   },
   {
-    id: "artecho-48-color-watercolor-set-3-brushes",
-    name: "48 Colors Watercolor Paint Set, 3 Brushes",
-    brand: "Artecho",
-    category: "Watercolor paints",
-    description: "A 48-pan watercolor set with three brushes in a portable case.",
-    asin: "B0BWRCKFDH",
-    amazonUrl: "https://www.amazon.com/dp/B0BWRCKFDH",
-    specs: [
+    "id": "artecho-48-color-watercolor-set-3-brushes",
+    "name": "48 Colors Watercolor Paint Set, 3 Brushes",
+    "brand": "Artecho",
+    "category": "Watercolor paints",
+    "description": "A 48-pan watercolor set with three brushes in a portable case.",
+    "asin": "B0BWRCKFDH",
+    "amazonUrl": "https://www.amazon.com/dp/B0BWRCKFDH",
+    "specs": [
       {
-        label: "Pans",
-        value: "48",
+        "label": "Pans",
+        "value": "48"
       },
       {
-        label: "Brushes",
-        value: "3",
+        "label": "Brushes",
+        "value": "3"
       },
       {
-        label: "Case",
-        value: "portable",
-      },
+        "label": "Case",
+        "value": "portable"
+      }
     ],
-    hobbies: ["watercolor-painting"],
-    articles: ["watercolor-painting-for-beginners"],
-    collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "watercolor",
-        slot: "paints",
-      },
+    "hobbies": [
+      "watercolor-painting"
     ],
-    role: "essential",
-    isEssential: true,
-    audience: "Beginners who want a colour-rich first palette",
-    whySelected: "Pans, brushes and case in one box.",
-    limitations: [
+    "articles": [
+      "watercolor-painting-for-beginners"
+    ],
+    "collections": [
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "watercolor",
+        "slot": "paints"
+      }
+    ],
+    "role": "essential",
+    "isEssential": true,
+    "audience": "Beginners who want a colour-rich first palette",
+    "whySelected": "Pans, brushes and case in one box.",
+    "limitations": [
       "48 colours is more than a beginner needs",
       "Pigment quality and lightfastness not stated in the text read",
       "Non-toxic status not stated: check the label",
       "Manufacturer page not yet checked",
-      "Seller on listing: not captured",
+      "Seller on listing: not captured"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0BWRCKFDH"],
-    lastVerified: "2026-11-18",
-    availability: "check-listing",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "48-color watercolor set",
-    benefit: "48 pan colors, three brushes and a case in one box: open it, wet a brush, start.",
-    lead: true,
-    onlyOne: true,
+    "researchSources": [
+      "https://www.amazon.com/dp/B0BWRCKFDH"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "check-listing",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "48-color watercolor set",
+    "benefit": "Pick one small set: this box has 48 pan colors, three brushes and a case. Use three colors at first and ignore the rest.",
+    "lead": true,
+    "onlyOne": true
   },
   {
-    id: "transon-8-round-watercolor-brushes",
-    name: "8pc Round Watercolor Brush Set, Goat Hair",
-    brand: "Transon",
-    category: "Brushes",
-    description:
-      "Eight round brushes in a natural-hair and nylon blend for watercolor and other media.",
-    asin: "B06XTMNKVF",
-    amazonUrl: "https://www.amazon.com/dp/B06XTMNKVF",
-    specs: [
+    "id": "transon-8-round-watercolor-brushes",
+    "name": "8pc Round Watercolor Brush Set, Goat Hair",
+    "brand": "Transon",
+    "category": "Brushes",
+    "description": "Eight round brushes in a natural-hair and nylon blend for watercolor and other media.",
+    "asin": "B06XTMNKVF",
+    "amazonUrl": "https://www.amazon.com/dp/B06XTMNKVF",
+    "specs": [
       {
-        label: "Count",
-        value: "8",
+        "label": "Count",
+        "value": "8"
       },
       {
-        label: "Shape",
-        value: "round",
+        "label": "Shape",
+        "value": "round"
       },
       {
-        label: "Hair",
-        value: "natural and nylon blend per listing",
-      },
+        "label": "Hair",
+        "value": "natural and nylon blend per listing"
+      }
     ],
-    hobbies: ["watercolor-painting"],
-    articles: ["watercolor-painting-for-beginners"],
-    collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "watercolor",
-        slot: "brushes",
-      },
+    "hobbies": [
+      "watercolor-painting"
     ],
-    role: "essential",
-    isEssential: true,
-    audience: "Beginners who want a few real round brushes",
-    whySelected: "Round brushes cover washes and fine lines; listing says they hold water well.",
-    limitations: [
-      '"Mimic sable" and spring-back are the listing\'s claims',
+    "articles": [
+      "watercolor-painting-for-beginners"
+    ],
+    "collections": [
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "watercolor",
+        "slot": "brushes"
+      }
+    ],
+    "role": "nice-to-have",
+    "isEssential": false,
+    "audience": "Beginners who want a few real round brushes",
+    "whySelected": "Round brushes cover washes and fine lines; listing says they hold water well.",
+    "limitations": [
+      "\"Mimic sable\" and spring-back are the listing's claims",
       "Round only: no flat brush",
       "Manufacturer page not yet checked",
-      "Seller on listing: not captured",
+      "Seller on listing: not captured"
     ],
-    researchSources: ["https://www.amazon.com/dp/B06XTMNKVF"],
-    lastVerified: "2026-11-18",
-    availability: "check-listing",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "Transon round brush set, 8 pieces",
-    benefit: "Eight round brushes in graduated sizes for washes and fine lines.",
-    lead: true,
+    "researchSources": [
+      "https://www.amazon.com/dp/B06XTMNKVF"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "check-listing",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "Transon round brush set, 8 pieces",
+    "benefit": "Eight round brushes in graduated sizes for washes and fine lines.",
+    "lead": true
   },
   {
-    id: "fenorkey-12-round-watercolor-brushes",
-    name: "12pc Round Watercolor Brushes (Nylon)",
-    brand: "FENORKEY",
-    category: "Brushes",
-    description: "Twelve nylon round brushes for watercolor, acrylic and gouache.",
-    asin: "B07WH8T6LH",
-    amazonUrl: "https://www.amazon.com/dp/B07WH8T6LH",
-    specs: [
+    "id": "fenorkey-12-round-watercolor-brushes",
+    "name": "12pc Round Watercolor Brushes (Nylon)",
+    "brand": "FENORKEY",
+    "category": "Brushes",
+    "description": "Twelve nylon round brushes for watercolor, acrylic and gouache.",
+    "asin": "B07WH8T6LH",
+    "amazonUrl": "https://www.amazon.com/dp/B07WH8T6LH",
+    "specs": [
       {
-        label: "Count",
-        value: "12",
+        "label": "Count",
+        "value": "12"
       },
       {
-        label: "Hair",
-        value: "nylon",
+        "label": "Hair",
+        "value": "nylon"
       },
       {
-        label: "Shape",
-        value: "round",
-      },
+        "label": "Shape",
+        "value": "round"
+      }
     ],
-    hobbies: ["watercolor-painting"],
-    articles: ["watercolor-painting-for-beginners"],
-    collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "watercolor",
-        slot: "brushes",
-      },
+    "hobbies": [
+      "watercolor-painting"
     ],
-    role: "affordable",
-    isEssential: false,
-    audience: "Budget-minded beginners",
-    whySelected: "Larger count at low commitment; nylon is easy to rinse.",
-    limitations: [
+    "articles": [
+      "watercolor-painting-for-beginners"
+    ],
+    "collections": [
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "watercolor",
+        "slot": "brushes"
+      }
+    ],
+    "role": "affordable",
+    "isEssential": false,
+    "audience": "Budget-minded beginners",
+    "whySelected": "Larger count at low commitment; nylon is easy to rinse.",
+    "limitations": [
       "Shedding resistance is the listing's claim",
       "All round shapes",
       "Manufacturer page not yet checked",
-      "Seller on listing: not captured",
+      "Seller on listing: not captured"
     ],
-    researchSources: ["https://www.amazon.com/dp/B07WH8T6LH"],
-    lastVerified: "2026-11-18",
-    availability: "check-listing",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "Fenorkey nylon round brushes, 12 pieces",
-    benefit: "Twelve nylon round brushes that rinse clean.",
-    compare: "More brushes, in nylon rather than goat hair; all round shapes.",
+    "researchSources": [
+      "https://www.amazon.com/dp/B07WH8T6LH"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "check-listing",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "Fenorkey nylon round brushes, 12 pieces",
+    "benefit": "Twelve nylon round brushes that rinse clean.",
+    "compare": "More brushes, in nylon rather than goat hair; all round shapes."
   },
   {
-    id: "arches-watercolor-pad-140lb-cold-press-9x12",
-    name: "Watercolor Paper Pad, 140 lb, Cold Press, 9 x 12 in",
-    brand: "Arches",
-    category: "Watercolor paper",
-    description: "A 9 x 12 in cold-press pad of cotton watercolor paper.",
-    asin: "B01EQHJH10",
-    amazonUrl: "https://www.amazon.com/dp/B01EQHJH10",
-    specs: [
+    "id": "arches-watercolor-pad-140lb-cold-press-9x12",
+    "name": "Watercolor Paper Pad, 140 lb, Cold Press, 9 x 12 in",
+    "brand": "Arches",
+    "category": "Watercolor paper",
+    "description": "A 9 x 12 in cold-press pad of cotton watercolor paper.",
+    "asin": "B01EQHJH10",
+    "amazonUrl": "https://www.amazon.com/dp/B01EQHJH10",
+    "specs": [
       {
-        label: "Weight",
-        value: "140 lb",
+        "label": "Weight",
+        "value": "140 lb"
       },
       {
-        label: "Surface",
-        value: "cold press",
+        "label": "Surface",
+        "value": "cold press"
       },
       {
-        label: "Size",
-        value: "9 x 12 in",
+        "label": "Size",
+        "value": "9 x 12 in"
       },
       {
-        label: "Fibre",
-        value: "100% cotton per listing",
-      },
+        "label": "Fibre",
+        "value": "100% cotton per listing"
+      }
     ],
-    hobbies: ["watercolor-painting"],
-    articles: ["watercolor-painting-for-beginners"],
-    collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "watercolor",
-        slot: "paper",
-      },
+    "hobbies": [
+      "watercolor-painting"
     ],
-    role: "nice-to-have",
-    isEssential: false,
-    audience: "People who want paper that handles water well",
-    whySelected: "Listing describes long-fibre cotton paper.",
-    limitations: [
+    "articles": [
+      "watercolor-painting-for-beginners"
+    ],
+    "collections": [
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "watercolor",
+        "slot": "paper"
+      }
+    ],
+    "role": "nice-to-have",
+    "isEssential": false,
+    "audience": "People who want paper that handles water well",
+    "whySelected": "Listing describes long-fibre cotton paper.",
+    "limitations": [
       "Sheet count not stated in the text read",
       "Premium paper is more than a first practice needs",
       "Manufacturer page not yet checked",
-      "Seller on listing: not captured",
+      "Seller on listing: not captured"
     ],
-    researchSources: ["https://www.amazon.com/dp/B01EQHJH10"],
-    lastVerified: "2026-11-18",
-    availability: "check-listing",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "Arches cold-press pad, 9 x 12 in",
-    benefit: "Cotton watercolor paper in a 140 lb cold-press pad.",
-    compare: "A step up in paper quality once you are hooked.",
+    "researchSources": [
+      "https://www.amazon.com/dp/B01EQHJH10"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "check-listing",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "Arches cold-press pad, 9 x 12 in",
+    "benefit": "Cotton watercolor paper in a 140 lb cold-press pad.",
+    "compare": "A step up in paper quality once you are hooked."
   },
   {
-    id: "hapikalor-watercolor-pad-140lb-9x12",
-    name: "Watercolor Paper Pad, 9 x 12 in, 140 lb/300 gsm, 20 Sheets",
-    brand: "Hapikalor",
-    category: "Watercolor paper",
-    description: "A 20-sheet cold-press watercolor pad, 140 lb, 9 x 12 in.",
-    asin: "B0D5R7JRKZ",
-    amazonUrl: "https://www.amazon.com/dp/B0D5R7JRKZ",
-    specs: [
+    "id": "hapikalor-watercolor-pad-140lb-9x12",
+    "name": "Watercolor Paper Pad, 9 x 12 in, 140 lb/300 gsm, 20 Sheets",
+    "brand": "Hapikalor",
+    "category": "Watercolor paper",
+    "description": "A 20-sheet cold-press watercolor pad, 140 lb, 9 x 12 in.",
+    "asin": "B0D5R7JRKZ",
+    "amazonUrl": "https://www.amazon.com/dp/B0D5R7JRKZ",
+    "specs": [
       {
-        label: "Sheets",
-        value: "20",
+        "label": "Sheets",
+        "value": "20"
       },
       {
-        label: "Weight",
-        value: "140 lb / 300 gsm",
+        "label": "Weight",
+        "value": "140 lb / 300 gsm"
       },
       {
-        label: "Surface",
-        value: "cold press",
+        "label": "Surface",
+        "value": "cold press"
       },
       {
-        label: "Size",
-        value: "9 x 12 in",
+        "label": "Size",
+        "value": "9 x 12 in"
       },
       {
-        label: "Acid-free",
-        value: "per listing",
-      },
+        "label": "Acid-free",
+        "value": "per listing"
+      }
     ],
-    hobbies: ["watercolor-painting"],
-    articles: ["watercolor-painting-for-beginners"],
-    collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "watercolor",
-        slot: "paper",
-      },
+    "hobbies": [
+      "watercolor-painting"
     ],
-    role: "affordable",
-    isEssential: true,
-    audience: "Beginners practising on a budget",
-    whySelected: "Heavyweight cold-press sheets suit practice washes.",
-    limitations: [
+    "articles": [
+      "watercolor-painting-for-beginners"
+    ],
+    "collections": [
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "watercolor",
+        "slot": "paper"
+      }
+    ],
+    "role": "affordable",
+    "isEssential": true,
+    "audience": "Beginners practising on a budget",
+    "whySelected": "Heavyweight cold-press sheets suit practice washes.",
+    "limitations": [
       "Cotton content not stated",
       "Acid-free is the listing's claim",
       "Manufacturer page not yet checked",
-      "Seller on listing: not captured",
+      "Seller on listing: not captured"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0D5R7JRKZ"],
-    lastVerified: "2026-11-18",
-    availability: "check-listing",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "Heavyweight watercolor pad, 9 x 12 in",
-    benefit: "Twenty 140 lb cold-press sheets for practice washes.",
-    lead: true,
+    "researchSources": [
+      "https://www.amazon.com/dp/B0D5R7JRKZ"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "check-listing",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "Heavyweight watercolor pad, 9 x 12 in",
+    "benefit": "Twenty 140 lb cold-press sheets for practice washes.",
+    "lead": true
   },
   {
-    id: "bradove-classic-embroidery-kit",
-    name: "Classic Embroidery Learning Kit for Adults and Kids",
-    brand: "Bradove",
-    category: "Embroidery kit",
-    description:
-      "A beginner embroidery kit with patterned fabric, thread, hoops, needles, a seam ripper and video tutorials.",
-    asin: "B0B762JW55",
-    amazonUrl: "https://www.amazon.com/dp/B0B762JW55",
-    specs: [
+    "id": "bradove-classic-embroidery-kit",
+    "name": "Classic Embroidery Learning Kit for Adults and Kids",
+    "brand": "Bradove",
+    "category": "Embroidery kit",
+    "description": "A beginner embroidery kit with patterned fabric, thread, hoops, needles, a seam ripper and video tutorials.",
+    "asin": "B0B762JW55",
+    "amazonUrl": "https://www.amazon.com/dp/B0B762JW55",
+    "specs": [
       {
-        label: "Includes",
-        value: "patterned fabrics, threads, hoops, needles, seam ripper, instructions",
+        "label": "Includes",
+        "value": "patterned fabrics, threads, hoops, needles, seam ripper, instructions"
       },
       {
-        label: "Tutorials",
-        value: "QR-code videos",
-      },
+        "label": "Tutorials",
+        "value": "QR-code videos"
+      }
     ],
-    hobbies: ["embroidery"],
-    articles: ["how-to-start-embroidery"],
-    collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "embroidery",
-        slot: "hoop",
-      },
+    "hobbies": [
+      "embroidery"
     ],
-    role: "complete-kit",
-    isEssential: true,
-    audience: "Beginners who want one box with a guide",
-    whySelected:
-      "Listing says tutorials cover hoop use, separating thread, threading and basic stitches.",
-    limitations: [
+    "articles": [
+      "how-to-start-embroidery"
+    ],
+    "collections": [
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "embroidery",
+        "slot": "hoop"
+      }
+    ],
+    "role": "complete-kit",
+    "isEssential": true,
+    "audience": "Beginners who want one box with a guide",
+    "whySelected": "Listing says tutorials cover hoop use, separating thread, threading and basic stitches.",
+    "limitations": [
       "Contents counts not shown in the text read",
       "Tutorial quality not tested by us",
       "Manufacturer page not yet checked",
-      "Seller on listing: not captured",
+      "Seller on listing: not captured"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0B762JW55"],
-    lastVerified: "2026-11-18",
-    availability: "check-listing",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "Bradove embroidery learning kit",
-    benefit: "A boxed kit with a tutorial covering the hoop, threading and basic stitches.",
-    lead: true,
-    onlyOne: true,
+    "researchSources": [
+      "https://www.amazon.com/dp/B0B762JW55"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "check-listing",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "Bradove embroidery learning kit",
+    "benefit": "A boxed kit with a tutorial covering the hoop, threading and basic stitches.",
+    "lead": true,
+    "onlyOne": true
   },
   {
-    id: "inscraft-304-piece-embroidery-starter-kit",
-    name: "304 Pack Embroidery Kit, 200 Colors, 5 Bamboo Hoops, 2 Aida Cloth",
-    brand: "INSCRAFT",
-    category: "Embroidery kit",
-    description:
-      "A large embroidery starter kit: 200 floss colours, 5 bamboo hoops, 2 Aida cloth, needles, pins and tools.",
-    asin: "B087RB2K2B",
-    amazonUrl: "https://www.amazon.com/dp/B087RB2K2B",
-    specs: [
+    "id": "inscraft-304-piece-embroidery-starter-kit",
+    "name": "304 Pack Embroidery Kit, 200 Colors, 5 Bamboo Hoops, 2 Aida Cloth",
+    "brand": "INSCRAFT",
+    "category": "Embroidery kit",
+    "description": "A large embroidery starter kit: 200 floss colours, 5 bamboo hoops, 2 Aida cloth, needles, pins and tools.",
+    "asin": "B087RB2K2B",
+    "amazonUrl": "https://www.amazon.com/dp/B087RB2K2B",
+    "specs": [
       {
-        label: "Floss",
-        value: "200 colours",
+        "label": "Floss",
+        "value": "200 colours"
       },
       {
-        label: "Hoops",
-        value: "5 bamboo",
+        "label": "Hoops",
+        "value": "5 bamboo"
       },
       {
-        label: "Cloth",
-        value: "2 Aida",
+        "label": "Cloth",
+        "value": "2 Aida"
       },
       {
-        label: "Needles",
-        value: "30",
+        "label": "Needles",
+        "value": "30"
       },
       {
-        label: "Pins",
-        value: "40",
+        "label": "Pins",
+        "value": "40"
       },
       {
-        label: "Extras",
-        value: "thimble, 1 scissor, pincushion, bag",
-      },
+        "label": "Extras",
+        "value": "thimble, 1 scissor, pincushion, bag"
+      }
     ],
-    hobbies: ["embroidery"],
-    articles: ["how-to-start-embroidery"],
-    collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "embroidery",
-        slot: "floss",
-      },
+    "hobbies": [
+      "embroidery"
     ],
-    role: "affordable",
-    isEssential: false,
-    audience: "People who want lots of floss to experiment",
-    whySelected: "A lot of colours and tools in one listing.",
-    limitations: [
+    "articles": [
+      "how-to-start-embroidery"
+    ],
+    "collections": [
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "embroidery",
+        "slot": "floss"
+      }
+    ],
+    "role": "affordable",
+    "isEssential": false,
+    "audience": "People who want lots of floss to experiment",
+    "whySelected": "A lot of colours and tools in one listing.",
+    "limitations": [
       "Aida cloth is for cross stitch: check it suits your pattern",
       "Much of the 304 count is small accessories",
       "Manufacturer page not yet checked",
-      "Seller on listing: not captured",
+      "Seller on listing: not captured"
     ],
-    researchSources: ["https://www.amazon.com/dp/B087RB2K2B"],
-    lastVerified: "2026-11-18",
-    availability: "check-listing",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "INSCRAFT embroidery set, 200 floss colors",
-    benefit: "A big palette of floss plus five bamboo hoops for trying things out.",
-    lead: true,
+    "researchSources": [
+      "https://www.amazon.com/dp/B087RB2K2B"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "check-listing",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "INSCRAFT embroidery set, 200 floss colors",
+    "benefit": "A big palette of floss plus five bamboo hoops for trying things out.",
+    "lead": true
   },
   {
-    id: "aqueenly-stork-embroidery-scissors-2-pack",
-    name: "Embroidery Scissors, Stork, 2 Pcs, 3.6 in, Gold",
-    brand: "AQUEENLY",
-    category: "Embroidery scissors",
-    description: "Two small stainless steel stork-style scissors with a gold finish.",
-    asin: "B07KZPRBQT",
-    amazonUrl: "https://www.amazon.com/dp/B07KZPRBQT",
-    specs: [
+    "id": "aqueenly-stork-embroidery-scissors-2-pack",
+    "name": "Embroidery Scissors, Stork, 2 Pcs, 3.6 in, Gold",
+    "brand": "AQUEENLY",
+    "category": "Embroidery scissors",
+    "description": "Two small stainless steel stork-style scissors with a gold finish.",
+    "asin": "B07KZPRBQT",
+    "amazonUrl": "https://www.amazon.com/dp/B07KZPRBQT",
+    "specs": [
       {
-        label: "Pack",
-        value: "2",
+        "label": "Pack",
+        "value": "2"
       },
       {
-        label: "Length",
-        value: "3.6 in",
+        "label": "Length",
+        "value": "3.6 in"
       },
       {
-        label: "Material",
-        value: "stainless steel",
-      },
+        "label": "Material",
+        "value": "stainless steel"
+      }
     ],
-    hobbies: ["embroidery"],
-    articles: ["how-to-start-embroidery"],
-    collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "embroidery",
-        slot: "scissors",
-      },
+    "hobbies": [
+      "embroidery"
     ],
-    role: "affordable",
-    isEssential: false,
-    audience: "Stitchers who want small thread snips",
-    whySelected: "Small pointed blades for trimming thread.",
-    limitations: [
+    "articles": [
+      "how-to-start-embroidery"
+    ],
+    "collections": [
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "embroidery",
+        "slot": "scissors"
+      }
+    ],
+    "role": "affordable",
+    "isEssential": false,
+    "audience": "Stitchers who want small thread snips",
+    "whySelected": "Small pointed blades for trimming thread.",
+    "limitations": [
       "Sharpness and rust resistance are the listing's claims",
       "Sharp points: keep away from children",
       "Manufacturer page not yet checked",
-      "Seller on listing: not captured",
+      "Seller on listing: not captured"
     ],
-    researchSources: ["https://www.amazon.com/dp/B07KZPRBQT"],
-    lastVerified: "2026-11-18",
-    availability: "check-listing",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "Gold stork embroidery scissors, 2-pack",
-    benefit: "Small gold scissors for snipping thread, a pair for each project bag.",
-    lead: true,
+    "researchSources": [
+      "https://www.amazon.com/dp/B07KZPRBQT"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "check-listing",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "Gold stork embroidery scissors, 2-pack",
+    "benefit": "Small gold scissors for snipping thread, a pair for each project bag.",
+    "lead": true
   },
   {
-    id: "3-swords-germany-stork-embroidery-scissors",
-    name: "Embroidery Scissors, Stork Scissors, with Synthetic Leather Case",
-    brand: "3 Swords Germany",
-    category: "Embroidery scissors",
-    description: "Stork-style embroidery scissors with a black synthetic leather case.",
-    asin: "B0D1Y66RQZ",
-    amazonUrl: "https://www.amazon.com/dp/B0D1Y66RQZ",
-    specs: [
+    "id": "3-swords-germany-stork-embroidery-scissors",
+    "name": "Embroidery Scissors, Stork Scissors, with Synthetic Leather Case",
+    "brand": "3 Swords Germany",
+    "category": "Embroidery scissors",
+    "description": "Stork-style embroidery scissors with a black synthetic leather case.",
+    "asin": "B0D1Y66RQZ",
+    "amazonUrl": "https://www.amazon.com/dp/B0D1Y66RQZ",
+    "specs": [
       {
-        label: "Case",
-        value: "black synthetic leather",
-      },
+        "label": "Case",
+        "value": "black synthetic leather"
+      }
     ],
-    hobbies: ["embroidery"],
-    articles: ["how-to-start-embroidery"],
-    collections: ["creative-girl"],
-    kitSlots: [
+    "hobbies": [
+      "embroidery"
+    ],
+    "articles": [
+      "how-to-start-embroidery"
+    ],
+    "collections": [
+      "creative-girl"
+    ],
+    "kitSlots": [
       {
-        kit: "embroidery",
-        slot: "scissors",
-      },
+        "kit": "embroidery",
+        "slot": "scissors"
+      }
     ],
-    role: "nice-to-have",
-    isEssential: false,
-    audience: "Stitchers who want a pair with a case",
-    whySelected: "Comes with a protective case.",
-    limitations: [
+    "role": "nice-to-have",
+    "isEssential": false,
+    "audience": "Stitchers who want a pair with a case",
+    "whySelected": "Comes with a protective case.",
+    "limitations": [
       "Bullet text did not load: only title and seller captured",
       "Country of manufacture not confirmed (brand name says Germany)",
       "Manufacturer page not yet checked",
-      "Seller on listing: 3 Swords - Germany",
+      "Seller on listing: 3 Swords - Germany"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0D1Y66RQZ"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0D1Y66RQZ"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "crochet-hooks-12-sizes-51-pack-ming-shun",
-    name: "Crochet Hooks 12 Sizes Set, 51 Pack, 2.0-8.0 mm",
-    brand: "not stated on listing",
-    category: "Crochet hooks",
-    description:
-      "A 51-piece crochet set: 12 aluminum hooks with silicone handles, markers, needles, row counter, scissors and case.",
-    asin: "B0C33QM3KR",
-    amazonUrl: "https://www.amazon.com/dp/B0C33QM3KR",
-    specs: [
+    "id": "crochet-hooks-12-sizes-51-pack-ming-shun",
+    "name": "Crochet Hooks 12 Sizes Set, 51 Pack, 2.0-8.0 mm",
+    "brand": "not stated on listing",
+    "category": "Crochet hooks",
+    "description": "A 51-piece crochet set: 12 aluminum hooks with silicone handles, markers, needles, row counter, scissors and case.",
+    "asin": "B0C33QM3KR",
+    "amazonUrl": "https://www.amazon.com/dp/B0C33QM3KR",
+    "specs": [
       {
-        label: "Hooks",
-        value: "12 (2-8 mm)",
+        "label": "Hooks",
+        "value": "12 (2-8 mm)"
       },
       {
-        label: "Markers",
-        value: "25",
+        "label": "Markers",
+        "value": "25"
       },
       {
-        label: "Needles",
-        value: "9",
+        "label": "Needles",
+        "value": "9"
       },
       {
-        label: "Extras",
-        value: "scissors, row counter, ring cutter, tape, case",
-      },
+        "label": "Extras",
+        "value": "scissors, row counter, ring cutter, tape, case"
+      }
     ],
-    hobbies: ["crochet"],
-    articles: ["how-to-start-crocheting"],
-    collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "crochet",
-        slot: "hooks",
-      },
+    "hobbies": [
+      "crochet"
     ],
-    role: "complete-kit",
-    isEssential: true,
-    audience: "Beginners who want a range of hook sizes",
-    whySelected: "Covers hooks, markers and needles in one listing.",
-    limitations: [
+    "articles": [
+      "how-to-start-crocheting"
+    ],
+    "collections": [
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "crochet",
+        "slot": "hooks"
+      }
+    ],
+    "role": "complete-kit",
+    "isEssential": true,
+    "audience": "Beginners who want a range of hook sizes",
+    "whySelected": "Covers hooks, markers and needles in one listing.",
+    "limitations": [
       "Random colours for several accessories",
       "Brand not stated",
       "Manufacturer page not yet checked",
-      "Seller on listing: Ming Shun Store",
+      "Seller on listing: Ming Shun Store"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0C33QM3KR"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0C33QM3KR"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "crochet-hooks-12-sizes-44-pcs-ergonomic-rp-tech",
-    name: "Crochet Hooks Set, 12 Sizes, 44 Pcs, Ergonomic Rubber Handles",
-    brand: "not stated on listing",
-    category: "Crochet hooks",
-    description:
-      "A 44-piece crochet set with 12 rubber-handle hooks (2-8 mm), markers, needles, row counter and case.",
-    asin: "B09F9B2XTD",
-    amazonUrl: "https://www.amazon.com/dp/B09F9B2XTD",
-    specs: [
+    "id": "crochet-hooks-12-sizes-44-pcs-ergonomic-rp-tech",
+    "name": "Crochet Hooks Set, 12 Sizes, 44 Pcs, Ergonomic Rubber Handles",
+    "brand": "not stated on listing",
+    "category": "Crochet hooks",
+    "description": "A 44-piece crochet set with 12 rubber-handle hooks (2-8 mm), markers, needles, row counter and case.",
+    "asin": "B09F9B2XTD",
+    "amazonUrl": "https://www.amazon.com/dp/B09F9B2XTD",
+    "specs": [
       {
-        label: "Hooks",
-        value: "12 (2-8 mm)",
+        "label": "Hooks",
+        "value": "12 (2-8 mm)"
       },
       {
-        label: "Markers",
-        value: "20",
+        "label": "Markers",
+        "value": "20"
       },
       {
-        label: "Needles",
-        value: "9",
-      },
+        "label": "Needles",
+        "value": "9"
+      }
     ],
-    hobbies: ["crochet"],
-    articles: ["how-to-start-crocheting"],
-    collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "crochet",
-        slot: "hooks",
-      },
+    "hobbies": [
+      "crochet"
     ],
-    role: "affordable",
-    isEssential: false,
-    audience: "People who want soft-grip hooks",
-    whySelected: "Soft rubber grips.",
-    limitations: [
+    "articles": [
+      "how-to-start-crocheting"
+    ],
+    "collections": [
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "crochet",
+        "slot": "hooks"
+      }
+    ],
+    "role": "affordable",
+    "isEssential": false,
+    "audience": "People who want soft-grip hooks",
+    "whySelected": "Soft rubber grips.",
+    "limitations": [
       "Listing markets them for arthritic hands: marketing, not a medical claim we can support",
       "Brand not stated",
       "Manufacturer page not yet checked",
-      "Seller on listing: RP-TECH",
+      "Seller on listing: RP-TECH"
     ],
-    researchSources: ["https://www.amazon.com/dp/B09F9B2XTD"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B09F9B2XTD"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "red-heart-super-saver-white-worsted",
-    name: "Super Saver Yarn, White, Single Skein",
-    brand: "Red Heart",
-    category: "Yarn",
-    description: "A single skein of worsted-weight (size 4) acrylic yarn in white.",
-    asin: "B000XZY8Q4",
-    amazonUrl: "https://www.amazon.com/dp/B000XZY8Q4",
-    specs: [
+    "id": "red-heart-super-saver-white-worsted",
+    "name": "Super Saver Yarn, White, Single Skein",
+    "brand": "Red Heart",
+    "category": "Yarn",
+    "description": "A single skein of worsted-weight (size 4) acrylic yarn in white.",
+    "asin": "B000XZY8Q4",
+    "amazonUrl": "https://www.amazon.com/dp/B000XZY8Q4",
+    "specs": [
       {
-        label: "Weight",
-        value: "worsted (4)",
+        "label": "Weight",
+        "value": "worsted (4)"
       },
       {
-        label: "Fibre",
-        value: "acrylic",
+        "label": "Fibre",
+        "value": "acrylic"
       },
       {
-        label: "Skeins",
-        value: "1",
-      },
+        "label": "Skeins",
+        "value": "1"
+      }
     ],
-    hobbies: ["crochet"],
-    articles: ["how-to-start-crocheting"],
-    collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "crochet",
-        slot: "yarn",
-      },
+    "hobbies": [
+      "crochet"
     ],
-    role: "essential",
-    isEssential: true,
-    audience: "Beginners who need a plain first yarn",
-    whySelected:
-      "Light colour makes stitches easy to see; worsted weight suits many beginner patterns.",
-    limitations: [
+    "articles": [
+      "how-to-start-crocheting"
+    ],
+    "collections": [
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "crochet",
+        "slot": "yarn"
+      }
+    ],
+    "role": "essential",
+    "isEssential": true,
+    "audience": "Beginners who need a plain first yarn",
+    "whySelected": "Light colour makes stitches easy to see; worsted weight suits many beginner patterns.",
+    "limitations": [
       "One skein is small for most projects",
       "Softness and stitch-definition are the listing's claims",
       "Manufacturer page not yet checked",
-      "Seller on listing: not captured",
+      "Seller on listing: not captured"
     ],
-    researchSources: ["https://www.amazon.com/dp/B000XZY8Q4"],
-    lastVerified: "2026-11-18",
-    availability: "check-listing",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "Red Heart Super Saver yarn, white",
-    benefit: "A plain, light worsted yarn that shows every stitch.",
-    lead: true,
-    onlyOne: true,
+    "researchSources": [
+      "https://www.amazon.com/dp/B000XZY8Q4"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "check-listing",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "Red Heart Super Saver yarn, white",
+    "benefit": "A plain, light worsted yarn that shows every stitch.",
+    "lead": true,
+    "onlyOne": true
   },
   {
-    id: "caron-simply-soft-feathered-gray-3-pack",
-    name: "Simply Soft Yarn, Feathered Gray, 3-Pack",
-    brand: "Caron",
-    category: "Yarn",
-    description: "Three skeins of machine-washable 100% acrylic worsted-weight (4) yarn in grey.",
-    asin: "B0BBY2QVV4",
-    amazonUrl: "https://www.amazon.com/dp/B0BBY2QVV4",
-    specs: [
+    "id": "caron-simply-soft-feathered-gray-3-pack",
+    "name": "Simply Soft Yarn, Feathered Gray, 3-Pack",
+    "brand": "Caron",
+    "category": "Yarn",
+    "description": "Three skeins of machine-washable 100% acrylic worsted-weight (4) yarn in grey.",
+    "asin": "B0BBY2QVV4",
+    "amazonUrl": "https://www.amazon.com/dp/B0BBY2QVV4",
+    "specs": [
       {
-        label: "Weight",
-        value: "worsted (4)",
+        "label": "Weight",
+        "value": "worsted (4)"
       },
       {
-        label: "Fibre",
-        value: "100% acrylic",
+        "label": "Fibre",
+        "value": "100% acrylic"
       },
       {
-        label: "Care",
-        value: "machine wash and dry",
+        "label": "Care",
+        "value": "machine wash and dry"
       },
       {
-        label: "Skeins",
-        value: "3",
-      },
+        "label": "Skeins",
+        "value": "3"
+      }
     ],
-    hobbies: ["crochet"],
-    articles: ["how-to-start-crocheting"],
-    collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "crochet",
-        slot: "yarn",
-      },
+    "hobbies": [
+      "crochet"
     ],
-    role: "nice-to-have",
-    isEssential: false,
-    audience: "People who want a softer feel and a few skeins",
-    whySelected: "Listing states gauge and machine-wash care.",
-    limitations: [
+    "articles": [
+      "how-to-start-crocheting"
+    ],
+    "collections": [
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "crochet",
+        "slot": "yarn"
+      }
+    ],
+    "role": "nice-to-have",
+    "isEssential": false,
+    "audience": "People who want a softer feel and a few skeins",
+    "whySelected": "Listing states gauge and machine-wash care.",
+    "limitations": [
       "Colour shown is one of many options: pick colour on the listing",
       "Pack size may vary by colour",
       "Manufacturer page not yet checked",
-      "Seller on listing: not captured",
+      "Seller on listing: not captured"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0BBY2QVV4"],
-    lastVerified: "2026-11-18",
-    availability: "check-listing",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "Caron Simply Soft yarn, gray 3-pack",
-    benefit: "Three skeins of softer yarn in a gentle gray.",
-    compare: "Softer feel and three skeins, enough for a small project.",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0BBY2QVV4"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "check-listing",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "Caron Simply Soft yarn, gray 3-pack",
+    "benefit": "Three skeins of softer yarn in a gentle gray.",
+    "compare": "Softer feel and three skeins, enough for a small project."
   },
   {
-    id: "benicci-12-piece-artist-paint-brush-set",
-    name: "Professional Artist Paint Brush Set of 12, Acrylic and Watercolor",
-    brand: "Benicci",
-    category: "Brushes",
-    description: "A 12-brush set: rounds, flats, liners, an angle, a filbert and a fan.",
-    asin: "B0868QQ1X6",
-    amazonUrl: "https://www.amazon.com/dp/B0868QQ1X6",
-    specs: [
+    "id": "benicci-12-piece-artist-paint-brush-set",
+    "name": "Professional Artist Paint Brush Set of 12, Acrylic and Watercolor",
+    "brand": "Benicci",
+    "category": "Brushes",
+    "description": "A 12-brush set: rounds, flats, liners, an angle, a filbert and a fan.",
+    "asin": "B0868QQ1X6",
+    "amazonUrl": "https://www.amazon.com/dp/B0868QQ1X6",
+    "specs": [
       {
-        label: "Count",
-        value: "12",
+        "label": "Count",
+        "value": "12"
       },
       {
-        label: "Shapes",
-        value: "4 round, 3 flat, 2 liner, 1 angle, 1 filbert, 1 fan",
-      },
+        "label": "Shapes",
+        "value": "4 round, 3 flat, 2 liner, 1 angle, 1 filbert, 1 fan"
+      }
     ],
-    hobbies: ["air-dry-clay", "paint-by-numbers"],
-    articles: ["how-to-start-air-dry-clay", "how-to-host-a-paint-night-at-home"],
-    collections: ["pottery-era", "creative-girl", "girls-night-in"],
-    kitSlots: [
-      {
-        kit: "air-dry-clay",
-        slot: "brushes",
-      },
-      {
-        kit: "paint-night",
-        slot: "brushes",
-      },
+    "hobbies": [
+      "air-dry-clay",
+      "paint-by-numbers"
     ],
-    role: "essential",
-    isEssential: true,
-    audience: "Beginners painting clay or canvases",
-    whySelected: "A spread of shapes covers base coats and fine lines.",
-    limitations: [
-      '"Studio results" and "crisp point" are the listing\'s claims',
+    "articles": [
+      "how-to-start-air-dry-clay",
+      "how-to-host-a-paint-night-at-home"
+    ],
+    "collections": [
+      "pottery-era",
+      "creative-girl",
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "air-dry-clay",
+        "slot": "brushes"
+      },
+      {
+        "kit": "paint-night",
+        "slot": "brushes"
+      }
+    ],
+    "role": "essential",
+    "isEssential": true,
+    "audience": "Beginners painting clay or canvases",
+    "whySelected": "A spread of shapes covers base coats and fine lines.",
+    "limitations": [
+      "\"Studio results\" and \"crisp point\" are the listing's claims",
       "Listing mentions oil use: not tested",
       "Manufacturer page not yet checked",
-      "Seller on listing: Benicci",
+      "Seller on listing: Benicci"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0868QQ1X6"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "Benicci artist brush set, 12 pieces",
-    benefit: "A mix of brush shapes for base coats and fine lines on clay or canvas.",
-    lead: true,
+    "researchSources": [
+      "https://www.amazon.com/dp/B0868QQ1X6"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "Benicci artist brush set, 12 pieces",
+    "benefit": "A mix of brush shapes for base coats and fine lines on clay or canvas.",
+    "lead": true
   },
   {
-    id: "auhoahsil-12-round-acrylic-paint-brushes",
-    name: "Acrylic Paint Brushes Set, 12pcs Round-Pointed Tip",
-    brand: "not stated on listing",
-    category: "Brushes",
-    description:
-      "Twelve round-tip brushes in sizes 0-12 for acrylic, watercolor and craft painting.",
-    asin: "B087W3PT95",
-    amazonUrl: "https://www.amazon.com/dp/B087W3PT95",
-    specs: [
+    "id": "auhoahsil-12-round-acrylic-paint-brushes",
+    "name": "Acrylic Paint Brushes Set, 12pcs Round-Pointed Tip",
+    "brand": "not stated on listing",
+    "category": "Brushes",
+    "description": "Twelve round-tip brushes in sizes 0-12 for acrylic, watercolor and craft painting.",
+    "asin": "B087W3PT95",
+    "amazonUrl": "https://www.amazon.com/dp/B087W3PT95",
+    "specs": [
       {
-        label: "Count",
-        value: "12",
+        "label": "Count",
+        "value": "12"
       },
       {
-        label: "Shape",
-        value: "round-pointed",
+        "label": "Shape",
+        "value": "round-pointed"
       },
       {
-        label: "Lengths",
-        value: "17.7-21.7 cm",
-      },
+        "label": "Lengths",
+        "value": "17.7-21.7 cm"
+      }
     ],
-    hobbies: ["craft-nights", "paint-by-numbers"],
-    articles: ["how-to-host-a-paint-night-at-home"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "paint-night",
-        slot: "brushes",
-      },
+    "hobbies": [
+      "craft-nights",
+      "paint-by-numbers"
     ],
-    role: "affordable",
-    isEssential: false,
-    audience: "Budget painters, detail work",
-    whySelected: "Many sizes for detail work.",
-    limitations: [
+    "articles": [
+      "how-to-host-a-paint-night-at-home"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "paint-night",
+        "slot": "brushes"
+      }
+    ],
+    "role": "affordable",
+    "isEssential": false,
+    "audience": "Budget painters, detail work",
+    "whySelected": "Many sizes for detail work.",
+    "limitations": [
       "Round only: no flat brush for base coats",
       "Manufacturer page not yet checked",
-      "Seller on listing: Auhoahsil Direct",
+      "Seller on listing: Auhoahsil Direct"
     ],
-    researchSources: ["https://www.amazon.com/dp/B087W3PT95"],
-    lastVerified: "2026-11-18",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B087W3PT95"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "esrich-8x10-stretched-canvas-10-pack",
-    name: "Stretched Canvases for Painting, 8 x 10 in, 10 Pack",
-    brand: "ESRICH",
-    category: "Canvas",
-    description:
-      "Ten primed, cotton 8 x 10 in canvases on 5/8 in pine frames; the listing describes them as primed and acid-free.",
-    asin: "B0CH3K5F62",
-    amazonUrl: "https://www.amazon.com/dp/B0CH3K5F62",
-    specs: [
+    "id": "esrich-8x10-stretched-canvas-10-pack",
+    "name": "Stretched Canvases for Painting, 8 x 10 in, 10 Pack",
+    "brand": "ESRICH",
+    "category": "Canvas",
+    "description": "Ten primed, cotton 8 x 10 in canvases on 5/8 in pine frames; the listing describes them as primed and acid-free.",
+    "asin": "B0CH3K5F62",
+    "amazonUrl": "https://www.amazon.com/dp/B0CH3K5F62",
+    "specs": [
       {
-        label: "Count",
-        value: "10",
+        "label": "Count",
+        "value": "10"
       },
       {
-        label: "Size",
-        value: "8 x 10 in",
+        "label": "Size",
+        "value": "8 x 10 in"
       },
       {
-        label: "Frame",
-        value: "5/8 in pine",
+        "label": "Frame",
+        "value": "5/8 in pine"
       },
       {
-        label: "Primed weight",
-        value: "8 oz per listing",
-      },
+        "label": "Primed weight",
+        "value": "8 oz per listing"
+      }
     ],
-    hobbies: ["craft-nights", "paint-by-numbers"],
-    articles: ["how-to-host-a-paint-night-at-home"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "paint-night",
-        slot: "canvas",
-      },
+    "hobbies": [
+      "craft-nights",
+      "paint-by-numbers"
     ],
-    role: "essential",
-    isEssential: true,
-    audience: "Hosts who need one canvas per guest",
-    whySelected: "Ten canvases cover a group; listing says pre-coated with gesso.",
-    limitations: [
+    "articles": [
+      "how-to-host-a-paint-night-at-home"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "paint-night",
+        "slot": "canvas"
+      }
+    ],
+    "role": "essential",
+    "isEssential": true,
+    "audience": "Hosts who need one canvas per guest",
+    "whySelected": "Ten canvases cover a group; listing says pre-coated with gesso.",
+    "limitations": [
       "Primed and acid-free wording is the listing's claim",
       "Ten may exceed a small group",
       "Manufacturer page not yet checked",
-      "Seller on listing: CLOYAN",
+      "Seller on listing: CLOYAN"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0CH3K5F62"],
-    lastVerified: "2026-11-18",
-    availability: "check-listing",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "8 x 10 canvases, 10-pack",
-    benefit: 'Ten primed canvases: one for every guest, plus spares for the "let me try again".',
-    lead: true,
-    onlyOne: true,
+    "researchSources": [
+      "https://www.amazon.com/dp/B0CH3K5F62"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "check-listing",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "8 x 10 canvases, 10-pack",
+    "benefit": "Ten primed canvases: one for every guest, plus spares for the \"let me try again\".",
+    "lead": true,
+    "onlyOne": true
   },
   {
-    id: "esrich-8x10-stretched-canvas-5-pack",
-    name: "Stretched Canvas for Painting, 8 x 10 in, 5 Pack",
-    brand: "ESRICH",
-    category: "Canvas",
-    description:
-      "Five primed, cotton 8 x 10 in canvases on 5/8 in pine frames; the listing describes them as primed and acid-free.",
-    asin: "B0D3TWT3TX",
-    amazonUrl: "https://www.amazon.com/dp/B0D3TWT3TX",
-    specs: [
+    "id": "esrich-8x10-stretched-canvas-5-pack",
+    "name": "Stretched Canvas for Painting, 8 x 10 in, 5 Pack",
+    "brand": "ESRICH",
+    "category": "Canvas",
+    "description": "Five primed, cotton 8 x 10 in canvases on 5/8 in pine frames; the listing describes them as primed and acid-free.",
+    "asin": "B0D3TWT3TX",
+    "amazonUrl": "https://www.amazon.com/dp/B0D3TWT3TX",
+    "specs": [
       {
-        label: "Count",
-        value: "5",
+        "label": "Count",
+        "value": "5"
       },
       {
-        label: "Size",
-        value: "8 x 10 in",
+        "label": "Size",
+        "value": "8 x 10 in"
       },
       {
-        label: "Frame",
-        value: "5/8 in pine",
-      },
+        "label": "Frame",
+        "value": "5/8 in pine"
+      }
     ],
-    hobbies: ["craft-nights", "paint-by-numbers"],
-    articles: ["how-to-host-a-paint-night-at-home"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "paint-night",
-        slot: "canvas",
-      },
+    "hobbies": [
+      "craft-nights",
+      "paint-by-numbers"
     ],
-    role: "affordable",
-    isEssential: false,
-    audience: "Small groups",
-    whySelected: "Smaller pack for four or five people.",
-    limitations: [
+    "articles": [
+      "how-to-host-a-paint-night-at-home"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "paint-night",
+        "slot": "canvas"
+      }
+    ],
+    "role": "affordable",
+    "isEssential": false,
+    "audience": "Small groups",
+    "whySelected": "Smaller pack for four or five people.",
+    "limitations": [
       "Same maker and claims as the 10 pack",
       "Manufacturer page not yet checked",
-      "Seller on listing: CLOYAN",
+      "Seller on listing: CLOYAN"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0D3TWT3TX"],
-    lastVerified: "2026-11-18",
-    availability: "check-listing",
-    affiliateStatus: "not-activated",
-    status: "verified",
-    imageRights: "none",
-    shortName: "ESRICH 8 x 10 canvases, 5-pack",
-    benefit: "Five canvases for a smaller group.",
-    compare: "The same canvases in a pack of five, for four guests or fewer.",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0D3TWT3TX"
+    ],
+    "lastVerified": "2026-11-18",
+    "availability": "check-listing",
+    "affiliateStatus": "not-activated",
+    "status": "verified",
+    "imageRights": "none",
+    "shortName": "ESRICH 8 x 10 canvases, 5-pack",
+    "benefit": "Five canvases for a smaller group.",
+    "compare": "The same canvases in a pack of five, for four guests or fewer."
   },
   {
-    id: "zicoto-hardcover-reading-journal",
-    name: "Beautiful Reading Journal for Book Lovers, Hard Cover Tracker",
-    brand: "Zicoto",
-    category: "Reading journal",
-    description:
-      "Casebound hardcover reading log with wish list, completed books, tracker and review sections.",
-    asin: "B0FHVQKZ1G",
-    amazonUrl: "https://www.amazon.com/dp/B0FHVQKZ1G",
-    specs: [
+    "id": "zicoto-hardcover-reading-journal",
+    "name": "Beautiful Reading Journal for Book Lovers, Hard Cover Tracker",
+    "brand": "Zicoto",
+    "category": "Reading journal",
+    "description": "Casebound hardcover reading log with wish list, completed books, tracker and review sections.",
+    "asin": "B0FHVQKZ1G",
+    "amazonUrl": "https://www.amazon.com/dp/B0FHVQKZ1G",
+    "specs": [
       {
-        label: "Pages",
-        value: "172",
+        "label": "Pages",
+        "value": "172"
       },
       {
-        label: "Binding",
-        value: "casebound hardcover",
+        "label": "Binding",
+        "value": "casebound hardcover"
       },
       {
-        label: "Ribbons",
-        value: "2",
+        "label": "Ribbons",
+        "value": "2"
       },
       {
-        label: "Index",
-        value: "yes",
-      },
+        "label": "Index",
+        "value": "yes"
+      }
     ],
-    hobbies: ["reading"],
-    articles: ["how-to-start-a-reading-journal"],
-    collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "reading-journal",
-        slot: "journal",
-      },
+    "hobbies": [
+      "reading"
     ],
-    role: "essential",
-    isEssential: true,
-    audience: "Readers starting a book log",
-    whySelected: "Listing describes dedicated sections and two ribbons.",
-    limitations: [
+    "articles": [
+      "how-to-start-a-reading-journal"
+    ],
+    "collections": [
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "reading-journal",
+        "slot": "journal"
+      }
+    ],
+    "role": "essential",
+    "isEssential": true,
+    "audience": "Readers starting a book log",
+    "whySelected": "Listing describes dedicated sections and two ribbons.",
+    "limitations": [
       "Layout fit is personal: look at the sections first",
       "Page count is the listing's claim",
       "Manufacturer page not yet checked",
-      "Seller on listing: Zicoto US",
+      "Seller on listing: Zicoto US"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0FHVQKZ1G"],
-    lastVerified: "2026-11-19",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0FHVQKZ1G"
+    ],
+    "lastVerified": "2026-11-19",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "paper-mate-inkjoy-gel-pens-14-fine",
-    name: "InkJoy Gel Pens, Fine Point 0.5 mm, Assorted Colors, 14 Count",
-    brand: "Paper Mate",
-    category: "Pens",
-    description: "Fourteen 0.5 mm gel pens in assorted colours with a comfort grip.",
-    asin: "B07BZ3L66Z",
-    amazonUrl: "https://www.amazon.com/dp/B07BZ3L66Z",
-    specs: [
+    "id": "paper-mate-inkjoy-gel-pens-14-fine",
+    "name": "InkJoy Gel Pens, Fine Point 0.5 mm, Assorted Colors, 14 Count",
+    "brand": "Paper Mate",
+    "category": "Pens",
+    "description": "Fourteen 0.5 mm gel pens in assorted colours with a comfort grip.",
+    "asin": "B07BZ3L66Z",
+    "amazonUrl": "https://www.amazon.com/dp/B07BZ3L66Z",
+    "specs": [
       {
-        label: "Count",
-        value: "14",
+        "label": "Count",
+        "value": "14"
       },
       {
-        label: "Point",
-        value: "0.5 mm",
+        "label": "Point",
+        "value": "0.5 mm"
       },
       {
-        label: "Ink",
-        value: "gel",
-      },
+        "label": "Ink",
+        "value": "gel"
+      }
     ],
-    hobbies: ["reading"],
-    articles: ["how-to-start-a-reading-journal"],
-    collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "reading-journal",
-        slot: "pens",
-      },
+    "hobbies": [
+      "reading"
     ],
-    role: "affordable",
-    isEssential: false,
-    audience: "Journalers who want colour options",
-    whySelected: "Brand-name fine-point set; listing claims faster drying.",
-    limitations: [
-      '"Dries 3X faster" is the maker\'s claim on the listing',
+    "articles": [
+      "how-to-start-a-reading-journal"
+    ],
+    "collections": [
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "reading-journal",
+        "slot": "pens"
+      }
+    ],
+    "role": "affordable",
+    "isEssential": false,
+    "audience": "Journalers who want colour options",
+    "whySelected": "Brand-name fine-point set; listing claims faster drying.",
+    "limitations": [
+      "\"Dries 3X faster\" is the maker's claim on the listing",
       "Gel ink can show through thin pages",
       "Manufacturer page not yet checked",
-      "Seller on listing: not captured",
+      "Seller on listing: not captured"
     ],
-    researchSources: ["https://www.amazon.com/dp/B07BZ3L66Z"],
-    lastVerified: "2026-11-19",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B07BZ3L66Z"
+    ],
+    "lastVerified": "2026-11-19",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "gritin-19-led-rechargeable-book-light",
-    name: "19 LED Rechargeable Book Light for Reading in Bed",
-    brand: "Gritin",
-    category: "Book light",
-    description:
-      "Clip-on rechargeable book light with three colour temperatures and stepless dimming.",
-    asin: "B0C3BC4QG2",
-    amazonUrl: "https://www.amazon.com/dp/B0C3BC4QG2",
-    specs: [
+    "id": "gritin-19-led-rechargeable-book-light",
+    "name": "19 LED Rechargeable Book Light for Reading in Bed",
+    "brand": "Gritin",
+    "category": "Book light",
+    "description": "Clip-on rechargeable book light with three colour temperatures and stepless dimming.",
+    "asin": "B0C3BC4QG2",
+    "amazonUrl": "https://www.amazon.com/dp/B0C3BC4QG2",
+    "specs": [
       {
-        label: "LEDs",
-        value: "19",
+        "label": "LEDs",
+        "value": "19"
       },
       {
-        label: "Colour modes",
-        value: "amber 1800K, mixed 3400K, white 6000K",
+        "label": "Colour modes",
+        "value": "amber 1800K, mixed 3400K, white 6000K"
       },
       {
-        label: "Brightness",
-        value: "10-100%",
+        "label": "Brightness",
+        "value": "10-100%"
       },
       {
-        label: "Power",
-        value: "rechargeable",
-      },
+        "label": "Power",
+        "value": "rechargeable"
+      }
     ],
-    hobbies: ["reading"],
-    articles: ["how-to-start-a-reading-journal"],
-    collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "reading-journal",
-        slot: "reading-light",
-      },
+    "hobbies": [
+      "reading"
     ],
-    role: "nice-to-have",
-    isEssential: false,
-    audience: "Readers who read in bed",
-    whySelected: "Warm amber mode and dimming are listed.",
-    limitations: [
-      '"Eye protection" is the listing\'s claim',
+    "articles": [
+      "how-to-start-a-reading-journal"
+    ],
+    "collections": [
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "reading-journal",
+        "slot": "reading-light"
+      }
+    ],
+    "role": "nice-to-have",
+    "isEssential": false,
+    "audience": "Readers who read in bed",
+    "whySelected": "Warm amber mode and dimming are listed.",
+    "limitations": [
+      "\"Eye protection\" is the listing's claim",
       "Battery life not captured",
       "Manufacturer page not yet checked",
-      "Seller on listing: MatriCom",
+      "Seller on listing: MatriCom"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0C3BC4QG2"],
-    lastVerified: "2026-11-19",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0C3BC4QG2"
+    ],
+    "lastVerified": "2026-11-19",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "tabletopics-book-club-conversation-cards",
-    name: "Book Club Conversation Cards for Adults",
-    brand: "TableTopics",
-    category: "Discussion cards",
-    description: "A deck of book-club discussion questions usable for any book.",
-    asin: "B01M4NYEG9",
-    amazonUrl: "https://www.amazon.com/dp/B01M4NYEG9",
-    specs: [
+    "id": "tabletopics-book-club-conversation-cards",
+    "name": "Book Club Conversation Cards for Adults",
+    "brand": "TableTopics",
+    "category": "Discussion cards",
+    "description": "A deck of book-club discussion questions usable for any book.",
+    "asin": "B01M4NYEG9",
+    "amazonUrl": "https://www.amazon.com/dp/B01M4NYEG9",
+    "specs": [
       {
-        label: "Use",
-        value: "book club prompts",
+        "label": "Use",
+        "value": "book club prompts"
       },
       {
-        label: "Players",
-        value: "3 or more",
-      },
+        "label": "Players",
+        "value": "3 or more"
+      }
     ],
-    hobbies: ["book-clubs"],
-    articles: ["how-to-start-a-book-club"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "book-club",
-        slot: "discussion-guide",
-      },
+    "hobbies": [
+      "book-clubs"
     ],
-    role: "nice-to-have",
-    isEssential: false,
-    audience: "Hosts who want ready-made questions",
-    whySelected: "Questions cover writing style, characters, plot, setting and themes.",
-    limitations: [
+    "articles": [
+      "how-to-start-a-book-club"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "book-club",
+        "slot": "discussion-guide"
+      }
+    ],
+    "role": "nice-to-have",
+    "isEssential": false,
+    "audience": "Hosts who want ready-made questions",
+    "whySelected": "Questions cover writing style, characters, plot, setting and themes.",
+    "limitations": [
       "Card count not captured",
       "Questions are generic: they do not replace book-specific prompts",
       "Manufacturer page not yet checked",
-      "Seller on listing: TableTopics Conversation Starters",
+      "Seller on listing: TableTopics Conversation Starters"
     ],
-    researchSources: ["https://www.amazon.com/dp/B01M4NYEG9"],
-    lastVerified: "2026-11-19",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B01M4NYEG9"
+    ],
+    "lastVerified": "2026-11-19",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "dowan-small-ceramic-bowls-set-of-4",
-    name: "Small Ceramic Bowls Set of 4, White",
-    brand: "DOWAN",
-    category: "Bowls",
-    description:
-      "Four small white ceramic bowls for snacks, dips and desserts; dishwasher and microwave safe per listing.",
-    asin: "B07T66BYHS",
-    amazonUrl: "https://www.amazon.com/dp/B07T66BYHS",
-    specs: [
+    "id": "dowan-small-ceramic-bowls-set-of-4",
+    "name": "Small Ceramic Bowls Set of 4, White",
+    "brand": "DOWAN",
+    "category": "Bowls",
+    "description": "Four small white ceramic bowls for snacks, dips and desserts; dishwasher and microwave safe per listing.",
+    "asin": "B07T66BYHS",
+    "amazonUrl": "https://www.amazon.com/dp/B07T66BYHS",
+    "specs": [
       {
-        label: "Count",
-        value: "4",
+        "label": "Count",
+        "value": "4"
       },
       {
-        label: "Material",
-        value: "ceramic",
+        "label": "Material",
+        "value": "ceramic"
       },
       {
-        label: "Colour",
-        value: "white",
-      },
+        "label": "Colour",
+        "value": "white"
+      }
     ],
-    hobbies: ["book-clubs", "mahjong"],
-    articles: ["how-to-start-a-book-club", "how-to-host-a-mahjong-night"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "book-club",
-        slot: "snack-bowls",
-      },
-      {
-        kit: "mahjong-night",
-        slot: "snack-bowls",
-      },
+    "hobbies": [
+      "book-clubs",
+      "mahjong"
     ],
-    role: "affordable",
-    isEssential: false,
-    audience: "Hosts serving snacks",
-    whySelected: "Small bowls for nuts and dips.",
-    limitations: [
+    "articles": [
+      "how-to-start-a-book-club",
+      "how-to-host-a-mahjong-night"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "book-club",
+        "slot": "snack-bowls"
+      },
+      {
+        "kit": "mahjong-night",
+        "slot": "snack-bowls"
+      }
+    ],
+    "role": "affordable",
+    "isEssential": false,
+    "audience": "Hosts serving snacks",
+    "whySelected": "Small bowls for nuts and dips.",
+    "limitations": [
       "Listing is inconsistent on size: title says 8.5 oz, bullets say 10 oz maximum capacity",
       "Dishwasher/microwave safety is the listing's claim",
       "Manufacturer page not yet checked",
-      "Seller on listing: Dowan life",
+      "Seller on listing: Dowan life"
     ],
-    researchSources: ["https://www.amazon.com/dp/B07T66BYHS"],
-    lastVerified: "2026-11-19",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B07T66BYHS"
+    ],
+    "lastVerified": "2026-11-19",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "zaze-80x80-waterproof-picnic-blanket",
-    name: "Extra Large Picnic Blanket, 80 x 80 in, Waterproof, Gingham",
-    brand: "ZAZE",
-    category: "Picnic blanket",
-    description: "Oversized foldable five-layer picnic blanket with waterproof backing.",
-    asin: "B08HGY1Q4K",
-    amazonUrl: "https://www.amazon.com/dp/B08HGY1Q4K",
-    specs: [
+    "id": "zaze-80x80-waterproof-picnic-blanket",
+    "name": "Extra Large Picnic Blanket, 80 x 80 in, Waterproof, Gingham",
+    "brand": "ZAZE",
+    "category": "Picnic blanket",
+    "description": "Oversized foldable five-layer picnic blanket with waterproof backing.",
+    "asin": "B08HGY1Q4K",
+    "amazonUrl": "https://www.amazon.com/dp/B08HGY1Q4K",
+    "specs": [
       {
-        label: "Size",
-        value: "80 x 80 in",
+        "label": "Size",
+        "value": "80 x 80 in"
       },
       {
-        label: "Layers",
-        value: "5",
+        "label": "Layers",
+        "value": "5"
       },
       {
-        label: "Backing",
-        value: "waterproof per listing",
+        "label": "Backing",
+        "value": "waterproof per listing"
       },
       {
-        label: "Washable",
-        value: "machine per listing",
-      },
+        "label": "Washable",
+        "value": "machine per listing"
+      }
     ],
-    hobbies: ["picnicking"],
-    articles: ["how-to-plan-a-perfect-picnic"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "picnic-adventure",
-        slot: "blanket",
-      },
+    "hobbies": [
+      "picnicking"
     ],
-    role: "essential",
-    isEssential: true,
-    audience: "Picnickers who want room for a group",
-    whySelected: "Size is stated for 4-8 adults sitting.",
-    limitations: [
-      '"Waterproof" and washability are the listing\'s claims',
+    "articles": [
+      "how-to-plan-a-perfect-picnic"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "picnic-adventure",
+        "slot": "blanket"
+      }
+    ],
+    "role": "essential",
+    "isEssential": true,
+    "audience": "Picnickers who want room for a group",
+    "whySelected": "Size is stated for 4-8 adults sitting.",
+    "limitations": [
+      "\"Waterproof\" and washability are the listing's claims",
       "Folded size not captured",
       "Manufacturer page not yet checked",
-      "Seller on listing: WD-2020",
+      "Seller on listing: WD-2020"
     ],
-    researchSources: ["https://www.amazon.com/dp/B08HGY1Q4K"],
-    lastVerified: "2026-11-19",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B08HGY1Q4K"
+    ],
+    "lastVerified": "2026-11-19",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "maelstrom-24-30-60-can-soft-cooler-bag",
-    name: "24/30/60 Can Soft Cooler Bag, Double Deck",
-    brand: "Maelstrom",
-    category: "Cooler bag",
-    description: "A leakproof, five-layer insulated soft cooler with an upper snack compartment.",
-    asin: "B0CSK46585",
-    amazonUrl: "https://www.amazon.com/dp/B0CSK46585",
-    specs: [
+    "id": "maelstrom-24-30-60-can-soft-cooler-bag",
+    "name": "24/30/60 Can Soft Cooler Bag, Double Deck",
+    "brand": "Maelstrom",
+    "category": "Cooler bag",
+    "description": "A leakproof, five-layer insulated soft cooler with an upper snack compartment.",
+    "asin": "B0CSK46585",
+    "amazonUrl": "https://www.amazon.com/dp/B0CSK46585",
+    "specs": [
       {
-        label: "Insulation",
-        value: "5 layer",
+        "label": "Insulation",
+        "value": "5 layer"
       },
       {
-        label: "Compartments",
-        value: "2 (double deck)",
+        "label": "Compartments",
+        "value": "2 (double deck)"
       },
       {
-        label: "Cold hold",
-        value: "up to 12 hours per listing",
-      },
+        "label": "Cold hold",
+        "value": "up to 12 hours per listing"
+      }
     ],
-    hobbies: ["picnicking"],
-    articles: ["how-to-plan-a-perfect-picnic"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "picnic-adventure",
-        slot: "cooler",
-      },
+    "hobbies": [
+      "picnicking"
     ],
-    role: "nice-to-have",
-    isEssential: false,
-    audience: "Picnickers carrying drinks and food",
-    whySelected: "Second compartment keeps snacks separate.",
-    limitations: [
+    "articles": [
+      "how-to-plan-a-perfect-picnic"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "picnic-adventure",
+        "slot": "cooler"
+      }
+    ],
+    "role": "nice-to-have",
+    "isEssential": false,
+    "audience": "Picnickers carrying drinks and food",
+    "whySelected": "Second compartment keeps snacks separate.",
+    "limitations": [
       "12-hour claim is the maker's",
       "Listing title shows three capacities: check which size you choose",
       "Manufacturer page not yet checked",
-      "Seller on listing: not captured",
+      "Seller on listing: not captured"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0CSK46585"],
-    lastVerified: "2026-11-19",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0CSK46585"
+    ],
+    "lastVerified": "2026-11-19",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "leize-floral-shears-flower-scissors",
-    name: "Flower Scissors, Floral Shears, Stainless Steel Pruner",
-    brand: "Leize",
-    category: "Floral snips",
-    description: "Slender floral shears that cut stems up to 8 mm, with non-slip handles.",
-    asin: "B08R43LHKT",
-    amazonUrl: "https://www.amazon.com/dp/B08R43LHKT",
-    specs: [
+    "id": "leize-floral-shears-flower-scissors",
+    "name": "Flower Scissors, Floral Shears, Stainless Steel Pruner",
+    "brand": "Leize",
+    "category": "Floral snips",
+    "description": "Slender floral shears that cut stems up to 8 mm, with non-slip handles.",
+    "asin": "B08R43LHKT",
+    "amazonUrl": "https://www.amazon.com/dp/B08R43LHKT",
+    "specs": [
       {
-        label: "Cutting diameter",
-        value: "up to 8 mm",
+        "label": "Cutting diameter",
+        "value": "up to 8 mm"
       },
       {
-        label: "Blade",
-        value: "high carbon steel per listing",
+        "label": "Blade",
+        "value": "high carbon steel per listing"
       },
       {
-        label: "Handle",
-        value: "non-slip PP",
-      },
+        "label": "Handle",
+        "value": "non-slip PP"
+      }
     ],
-    hobbies: ["flower-arranging"],
-    articles: ["flower-arranging-as-a-hobby"],
-    collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "flower-arranging",
-        slot: "snips",
-      },
+    "hobbies": [
+      "flower-arranging"
     ],
-    role: "essential",
-    isEssential: true,
-    audience: "Arrangers cutting soft stems",
-    whySelected: "Maker lists stem diameter limit.",
-    limitations: [
+    "articles": [
+      "flower-arranging-as-a-hobby"
+    ],
+    "collections": [
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "flower-arranging",
+        "slot": "snips"
+      }
+    ],
+    "role": "essential",
+    "isEssential": true,
+    "audience": "Arrangers cutting soft stems",
+    "whySelected": "Maker lists stem diameter limit.",
+    "limitations": [
       "Cannot cut thick woody stems (8 mm limit)",
       "Sharpness is the listing's claim",
       "Manufacturer page not yet checked",
-      "Seller on listing: Panago Garden",
+      "Seller on listing: Panago Garden"
     ],
-    researchSources: ["https://www.amazon.com/dp/B08R43LHKT"],
-    lastVerified: "2026-11-19",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B08R43LHKT"
+    ],
+    "lastVerified": "2026-11-19",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "der-rose-12-glass-bud-vases",
-    name: "12pcs Glass Bud Vases, Clear, Vintage Pattern",
-    brand: "Der Rose",
-    category: "Vase",
-    description: "Twelve small clear glass bud vases with a vintage pattern.",
-    asin: "B0D46SKZMK",
-    amazonUrl: "https://www.amazon.com/dp/B0D46SKZMK",
-    specs: [
+    "id": "der-rose-12-glass-bud-vases",
+    "name": "12pcs Glass Bud Vases, Clear, Vintage Pattern",
+    "brand": "Der Rose",
+    "category": "Vase",
+    "description": "Twelve small clear glass bud vases with a vintage pattern.",
+    "asin": "B0D46SKZMK",
+    "amazonUrl": "https://www.amazon.com/dp/B0D46SKZMK",
+    "specs": [
       {
-        label: "Count",
-        value: "12",
+        "label": "Count",
+        "value": "12"
       },
       {
-        label: "Material",
-        value: "glass",
+        "label": "Material",
+        "value": "glass"
       },
       {
-        label: "Use",
-        value: "single stems and small bunches",
-      },
+        "label": "Use",
+        "value": "single stems and small bunches"
+      }
     ],
-    hobbies: ["flower-arranging"],
-    articles: ["flower-arranging-as-a-hobby"],
-    collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "flower-arranging",
-        slot: "vase",
-      },
+    "hobbies": [
+      "flower-arranging"
     ],
-    role: "essential",
-    isEssential: true,
-    audience: "Beginners arranging small bunches",
-    whySelected: "Several small vases suit single stems.",
-    limitations: [
+    "articles": [
+      "flower-arranging-as-a-hobby"
+    ],
+    "collections": [
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "flower-arranging",
+        "slot": "vase"
+      }
+    ],
+    "role": "essential",
+    "isEssential": true,
+    "audience": "Beginners arranging small bunches",
+    "whySelected": "Several small vases suit single stems.",
+    "limitations": [
       "Twelve small vases is a lot for one person",
       "Capacity not captured",
       "Manufacturer page not yet checked",
-      "Seller on listing: Der Rose",
+      "Seller on listing: Der Rose"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0D46SKZMK"],
-    lastVerified: "2026-11-19",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0D46SKZMK"
+    ],
+    "lastVerified": "2026-11-19",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "sprina-4-piece-flower-frog-kenzan-set",
-    name: "4 Pcs Flower Frog Pin Holder Set, 1/2/3 in",
-    brand: "not stated on listing",
-    category: "Flower frog",
-    description: "Four weighted iron kenzan frogs with copper pins in three sizes.",
-    asin: "B0F2N36DSW",
-    amazonUrl: "https://www.amazon.com/dp/B0F2N36DSW",
-    specs: [
+    "id": "sprina-4-piece-flower-frog-kenzan-set",
+    "name": "4 Pcs Flower Frog Pin Holder Set, 1/2/3 in",
+    "brand": "not stated on listing",
+    "category": "Flower frog",
+    "description": "Four weighted iron kenzan frogs with copper pins in three sizes.",
+    "asin": "B0F2N36DSW",
+    "amazonUrl": "https://www.amazon.com/dp/B0F2N36DSW",
+    "specs": [
       {
-        label: "Count",
-        value: "4 (1 in, two 2 in, 3 in)",
+        "label": "Count",
+        "value": "4 (1 in, two 2 in, 3 in)"
       },
       {
-        label: "Base",
-        value: "iron",
+        "label": "Base",
+        "value": "iron"
       },
       {
-        label: "Pins",
-        value: "copper per listing",
-      },
+        "label": "Pins",
+        "value": "copper per listing"
+      }
     ],
-    hobbies: ["flower-arranging"],
-    articles: ["flower-arranging-as-a-hobby"],
-    collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "flower-arranging",
-        slot: "frog",
-      },
+    "hobbies": [
+      "flower-arranging"
     ],
-    role: "nice-to-have",
-    isEssential: false,
-    audience: "Arrangers using shallow bowls",
-    whySelected: "Weighted bases hold stems at an angle.",
-    limitations: [
+    "articles": [
+      "flower-arranging-as-a-hobby"
+    ],
+    "collections": [
+      "creative-girl"
+    ],
+    "kitSlots": [
+      {
+        "kit": "flower-arranging",
+        "slot": "frog"
+      }
+    ],
+    "role": "nice-to-have",
+    "isEssential": false,
+    "audience": "Arrangers using shallow bowls",
+    "whySelected": "Weighted bases hold stems at an angle.",
+    "limitations": [
       "Sharp pins: handle carefully",
       "Material claims are the listing's",
       "Manufacturer page not yet checked",
-      "Seller on listing: Sprina-US",
+      "Seller on listing: Sprina-US"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0F2N36DSW"],
-    lastVerified: "2026-11-19",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0F2N36DSW"
+    ],
+    "lastVerified": "2026-11-19",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "niupipo-pickleball-paddles-set-of-2-with-balls",
-    name: "Pickleball Paddles Set of 2, USAPA Approved Fiberglass, Balls and Bag",
-    brand: "niupipo",
-    category: "Pickleball paddles",
-    description: "Two fiberglass honeycomb-core paddles with balls and a bag.",
-    asin: "B08C73KK4R",
-    amazonUrl: "https://www.amazon.com/dp/B08C73KK4R",
-    specs: [
+    "id": "niupipo-pickleball-paddles-set-of-2-with-balls",
+    "name": "Pickleball Paddles Set of 2, USAPA Approved Fiberglass, Balls and Bag",
+    "brand": "niupipo",
+    "category": "Pickleball paddles",
+    "description": "Two fiberglass honeycomb-core paddles with balls and a bag.",
+    "asin": "B08C73KK4R",
+    "amazonUrl": "https://www.amazon.com/dp/B08C73KK4R",
+    "specs": [
       {
-        label: "Paddles",
-        value: "2",
+        "label": "Paddles",
+        "value": "2"
       },
       {
-        label: "Face",
-        value: "fiberglass, polypropylene honeycomb core",
+        "label": "Face",
+        "value": "fiberglass, polypropylene honeycomb core"
       },
       {
-        label: "Weight",
-        value: "7.62-8 oz",
+        "label": "Weight",
+        "value": "7.62-8 oz"
       },
       {
-        label: "Grip",
-        value: "4.72 in length",
-      },
+        "label": "Grip",
+        "value": "4.72 in length"
+      }
     ],
-    hobbies: ["pickleball"],
-    articles: ["pickleball-for-beginners"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "pickleball",
-        slot: "paddles",
-      },
+    "hobbies": [
+      "pickleball"
     ],
-    role: "complete-kit",
-    isEssential: true,
-    audience: "Beginner pairs",
-    whySelected: "Includes balls and bag; listing says USAPA approved.",
-    limitations: [
+    "articles": [
+      "pickleball-for-beginners"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "pickleball",
+        "slot": "paddles"
+      }
+    ],
+    "role": "complete-kit",
+    "isEssential": true,
+    "audience": "Beginner pairs",
+    "whySelected": "Includes balls and bag; listing says USAPA approved.",
+    "limitations": [
       "USAPA approval is the listing's claim: we did not check the approved list",
-      'Lists "set of 2 or 4": confirm the option chosen',
+      "Lists \"set of 2 or 4\": confirm the option chosen",
       "Manufacturer page not yet checked",
-      "Seller on listing: niupipo US",
+      "Seller on listing: niupipo US"
     ],
-    researchSources: ["https://www.amazon.com/dp/B08C73KK4R"],
-    lastVerified: "2026-11-19",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B08C73KK4R"
+    ],
+    "lastVerified": "2026-11-19",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "cyclotron-6-pack-pickleball-balls",
-    name: "6-Pack Pickleball Balls, USAPA Approved, 40-Hole Outdoor/Indoor",
-    brand: "cyclotron",
-    category: "Pickleballs",
-    description: "Six 40-hole TPE pickleballs in bright green with a mesh bag.",
-    asin: "B0DM8YV5XQ",
-    amazonUrl: "https://www.amazon.com/dp/B0DM8YV5XQ",
-    specs: [
+    "id": "cyclotron-6-pack-pickleball-balls",
+    "name": "6-Pack Pickleball Balls, USAPA Approved, 40-Hole Outdoor/Indoor",
+    "brand": "cyclotron",
+    "category": "Pickleballs",
+    "description": "Six 40-hole TPE pickleballs in bright green with a mesh bag.",
+    "asin": "B0DM8YV5XQ",
+    "amazonUrl": "https://www.amazon.com/dp/B0DM8YV5XQ",
+    "specs": [
       {
-        label: "Count",
-        value: "6",
+        "label": "Count",
+        "value": "6"
       },
       {
-        label: "Holes",
-        value: "40",
+        "label": "Holes",
+        "value": "40"
       },
       {
-        label: "Material",
-        value: "TPE",
+        "label": "Material",
+        "value": "TPE"
       },
       {
-        label: "Colour",
-        value: "green",
-      },
+        "label": "Colour",
+        "value": "green"
+      }
     ],
-    hobbies: ["pickleball"],
-    articles: ["pickleball-for-beginners"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "pickleball",
-        slot: "balls",
-      },
+    "hobbies": [
+      "pickleball"
     ],
-    role: "essential",
-    isEssential: true,
-    audience: "Players who need spare balls",
-    whySelected: "Mesh bag included.",
-    limitations: [
+    "articles": [
+      "pickleball-for-beginners"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "pickleball",
+        "slot": "balls"
+      }
+    ],
+    "role": "essential",
+    "isEssential": true,
+    "audience": "Players who need spare balls",
+    "whySelected": "Mesh bag included.",
+    "limitations": [
       "USAPA approval is the listing's claim",
       "Durability claims are the listing's",
       "Manufacturer page not yet checked",
-      "Seller on listing: CYCLOTRON SPORTS",
+      "Seller on listing: CYCLOTRON SPORTS"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0DM8YV5XQ"],
-    lastVerified: "2026-11-19",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0DM8YV5XQ"
+    ],
+    "lastVerified": "2026-11-19",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "hiraliy-27-inch-tennis-racket-with-ball-bag",
-    name: "27-Inch Tennis Racket for Adults with Ball and Carry Bag",
-    brand: "HIRALIY",
-    category: "Tennis racquet",
-    description:
-      "A 27 in aluminum adult racquet with pressureless ball, spare overgrips and carry bag.",
-    asin: "B09731Z6R8",
-    amazonUrl: "https://www.amazon.com/dp/B09731Z6R8",
-    specs: [
+    "id": "hiraliy-27-inch-tennis-racket-with-ball-bag",
+    "name": "27-Inch Tennis Racket for Adults with Ball and Carry Bag",
+    "brand": "HIRALIY",
+    "category": "Tennis racquet",
+    "description": "A 27 in aluminum adult racquet with pressureless ball, spare overgrips and carry bag.",
+    "asin": "B09731Z6R8",
+    "amazonUrl": "https://www.amazon.com/dp/B09731Z6R8",
+    "specs": [
       {
-        label: "Length",
-        value: "27 in",
+        "label": "Length",
+        "value": "27 in"
       },
       {
-        label: "Material",
-        value: "aluminum",
+        "label": "Material",
+        "value": "aluminum"
       },
       {
-        label: "Weight",
-        value: "about 260 g",
+        "label": "Weight",
+        "value": "about 260 g"
       },
       {
-        label: "Includes",
-        value: "ball, overgrips, bag",
-      },
+        "label": "Includes",
+        "value": "ball, overgrips, bag"
+      }
     ],
-    hobbies: ["tennis"],
-    articles: ["how-to-start-playing-tennis-as-an-adult"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "tennis",
-        slot: "racquet",
-      },
+    "hobbies": [
+      "tennis"
     ],
-    role: "complete-kit",
-    isEssential: true,
-    audience: "Casual beginners",
-    whySelected: "Everything for a first hit in one listing.",
-    limitations: [
+    "articles": [
+      "how-to-start-playing-tennis-as-an-adult"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "tennis",
+        "slot": "racquet"
+      }
+    ],
+    "role": "complete-kit",
+    "isEssential": true,
+    "audience": "Casual beginners",
+    "whySelected": "Everything for a first hit in one listing.",
+    "limitations": [
       "Aluminum frames are for casual play, not serious improvement",
       "Many courts rent racquets: try one first",
-      'Listing says "rackets": check quantity',
+      "Listing says \"rackets\": check quantity",
       "Manufacturer page not yet checked",
-      "Seller on listing: 11HOME",
+      "Seller on listing: 11HOME"
     ],
-    researchSources: ["https://www.amazon.com/dp/B09731Z6R8"],
-    lastVerified: "2026-11-19",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B09731Z6R8"
+    ],
+    "lastVerified": "2026-11-19",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "penn-championship-extra-duty-tennis-balls",
-    name: "Championship Tennis Balls, Extra Duty Felt, 3 Balls (Pack of 4)",
-    brand: "Penn",
-    category: "Tennis balls",
-    description: "Pressurized extra-duty felt tennis balls, packs of three cans.",
-    asin: "B0002JZEL4",
-    amazonUrl: "https://www.amazon.com/dp/B0002JZEL4",
-    specs: [
+    "id": "penn-championship-extra-duty-tennis-balls",
+    "name": "Championship Tennis Balls, Extra Duty Felt, 3 Balls (Pack of 4)",
+    "brand": "Penn",
+    "category": "Tennis balls",
+    "description": "Pressurized extra-duty felt tennis balls, packs of three cans.",
+    "asin": "B0002JZEL4",
+    "amazonUrl": "https://www.amazon.com/dp/B0002JZEL4",
+    "specs": [
       {
-        label: "Type",
-        value: "pressurized, extra duty",
+        "label": "Type",
+        "value": "pressurized, extra duty"
       },
       {
-        label: "Cans",
-        value: "3 balls per can",
-      },
+        "label": "Cans",
+        "value": "3 balls per can"
+      }
     ],
-    hobbies: ["tennis"],
-    articles: ["how-to-start-playing-tennis-as-an-adult"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "tennis",
-        slot: "balls",
-      },
+    "hobbies": [
+      "tennis"
     ],
-    role: "essential",
-    isEssential: true,
-    audience: "Players on hard courts",
-    whySelected: "Listing says suited to hard courts and usable on all surfaces.",
-    limitations: [
+    "articles": [
+      "how-to-start-playing-tennis-as-an-adult"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "tennis",
+        "slot": "balls"
+      }
+    ],
+    "role": "essential",
+    "isEssential": true,
+    "audience": "Players on hard courts",
+    "whySelected": "Listing says suited to hard courts and usable on all surfaces.",
+    "limitations": [
       "\"America's #1 selling\" is the maker's claim",
       "Title wording on pack count is ambiguous: check before ordering",
       "Manufacturer page not yet checked",
-      "Seller on listing: not captured",
+      "Seller on listing: not captured"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0002JZEL4"],
-    lastVerified: "2026-11-19",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0002JZEL4"
+    ],
+    "lastVerified": "2026-11-19",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "bedsure-sherpa-fleece-throw-50x60",
-    name: "Soft Sherpa Blanket Fluffy Throw, 50 x 60 in",
-    brand: "Bedsure",
-    category: "Throw blanket",
-    description: "A reversible sherpa fleece throw, 50 x 60 in.",
-    asin: "B0CPS62512",
-    amazonUrl: "https://www.amazon.com/dp/B0CPS62512",
-    specs: [
+    "id": "bedsure-sherpa-fleece-throw-50x60",
+    "name": "Soft Sherpa Blanket Fluffy Throw, 50 x 60 in",
+    "brand": "Bedsure",
+    "category": "Throw blanket",
+    "description": "A reversible sherpa fleece throw, 50 x 60 in.",
+    "asin": "B0CPS62512",
+    "amazonUrl": "https://www.amazon.com/dp/B0CPS62512",
+    "specs": [
       {
-        label: "Size",
-        value: "50 x 60 in",
+        "label": "Size",
+        "value": "50 x 60 in"
       },
       {
-        label: "Type",
-        value: "sherpa fleece",
+        "label": "Type",
+        "value": "sherpa fleece"
       },
       {
-        label: "Heating",
-        value: "none",
-      },
+        "label": "Heating",
+        "value": "none"
+      }
     ],
-    hobbies: ["reading"],
-    articles: ["cozy-solo-dates-at-home"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "cozy-night-in",
-        slot: "blanket",
-      },
+    "hobbies": [
+      "reading"
     ],
-    role: "nice-to-have",
-    isEssential: false,
-    audience: "Anyone wanting a soft throw",
-    whySelected: "Reversible with a plain, non-electric warmth.",
-    limitations: [
+    "articles": [
+      "cozy-solo-dates-at-home"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "cozy-night-in",
+        "slot": "blanket"
+      }
+    ],
+    "role": "nice-to-have",
+    "isEssential": false,
+    "audience": "Anyone wanting a soft throw",
+    "whySelected": "Reversible with a plain, non-electric warmth.",
+    "limitations": [
       "Colour options vary by listing",
       "Warmth claims are the maker's",
       "Manufacturer page not yet checked",
-      "Seller on listing: Bedsure",
+      "Seller on listing: Bedsure"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0CPS62512"],
-    lastVerified: "2026-11-19",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0CPS62512"
+    ],
+    "lastVerified": "2026-11-19",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "nimiko-flameless-led-candles-with-remote",
-    name: "Flameless Candles with Remote, Battery Operated, Timer 2/4/6/8H",
-    brand: "Nimiko",
-    category: "Flameless candles",
-    description:
-      "Battery-operated flickering LED candles with remote and timer; plastic, not waterproof.",
-    asin: "B0BW33BV1T",
-    amazonUrl: "https://www.amazon.com/dp/B0BW33BV1T",
-    specs: [
+    "id": "nimiko-flameless-led-candles-with-remote",
+    "name": "Flameless Candles with Remote, Battery Operated, Timer 2/4/6/8H",
+    "brand": "Nimiko",
+    "category": "Flameless candles",
+    "description": "Battery-operated flickering LED candles with remote and timer; plastic, not waterproof.",
+    "asin": "B0BW33BV1T",
+    "amazonUrl": "https://www.amazon.com/dp/B0BW33BV1T",
+    "specs": [
       {
-        label: "Type",
-        value: "LED, battery operated",
+        "label": "Type",
+        "value": "LED, battery operated"
       },
       {
-        label: "Timer",
-        value: "2/4/6/8 h",
+        "label": "Timer",
+        "value": "2/4/6/8 h"
       },
       {
-        label: "Remote",
-        value: "yes",
+        "label": "Remote",
+        "value": "yes"
       },
       {
-        label: "Material",
-        value: "plastic",
-      },
+        "label": "Material",
+        "value": "plastic"
+      }
     ],
-    hobbies: ["reading"],
-    articles: ["cozy-solo-dates-at-home"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "cozy-night-in",
-        slot: "candle",
-      },
+    "hobbies": [
+      "reading"
     ],
-    role: "nice-to-have",
-    isEssential: false,
-    audience: "People who want candle light without flame",
-    whySelected: "No open flame; listing says plastic and not waterproof.",
-    limitations: [
+    "articles": [
+      "cozy-solo-dates-at-home"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "cozy-night-in",
+        "slot": "candle"
+      }
+    ],
+    "role": "nice-to-have",
+    "isEssential": false,
+    "audience": "People who want candle light without flame",
+    "whySelected": "No open flame; listing says plastic and not waterproof.",
+    "limitations": [
       "Batteries not confirmed as included",
       "Candle count not captured",
       "Manufacturer page not yet checked",
-      "Seller on listing: Nimiko",
+      "Seller on listing: Nimiko"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0BW33BV1T"],
-    lastVerified: "2026-11-19",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B0BW33BV1T"
+    ],
+    "lastVerified": "2026-11-19",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "celestial-seasonings-herbal-tea-sampler",
-    name: "Herbal Tea Sampler Variety Pack, Caffeine Free, 18 Tea Bags",
-    brand: "Celestial Seasonings",
-    category: "Tea",
-    description:
-      "Sampler of five caffeine-free herbal teas: Chamomile, Lemon Zinger, Peppermint, Honey Vanilla Chamomile, Sleepytime.",
-    asin: "B004CIUU6K",
-    amazonUrl: "https://www.amazon.com/dp/B004CIUU6K",
-    specs: [
+    "id": "celestial-seasonings-herbal-tea-sampler",
+    "name": "Herbal Tea Sampler Variety Pack, Caffeine Free, 18 Tea Bags",
+    "brand": "Celestial Seasonings",
+    "category": "Tea",
+    "description": "Sampler of five caffeine-free herbal teas: Chamomile, Lemon Zinger, Peppermint, Honey Vanilla Chamomile, Sleepytime.",
+    "asin": "B004CIUU6K",
+    "amazonUrl": "https://www.amazon.com/dp/B004CIUU6K",
+    "specs": [
       {
-        label: "Bags",
-        value: "18",
+        "label": "Bags",
+        "value": "18"
       },
       {
-        label: "Varieties",
-        value: "5",
+        "label": "Varieties",
+        "value": "5"
       },
       {
-        label: "Caffeine",
-        value: "free per listing",
-      },
+        "label": "Caffeine",
+        "value": "free per listing"
+      }
     ],
-    hobbies: ["reading"],
-    articles: ["cozy-solo-dates-at-home"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "cozy-night-in",
-        slot: "tea",
-      },
+    "hobbies": [
+      "reading"
     ],
-    role: "affordable",
-    isEssential: false,
-    audience: "People avoiding caffeine at night",
-    whySelected: "Five varieties for a first try.",
-    limitations: [
+    "articles": [
+      "cozy-solo-dates-at-home"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "cozy-night-in",
+        "slot": "tea"
+      }
+    ],
+    "role": "affordable",
+    "isEssential": false,
+    "audience": "People avoiding caffeine at night",
+    "whySelected": "Five varieties for a first try.",
+    "limitations": [
       "Herbal teas are not for everyone: check ingredients for allergies",
       "Manufacturer page not yet checked",
-      "Seller on listing: not captured",
+      "Seller on listing: not captured"
     ],
-    researchSources: ["https://www.amazon.com/dp/B004CIUU6K"],
-    lastVerified: "2026-11-19",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
+    "researchSources": [
+      "https://www.amazon.com/dp/B004CIUU6K"
+    ],
+    "lastVerified": "2026-11-19",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
   },
   {
-    id: "prime-time-puzzles-1000-piece-mountain-cabin",
-    name: "Adult Jigsaw Puzzle 1000 Piece Mountain Cabin",
-    brand: "Prime Time Puzzles",
-    category: "Jigsaw puzzle",
-    description:
-      "A 1000-piece puzzle of a lake cabin scene, finished size 20 x 27 in, matte finish.",
-    asin: "B0DGZ7L567",
-    amazonUrl: "https://www.amazon.com/dp/B0DGZ7L567",
-    specs: [
+    "id": "prime-time-puzzles-1000-piece-mountain-cabin",
+    "name": "Adult Jigsaw Puzzle 1000 Piece Mountain Cabin",
+    "brand": "Prime Time Puzzles",
+    "category": "Jigsaw puzzle",
+    "description": "A 1000-piece puzzle of a lake cabin scene, finished size 20 x 27 in, matte finish.",
+    "asin": "B0DGZ7L567",
+    "amazonUrl": "https://www.amazon.com/dp/B0DGZ7L567",
+    "specs": [
       {
-        label: "Pieces",
-        value: "1000",
+        "label": "Pieces",
+        "value": "1000"
       },
       {
-        label: "Finished size",
-        value: "20 x 27 in",
+        "label": "Finished size",
+        "value": "20 x 27 in"
       },
       {
-        label: "Finish",
-        value: "matte, non-glare",
-      },
+        "label": "Finish",
+        "value": "matte, non-glare"
+      }
     ],
-    hobbies: ["jigsaw-puzzles"],
-    articles: ["cozy-solo-dates-at-home"],
-    collections: ["girls-night-in"],
-    kitSlots: [
-      {
-        kit: "cozy-night-in",
-        slot: "puzzle",
-      },
+    "hobbies": [
+      "jigsaw-puzzles"
     ],
-    role: "nice-to-have",
-    isEssential: false,
-    audience: "People who like a long, quiet project",
-    whySelected: "Thick pieces and a non-glare finish per listing.",
-    limitations: [
+    "articles": [
+      "cozy-solo-dates-at-home"
+    ],
+    "collections": [
+      "girls-night-in"
+    ],
+    "kitSlots": [
+      {
+        "kit": "cozy-night-in",
+        "slot": "puzzle"
+      }
+    ],
+    "role": "nice-to-have",
+    "isEssential": false,
+    "audience": "People who like a long, quiet project",
+    "whySelected": "Thick pieces and a non-glare finish per listing.",
+    "limitations": [
       "1000 pieces needs table space for days",
       "Quality claims are the listing's",
       "Manufacturer page not yet checked",
-      "Seller on listing: Prime Time Puzzles",
+      "Seller on listing: Prime Time Puzzles"
     ],
-    researchSources: ["https://www.amazon.com/dp/B0DGZ7L567"],
-    lastVerified: "2026-11-19",
-    availability: "available",
-    affiliateStatus: "not-activated",
-    status: "candidate",
-    imageRights: "none",
-  },
+    "researchSources": [
+      "https://www.amazon.com/dp/B0DGZ7L567"
+    ],
+    "lastVerified": "2026-11-19",
+    "availability": "available",
+    "affiliateStatus": "not-activated",
+    "status": "candidate",
+    "imageRights": "none"
+  }
 ];
