@@ -102,12 +102,9 @@ describe("ingest-images validator", () => {
     expect(check({ ...card, heroFor: good.heroFor }, ctx(small)).join()).toMatch(/1600 px/);
     expect(check({ ...card, hobbyFor: "nope" }, ctx(small)).join()).toMatch(/no hobby with slug/);
     expect(check({ ...card, hobbyFor: "reading" }, ctx(small)).join()).toMatch(/already has image/);
-    expect(
-      check(
-        { ...card, info: undefined },
-        ctx({ info: { width: 500, height: 500 }, hobbies }),
-      ).join(),
-    ).toMatch(/600 px/);
+    expect(check(card, ctx({ info: { width: 500, height: 500 }, hobbies })).join()).toMatch(
+      /600 px/,
+    );
   });
   it("sets a hobby image idempotently with a small text edit", () => {
     const text = `const seeds = [\n  {\n    name: "Paint by Numbers",\n    tags: 1,\n    productIds: ["a"],\n  },\n];\n`;
