@@ -1,6 +1,6 @@
 import { getHobby, type Hobby } from "@/data/hobbies";
 import { collectionProducts, type Product } from "@/data/products";
-import { kits } from "@/data/kits";
+import { kitHobbies, kits } from "@/data/kits";
 import { articles, type Article } from "@/content";
 
 export type CollectionGuide = {
@@ -43,7 +43,7 @@ export function collectionGuide(slug: string): CollectionGuide {
       .slice(0, 6),
     articles: articles.filter((a) => a.hobbies.some((h) => sliceSet.has(h))).slice(0, 3),
     kitIds: kits
-      .filter((k) => k.hobby && sliceSet.has(k.hobby))
+      .filter((k) => kitHobbies(k).some((h) => sliceSet.has(h)))
       .map((k) => k.id)
       .slice(0, 2),
     whoFor: names.length

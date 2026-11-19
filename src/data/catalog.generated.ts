@@ -1384,16 +1384,6 @@ export const generatedCatalog: CatalogProduct[] = [
     articles: ["how-to-host-a-mahjong-night"],
     collections: ["girls-night-in"],
     kitSlots: [],
-    role: "nice-to-have",
-    isEssential: false,
-    audience: "Hosts who spill drinks near the table",
-    whySelected: "Keeps a paper card clean.",
-    limitations: [
-      "Final sale / no returns per listing",
-      "Fits the card for the stated year; a new card is released yearly",
-      "Manufacturer page not yet checked",
-      "Seller on listing: Lseac",
-    ],
     researchSources: ["https://www.amazon.com/dp/B0FRSSG8FZ"],
     lastVerified: "2026-11-18",
     availability: "available",
@@ -1748,12 +1738,7 @@ export const generatedCatalog: CatalogProduct[] = [
     hobbies: ["embroidery"],
     articles: ["how-to-start-embroidery"],
     collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "embroidery",
-        slot: "hoop",
-      },
-    ],
+    kitSlots: [],
     role: "complete-kit",
     isEssential: true,
     audience: "Beginners who want one box with a guide",
@@ -1814,12 +1799,7 @@ export const generatedCatalog: CatalogProduct[] = [
     hobbies: ["embroidery"],
     articles: ["how-to-start-embroidery"],
     collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "embroidery",
-        slot: "floss",
-      },
-    ],
+    kitSlots: [],
     role: "affordable",
     isEssential: false,
     audience: "People who want lots of floss to experiment",
@@ -1865,12 +1845,7 @@ export const generatedCatalog: CatalogProduct[] = [
     hobbies: ["embroidery"],
     articles: ["how-to-start-embroidery"],
     collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "embroidery",
-        slot: "scissors",
-      },
-    ],
+    kitSlots: [],
     role: "affordable",
     isEssential: false,
     audience: "Stitchers who want small thread snips",
@@ -1908,12 +1883,7 @@ export const generatedCatalog: CatalogProduct[] = [
     hobbies: ["embroidery"],
     articles: ["how-to-start-embroidery"],
     collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "embroidery",
-        slot: "scissors",
-      },
-    ],
+    kitSlots: [],
     role: "nice-to-have",
     isEssential: false,
     audience: "Stitchers who want a pair with a case",
@@ -1961,12 +1931,7 @@ export const generatedCatalog: CatalogProduct[] = [
     hobbies: ["crochet"],
     articles: ["how-to-start-crocheting"],
     collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "crochet",
-        slot: "hooks",
-      },
-    ],
+    kitSlots: [],
     role: "complete-kit",
     isEssential: true,
     audience: "Beginners who want a range of hook sizes",
@@ -2010,12 +1975,7 @@ export const generatedCatalog: CatalogProduct[] = [
     hobbies: ["crochet"],
     articles: ["how-to-start-crocheting"],
     collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "crochet",
-        slot: "hooks",
-      },
-    ],
+    kitSlots: [],
     role: "affordable",
     isEssential: false,
     audience: "People who want soft-grip hooks",
@@ -2058,12 +2018,7 @@ export const generatedCatalog: CatalogProduct[] = [
     hobbies: ["crochet"],
     articles: ["how-to-start-crocheting"],
     collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "crochet",
-        slot: "yarn",
-      },
-    ],
+    kitSlots: [],
     role: "essential",
     isEssential: true,
     audience: "Beginners who need a plain first yarn",
@@ -2115,12 +2070,7 @@ export const generatedCatalog: CatalogProduct[] = [
     hobbies: ["crochet"],
     articles: ["how-to-start-crocheting"],
     collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "crochet",
-        slot: "yarn",
-      },
-    ],
+    kitSlots: [],
     role: "nice-to-have",
     isEssential: false,
     audience: "People who want a softer feel and a few skeins",
@@ -2168,7 +2118,7 @@ export const generatedCatalog: CatalogProduct[] = [
         slot: "brushes",
       },
       {
-        kit: "paint-night",
+        kit: "pottery-paint-night",
         slot: "brushes",
       },
     ],
@@ -2220,7 +2170,7 @@ export const generatedCatalog: CatalogProduct[] = [
     collections: ["girls-night-in"],
     kitSlots: [
       {
-        kit: "paint-night",
+        kit: "pottery-paint-night",
         slot: "brushes",
       },
     ],
@@ -2272,7 +2222,7 @@ export const generatedCatalog: CatalogProduct[] = [
     collections: ["girls-night-in"],
     kitSlots: [
       {
-        kit: "paint-night",
+        kit: "pottery-paint-night",
         slot: "canvas",
       },
     ],
@@ -2325,7 +2275,7 @@ export const generatedCatalog: CatalogProduct[] = [
     collections: ["girls-night-in"],
     kitSlots: [
       {
-        kit: "paint-night",
+        kit: "pottery-paint-night",
         slot: "canvas",
       },
     ],
@@ -2380,7 +2330,7 @@ export const generatedCatalog: CatalogProduct[] = [
     collections: ["creative-girl"],
     kitSlots: [
       {
-        kit: "reading-journal",
+        kit: "reading-book-club",
         slot: "journal",
       },
     ],
@@ -2428,7 +2378,7 @@ export const generatedCatalog: CatalogProduct[] = [
     collections: ["creative-girl"],
     kitSlots: [
       {
-        kit: "reading-journal",
+        kit: "reading-book-club",
         slot: "pens",
       },
     ],
@@ -2481,7 +2431,7 @@ export const generatedCatalog: CatalogProduct[] = [
     collections: ["creative-girl"],
     kitSlots: [
       {
-        kit: "reading-journal",
+        kit: "reading-book-club",
         slot: "reading-light",
       },
     ],
@@ -2525,7 +2475,7 @@ export const generatedCatalog: CatalogProduct[] = [
     collections: ["girls-night-in"],
     kitSlots: [
       {
-        kit: "book-club",
+        kit: "reading-book-club",
         slot: "discussion-guide",
       },
     ],
@@ -2574,7 +2524,7 @@ export const generatedCatalog: CatalogProduct[] = [
     collections: ["girls-night-in"],
     kitSlots: [
       {
-        kit: "book-club",
+        kit: "reading-book-club",
         slot: "snack-bowls",
       },
       {
@@ -2630,7 +2580,7 @@ export const generatedCatalog: CatalogProduct[] = [
     collections: ["girls-night-in"],
     kitSlots: [
       {
-        kit: "picnic-adventure",
+        kit: "picnic",
         slot: "blanket",
       },
     ],
@@ -2678,7 +2628,7 @@ export const generatedCatalog: CatalogProduct[] = [
     collections: ["girls-night-in"],
     kitSlots: [
       {
-        kit: "picnic-adventure",
+        kit: "picnic",
         slot: "cooler",
       },
     ],
@@ -2724,12 +2674,7 @@ export const generatedCatalog: CatalogProduct[] = [
     hobbies: ["flower-arranging"],
     articles: ["flower-arranging-as-a-hobby"],
     collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "flower-arranging",
-        slot: "snips",
-      },
-    ],
+    kitSlots: [],
     role: "essential",
     isEssential: true,
     audience: "Arrangers cutting soft stems",
@@ -2772,12 +2717,7 @@ export const generatedCatalog: CatalogProduct[] = [
     hobbies: ["flower-arranging"],
     articles: ["flower-arranging-as-a-hobby"],
     collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "flower-arranging",
-        slot: "vase",
-      },
-    ],
+    kitSlots: [],
     role: "essential",
     isEssential: true,
     audience: "Beginners arranging small bunches",
@@ -2820,12 +2760,7 @@ export const generatedCatalog: CatalogProduct[] = [
     hobbies: ["flower-arranging"],
     articles: ["flower-arranging-as-a-hobby"],
     collections: ["creative-girl"],
-    kitSlots: [
-      {
-        kit: "flower-arranging",
-        slot: "frog",
-      },
-    ],
+    kitSlots: [],
     role: "nice-to-have",
     isEssential: false,
     audience: "Arrangers using shallow bowls",
@@ -2874,7 +2809,7 @@ export const generatedCatalog: CatalogProduct[] = [
     collections: ["girls-night-in"],
     kitSlots: [
       {
-        kit: "pickleball",
+        kit: "racquet-sports",
         slot: "paddles",
       },
     ],
@@ -2926,8 +2861,8 @@ export const generatedCatalog: CatalogProduct[] = [
     collections: ["girls-night-in"],
     kitSlots: [
       {
-        kit: "pickleball",
-        slot: "balls",
+        kit: "racquet-sports",
+        slot: "pickleballs",
       },
     ],
     role: "essential",
@@ -2979,7 +2914,7 @@ export const generatedCatalog: CatalogProduct[] = [
     collections: ["girls-night-in"],
     kitSlots: [
       {
-        kit: "tennis",
+        kit: "racquet-sports",
         slot: "racquet",
       },
     ],
@@ -3024,8 +2959,8 @@ export const generatedCatalog: CatalogProduct[] = [
     collections: ["girls-night-in"],
     kitSlots: [
       {
-        kit: "tennis",
-        slot: "balls",
+        kit: "racquet-sports",
+        slot: "tennis-balls",
       },
     ],
     role: "essential",
@@ -3072,7 +3007,7 @@ export const generatedCatalog: CatalogProduct[] = [
     collections: ["girls-night-in"],
     kitSlots: [
       {
-        kit: "cozy-night-in",
+        kit: "reading-book-club",
         slot: "blanket",
       },
     ],
@@ -3125,7 +3060,7 @@ export const generatedCatalog: CatalogProduct[] = [
     collections: ["girls-night-in"],
     kitSlots: [
       {
-        kit: "cozy-night-in",
+        kit: "reading-book-club",
         slot: "candle",
       },
     ],
@@ -3174,7 +3109,7 @@ export const generatedCatalog: CatalogProduct[] = [
     collections: ["girls-night-in"],
     kitSlots: [
       {
-        kit: "cozy-night-in",
+        kit: "reading-book-club",
         slot: "tea",
       },
     ],
@@ -3222,7 +3157,7 @@ export const generatedCatalog: CatalogProduct[] = [
     collections: ["girls-night-in"],
     kitSlots: [
       {
-        kit: "cozy-night-in",
+        kit: "reading-book-club",
         slot: "puzzle",
       },
     ],

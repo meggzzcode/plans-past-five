@@ -28,6 +28,7 @@ import {
 } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { articleToJson } from "./content-lib.mjs";
 import {
   kebabKey,
   MAX_WIDTH,
@@ -41,7 +42,6 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const INCOMING = join(root, "docs/content/incoming-images");
 const ASSETS = join(root, "src/assets");
 const EXTRA = join(root, "src/data/images.extra.ts");
-const IMAGES_TS = join(root, "src/data/images.ts");
 const LICENSES = join(root, "docs/IMAGE-LICENSES.md");
 const CONTENT = join(root, "src/content");
 
@@ -193,10 +193,14 @@ async function pickBackend() {
 
 // ---------- repo state ----------
 function baseKeys() {
-  const text = readFileSync(IMAGES_TS, "utf8");
-  const block = /const baseImages = \{([\s\S]*?)\n\} satisfies/.exec(text);
-  if (!block) die("could not find `const baseImages = { ... } satisfies` in src/data/images.ts");
-  return new Set([...block[1].matchAll(/^ {2}(\w+): \{$/gm)].map((m) => m[1]));
+  // Base images now live one per file in content/images/<key>.json (edited in Pages CMS).
+  const dir = join(root, "content/images");
+  if (!existsSync(dir)) die("could not find content/images (the image data files)");
+  return new Set(
+    readdirSync(dir)
+      .filter((f) => f.endsWith(".json"))
+      .map((f) => f.replace(/\.json$/, "")),
+  );
 }
 
 /** Parse entries from the generated file: [{key, file, alt, w, h}] */
@@ -329,8 +333,7 @@ for (const { row, already, path } of plan) {
     const f = articles.get(slug);
     const data = JSON.parse(readFileSync(f, "utf8"));
     if (typeof data.hero !== "string") die(`${f} has no "hero" field`);
-    if (data.hero !== row.key)
-      writeFileSync(f, `${JSON.stringify({ ...data, hero: row.key }, null, 2)}\n`);
+    if (data.hero !== row.key) writeFileSync(f, articleToJson({ ...data, hero: row.key }));
     heroes.push(slug);
   }
   if (!licenseText.includes(`\`${row.key}\``)) {

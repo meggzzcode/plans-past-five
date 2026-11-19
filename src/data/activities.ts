@@ -27,8 +27,9 @@ export type Activity = {
   /** True when it can be done without leaving the house. */
   home: boolean;
   /**
-   * True when it needs signing up or booking ahead (a volunteer shift). Same-day, tonight and
-   * single-day plans leave these out, because nobody can do them on the fly.
+   * True when it needs signing up, or may need booking, ahead (a volunteer shift, a paint-your-own
+   * pottery studio). Same-day, tonight and single-day plans leave these out, because nobody can be
+   * sure of doing them on the fly. A whole-weekend plan keeps them, with a "book ahead" note.
    */
   advance?: boolean;
   /**
@@ -1119,7 +1120,13 @@ const startWindows: Record<string, [number, number]> = {
 };
 
 /** Ideas that need signing up or booking ahead. Edit here. */
-const ADVANCE_IDS: readonly string[] = ["volunteer"];
+const ADVANCE_IDS: readonly string[] = ["volunteer", "pottery-studio"];
+
+/** One short line shown on a plan card for ideas in ADVANCE_IDS. Only says what the idea's own prep says. */
+export const ADVANCE_NOTES: Record<string, string> = {
+  volunteer: "Sign up ahead",
+  "pottery-studio": "Check whether you need to book",
+};
 
 /** Ideas that are the same kind of thing. Anything not listed is its own family. Edit here. */
 const FAMILIES: Record<string, string[]> = {

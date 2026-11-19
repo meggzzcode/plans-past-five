@@ -18,6 +18,8 @@ function scratch() {
   cpSync(path.join(repo, "content"), path.join(root, "content"), { recursive: true });
   mkdirSync(path.join(root, "src/data"), { recursive: true });
   cpSync(path.join(repo, "src/data/categories.ts"), path.join(root, "src/data/categories.ts"));
+  for (const f of ["images.ts", "images.extra.ts"])
+    cpSync(path.join(repo, "src/data", f), path.join(root, "src/data", f));
   cpSync(path.join(repo, "src/assets"), path.join(root, "src/assets"), { recursive: true });
   return root;
 }

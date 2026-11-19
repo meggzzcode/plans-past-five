@@ -25,6 +25,8 @@ export type Kit = {
   dek: string;
   /** Hobby slug from src/data/hobbies.ts, when one matches. */
   hobby?: string;
+  /** Further hobby slugs the kit also serves (merged collection kits). */
+  alsoHobbies?: string[];
   /**
    * One short, honest note for the whole kit (what to check, who it suits). Replaces per-product
    * disclaimers. Plain sentences, no prices, no editor-speak.
@@ -101,65 +103,6 @@ export const kits: Kit[] = [
     ],
   },
   {
-    id: "embroidery",
-    name: "Embroidery starter kit",
-    headline: "Stitch your first hoop",
-    dek: "A hoop, some thread and a quiet hour. A boxed kit with a tutorial is the easiest start.",
-    hobby: "embroidery",
-    note: "A beginner kit with a guide is the quickest way in. Buy extra floss once you know which colors you reach for.",
-    slots: [
-      s("hoop", "Embroidery hoop", E),
-      s("floss", "Embroidery floss", O, "affordable"),
-      s("needles", "Embroidery needles", E),
-      s("fabric", "Cotton or linen fabric", E),
-      s("scissors", "Small sharp scissors", O),
-      s("pattern", "A beginner pattern", O, "complete-kit"),
-    ],
-  },
-  {
-    id: "crochet",
-    name: "Crochet starter kit",
-    headline: "Where to start with crochet",
-    dek: "A hook, easy yarn and one thing to finish this week.",
-    hobby: "crochet",
-    note: "Pick a smooth, light yarn and a mid-size hook (5 to 6 mm) so you can see every stitch.",
-    slots: [
-      s("hooks", "Crochet hooks", E),
-      s("yarn", "Smooth, light-colored beginner yarn", E),
-      s("stitch-markers", "Stitch markers", O),
-      s("scissors", "Scissors", P),
-      s("tapestry-needle", "Tapestry needle", O),
-    ],
-  },
-  {
-    id: "reading-journal",
-    name: "Reading journal kit",
-    headline: "A notebook for the books that stuck",
-    dek: "A notebook and pens for the books that stuck with you.",
-    hobby: "reading",
-    note: "Choose a layout you would actually fill in: look at the sections before you buy.",
-    slots: [
-      s("journal", "A reading journal or notebook", E),
-      s("pens", "A pen you like", E),
-      s("bookmark", "Bookmark or page flags", O),
-      s("highlighters", "Highlighters or tabs", O),
-      s("reading-light", "Book light", O, "nice-to-have"),
-    ],
-  },
-  {
-    id: "girls-craft-night",
-    name: "Girls' craft night kit",
-    headline: "Craft night, sorted",
-    dek: "One easy project, a table, and a group chat that finally has a date.",
-    hobby: "craft-nights",
-    slots: [
-      s("main-project", "The main project supplies", E, "complete-kit"),
-      s("shared-tools", "Shared scissors and glue", E),
-      s("table-cover", "Table protection", O),
-      s("extra-supplies", "Extras for people who finish early", O, "nice-to-have"),
-    ],
-  },
-  {
     id: "mahjong-night",
     name: "Mahjong night kit",
     headline: "Everything for your first game night",
@@ -174,35 +117,7 @@ export const kits: Kit[] = [
     ],
   },
   {
-    id: "book-club",
-    name: "Book club kit",
-    headline: "Make book club feel like a ritual",
-    dek: "Little things that make the meeting feel like a ritual.",
-    hobby: "book-clubs",
-    slots: [
-      s("discussion-guide", "Discussion prompts", O),
-      s("notebook", "Notebook for notes", O),
-      s("bookmarks", "Bookmarks or page flags", O),
-      s("snack-bowls", "Snack bowls or a board", P),
-    ],
-  },
-  {
-    id: "paint-night",
-    name: "Paint night kit",
-    headline: "A canvas each, nobody has to be good",
-    dek: "A canvas each, a table of brushes, and nobody has to be good.",
-    note: "Plan one canvas per guest, plus a spare or two.",
-    slots: [
-      s("canvas", "Canvases or panels", E),
-      s("paint", "Acrylic paint", E),
-      s("brushes", "Brushes", E),
-      s("palette", "Palettes", O),
-      s("aprons", "Aprons or old shirts", P),
-      s("easel", "Tabletop easel", O, "nice-to-have"),
-    ],
-  },
-  {
-    id: "picnic-adventure",
+    id: "picnic",
     name: "Picnic kit",
     headline: "Pack for a picnic",
     dek: "A blanket, a bag and an afternoon.",
@@ -216,52 +131,22 @@ export const kits: Kit[] = [
     ],
   },
   {
-    id: "flower-arranging",
-    name: "Flower arranging kit",
-    headline: "Make stems stay put",
-    dek: "Snips, a vase and the little things that make stems stay put.",
-    hobby: "flower-arranging",
+    id: "reading-book-club",
+    name: "Reading and book club kit",
+    headline: "A cozy reading night, or a book club that feels like a ritual",
+    dek: "A notebook and pens for the books that stuck, plus little things for a book club or a cozy night in.",
+    hobby: "reading",
+    alsoHobbies: ["book-clubs"],
+    note: "Choose a journal layout you would actually fill in: look at the sections before you buy. The cozy night-in items (throw, candle, tea, puzzle, mug) are optional and you may already own them.",
     slots: [
-      s("snips", "Floral snips", E),
-      s("vase", "A vase", E),
-      s("frog", "Flower frog or floral tape", O),
-      s("water-jar", "A jug for water", P),
-    ],
-  },
-  {
-    id: "pickleball",
-    name: "Pickleball starter kit",
-    headline: "Your first pickleball game",
-    dek: "Two paddles and a ball: that's the whole starter. Borrow first if you can.",
-    hobby: "pickleball",
-    note: "Paddles and balls are all you need to start. A racket from another sport will not work here, and many courts and clubs lend paddles.",
-    slots: [
-      s("paddles", "Pickleball paddles", E),
-      s("balls", "Pickleballs", E),
-      s("bag", "Bag", O),
-      s("court-shoes", "Court shoes", O, "later-upgrade"),
-    ],
-  },
-  {
-    id: "tennis",
-    name: "Tennis starter kit",
-    headline: "Your first Saturday rally",
-    dek: "A racquet, a can of balls and a standing Saturday. Many courts rent racquets, so try one first.",
-    hobby: "tennis",
-    note: "Many courts and clubs rent rackets, so try one first if you are not sure you will keep playing.",
-    slots: [
-      s("racquet", "Beginner racquet", E),
-      s("balls", "Tennis balls", E),
-      s("bag", "Racquet bag", O),
-      s("court-shoes", "Court shoes", O, "later-upgrade"),
-    ],
-  },
-  {
-    id: "cozy-night-in",
-    name: "Cozy night in kit",
-    headline: "Candle-and-blanket night",
-    dek: "Candle-and-blanket energy, nothing you have to buy.",
-    slots: [
+      s("journal", "A reading journal or notebook", E),
+      s("pens", "A pen you like", E),
+      s("bookmark", "Bookmark or page flags", O),
+      s("highlighters", "Highlighters or tabs", O),
+      s("reading-light", "Book light", O, "nice-to-have"),
+      s("discussion-guide", "Discussion prompts for a book club", O),
+      s("club-notebook", "Notebook for club notes", O),
+      s("snack-bowls", "Snack bowls or a board", P),
       s("blanket", "A soft throw", O),
       s("candle", "A candle", O),
       s("tea", "Tea or cocoa", O),
@@ -269,9 +154,51 @@ export const kits: Kit[] = [
       s("mug", "A favorite mug", P),
     ],
   },
+  {
+    id: "pottery-paint-night",
+    name: "Pottery and paint night kit",
+    headline: "A canvas or a mug each, nobody has to be good",
+    dek: "Canvases or a ceramic piece each, a table of brushes, and a group chat that finally has a date.",
+    hobby: "pottery-painting",
+    alsoHobbies: ["craft-nights"],
+    note: "Plan one canvas or piece per guest, plus a spare or two. For a girls' craft night, pick one easy project and share the scissors and glue.",
+    slots: [
+      s("canvas", "Canvases or panels", E),
+      s("paint", "Acrylic paint", E),
+      s("brushes", "Brushes", E),
+      s("palette", "Palettes", O),
+      s("aprons", "Aprons or old shirts", P),
+      s("easel", "Tabletop easel", O, "nice-to-have"),
+      s("main-project", "The main project supplies", E, "complete-kit"),
+      s("shared-tools", "Shared scissors and glue", E),
+      s("table-cover", "Table protection", O),
+      s("extra-supplies", "Extras for people who finish early", O, "nice-to-have"),
+    ],
+  },
+  {
+    id: "racquet-sports",
+    name: "Pickleball and tennis kit",
+    headline: "Your first game, pickleball or tennis",
+    dek: "Paddles or a racquet, a ball and a standing weekend slot. Borrow first if you can.",
+    hobby: "pickleball",
+    alsoHobbies: ["tennis"],
+    note: "Many courts and clubs lend paddles or rent racquets, so try one first. A racquet from another sport will not work for pickleball.",
+    slots: [
+      s("paddles", "Pickleball paddles", E),
+      s("pickleballs", "Pickleballs", E),
+      s("pickleball-bag", "Pickleball bag", O),
+      s("racquet", "Beginner tennis racquet", E),
+      s("tennis-balls", "Tennis balls", E),
+      s("racquet-bag", "Racquet bag", O),
+      s("court-shoes", "Court shoes", O, "later-upgrade"),
+    ],
+  },
 ];
 
 export const getKit = (id: string) => kits.find((k) => k.id === id);
+
+/** Every hobby slug a kit speaks to (its main hobby first). */
+export const kitHobbies = (k: Kit): string[] => [...(k.hobby ? [k.hobby] : []), ...(k.alsoHobbies ?? [])];
 
 /** `{ kitId: [slotIds] }` for cross-reference validation. */
 export const kitSlotIndex = (): Record<string, string[]> =>

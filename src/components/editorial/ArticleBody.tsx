@@ -5,7 +5,7 @@ import { heavyCallouts } from "./article-summary";
 import { getHobby } from "@/data/hobbies";
 import { productsFor } from "@/data/products";
 import { selectProducts, verifiedCatalog } from "@/data/catalog";
-import { fillKit, kits } from "@/data/kits";
+import { fillKit, kitHobbies, kits } from "@/data/kits";
 import { ShopTheArticle } from "@/components/commerce/ShopTheArticle";
 import { ShopMyHobby } from "@/components/commerce/ShopMyHobby";
 import { StarterKit } from "@/components/commerce/StarterKit";
@@ -241,7 +241,7 @@ function verifiedFor(
   ];
   if (hobbies.length === 0) return null;
   if (b.type === "starterKit") {
-    const kit = kits.find((k) => hobbies.some((h) => k.id === h || k.hobby === h));
+    const kit = kits.find((k) => hobbies.some((h) => k.id === h || kitHobbies(k).includes(h)));
     if (kit) {
       const filled = fillKit(kit, verifiedCatalog);
       if (
