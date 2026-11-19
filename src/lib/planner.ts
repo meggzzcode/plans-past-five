@@ -9,7 +9,7 @@ import {
 } from "@/data/activities";
 import type { Cost } from "@/data/hobbies";
 import { getHobby } from "@/data/hobbies";
-import { productsFor } from "@/data/products";
+import { collections } from "@/data/products";
 import { articlesForHobby } from "@/content";
 import { EVENING_TEMPLATES, type EveningTemplate } from "@/data/evening-templates";
 
@@ -1184,8 +1184,8 @@ export function guidesFor(a: Activity): GuideLink[] {
     out.push({ kind: "hobby", slug: hobby.slug, label: `${hobby.name} guide` });
     const art = articlesForHobby(hobby.slug)[0];
     if (art) out.push({ kind: "article", slug: art.slug, label: `Read: ${art.title}` });
-    const shop = productsFor(hobby.productIds)[0];
-    if (shop) out.push({ kind: "shop", slug: shop.collection, label: "Supplies to browse" });
+    const shop = collections.find((c) => c.hobbies.includes(hobby.slug));
+    if (shop) out.push({ kind: "shop", slug: shop.slug, label: "Supplies to browse" });
   } else {
     const section: { to: SectionPath; label: string } = a.vibes.includes("active")
       ? { to: "/movement", label: "More movement ideas" }

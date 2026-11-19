@@ -1,0 +1,59 @@
+{
+  "id": "shuttle-art-acrylic-paint-15-tubes",
+  "name": "Acrylic Paint Set, 15 x 12 ml Tubes",
+  "brand": "Shuttle Art",
+  "category": "Acrylic paint",
+  "order": 9,
+  "status": "verified",
+  "description": "A 15-colour set of 12 ml acrylic paint tubes with three brushes, described as suitable for clay among other surfaces.",
+  "asin": "B083X67QFX",
+  "specs": [
+    {
+      "label": "Tubes",
+      "value": "15 x 12 ml"
+    },
+    {
+      "label": "Brushes",
+      "value": "3 included"
+    },
+    {
+      "label": "Listing surfaces",
+      "value": "canvas, wood, clay, fabric, ceramic"
+    }
+  ],
+  "hobbies": [
+    "air-dry-clay",
+    "paint-by-numbers"
+  ],
+  "articles": [
+    "how-to-start-air-dry-clay"
+  ],
+  "collections": [
+    "pottery-era",
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "air-dry-clay",
+      "slot": "paint"
+    }
+  ],
+  "role": "affordable",
+  "isEssential": true,
+  "audience": "Beginners who need a first set of paints for dry clay",
+  "whySelected": "The listing names clay among suitable surfaces and includes brushes, so one purchase covers paint and brushes.",
+  "limitations": [
+    "No safety certification was checked",
+    "Small tubes run out quickly with large pieces",
+    "Manufacturer page not yet checked"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B083X67QFX"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "shortName": "Shuttle Art acrylic paints, 15 tubes",
+  "benefit": "Fifteen 12 ml tubes in a spread of colors: enough to paint a first piece.",
+  "lead": true
+}

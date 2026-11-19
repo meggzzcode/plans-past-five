@@ -26,7 +26,7 @@ Important: the build now refuses a published article that has no `sources`, no `
 Edit the JSON, set `updatedAt`, run `bun run content:format <file>` and `bun run content:build`. A bad date or a `http://` source stops the build with the field name in the message.
 
 ## Add a product
-`bun run import:products` REPLACES the whole generated catalog with the CSV you give it, so always start from the full file: copy `docs/commerce/product-research.csv`, append your row (column rules in the header of `docs/commerce/PRODUCT-RESEARCH-TEMPLATE.csv`), run it with `--check` first, then without, then `bunx vitest run` and a build. Save your copy back over `docs/commerce/product-research.csv` so the next import keeps it. A verified product with `kitSlots` and `collections` appears on its `/shop/<collection>` page and the matching hobby page; kits and `/shop` need the kit rules in `docs/commerce/STARTER-KITS.md`.
+Products are edited in Pages CMS (Products); no terminal is needed. See `docs/buyer/PRODUCT-MANAGEMENT.md`. (Developers may bulk-load new products with `bun run import:products`, which only adds new files.)
 
 ## Switch on affiliate links
 Edit `affiliateRegistry.amazon` in `src/config/affiliate.ts` (`websiteTrackingId`, `approvalStatus: "approved"`, `active: true`, `lastVerified`, `approvedPromotionMethods`, `accountOwnershipNote`). Every Amazon link then carries `?tag=<your id>` and the disclosure text switches. Expect about 9 existing tests to fail, because they assert the unmonetized defaults (`affiliate.test.ts`, `rules.test.ts`, `shop.test.tsx`, `round3-fixes.test.tsx`): update those expectations deliberately. Links already carry `rel="sponsored noopener noreferrer"` even while unmonetized.

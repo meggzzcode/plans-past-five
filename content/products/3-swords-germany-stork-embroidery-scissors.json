@@ -1,0 +1,42 @@
+{
+  "id": "3-swords-germany-stork-embroidery-scissors",
+  "name": "Embroidery Scissors, Stork Scissors, with Synthetic Leather Case",
+  "brand": "3 Swords Germany",
+  "category": "Embroidery scissors",
+  "order": 36,
+  "status": "candidate",
+  "description": "Stork-style embroidery scissors with a black synthetic leather case.",
+  "asin": "B0D1Y66RQZ",
+  "specs": [
+    {
+      "label": "Case",
+      "value": "black synthetic leather"
+    }
+  ],
+  "hobbies": [
+    "embroidery"
+  ],
+  "articles": [
+    "how-to-start-embroidery"
+  ],
+  "collections": [
+    "creative-girl"
+  ],
+  "kitSlots": [],
+  "role": "nice-to-have",
+  "isEssential": false,
+  "audience": "Stitchers who want a pair with a case",
+  "whySelected": "Comes with a protective case.",
+  "limitations": [
+    "Bullet text did not load: only title and seller captured",
+    "Country of manufacture not confirmed (brand name says Germany)",
+    "Manufacturer page not yet checked",
+    "Seller on listing: 3 Swords - Germany"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0D1Y66RQZ"
+  ],
+  "lastVerified": "2026-11-18",
+  "availability": "available",
+  "affiliateStatus": "not-activated"
+}

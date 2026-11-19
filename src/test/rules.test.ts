@@ -5,15 +5,7 @@ import { articles, getArticle } from "@/content";
 import { allArticlesIncludingDrafts } from "@/content/draft-registry";
 import { search } from "@/lib/search";
 import { hobbies } from "@/data/hobbies";
-import {
-  products,
-  articleProducts,
-  allProductTypes,
-  productTypeIds,
-  getProduct,
-  collections,
-  collectionProducts,
-} from "@/data/products";
+import { collections } from "@/data/products";
 import { amazonSearchUrl } from "@/config/affiliate";
 import { restoreAffiliate, setAffiliateState, snapshotAffiliate } from "./affiliate-state";
 import { sanitizeSaved } from "@/lib/saved";
@@ -117,78 +109,17 @@ describe("Content rules", () => {
       expect(search(d.title).some((h) => h.to === `/journal/${d.slug}`)).toBe(false);
     }
   });
-  // Updated deliberately: the owner asked for eight collections. The original six own six product
-  // types each; "journaling-era" and "cozy-after-hours" own none and cross-reference at least four
-  // existing product types via extraProductIds (no new products were invented).
-  // Hobby count updated deliberately from 36 to 43: "Yoga for Beginners", "Dance Classes", "Running", "Climbing", "Board Games", "Cooking Classes", "Language Learning"
-  // were added so the Active filter is not just four hobbies (cost-and-search review).
-  it("has 8 collections, each with at least 4 product types", () => {
-    expect(new Set(hobbies.map((h) => h.slug)).size).toBe(hobbies.length); // no fixed hobby count
+  // Hobby count is not fixed (the directory may grow or shrink). Eight collections today.
+  it("has 8 collections, each supporting hobbies that exist", () => {
+    expect(new Set(hobbies.map((h) => h.slug)).size).toBe(hobbies.length);
     expect(collections).toHaveLength(8);
-    expect(products).toHaveLength(36);
-    for (const c of collections)
-      expect(collectionProducts(c.slug).length).toBeGreaterThanOrEqual(4);
-    for (const slug of [
-      "pottery-era",
-      "creative-girl",
-      "sporty-girl",
-      "girls-night-in",
-      "bookish-girl",
-      "little-adventures",
-    ])
-      expect(products.filter((p) => p.collection === slug)).toHaveLength(6);
-    for (const c of collections)
-      for (const id of c.extraProductIds ?? [])
-        expect(products.some((p) => p.id === id)).toBe(true);
-  });
-  // Article-only product types (docs/commerce/PRODUCT-TYPES.md): not in `products`, so the collection
-  // counts above stay as they were; resolvable by id for articles and hobby pages.
-  it("has 30 article-only product types that stay out of collections and search", () => {
-    expect(articleProducts.map((x) => x.id)).toEqual([
-      "walking-shoes",
-      "trekking-socks",
-      "phone-armband",
-      "sketch-pads",
-      "crochet-hooks",
-      "yarn",
-      "knitting-needles",
-      "flower-snips",
-      "vases",
-      "flower-frogs",
-      "jigsaw-puzzles",
-      "paint-by-number-kits",
-      "cozy-night-in",
-      "bike-helmets",
-      "bike-lights",
-      "bike-repair-kits",
-      "bike-bells",
-      "skate-protective-gear",
-      "thermos-flasks",
-      "cooler-bags",
-      "portable-speakers",
-      "glue-guns",
-      "tea-sets",
-      "brush-pens",
-      "photo-albums",
-      "letter-writing-sets",
-      "indoor-plant-basics",
-      "tennis-shoes",
-      "pickleball-shoes",
-      "yoga-mats",
-    ]);
-    expect(new Set(productTypeIds).size).toBe(allProductTypes.length);
-    expect(allProductTypes).toHaveLength(66);
-    for (const a of articleProducts) {
-      expect(getProduct(a.id)).toBe(a);
-      expect(products.some((x) => x.id === a.id)).toBe(false);
-      expect(collections.some((c) => collectionProducts(c.slug).some((x) => x.id === a.id))).toBe(
-        false,
-      );
-      expect(collections.some((c) => c.slug === a.collection)).toBe(true);
-      expect(a.amazonQuery).toMatch(/^[a-z0-9 ]+$/);
-      expect(a.blurb.length).toBeGreaterThan(10);
-      expect(a.lookFor.length).toBeGreaterThan(10);
-      expect(a.brand ?? a.exactUrl ?? a.sourceUrl).toBeUndefined();
+    for (const c of collections) {
+      expect(c.hobbies.length, c.slug).toBeGreaterThan(0);
+      for (const s of c.hobbies)
+        expect(
+          hobbies.some((x) => x.slug === s),
+          `${c.slug} -> ${s}`,
+        ).toBe(true);
     }
   });
   it("Amazon links carry no affiliate tag unless an entry is live", () => {
@@ -212,25 +143,24 @@ describe("Saved items", () => {
   });
 });
 
-// The content validator (scripts/content-lib.mjs) only checks that productIds is a string list, so
-// this is the guard that a shopHobby/starterKit block never silently renders nothing.
-describe("article productIds resolve", () => {
-  it("every shopHobby and starterKit product id is a known product type or kit-slot id", async () => {
+// scripts/content-lib.mjs fails the build when a shopHobby/starterKit block names a hobby that does not exist.
+describe("article shop block hobbies resolve", () => {
+  it("every shopHobby and starterKit names real hobbies", async () => {
     const { readdirSync, readFileSync } = await import("node:fs");
     const path = await import("node:path");
     const dir = path.resolve(__dirname, "../../content/articles");
     const bad: string[] = [];
     for (const f of readdirSync(dir).filter((n) => n.endsWith(".json"))) {
       const a = JSON.parse(readFileSync(path.join(dir, f), "utf8"));
-      for (const b of JSON.stringify(a).match(/"type":"shopHobby"/) ? flat(a) : [])
-        if (b.type === "shopHobby")
-          for (const id of b.productIds ?? [])
-            if (!productTypeIds.includes(id)) bad.push(`${f}: ${id}`);
+      for (const b of flat(a))
+        if (b.type === "shopHobby" || b.type === "starterKit")
+          for (const id of b.hobbies ?? [])
+            if (!hobbies.some((x) => x.slug === id)) bad.push(`${f}: ${id}`);
     }
     expect(bad).toEqual([]);
   });
 });
-function flat(node: unknown): Array<{ type?: string; productIds?: string[] }> {
+function flat(node: unknown): Array<{ type?: string; hobbies?: string[] }> {
   if (Array.isArray(node)) return node.flatMap(flat);
   if (node && typeof node === "object")
     return [node as never, ...Object.values(node).flatMap(flat)];

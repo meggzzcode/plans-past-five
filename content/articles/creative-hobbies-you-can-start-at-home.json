@@ -18,30 +18,6 @@
     "jewelry-making",
     "crochet"
   ],
-  "productIds": [
-    "junk-journals",
-    "washi-tape",
-    "photo-albums",
-    "brush-pens",
-    "watercolor-sets",
-    "watercolor-sketchbooks",
-    "paint-by-number-kits",
-    "acrylic-paints",
-    "air-dry-clay",
-    "clay-tools",
-    "clay-mats",
-    "friendship-bracelet-kits",
-    "ceramic-painting-kits",
-    "embroidery-kits",
-    "crochet-hooks",
-    "yarn",
-    "knitting-needles",
-    "flower-snips",
-    "vases",
-    "flower-frogs",
-    "indoor-plant-basics",
-    "cookie-decorating-kits"
-  ],
   "sources": [
     {
       "title": "How long does air-dry clay take to dry? (Crayola FAQ)",
@@ -110,11 +86,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "junk-journals",
-        "washi-tape",
-        "photo-albums",
-        "brush-pens"
+      "hobbies": [
+        "junk-journaling",
+        "scrapbooking",
+        "calligraphy"
       ],
       "title": "For a paper evening",
       "dek": "A journal, washi tape, an album or a brush pen is a small first buy that gets you to a finished page the same night."
@@ -146,7 +121,7 @@
       "type": "item",
       "n": 7,
       "title": "Painting thrifted frames and objects",
-      "note": "Pick up a plain frame, vase or tray from a thrift store and give it stripes, checks or cherries with acrylics. Instant decor, very low risk. **What makes it easier:** {{product:apple-barrel-16-acrylic-craft-paints-2oz|a set of small acrylic craft paints}} and a flat brush, so stripes and checks go on in one sitting.",
+      "note": "Pick up a plain frame, vase or tray from a thrift store and give it stripes, checks or cherries with acrylics. Instant decor, very low risk. **What makes it easier:** a set of small acrylic craft paints and a flat brush, so stripes and checks go on in one sitting.",
       "time": "1 hour",
       "cost": "Thrift find plus paint",
       "company": "Solo or social",
@@ -159,11 +134,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "watercolor-sets",
-        "watercolor-sketchbooks",
-        "paint-by-number-kits",
-        "acrylic-paints"
+      "hobbies": [
+        "watercolor-painting",
+        "paint-by-numbers",
+        "air-dry-clay"
       ],
       "title": "For a painting evening",
       "dek": "A small paint set and a pad of paper, a paint-by-number kit or a few acrylics are enough for the first painting."
@@ -178,7 +152,7 @@
       "n": 8,
       "title": "Air-dry clay",
       "hobby": "air-dry-clay",
-      "note": "No wheel or kiln required, and [how to start air-dry clay](/journal/how-to-start-air-dry-clay) walks through a first project. Ring dishes, trinket trays and small ornaments air-dry at home (about a day to the touch for Crayola's, longer for thick pieces; check the label), then you can paint them. Keep finished pieces for display, not for food, drink or water. **What makes it easier:** {{product:crayola-air-dry-clay-5-lb-bucket|a bucket of air-dry clay}}, a small set of clay tools and a work mat, so rolling, cutting and cleanup stay in one corner."
+      "note": "No wheel or kiln required, and [how to start air-dry clay](/journal/how-to-start-air-dry-clay) walks through a first project. Ring dishes, trinket trays and small ornaments air-dry at home (about a day to the touch for Crayola's, longer for thick pieces; check the label), then you can paint them. Keep finished pieces for display, not for food, drink or water. **What makes it easier:** a bucket of air-dry clay, a small set of clay tools and a work mat, so rolling, cutting and cleanup stay in one corner."
     },
     {
       "type": "item",
@@ -203,11 +177,8 @@
     },
     {
       "type": "starterKit",
-      "productIds": [
-        "air-dry-clay",
-        "clay-tools",
-        "acrylic-paints",
-        "clay-mats"
+      "hobbies": [
+        "air-dry-clay"
       ],
       "title": "Clay: where to start"
     },
@@ -271,11 +242,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "embroidery-kits",
-        "crochet-hooks",
-        "yarn",
-        "knitting-needles"
+      "hobbies": [
+        "embroidery",
+        "crochet",
+        "knitting"
       ],
       "title": "For a thread-and-yarn evening",
       "dek": "A starter kit, a set of hooks or needles and a ball of beginner yarn keep your hands busy through a whole episode."
@@ -308,12 +278,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "flower-snips",
-        "vases",
-        "flower-frogs",
-        "indoor-plant-basics",
-        "cookie-decorating-kits"
+      "hobbies": [
+        "flower-arranging",
+        "indoor-gardening",
+        "baking"
       ],
       "title": "For the living and edible hobbies",
       "dek": "Snips and a vase, a few jars, a decorating kit: small things that make a bunch of flowers, a cutting or a plate of cookies look arranged."

@@ -16,15 +16,6 @@
     "creative-writing",
     "junk-journaling"
   ],
-  "productIds": [
-    "pocket-notebooks",
-    "reading-journals",
-    "book-sleeves",
-    "portable-watercolor",
-    "sketch-pads",
-    "letter-writing-sets",
-    "market-totes"
-  ],
   "sources": [
     {
       "title": "Food Allergy Research & Education: tips for staying safe",
@@ -78,10 +69,9 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "pocket-notebooks",
-        "reading-journals",
-        "book-sleeves"
+      "hobbies": [
+        "creative-writing",
+        "reading"
       ],
       "title": "Pack the date",
       "dek": "A pocket notebook, a book sleeve and a journal make your bag feel date-ready and give your hands something lovely to do."
@@ -165,10 +155,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "portable-watercolor",
-        "sketch-pads",
-        "letter-writing-sets"
+      "hobbies": [
+        "watercolor-painting",
+        "outdoor-sketching",
+        "creative-writing"
       ],
       "title": "For the sketch-and-letter hour",
       "dek": "A pocket watercolor set, a small sketch pad and a letter-writing set turn a spare hour at the table into something you can hold at the end."

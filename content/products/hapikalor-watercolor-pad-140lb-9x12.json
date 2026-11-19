@@ -1,0 +1,67 @@
+{
+  "id": "hapikalor-watercolor-pad-140lb-9x12",
+  "name": "Watercolor Paper Pad, 9 x 12 in, 140 lb/300 gsm, 20 Sheets",
+  "brand": "Hapikalor",
+  "category": "Watercolor paper",
+  "order": 32,
+  "status": "verified",
+  "description": "A 20-sheet cold-press watercolor pad, 140 lb, 9 x 12 in.",
+  "asin": "B0D5R7JRKZ",
+  "specs": [
+    {
+      "label": "Sheets",
+      "value": "20"
+    },
+    {
+      "label": "Weight",
+      "value": "140 lb / 300 gsm"
+    },
+    {
+      "label": "Surface",
+      "value": "cold press"
+    },
+    {
+      "label": "Size",
+      "value": "9 x 12 in"
+    },
+    {
+      "label": "Acid-free",
+      "value": "per listing"
+    }
+  ],
+  "hobbies": [
+    "watercolor-painting"
+  ],
+  "articles": [
+    "watercolor-painting-for-beginners"
+  ],
+  "collections": [
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "watercolor",
+      "slot": "paper"
+    }
+  ],
+  "role": "affordable",
+  "isEssential": true,
+  "audience": "Beginners practising on a budget",
+  "whySelected": "Heavyweight cold-press sheets suit practice washes.",
+  "limitations": [
+    "Cotton content not stated",
+    "Acid-free is the listing's claim",
+    "Manufacturer page not yet checked",
+    "Seller on listing: not captured",
+    "The cover colour on the listing may differ from the one you receive"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0D5R7JRKZ"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "check-listing",
+  "affiliateStatus": "not-activated",
+  "shortName": "Heavyweight watercolor pad, 9 x 12 in",
+  "benefit": "Twenty 140 lb cold-press sheets for practice washes.",
+  "lead": true
+}

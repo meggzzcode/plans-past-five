@@ -17,20 +17,6 @@
     "reading",
     "outdoor-sketching"
   ],
-  "productIds": [
-    "walking-shoes",
-    "trekking-socks",
-    "daypacks",
-    "water-bottles",
-    "phone-armband",
-    "film-cameras",
-    "picnic-blankets",
-    "market-totes",
-    "thermos-flasks",
-    "portable-watercolor",
-    "sketch-pads",
-    "pocket-notebooks"
-  ],
   "sources": [
     {
       "title": "Solo outings: well-lit areas and companions (US DOJ/OJP guide)",
@@ -100,13 +86,11 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "walking-shoes",
-        "trekking-socks",
-        "daypacks",
-        "water-bottles",
-        "phone-armband",
-        "film-cameras"
+      "hobbies": [
+        "hiking",
+        "tennis",
+        "running",
+        "film-photography"
       ],
       "title": "For a long wander",
       "dek": "Walking shoes, trekking-style socks, a small daypack, a bottle, a phone armband and a pocket camera for the day you follow your nose."
@@ -130,10 +114,8 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "picnic-blankets",
-        "market-totes",
-        "thermos-flasks"
+      "hobbies": [
+        "picnicking"
       ],
       "title": "For a day in the park",
       "dek": "A blanket, a roomy tote and an insulated flask turn a bench lunch into an afternoon."
@@ -157,10 +139,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "portable-watercolor",
-        "sketch-pads",
-        "pocket-notebooks"
+      "hobbies": [
+        "watercolor-painting",
+        "outdoor-sketching",
+        "creative-writing"
       ],
       "title": "For a make-something afternoon",
       "dek": "A travel watercolor set, a sketch pad and a pocket notebook fit in a coat pocket and make any bench a studio."

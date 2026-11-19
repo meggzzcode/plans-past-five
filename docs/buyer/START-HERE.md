@@ -33,8 +33,8 @@ What you can do alone and what needs a developer: the table in `docs/marketplace
 ## Three findings from the takeover rehearsal
 
 - **Dev server.** `bun run dev` runs `vite dev --host 127.0.0.1` (the old default failed without IPv6). Open the "Local:" address it prints.
-- **The product importer replaces the whole catalog.** `bun run import:products <csv>` rebuilds the catalog from the file you give it. Start from the full `docs/commerce/product-research.csv`, run `--check` first; a guard refuses a write that shrinks the catalog by 30% or more unless you add `--force` (`docs/buyer/PRODUCT-MANAGEMENT.md`).
-- **Publish gate.** The build refuses a published article with no source, no `verifiedAt` date or unresolved checks. That proves the fields exist, not that the facts are right: you still verify every claim (`docs/SOP-publish-article.md`). A saved edit is not a live edit: nothing goes live until you deploy on purpose (`docs/buyer/NETLIFY-CREDITS-AND-RELEASES.md`).
+- **Products are edited in Pages CMS, not by importing a file.** Section Products, one file per product; the build stops with a plain-English message if a change would break an article. See `docs/buyer/PRODUCT-MANAGEMENT.md`. The CSV importer is an optional developer tool.
+- **Publish gate.** The build refuses a published article with no source, no `verifiedAt` date or unresolved checks. That proves the fields exist, not that the facts are right: you still verify every claim (`docs/SOP-publish-article.md`). A saved edit is not a live edit: nothing goes live until you press Publish site (`docs/buyer/PUBLISH-AND-ROLLBACK.md`; credits in `docs/buyer/NETLIFY-CREDITS-AND-RELEASES.md`).
 
 ## What we do not claim
 

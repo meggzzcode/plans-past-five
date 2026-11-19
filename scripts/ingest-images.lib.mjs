@@ -253,8 +253,7 @@ export function setHobbyImage(text, slug, key) {
     if (s !== slug) return all;
     done = true;
     if (/^ {4}image: "/m.test(body)) return all;
-    if (!/^ {4}productIds:/m.test(body)) throw new Error(`hobby "${slug}" has no productIds line`);
-    return head + body.replace(/^( {4}productIds:)/m, `    image: "${key}",\n$1`) + tail;
+    return `${head}    image: "${key}",\n${body}${tail}`;
   });
   if (!done) throw new Error(`no hobby with slug "${slug}"`);
   return next;

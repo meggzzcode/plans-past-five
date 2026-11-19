@@ -16,11 +16,6 @@
       "pottery-painting",
       "museum-exploring"
     ],
-    "productIds": [
-      "picnic-blankets",
-      "market-totes",
-      "film-cameras"
-    ],
     "body": [
       {
         "type": "h2",
@@ -56,10 +51,6 @@
       "pickleball",
       "volunteering",
       "mahjong"
-    ],
-    "productIds": [
-      "conversation-cards",
-      "mahjong-sets"
     ],
     "body": [
       {

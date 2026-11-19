@@ -20,24 +20,6 @@
     "thrifting",
     "flower-arranging"
   ],
-  "productIds": [
-    "pickleball-sets",
-    "tennis-rackets",
-    "tennis-balls",
-    "pickleball-shoes",
-    "tennis-shoes",
-    "walking-shoes",
-    "trekking-socks",
-    "daypacks",
-    "water-bottles",
-    "phone-armband",
-    "binoculars",
-    "skate-protective-gear",
-    "bike-helmets",
-    "sports-totes",
-    "portable-speakers",
-    "thermos-flasks"
-  ],
   "sources": [
     {
       "title": "CDC: adult physical activity guidelines",
@@ -160,12 +142,9 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "pickleball-sets",
-        "tennis-rackets",
-        "tennis-balls",
-        "pickleball-shoes",
-        "tennis-shoes"
+      "hobbies": [
+        "pickleball",
+        "tennis"
       ],
       "title": "For your first rally",
       "dek": "A paddle or racket, balls and court shoes cover a first session. Your own gear is there for round two, when a friend texts \"court at six?\""
@@ -229,13 +208,11 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "walking-shoes",
-        "trekking-socks",
-        "daypacks",
-        "water-bottles",
-        "phone-armband",
-        "binoculars"
+      "hobbies": [
+        "hiking",
+        "tennis",
+        "running",
+        "birdwatching"
       ],
       "title": "For your first trail morning",
       "dek": "Comfortable shoes, socks made for walking, a daypack and a bottle make a morning outside feel easy to start, and a phone armband keeps a map or a playlist close."
@@ -347,11 +324,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "sports-totes",
-        "skate-protective-gear",
-        "bike-helmets",
-        "portable-speakers"
+      "hobbies": [
+        "tennis",
+        "roller-skating",
+        "craft-nights"
       ],
       "title": "By the door, ready to go",
       "dek": "A tote packed by the door, skate pads, a bike helmet and a small speaker mean the next outing starts with grabbing a bag, not hunting for gear."

@@ -1,0 +1,55 @@
+{
+  "id": "mr-pen-washi-tape-21-rolls",
+  "name": "Washi Tape Set, 21 Rolls, Assorted Sizes, Floral",
+  "brand": "Mr. Pen",
+  "category": "Washi tape",
+  "order": 1,
+  "status": "verified",
+  "description": "A 21-roll washi tape set in three widths with floral, pastel and seasonal designs.",
+  "asin": "B08L5PB8N6",
+  "specs": [
+    {
+      "label": "Rolls",
+      "value": "21"
+    },
+    {
+      "label": "Widths",
+      "value": "0.6 in x 7, 0.3 in x 7, 0.12 in x 7"
+    }
+  ],
+  "hobbies": [
+    "junk-journaling"
+  ],
+  "articles": [
+    "junk-journaling-supplies-for-beginners",
+    "how-to-start-junk-journaling"
+  ],
+  "collections": [
+    "journaling-era",
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "junk-journaling",
+      "slot": "washi-tape"
+    }
+  ],
+  "role": "affordable",
+  "isEssential": false,
+  "audience": "Beginners who want variety in a few widths",
+  "whySelected": "A varied, low-commitment starter set; the listing says it tears by hand and repositions without residue.",
+  "limitations": [
+    "Designs are a mixed assortment and include seasonal prints",
+    "Residue and repositioning claims are the listing's, not tested by us",
+    "Manufacturer page not yet checked"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B08L5PB8N6"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "shortName": "Floral washi tape, 21 rolls",
+  "benefit": "Pastel floral rolls in three widths: enough to dress every page of a first journal.",
+  "lead": true
+}

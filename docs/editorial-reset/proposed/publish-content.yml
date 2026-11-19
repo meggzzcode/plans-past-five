@@ -1,3 +1,4 @@
+# SUPERSEDED (Stage 2c): the approved, hardened version is installed as .github/workflows/publish-content.yml. This copy is kept for history only; do not use it.
 # PROPOSED, NOT ACTIVE. Copy to .github/workflows/publish-content.yml only after the owner approves
 # (see docs/editorial-reset/PUBLISHING-WORKFLOW-RECOMMENDATION.md and CMS-ACCEPTANCE-TEST-OWNER-ACTIONS.md).
 # Never run against the production repository before it has passed on the throwaway test repository.

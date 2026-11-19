@@ -1,3 +1,5 @@
+> SUPERSEDED (Stage 2c): the `actions:` block is now in the real `.pages.yml`. Kept for history only.
+
 # PROPOSED `.pages.yml` addition: the Publish site button (not applied)
 
 Add at the top level of `.pages.yml` (same level as `content:` and `media:`) only after the acceptance test on the throwaway repository has shown the workflow works. The syntax is from https://pagescms.org/docs/configuration/actions/ (read 2026-11-19):

@@ -1,0 +1,62 @@
+{
+  "id": "nmjl-2026-large-size-cards-four-pack",
+  "name": "2026 Mahjong Large Size Cards, Four-Pack Bundle",
+  "brand": "National Mah Jongg League",
+  "category": "Mahjong cards",
+  "order": 13,
+  "status": "verified",
+  "description": "Four large-size official National Mah Jongg League cards with the 2026 hands and rules.",
+  "asin": "B0GRCBQ3Y2",
+  "specs": [
+    {
+      "label": "Cards",
+      "value": "4 large-size"
+    },
+    {
+      "label": "Size",
+      "value": "6 1/8 x 4 3/4 in"
+    },
+    {
+      "label": "Edition",
+      "value": "2026"
+    },
+    {
+      "label": "Seller on listing",
+      "value": "The National Mah Jongg League, Inc."
+    }
+  ],
+  "hobbies": [
+    "mahjong"
+  ],
+  "articles": [
+    "how-to-host-a-mahjong-night"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "mahjong-night",
+      "slot": "card"
+    }
+  ],
+  "role": "essential",
+  "isEssential": true,
+  "audience": "Anyone playing American mahjong who wants the official card",
+  "whySelected": "Sold by the League itself per the listing, and the card is the official source for the annual hands.",
+  "limitations": [
+    "The 2026 card is the current edition; the League issues a new card each year",
+    "American mahjong only",
+    "Sold by the National Mah Jongg League itself (listing checked 2026-11-19); the card is year-specific, so a new card is needed each year"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0GRCBQ3Y2"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "manufacturerUrl": "https://www.nationalmahjonggleague.org/store.aspx",
+  "shortName": "2026 mahjong card, large size",
+  "benefit": "The official card of hands your table plays from: four large-size cards, so everyone has one. This is the 2026 edition.",
+  "lead": true
+}

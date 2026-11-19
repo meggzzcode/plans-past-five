@@ -1,6 +1,6 @@
 # Netlify credits and the publish workflow (buyer)
 
-> **NOT YET TESTED WITH A REAL LOGIN.** The CMS is configured (`.pages.yml`) and the content checks are tested, but nobody has yet signed in to Pages CMS with the owner's GitHub login, edited a real article, or pressed Netlify's Trigger deploy on this site. Do not treat it as fully operational until `docs/buyer/CMS-TEST-PLAN.md` has been run and recorded as passed.
+> **NOT YET TESTED WITH A REAL LOGIN.** The CMS is configured (`.pages.yml`) and the content checks are tested, but nobody has yet signed in to Pages CMS with the owner's GitHub login, edited a real article, or pressed Publish site on this site. Do not treat it as fully operational until `docs/buyer/CMS-TEST-PLAN.md` has been run and recorded as passed.
 
 Status on 2026-11-19: a Netlify project exists on the seller's account as a test deploy (a `netlify.app` address; the main routes returned 200). It is not part of the handover; you create your own. Nothing was purchased.
 
@@ -14,34 +14,35 @@ Read from Netlify's own pages on 2026-11-19 (re-read live before relying on them
 - **When the credits run out, every project on the account is paused**: visitors see "Site not available" until the next cycle or an upgrade.
 - UNKNOWN (the pages do not say; only a test on your account answers): whether a *skipped* build costs anything, and whether Trigger deploy honours the skip rule.
 
-Worked example: 8 deploys use 120 credits, leaving 180 credits (about 9 GB of bandwidth). 20 deploys would use all 300 credits before any visitor downloads anything. That is why automatic deploy on every CMS save is unsafe on the free plan; see `docs/editorial-reset/PUBLISHING-WORKFLOW-RECOMMENDATION.md` for the options and the recommended one-button route.
+Worked example: 8 deploys use 120 credits, leaving 180 credits (about 9 GB of bandwidth). 20 deploys would use all 300 credits before any visitor downloads anything. That is why automatic deploy on every CMS save is unsafe on the free plan; the Publish site button (`docs/buyer/PUBLISH-AND-ROLLBACK.md`) spends 15 credits only when you press it. Options and sources: `docs/editorial-reset/PUBLISHING-WORKFLOW-RECOMMENDATION.md`.
 
 ## The one rule: Saved is not Published
 
 | Word | What happened | Is it on the website? | Credits |
 |---|---|---|---|
-| **Saved** | You pressed Save in Pages CMS. The change is stored in GitHub. | **No.** Visitors see the old site. | 0 (the build is skipped; whether Netlify charges anything for a skipped build is not confirmed, check Usage after your first week) |
-| **Published** | You pressed Netlify **Deploys > Trigger deploy > Deploy site**. Netlify checks the content and rebuilds. | **Yes**, after about 2 to 5 minutes. | 15 per publish |
+| **Saved** | You pressed Save in Pages CMS on the `content-edits` branch. The change is stored in GitHub. | **No.** Visitors see the old site. | 0 for the live site. Netlify builds a preview of the branch (0 credits per Netlify's docs). |
+| **Published** | You pressed **Publish site** in Pages CMS. GitHub checks the content, merges `content-edits` into `main` with the release marker, and Netlify makes one production deploy. | **Yes**, after about 2 to 5 minutes. | 15 per publish |
 
-You can save as many times as you like. Publish once when a batch of edits is ready.
+You can save as many times as you like. Publish once when a batch of edits is ready. Whether Netlify charges anything for a *skipped* build is not confirmed: check Usage after your first week.
 
-Why: `netlify.toml` skips every build unless the newest commit message contains the release marker (the word deploy in square brackets), or you press Trigger deploy. Pages CMS saves do not add that marker. A commit-message template that added the marker would publish and spend 15 credits on every single save, so it is not used. Pages CMS does read its configuration per branch and has Actions buttons (pagescms.org docs, read 2026-11-19), so a branch plus Publish-button route is possible; it is proposed, not active, in `docs/editorial-reset/PUBLISHING-WORKFLOW-RECOMMENDATION.md`.
+Why: `netlify.toml` skips every production build unless the newest commit message contains the release marker (the word deploy in square brackets). Pages CMS saves do not carry the marker; the merge commit made by the Publish workflow does, so exactly one production build happens per publish. Deploy Previews and branch deploys are never skipped by that rule (they cost 0 credits and are your preview). A commit-message template that added the marker to every save would spend 15 credits per save, so it is not used.
 
 ## How to publish (exact clicks)
-1. Open Netlify, choose your site, then **Deploys**.
-2. Click **Trigger deploy**, then **Deploy site**.
-3. Wait for the top deploy to say **Published** (green). If it says **Failed**, nothing changed on the live site: open it and read the plain-English list of problems (see `docs/buyer/CMS-SETUP.md`), fix them in the CMS, Save, and trigger again.
-4. **If the deploy says Skipped or "Canceled"** (not yet confirmed whether Trigger deploy ignores the skip rule; the CMS test checks this): use the backup method. On github.com open the file `RELEASES.md`, click the pencil, add a line, then in "Commit changes" write a message ending in the marker, for example `Release: new article [deploy]`, and commit to main.
+Full guide: `docs/buyer/PUBLISH-AND-ROLLBACK.md`.
+1. Pages CMS, branch `content-edits`, check the preview, click **Publish site**, **Publish now**.
+2. Watch GitHub **Actions > Publish content** (green = merged) and Netlify **Deploys** (green **Published** = live). If red, read the message; the live site is unchanged.
+3. Fallback only if the button cannot be used (edits saved on `main`): Netlify **Deploys**, **Trigger deploy**, **Deploy site**. Whether Trigger deploy honours the skip rule is UNKNOWN until the CMS test; if it says **Skipped**, edit `RELEASES.md` on github.com and end the commit message with the marker, for example `Release: new article [deploy]`.
 
 ## Preview before publishing
-Netlify Deploys, open a deploy, **Preview** shows a build. For a pre-publish look at a draft, a draft is never on the website by design: publish with Status Published only when finished. To check an article live without telling anyone, publish it and check `/journal/<slug>`; to hide again see Unpublish below. (Netlify Deploy Previews of pull requests are on by default and branch deploys are off by default; both cost 0 credits and the `netlify.toml` rule no longer skips them. They become the preview step if the proposed route is approved.)
+Netlify Deploys, filter **Branch deploys**, open the newest `content-edits` build, **Preview** (or `https://content-edits--<your-site>.netlify.app`). It needs the one-time setting Netlify Project configuration > Continuous deployment > Branches and deploy contexts > add `content-edits` (branch deploys are off by default, Netlify docs). A draft is never built into any copy of the site: set it to Published on the branch to preview it; nothing is live until you press Publish site.
 
 ## Unpublish
-In Pages CMS set the article's Status to **Draft**, Save, then Publish as above. The article is removed from the site and sitemap at that publish.
+In Pages CMS set the article's Status to **Draft**, Save, then Publish site. The article is removed from the site and sitemap at that publish.
 
 ## Roll back
-- Fast, no code: Netlify **Deploys**, click an earlier **Published** deploy, then **Publish deploy**. This restores that build instantly and costs 0 credits per Netlify's docs. Netlify then stops auto-publishing, so press **Auto publish** again afterwards.
-- Permanent: undo the bad edit in GitHub history (GitHub **Commits** on main, open it, **...**, **Revert**, Create pull request, Merge), then Publish. Never force-push; the site is also connected to Lovable.
+Steps in `docs/buyer/PUBLISH-AND-ROLLBACK.md`, section 5:
+- Fast, no code: Netlify **Deploys**, click an earlier **Published** deploy, **Publish deploy** (0 credits per Netlify's docs). Netlify then stops auto-publishing, so turn auto publishing back on afterwards.
+- Make GitHub agree: GitHub **Actions > Undo last publish > Run workflow**, then reset the `content-edits` branch. Never force-push `main`; the site is also connected to Lovable.
 
 ## Expected credits
 | Editing pace | Publishes per month | Credits |

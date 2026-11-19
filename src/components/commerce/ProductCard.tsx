@@ -69,7 +69,7 @@ export function ProductVisual({
       <figure className={cn("m-0", className)}>
         <img
           src={photo.src}
-          alt={p.shortName ?? p.name}
+          alt={photo.alt}
           loading="lazy"
           className="aspect-[4/3] w-full object-cover"
         />

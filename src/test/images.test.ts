@@ -109,7 +109,7 @@ describe("ingest-images validator", () => {
   it("sets a hobby image idempotently with a small text edit", () => {
     const text = `const seeds = [\n  {\n    name: "Paint by Numbers",\n    tags: 1,\n    productIds: ["a"],\n  },\n];\n`;
     const once = lib.setHobbyImage(text, "paint-by-numbers", "hobbyX") as string;
-    expect(once).toContain('    image: "hobbyX",\n    productIds');
+    expect(once).toContain('    name: "Paint by Numbers",\n    image: "hobbyX",\n    tags: 1,');
     expect(lib.setHobbyImage(once, "paint-by-numbers", "hobbyX")).toBe(once);
     expect(lib.parseHobbySeeds(once)).toEqual([{ slug: "paint-by-numbers", image: "hobbyX" }]);
     expect(() => lib.setHobbyImage(text, "nope", "k")).toThrow(/no hobby/);

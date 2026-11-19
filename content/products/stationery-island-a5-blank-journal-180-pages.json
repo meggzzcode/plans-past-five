@@ -1,0 +1,65 @@
+{
+  "id": "stationery-island-a5-blank-journal-180-pages",
+  "name": "A5 Hardcover Blank Notebook, 120gsm, 180 Pages, Black",
+  "brand": "Stationery Island",
+  "category": "Journal",
+  "order": 24,
+  "status": "verified",
+  "description": "A hardcover A5 unlined notebook with 120 gsm paper and 180 pages.",
+  "asin": "B081VK1CM1",
+  "specs": [
+    {
+      "label": "Size",
+      "value": "A5"
+    },
+    {
+      "label": "Paper",
+      "value": "120 gsm"
+    },
+    {
+      "label": "Pages",
+      "value": "180"
+    },
+    {
+      "label": "Extras",
+      "value": "2 ribbon bookmarks, pocket"
+    }
+  ],
+  "hobbies": [
+    "junk-journaling"
+  ],
+  "articles": [
+    "junk-journaling-supplies-for-beginners",
+    "how-to-start-junk-journaling"
+  ],
+  "collections": [
+    "journaling-era",
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "junk-journaling",
+      "slot": "journal"
+    }
+  ],
+  "role": "essential",
+  "isEssential": true,
+  "audience": "Beginners who want paper thick enough for glue and tape",
+  "whySelected": "Thicker paper than a standard notebook, per the listing.",
+  "limitations": [
+    "Heavy glue and wet media may still warp pages (untested)",
+    "Listing says it reduces ghosting and bleed-through: the listing's claim",
+    "Manufacturer page not yet checked",
+    "Seller on listing: Stationery Island North America"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B081VK1CM1"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "shortName": "A5 hardcover journal, 120 gsm",
+  "benefit": "Thicker 120 gsm pages than a standard notebook, in a black hardcover with 180 pages to fill.",
+  "lead": true,
+  "onlyOne": true
+}

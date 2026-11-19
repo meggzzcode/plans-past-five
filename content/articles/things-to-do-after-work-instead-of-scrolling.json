@@ -18,29 +18,6 @@
     "pickleball",
     "baking"
   ],
-  "productIds": [
-    "portable-watercolor",
-    "air-dry-clay",
-    "junk-journals",
-    "letter-writing-sets",
-    "jigsaw-puzzles",
-    "paint-by-number-kits",
-    "book-lights",
-    "cozy-night-in",
-    "group-painting-kits",
-    "friendship-bracelet-kits",
-    "board-games",
-    "mahjong-sets",
-    "pickleball-sets",
-    "tennis-rackets",
-    "water-bottles",
-    "walking-shoes",
-    "phone-armband",
-    "market-totes",
-    "brush-pens",
-    "pocket-notebooks",
-    "skate-protective-gear"
-  ],
   "sources": [
     {
       "title": "Library Card Sign-up Month fact sheet (American Library Association)",
@@ -106,7 +83,7 @@
       "n": 2,
       "title": "Make a clay ring dish",
       "hobby": "air-dry-clay",
-      "note": "Air-dry clay doesn't need a kiln. Roll a ball, press your thumb in, smooth the edges and let it dry (about a day to the touch for Crayola's, longer for thick pieces; check your clay's label), then paint it. [Here's how to start](/journal/how-to-start-air-dry-clay). **What makes it easier:** {{product:crayola-air-dry-clay-5-lb-bucket|a tub of air-dry clay}}, a small set of sculpting tools and a craft mat, so the table stays clean and the edges come out crisp.",
+      "note": "Air-dry clay doesn't need a kiln. Roll a ball, press your thumb in, smooth the edges and let it dry (about a day to the touch for Crayola's, longer for thick pieces; check your clay's label), then paint it. [Here's how to start](/journal/how-to-start-air-dry-clay). **What makes it easier:** a tub of air-dry clay, a small set of sculpting tools and a craft mat, so the table stays clean and the edges come out crisp.",
       "time": "45 min + drying",
       "company": "Solo or social"
     },
@@ -147,11 +124,11 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "portable-watercolor",
+      "hobbies": [
+        "watercolor-painting",
         "air-dry-clay",
-        "junk-journals",
-        "letter-writing-sets"
+        "junk-journaling",
+        "creative-writing"
       ],
       "title": "For a make-something evening",
       "dek": "A travel watercolor set, a block of clay, a thick-paged journal and a letter-writing set, kept in one drawer so starting takes seconds."
@@ -202,11 +179,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
+      "hobbies": [
         "jigsaw-puzzles",
-        "paint-by-number-kits",
-        "book-lights",
-        "cozy-night-in"
+        "paint-by-numbers",
+        "reading"
       ],
       "title": "For a nothing-left evening",
       "dek": "A puzzle, a paint-by-number kit, a clip-on light and a soft throw: the small things that make the sofa the easy option."
@@ -230,7 +206,7 @@
       "n": 11,
       "title": "Start a standing game night",
       "hobby": "mahjong",
-      "note": "Mahjong, cards, a cooperative board game. Same night every week or every other week, so nobody has to plan. If it is mahjong, see [how to host a mahjong night](/journal/how-to-host-a-mahjong-night). **What makes it easier:** a board game or {{product:jongyance-american-mahjong-set-white-tiles|an American mahjong set}}, so the same box comes out on the same night each week.",
+      "note": "Mahjong, cards, a cooperative board game. Same night every week or every other week, so nobody has to plan. If it is mahjong, see [how to host a mahjong night](/journal/how-to-host-a-mahjong-night). **What makes it easier:** a board game or an American mahjong set, so the same box comes out on the same night each week.",
       "time": "2 hours",
       "company": "Group"
     },
@@ -259,13 +235,13 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "group-painting-kits",
-        "board-games",
-        "friendship-bracelet-kits",
-        "pickleball-sets",
-        "water-bottles",
-        "phone-armband"
+      "hobbies": [
+        "craft-nights",
+        "jigsaw-puzzles",
+        "friendship-bracelets",
+        "pickleball",
+        "tennis",
+        "running"
       ],
       "title": "For evenings with friends or a little energy",
       "dek": "A painting kit, a board game, a bracelet kit, a paddle set and a bottle: one box for the group and one bag for the court."

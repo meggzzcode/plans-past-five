@@ -133,7 +133,6 @@ describe("collections as editorial pages", () => {
   it("every collection yields real guide content from existing records", () => {
     for (const c of collections) {
       const g = collectionGuide(c.slug);
-      expect(g.products.length, c.slug).toBeGreaterThanOrEqual(4);
       expect(g.hobbies.length, c.slug).toBeGreaterThan(0);
       expect(g.essentials.length, c.slug).toBeGreaterThan(0);
     }

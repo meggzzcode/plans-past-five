@@ -20,16 +20,6 @@
     "book-clubs",
     "craft-nights"
   ],
-  "productIds": [
-    "pocket-notebooks",
-    "watercolor-sets",
-    "air-dry-clay",
-    "daypacks",
-    "pickleball-sets",
-    "conversation-cards",
-    "friendship-bracelet-kits",
-    "market-totes"
-  ],
   "sources": [
     {
       "title": "National Park Service: hiking safety",
@@ -139,11 +129,11 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "pocket-notebooks",
-        "watercolor-sets",
+      "hobbies": [
+        "creative-writing",
+        "watercolor-painting",
         "air-dry-clay",
-        "daypacks"
+        "hiking"
       ],
       "title": "Three trial kits",
       "dek": "A pocket notebook, a mini paint set or a block of clay and a daypack for an outdoor trial cover three very different evenings, and each makes starting simple."

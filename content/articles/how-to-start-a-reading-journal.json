@@ -15,12 +15,6 @@
     "book-clubs",
     "creative-writing"
   ],
-  "productIds": [
-    "reading-journals",
-    "pocket-notebooks",
-    "book-lights",
-    "magnetic-bookmarks"
-  ],
   "sources": [
     {
       "title": "Los Angeles County Library: eBooks and audiobooks",
@@ -95,11 +89,9 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "reading-journals",
-        "pocket-notebooks",
-        "book-lights",
-        "magnetic-bookmarks"
+      "hobbies": [
+        "reading",
+        "creative-writing"
       ],
       "title": "Make your reading journal easier and prettier",
       "dek": "A journal with prompts for the blank-page days, a pocket notebook for favorite lines, a light for late chapters and a magnetic bookmark for the lines you want to copy out. Start with whichever solves your biggest hurdle."

@@ -1,4 +1,4 @@
-import type { CatalogProduct, KnownRefs } from "../src/data/catalog";
+import type { CatalogProduct, KnownRefs } from "../src/data/catalog-rules";
 
 export const COLUMNS: string[];
 export const RESERVED_ID_PREFIXES: string[];
@@ -13,6 +13,4 @@ export function importCsv(
   known?: KnownRefs | null,
   now?: Date,
 ): { products: CatalogProduct[]; errors: string[]; warnings: string[] };
-export const MAX_SHRINK: number;
-export function countExistingProducts(file: string): number;
-export function shrinkProblem(current: number, next: number): string;
+export function toSourceRecord(p: CatalogProduct): Record<string, unknown>;

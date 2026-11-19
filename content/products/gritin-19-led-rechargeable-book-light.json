@@ -1,0 +1,59 @@
+{
+  "id": "gritin-19-led-rechargeable-book-light",
+  "name": "19 LED Rechargeable Book Light for Reading in Bed",
+  "brand": "Gritin",
+  "category": "Book light",
+  "order": 47,
+  "status": "candidate",
+  "description": "Clip-on rechargeable book light with three colour temperatures and stepless dimming.",
+  "asin": "B0C3BC4QG2",
+  "specs": [
+    {
+      "label": "LEDs",
+      "value": "19"
+    },
+    {
+      "label": "Colour modes",
+      "value": "amber 1800K, mixed 3400K, white 6000K"
+    },
+    {
+      "label": "Brightness",
+      "value": "10-100%"
+    },
+    {
+      "label": "Power",
+      "value": "rechargeable"
+    }
+  ],
+  "hobbies": [
+    "reading"
+  ],
+  "articles": [
+    "how-to-start-a-reading-journal"
+  ],
+  "collections": [
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "reading-book-club",
+      "slot": "reading-light"
+    }
+  ],
+  "role": "nice-to-have",
+  "isEssential": false,
+  "audience": "Readers who read in bed",
+  "whySelected": "Warm amber mode and dimming are listed.",
+  "limitations": [
+    "\"Eye protection\" is the listing's claim",
+    "Battery life not captured",
+    "Manufacturer page not yet checked",
+    "Seller on listing: MatriCom"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0C3BC4QG2"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated"
+}

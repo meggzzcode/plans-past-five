@@ -15,12 +15,6 @@
     "craft-nights",
     "book-clubs"
   ],
-  "productIds": [
-    "mahjong-sets",
-    "tea-sets",
-    "board-games",
-    "conversation-cards"
-  ],
   "sources": [
     {
       "title": "National Mah Jongg League",
@@ -207,10 +201,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "tea-sets",
-        "board-games",
-        "conversation-cards"
+      "hobbies": [
+        "book-clubs",
+        "jigsaw-puzzles",
+        "craft-nights"
       ],
       "title": "For the side table and the quiet moments",
       "dek": "A tea set for the side tray, a backup game for the night you're one player short and a deck of conversation cards for the pauses between rounds."

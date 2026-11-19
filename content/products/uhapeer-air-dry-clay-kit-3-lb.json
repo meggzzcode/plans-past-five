@@ -1,0 +1,65 @@
+{
+  "id": "uhapeer-air-dry-clay-kit-3-lb",
+  "name": "Air Dry Clay Kit for Adults, Pottery Set for Beginners",
+  "brand": "UHAPEER",
+  "category": "Clay kit",
+  "order": 15,
+  "status": "verified",
+  "description": "An all-in-one air dry clay starter kit with clay, sculpting tools, paints, varnish and a guide.",
+  "asin": "B0DFH9Z3BC",
+  "specs": [
+    {
+      "label": "Clay",
+      "value": "3 x 1 lb"
+    },
+    {
+      "label": "Paints",
+      "value": "6 acrylic"
+    },
+    {
+      "label": "Tools",
+      "value": "8 sculpting tools"
+    },
+    {
+      "label": "Includes",
+      "value": "gloss varnish, sponge, palette, brushes, mat, spray bottle, rolling pin, guide and video"
+    }
+  ],
+  "hobbies": [
+    "air-dry-clay"
+  ],
+  "articles": [
+    "how-to-start-air-dry-clay"
+  ],
+  "collections": [
+    "pottery-era",
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "air-dry-clay",
+      "slot": "clay"
+    }
+  ],
+  "role": "complete-kit",
+  "isEssential": true,
+  "audience": "Beginners who want everything in one box",
+  "whySelected": "Covers clay, tools, paint and sealer in a single listing; the listing says it dries in 24-48 hours without a kiln.",
+  "limitations": [
+    "Drying time and \"6-8 average creations\" are the listing's claims, not tested by us",
+    "Third-party seller; no safety certification seen on the listing page",
+    "Do not call finished pieces food-safe",
+    "Manufacturer page not yet checked",
+    "Seller on listing: Ystep"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0DFH9Z3BC"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "check-listing",
+  "affiliateStatus": "not-activated",
+  "shortName": "Air-dry clay kit for adults, 3 lb",
+  "benefit": "Clay, tools, paint and sealer in one box: shape a trinket dish tonight, paint it once it dries.",
+  "lead": true,
+  "onlyOne": true
+}

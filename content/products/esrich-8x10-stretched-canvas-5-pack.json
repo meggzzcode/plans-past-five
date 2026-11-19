@@ -1,0 +1,55 @@
+{
+  "id": "esrich-8x10-stretched-canvas-5-pack",
+  "name": "Stretched Canvas for Painting, 8 x 10 in, 5 Pack",
+  "brand": "ESRICH",
+  "category": "Canvas",
+  "order": 44,
+  "status": "verified",
+  "description": "Five primed, cotton 8 x 10 in canvases on 5/8 in pine frames; the listing describes them as primed and acid-free.",
+  "asin": "B0D3TWT3TX",
+  "specs": [
+    {
+      "label": "Count",
+      "value": "5"
+    },
+    {
+      "label": "Size",
+      "value": "8 x 10 in"
+    },
+    {
+      "label": "Frame",
+      "value": "5/8 in pine"
+    }
+  ],
+  "hobbies": [
+    "paint-by-numbers"
+  ],
+  "articles": [
+    "how-to-host-a-paint-night-at-home"
+  ],
+  "collections": [],
+  "kitSlots": [
+    {
+      "kit": "pottery-paint-night",
+      "slot": "canvas"
+    }
+  ],
+  "role": "affordable",
+  "isEssential": false,
+  "audience": "Small groups",
+  "whySelected": "Smaller pack for four or five people.",
+  "limitations": [
+    "Same maker and claims as the 10 pack",
+    "Manufacturer page not yet checked",
+    "Seller on listing: CLOYAN"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0D3TWT3TX"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "check-listing",
+  "affiliateStatus": "not-activated",
+  "shortName": "ESRICH 8 x 10 canvases, 5-pack",
+  "benefit": "Five canvases for a smaller group.",
+  "compare": "The same canvases in a pack of five, for four guests or fewer."
+}

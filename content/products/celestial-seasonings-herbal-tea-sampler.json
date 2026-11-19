@@ -1,0 +1,54 @@
+{
+  "id": "celestial-seasonings-herbal-tea-sampler",
+  "name": "Herbal Tea Sampler Variety Pack, Caffeine Free, 18 Tea Bags",
+  "brand": "Celestial Seasonings",
+  "category": "Tea",
+  "order": 61,
+  "status": "candidate",
+  "description": "Sampler of five caffeine-free herbal teas: Chamomile, Lemon Zinger, Peppermint, Honey Vanilla Chamomile, Sleepytime.",
+  "asin": "B004CIUU6K",
+  "specs": [
+    {
+      "label": "Bags",
+      "value": "18"
+    },
+    {
+      "label": "Varieties",
+      "value": "5"
+    },
+    {
+      "label": "Caffeine",
+      "value": "free per listing"
+    }
+  ],
+  "hobbies": [
+    "reading"
+  ],
+  "articles": [
+    "cozy-solo-dates-at-home"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "reading-book-club",
+      "slot": "tea"
+    }
+  ],
+  "role": "affordable",
+  "isEssential": false,
+  "audience": "People avoiding caffeine at night",
+  "whySelected": "Five varieties for a first try.",
+  "limitations": [
+    "Herbal teas are not for everyone: check ingredients for allergies",
+    "Manufacturer page not yet checked",
+    "Seller on listing: not captured"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B004CIUU6K"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated"
+}

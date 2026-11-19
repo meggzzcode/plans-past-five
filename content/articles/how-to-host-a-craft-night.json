@@ -16,16 +16,6 @@
     "air-dry-clay",
     "pottery-painting"
   ],
-  "productIds": [
-    "group-painting-kits",
-    "ceramic-painting-kits",
-    "friendship-bracelet-kits",
-    "air-dry-clay",
-    "cookie-decorating-kits",
-    "acrylic-paints",
-    "glue-guns",
-    "portable-speakers"
-  ],
   "sources": [
     {
       "title": "CPSC: art materials safety",
@@ -96,7 +86,7 @@
     },
     {
       "type": "p",
-      "text": "**What to set out:** a ceramic painting kit or ready-made pieces, {{product:apple-barrel-16-acrylic-craft-paints-2oz|a set of acrylic craft paints}} and {{product:benicci-12-piece-artist-paint-brush-set|a brush set}} to share, so every guest has a piece and a brush from the first minute."
+      "text": "**What to set out:** a ceramic painting kit or ready-made pieces, a set of acrylic craft paints and {{product:benicci-12-piece-artist-paint-brush-set|a brush set}} to share, so every guest has a piece and a brush from the first minute."
     },
     {
       "type": "h3",
@@ -112,12 +102,12 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "group-painting-kits",
-        "friendship-bracelet-kits",
-        "ceramic-painting-kits",
+      "hobbies": [
+        "craft-nights",
+        "friendship-bracelets",
+        "pottery-painting",
         "air-dry-clay",
-        "cookie-decorating-kits"
+        "baking"
       ],
       "title": "Start with a kit made for groups",
       "dek": "Choose a project and the kit arrives together, so hosting is more about the fun than the shopping."
@@ -132,7 +122,7 @@
     },
     {
       "type": "p",
-      "text": "**What to set out:** {{product:crayola-air-dry-clay-5-lb-bucket|a bucket of air-dry clay}}, a small set of clay tools and a mat each, so rolling and cutting stay on the table and cleanup is a wipe."
+      "text": "**What to set out:** a bucket of air-dry clay, a small set of clay tools and a mat each, so rolling and cutting stay on the table and cleanup is a wipe."
     },
     {
       "type": "h3",
@@ -237,10 +227,9 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "glue-guns",
-        "portable-speakers",
-        "acrylic-paints"
+      "hobbies": [
+        "craft-nights",
+        "air-dry-clay"
       ],
       "title": "For the table and the room",
       "dek": "A mini glue gun for quick bonds, a small speaker for the playlist and acrylic paints for the pottery pieces round out the evening."

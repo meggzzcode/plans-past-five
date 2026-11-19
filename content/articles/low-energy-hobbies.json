@@ -22,23 +22,6 @@
     "crossword-puzzles",
     "collage-art"
   ],
-  "productIds": [
-    "jigsaw-puzzles",
-    "paint-by-number-kits",
-    "knitting-needles",
-    "yarn",
-    "embroidery-kits",
-    "friendship-bracelet-kits",
-    "book-lights",
-    "cozy-night-in",
-    "tea-sets",
-    "portable-speakers",
-    "pocket-notebooks",
-    "yoga-mats",
-    "magnetic-bookmarks",
-    "photo-albums",
-    "indoor-plant-basics"
-  ],
   "sources": [
     {
       "title": "Los Angeles County Library: eBooks and audiobooks",
@@ -143,13 +126,13 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
+      "hobbies": [
         "jigsaw-puzzles",
-        "paint-by-number-kits",
-        "knitting-needles",
-        "yarn",
-        "embroidery-kits",
-        "friendship-bracelet-kits"
+        "paint-by-numbers",
+        "knitting",
+        "crochet",
+        "embroidery",
+        "friendship-bracelets"
       ],
       "title": "Something gentle for your hands",
       "dek": "A puzzle, a paint-by-number kit, a first pair of needles, a beginner embroidery kit or a bracelet kit: each arrives with most of the decisions already made."
@@ -169,10 +152,9 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "book-lights",
-        "cozy-night-in",
-        "tea-sets"
+      "hobbies": [
+        "reading",
+        "book-clubs"
       ],
       "title": "For the cozy corner",
       "dek": "A clip-on light, a soft throw and a small tea set make the sofa corner a place you want to land on a flat evening."

@@ -20,7 +20,7 @@ try {
       `Tidied the layout of ${r.reformatted.length} article file(s) (same content): ${r.reformatted.join(", ")}`,
     );
   console.log(
-    `Content OK: ${r.published.length} published and ${r.drafts.length} draft articles, ${r.images.length} images from content/.${check ? "" : " Generated files written."}`,
+    `Content OK: ${r.published.length} published and ${r.drafts.length} draft articles, ${r.images.length} images, ${r.products.length} products from content/.${check ? "" : " Generated files written."}`,
   );
 } catch (e) {
   if (!(e instanceof ContentError)) throw e;

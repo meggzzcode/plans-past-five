@@ -1,0 +1,63 @@
+{
+  "id": "knaid-slim-washi-tape-40-rolls-minimalist",
+  "name": "Slim Washi Tape Gift Box Set, 40 Rolls, 10 mm (Minimalist)",
+  "brand": "Knaid",
+  "category": "Washi tape",
+  "order": 2,
+  "status": "verified",
+  "description": "A 40-roll set of 10 mm washi tape in neutral, geometric and solid designs, in a gift box.",
+  "asin": "B0881M69D4",
+  "specs": [
+    {
+      "label": "Rolls",
+      "value": "40"
+    },
+    {
+      "label": "Width",
+      "value": "10 mm"
+    },
+    {
+      "label": "Length",
+      "value": "5 m x 10 rolls, 3 m x 30 rolls"
+    },
+    {
+      "label": "Variant",
+      "value": "Minimalist"
+    }
+  ],
+  "hobbies": [
+    "junk-journaling"
+  ],
+  "articles": [
+    "junk-journaling-supplies-for-beginners",
+    "how-to-start-junk-journaling"
+  ],
+  "collections": [
+    "journaling-era",
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "junk-journaling",
+      "slot": "washi-tape"
+    }
+  ],
+  "role": "aesthetic-upgrade",
+  "isEssential": false,
+  "audience": "People who want a calmer, neutral palette",
+  "whySelected": "Cohesive neutral look and a lot of tape per set; the listing describes it as tearable and repositionable.",
+  "limitations": [
+    "One width only (10 mm)",
+    "Variant colour range matters: confirm the Minimalist variant is selected",
+    "Manufacturer page not yet checked"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0881M69D4"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "shortName": "Neutral slim washi tape, 40 rolls",
+  "benefit": "Calm neutral and geometric prints in a gift box, 10 mm wide.",
+  "compare": "Quieter, more neutral palette than the floral set; one width only."
+}

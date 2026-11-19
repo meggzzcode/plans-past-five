@@ -1,0 +1,58 @@
+{
+  "id": "plusvivo-felt-game-table-cover-36-blue",
+  "name": "Felt Game Table Cover, 36 x 36 in, Blue",
+  "brand": "Plusvivo",
+  "category": "Table cover",
+  "order": 25,
+  "status": "verified",
+  "description": "A fitted square felt cover for card tables, listed for poker, mahjong and bridge.",
+  "asin": "B09CTRNP73",
+  "specs": [
+    {
+      "label": "Size",
+      "value": "36 x 36 in"
+    },
+    {
+      "label": "Material",
+      "value": "synthetic wool felt"
+    },
+    {
+      "label": "Washable",
+      "value": "per listing"
+    }
+  ],
+  "hobbies": [
+    "mahjong"
+  ],
+  "articles": [
+    "how-to-host-a-mahjong-night"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "mahjong-night",
+      "slot": "mat"
+    }
+  ],
+  "role": "affordable",
+  "isEssential": false,
+  "audience": "Hosts with a standard card table",
+  "whySelected": "Fitted cover that the listing says reduces tile noise.",
+  "limitations": [
+    "Size must match your table",
+    "Machine-washable claim is the listing's",
+    "Manufacturer page not yet checked",
+    "Seller on listing: YuChii"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B09CTRNP73"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "check-listing",
+  "affiliateStatus": "not-activated",
+  "shortName": "Felt card-table cover, 36 in",
+  "benefit": "A fitted felt cover for a standard card table that softens tile noise.",
+  "compare": "Fits a 36 in card table instead of rolling up like a mat."
+}

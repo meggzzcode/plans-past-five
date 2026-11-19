@@ -22,8 +22,8 @@ export type Block =
       first?: string | undefined;
     }
   | { type: "whatYoullNeed"; essentials: string[]; optional?: string[] }
-  | { type: "starterKit"; productIds: string[]; title?: string }
-  | { type: "shopHobby"; productIds: string[]; title?: string; dek?: string }
+  | { type: "starterKit"; hobbies: string[]; title?: string }
+  | { type: "shopHobby"; hobbies: string[]; title?: string; dek?: string }
   /** Verified catalog products for this article/hobbies/collection. Renders nothing until the catalog has verified products. */
   | {
       type: "shopTheArticle";
@@ -56,7 +56,6 @@ export type Article = {
   searchIntent: string;
   angle: string;
   hobbies: string[];
-  productIds: string[];
   /** Sources a reader or editor can check. Filled when claims are verified. */
   sources?: { title: string; url: string; note?: string }[];
   /** Date (YYYY-MM-DD) all coworkChecks were verified against sources. Publish only after this is set. */

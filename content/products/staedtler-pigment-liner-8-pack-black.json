@@ -1,0 +1,60 @@
+{
+  "id": "staedtler-pigment-liner-8-pack-black",
+  "name": "Pigment Liner Fineliner Pens Set, Black, 8 pc Assorted Tip Sizes",
+  "brand": "STAEDTLER",
+  "category": "Pens",
+  "order": 66,
+  "status": "candidate",
+  "description": "Eight black pigment fineliners in assorted tip sizes.",
+  "asin": "B0C922C7WT",
+  "specs": [
+    {
+      "label": "Pens",
+      "value": "8"
+    },
+    {
+      "label": "Colour",
+      "value": "black"
+    },
+    {
+      "label": "Tips",
+      "value": "assorted"
+    }
+  ],
+  "hobbies": [
+    "junk-journaling"
+  ],
+  "articles": [
+    "junk-journaling-supplies-for-beginners",
+    "how-to-start-junk-journaling"
+  ],
+  "collections": [
+    "journaling-era",
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "junk-journaling",
+      "slot": "pens"
+    }
+  ],
+  "role": "affordable",
+  "isEssential": false,
+  "audience": "People who want to add handwriting or fine details",
+  "whySelected": "Replacement for the Pigma 8-pack: well-known brand, and the Amazon listing is Sold by Amazon Resale and Fulfilled by Amazon, so there is no marketplace-seller concern.",
+  "limitations": [
+    "Maker page not checked: ink claims (archival, waterproof) not verified",
+    "Exact tip sizes not captured",
+    "Amazon Resale can mean open-box stock: check condition on the listing"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0C922C7WT (read 2026-11-19: In Stock)"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated",
+  "manufacturerUrl": "https://www.sakuraofamerica.com/product/pigma-micron/",
+  "shortName": "Pigma Micron pens, 8-pack",
+  "benefit": "Fine black pens for handwriting and small details on your pages.",
+  "lead": true
+}

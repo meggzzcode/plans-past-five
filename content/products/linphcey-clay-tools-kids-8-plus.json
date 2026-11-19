@@ -1,0 +1,53 @@
+{
+  "id": "linphcey-clay-tools-kids-8-plus",
+  "name": "Air Dry Clay Tools, Pottery Clay Tool Kit (Ages 8+)",
+  "brand": "LINPHCEY",
+  "category": "Clay tools",
+  "order": 16,
+  "status": "held",
+  "statusReason": "Marketed for kids (ages 8+); the clay kit already includes tools. Held for audience fit.",
+  "description": "A plastic clay sculpting tool set marketed for children aged 8 and up and adults.",
+  "asin": "B0B45TMWTX",
+  "specs": [
+    {
+      "label": "Material",
+      "value": "plastic"
+    },
+    {
+      "label": "Age",
+      "value": "8+ per listing"
+    }
+  ],
+  "hobbies": [
+    "air-dry-clay"
+  ],
+  "articles": [
+    "how-to-start-air-dry-clay"
+  ],
+  "collections": [
+    "pottery-era",
+    "creative-girl"
+  ],
+  "kitSlots": [
+    {
+      "kit": "air-dry-clay",
+      "slot": "tools"
+    }
+  ],
+  "role": "affordable",
+  "isEssential": false,
+  "audience": "Beginners who want cheap shaping tools",
+  "whySelected": "Low-commitment tools for shaping, carving and texture.",
+  "limitations": [
+    "Marketed to kids",
+    "\"Child-safe materials\" is the listing's claim only",
+    "Manufacturer page not yet checked",
+    "Seller on listing: Shan1Gy"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0B45TMWTX"
+  ],
+  "lastVerified": "2026-11-18",
+  "availability": "check-listing",
+  "affiliateStatus": "not-activated"
+}

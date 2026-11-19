@@ -20,23 +20,6 @@
     "volunteering",
     "outdoor-sketching"
   ],
-  "productIds": [
-    "walking-shoes",
-    "trekking-socks",
-    "daypacks",
-    "water-bottles",
-    "phone-armband",
-    "binoculars",
-    "pocket-notebooks",
-    "sketch-pads",
-    "portable-watercolor",
-    "film-cameras",
-    "picnic-blankets",
-    "thermos-flasks",
-    "market-totes",
-    "cooler-bags",
-    "book-sleeves"
-  ],
   "sources": [
     {
       "title": "National Park Service: hiking safety",
@@ -147,12 +130,10 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "walking-shoes",
-        "trekking-socks",
-        "daypacks",
-        "water-bottles",
-        "phone-armband"
+      "hobbies": [
+        "hiking",
+        "tennis",
+        "running"
       ],
       "title": "For your first trail morning",
       "dek": "Walking shoes, socks made for walking, a daypack, a bottle and a phone armband turn \"let's go for a walk\" into a plan you can leave the house for."
@@ -203,12 +184,12 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "binoculars",
-        "pocket-notebooks",
-        "sketch-pads",
-        "portable-watercolor",
-        "film-cameras"
+      "hobbies": [
+        "birdwatching",
+        "creative-writing",
+        "outdoor-sketching",
+        "watercolor-painting",
+        "film-photography"
       ],
       "title": "For slower, closer looking",
       "dek": "Binoculars, a pocket notebook, a sketch pad, a travel watercolor set or a film camera give a quiet hour something to do and something to bring home."
@@ -276,12 +257,9 @@
     },
     {
       "type": "shopHobby",
-      "productIds": [
-        "picnic-blankets",
-        "thermos-flasks",
-        "market-totes",
-        "cooler-bags",
-        "book-sleeves"
+      "hobbies": [
+        "picnicking",
+        "reading"
       ],
       "title": "For market and picnic days",
       "dek": "A blanket, a flask, a tote and an insulated bag carry the day, so the spread, the finds and the tea all arrive in one piece."

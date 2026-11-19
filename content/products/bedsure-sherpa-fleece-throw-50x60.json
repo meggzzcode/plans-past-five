@@ -1,0 +1,55 @@
+{
+  "id": "bedsure-sherpa-fleece-throw-50x60",
+  "name": "Soft Sherpa Blanket Fluffy Throw, 50 x 60 in",
+  "brand": "Bedsure",
+  "category": "Throw blanket",
+  "order": 59,
+  "status": "candidate",
+  "description": "A reversible sherpa fleece throw, 50 x 60 in.",
+  "asin": "B0CPS62512",
+  "specs": [
+    {
+      "label": "Size",
+      "value": "50 x 60 in"
+    },
+    {
+      "label": "Type",
+      "value": "sherpa fleece"
+    },
+    {
+      "label": "Heating",
+      "value": "none"
+    }
+  ],
+  "hobbies": [
+    "reading"
+  ],
+  "articles": [
+    "cozy-solo-dates-at-home"
+  ],
+  "collections": [
+    "girls-night-in"
+  ],
+  "kitSlots": [
+    {
+      "kit": "reading-book-club",
+      "slot": "blanket"
+    }
+  ],
+  "role": "nice-to-have",
+  "isEssential": false,
+  "audience": "Anyone wanting a soft throw",
+  "whySelected": "Reversible with a plain, non-electric warmth.",
+  "limitations": [
+    "Colour options vary by listing",
+    "Warmth claims are the maker's",
+    "Manufacturer page not yet checked",
+    "Seller on listing: Bedsure"
+  ],
+  "researchSources": [
+    "https://www.amazon.com/dp/B0CPS62512"
+  ],
+  "lastVerified": "2026-11-19",
+  "availability": "available",
+  "affiliateStatus": "not-activated"
+}

@@ -84,7 +84,8 @@ async function digest() {
   const { articles } = await load("src/content/index.ts");
   const { allArticlesIncludingDrafts } = await load("src/content/draft-registry.ts");
   const { hobbies } = await load("src/data/hobbies.ts");
-  const { products, collections } = await load("src/data/products.ts");
+  const { collections } = await load("src/data/products.ts");
+  const { verifiedCatalog } = await load("src/data/catalog.ts");
   const drafts = allArticlesIncludingDrafts.length - articles.length;
   const lines = [
     "# Monthly digest",
@@ -92,7 +93,7 @@ async function digest() {
     `- Published articles: ${articles.length}`,
     `- Draft articles (not public): ${drafts}`,
     `- Hobbies: ${hobbies.length}`,
-    `- Product records: ${products.length} in ${collections.length} collections`,
+    `- Products shown: ${verifiedCatalog.length} in ${collections.length} collections`,
     `- Published articles with no verifiedAt date: ${articles.filter((a) => !a.verifiedAt).length}`,
     "",
     "Counts only. Nothing was published or changed.",
