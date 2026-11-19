@@ -1,0 +1,12 @@
+# Reviewer briefs (for the Cowork re-review of the live URL, item F12)
+
+Give each reviewer ONLY its task list below, never prior scores or fix lists. Label every result as simulated AI sentiment, not customer research or marketplace demand. Metrics: first impression, aesthetic appeal, navigation, editorial authenticity, usefulness, trust, product desirability, willingness to purchase supplies, willingness to return, willingness to share, business credibility; and for each customer: would continue exploring / trust / try a hobby / click a product / consider purchasing / save / share / return.
+
+Customers
+1. Tired nine-to-five professional, phone 390x844: land cold; find a low-energy idea for tonight; take the quiz; save two things and find them after refresh; share one idea; read an article for 2 minutes; find contact and how the site makes money.
+2. Woman seeking a creative hobby (junk journaling, clay, watercolor, crochet, pottery painting): choose a hobby; read its article; understand how to begin; look at supplies; decide whether to try it this weekend.
+3. Woman planning activities with friends: planner for a group; girls' night or mahjong article; send the plan to the group chat; check the plan respects friends, time and budget; check supplies for a social idea.
+4. Budget-conscious woman with about $40: tight-budget weekend plan; free, solo, tonight and indoors variants; budget tool vs profiles; save and restore; search 'cheap date', 'yoga', 'tired', nonsense; widths 390 and 320.
+5. Shopper for beginner supplies: shop; pick a hobby; best first purchase; compare 8+ product cards; check link clarity (no purchase); shopping list copy/export; does the shop feel complete.
+
+Buyers (hypothetical willingness to purchase only; may read docs/buyer, README and the listing draft and inventory; inspect the live site): first-time online business buyer; experienced affiliate-website investor; lifestyle content creator acquiring a brand. Score: brand desirability, website quality, differentiation, monetization readiness, commercial potential, scalability, operating costs, maintenance complexity, technical risks, content quality, asset ownership, transferability, perceived value; list purchase objections and what would prevent an offer.
