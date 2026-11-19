@@ -94,16 +94,16 @@ export const articleFlowerArrangingAsAHobby: Article = {
   body: [
     {
       type: "p",
-      text: "Friday evening: the week is finished, and so is the milk, so you make a quick run to the shop. At the end of the aisle sits a bucket of flowers, and for once you put a bunch in the basket.",
+      text: "A grocery-store bunch shoved straight into a jar looks like a bunch of flowers shoved into a jar. A little structure is the only thing between that and something that looks arranged.",
     },
     {
       type: "p",
-      text: "Then you get it home and it looks like a bunch of flowers shoved in a jar. That is the gap this guide fills. A bit of structure turns a bunch of stems into something that looks arranged.",
+      text: "This guide gives you that structure: a three-layer recipe, a minimal toolkit and the care habits that keep stems going. All you need is what you can pick up with the milk.",
     },
     { type: "h2", text: "Why it is worth trying", id: "why" },
     {
       type: "p",
-      text: "It takes about twenty minutes and needs no talent, only a few choices. You can begin with a bunch from the shop and a jug. And the result lands on your table, where you see it every day. Do the flowers first and let everything else come after.",
+      text: "It takes about twenty minutes and needs no talent, only a few choices. The result lands on your table, where you see it every day.",
     },
     { type: "h2", text: "What you need", id: "need" },
     {
@@ -127,14 +127,8 @@ export const articleFlowerArrangingAsAHobby: Article = {
       text: "**What you probably own.** A jug, a mason jar, an old teapot, even a mug. Odd containers often make a more interesting arrangement than a classic vase.",
     },
     {
-      type: "saveSplurge",
-      save: "One grocery-store bunch, a jar and kitchen scissors.",
-      splurge:
-        "A good pair of snips and a vase with a shape you love, once flowers are a weekly habit.",
-    },
-    {
       type: "p",
-      text: "What a weekly bunch costs varies with the season and where you live, so start with one and see.",
+      text: "What a weekly bunch costs varies with the season and where you live, so start with one. Good snips and a vase with a shape you love can wait until flowers are a habit.",
     },
     { type: "h2", text: "A recipe you can reuse", id: "recipe" },
     {
@@ -142,8 +136,8 @@ export const articleFlowerArrangingAsAHobby: Article = {
       text: "Think in three layers. A focal flower is the star, such as a rose or a ranunculus. A filler adds softness. Greenery frames everything. Choosing one of each, in an odd number of stems, is a rule of thumb many arrangers like for a natural look; it is style advice, not a rule.",
     },
     {
-      type: "first30",
-      steps: [
+      type: "list",
+      items: [
         "Fill a clean vase about two-thirds with cool water and add flower food if you have it, following the packet.",
         "Strip any leaves that would sit below the waterline, because they rot and cloud the water.",
         "Use clean, sharp scissors or a knife, and trim an inch off any stems that have been out of water.",
@@ -173,11 +167,11 @@ export const articleFlowerArrangingAsAHobby: Article = {
     { type: "h2", text: "Making it a weekly ritual", id: "ritual" },
     {
       type: "p",
-      text: "The hobby is mostly repetition. The same jug, a different bunch each week, and a slightly better eye each time. You start to notice what you reach for: soft pastels, one loud color, wild-looking greenery. That is your style forming, and nobody had to tell you what it should be.",
+      text: "The hobby is mostly repetition: the same jug, a different bunch each week, and a slightly better eye each time. You start to notice what you reach for, whether soft pastels, one loud color or wild-looking greenery. That is your style forming.",
     },
     {
       type: "p",
-      text: "Seasons help. Whatever is in the bucket in spring will not be there in autumn, so the bunch changes without effort. Grocery-store flowers are a good teacher, because the range is limited and you learn to work with what is there.",
+      text: "Seasons help. Whatever is in the bucket in spring will not be there in autumn, so the bunch changes without effort, and a limited range teaches you to work with what is there.",
     },
     {
       type: "p",
@@ -185,11 +179,7 @@ export const articleFlowerArrangingAsAHobby: Article = {
     },
     {
       type: "p",
-      text: "Pollen can stain fabric and may bother some people with allergies, so put your arrangement on a surface you can wipe, and choose gently scented stems if you are sensitive.",
-    },
-    {
-      type: "p",
-      text: "Sharp tools deserve a little respect. Cut away from yourself, put snips back where they live, and keep them out of reach of children and pets. Clean, sharp tools also make a tidier cut, so the safe habit and the good habit are the same one.",
+      text: "Pollen can stain fabric and may bother some people with allergies, so use a surface you can wipe and choose gently scented stems if you are sensitive. Cut away from yourself and keep snips out of reach of children and pets.",
     },
     { type: "h2", text: "Common mistakes and fixes", id: "troubleshooting" },
     {
@@ -210,10 +200,6 @@ export const articleFlowerArrangingAsAHobby: Article = {
     {
       type: "tryThisWeekend",
       text: "On your next shop, choose one bunch and bring home one extra stem of greenery. Arrange them in a jar before dinner.",
-    },
-    {
-      type: "makePlan",
-      text: "Make flowers a standing Friday habit, and treat the arranging as the start of the weekend.",
     },
     {
       type: "p",

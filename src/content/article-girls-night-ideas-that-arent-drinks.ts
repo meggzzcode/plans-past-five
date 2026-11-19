@@ -82,11 +82,11 @@ export const articleGirlsNightIdeasThatArentDrinks: Article = {
   body: [
     {
       type: "p",
-      text: "Someone types 'we should do something' into the group chat, six people react with a heart, and three days later the plan is, once again, drinks. Drinks are lovely. They're also loud, pricey, hard to talk over and a slightly awkward fit for friends who aren't drinking, are driving, are saving or want to be home by ten.",
+      text: "'We should do something' tends to end in drinks. Drinks are lovely, but they're also loud, pricey, hard to talk over and an awkward fit for friends who aren't drinking, are driving, are saving or want to be home by ten.",
     },
     {
       type: "p",
-      text: "So here are twenty-five alternatives, grouped by effort and budget. Costs vary by city and group size, and the group sizes shown are suggestions rather than rules, so treat both as a starting point.",
+      text: "Here are twenty-five alternatives, grouped by how much effort they take. Costs vary by city and group size, and the group sizes shown are suggestions rather than rules.",
     },
     { type: "h2", text: "How to pick one for your group", id: "picking" },
     {
@@ -162,7 +162,7 @@ export const articleGirlsNightIdeasThatArentDrinks: Article = {
     it(
       8,
       "Mahjong night",
-      "Ideal if one friend already plays. Sets and rules differ by version, so agree which you're playing first; our [mahjong night guide](/journal/how-to-host-a-mahjong-night) covers how to start.",
+      "Ideal if one friend already plays. Sets and rules differ by version, so agree which you're playing first; the [mahjong night guide](/journal/how-to-host-a-mahjong-night) covers how to start.",
       "2-3 hours",
       "Varies",
       "4 friends",
@@ -178,7 +178,7 @@ export const articleGirlsNightIdeasThatArentDrinks: Article = {
     ),
     {
       type: "girlsNight",
-      text: "The easiest hosting rule: one activity, one snack table, one end time. People relax when they know how the evening ends.",
+      text: "The easiest hosting rule is one activity, one snack table and one end time. People relax when they know how the evening ends.",
     },
     { type: "h2", text: "Out and about, without the bar", id: "out" },
     it(
@@ -325,20 +325,10 @@ export const articleGirlsNightIdeasThatArentDrinks: Article = {
     {
       type: "list",
       items: [
-        "Send one short message with a date, a plan and a rough cost.",
+        "Send one short message with two options, a date and a rough cost.",
         "Give a deadline for replies, like 'let me know by Thursday'.",
         "Be the one who books. Plans rarely survive committees.",
-        "Keep a backup for no-shows: a smaller version of the same plan.",
-      ],
-    },
-    { type: "h3", text: "Get it into the group chat" },
-    {
-      type: "list",
-      items: [
-        "Pick two ideas from the list that suit your group.",
-        "Send them to the chat with a date and a rough cost.",
-        "Take the first yes as a plan and confirm the details.",
-        "Send a reminder two days before.",
+        "Send a reminder two days before, and keep a smaller version of the plan for no-shows.",
       ],
     },
     {
@@ -351,14 +341,10 @@ export const articleGirlsNightIdeasThatArentDrinks: Article = {
       type: "p",
       text: "If craft night sounds like your group, start with [how to host a craft night](/journal/how-to-host-a-craft-night). For more ideas, browse [things to do after work instead of scrolling](/journal/things-to-do-after-work-instead-of-scrolling).",
     },
-    { type: "h2", text: "Keeping it inclusive" },
+    { type: "h2", text: "Keeping it inclusive", id: "inclusive" },
     {
       type: "p",
-      text: "Think about who might be quietly left out. Choose a time that works around early mornings and childcare, a price nobody has to do sums over, and a place reachable without a car. If someone doesn't drink, don't build the plan around alcohol and don't ask why. Give people a graceful way to opt out of anything physical or messy.",
-    },
-    {
-      type: "p",
-      text: "Rotating who chooses helps too. When each friend takes a turn, the group finds new things and nobody ends up carrying the planning alone. A standing night turns 'we should do something' into a date on the calendar.",
+      text: "Think about who might be quietly left out. Choose a time that works around early mornings and childcare, a price nobody has to do sums over, and a place reachable without a car. If someone doesn't drink, don't build the plan around alcohol and don't ask why. Give people a graceful way to opt out of anything physical or messy. Rotating who chooses helps too, so nobody carries the planning alone.",
     },
     { type: "ifYouLoved", hobbies: ["craft-nights", "pottery-painting", "book-clubs"] },
   ],

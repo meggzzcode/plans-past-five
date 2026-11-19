@@ -65,11 +65,11 @@ export const articleCreativeHobbyStarterKitsWorthConsidering: Article = {
   body: [
     {
       type: "p",
-      text: "It's 11 p.m. and the online cart holds a tiny embroidery hoop, a clay set with a cheerful box, a paint tin the size of a deck of cards. Each one promises a finished thing and no decisions. Some deliver. Others are a small pile of ordinary materials in a pretty package.",
+      text: "Is a craft kit worth it, or is it ordinary materials in a pretty box? Sometimes each. A kit promises a finished thing and no decisions, and some deliver exactly that.",
     },
     {
       type: "p",
-      text: "This page does not rank named kits, and nothing here comes from hands-on testing. What it does give you is a way to size up any kit you meet, plus a quick read on which hobbies suit a box and which are better bought loose.",
+      text: "This page doesn't rank named kits, and nothing here comes from hands-on testing. It gives you a way to size up any kit you meet, plus a read on which hobbies suit a box and which are better bought loose.",
     },
     { type: "h2", text: "When a kit makes sense", id: "when-kit" },
     {
@@ -135,7 +135,7 @@ export const articleCreativeHobbyStarterKitsWorthConsidering: Article = {
       n: 4,
       title: "Junk journaling",
       hobby: "junk-journaling",
-      note: "Usually better loose: a notebook, glue and scraps. Our [junk journaling guide](/journal/how-to-start-junk-journaling) covers a first page, and the [supplies guide](/journal/junk-journaling-supplies-for-beginners) sorts what is worth buying.",
+      note: "Usually better loose: a notebook, glue and scraps. The [junk journaling guide](/journal/how-to-start-junk-journaling) covers a first page, and the [supplies guide](/journal/junk-journaling-supplies-for-beginners) sorts what is worth buying.",
       cost: "Varies",
     },
     {
@@ -145,12 +145,6 @@ export const articleCreativeHobbyStarterKitsWorthConsidering: Article = {
       hobby: "pottery-painting",
       note: "Kits can suit this well, but check whether pieces need firing or are decorative only, and what any glaze label says about use. Don't treat decorative-only pieces as food safe.",
       cost: "Varies",
-    },
-    {
-      type: "saveSplurge",
-      save: "A small kit for hobbies with many separate parts, such as embroidery, and loose supplies for the rest.",
-      splurge:
-        "A kit with a clear contents list, good core materials and a step-by-step guide, when you want something gift-ready or a friends-night activity.",
     },
     { type: "h2", text: "What a first purchase should actually do", id: "first-purchase" },
     {
@@ -163,11 +157,7 @@ export const articleCreativeHobbyStarterKitsWorthConsidering: Article = {
     },
     {
       type: "p",
-      text: "Many hobbies can also be sampled for free. A library, a friend with a spare hook, or a single-session class can all tell you whether a craft suits you before any money moves.",
-    },
-    {
-      type: "p",
-      text: "Kits are also easy to over-buy for other people. If you are gifting one, choose something with a finished project at the end, since it is more satisfying to open and finish than a box of open-ended supplies.",
+      text: "Many hobbies can also be sampled for free: a library, a friend with a spare hook or a single-session class can tell you whether a craft suits you before any money moves. If you are gifting a kit, choose one with a finished project at the end.",
     },
     { type: "h2", text: "Red flags", id: "red-flags" },
     {
@@ -200,10 +190,6 @@ export const articleCreativeHobbyStarterKitsWorthConsidering: Article = {
     {
       type: "tryThisWeekend",
       text: "Before anything goes in a cart, write down the three hobbies you are most curious about and mark which you could start with things you already own. Buy a kit only for the one that truly needs it.",
-    },
-    {
-      type: "makePlan",
-      text: "Still undecided? Try the hobby finder, then book your first session on the calendar.",
     },
     { type: "ifYouLoved", hobbies: ["embroidery", "watercolor-painting", "air-dry-clay"] },
   ],

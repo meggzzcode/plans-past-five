@@ -1,4 +1,4 @@
-import { Bookmark, BookmarkCheck } from "lucide-react";
+import { Bookmark, BookmarkCheck, Heart } from "lucide-react";
 import { useSaved, type SavedItem } from "@/lib/saved";
 import { cn } from "@/lib/utils";
 
@@ -37,7 +37,13 @@ export function SaveButton({
         className,
       )}
     >
-      {saved ? <BookmarkCheck className="h-4 w-4" /> : <Bookmark className="h-4 w-4" />}
+      {item.kind === "hobby" ? (
+        <Heart className={cn("h-4 w-4", saved && "fill-current")} aria-hidden />
+      ) : saved ? (
+        <BookmarkCheck className="h-4 w-4" />
+      ) : (
+        <Bookmark className="h-4 w-4" />
+      )}
       {!compact && (saved ? "Saved to My Plans" : "Save to My Plans")}
     </button>
   );

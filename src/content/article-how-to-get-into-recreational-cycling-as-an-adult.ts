@@ -87,15 +87,15 @@ export const articleHowToGetIntoRecreationalCyclingAsAnAdult: Article = {
   body: [
     {
       type: "p",
-      text: "Say there's a bike at the back of the garage, or one a friend keeps offering to lend, and the last time you rode anything was when you were fourteen. The idea of riding for fun feels nostalgic on a sunny day and slightly terrifying on every other one. Both reactions are normal.",
+      text: "If the last time you rode a bike you were fourteen, riding for fun can feel nostalgic on a sunny day and slightly terrifying on every other one. Both reactions are normal, and neither means you've forgotten how.",
     },
     {
       type: "p",
-      text: "Recreational cycling is the unhurried kind: no special outfit, no speed targets, no clip-in shoes. Just you, a bike and somewhere pleasant to end up, preferably with a coffee. This guide takes you from 'where do I even start' to a calm first ride, with safety woven in from the beginning rather than bolted on at the end.",
+      text: "Recreational cycling is the unhurried kind: no special outfit, no speed targets, no clip-in shoes. Just you, a bike and somewhere pleasant to end up. This guide goes from a borrowed bike to a calm first ride, with safety built in from step one.",
     },
     {
       type: "p",
-      text: "One note before we go further: cycling rules and laws differ from place to place. Everything below is general guidance. Check your local rules on helmets, lights, where you may ride and how to signal, and follow those over anything written here.",
+      text: "Rules differ from place to place. Everything below is general guidance, so check your local rules on helmets, lights, where you may ride and how to signal, and follow those over anything written here.",
     },
     { type: "h2", text: "Step 1: Get a bike that fits", id: "bike" },
     {
@@ -162,11 +162,11 @@ export const articleHowToGetIntoRecreationalCyclingAsAnAdult: Article = {
     { type: "h2", text: "Step 5: Practice somewhere quiet", id: "practice" },
     {
       type: "p",
-      text: "Choose an empty parking lot, a quiet park path or a traffic-free trail. Spend twenty minutes getting comfortable.",
+      text: "Choose an empty parking lot, a quiet park path or a traffic-free trail, and spend twenty minutes getting comfortable.",
     },
     {
-      type: "first30",
-      steps: [
+      type: "list",
+      items: [
         "Do the safety check, put on your helmet and adjust the saddle.",
         "Push off, coast and practice braking gently with both brakes.",
         "Ride in a slow, wide circle. Then try a figure-eight.",
@@ -216,12 +216,6 @@ export const articleHowToGetIntoRecreationalCyclingAsAnAdult: Article = {
       text: "Walk to the nearest bike shop or call a friend. Later, learn to fix one at home, or take a workshop if your area offers them.",
     },
     {
-      type: "saveSplurge",
-      save: "Borrow or rent a bike, wear what you already own and ride free paths.",
-      splurge:
-        "A properly fitted helmet and a decent set of lights, if you ride near dusk. They're the two things worth getting right.",
-    },
-    {
       type: "shopHobby",
       title: "Small things that help",
       dek: "Optional. Check what you have first.",
@@ -234,10 +228,6 @@ export const articleHowToGetIntoRecreationalCyclingAsAnAdult: Article = {
     {
       type: "p",
       text: "For other gentle ways to move, see [active hobbies for women who don't love the gym](/journal/active-hobbies-for-women-who-dont-love-the-gym), or plan a destination with [cheap weekend adventures](/journal/cheap-weekend-adventures).",
-    },
-    {
-      type: "makePlan",
-      text: "Pick a day, a friend and a flat route on Make Some Plans.",
     },
     { type: "ifYouLoved", hobbies: ["hiking", "birdwatching", "nature-photography"] },
   ],

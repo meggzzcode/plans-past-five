@@ -7,6 +7,7 @@ import { site } from "@/config/site";
 import { seo } from "@/lib/seo";
 import { HobbyMeta, ArticleCard, ProductCard, HobbyCard } from "@/components/cards/Cards";
 import { SaveButton } from "@/components/editorial/SaveButton";
+import { ShareButtons } from "@/components/editorial/ShareButtons";
 import { AffiliateNote } from "@/components/editorial/AffiliateNote";
 import { Kicker } from "@/components/editorial/Section";
 import { Star, Divider } from "@/components/brand/Doodles";
@@ -67,7 +68,7 @@ function HobbyPage() {
           <div>
             <nav className="text-xs text-muted-foreground" aria-label="Breadcrumb">
               <Link to="/hobbies" className="hover:text-cherry">
-                Find a Hobby
+                Hobbies
               </Link>{" "}
               / {h.name}
             </nav>
@@ -77,7 +78,7 @@ function HobbyPage() {
             </h1>
             <p className="mt-5 max-w-lg text-lg text-ink">{h.description}</p>
             <HobbyMeta h={h} className="mt-6 text-sm" />
-            <div className="mt-6">
+            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-1">
               <SaveButton
                 item={{
                   key: `hobby:${h.slug}`,
@@ -85,6 +86,11 @@ function HobbyPage() {
                   title: h.name,
                   href: `/hobbies/${h.slug}`,
                 }}
+              />
+              <ShareButtons
+                title={`${h.name} for beginners`}
+                path={`/hobbies/${h.slug}`}
+                {...(img ? { image: img.src } : {})}
               />
             </div>
           </div>

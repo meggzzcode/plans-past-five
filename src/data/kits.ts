@@ -5,7 +5,7 @@
  *
  * Kits are editorially curated shopping lists. They are not bundles sold by Plans Past Five.
  */
-import type { CatalogProduct, ProductRole } from "./catalog";
+import { MAX_ALTERNATIVES, choosePrimary, type CatalogProduct, type ProductRole } from "./catalog";
 
 export type SlotNeed = "essential" | "optional" | "probably-own";
 
@@ -23,11 +23,16 @@ export type Kit = {
   dek: string;
   /** Hobby slug from src/data/hobbies.ts, when one matches. */
   hobby?: string;
+  /**
+   * One short, honest note for the whole kit (what to check, who it suits). Replaces per-product
+   * disclaimers. Plain sentences, no prices, no editor-speak.
+   */
+  note?: string;
   slots: KitSlot[];
 };
 
 export const KIT_DISCLAIMER =
-  "An editorially curated shopping list, not a bundle sold by Plans Past Five. Each item links to its own listing.";
+  "A shopping list we put together, not a bundle we sell. Each item links to its own Amazon page.";
 
 const s = (
   id: string,
@@ -50,6 +55,8 @@ export const kits: Kit[] = [
     name: "Junk journaling starter kit",
     dek: "A journal, something sticky and a pile of paper scraps.",
     hobby: "junk-journaling",
+    note:
+      "Two things make this list work: a journal with thick pages, and a glue you like. Everything else is a bonus, and scraps from your recycling bin work as well as bought paper.",
     slots: [
       s("journal", "A journal that can take glue", E),
       s("washi-tape", "Washi tape", E, "affordable"),
@@ -64,6 +71,8 @@ export const kits: Kit[] = [
     name: "Watercolor starter kit",
     dek: "Paint, a brush or two and paper that won't buckle.",
     hobby: "watercolor-painting",
+    note:
+      "Start with the paint, a round brush and heavy paper. The rest can wait.",
     slots: [
       s("paints", "A small pan or tube set", E),
       s("brushes", "Round brushes", E),
@@ -78,6 +87,8 @@ export const kits: Kit[] = [
     name: "Air-dry clay starter kit",
     dek: "No kiln needed: clay, a few tools and paint.",
     hobby: "air-dry-clay",
+    note:
+      "Air-dry clay is for decor and trinket dishes. Painted pieces are not food-safe, so skip mugs and bowls you'd eat from.",
     slots: [
       s("clay", "Air-dry clay", E),
       s("tools", "Sculpting tools", O, "affordable"),
@@ -92,6 +103,8 @@ export const kits: Kit[] = [
     name: "Embroidery starter kit",
     dek: "Hoop, floss, needles and fabric to practice on.",
     hobby: "embroidery",
+    note:
+      "A beginner kit with a guide is the quickest way in. Buy extra floss once you know which colors you reach for.",
     slots: [
       s("hoop", "Embroidery hoop", E),
       s("floss", "Embroidery floss", E, "affordable"),
@@ -106,6 +119,8 @@ export const kits: Kit[] = [
     name: "Crochet starter kit",
     dek: "A hook, easy yarn and something to finish.",
     hobby: "crochet",
+    note:
+      "Pick a smooth, light yarn and a mid-size hook (5 to 6 mm) so you can see every stitch.",
     slots: [
       s("hooks", "Crochet hooks", E),
       s("yarn", "Smooth, light-colored beginner yarn", E),
@@ -119,6 +134,8 @@ export const kits: Kit[] = [
     name: "Reading journal kit",
     dek: "A notebook and pens for the books that stuck with you.",
     hobby: "reading",
+    note:
+      "Choose a layout you would actually fill in: look at the sections before you buy.",
     slots: [
       s("journal", "A reading journal or notebook", E),
       s("pens", "A pen you like", E),
@@ -144,6 +161,8 @@ export const kits: Kit[] = [
     name: "Mahjong night kit",
     dek: "A set you can play on and something to play on top of.",
     hobby: "mahjong",
+    note:
+      "These sets are for American mahjong (166 tiles with jokers). Playing another version? The tile count differs, so check before you buy. The league card changes every year, and the 2026 card is the current one.",
     slots: [
       s("set", "A mahjong set", E),
       s("mat", "Playing mat", O),
@@ -167,6 +186,8 @@ export const kits: Kit[] = [
     id: "paint-night",
     name: "Paint night kit",
     dek: "Canvas, paint and brushes for a table of beginners.",
+    note:
+      "Plan one canvas per guest, plus a spare or two.",
     slots: [
       s("canvas", "Canvases or panels", E),
       s("paint", "Acrylic paint", E),
@@ -181,6 +202,8 @@ export const kits: Kit[] = [
     name: "Picnic kit",
     dek: "A blanket, something to carry and something to sit on.",
     hobby: "picnicking",
+    note:
+      "A blanket with a waterproof backing covers most parks.",
     slots: [
       s("blanket", "A picnic blanket", E),
       s("carrier", "Bag or basket", O),
@@ -205,6 +228,8 @@ export const kits: Kit[] = [
     name: "Pickleball starter kit",
     dek: "Paddles and balls. Rent or borrow first if you'd like to try it.",
     hobby: "pickleball",
+    note:
+      "Paddles and balls are all you need to start. A racket from another sport will not work here, and many courts and clubs lend paddles.",
     slots: [
       s("paddles", "Pickleball paddles", E),
       s("balls", "Pickleballs", E),
@@ -217,6 +242,8 @@ export const kits: Kit[] = [
     name: "Tennis starter kit",
     dek: "A racquet and balls. Many courts and clubs rent racquets.",
     hobby: "tennis",
+    note:
+      "Many courts and clubs rent rackets, so try one first if you are not sure you will keep playing.",
     slots: [
       s("racquet", "Beginner racquet", E),
       s("balls", "Tennis balls", E),
@@ -244,23 +271,31 @@ export const getKit = (id: string) => kits.find((k) => k.id === id);
 export const kitSlotIndex = (): Record<string, string[]> =>
   Object.fromEntries(kits.map((k) => [k.id, k.slots.map((x) => x.id)]));
 
-export type FilledSlot = { slot: KitSlot; product: CatalogProduct };
+export type FilledSlot = {
+  slot: KitSlot;
+  product: CatalogProduct;
+  /** Other verified products for the same slot, at most MAX_ALTERNATIVES, best first. */
+  alternatives: CatalogProduct[];
+};
 
 /**
- * Slots that a verified product fills. A product fills at most one slot per kit and each slot shows
- * one product (the first match, in list order). Empty slots and empty kits are simply absent.
+ * Slots that a verified product fills. A product fills at most one slot per kit. Each slot shows one
+ * primary product (see `choosePrimary`) and up to two alternatives. Empty slots and empty kits are
+ * simply absent.
  */
 export function fillKit(kit: Kit, list: CatalogProduct[]): FilledSlot[] {
   const used = new Set<string>();
   const out: FilledSlot[] = [];
   for (const slot of kit.slots) {
-    const hit = list.find(
+    const hits = list.filter(
       (p) => !used.has(p.id) && p.kitSlots.some((k) => k.kit === kit.id && k.slot === slot.id),
     );
-    if (hit) {
-      used.add(hit.id);
-      out.push({ slot, product: hit });
-    }
+    if (hits.length === 0) continue;
+    const product = choosePrimary(hits, list);
+    const alternatives = hits.filter((p) => p.id !== product.id).slice(0, MAX_ALTERNATIVES);
+    used.add(product.id);
+    for (const a of alternatives) used.add(a.id);
+    out.push({ slot, product, alternatives });
   }
   return out;
 }

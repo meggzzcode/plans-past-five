@@ -55,25 +55,20 @@ export const articleAffordableHobbiesUnder25: Article = {
   body: [
     {
       type: "p",
-      text: "Somewhere between the pottery-studio membership and the camera with its own backpack, 'having a hobby' started to sound like a line item. It doesn't have to be. A lot of the most absorbing ones cost less than a decent takeaway to begin.",
+      text: "A hobby starts to sound like a line item somewhere between the pottery-studio membership and the camera that needs its own backpack. It doesn't have to. Most of the ones people stick with begin with one small purchase, or none.",
     },
     {
       type: "p",
-      text: "Below are fifteen, each with a rough starter budget, the cheapest way in, and what to skip until you're sure. Treat it as a menu. You only need to order one.",
+      text: "Below are fifteen, each with a ballpark starter cost, the cheapest sensible way in, and a first small step. Treat it as a menu. You only need to order one.",
     },
-    { type: "h2", text: "A quick word about prices", id: "prices" },
+    { type: "h2", text: "About those prices", id: "prices" },
     {
       type: "p",
-      text: "Every cost here is a ballpark, marked 'typically', and yours will differ. Prices shift with where you live, which shops are nearby, new versus secondhand, whatever's on sale this month, and how much has changed since this was written. We leave out exact figures on purpose, because they'd be stale within weeks.",
+      text: "Every cost here is a ballpark marked 'typically', and yours will differ with where you live, new versus secondhand, and what's on offer this month. We've left out exact figures on purpose because they go stale fast. Online prices also often leave out shipping and tax.",
     },
     {
-      type: "list",
-      items: [
-        "**Aim, don't promise.** If a kit costs more near you, look for a smaller one or buy the pieces separately.",
-        "**Secondhand counts.** Charity shops, swaps and neighborhood groups are full of barely used supplies.",
-        "**Borrow first.** Many libraries lend more than books, and a friend may own a hoop, a racket or a spare set of paints.",
-        "**Mind the extras.** Online prices often leave out shipping and tax.",
-      ],
+      type: "p",
+      text: "Two habits keep costs down whatever you pick. Borrow first, since many libraries lend more than books and a friend may own a hoop or a spare set of paints. And check secondhand: charity shops, swaps and neighborhood groups are full of barely used supplies.",
     },
     { type: "h2", text: "Make-something hobbies", id: "creative" },
     it(
@@ -87,7 +82,7 @@ export const articleAffordableHobbiesUnder25: Article = {
     it(
       2,
       "Junk journaling",
-      "A plain notebook, a glue stick and the things you'd normally recycle. [Our beginner's guide](/journal/how-to-start-junk-journaling) walks through the first page.",
+      "A plain notebook, a glue stick and the things you'd normally recycle. The [beginner's guide](/journal/how-to-start-junk-journaling) walks through the first page.",
       "Typically under $25, often free",
       "Glue in one receipt and one ticket, then add a sentence about the day.",
       "junk-journaling",
@@ -119,22 +114,16 @@ export const articleAffordableHobbiesUnder25: Article = {
     it(
       6,
       "Friendship bracelets",
-      "A few skeins of embroidery floss and a safety pin to hold your work in place. Make one for yourself before you make any gifts.",
+      "A few skeins of embroidery floss and a safety pin to hold your work in place. Make one for yourself before you start on gifts.",
       "Typically under $25",
       "Learn the forward knot and make a short striped band.",
       "friendship-bracelets",
     ),
-    {
-      type: "saveSplurge",
-      save: "Beginner kits, secondhand supplies and the smallest size of everything.",
-      splurge:
-        "One better tool in a hobby you've done at least five times: a nicer brush, sharper scissors.",
-    },
     { type: "h2", text: "Cozy-at-home hobbies", id: "cozy" },
     it(
       7,
       "Jigsaw puzzles",
-      "Secondhand puzzles are everywhere. Check the pieces are all there before you pay, or trade with a friend.",
+      "Secondhand puzzles are everywhere. Check the pieces are all there before you pay, or swap with a friend.",
       "Typically under $25, often cheaper used",
       "Sort the edge pieces and build the frame.",
       "jigsaw-puzzles",
@@ -175,7 +164,7 @@ export const articleAffordableHobbiesUnder25: Article = {
     it(
       12,
       "Birdwatching",
-      "Your eyes, a window or a park bench, and a free bird-ID app. Binoculars are a lovely later upgrade, not a ticket in.",
+      "Your eyes, a window or a park bench, and a free bird-ID app. Binoculars are a nice later upgrade, not a ticket in.",
       "Free to start",
       "Sit for fifteen minutes and note every bird you see.",
       "birdwatching",
@@ -199,29 +188,19 @@ export const articleAffordableHobbiesUnder25: Article = {
     it(
       15,
       "Thrifting",
-      "Set a spending cap before you leave: a number you're happy to part with. Look for one thing you'd never buy new.",
+      "Set a spending cap before you leave, a number you're happy to part with. Look for one thing you'd never buy new.",
       "Your cap, typically under $25",
       "Visit one secondhand shop, choose one item and go home.",
       "thrifting",
     ),
-    { type: "h2", text: "What you probably own already", id: "own" },
+    { type: "h2", text: "Before you buy anything", id: "own" },
     {
       type: "p",
-      text: "Before you buy anything, walk around your home with this in mind. Most starter lists are shorter than they look.",
+      text: "Walk around your home first. Most starter lists are shorter than they look: a notebook, pens, scissors, a glue stick, a mixing bowl, a baking tray, old jars, comfortable shoes and a tote are probably already here. For the craft hobbies, the one thing worth buying is a small kit or set in the smallest size, so everything arrives in a box. Better paper, a nicer brush, binoculars and a trail-ready daypack can wait until you've done the hobby five times.",
     },
-    {
-      type: "list",
-      items: [
-        "**Probably already at home:** a notebook, pens, scissors, a glue stick, a mixing bowl, a baking tray, old jars, comfortable shoes, a tote.",
-        "**Worth buying for the craft hobbies:** one small kit or set, in the smallest size, so you have everything in a box.",
-        "**Optional:** a clip-on reading light, a lap tray, a pencil case to keep it all together.",
-        "**Later upgrades:** better paper, a nicer brush, binoculars, a trail-ready daypack. Wait until you've done the hobby five times.",
-      ],
-    },
-    { type: "h2", text: "Choosing from fifteen", id: "choose" },
     {
       type: "p",
-      text: "Ask what you want from your evenings. Something for your hands? Start in the first list. Something quiet? The second. Something that gets you out the door? The third. Still stuck? The [Hobby Finder quiz](/hobby-finder) narrows it down in a couple of minutes.",
+      text: "Still stuck choosing? Ask what you want from your evenings. Something for your hands: start with the first list. Something quiet: the second. Something that gets you out the door: the third. The [Hobby Finder quiz](/hobby-finder) narrows it down in a couple of minutes.",
     },
     {
       type: "noSpend",
@@ -232,10 +211,6 @@ export const articleAffordableHobbiesUnder25: Article = {
       title: "If you want a starter kit",
       dek: "Optional. Start with what you have, then upgrade if a hobby sticks.",
       productIds: ["watercolor-sets", "air-dry-clay", "embroidery-kits", "pocket-notebooks"],
-    },
-    {
-      type: "makePlan",
-      text: "Pick a hobby, pick a night, and let Make Some Plans slot it into your week.",
     },
     { type: "ifYouLoved", hobbies: ["watercolor-painting", "air-dry-clay", "birdwatching"] },
   ],

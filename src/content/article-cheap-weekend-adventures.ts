@@ -66,11 +66,11 @@ export const articleCheapWeekendAdventures: Article = {
   body: [
     {
       type: "p",
-      text: "Adventure has quietly become a product. There are experiences to book, weekends to upgrade, and a whole genre of content suggesting you haven't lived until you've paid for a sunset. Meanwhile your own town is full of places you could happily spend a Saturday for next to nothing.",
+      text: "You don't need a booking, an upgrade or a paid sunset to have an adventure. Most towns have a trail, a park, a library branch and a market that can fill a Saturday for little more than a fare, a coffee and a snack.",
     },
     {
       type: "p",
-      text: "This list uses kinds of places, not specific ones, so it works wherever you live. Each has a prompt for finding your own version. Costs vary by place, so check entry fees and rules before you go. The aim is a day that needs little more than a fare, a coffee and a snack.",
+      text: "This list uses kinds of places rather than named ones, so it works wherever you live, and each comes with a prompt for finding your own version. Costs vary by place, so check entry fees and rules before you go.",
     },
     { type: "h2", text: "Four rules before you head out", id: "rules" },
     {
@@ -296,53 +296,32 @@ export const articleCheapWeekendAdventures: Article = {
       "Varies",
       "Solo or social",
     ),
-    { type: "h3", text: "Plan your first adventure" },
-    {
-      type: "list",
-      items: [
-        "Pick one category from this list and search your area for a nearby match.",
-        "Check opening times, entry costs and any rules.",
-        "Pack water, a snack and one small thing to do there, like a book or a sketchbook.",
-        "Put it in your calendar with a start time.",
-      ],
-    },
     { type: "h2", text: "Keeping it cheap", id: "cheap" },
     {
-      type: "list",
-      items: [
-        "**Eat first or bring food.** Snacks are where adventure budgets quietly vanish.",
-        "**Look for free days, not free forever.** Many places offer them if you check ahead.",
-        "**Go on a weekday evening** if your schedule allows. Prices and crowds are often lower.",
-        "**Share the ride.** Carpooling or a group ticket often saves money.",
-      ],
-    },
-    { type: "h2", text: "What to bring, and what you already own", id: "kit" },
-    {
-      type: "list",
-      items: [
-        "**Essentials:** comfortable shoes, water, a charged phone.",
-        "**Probably already own:** a tote, a notebook, a pen, a water bottle, a spare layer.",
-        "**Optional:** a small daypack, a pocket notebook or sketchbook, binoculars for the birdwatching days.",
-        "**Later upgrade:** a sturdier daypack or proper walking shoes, once you've walked enough to know what bothers you.",
-      ],
-    },
-    {
-      type: "noSpend",
-      text: "Many of these need little more than time and a snack. Start with the green spaces and treasure hunts for your cheapest weekend, and check entry fees and parking charges first.",
+      type: "p",
+      text: "Eat first or bring food, because snacks are where adventure budgets quietly vanish. Look for free days rather than free forever; many places offer them if you check ahead. Go on a weekday evening if your schedule allows, since prices and crowds are often lower, and share the ride when you can.",
     },
     {
       type: "p",
-      text: "Want a fuller list for the weekend? See [things to do on the weekend](/journal/things-to-do-on-the-weekend), or stay in with an [at-home creative weekend](/journal/at-home-creative-weekend).",
+      text: "For the kit, you need comfortable shoes, water and a charged phone. A tote, a notebook and a spare layer are probably already at home. A small daypack, a pocket notebook or binoculars for the birdwatching days are optional, and a sturdier daypack or proper walking shoes can wait until you've walked enough to know what bothers you.",
+    },
+    {
+      type: "tryThisWeekend",
+      text: "Pick one category from this list and search your area for a nearby match. Check opening times, entry costs and any rules, pack water, a snack and one small thing to do there, and put it in your calendar with a start time.",
+    },
+    {
+      type: "noSpend",
+      text: "For your cheapest weekend, start with the green spaces and treasure hunts, and check entry fees and parking charges first.",
+    },
+    {
+      type: "p",
+      text: "For a fuller list, see [things to do on the weekend](/journal/things-to-do-on-the-weekend), or stay in with an [at-home creative weekend](/journal/at-home-creative-weekend).",
     },
     {
       type: "shopHobby",
       title: "Small things that help",
       dek: "Optional. A bag, a notebook and comfortable shoes go a long way.",
       productIds: ["daypacks", "pocket-notebooks", "market-totes", "binoculars"],
-    },
-    {
-      type: "makePlan",
-      text: "Pick a category, pick a day, and let Make Some Plans help with the rest.",
     },
     { type: "ifYouLoved", hobbies: ["hiking", "birdwatching", "thrifting"] },
   ],

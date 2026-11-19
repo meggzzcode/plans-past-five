@@ -1,0 +1,96 @@
+# Contrast sweep
+
+Date: 2026-11-19. Trigger: the global rule `.prose-editorial a { color: var(--cherry) }` overrode utility colours on buttons inside `not-prose` callouts, giving cherry text on a cherry fill (label invisible). This sweep looked for the same class of bug everywhere: a global or ancestor style that overrides a component's own colours, and any text that is invisible or nearly invisible for any other reason.
+
+## Result
+
+| Severity                                                           | Count found                                                                                         | Fixed | Remaining |
+| ------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------- | ----- | --------- |
+| Invisible-risk (< 3:1, or text equal to its background)            | 0 on the current code (the original `.prose-editorial a` bug, already fixed, is the only one known) | n/a   | 0         |
+| Should fix (3:1 to 4.5:1, body-size text)                          | 1 cluster (4 text nodes on `/shop/sporty-girl`, 3.82:1)                                             | 1     | 0         |
+| Latent hazards found by the static sweep (no visible defect today) | 2                                                                                                   | 2     | 0         |
+| Hidden or unlabelled links and buttons                             | 0                                                                                                   | n/a   | 0         |
+
+## Method
+
+### 1. Static sweep of `src/styles.css`
+
+Every global rule that targets an element or descendant was read:
+
+| Rule                                                                                   | Layer                                 | Can it override a utility colour?                                                                                                                                                             | Action                                                                       |
+| -------------------------------------------------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `h1, h2, h3, h4 { color: var(--color-ink) }`                                           | `@layer base`                         | No while a `text-*` class is present (utilities win over base). A heading with no colour class inside a dark fill would be ink on dark. No such heading exists (footer h2 has `text-butter`). | None                                                                         |
+| `::selection`, `:focus-visible`, `* { border-color }`                                  | base                                  | Not text colour                                                                                                                                                                               | None                                                                         |
+| `.prose-editorial a`                                                                   | utility                               | Yes (the original bug)                                                                                                                                                                        | Fixed earlier: `a:not(:where(.not-prose, .not-prose *))`                     |
+| `.prose-editorial ul li::before { color: cherry }`                                     | utility                               | Yes: a list inside a `not-prose` callout on a cherry or garden fill would get a cherry bullet. Author code already worked around it with `before:!hidden`.                                    | Fixed: selector is now `ul:not(:where(.not-prose, .not-prose *)) li::before` |
+| `.prose-editorial strong { color: ink }`                                               | utility                               | Yes: bold text inside a `not-prose` block on a dark fill would be ink on dark.                                                                                                                | Fixed: `strong:not(:where(.not-prose, .not-prose *))`                        |
+| `[class*="bg-matcha"] .kicker.text-cherry { color: garden }`                           | unlayered (beats utilities by design) | Only recolours cherry kickers under a matcha fill, and to a colour that passes (garden on matcha about 4.6:1).                                                                                | None, covered by a test                                                      |
+| `.gingham`, `.paper`, `.postcard`, `.tape`, `.kicker`, `.hand`, `.editorial-underline` | utility                               | Set backgrounds, fonts or no colour                                                                                                                                                           | None                                                                         |
+
+Component-level colour pairs were listed with a grep (`text-*` and `bg-*` tokens, `/NN` opacity text, `opacity-*`). Reviewed: `text-cherry/60` and `/80` (decorative large squiggle and numeral), `text-cream/70..90` on garden (footer, 6.3:1 or better), `text-muted-foreground/60` (search placeholder), `disabled:opacity-50` buttons. The token pairs are asserted in `src/test/contrast.test.ts`.
+
+### 2. Dynamic sweep (Playwright, Chromium)
+
+For every visible text node: computed text colour (including alpha and ancestor opacity), effective background (walk up to the first opaque background, compositing translucent layers and opacity), WCAG ratio. Colours were normalised through a canvas so `oklch()` and `color-mix()` values parse. Where an ancestor has a `background-image` (gingham, gradients) or an `<img>`/`<video>` sits behind the text (`elementsFromPoint`), the page was re-screenshotted with all text made transparent, and the ratio is the 5th percentile over the pixels behind the text. Flags: below 3:1 (invisible-risk), 3 to 4.5:1 for text under 24px (or 18.66px bold), near-equal colours (< 1.5:1), text covered by another element, text clipped by overflow, zero-size or transparent text, fully transparent text fill, and links or buttons with no accessible label. Skip-link and `.sr-only` text is excluded on purpose.
+
+The detector was validated against the original bug: with the old `.prose-editorial a` rule restored and a cherry callout with a cream-label link injected into an article, it reported ratio 1.0 (INVISIBLE, near-equal); with the fixed rule the same injection reports nothing.
+
+Viewports: 390x844 and 1280x900. Hover state: one instance of every distinct link and button class signature on eight rich pages (92 elements) was hovered and re-checked.
+
+Run total: 207 page-states, about 36,000 text nodes, no page errors.
+
+### Pages and states covered
+
+- Static routes: `/`, `/start-here`, `/hobbies`, `/journal`, `/shop`, `/hobby-finder`, `/make-plans`, `/tools/hobby-budget`, `/tools/tonight`, `/about`, `/contact`, `/privacy`, `/terms`, `/affiliate-disclosure`, `/editorial-policy`, `/methodology`, `/corrections`, the six category pages (`/after-hours`, `/weekends`, `/solo-dates`, `/better-together`, `/creative-corner`, `/movement`), `/search?q=clay`, `/saved`, and a 404.
+- Journal: the four launch articles first, then all 25 published articles (the same list as `src/content/index.ts` and the sitemap).
+- Hobbies: all 33 indexable hobby profiles (a superset of the six originally requested).
+- Shop: all 8 collections.
+- States: quiz start, middle (2 answers) and result; planner empty, generated, and after "Save"; `/saved` with article, hobby, product and solo-date items (and with a saved plan); both tools after interacting; mobile menu open (390 only); search results.
+- Article block types, all present in published articles and therefore rendered: makePlan (22 articles), saveSplurge (17), noSpend (9), girlsNight (7), tryThisWeekend (16), first30 (13), whatYoullNeed (15), quote (5), shopHobby (24), shopTheArticle (2), starterKit (1), ifYouLoved (27), item (15), list (27), image (2). Every link and button inside them is in the text-node and label checks, and the hover sweep covered the not-prose variants.
+
+## Findings
+
+| Page                                            | Element                                                                      | Text                                    | Ratio                      | Fix                                                                                                                                                                             |
+| ----------------------------------------------- | ---------------------------------------------------------------------------- | --------------------------------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/shop/sporty-girl` (matcha hero), 390px        | breadcrumb nav, `text-muted-foreground`                                      | "Off Duty Essentials / The Sporty Girl" | 3.82:1                     | `src/routes/shop.$category.tsx`: breadcrumb now `text-ink` (ink on matcha about 7.6:1)                                                                                          |
+| `/shop/sporty-girl`, 390px                      | `AffiliateNote` paragraph and its "Disclosure" link, `text-muted-foreground` | "Links open an Amazon search ..."       | 3.82:1                     | Same file: `<AffiliateNote className="mt-6 text-ink" />` (tailwind-merge swaps the colour)                                                                                      |
+| `.prose-editorial` (any callout with a list)    | `ul li::before` bullet                                                       | star bullet                             | would be cherry on cherry  | Selector now excludes `.not-prose`; asserted in test                                                                                                                            |
+| `.prose-editorial` (any callout with bold text) | `strong`                                                                     | bold text                               | would be ink on dark fills | Selector now excludes `.not-prose`; asserted in test                                                                                                                            |
+| `/hobbies/<slug>` (shop block)                  | "Copy list" and "Print list" buttons at 2.6:1                                |                                         | 2.6:1                      | Not a defect: the buttons are `disabled` (`disabled:opacity-50`) until an item is ticked. Disabled controls are exempt from WCAG 1.4.3. 32 such nodes, all disabled-state only. |
+
+The first two rows only appeared on matcha-toned collections (`sporty-girl`), because the other seven collections use butter, strawberry or sunday tints where muted text passes.
+
+After the fixes the full run reports zero invisible-risk findings, zero 3 to 4.5:1 findings, zero unlabelled or hidden links/buttons, and zero covered or clipped text, in both viewports.
+
+Observed, not changed: cherry text on matcha (large `em` in a matcha `PageHero`, hover colour on matcha links) is about 3.3:1, which passes only as large text or hover state. Body-size cherry text on matcha is already handled by the kicker override.
+
+## Regression tests
+
+`src/test/contrast.test.ts` (fast, vitest/jsdom, about 0.4s):
+
+- the link, bullet and `strong` selectors in `.prose-editorial` carry the `:not(:where(.not-prose, .not-prose *))` exclusion, and no bare `a { color }` remains;
+- the selector really skips `.not-prose` descendants (jsdom DOM check);
+- the set of descendant colour rules inside `prose-editorial` and the set of unlayered rules in `styles.css` match an allow-list, so a new global colour rule fails the test and gets reviewed;
+- 30 text-on-background token pairs (read from `:root` in `styles.css`, converted from oklch) are at least 4.5:1, including cream/90, /80, /70 on garden and muted-foreground on muted;
+- cherry on matcha is still below 4.5:1, which documents why the matcha kicker override exists.
+
+## What could not be checked
+
+- Focus-visible and active states, and `:hover` on elements outside the eight pages sampled (the sampled set covers every distinct class signature found on them, not every one site-wide).
+- Dark mode: the site has no dark theme (`dark` variant is defined but unused by the pages).
+- Pixel sampling is capped at 60 text blocks per page; none of the pages needed more. It measures backgrounds only, so text-shadow and partially transparent images over text are approximated by the percentile.
+- Drafts (`draft-registry.ts`) are not public and were not rendered. Production CSS was not separately swept (the sweep ran against the Vite dev server; the production build compiles the same Tailwind source).
+- `src/components/commerce` was scanned (ShopMyHobby, ShopTheArticle, StarterKit, ProductCard render inside article blocks and hobby pages) and is clean; ProductCard states with real catalogue data other than the shipped sample were not exercised.
+- Third-party embeds: none exist on the site.
+- During the sweep other workers were editing the planner and quiz components and the makePlan callout (now `callout callout-light`). The final run (after those edits had landed) was clean, but later edits to those files are not covered.
+
+## Remaining risks
+
+- Any new colour rule added to `styles.css` that targets a descendant (for example `.prose-editorial em`) can recreate this bug. The allow-list test is the guard; extend it deliberately.
+- A new container with a dark fill placed inside `.prose-editorial` without `not-prose` will pick up cherry links, ink bold text and cherry bullets. Always add `not-prose` to coloured callouts.
+- `[class*="bg-matcha"]` is a substring match: a custom class such as `bg-matcha-foo` would trigger the kicker override. Harmless today (garden also passes on cream).
+- Matcha is the lowest-contrast tint in the palette (muted text on it is 3.8:1, cherry about 3.3:1). New text on matcha should use `text-ink` or `text-garden`.
+
+## Re-running
+
+The sweep script is not committed (it lives in the session scratchpad). To repeat: start `bunx vite dev --host 127.0.0.1 --port 5894`, load each route at 390x844 and 1280x900, and for each text node compare `getComputedStyle(parent).color` with the composited ancestor backgrounds using the WCAG formula; screenshot with text hidden for anything over a gradient or image.

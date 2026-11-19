@@ -3,6 +3,7 @@ import { WordmarkStacked } from "@/components/brand/Wordmark";
 import { Star } from "@/components/brand/Doodles";
 import { site } from "@/config/site";
 import { categories } from "@/data/categories";
+import { NAMES } from "@/components/layout/nav";
 import { trustLinks } from "@/config/trust-links";
 
 export function Footer() {
@@ -25,15 +26,15 @@ export function Footer() {
           ]}
         />
         <FooterCol
-          title="Tools & extras"
+          title="Tools"
           links={[
-            { to: "/hobby-finder", label: "Find Your Thing" },
-            { to: "/make-plans", label: "Make Some Plans" },
+            { to: "/hobby-finder", label: NAMES.quiz },
+            { to: "/make-plans", label: NAMES.plans },
+            { to: "/shop", label: NAMES.shop },
+            { to: "/tools/tonight", label: NAMES.tonight },
             { to: "/tools/hobby-budget", label: "Hobby Starter Budget" },
-            { to: "/tools/tonight", label: "What Should I Do Tonight?" },
-            { to: "/hobbies", label: "Hobby Directory" },
-            { to: "/shop", label: "Off Duty Essentials" },
-            { to: "/saved", label: "My Plans" },
+            { to: "/hobbies", label: NAMES.hobbies },
+            { to: "/saved", label: NAMES.saved },
           ]}
         />
         <FooterCol
@@ -71,7 +72,7 @@ function FooterCol({ title, links }: { title: string; links: { to: string; label
           <li key={l.to}>
             <Link
               to={l.to}
-              className="inline-flex min-h-8 items-center text-sm text-cream/90 hover:text-butter hover:underline"
+              className="inline-flex min-h-11 items-center text-sm text-cream/90 hover:text-butter hover:underline"
             >
               {l.label}
             </Link>

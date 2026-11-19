@@ -56,7 +56,7 @@ export const articleHowToFindAHobbyAsAnAdult: Article = {
     },
     {
       type: "p",
-      text: "Here's the reassuring part: nobody discovers a passion by waiting for a lightning bolt. Hobbies tend to turn up the other way round. You try small things, notice which ones you'd happily repeat, and keep those. That's the whole method, and the steps below just make it tidy.",
+      text: "Nobody finds a passion by waiting for a lightning bolt. Hobbies tend to turn up the other way round: you try small things, notice which ones you'd happily repeat, and keep those. The steps below just make that tidy.",
     },
     { type: "h2", text: "Start with a nosy little audit", id: "audit" },
     {
@@ -115,16 +115,11 @@ export const articleHowToFindAHobbyAsAnAdult: Article = {
       ],
       optional: ["A friend to join one of them", "A tiny set of supplies for one hobby"],
     },
-    {
-      type: "p",
-      text: "That's the honest shopping list for this whole article. Everything else is a nice extra, and you can ignore it until something has earned a place in your week.",
-    },
     { type: "h2", text: "Run a one-week experiment", id: "experiment" },
     {
       type: "p",
       text: "Seven days, three short sessions, thirty to sixty minutes each. Afterwards, jot down how you felt before, how you felt after, and whether you'd go again. Skill doesn't matter. The after-feeling does: lighter, curious, a bit pleased with yourself.",
     },
-    { type: "h3", text: "Your one-week experiment" },
     {
       type: "list",
       items: [
@@ -136,7 +131,7 @@ export const articleHowToFindAHobbyAsAnAdult: Article = {
     },
     {
       type: "p",
-      text: "Try not to run this in your most frazzled week. Pick a merely ordinary one. Three modest tries will beat one heroic plan that collapses by Tuesday.",
+      text: "Skip your most frazzled week and pick an ordinary one. Three modest tries beat one heroic plan that collapses by Tuesday.",
     },
     { type: "h2", text: "Keep one, park one, drop one", id: "decide" },
     {
@@ -173,10 +168,8 @@ export const articleHowToFindAHobbyAsAnAdult: Article = {
       text: "Very common, and mostly a first-session problem. The second visit is noticeably easier.",
     },
     {
-      type: "saveSplurge",
-      save: "Borrow, rent or book a single beginner session before buying anything.",
-      splurge:
-        "After you've tried something three times and still want more, buy one good thing that makes it nicer.",
+      type: "p",
+      text: "Borrow, rent or book a single beginner session before buying anything. Once you've tried something three times and still want more, buy one good thing that makes it nicer.",
     },
     {
       type: "shopHobby",
@@ -187,10 +180,6 @@ export const articleHowToFindAHobbyAsAnAdult: Article = {
     {
       type: "tryThisWeekend",
       text: "Do the audit on Friday evening with something warm to drink. By Saturday morning you'll have three hobbies to try.",
-    },
-    {
-      type: "makePlan",
-      text: "Want help turning a hobby into an actual plan? Make Some Plans picks a time, a mood and a setting with you.",
     },
     { type: "ifYouLoved", hobbies: ["watercolor-painting", "hiking", "craft-nights"] },
   ],

@@ -57,11 +57,11 @@ export const articleAtHomeCreativeWeekend: Article = {
   body: [
     {
       type: "p",
-      text: "Saturdays at home tend to go one of two ways. You clean until you resent the cleaning, or you sink into the sofa and the hours leak away. There's a third version, where you stay in, make a few small things with your hands, and finish Sunday with a shelf of evidence.",
+      text: "A weekend at home doesn't have to mean chores or the sofa. This is a two-day plan for the third option: stay in, make a few small things with your hands, and finish Sunday with a shelf of evidence.",
     },
     {
       type: "p",
-      text: "This plan is built for an ordinary apartment and an ordinary budget. It assumes you want a mix of making and resting, a loose structure, and no studio or spotless table.",
+      text: "It's built for an ordinary apartment and an ordinary budget, with a mix of making and resting, a loose structure, and no need for a studio or a spotless table.",
     },
     { type: "h2", text: "The shape of the weekend", id: "shape" },
     {
@@ -94,16 +94,11 @@ export const articleAtHomeCreativeWeekend: Article = {
     },
     {
       type: "p",
-      text: "Before you shop, check the cupboards. You may already own a notebook, scissors, a glue stick, a jar and some paper towels. What's left is mainly clay, paints and paper, and buying small sizes keeps the shopping list modest; prices vary by store and region. Read the labels on any paints you buy, look for the ACMI AP or CL seal, and avoid products containing lead, cadmium or other heavy metals. Don't treat any paint as safe to eat unless its label says so.",
+      text: "Check the cupboards before you shop. You may already own a notebook, scissors, a glue stick, a jar and paper towels, which leaves mainly clay, paints and paper. Small sizes keep the list modest; prices vary by store and region. Later upgrades like heavier watercolor paper and better brushes can wait.",
     },
     {
-      type: "list",
-      items: [
-        "**Essentials:** clay, a few acrylics, a small watercolor set, paper.",
-        "**Probably already own:** notebook, scissors, glue, jar, paper towels, newspaper, a rolling pin.",
-        "**Optional:** washi tape, an apron, a sealer.",
-        "**Later upgrade:** heavier watercolor paper, better brushes, a nicer notebook to keep.",
-      ],
+      type: "p",
+      text: "Read the labels on any paints you buy, look for the ACMI AP or CL seal, and avoid products containing lead, cadmium or other heavy metals. Don't treat any paint as safe to eat unless its label says so.",
     },
     {
       type: "p",
@@ -131,12 +126,12 @@ export const articleAtHomeCreativeWeekend: Article = {
     { type: "h2", text: "Lunch, and a proper break", id: "lunch" },
     {
       type: "p",
-      text: "Leave the table. Eat somewhere that isn't the craft zone, then walk around the block or lie down with a book for twenty minutes. This isn't lost time; it's what keeps the afternoon fun.",
+      text: "Leave the table. Eat somewhere that isn't the craft zone, then walk around the block or lie down with a book for twenty minutes. It keeps the afternoon fun.",
     },
     { type: "h2", text: "Saturday afternoon: small watercolors", id: "saturday-pm" },
     {
       type: "p",
-      text: "Paint small and fast. Set a ten-minute timer and paint one thing on the table: a flower, a mug, a lemon. Do five. They won't all be good, which is rather the point, because the practice is in getting loose.",
+      text: "Paint small and fast. Set a ten-minute timer and paint one thing on the table: a flower, a mug, a lemon. Do five. They won't all be good, and that's fine. The practice is in getting loose.",
     },
     {
       type: "list",
@@ -165,7 +160,7 @@ export const articleAtHomeCreativeWeekend: Article = {
     { type: "h2", text: "Sunday evening: a small ceremony", id: "sunday-evening" },
     {
       type: "p",
-      text: "Put the finished pieces on a shelf. Take a photo if you want one. Note what you enjoyed most and what you'd skip next time, then pack the supplies somewhere findable. Your free time doesn't need a performance review, but a two-line note to self is nice.",
+      text: "Put the finished pieces on a shelf. Take a photo if you want one. Note what you enjoyed most and what you'd skip next time, then pack the supplies somewhere findable. A two-line note to self is plenty.",
     },
     {
       type: "tryThisWeekend",
@@ -182,12 +177,6 @@ export const articleAtHomeCreativeWeekend: Article = {
       ],
     },
     {
-      type: "saveSplurge",
-      save: "A single small set of paints, a basic brush set and inexpensive paper. They go further than you'd expect.",
-      splurge:
-        "Better watercolor paper or a lovely notebook, so the things you make feel worth keeping.",
-    },
-    {
       type: "shopHobby",
       title: "Stock your creative weekend",
       dek: "Optional. Start with what you have.",
@@ -202,10 +191,6 @@ export const articleAtHomeCreativeWeekend: Article = {
     {
       type: "p",
       text: "Not sure what to buy? [Creative hobby starter kits worth considering](/journal/creative-hobby-starter-kits-worth-considering) weighs up the bundles. For a different kind of weekend, see [things to do on the weekend](/journal/things-to-do-on-the-weekend).",
-    },
-    {
-      type: "makePlan",
-      text: "Want a different mood for the weekend? Make Some Plans can build one around your time and energy.",
     },
     { type: "ifYouLoved", hobbies: ["air-dry-clay", "watercolor-painting", "craft-nights"] },
   ],

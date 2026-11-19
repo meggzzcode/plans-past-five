@@ -419,7 +419,11 @@ for (const route of QUICK ? routes.slice(0, 6) : routes) {
   const responses = [];
   page.on(
     "console",
-    (m) => m.type() === "error" && events.push(`console: ${m.text().slice(0, 160)}`),
+    // ERR_CONNECTION_REFUSED/RESET is the dev server restarting under HMR, not a page fault.
+    (m) =>
+      m.type() === "error" &&
+      !/ERR_CONNECTION_(REFUSED|RESET)/.test(m.text()) &&
+      events.push(`console: ${m.text().slice(0, 160)}`),
   );
   page.on("pageerror", (e) => events.push(`pageerror: ${e.message.slice(0, 160)}`));
   page.on("download", (d) => downloads.push(d.suggestedFilename()));

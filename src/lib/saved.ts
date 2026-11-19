@@ -69,6 +69,9 @@ function write(items: SavedItem[]) {
 }
 
 /** Browser-only bookmarks. Read after mount to avoid hydration mismatches. */
+/** Current stored items, read straight from storage (for event handlers). */
+export const readSaved = read;
+
 export function useSaved() {
   const [items, setItems] = useState<SavedItem[]>([]);
   const [ready, setReady] = useState(false);
@@ -94,5 +97,7 @@ export function useSaved() {
   }, []);
   const remove = useCallback((key: string) => write(read().filter((i) => i.key !== key)), []);
   const clear = useCallback(() => write([]), []);
-  return { items, ready, isSaved, toggle, remove, clear };
+  /** Replace everything (used by import, after merging with what is already stored). */
+  const replaceAll = useCallback((next: SavedItem[]) => write(sanitizeSaved(next)), []);
+  return { items, ready, isSaved, toggle, remove, clear, replaceAll };
 }

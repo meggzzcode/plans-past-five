@@ -67,6 +67,28 @@ export type CatalogProduct = {
   whySelected: string;
   /** Honest downsides. Required to be thought about; may be a short list. */
   limitations: string[];
+  /**
+   * Short display title for cards ("Mr. Pen floral washi, 21 rolls"). `name` stays the exact listing
+   * title so the Amazon page can be matched.
+   */
+  shortName?: string;
+  /** One plain, practical benefit line shown on the card. No prices, ratings or unsupported claims. */
+  benefit?: string;
+  /** For a product that is an alternative to another pick: one line saying how it differs. */
+  compare?: string;
+  /** Preferred pick for its kit slot, ahead of the default order. */
+  lead?: boolean;
+  /** The "If you only buy one thing" pick for its kit / hobby / collection. */
+  onlyOne?: boolean;
+  /**
+   * Editorial hold: facts were verified but the product is not shown (audience fit, redundancy).
+   * The text says why. Never a substitute for `status`.
+   */
+  hold?: string;
+  /** Photo. Shown ONLY when imageRights is owned, licensed or retailer-permission and imageCredit is set. */
+  imageUrl?: string;
+  /** Required with imageUrl: who to credit, e.g. "Photo: Brand press kit". */
+  imageCredit?: string;
   imageSource?: string;
   imageRights?: CatalogImageRights;
   /** https pages the facts were checked against. At least one. */
@@ -235,6 +257,33 @@ export function validateCatalogProduct(input: unknown, now: Date = new Date()): 
     bad("imageRights is not a recognised value");
   if (r["imageRights"] && r["imageRights"] !== "none" && !str(r["imageSource"]))
     bad("imageRights set without imageSource");
+  if (r["imageUrl"] !== undefined && r["imageUrl"] !== "") {
+    const u = r["imageUrl"];
+    if (typeof u !== "string" || !(u.startsWith("/") && !u.startsWith("//")) && !isHttps(u))
+      bad("imageUrl must be https or a site-relative path");
+    else if (/amazon\.com|media-amazon|ssl-images-amazon/i.test(u))
+      bad("imageUrl must not point at Amazon images (Associates terms restrict them)");
+    if (!r["imageRights"] || r["imageRights"] === "none")
+      bad("imageUrl needs documented imageRights (owned, licensed or retailer-permission)");
+    if (!str(r["imageCredit"])) bad("imageUrl needs an imageCredit");
+    if (!str(r["imageSource"])) bad("imageUrl needs an imageSource (where the permission is recorded)");
+  } else if (str(r["imageCredit"]) && r["imageUrl"] === undefined) {
+    // credit with no photo is harmless, but flag it so it is not forgotten
+    bad("imageCredit set without imageUrl");
+  }
+  for (const k of ["lead", "onlyOne"])
+    if (r[k] !== undefined && typeof r[k] !== "boolean") bad(`${k} must be true or false`);
+  for (const [k, max] of [
+    ["shortName", 70],
+    ["benefit", 140],
+    ["compare", 140],
+  ] as const) {
+    const v = r[k];
+    if (v === undefined) continue;
+    if (!str(v)) bad(`${k} cannot be empty (omit it instead)`);
+    else if ((v as string).length > max) bad(`${k} is longer than ${max} characters`);
+  }
+  if (r["hold"] !== undefined && !str(r["hold"])) bad("hold needs a reason (omit it to show the product)");
 
   // No unsupported commerce claims
   for (const k of Object.keys(r))
@@ -246,6 +295,9 @@ export function validateCatalogProduct(input: unknown, now: Date = new Date()): 
     r["description"],
     r["whySelected"],
     r["audience"],
+    r["shortName"],
+    r["benefit"],
+    r["compare"],
     ...(Array.isArray(r["limitations"]) ? r["limitations"] : []),
     ...(Array.isArray(r["specs"])
       ? r["specs"].flatMap((s) => [(s as Record<string, unknown>)?.["value"]])
@@ -292,11 +344,12 @@ export function catalogReferenceProblems(list: CatalogProduct[], known: KnownRef
   return out;
 }
 
-/** Only verified, valid, still-available records. Everything else stays invisible. */
+/** Only verified, valid, still-available records that are not on editorial hold. Everything else stays invisible. */
 export function filterVerified(list: CatalogProduct[], now: Date = new Date()): CatalogProduct[] {
   return list.filter(
     (p) =>
       p.status === "verified" &&
+      !p.hold &&
       p.availability !== "unavailable" &&
       validateCatalogProduct(p, now).length === 0,
   );
@@ -323,39 +376,74 @@ export type Selection = {
   essentials: CatalogProduct[];
   /** Non-essential products that are not alternatives for another product's slot. */
   optional: CatalogProduct[];
-  /** Products that fill a kit slot another product in the selection already fills as the primary. */
+  /** Products that fill a kit slot another product in the selection already fills as the primary (at most MAX_ALTERNATIVES per slot). */
   alternatives: CatalogProduct[];
+  /** primary product id -> its (at most two) alternatives, in display order. */
+  alternativesOf: Record<string, CatalogProduct[]>;
+  /** "If you only buy one thing": one essential (or complete kit) for the whole selection, if any. */
+  pick: CatalogProduct | undefined;
+  /** Everything that is displayed (essentials, optional and the capped alternatives). */
   all: CatalogProduct[];
 };
+
+/** Alternatives shown per slot. More than this is a decision handed back to a tired reader. */
+export const MAX_ALTERNATIVES = 2;
 
 const roleRank = (r: ProductRole) => PRODUCT_ROLES.indexOf(r);
 
 const slotKey = (s: KitSlotRef) => `${s.kit}:${s.slot}`;
 
 /**
+ * The primary among products that fill one slot: a `lead` product, else the "researched-pick", else
+ * the first in list order. A slot that has an essential filler keeps an essential as its primary, so
+ * a nice-to-have is never promoted over an essential.
+ */
+export function choosePrimary(ps: CatalogProduct[], list: CatalogProduct[]): CatalogProduct {
+  const order = (p: CatalogProduct) => list.findIndex((x) => x.id === p.id);
+  const sorted = [...ps].sort((a, b) => order(a) - order(b));
+  const pool = sorted.some((p) => p.isEssential) ? sorted.filter((p) => p.isEssential) : sorted;
+  return (
+    pool.find((p) => p.lead) ?? pool.find((p) => p.role === "researched-pick") ?? pool[0]!
+  );
+}
+
+/**
  * Where several products fill the same kit slot (three mahjong sets, two card sizes), one is the
- * primary for that slot: the "researched-pick" if there is one, otherwise the first in list order (among essentials when the slot has any).
- * A product is an alternative when it has kit slots and is not the primary of any of them.
- * Products with no kit slot are never alternatives.
+ * primary for that slot (see `choosePrimary`). A product is an alternative when it has kit slots and
+ * is not the primary of any of them. Products with no kit slot are never alternatives.
  */
 export function alternativeIds(picked: CatalogProduct[], list: CatalogProduct[]): Set<string> {
-  const order = (p: CatalogProduct) => list.findIndex((x) => x.id === p.id);
+  return new Set(Object.keys(alternativePrimaries(picked, list)));
+}
+
+/** alternative id -> primary id of the (first) slot it is an alternative for. */
+function alternativePrimaries(
+  picked: CatalogProduct[],
+  list: CatalogProduct[],
+): Record<string, string> {
   const groups = new Map<string, CatalogProduct[]>();
   for (const p of picked)
     for (const s of p.kitSlots) groups.set(slotKey(s), [...(groups.get(slotKey(s)) ?? []), p]);
   const primary = new Map<string, string>();
-  for (const [k, ps] of groups) {
-    const sorted = [...ps].sort((a, b) => order(a) - order(b));
-    // A slot that has an essential filler keeps an essential as its primary, so it is never demoted.
-    const pool = sorted.some((p) => p.isEssential) ? sorted.filter((p) => p.isEssential) : sorted;
-    primary.set(k, (pool.find((p) => p.role === "researched-pick") ?? pool[0]!).id);
+  for (const [k, ps] of groups) primary.set(k, choosePrimary(ps, list).id);
+  const out: Record<string, string> = {};
+  for (const p of picked) {
+    if (p.kitSlots.length === 0 || p.kitSlots.some((s) => primary.get(slotKey(s)) === p.id))
+      continue;
+    out[p.id] = primary.get(slotKey(p.kitSlots[0]!))!;
   }
-  return new Set(
-    picked
-      .filter(
-        (p) => p.kitSlots.length > 0 && p.kitSlots.every((s) => primary.get(slotKey(s)) !== p.id),
-      )
-      .map((p) => p.id),
+  return out;
+}
+
+/**
+ * The single "If you only buy one thing" product: one flagged `onlyOne`, else the first essential
+ * complete kit, else the first essential. Undefined when there is nothing essential to point at.
+ */
+export function onlyOnePick(essentials: CatalogProduct[]): CatalogProduct | undefined {
+  return (
+    essentials.find((p) => p.onlyOne) ??
+    essentials.find((p) => p.role === "complete-kit") ??
+    essentials[0]
   );
 }
 
@@ -381,13 +469,36 @@ export function selectProducts(
   if (hobbies.length) list.filter((p) => p.hobbies.some((h) => hobbies.includes(h))).forEach(add);
   if (ctx.collection) list.filter((p) => p.collections.includes(ctx.collection!)).forEach(add);
   const sorted = [...picked].sort((a, b) => roleRank(a.role) - roleRank(b.role));
-  const alt = alternativeIds(picked, list);
+  const altOf = alternativePrimaries(picked, list);
+  const shownAlt: CatalogProduct[] = [];
+  const alternativesOf: Record<string, CatalogProduct[]> = {};
+  for (const p of sorted) {
+    const primary = altOf[p.id];
+    if (!primary) continue;
+    const mine = (alternativesOf[primary] ??= []);
+    if (mine.length >= MAX_ALTERNATIVES) continue;
+    mine.push(p);
+    shownAlt.push(p);
+  }
+  const essentials = sorted.filter((p) => p.isEssential && !altOf[p.id]);
+  const optional = sorted.filter((p) => !p.isEssential && !altOf[p.id]);
   return {
-    essentials: sorted.filter((p) => p.isEssential && !alt.has(p.id)),
-    optional: sorted.filter((p) => !p.isEssential && !alt.has(p.id)),
-    alternatives: sorted.filter((p) => alt.has(p.id)),
-    all: sorted,
+    essentials,
+    optional,
+    alternatives: shownAlt,
+    alternativesOf,
+    pick: onlyOnePick(essentials),
+    all: [...essentials, ...optional, ...shownAlt],
   };
+}
+
+/** A photo is displayed only when rights are recorded, a credit is set and the record is valid. */
+export function photoFor(
+  p: Pick<CatalogProduct, "imageUrl" | "imageRights" | "imageCredit">,
+): { src: string; credit: string } | null {
+  if (!p.imageUrl || !p.imageCredit) return null;
+  if (!p.imageRights || p.imageRights === "none") return null;
+  return { src: p.imageUrl, credit: p.imageCredit };
 }
 
 /** The shape `resolveProductLink` expects. The exact URL is the ordinary ASIN page; the registry adds tags later. */

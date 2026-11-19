@@ -5,7 +5,7 @@ import { WordmarkInline } from "@/components/brand/Wordmark";
 import { Star } from "@/components/brand/Doodles";
 import { site } from "@/config/site";
 import { useSaved } from "@/lib/saved";
-import { browseNav, sectionNav, toolNav, topNav, type NavItem } from "@/components/layout/nav";
+import { browseNav, NAMES, sectionNav, toolNav, topNav, type NavItem } from "@/components/layout/nav";
 
 const ACTIVE = "data-[status=active]:text-cherry";
 
@@ -97,7 +97,7 @@ export function Header() {
           <Link
             to="/saved"
             className="relative grid h-11 w-11 place-items-center text-espresso hover:text-cherry data-[status=active]:text-cherry"
-            aria-label="My Plans"
+            aria-label={NAMES.saved}
           >
             <Bookmark className="h-5 w-5" />
             {ready && items.length > 0 && (
@@ -110,7 +110,7 @@ export function Header() {
             to="/hobby-finder"
             className="ml-2 hidden min-h-11 items-center border-2 border-cherry bg-cherry px-4 text-sm font-semibold text-cream transition hover:bg-transparent hover:text-cherry md:inline-flex"
           >
-            Find Your Thing
+            {NAMES.quiz}
           </Link>
           <button
             className="grid h-11 w-11 place-items-center text-espresso lg:hidden"

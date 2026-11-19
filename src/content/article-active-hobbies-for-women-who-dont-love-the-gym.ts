@@ -14,7 +14,7 @@ export const articleActiveHobbiesForWomenWhoDontLoveTheGym: Article = {
   slug: "active-hobbies-for-women-who-dont-love-the-gym",
   title: "15 Active Hobbies for Women Who Don't Love the Gym",
   titleItalic: "Don't Love the Gym",
-  dek: "Fifteen ways to move that have more in common with a good Saturday than a treadmill, sorted by what you actually like doing.",
+  dek: "Fifteen ways to move that have more in common with a good Saturday than a treadmill, sorted by what you like: friends, fresh air or a good playlist.",
   category: "movement",
   status: "published",
   publishedAt: "2026-11-19",
@@ -101,30 +101,26 @@ export const articleActiveHobbiesForWomenWhoDontLoveTheGym: Article = {
   body: [
     {
       type: "p",
-      text: "It's a Tuesday evening and you've signed up, again, for the thing everyone says you should do. Fluorescent lights. A wall of machines with instructions in tiny print. A playlist you didn't choose and can't skip. By minute twelve you are mostly calculating how soon you can leave without it being rude.",
+      text: "Not loving the gym is not a character flaw, and it doesn't mean you don't like moving. Plenty of people who dread a treadmill will happily spend three hours walking around a flea market or chasing a ball around a court. Same legs, better setting.",
     },
     {
       type: "p",
-      text: "If that scene is familiar, the problem was probably never your discipline. It was the setting. Three hours walking around a flea market or an afternoon chasing a ball around a court is movement too, even if it never felt like exercise.",
-    },
-    {
-      type: "p",
-      text: "So this is a different kind of list: fifteen things to do with your body that come with a view, a friend, a ball or a decent soundtrack. Pick by what sounds fun, not by what burns the most.",
+      text: "So here are fifteen things to do with your body that come with a view, a friend, a ball or a soundtrack. Pick by what sounds fun, not by what burns the most.",
     },
     { type: "h2", text: "How to choose", id: "choose" },
     {
       type: "p",
-      text: "Start with your temperament rather than your goals. If you like company, look at racket sports, classes and walking groups. If you need air and space, try hiking, cycling or skating. If music is half the point, try dancing or a rink night. If you like seeing yourself get better at something, try swimming or tennis. And if you want it to feel like play, pick anything with a ball or wheels.",
+      text: "Start with temperament. If you like company, look at racket sports, classes and walking groups. If you need air and space, try hiking, cycling or skating. If music is half the point, try dancing or a rink night. If you like watching yourself improve, try swimming or tennis. If you want it to feel like play, pick anything with a ball or wheels.",
     },
     {
       type: "p",
-      text: "Give each one more than one try. The first session is mostly about being new, so it's a poor judge. A better test is whether you feel curious about going back, even if you were terrible at it. And if you have a health condition or an injury, or it's been a long time since you were active, ask a clinician what suits you before you begin. Then start gently.",
+      text: "Give each one more than one try, because the first session is mostly about being new. The better test is whether you're curious to go back, even if you were terrible. If you have a health condition or an injury, or it's been a long while since you were active, ask a clinician what suits you before you start.",
     },
     { type: "h2", text: "With friends", id: "friends" },
     it(
       1,
       "Pickleball",
-      "Simple rules, a small court and a lot of laughing. Among the friendliest ways to try a paddle sport. See [pickleball for beginners](/journal/pickleball-for-beginners).",
+      "Simple rules, a small court and a lot of laughing. One of the friendliest ways to try a paddle sport. See [pickleball for beginners](/journal/pickleball-for-beginners).",
       "60 min",
       "Varies; check local courts",
       "Social",
@@ -142,7 +138,7 @@ export const articleActiveHobbiesForWomenWhoDontLoveTheGym: Article = {
     it(
       3,
       "Badminton or table tennis",
-      "Quick and social, and often on offer at community centers, so check locally. You'll be surprised how much you move.",
+      "Quick and social, and often on offer at community centers, so check locally. You'll move more than you expect.",
       "45-60 min",
       "Varies",
       "Social",
@@ -150,7 +146,7 @@ export const articleActiveHobbiesForWomenWhoDontLoveTheGym: Article = {
     it(
       4,
       "A walking club",
-      "Regular, no-fuss and surprisingly sociable. Walk with a friend or find a local group. Bring a thermos.",
+      "Regular, no-fuss and surprisingly sociable. Walk with a friend or find a local group, and bring a thermos.",
       "60 min",
       "Free",
       "Social",
@@ -158,7 +154,7 @@ export const articleActiveHobbiesForWomenWhoDontLoveTheGym: Article = {
     it(
       5,
       "A group class you can hide in the back of",
-      "Dance, yoga, aqua aerobics, community fitness. Choose one with beginners listed and pick a spot near the door.",
+      "Dance, yoga, aqua aerobics, community fitness. Choose one that lists beginners and stand near the door.",
       "45-60 min",
       "Varies",
       "Social",
@@ -176,7 +172,7 @@ export const articleActiveHobbiesForWomenWhoDontLoveTheGym: Article = {
     it(
       7,
       "Recreational cycling",
-      "Flat, scenic and conversation-friendly. Our [cycling guide](/journal/how-to-get-into-recreational-cycling-as-an-adult) covers the basics.",
+      "Flat, scenic and easy to chat through. The [cycling guide](/journal/how-to-get-into-recreational-cycling-as-an-adult) covers the basics.",
       "1 hour",
       "Varies",
       "Solo or social",
@@ -184,7 +180,7 @@ export const articleActiveHobbiesForWomenWhoDontLoveTheGym: Article = {
     it(
       8,
       "Birdwatching walks",
-      "Slow, but it adds up. A two-hour walk looking for birds covers a surprising amount of ground.",
+      "Slow, but it adds up. A two-hour walk looking for birds covers more ground than you'd guess.",
       "1-2 hours",
       "Varies",
       "Solo or social",
@@ -202,7 +198,7 @@ export const articleActiveHobbiesForWomenWhoDontLoveTheGym: Article = {
     it(
       10,
       "Outdoor swimming or a local pool",
-      "If you like water, swimming is low-impact and a lovely change of scene. Swim where a lifeguard is present, never swim alone, and follow local rules.",
+      "If you like water, swimming is low-impact and a nice change of scene. Swim where a lifeguard is present, never swim alone, and follow local rules.",
       "30-45 min",
       "Varies",
       "Social",
@@ -211,7 +207,7 @@ export const articleActiveHobbiesForWomenWhoDontLoveTheGym: Article = {
     it(
       11,
       "Roller skating",
-      "A rink night with a disco ball is more fun than any treadmill. Wear a helmet, wrist guards, and knee and elbow pads while you learn, and skate on a smooth paved surface or at a rink, not at night.",
+      "A rink night with a disco ball beats a treadmill. While you learn, wear a helmet, wrist guards, and knee and elbow pads, and skate on a smooth paved surface or at a rink, not at night.",
       "60 min",
       "Varies",
       "Social",
@@ -220,7 +216,7 @@ export const articleActiveHobbiesForWomenWhoDontLoveTheGym: Article = {
     it(
       12,
       "Dance classes",
-      "Salsa, swing, line dancing, whatever sounds fun. Many beginner sessions don't expect you to bring a partner, but check with the class first.",
+      "Salsa, swing, line dancing, whatever sounds fun. Many beginner sessions don't expect a partner, but check with the class first.",
       "60 min",
       "Varies",
       "Social",
@@ -228,16 +224,16 @@ export const articleActiveHobbiesForWomenWhoDontLoveTheGym: Article = {
     it(
       13,
       "Kitchen disco",
-      "Make a playlist and dance for three songs while dinner cooks. It's a workout in disguise, and it's free.",
+      "Make a playlist and dance for three songs while dinner cooks. Free, and it counts.",
       "10-15 min",
       "Free",
       "Solo or social",
     ),
-    { type: "h2", text: "Active but with a purpose", id: "purpose" },
+    { type: "h2", text: "Active, with a purpose", id: "purpose" },
     it(
       14,
       "Gardening or a community plot",
-      "Light gardening counts as gentle activity, and you get flowers or vegetables at the end.",
+      "Light gardening counts as gentle activity, and you end up with flowers or vegetables.",
       "1-2 hours",
       "Varies",
       "Solo or social",
@@ -246,30 +242,24 @@ export const articleActiveHobbiesForWomenWhoDontLoveTheGym: Article = {
     it(
       15,
       "Thrifting on foot",
-      "Make it a long walk between shops. Carry a tote, and you've turned retail into cardio.",
+      "Make it a long walk between shops and carry a tote. Retail becomes cardio.",
       "2-3 hours",
       "Varies",
       "Solo or social",
       "thrifting",
     ),
-    { type: "h3", text: "Plan your first try" },
-    {
-      type: "list",
-      items: [
-        "Pick the one activity above that made you curious rather than obligated.",
-        "Find its easiest version: a short trail, a drop-in session, a friend with a spare racket.",
-        "Put it in your calendar for a time of day when you actually have energy.",
-        "Go for thirty minutes, and stop when it stops being fun.",
-      ],
-    },
-    {
-      type: "p",
-      text: "Notice what isn't on this list: counting reps, a membership, or any need to enjoy sweating in front of strangers. Some of these will leave you properly out of breath. Others will have you on your feet for two hours without your noticing. Both count. The routine you look forward to will beat the perfect one you dread, every time.",
-    },
     { type: "h2", text: "Making it stick", id: "stick" },
     {
       type: "p",
-      text: "Put it in the calendar with another person, because a friend waiting at the court is a stronger motivator than any app. Keep your shoes, water bottle and tote by the door so that going takes no thinking. Start shorter than feels worthwhile; half an hour twice a week survives a busy month, and an ambitious plan usually doesn't. Treat that as a gentle start rather than a fitness target: public-health guidance for adults is about 150 minutes of moderate activity a week, and brisk walking and fast dancing both count. Afterwards, write one line about how it felt rather than how long it lasted. That line is what will tell you what to do more of.",
+      text: "Book it with another person, because a friend waiting at the court is a stronger nudge than any app. Keep your shoes, water bottle and tote by the door so that going takes no thinking. Start shorter than feels worthwhile: half an hour twice a week survives a busy month, and an ambitious plan usually doesn't.",
+    },
+    {
+      type: "p",
+      text: "Treat that as a gentle start rather than a target. Public-health guidance for adults is about 150 minutes of moderate activity a week, and brisk walking and fast dancing both count. Afterwards, write one line about how it felt rather than how long it lasted. That line tells you what to do more of.",
+    },
+    {
+      type: "tryThisWeekend",
+      text: "Pick the one activity above that made you curious rather than obligated, find its easiest version (a short trail, a drop-in session, a friend with a spare racket) and put it in your calendar at a time of day when you have energy. Stop when it stops being fun.",
     },
     {
       type: "whatYoullNeed",
@@ -281,25 +271,14 @@ export const articleActiveHobbiesForWomenWhoDontLoveTheGym: Article = {
       optional: [
         "A borrowed racket or paddle for the racket sports, before you buy one",
         "A daypack for hikes and walks that run past lunchtime",
-        "A tote for balls, towels and snacks",
         "Helmet, wrist guards, and knee and elbow pads if skating appeals; a helmet if cycling does",
       ],
-    },
-    {
-      type: "saveSplurge",
-      save: "Borrow a racket, wear shoes you already own and stick to courts, paths and trails that are free where you live.",
-      splurge:
-        "One properly comfortable pair of shoes, or a daypack that sits well on your back. You'll notice both every time you go.",
     },
     {
       type: "shopHobby",
       title: "Gear for getting started",
       dek: "Optional, and best bought after you've tried a thing twice.",
-      productIds: ["tennis-rackets", "pickleball-sets", "daypacks", "water-bottles"],
-    },
-    {
-      type: "makePlan",
-      text: "Ready to turn an idea into a plan? Make Some Plans will help you choose a day, a friend and a mood.",
+      productIds: ["daypacks", "water-bottles", "sports-totes"],
     },
     { type: "ifYouLoved", hobbies: ["pickleball", "tennis", "hiking"] },
   ],

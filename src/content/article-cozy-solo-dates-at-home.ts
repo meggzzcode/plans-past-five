@@ -74,11 +74,11 @@ export const articleCozySoloDatesAtHome: Article = {
   body: [
     {
       type: "p",
-      text: "Friday, pouring rain, social battery somewhere around four percent. Staying in isn't a failure to make plans. It can be the plan, provided you actually make it.",
+      text: "Staying in isn't a failure to make plans. It can be the plan, provided you actually make it.",
     },
     {
       type: "p",
-      text: "The difference is three small decisions: a start time, a little setup and a rule about your phone. Do those and the sofa becomes a venue. Here's how to set the scene, then twenty ideas sorted by how much energy you've got.",
+      text: "The difference is three small decisions: a start time, a little setup and a rule about your phone. Do those and the sofa becomes a venue. Here's how to set the scene, then twenty ideas sorted by how much energy you have.",
     },
     { type: "h2", text: "Set the scene in ten minutes", id: "set-scene" },
     {
@@ -261,36 +261,19 @@ export const articleCozySoloDatesAtHome: Article = {
       ],
     },
     {
-      type: "first30",
-      steps: [
-        "Choose one idea and a start time.",
-        "Put your phone in another room.",
-        "Make the snack and change the lighting.",
-        "Do the thing for thirty minutes, then decide whether to keep going.",
-      ],
-    },
-    {
       type: "shopHobby",
       productIds: ["junk-journals", "washi-tape", "book-lights", "reading-journals"],
       title: "Small things for a better night in",
       dek: "Nothing here is required. They just make staying in feel a bit more like an occasion.",
     },
     {
-      type: "makePlan",
-      text: "Tell us how much energy and time you have, and get a plan built to fit.",
-    },
-    {
       type: "p",
       text: "For more ideas, see [creative hobbies you can start at home](/journal/creative-hobbies-you-can-start-at-home) and [low-energy hobbies](/journal/low-energy-hobbies). Ready to go out instead? Try [50 solo date ideas](/journal/solo-date-ideas) or [how to plan a solo Saturday](/journal/how-to-plan-a-solo-saturday).",
     },
-    { type: "h2", text: "Make it a series" },
+    { type: "h2", text: "Make it a series", id: "series" },
     {
       type: "p",
-      text: "Once you've found two or three favorites, rotate them. Give the month a theme, such as clay, cooking or re-reading, and you'll have something to anticipate. Keep a short list on the fridge or in your notes, so that when the evening arrives you pick instead of decide.",
-    },
-    {
-      type: "p",
-      text: "It also works as a reset after a hectic week. If your weekends tend to fill up, a cozy night booked in advance gives you permission to rest, and a free evening you've chosen to spend this way is never wasted. Book it like a plan, even if the plan is a blanket.",
+      text: "Once you've found two or three favorites, rotate them. Give the month a theme, such as clay, cooking or re-reading, and keep a short list on the fridge so that when the evening arrives you pick instead of decide. A cozy night booked in advance also gives you permission to rest. Book it like a plan, even if the plan is a blanket.",
     },
     { type: "ifYouLoved", hobbies: ["air-dry-clay", "paint-by-numbers", "jigsaw-puzzles"] },
   ],

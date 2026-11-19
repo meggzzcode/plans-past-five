@@ -5,6 +5,7 @@ import {
   CalendarHeart,
   Compass,
   Footprints,
+  Lightbulb,
   Moon,
   Palette,
   ShoppingBag,
@@ -35,27 +36,43 @@ export const sectionNav: NavItem[] = categories.map((c) => ({
   Icon: sectionIcons[c.slug],
 }));
 
-/** Tools and orientation: Start Here first. */
+/**
+ * Names, one per thing, used by the header, footer, homepage, page titles and tool headings:
+ * Find Your Thing (quiz), Make Some Plans (planner), Shop Your Hobby (shop), My Plans (saved),
+ * What Should I Do Tonight? (tonight tool), Hobbies (directory), The Journal.
+ */
+export const NAMES = {
+  quiz: "Find Your Thing",
+  plans: "Make Some Plans",
+  shop: "Shop Your Hobby",
+  saved: "My Plans",
+  tonight: "What Should I Do Tonight?",
+  hobbies: "Hobbies",
+  journal: "The Journal",
+} as const;
+
+/** Start here: the three journeys first, then the tools that support them. */
 export const toolNav: NavItem[] = [
   { to: "/start-here", label: "Start Here", Icon: Compass },
-  { to: "/hobby-finder", label: "Find Your Thing", Icon: Sparkles },
-  { to: "/make-plans", label: "Make Some Plans", Icon: CalendarHeart },
-  { to: "/saved", label: "My Plans", Icon: Bookmark },
+  { to: "/hobby-finder", label: NAMES.quiz, Icon: Sparkles },
+  { to: "/make-plans", label: NAMES.plans, Icon: CalendarHeart },
+  { to: "/shop", label: NAMES.shop, Icon: ShoppingBag },
+  { to: "/tools/tonight", label: NAMES.tonight, Icon: Lightbulb },
+  { to: "/saved", label: NAMES.saved, Icon: Bookmark },
 ];
 
 export const browseNav: NavItem[] = [
-  { to: "/hobbies", label: "Hobbies", Icon: Smile },
-  { to: "/journal", label: "The Journal", Icon: BookOpen },
-  { to: "/shop", label: "The Shop", Icon: ShoppingBag },
+  { to: "/hobbies", label: NAMES.hobbies, Icon: Smile },
+  { to: "/journal", label: NAMES.journal, Icon: BookOpen },
 ];
 
 /** Desktop top bar (sections sit in a second row beneath it). */
 export const topNav = [
   { to: "/start-here", label: "Start Here" },
-  { to: "/make-plans", label: "Make Some Plans" },
-  { to: "/hobbies", label: "Hobbies" },
-  { to: "/journal", label: "The Journal" },
-  { to: "/shop", label: "The Shop" },
+  { to: "/make-plans", label: NAMES.plans },
+  { to: "/hobbies", label: NAMES.hobbies },
+  { to: "/journal", label: NAMES.journal },
+  { to: "/shop", label: NAMES.shop },
 ] as const;
 
 /** Everything the mobile menu lists, in order. */

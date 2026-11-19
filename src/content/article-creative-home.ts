@@ -12,7 +12,7 @@ export const articleCreativeHome: Article = {
   slug: "creative-hobbies-you-can-start-at-home",
   title: "21 Creative Hobbies You Can Start at Home",
   titleItalic: "at Home",
-  dek: "No studio, no car, no expensive equipment. Just your kitchen table, a free evening, and the very real joy of making something with your hands.",
+  dek: "No studio, no car, no expensive equipment: twenty-one things to make with your hands at a kitchen table, grouped by material and mess level.",
   category: "creative-corner",
   status: "published",
   publishedAt: "2026-11-18",
@@ -38,13 +38,12 @@ export const articleCreativeHome: Article = {
   body: [
     {
       type: "p",
-      text: "At some point between school art class and your first job, making things just… stopped. Not because you didn't enjoy it, but because nobody gave you a reason to keep going. There was no grade, no deadline, no meeting about it.",
+      text: "Do you still make things with your hands? For a lot of adults the answer slipped from yes to no sometime after school art class, mostly because nobody asked for a drawing or a clay pot anymore.",
     },
     {
       type: "p",
-      text: "Consider this your reason. Every hobby below works in a small apartment, at a kitchen table, after work. We've noted the mess level, what to buy first (often nothing), and one small project that'll show you whether you like it.",
+      text: "Consider this your reason. Every hobby below works in a small apartment, at a kitchen table, after work. Each one notes the mess level, what to buy first (often nothing) and one small project that shows whether you like it.",
     },
-    { type: "quote", text: "No experience, just enthusiasm." },
     { type: "h2", text: "Paper people", id: "paper" },
     {
       type: "p",
@@ -53,7 +52,7 @@ export const articleCreativeHome: Article = {
     it(
       1,
       "Junk journaling",
-      "Layer receipts, tickets and scraps into a notebook. It's part diary, part collage, and impossible to do wrong. Read our full [beginner's guide to junk journaling](/journal/how-to-start-junk-journaling), then the [supplies guide](/journal/junk-journaling-supplies-for-beginners) before you shop.",
+      "Layer receipts, tickets and scraps into a notebook. It's part diary, part collage, and impossible to do wrong. Start with the [beginner's guide to junk journaling](/journal/how-to-start-junk-journaling), then the [supplies guide](/journal/junk-journaling-supplies-for-beginners) before you shop.",
       "junk-journaling",
     ),
     it(
@@ -108,7 +107,7 @@ export const articleCreativeHome: Article = {
       undefined,
       {
         time: "1 hour",
-        cost: "Under $25",
+        cost: "Varies",
         first: "Paint a thrifted wooden frame with a simple checkerboard border.",
         company: "Solo or social",
       },
@@ -118,22 +117,17 @@ export const articleCreativeHome: Article = {
       image: "watercolor",
       caption: "Twenty minutes, three colors, one jar of flowers.",
     },
-    {
-      type: "saveSplurge",
-      save: "A student-grade watercolor pan set and a pad of watercolor paper. Plenty for months of practice.",
-      splurge: "Artist-grade half pans and a hardback 300 gsm sketchbook you'll be proud to fill.",
-    },
     { type: "h2", text: "Clay and things you can hold", id: "clay" },
     it(
       9,
       "Air-dry clay",
-      "No wheel or kiln required. Ring dishes, incense holders and tiny vases dry overnight and can be painted the next day. Seal them if you want them to last.",
+      "No wheel or kiln required. Ring dishes, incense holders and tiny vases dry overnight and can be painted the next day. Check your clay's label before sealing, and keep finished pieces for display.",
       "air-dry-clay",
     ),
     it(
       10,
       "At-home pottery painting",
-      "Get a ceramic painting kit or a plain mug and porcelain-safe paints, follow the curing instructions, and drink your morning coffee out of something you made.",
+      "Get a ceramic painting kit and follow its instructions. Check whether the finished piece is decorative only before it goes near food or drink.",
       "pottery-painting",
     ),
     it(
@@ -145,7 +139,7 @@ export const articleCreativeHome: Article = {
     it(
       12,
       "Friendship bracelets",
-      "Quick, nostalgic and perfect for doing with friends. Letter beads are a must.",
+      "Quick, nostalgic and perfect for doing with friends. Letter beads make them yours.",
       "friendship-bracelets",
     ),
     {
@@ -171,7 +165,7 @@ export const articleCreativeHome: Article = {
       undefined,
       {
         time: "30–60 min",
-        cost: "Under $25 for a kit",
+        cost: "Varies",
         first: "Stitch a small motif from a beginner kit, like a strawberry or a star.",
         company: "Solo",
       },
@@ -183,7 +177,7 @@ export const articleCreativeHome: Article = {
       undefined,
       {
         time: "1 hour",
-        cost: "About $25–$50 for a kit",
+        cost: "Varies",
         first: "Punch a small heart or flower on a 6-inch hoop.",
         company: "Solo",
       },
@@ -207,7 +201,7 @@ export const articleCreativeHome: Article = {
       undefined,
       {
         time: "2 hours",
-        cost: "About $25 for fabric and thread",
+        cost: "Varies",
         first: "Sew a simple lined tote from a free beginner pattern.",
         company: "Solo",
       },
@@ -216,7 +210,7 @@ export const articleCreativeHome: Article = {
     it(
       19,
       "Flower arranging",
-      "One supermarket bunch, three jars. Learn about height and texture, then break every rule. Start with our [flower arranging guide](/journal/flower-arranging-as-a-hobby).",
+      "One supermarket bunch, three jars. Learn about height and texture, then break every rule. Start with the [flower arranging guide](/journal/flower-arranging-as-a-hobby).",
       "flower-arranging",
     ),
     it(
@@ -232,8 +226,8 @@ export const articleCreativeHome: Article = {
       "baking",
     ),
     {
-      type: "girlsNight",
-      text: "Turn any of these into a craft night: pick one, set out supplies for four, add snacks. Clay, bracelets and cookie decorating are the easiest for groups.",
+      type: "tryThisWeekend",
+      text: "Turn any of these into a craft night: pick one, set out supplies for four and add snacks. Clay, bracelets and cookie decorating are the easiest for groups.",
     },
     { type: "h2", text: "How to start without buying everything", id: "start-small" },
     {
@@ -250,10 +244,6 @@ export const articleCreativeHome: Article = {
       title: "Shop the hobby",
       dek: "Starter picks from The Creative Girl and The Pottery Era.",
       productIds: ["watercolor-sets", "embroidery-kits", "washi-tape", "friendship-bracelet-kits"],
-    },
-    {
-      type: "makePlan",
-      text: "Can't choose? Find Your Thing matches you with creative hobbies based on your time, space and budget.",
     },
     { type: "ifYouLoved", hobbies: ["watercolor-painting", "embroidery", "craft-nights"] },
   ],

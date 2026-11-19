@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, CalendarHeart, Moon, Sparkles, type LucideIcon } from "lucide-react";
+import { ArrowRight, CalendarHeart, ShoppingBag, Sparkles, type LucideIcon } from "lucide-react";
 import { images, type ImageKey } from "@/data/images";
 import { categories } from "@/data/categories";
 import { hobbies } from "@/data/hobbies";
@@ -9,6 +9,8 @@ import { quizCountWord } from "@/data/quiz-meta";
 import { site } from "@/config/site";
 import { seo } from "@/lib/seo";
 import { Star, Sparkle, Squiggle } from "@/components/brand/Doodles";
+import { SeasonStrip } from "@/components/home/SeasonStrip";
+import { NAMES } from "@/components/layout/nav";
 import { AffiliateNote } from "@/components/editorial/AffiliateNote";
 import { cn } from "@/lib/utils";
 
@@ -52,6 +54,7 @@ function Pic({
   );
 }
 
+/** The three journeys. Shop replaces the old "What tonight?" tile; Tonight stays in the nav and Make Some Plans. */
 const startTiles: {
   to: string;
   title: string;
@@ -62,7 +65,7 @@ const startTiles: {
 }[] = [
   {
     to: "/hobby-finder",
-    title: "Find your thing",
+    title: NAMES.quiz,
     line: `${quizCountWord()} quick questions, hobbies that fit.`,
     k: "hiking",
     Icon: Sparkles,
@@ -70,18 +73,18 @@ const startTiles: {
   },
   {
     to: "/make-plans",
-    title: "Plan my weekend",
+    title: NAMES.plans,
     line: "A realistic plan, built in a minute.",
     k: "shopAdventures",
     Icon: CalendarHeart,
     tone: "bg-butter",
   },
   {
-    to: "/tools/tonight",
-    title: "What tonight?",
-    line: "Tell us your energy. Get one idea.",
+    to: "/shop",
+    title: NAMES.shop,
+    line: "Honest starter supplies, hobby by hobby.",
     k: "shopBookish",
-    Icon: Moon,
+    Icon: ShoppingBag,
     tone: "bg-matcha",
   },
 ];
@@ -170,6 +173,9 @@ function Home() {
         </ul>
       </section>
 
+      {/* THIS SEASON */}
+      <SeasonStrip />
+
       {/* SIX SECTIONS */}
       <section className="mx-auto mt-14 max-w-7xl px-5 md:mt-20 md:px-8">
         <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-1">
@@ -239,7 +245,7 @@ function Home() {
               to="/shop"
               className="inline-flex min-h-11 items-center border-b-2 border-cherry text-sm font-semibold text-cherry"
             >
-              Visit the shop <ArrowRight className="ml-1 h-4 w-4" />
+              All of it <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </div>
           <ul className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-6">
@@ -266,20 +272,12 @@ function Home() {
       <section className="mx-auto max-w-3xl px-5 py-12 text-center md:py-16">
         <p className="hand text-3xl text-cherry md:text-4xl">{site.slogan}</p>
         <p className="mx-auto mt-3 max-w-md text-espresso">{site.mission}</p>
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
-          <Link
-            to="/saved"
-            className="inline-flex min-h-11 items-center border-2 border-cherry px-6 text-sm font-semibold text-cherry hover:bg-cherry hover:text-cream"
-          >
-            Open My Plans
-          </Link>
-          <Link
-            to="/start-here"
-            className="inline-flex min-h-11 items-center px-3 text-sm font-semibold text-ink underline decoration-cherry decoration-2 underline-offset-4"
-          >
-            New here? Start here
-          </Link>
-        </div>
+        <Link
+          to="/start-here"
+          className="mt-4 inline-flex min-h-11 items-center px-3 text-sm font-semibold text-ink underline decoration-cherry decoration-2 underline-offset-4"
+        >
+          New here? Start here
+        </Link>
       </section>
     </>
   );

@@ -39,13 +39,12 @@ export const articleAfterWork: Article = {
   body: [
     {
       type: "p",
-      text: "It's 6:14 p.m. You've closed the laptop, changed into the good sweatpants, and you're standing in the kitchen holding your phone. Forty-five minutes later you're still holding it, now deep in a stranger's apartment renovation. Sound familiar?",
+      text: "Scrolling after work isn't a character flaw. It's the easiest thing within reach when your brain is tired, and that's the whole problem: the alternative has to be almost as easy.",
     },
     {
       type: "p",
-      text: "The scroll isn't a character flaw. It's just the easiest thing available when your brain is tired. The trick is to make something else almost as easy, and a lot more fun. Here are twenty-five things to do after work that fit inside a normal weeknight, sorted by how you're feeling when you clock out.",
+      text: "Here are twenty-five ideas that fit inside a normal weeknight, sorted by how you feel when you clock out: exhausted, creative, a bit restless, or in need of people. Pick one, not all of them.",
     },
-    { type: "quote", text: "Make the better option almost as easy as the scroll." },
     { type: "h2", text: "If you're exhausted", id: "exhausted" },
     {
       type: "p",
@@ -54,7 +53,7 @@ export const articleAfterWork: Article = {
     it(
       1,
       "Do a puzzle with a podcast",
-      "Put on a podcast or an album and work on a jigsaw for half an hour. Your hands stay busy, your eyes get a break, and you can stop the second you're done.",
+      "Put on a podcast or an album and work on a jigsaw for half an hour. Your hands stay busy, your eyes get a break, and you can stop whenever you like.",
       "30–60 min",
       "Under $25",
       "Solo or with a housemate",
@@ -146,7 +145,7 @@ export const articleAfterWork: Article = {
     it(
       11,
       "Rearrange one shelf",
-      "Style one shelf with books, a plant and something you've thrifted. Small home projects scratch the creative itch without a big commitment.",
+      "Style one shelf with books, a plant and something you've thrifted. A small home project can scratch the creative itch without a big commitment.",
       "30 min",
       "Free",
       "Solo",
@@ -164,9 +163,9 @@ export const articleAfterWork: Article = {
     it(
       12,
       "Play pickleball or tennis",
-      "Many public courts have lights and evening open play. An hour of rallying with a friend beats a treadmill every time. New to either? Start with [pickleball for beginners](/journal/pickleball-for-beginners) or [tennis as an adult](/journal/how-to-start-playing-tennis-as-an-adult).",
+      "Many public courts have lights and evening open play. New to either? Start with [pickleball for beginners](/journal/pickleball-for-beginners) or [tennis as an adult](/journal/how-to-start-playing-tennis-as-an-adult).",
       "60 min",
-      "Under $50 for gear, courts often free",
+      "Courts often free; gear optional",
       "With a friend",
       "pickleball",
     ),
@@ -208,7 +207,7 @@ export const articleAfterWork: Article = {
     it(
       17,
       "Host a 90-minute craft hour",
-      "Not a dinner party. Just a table, snacks and a bracelet kit. Text two friends 'craft hour Thursday?' and see what happens. [How to host a craft night](/journal/how-to-host-a-craft-night) has the plan.",
+      "Not a dinner party. Just a table, snacks and a bracelet kit. Text two friends 'craft hour Thursday?', which is easier to say yes to than a big plan. [How to host a craft night](/journal/how-to-host-a-craft-night) has the plan.",
       "90 min",
       "Under $25",
       "With friends",
@@ -248,10 +247,6 @@ export const articleAfterWork: Article = {
       "Free",
       "With a friend",
     ),
-    {
-      type: "girlsNight",
-      text: "Pick one night, one craft and one snack. Text: 'Bracelets + snacks at mine, Thursday 7?' The best plans are the easiest to say yes to.",
-    },
     { type: "h2", text: "If you want to feel like a new person", id: "new-person" },
     it(
       22,
@@ -274,7 +269,7 @@ export const articleAfterWork: Article = {
     it(
       24,
       "Have a solo dinner out",
-      "Sit at the bar or by the window with a book. Table for one is a very underrated plan.",
+      "Sit at the bar or by the window with a book. A table for one is an easy plan to say yes to.",
       "60–90 min",
       "Your choice",
       "Solo",
@@ -290,26 +285,13 @@ export const articleAfterWork: Article = {
     { type: "h2", text: "Making it stick", id: "making-it-stick" },
     {
       type: "p",
-      text: "The secret isn't willpower. It's friction. Make the fun thing easier and the scrolling slightly harder:",
-    },
-    {
-      type: "list",
-      items: [
-        "**Leave the hobby out.** A puzzle on the table or a sketchbook by the couch gets used. A kit in a closet doesn't.",
-        "**Charge your phone in the kitchen** for one hour after you get home.",
-        "**Decide before 5 p.m.** Choosing your evening plan at lunch makes it far more likely to happen.",
-        "**Lower the bar.** Twenty minutes counts. One page counts.",
-      ],
+      text: "Willpower is the wrong tool. Change the friction instead. Leave the hobby out where you'll see it, since a puzzle on the table gets used and a kit in a closet doesn't. Charge your phone in the kitchen for the first hour after you get home. Decide your evening at lunchtime, when you're not tired. And lower the bar: twenty minutes counts, and so does one page.",
     },
     {
       type: "shopHobby",
       title: "Weeknight starter picks",
       dek: "Small, affordable things that make the fun option the easy one.",
       productIds: ["group-painting-kits", "book-lights", "board-games", "air-dry-clay"],
-    },
-    {
-      type: "makePlan",
-      text: "Want us to pick for you? Make Some Plans builds a realistic after-work plan from your time, energy and budget.",
     },
     { type: "ifYouLoved", hobbies: ["air-dry-clay", "reading", "craft-nights"] },
   ],
