@@ -5,13 +5,15 @@
 # STATUS: written from the published Pages CMS documentation. It has NOT yet been opened in the live
 # Pages CMS app (that needs the owner's GitHub login). Cowork task C17 does that first test.
 #
-# Every save in the CMS is a commit to GitHub. A save does NOT change the live website: it is only
-# "Saved". The site is "Published" when the owner presses Netlify's Deploys > Trigger deploy > Deploy
-# site (see netlify.toml and docs/buyer/CMS-SETUP.md). The build then checks the content
-# (scripts/build-content.mjs); if something is wrong the build stops and the live site stays as it was.
-# Pages CMS also reads its configuration per branch and has repository "Actions" buttons; a branch plus
-# "Publish site" button route is PROPOSED, not active (docs/editorial-reset/PUBLISHING-WORKFLOW-
-# RECOMMENDATION.md, docs/editorial-reset/proposed/). Commit messages stay at their defaults.
+# Every save in the CMS is a commit to GitHub. Open the CMS on the branch `content-edits` (the branch
+# picker in Pages CMS): saves there never touch the live website and cost no Netlify credits. Netlify
+# builds a free preview of that branch. The site is "Published" only when the owner presses the
+# "Publish site" button (the `actions:` block below), which runs .github/workflows/publish-content.yml:
+# it checks the content, merges content-edits into main and Netlify makes one production deploy.
+# Pages CMS reads this file per branch, so keep it identical on main and content-edits (the publish
+# workflow levels the two branches after each publish). Guide: docs/buyer/PUBLISH-AND-ROLLBACK.md.
+# NOT YET TESTED with a real login (docs/editorial-reset/CMS-ACCEPTANCE-TEST-OWNER-ACTIONS.md).
+# Commit messages stay at their defaults.
 # IMAGES: use the Images form only (it records alt text, source and licence). Pages CMS writes JSON with
 # 2-space indent and no final newline; the content build understands and tidies that layout.
 
@@ -25,6 +27,21 @@ media:
   input: public/uploads
   output: /uploads
   categories: [image]
+
+# The Publish button (repository sidebar). Keys used are the ones documented at
+# https://pagescms.org/docs/configuration/actions/ (read 2026-11-19): name, label, workflow, ref,
+# cancelable, confirm (title, message, button). `ref: main` runs the workflow file that is on main,
+# whichever branch is open in the CMS. The workflow takes the required `payload` input that Pages CMS sends.
+actions:
+  - name: publish-site
+    label: Publish site
+    workflow: publish-content.yml
+    ref: main
+    cancelable: false
+    confirm:
+      title: Publish your saved edits to the live website?
+      message: "This checks everything first. If a check fails, nothing changes and the live website stays as it is. Have you looked at the preview?"
+      button: Publish now
 
 content:
   # ---------------------------------------------------------------- Articles

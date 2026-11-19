@@ -1,0 +1,170 @@
+# Publish content: merges the `content-edits` branch into `main` so the website goes live.
+# Plain-English guide for the site owner: docs/buyer/PUBLISH-AND-ROLLBACK.md
+#
+# WHO CAN START IT: only the "Publish site" button in Pages CMS (declared in .pages.yml) or "Run workflow"
+# on GitHub's Actions tab. Both need write access to this repository; strangers cannot start it. The
+# workflow never runs on pushes, pull requests or any other event, and it refuses to run unless it was
+# started on `main` (so a copy of this file on another branch is ignored).
+#
+# WHAT IT DOES: (1) refuses if the edit branch changes anything other than content/ and public/uploads/
+# (code is never published through this button); (2) merges the branch into main inside this temporary
+# machine only; (3) runs the full content check (node scripts/build-content.mjs --check) and the
+# content-integrity tests on the merged result; (4) ONLY if all of that passes, pushes main. The merge
+# commit message carries the release marker that netlify.toml's `ignore` rule requires, so Netlify makes
+# exactly one production deploy; (5) moves content-edits up to the same point so the two branches start
+# level again. On any failure it stops before the push: `main` is not changed and the live site stays
+# as it was.
+#
+# SAFETY: no secrets are used; the only credential is the built-in GITHUB_TOKEN, scoped to this
+# repository and to `contents: write` only. No third-party actions are used (git and npm are already on
+# the runner), so there is nothing to pin. Branch names are fixed in this file, and nothing from the
+# Pages CMS payload, commit messages or file names is ever placed inside a shell command: untrusted text
+# is only read by programs from files or environment variables. The token is given only to the steps
+# that talk to GitHub, never to the steps that install packages or run tests.
+#
+# Needs (one-time): Settings > Actions > General > Workflow permissions = "Read and write permissions";
+# no branch protection on main that blocks this push. Release marker: keep it equal to the one in
+# netlify.toml (a test, src/test/publish-workflow.test.ts, checks this).
+name: Publish content
+
+on:
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: "Sent by the Pages CMS Publish site button. Leave empty when running by hand."
+        required: false
+        default: ""
+        type: string
+
+# No permissions by default; the single job asks for exactly what it needs.
+permissions: {}
+
+concurrency:
+  group: publish-content
+  cancel-in-progress: false
+
+env:
+  BUN_VERSION: "1.4.4"
+
+jobs:
+  publish:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Get main and content-edits
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          cred="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          echo "::add-mask::$cred"
+          auth="Authorization: Basic $cred"
+          git -c "http.extraheader=$auth" clone --quiet "https://github.com/$REPO.git" repo
+          cd repo
+          git checkout --quiet main
+          if ! git -c "http.extraheader=$auth" fetch --quiet origin content-edits; then
+            echo "::error title=Nothing published::The branch called content-edits does not exist yet. Open Pages CMS on that branch, save an edit, then press Publish site again. Nothing was changed."
+            exit 1
+          fi
+
+      - name: Check that the edits are content only
+        working-directory: repo
+        run: |
+          set -euo pipefail
+          bad=0
+          while IFS= read -r -d '' f; do
+            case "$f" in
+              content/*|public/uploads/*) ;;
+              *) echo "::error title=Nothing published::The content-edits branch changes a file that is not website content. Only the content/ and public/uploads/ folders can be published with this button. Nothing was changed."; bad=1;;
+            esac
+          done < <(git diff --name-only -z origin/main...origin/content-edits)
+          if git ls-tree -r origin/content-edits -- content public/uploads | grep -q '^120000'; then
+            echo "::error title=Nothing published::The content-edits branch contains a shortcut (symbolic link) inside content/ or public/uploads/. Nothing was changed."; bad=1
+          fi
+          [ "$bad" = 0 ] || exit 1
+
+      - name: Merge the edits on this temporary machine (nothing pushed yet)
+        id: merge
+        working-directory: repo
+        run: |
+          set -euo pipefail
+          git config user.name "Plans Past Five publisher"
+          git config user.email "noreply@users.noreply.github.com"
+          if git merge-base --is-ancestor origin/content-edits HEAD; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Nothing to publish: content-edits has no changes that main does not already have."
+            exit 0
+          fi
+          if ! git merge --no-ff origin/content-edits -m "Publish: content edits [deploy]"; then
+            git merge --abort || true
+            echo "::error title=Nothing published::These edits clash with a change made directly on main. Nothing was published and the live site is unchanged. Ask the site maintainer to reset the content-edits branch (docs/buyer/PUBLISH-AND-ROLLBACK.md, Reset the edit branch)."
+            exit 1
+          fi
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Install the project tools
+        if: steps.merge.outputs.changed == 'true'
+        working-directory: repo
+        run: |
+          set -euo pipefail
+          npm install --global --silent "bun@${BUN_VERSION}"
+          bun install --frozen-lockfile
+
+      - name: Check all the content
+        if: steps.merge.outputs.changed == 'true'
+        working-directory: repo
+        run: |
+          if ! node scripts/build-content.mjs --check; then
+            echo "::error title=Nothing published::The content check found a problem (the list is just above this message: it names the file and the field). Fix it in Pages CMS on the content-edits branch, Save, then press Publish site again. Nothing was published and the live site is unchanged."
+            exit 1
+          fi
+
+      - name: Run the content-integrity tests
+        if: steps.merge.outputs.changed == 'true'
+        working-directory: repo
+        run: |
+          if ! bunx vitest run \
+            src/test/build-content.test.ts \
+            src/test/content-registry.test.ts \
+            src/test/image-ledger.test.ts \
+            src/test/images.test.ts \
+            src/test/settings.test.ts \
+            src/test/links.test.ts \
+            src/test/related.test.ts \
+            src/test/pins.test.tsx; then
+            echo "::error title=Nothing published::A content test failed (details above). Typical causes: a link, pin or related list points at an article that is a Draft, or a photo lacks a description, source or licence. Fix it in Pages CMS on the content-edits branch and press Publish site again. Nothing was published and the live site is unchanged."
+            exit 1
+          fi
+
+      - name: Publish (push main), then level content-edits
+        if: steps.merge.outputs.changed == 'true'
+        working-directory: repo
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cred="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          echo "::add-mask::$cred"
+          auth="Authorization: Basic $cred"
+          if ! git -c "http.extraheader=$auth" push origin HEAD:refs/heads/main; then
+            echo "::error title=Nothing published::GitHub refused the final step. Either main changed while this ran (just press Publish site again), or main is protected, or this repository does not allow Actions to write (docs/buyer/PUBLISH-AND-ROLLBACK.md, When something fails). The live site is unchanged."
+            exit 1
+          fi
+          # main is now published; levelling the edit branch is housekeeping, not a failure of the publish.
+          git -c "http.extraheader=$auth" push origin HEAD:refs/heads/content-edits \
+            || echo "::warning title=Published, but content-edits was not levelled::Your edits are live. Reset the content-edits branch before your next edit (docs/buyer/PUBLISH-AND-ROLLBACK.md)."
+          {
+            echo "### Published"
+            echo "The edits were merged into main. Netlify now builds the live site (one production deploy, about a minute or two)."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Say so when there was nothing to publish
+        if: steps.merge.outputs.changed == 'false'
+        run: echo "### Nothing to publish" >> "$GITHUB_STEP_SUMMARY"
