@@ -1,17 +1,17 @@
 # Hands-on recipes (each one tested in a clean export, 2026-11-19)
 
-Every command below was run in a fresh `git archive HEAD` export with no `node_modules`, `.env` or accounts (`docs/marketplace/final-inspection/BUYER-TAKEOVER-LOG.md`). Tools: Bun 1.4.4, Node 22. Run commands from the project folder.
+Every command below was run in a fresh `git archive HEAD` export with no `node_modules`, `.env` or accounts (`docs/marketplace/final-inspection/BUYER-TAKEOVER.md`). Tools: Bun 1.4.4, Node 22. Run commands from the project folder.
 
 ## Run it locally
 ```
 bun install --frozen-lockfile
-bun run dev -- --host 127.0.0.1 --port 5173     # then open http://127.0.0.1:5173/
+bun run dev      # binds 127.0.0.1; open the "Local:" address it prints (port 8080 in the last check)
 ```
-Plain `bun run dev` picks its own host and port (it printed port 8080 in a container) and can fail with `EAFNOSUPPORT` on a machine without IPv6. Read the "Local:" line it prints; the `--host`/`--port` flags above avoid the problem.
+The `dev` script is `vite dev --host 127.0.0.1`. It used to fail with `EAFNOSUPPORT` on a machine without IPv6; the explicit host fixed that. Extra flags still work: `bun run dev -- --port 5173`.
 
 ## Build, and which output folder
-- `bun run build` makes `.output/` (the Cloudflare-style default). Preview it with `node scripts/serve-built.mjs 3000`.
-- `NITRO_PRESET=netlify bun run build` makes `dist/` plus `.netlify/functions-internal/` (what `netlify.toml` does). Both finish in seconds.
+- `bun run build` makes `.output/` (the Cloudflare-style default, an alternative that is not the configured host). Preview it with `node scripts/serve-built.mjs 3000`.
+- `NITRO_PRESET=netlify bun run build` makes `dist/` plus `.netlify/functions-internal/` (what `netlify.toml` does: Netlify is the configured host). Both finish in seconds.
 - `docs/buyer/SECURITY-AND-BACKUPS.md` says "deploy `.output`": that is only the default preset.
 
 ## Publish an article (draft to published)
@@ -48,7 +48,7 @@ Replace `public/favicon.svg` (and `public/favicon.ico`, `public/icons/*`, which 
 Fill `contactEmail`, `legal.ownerName`, `legal.jurisdiction`, `publisherName`, `publisherEntityType`, `publisherAddress` in `src/config/site.ts`. The Contact and Privacy pages show the email; footer, About, Contact, Terms and Privacy show the Published-by line. To see the pre-publish check run `bunx vitest run src/test/publisher-trust-links.test.tsx --reporter=verbose`; the empty-field warning is only visible with that flag. Once you fill the fields, the test "ships empty and renders nothing" fails by design: update it.
 
 ## Marketing assets
-Pins: `public/pins/` (88 images), plan and captions: `docs/pinterest-pins.csv` (replace `{SITE_URL}` with your domain), brand files: `design/brand/` (logos, social templates, exports), pin sources: `design/pins/`. Zip them: `zip -r marketing-assets.zip public/pins docs/pinterest-pins.csv design docs/marketing` (about 22 MB).
+Pins: `public/pins/` (count: `docs/buyer/INVENTORY.md`), plan and captions: `docs/pinterest-pins.csv` (replace `{SITE_URL}` with your domain), brand files: `design/brand/` (logos, social templates, exports), pin sources: `design/pins/`. Zip them: `zip -r marketing-assets.zip public/pins docs/pinterest-pins.csv design docs/marketing` (about 22 MB).
 
 ## Backups
 - Whole site: `git bundle create ../plans-past-five.bundle --all`, check with `git bundle verify`, restore with `git clone ../plans-past-five.bundle new-folder`, then `bun install --frozen-lockfile && bun run build`. A bundle contains committed history only: commit first.
