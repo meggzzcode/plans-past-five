@@ -34,3 +34,7 @@ Goal: point Netlify project plans-past-five at meggzzcode/planspastfive (main). 
 ## Still needed from the owner
 - Decide whether to accept that the live (private) site now shows planspastfive's main.
 - Confirm credits drop to about 118 on the Usage page; keep further builds to the single planned `[deploy]` at the end.
+
+## Update (2026-11-20 about 10:25 AM ET): credits confirmed
+- Credits available now 118 of 1,000 (was 133). The unexpected build on link cost 15 credits, as expected for one production deploy.
+- Still untested: whether a push to planspastfive main WITHOUT `[deploy]` is skipped.
