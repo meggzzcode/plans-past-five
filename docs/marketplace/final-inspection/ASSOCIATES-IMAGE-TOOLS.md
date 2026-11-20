@@ -27,7 +27,7 @@ Main menu: The Basics, Home, Reports, Tools, Promotions, Creator University, Acc
 - Stated eligibility (FAQ): an approved creators account, and being logged in with Full access to create applications and credentials. To use the PA API through Creators API you also need **at least 10 qualifying sales in the past 30 days**.
 - Review time after creating credentials: up to 48 hours; an "AssociateNotEligible" error can appear during that time and, if it persists past 48 hours, means the criteria are not met.
 - You can create up to two applications with two credential sets each. (None created.)
-- Not stated on the page: what "approved" means. (Amazon's usual rule is 3 qualifying sales within 180 days of signing up, but this page does not say that, so it is not confirmed here.) The account has 0 sales and 0 earnings this month, 24 clicks over 30 days.
+- Not stated on the page: what "approved" means. (Amazon's usual rule is 3 qualifying sales within 180 days of signing up, but this page does not say that, so it is not confirmed here.) The account shows 0 items shipped, $0.00 earnings and 0 clicks for this month on the home summary.
 - Practical result: no product images or titles from Amazon's API until the account is approved AND reaches 10 qualifying sales in 30 days. Credentials are per account, not per tracking ID, so this would apply to planspastfive-20 and pawspassage-20 together.
 
 ## Other things noticed
